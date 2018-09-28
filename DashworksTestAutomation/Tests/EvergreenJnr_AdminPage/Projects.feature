@@ -2030,7 +2030,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @DAS12108 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @DAS12108 @DAS12756 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2046,6 +2046,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
+	#When User clicks String Filter button for "Owned By Team" column on the Admin page
+	#Then Teams in filter dropdown are displayed in alphabetical order
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
@@ -3020,7 +3022,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects         |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -3029,13 +3031,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
@@ -3105,7 +3107,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects         |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -3114,13 +3116,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
@@ -3390,6 +3392,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                                 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
+	#Then Blue banner with "Object updates being queued, please wait" text is displayed
 	Then Success message is displayed and contains "14641 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
@@ -3400,6 +3403,40 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to remove 
 	When User selects all objects to the Project
+	#And User selects following Objects
+	#| Objects                        |
+	#| AAC860150 (Kerrie D. Ruiz)     |
+	#| AAD1011948 (Pinabel Cinq-Mars) |
+	#| AAG081456 (Melanie Z. Fowler)  |
+	#| AAH0343264 (Luc Gauthier)      |
+	#| AAK881049 (Miguel W. Owen)     |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12756 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DeviceProject56" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "UserProject56" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "MailboxProject56" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks String Filter button for "Type" column on the Admin page
+	Then Type of Projects in filter dropdown are displayed in alphabetical order

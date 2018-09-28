@@ -12,6 +12,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
     {
         public const string ProjectInFilterDropdown = "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted']";
 
+        public const string ProjectsTypeInFilterDropdown = "//mat-option[contains(@class, 'mat-option mat-option-multiple ng-star-inserted mat')]";
+
+        public const string TeamInFilterDropdown = "//mat-option[contains(@class, 'mat-option mat-option-multiple ng-star-inserted mat')]";
+
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
         public const string BucketRow = "//div[@col-id='name']//a";
@@ -126,6 +130,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
         public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
+        public IList<IWebElement> ProjectsTypeListInFilterDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
+        public IList<IWebElement> TeamListInFilterDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = BucketRow)]
         public IList<IWebElement> BucketRowList { get; set; }
