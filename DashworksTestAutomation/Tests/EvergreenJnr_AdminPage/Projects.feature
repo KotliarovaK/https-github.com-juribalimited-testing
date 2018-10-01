@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When User enters "TestProject7" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject7" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject9" in the Project Name field
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject9" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	When User enters "TestProject5" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 	When User enters "Rainbow" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Rainbow" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
@@ -162,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	When User enters "TestProject13" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject13" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -198,7 +198,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "DDPPProject14" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "DDPPProject14" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User enters "NewProject15" in the Project Name field
 	And User selects "All Users" in the Scope Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "NewProject15" is displayed to user
 	And Success message is not displayed on the Projects page
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	When User enters "TestProject12332" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12332" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -305,7 +305,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the Project Name field
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "<ProjectName>" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -345,7 +345,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User selects "All Devices" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User clicks newly created object link
 	Then Project "TestProject19" is displayed to user
@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User enters "TestProject12490" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12490" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -585,7 +585,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestProject12364" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	Then Project "TestProject12364" is displayed to user
@@ -685,7 +685,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEmptyGreenAlertLineIsNotDisplayedOnPro
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11881" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
@@ -756,7 +756,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	And User selects "SavedList12349" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestProject12349" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12349" is displayed to user
 	And There are no errors in the browser console
@@ -788,7 +788,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User selects "All Devices" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User enters "TestProject22" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -806,7 +806,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName12336" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestName12336" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -842,7 +842,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelButtonIsDisplayedWithCorrectColo
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName12891" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "TestName12891" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
@@ -865,14 +865,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheFilterSearchIsNotCaseSensitive
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "testname_small letters" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "testname_small letters" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "TestName" text in the Search field for "Project" column
 	Then created Project with "testname_small letters" name is displayed correctly
 	Then created Project with "TESTNAME_capital letters" name is displayed correctly
@@ -898,7 +898,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	When User enters "DevicesProject" in the Project Name field
 	And User selects "StaticList6527" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "DevicesProject" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -940,7 +940,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	When User enters "UsersProject" in the Project Name field
 	And User selects "StaticList6529" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message with "Your project has been created" text is displayed on the Projects page
+	Then Success message with "The project has been created" text is displayed on the Projects page
 	When User clicks newly created object link
 	Then Project "UsersProject" is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
@@ -972,7 +972,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then Scope field is automatically populated
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -986,7 +986,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then Scope field is automatically populated
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -1001,7 +1001,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then Scope field is automatically populated
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 
 Examples:
 	| ListName  | ProjectName | StaticList     | Item                   | ColumnName    | DynamicList  |
@@ -1020,7 +1020,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "MailboxesProject25" text in the Search field for "Project" column
@@ -1042,7 +1042,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	And User selects "StaticList5846" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "MailboxesProject26" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -1061,7 +1061,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	And User selects "DynamicList9513" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenBucketsFromListPage
@@ -1073,7 +1073,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then Scope field is automatically populated
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -1089,7 +1089,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then Scope field is automatically populated
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -1104,7 +1104,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then Scope field is automatically populated
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 
 Examples:
 	| ProjectName     | StaticList     | PageName | Item                | ColumnName | DynamicList     |
@@ -1120,7 +1120,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User enters "<ProjectName>" in the Project Name field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -1135,7 +1135,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User enters "<ProjectName>" in the Project Name field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -1149,7 +1149,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithProjectBucketsF
 	When User enters "<ProjectName>" in the Project Name field
 	Then Scope field is automatically populated
 	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 
 Examples:
 	| ProjectName     | StaticList     | PageName  | Item                             | ColumnName    | DynamicList     |
@@ -1167,7 +1167,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	When User enters "TestProject9753" in the Project Name field
 	And User selects "<AllListName>" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject9753" is displayed to user
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
@@ -1199,7 +1199,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	And User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Details" tab
 	Then "Mailbox scoped project" is displayed in the disabled Project Type field
@@ -1222,7 +1222,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	And User selects "<ScopeValue>" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Details" tab
 	And User selects "Use project buckets" in the Buckets Project dropdown
@@ -1256,7 +1256,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then Scope field is automatically populated
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 3808 selected)" is displayed to the user in the Project Scope Changes section
@@ -1296,7 +1296,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	When User enters "DevicesProject2" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
@@ -1325,7 +1325,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	When User enters "DevicesProject6" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Users" tab in the Project Scope Changes section
@@ -1363,7 +1363,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	When User enters "DevicesProject4" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
@@ -1413,7 +1413,7 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	And User selects "All Users" in the Scope Project dropdown
 	When User selects "<Buckets>" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Users to add (0 of 41339 selected)" is displayed to the user in the Project Scope Changes section
@@ -1451,7 +1451,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndM
 	When User enters "DevicesProject8" in the Project Name field
 	And User selects "<ProjectList>" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "<ScopeChanges>" tab in the Project Scope Changes section
@@ -1500,7 +1500,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForUserP
 	When User enters "DevicesProject9" in the Project Name field
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
@@ -1549,7 +1549,7 @@ Scenario Outline: EvergreenJnr_ChangingMailboxScopeListToAnotherListForMailboxPr
 	When User enters "MailboxesProject3" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
@@ -1580,7 +1580,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopePermissionsForMailboxProject
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "TestName11881" name is displayed correctly
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestName11881" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
@@ -1613,7 +1613,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingApplicationScopePermissionsForMailboxPr
 	When User enters "TestName12881" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestName12881" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
@@ -1639,7 +1639,7 @@ Scenario: EvergreenJnr_AdminPage_OnboardingMailboxesUsersApplicationsObjectsUsin
 	When User enters "TestProject65" in the Project Name field
 	And User selects " All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Info message is displayed and contains "There are no objects in this project, use Scope Changes to add objects to your project" text
 	Then Project "TestProject65" is displayed to user
@@ -1698,7 +1698,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	When User enters "MailboxProject2" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
@@ -1735,7 +1735,7 @@ Scenario: EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject
 	When User enters "TestName12581" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestName12581" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -1813,7 +1813,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User enters "TestName18" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "TestName18" Project
@@ -1892,7 +1892,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	When User enters "DevicesProject1982" in the Project Name field
 	And User selects "DynamicList4811" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
@@ -1909,7 +1909,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User enters "Project13096" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Project13096" Project
@@ -1940,7 +1940,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject12776" in the Project Name field
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12776" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -1997,7 +1997,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User enters "TestProject12777" in the Project Name field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12777" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -2041,7 +2041,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User enters "project12949" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -2102,7 +2102,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When User enters "1DevicesProject" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
@@ -2133,7 +2133,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "Project12965" name is displayed correctly
-	And Success message is displayed and contains "Your project has been created" text
+	And Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project12965" is displayed to user
 	When User selects "Scope Details" tab on the Project details page
@@ -2174,7 +2174,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User enters "UsersProject2" in the Project Name field
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "UsersProject2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -2221,7 +2221,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	When User enters "UsersProject3" in the Project Name field
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "UsersProject3" Project
@@ -2287,7 +2287,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuc
 	When User enters "Project12157" in the Project Name field
 	And User selects "<MainList>" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project12157" is displayed to user
 	When User selects "<ListToScope1>" in the Scope Project details
@@ -2355,7 +2355,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then created Project with "Project12965" name is displayed correctly
-	And Success message is displayed and contains "Your project has been created" text
+	And Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project12965" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -2389,7 +2389,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User enters "Project13390" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
@@ -2552,7 +2552,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User enters "Project13391" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
@@ -2597,7 +2597,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User enters "TestProject12645" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12645" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -2708,7 +2708,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User selects "TestList0A78U9" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then "Projects" page should be displayed to the user
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
 	When User enters "TestProject6" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -2734,7 +2734,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User enters "TestProject5" in the Project Name field
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject5" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -2815,7 +2815,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User enters "TestProject1" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject1" is displayed to user
 	When User clicks "Details" tab
@@ -2868,7 +2868,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User enters "TestProject1" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject1" is displayed to user
 	When User clicks "Details" tab
@@ -2893,7 +2893,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User selects "<ScopeList>" in the Scope Project dropdown
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -2916,7 +2916,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User selects "<StaticList>" in the Scope Project dropdown
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -2935,7 +2935,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	And User selects "<DynamicList>" in the Scope Project dropdown
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 
 Examples:
 	| ProjectName  | ScopeList     | StaticList     | PageName  | Item                   | ColumnName    | DynamicList     |
@@ -2976,7 +2976,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User enters "TestProject84" in the Project Name field
 	And User selects "StaticList4581" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User enters "TestProject84" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
@@ -3014,7 +3014,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User enters "Project13110Dynamic1" in the Project Name field
 	And User selects "Dynamic13110" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project13110Dynamic1" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -3074,7 +3074,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User enters "Project13110Dynamic2" in the Project Name field
 	And User selects "Dynamic13110" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project13110Dynamic2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -3144,7 +3144,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User enters "Project13110Static1" in the Project Name field
 	And User selects "Static13110" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project13110Static1" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -3203,7 +3203,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User enters "Project13110Static2" in the Project Name field
 	And User selects "Static13110" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project13110Static2" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -3266,7 +3266,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User enters "TestProject55" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject55" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -3366,7 +3366,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User enters "Project13347" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "Project13347" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
@@ -3427,18 +3427,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	When User enters "DeviceProject56" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "UserProject56" in the Project Name field
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxProject56" in the Project Name field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks String Filter button for "Type" column on the Admin page
 	Then Type of Projects in filter dropdown are displayed in alphabetical order
