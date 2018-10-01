@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string ProjectsTypeInFilterDropdown = "//mat-option[contains(@class, 'mat-option mat-option-multiple ng-star-inserted mat')]";
 
-        public const string TeamInFilterDropdown = "//mat-option[contains(@class, 'mat-option mat-option-multiple ng-star-inserted mat')]";
+        public const string TeamInFilterDropdown = "//mat-option[@class='mat-option mat-option-multiple ng-star-inserted mat-selected']";
 
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
