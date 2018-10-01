@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User enters "TestProject20" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject20" is displayed to user
 	When User clicks "Details" tab
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User selects "All Devices" in the Scope Project dropdown
 	And User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	Then Bucket dropdown is not displayed on the Project details page
@@ -231,7 +231,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	When User enters "1Project12763" in the Project Name field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
@@ -248,7 +248,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	And User selects "All Devices" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
@@ -268,7 +268,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	And User selects "All Devices" in the Scope Project dropdown
 	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
