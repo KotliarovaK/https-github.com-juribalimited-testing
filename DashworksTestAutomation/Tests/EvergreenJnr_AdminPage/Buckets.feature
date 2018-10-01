@@ -576,7 +576,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User selects "All Users" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "Your project has been created" text
+	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
