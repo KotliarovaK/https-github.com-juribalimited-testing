@@ -815,6 +815,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12286")]
         [NUnit.Framework.CategoryAttribute("DAS12192")]
         [NUnit.Framework.CategoryAttribute("DAS12623")]
+        [NUnit.Framework.CategoryAttribute("DAS12687")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList()
         {
@@ -828,6 +829,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12286",
                         "DAS12192",
                         "DAS12623",
+                        "DAS12687",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

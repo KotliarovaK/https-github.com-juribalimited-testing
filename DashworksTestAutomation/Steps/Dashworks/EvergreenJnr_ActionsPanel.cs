@@ -427,6 +427,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserClicksButtonOnMessageBox(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             action.GetButtonOnMessageBoxByNameOnActionPanel(buttonName).Click();
         }
 
