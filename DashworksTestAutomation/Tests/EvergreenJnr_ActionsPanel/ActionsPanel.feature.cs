@@ -2057,12 +2057,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.TestCaseAttribute("CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("DLL972653", "Complete", "Admin IT", "Not Started", "K-Team", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("LZI970280", "Not Applicable", "Admin IT", "Failed", "IB Team", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ZQX656408", "Not Applicable", "Admin IT", "Complete", "Migration Phase 2", new string[0])]
-        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField(string rowName, string newValue, string newTeam, string defaultValue, string defaultTeam, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("DAS1321", "CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1322", "BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1323", "DLL972653", "Complete", "Admin IT", "Not Started", "K-Team", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1324", "LZI970280", "Not Applicable", "Admin IT", "Failed", "IB Team", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1325", "ZQX656408", "Not Applicable", "Admin IT", "Complete", "Migration Phase 2", new string[0])]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField(string name, string rowName, string newValue, string newTeam, string defaultValue, string defaultTeam, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2091,7 +2091,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "ConfirmPassword",
                         "Roles"});
             table77.AddRow(new string[] {
-                        "DAS132882",
+                        string.Format("{0}", name),
                         "Value",
                         "1234qwer",
                         "1234qwer",
@@ -2106,7 +2106,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Username",
                         "Password"});
             table78.AddRow(new string[] {
-                        "DAS132882",
+                        string.Format("{0}", name),
                         "1234qwer"});
             testRunner.When("User login with following credentials:", ((string)(null)), table78, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2175,7 +2175,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS132882\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2190,13 +2190,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
-        [NUnit.Framework.TestCaseAttribute("CQV0623434", "May 19, 2018", "Admin IT", "May 08, 2015", "Administrative Team", "Complete", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("BBZ877343", "Aug 28, 2001", "Admin IT", "Sep 07, 2018", "Retail Team", "Failed", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("DLL972653", "Aug 30, 2018", "Admin IT", "Sep 05, 2018", "K-Team", "Complete", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("LZI970280", "May 09, 2018", "Admin IT", "Sep 03, 2018", "IB Team", "Not Applicable", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ZQX656408", "Aug 15, 2018", "Admin IT", "Aug 30, 2018", "Migration Phase 2", "Not Applicable", new string[0])]
-        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField(string rowName, string newDate, string newTeam, string defaultDate, string defaultTeam, string defaultValue, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("DAS1330", "CQV0623434", "May 19, 2018", "Admin IT", "May 08, 2015", "Administrative Team", "Complete", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1331", "BBZ877343", "Aug 28, 2001", "Admin IT", "Sep 07, 2018", "Retail Team", "Failed", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1332", "DLL972653", "Aug 30, 2018", "Admin IT", "Sep 05, 2018", "K-Team", "Complete", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1333", "LZI970280", "May 09, 2018", "Admin IT", "Sep 03, 2018", "IB Team", "Not Applicable", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS1334", "ZQX656408", "Aug 15, 2018", "Admin IT", "Aug 30, 2018", "Migration Phase 2", "Not Applicable", new string[0])]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField(string name, string rowName, string newDate, string newTeam, string defaultDate, string defaultTeam, string defaultValue, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2206,8 +2205,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287",
-                    "Delete_Newly_Created_User"};
+                    "DAS13287"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2226,7 +2224,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "ConfirmPassword",
                         "Roles"});
             table81.AddRow(new string[] {
-                        "DAS13288",
+                        string.Format("{0}", name),
                         "DAS13288",
                         "1234qwer",
                         "1234qwer",
@@ -2241,7 +2239,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Username",
                         "Password"});
             table82.AddRow(new string[] {
-                        "DAS13288",
+                        string.Format("{0}", name),
                         "1234qwer"});
             testRunner.When("User login with following credentials:", ((string)(null)), table82, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2300,6 +2298,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("Success message with \"1 of 1 objects were valid for the update. Your changes have" +
                     " successfully been queued.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2314,11 +2321,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.TestCaseAttribute("BBZ877343", "Failed", "Aug 28, 2001", "Not Applicable", "Sep 07, 2018", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("DLL972653", "Complete", "Aug 30, 2018", "Not Started", "Sep 05, 2018", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("LZI970280", "Not Applicable", "May 09, 2018", "Failed", "Sep 03, 2018", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("ZQX656408", "Not Applicable", "Aug 15, 2018", "Complete", "Aug 30, 2018", new string[0])]
-        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField(string rowName, string newValue, string newDate, string defaultValue, string defaultDate, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("DAS13280", "CQV0623434", "Complete", "Sep 01, 2009", "Started", "May 08, 2015", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13281", "BBZ877343", "Failed", "Aug 28, 2001", "Not Applicable", "Sep 07, 2018", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13282", "DLL972653", "Complete", "Aug 30, 2018", "Not Started", "Sep 05, 2018", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13283", "LZI970280", "Not Applicable", "May 09, 2018", "Failed", "Sep 03, 2018", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13284", "ZQX656408", "Not Applicable", "Aug 15, 2018", "Complete", "Aug 30, 2018", new string[0])]
+        public virtual void EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField(string name, string rowName, string newValue, string newDate, string defaultValue, string defaultDate, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2347,7 +2355,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "ConfirmPassword",
                         "Roles"});
             table85.AddRow(new string[] {
-                        "DAS132881",
+                        string.Format("{0}", name),
                         "DAS132881",
                         "1234qwer",
                         "1234qwer",
@@ -2362,7 +2370,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Username",
                         "Password"});
             table86.AddRow(new string[] {
-                        "DAS132881",
+                        string.Format("{0}", name),
                         "1234qwer"});
             testRunner.When("User login with following credentials:", ((string)(null)), table86, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2431,7 +2439,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS132881\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
