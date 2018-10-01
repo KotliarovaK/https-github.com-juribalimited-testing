@@ -3416,7 +3416,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Blue banner with "Object updates being queued, please wait" text is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12756 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12756 @DAS13586 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
