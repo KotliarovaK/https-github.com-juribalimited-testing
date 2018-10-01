@@ -1039,6 +1039,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Message
 
+        [Then(@"Blue banner with ""(.*)"" text is displayed")]
+        public void ThenBlueBannerWithTextIsDisplayed(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
+            StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed correctly");
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]
         public void ThenWarningMessageWithTextIsDisplayedOnTheAdminPage(string text)
         {
@@ -1266,6 +1274,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateBucketButton.Click();
         }
 
+        [When(@"User expands the object to remove")]
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
@@ -1340,7 +1349,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            //Assert.AreEqual(list.OrderBy(s => s).ToList(), list, "Objects are not in alphabetical order");
             List<string> originalList = page.ObjectsList.Select(x => x.Text).ToList();
             SortingHelper.IsListSorted(originalList);
         }
@@ -1670,6 +1678,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             List<string> list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"Teams in filter dropdown are displayed in alphabetical order")]
+        public void ThenTeamsInFilterDropdownAreDisplayedInAlphabeticalOrder()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            List<string> list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"Type of Projects in filter dropdown are displayed in alphabetical order")]
+        public void ThenTypeOfProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            List<string> list = page.ProjectsTypeListInFilterDropdown.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
             page.BodyContainer.Click();
         }
 

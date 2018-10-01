@@ -163,35 +163,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(selector));
         }
 
-        public void ExpandColumnsSectionByName(string sectionsName)
-        {
-            if (Driver.IsElementExists(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")))
-            try
-            {
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
-            }
-            catch
-            {
-                Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"));
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
-            }
-            if (ColumnSubcategories.Any())
-                Driver.MouseHover(ColumnSubcategories.Last());
-        }
-
-        public void CloseColumnsSectionByName(string sectionsName)
-        {
-            try
-            {
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
-            }
-            catch
-            {
-                Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"));
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
-            }
-        }
-
         public bool CategoryIsDisplayed(string sectionsName)
         {
             return Driver.IsElementDisplayed(

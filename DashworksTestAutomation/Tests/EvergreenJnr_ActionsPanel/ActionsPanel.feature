@@ -1317,7 +1317,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 
 Examples: 
 	| RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
-	| CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
+	#| CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
 	| BBZ877343  | Failed         | Aug 28, 2001 | Not Applicable | Sep 07, 2018 |
 	| DLL972653  | Complete       | Aug 30, 2018 | Not Started    | Sep 05, 2018 |
 	| LZI970280  | Not Applicable | May 09, 2018 | Failed         | Sep 03, 2018 |
@@ -1445,7 +1445,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state

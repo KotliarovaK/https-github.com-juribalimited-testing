@@ -2314,7 +2314,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.TestCaseAttribute("CQV0623434", "Complete", "Sep 01, 2009", "Started", "May 08, 2015", new string[0])]
         [NUnit.Framework.TestCaseAttribute("BBZ877343", "Failed", "Aug 28, 2001", "Not Applicable", "Sep 07, 2018", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DLL972653", "Complete", "Aug 30, 2018", "Not Started", "Sep 05, 2018", new string[0])]
         [NUnit.Framework.TestCaseAttribute("LZI970280", "Not Applicable", "May 09, 2018", "Failed", "Sep 03, 2018", new string[0])]
@@ -2639,7 +2638,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Success message with \"1 of 1 objects were valid for the update. Your changes have" +
                     " successfully been queued.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

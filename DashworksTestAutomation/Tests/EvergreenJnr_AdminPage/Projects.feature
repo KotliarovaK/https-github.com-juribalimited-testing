@@ -1705,7 +1705,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	When  User selects "Include applications" checkbox on the Project details page
+	When User selects "Include applications" checkbox on the Project details page
 	And User selects "<ChangingToList1>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
@@ -2030,7 +2030,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @DAS12108 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12949 @DAS12609 @DAS12108 @DAS12756 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2046,6 +2046,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
+	#When User clicks String Filter button for "Owned By Team" column on the Admin page
+	#Then Teams in filter dropdown are displayed in alphabetical order
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
@@ -3020,7 +3022,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects         |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -3029,13 +3031,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
@@ -3105,7 +3107,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects         |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
@@ -3114,13 +3116,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	When User selects "Queue" tab on the Project details page
 	Then following Items are displayed in the Queue table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
 	| Items           |
-	| 001BAQXT6JWFPI  |
+	| 00HA7MKAVVFDAV  |
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
@@ -3352,3 +3354,89 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "Device" checkbox from String Filter on the Admin page
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13347 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project13347" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks newly created object link
+	Then Project "Project13347" is displayed to user
+	When User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects         |
+	| 00K4CEEQ737BA4L |
+	| 00YWR8TJU4ZF8V  |
+	| 019BFPQGKK5QT8N |
+	| 02C80G8RFTPA9E  |
+	| 06T5FX3CUY08AE  |
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to add 
+	When User selects all objects to the Project
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User expands the object to add 
+	And User selects following Objects
+	| Objects                                                                       |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)          |
+	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0) |
+	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI (12.0.2430.0)                  |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                            |
+	| 0036 - Microsoft Access 97 SR-2 English (8.0)                                 |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	#Then Blue banner with "Object updates being queued, please wait" text is displayed
+	Then Success message is displayed and contains "14641 objects queued for onboarding, 0 objects offboarded" text
+	When User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	When User selects "Do not include device owners" checkbox on the Project details page
+	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
+	When User selects "Do not include applications" checkbox on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User expands the object to remove 
+	When User selects all objects to the Project
+	#And User selects following Objects
+	#| Objects                        |
+	#| AAC860150 (Kerrie D. Ruiz)     |
+	#| AAD1011948 (Pinabel Cinq-Mars) |
+	#| AAG081456 (Melanie Z. Fowler)  |
+	#| AAH0343264 (Luc Gauthier)      |
+	#| AAK881049 (Miguel W. Owen)     |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Blue banner with "Object updates being queued, please wait" text is displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12756 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DeviceProject56" in the Project Name field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "UserProject56" in the Project Name field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "MailboxProject56" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "Your project has been created" text
+	When User clicks String Filter button for "Type" column on the Admin page
+	Then Type of Projects in filter dropdown are displayed in alphabetical order
