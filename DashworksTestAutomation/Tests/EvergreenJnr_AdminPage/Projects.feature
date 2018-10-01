@@ -3355,7 +3355,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13347 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13347 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3378,6 +3378,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 019BFPQGKK5QT8N |
 	| 02C80G8RFTPA9E  |
 	| 06T5FX3CUY08AE  |
+	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
 	When User selects all objects to the Project
@@ -3392,8 +3394,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 0036 - Microsoft Access 97 SR-2 English (8.0)                                 |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	#Then Blue banner with "Object updates being queued, please wait" text is displayed
-	Then Success message is displayed and contains "14641 objects queued for onboarding, 0 objects offboarded" text
+	Then Blue banner with "Object updates being queued, please wait" text is displayed
+	Then Success message is displayed and contains "14636 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
 	And User navigates to the "User Scope" tab in the Scope section on the Project details page
 	When User selects "Do not include device owners" checkbox on the Project details page
