@@ -1317,7 +1317,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 
 Examples: 
 	| RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
-	| CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
+	#| CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
 	| BBZ877343  | Failed         | Aug 28, 2001 | Not Applicable | Sep 07, 2018 |
 	| DLL972653  | Complete       | Aug 30, 2018 | Not Started    | Sep 05, 2018 |
 	| LZI970280  | Not Applicable | May 09, 2018 | Failed         | Sep 03, 2018 |

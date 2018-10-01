@@ -2314,7 +2314,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.TestCaseAttribute("CQV0623434", "Complete", "Sep 01, 2009", "Started", "May 08, 2015", new string[0])]
         [NUnit.Framework.TestCaseAttribute("BBZ877343", "Failed", "Aug 28, 2001", "Not Applicable", "Sep 07, 2018", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DLL972653", "Complete", "Aug 30, 2018", "Not Started", "Sep 05, 2018", new string[0])]
         [NUnit.Framework.TestCaseAttribute("LZI970280", "Not Applicable", "May 09, 2018", "Failed", "Sep 03, 2018", new string[0])]

@@ -68,7 +68,7 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         Retire,
         Keep,
-        Uncategorized
+        //Uncategorized
     }
 
     public enum OnboardUsedApplicationsByAssociationToEnum
