@@ -29,6 +29,9 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = "//a[text()='Next  >']")]
         public IWebElement NextTeamsListLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[@title='Default Team']/input")]
+        public IWebElement DefaultTeamCheckbox { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -46,6 +49,9 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-success')]")]
         public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[contains(@class, 'tooltip-information')]")]
+        public IWebElement InformationMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-alert')]")]
         public IWebElement ErrorMessage { get; set; }
@@ -175,6 +181,13 @@ namespace DashworksTestAutomation.Pages.Projects
         }
 
         #endregion
+
+        public IWebElement GetTeamByName(string teamName)
+        {
+            var selector = By.XPath($"//td[contains(@title, '{teamName}')]/a");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
 
         public int GetGroupsCountByTeamName(string teamName)
         {

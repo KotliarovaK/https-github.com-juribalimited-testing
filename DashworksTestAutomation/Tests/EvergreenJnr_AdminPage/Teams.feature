@@ -435,3 +435,41 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	And User clicks Create Team button on the Create Team page
 	Then Error message with "A team already exists with this name" text is displayed
 	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13000 @DAS13632 @Delete_Newly_Created_Team @Teams
+Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User enters "000Team13000" in the Team Name field
+	And User enters "13000" in the Team Description field
+	And User clicks Default Team checkbox
+	And User clicks the "CREATE TEAM" Action button
+	And User enters "000Team13000" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete Team" in the Actions
+	And User clicks Delete button
+	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User enters "001Team13000" in the Team Name field
+	And User enters "13000" in the Team Description field
+	And User clicks Default Team checkbox
+	And User clicks the "CREATE TEAM" Action button
+	And User enters "000Team13000" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete Team" in the Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
+	When User enters "My Team" text in the Search field for "Team" column
+	And User clicks content from "Team" column
+	And User clicks "Team Settings" tab
+	And User clicks Default Team checkbox
+	And User clicks the "UPDATE TEAM" Action button
+	Then Success message is displayed and contains "The team was successfully updated" text
