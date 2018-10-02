@@ -90,6 +90,15 @@ namespace DashworksTestAutomation.Steps.Projects
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"information message is displayed with ""(.*)"" text")]
+        public void ThenInformationMessageIsDisplayedWithText(string text)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+
+            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.InformationMessage);
+            StringAssert.Contains(text, page.InformationMessage.Text, "Information Message is not displayed");
+        }
+
         [Then(@"Success message is displayed")]
         public void ThenSuccessMessageIsDisplayed()
         {
@@ -514,7 +523,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 var option = page.SelectReadiness();
                 _taskPropertiesValuesDto.Readiness.Add(option);
             }
-                //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex); 
+            //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex); 
 
             page.TaskStatus.SelectboxSelect(_taskPropertiesValuesDto.TaskStatus.GetValue());
             page.DefaultValue.SetCheckboxState(_taskPropertiesValuesDto.DefaultValue);
@@ -547,7 +556,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 var option = page.SelectReadiness();
                 _taskPropertiesValuesDto.Readiness.Add(option);
             }
-                //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex);
+            //page.SelectReadiness(_taskPropertiesValuesDto.ReadinessIndex);
 
             if (!string.IsNullOrEmpty(_taskPropertiesValuesDto.TaskStatusString))
             {
@@ -773,6 +782,35 @@ namespace DashworksTestAutomation.Steps.Projects
             var groupsInTeam = _projectDto.GroupProperties.Count(x => x.OwnedByTeam.Equals(teamName));
             var groups = page.GetGroupsCountByTeamName(_projectDto.TeamProperties.Last().TeamName);
             Assert.AreEqual(groups, groupsInTeam, "Number of groups is incorrect");
+        }
+
+        [When(@"User navigates to ""(.*)"" Team")]
+        public void WhenUserNavigatesToTeam(string teamName)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            page.GetTeamByName(teamName).Click();
+        }
+
+        [Then(@"""(.*)"" Team have a default value")]
+        public void ThenTeamHaveADefaultValue(string teamName)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            Assert.IsTrue(page.GetDefaultRequestTypeCountByName(teamName).Displayed(), "Selected Team is not 'Default'");
+        }
+
+        [Then(@"Default Team checkbox is checked and cannot be unchecked")]
+        public void ThenDefaultTeamCheckboxIsCheckedAndCannotBeUnchecked()
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            Assert.AreEqual(true, page.DefaultTeamCheckbox.Selected, "Cheked state is incorrect");
+            Assert.AreEqual(true, Convert.ToBoolean(page.DefaultTeamCheckbox.GetAttribute("disabled")), "Checkbox state is incorrect");
+        }
+
+        [When(@"User makes selected Team by default")]
+        public void WhenUserMakesSelectedTeamByDefault()
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            page.DefaultTeamCheckbox.Click();
         }
 
         [Then(@"""(.*)"" number of Groups is displayed for ""(.*)"" Team")]
