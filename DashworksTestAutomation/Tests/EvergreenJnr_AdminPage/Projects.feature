@@ -455,10 +455,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in descending order on the Admin page
-	When User selects following date filter on the Projects page
-	| FilterData |
-	| 7302017    |
-	Then Counter shows "0" found rows
+	#When User selects following date filter on the Projects page
+	#| FilterData |
+	#| 7302017    |
+	#Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
@@ -507,10 +507,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Status" column in ascending order on the Admin page
 	When User click on "Status" column header on the Admin page
 	Then data in table is sorted by "Status" column in descending order on the Admin page
-	When User selects following date filter on the Projects page
-	| FilterData |
-	| 7302017    |
-	Then Counter shows "0" found rows
+	#When User selects following date filter on the Projects page
+	#| FilterData |
+	#| 7302017    |
+	#Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows

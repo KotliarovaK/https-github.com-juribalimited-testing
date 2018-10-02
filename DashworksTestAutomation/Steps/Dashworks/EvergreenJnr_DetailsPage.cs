@@ -291,8 +291,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.SelectValueForDateColumn("In range");
             foreach (var row in table.Rows)
             {
-                menu.DateFromValue.SendKeys(row["DateFrom"]);
-                menu.DateToValue.SendKeys(row["DateTo"]);
+                menu.DateFromValue.SendkeysWithDelay(row["DateFrom"]);
+                menu.DateToValue.SendkeysWithDelay(row["DateTo"]);
             }
         }
 
@@ -353,7 +353,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("153px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("129px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
@@ -364,7 +364,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
             { }
             else
-                Assert.AreEqual("101px", filterPanel.PackageSiteColumnWidt());
+                Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidt());
         }
 
         [Then(@"Bucket pop-up has standard size on the Details Page")]
