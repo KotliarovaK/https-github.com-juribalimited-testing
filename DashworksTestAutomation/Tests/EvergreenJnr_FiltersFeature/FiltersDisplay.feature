@@ -1207,6 +1207,35 @@ Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedTo
 	Then "Application Manufacturer" filter is not presented in the filters list
 	And "Application Vendor" filter is presented in the filters list
 
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296
+Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Selected Columns" filter category
+	And User expands "User" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories          |
+	| Common Name            |
+	| Compliance             |
+	| Dashworks First Seen   |
+	| Description            |
+	| Device Count           |
+	| Directory Type         |
+	| Email Address          |
+	| Enabled                |
+	| Given Name             |
+	| Group Count            |
+	| GUID                   |
+	| Home Directory         |
+	| Home Drive             |
+	| Last Logon Date        |
+	| Mailbox Count (Access) |
+	#| Mailbox Count (Owned) |
+	| SID                    |
+	| Surname                |
+	| User Key               |
+	
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded
 	When User clicks "<ListName>" on the left-hand menu

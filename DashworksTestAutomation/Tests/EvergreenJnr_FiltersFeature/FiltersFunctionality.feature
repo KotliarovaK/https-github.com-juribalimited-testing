@@ -1152,6 +1152,23 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDevi
 	And "Application whose Key is 86 used by device's owner" is displayed in added filter info
 	And "154" rows are displayed in the agGrid
 
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS9820 @DAS13296
+Scenario Outline: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersCanBeUsedOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	And User add "<FilterName>" filter where type is "Equals" with added column and following value:
+	| Values   |
+	| <Values> |
+	Then "<RowsCount>" rows are displayed in the agGrid
+	And There are no errors in the browser console
+
+Examples: 
+	| FilterName             | Values | RowsCount        |
+	| Device Count           | 6      | 1                |
+	| Group Count            | 13     | 32               |
+	| Mailbox Count (Access) | 3      | 6                |
+	#| Mailbox Count (Owned)  | 4      | to_be_determined |
+
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
 	When User clicks "<PageName>" on the left-hand menu

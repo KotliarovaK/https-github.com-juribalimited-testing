@@ -70,6 +70,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.GetExpandedSection(), Is.EqualTo(expectedSection), "Wrong section expanded");
         }
 
+        [When(@"User closes ""(.*)"" filter category")]
+        public void ThenUserClosesFilterCategory(string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.CloseFilterSectionByName(categoryName);
+        }
+
+        [When(@"User expands ""(.*)"" filter category")]
+        public void ThenUserExpandsFilterCategory(string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.ExpandFilterSectionByName(categoryName);
+        }
+
         [Then(@"Add New button is displayed on the Filter panel")]
         public void ThenAddNewButtonIsDisplayedOnTheFilterPanel()
         {

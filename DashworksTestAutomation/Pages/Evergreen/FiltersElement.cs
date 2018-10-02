@@ -126,6 +126,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = FilterOptionsSelector)]
         public IList<IWebElement> FilterOptions { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
+        public IList<IWebElement> FilterSubcategories { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class,'mat-select-value-text')]")]
         public IWebElement OperatorDropdown { get; set; }
 
@@ -440,6 +443,35 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string GetFilterFontColor()
         {
             return Driver.FindElement(By.XPath(".//span[@class='filter-label-name']")).GetCssValue("color");
+        }
+
+        public void CloseFilterSectionByName(string sectionsName)
+        {
+            try
+            {
+                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
+            }
+            catch
+            {
+                Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"));
+                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
+            }
+        }
+
+        public void ExpandFilterSectionByName(string sectionsName)
+        {
+            if (Driver.IsElementExists(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")))
+                try
+                {
+                    Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
+                }
+                catch
+                {
+                    Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"));
+                    Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
+                }
+            if (FilterSubcategories.Any())
+                Driver.MouseHover(FilterSubcategories.Last());
         }
 
         public IWebElement GetOpenedFilter(string filterName)

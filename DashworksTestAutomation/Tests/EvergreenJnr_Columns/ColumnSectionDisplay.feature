@@ -541,6 +541,34 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	| Owner Display Name |
 	| Import             |
 
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
+Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsAvailableUnderUserCategoryInColumnsPanelOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And User closed "Selected Columns" columns category
+	And User is expand "User" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories          |
+	| Common Name            |
+	| Compliance             |
+	| Dashworks First Seen   |
+	| Description            |
+	| Device Count           |
+	| Directory Type         |
+	| Email Address          |
+	| Enabled                |
+	| Given Name             |
+	| Group Count            |
+	| GUID                   |
+	| Home Directory         |
+	| Home Drive             |
+	| Last Logon Date        |
+	| Mailbox Count (Access) |
+	#| Mailbox Count (Owned) |
+	| SID                    |
+	| Surname                |
+	| User Key               |
+
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245
 Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch
 	When User clicks "Devices" on the left-hand menu
