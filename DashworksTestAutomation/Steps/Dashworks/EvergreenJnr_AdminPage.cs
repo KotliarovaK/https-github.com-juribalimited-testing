@@ -1067,7 +1067,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
-            Assert.AreEqual("rgba(234, 161, 39, 1)", message.GetMessageColor());//Amber color
+            Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor());//Amber color
             Assert.IsTrue(message.TextMessage(text),
                 $"{text} is not displayed on the Project page");
         }
