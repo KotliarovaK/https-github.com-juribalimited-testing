@@ -802,11 +802,8 @@ namespace DashworksTestAutomation.Steps.Projects
         public void ThenDefaultTeamCheckboxIsCheckedAndCannotBeUnchecked()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            Assert.AreEqual(true, page.DefaultTeamCheckbox.Selected,
-                $"Cheked state is incorrect");
-            Assert.AreEqual(true,
-                Convert.ToBoolean(page.DefaultTeamCheckbox.GetAttribute("disabled")),
-                $"Checkbox state is incorrect");
+            Assert.AreEqual(true, page.DefaultTeamCheckbox.Selected, "Cheked state is incorrect");
+            Assert.AreEqual(true, Convert.ToBoolean(page.DefaultTeamCheckbox.GetAttribute("disabled")), "Checkbox state is incorrect");
         }
 
         [When(@"User makes selected Team by default")]
