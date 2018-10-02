@@ -6208,7 +6208,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to remove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User selects all objects to the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table159 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table159.AddRow(new string[] {
+                        "AAC860150 (Kerrie D. Ruiz)"});
+            table159.AddRow(new string[] {
+                        "AAD1011948 (Pinabel Cinq-Mars)"});
+            table159.AddRow(new string[] {
+                        "AAG081456 (Melanie Z. Fowler)"});
+            table159.AddRow(new string[] {
+                        "AAH0343264 (Luc Gauthier)"});
+            table159.AddRow(new string[] {
+                        "AAK881049 (Miguel W. Owen)"});
+            testRunner.When("User selects following Objects", ((string)(null)), table159, "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Blue banner with \"Object updates being queued, please wait\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
