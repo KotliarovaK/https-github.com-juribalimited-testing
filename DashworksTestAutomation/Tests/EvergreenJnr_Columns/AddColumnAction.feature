@@ -184,6 +184,23 @@ Examples:
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
 
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
+Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeUsedOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName              |
+	| Device Count            |
+	| Group Count             |
+	| Mailbox Count (Access)  |
+	#| Mailbox Count (Owned) |
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Device Count            |
+	| Group Count             |
+	| Mailbox Count (Access)  |
+	#| Mailbox Count (Owned) |
+
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS13024
 Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList
 	When User clicks "Devices" on the left-hand menu
