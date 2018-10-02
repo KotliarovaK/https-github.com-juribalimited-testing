@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "birmingham" text in the Search field for "Bucket" column
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @DAS12772 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailboxesListsOfParticularBucket
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
@@ -421,6 +421,24 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailbo
 	Then data in table is sorted by "Username" column in ascending order by default on the Admin page
 	When User clicks "Mailboxes" tab
 	Then data in table is sorted by "Email Address (Primary)" column in ascending order by default on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Buckets
+Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User selects all rows on the grid
+	And User clicks Reset Filters button on the Admin page
+	Then User sees "1" of "559" rows selected label
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	And User selects all rows on the grid
+	Then User sees "17225" of "17225" rows selected label
+	When User clicks "Users" tab
+	And User selects all rows on the grid
+	Then User sees "41339" of "41339" rows selected label
+	When User clicks "Mailboxes" tab
+	And User selects all rows on the grid
+	Then User sees "14784" of "14784" rows selected label
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11748 @Buckets @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpdatingBucketToDefaultType
@@ -576,7 +594,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User selects "All Users" in the Scope Project dropdown
 	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
 	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
+	Then Success message is displayed and contains "Your project has been created" text
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
