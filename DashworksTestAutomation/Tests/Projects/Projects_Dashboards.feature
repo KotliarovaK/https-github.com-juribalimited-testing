@@ -19,3 +19,28 @@ Examples:
 	| PageName           |
 	| User Dashboard     |
 	| Computer Dashboard |
+
+@Evergreen @Projects @Projects_Dashboards @Dashboards @DAS13000 @Teams
+Scenario: Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Computer Scheduled Test (Jo)" Project
+	When User navigate to "Teams" tab
+	Then "My Team" Team have a default value 
+	When User navigates to "My Team" Team
+	When User navigate to "Details" page
+	Then Default Team checkbox is checked and cannot be unchecked
+	When User clicks "Cancel" button
+	When User navigates to "Admin IT" Team
+	When User navigate to "Details" page
+	When User makes selected Team by default
+	When User clicks "Update" button
+	Then information message is displayed with "Team was successfully updated." text
+	Then Default Team checkbox is checked and cannot be unchecked
+	When User clicks "Cancel" button
+	When User navigates to "My Team" Team
+	When User navigate to "Details" page
+	When User makes selected Team by default
+	When User clicks "Update" button
+	Then information message is displayed with "Team was successfully updated." text
+	Then Default Team checkbox is checked and cannot be unchecked
