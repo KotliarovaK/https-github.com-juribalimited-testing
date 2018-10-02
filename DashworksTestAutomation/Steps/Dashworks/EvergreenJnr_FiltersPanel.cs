@@ -271,6 +271,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.SelectOperator(operatorValue);
         }
 
+        [When(@"User adds column for the selected filter")]
+        public void WhenUserAddsColumnForTheSelectedFilter()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddFiltersColumnName.Click();
+        }
+
         [When(@"User have create ""(.*)"" Values filter with column and following options:")]
         public void WhenUserHaveCreateValuesFilterWithColumnAndFollowingOptions(string operatorValue, Table table)
         {
@@ -1020,7 +1027,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Sections
 
-        [Then(@"""(.*)"" with ""(.*)""category is displayed on Filters panel")]
+        [Then(@"""(.*)"" with ""(.*)"" category is displayed on Filters panel")]
         public void ThenWithCategoryIsDisplayedOnFiltersPanel(string filterName, string categoryCount)
         {
             var page = _driver.NowAt<FiltersElement>();
@@ -1078,6 +1085,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.ColumnSubcategoryList.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Subcategory values are different");
+        }
+
+        [Then(@"the following subcategories are NOT displayed for Selected Columns category:")]
+        public void ThenTheFollowingSubcategoriesAreNotDisplayedForSelectedColumnsCategory(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.SelectedColumnsSubcategoryList.Select(value => value.Text).ToList();
+            foreach (var value in expectedList)
+            {
+                Assert.IsTrue(!actualList.Contains(value), $"{value} is displayed for that category");
+            }
         }
 
         [Then(@"the following subcategories are displayed for Selected Filters category:")]

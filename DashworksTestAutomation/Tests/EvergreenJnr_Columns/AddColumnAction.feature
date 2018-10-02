@@ -247,3 +247,32 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrec
 	| Out Of Scope   |
 	And User clicks the "CANCEL" Action button
 	Then Add And button is displayed on the Filter panel
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481
+Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| State/County |
+	| Postal Code  |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| State/County |
+	| Postal Code  |
+	When User click on 'State/County' column header
+	Then data in table is sorted by 'State/County' column in ascending order
+	When User click on 'State/County' column header
+	Then data in table is sorted by 'State/County' column in descending order
+	When User click on 'Postal Code' column header
+	Then data in table is sorted by 'Postal Code' column in ascending order
+	When User click on 'Postal Code' column header
+	Then data in table is sorted by 'Postal Code' column in descending order
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |

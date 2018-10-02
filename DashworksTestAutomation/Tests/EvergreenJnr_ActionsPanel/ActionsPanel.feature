@@ -1082,16 +1082,16 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User create new User
-	| Username  | FullName | Password | ConfirmPassword | Roles                |
-	| DAS132882 | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
+	| Username | FullName | Password | ConfirmPassword | Roles                |
+	| <Name>   | Value    | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User login with following credentials:
-	| Username  | Password |
-	| DAS132882 | 1234qwer |
+	| Username | Password |
+	| <Name>   | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1151,17 +1151,17 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS132882" User
+	And User removes "<Name>" User
 
 Examples: 
-	| RowName    | NewValue       | NewTeam  | DefaultValue   | DefaultTeam         |
-	| CQV0623434 | Complete       | Admin IT | Started        | Administrative Team |
-	| BBZ877343  | Failed         | Admin IT | Not Applicable | Retail Team         |
-	| DLL972653  | Complete       | Admin IT | Not Started    | K-Team              |
-	| LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
-	| ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
+	| Name    | RowName    | NewValue       | NewTeam  | DefaultValue   | DefaultTeam         |
+	| DAS1321 | CQV0623434 | Complete       | Admin IT | Started        | Administrative Team |
+	| DAS1322 | BBZ877343  | Failed         | Admin IT | Not Applicable | Retail Team         |
+	| DAS1323 | DLL972653  | Complete       | Admin IT | Not Started    | K-Team              |
+	| DAS1324 | LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
+	| DAS1325 | ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Delete_Newly_Created_User
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1169,7 +1169,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User select "Manage Users" option in Management Console
 	And User create new User
 	| Username | FullName | Password | ConfirmPassword | Roles                |
-	| DAS13288 | DAS13288 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	| <Name>   | DAS13288 | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
@@ -1177,7 +1177,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Login Page is displayed to the user
 	When User login with following credentials:
 	| Username | Password |
-	| DAS13288 | 1234qwer |
+	| <Name>   | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1228,14 +1228,23 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
 	When User refreshes agGrid
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "<Name>" User
 
 Examples: 
-	| RowName    | NewDate      | NewTeam  | DefaultDate  | DefaultTeam         | DefaultValue   |
-	| CQV0623434 | May 19, 2018 | Admin IT | May 08, 2015 | Administrative Team | Complete       |
-	| BBZ877343  | Aug 28, 2001 | Admin IT | Sep 07, 2018 | Retail Team         | Failed         |
-	| DLL972653  | Aug 30, 2018 | Admin IT | Sep 05, 2018 | K-Team              | Complete       |
-	| LZI970280  | May 09, 2018 | Admin IT | Sep 03, 2018 | IB Team             | Not Applicable |
-	| ZQX656408  | Aug 15, 2018 | Admin IT | Aug 30, 2018 | Migration Phase 2   | Not Applicable |
+	| Name    | RowName    | NewDate      | NewTeam  | DefaultDate  | DefaultTeam         | DefaultValue   |
+	| DAS1330 | CQV0623434 | May 19, 2018 | Admin IT | May 08, 2015 | Administrative Team | Complete       |
+	| DAS1331 | BBZ877343  | Aug 28, 2001 | Admin IT | Sep 07, 2018 | Retail Team         | Failed         |
+	| DAS1332 | DLL972653  | Aug 30, 2018 | Admin IT | Sep 05, 2018 | K-Team              | Complete       |
+	| DAS1333 | LZI970280  | May 09, 2018 | Admin IT | Sep 03, 2018 | IB Team             | Not Applicable |
+	| DAS1334 | ZQX656408  | Aug 15, 2018 | Admin IT | Aug 30, 2018 | Migration Phase 2   | Not Applicable |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
@@ -1244,16 +1253,16 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User create new User
-	| Username  | FullName  | Password | ConfirmPassword | Roles                |
-	| DAS132881 | DAS132881 | 1234qwer | 1234qwer        | Project Bulk Updater |
+	| Username | FullName  | Password | ConfirmPassword | Roles                |
+	| <Name>   | DAS132881 | 1234qwer | 1234qwer        | Project Bulk Updater |
 	Then Success message is displayed
 	When User cliks Logout link
 	Then User is logged out
 	When User clicks on the Login link
 	Then Login Page is displayed to the user
 	When User login with following credentials:
-	| Username  | Password |
-	| DAS132881 | 1234qwer |
+	| Username | Password |
+	| <Name>   | 1234qwer |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1313,15 +1322,15 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
-	And User removes "DAS132881" User
+	And User removes "<Name>" User
 
 Examples: 
-	| RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
-	| CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
-	| BBZ877343  | Failed         | Aug 28, 2001 | Not Applicable | Sep 07, 2018 |
-	| DLL972653  | Complete       | Aug 30, 2018 | Not Started    | Sep 05, 2018 |
-	| LZI970280  | Not Applicable | May 09, 2018 | Failed         | Sep 03, 2018 |
-	| ZQX656408  | Not Applicable | Aug 15, 2018 | Complete       | Aug 30, 2018 |
+	| Name     | RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
+	| DAS13280 | CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
+	| DAS13281 | BBZ877343  | Failed         | Aug 28, 2001 | Not Applicable | Sep 07, 2018 |
+	| DAS13282 | DLL972653  | Complete       | Aug 30, 2018 | Not Started    | Sep 05, 2018 |
+	| DAS13283 | LZI970280  | Not Applicable | May 09, 2018 | Failed         | Sep 03, 2018 |
+	| DAS13284 | ZQX656408  | Not Applicable | Aug 15, 2018 | Complete       | Aug 30, 2018 |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
@@ -1445,7 +1454,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
-	Then Success message is hidden after five seconds
+	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
