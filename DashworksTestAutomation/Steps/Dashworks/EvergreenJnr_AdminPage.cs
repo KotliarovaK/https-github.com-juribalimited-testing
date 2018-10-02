@@ -1796,6 +1796,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
+        [Then(@"User sees ""(.*)"" of ""(.*)"" rows selected label")]
+        public void ThenUserSeesRowsSelectedLabel(int selectedRows, int ofRows)
+        {
+            var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
+            StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected", foundRowsCounter.RowsCounter.Text,
+                "Incorrect rows count");
+        }
+
         [Then(@"User sees Buckets in next default sort order:")]
         public void ThenUserSeesBuketsInNextDefaultSortOrder(Table buckets)
         {
