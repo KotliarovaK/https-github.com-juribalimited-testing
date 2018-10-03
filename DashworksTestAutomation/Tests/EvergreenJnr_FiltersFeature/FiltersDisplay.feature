@@ -1310,3 +1310,22 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheUserDescriptionFieldIsNotDis
 	Then User Description field is not displayed
 	When User select "Not empty" Operator value
 	Then User Description field is not displayed
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13383 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayedCorrectlyAfterSavingList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Red            |
+	| Amber          |
+	And User create custom list with "CheckColors13383" name
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "Babel(Engl: Readiness" filter
+	Then color for following values are displayed correctly:
+	| Color |
+	| Red   |
+	| Amber |
