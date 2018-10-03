@@ -1686,7 +1686,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             List<string> list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
-            List<string> test = new List<string>(){"b", "I-Team", "IATeam", "a"};
             Assert.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
             page.BodyContainer.Click();
         }
