@@ -105,6 +105,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[@id='readinessForOnboardedApplications']")]
         public IWebElement DefaultReadinessDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'mat-tab-label-active')]")]
+        public IWebElement ActiveTabOnScopeChangesSection { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

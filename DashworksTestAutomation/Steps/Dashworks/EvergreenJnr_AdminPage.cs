@@ -329,6 +329,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
 
+        [Then(@"open tab in the Project Scope Changes section is active")]
+        public void ThenOpenTabInTheProjectScopeChangesSectionIsActive()
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            var tabState = projectTabs.ActiveTabOnScopeChangesSection.GetAttribute("aria-selected");
+            Assert.AreEqual("true", tabState, "Tab state is incorrect");
+        }
+
         [When(@"User click on ""(.*)"" column header on the Admin page")]
         public void WhenUserClickOnColumnHeaderOnTheAdminPage(string columnName)
         {
@@ -1686,7 +1694,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             List<string> list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
-            Assert.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
+            Assert.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
             page.BodyContainer.Click();
         }
 

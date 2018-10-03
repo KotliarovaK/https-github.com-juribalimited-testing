@@ -395,6 +395,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserRefreshesAgGrid()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             page.RefreshTableButton.Click();
         }
 

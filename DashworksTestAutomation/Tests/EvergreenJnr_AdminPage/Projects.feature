@@ -2046,8 +2046,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
-	#When User clicks String Filter button for "Owned By Team" column on the Admin page
-	#Then Teams in filter dropdown are displayed in alphabetical order
+	When User clicks String Filter button for "Owned By Team" column on the Admin page
+	Then Teams in filter dropdown are displayed in alphabetical order
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
@@ -2393,7 +2393,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
@@ -2556,7 +2557,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
@@ -3283,7 +3285,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
@@ -3381,7 +3384,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User clicks newly created object link
 	Then Project "Project13347" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
