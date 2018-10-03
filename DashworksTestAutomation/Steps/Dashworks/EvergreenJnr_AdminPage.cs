@@ -329,6 +329,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
 
+        [Then(@"open tab in the Project Scope Changes section is active")]
+        public void ThenOpenTabInTheProjectScopeChangesSectionIsActive()
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            var tabState = projectTabs.ActiveTabOnScopeChangesSection.GetAttribute("aria-selected");
+            Assert.AreEqual("true", tabState, "Tab state is incorrect");
+        }
+
         [When(@"User click on ""(.*)"" column header on the Admin page")]
         public void WhenUserClickOnColumnHeaderOnTheAdminPage(string columnName)
         {
