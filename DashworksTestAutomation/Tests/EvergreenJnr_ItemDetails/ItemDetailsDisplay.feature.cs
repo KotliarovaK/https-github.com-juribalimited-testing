@@ -176,6 +176,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS11732")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
+        [NUnit.Framework.CategoryAttribute("DAS13657")]
         [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Projects", "Project", "Object ID", "Object ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Projects", "Project", "Object Key", "Object Key", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections(string pageName, string searchTerm, string itemName, string tabName, string columnName, string checkboxName, string newColumnName, string[] exampleTags)
@@ -187,7 +188,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "ItemDetailsDisplay",
                     "DAS11732",
                     "DAS12235",
-                    "DAS13409"};
+                    "DAS13409",
+                    "DAS13657"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -229,6 +231,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS11732")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS12799")]
+        [NUnit.Framework.CategoryAttribute("DAS13657")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Application Key", "Application Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Advertisement Key", "Advertisement Key", new string[0])]
@@ -260,6 +263,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "DAS11732",
                     "DAS12235",
                     "DAS12799",
+                    "DAS13657",
                     "Not_Run"};
             if ((exampleTags != null))
             {
@@ -362,6 +366,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12053")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13004")]
+        [NUnit.Framework.CategoryAttribute("DAS13657")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Compliance", "Software Compliance Issues", "Application", "PackageKey", "PackageKey", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Projects", "Project", "Object ID", "Object ID", new string[0])]
@@ -383,6 +388,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "DAS12053",
                     "DAS12235",
                     "DAS13004",
+                    "DAS13657",
                     "Not_Run"};
             if ((exampleTags != null))
             {
@@ -470,6 +476,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11393")]
         [NUnit.Framework.CategoryAttribute("DAS12765")]
+        [NUnit.Framework.CategoryAttribute("DAS13657")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage()
         {
@@ -481,6 +488,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ItemDetailsDisplay",
                         "DAS11393",
                         "DAS12765",
+                        "DAS13657",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1262,7 +1270,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12738")]
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Device Projects", "5", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Device Owner Projects", "5", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Loya\\, Dan.Employees.Birmingham.UK.bclabs.local", "Username", "Projects", "User Projects", "1", new string[0])]
@@ -1277,8 +1284,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "DAS12210",
                     "DAS12738",
                     "DAS12371",
-                    "DAS13409",
-                    "Not_Run"};
+                    "DAS13409"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1304,9 +1310,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks String Filter button for \"Project Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks String Filter button for \"Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks String Filter button for \"Category\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks String Filter button for \"Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Dropdown List is displayed correctly in the Filter on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1822,7 +1828,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12883")]
         [NUnit.Framework.CategoryAttribute("DAS13208")]
         [NUnit.Framework.CategoryAttribute("DAS13478")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSucc" +
@@ -1834,8 +1839,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "ItemDetailsDisplay",
                         "DAS12883",
                         "DAS13208",
-                        "DAS13478",
-                        "Not_Run"});
+                        "DAS13478"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1867,7 +1871,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.When("User clicks \"CHANGE\" button on Change Bucket window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Evergreen Bucket link \"Bucket12883\" is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User opens \"Related Users\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on Evergreen Bucket link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Change Bucket pop-up is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Bucket pop-up has standard size on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("section is loaded correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects all rows on the grid on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User clicks on New Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1878,7 +1884,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"003F5D8E1A844B1FAA5\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User perform search by \"01C44C91EB7E4BE88F6\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Projects\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1894,7 +1900,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.When("User clicks \"CHANGE\" button on Change Bucket window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Evergreen Bucket link \"Bucket12883\" is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User opens \"Related Mailboxes\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on Evergreen Bucket link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Bucket pop-up has standard size on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("section is loaded correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects all rows on the grid on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User clicks on New Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1921,7 +1928,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             testRunner.When("User clicks \"CHANGE\" button on Change Bucket window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Evergreen Bucket link \"Bucket12883\" is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User opens \"Related Users\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on Evergreen Bucket link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Change Bucket pop-up is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Bucket pop-up has standard size on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("section is loaded correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects all rows on the grid on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User clicks on New Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

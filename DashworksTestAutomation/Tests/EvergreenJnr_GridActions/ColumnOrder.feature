@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 	| Vendor     |
 	| Version    |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @Not_Run
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @DAS13668 @Not_Run
 Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

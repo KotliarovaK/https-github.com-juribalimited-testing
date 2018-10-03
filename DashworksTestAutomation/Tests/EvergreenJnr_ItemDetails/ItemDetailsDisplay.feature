@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 	Then User clicks on "NL00G001" search result
 	And Group Icon for Group Details page is displayed
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -61,7 +61,7 @@ Examples:
 	#| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
 	#| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @DAS13657 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -137,7 +137,7 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @DAS13657 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDe
 	| IP Address     |
 	| Compliance     |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -549,7 +549,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermiss
 	Then Content is present in the table on the Details Page
 	And "14" rows found label displays on Details Page 
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -568,9 +568,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 Examples:
@@ -783,7 +783,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @Not_Run
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478
 Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -815,7 +815,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket to default value
-	When User opens "Related Users" section on the Details Page
+	When User clicks on Evergreen Bucket link
+	Then Change Bucket pop-up is opened
+	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
 	Then User clicks on New Bucket dropdown
@@ -826,7 +828,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then There are no errors in the browser console
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
-	When User perform search by "003F5D8E1A844B1FAA5"
+	When User perform search by "01C44C91EB7E4BE88F6"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
@@ -843,7 +845,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket to default value
-	When User opens "Related Mailboxes" section on the Details Page
+	When User clicks on Evergreen Bucket link
+	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
 	Then User clicks on New Bucket dropdown
@@ -871,7 +874,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket to default value
-	When User opens "Related Users" section on the Details Page
+	When User clicks on Evergreen Bucket link
+	Then Change Bucket pop-up is opened
+	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
 	Then User clicks on New Bucket dropdown

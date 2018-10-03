@@ -2310,6 +2310,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Match to Evergreen Bucket\" is displayed in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -4925,7 +4926,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13429")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "TestList6589", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "TestList6588", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "TestList6587", new string[0])]
@@ -4940,8 +4940,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "DAS12999",
                     "DAS13429",
                     "Delete_Newly_Created_List",
-                    "Projects",
-                    "Not_Run"};
+                    "Projects"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

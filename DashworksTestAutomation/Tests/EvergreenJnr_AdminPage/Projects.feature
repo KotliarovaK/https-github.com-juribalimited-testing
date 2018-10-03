@@ -1206,7 +1206,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
@@ -2659,7 +2659,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	When User enters "Checkbox11758" text in the Search field for "Project" column
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @DAS12999 @DAS13429 @Delete_Newly_Created_List @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @DAS12999 @DAS13429 @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
