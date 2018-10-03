@@ -2046,8 +2046,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	Then "Buckets" page should be displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then Projects in filter dropdown are displayed in alphabetical order
-	#When User clicks String Filter button for "Owned By Team" column on the Admin page
-	#Then Teams in filter dropdown are displayed in alphabetical order
+	When User clicks String Filter button for "Owned By Team" column on the Admin page
+	Then Teams in filter dropdown are displayed in alphabetical order
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "project12949" text in the Search field for "Project" column
