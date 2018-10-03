@@ -2378,7 +2378,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When User selects "Scope Changes" tab on the Project details page
 	Then Success message is not displayed on the Projects page
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13390 @DAS12582 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13390 @DAS12582 @DAS11978 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2393,7 +2393,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
@@ -2556,7 +2557,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 001BAQXT6JWFPI  |
@@ -3266,7 +3268,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12955 @DAS12820 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12955 @DAS12820 @DAS11978 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3283,7 +3285,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
@@ -3366,7 +3369,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13347 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13347 @DAS11978 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3381,7 +3384,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User clicks newly created object link
 	Then Project "Project13347" is displayed to user
 	When User selects "Scope Changes" tab on the Project details page
-	And User expands the object to add 
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 00K4CEEQ737BA4L |
