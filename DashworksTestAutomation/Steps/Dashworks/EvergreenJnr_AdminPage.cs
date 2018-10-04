@@ -647,7 +647,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
-            checkbox.SelectRadioButtonByName(radioButtonName);
+            checkbox.SelectRadioButtonByName(radioButtonName).Click();
+        }
+
+        [Then(@"""(.*)"" associated checkbox is checked and cannot be unchecked")]
+        public void ThenAssociatedCheckboxIsCheckedAndCannotBeUnchecked(string radioButtonName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            var t = checkbox.GetAssociatedCheckboxByName(radioButtonName);
+            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
+            Assert.AreEqual(true, Convert.ToBoolean(t.GetAttribute("disabled")), "Checkbox state is incorrect");
+        }
+
+        [Then(@"""(.*)"" associated checkbox is checked")]
+        public void ThenAssociatedCheckboxIsChecked(string radioButtonName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
         }
 
         [When(@"User clicks ""(.*)"" checkbox on the Project details page")]

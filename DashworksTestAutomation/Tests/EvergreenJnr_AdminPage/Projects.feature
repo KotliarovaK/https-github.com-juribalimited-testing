@@ -3457,3 +3457,34 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks String Filter button for "Type" column on the Admin page
 	Then Type of Projects in filter dropdown are displayed in alphabetical order
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12183 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWorkedCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project12183" in the Project Name field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the "User Scope" tab in the Scope section on the Project details page
+	And User selects "Include users associated to mailboxes" checkbox on the Project details page
+	And User clicks "Owned mailboxes" associated checkbox on the Project details page
+	And User clicks "Delegated mailboxes" associated checkbox on the Project details page
+	And User clicks "Other mailbox permissions" associated checkbox on the Project details page
+	And User clicks "Mailbox folder permissions" associated checkbox on the Project details page
+	And User selects "Do not include users" checkbox on the Project details page
+	Then "Owned mailboxes" associated checkbox is checked and cannot be unchecked
+	And "Delegated mailboxes " associated checkbox is checked and cannot be unchecked
+	And "Other mailbox permissions" associated checkbox is checked and cannot be unchecked
+	And "Mailbox folder permissions" associated checkbox is checked and cannot be unchecked
+	When User selects "Include users associated to mailboxes" checkbox on the Project details page
+	Then "Owned mailboxes" associated checkbox is checked
+	And "Delegated mailboxes " associated checkbox is checked
+	And "Other mailbox permissions" associated checkbox is checked
+	And "Mailbox folder permissions" associated checkbox is checked

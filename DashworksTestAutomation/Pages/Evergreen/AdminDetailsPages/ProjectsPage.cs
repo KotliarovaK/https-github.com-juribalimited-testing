@@ -153,11 +153,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
-        public void SelectRadioButtonByName(string radioButtonName)
+        public IWebElement SelectRadioButtonByName(string radioButtonName)
         {
             var button = By.XPath($"//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
             Driver.WaitWhileControlIsNotDisplayed(button);
-            Driver.FindElement(button).Click();
+            return Driver.FindElement(button);
+        }
+
+        public IWebElement GetAssociatedCheckboxByName(string associatedCheckbox)
+        {
+            var button = By.XPath($"//span[text()='{associatedCheckbox}']/../div/input[@type='checkbox']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            return Driver.FindElement(button);
         }
 
         public void RemovePermissionsByName(string permissions)
