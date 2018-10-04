@@ -1669,8 +1669,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextInSearchFieldIsDisplayedCorrectlyForColumn(string searchText, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            var t = page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value");
-            Assert.AreEqual(t, searchText, "Text in search field is different");
+            Assert.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText, "Text in search field is different");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
