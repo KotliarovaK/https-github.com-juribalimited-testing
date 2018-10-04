@@ -411,7 +411,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 }
                 catch (StaleElementReferenceException)
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(3000);
                     element = GetGridCell(iter, columnNumber);
                     Driver.MouseHoverByJavascript(element);
                 }
@@ -419,7 +419,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 //Data loading
                 if (element == null)
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(3000);
                     element = GetGridCell(iter, columnNumber);
                 }
                 try
@@ -428,7 +428,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 }
                 catch (StaleElementReferenceException)
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(3000);
                     element = GetGridCell(iter, columnNumber);
                     columnData.Add(element.Text);
                 }
