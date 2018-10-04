@@ -76,13 +76,13 @@ Runs Evergreen URL query strings for the Mailboxes List.
 	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus                                                      |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684 @Not_Run
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684
 Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
-	| QueryType                | QueryStringURL                                                                                                                                                                                                                                                        |
-	| Application (Saved List) | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(applicationSavedListId%20EQUALS%20('4')%20WHERE%20(Used%20on%20device,Used%20by%20device's%20owner))                                                                        |
-	| Apps On Devices          | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner)) |
+	| QueryType                | QueryStringURL                                                                                                                                            |
+	| Application (Saved List) | evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(applicationSavedListId%20EQUALS%20('4')%20WHERE%20(uod%2Cubdo)) |
+	| Apps On Devices          | evergreen/#/devices?$filter=(application%20EQUALS%20('451')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                    |
 	Then agGrid Main Object List is returned with data
 
 @Evergreen @Users @Mailboxes @Devices @Applications @EvergreenJnr_QueryStrings @Query @TableSorting @DAS10598
