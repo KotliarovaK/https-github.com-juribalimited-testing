@@ -359,7 +359,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS10789")]
         [NUnit.Framework.CategoryAttribute("DAS13684")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_ApplicationsOnDevicesList", new string[] {
@@ -368,8 +367,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS10789",
-                        "DAS13684",
-                        "Not_Run"});
+                        "DAS13684"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -378,11 +376,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             table8.AddRow(new string[] {
                         "Application (Saved List)",
                         "evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&" +
-                            "$filter=(applicationSavedListId%20EQUALS%20(\'4\')%20WHERE%20(Used%20on%20device,U" +
-                            "sed%20by%20device\'s%20owner))"});
+                            "$filter=(applicationSavedListId%20EQUALS%20(\'4\')%20WHERE%20(uod%2Cubdo))"});
             table8.AddRow(new string[] {
                         "Apps On Devices",
-                        @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName&$filter=(application%20EQUALS%20('451')%20WHERE%20(Used%20on%20device,Entitled%20to%20device,Installed%20on%20device,Used%20by%20device's%20owner,Entitled%20to%20device's%20owner))"});
+                        "evergreen/#/devices?$filter=(application%20EQUALS%20(\'451\')%20WHERE%20(uod%2Cetd%" +
+                            "2Ciod%2Cubdo%2Cetdo))"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table8, "When ");
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
