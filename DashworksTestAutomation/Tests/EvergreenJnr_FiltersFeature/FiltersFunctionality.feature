@@ -1146,6 +1146,18 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	Then Filters panel is displayed to the user
 	And Edit button is displayed correctly for "EmailMigra: Readiness" filter
 
+@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13588
+Scenario: EvergreenJnr_ApplicationsList_CheckThatUsingUserLDAPFilterDoesNotProduceServerError
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	And User add "badpasswordtime" filter where type is "Equals" with following Value and Association:
+	| Values | Association     |
+	| test   | Has used app    |
+	|        | Entitled to app |
+	Then There are no errors in the browser console
+	And "Applications" list should be displayed to the user
+	And message 'No applications found' is displayed to the user 
+
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13331
 Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDeviceAssociationReturnCorrectData
 	When User clicks "Devices" on the left-hand menu
