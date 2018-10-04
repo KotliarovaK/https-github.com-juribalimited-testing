@@ -421,5 +421,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return Driver.IsElementDisplayed(By.XPath($"//span[contains(@class, 'boolean')][text()='{defaultValue}']"));
         }
+
+        public IWebElement GetTextInSearchFieldByColumnName(string columnName)
+        {
+            var selector = By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
