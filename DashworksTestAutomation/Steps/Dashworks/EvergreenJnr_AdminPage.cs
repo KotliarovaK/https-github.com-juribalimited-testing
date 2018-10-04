@@ -1647,8 +1647,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.BackToTableButton.Click();
         }
 
-        [When(@"User clears Search field for ""(.*)"" column")]
-        public void WhenUserClearsSearchFieldForColumn(string columnName)
+        [When(@"User resets Search fields for columns")]
+        public void WhenUserResetsSearchFieldsForColumns()
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
@@ -1663,6 +1663,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
                 _lastUsedBucket.Value = text;
+        }
+
+        [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]
+        public void ThenTextInSearchFieldIsDisplayedCorrectlyForColumn(string searchText, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText, "Text in search field is different");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
