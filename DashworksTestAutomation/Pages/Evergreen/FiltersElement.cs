@@ -503,5 +503,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetColorForReadinessFilterValue(string value)
+        {
+            var selector = By.XPath($"//ul[@class='chips chips-have-expand-button']//span[contains(@class, 'text-container')]//span[text()='{value}']/../div");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

@@ -70,8 +70,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
             "lumnInCustomList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -142,8 +140,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
             "SortedColumnInCustomList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -218,8 +214,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
             "lumnInCustomListThrowFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -303,8 +297,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
             "lumnInDefaultList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -358,8 +350,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultiple" +
             "SortedColumnInDefaultList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -426,8 +416,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedCo" +
             "lumnInDefaultListThrowFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -504,8 +492,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColu" +
             "mn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -552,8 +538,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -611,8 +595,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -681,8 +663,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWork" +
             "sCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -754,8 +734,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingOne" +
             "ColumnFromTheURL")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -813,8 +791,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllCo" +
             "lumnsFromTheURL")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -866,8 +842,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovi" +
             "ngAColumnWhichAlsoExistsAsAFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -930,8 +904,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHost" +
             "nameColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -973,8 +945,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwn" +
             "erEnabledColumnForMailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1019,8 +989,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterAddingAndRemovingOwner" +
             "EnabledColumnForDevices")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]

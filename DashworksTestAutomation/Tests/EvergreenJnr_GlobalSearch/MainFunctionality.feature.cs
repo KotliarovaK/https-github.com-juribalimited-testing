@@ -70,8 +70,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        
-        
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpac" +
             "es")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]

@@ -1209,5 +1209,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
+
+        [Then(@"color for following values are displayed correctly:")]
+        public void ThenColorForFollowingValuesAreDisplayedCorrectly(Table table)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            foreach (var row in table.Rows)
+            {
+                var getColor = page.GetColorForReadinessFilterValue(row["Color"]).GetAttribute("style").Split(';').First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
+                Assert.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
+            }
+        }
     }
 }
