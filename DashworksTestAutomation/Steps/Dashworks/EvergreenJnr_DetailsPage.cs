@@ -195,6 +195,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
             }
+            filterElement.BodyContainer.Click();
         }
 
         [When(@"User clicks Reset Filters button on the Details Page")]
@@ -291,8 +292,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.SelectValueForDateColumn("In range");
             foreach (var row in table.Rows)
             {
-                menu.DateFromValue.SendkeysWithDelay(row["DateFrom"]);
-                menu.DateToValue.SendkeysWithDelay(row["DateTo"]);
+                menu.DateFromValue.SendKeys(row["DateFrom"]);
+                menu.DateToValue.SendKeys(row["DateTo"]);
             }
         }
 
