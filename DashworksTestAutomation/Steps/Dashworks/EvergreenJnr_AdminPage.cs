@@ -10,6 +10,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -629,20 +630,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is checked");
         }
 
-        [When(@"User select ""(.*)"" rows in the grid on the Admin page")]
-        public void WhenUserSelectRowsInTheGridOnTheAdminPage(string columnName, Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var columnContent = page.GetCheckboxByColumnName(columnName);
-            foreach (var row in table.Rows)
-            {
-                var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
-                if (rowIndex < 0)
-                    throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
-                page.SelectRowsCheckboxesOnAdminPage[rowIndex].Click();
-            }
-        }
-
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {
@@ -816,15 +803,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(teamElement.DefaulTeamCheckbox.Displayed(), "Default Team checkbox is active");
         }
 
-        [When(@"User clicks Create Team button on the Create Team page")]
-        public void ThenUserClicksCreateTeamButtonOnTheCreateTeamPage()
-        {
-            var page = _driver.NowAt<CreateTeamPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateTeamPage>(() => page.CreateTeamButton);
-            page.CreateTeamButton.Click();
-            Logger.Write("Create Team button was clicked");
-        }
-
         [When(@"User selects ""(.*)"" tab on the Team details page")]
         public void WhenUserSelectsTabOnTheTeamDetailsPage(string tabName)
         {
@@ -850,6 +828,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<AddToAnotherTeamPage>();
             teamElement.AddUsersToAnotherTeam(teamName);
+        }
+
+        [When(@"User type ""(.*)"" search criteria in Select a new Team field")]
+        public void WhenUserTypeSearchCriteriaInSelectANewTeamField(string text)
+        {
+            var teamPage = _driver.NowAt<AddToAnotherTeamPage>();
+            teamPage.TeamSelectbox.Click();
+            teamPage.TeamSelectbox.Clear();
+            teamPage.TeamSelectbox.SendKeys(text);
+        }
+
+        [Then(@"following Team are displayed in Select a new Team drop-down:")]
+        public void ThenFollowingTeamAreDisplayedInSelectANewTeamDrop_Down(Table table)
+        {
+            var teamPage = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = teamPage.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Teams in Select a new Team drop-down are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [Then(@"Add Buckets page is displayed to the user")]
