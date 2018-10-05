@@ -3074,10 +3074,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0036 - Microsoft Access 97 SR-2 English                    |
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
-	| Items                                                                |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
-	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
-	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
+	| Items                                                      |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
+	| 0036 - Microsoft Access 97 SR-2 English                    |
 	And There are no errors in the browser console
 	When User click on Back button
 	Then Admin page should be displayed to the user
@@ -3110,10 +3110,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 0036 - Microsoft Access 97 SR-2 English                    |
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
-	| Items                                                                |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
-	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)                   |
-	| 0036 - Microsoft Access 97 SR-2 English (8.0)                        |
+	| Items                                                      |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
+	| 0036 - Microsoft Access 97 SR-2 English                    |
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section

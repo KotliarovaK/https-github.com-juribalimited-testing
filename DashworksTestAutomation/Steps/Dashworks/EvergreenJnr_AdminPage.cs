@@ -1129,7 +1129,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor());//Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
