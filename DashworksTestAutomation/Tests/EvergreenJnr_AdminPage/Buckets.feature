@@ -704,3 +704,37 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then "Unassigned" content is displayed in "Bucket" column
 	When User enters "00I0COBFWHOF27" text in the Search field for "Item" column
 	Then "Deleted bucket" italic content is displayed in "Bucket" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12331 @Buckets @Delete_Newly_Created_Bucket
+Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfterSwitchingFocusToAnotherBucket 
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "1Bucket12331" in the Bucket Name field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "2Bucket12331" in the Bucket Name field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks Create button on the Create Bucket page
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User select "Bucket" rows in the grid
+	| SelectedRowsName |
+	| 1Bucket12331     |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
+	When User select "Bucket" rows in the grid
+	| SelectedRowsName |
+	| 1Bucket12331     |
+	Then "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" warning message is not displayed on the Buckets page
+	When User select "Bucket" rows in the grid
+	| SelectedRowsName |
+	| 2Bucket12331     |
+	Then "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" warning message is not displayed on the Buckets page
