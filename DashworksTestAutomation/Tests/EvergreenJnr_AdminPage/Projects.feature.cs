@@ -4908,13 +4908,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "SelectedRowsName"});
             table117.AddRow(new string[] {
                         "1Checkbox11758"});
-            testRunner.When("User select \"Project\" rows in the grid on the Admin page", ((string)(null)), table117, "When ");
+            testRunner.When("User select \"Project\" rows in the grid", ((string)(null)), table117, "When ");
             testRunner.Then("Select All selectbox is unchecked on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table118.AddRow(new string[] {
                         "1Checkbox11758"});
-            testRunner.When("User select \"Project\" rows in the grid on the Admin page", ((string)(null)), table118, "When ");
+            testRunner.When("User select \"Project\" rows in the grid", ((string)(null)), table118, "When ");
             testRunner.Then("Select All selectbox is checked on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"Checkbox11758\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

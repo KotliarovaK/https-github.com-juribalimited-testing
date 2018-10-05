@@ -65,9 +65,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
-        public IList<IWebElement> SelectRowsCheckboxesOnAdminPage { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
         public IWebElement AscendingSortingIcon { get; set; }
 
@@ -207,13 +204,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             string recordNameSelector = $".//a[text()='{recordName}']";
             Driver.FindElement(By.XPath(recordNameSelector)).Click();
-        }
-
-        public List<string> GetCheckboxByColumnName(string columnName)
-        {
-            By by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public int GetColumnNumberByName(string columnName)

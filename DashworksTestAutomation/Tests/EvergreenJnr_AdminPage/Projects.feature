@@ -2650,11 +2650,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	Then created Project with "3Checkbox11758" name is displayed correctly
 	When User selects all rows on the grid
 	Then Select All selectbox is checked on the Admin page
-	When User select "Project" rows in the grid on the Admin page
+	When User select "Project" rows in the grid
 	| SelectedRowsName |
 	| 1Checkbox11758   |
 	Then Select All selectbox is unchecked on the Admin page
-	When User select "Project" rows in the grid on the Admin page
+	When User select "Project" rows in the grid
 	| SelectedRowsName |
 	| 1Checkbox11758   |
 	Then Select All selectbox is checked on the Admin page
