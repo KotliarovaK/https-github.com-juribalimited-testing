@@ -177,8 +177,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application", "Key", "Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "svc_dashworks", "Username", "Groups", "Group", "Key", "Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Projects", "Project", "Object ID", "Object ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Projects", "Project", "Object Key", "Object Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Users", "Domain", "Key", "Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Users", "Domain", "Evergreen Object ID", "Evergreen Object ID", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections(string pageName, string searchTerm, string itemName, string tabName, string columnName, string checkboxName, string newColumnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -217,7 +221,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             table2.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
             testRunner.And("content is present in the following newly added columns:", ((string)(null)), table2, "And ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -232,7 +235,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS12799")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Application Key", "Application Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Advertisement Key", "Advertisement Key", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application Summary", "Application Detail", "Application", "Group Key", "Group Key", new string[0])]
@@ -263,8 +265,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "DAS11732",
                     "DAS12235",
                     "DAS12799",
-                    "DAS13657",
-                    "Not_Run"};
+                    "DAS13657"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -293,7 +294,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             table4.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
             testRunner.And("content is present in the following newly added columns:", ((string)(null)), table4, "And ");
-            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -367,7 +367,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13004")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Compliance", "Software Compliance Issues", "Application", "PackageKey", "PackageKey", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Projects", "Project", "Object ID", "Object ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Projects", "Device Projects", "Project", "Key", "Key", new string[0])]
@@ -388,8 +387,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "DAS12053",
                     "DAS12235",
                     "DAS13004",
-                    "DAS13657",
-                    "Not_Run"};
+                    "DAS13657"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -417,7 +415,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             table8.AddRow(new string[] {
                         string.Format("{0}", newColumnName)});
             testRunner.And("content is present in the following newly added columns:", ((string)(null)), table8, "And ");
-            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -527,6 +524,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             table11.AddRow(new string[] {
                         "Date"});
             table11.AddRow(new string[] {
+                        "Slot"});
+            table11.AddRow(new string[] {
                         "Readiness"});
             testRunner.And("ColumnName is displayed in following order on the Details page:", ((string)(null)), table11, "And ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -549,6 +548,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Status"});
             table12.AddRow(new string[] {
                         "Date"});
+            table12.AddRow(new string[] {
+                        "Slot"});
             table12.AddRow(new string[] {
                         "Readiness"});
             testRunner.And("Checkboxes are checked on the Column Settings panel for \"Key\" Column Settings pan" +

@@ -936,14 +936,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfter
 	Then Filters panel is displayed to the user
 	When User add "EmailMigra: Team" filter where type is "Equals" without added column and following value:
 	| Values |
-	| 1234   |
-	Then "1 shown" results are displayed in the Filter panel
+	| 55     |
+	Then "50 of 55 shown" results are displayed in the Filter panel
 	When User deletes one character from the Search field
-	Then "13 shown" results are displayed in the Filter panel
-	When User deletes one character from the Search field
-	Then "50 of 157 shown" results are displayed in the Filter panel
-	When User deletes one character from the Search field
-	Then "50 of 1502 shown" results are displayed in the Filter panel
+	Then "50 of 773 shown" results are displayed in the Filter panel
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
 Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
