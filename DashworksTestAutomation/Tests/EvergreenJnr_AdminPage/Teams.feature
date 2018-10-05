@@ -498,8 +498,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
-	When User selects "Team Members" tab on the Team details page
-	When User clicks the "ADD MEMBERS" Action button
+	And User selects "Team Members" tab on the Team details page
+	And User clicks the "ADD MEMBERS" Action button
 	And User adds following Objects from list
 	| Objects           |
 	| automation_admin1 |
@@ -507,7 +507,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| automation_admin3 |
 	Then Success message is displayed and contains "The selected users have been added" text
 	When User enters "admin1" text in the Search field for "Username" column
-	When User selects all rows on the grid
+	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Add to another team" in the Actions
 	And User clicks the "CONTINUE" Action button
