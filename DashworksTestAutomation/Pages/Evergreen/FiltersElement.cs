@@ -132,7 +132,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> FilterSubcategories { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[contains(@class,'mat-select-value-text')]")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@mat-container-class='my-container']")]
         public IWebElement OperatorDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-content')]/mat-option")]
