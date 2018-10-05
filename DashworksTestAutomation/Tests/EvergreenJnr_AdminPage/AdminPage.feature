@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @DAS12369
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -69,8 +69,9 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User selects incorrect file to upload on Import Project page
 	And User selects "Import to new project" in the Import dropdown on the Import Project Page
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
-	And User clicks Import Project button on the Import Project page
-	And User selects correct file to upload on Import Project page
+	When User clicks Import Project button on the Import Project page
+	Then Error message with "Selected file is not in a valid format" text is displayed
+	When User selects correct file to upload on Import Project page
 	Then Import Project button is enabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Teams
