@@ -67,6 +67,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.Buckets.Click();
                     break;
 
+                case "Capacity Units":
+                    menu.CapacityUnits.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }
@@ -118,6 +122,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Import Project":
                     var importProjectPage = _driver.NowAt<ImportProjectPage>();
                     StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Capacity Units":
+                    var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -210,6 +220,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectPage = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
+        }
+
+        [Then(@"Evergreen Unit is displayed to the user")]
+        public void ThenEvergreenUnitIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
         }
 
         [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
@@ -1702,6 +1719,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
             filterElement.GetStringFilterByColumnName(columnName);
+        }
+
+        [Then(@"""(.*)"" checkbox is checked in the filter dropdown")]
+        public void ThenCheckboxIsCheckedInTheFilterDropdown(string filterName)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(filterElement.GetCheckedFilterByCheckboxName(filterName).Displayed(),
+                $"{filterName} checkbox is not checked");
         }
 
         [Then(@"""(.*)"" is not displayed in the filter dropdown")]
