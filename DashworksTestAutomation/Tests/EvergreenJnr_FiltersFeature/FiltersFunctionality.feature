@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	When User clicks refresh button in the browser
 	Then full list content is displayed to the user
 
-@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @DAS13172 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

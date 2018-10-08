@@ -76,7 +76,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User removes selected item
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -92,7 +92,8 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User enters "TestTeam8" in the Team Name field
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
-	And User selects following Objects
+	Then There are no errors in the browser console
+	When User selects following Objects
 	| Objects                |
 	| Migration Phase 3 Team |
 	| Retail Team            |
