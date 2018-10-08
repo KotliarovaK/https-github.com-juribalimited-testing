@@ -361,33 +361,33 @@ Scenario: Projects_CreateUserScheduledProject
 	| true              | false          | false          | false       | UserScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 		#Capacity tabs
-	When User navigate to "Capacity" tab
-	Then "Manage Capacity" page is displayed to the user
-	When User updates the Details on Capacity tab
-	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
-	| true           | true          | true                      | true                       | 80              |
-	Then Success message is displayed with "Details successfully updated." text
-	When User navigate to "Capacity" page
-	And User updates the Capacity page on Capacity tab for "1" Team
-	| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| 06 Apr 2016 | 27 May 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
-	Then Success message is displayed with "Capacity information successfully updated." text
-	When User updates the Capacity page on Capacity tab for "2" Team
-	| StartDate    | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| 19 Apr  2013 | 20 March 2015 | false          | false           | false             | false            | false          | false            | false          | 10     | 10      | 10        | 10       | 10     | 10       | 10     |
-	Then Success message is displayed with "Capacity information successfully updated." text
-	When User updates the Capacity page on Capacity tab for "3" Team
-	| StartDate    | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-	| 16 June 2012 | 03 March 2016 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
-	Then Success message is displayed with "Capacity information successfully updated." text
-	When User navigate to "Summary" page
-	And User select created request type on Summary tab
-	Then table for selected request type is displayed
-	When User navigate to "Override Dates" page
-	And User updates the Override Dates on Capacity tab
-	| Date         | Capacity | Comment              |
-	| 13 June 2016 | 0        | UserScheduledProject |
-	Then Success message is displayed with "Override date successfully inserted" text
+	#When User navigate to "Capacity" tab
+	#Then "Manage Capacity" page is displayed to the user
+	#When User updates the Details on Capacity tab
+	#| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
+	#| true           | true          | true                      | true                       | 80              |
+	#Then Success message is displayed with "Details successfully updated." text
+	#When User navigate to "Capacity" page
+	#And User updates the Capacity page on Capacity tab for "1" Team
+	#| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	#| 06 Apr 2016 | 27 May 2018 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
+	#Then Success message is displayed with "Capacity information successfully updated." text
+	#When User updates the Capacity page on Capacity tab for "2" Team
+	#| StartDate    | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	#| 19 Apr  2013 | 20 March 2015 | false          | false           | false             | false            | false          | false            | false          | 10     | 10      | 10        | 10       | 10     | 10       | 10     |
+	#Then Success message is displayed with "Capacity information successfully updated." text
+	#When User updates the Capacity page on Capacity tab for "3" Team
+	#| StartDate    | EndDate       | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+	#| 16 June 2012 | 03 March 2016 | false          | false           | false             | false            | false          | false            | false          | 100    | 100     | 100       | 100      | 100    | 100      | 100    |
+	#Then Success message is displayed with "Capacity information successfully updated." text
+	#When User navigate to "Summary" page
+	#And User select created request type on Summary tab
+	#Then table for selected request type is displayed
+	#When User navigate to "Override Dates" page
+	#And User updates the Override Dates on Capacity tab
+	#| Date         | Capacity | Comment              |
+	#| 13 June 2016 | 0        | UserScheduledProject |
+	#Then Success message is displayed with "Override date successfully inserted" text
 		#removing
 	#When User navigate to "Groups" tab
 	#And User removes created Group
