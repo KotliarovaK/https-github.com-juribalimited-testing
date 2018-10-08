@@ -586,6 +586,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks on Evergreen Bucket link for ""(.*)"" field")]
+        public void WhenUserClicksOnEvergreenBucketLinkForField(string fieldName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.GetUnassignedLinkByFieldName(fieldName));
+            detailsPage.GetUnassignedLinkByFieldName(fieldName).Click();
+        }
+
         [Then(@"Evergreen Bucket link ""(.*)"" is displayed")]
         public void ThenEvergreenBucketLinkIsDisplayed(string bucketName)
         {

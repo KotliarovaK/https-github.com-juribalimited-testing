@@ -171,6 +171,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
+        [When(@"User enters ""(.*)"" in the ""(.*)"" field")]
+        public void WhenUserEntersInTheField(string name, string fieldName)
+        {
+            var bucketName = _driver.NowAt<ProjectsPage>();
+            bucketName.GetFieldNameByPage(fieldName).Clear();
+            bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
+
+            if (!string.IsNullOrEmpty(name))
+                _buckets.Value.Add(name);
+        }
+
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
         {
@@ -1047,7 +1058,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUpdatesTheDefaultBucketCheckboxState()
         {
             var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.DefaulBucketCheckbox.Click();
+            createBucketElement.DefaultBucketCheckbox.Click();
         }
 
         [When(@"User clicks Create button on the Create Bucket page")]

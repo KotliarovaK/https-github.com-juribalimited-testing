@@ -797,6 +797,12 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks Create button on the Create Bucket page
 	Then Success message is displayed and contains "The bucket has been created" text
+	#When User clicks "Capacity Units" link on the Admin page
+	#Then "Capacity Units" page should be displayed to the user
+	#When User clicks the "CREATE UNIT" Action button
+	#Then "Create Capacity Unit" page should be displayed to the user
+	#When User enters "CapacityUnit12883" in the "Capacity Units Name" field
+
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
@@ -804,7 +810,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Details object page is displayed to the user
 	When User clicks refresh button in the browser
 	When User navigates to the "Projects" tab
-	When User clicks on Evergreen Bucket link
+	When User clicks on Evergreen Bucket link for "Evergreen Bucket" field
 	Then Change Bucket pop-up is opened
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
@@ -817,7 +823,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket to default value
-	When User clicks on Evergreen Bucket link
+	When User clicks on Evergreen Bucket link for "Evergreen Bucket" field
 	Then Change Bucket pop-up is opened
 	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
@@ -834,7 +840,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
-	When User clicks on Evergreen Bucket link
+	When User clicks on Evergreen Bucket link for "Evergreen Bucket" field
 	Then Change Bucket pop-up is opened
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Mailboxes" section on the Details Page
@@ -847,7 +853,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket to default value
-	When User clicks on Evergreen Bucket link
+	When User clicks on Evergreen Bucket link for "Evergreen Bucket" field
 	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
@@ -863,7 +869,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
-	When User clicks on Evergreen Bucket link
+	When User clicks on Evergreen Bucket link for "Evergreen Bucket" field
 	Then Change Bucket pop-up is opened
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
@@ -876,7 +882,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Evergreen Bucket link "Bucket12883" is displayed
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket to default value
-	When User clicks on Evergreen Bucket link
+	When User clicks on Evergreen Bucket link for "Evergreen Bucket" field
 	Then Change Bucket pop-up is opened
 	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
