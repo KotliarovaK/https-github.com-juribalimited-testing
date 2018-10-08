@@ -32,17 +32,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User closes ""(.*)"" section on the Details Page")]
-        public void WhenUserClosesSectionOnTheDetailsPage(string sectionName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NavigateToSectionByName(sectionName);
-        }
-
         [When(@"User opens ""(.*)"" section on the Details Page")]
         public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NavigateToSectionByName(sectionName);
+            _driver.WaitForDataLoading();
+            if (detailsPage.CategoryField.Displayed())
+                detailsPage.NavigateToSectionByName(sectionName).Click();
         }
 
         [When(@"User clicks ""(.*)"" link on the Details Page")]
@@ -64,7 +60,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
-                _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.OpenedSection);
                 Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
             }
         }
@@ -372,7 +367,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -576,64 +571,46 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User clicks on Evergreen Bucket link")]
-        public void WhenUserClicksOnEvergreenBucketLink()
+        [When(@"User clicks on ""(.*)"" link for ""(.*)"" field")]
+        public void WhenUserClicksOnLinkForField(string fieldName, string link)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.MouseHover(detailsPage.BucketLink);
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.EditButtonBucketLink);
-            detailsPage.EditButtonBucketLink.Click();
-            _driver.WaitForDataLoading();
+            detailsPage.GetUnassignedLinkByFieldName(fieldName, link).Click();
         }
 
-        [When(@"User clicks on Evergreen Bucket link for ""(.*)"" field")]
-        public void WhenUserClicksOnEvergreenBucketLinkForField(string fieldName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.GetUnassignedLinkByFieldName(fieldName));
-            detailsPage.GetUnassignedLinkByFieldName(fieldName).Click();
-        }
-
-        [Then(@"Evergreen Bucket link ""(.*)"" is displayed")]
-        public void ThenEvergreenBucketLinkIsDisplayed(string bucketName)
+        [Then(@"""(.*)"" link is displayed on the Details Page")]
+        public void ThenLinkIsDisplayedOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
         }
 
-        [Then(@"Change Bucket pop-up is opened")]
-        public void ThenChangeBucketPop_UpIsOpened()
+        [Then(@"popup changes window opened")]
+        public void ThenPopupChangesWindowOpened()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(detailsPage.EditBucketWindow.Displayed(), "Bucket Window is not loaded");
+            Assert.IsTrue(detailsPage.EditBucketWindow.Displayed(), "popup changes window is not loaded");
         }
 
-        [Then(@"User clicks on New Bucket dropdown")]
-        public void ThenUserClicksOnNewBucketDropdown()
+        [Then(@"User clicks on ""(.*)"" dropdown")]
+        public void ThenUserClicksOnDropdown(string value)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NewBucketDropdown.Click();
+            detailsPage.GetChangeValueInPopUpByName(value).Click();
         }
 
-        [When(@"User clicks ""(.*)"" button on Change Bucket window")]
-        public void WhenUserClicksButtonOnChangeBucketWindow(string buttonName)
+        [When(@"User select ""(.*)"" value on the Details Page")]
+        public void WhenUserSelectValueOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetButtonByNameOnBucketWindow(buttonName).Click();
-        }
-
-        [When(@"User select ""(.*)"" Bucket on the Details Page")]
-        public void WhenUserSelectBucketOnTheDetailsPage(string bucketName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetBucketByName(bucketName).Click();
+            detailsPage.GetValueByName(bucketName).Click();
         }
 
         [When(@"User selects all rows on the grid on the Details Page")]
         public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
             detailsPage.SelectAllCheckBox.Click();
         }
     }

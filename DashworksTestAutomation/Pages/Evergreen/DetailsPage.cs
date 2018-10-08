@@ -47,9 +47,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement NoFoundMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']//span[@class='ng-star-inserted']")]
-        public IWebElement UnknownTextField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']//span[@class='ng-star-inserted']")]
         public IList<IWebElement> TableRowDetails { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='agGridTable']")]
@@ -61,20 +58,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderCounter']//span[@class='ng-star-inserted' and count(*)=0]")]
         public IWebElement FoundRowsLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='editText']")]
-        public IWebElement BucketLink { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//i[@class='material-icons mat-filter-edit']")]
-        public IWebElement EditButtonBucketLink { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'mat-dialog-container')]")]
         public IWebElement EditBucketWindow { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='mat-select-arrow-wrapper']")]
-        public IWebElement NewBucketDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
+        [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']")]
         public IWebElement SelectAllCheckBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='field-category']")]
+        public IWebElement CategoryField { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -90,12 +81,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath("//mat-dialog-container[contains(@class, 'mat-dialog-container')]")).GetCssValue("width");
         }
 
-        public void NavigateToSectionByName(string sectionName)
+        public IWebElement NavigateToSectionByName(string sectionName)
         {
-            var section = Driver.FindElement(
-                By.XPath(
-                    $".//div[@class='ng-star-inserted']//span[@class='filter-category-label blue-color bold-text'][text()='{sectionName}']"));
-            section.Click();
+            var selector = By.XPath($"//span[text()='{sectionName}']//ancestor::div//span[@class='btn-group-sm']//button");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public IWebElement NavigateToFieldByName(string fieldName)
@@ -240,16 +230,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
         }
 
-        public IWebElement GetBucketByName(string bucketName)
+        public IWebElement GetValueByName(string value)
         {
-            var selector = By.XPath($"//span[@class='mat-option-text'][text()='{bucketName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetButtonByNameOnBucketWindow(string buttonName)
-        {
-            var selector = By.XPath($"//button//span[text()='{buttonName}']");
+            var selector = By.XPath($"//mat-option[@role='option']//span[text()='{value}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -261,9 +244,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetUnassignedLinkByFieldName(string fieldName)
+        public IWebElement GetUnassignedLinkByFieldName(string fieldName, string link)
         {
-            var selector = By.XPath($".//tr//div/span[text()='{fieldName}']//ancestor::tr//td//div/span[text()='Unassigned']");
+            var selector = By.XPath($".//tr//div/span[text()='{fieldName}']//ancestor::tr//td//div/span[text()='{link}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetChangeValueInPopUpByName(string value)
+        {
+            var selector = By.XPath($"//td[text()='{value}']/..//div[@class='mat-form-field-infix']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

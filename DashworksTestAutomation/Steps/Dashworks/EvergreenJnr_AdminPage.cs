@@ -1058,15 +1058,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.DefaultBucketCheckbox.Click();
         }
 
-        [When(@"User clicks Create button on the Create Bucket page")]
-        public void WhenUserClicksCreateButtonOnTheCreateBucketPage()
-        {
-            var page = _driver.NowAt<CreateBucketPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateBucketPage>(() => page.CreateBucketButton);
-            page.CreateBucketButton.Click();
-            Logger.Write("Create Team button was clicked");
-        }
-
         #region Message
 
         [Then(@"Blue banner with ""(.*)"" text is displayed")]
