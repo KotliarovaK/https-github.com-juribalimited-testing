@@ -82,6 +82,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
         [NUnit.Framework.CategoryAttribute("DAS12544")]
         [NUnit.Framework.CategoryAttribute("DAS12047")]
         [NUnit.Framework.CategoryAttribute("DAS12603")]
+        [NUnit.Framework.CategoryAttribute("DAS12728")]
         public virtual void EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpaces()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypingThreeSpac" +
@@ -95,7 +96,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
                         "DAS11706",
                         "DAS12544",
                         "DAS12047",
-                        "DAS12603"});
+                        "DAS12603",
+                        "DAS12728"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User type \"   \" in Global Search Field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -128,6 +130,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GlobalSearch
             testRunner.Then("\"Search results for \"%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2" +
                     "013\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"1\" rows are displayed on the Global Search", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User type \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\" in Global " +
+                    "Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Search results for \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007)\"\"" +
+                    " is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)\" text is di" +
+                    "splayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User type \"Escaping Test User |\\\\/\\,\\<\\>#\\;+\\\"\\=- |\\\\/\\,\\<\\>#\\;+\\\"\\=-.Users.corp." +
+                    "juriba.com\" in Global Search Field and presses Enter key", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Search results for \"Escaping Test User |\\\\/\\,\\<\\>#\\;+\\\"\\=- |\\\\/\\,\\<\\>#\\;+\\\"\\=-.U" +
+                    "sers.corp.juriba.com\"\" is displayed below Global Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("message \"No results found for the current search\" is displayed to the user below " +
+                    "Search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
