@@ -16,9 +16,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-primary mat-raised-button')]")]
         public IWebElement CreateTeamButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[text()='Team Name']/ancestor::div[@class='form-item']//input")]
-        public IWebElement TeamNameField { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//span[text()='Add Members (Optional)']")]
         public IWebElement AddMembersCheckbox { get; set; }
 

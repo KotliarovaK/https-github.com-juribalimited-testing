@@ -757,15 +757,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
         }
 
-        [When(@"User enters ""(.*)"" in the Team Name field")]
-        public void ThenUserEntersInTheTeamNameField(string teamName)
-        {
-            var teamPage = _driver.NowAt<CreateTeamPage>();
-            teamPage.TeamNameField.Clear();
-            teamPage.TeamNameField.SendKeys(teamName);
-            _teamName.Value.Add(teamName);
-        }
-
         [When(@"User enters ""(.*)"" in the Team Description field")]
         public void WhenUserEntersInTheTeamDescriptionField(string descriptionText)
         {
@@ -1031,17 +1022,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<TeamsPage>();
             _driver.WaitWhileControlIsNotDisplayed<TeamsPage>(() => page.ReassignObjectsSummary);
             Assert.IsTrue(page.ReassignObjectsSummary.Displayed(), "Reassign Objects was not displayed");
-        }
-
-        [When(@"User enters ""(.*)"" in the Bucket Name field")]
-        public void ThenUserEntersInTheBucketNameField(string bucketText)
-        {
-            var bucketName = _driver.NowAt<CreateBucketPage>();
-            bucketName.BucketNameField.Clear();
-            bucketName.BucketNameField.SendKeys(bucketText);
-
-            if (!string.IsNullOrEmpty(bucketText))
-                _buckets.Value.Add(bucketText);
         }
 
         [When(@"User selects ""(.*)"" team in the Team dropdown on the Buckets page")]
@@ -1541,17 +1521,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
-        }
-
-        [When(@"User enters ""(.*)"" in the Project Name field")]
-        public void ThenUserEntersInTheProjectNameField(string projectText)
-        {
-            var projectName = _driver.NowAt<CreateProjectPage>();
-            projectName.ProjectNameField.SendKeys(projectText);
-            if (!string.IsNullOrEmpty(projectText))
-            {
-                _projects.Value.Add(projectText);
-            }
         }
 
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
