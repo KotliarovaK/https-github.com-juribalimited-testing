@@ -32,9 +32,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "99770" in the Team Name field
+	When User enters "99770" in the "Team Name" field
 	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
 	Then "99770" team details is displayed to the user
@@ -67,9 +67,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	Then "TRUE" value is displayed for Default column
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters " 99770" in the Team Name field
+	When User enters " 99770" in the "Team Name" field
 	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Error message with "A team already exists with this name" text is displayed
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam8" in the Team Name field
+	When User enters "TestTeam8" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	When User selects "Add members from another team" in the Add Members dropdown
 	Then There are no errors in the browser console
@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	| Objects                |
 	| Migration Phase 3 Team |
 	| Retail Team            |
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User enters "My Team" text in the Search field for "Team" column
 	Then "TRUE" value is displayed for Default column
@@ -109,14 +109,14 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam88" in the Team Name field
+	When User enters "TestTeam88" in the "Team Name" field
 	And User enters "test" in the Team Description field
 	And User clicks Default Team checkbox
 	When User selects "Add individual members" in the Add Members dropdown
 	And User selects following Objects
 	| Objects           |
 	| automation_admin1 |
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User enters "My Team" text in the Search field for "Team" column
 	Then "FALSE" value is displayed for Default column
@@ -139,9 +139,9 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam7" in the Team Name field
+	When User enters "TestTeam7" in the "Team Name" field
 	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
 	When User selects "Team Members" tab on the Team details page
@@ -204,9 +204,9 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam5" in the Team Name field
+	When User enters "TestTeam5" in the "Team Name" field
 	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
 	When User selects "Buckets" tab on the Team details page
@@ -303,9 +303,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam9" in the Team Name field
+	When User enters "TestTeam9" in the "Team Name" field
 	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
 	Then "TestTeam9" team details is displayed to the user
@@ -319,11 +319,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDesc
 	Then Success message is displayed and contains "The team was successfully updated" text
 	And There are no errors in the browser console
 	When User clicks refresh button in the browser
-	When User enters "" in the Team Name field
+	When User enters "" in the "Team Name" field
 	Then Update Team button is disabled
-	When User enters " " in the Team Name field
+	When User enters " " in the "Team Name" field
 	Then Update Team button is disabled
-	When User enters "NewTeamName" in the Team Name field
+	When User enters "NewTeamName" in the "Team Name" field
 	And User clicks Update Team button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	And There are no errors in the browser console
@@ -433,18 +433,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters " " in the Team Name field
+	When User enters " " in the "Team Name" field
 	And User enters "test" in the Team Description field
 	Then Create Team button is disabled
-	When User enters "TestTeam" in the Team Name field
+	When User enters "TestTeam" in the "Team Name" field
 	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "TestTeam" in the Team Name field
+	When User enters "TestTeam" in the "Team Name" field
 	And User enters "test" in the Team Description field
-	And User clicks Create Team button on the Create Team page
+	And User clicks the "CREATE TEAM" Action button
 	Then Error message with "A team already exists with this name" text is displayed
 	And There are no errors in the browser console
 
@@ -456,7 +456,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "000Team13000" in the Team Name field
+	When User enters "000Team13000" in the "Team Name" field
 	And User enters "13000" in the Team Description field
 	And User clicks Default Team checkbox
 	And User clicks the "CREATE TEAM" Action button
@@ -468,7 +468,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "001Team13000" in the Team Name field
+	When User enters "001Team13000" in the "Team Name" field
 	And User enters "13000" in the Team Description field
 	And User clicks Default Team checkbox
 	And User clicks the "CREATE TEAM" Action button
@@ -485,3 +485,36 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @Delete_Newly_Created_Team @Teams
+Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Teams" link on the Admin page
+	Then "Teams" page should be displayed to the user
+	When User clicks the "CREATE TEAM" Action button
+	Then "Create Team" page should be displayed to the user
+	When User enters "DAS12326" in the "Team Name" field
+	And User enters "12326" in the Team Description field
+	And User clicks the "CREATE TEAM" Action button
+	Then Success message is displayed and contains "The team has been created" text
+	When User clicks newly created object link
+	And User selects "Team Members" tab on the Team details page
+	And User clicks the "ADD MEMBERS" Action button
+	And User adds following Objects from list
+	| Objects           |
+	| automation_admin1 |
+	| automation_admin2 |
+	| automation_admin3 |
+	Then Success message is displayed and contains "The selected users have been added" text
+	When User enters "admin1" text in the Search field for "Username" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Add to another team" in the Actions
+	And User clicks the "CONTINUE" Action button
+	When User type "M" search criteria in Select a new Team field
+	Then following Team are displayed in Select a new Team drop-down:
+	| Options                |
+	| Migration Phase 2      |
+	| Migration Phase 3 Team |
+	| My Team                |

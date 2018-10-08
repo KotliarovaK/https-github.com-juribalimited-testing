@@ -105,6 +105,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(searchElement.NoResultFound.Displayed(), $"{text} is not displayed");
         }
 
+        [Then(@"message ""(.*)"" is displayed to the user below Search results")]
+        public void ThenMessageIsDisplayedToTheUserBelowSearchResults(string message)
+        {
+            var page = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitForDataLoading();
+            Assert.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
+        }
+
         [Then(@"Search results are displayed below Global Search field")]
         public void ThenSearchResultsAreDisplayedBelowGlobalSearchField()
         {

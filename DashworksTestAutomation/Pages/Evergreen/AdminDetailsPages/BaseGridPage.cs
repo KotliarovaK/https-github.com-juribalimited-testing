@@ -53,6 +53,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div//span[text()='Evergreen']")]
+        public IWebElement EvergreenUnit { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button//span[contains(text(), 'RESET FILTERS')]")]
         public IWebElement ResetFiltersButton { get; set; }
 
@@ -64,9 +67,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
-        public IList<IWebElement> SelectRowsCheckboxesOnAdminPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
         public IWebElement AscendingSortingIcon { get; set; }
@@ -207,13 +207,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             string recordNameSelector = $".//a[text()='{recordName}']";
             Driver.FindElement(By.XPath(recordNameSelector)).Click();
-        }
-
-        public List<string> GetCheckboxByColumnName(string columnName)
-        {
-            By by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public int GetColumnNumberByName(string columnName)
@@ -385,11 +378,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
-        public void GetStringFilterByCheckboxName(string filterName)
+        public IWebElement GetCheckedFilterByCheckboxName(string filterName)
         {
-            string filterSelector = $".//span[@class='boolean-icon text-container']/span[(text()='{filterName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
-            Driver.FindElement(By.XPath(filterSelector)).Click();
+            var selector = By.XPath($"//mat-option[contains(@class, 'mat-active')]//div/span[text()='{filterName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public bool GetCreatedProjectName(string projectName)

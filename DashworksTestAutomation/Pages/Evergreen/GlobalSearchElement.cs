@@ -23,6 +23,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'no-result')]")]
         public IWebElement NoResultFound { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='content']//div[@class='empty-message ng-star-inserted']")]
+        public IWebElement NoResultsFoundMessage { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
         public IWebElement ResultsRowsCount { get; set; }
 

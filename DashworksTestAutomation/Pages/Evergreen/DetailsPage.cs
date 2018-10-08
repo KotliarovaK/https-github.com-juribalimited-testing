@@ -260,5 +260,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetUnassignedLinkByFieldName(string fieldName)
+        {
+            var selector = By.XPath($".//tr//div/span[text()='{fieldName}']//ancestor::tr//td//div/span[text()='Unassigned']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

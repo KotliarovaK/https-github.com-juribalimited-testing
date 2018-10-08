@@ -273,5 +273,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
+
+        public IWebElement GetFieldNameByPage(string name)
+        {
+            var selector = By.XPath($".//label[text()='{name}']/ancestor::div[@class='form-item']//input");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

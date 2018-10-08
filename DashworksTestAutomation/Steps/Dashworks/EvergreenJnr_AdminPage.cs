@@ -10,6 +10,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
@@ -66,6 +67,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.Buckets.Click();
                     break;
 
+                case "Capacity Units":
+                    menu.CapacityUnits.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }
@@ -120,6 +125,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
+                case "Capacity Units":
+                    var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
                 default:
                     throw new Exception($"'{pageTitle}' menu item is not valid ");
             }
@@ -170,6 +181,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
+        [When(@"User enters ""(.*)"" in the ""(.*)"" field")]
+        public void WhenUserEntersInTheField(string name, string fieldName)
+        {
+            var bucketName = _driver.NowAt<ProjectsPage>();
+            bucketName.GetFieldNameByPage(fieldName).Clear();
+            bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
+
+            if (!string.IsNullOrEmpty(name))
+                _buckets.Value.Add(name);
+        }
+
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
         {
@@ -198,6 +220,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectPage = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
+        }
+
+        [Then(@"Evergreen Unit is displayed to the user")]
+        public void ThenEvergreenUnitIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
         }
 
         [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
@@ -629,20 +658,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is checked");
         }
 
-        [When(@"User select ""(.*)"" rows in the grid on the Admin page")]
-        public void WhenUserSelectRowsInTheGridOnTheAdminPage(string columnName, Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var columnContent = page.GetCheckboxByColumnName(columnName);
-            foreach (var row in table.Rows)
-            {
-                var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
-                if (rowIndex < 0)
-                    throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
-                page.SelectRowsCheckboxesOnAdminPage[rowIndex].Click();
-            }
-        }
-
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
         public void WhenUserSelectCheckboxOnTheProjectDetailsPage(string radioButtonName)
         {
@@ -759,15 +774,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
         }
 
-        [When(@"User enters ""(.*)"" in the Team Name field")]
-        public void ThenUserEntersInTheTeamNameField(string teamName)
-        {
-            var teamPage = _driver.NowAt<CreateTeamPage>();
-            teamPage.TeamNameField.Clear();
-            teamPage.TeamNameField.SendKeys(teamName);
-            _teamName.Value.Add(teamName);
-        }
-
         [When(@"User enters ""(.*)"" in the Team Description field")]
         public void WhenUserEntersInTheTeamDescriptionField(string descriptionText)
         {
@@ -816,15 +822,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(teamElement.DefaulTeamCheckbox.Displayed(), "Default Team checkbox is active");
         }
 
-        [When(@"User clicks Create Team button on the Create Team page")]
-        public void ThenUserClicksCreateTeamButtonOnTheCreateTeamPage()
-        {
-            var page = _driver.NowAt<CreateTeamPage>();
-            _driver.WaitWhileControlIsNotDisplayed<CreateTeamPage>(() => page.CreateTeamButton);
-            page.CreateTeamButton.Click();
-            Logger.Write("Create Team button was clicked");
-        }
-
         [When(@"User selects ""(.*)"" tab on the Team details page")]
         public void WhenUserSelectsTabOnTheTeamDetailsPage(string tabName)
         {
@@ -850,6 +847,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<AddToAnotherTeamPage>();
             teamElement.AddUsersToAnotherTeam(teamName);
+        }
+
+        [When(@"User type ""(.*)"" search criteria in Select a new Team field")]
+        public void WhenUserTypeSearchCriteriaInSelectANewTeamField(string text)
+        {
+            var teamPage = _driver.NowAt<AddToAnotherTeamPage>();
+            teamPage.TeamSelectbox.Click();
+            teamPage.TeamSelectbox.Clear();
+            teamPage.TeamSelectbox.SendKeys(text);
+        }
+
+        [Then(@"following Team are displayed in Select a new Team drop-down:")]
+        public void ThenFollowingTeamAreDisplayedInSelectANewTeamDrop_Down(Table table)
+        {
+            var teamPage = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = teamPage.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Teams in Select a new Team drop-down are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [Then(@"Add Buckets page is displayed to the user")]
@@ -1024,17 +1041,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ReassignObjectsSummary.Displayed(), "Reassign Objects was not displayed");
         }
 
-        [When(@"User enters ""(.*)"" in the Bucket Name field")]
-        public void ThenUserEntersInTheBucketNameField(string bucketText)
-        {
-            var bucketName = _driver.NowAt<CreateBucketPage>();
-            bucketName.BucketNameField.Clear();
-            bucketName.BucketNameField.SendKeys(bucketText);
-
-            if (!string.IsNullOrEmpty(bucketText))
-                _buckets.Value.Add(bucketText);
-        }
-
         [When(@"User selects ""(.*)"" team in the Team dropdown on the Buckets page")]
         public void ThenUserSelectTeamInTheTeamDropdownOnTheBucketsPage(string teamName)
         {
@@ -1049,7 +1055,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserUpdatesTheDefaultBucketCheckboxState()
         {
             var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.DefaulBucketCheckbox.Click();
+            createBucketElement.DefaultBucketCheckbox.Click();
         }
 
         [When(@"User clicks Create button on the Create Bucket page")]
@@ -1131,7 +1137,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor());//Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
@@ -1535,17 +1540,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(button.ImportProjectButton.Displayed(), "Import Project button is displayed");
         }
 
-        [When(@"User enters ""(.*)"" in the Project Name field")]
-        public void ThenUserEntersInTheProjectNameField(string projectText)
-        {
-            var projectName = _driver.NowAt<CreateProjectPage>();
-            projectName.ProjectNameField.SendKeys(projectText);
-            if (!string.IsNullOrEmpty(projectText))
-            {
-                _projects.Value.Add(projectText);
-            }
-        }
-
         [When(@"User selects ""(.*)"" in the Scope Project dropdown")]
         public void ThenUserSelectsInTheScopeProjectDropdown(string objectName)
         {
@@ -1694,6 +1688,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
             filterElement.GetStringFilterByColumnName(columnName);
+        }
+
+        [Then(@"""(.*)"" checkbox is checked in the filter dropdown")]
+        public void ThenCheckboxIsCheckedInTheFilterDropdown(string filterName)
+        {
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(filterElement.GetCheckedFilterByCheckboxName(filterName).Displayed(),
+                $"{filterName} checkbox is not checked");
         }
 
         [Then(@"""(.*)"" is not displayed in the filter dropdown")]
