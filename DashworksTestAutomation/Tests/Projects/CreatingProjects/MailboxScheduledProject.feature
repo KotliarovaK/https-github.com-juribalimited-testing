@@ -330,12 +330,12 @@ Scenario: Projects_CreateMailboxScheduledProject
 	| true              | false          | false          | false       | MailboxScheduledProject |
 	Then Success message is displayed with "Self Service Screen successfully updated" text
 		#Capacity tabs
-	When User navigate to "Capacity" tab
-	Then "Manage Capacity" page is displayed to the user
-	When User updates the Details on Capacity tab
-	| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
-	| true           | true          | true                      | true                       | 80              |
-	Then Success message is displayed with "Details successfully updated." text
+	#When User navigate to "Capacity" tab
+	#Then "Manage Capacity" page is displayed to the user
+	#When User updates the Details on Capacity tab
+	#| EnablePlanning | DisplayColors | EnforceOonSelfServicePage | EnforceOnProjectObjectPage | CapacityToReach |
+	#| true           | true          | true                      | true                       | 80              |
+	#Then Success message is displayed with "Details successfully updated." text
 	#When User navigate to "Capacity" page
 	#And User updates the Capacity page on Capacity tab for "1" Team
 	#| StartDate   | EndDate     | MondayCheckbox | TuesdayCheckbox | WednesdayCheckbox | ThursdayCheckbox | FridayCheckbox | SaturdayCheckbox | SundayCheckbox | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
