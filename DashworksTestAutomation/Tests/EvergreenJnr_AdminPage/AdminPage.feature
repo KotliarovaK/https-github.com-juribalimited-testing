@@ -74,7 +74,9 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User selects correct file to upload on Import Project page
 	Then Import Project button is enabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 
+
+@Project_Creation_and_Scope @Projects @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
