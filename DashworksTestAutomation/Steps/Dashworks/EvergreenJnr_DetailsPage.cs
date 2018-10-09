@@ -504,7 +504,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            //detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,

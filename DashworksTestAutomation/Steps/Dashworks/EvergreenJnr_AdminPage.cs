@@ -188,11 +188,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketName.GetFieldNameByPage(fieldName).Clear();
             bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
 
-            //Please add switch here
             if (!string.IsNullOrEmpty(name))
-                _buckets.Value.Add(name);
-
-            _projects.Value.Add(name);
+            {
+                switch (fieldName)
+                {
+                    case "Project Name":
+                        _projects.Value.Add(name);
+                        break;
+                    case "Team Name":
+                        _teamName.Value.Add(name);
+                        break;
+                    case "Bucket Name":
+                        _buckets.Value.Add(name);
+                        break;
+                    //case "Capacity Unit Name":
+                    //    break;
+                    default:
+                        throw new Exception($"{fieldName} not found");
+                }
+            }
         }
 
         [Then(@"Scope field is automatically populated")]

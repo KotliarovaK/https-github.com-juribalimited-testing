@@ -1710,14 +1710,14 @@ Scenario Outline: EvergreenJnr_ChangingApplicationScopeListToAnotherListForMailb
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd1>" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	And User selects "<ChangingToList2>" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then "<ObjectsToAdd2>" is displayed to the user in the Project Scope Changes section
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples:
 	| ChangingToList1  | ChangingToList2 | ObjectsToAdd1                         | ObjectsToAdd2                         |

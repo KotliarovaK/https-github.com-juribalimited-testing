@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']")]
         public IWebElement SelectAllCheckBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='field-category']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'field-category')]")]
         public IWebElement CategoryField { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement NavigateToSectionByName(string sectionName)
         {
-            var selector = By.XPath($"//span[text()='{sectionName}']//ancestor::div//span[@class='btn-group-sm']//button");
+            var selector = By.XPath($"//div//span[contains(@class, 'filter-category')][text()='{sectionName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

@@ -80,7 +80,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples: 
 	| PageName     | SearchTerm                                              | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
@@ -154,7 +154,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 Examples: 
 	| PageName | ItemName | TabName    | SectionName                | ColumnName  | CheckboxName     | NewColumnName    |
