@@ -188,8 +188,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketName.GetFieldNameByPage(fieldName).Clear();
             bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
 
+            //Please add switch here
             if (!string.IsNullOrEmpty(name))
                 _buckets.Value.Add(name);
+
+            _projects.Value.Add(name);
         }
 
         [Then(@"Scope field is automatically populated")]
@@ -771,7 +774,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void DeleteTeam(string teamName)
         {
-            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[Teams] where [TeamName] = '{teamName}'");
         }
 
         [When(@"User enters ""(.*)"" in the Team Description field")]
@@ -1954,7 +1957,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectId =
                 DatabaseHelper.ExecuteReader(
-                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0).LastOrDefault();
+                    $"SELECT [ProjectID] FROM [PM].[dbo].[Projects] where [ProjectName] = '{projectName}' AND [IsDeleted] = 0", 0).LastOrDefault();
             return projectId;
         }
 
