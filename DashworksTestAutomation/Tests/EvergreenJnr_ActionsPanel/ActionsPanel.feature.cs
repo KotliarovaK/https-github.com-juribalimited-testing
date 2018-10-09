@@ -1011,6 +1011,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12863")]
         [NUnit.Framework.CategoryAttribute("DAS13266")]
         [NUnit.Framework.CategoryAttribute("DAS13284")]
+        [NUnit.Framework.CategoryAttribute("DAS13708")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage" +
@@ -1021,7 +1022,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12863",
                         "DAS13266",
-                        "DAS13284"});
+                        "DAS13284",
+                        "DAS13708"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

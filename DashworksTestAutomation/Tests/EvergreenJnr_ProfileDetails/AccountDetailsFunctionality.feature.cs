@@ -201,7 +201,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
         [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API", new string[] {
@@ -210,8 +209,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_FilterFeature",
                         "UserProfile",
                         "DAS11723",
-                        "API",
-                        "Not_Run"});
+                        "API"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.Then("default list page Size is \"1000\" and Cache \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -227,7 +225,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("API")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UserProfile_ChecksListPageSizeAPI()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_ChecksListPageSizeAPI", new string[] {
@@ -236,8 +233,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "EvergreenJnr_FilterFeature",
                         "UserProfile",
                         "DAS13026",
-                        "API",
-                        "Not_Run"});
+                        "API"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -246,6 +242,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.And("User changes List Page Size to \"2500\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Update button on the Advanced page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("page Size is \"2500\" on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

@@ -1383,7 +1383,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectElement.AddItem(row["Objects"]);
                 projectElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
-
             projectElement.UpdateButton.Click();
         }
 
@@ -1391,6 +1390,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsFollowingObjects(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
             {
                 projectElement.AddItem(row["Objects"]);
