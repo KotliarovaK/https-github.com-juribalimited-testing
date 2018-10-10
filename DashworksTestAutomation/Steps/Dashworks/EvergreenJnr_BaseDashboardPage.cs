@@ -278,6 +278,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dashboardPage.CheckColumnContent(text);
         }
 
+        [Then(@"Evergreen Icon is displayed to the user")]
+        public void ThenEvergreenIconIsDisplayedToTheUser()
+        {
+            _driver.WaitForDataLoading();
+            var content = _driver.FindElements(By.XPath(BaseDashboardPage.ColumnWithEvergreenIconSelector));
+            foreach (var element in content)
+            {
+                var evergreenIcon = element.FindElement(By.XPath(BaseDashboardPage.ImageSelector));
+                Assert.IsTrue(_driver.IsElementExists(evergreenIcon), "Evergreen Icon is not found");
+            }
+        }
+
         [Then(@"table content is present")]
         public void ThenTableContentIsPresent()
         {

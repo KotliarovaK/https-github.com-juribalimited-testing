@@ -31,6 +31,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string OptionOnActionsPanel = "//mat-option[@role='option']";
 
+        public const string ColumnWithEvergreenIconSelector = ".//div[@col-id='projectName'][@role='gridcell']";
+
+        public const string ImageSelector = ".//i";
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
