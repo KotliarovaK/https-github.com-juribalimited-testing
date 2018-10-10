@@ -752,7 +752,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User perform search by "AAG081456"
 	And User click content from "Username" column
 	And User navigates to the "Projects" tab
-	And User clicks on "Unassigned" link for "Evergreen Bucket" field
+	And User clicks on Unassigned link for "Evergreen Bucket" field
 	And User clicks on "New Bucket" dropdown
 	And User select "AutoTestBucket_DAS_13335" value on the Details Page
 	And User opens "Related Devices" section on the Details Page
