@@ -230,6 +230,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_SlotsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_UnitsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ChangeTeamPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateNewSlotPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReassignBucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateProjectPage.cs" />

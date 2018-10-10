@@ -833,6 +833,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublish
 	| Windows7Mi: Radiobutton Task for Workstation                                                                     |
 	| Windows7Mi: Scheduled Code                                                                                       |
 	| Windows7Mi: Scheduled Date                                                                                       |
+	| Windows7Mi: Scheduled Date (Slot)                                                                                |
 	| Windows7Mi: Self Service Enabled                                                                                 |
 	| Windows7Mi: Send Applications List - Computer Object Task                                                        |
 	| Windows7Mi: SS Application List Completed                                                                        |

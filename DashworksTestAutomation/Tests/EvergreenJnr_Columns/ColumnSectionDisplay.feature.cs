@@ -1812,6 +1812,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table86.AddRow(new string[] {
                         "Windows7Mi: Scheduled Date"});
             table86.AddRow(new string[] {
+                        "Windows7Mi: Scheduled Date (Slot)"});
+            table86.AddRow(new string[] {
                         "Windows7Mi: Self Service Enabled"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Send Applications List - Computer Object Task"});

@@ -3182,6 +3182,73 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("color for following values are displayed correctly:", ((string)(null)), table98, "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12547")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock", new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS12547"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("user select \"Owner Floor\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks in search field in the Filter block", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value"});
+            table99.AddRow(new string[] {
+                        "Empty"});
+            table99.AddRow(new string[] {
+                        "0"});
+            table99.AddRow(new string[] {
+                        "1"});
+            table99.AddRow(new string[] {
+                        "2"});
+            table99.AddRow(new string[] {
+                        "3"});
+            table99.AddRow(new string[] {
+                        "4"});
+            table99.AddRow(new string[] {
+                        "5"});
+            table99.AddRow(new string[] {
+                        "6"});
+            table99.AddRow(new string[] {
+                        "11"});
+            table99.AddRow(new string[] {
+                        "12"});
+            table99.AddRow(new string[] {
+                        "18"});
+            table99.AddRow(new string[] {
+                        "19"});
+            table99.AddRow(new string[] {
+                        "20"});
+            table99.AddRow(new string[] {
+                        "21"});
+            table99.AddRow(new string[] {
+                        "25"});
+            table99.AddRow(new string[] {
+                        "26"});
+            table99.AddRow(new string[] {
+                        "49"});
+            table99.AddRow(new string[] {
+                        "51"});
+            testRunner.Then("the values are displayed for \"OwnerFloor\" filter on \"Mailboxes\" page in the follo" +
+                    "wing order:", ((string)(null)), table99, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

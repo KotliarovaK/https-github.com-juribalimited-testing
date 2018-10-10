@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDe
 	| IP Address     |
 	| Compliance     |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657
 Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -212,7 +212,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Status       |
 	| Date         |
 	| Slot         |
-	| Readiness    |
 	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
 	| Checkbox     |
 	| Key          |
@@ -340,7 +339,7 @@ Examples:
 	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Details | Mailbox           | Department and Location |
 	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Details | Mailbox           | Mailbox                 |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -357,7 +356,7 @@ Examples:
 	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn |
 	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    |
 	| Users        | svc_dashworks                                           | Username      | Groups       | Group          |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
+	#| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
@@ -400,7 +399,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedWhenOpenedDevice
 	And User navigates to the "Details" tab
 	And User opens "Device Owner" section on the Details Page
 	Then "No device owner information found for this device" message is displayed on the Details Page
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12071
 Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnTheDetailsPage
@@ -551,7 +550,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermiss
 	Then Content is present in the table on the Details Page
 	And "14" rows found label displays on Details Page 
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

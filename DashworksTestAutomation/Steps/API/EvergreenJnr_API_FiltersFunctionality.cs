@@ -98,6 +98,32 @@ namespace DashworksTestAutomation.Steps.API
             }
         }
 
+        [Then(@"the values are displayed for ""(.*)"" filter on ""(.*)"" page in the following order:")]
+        public void ThenTheValuesAreDisplayedForFilterOnPageInTheFollowingOrder(string filterName, string pageName, Table table)
+        {
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}{pageName.ToLower()}/filters/options/{filterName.ToLower()}";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            var response = _client.Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var responseContent = JsonConvert.DeserializeObject<JArray>(content).ToList();
+            var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            foreach (var value in expectedList)
+            {
+                Assert.AreEqual(filterValueList, expectedList, "Values are not displayed in the correct order");
+            }
+        }
+
         [Then(@"""(.*)"" is displayed after ""(.*)"" in Application list filter")]
         public void ThenIsDisplayedAfterInApplicationListFilter(string item1, string item2)
         {
