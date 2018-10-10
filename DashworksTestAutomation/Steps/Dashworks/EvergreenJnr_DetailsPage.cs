@@ -518,6 +518,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
         }
 
+        [Then(@"User sees ""(.*)"" Evergreen Bucket in Project Summary section on the Details Page")]
+        public void ThenUserSeesEvergreenBucketInProjectSummarySetionOnTheDetailsPage(string bucketName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+
+            Assert.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
+        }
+
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
         public void ThenFieldDisplayStateIsOnDetailsTab(string fieldName, bool state)
         {
@@ -593,6 +601,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User clicks on ""(.*)"" dropdown")]
+        [When(@"User clicks on ""(.*)"" dropdown")]
         public void ThenUserClicksOnDropdown(string value)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();

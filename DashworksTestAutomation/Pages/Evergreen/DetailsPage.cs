@@ -58,6 +58,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderCounter']//span[@class='ng-star-inserted' and count(*)=0]")]
         public IWebElement FoundRowsLabel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//table[@class='table projectDetails']/*//span[text()='Evergreen Bucket']/ancestor::tr/td[@class='fld-value']")]
+        public IWebElement ProjectSummaryBucketValue { get; set; }
+        
         [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'mat-dialog-container')]")]
         public IWebElement EditBucketWindow { get; set; }
 
@@ -83,7 +86,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement NavigateToSectionByName(string sectionName)
         {
-            var selector = By.XPath($"//span[text()='{sectionName}']//ancestor::div//span[@class='btn-group-sm']//button");
+            var selector = By.XPath($"//span[text()='{sectionName}']//ancestor::div/span[@class='btn-group-sm']//button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
