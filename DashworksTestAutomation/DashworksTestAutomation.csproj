@@ -225,6 +225,10 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AddToAnotherTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AddBucketToTeamPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_DetailsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_OverrideDatesPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_SlotsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_UnitsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ChangeTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateNewSlotPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReassignBucketsPage.cs" />
@@ -355,6 +359,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Buckets.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Capacity.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits.feature.cs">
       <AutoGen>True</AutoGen>
@@ -544,6 +553,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Buckets.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Capacity.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

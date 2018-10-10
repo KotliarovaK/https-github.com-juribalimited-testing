@@ -740,6 +740,31 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 5222014  | 5202018 |
 	Then "2" rows found label displays on Details Page
 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @Delete_Newly_Created_Bucket
+Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User clicks the "CREATE BUCKET" Action button
+	And User enters "AutoTestBucket_DAS_13335" in the "Bucket Name" field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	And User clicks "Users" on the left-hand menu
+	And User perform search by "AAG081456"
+	And User click content from "Username" column
+	And User navigates to the "Projects" tab
+	And User clicks on Unassigned link for "Evergreen Bucket" field
+	And User clicks on "New Bucket" dropdown
+	And User select "AutoTestBucket_DAS_13335" value on the Details Page
+	And User opens "Related Devices" section on the Details Page
+	And User selects all rows on the grid on the Details Page
+	And User opens "Related Mailboxes" section on the Details Page
+	And User clicks the "CHANGE" Action button
+	And User clicks "Devices" on the left-hand menu
+	And User perform search by "I55HL8MSBYK0VG"
+	And User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	Then User sees "AutoTestBucket_DAS_13335" Evergreen Bucket in Project Summary section on the Details Page
+
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12386
 Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage
 	When User add following columns using URL to the "<PageName>" page:
