@@ -1325,3 +1325,32 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayed
 	| Color |
 	| Red   |
 	| Amber |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS12547
+Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Floor" filter
+	When User clicks in search field in the Filter block
+	Then the values are displayed for "OwnerFloor" filter on "Mailboxes" page in the following order:
+	| Value |
+	| Empty |
+	| 0     |
+	| 1     |
+	| 2     |
+	| 3     |
+	| 4     |
+	| 5     |
+	| 6     |
+	| 11    |
+	| 12    |
+	| 18    |
+	| 19    |
+	| 20    |
+	| 21    |
+	| 25    |
+	| 26    |
+	| 49    |
+	| 51    |

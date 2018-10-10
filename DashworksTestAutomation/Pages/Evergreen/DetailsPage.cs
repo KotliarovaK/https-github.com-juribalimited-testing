@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//table[@class='table projectDetails']/*//span[text()='Evergreen Bucket']/ancestor::tr/td[@class='fld-value']")]
         public IWebElement ProjectSummaryBucketValue { get; set; }
         
-        [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'mat-dialog-container')]")]
+        [FindsBy(How = How.XPath, Using = "//mat-tab-body[contains(@class, 'mat-tab-body')]")]
         public IWebElement PopupChangesPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']")]

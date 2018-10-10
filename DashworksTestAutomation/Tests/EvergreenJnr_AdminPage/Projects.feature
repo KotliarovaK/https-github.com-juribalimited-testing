@@ -1210,7 +1210,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseDifferentBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2725,7 +2725,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User clicks Delete button on the warning message in the lists panel
 	And no Warning message is displayed in the lists panel
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2891,6 +2891,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnProjectsGrid
 	And User enters "TestProjectDAS11944" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks the "CREATE PROJECT" Action button
+	When User enters "Barry's User Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	Then User sees "1" of "1" rows selected label
 
@@ -3204,10 +3205,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| Adobe Acrobat Reader 5.0 |
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
-	| Items                          |
-	| 20040610sqlserverck (1.0.0)    |
-	| AddressGrabber Standard (3.1)  |
-	| Adobe Acrobat Reader 5.0 (1.0) |
+	| Items                    |
+	| 20040610sqlserverck      |
+	| AddressGrabber Standard  |
+	| Adobe Acrobat Reader 5.0 |
 	And There are no errors in the browser console
 	When User click on Back button
 	When User clicks "Projects" link on the Admin page
@@ -3239,10 +3240,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| Adobe Acrobat Reader 5.0 |
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
-	| Items                          |
-	| 20040610sqlserverck (1.0.0)    |
-	| AddressGrabber Standard (3.1)  |
-	| Adobe Acrobat Reader 5.0 (1.0) |  
+	| Items                    |
+	| 20040610sqlserverck      |
+	| AddressGrabber Standard  |
+	| Adobe Acrobat Reader 5.0 | 
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add

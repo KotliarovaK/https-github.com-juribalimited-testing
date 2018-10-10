@@ -127,6 +127,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.FilterSearchField.Click();
         }
 
+        [When(@"User clicks in search field in the Filter block")]
+        public void WhenUserClicksInSearchFieldInTheFilterBlock()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.LookupFilterSearchTextbox.Click();
+        }
+
         [When(@"User enters ""(.*)"" text in Search field at Filters Panel")]
         public void WhenUserEntersTextInSearchFieldAtFiltersPanel(string searchedText)
         {

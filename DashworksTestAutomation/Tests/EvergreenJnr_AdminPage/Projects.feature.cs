@@ -2327,9 +2327,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS13471")]
+        [NUnit.Framework.CategoryAttribute("DAS13803")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("UsersProject5", "All Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("MailboxesProject5", "All Mailboxes", new string[0])]
         public virtual void EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseDifferentBuckets(string projectName, string scopeValue, string[] exampleTags)
@@ -2342,9 +2344,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "DAS12999",
                     "DAS13199",
                     "DAS13471",
+                    "DAS13803",
                     "Delete_Newly_Created_Project",
                     "Project_Creation_and_Scope",
-                    "Projects"};
+                    "Projects",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -5063,9 +5067,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS13297")]
         [NUnit.Framework.CategoryAttribute("DAS12485")]
+        [NUnit.Framework.CategoryAttribute("DAS13803")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpda" +
@@ -5079,9 +5085,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13199",
                         "DAS13297",
                         "DAS12485",
+                        "DAS13803",
                         "Delete_Newly_Created_Project",
                         "Project_Creation_and_Scope",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5372,6 +5380,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"TestProjectDAS11944\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User enters \"Barry\'s User Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("User sees \"1\" of \"1\" rows selected label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -5893,11 +5902,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table142.AddRow(new string[] {
-                        "20040610sqlserverck (1.0.0)"});
+                        "20040610sqlserverck"});
             table142.AddRow(new string[] {
-                        "AddressGrabber Standard (3.1)"});
+                        "AddressGrabber Standard"});
             table142.AddRow(new string[] {
-                        "Adobe Acrobat Reader 5.0 (1.0)"});
+                        "Adobe Acrobat Reader 5.0"});
             testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table142, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5941,11 +5950,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table145.AddRow(new string[] {
-                        "20040610sqlserverck (1.0.0)"});
+                        "20040610sqlserverck"});
             table145.AddRow(new string[] {
-                        "AddressGrabber Standard (3.1)"});
+                        "AddressGrabber Standard"});
             table145.AddRow(new string[] {
-                        "Adobe Acrobat Reader 5.0 (1.0)"});
+                        "Adobe Acrobat Reader 5.0"});
             testRunner.Then("following Items are displayed in the History table", ((string)(null)), table145, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
