@@ -189,7 +189,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
 
             if (!string.IsNullOrEmpty(name))
-                _buckets.Value.Add(name);
+            {
+                switch (fieldName)
+                {
+                    case "Project Name":
+                        _projects.Value.Add(name);
+                        break;
+                    case "Team Name":
+                        _teamName.Value.Add(name);
+                        break;
+                    case "Bucket Name":
+                        _buckets.Value.Add(name);
+                        break;
+                    //case "Capacity Unit Name":
+                    //    break;
+                    default:
+                        throw new Exception($"{fieldName} not found");
+                }
+            }
         }
 
         [Then(@"Scope field is automatically populated")]
@@ -771,7 +788,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void DeleteTeam(string teamName)
         {
-            DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Teams] where[TeamName] = '{teamName}'");
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[Teams] where [TeamName] = '{teamName}'");
         }
 
         [When(@"User enters ""(.*)"" in the Team Description field")]
@@ -1383,7 +1400,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 projectElement.AddItem(row["Objects"]);
                 projectElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
-
             projectElement.UpdateButton.Click();
         }
 
@@ -1391,6 +1407,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsFollowingObjects(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
             {
                 projectElement.AddItem(row["Objects"]);
@@ -1954,7 +1971,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectId =
                 DatabaseHelper.ExecuteReader(
-                    $"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0).LastOrDefault();
+                    $"SELECT [ProjectID] FROM [PM].[dbo].[Projects] where [ProjectName] = '{projectName}' AND [IsDeleted] = 0", 0).LastOrDefault();
             return projectId;
         }
 

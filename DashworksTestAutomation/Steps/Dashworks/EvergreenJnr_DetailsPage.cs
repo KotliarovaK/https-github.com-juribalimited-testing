@@ -36,9 +36,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            if (detailsPage.CategoryField.Displayed())
-                detailsPage.NavigateToSectionByName(sectionName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            detailsPage.NavigateToSectionByName(sectionName).Click();
         }
 
         [When(@"User clicks ""(.*)"" link on the Details Page")]
@@ -52,16 +51,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSectionIsLoadedCorrectly()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-
             _driver.WaitForDataLoading();
-            if (!detailsPage.OpenedSection.Displayed())
-            {
-                Assert.IsTrue(detailsPage.NoFoundContent.Displayed());
-            }
-            else
-            {
+            if (detailsPage.PopupChangesPanel.Displayed())
                 Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
-            }
+            else
+                Assert.IsTrue(detailsPage.NoFoundContent.Displayed(), "Section is not loaded");
         }
 
         [Then(@"Highcharts graphic is displayed on the Details Page")]
@@ -504,7 +498,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            //detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
@@ -579,11 +572,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User clicks on ""(.*)"" link for ""(.*)"" field")]
-        public void WhenUserClicksOnLinkForField(string fieldName, string link)
+        [When(@"User clicks on ""(.*)"" link on the Details Page")]
+        public void WhenUserClicksOnLinkOnTheDetailsPage(string link)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetUnassignedLinkByFieldName(fieldName, link).Click();
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetLinkOnTheDetailsPageByName(link).Click();
+        }
+
+        [When(@"User clicks on Unassigned link for ""(.*)"" field")]
+        public void WhenUserClicksOnUnassignedLinkForField(string fieldName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetUnassignedLinkByFieldName(fieldName).Click();
         }
 
         [Then(@"""(.*)"" link is displayed on the Details Page")]
@@ -597,7 +599,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPopupChangesWindowOpened()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(detailsPage.EditBucketWindow.Displayed(), "popup changes window is not loaded");
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            Assert.IsTrue(detailsPage.PopupChangesPanel.Displayed(), "Popup changes panel is not loaded");
         }
 
         [Then(@"User clicks on ""(.*)"" dropdown")]

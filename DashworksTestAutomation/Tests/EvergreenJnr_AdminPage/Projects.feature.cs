@@ -3243,6 +3243,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
                     " details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3250,6 +3251,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -4232,10 +4234,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12157")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.TestCaseAttribute("All Devices", "Devices to add (0 of 1 selected)", "DevicesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Users", "Users to add (0 of 1 selected)", "UsersList12157", "Device Scope", "DevicesList12157", "Devices", "Devices to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes to add (0 of 1 selected)", "MailboxesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
-        public virtual void EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList(string mainList, string objectsToAdd1, string listToScope1, string scopeTab1, string listToScope2, string scopeChanges1, string objectsToAdd2, string objectsToAdd3, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("All Devices", "DAS12157A", "Devices to add (0 of 1 selected)", "DevicesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Users", "DAS12157B", "Users to add (0 of 1 selected)", "UsersList12157", "Device Scope", "DevicesList12157", "Devices", "Devices to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "DAS12157C", "Mailboxes to add (0 of 1 selected)", "MailboxesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        public virtual void EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList(string mainList, string testName, string objectsToAdd1, string listToScope1, string scopeTab1, string listToScope2, string scopeChanges1, string objectsToAdd2, string objectsToAdd3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -4287,12 +4289,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"Project12157\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User selects \"{0}\" in the Scope Project dropdown", mainList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Project \"Project12157\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("Project \"{0}\" is displayed to user", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User selects \"{0}\" in the Scope Project details", listToScope1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User navigates to the \"{0}\" tab in the Scope section on the Project details page", scopeTab1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User selects \"{0}\" in the Scope Project details", listToScope2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
