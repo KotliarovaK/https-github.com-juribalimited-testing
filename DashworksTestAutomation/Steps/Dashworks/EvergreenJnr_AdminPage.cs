@@ -1633,6 +1633,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ProjectName.SendKeys(projectName);
         }
 
+        [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
+        public void WhenUserChangesNameToInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.GetFieldByName(fieldName).Clear();
+            projectElement.GetFieldByName(fieldName).SendKeys(name);
+        }
+
         [When(@"User changes Project Short Name to ""(.*)""")]
         public void WhenUserChangesProjectShortNameTo(string shortProjectName)
         {
