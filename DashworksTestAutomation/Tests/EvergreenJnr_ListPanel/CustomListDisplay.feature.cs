@@ -361,6 +361,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS12966")]
+        [NUnit.Framework.CategoryAttribute("DAS13838")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder()
@@ -379,6 +380,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS12351",
                         "DAS12602",
                         "DAS12966",
+                        "DAS13838",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
@@ -959,6 +961,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
+        [NUnit.Framework.CategoryAttribute("DAS13838")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes()
@@ -973,6 +976,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS11951",
                         "DAS12199",
                         "DAS13001",
+                        "DAS13838",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
@@ -1071,6 +1075,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10647")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
+        [NUnit.Framework.CategoryAttribute("DAS13838")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed()
@@ -1083,6 +1088,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "CustomListDisplay",
                         "DAS10647",
                         "DAS13001",
+                        "DAS13838",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);

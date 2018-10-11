@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	| aba        |
 	| waa        |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @Buckets @Delete_Newly_Created_Bucket @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @DAS13837 @Buckets @Delete_Newly_Created_Bucket @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -345,7 +345,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And Delete "TestBucket7" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @DAS13837 @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -413,7 +413,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997 @DAS13837 @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailboxesListsOfParticularBucket
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page

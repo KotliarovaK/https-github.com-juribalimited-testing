@@ -586,6 +586,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13420")]
+        [NUnit.Framework.CategoryAttribute("DAS13837")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
@@ -599,6 +600,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12999",
                         "DAS13420",
+                        "DAS13837",
                         "Buckets",
                         "Delete_Newly_Created_Bucket",
                         "Buckets",
@@ -754,6 +756,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13420")]
+        [NUnit.Framework.CategoryAttribute("DAS13837")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_AddingMailboxesFromBuckets()
@@ -765,6 +768,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12999",
                         "DAS13420",
+                        "DAS13837",
                         "Buckets",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
@@ -860,6 +864,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12997")]
+        [NUnit.Framework.CategoryAttribute("DAS13837")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailboxesListsOfParticularBucket()
@@ -871,6 +876,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS12997",
+                        "DAS13837",
                         "Buckets",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
