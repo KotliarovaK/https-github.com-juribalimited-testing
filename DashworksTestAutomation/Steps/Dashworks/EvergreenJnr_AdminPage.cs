@@ -756,6 +756,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
+        [Then(@"User sees folloing options in Buckets dropdown on Import Projects page:")]
+        public void ThenUserSeesFollowingOptionsInBucketsDropdownOnImportProjectPage(Table options)
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            List<string> actualBucketsOptions = page.GetBucketsDropdownOptions();
+
+            for (int i = 0; i < options.RowCount; i++)
+            {
+                Assert.That(actualBucketsOptions[i], Is.EqualTo(options.Rows[i].Values.FirstOrDefault()), "Options do not match!");
+            }
+        }
+
         [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
         public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
         {
