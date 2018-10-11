@@ -76,6 +76,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             action.RequestTypeDropdown.Click();
+            _driver.WaitForDataLoading();
             action.GetOptionOnActionsPanelByName(typeName).Click();
         }
 

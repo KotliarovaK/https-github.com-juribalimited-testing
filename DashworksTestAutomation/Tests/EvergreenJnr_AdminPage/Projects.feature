@@ -127,10 +127,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	Then "" content is displayed in "Bucket" column
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
-	| Items                       |
-	| 20040610sqlserverck (1.0.0) |
-	| 7zip (Unknown)              |
-	| ACDSee 4.0 (4.0.0)          |
+	| Items               |
+	| 20040610sqlserverck |
+	| 7zip                |
+	| ACDSee 4.0          |
 	Then "" content is displayed in "Bucket" column
 	And There are no errors in the browser console
 
@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Device scoped" checkbox from String Filter on the Admin page
-	Then Counter shows "1" found rows
+	Then Counter shows "6" found rows
 	When User clicks Reset Filters button on the Admin page 
 	When User enters "DDPP" text in the Search field for "Short Name" column
 	Then Counter shows "1" found rows
@@ -252,7 +252,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	And content is present in the following newly added columns:
 	| ColumnName |
 	| Project ID |
-	When User enters "01" text in the Search field for "Project ID" column
+	When User enters "0" text in the Search field for "Project ID" column
 	Then Counter shows "0" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12485 @DAS12645 @DAS11877 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
@@ -455,10 +455,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in descending order on the Admin page
-	#When User selects following date filter on the Projects page
-	#| FilterData |
-	#| 7302017    |
-	#Then Counter shows "0" found rows
+	When User selects following date filter on the Projects page
+	| FilterData |
+	| 7302017    |
+	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
@@ -477,13 +477,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the History table
-	| Items                                    |
-	| 0IJB93JZPG72PX                           |
-	| 04I01QSFL1AWKM                           |
-	| ABQ575757                                |
-	| ADG685492                                |
-	| ACDSee 4.0.1 Std Trial Version (Unknown) |
-	| ACDSee 8 (8.0.39)                        |
+	| Items                          |
+	| 0IJB93JZPG72PX                 |
+	| 04I01QSFL1AWKM                 |
+	| ABQ575757                      |
+	| ADG685492                      |
+	| ACDSee 4.0.1 Std Trial Version |
+	| ACDSee 8                       |
 	Then Counter shows "6" found rows
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
@@ -507,10 +507,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Status" column in ascending order on the Admin page
 	When User click on "Status" column header on the Admin page
 	Then data in table is sorted by "Status" column in descending order on the Admin page
-	#When User selects following date filter on the Projects page
-	#| FilterData |
-	#| 7302017    |
-	#Then Counter shows "0" found rows
+	When User selects following date filter on the Projects page
+	| FilterData |
+	| 7302017    |
+	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
@@ -2155,8 +2155,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	When User refreshes agGrid
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
-	| Items                                                                  |
-	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook (Unknown) |
+	| Items                                                        |
+	| ALS - Designing a Microsoft Windows 2000 Dir. Services eBook |
 	When User refreshes agGrid
 	When User enters "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook" text in the Search field for "Item" column
 	And User clicks content from "Item" column
@@ -3369,12 +3369,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User selects "History" tab on the Project details page
 	Then additional onboarded Items are displayed in the History table
-	| Items                                                         |
-	| Advantage Data Architect (Unknown)                            |
-	| Hilfe zu Blockdiagrammen (Unknown)                            |
-	| Intel(R) Processor Graphics (20.19.15.4568)                   |
-	| Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4) |
-	| NJStar Chinese Word Processor (Unknown)                       |
+	| Items                                           |
+	| Advantage Data Architect                        |
+	| Hilfe zu Blockdiagrammen                        |
+	| Intel(R) Processor Graphics                     |
+	| Microsoft Exchange Client Language Pack - Hindi |
+	| NJStar Chinese Word Processor                   |
 	#Then following Items are displayed at the top of the list
 	When User clicks String Filter button for "Object Type" column on the Admin page
 	When User selects "Device" checkbox from String Filter on the Admin page

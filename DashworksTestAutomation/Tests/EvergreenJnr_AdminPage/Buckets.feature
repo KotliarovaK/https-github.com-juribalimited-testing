@@ -15,9 +15,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesT
 	And User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User clicks "Mailboxes" tab
+	Then "No objects found for this bucket" message is displayed on the Admin Page
 	When User clicks the "ADD MAILBOX" Action button
 	Then No items text is displayed
-	And There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12170 @DAS13011 @Remove_Added_Objects_From_Buckets @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets
@@ -47,6 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToT
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
+	Then "No objects found for this bucket" message is displayed on the Admin Page
 	When User clicks the "ADD DEVICE" Action button
 	Then No items text is displayed
 	And There are no errors in the browser console
@@ -305,11 +307,11 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 	And data in table is sorted by "Username" column in ascending order by default on the Admin page
-	#Then Counter shows "41,339" found rows
+	Then Counter shows "41,339" found rows
 	#When User click on "Username" column header on the Admin page
 	#Then data in table is sorted by "Username" column in ascending order on the Admin page
 	#When User click on "Username" column header on the Admin page
-	##Then data in table is sorted by "Username" column in descending order on the Admin page
+	#Then data in table is sorted by "Username" column in descending order on the Admin page
 	When User click on "Domain" column header on the Admin page
 	Then data in table is sorted by "Domain" column in ascending order on the Admin page
 	When User click on "Domain" column header on the Admin page
@@ -429,7 +431,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	And User clicks "Buckets" link on the Admin page
 	And User selects all rows on the grid
 	And User clicks Reset Filters button on the Admin page
-	Then User sees "1" of "559" rows selected label
+	#Then User sees "1" of "559" rows selected label
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User selects all rows on the grid
