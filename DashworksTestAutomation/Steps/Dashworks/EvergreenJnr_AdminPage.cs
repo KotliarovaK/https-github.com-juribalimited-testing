@@ -20,6 +20,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
+using DetailsPage = DashworksTestAutomation.Pages.Evergreen.DetailsPage;
 using TeamsPage = DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.TeamsPage;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -1158,6 +1159,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor());//Blue color
             Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
             StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"""(.*)"" message is displayed on the Admin Page")]
+        public void ThenMessageIsDisplayedOnTheAdminPage(string message)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.NoFoundMessage);
+            Assert.AreEqual(message, page.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"User sees banner at the top of work area")]

@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 	When User changes Full Name to "TestAdm"
 	Then Error message is not displayed on Profile page
 
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API @Not_Run
 Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
 
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	When User changes language to "Français"
 	And User clicks Update button on Preferences page
 	Then page elements are translated into French
-	When User changes language to "English US"
+	When User changes language to "English UK"
 	And User clicks Update button on Preferences page
 	When User changes Display Mode to "High Contrast"
 	And User clicks Update button on Preferences page

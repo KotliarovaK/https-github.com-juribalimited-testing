@@ -138,7 +138,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS11770")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
-        [NUnit.Framework.CategoryAttribute("12846")]
+        [NUnit.Framework.CategoryAttribute("DAS12846")]
         [NUnit.Framework.CategoryAttribute("DAS13602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         [NUnit.Framework.CategoryAttribute("Teams")]
@@ -153,7 +153,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS11770",
                         "DAS12999",
                         "DAS13199",
-                        "12846",
+                        "DAS12846",
                         "DAS13602",
                         "Delete_Newly_Created_Team",
                         "Teams"});
