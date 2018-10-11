@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then "Create Bucket" page should be displayed to the user
 	When User enters "Bucket12948" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks "Projects" link on the Admin page
@@ -171,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks content from "Bucket" column
 	Then "[Unassigned]" bucket details is displayed to the user
 	When User clicks "Bucket Settings" tab
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "Bucket12948" Bucket in the Administration

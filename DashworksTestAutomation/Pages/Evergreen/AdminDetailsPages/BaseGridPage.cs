@@ -421,5 +421,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetLinkByText(string text)
+        {
+            var selector = By.XPath($"//span[contains(@class, 'inline-link')]//a[text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

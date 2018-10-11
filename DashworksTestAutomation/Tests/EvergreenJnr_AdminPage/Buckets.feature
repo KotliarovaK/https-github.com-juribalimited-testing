@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then "Create Bucket" page should be displayed to the user
 	When User enters "TestBucket5" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks newly created object link
@@ -188,7 +188,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then "FALSE" value is displayed for Default column
 	When User clicks content from "Bucket" column
 	And User clicks "Bucket Settings" tab
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
@@ -457,7 +457,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	And User clicks content from "Bucket" column
 	Then "TestBucket2" bucket details is displayed to the user
 	When User clicks "Bucket Settings" tab
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
@@ -469,7 +469,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then "FALSE" value is displayed for Default column
 	When User clicks content from "Bucket" column
 	And User clicks "Bucket Settings" tab
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 

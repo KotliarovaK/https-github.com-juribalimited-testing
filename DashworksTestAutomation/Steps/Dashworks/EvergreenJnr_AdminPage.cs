@@ -232,6 +232,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"""(.*)"" tab is selected on the Admin page")]
+        public void ThenTabIsSelectedOnTheAdminPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
+        }
+
+        [When(@"User selects ""(.*)"" tab on the Capacity Units page")]
+        public void WhenUserSelectsTabOnTheCapacityUnitsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
+        }
+
         [Then(@"Bucket dropdown is not displayed on the Project details page")]
         public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
         {
@@ -1068,11 +1082,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.SelectTeam(teamName);
         }
 
-        [When(@"User updates the Default Bucket checkbox state")]
-        public void WhenUserUpdatesTheDefaultBucketCheckboxState()
+        [When(@"User updates the ""(.*)"" checkbox state")]
+        public void WhenUserUpdatesTheCheckboxState(string checkbox)
         {
             var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.DefaultBucketCheckbox.Click();
+            createBucketElement.GetDefaultCheckboxByName(checkbox).Click();
         }
 
         #region Message
@@ -1141,15 +1155,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Delete button was clicked");
         }
 
-        [Then(@"Success message is displayed and contains ""(.*)"" text")]
-        public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
-            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor());//Green color
-            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
-        }
-
         [Then(@"Info message is displayed and contains ""(.*)"" text")]
         public void ThenInfoMessageIsDisplayedAndContainsText(string text)
         {
@@ -1166,6 +1171,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.Banner);
             Assert.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
+        }
+
+        [Then(@"Success message is displayed and contains ""(.*)"" text")]
+        public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor());//Green color
+            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
@@ -1215,6 +1229,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.NewProjectLink.Click();
+        }
+
+        [Then(@"Success message is displayed and contains ""(.*)"" link")]
+        public void ThenSuccessMessageIsDisplayedAndContainsLink(string text)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.GetLinkByText(text).Displayed(), $"Message with {text} link is not displayed");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed")]
@@ -1634,7 +1655,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
-        public void WhenUserChangesNameToInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
+        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
+        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.GetFieldByName(fieldName).Clear();

@@ -133,6 +133,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             tab.Click();
         }
 
+        public IWebElement GetsSelectedTabByName(string tabName)
+        {
+            var button = By.XPath($"//div[contains(@class, 'item-selected')]//span[text()='{tabName}']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            return Driver.FindElement(button);
+        }
+
+        public IWebElement GetTabByNameOnCapacityUnits(string tabName)
+        {
+            var button = By.XPath($"//div[contains(@class, 'menuItems')]//span[text()='{tabName}']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            return Driver.FindElement(button);
+        }
+
         public void NavigateToProjectTabInScopSectionByName(string tabName)
         {
             var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
