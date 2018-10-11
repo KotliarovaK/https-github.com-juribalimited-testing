@@ -20,6 +20,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
+using DetailsPage = DashworksTestAutomation.Pages.Evergreen.DetailsPage;
 using TeamsPage = DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.TeamsPage;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -769,6 +770,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
+        [Then(@"User sees folloing options in Buckets dropdown on Import Projects page:")]
+        public void ThenUserSeesFollowingOptionsInBucketsDropdownOnImportProjectPage(Table options)
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            List<string> actualBucketsOptions = page.GetBucketsDropdownOptions();
+
+            for (int i = 0; i < options.RowCount; i++)
+            {
+                Assert.That(actualBucketsOptions[i], Is.EqualTo(options.Rows[i].Values.FirstOrDefault()), "Options do not match!");
+            }
+        }
+
         [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
         public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
         {
@@ -1163,6 +1176,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor());//Blue color
             Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
             StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"""(.*)"" message is displayed on the Admin Page")]
+        public void ThenMessageIsDisplayedOnTheAdminPage(string message)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.NoFoundMessage);
+            Assert.AreEqual(message, page.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"User sees banner at the top of work area")]

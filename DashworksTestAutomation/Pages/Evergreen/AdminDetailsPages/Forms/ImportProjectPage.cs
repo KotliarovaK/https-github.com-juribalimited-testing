@@ -10,25 +10,31 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ImportProjectPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]/h2")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'action-container')]/h2")]
         public IWebElement ImportProjectFormTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//button[contains(@class,'mat-primary mat-raised-button')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-primary mat-raised-button')]")]
         public IWebElement ImportProjectButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'mat-raised-button')]/span[text()='CANCEL']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'mat-raised-button')]/span[text()='CANCEL']")]
         public IWebElement CancelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder=\"Project Name\"]")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder=\"Project Name\"]")]
         public IWebElement ProjectNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='form']//*/mat-select[@aria-label='Import']//*/span")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form']//*/mat-select[@aria-label='Import']//*/span")]
         public IWebElement DropdownImport { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'select-content')]//*/span")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'select-content')]//*/span")]
         public IList<IWebElement> ValuesDropdownImport { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='form']/div[contains(@class,'input')]/input")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form']//*/mat-select[@aria-label='Buckets']//*/span")]
+        public IWebElement DropdownBuckets { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'select-content')]//*/span")]
+        public IList<IWebElement> ValuesDropdownBuckets { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form']/div[contains(@class,'input')]/input")]
         public IWebElement ButtonChooseFile { get; set; }
 
 
@@ -39,6 +45,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 SelectorFor(this, p => p.ImportProjectFormTitle)
             };
+        }
+
+        public List<string> GetBucketsDropdownOptions()
+        {
+            DropdownBuckets.Click();
+
+            return ValuesDropdownBuckets.Select(x => x.Text).ToList();
         }
 
         public void SelectImportOption(string optionName)

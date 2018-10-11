@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']//span[@class='ng-star-inserted']")]
         public IList<IWebElement> TableRowDetails { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class='field-category collapsed']")]
+        [FindsBy(How = How.XPath, Using = "//mat-tab-body//div[contains(@class, 'collapsed')]")]
         public IWebElement OpenedSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']")]
