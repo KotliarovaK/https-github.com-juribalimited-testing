@@ -3013,6 +3013,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User selects all rows on the grid
 	And User removes selected item
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects
+Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage
+	When User clicks Admin on the left-hand menu
+	And User clicks the "IMPORT PROJECT" Action button
+	And User selects "Import to new project" in the Import dropdown on the Import Project Page
+	Then User sees folloing options in Buckets dropdown on Import Projects page:
+	| OptionLabel                                |
+	| Use project buckets                        |
+	| Clone evergreen buckets to project buckets |
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope
 	When User clicks "Devices" on the left-hand menu
