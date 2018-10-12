@@ -697,20 +697,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectRadioButtonByName(radioButtonName).Click();
         }
 
+        [Then(@"""(.*)"" checkbox is checked and cannot be unchecked")]
         [Then(@"""(.*)"" associated checkbox is checked and cannot be unchecked")]
         public void ThenAssociatedCheckboxIsCheckedAndCannotBeUnchecked(string radioButtonName)
         {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-            var t = checkbox.GetAssociatedCheckboxByName(radioButtonName);
-            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
-            Assert.AreEqual(true, Convert.ToBoolean(t.GetAttribute("disabled")), "Checkbox state is incorrect");
+            var page = _driver.NowAt<ProjectsPage>();
+            var checkbox = page.GetAssociatedCheckboxByName(radioButtonName);
+            Assert.AreEqual(true, page.GetAssociatedCheckboxByName(radioButtonName).Selected, "Checkbox state is incorrect");
+            Assert.AreEqual(true, Convert.ToBoolean(checkbox.GetAttribute("disabled")), "Checkbox state is incorrect");
         }
 
         [Then(@"""(.*)"" associated checkbox is checked")]
         public void ThenAssociatedCheckboxIsChecked(string radioButtonName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
+            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Checkbox state is incorrect");
         }
 
         [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
@@ -770,7 +771,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
-        [Then(@"User sees folloing options in Buckets dropdown on Import Projects page:")]
+        [Then(@"User sees following options in Buckets dropdown on Import Projects page:")]
         public void ThenUserSeesFollowingOptionsInBucketsDropdownOnImportProjectPage(Table options)
         {
             var page = _driver.NowAt<ImportProjectPage>();
@@ -1273,6 +1274,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
+        }
+
+        [When(@"User close message on the Admin page")]
+        public void WhenUserCloseMessageOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.CloseMessageButton.Click();
         }
 
         #endregion
