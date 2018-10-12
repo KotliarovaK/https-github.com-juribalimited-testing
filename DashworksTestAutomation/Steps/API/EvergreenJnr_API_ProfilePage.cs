@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Steps.API
         }
 
         [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
-        public void ThenDefaultListPageSizeIsAndCache(int pageSize, int pageCache)
+        public void ThenDefaultListPageSizeIsAndCache(string pageSize, string pageCache)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}security/userprofile";
             var request = new RestRequest(requestUri);
@@ -46,17 +46,19 @@ namespace DashworksTestAutomation.Steps.API
             var content = response.Content;
 
             var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
-            var listPageSize = Convert.ToInt32(pageOptions["gridPageSize"]);
-            var listPageToCache = Convert.ToInt32(pageOptions["gridPageCache"]);
-            Assert.AreEqual(pageSize, listPageSize, "Incorrect Page Size on Account page");
-            Assert.AreEqual(pageCache, listPageToCache, "Incorrect Cache Size on Account page");
+            var gridPageSize = pageOptions["gridPageSize"].ToString();
+            var gridPageCache = pageOptions["gridPageCache"].ToString();
+            if (gridPageSize.Equals(string.Empty) ||
+                gridPageCache.Equals(string.Empty)) return;
+            Assert.AreEqual(pageSize, gridPageSize, "Incorrect Page Size on Account page");
+            Assert.AreEqual(pageCache, gridPageCache, "Incorrect Cache Size on Account page");
         }
 
         [Then(@"page Size is ""(.*)"" on ""(.*)"" page")]
         public void ThenPageSizeIsOnPage(int pageSize, string pageName)
         {
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
-            Assert.True(lastNetworkRequest["name"].ToString().Contains("?$top=2500"), "page Size is not 2500");
+            Assert.True(lastNetworkRequest["name"].ToString().Contains($"?$top={pageSize}"), $"Page Size is not {pageSize}");
         }
     }
 }

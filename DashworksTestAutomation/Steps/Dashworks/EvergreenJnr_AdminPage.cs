@@ -1734,6 +1734,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
+        [When(@"User enters in the ""(.*)"" dete in the ""(.*)"" field")]
+        public void WhenUserEntersInTheDeteInTheField(string date, string fieldName)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.AddDateByFieldName(fieldName, date);
+        }
+
         [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]
         public void ThenTextInSearchFieldIsDisplayedCorrectlyForColumn(string searchText, string columnName)
         {
