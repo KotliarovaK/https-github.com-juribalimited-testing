@@ -3020,11 +3020,31 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	And User clicks the "IMPORT PROJECT" Action button
-	And User selects "Import to new project" in the Import dropdown on the Import Project Page
-	Then User sees folloing options in Buckets dropdown on Import Projects page:
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	Then User sees folloing options in "Buckets" dropdown on Import Projects page:
 	| OptionLabel                                |
 	| Use project buckets                        |
 	| Clone evergreen buckets to project buckets |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects
+Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage
+	When User clicks Admin on the left-hand menu
+	And User clicks the "IMPORT PROJECT" Action button
+	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
+	Then User sees folloing options in "Select Existing Project" dropdown on Import Projects page:
+	| OptionLabel                                       |
+	| Babel (English, German and French)                |
+	| Barry's User Project                              |
+	| Computer Scheduled Test (Jo)                      |
+	| Email Migration                                   |
+	| Evergreen Project KK - all devices \ clone        |
+	| Havoc (Big Data)                                  |
+	| I-Computer Scheduled Project                      |
+	| Migration Project Phase 2 (User Project)          |
+	| Project K-Computer Scheduled Project              |
+	| User Scheduled Project in Italian & Japanese (Jo) |
+	| User Scheduled Test (Jo)                          |
+	| Windws 7 Migration (Computer Scheduled Project)   |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope

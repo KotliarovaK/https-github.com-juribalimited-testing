@@ -770,11 +770,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
-        [Then(@"User sees folloing options in Buckets dropdown on Import Projects page:")]
-        public void ThenUserSeesFollowingOptionsInBucketsDropdownOnImportProjectPage(Table options)
+        [Then(@"User sees folloing options in ""(.*)"" dropdown on Import Projects page:")]
+        public void ThenUserSeesFollowingOptionsInDropdownOnImportProjectPage(string dropdownName, Table options)
         {
             var page = _driver.NowAt<ImportProjectPage>();
-            List<string> actualBucketsOptions = page.GetBucketsDropdownOptions();
+            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
 
             for (int i = 0; i < options.RowCount; i++)
             {
@@ -782,11 +782,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
-        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
+        [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown on the Import Project Page")]
+        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName, string dropdownName)
         {
             var importProjectPage = _driver.NowAt<ImportProjectPage>();
-            importProjectPage.SelectImportOption(optionName);
+            importProjectPage.SelectDropdownOption(dropdownName, optionName);
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]
