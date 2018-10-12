@@ -242,6 +242,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).SendKeys(text);
         }
 
+        public void AddDateByFieldName(string fieldName, string date)
+        {
+            By byControl =
+                By.XPath(
+                    $"//input[@aria-label='Date'][@placeholder='{fieldName}']");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+            Driver.FindElement(byControl).Clear();
+            Driver.FindElement(byControl).SendKeys(date);
+        }
+
         public void GetObgectField(string text)
         {
             By byControl =

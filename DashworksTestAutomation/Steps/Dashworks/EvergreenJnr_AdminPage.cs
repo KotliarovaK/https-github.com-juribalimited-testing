@@ -772,10 +772,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees following options in Buckets dropdown on Import Projects page:")]
-        public void ThenUserSeesFollowingOptionsInBucketsDropdownOnImportProjectPage(Table options)
+        public void ThenUserSeesFollowingOptionsInDropdownOnImportProjectPage(string dropdownName, Table options)
         {
             var page = _driver.NowAt<ImportProjectPage>();
-            List<string> actualBucketsOptions = page.GetBucketsDropdownOptions();
+            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
 
             for (int i = 0; i < options.RowCount; i++)
             {
@@ -783,11 +783,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
-        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
+        [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown on the Import Project Page")]
+        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName, string dropdownName)
         {
             var importProjectPage = _driver.NowAt<ImportProjectPage>();
-            importProjectPage.SelectImportOption(optionName);
+            importProjectPage.SelectDropdownOption(dropdownName, optionName);
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]
@@ -1740,6 +1740,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Store bucket name for further usage
             if (columnName.Equals("Bucket"))
                 _lastUsedBucket.Value = text;
+        }
+
+        [When(@"User enters in the ""(.*)"" dete in the ""(.*)"" field")]
+        public void WhenUserEntersInTheDeteInTheField(string date, string fieldName)
+        {
+            var searchElement = _driver.NowAt<BaseGridPage>();
+            searchElement.AddDateByFieldName(fieldName, date);
         }
 
         [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]

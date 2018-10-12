@@ -145,7 +145,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 listPageElement.TableSearchButton.Click();
                 Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
             }
-
         }
 
         [When(@"User click content from ""(.*)"" column")]
