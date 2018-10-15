@@ -28,6 +28,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='form']/div[contains(@class,'input')]/input")]
         public IWebElement ButtonChooseFile { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div//mat-select[@aria-label='Select Existing Project']")]
+        public IWebElement SelectExistingProjectDropdown { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -49,6 +51,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             GetDropdownByName(dropdownName).Click();
             DropdownOptions.Where(x => x.Text.Equals(optionName)).First().Click();
+        }
+
+        public IWebElement SelectExistingProjectDisplayed(string projectName)
+        {
+            var selector = By.XPath($"//span[contains(text(), '{projectName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         private IWebElement GetDropdownByName(string name)

@@ -790,6 +790,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             importProjectPage.SelectDropdownOption(dropdownName, optionName);
         }
 
+        [Then(@"User sees folloing options in Select Existing Project dropdown on Import Projects page:")]
+        public void ThenUserSeesFolloingOptionsInSelectExistingProjectDropdownOnImportProjectsPage(Table table)
+        {
+            var importProjectPage = _driver.NowAt<ImportProjectPage>();
+            importProjectPage.SelectExistingProjectDropdown.Click();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(importProjectPage.SelectExistingProjectDisplayed(row["OptionLabel"]).Displayed, $"{row["OptionLabel"]} is not displayed in Queue table");
+            }
+        }
+
         [Then(@"Delete ""(.*)"" Team in the Administration")]
         public void ThenDeleteTeamInTheAdministration(string teamName)
         {

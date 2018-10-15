@@ -111,7 +111,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateToPanel']/input")]
         public IWebElement DateToValue { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='ag-menu']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'ag-menu')]")]
         public IWebElement ColumnSettingsPanel { get; set; }
 
         public const string SiteColumnSelector = ".//div[@col-id='packageSite']";
