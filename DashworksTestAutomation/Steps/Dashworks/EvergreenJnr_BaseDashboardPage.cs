@@ -96,7 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             foreach (var row in table.Rows)
             {
-                Actions shiftClick = new Actions(_driver);
+                var shiftClick = new Actions(_driver);
                 shiftClick.KeyDown(OpenQA.Selenium.Keys.Shift).Click(page.GetColumnHeaderByName(row["ColumnName"]))
                     .KeyUp(OpenQA.Selenium.Keys.Shift).Perform();
             }
@@ -107,7 +107,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
@@ -118,7 +118,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList);
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
@@ -149,7 +149,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
@@ -159,7 +159,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            List<string> expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
@@ -168,7 +168,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorDataIsSortedByColumnInAscendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
-            List<string> expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList));
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
@@ -177,7 +177,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorDataIsSortedByColumnInDescendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
-            List<string> expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
@@ -215,7 +215,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> originalList = listPageMenu.GetColumnContent(columnName).ToList();
+            var originalList = listPageMenu.GetColumnContent(columnName).ToList();
             SortingHelper.IsListSorted(originalList);
         }
 
@@ -314,7 +314,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
 
-            List<string> columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
+            var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
         }
@@ -376,11 +376,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAllDataIsUniqueInTheColumn(string columnName)
         {
             var grid = _driver.NowAt<BaseDashboardPage>();
-            List<string> columnData = grid.GetColumnDataByScrolling(columnName);
+            var columnData = grid.GetColumnDataByScrolling(columnName);
 
             //Get all elements that has more than one occurence in the list
             var duplicates = columnData.GroupBy(x => x)
-                .Select(g => new { Value = g.Key, Count = g.Count() })
+                .Select(g => new {Value = g.Key, Count = g.Count()})
                 .Where(x => x.Count > 1).ToList();
             if (duplicates.Any())
                 throw new Exception($"Some duplicates are spotted in the '{columnName}' column");

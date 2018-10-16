@@ -2,12 +2,12 @@
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Steps.Projects
+namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
 {
     [Binding]
     internal class Projects_Removing : SpecFlowContext
@@ -20,7 +20,10 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly RemoteWebDriver _driver;
         private readonly ProjectDto _projectDto;
 
-        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto, PrjLastDeletedGroupName deletedGroupName, PrjLastDeletedTeamName deletedTeamName, PrjLastDeletedTaskName deletedTaskName, PrjLastDeletedStageName deletedStageName, PrjLastDeletedRequestTypeName deletedRequestTypeName)
+        public Projects_Removing(RemoteWebDriver driver, ProjectDto projectDto,
+            PrjLastDeletedGroupName deletedGroupName, PrjLastDeletedTeamName deletedTeamName,
+            PrjLastDeletedTaskName deletedTaskName, PrjLastDeletedStageName deletedStageName,
+            PrjLastDeletedRequestTypeName deletedRequestTypeName)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -124,7 +127,8 @@ namespace DashworksTestAutomation.Steps.Projects
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             _driver.WaitForDataLoading();
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTeamName.Value), "Selected Team is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTeamName.Value),
+                "Selected Team is displayed in the table");
         }
 
         [Then(@"selected Group was removed")]
@@ -132,15 +136,17 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedGroupName.Value), "Selected Group is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedGroupName.Value),
+                "Selected Group is displayed in the table");
         }
 
         [Then(@"selected Task was removed")]
         public void ThenSelectedTaskWasRemoved()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTaskName.Value), "Selected Task is displayed in the table");
+
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedTaskName.Value),
+                "Selected Task is displayed in the table");
         }
 
         [Then(@"selected Stage was removed")]
@@ -148,7 +154,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedStageName.Value), "Selected Stage is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedStageName.Value),
+                "Selected Stage is displayed in the table");
         }
 
         [Then(@"selected Category was removed")]
@@ -156,7 +163,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.Categories.Last().Name), "Selected Category is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.Categories.Last().Name),
+                "Selected Category is displayed in the table");
         }
 
         [Then(@"selected Request Type was removed")]
@@ -164,7 +172,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedRequestTypeName.Value), "Selected Request Type is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedRequestTypeName.Value),
+                "Selected Request Type is displayed in the table");
         }
 
         [Then(@"selected Mail Template was removed")]
@@ -172,7 +181,8 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.MailTemplateProperties.Name), "Selected Mail Template is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_projectDto.MailTemplateProperties.Name),
+                "Selected Mail Template is displayed in the table");
         }
 
         #endregion

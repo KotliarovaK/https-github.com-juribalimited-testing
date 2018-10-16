@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    class EvergreenJnr_AdminPage_AfterScenario : TechTalk.SpecFlow.Steps
+    internal class EvergreenJnr_AdminPage_AfterScenario : TechTalk.SpecFlow.Steps
     {
         private readonly RemoteWebDriver _driver;
         private readonly AddedObjects _addedObjects;
@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 When("User clicks Admin on the left-hand menu");
                 When($"User clicks \"{"Buckets"}\" link on the Admin page");
                 When("User clicks Reset Filters button on the Admin page");
-                foreach (string bucketName in allBuckets)
+                foreach (var bucketName in allBuckets)
                 {
                     When($"User enters \"{bucketName}\" text in the Search field for \"{"Bucket"}\" column");
                     When($"User clicks content from \"{"Bucket"}\" column");
@@ -42,10 +42,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     MoveObject("Users", bucketName, "Username");
 
                     MoveObject("Mailboxes", bucketName, "Email Address (Primary)");
-
                 }
             }
-            catch { }
+            catch
+            {
+            }
         }
 
         private void MoveObject(string sectionName, string bucketName, string columnName)
@@ -55,7 +56,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var gridPage = _driver.NowAt<BaseGridPage>();
             var selectedObjects = 0;
             //Select all objects that should be moved
-            foreach (string objectName in _addedObjects.Value.Where(x => x.Value.Equals(bucketName)).Select(x => x.Key))
+            foreach (var objectName in _addedObjects.Value.Where(x => x.Value.Equals(bucketName)).Select(x => x.Key))
             {
                 if (gridPage.NoObjectsMessage.Displayed())
                     break;

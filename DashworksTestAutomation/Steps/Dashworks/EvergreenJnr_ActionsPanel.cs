@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
@@ -7,7 +6,6 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -84,7 +82,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(action.RequestTypeDropdown.Displayed(), "Bulk Update Type dropdown is not displayed on Action panel");
+            Assert.IsTrue(action.RequestTypeDropdown.Displayed(),
+                "Bulk Update Type dropdown is not displayed on Action panel");
         }
 
         [When(@"User selects ""(.*)"" Project on Action panel")]
@@ -102,7 +101,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
         }
 
@@ -168,7 +167,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.StageField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Stages are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -189,7 +188,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TaskField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -306,7 +305,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TeamField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -413,7 +412,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
-            Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(), "Close button in Success message is not displayed");
+            Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
+                "Close button in Success message is not displayed");
         }
 
         [Then(@"Success message is hidden after five seconds")]
@@ -530,7 +530,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypesStaticListName(string listName)
         {
             var listElement = _driver.NowAt<ActionsElement>();
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
         }
 
         [When(@"User clicks Cancel button on the Actions panel")]
@@ -545,7 +545,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.CreateButton.Click();
 
@@ -560,7 +560,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
         }
 
         [When(@"User select ""(.*)"" option in Actions panel")]

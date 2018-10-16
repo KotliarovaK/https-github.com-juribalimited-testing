@@ -18,12 +18,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ColumnsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
-        public IWebElement SearchTextbox { get; set; }
+        public IWebElement SearchTextBox { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
                 "//button[@class='btn btn-default input-toggle mat-icon-button _mat-animation-noopable ng-star-inserted']")]
-        public IWebElement SearchTextboxResetButton { get; set; }
+        public IWebElement SearchTextBoxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-clear mat-18']")]
@@ -51,14 +51,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return new List<By>
             {
                 SelectorFor(this, p => p.ColumnsPanel),
-                //SelectorFor(this, p => p.SearchTextbox)
+                //SelectorFor(this, p => p.SearchTextBox)
             };
         }
 
         public void AddColumn(string columnName)
         {
-            SearchTextbox.SendKeys(columnName);
-            var selector = string.Empty;
+            SearchTextBox.SendKeys(columnName);
+            string selector;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void AddColumnFromExpandedSection(string columnName)
         {
-            var selector = string.Empty;
+            string selector;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -90,10 +90,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 selector = $".//div[@class='columns-panel']//span[text()='{columnName}']";
             }
 
-            if (!Driver.IsElementDisplayed(By.XPath(selector)))
-            {
-                Driver.MouseHover(ColumnSubcategories.First());
-            }
+            if (!Driver.IsElementDisplayed(By.XPath(selector))) Driver.MouseHover(ColumnSubcategories.First());
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
@@ -111,7 +108,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var filterCategory = FilterCategory(categoryName);
             filterCategory.FindElement(By.XPath(GroupTitleSelector)).Click();
 
-            //Small wait for subcategoris display
+            //Small wait for subcategories display
             Thread.Sleep(350);
             var subCategories =
                 filterCategory.FindElements(By.XPath(".//div[@class='sub-categories ng-star-inserted']/div"));

@@ -110,7 +110,6 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
         public List<string> GetAllItemsKeys(string pageName)
         {
             var returnValue = "";
-            var returnList = new List<string>();
             switch (pageName)
             {
                 case "Devices":
@@ -144,9 +143,8 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
-            foreach (var item in allItems) returnList.Add(item[returnValue].ToString());
 
-            return returnList;
+            return allItems.Select(item => item[returnValue].ToString()).ToList();
         }
 
         public static string GetDefaultColumnsUrlByPageName(string pageName)

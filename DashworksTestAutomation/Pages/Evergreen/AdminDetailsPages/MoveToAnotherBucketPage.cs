@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -35,11 +31,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             BucketSelectbox.Click();
             Driver.WaitForDataLoading();
-            string bucketSelector = $".//mat-option/span[contains(text(), '{bucketName}')]";
+            var bucketSelector = $".//mat-option/span[contains(text(), '{bucketName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(bucketSelector));
             Driver.FindElement(By.XPath(bucketSelector)).Click();
             MoveButton.Click();
         }
-
     }
 }

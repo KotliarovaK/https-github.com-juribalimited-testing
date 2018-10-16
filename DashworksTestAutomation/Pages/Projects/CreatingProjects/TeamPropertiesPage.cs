@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
     internal class TeamPropertiesPage : SeleniumBasePage
     {
@@ -11,7 +11,7 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement TeamName { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//textarea[@title='Short Description']")]
-        public IWebElement ShortDescription	 { get; set; }
+        public IWebElement ShortDescription { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Create Team']")]
         public IWebElement ConfirmCreateTeamButton { get; set; }

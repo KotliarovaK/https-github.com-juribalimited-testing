@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
+namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
     internal class ImportProjectPage : SeleniumBasePage
     {
@@ -50,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void SelectDropdownOption(string dropdownName, string optionName)
         {
             GetDropdownByName(dropdownName).Click();
-            DropdownOptions.Where(x => x.Text.Equals(optionName)).First().Click();
+            DropdownOptions.First(x => x.Text.Equals(optionName)).Click();
         }
 
         public IWebElement SelectExistingProjectDisplayed(string projectName)
@@ -62,9 +61,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         private IWebElement GetDropdownByName(string name)
         {
-            return Driver.FindElement(By.XPath(String.Format(
-                ".//div[@class='form']//*/mat-select[@aria-label='{0}']//*/span", name)));
+            return Driver.FindElement(By.XPath($".//div[@class='form']//*/mat-select[@aria-label='{name}']//*/span"));
         }
-
     }
 }

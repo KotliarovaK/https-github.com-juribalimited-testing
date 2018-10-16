@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
-using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
     internal class DetailsPage : SeleniumBasePage
     {
@@ -40,7 +39,8 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'DefaultAppsForwardPathTypeID')]")]
         public IWebElement ApplicationRationalisation { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Show Original Application Column On Application Dashboards']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//input[@aria-label='Show Original Application Column On Application Dashboards']")]
         public IWebElement OriginalApplicationColumnCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Include Site Name in Application Name']")]
@@ -112,7 +112,7 @@ namespace DashworksTestAutomation.Pages.Projects
         public KeyValuePair<int, string> SelectOnboardedApplications(int index)
         {
             var option = GetRandomOnboardedApplicationOption(index);
-            string selector = string.Format(OnboardedApplicationsColorsSelector, option.Value);
+            var selector = string.Format(OnboardedApplicationsColorsSelector, option.Value);
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
             return option;

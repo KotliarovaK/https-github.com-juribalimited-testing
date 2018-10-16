@@ -46,7 +46,7 @@ namespace DashworksTestAutomation.Steps
         {
             var header = _driver.NowAt<DashworksHeaderMenuElement>();
 
-            Assert.IsTrue(header.LoginLink.Displayed(), "Login link was not displated");
+            Assert.IsTrue(header.LoginLink.Displayed(), "Login link was not displayed");
 
             Logger.Write("User is successfully logged out");
         }

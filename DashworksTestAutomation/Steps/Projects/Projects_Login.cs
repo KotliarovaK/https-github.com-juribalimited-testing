@@ -1,12 +1,14 @@
-﻿using DashworksTestAutomation.Base;
-using DashworksTestAutomation.Extensions;
+﻿using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.ManagementConsole;
+using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Steps.Projects
 {
     [Binding]
     internal class ProjectsLogin : SpecFlowContext
@@ -75,7 +77,7 @@ namespace DashworksTestAutomation.Pages.Projects
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            _driver.WaitForTextToAppear(page.PageHeder, pageName);
+            _driver.WaitForTextToAppear(page.PageHeader, pageName);
             Logger.Write("Projects Home page is displayed");
         }
     }

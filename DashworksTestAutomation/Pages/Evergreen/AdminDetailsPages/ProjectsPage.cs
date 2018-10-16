@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using DashworksTestAutomation.Base;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
@@ -93,7 +88,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='form-container']/div/button/span[text()='ADD PERMISSION']")]
         public IWebElement AddPermissionsButtonInTab { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
+        [FindsBy(How = How.XPath,
+            Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
         public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Request Type']")]
@@ -129,7 +125,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void NavigateToProjectTabByName(string tabName)
         {
-            var tab = Driver.FindElement(By.XPath($".//ul[contains(@class, 'subMenu-items')]//span[text()='{tabName}']"));
+            var tab = Driver.FindElement(
+                By.XPath($".//ul[contains(@class, 'subMenu-items')]//span[text()='{tabName}']"));
             tab.Click();
         }
 
@@ -147,9 +144,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(button);
         }
 
-        public void NavigateToProjectTabInScopSectionByName(string tabName)
+        public void NavigateToProjectTabInScopeSectionByName(string tabName)
         {
-            var tab = Driver.FindElement(By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
+            var tab = Driver.FindElement(
+                By.XPath($".//div[@class='detail-label ng-star-inserted']//span[text()='{tabName}']"));
             tab.Click();
         }
 
@@ -210,7 +208,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool CheckboxesDisplay(string checkboxes)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
+            return Driver.IsElementDisplayed(By.XPath(
+                $"//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
         }
 
         public bool ActiveProjectByName(string projectName)
@@ -230,23 +229,23 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectObjectForProjectCreation(string objectName)
         {
-            string listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public void GetCheckboxStringFilterByName(string filterName)
         {
-            string filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
+            var filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
         public void SelectProjectLanguage(string language)
         {
-            string ListNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
-            Driver.FindElement(By.XPath(ListNameSelector)).Click();
+            var listNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public IWebElement SelectRequestTypeByName(string requestTypeName)
@@ -275,10 +274,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool GetDisabledAssociationName(string associationName)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
+            return Driver.IsElementDisplayed(
+                By.XPath($"//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
         }
 
-        public bool GetCheckboxByName (string checkboxName)
+        public bool GetCheckboxByName(string checkboxName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//span[text()='{checkboxName}']"));
         }
