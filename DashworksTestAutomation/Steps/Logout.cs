@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Steps
 
             var logoutPage = _driver.NowAt<LogoutPage>();
 
-            //Messge is different depending on the language
+            //Message is different depending on the language
             try
             {
                 Assert.AreEqual("You have been successfully logged out", logoutPage.SignedOutMessage.Text);

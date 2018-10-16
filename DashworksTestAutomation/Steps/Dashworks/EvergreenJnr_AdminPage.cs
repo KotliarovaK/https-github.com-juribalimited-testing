@@ -241,6 +241,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
         }
 
+        [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
+        public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
+        {
+            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
+            projectElement.UnlimitedField.Click();
+        }
+
+        [Then(@"Unlimited text disappears from column")]
+        public void ThenUnlimitedTextDisappearsFromColumn()
+        {
+            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
+            Assert.IsTrue(projectElement.EmptyUnlimitedField.Displayed());
+        }
+
         [Then(@"Bucket dropdown is not displayed on the Project details page")]
         public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
         {
@@ -1392,8 +1406,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualRowList = page.BucketRowList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedRowList, actualRowList, "Tasks value are different");
+            var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
+        }
+
+        [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
+        public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
+        {
+            if (tabName.Equals("Applications"))
+            {
+                var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+
+                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+            }
+            else
+            {
+                var page = _driver.NowAt<BaseGridPage>();
+
+                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+            }
         }
 
         [When(@"User searches and selects following rows in the grid:")]
@@ -1720,8 +1755,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
-        [When(@"User enters in the ""(.*)"" dete in the ""(.*)"" field")]
-        public void WhenUserEntersInTheDateInTheField(string date, string fieldName)
+        [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
+        public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.AddDateByFieldName(fieldName, date);

@@ -540,10 +540,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Incorrect number of rows in agGrid.");
         }
 
+        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
         [Then(@"""(.*)"" rows found label displays on Details Page")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
+            var detailsPage = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 detailsPage.FoundRowsLabel.Text,
