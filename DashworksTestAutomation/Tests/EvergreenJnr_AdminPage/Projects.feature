@@ -2213,7 +2213,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "2" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2263,7 +2263,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| 003F5D8E1A844B1FAA5 |
 	And "UsersProject3Group" content is displayed in "Bucket" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList
 	When User create static list with "DevicesList12157" name on "Devices" page with following items
 	| ItemName       |
@@ -2313,7 +2313,7 @@ Examples:
 	| All Users     | DAS12157B | Users to add (0 of 1 selected)     | UsersList12157     | Device Scope | DevicesList12157 | Devices       | Devices to add (0 of 0 selected) | Applications to add (0 of 0 selected) |
 	| All Mailboxes | DAS12157C | Mailboxes to add (0 of 1 selected) | MailboxesList12157 | User Scope   | UsersList12157   | Users         | Users to add (0 of 0 selected)   | Applications to add (0 of 0 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11981 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11981 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScopeOptionsChangeOnProjectDetailsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -2346,7 +2346,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatItemsToAddValuesAreNotCachedAfterScope
 	When User clicks "Users" tab in the Project Scope Changes section
 	Then "Users to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13428 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13428 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownOnce
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2381,7 +2381,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	When User selects "Scope Changes" tab on the Project details page
 	Then Success message is not displayed on the Projects page
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13390 @DAS12582 @DAS11978 @DAS12825 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13390 @DAS12582 @DAS11978 @DAS12825 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2591,7 +2591,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13390" User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12645 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12645 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectScopeChanges
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2656,14 +2656,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	| SelectedRowsName |
 	| 1Checkbox11758   |
 	Then Select All selectbox is unchecked on the Admin page
-	When User select "Project" rows in the grid
-	| SelectedRowsName |
-	| 1Checkbox11758   |
-	Then Select All selectbox is checked on the Admin page
-	When User enters "Checkbox11758" text in the Search field for "Project" column
+	When User selects all rows on the grid
+	When User deselect all rows on the grid
+	And User enters "Checkbox11758" text in the Search field for "Project" column
+	When User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @DAS12999 @DAS13429 @Delete_Newly_Created_List @Projects @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12578 @DAS12999 @DAS13429 @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatTheEditListFunctionIsHiddenAfterCancelingCreatingProjectFromTheMainLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -2690,7 +2689,7 @@ Examples:
 	| Users     | Username      | TestList6588    |
 	| Mailboxes | Email Address | TestList6587    |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @DAS12872 @Delete_Newly_Created_List @Project_Creation_and_Scope @Projects @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12154 @DAS12742 @DAS12872 @Delete_Newly_Created_List @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -2771,7 +2770,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Babel @Not_Run
+@Evergreen @AllLists @EvergreenJnr_AdminPage @AdminPage @DAS11886 @DAS12613 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists 
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -2885,7 +2884,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Projects @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Projects @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnProjectsGrid
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -2959,7 +2958,7 @@ Examples:
 	| TestProject3 | All Users     | StaticList8813 | Users     | 003F5D8E1A844B1FAA5    | Username      | DynamicList9518 |
 	| TestProject4 | All Mailboxes | StaticList8814 | Mailboxes | ZVI880605@bclabs.local | Email Address | DynamicList9519 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS12761 @DAS11770 @DAS12999 @DAS11892 @Project_Creation_and_Scope @Delete_Newly_Created_List @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS12761 @DAS11770 @DAS12999 @DAS11892 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2970,11 +2969,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	When User enters " " in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	Then Create Project button is disabled
-	When User enters "All Devices Project" in the "Project Name" field
+	When User enters "AllDevices Project" in the "Project Name" field
 	And User clicks Create button on the Create Project page
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters " all devices project" in the "Project Name" field
+	When User enters " alldevices project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Error message with "A project already exists with this name" text is displayed
@@ -3008,10 +3007,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
-	When User enters "DevicesProject1258" in the "Project Name" field
+	When User enters "AllDevices Project1258" in the "Project Name" field
 	And User selects "DynamicList5531" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	And User enters "Devices" text in the Search field for "Project" column
+	And User enters "AllDevices Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 

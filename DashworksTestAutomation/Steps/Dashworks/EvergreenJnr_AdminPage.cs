@@ -673,6 +673,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAllRowsOnTheGrid()
         {
             var checkbox = _driver.NowAt<BaseGridPage>();
+            checkbox.BodyContainer.Click();
             checkbox.SelectAllCheckBox.Click();
         }
 
