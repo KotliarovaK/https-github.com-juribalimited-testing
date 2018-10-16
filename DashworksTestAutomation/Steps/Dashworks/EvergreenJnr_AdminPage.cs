@@ -669,6 +669,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAllRowsOnTheGrid()
         {
             var checkbox = _driver.NowAt<BaseGridPage>();
+            checkbox.BodyContainer.Click();
             checkbox.SelectAllCheckBox.Click();
         }
 
@@ -693,20 +694,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectRadioButtonByName(radioButtonName).Click();
         }
 
+        [Then(@"""(.*)"" checkbox is checked and cannot be unchecked")]
         [Then(@"""(.*)"" associated checkbox is checked and cannot be unchecked")]
         public void ThenAssociatedCheckboxIsCheckedAndCannotBeUnchecked(string radioButtonName)
         {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-            var t = checkbox.GetAssociatedCheckboxByName(radioButtonName);
-            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
-            Assert.AreEqual(true, Convert.ToBoolean(t.GetAttribute("disabled")), "Checkbox state is incorrect");
+            var page = _driver.NowAt<ProjectsPage>();
+            var checkbox = page.GetAssociatedCheckboxByName(radioButtonName);
+            Assert.AreEqual(true, page.GetAssociatedCheckboxByName(radioButtonName).Selected, "Checkbox state is incorrect");
+            Assert.AreEqual(true, Convert.ToBoolean(checkbox.GetAttribute("disabled")), "Checkbox state is incorrect");
         }
 
         [Then(@"""(.*)"" associated checkbox is checked")]
         public void ThenAssociatedCheckboxIsChecked(string radioButtonName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
+            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Checkbox state is incorrect");
         }
 
         [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
@@ -766,11 +768,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
-        [Then(@"User sees folloing options in Buckets dropdown on Import Projects page:")]
-        public void ThenUserSeesFollowingOptionsInBucketsDropdownOnImportProjectPage(Table options)
+        [Then(@"User sees following options in Buckets dropdown on Import Projects page:")]
+        public void ThenUserSeesFollowingOptionsInDropdownOnImportProjectPage(string dropdownName, Table options)
         {
             var page = _driver.NowAt<ImportProjectPage>();
-            List<string> actualBucketsOptions = page.GetBucketsDropdownOptions();
+            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
 
             for (int i = 0; i < options.RowCount; i++)
             {
@@ -778,11 +780,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
-        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
+        [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown on the Import Project Page")]
+        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName, string dropdownName)
         {
             var importProjectPage = _driver.NowAt<ImportProjectPage>();
-            importProjectPage.SelectImportOption(optionName);
+            importProjectPage.SelectDropdownOption(dropdownName, optionName);
+        }
+
+        [Then(@"User sees folloing options in Select Existing Project dropdown on Import Projects page:")]
+        public void ThenUserSeesFolloingOptionsInSelectExistingProjectDropdownOnImportProjectsPage(Table table)
+        {
+            var importProjectPage = _driver.NowAt<ImportProjectPage>();
+            importProjectPage.SelectExistingProjectDropdown.Click();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(importProjectPage.SelectExistingProjectDisplayed(row["OptionLabel"]).Displayed, $"{row["OptionLabel"]} is not displayed in Queue table");
+            }
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]
@@ -1246,6 +1259,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
+        }
+
+        [When(@"User close message on the Admin page")]
+        public void WhenUserCloseMessageOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.CloseMessageButton.Click();
         }
 
         #endregion

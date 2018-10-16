@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'tools-item')]//button[@aria-label='close']")]
         public IWebElement CloseToolsPanelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'reload')]")]
         public IWebElement RefreshTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]

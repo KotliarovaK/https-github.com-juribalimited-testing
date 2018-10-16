@@ -171,6 +171,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'btn-close-wrap')]//button")]
+        public IWebElement CloseMessageButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'messageAction')]/span[contains(text(), 'DELETE')]")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 

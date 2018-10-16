@@ -22,21 +22,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder=\"Project Name\"]")]
         public IWebElement ProjectNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form']//*/mat-select[@aria-label='Import']//*/span")]
-        public IWebElement DropdownImport { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'select-content')]//*/span")]
-        public IList<IWebElement> ValuesDropdownImport { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form']//*/mat-select[@aria-label='Buckets']//*/span")]
-        public IWebElement DropdownBuckets { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'select-content')]//*/span")]
-        public IList<IWebElement> ValuesDropdownBuckets { get; set; }
+        public IList<IWebElement> DropdownOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='form']/div[contains(@class,'input')]/input")]
         public IWebElement ButtonChooseFile { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div//mat-select[@aria-label='Select Existing Project']")]
+        public IWebElement SelectExistingProjectDropdown { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -47,17 +40,30 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             };
         }
 
-        public List<string> GetBucketsDropdownOptions()
+        public List<string> GetDropdownOptions(string dropdownName)
         {
-            DropdownBuckets.Click();
+            GetDropdownByName(dropdownName).Click();
 
-            return ValuesDropdownBuckets.Select(x => x.Text).ToList();
+            return DropdownOptions.Select(x => x.Text).ToList();
         }
 
-        public void SelectImportOption(string optionName)
+        public void SelectDropdownOption(string dropdownName, string optionName)
         {
-            DropdownImport.Click();
-            ValuesDropdownImport.Where(x => x.Text.Equals(optionName)).First().Click();
+            GetDropdownByName(dropdownName).Click();
+            DropdownOptions.Where(x => x.Text.Equals(optionName)).First().Click();
+        }
+
+        public IWebElement SelectExistingProjectDisplayed(string projectName)
+        {
+            var selector = By.XPath($"//span[contains(text(), '{projectName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        private IWebElement GetDropdownByName(string name)
+        {
+            return Driver.FindElement(By.XPath(String.Format(
+                ".//div[@class='form']//*/mat-select[@aria-label='{0}']//*/span", name)));
         }
 
     }
