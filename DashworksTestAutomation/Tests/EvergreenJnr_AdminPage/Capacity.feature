@@ -44,8 +44,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
 	When User clicks the "ADD OVERRIDE DATE" Action button
-	When User enters in the "4 Oct 2018" dete in the "Override Start Date" field
-	When User enters in the "7 Oct 2018" dete in the "Override End Date" field
+	When User enters "4 Oct 2018" date in the "Override Start Date" field
+	When User enters "7 Oct 2018" date in the "Override End Date" field
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	Then "Unlimited" content is displayed in "Capacity" column

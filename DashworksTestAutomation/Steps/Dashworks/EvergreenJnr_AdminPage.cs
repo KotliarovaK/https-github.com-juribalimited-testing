@@ -1754,8 +1754,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
-        [When(@"User enters in the ""(.*)"" dete in the ""(.*)"" field")]
-        public void WhenUserEntersInTheDeteInTheField(string date, string fieldName)
+        [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
+        public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.AddDateByFieldName(fieldName, date);
