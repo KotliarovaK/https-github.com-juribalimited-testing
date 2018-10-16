@@ -400,7 +400,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedWhenOpenedDevice
 	And User navigates to the "Details" tab
 	And User opens "Device Owner" section on the Details Page
 	Then "No device owner information found for this device" message is displayed on the Details Page
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12071
 Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnTheDetailsPage
