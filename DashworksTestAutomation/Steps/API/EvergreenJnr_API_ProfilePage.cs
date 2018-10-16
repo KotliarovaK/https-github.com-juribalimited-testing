@@ -3,7 +3,6 @@ using System.Net;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
-using DashworksTestAutomation.Steps.Dashworks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
