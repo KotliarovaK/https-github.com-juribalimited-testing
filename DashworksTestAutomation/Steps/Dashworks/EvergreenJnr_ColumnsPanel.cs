@@ -65,7 +65,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 columnElement.SearchTextbox.ClearWithHomeButton(_driver);
             }
 
-            //Minimise the Selected Columns
+            //Minimize the Selected Columns
             //columnElement.MinimizeGroupButton.Click();
             //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
@@ -83,7 +83,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Clear the textbox after adding a column, so it is reset for the next loop
             columnElement.SearchTextbox.ClearWithHomeButton(_driver);
 
-            //Minimise the Selected Columns
+            //Minimize the Selected Columns
             //columnElement.MinimizeGroupButton.Click();
             //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
@@ -115,8 +115,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
             StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
-                urlPartToCheck.ToLower(),
-                $"{columnName} is not added to URL");
+                urlPartToCheck.ToLower(), $"{columnName} is not added to URL");
         }
 
         [When(@"User add following columns using URL to the ""(.*)"" page:")]
@@ -401,12 +400,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
         {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-            listpageMenu.RefreshTableButton.Click();
+            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            listPageMenu.RefreshTableButton.Click();
             _driver.WaitForDataLoading();
             Thread.Sleep(1000);
             foreach (var row in table.Rows)
-                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
+                Assert.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
         }
 
@@ -414,7 +413,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddAllColumnsFromSpecificCategory(Table table)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-
             foreach (var row in table.Rows) columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
         } 
 

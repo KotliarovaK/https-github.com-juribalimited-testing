@@ -9,11 +9,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class ActionsElement : SeleniumBasePage
     {
-        public const string ActionValuesSelector = ".//mat-option[contains(@id, 'mat-option')]";
+        private const string ActionValuesSelector = ".//mat-option[contains(@id, 'mat-option')]";
+        private const string RowsSelectedCountSelector = ".//div[@class='actions-container-row-select']";
+        private const string ListsDropdownSelector = ".//mat-select[@aria-label='Static Lists']";
 
-        private const string RowsSelectedCountSelctor = ".//div[@class='actions-container-row-select']";
-
-        public string listsDropdown = ".//mat-select[@aria-label='Static Lists']";
+        [FindsBy(How = How.XPath, Using = ListsDropdownSelector)]
+        public IWebElement ListsDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
@@ -58,8 +59,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var listNameSelector =
                 $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//mat-option//span[text()='{listName}']";
-            var dropdownBoxList = listsDropdown;
-            Driver.FindElement(By.XPath(dropdownBoxList)).Click();
+            Driver.FindElement(By.XPath(ListsDropdownSelector)).Click();
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
@@ -71,8 +71,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetSelectedRowsCount()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(RowsSelectedCountSelctor));
-            return Driver.FindElement(By.XPath(RowsSelectedCountSelctor)).Text.Split(' ').First();
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(RowsSelectedCountSelector));
+            return Driver.FindElement(By.XPath(RowsSelectedCountSelector)).Text.Split(' ').First();
         }
     }
 }

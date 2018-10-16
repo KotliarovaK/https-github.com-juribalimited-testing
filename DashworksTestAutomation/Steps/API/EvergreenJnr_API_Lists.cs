@@ -52,7 +52,8 @@ namespace DashworksTestAutomation.Steps.API
             var response = _client.Value.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                throw new Exception(
+                    $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
 
             var content = response.Content;
 
@@ -136,8 +137,6 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
 
-            response = _client.Value.Options(request);
-
             #endregion
 
             #region Add query to list
@@ -160,8 +159,6 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
 
-            response = _client.Value.Put(request);
-
             #endregion
 
             requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}/items";
@@ -175,7 +172,8 @@ namespace DashworksTestAutomation.Steps.API
             response = _client.Value.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                throw new Exception(
+                    $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
 
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
@@ -217,11 +215,11 @@ namespace DashworksTestAutomation.Steps.API
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
         }
 
-        private string GetDynamicQueryStringFromUrl(string url, string pageName)
+        private static string GetDynamicQueryStringFromUrl(string url, string pageName)
         {
-            var queryString = string.Empty;
-            var pattern = @"\?\$(.*)";
-            string originalPart = Regex.Match(url, pattern).Groups[1].Value;
+            string queryString;
+            const string pattern = @"\?\$(.*)";
+            var originalPart = Regex.Match(url, pattern).Groups[1].Value;
             if (originalPart.Contains("select="))
                 queryString = "$" + originalPart;
             else
@@ -232,10 +230,9 @@ namespace DashworksTestAutomation.Steps.API
             return queryString;
         }
 
-        private string GetStaticQueryStringFromUrl(string pageName, string listId)
+        private static string GetStaticQueryStringFromUrl(string pageName, string listId)
         {
-            var queryString = string.Empty;
-            queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$listid=" + $"{listId}";
+            var queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$listid=" + $"{listId}";
             return queryString;
         }
     }

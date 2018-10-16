@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -68,23 +64,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 selectedObjects++;
             }
 
-            if (selectedObjects != 0)
-            {
-                When("User clicks on Actions button");
-                When($"User selects \"{"Move To Another Bucket"}\" in the Actions");
-                gridPage = _driver.NowAt<BaseGridPage>();
-                if (gridPage.ContinueButton.Displayed())
-                {
-                    gridPage.ContinueButton.Click();
+            if (selectedObjects == 0) return;
+            When("User clicks on Actions button");
+            When($"User selects \"{"Move To Another Bucket"}\" in the Actions");
+            gridPage = _driver.NowAt<BaseGridPage>();
+            if (!gridPage.ContinueButton.Displayed()) return;
+            gridPage.ContinueButton.Click();
 
-                    var moveToAnotherBucketPage = _driver.NowAt<MoveToAnotherBucketPage>();
-                    var firstBucket = _driver
-                        .GetOptionsFromMatSelectbox(moveToAnotherBucketPage.BucketSelectbox)
-                        .First().Text;
-                    _driver.SelectMatSelectbox(moveToAnotherBucketPage.BucketSelectbox, firstBucket);
-                    moveToAnotherBucketPage.MoveButton.Click();
-                }
-            }
+            var moveToAnotherBucketPage = _driver.NowAt<MoveToAnotherBucketPage>();
+            var firstBucket = _driver
+                .GetOptionsFromMatSelectbox(moveToAnotherBucketPage.BucketSelectbox)
+                .First().Text;
+            _driver.SelectMatSelectbox(moveToAnotherBucketPage.BucketSelectbox, firstBucket);
+            moveToAnotherBucketPage.MoveButton.Click();
         }
     }
 }

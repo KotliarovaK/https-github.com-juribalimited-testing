@@ -11,17 +11,13 @@ using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
-using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
-using DetailsPage = DashworksTestAutomation.Pages.Evergreen.DetailsPage;
-using TeamsPage = DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.TeamsPage;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -30,17 +26,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly TeamName _teamName;
-        private readonly UsedUsers _usedUsers;
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Buckets _buckets;
         private readonly RestWebClient _client;
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects)
         {
             _driver = driver;
-            _usedUsers = usedUsers;
             _teamName = teamName;
             _projects = projects;
             _client = client;
@@ -331,7 +325,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
             {
-                Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]), $"'{row["Permissions"]}' are not displayed");
+                Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]),
+                    $"'{row["Permissions"]}' are not displayed");
             }
         }
 
@@ -342,7 +337,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
             {
-                Assert.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]), $"'{row["Checkboxes"]}' are not displayed");
+                Assert.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]),
+                    $"'{row["Checkboxes"]}' are not displayed");
             }
         }
 
@@ -451,21 +447,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            List<string> actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
         [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            List<string> expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"color data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
@@ -480,28 +476,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"color data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenColorDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"date in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenDateInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
-            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
         [Then(@"date in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenDateInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
-            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            List<string> originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"Project ""(.*)"" is displayed to user")]
@@ -793,29 +789,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDeleteTeamInTheAdministration(string teamName)
         {
             DeleteTeam(teamName);
-        }
-
-        [AfterScenario("Delete_Newly_Created_Team")]
-        public void DeleteAllTeamsAfterScenarioRun()
-        {
-            try
-            {
-                if (!_teamName.Value.Any())
-                    return;
-
-                foreach (string name in _teamName.Value)
-                    try
-                    {
-                        DeleteTeam(name);
-                    }
-                    catch { }
-            }
-            catch { }
-        }
-
-        private void DeleteTeam(string teamName)
-        {
-            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[Teams] where [TeamName] = '{teamName}'");
         }
 
         [When(@"User enters ""(.*)"" in the Team Description field")]
@@ -1132,7 +1105,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             }
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
-            Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor());//Amber color
+            Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor()); //Amber color
             Assert.IsTrue(message.TextMessage(text),
                 $"{text} is not displayed on the Project page");
         }
@@ -1808,8 +1781,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
         public void ThenSearchFieldsForColumnContainCorrectlyValue(string columnName)
         {
-            var searchFild = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(searchFild.GetSearchFieldTextByColumnName(columnName).Displayed(), "Incorrect contain value for search field");
+            var searchField = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(searchField.GetSearchFieldTextByColumnName(columnName).Displayed(), "Incorrect contain value for search field");
         }
 
         [When(@"User clicks Reset Filters button on the Admin page")]
@@ -1891,8 +1864,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
-                foundRowsCounter.RowsCounter.Text,
-                "Incorrect rows count");
+                foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
 
         [Then(@"User sees ""(.*)"" of ""(.*)"" rows selected label")]
@@ -1901,8 +1873,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
-            StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected", foundRowsCounter.RowsCounter.Text,
-                "Incorrect rows count");
+            StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected", 
+                foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
 
         [Then(@"User sees Buckets in next default sort order:")]
@@ -1943,40 +1915,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [AfterScenario("Delete_Newly_Created_Bucket")]
-        public void DeleteAllBucketAfterScenarioRun()
-        {
-            try
-            {
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
-
-                foreach (var bucketName in _buckets.Value)
-                {
-                    if (string.IsNullOrEmpty(bucketName))
-                        continue;
-
-                    var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
-
-                    var request = new RestRequest(requestUri);
-
-                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                    request.AddParameter("objectId", null);
-                    request.AddParameter("selectedObjectsList", bucketId);
-
-                    var response = _client.Value.Put(request);
-
-                    if (response.StatusCode != HttpStatusCode.OK)
-                        throw new Exception($"Unable to execute request. URI: {requestUri}");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
-
         [Then(@"Delete ""(.*)"" Project in the Administration")]
         public void ThenDeleteProjectInTheAdministration(string projectName)
         {
@@ -1990,6 +1928,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
+        }
+
+        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
+        [When(@"User deletes ""(.*)"" Bucket in the Administration")]
+        public void ThenDeleteBucketInTheAdministration(string bucketName)
+        {
+            //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
+        }
+
+        [Then(@"Delete following Buckets in the Administration:")]
+        public void ThenDeleteFollowingBucketsInTheAdministration(Table buckets)
+        {
+            foreach (var bucket in buckets.Rows)
+            {
+                DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
+            }
+        }
+
+        [AfterScenario("Delete_Newly_Created_Team")]
+        public void DeleteAllTeamsAfterScenarioRun()
+        {
+            try
+            {
+                if (!_teamName.Value.Any())
+                    return;
+
+                foreach (string name in _teamName.Value)
+                    try
+                    {
+                        DeleteTeam(name);
+                    }
+                    catch { }
+            }
+            catch { }
         }
 
         [AfterScenario("Delete_Newly_Created_Project")]
@@ -2025,29 +1998,51 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [AfterScenario("Delete_Newly_Created_Bucket")]
+        public void DeleteAllBucketAfterScenarioRun()
+        {
+            try
+            {
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
+
+                foreach (var bucketName in _buckets.Value)
+                {
+                    if (string.IsNullOrEmpty(bucketName))
+                        continue;
+
+                    var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
+
+                    var request = new RestRequest(requestUri);
+
+                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                    request.AddParameter("objectId", null);
+                    request.AddParameter("selectedObjectsList", bucketId);
+
+                    var response = _client.Value.Put(request);
+
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        private void DeleteTeam(string teamName)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[Teams] where [TeamName] = '{teamName}'");
+        }
+
         private string GetProjectId(string projectName)
         {
             var projectId =
                 DatabaseHelper.ExecuteReader(
                     $"SELECT [ProjectID] FROM [PM].[dbo].[Projects] where [ProjectName] = '{projectName}' AND [IsDeleted] = 0", 0).LastOrDefault();
             return projectId;
-        }
-
-        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
-        [When(@"User deletes ""(.*)"" Bucket in the Administration")]
-        public void ThenDeleteBucketInTheAdministration(string bucketName)
-        {
-            //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
-            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
-        }
-
-        [Then(@"Delete following Buckets in the Administration:")]
-        public void ThenDeleteFollowingBucketsInTheAdministration(Table buckets)
-        {
-            foreach (var bucket in buckets.Rows)
-            {
-                DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
-            }
         }
     }
 }

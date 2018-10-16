@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
@@ -263,7 +262,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
         }
@@ -274,7 +273,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                           ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
         }
@@ -356,7 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [AfterScenario("Remove_Profile_Changes")]
-        public void RemoveProfileChangesAfterscenario()
+        public void RemoveProfileChangesAfterScenario()
         {
             try
             {
@@ -375,12 +374,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
             }
-            catch
-            {}
+            catch {}
         }
 
         [AfterScenario("Remove_Password_Changes")]
-        public void RemovePasswordChangesAfterscenario()
+        public void RemovePasswordChangesAfterScenario()
         {
             try
             {
@@ -393,8 +391,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.ConfirmPasswordField.SendKeys("m!gration");
                 page.UpdateButton.Click();
             }
-            catch
-            {}
+            catch {}
         }
 
         [AfterScenario("Delete_Newly_Created_User")]
@@ -426,8 +423,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitForDataLoading();
                 _driver.AcceptAlert();
             }
-            catch
-            {}
+            catch {}
         }
     }
 }

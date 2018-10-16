@@ -511,11 +511,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))
                 throw new Exception("Rows count in table is missed");
-            var numberoOfRowsInTable =
+            var numberOfRowsInTable =
                 dashboardPage.ResultsOnPageCount.Text.Split(' ').First().Replace(",", string.Empty);
             var actionsPanel = _driver.NowAt<ActionsElement>();
             var numberOfRowsInActions = actionsPanel.GetSelectedRowsCount();
-            Assert.AreEqual(numberoOfRowsInTable, numberOfRowsInActions,
+            Assert.AreEqual(numberOfRowsInTable, numberOfRowsInActions,
                 "Number of rows are not equal in table and in Actions");
         }
 
@@ -581,7 +581,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
-            _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
+            actionsElement.ListsDropdown.Click();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
                 actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -200,7 +198,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsFollowingTextFromKeyValueGridOnTheDetailsPage(string textToBeSelected)
         {
             var page = _driver.NowAt<DetailsPage>();
-
             page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
         }
 
@@ -432,21 +429,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
-                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage().Select(column => column.Text)
-                    .ToList();
+                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage()
+                    .Select(column => column.Text).ToList();
                 var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
                 Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
-            }
-        }
-
-        private void CheckColumnDisplayedState(Table table, bool displayedState)
-        {
-            var listpageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForDataLoading();
-                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
-                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
         }
 
@@ -624,6 +610,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
             detailsPage.SelectAllCheckBox.Click();
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listPageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+            }
         }
     }
 }
