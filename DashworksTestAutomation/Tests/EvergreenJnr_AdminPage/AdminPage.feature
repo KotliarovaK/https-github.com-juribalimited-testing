@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User clicks the "IMPORT PROJECT" Action button
 	Then "Import Project" page should be displayed to the user
 	When User selects incorrect file to upload on Import Project page
-	And User selects "Import to new project" in the Import dropdown on the Import Project Page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	Then Error message with "Selected file is not in a valid format" text is displayed

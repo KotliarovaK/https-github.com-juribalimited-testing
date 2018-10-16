@@ -248,6 +248,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
         }
 
+        [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
+        public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
+        {
+            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
+            projectElement.UnlimitedField.Click();
+        }
+
+        [Then(@"Unlimited text disappears from column")]
+        public void ThenUnlimitedTextDisappearsFromColumn()
+        {
+            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
+            Assert.IsTrue(projectElement.EmptyUnlimitedField.Displayed());
+        }
+
         [Then(@"Bucket dropdown is not displayed on the Project details page")]
         public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
         {
@@ -674,6 +688,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAllRowsOnTheGrid()
         {
             var checkbox = _driver.NowAt<BaseGridPage>();
+            checkbox.BodyContainer.Click();
             checkbox.SelectAllCheckBox.Click();
         }
 
@@ -1775,8 +1790,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
-        [When(@"User enters in the ""(.*)"" dete in the ""(.*)"" field")]
-        public void WhenUserEntersInTheDeteInTheField(string date, string fieldName)
+        [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
+        public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.AddDateByFieldName(fieldName, date);
