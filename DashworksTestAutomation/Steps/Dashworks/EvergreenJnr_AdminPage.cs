@@ -10,6 +10,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
@@ -1422,8 +1423,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualRowList = page.BucketRowList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedRowList, actualRowList, "Tasks value are different");
+            var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
+        }
+
+        [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
+        public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
+        {
+            if (tabName.Equals("Applications"))
+            {
+                var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+
+                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+            }
+            else
+            {
+                var page = _driver.NowAt<BaseGridPage>();
+
+                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+            }
         }
 
         [When(@"User searches and selects following rows in the grid:")]
@@ -1566,7 +1588,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheObjectSearchField(string text)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetObgectField(text);
+            searchElement.GetObjectField(text);
         }
 
         [Then(@"following items are still selected")]
