@@ -5679,8 +5679,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table126.AddRow(new string[] {
                         "Email Migration"});
             table126.AddRow(new string[] {
-                        "Evergreen Project KK - all devices \\ clone"});
-            table126.AddRow(new string[] {
                         "Havoc (Big Data)"});
             table126.AddRow(new string[] {
                         "I-Computer Scheduled Project"});

@@ -3035,7 +3035,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| User Project                                      |
 	| Computer Scheduled Test (Jo)                      |
 	| Email Migration                                   |
-	| Evergreen Project KK - all devices \ clone        |
+	#| Evergreen Project KK - all devices \ clone        |
 	| Havoc (Big Data)                                  |
 	| I-Computer Scheduled Project                      |
 	| Migration Project Phase 2 (User Project)          |
