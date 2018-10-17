@@ -829,6 +829,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForTeamCreation(optionName);
         }
 
+        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
+        public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
+            dropdown.GetDropdownValueByName(value).Click();
+        }
+
         [When(@"User clicks Update Team button")]
         public void WhenUserClicksUpdateTeamButton()
         {

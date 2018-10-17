@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters "1" text in the Search field for "Capacity" column
 	Then Counter shows "0" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -71,6 +71,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User clicks the "CREATE NEW SLOT" Action button
 	When User clicks on the Unlimited field on the Capacity Slots page
 	Then Unlimited text disappears from column
+	When User clicks the "CANCEL" Action button
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13432" Name in the "Display Name" field on the Project details page
+	When User selects "Capacity Units" in the "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then "All Capacity Units" content is displayed in "Capacity Units" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13790 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
