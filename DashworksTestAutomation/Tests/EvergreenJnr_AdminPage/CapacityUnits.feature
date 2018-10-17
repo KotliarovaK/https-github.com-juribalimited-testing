@@ -296,3 +296,58 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUnitsPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	And User type "Capacity Unit Sorting" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User click on "Capacity Unit" column header on the Admin page
+	Then data in table is sorted by "Capacity Unit" column in ascending order on the Admin page	
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
+	When User click on "Devices" column header on the Admin page
+	Then numeric data in table is sorted by "Devices" column in ascending order on the Admin page
+		#Default column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnThePowerUnitPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	And User type "CapacityUnit12141" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks newly created object link
+	Then "Devices" tab is selected on the Admin page
+	When User clicks the "ADD DEVICE" Action button
+	And User selects following Objects
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	| 00CWZRC4UK6W20  |
+	| 00I0COBFWHOF27  |
+	And User clicks the "ADD DEVICES" Action button
+	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
+	Then "5" rows are displayed in the agGrid on Capacity Units page
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	And User clicks on Actions button
+	And User selects "Move to another unit" in the Actions
+	And User clicks the "CONTINUE" Action button
+	Then "Move To Another Capacity Unit" is displayed on the Admin page
+	When User moves selected objects to "Unassigned" Capacity Unit
+	Then Success message is displayed and contains "The selected object has been added to the selected capacity unit" text
+	Then "4" rows are displayed in the agGrid on Capacity Units page
+	When User click on Back button
+	When User enters "CapacityUnit12141" text in the Search field for "Capacity Unit" column
+	Then "4" content is displayed in "Devices" column

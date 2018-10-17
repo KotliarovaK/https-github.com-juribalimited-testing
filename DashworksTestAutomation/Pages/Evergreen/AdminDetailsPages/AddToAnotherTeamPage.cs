@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     public class AddToAnotherTeamPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//h2")]
+        [FindsBy(How = How.XPath, Using = "//h1")]
         public IWebElement PageTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@id='teams']")]

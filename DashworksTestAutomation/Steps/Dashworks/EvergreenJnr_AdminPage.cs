@@ -1296,11 +1296,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.BucketSelectbox.Displayed, "Move To Another Bucket Page is not displayed to the user");
         }
 
+        [When(@"User moves selected objects to ""(.*)"" Capacity Unit")]
         [When(@"User moves selected objects to ""(.*)"" bucket")]
         public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
         {
             var page = _driver.NowAt<MoveToAnotherBucketPage>();
             page.MoveToBucketByName(bucketName);
+        }
+
+        [Then(@"""(.*)"" is displayed on the Admin page")]
+        public void ThenIsDisplayedOnTheAdminPage(string name)
+        {
+            var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+            Assert.IsTrue(page.GetMovingElementByName(name).Displayed(), $"{name} Page is not displayed to the user");
         }
 
         [Then(@"Actions dropdown is displayed correctly")]
