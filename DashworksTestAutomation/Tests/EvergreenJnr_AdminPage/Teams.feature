@@ -518,3 +518,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| Migration Phase 2      |
 	| Migration Phase 3 Team |
 	| My Team                |
+	When User click on Back button
+	When User enters "DAS12326" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
+	#And User clicks on Actions button
+	#And User selects "Delete Team" in the Actions
+	#And User clicks the "DELETE" Action button
