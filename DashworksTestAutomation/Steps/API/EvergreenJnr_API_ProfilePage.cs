@@ -50,6 +50,15 @@ namespace DashworksTestAutomation.Steps.API
                 When($"User clicks \"{"Devices"}\" on the left-hand menu");
                 Then($"\"{"Devices"}\" list should be displayed to the user");
                 ThenPageSizeIsOnPage(1000, "Devices");
+                When($"User clicks \"{"Users"}\" on the left-hand menu");
+                Then($"\"{"Users"}\" list should be displayed to the user");
+                ThenPageSizeIsOnPage(1000, "Users");
+                When($"User clicks \"{"Applications"}\" on the left-hand menu");
+                Then($"\"{"Applications"}\" list should be displayed to the user");
+                ThenPageSizeIsOnPage(1000, "Applications");
+                When($"User clicks \"{"Mailboxes"}\" on the left-hand menu");
+                Then($"\"{"Mailboxes"}\" list should be displayed to the user");
+                ThenPageSizeIsOnPage(1000, "Mailboxes");
             }
             else
             {
