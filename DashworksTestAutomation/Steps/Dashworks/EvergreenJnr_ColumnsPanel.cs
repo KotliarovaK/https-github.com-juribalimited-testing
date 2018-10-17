@@ -17,15 +17,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
     [Binding]
     internal class EvergreenJnr_ColumnsPanel : SpecFlowContext
     {
-        private readonly RestWebClient _client;
         private readonly RemoteWebDriver _driver;
-        private readonly PageToUrlConvertor _page;
 
-        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver, RestWebClient client, PageToUrlConvertor page)
+        public EvergreenJnr_ColumnsPanel(RemoteWebDriver driver)
         {
             _driver = driver;
-            _client = client;
-            _page = page;
         }
 
         [Then(@"Columns panel is displayed to the user")]
@@ -40,8 +36,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInSearchFieldAtColumnsPanel(string searchedText)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.SearchTextbox.Clear();
-            columnElement.SearchTextbox.SendKeys(searchedText);
+            columnElement.SearchTextBox.Clear();
+            columnElement.SearchTextBox.SendKeys(searchedText);
             _driver.WaitForDataLoading();
         }
 
@@ -49,7 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClearsSearchTextboxInColumnsPanel()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            columnElement.SearchTextboxResetButton.Click();
+            columnElement.SearchTextBoxResetButton.Click();
         }
 
         [When(@"ColumnName is entered into the search box and the selection is clicked")]
@@ -62,10 +58,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 columnElement.AddColumn(row["ColumnName"]);
 
                 //Clear the textbox after adding a column, so it is reset for the next loop
-                columnElement.SearchTextbox.ClearWithHomeButton(_driver);
+                columnElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
 
-            //Minimise the Selected Columns
+            //Minimize the Selected Columns
             //columnElement.MinimizeGroupButton.Click();
             //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
@@ -81,9 +77,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.AddColumn(columnName);
 
             //Clear the textbox after adding a column, so it is reset for the next loop
-            columnElement.SearchTextbox.ClearWithHomeButton(_driver);
+            columnElement.SearchTextBox.ClearWithHomeButton(_driver);
 
-            //Minimise the Selected Columns
+            //Minimize the Selected Columns
             //columnElement.MinimizeGroupButton.Click();
             //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
@@ -101,7 +97,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 columnElement.AddColumn(row["ColumnName"]);
 
                 //Clear the textbox after adding a column, so it is reset for the next loop
-                columnElement.SearchTextbox.ClearWithHomeButton(_driver);
+                columnElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
         }
 
@@ -115,8 +111,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             const string pattern = @"\$select=(.*)";
             var urlPartToCheck = Regex.Match(currentUrl, pattern).Groups[1].Value;
             StringAssert.Contains(ColumnNameToUrlConvertor.Convert(pageName, columnName).ToLower(),
-                urlPartToCheck.ToLower(),
-                $"{columnName} is not added to URL");
+                urlPartToCheck.ToLower(), $"{columnName} is not added to URL");
         }
 
         [When(@"User add following columns using URL to the ""(.*)"" page:")]
@@ -247,7 +242,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             if (page.StatusCodeLabel.Displayed())
                 throw new Exception("500 error was returned after removing all columns from URL");
-         
         }
 
         #endregion
@@ -283,7 +277,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //columnElement.ExpandColumnsSectionByName("Selected Columns");
             foreach (var row in table.Rows) columnElement.GetDeleteColumnButton(row["ColumnName"]).Click();
         }
-        
+
         [Then(@"ColumnName is removed from the list")]
         public void ThenColumnNameIsRemovedFromTheList(Table table)
         {
@@ -296,7 +290,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            var resetButton = columnElement.SearchTextboxResetButton;
+            var resetButton = columnElement.SearchTextBoxResetButton;
             if (resetButton.Displayed()) resetButton.Click();
 
             Assert.AreEqual(subCategoriesCount, columnElement.GetSubcategoriesCountByCategoryName(categoryName),
@@ -399,24 +393,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.RefreshTableButton.Click();
         }
 
-        private void CheckColumnDisplayedState(Table table, bool displayedState)
-        {
-            var listpageMenu = _driver.NowAt<BaseDashboardPage>();
-            listpageMenu.RefreshTableButton.Click();
-            _driver.WaitForDataLoading();
-            Thread.Sleep(1000);
-            foreach (var row in table.Rows)
-                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
-                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
-        }
-
         [When(@"User add all Columns from specific category")]
         public void WhenUserAddAllColumnsFromSpecificCategory(Table table)
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-
             foreach (var row in table.Rows) columnElement.AddAllColumnsFromCategory(row["CategoryName"]);
-        } 
+        }
 
         [When(@"User have reset all columns")]
         public void WhenUserHaveResetAllColumns()
@@ -433,6 +415,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             var content = page.GetColumnContent(columnName);
             Assert.IsFalse(content.Contains("-1"), "The Lowest value is not null");
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            listPageMenu.RefreshTableButton.Click();
+            _driver.WaitForDataLoading();
+            Thread.Sleep(1000);
+            foreach (var row in table.Rows)
+                Assert.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
         }
     }
 }

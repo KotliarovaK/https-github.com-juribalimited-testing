@@ -1,13 +1,14 @@
 ﻿using System;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
-namespace DashworksTestAutomation.Steps.Projects
+namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
 {
     [Binding]
     internal class Projects_SelfService : SpecFlowContext
@@ -24,7 +25,11 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly SelfService_OtherOptions2Dto _options2Dto;
         private readonly SelfService_ThankYouDto _thankYouDto;
 
-        public Projects_SelfService(RemoteWebDriver driver, SelfService_DetailsDto detailsDto, SelfService_WelcomeDto welcomeDto, SelfService_ComputerOwnershipDto computerOwnershipDto, SelfService_DepartmentAndLocationDto departmentAndLocationDto, SelfService_AppsListDto appsListDto, SelfService_ProjectDateDto projectDateDto, SelfService_OtherOptions1Dto otherOptions1Dto, SelfService_OtherOptions2Dto otherOptions2Dto, SelfService_ThankYouDto thankYouDto, ProjectDto projectDto)
+        public Projects_SelfService(RemoteWebDriver driver, SelfService_DetailsDto detailsDto,
+            SelfService_WelcomeDto welcomeDto, SelfService_ComputerOwnershipDto computerOwnershipDto,
+            SelfService_DepartmentAndLocationDto departmentAndLocationDto, SelfService_AppsListDto appsListDto,
+            SelfService_ProjectDateDto projectDateDto, SelfService_OtherOptions1Dto otherOptions1Dto,
+            SelfService_OtherOptions2Dto otherOptions2Dto, SelfService_ThankYouDto thankYouDto, ProjectDto projectDto)
         {
             _driver = driver;
             _detailsDto = detailsDto;
@@ -131,30 +136,35 @@ namespace DashworksTestAutomation.Steps.Projects
             if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
             {
                 //assign NamefromHttpString to NamefromHttpEnum
-                _computerOwnershipDto.NamefromHttp = (NamefromHttpEnum)Enum.Parse(typeof(NamefromHttpEnum), _computerOwnershipDto.NamefromHttpString);
-                page.NamefromHttp.SelectboxSelect(_computerOwnershipDto.NamefromHttp.GetValue());
+                _computerOwnershipDto.NamefromHttp = (NamefromHttpEnum) Enum.Parse(typeof(NamefromHttpEnum),
+                    _computerOwnershipDto.NamefromHttpString);
+                page.NameFromHttp.SelectboxSelect(_computerOwnershipDto.NamefromHttp.GetValue());
 
-                if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
+                switch (_projectDto.ProjectType)
                 {
-                    if (_detailsDto.Mode1.Equals(true))
+                    case ProjectTypeEnum.ComputerScheduledProject:
                     {
-                        page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
-                        page.AllowUsersToSearch.SetCheckboxState(_computerOwnershipDto.AllowUsersToSearch);
-                        page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
+                        if (_detailsDto.Mode1.Equals(true))
+                        {
+                            page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
+                            page.AllowUsersToSearch.SetCheckboxState(_computerOwnershipDto.AllowUsersToSearch);
+                            page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
+                        }
+
+                        if (_detailsDto.Mode2.Equals(true))
+                        {
+                            page.UsersOfTheComputer.SetCheckboxState(_computerOwnershipDto.UsersOfTheComputer);
+                            page.OwnerOfTheComputer.SetCheckboxState(_computerOwnershipDto.OwnerOfTheComputer);
+                            page.AllowUsersToChangeUsers.SetCheckboxState(_computerOwnershipDto
+                                .AllowUsersToChangeUsers);
+                        }
+
+                        break;
                     }
-
-                    if (_detailsDto.Mode2.Equals(true))
-                    {
-                        page.UsersOfTheComputer.SetCheckboxState(_computerOwnershipDto.UsersOfTheComputer);
-                        page.OwnerOfTheComputer.SetCheckboxState(_computerOwnershipDto.OwnerOfTheComputer);
-                        page.AllowUsersToChangeUsers.SetCheckboxState(_computerOwnershipDto.AllowUsersToChangeUsers);
-                    } 
-                }
-
-                if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
-                {
-                    page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
-                    page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
+                    case ProjectTypeEnum.UserScheduledProject:
+                        page.ShowComputers.SetCheckboxState(_computerOwnershipDto.ShowComputers);
+                        page.AllowUsersToSetPrimary.SetCheckboxState(_computerOwnershipDto.AllowUsersToSetPrimary);
+                        break;
                 }
 
                 page.LimitMaximum.SendKeys(_computerOwnershipDto.LimitMaximum);
@@ -222,7 +232,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 _appsListDto.View = ViewEnum.TargetState;
 
             //assign ViewString to ViewEnum
-            _appsListDto.View = (ViewEnum)Enum.Parse(typeof(ViewEnum), _appsListDto.ViewString);
+            _appsListDto.View = (ViewEnum) Enum.Parse(typeof(ViewEnum), _appsListDto.ViewString);
             page.View.SelectboxSelect(_appsListDto.View.GetValue());
             page.PageDescription.SendKeys(_appsListDto.PageDescription);
 
@@ -241,14 +251,13 @@ namespace DashworksTestAutomation.Steps.Projects
 
             page.ShowScreen.SetCheckboxState(_projectDateDto.ShowThisScreen);
             if (!_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
-            {
                 if (!string.IsNullOrEmpty(_projectDateDto.ShowComputerNameString))
                 {
                     //assign ShowComputerNameString to ProjectTypeEnum
-                    _projectDateDto.ShowComputerName = (ShowComputerNameEnum)Enum.Parse(typeof(ShowComputerNameEnum), _projectDateDto.ShowComputerNameString);
+                    _projectDateDto.ShowComputerName = (ShowComputerNameEnum) Enum.Parse(typeof(ShowComputerNameEnum),
+                        _projectDateDto.ShowComputerNameString);
                     page.ShowComputerName.SelectboxSelect(_projectDateDto.ShowComputerName.GetValue());
                 }
-            }
 
             page.AllowUsersToAddANote.SetCheckboxState(_projectDateDto.AllowUsersToAddANote);
             page.MinimumHours.Clear();
@@ -275,6 +284,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
                 page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
             }
+
             page.PageDescription.SendKeys(_options1Dto.PageDescription);
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();
@@ -305,6 +315,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.OnlyOwned.SetCheckboxState(_options1Dto.OnlyOwned);
                 page.AllLinked.SetCheckboxState(_options1Dto.AllLinked);
             }
+
             page.PageDescription.SendKeys(_options2Dto.PageDescription);
 
             var upd = _driver.NowAt<MainElementsOfProjectCreation>();

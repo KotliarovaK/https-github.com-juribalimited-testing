@@ -13,36 +13,13 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.API
 {
     [Binding]
-    internal class EvergreenJnr_API_FiltersFunctionality
+    internal class EvergreenJnr_API_FiltersFunctionality : SpecFlowContext
     {
         private readonly RestWebClient _client;
 
         public EvergreenJnr_API_FiltersFunctionality(RestWebClient client)
         {
             _client = client;
-        }
-
-        [When(@"I perform test request to the Users API and get operators by ""(.*)"" filter")]
-        public void WhenIPerformTestRequestToTheUsersApiAndGetOperatorsByFilter(string filterName)
-        {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}users/filters?$lang=en-GB";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-
-            var response = _client.Value.Get(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. URI: {requestUri}");
-
-            var content = response.Content;
-
-            var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
-            var filter = allFilters.First(x => x["label"].ToString().Equals(filterName));
-            var allOperators = filter["operators"];
-            var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
         }
 
         [Then(@"following operators are displayed in ""(.*)"" category for ""(.*)"" filter on ""(.*)"" page:")]
@@ -65,7 +42,8 @@ namespace DashworksTestAutomation.Steps.API
 
             var allFilters = JsonConvert.DeserializeObject<List<JObject>>(content);
             var filter = allFilters.First(x =>
-                x["translatedCategory"].ToString().Equals(categoryName) && x["label"].ToString().Equals(filterName));
+                x["translatedCategory"].ToString().Equals(categoryName) &&
+                x["label"].ToString().Equals(filterName));
             var allOperators = filter["operators"];
             var operatorsValues = allOperators.Select(x => x["key"].ToString()).ToList();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(), operatorsValues,
@@ -165,10 +143,10 @@ namespace DashworksTestAutomation.Steps.API
             var content = response.Content;
 
             var responseContent = JsonConvert.DeserializeObject<List<JObject>>(content).ToList();
-            var subсategory = responseContent.FindAll(x => x["translatedCategory"].ToString().Equals(categoryName)).ToList();
-            var subсategoryList = subсategory.Select(x => x["translatedColumnName"].ToString()).ToList();
+            var subcategory = responseContent.FindAll(x => x["translatedCategory"].ToString().Equals(categoryName)).ToList();
+            var subcategoryList = subcategory.Select(x => x["translatedColumnName"].ToString()).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(subсategoryList, expectedList, "Subcategory lists are not equal");
+            Assert.AreEqual(subcategoryList, expectedList, "Subcategory lists are not equal");
         }
     }
 }

@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
     internal class SelfService_ThankYouPage : SeleniumBasePage
     {
@@ -16,7 +16,8 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'cb_showChoicesSummary')]")]
         public IWebElement ShowChoicesSummary { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'reviewChoicesIncludeDashworksHomepageButtonValuee')]")]
+        [FindsBy(How = How.XPath,
+            Using = ".//input[contains(@id, 'reviewChoicesIncludeDashworksHomepageButtonValuee')]")]
         public IWebElement IncludeLink { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]

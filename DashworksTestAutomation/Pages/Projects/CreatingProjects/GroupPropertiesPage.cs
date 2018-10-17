@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
-using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
     internal class GroupPropertiesPage : SeleniumBasePage
     {
@@ -28,7 +27,7 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public void SelectTeamForGroup(string teamName)
         {
-            string listNameSelector = $"//select//option[text()='{teamName}']";
+            var listNameSelector = $"//select//option[text()='{teamName}']";
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
     }

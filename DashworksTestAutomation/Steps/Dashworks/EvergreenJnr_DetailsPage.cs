@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -184,6 +181,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
             }
+
             filterElement.BodyContainer.Click();
         }
 
@@ -200,7 +198,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsFollowingTextFromKeyValueGridOnTheDetailsPage(string textToBeSelected)
         {
             var page = _driver.NowAt<DetailsPage>();
-
             page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
         }
 
@@ -324,10 +321,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitForDataLoading();
             filter.ResetFiltersButton.Click();
-            foreach (var row in table.Rows)
-            {
-                filter.DateFilterValue.SendKeys(row["FilterData"]);
-            }
+            foreach (var row in table.Rows) filter.DateFilterValue.SendKeys(row["FilterData"]);
+
             _driver.WaitForDataLoading();
         }
 
@@ -352,9 +347,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
-            { }
+            {
+            }
             else
-                Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidt());
+            {
+                Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidth());
+            }
         }
 
         [Then(@"Bucket pop-up has standard size on the Details Page")]
@@ -369,8 +367,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() =>
-                filterElement.FilterSearchTextbox);
-            filterElement.FilterSearchTextbox.SendKeys(searchedText);
+                filterElement.FilterSearchTextBox);
+            filterElement.FilterSearchTextBox.SendKeys(searchedText);
         }
 
         [When(@"User clears Filter field")]
@@ -378,7 +376,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Thread.Sleep(500);
-            page.FilterSearchTextbox.ClearWithHomeButton(_driver);
+            page.FilterSearchTextBox.ClearWithHomeButton(_driver);
             page.BodyContainer.Click();
         }
 
@@ -432,21 +430,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
-                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage().Select(column => column.Text)
-                    .ToList();
+                var columnNames = page.GetAllColumnHeadersOnTheDetailsPage()
+                    .Select(column => column.Text).ToList();
                 var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
                 Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
-            }
-        }
-
-        private void CheckColumnDisplayedState(Table table, bool displayedState)
-        {
-            var listpageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForDataLoading();
-                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
-                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
         }
 
@@ -477,7 +464,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.ExpandAllSections();
             var table = detailsPage.GetFieldsWithContent(sectionName);
-            foreach (KeyValuePair<string, string> pair in table)
+            foreach (var pair in table)
             {
                 if (pair.Key.Equals("Address 2") || pair.Key.Equals("Address 3") || pair.Key.Equals("Address 4"))
                     continue;
@@ -512,7 +499,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees ""(.*)"" Evergreen Bucket in Project Summary section on the Details Page")]
-        public void ThenUserSeesEvergreenBucketInProjectSummarySetionOnTheDetailsPage(string bucketName)
+        public void ThenUserSeesEvergreenBucketInProjectSummarySectionOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
 
@@ -531,14 +518,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             foreach (var element in detailsPage.TableRowDetails)
-            {
                 StringAssert.DoesNotContain("Unknown", element.Text,
                     "Unknown text is displayed");
-            }
         }
 
         [Then(@"Rows do not have unknown values")]
-        public void ThenRowsDoNotHaveUnkonwnValues()
+        public void ThenRowsDoNotHaveUnknownValues()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             foreach (var element in page.GridRows)
@@ -561,16 +546,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            if (numberOfRows == "1")
-            {
-                StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", detailsPage.FoundRowsLabel.Text,
-                    "Incorrect rows count");
-            }
-            else
-            {
-                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", detailsPage.FoundRowsLabel.Text,
-                    "Incorrect rows count");
-            }
+            StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                detailsPage.FoundRowsLabel.Text,
+                "Incorrect rows count");
         }
 
         [When(@"User clicks on ""(.*)"" link on the Details Page")]
@@ -625,6 +603,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
             detailsPage.SelectAllCheckBox.Click();
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listPageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+            }
         }
     }
 }

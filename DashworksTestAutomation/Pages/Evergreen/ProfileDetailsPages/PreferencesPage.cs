@@ -9,8 +9,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
     internal class PreferencesPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath,
-            Using = ".//label[contains(text(), 'Lang')]/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
-        public IWebElement LanguageDropdown { get; set; } 
+            Using =
+                ".//label[contains(text(), 'Lang')]/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
+        public IWebElement LanguageDropdown { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
@@ -52,7 +53,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         public void ChangeDisplayMode(string displayMode)
         {
             DisplayModeDropdown.Click();
-            string displayModeSelector = $".//mat-option/span[text()='{displayMode}']";
+            var displayModeSelector = $".//mat-option/span[text()='{displayMode}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(displayModeSelector));
             Driver.FindElement(By.XPath(displayModeSelector)).Click();
         }

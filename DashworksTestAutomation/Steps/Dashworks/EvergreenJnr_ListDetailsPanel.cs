@@ -82,14 +82,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserMarkListAUnfavorite()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            listDetailsElement.UnfavoriteButton.Click();
+            listDetailsElement.UnFavoriteButton.Click();
         }
 
         [Then(@"List is marked as favorite")]
         public void ThenListIsMarkedAsFavorite()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            Assert.IsTrue(listDetailsElement.UnfavoriteButton.Displayed(), "List is marked as unfavorite");
+            Assert.IsTrue(listDetailsElement.UnFavoriteButton.Displayed(), "List is marked as unfavorite");
         }
 
         [Then(@"""(.*)"" name is displayed in list details panel")]
@@ -129,7 +129,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDependentListIsDisplayed(string listName)
         {
             var list = _driver.NowAt<ListDetailsElement>();
-            Assert.IsTrue(list.GetDependentListByName(listName).Displayed(), $"Dependent '{listName}' list is not displayed");
+            Assert.IsTrue(list.GetDependentListByName(listName).Displayed(),
+                $"Dependent '{listName}' list is not displayed");
         }
 
         [When(@"User navigates to the dependent ""(.*)"" list")]
@@ -159,7 +160,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
-            Assert.IsFalse(listDetailsElement.WarningMessage.Displayed(), "Warning message is displayed in the list details panel");
+            Assert.IsFalse(listDetailsElement.WarningMessage.Displayed(),
+                "Warning message is displayed in the list details panel");
         }
 
         [Then(@"Dependants section is collapsed by default")]
@@ -265,7 +267,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSharingUserIsDisplayedCorrectly(string userName)
         {
             var page = _driver.NowAt<ListDetailsElement>();
-            Assert.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(), "Selected Sharing user is not displayed on Details panel");
+            Assert.IsTrue(page.GetSharingUserOnDetailsPanelByName(userName).Displayed(),
+                "Selected Sharing user is not displayed on Details panel");
         }
 
         [When(@"User select ""(.*)"" as a Owner of a list")]
@@ -290,7 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOwnersIsDisplayedInAlphabeticalOrder()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            List<string> list = listDetailsElement.OwnersList.Select(x => x.Text).ToList();
+            var list = listDetailsElement.OwnersList.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Owners are not in alphabetical order");
         }
 
@@ -397,7 +400,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAppropriateIconIsDisplayedForFavourites()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(page.FavouritesIcon.Displayed(), "Appropriate icon is not displayed");
+            Assert.IsTrue(page.FavoritesIcon.Displayed(), "Appropriate icon is not displayed");
         }
 
         [Then(@"appropriate icon is displayed for My lists")]

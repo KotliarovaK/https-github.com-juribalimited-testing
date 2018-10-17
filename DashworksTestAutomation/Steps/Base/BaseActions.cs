@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Steps.Base
         [Then(@"There are no errors in the browser console")]
         public void ThenThereAreNoErrorsInTheBrowserConsole()
         {
-            List<LogEntry> errorsList = new List<LogEntry>();
+            var errorsList = new List<LogEntry>();
             foreach (var entry in _driver.Manage().Logs.GetLog(LogType.Browser).ToList())
                 if (entry.Level == LogLevel.Severe)
                     errorsList.Add(entry);

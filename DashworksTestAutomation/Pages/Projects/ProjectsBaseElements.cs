@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using DashworksTestAutomation.Base;
+﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
@@ -37,7 +36,7 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public void SelectCheckboxByName(string checkboxName)
         {
-            string selector = $"//td[text()='{checkboxName}']//following-sibling::td//input[@name='TaskId']";
+            var selector = $"//td[text()='{checkboxName}']//following-sibling::td//input[@name='TaskId']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }

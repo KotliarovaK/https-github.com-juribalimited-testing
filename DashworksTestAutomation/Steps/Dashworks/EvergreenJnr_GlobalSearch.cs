@@ -3,14 +3,13 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    internal class EvergreenJnr_GlobalSearch
+    internal class EvergreenJnr_GlobalSearch : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -55,16 +54,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
 
-                if (numberOfRows == "1")
-                {
-                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsRowsCount.Text,
-                        "Incorrect rows count");
-                }
-                else
-                {
-                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsRowsCount.Text,
-                        "Incorrect rows count");
-                }
+                StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                    listPageElement.ResultsRowsCount.Text, "Incorrect rows count");
                 Logger.Write(
                     $"Evergreen Global Search returned the correct number of rows for: {numberOfRows}  search");
             }
@@ -134,8 +125,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
-            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.GlobalSearchTextboxResetButton);
-            Assert.IsTrue(searchElement.GlobalSearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() =>
+                searchElement.GlobalSearchTextBoxResetButton);
+            Assert.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
     }

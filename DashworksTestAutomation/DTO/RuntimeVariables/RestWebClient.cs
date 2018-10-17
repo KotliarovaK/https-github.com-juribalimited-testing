@@ -6,6 +6,7 @@ using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NUnit.Framework;
 using RestSharp;
 
 namespace DashworksTestAutomation.DTO.RuntimeVariables
@@ -35,7 +36,30 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var response = Value.Put(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                throw new Exception(
+                    $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+
+            #region User Language Verification
+
+            requestUri = $"{UrlProvider.RestClientBaseUrl}security/userprofile";
+            request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            response = Value.Get(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
+            var content = response.Content;
+
+            var pageOptions = JsonConvert.DeserializeObject<JObject>(content);
+            var userLanguage = pageOptions["languageName"].ToString();
+            Assert.AreEqual(userLanguage, language, "Profile language was not changed");
+
+            #endregion
         }
 
         public string GetItemIdByName(string itemName, string pageName)
@@ -74,7 +98,8 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var response = Value.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                throw new Exception(
+                    $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
@@ -85,7 +110,6 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
         public List<string> GetAllItemsKeys(string pageName)
         {
             var returnValue = "";
-            List<string> returnList = new List<string>();
             switch (pageName)
             {
                 case "Devices":
@@ -114,13 +138,13 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
             var response = Value.Get(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                throw new Exception(
+                    $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
             var content = response.Content;
 
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["results"];
-            foreach (var item in allItems) returnList.Add(item[returnValue].ToString());
 
-            return returnList;
+            return allItems.Select(item => item[returnValue].ToString()).ToList();
         }
 
         public static string GetDefaultColumnsUrlByPageName(string pageName)

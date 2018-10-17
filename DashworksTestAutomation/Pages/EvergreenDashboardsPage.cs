@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
@@ -29,63 +28,49 @@ namespace DashworksTestAutomation.Pages
         public void ClickSectionFromCircleChart(string chartName, string sectionName)
         {
             //JavaScript to get all circle charts on page
-            string javaScriptCodeToGetCharts = "return document.getElementsByTagName('svg')";
+            var javaScriptCodeToGetCharts = "return document.getElementsByTagName('svg')";
             //get all circle charts as web elements
-            IReadOnlyCollection<IWebElement> allChartsAsWebElements =
+            var allChartsAsWebElements =
                 GetWebElementsByJavaScript(javaScriptCodeToGetCharts);
 
             //find index of chart by chart name
-            int i = GetIndexOfElementContainingText(allChartsAsWebElements, chartName);
+            var i = GetIndexOfElementContainingText(allChartsAsWebElements, chartName);
 
             //JavaScript to get all text of particular chart(determined by i index)
-            string javaScriptCodeToGetTextInParticularChart =
-                String.Format("return document.getElementsByTagName('svg')[{0}].getElementsByTagName('tspan')", i);
+            var javaScriptCodeToGetTextInParticularChart =
+                $"return document.getElementsByTagName('svg')[{i}].getElementsByTagName('tspan')";
             //get all texts in particular chart as web elements
-            IReadOnlyCollection<IWebElement> allTextsInParticularChartAsWebElements =
+            var allTextsInParticularChartAsWebElements =
                 GetWebElementsByJavaScript(javaScriptCodeToGetTextInParticularChart);
 
             //find index of section by name in particular chart
-            int j = GetIndexOfElementContainingText(allTextsInParticularChartAsWebElements, sectionName);
+            var j = GetIndexOfElementContainingText(allTextsInParticularChartAsWebElements, sectionName);
 
             //find color of required section by text
-            string color = ((IJavaScriptExecutor) Driver)
-                .ExecuteScript(String.Format(
-                    "return document.getElementsByTagName('svg')[{0}].getElementsByTagName('tspan')[{1}].parentElement.nextSibling.getAttribute('fill')",
-                    i, j)).ToString();
+            var color = ((IJavaScriptExecutor) Driver)
+                .ExecuteScript(
+                    $"return document.getElementsByTagName('svg')[{i}].getElementsByTagName('tspan')[{j}].parentElement.nextSibling.getAttribute('fill')")
+                .ToString();
 
             //JavaScript to get all sections in particular chart
-            string javaScriptCodeToGetAllSectionsInParticularChart =
-                String.Format("return document.getElementsByTagName('svg')[{0}].getElementsByTagName('path')", i);
+            var javaScriptCodeToGetAllSectionsInParticularChart =
+                $"return document.getElementsByTagName('svg')[{i}].getElementsByTagName('path')";
             //get all sections in particular chart as web elements
-            IReadOnlyCollection<IWebElement> allSectionsInParticularChartAsWebElement =
+            var allSectionsInParticularChartAsWebElement =
                 GetWebElementsByJavaScript(javaScriptCodeToGetAllSectionsInParticularChart);
 
             //click section in particular chart by color
             foreach (var section in allSectionsInParticularChartAsWebElement)
-            {
                 if (section.GetAttribute("fill").Contains(color))
                 {
                     section.Click();
                     break;
                 }
-            }
         }
 
-        private int GetIndexOfElementContainingText(IReadOnlyCollection<IWebElement> webElememnts, string text)
+        private int GetIndexOfElementContainingText(IEnumerable<IWebElement> webElements, string text)
         {
-            int i = 0;
-
-            foreach (var chart in webElememnts)
-            {
-                if (chart.GetAttribute("textContent").Contains(text))
-                {
-                    break;
-                }
-
-                i++;
-            }
-
-            return i;
+            return webElements.TakeWhile(chart => !chart.GetAttribute("textContent").Contains(text)).Count();
         }
 
         private IReadOnlyCollection<IWebElement> GetWebElementsByJavaScript(string javaScriptCode)

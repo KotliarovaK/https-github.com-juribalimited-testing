@@ -4,7 +4,7 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
     internal class SelfService_WelcomePage : SeleniumBasePage
     {
@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Pages.Projects
             return Driver.FindElement(selector);
         }
 
-        public void GetTypeByName (string typeName)
+        public void GetTypeByName(string typeName)
         {
             var selector = By.XPath($"//select[@aria-label='Type']/option[text()='{typeName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
