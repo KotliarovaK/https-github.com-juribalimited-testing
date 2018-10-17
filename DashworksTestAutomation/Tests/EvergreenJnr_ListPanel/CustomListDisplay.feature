@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @DAS13838 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Static List TestName" list is displayed to user
 	And Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @DAS11951 @DAS12199 @DAS13001 @DAS13838 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @DAS11951 @DAS12199 @DAS13001 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -477,7 +477,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	When User navigates to the "Applications List TestName" list
 	Then Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @DAS13838 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

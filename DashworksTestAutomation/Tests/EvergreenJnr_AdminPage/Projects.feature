@@ -2094,7 +2094,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User selects "History" tab on the Project details page
 	Then onboarded objects are displayed in the dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @DAS12763 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @DAS12763 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2124,7 +2124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
 
-@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @DAS12485 @DAS12825 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @DAS12485 @DAS12825 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2626,7 +2626,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758 @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
