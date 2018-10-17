@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.SearchEverythingField.Clear();
             searchElement.SearchEverythingField.SendKeys(searchText);
             _driver.WaitForDataLoading();
-            searchElement.SearchEverythingField.SendKeys(Keys.Enter);
+            searchElement.SearchEverythingField.SendKeys(OpenQA.Selenium.Keys.Enter);
         }
 
         [Then(@"""(.*)"" is displayed below Global Search field")]
