@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Net;
-using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Providers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -15,17 +13,15 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.API
 {
     [Binding]
-    internal class EvergreenJnr_API_ProfilePage
+    internal class EvergreenJnr_API_ProfilePage : TechTalk.SpecFlow.Steps
     {
         private readonly RestWebClient _client;
-        private readonly WebsiteUrl _url;
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_API_ProfilePage(RestWebClient client, RemoteWebDriver driver, WebsiteUrl url)
+        public EvergreenJnr_API_ProfilePage(RestWebClient client, RemoteWebDriver driver)
         {
             _client = client;
             _driver = driver;
-            _url = url;
         }
 
         [Then(@"default list page Size is ""(.*)"" and Cache ""(.*)""")]
@@ -49,16 +45,34 @@ namespace DashworksTestAutomation.Steps.API
             var gridPageSize = pageOptions["gridPageSize"].ToString();
             var gridPageCache = pageOptions["gridPageCache"].ToString();
             if (gridPageSize.Equals(string.Empty) ||
-                gridPageCache.Equals(string.Empty)) return;
-            Assert.AreEqual(pageSize, gridPageSize, "Incorrect Page Size on Account page");
-            Assert.AreEqual(pageCache, gridPageCache, "Incorrect Cache Size on Account page");
+                gridPageCache.Equals(string.Empty))
+            {
+                When($"User clicks \"{"Devices"}\" on the left-hand menu");
+                Then($"\"{"Devices"}\" list should be displayed to the user");
+                ThenPageSizeIsOnPage(1000, "Devices");
+                When($"User clicks \"{"Users"}\" on the left-hand menu");
+                Then($"\"{"Users"}\" list should be displayed to the user");
+                ThenPageSizeIsOnPage(1000, "Users");
+                When($"User clicks \"{"Applications"}\" on the left-hand menu");
+                Then($"\"{"Applications"}\" list should be displayed to the user");
+                ThenPageSizeIsOnPage(1000, "Applications");
+                When($"User clicks \"{"Mailboxes"}\" on the left-hand menu");
+                Then($"\"{"Mailboxes"}\" list should be displayed to the user");
+                ThenPageSizeIsOnPage(1000, "Mailboxes");
+            }
+            else
+            {
+                Assert.AreEqual(pageSize, gridPageSize, "Incorrect Page Size on Account page");
+                Assert.AreEqual(pageCache, gridPageCache, "Incorrect Cache Size on Account page");
+            }
         }
 
         [Then(@"page Size is ""(.*)"" on ""(.*)"" page")]
         public void ThenPageSizeIsOnPage(int pageSize, string pageName)
         {
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
-            Assert.True(lastNetworkRequest["name"].ToString().Contains($"?$top={pageSize}"), $"Page Size is not {pageSize}");
+            Assert.True(lastNetworkRequest["name"].ToString().Contains($"?$top={pageSize}"),
+                $"Page Size is not {pageSize}");
         }
     }
 }

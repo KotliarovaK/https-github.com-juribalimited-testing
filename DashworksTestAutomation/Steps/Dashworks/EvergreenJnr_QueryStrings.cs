@@ -14,15 +14,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
     [Binding]
     internal class EvergreenJnr_QueryStrings : SpecFlowContext
     {
-        private readonly RestWebClient _client;
         private readonly RemoteWebDriver _driver;
         private readonly WebsiteUrl _url;
 
-        public EvergreenJnr_QueryStrings(RemoteWebDriver driver, WebsiteUrl url, RestWebClient client)
+        public EvergreenJnr_QueryStrings(RemoteWebDriver driver, WebsiteUrl url)
         {
             _driver = driver;
             _url = url;
-            _client = client;
         }
 
         [Given(@"User is on Dashworks Homepage")]
@@ -41,7 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Logger.Write("Using automation2.corp.juriba.com instead");
             }
             //Check if the forced login page is displayed
-            else if (loginPage.LoginsplashPanel.Displayed())
+            else if (loginPage.LoginSplashPanel.Displayed())
             {
                 Logger.Write("Forced login splash page is visible instead of Dashworks homepage");
             }
@@ -53,11 +51,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var loginPage = _driver.NowAt<LoginPanelPage>();
 
             //Only check the login link is visible if the forced login splash page is not displayed
-            if (loginPage.LoginsplashPanel.Displayed())
-            {
-                Assert.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
-                Logger.Write("Login link is visible");
-            }
+            if (!loginPage.LoginSplashPanel.Displayed()) return;
+            Assert.IsTrue(loginPage.LoginLink.Displayed, "Login link is NOT visible");
+            Logger.Write("Login link is visible");
         }
 
         [When(@"User clicks on the Login link")]
@@ -66,7 +62,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var loginPage = _driver.NowAt<LoginPanelPage>();
 
             //Only click the login link if the forced login splash page is NOT displayed
-            if (!loginPage.LoginsplashPanel.Displayed())
+            if (!loginPage.LoginSplashPanel.Displayed())
             {
                 loginPage.LoginLink.Click();
                 Logger.Write("Login link was clicked");
@@ -78,13 +74,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var loginPage = _driver.NowAt<LoginPage>();
 
-            if (loginPage.LoginGroupbox.Displayed())
+            if (loginPage.LoginGroupBox.Displayed())
             {
                 Logger.Write("Login page is visible");
             }
             else
             {
-                Assert.IsTrue(loginPage.SplasLoginGroupbox.Displayed(), "Login Splash page is NOT visible");
+                Assert.IsTrue(loginPage.SplashLoginGroupBox.Displayed(), "Login Splash page is NOT visible");
                 Logger.Write("Login Splash page is visible");
             }
         }
@@ -145,7 +141,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 Logger.Write($"Evergreen agGrid Main Object List is returned with data for: {row["QueryType"]} query");
                 ThenAgGridMainObjectListIsReturnedWithData();
-                EvergreenJnr_ListSearch evergreenJnrListSearch = new EvergreenJnr_ListSearch(_driver);
+                var evergreenJnrListSearch = new EvergreenJnr_ListSearch(_driver);
                 evergreenJnrListSearch.ThenRowsAreDisplayedInTheAgGrid(row["RowCount"]);
             }
         }

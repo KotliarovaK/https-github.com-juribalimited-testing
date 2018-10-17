@@ -1,13 +1,12 @@
 ﻿using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
-using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -263,8 +262,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                          ResourceFilesNamesProvider.IncorrectFile;
+            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                       ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
         }
 
@@ -274,8 +273,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                          ResourceFilesNamesProvider.CorrectFile;
+            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                       ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
         }
 
@@ -356,7 +355,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [AfterScenario("Remove_Profile_Changes")]
-        public void RemoveProfileChangesAfterscenario()
+        public void RemoveProfileChangesAfterScenario()
         {
             try
             {
@@ -376,11 +375,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.UpdateButton.Click();
             }
             catch
-            {}
+            {
+            }
         }
 
         [AfterScenario("Remove_Password_Changes")]
-        public void RemovePasswordChangesAfterscenario()
+        public void RemovePasswordChangesAfterScenario()
         {
             try
             {
@@ -394,7 +394,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.UpdateButton.Click();
             }
             catch
-            {}
+            {
+            }
         }
 
         [AfterScenario("Delete_Newly_Created_User")]
@@ -408,8 +409,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var loginPage1 = _driver.NowAt<LoginPanelPage>();
                 loginPage1.LoginLink.Click();
                 var loginPage = _driver.NowAt<LoginPage>();
-                loginPage.SplashUserNameTextbox.SendKeys("admin");
-                loginPage.SplashPasswordTextbox.SendKeys("m!gration");
+                loginPage.SplashUserNameTextBox.SendKeys("admin");
+                loginPage.SplashPasswordTextBox.SendKeys("m!gration");
                 loginPage.SplashLoginButton.Click();
                 _driver.WaitForDataLoading();
                 var page = _driver.NowAt<ManagementConsolePage>();
@@ -418,8 +419,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.ManageUsersLink.Click();
                 _driver.WaitForDataLoading();
                 var page1 = _driver.NowAt<MainElementsOfProjectCreation>();
-                page1.SearchTextbox.Clear();
-                page1.SearchTextbox.SendKeys("DAS13288");
+                page1.SearchTextBox.Clear();
+                page1.SearchTextBox.SendKeys("DAS13288");
                 page1.SearchButton.Click();
                 _driver.WaitForDataLoading();
                 page1.GetDeleteButtonElementByName("DAS13288").Click();
@@ -427,7 +428,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.AcceptAlert();
             }
             catch
-            {}
+            {
+            }
         }
     }
 }

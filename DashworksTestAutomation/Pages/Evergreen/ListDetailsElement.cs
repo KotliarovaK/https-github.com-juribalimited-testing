@@ -26,12 +26,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using = ".//i[contains(@class,'material-icons pull-left list-star-icon star-filled')]")]
-        public IWebElement UnfavoriteButton { get; set; }
+        public IWebElement UnFavoriteButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='favourite']")]
         public IWebElement ActiveFavoriteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default btn-remove mat-icon-button _mat-animation-noopable']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[@class='btn btn-default btn-remove mat-icon-button _mat-animation-noopable']")]
         public IWebElement RemoveListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button _mat-animation-noopable']")]

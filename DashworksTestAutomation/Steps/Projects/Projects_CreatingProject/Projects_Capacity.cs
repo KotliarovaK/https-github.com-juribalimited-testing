@@ -1,17 +1,17 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
-using DashworksTestAutomation.DTO.Projects.Capacity;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects;
-using DashworksTestAutomation.Pages.Projects.Capacity;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects.Capacity;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
-namespace DashworksTestAutomation.Steps.Projects
+namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
 {
     [Binding]
     internal class Projects_Capacity : SpecFlowContext
@@ -21,17 +21,16 @@ namespace DashworksTestAutomation.Steps.Projects
         private readonly Capacity_DetailsDto _detailsDto;
         private readonly Capacity_CapacityDto _capacityDto;
         private readonly Capacity_OverrideDatesDto _overrideDatesDto;
-        private readonly Capacity_SummaryDto _summaryDto;
 
 
-        public Projects_Capacity(RemoteWebDriver driver, ProjectDto projectDto, Capacity_DetailsDto detailsDto, Capacity_CapacityDto capacityDto, Capacity_OverrideDatesDto overrideDatesDto, Capacity_SummaryDto summaryDto)
+        public Projects_Capacity(RemoteWebDriver driver, ProjectDto projectDto, Capacity_DetailsDto detailsDto,
+            Capacity_CapacityDto capacityDto, Capacity_OverrideDatesDto overrideDatesDto)
         {
             _driver = driver;
             _projectDto = projectDto;
             _detailsDto = detailsDto;
             _capacityDto = capacityDto;
             _overrideDatesDto = overrideDatesDto;
-            _summaryDto = summaryDto;
         }
 
         [When(@"User updates the Details on Capacity tab")]
@@ -98,6 +97,7 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
                 _driver.WaitForDataLoadingOnProjects();
             }
+
             _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
             page.StartDate.Clear();
             page.StartDate.SendKeys(_capacityDto.StartDate);
@@ -152,14 +152,18 @@ namespace DashworksTestAutomation.Steps.Projects
             page.Date.SendKeys(_overrideDatesDto.Date);
             page.OverrideTeam.SelectboxSelect(_overrideDatesDto.OverrideTeam.GetValue());
 
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.ComputerScheduledProject))
-                _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultComputer;
-
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
-                _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultMailbox;
-
-            if (_projectDto.ProjectType.Equals(ProjectTypeEnum.UserScheduledProject))
-                _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultUser;
+            switch (_projectDto.ProjectType)
+            {
+                case ProjectTypeEnum.ComputerScheduledProject:
+                    _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultComputer;
+                    break;
+                case ProjectTypeEnum.MailboxScheduledProject:
+                    _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultMailbox;
+                    break;
+                case ProjectTypeEnum.UserScheduledProject:
+                    _overrideDatesDto.OverrideRequestType = OverrideRequestTypeEnum.DefaultUser;
+                    break;
+            }
 
             page.Capacity.SendKeys(_overrideDatesDto.Capacity.ToString());
             page.Comment.SendKeys(_overrideDatesDto.Comment);

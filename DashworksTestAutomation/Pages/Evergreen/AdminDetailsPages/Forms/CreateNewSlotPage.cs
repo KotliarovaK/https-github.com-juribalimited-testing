@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -10,7 +8,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
     internal class CreateNewSlotPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]//h2[text()='Create Capacity Slot']")]
+        [FindsBy(How = How.XPath,
+            Using = "//div[contains(@class,'action-container')]//h2[text()='Create Capacity Slot']")]
         public IWebElement CreateNewSlotTitle { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

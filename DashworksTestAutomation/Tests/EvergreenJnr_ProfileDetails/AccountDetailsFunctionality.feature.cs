@@ -213,9 +213,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.Then("default list page Size is \"1000\" and Cache \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("page Size is \"1000\" on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         

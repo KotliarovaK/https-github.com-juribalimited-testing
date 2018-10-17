@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ResultsRowsCount { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle mat-icon-button ')]")]
-        public IWebElement GlobalSearchTextboxResetButton { get; set; }
+        public IWebElement GlobalSearchTextBoxResetButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

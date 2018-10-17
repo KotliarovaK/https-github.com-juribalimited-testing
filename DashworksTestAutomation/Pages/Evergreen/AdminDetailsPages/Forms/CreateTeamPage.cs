@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
+namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
     internal class CreateTeamPage : SeleniumBasePage
     {
@@ -21,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Team Description']")]
         public IWebElement TeamDescriptionField { get; set; }
-        
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -33,7 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectObjectForTeamCreation(string objectName)
         {
-            string ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
+            var ListNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(ListNameSelector));
             Driver.FindElement(By.XPath(ListNameSelector)).Click();
         }

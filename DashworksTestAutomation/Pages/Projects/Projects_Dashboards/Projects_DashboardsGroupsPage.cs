@@ -7,7 +7,8 @@ namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
 {
     internal class Projects_DashboardsGroupsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ui-jqgrid-bdiv']//table[contains(@id,'GroupObjectsDashboard')]")]
+        [FindsBy(How = How.XPath,
+            Using = ".//div[@class='ui-jqgrid-bdiv']//table[contains(@id,'GroupObjectsDashboard')]")]
         public IWebElement Table { get; set; }
 
         public IWebElement GetPageHeaderByGroupName(string groupName)
@@ -17,13 +18,16 @@ namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
             if (groupName.Contains("'"))
             {
                 var strings = groupName.Split('\'');
-                selector = $"//div[contains(@class, 'ui-helper-clearfix')]//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                selector =
+                    $"//div[contains(@class, 'ui-helper-clearfix')]//span[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
             }
             else
             {
                 selector = $"//div[contains(@class, 'ui-helper-clearfix')]//span[text()='{groupName}']";
             }
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));;
+
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            ;
             return Driver.FindElement(By.XPath(selector));
         }
     }

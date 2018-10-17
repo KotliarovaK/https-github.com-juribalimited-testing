@@ -91,7 +91,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCreateButtonIsNotDisplayed()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsFalse(button.CreateActionButton.Displayed(), "Create button is displayed on the Base Dashboard Page");
+            Assert.IsFalse(button.CreateActionButton.Displayed(),
+                "Create button is displayed on the Base Dashboard Page");
         }
 
         [Then(@"tooltip is displayed with ""(.*)"" text for Create Project button")]
@@ -116,7 +117,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterContainerButton);
-            Assert.IsTrue(Convert.ToBoolean(menu.FilterContainerButton.GetAttribute("disabled")), "Filter button on AGgrid is active");
+            Assert.IsTrue(Convert.ToBoolean(menu.FilterContainerButton.GetAttribute("disabled")),
+                "Filter button on AGgrid is active");
         }
 
         [Then(@"Empty link is displayed for first row in the ""(.*)"" column")]

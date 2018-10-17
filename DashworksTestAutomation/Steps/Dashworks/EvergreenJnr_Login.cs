@@ -7,7 +7,6 @@ using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
 using TechTalk.SpecFlow;
@@ -65,16 +64,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var loginPage = _driver.NowAt<LoginPage>();
 
-            if (loginPage.LoginGroupbox.Displayed())
+            if (loginPage.LoginGroupBox.Displayed())
             {
-                loginPage.UserNameTextbox.SendKeys(user.UserName);
-                loginPage.PasswordTextbox.SendKeys(user.Password);
+                loginPage.UserNameTextBox.SendKeys(user.UserName);
+                loginPage.PasswordTextBox.SendKeys(user.Password);
                 loginPage.LoginButton.Click();
             }
             else
             {
-                loginPage.SplashUserNameTextbox.SendKeys(user.UserName);
-                loginPage.SplashPasswordTextbox.SendKeys(user.Password);
+                loginPage.SplashUserNameTextBox.SendKeys(user.UserName);
+                loginPage.SplashPasswordTextBox.SendKeys(user.Password);
                 loginPage.SplashLoginButton.Click();
             }
         }
@@ -87,16 +86,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var loginPage = _driver.NowAt<LoginPage>();
 
-            if (loginPage.LoginGroupbox.Displayed())
+            if (loginPage.LoginGroupBox.Displayed())
             {
-                loginPage.UserNameTextbox.SendKeys(_user.UserName);
-                loginPage.PasswordTextbox.SendKeys(_user.Password);
+                loginPage.UserNameTextBox.SendKeys(_user.UserName);
+                loginPage.PasswordTextBox.SendKeys(_user.Password);
                 loginPage.LoginButton.Click();
             }
             else
             {
-                loginPage.SplashUserNameTextbox.SendKeys(_user.UserName);
-                loginPage.SplashPasswordTextbox.SendKeys(_user.Password);
+                loginPage.SplashUserNameTextBox.SendKeys(_user.UserName);
+                loginPage.SplashPasswordTextBox.SendKeys(_user.Password);
                 loginPage.SplashLoginButton.Click();
             }
         }
@@ -107,20 +106,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var loginPage = _driver.NowAt<LoginPage>();
 
             foreach (var row in table.Rows)
-            {
-                if (loginPage.LoginGroupbox.Displayed())
+                if (loginPage.LoginGroupBox.Displayed())
                 {
-                    loginPage.UserNameTextbox.SendKeys(row["Username"]);
-                    loginPage.PasswordTextbox.SendKeys(row["Password"]);
+                    loginPage.UserNameTextBox.SendKeys(row["Username"]);
+                    loginPage.PasswordTextBox.SendKeys(row["Password"]);
                     loginPage.LoginButton.Click();
                 }
                 else
                 {
-                    loginPage.SplashUserNameTextbox.SendKeys(row["Username"]);
-                    loginPage.SplashPasswordTextbox.SendKeys(row["Password"]);
+                    loginPage.SplashUserNameTextBox.SendKeys(row["Username"]);
+                    loginPage.SplashPasswordTextBox.SendKeys(row["Password"]);
                     loginPage.SplashLoginButton.Click();
                 }
-            }
         }
 
         [Then(@"Dashworks homepage is displayed to the user in a logged in state")]
@@ -162,13 +159,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var restClient = new RestClient(UrlProvider.Url);
             //Get cookies
-            HttpClientHelper client = new HttpClientHelper(user, restClient);
+            var client = new HttpClientHelper(user, restClient);
 
             //Init session
             _driver.NavigateToUrl(UrlProvider.Url);
 
             //Set cookies to browser
-            foreach (Cookie cookie in client.SeleniumCookiesJar) _driver.Manage().Cookies.AddCookie(cookie);
+            foreach (var cookie in client.SeleniumCookiesJar) _driver.Manage().Cookies.AddCookie(cookie);
 
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);

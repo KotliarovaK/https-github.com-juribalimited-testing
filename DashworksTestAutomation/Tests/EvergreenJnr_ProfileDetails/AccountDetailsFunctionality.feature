@@ -63,18 +63,6 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 @Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API
 Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	Then page Size is "1000" on "Devices" page
-	#When User clicks "Users" on the left-hand menu
-	#Then "Users" list should be displayed to the user
-	#Then page Size is "1000" on "Users" page
-	#When User clicks "Applications" on the left-hand menu
-	#Then "Applications" list should be displayed to the user
-	#Then page Size is "1000" on "Applications" page
-	#When User clicks "Mailboxes" on the left-hand menu
-	#Then "Mailboxes" list should be displayed to the user
-	#Then page Size is "1000" on "Mailboxes" page
 
 @Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS13026 @API
 Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI

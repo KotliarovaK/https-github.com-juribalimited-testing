@@ -1,8 +1,5 @@
 ﻿using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
-using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Utils;
-using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -22,7 +19,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksSectionFromChartOnDashboardsPage(string sectionName, string chartName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             page.ClickSectionFromCircleChart(chartName, sectionName);
         }
     }

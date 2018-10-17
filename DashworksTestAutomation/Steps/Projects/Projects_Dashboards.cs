@@ -1,5 +1,4 @@
 ﻿using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.Projects_Dashboards;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;

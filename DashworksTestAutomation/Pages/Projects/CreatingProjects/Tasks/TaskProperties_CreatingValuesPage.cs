@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
-using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects.Tasks
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 {
     internal class TaskProperties_CreatingValuesPage : SeleniumBasePage
     {
+        private const string Readiness = ".//input[contains(@class, 'option_value')]/../label[text()='{0}']";
+
         [FindsBy(How = How.XPath, Using = ".//input[contains(@class, 'name')]")]
         public IWebElement Name { get; set; }
 
@@ -18,8 +19,6 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@id, 'ColourStatusID')]")]
         public IWebElement ReadinessListClick { get; set; }
-
-        private const string Readiness = ".//input[contains(@class, 'option_value')]/../label[text()='{0}']";
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@id, 'ColourStatusID')]//li")]
         public IList<IWebElement> ReadinessOptions { get; set; }
@@ -53,7 +52,7 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
         public KeyValuePair<int, string> SelectReadiness(int index)
         {
             var option = GetRandomReadinessOption(index);
-            string selector = string.Format(Readiness, option.Value);
+            var selector = string.Format(Readiness, option.Value);
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
             return option;

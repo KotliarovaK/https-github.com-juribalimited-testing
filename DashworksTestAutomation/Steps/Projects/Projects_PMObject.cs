@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Projects
         }
 
         [Then(@"Colour of onboarded app is ""(.*)""")]
-        public void ThenColourOfOnboardedAppIs(string colorName)
+        public void ThenColorOfOnboardedAppIs(string colorName)
         {
             var page = _driver.NowAt<Projects_PMObjectPage>();
             var color = page.ColorItem.GetAttribute("title");
