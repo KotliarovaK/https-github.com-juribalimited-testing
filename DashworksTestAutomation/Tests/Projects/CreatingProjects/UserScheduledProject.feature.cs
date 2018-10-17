@@ -438,7 +438,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "To",
                         "SendOnceOnly",
                         "RequestTypesAll",
-                        "ApplyEmailToAll"});
+                        "ApllyEmailToAll"});
             table25.AddRow(new string[] {
                         "true",
                         "UserScheduledProject0@email.com",
@@ -575,7 +575,7 @@ namespace DashworksTestAutomation.Tests.Projects.CreatingProjects
                         "To",
                         "SendOnceOnly",
                         "RequestTypesAll",
-                        "ApplyEmailToAll"});
+                        "ApllyEmailToAll"});
             table32.AddRow(new string[] {
                         "true",
                         "UserScheduledProject2@email.com",
