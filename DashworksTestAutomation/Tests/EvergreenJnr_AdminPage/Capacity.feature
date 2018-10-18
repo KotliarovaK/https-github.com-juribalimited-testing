@@ -93,16 +93,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User clicks the "CREATE NEW SLOT" Action button
 	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
-	When User selects "Capacity Units" in the "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
+	And User selects "Capacity Units" in the "Capacity Type" dropdown
+	And User clicks the "CREATE" Action button
 	Then Error message with "A capacity slot already exists with this name" text is displayed
 	When User clicks the "CREATE NEW SLOT" Action button
 	And User type "UniqueNameSlot" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
-	When User clicks the "CREATE" Action button
+	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User click content from "Capacity Slot" column
+	And User type "NewSlotName" Name in the "Slot Name" field on the Project details page
+	And User type "NewDisplayName" Name in the "Display Name" field on the Project details page
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The capacity slot details have been updated" text
+	Then "NewSlotName" text is displayed in the table content
+	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13790 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13790 @DAS13528 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -126,3 +133,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
+	When User clicks the "CANCEL" Action button
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "DAS13528" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User selects "Details" tab on the Project details page
+	When User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+	Then There are no errors in the browser console
