@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And "Users 0/0" is displayed in the tab header on the Admin page
 	And "Applications 0/0" is displayed in the tab header on the Admin page
 	When User selects "Queue" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the Queue table
 	| Items                          |
@@ -456,8 +456,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
-	| FilterData |
-	| 7302017    |
+	| FilterData  |
+	| 30 Jul 2017 |
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
@@ -474,7 +474,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the History table
 	| Items                          |
@@ -508,8 +508,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User click on "Status" column header on the Admin page
 	Then data in table is sorted by "Status" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
-	| FilterData |
-	| 7302017    |
+	| FilterData  |
+	| 30 Jul 2017 |
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column

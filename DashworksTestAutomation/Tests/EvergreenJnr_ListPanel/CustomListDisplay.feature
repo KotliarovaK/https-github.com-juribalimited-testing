@@ -1060,7 +1060,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	And User clicks Delete button on the warning message in the lists panel
 	And "List Deleted" message is displayed
 
-@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
+@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

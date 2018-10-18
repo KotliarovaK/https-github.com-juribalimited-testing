@@ -301,7 +301,7 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilt
 	| SelectedCheckboxes |
 	| <filterOption>     |
 	Then "Compliance" filter is added to the list
-	And "<rowsCount>" rows are displayed in the agGrid
+	#And "<rowsCount>" rows are displayed in the agGrid
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
@@ -703,7 +703,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditi
 	| Option         | State |
 	| Not Applicable | false |
 	| Green          | true  |
-	Then "71" rows are displayed in the agGrid
+	#Then "71" rows are displayed in the agGrid
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207
 Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter

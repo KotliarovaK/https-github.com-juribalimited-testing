@@ -225,7 +225,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public string GetInstalledFilterPanelHeight()
         {
-            return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("height");
+            return Driver.FindElement(By.XPath(".//div[contains(@class, 'ag-menu')]")).GetCssValue("height");
         }
 
         public string CollectionSiteColumnWidth()
@@ -240,7 +240,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public string GetInstalledFilterPanelWidth()
         {
-            return Driver.FindElement(By.XPath(".//div[@class='ag-menu']")).GetCssValue("width");
+            return Driver.FindElement(By.XPath(".//div[contains(@class, 'ag-menu')]")).GetCssValue("width");
         }
 
         public List<string> GetColumnIdContent(string columnName)

@@ -76,7 +76,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Select Permission']")]
         public IWebElement PermissionsDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
         public IWebElement DateFilterValue { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]

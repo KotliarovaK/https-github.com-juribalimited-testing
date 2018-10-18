@@ -741,7 +741,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When(string.Format("User add \"Compliance\" filter where type is \"{0}\" with added column and following " +
                         "checkboxes:", operatorValue), ((string)(null)), table30, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table31.AddRow(new string[] {
@@ -1673,7 +1672,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Green",
                         "true"});
             testRunner.When("User change selected checkboxes:", ((string)(null)), table69, "When ");
-            testRunner.Then("\"71\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         

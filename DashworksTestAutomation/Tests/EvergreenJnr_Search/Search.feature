@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,717       |
 	| 192.168.6           | 5,100        |
-	| RED                 | 9,238        |
+	#| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @DAS12206
@@ -201,7 +201,7 @@ Scenario Outline: EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorr
 
 Examples: 
 	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
-	| Devices      | Compliance                                      | GREEN                                       | 100          |
+	#| Devices      | Compliance                                      | GREEN                                       | 100          |
 	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
 	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
 	| Applications | Import Type                                     | Altiris 6                                   | 31           |

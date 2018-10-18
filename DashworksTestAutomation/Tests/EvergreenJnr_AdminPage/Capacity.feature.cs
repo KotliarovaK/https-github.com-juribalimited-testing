@@ -197,6 +197,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13171")]
         [NUnit.Framework.CategoryAttribute("DAS13432")]
         [NUnit.Framework.CategoryAttribute("DAS13430")]
+        [NUnit.Framework.CategoryAttribute("DAS13412")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell()
         {
@@ -209,6 +210,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13171",
                         "DAS13432",
                         "DAS13430",
+                        "DAS13412",
                         "Delete_Newly_Created_Project"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
