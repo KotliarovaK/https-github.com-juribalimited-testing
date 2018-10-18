@@ -5682,8 +5682,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "User Scheduled Test (Jo)"});
             table126.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)"});
-            testRunner.Then("User sees folloing options in Select Existing Project dropdown on Import Projects" +
-                    " page:", ((string)(null)), table126, "Then ");
+            testRunner.Then("User sees following options in Select Existing Project dropdown on Import Project" +
+                    "s page:", ((string)(null)), table126, "Then ");
             this.ScenarioCleanup();
         }
         

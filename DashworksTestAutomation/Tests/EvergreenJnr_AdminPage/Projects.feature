@@ -3029,7 +3029,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	When User clicks Admin on the left-hand menu
 	And User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
-	Then User sees folloing options in Select Existing Project dropdown on Import Projects page:
+	Then User sees following options in Select Existing Project dropdown on Import Projects page:
 	| OptionLabel                                       |
 	| Babel (English, German and French)                |
 	| User Project                                      |
