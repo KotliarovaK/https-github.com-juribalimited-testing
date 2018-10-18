@@ -797,7 +797,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             importProjectPage.SelectDropdownOption(dropdownName, optionName);
         }
 
-        [Then(@"User sees folloing options in Select Existing Project dropdown on Import Projects page:")]
+        [Then(@"User sees following options in Select Existing Project dropdown on Import Projects page:")]
         public void ThenUserSeesFollowingOptionsInSelectExistingProjectDropdownOnImportProjectsPage(Table table)
         {
             var importProjectPage = _driver.NowAt<ImportProjectPage>();
@@ -1301,7 +1301,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            Assert.IsTrue(page.BucketSelectbox.Displayed, "Move To Another Bucket Page is not displayed to the user");
+            Assert.IsTrue(page.MoveToSelectBox.Displayed, "Move To Another Bucket Page is not displayed to the user");
         }
 
         [When(@"User moves selected objects to ""(.*)"" Capacity Unit")]

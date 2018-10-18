@@ -74,9 +74,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var moveToAnotherBucketPage = _driver.NowAt<MoveToAnotherBucketPage>();
             var firstBucket = _driver
-                .GetOptionsFromMatSelectbox(moveToAnotherBucketPage.BucketSelectbox)
+                .GetOptionsFromMatSelectbox(moveToAnotherBucketPage.MoveToSelectBox)
                 .First().Text;
-            _driver.SelectMatSelectbox(moveToAnotherBucketPage.BucketSelectbox, firstBucket);
+            _driver.SelectMatSelectbox(moveToAnotherBucketPage.MoveToSelectBox, firstBucket);
             moveToAnotherBucketPage.MoveButton.Click();
         }
     }
