@@ -451,6 +451,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetDropdownByName(string dropdownName)
+        {
+            var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownValueByName(string value)
+        {
+            var selector = By.XPath($".//span[@class='mat-option-text'][text()='{value}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public void SelectValueInTheDropdown(string value)
+        {
+            var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{value}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
         public IWebElement GetLinkByText(string text)
         {
             var selector = By.XPath($"//span[contains(@class, 'inline-link')]//a[text()='{text}']");

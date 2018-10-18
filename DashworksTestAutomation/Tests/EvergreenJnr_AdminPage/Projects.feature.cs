@@ -3950,8 +3950,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12755")]
         [NUnit.Framework.CategoryAttribute("DAS12763")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Babel")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingPr" +
@@ -3962,9 +3960,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12755",
                         "DAS12763",
-                        "Delete_Newly_Created_Project",
-                        "Babel",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Project"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4009,8 +4005,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS12825")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Babel")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly", new string[] {
@@ -4022,9 +4016,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12965",
                         "DAS12485",
                         "DAS12825",
-                        "Delete_Newly_Created_Project",
-                        "Babel",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Project"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4900,8 +4892,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11758")]
-        [NUnit.Framework.CategoryAttribute("Babel")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage", new string[] {
@@ -4909,9 +4899,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "DAS11758",
-                        "Babel",
-                        "Not_Run"});
+                        "DAS11758"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

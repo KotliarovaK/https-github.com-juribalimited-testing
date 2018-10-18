@@ -98,10 +98,27 @@ namespace DashworksTestAutomation.Steps.API
 
             items = items.TrimEnd(',');
 
-            #region Create list
+            #region Send Options to allow Post requests
 
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
+
             var request = new RestRequest(requestUri);
+
+            request.AddParameter("Accept", "*/*");
+            request.AddParameter("Accept-Encoding", "gzip, deflate");
+            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
+            request.AddParameter("Access-Control-Request-Headers", "content-type");
+            request.AddParameter("Access-Control-Request-Method", "POST");
+            request.AddParameter("Connection", "keep-alive");
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            #endregion
+
+            #region Create list
+
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
+            request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
@@ -142,14 +159,10 @@ namespace DashworksTestAutomation.Steps.API
             #region Add query to list
 
             var queryString = GetStaticQueryStringFromUrl(pageName, listId);
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}";
             request = new RestRequest(requestUri);
 
-            request.AddParameter("Accept", "application/json");
-            request.AddParameter("Accept-Encoding", "gzip, deflate");
-            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
-            request.AddParameter("Connection", "keep-alive");
-            request.AddParameter("Content-Type", "application/json");
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
             request.AddParameter("listId", listId);
@@ -159,7 +172,31 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("sharedAccessType", "Private");
             request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
 
+            response = _client.Value.Put(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
             #endregion
+
+            #region Send Options to allow Put requests
+
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}/items";
+
+            request = new RestRequest(requestUri);
+
+            request.AddParameter("Accept", "*/*");
+            request.AddParameter("Accept-Encoding", "gzip, deflate");
+            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
+            request.AddParameter("Access-Control-Request-Headers", "content-type");
+            request.AddParameter("Access-Control-Request-Method", "POST");
+            request.AddParameter("Connection", "keep-alive");
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            #endregion
+
+            #region Add items to list
 
             requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}/items";
             request = new RestRequest(requestUri);
@@ -178,6 +215,8 @@ namespace DashworksTestAutomation.Steps.API
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
             _driver.Navigate().GoToUrl(url);
+
+            #endregion
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
@@ -232,7 +271,7 @@ namespace DashworksTestAutomation.Steps.API
 
         private static string GetStaticQueryStringFromUrl(string pageName, string listId)
         {
-            var queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$listid=" + $"{listId}";
+            var queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + $"&$listid={listId}";
             return queryString;
         }
     }
