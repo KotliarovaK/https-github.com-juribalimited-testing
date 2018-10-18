@@ -523,6 +523,3 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	And User selects all rows on the grid
 	And User removes selected item
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
-	#And User clicks on Actions button
-	#And User selects "Delete Team" in the Actions
-	#And User clicks the "DELETE" Action button
