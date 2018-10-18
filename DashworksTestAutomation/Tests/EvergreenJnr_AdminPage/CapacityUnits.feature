@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "Evergreen" checkbox is checked in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626
 Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -29,6 +29,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the NotDefaultCapacityUnit13720 capacity unit" link
+	Then There are no errors in the browser console
 	And "NotDefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "NotDefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	Then "FALSE" value is displayed for Default column
