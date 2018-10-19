@@ -63,7 +63,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters "1" text in the Search field for "Capacity" column
 	Then Counter shows "0" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -180,3 +180,47 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNONPublishedDateTasksIsAvailableOnTheC
 	| Name        | Help        | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| for project | for project | for project      | Normal         | Date            | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13442 @DAS13440 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "ProjectDAS13442" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "ProjectDAS13442" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot13442" Name in the "Slot Name" field on the Project details page
+	And User type "13442" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User selects "Override Dates" tab on the Project details page
+	When User clicks the "ADD OVERRIDE DATE" Action button
+	And User enters "1 Sep 2018" date in the "Override Start Date" field
+	And User enters "7 Sep 2018" date in the "Override End Date" field
+	And User selects "Slot13442" in the "Slot" dropdown
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your override date has been created" text
+	When User clicks the "ADD OVERRIDE DATE" Action button
+	And User enters "5 Sep 2018" date in the "Override Start Date" field
+	And User enters "10 Sep 2018" date in the "Override End Date" field
+	And User selects "Slot13442" in the "Slot" dropdown
+	And User clicks the "CREATE" Action button
+	Then Error message with "An override already exists for this date" text is displayed
+	And There are no errors in the browser console
+	When User selects "Slots" tab on the Project details page
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| Slot13442        |
+	When User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	Then Warning message with "1 slot and 1 related override date will be deleted, do you wish to proceed?" text is displayed on the Admin page
