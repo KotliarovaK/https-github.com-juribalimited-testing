@@ -172,6 +172,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(button);
         }
 
+        public IWebElement GetNavigationLinkByName(string linkName)
+        {
+            var button = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            return Driver.FindElement(button);
+        }
+
         public IWebElement GetAssociatedCheckboxByName(string associatedCheckbox)
         {
             var button = By.XPath($"//span[text()='{associatedCheckbox}']/../div/input[@type='checkbox']");

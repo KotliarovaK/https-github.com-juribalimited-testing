@@ -3520,3 +3520,27 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	And "Delegated mailboxes " associated checkbox is checked
 	And "Other mailbox permissions" associated checkbox is checked
 	And "Mailbox folder permissions" associated checkbox is checked
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13606
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then "Windows 7 Migration (Computer Scheduled Project)" content is displayed in "Project Name" field
+	Then "Windows7Mi" content is displayed in "Project Short Name" field
+	Then "Windows 7 Migration Phase 1Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill;" content is displayed in "Project Description" field
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "Barry's User Project" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then "Barry's User Project" content is displayed in "Project Name" field
+	Then "Barry'sUse" content is displayed in "Project Short Name" field
+	Then "Barry's User Project" content is displayed in "Project Description" field
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "Email Migration" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then "Email Migration" content is displayed in "Project Name" field
+	Then "EmailMigra" content is displayed in "Project Short Name" field
+	Then "" content is displayed in "Project Description" field
