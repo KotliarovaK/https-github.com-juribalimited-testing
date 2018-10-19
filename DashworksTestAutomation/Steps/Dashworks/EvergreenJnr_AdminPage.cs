@@ -136,6 +136,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{pageTitle}' page is visible");
         }
 
+        [When(@"User clicks ""(.*)"" navigation link on the Admin page")]
+        public void WhenUserClicksNavigationLinkOnTheAdminPage(string linkName)
+        {
+            var link = _driver.NowAt<ProjectsPage>();
+            link.GetNavigationLinkByName(linkName).Click();
+        }
+
         #region Check button state
 
         [Then(@"Update Project buttons is disabled")]
@@ -1785,6 +1792,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Assert.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
+        }
+
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
+        public void ThenContentIsDisplayedInField(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
+                $"Text in {fieldName} field is different");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
