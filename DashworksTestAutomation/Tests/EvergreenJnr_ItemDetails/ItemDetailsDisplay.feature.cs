@@ -1876,6 +1876,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12883")]
         [NUnit.Framework.CategoryAttribute("DAS13208")]
         [NUnit.Framework.CategoryAttribute("DAS13478")]
+        [NUnit.Framework.CategoryAttribute("DAS13971")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly()
         {
@@ -1889,6 +1890,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "DAS12883",
                         "DAS13208",
                         "DAS13478",
+                        "DAS13971",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -2003,6 +2005,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13208")]
+        [NUnit.Framework.CategoryAttribute("DAS13971")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly()
         {
@@ -2014,6 +2017,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS13208",
+                        "DAS13971",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

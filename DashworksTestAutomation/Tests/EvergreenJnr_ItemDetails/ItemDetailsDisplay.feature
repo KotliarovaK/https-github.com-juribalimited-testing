@@ -810,7 +810,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @Not_Run
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @Not_Run
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -917,7 +917,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then There are no errors in the browser console
 	Then Delete "Bucket12883" Bucket in the Administration
 	
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @Not_Run
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @Not_Run
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
