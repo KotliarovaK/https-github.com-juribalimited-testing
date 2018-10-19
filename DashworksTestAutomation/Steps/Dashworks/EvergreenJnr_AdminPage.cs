@@ -1437,6 +1437,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
         public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
         {
+            var content = _driver.NowAt<BaseGridPage>();
+            if (!content.TableContent.Displayed())
+            {
+                _driver.Navigate().Refresh();
+            }
+
             if (tabName.Equals("Applications"))
             {
                 var page = _driver.NowAt<Capacity_CapacityUnitsPage>();

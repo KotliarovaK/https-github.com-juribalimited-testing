@@ -132,9 +132,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	| 01ERDGD48UDQKE  |
 	And User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
-	And data in table is sorted by "Hostname" column in ascending order by default on the Admin page
-	When User refreshes agGrid
-	Then "5" rows are displayed in the agGrid on Capacity Units page
 	And following Objects are displayed in "Devices" tab on the Capacity Units page:
 	| Objects         |
 	| 00I0COBFWHOF27  |
@@ -142,6 +139,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	| 00KLL9S8NRF0X6  |
 	| 00KWQ4J3WKQM0G  |
 	| 01ERDGD48UDQKE  |
+	And data in table is sorted by "Hostname" column in ascending order by default on the Admin page
+	When User refreshes agGrid
+	Then "5" rows are displayed in the agGrid on Capacity Units page
 	When User close message on the Admin page
 	And User click on Back button
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
@@ -359,7 +359,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnTh
 	Then "Move To Another Capacity Unit" is displayed on the Admin page
 	When User moves selected objects to "[Unassigned]" Capacity Unit
 	Then Success message is displayed and contains "The selected object has been added to the selected capacity unit" text
-	Then "4" rows are displayed in the agGrid on Capacity Units page
+	#Then "4" rows are displayed in the agGrid on Capacity Units page
 	When User click on Back button
 	When User enters "CapacityUnit12141" text in the Search field for "Capacity Unit" column
 	Then "4" content is displayed in "Devices" column

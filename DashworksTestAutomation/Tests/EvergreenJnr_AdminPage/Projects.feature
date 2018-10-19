@@ -3035,7 +3035,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| User Project                                      |
 	| Computer Scheduled Test (Jo)                      |
 	| Email Migration                                   |
-	#| Evergreen Project KK - all devices \ clone        |
 	| Havoc (Big Data)                                  |
 	| I-Computer Scheduled Project                      |
 	| Migration Project Phase 2 (User Project)          |
@@ -3544,3 +3543,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "Email Migration" content is displayed in "Project Name" field
 	Then "EmailMigra" content is displayed in "Project Short Name" field
 	Then "" content is displayed in "Project Description" field
+	Then There are no errors in the browser console
