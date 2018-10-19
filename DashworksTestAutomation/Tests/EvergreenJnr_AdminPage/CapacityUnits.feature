@@ -183,15 +183,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And data in table is sorted by "Username" column in ascending order by default on the Admin page
 	When User refreshes agGrid
 	Then "5" rows are displayed in the agGrid on Capacity Units page
-	And following Objects are displayed in "Users" tab on the Capacity Units page:
+	When User close message on the Admin page
+	Then following Objects are displayed in "Users" tab on the Capacity Units page:
 	| Objects              |
 	| $231000-3AC04R8AR431 |
 	| $6BE000-SUDQ9614UVO8 |
 	| ___ ___              |
 	| 002B5DC7D4D34D5C895  |
 	| 00BDBAEA57334C7C8F4  |
-	When User close message on the Admin page
-	And User click on Back button
+	When User click on Back button
 	When User enters "CapacityUnit12141Users" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Users" column
 	When User select "Capacity Unit" rows in the grid
@@ -231,15 +231,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And data in table is sorted by "Email Address" column in ascending order by default on the Admin page
 	When User refreshes agGrid
 	Then "5" rows are displayed in the agGrid on Capacity Units page
-	And following Objects are displayed in "Mailboxes" tab on the Capacity Units page:
+	When User close message on the Admin page
+	Then following Objects are displayed in "Mailboxes" tab on the Capacity Units page:
 	| Objects                          |
 	| 000F977AC8824FE39B8@bclabs.local |
 	| 002B5DC7D4D34D5C895@bclabs.local |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	| 0072B088173449E3A93@bclabs.local |
 	| 02171CE96D0244BBB80@bclabs.local |
-	When User close message on the Admin page
-	And User click on Back button
+	When User click on Back button
 	When User enters "CapacityUnit12141Mailboxes" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Mailboxes" column
 	When User select "Capacity Unit" rows in the grid
@@ -279,15 +279,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And data in table is sorted by "Application" column in ascending order by default on the Admin page
 	When User refreshes agGrid
 	Then "5" rows are displayed in the agGrid on Capacity Units page
-	And following Objects are displayed in "Applications" tab on the Capacity Units page:
+	When User close message on the Admin page
+	Then following Objects are displayed in "Applications" tab on the Capacity Units page:
 	| Objects                                                         |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI                  |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| ACD FotoCanvas 2.0 Trial                                        |
-	When User close message on the Admin page
-	And User click on Back button
+	When User click on Back button
 	When User enters "CapacityUnit12141Applications" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Applications" column
 	When User select "Capacity Unit" rows in the grid

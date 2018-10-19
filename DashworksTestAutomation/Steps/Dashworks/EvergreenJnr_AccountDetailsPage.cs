@@ -359,6 +359,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             try
             {
+                WhenUserClicksProfileInAccountDropdown();
                 var page = _driver.NowAt<AccountDetailsPage>();
                 page.FullNameField.Clear();
                 page.FullNameField.SendKeys(_userDto.FullName);
@@ -368,11 +369,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     : _userDto.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
+                page.NavigateToPage("Preferences");
                 var preferencesPage = _driver.NowAt<PreferencesPage>();
                 preferencesPage.PreferencesLink.Click();
                 preferencesPage.DisplayModeDropdown.Click();
                 preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
+                page.NavigateToPage("Advanced");
+                var advancedPage = _driver.NowAt<AdvancedPage>();
+                advancedPage.ListPageSizeField.Clear();
+                advancedPage.ListPageSizeField.SendKeys("0");
+                advancedPage.UpdateButton.Click();
             }
             catch
             {

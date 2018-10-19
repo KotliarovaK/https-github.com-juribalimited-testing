@@ -49,16 +49,16 @@ namespace DashworksTestAutomation.Steps.API
             {
                 When($"User clicks \"{"Devices"}\" on the left-hand menu");
                 Then($"\"{"Devices"}\" list should be displayed to the user");
-                ThenPageSizeIsOnPage(1000, "Devices");
+                Then($"page Size is \"{1000}\" on \"{"Devices"}\" page");
                 When($"User clicks \"{"Users"}\" on the left-hand menu");
                 Then($"\"{"Users"}\" list should be displayed to the user");
-                ThenPageSizeIsOnPage(1000, "Users");
+                Then($"page Size is \"{1000}\" on \"{"Users"}\" page");
                 When($"User clicks \"{"Applications"}\" on the left-hand menu");
                 Then($"\"{"Applications"}\" list should be displayed to the user");
-                ThenPageSizeIsOnPage(1000, "Applications");
+                Then($"page Size is \"{1000}\" on \"{"Applications"}\" page");
                 When($"User clicks \"{"Mailboxes"}\" on the left-hand menu");
                 Then($"\"{"Mailboxes"}\" list should be displayed to the user");
-                ThenPageSizeIsOnPage(1000, "Mailboxes");
+                Then($"page Size is \"{1000}\" on \"{"Mailboxes"}\" page");
             }
             else
             {
@@ -71,8 +71,7 @@ namespace DashworksTestAutomation.Steps.API
         public void ThenPageSizeIsOnPage(int pageSize, string pageName)
         {
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
-            Assert.True(lastNetworkRequest["name"].ToString().Contains($"?$top={pageSize}"),
-                $"Page Size is not {pageSize}");
+            Assert.That(lastNetworkRequest["name"].ToString().Contains($"?$top={pageSize}"), $"Page Size is not {pageSize}");
         }
     }
 }

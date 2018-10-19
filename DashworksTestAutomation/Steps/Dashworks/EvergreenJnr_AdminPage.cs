@@ -1437,27 +1437,44 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
         public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
         {
-            var content = _driver.NowAt<BaseGridPage>();
-            if (!content.TableContent.Displayed())
+            try
+            {
+                if (tabName.Equals("Applications"))
+                {
+                    var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+                else
+                {
+                    var page = _driver.NowAt<BaseGridPage>();
+
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+            }
+            catch (Exception)
             {
                 _driver.Navigate().Refresh();
-            }
+                if (tabName.Equals("Applications"))
+                {
+                    var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
 
-            if (tabName.Equals("Applications"))
-            {
-                var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+                else
+                {
+                    var page = _driver.NowAt<BaseGridPage>();
 
-                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-                var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
-                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
-            }
-            else
-            {
-                var page = _driver.NowAt<BaseGridPage>();
-
-                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-                var actualRowList = page.RowsList.Select(value => value.Text).ToList();
-                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
             }
         }
 

@@ -392,6 +392,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     " Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"5\" rows are displayed in the agGrid on Capacity Units page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User close message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table8.AddRow(new string[] {
@@ -404,9 +405,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "002B5DC7D4D34D5C895"});
             table8.AddRow(new string[] {
                         "00BDBAEA57334C7C8F4"});
-            testRunner.And("following Objects are displayed in \"Users\" tab on the Capacity Units page:", ((string)(null)), table8, "And ");
-            testRunner.When("User close message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("following Objects are displayed in \"Users\" tab on the Capacity Units page:", ((string)(null)), table8, "Then ");
+            testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"CapacityUnit12141Users\" text in the Search field for \"Capacity Unit\"" +
                     " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"5\" content is displayed in \"Users\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -481,6 +481,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "n the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"5\" rows are displayed in the agGrid on Capacity Units page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User close message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table11.AddRow(new string[] {
@@ -493,9 +494,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "0072B088173449E3A93@bclabs.local"});
             table11.AddRow(new string[] {
                         "02171CE96D0244BBB80@bclabs.local"});
-            testRunner.And("following Objects are displayed in \"Mailboxes\" tab on the Capacity Units page:", ((string)(null)), table11, "And ");
-            testRunner.When("User close message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("following Objects are displayed in \"Mailboxes\" tab on the Capacity Units page:", ((string)(null)), table11, "Then ");
+            testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"CapacityUnit12141Mailboxes\" text in the Search field for \"Capacity U" +
                     "nit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"5\" content is displayed in \"Mailboxes\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -571,6 +571,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"5\" rows are displayed in the agGrid on Capacity Units page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User close message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table14.AddRow(new string[] {
@@ -583,10 +584,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             table14.AddRow(new string[] {
                         "ACD FotoCanvas 2.0 Trial"});
-            testRunner.And("following Objects are displayed in \"Applications\" tab on the Capacity Units page:" +
-                    "", ((string)(null)), table14, "And ");
-            testRunner.When("User close message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("following Objects are displayed in \"Applications\" tab on the Capacity Units page:" +
+                    "", ((string)(null)), table14, "Then ");
+            testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"CapacityUnit12141Applications\" text in the Search field for \"Capacit" +
                     "y Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"5\" content is displayed in \"Applications\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
