@@ -35,6 +35,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div[@row-index]")]
+        public IWebElement TableString { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right')]//*/button")]
         public IWebElement ImportProjectButton { get; set; }
 
@@ -346,6 +349,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($"//a[text()='{objectName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public string GetTableStringRowNumber(string itemName)
+        {
+            return Driver.FindElement(By.XPath($".//div[@ref='eBodyContainer']//div//div[@title='{itemName}']//parent::div")).GetAttribute("row-index");
         }
 
         public bool OnboardedObjectNumber(string objectsNumber)

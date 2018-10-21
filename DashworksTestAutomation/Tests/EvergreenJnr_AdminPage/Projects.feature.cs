@@ -6264,11 +6264,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table156.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
             testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table156, "Then ");
-            testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
-                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table157 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table157.AddRow(new string[] {
@@ -6281,7 +6276,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Microsoft Exchange Client Language Pack - Hindi"});
             table157.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
-            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table157, "Then ");
+            testRunner.Then("following Items are displayed at the top of the list", ((string)(null)), table157, "Then ");
+            testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
+                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
+                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table158.AddRow(new string[] {
+                        "Advantage Data Architect"});
+            table158.AddRow(new string[] {
+                        "Hilfe zu Blockdiagrammen"});
+            table158.AddRow(new string[] {
+                        "Intel(R) Processor Graphics"});
+            table158.AddRow(new string[] {
+                        "Microsoft Exchange Client Language Pack - Hindi"});
+            table158.AddRow(new string[] {
+                        "NJStar Chinese Word Processor"});
+            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table158, "Then ");
             testRunner.When("User clicks String Filter button for \"Object Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"Device\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
@@ -6330,19 +6343,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table159 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table158.AddRow(new string[] {
+            table159.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table158.AddRow(new string[] {
+            table159.AddRow(new string[] {
                         "00YWR8TJU4ZF8V"});
-            table158.AddRow(new string[] {
+            table159.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            table158.AddRow(new string[] {
+            table159.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            table158.AddRow(new string[] {
+            table159.AddRow(new string[] {
                         "06T5FX3CUY08AE"});
-            testRunner.And("User selects following Objects", ((string)(null)), table158, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table159, "And ");
             testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -6350,19 +6363,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects all objects to the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table159 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table160 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table159.AddRow(new string[] {
+            table160.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            table159.AddRow(new string[] {
+            table160.AddRow(new string[] {
                         "%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0)"});
-            table159.AddRow(new string[] {
+            table160.AddRow(new string[] {
                         "%SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI (12.0.2430.0)"});
-            table159.AddRow(new string[] {
+            table160.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
-            table159.AddRow(new string[] {
+            table160.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table159, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table160, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Blue banner with \"Object updates being queued, please wait\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -6378,19 +6391,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to remove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table160 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table161 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table160.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "AAC860150 (Kerrie D. Ruiz)"});
-            table160.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "AAD1011948 (Pinabel Cinq-Mars)"});
-            table160.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "AAG081456 (Melanie Z. Fowler)"});
-            table160.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "AAH0343264 (Luc Gauthier)"});
-            table160.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "AAK881049 (Miguel W. Owen)"});
-            testRunner.When("User selects following Objects", ((string)(null)), table160, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table161, "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Blue banner with \"Object updates being queued, please wait\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

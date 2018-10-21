@@ -1565,7 +1565,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 catch (Exception)
                 {
-                    Thread.Sleep(40000);
+                    Thread.Sleep(30000);
                     _driver.Navigate().Refresh();
                     Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed,
                         $"{row["Items"]} is not displayed in History table");
@@ -1577,8 +1577,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
+            {
                 Assert.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in Queue table");
+            }
+        }
+
+        [Then(@"following Items are displayed at the top of the list")]
+        public void ThenFollowingItemsAreDisplayedAtTheTopOfTheList(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+
+            for (var i = 0; i < table.RowCount; i++)
+            {
+                var row = table.Rows.ElementAt(i);
+                Assert.AreEqual(projectElement.GetTableStringRowNumber(row["Items"]), i.ToString(),
+                    $"{row["Items"]} is not displayed in History table");
+            }
         }
 
         [Then(@"following objects were not found")]

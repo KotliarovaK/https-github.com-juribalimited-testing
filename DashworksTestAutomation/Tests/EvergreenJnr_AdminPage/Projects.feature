@@ -3385,6 +3385,13 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |
 	| NJStar Chinese Word Processor                   |
+	Then following Items are displayed at the top of the list
+	| Items                                           |
+	| Advantage Data Architect                        |
+	| Hilfe zu Blockdiagrammen                        |
+	| Intel(R) Processor Graphics                     |
+	| Microsoft Exchange Client Language Pack - Hindi |
+	| NJStar Chinese Word Processor                   |
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User selects "History" tab on the Project details page
@@ -3396,6 +3403,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| Microsoft Exchange Client Language Pack - Hindi |
 	| NJStar Chinese Word Processor                   |
 	#Then following Items are displayed at the top of the list
+	#| Items                                           |
+	#| Advantage Data Architect                        |
+	#| Hilfe zu Blockdiagrammen                        |
+	#| Intel(R) Processor Graphics                     |
+	#| Microsoft Exchange Client Language Pack - Hindi |
+	#| NJStar Chinese Word Processor                   |
 	When User clicks String Filter button for "Object Type" column on the Admin page
 	When User selects "Device" checkbox from String Filter on the Admin page
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
