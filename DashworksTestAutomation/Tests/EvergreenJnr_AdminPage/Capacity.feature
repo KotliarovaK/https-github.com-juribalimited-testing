@@ -224,3 +224,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User clicks Delete button in Actions
 	And User clicks Delete button
 	Then Warning message with "1 slot and 1 related override date will be deleted, do you wish to proceed?" text is displayed on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13490
+Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "User Scheduled Test (Jo)" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then Project "User Scheduled Test (Jo)" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	Then "40" content is displayed in "MO" column
+	When User clicks content from "Capacity Slot" column
+	When User changes value to "0" for "Monday" column
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The capacity slot details have been updated" text
+	Then "0" content is displayed in "MO" column
+	When User clicks content from "Capacity Slot" column
+	When User changes value to "40" for "Monday" column
+	When User clicks the "UPDATE" Action button

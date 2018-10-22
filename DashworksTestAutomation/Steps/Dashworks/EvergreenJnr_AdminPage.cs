@@ -1817,6 +1817,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
+        [When(@"User changes value to ""(.*)"" for ""(.*)"" column")]
+        public void WhenUserChangesValueToForColumn(string value, string columnName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.EnterValueByColumnName(value, columnName);
+        }
+
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
         public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
