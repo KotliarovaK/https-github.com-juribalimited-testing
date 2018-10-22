@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'Subject')]")]
         public IWebElement SubjectLine { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@id, 'MainContent_Body')]")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@id, 'Body')]")]
         public IWebElement BodyText { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Create Mail Template']")]
