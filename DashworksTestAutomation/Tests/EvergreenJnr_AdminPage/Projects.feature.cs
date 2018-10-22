@@ -675,6 +675,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12796")]
         [NUnit.Framework.CategoryAttribute("DAS12872")]
+        [NUnit.Framework.CategoryAttribute("DAS13401")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
@@ -691,6 +692,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "AdminPage",
                     "DAS12796",
                     "DAS12872",
+                    "DAS13401",
                     "Delete_Newly_Created_List",
                     "Delete_Newly_Created_Project",
                     "Project_Creation_and_Scope",
