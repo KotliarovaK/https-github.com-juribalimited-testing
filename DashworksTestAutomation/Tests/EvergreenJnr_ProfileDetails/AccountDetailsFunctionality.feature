@@ -11,11 +11,14 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User changes Full Name to "TestAdmin"
-	When User changes Email to "automation2@juriba.com"
+	When User changes Email to "automation4@juriba.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
 	And "TestAdmin" is displayed in Full Name field
-	And "automation2@juriba.com" is displayed in Email field
+	And "automation4@juriba.com" is displayed in Email field
+	When User changes Full Name to "Administrator"
+	When User changes Email to "automation@juriba.com"
+	And User clicks Update button on Profile page
 
 @Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS10756 @DAS12947 @DAS11523 @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed
@@ -52,13 +55,16 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
 	When User changes Full Name to "TestAdmin"
-	When User changes Email to "automation2@juriba.com"
+	When User changes Email to "automation3@juriba.com"
 	And User clicks Update button on Profile page
 	Then Error message is not displayed on Profile page
 	And "TestAdmin" is displayed in Full Name field
-	And "automation2@juriba.com" is displayed in Email field
+	And "automation3@juriba.com" is displayed in Email field
 	When User changes Full Name to "TestAdm"
 	Then Error message is not displayed on Profile page
+	When User changes Full Name to "Administrator"
+	When User changes Email to "automation@juriba.com"
+	And User clicks Update button on Profile page
 
 @Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API
 Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API

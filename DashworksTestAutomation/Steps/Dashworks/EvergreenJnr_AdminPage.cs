@@ -1439,6 +1439,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             try
             {
+                _driver.Navigate().Refresh();
                 if (tabName.Equals("Applications"))
                 {
                     var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
