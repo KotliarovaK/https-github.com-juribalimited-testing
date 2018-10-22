@@ -277,9 +277,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "192.168.6",
                         "5,100"});
             table9.AddRow(new string[] {
-                        "RED",
-                        "9,238"});
-            table9.AddRow(new string[] {
                         "0JIE",
                         "1"});
             testRunner.Then("User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRow" +

@@ -155,7 +155,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples: 
 	| PageName | ItemName | TabName    | SectionName                | ColumnName  | CheckboxName     | NewColumnName    |
@@ -351,7 +351,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	And User clicks Filter button on the Column Settings panel
 	When  User enters "123455465" text in the Filter field
 	When User clears Filter field
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples:
 	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn |
@@ -810,8 +810,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @Not_Run
-Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @Not_Run
+Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
@@ -822,13 +822,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
-	When User clicks "Capacity Units" link on the Admin page
-	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
-	Then "Capacity Units" page should be displayed to the user
-	When User enters "CapacityUnit12883" in the "Capacity Unit Name" field
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -848,19 +841,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "CHANGE" Action button
 	Then "Bucket12883" link is displayed on the Details Page
-	#Then There are no errors in the browser console
-	When User clicks on Unassigned link for "Capacity Unit" field
-	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
-	When User opens "Related Users" section on the Details Page
-	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "CapacityUnit12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
-	When User clicks the "CHANGE" Action button
-	Then "CapacityUnit12883" link is displayed on the Details Page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then popup changes window opened
@@ -872,18 +853,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "CHANGE" Action button
 	Then "Unassigned" link is displayed on the Details Page
-	#Then There are no errors in the browser console
-	When User clicks on "CapacityUnit12883" link on the Details Page
-	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
-	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "Unassigned" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
-	When User clicks the "CHANGE" Action button
-	Then "Unassigned" link is displayed on the Details Page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -902,19 +872,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "CHANGE" Action button
 	Then "Bucket12883" link is displayed on the Details Page
-	#Then There are no errors in the browser console
-	When User clicks on Unassigned link for "Capacity Unit" field
-	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
-	When User opens "Related Mailboxes" section on the Details Page
-	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "CapacityUnit12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
-	When User clicks the "CHANGE" Action button
-	Then "CapacityUnit12883" link is displayed on the Details Page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
@@ -925,18 +883,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "CHANGE" Action button
 	Then "Unassigned" link is displayed on the Details Page
-	#Then There are no errors in the browser console
-	When User clicks on "CapacityUnit12883" link on the Details Page
-	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
-	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "Unassigned" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
-	When User clicks the "CHANGE" Action button
-	Then "Unassigned" link is displayed on the Details Page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 		#go to Mailboxes page
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -955,19 +902,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "CHANGE" Action button
 	Then "Bucket12883" link is displayed on the Details Page
-	#Then There are no errors in the browser console
-	When User clicks on Unassigned link for "Capacity Unit" field
-	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
-	When User opens "Related Users" section on the Details Page
-	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
-	Then User clicks on "New Capacity Unit" dropdown
-	When User select "CapacityUnit12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
-	When User clicks the "CHANGE" Action button
-	Then "CapacityUnit12883" link is displayed on the Details Page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then popup changes window opened
@@ -979,7 +914,34 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "CHANGE" Action button
 	Then "Unassigned" link is displayed on the Details Page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
+	Then Delete "Bucket12883" Bucket in the Administration
+	
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @Not_Run
+Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	Then "Capacity Units" page should be displayed to the user
+	When User type "CapacityUnit12883" Name in the "Capacity Unit Name" field on the Project details page
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+		#go to Devices page
+	When User clicks on Unassigned link for "Capacity Unit" field
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
@@ -990,7 +952,57 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "CHANGE" Action button
 	Then "Unassigned" link is displayed on the Details Page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
+		#go to Users page
+	When User clicks on Unassigned link for "Capacity Unit" field
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Mailboxes" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#go to Mailboxes page
+	When User clicks on Unassigned link for "Capacity Unit" field
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -1002,7 +1014,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIs
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
-	Then Delete "Bucket12883" Bucket in the Administration
 
 @Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
@@ -1034,3 +1045,15 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then "99" rows found label displays on Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13892
+Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccessfullyLoaded
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks content from "Hostname" column
+	And User navigates to the "Projects" tab
+	When User clicks on Unassigned link for "Capacity Unit" field
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	Then There are no errors in the browser console

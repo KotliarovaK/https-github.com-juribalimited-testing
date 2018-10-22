@@ -35,6 +35,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div[@row-index]")]
+        public IWebElement TableString { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right')]//*/button")]
         public IWebElement ImportProjectButton { get; set; }
 
@@ -348,6 +351,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public string GetTableStringRowNumber(string itemName)
+        {
+            return Driver.FindElement(By.XPath($".//div[@ref='eBodyContainer']//div//div[@title='{itemName}']//parent::div")).GetAttribute("row-index");
+        }
+
         public bool OnboardedObjectNumber(string objectsNumber)
         {
             Driver.WaitForElement(By.XPath(".//div[@id='agGridTable']"));
@@ -449,6 +457,34 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//input");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTextInFieldByFieldName(string fieldName)
+        {
+            var selector = By.XPath($".//input[@placeholder='{fieldName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownByName(string dropdownName)
+        {
+            var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownValueByName(string value)
+        {
+            var selector = By.XPath($".//span[@class='mat-option-text'][text()='{value}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public void SelectValueInTheDropdown(string value)
+        {
+            var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{value}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public IWebElement GetLinkByText(string text)

@@ -273,7 +273,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterO
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
+	#Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
 	When User clicks on Action drop-down
 
 Examples: 

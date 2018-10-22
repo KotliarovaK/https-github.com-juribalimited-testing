@@ -136,6 +136,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"'{pageTitle}' page is visible");
         }
 
+        [When(@"User clicks ""(.*)"" navigation link on the Admin page")]
+        public void WhenUserClicksNavigationLinkOnTheAdminPage(string linkName)
+        {
+            var link = _driver.NowAt<ProjectsPage>();
+            link.GetNavigationLinkByName(linkName).Click();
+        }
+
         #region Check button state
 
         [Then(@"Update Project buttons is disabled")]
@@ -820,6 +827,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForTeamCreation(optionName);
         }
 
+        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
+        public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
+            dropdown.GetDropdownValueByName(value).Click();
+        }
+
         [When(@"User clicks Update Team button")]
         public void WhenUserClicksUpdateTeamButton()
         {
@@ -1284,14 +1299,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            Assert.IsTrue(page.BucketSelectbox.Displayed, "Move To Another Bucket Page is not displayed to the user");
+            Assert.IsTrue(page.MoveToSelectBox.Displayed, "Move To Another Bucket Page is not displayed to the user");
         }
 
+        [When(@"User moves selected objects to ""(.*)"" Capacity Unit")]
         [When(@"User moves selected objects to ""(.*)"" bucket")]
         public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
         {
             var page = _driver.NowAt<MoveToAnotherBucketPage>();
             page.MoveToBucketByName(bucketName);
+        }
+
+        [Then(@"""(.*)"" is displayed on the Admin page")]
+        public void ThenIsDisplayedOnTheAdminPage(string name)
+        {
+            var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+            Assert.IsTrue(page.GetMovingElementByName(name).Displayed(), $"{name} Page is not displayed to the user");
         }
 
         [Then(@"Actions dropdown is displayed correctly")]
@@ -1405,21 +1428,44 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
         public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
         {
-            if (tabName.Equals("Applications"))
+            try
             {
-                var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+                if (tabName.Equals("Applications"))
+                {
+                    var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
 
-                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-                var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
-                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+                else
+                {
+                    var page = _driver.NowAt<BaseGridPage>();
+
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
             }
-            else
+            catch (Exception)
             {
-                var page = _driver.NowAt<BaseGridPage>();
+                _driver.Navigate().Refresh();
+                if (tabName.Equals("Applications"))
+                {
+                    var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
 
-                var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-                var actualRowList = page.RowsList.Select(value => value.Text).ToList();
-                Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+                else
+                {
+                    var page = _driver.NowAt<BaseGridPage>();
+
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
             }
         }
 
@@ -1510,7 +1556,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
                 catch (Exception)
                 {
-                    Thread.Sleep(40000);
+                    Thread.Sleep(30000);
                     _driver.Navigate().Refresh();
                     Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed,
                         $"{row["Items"]} is not displayed in History table");
@@ -1522,8 +1568,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
+            {
                 Assert.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in Queue table");
+            }
+        }
+
+        [Then(@"following Items are displayed at the top of the list")]
+        public void ThenFollowingItemsAreDisplayedAtTheTopOfTheList(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+
+            for (var i = 0; i < table.RowCount; i++)
+            {
+                var row = table.Rows.ElementAt(i);
+                Assert.AreEqual(projectElement.GetTableStringRowNumber(row["Items"]), i.ToString(),
+                    $"{row["Items"]} is not displayed in History table");
+            }
         }
 
         [Then(@"following objects were not found")]
@@ -1747,6 +1808,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
+        [When(@"User changes value to ""(.*)"" for ""(.*)"" column")]
+        public void WhenUserChangesValueToForColumn(string value, string columnName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.EnterValueByColumnName(value, columnName);
+        }
+
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
         public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
@@ -1760,6 +1828,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Assert.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
+        }
+
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
+        public void ThenContentIsDisplayedInField(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
+                $"Text in {fieldName} field is different");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]

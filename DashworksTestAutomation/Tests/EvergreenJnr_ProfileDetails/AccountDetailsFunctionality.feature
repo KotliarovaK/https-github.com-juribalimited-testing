@@ -64,7 +64,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
 
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS13026 @API
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS13026 @API @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -79,6 +79,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	When User navigates to the "Advanced" page on Account details
 	When User changes List Page Size to "1000"
 	And User clicks Update button on the Advanced page
+	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
 
 @Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS11646 @DAS12947 @DAS13026 @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds

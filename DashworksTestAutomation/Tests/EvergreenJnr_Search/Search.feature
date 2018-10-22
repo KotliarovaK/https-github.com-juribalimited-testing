@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,717       |
 	| 192.168.6           | 5,100        |
-	| RED                 | 9,238        |
+	#| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @DAS12206

@@ -293,7 +293,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplaye
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12796 @DAS12872 @DAS13401 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheScopeChangesOfProjectAfterTheChangeCustomList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And "Users 0/0" is displayed in the tab header on the Admin page
 	And "Applications 0/0" is displayed in the tab header on the Admin page
 	When User selects "Queue" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the Queue table
 	| Items                          |
@@ -456,8 +456,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
-	| FilterData |
-	| 7302017    |
+	| FilterData  |
+	| 30 Jul 2017 |
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
@@ -474,7 +474,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
 	Then following Items are displayed in the History table
 	| Items                          |
@@ -508,8 +508,8 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User click on "Status" column header on the Admin page
 	Then data in table is sorted by "Status" column in descending order on the Admin page
 	When User selects following date filter on the Projects page
-	| FilterData |
-	| 7302017    |
+	| FilterData  |
+	| 30 Jul 2017 |
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
@@ -1190,7 +1190,7 @@ Examples:
 	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @Projects @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @DAS13803 @DAS13930 @Projects @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1207,13 +1207,13 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	And User clicks "Details" tab
 	Then "Mailbox scoped project" is displayed in the disabled Project Type field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And User clicks the "UPDATE" Action button
+	#Then Success message is displayed and contains "The project details have been updated" text
+	Then There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @DAS13803 @DAS13930 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseDifferentBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1228,10 +1228,10 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Details" tab
-	And User selects "Use project buckets" in the Buckets Project dropdown
-	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And User selects "Use project buckets" in the Buckets Project dropdown
+	#And User clicks the "UPDATE" Action button
+	#Then Success message is displayed and contains "The project details have been updated" text
+	Then There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Unassigned" is displayed in the Bucket dropdown
 	And There are no errors in the browser console
@@ -2094,7 +2094,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	When User selects "History" tab on the Project details page
 	Then onboarded objects are displayed in the dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @DAS12763 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12755 @DAS12763 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2124,7 +2124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
 
-@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @DAS12485 @DAS12825 @Delete_Newly_Created_Project @Babel @Not_Run
+@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12965 @DAS12485 @DAS12825 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2626,7 +2626,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758 @Babel @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11758
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2726,7 +2726,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeleti
 	And User clicks Delete button on the warning message in the lists panel
 	And no Warning message is displayed in the lists panel
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12182 @DAS12999 @DAS13199 @DAS13297 @DAS12485 @DAS13803 @DAS13930 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2764,8 +2764,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCo
 	Then "Devices to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Details" tab
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project details have been updated" text
+	#And User clicks the "UPDATE" Action button
+	#Then Success message is displayed and contains "The project details have been updated" text
 	Then There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
@@ -2807,7 +2807,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2827,9 +2827,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Description to "45978DescriptionText"
 	And User changes project language to "Dutch"
 	And User selects "Use evergreen buckets" in the Buckets Project dropdown
-	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	#And User clicks the "UPDATE" Action button
+	#Then Success message is displayed and contains "The project details have been updated" text
+	Then There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
@@ -2877,8 +2877,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks "Details" tab
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
-	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project details have been updated" text
+	#And User clicks the "UPDATE" Action button
+	#Then Success message is displayed and contains "The project details have been updated" text
 	When User click on Back button
 	And User enters "NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
@@ -3035,7 +3035,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| User Project                                      |
 	| Computer Scheduled Test (Jo)                      |
 	| Email Migration                                   |
-	#| Evergreen Project KK - all devices \ clone        |
 	| Havoc (Big Data)                                  |
 	| I-Computer Scheduled Project                      |
 	| Migration Project Phase 2 (User Project)          |
@@ -3386,6 +3385,13 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| Intel(R) Processor Graphics                     |
 	| Microsoft Exchange Client Language Pack - Hindi |
 	| NJStar Chinese Word Processor                   |
+	Then following Items are displayed at the top of the list
+	| Items                                           |
+	| Advantage Data Architect                        |
+	| Hilfe zu Blockdiagrammen                        |
+	| Intel(R) Processor Graphics                     |
+	| Microsoft Exchange Client Language Pack - Hindi |
+	| NJStar Chinese Word Processor                   |
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 	When User selects "History" tab on the Project details page
@@ -3397,6 +3403,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| Microsoft Exchange Client Language Pack - Hindi |
 	| NJStar Chinese Word Processor                   |
 	#Then following Items are displayed at the top of the list
+	#| Items                                           |
+	#| Advantage Data Architect                        |
+	#| Hilfe zu Blockdiagrammen                        |
+	#| Intel(R) Processor Graphics                     |
+	#| Microsoft Exchange Client Language Pack - Hindi |
+	#| NJStar Chinese Word Processor                   |
 	When User clicks String Filter button for "Object Type" column on the Admin page
 	When User selects "Device" checkbox from String Filter on the Admin page
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
@@ -3520,3 +3532,28 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	And "Delegated mailboxes " associated checkbox is checked
 	And "Other mailbox permissions" associated checkbox is checked
 	And "Mailbox folder permissions" associated checkbox is checked
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13606
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then "Windows 7 Migration (Computer Scheduled Project)" content is displayed in "Project Name" field
+	Then "Windows7Mi" content is displayed in "Project Short Name" field
+	Then "Windows 7 Migration Phase 1Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill;" content is displayed in "Project Description" field
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "Barry's User Project" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then "Barry's User Project" content is displayed in "Project Name" field
+	Then "Barry'sUse" content is displayed in "Project Short Name" field
+	Then "Barry's User Project" content is displayed in "Project Description" field
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "Email Migration" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then "Email Migration" content is displayed in "Project Name" field
+	Then "EmailMigra" content is displayed in "Project Short Name" field
+	Then "" content is displayed in "Project Description" field
+	Then There are no errors in the browser console

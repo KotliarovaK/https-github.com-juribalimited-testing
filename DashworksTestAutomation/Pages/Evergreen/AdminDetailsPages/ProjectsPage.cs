@@ -76,7 +76,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Select Permission']")]
         public IWebElement PermissionsDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@class='ag-filter-filter']")]
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
         public IWebElement DateFilterValue { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]
@@ -168,6 +168,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement SelectRadioButtonByName(string radioButtonName)
         {
             var button = By.XPath($"//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            return Driver.FindElement(button);
+        }
+
+        public IWebElement GetNavigationLinkByName(string linkName)
+        {
+            var button = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
             Driver.WaitWhileControlIsNotDisplayed(button);
             return Driver.FindElement(button);
         }

@@ -389,8 +389,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User enters "Team 10" text in the Search field for "Description" column
 	Then Counter shows "111" found rows
 	When User clicks Reset Filters button on the Admin page
-	And User enters "1" text in the Search field for "Evergreen Buckets" column
-	Then Counter shows "1" found rows
+	And User enters "0" text in the Search field for "Evergreen Buckets" column
+	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "5" text in the Search field for "Project Buckets" column
 	Then Counter shows "1" found rows
@@ -518,3 +518,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| Migration Phase 2      |
 	| Migration Phase 3 Team |
 	| My Team                |
+	When User click on Back button
+	When User enters "DAS12326" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text

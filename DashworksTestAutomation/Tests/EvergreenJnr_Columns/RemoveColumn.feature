@@ -275,7 +275,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksC
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	And "9,174" rows are displayed in the agGrid
+	#And "9,174" rows are displayed in the agGrid
 	And table data is filtered correctly
 	And "Compliance" filter with "Red" values is added to URL on "Devices" page
 	And "Compliance" column is added to URL on "Devices" page
@@ -310,7 +310,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomList
 	| SelectedCheckboxes |
 	| Red                |
 	Then "Compliance" filter is added to the list
-	And "9,174" rows are displayed in the agGrid
+	#And "9,174" rows are displayed in the agGrid
 	And table data is filtered correctly
 	And "Compliance" filter with "Red" values is added to URL on "Devices" page
 	And "Compliance" column is added to URL on "Devices" page
