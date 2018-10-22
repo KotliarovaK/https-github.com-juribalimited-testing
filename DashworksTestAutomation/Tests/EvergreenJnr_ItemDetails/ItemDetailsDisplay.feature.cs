@@ -2183,8 +2183,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccessfullyLoaded" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13892")]
@@ -2193,8 +2192,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccessfullyLoaded" +
                     "", new string[] {
                         "Evergreen",
-                        "Applications",
-                        "AllLists",
+                        "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS13892"});

@@ -1046,7 +1046,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then "99" rows found label displays on Details Page
 
-@Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13892
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13892
 Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccessfullyLoaded
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
