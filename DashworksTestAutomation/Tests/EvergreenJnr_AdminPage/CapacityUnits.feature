@@ -132,7 +132,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	| 01ERDGD48UDQKE  |
 	And User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
-	And following Objects are displayed in "Devices" tab on the Capacity Units page:
+	When User close message on the Admin page
+	Then following Objects are displayed in "Devices" tab on the Capacity Units page:
 	| Objects         |
 	| 00I0COBFWHOF27  |
 	| 00K4CEEQ737BA4L |
@@ -142,8 +143,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And data in table is sorted by "Hostname" column in ascending order by default on the Admin page
 	When User refreshes agGrid
 	Then "5" rows are displayed in the agGrid on Capacity Units page
-	When User close message on the Admin page
-	And User click on Back button
+	When User click on Back button
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Devices" column
 	When User select "Capacity Unit" rows in the grid

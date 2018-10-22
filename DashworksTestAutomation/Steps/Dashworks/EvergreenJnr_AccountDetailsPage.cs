@@ -361,6 +361,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 WhenUserClicksProfileInAccountDropdown();
                 var page = _driver.NowAt<AccountDetailsPage>();
+                page.AccountDetails.Click();
                 page.FullNameField.Clear();
                 page.FullNameField.SendKeys(_userDto.FullName);
                 page.EmailField.Clear();

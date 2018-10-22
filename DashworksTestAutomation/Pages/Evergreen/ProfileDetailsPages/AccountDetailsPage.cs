@@ -27,9 +27,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//ul[@class='roles']/li")]
         public IList<IWebElement> RolesList { get; set; }
-
+  
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
         public IWebElement ErrorMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//li//span[text()='Account Details']")]
+        public IWebElement AccountDetails { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
