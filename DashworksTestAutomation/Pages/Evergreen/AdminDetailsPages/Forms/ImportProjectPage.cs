@@ -52,13 +52,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
             DropdownOptions.First(x => x.Text.Equals(optionName)).Click();
         }
 
-        public IWebElement SelectExistingProjectDisplayed(string projectName)
-        {
-            var selector = By.XPath($"//span[contains(text(), '{projectName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         private IWebElement GetDropdownByName(string name)
         {
             return Driver.FindElement(By.XPath($".//div[@class='form']//*/mat-select[@aria-label='{name}']//*/span"));

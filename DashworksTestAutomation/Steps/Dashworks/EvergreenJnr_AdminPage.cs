@@ -779,15 +779,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
-        [Then(@"User sees following options in Buckets dropdown on Import Projects page:")]
+        [Then(@"User sees folloing options in ""(.*)"" dropdown on Import Projects page:")]
         public void ThenUserSeesFollowingOptionsInDropdownOnImportProjectPage(string dropdownName, Table options)
         {
             var page = _driver.NowAt<ImportProjectPage>();
-            var actualBucketsOptions = page.GetDropdownOptions(dropdownName);
+            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
 
-            for (var i = 0; i < options.RowCount; i++)
-                Assert.That(actualBucketsOptions[i], Is.EqualTo(options.Rows[i].Values.FirstOrDefault()),
-                    "Options do not match!");
+            for (int i = 0; i < options.RowCount; i++)
+            {
+                Assert.That(actualBucketsOptions[i], Is.EqualTo(options.Rows[i].Values.FirstOrDefault()), "Options do not match!");
+            }
         }
 
         [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown on the Import Project Page")]
@@ -795,16 +796,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var importProjectPage = _driver.NowAt<ImportProjectPage>();
             importProjectPage.SelectDropdownOption(dropdownName, optionName);
-        }
-
-        [Then(@"User sees folloing options in Select Existing Project dropdown on Import Projects page:")]
-        public void ThenUserSeesFollowingOptionsInSelectExistingProjectDropdownOnImportProjectsPage(Table table)
-        {
-            var importProjectPage = _driver.NowAt<ImportProjectPage>();
-            importProjectPage.SelectExistingProjectDropdown.Click();
-            foreach (var row in table.Rows)
-                Assert.IsTrue(importProjectPage.SelectExistingProjectDisplayed(row["OptionLabel"]).Displayed,
-                    $"{row["OptionLabel"]} is not displayed in Queue table");
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]

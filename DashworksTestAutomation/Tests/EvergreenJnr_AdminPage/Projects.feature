@@ -3019,7 +3019,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProje
 	When User clicks Admin on the left-hand menu
 	And User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
-	Then User sees following options in Buckets dropdown on Import Projects page:
+	Then User sees folloing options in "Buckets" dropdown on Import Projects page:
 	| OptionLabel                                |
 	| Use project buckets                        |
 	| Clone evergreen buckets to project buckets |
@@ -3029,7 +3029,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	When User clicks Admin on the left-hand menu
 	And User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
-	Then User sees folloing options in Select Existing Project dropdown on Import Projects page:
+	Then User sees folloing options in "Select Existing Project" dropdown on Import Projects page:
 	| OptionLabel                                       |
 	| Babel (English, German and French)                |
 	| User Project                                      |

@@ -81,6 +81,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetColumnHeaderByName(columnName).Click();
         }
 
+        [When(@"User performs right-click on ""(.*)"" cell in the grid")]
+        public void WhenUserPerformsRightClickOnCellInTheGrid(string cellText)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            page.ContextClickOnCell(cellText);
+        }
+
+        [Then(@"User sees context menu placed near ""(.*)"" cell in the grid")]
+        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            var cellTopYCoordinte = page.GetElementTopYCoordinate(page.GetGridCellByText(columnName));
+            var cellBottomYCoordinte = page.GetElementBottomYCoordinate(page.GetGridCellByText(columnName));
+            var cellLeftXCoordinte = page.GetElementLeftXCoordinate(page.GetGridCellByText(columnName));
+            var cellRightXCoordinte = page.GetElementRightXCoordinate(page.GetGridCellByText(columnName));
+
+            var menuTopYCoordinate = page.GetElementTopYCoordinate(page.AgMenu);
+            var manuLeftXCoordinate = page.GetElementLeftXCoordinate(page.AgMenu);
+
+            Assert.That(menuTopYCoordinate, Is.GreaterThan(cellTopYCoordinte));
+            Assert.That(menuTopYCoordinate, Is.LessThan(cellBottomYCoordinte));
+            Assert.That(manuLeftXCoordinate, Is.GreaterThan(cellLeftXCoordinte));
+            Assert.That(manuLeftXCoordinate, Is.LessThan(cellRightXCoordinte));
+        }
+
         [When(@"User click on '(.*)' column header")]
         public void WhenUserClickOnColumnHeader(string columnName)
         {

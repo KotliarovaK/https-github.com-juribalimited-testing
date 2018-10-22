@@ -5,6 +5,7 @@ using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
@@ -30,6 +31,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
 
         public const string OptionOnActionsPanel = "//mat-option[@role='option']";
+
+        public const string GridCellByText = ".//div[@role='gridcell' and @title='{0}']";
 
         public const string ColumnWithEvergreenIconSelector = ".//div[@col-id='projectName'][@role='gridcell']";
 
@@ -274,6 +277,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/mailbox/49258/']")]
         public IWebElement FirstMailboxesCell { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']")]
+        public IWebElement AgMenu { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']")]
         public IWebElement CreateActionButton { get; set; }
 
@@ -402,6 +408,37 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
+        }
+
+        public IWebElement GetGridCellByText(string cellText)
+        {
+            return Driver.FindElement(By.XPath(string.Format(GridCellByText, cellText)));
+        }
+
+        public void ContextClickOnCell(string cellText)
+        {
+            var builder = new Actions(Driver);
+            builder.ContextClick(GetGridCellByText(cellText)).Build().Perform();
+        }
+
+        public int GetElementTopYCoordinate(IWebElement element)
+        {
+            return element.Location.Y;
+        }
+
+        public int GetElementBottomYCoordinate(IWebElement element)
+        {
+            return element.Location.Y + element.Size.Height;
+        }
+        
+        public int GetElementLeftXCoordinate(IWebElement element)
+        {
+            return element.Location.X;
+        }
+
+        public int GetElementRightXCoordinate(IWebElement element)
+        {
+            return element.Location.X + element.Size.Width;
         }
 
         public IWebElement GetCorrectApplicationVersion(string versionNumber)

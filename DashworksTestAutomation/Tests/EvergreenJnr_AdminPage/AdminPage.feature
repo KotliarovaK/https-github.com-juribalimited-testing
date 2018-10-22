@@ -74,6 +74,20 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User selects correct file to upload on Import Project page
 	Then Import Project button is enabled
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766
+Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
+	When User clicks Admin on the left-hand menu
+	And User clicks "<PageName>" link on the Admin page
+	And User performs right-click on "<CellText>" cell in the grid
+	Then User sees context menu placed near "<CellText>" cell in the grid
+
+Examples: 
+	| PageName       | CellText   |
+	| Projects       | EmailMigra |
+	| Teams          | IB Team   |
+	| Buckets        | Evergreen  |
+	| Capacity Units | True       |
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @Project_Creation_and_Scope @Projects @Teams @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
 	When User clicks Admin on the left-hand menu
