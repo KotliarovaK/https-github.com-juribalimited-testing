@@ -161,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then data in table is sorted by "Full Name" column in ascending order on the Admin page
 	When User click on "Full Name" column header on the Admin page
 	Then data in table is sorted by "Full Name" column in descending order on the Admin page
-	When User enters "Automation " text in the Search field for "Full Name" column
+	When User enters "Admin" text in the Search field for "Full Name" column
 	Then Counter shows "3" found rows
 	When User enters "automation_admin1" text in the Search field for "Username" column
 	Then Counter shows "1" found rows
