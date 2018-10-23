@@ -357,7 +357,7 @@ Examples:
 	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn |
 	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    |
 	| Users        | svc_dashworks                                           | Username      | Groups       | Group          |
-	#| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628

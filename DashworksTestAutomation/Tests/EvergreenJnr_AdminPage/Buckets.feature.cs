@@ -121,9 +121,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12170")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
+        [NUnit.Framework.CategoryAttribute("DAS13839")]
         [NUnit.Framework.CategoryAttribute("Remove_Added_Objects_From_Buckets")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInTheBuckets()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingDevicesInT" +
@@ -134,9 +134,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS12170",
                         "DAS13011",
+                        "DAS13839",
                         "Remove_Added_Objects_From_Buckets",
-                        "Buckets",
-                        "Not_Run"});
+                        "Buckets"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -174,7 +174,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13011")]
         [NUnit.Framework.CategoryAttribute("DAS13172")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhereNoDevicesExist()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingDevicesToTheBucketWhe" +
@@ -186,8 +185,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12170",
                         "DAS13011",
                         "DAS13172",
-                        "Buckets",
-                        "Not_Run"});
+                        "Buckets"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -215,6 +213,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12170")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
         [NUnit.Framework.CategoryAttribute("DAS13172")]
+        [NUnit.Framework.CategoryAttribute("DAS13839")]
         [NUnit.Framework.CategoryAttribute("Remove_Added_Objects_From_Buckets")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatConsoleErrorsAreNotDisplayedAfterAddingUsersInTheBuckets()
@@ -228,6 +227,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12170",
                         "DAS13011",
                         "DAS13172",
+                        "DAS13839",
                         "Remove_Added_Objects_From_Buckets",
                         "Buckets"});
             this.ScenarioSetup(scenarioInfo);
@@ -240,6 +240,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"Bangor\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Counter shows \"15\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -251,6 +252,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User adds following Objects from list", ((string)(null)), table2, "When ");
             testRunner.Then("Success message is displayed and contains \"The selected users have been added to " +
                     "the selected bucket\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Counter shows \"17\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -265,6 +267,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS11765")]
         [NUnit.Framework.CategoryAttribute("DAS12170")]
         [NUnit.Framework.CategoryAttribute("DAS13011")]
+        [NUnit.Framework.CategoryAttribute("DAS13839")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Remove_Added_Objects_From_Buckets")]
         public virtual void EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets()
@@ -277,6 +280,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS11765",
                         "DAS12170",
                         "DAS13011",
+                        "DAS13839",
                         "Buckets",
                         "Remove_Added_Objects_From_Buckets"});
             this.ScenarioSetup(scenarioInfo);

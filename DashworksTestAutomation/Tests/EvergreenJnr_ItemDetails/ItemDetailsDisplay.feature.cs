@@ -841,6 +841,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS13813")]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "svc_dashworks", "Username", "Groups", "Group", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "MSI", "File Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Users", "Username", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField(string pageName, string searchTerm, string columnName, string tabName, string selectedColumn, string[] exampleTags)
         {
