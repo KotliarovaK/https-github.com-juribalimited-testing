@@ -3559,3 +3559,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "EmailMigra" content is displayed in "Project Short Name" field
 	Then "" content is displayed in "Project Description" field
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13498 @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User clicks create Project button
+	Then "Create Project" page is displayed to the user
+	When User creates Project
+	| ProjectName     | ProjectShortName | ProjectDescription   | ProjectTypeString        |
+	| SnrProject13498 | Project13498     | ComputerProject13498 | ComputerScheduledProject |
+	And User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "SnrProject13498" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then "SnrProject13498" content is displayed in "Project Name" field
+	Then "Project13498" content is displayed in "Project Short Name" field
+	Then "ComputerProject13498" content is displayed in "Project Description" field
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
