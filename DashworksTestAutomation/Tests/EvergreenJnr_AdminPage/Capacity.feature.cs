@@ -542,6 +542,117 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Capacity")]
+        [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("DAS13608")]
+        public virtual void EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Capacity",
+                        "Override_Dates",
+                        "DAS13608"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"Email Migration\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Project \"Email Migration\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on \"Request Types\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table5.AddRow(new string[] {
+                        "Personal Mailbox"});
+            table5.AddRow(new string[] {
+                        "Public Folder"});
+            table5.AddRow(new string[] {
+                        "Shared Mailbox"});
+            table5.AddRow(new string[] {
+                        "Personal Mailbox - VIP"});
+            table5.AddRow(new string[] {
+                        "Personal Mailbox - EA"});
+            testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table5, "Then ");
+            testRunner.When("User selects \"User\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on \"Request Types\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table6.AddRow(new string[] {
+                        "Standard User"});
+            table6.AddRow(new string[] {
+                        "VIP User"});
+            testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table6, "Then ");
+            testRunner.When("User selects \"Application\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on \"Request Types\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table7.AddRow(new string[] {
+                        "Public Folder"});
+            table7.AddRow(new string[] {
+                        "Sharepoint Application"});
+            testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table7, "Then ");
+            testRunner.When("User clicks \"Projects\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
+                    " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Project \"Windows 7 Migration (Computer Scheduled Project)\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on \"Request Types\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table8.AddRow(new string[] {
+                        "[This is the Default Request Type for Computer)]"});
+            table8.AddRow(new string[] {
+                        "Computer: PC Rebuild"});
+            table8.AddRow(new string[] {
+                        "Computer: Workstation Replacement"});
+            table8.AddRow(new string[] {
+                        "Computer: Laptop Replacement"});
+            table8.AddRow(new string[] {
+                        "Computer: Virtual Machine"});
+            testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table8, "Then ");
+            testRunner.When("User selects \"User\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on \"Request Types\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table9.AddRow(new string[] {
+                        "[Default (User)]"});
+            table9.AddRow(new string[] {
+                        "User: No Agent"});
+            table9.AddRow(new string[] {
+                        "User: VIP"});
+            table9.AddRow(new string[] {
+                        "User; Maternity"});
+            testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table9, "Then ");
+            testRunner.When("User selects \"Application\" in the \"Object Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks on \"Request Types\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table10.AddRow(new string[] {
+                        "[Default (Application)]"});
+            table10.AddRow(new string[] {
+                        "Application: Request Type A"});
+            table10.AddRow(new string[] {
+                        "Application: Request Type B"});
+            testRunner.Then("following items are displayed in the dropdown:", ((string)(null)), table10, "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

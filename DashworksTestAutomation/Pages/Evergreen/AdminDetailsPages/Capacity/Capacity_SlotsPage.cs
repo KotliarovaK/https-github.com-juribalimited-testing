@@ -32,6 +32,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             Driver.FindElement(byControl).SendKeys(value);
         }
 
+        public void ClickDropdownByName(string dropdownName)
+        {
+            var byControl = By.XPath($"//div//input[@placeholder='{dropdownName}']");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+        }
     }
 
 }

@@ -245,3 +245,66 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	When User clicks content from "Capacity Slot" column
 	When User changes value to "40" for "Monday" column
 	When User clicks the "UPDATE" Action button
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13608
+Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Email Migration" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then Project "Email Migration" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	When User clicks content from "Capacity Slot" column
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items                  |
+	| Personal Mailbox       |
+	| Public Folder          |
+	| Shared Mailbox         |
+	| Personal Mailbox - VIP |
+	| Personal Mailbox - EA  |
+	When User selects "User" in the "Object Type" dropdown
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items         |
+	| Standard User |
+	| VIP User      |
+	When User selects "Application" in the "Object Type" dropdown
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items                  |
+	| Public Folder          |
+	| Sharepoint Application |
+	When User clicks "Projects" navigation link on the Admin page
+	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	Then Project "Windows 7 Migration (Computer Scheduled Project)" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	When User clicks content from "Capacity Slot" column
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items                                            |
+	| [This is the Default Request Type for Computer)] |
+	| Computer: PC Rebuild                             |
+	| Computer: Workstation Replacement                |
+	| Computer: Laptop Replacement                     |
+	| Computer: Virtual Machine                        |
+	When User selects "User" in the "Object Type" dropdown
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items            |
+	| [Default (User)] |
+	| User: No Agent   |
+	| User: VIP        |
+	| User; Maternity  |
+	When User selects "Application" in the "Object Type" dropdown
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items                       |
+	| [Default (Application)]     |
+	| Application: Request Type A |
+	| Application: Request Type B |

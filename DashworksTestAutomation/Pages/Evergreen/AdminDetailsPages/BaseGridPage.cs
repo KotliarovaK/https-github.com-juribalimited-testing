@@ -351,6 +351,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public IWebElement DropdownItemDisplayed(string itemName)
+        {
+            var selector = By.XPath($"//li//label//span[contains(text(), '{itemName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public string GetTableStringRowNumber(string itemName)
         {
             return Driver.FindElement(By.XPath($".//div[@ref='eBodyContainer']//div//div[@title='{itemName}']//parent::div")).GetAttribute("row-index");

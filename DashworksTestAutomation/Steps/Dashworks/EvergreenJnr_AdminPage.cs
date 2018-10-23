@@ -1816,6 +1816,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.EnterValueByColumnName(value, columnName);
         }
 
+        [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
+        public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.ClickDropdownByName(dropdownName);
+        }
+
+        [Then(@"following items are displayed in the dropdown:")]
+        public void ThenFollowingItemsAreDisplayedInTheDropdown(Table items)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            foreach (var row in items.Rows)
+            {
+                Assert.IsTrue(page.DropdownItemDisplayed(row["Items"]).Displayed,
+                    $"{row["Items"]} is not displayed in the dropdown");
+            }
+        }
+
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
         public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
