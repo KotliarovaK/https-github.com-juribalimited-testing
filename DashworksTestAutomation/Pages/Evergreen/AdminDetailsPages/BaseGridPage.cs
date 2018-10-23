@@ -80,6 +80,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
         public IWebElement AscendingSortingIcon { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
+        public IWebElement DateSearchField { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//div[@class='ag-header-container']/div[@class='ag-header-row']/div[@col-id]")]
         public IList<IWebElement> GridColumns { get; set; }

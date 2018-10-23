@@ -539,6 +539,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [Then(@"field for Date column is empty")]
+        public void ThenFieldForDateColumnIsEmpty()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
+        }
+
         [When(@"User selects following date filter on the Projects page")]
         public void WhenUserSelectsFollowingDateFilterOnTheProjectsPage(Table table)
         {
@@ -1430,7 +1437,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             try
             {
-                _driver.Navigate().Refresh();
                 if (tabName.Equals("Applications"))
                 {
                     var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
@@ -1450,11 +1456,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             catch (Exception)
             {
-                _driver.Navigate().Refresh();
                 if (tabName.Equals("Applications"))
                 {
                     var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
-
+                    _driver.Navigate().Refresh();
                     var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
                     var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
                     Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
@@ -1462,7 +1467,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 else
                 {
                     var page = _driver.NowAt<BaseGridPage>();
-
+                    _driver.Navigate().Refresh();
                     var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
                     var actualRowList = page.RowsList.Select(value => value.Text).ToList();
                     Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");

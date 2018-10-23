@@ -84,7 +84,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
 Examples: 
 	| PageName       | CellText   |
 	| Projects       | EmailMigra |
-	| Teams          | IB Team   |
+	| Teams          | IB Team    |
 	| Buckets        | Evergreen  |
 	| Capacity Units | True       |
 

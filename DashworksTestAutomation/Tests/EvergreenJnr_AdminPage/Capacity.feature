@@ -21,9 +21,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	Then Project "ProjectForCapacity13720" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User enters "Default Capacity Unit" text in the Search field for "Capacity Unit" column
+	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User changes Name to "Unassigned" in the "Capacity Unit Name" field on the Project details page 
+	And User changes Name to "Default Capacity Unit" in the "Capacity Unit Name" field on the Project details page 
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	Then Column is displayed in following order:
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNONPublishedDateTasksIsAvailableOnTheC
 	| for project | for project | for project      | Normal         | Date            | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13442 @DAS13440 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13442 @DAS13440 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User clicks Delete button
 	Then Warning message with "1 slot and 1 related override date will be deleted, do you wish to proceed?" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13490
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13490
 Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -246,7 +246,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	When User changes value to "40" for "Monday" column
 	When User clicks the "UPDATE" Action button
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13608
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13608
 Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

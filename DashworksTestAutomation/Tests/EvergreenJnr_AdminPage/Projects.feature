@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13949 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -455,11 +455,12 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Bucket" column in ascending order on the Admin page
 	When User click on "Bucket" column header on the Admin page
 	Then data in table is sorted by "Bucket" column in descending order on the Admin page
-	When User selects following date filter on the Projects page
-	| FilterData  |
-	| 30 Jul 2017 |
-	Then Counter shows "0" found rows
+	#When User selects following date filter on the Projects page
+	#| FilterData  |
+	#| 30 Jul 2017 |
+	#Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
+	Then field for Date column is empty
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
@@ -507,11 +508,12 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then data in table is sorted by "Status" column in ascending order on the Admin page
 	When User click on "Status" column header on the Admin page
 	Then data in table is sorted by "Status" column in descending order on the Admin page
-	When User selects following date filter on the Projects page
-	| FilterData  |
-	| 30 Jul 2017 |
-	Then Counter shows "0" found rows
+	#When User selects following date filter on the Projects page
+	#| FilterData  |
+	#| 30 Jul 2017 |
+	#Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
+	Then field for Date column is empty
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
@@ -3032,7 +3034,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	Then User sees folloing options in "Select Existing Project" dropdown on Import Projects page:
 	| OptionLabel                                       |
 	| Babel (English, German and French)                |
-	| User Project                                      |
+	| Barry's User Project                              |
 	| Computer Scheduled Test (Jo)                      |
 	| Email Migration                                   |
 	| Havoc (Big Data)                                  |

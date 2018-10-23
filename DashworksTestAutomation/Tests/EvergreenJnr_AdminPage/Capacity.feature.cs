@@ -106,11 +106,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Project \"ProjectForCapacity13720\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User enters \"Default Capacity Unit\" text in the Search field for \"Capacity Unit\" " +
-                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks content from \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User changes Name to \"Unassigned\" in the \"Capacity Unit Name\" field on the Projec" +
-                    "t details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User changes Name to \"Default Capacity Unit\" in the \"Capacity Unit Name\" field on" +
+                    " the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"The capacity unit details have been up" +
                     "dated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -433,7 +432,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
-        [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13442")]
         [NUnit.Framework.CategoryAttribute("DAS13440")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -445,7 +444,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Capacity",
-                        "Override_Dates",
+                        "Slots",
                         "DAS13442",
                         "DAS13440",
                         "Delete_Newly_Created_Project"});
@@ -507,7 +506,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
-        [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13490")]
         public virtual void EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen()
         {
@@ -516,7 +515,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Capacity",
-                        "Override_Dates",
+                        "Slots",
                         "DAS13490"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -550,7 +549,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
-        [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13608")]
         public virtual void EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType()
         {
@@ -559,7 +558,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Capacity",
-                        "Override_Dates",
+                        "Slots",
                         "DAS13608"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
