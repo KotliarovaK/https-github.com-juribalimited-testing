@@ -2215,7 +2215,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
 	Then Counter shows "2" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @DAS13529 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2259,11 +2259,34 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Items               |
 	| 003F5D8E1A844B1FAA5 |
 	Then "UsersProject3Group" content is displayed in "Bucket" column
+	Then "Unassigned" content is displayed in "Capacity Unit" column
+	Then Column is displayed in following order:
+	| ColumnName    |
+	| Date          |
+	| Item          |
+	| Object Type   |
+	| Action        |
+	| Bucket        |
+	| Capacity Unit |
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	Then Counter shows "1" found rows
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items               |
 	| 003F5D8E1A844B1FAA5 |
 	And "UsersProject3Group" content is displayed in "Bucket" column
+	Then "Unassigned" content is displayed in "Capacity Unit" column
+	Then Column is displayed in following order:
+	| ColumnName    |
+	| Date          |
+	| Item          |
+	| Object Type   |
+	| Action        |
+	| Bucket        |
+	| Capacity Unit |
+	| Status        |
+	When User enters "Units" text in the Search field for "Capacity Unit" column
+	Then Counter shows "0" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList
