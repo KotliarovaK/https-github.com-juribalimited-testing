@@ -359,6 +359,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             try
             {
+                _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
                 WhenUserClicksProfileInAccountDropdown();
                 var page = _driver.NowAt<AccountDetailsPage>();
                 page.AccountDetails.Click();
