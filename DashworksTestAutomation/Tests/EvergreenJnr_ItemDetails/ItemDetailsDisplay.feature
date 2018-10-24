@@ -707,6 +707,16 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13849
+Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProjectsGridOnProjectsTabOfParticularDevice
+	When User clicks "Devices" on the left-hand menu
+	And User perform search by "00BDM1JUR8IF419"
+	And User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	And User closes "Project Summary" section on the Details Page
+	And User opens "Device Projects" section on the Details Page
+	Then All data is unique in the 'Project' column
+
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
 	When User clicks "<PageName>" on the left-hand menu
