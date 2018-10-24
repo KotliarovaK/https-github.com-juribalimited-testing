@@ -62,8 +62,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	And "Unlimited" content is displayed in "Capacity" column
-	When User enters "1" text in the Search field for "Capacity" column
-	Then Counter shows "0" found rows
+	When User enters ">1" text in the Search field for "Capacity" column
+	Then Counter shows "1" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
