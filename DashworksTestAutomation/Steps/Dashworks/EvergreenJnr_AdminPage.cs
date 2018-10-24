@@ -608,6 +608,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Application Scope checkboxes are active");
         }
 
+        [Then(@"""(.*)"" tab is disabled")]
+        public void ThenTabIsDisabled(string tabName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetDisabledTabByName(tabName).Displayed(), $"{tabName} is active");
+        }
+
         [Then(@"Application Scope checkboxes are active")]
         public void ThenApplicationScopeCheckboxesAreActive()
         {
@@ -1874,6 +1881,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
                 $"Text in {fieldName} field is different");
+        }
+
+        [Then(@"Menu options are displayed in the following order on the Admin page:")]
+        public void ThenMenuOptionsAreDisplayedInTheFollowingOrderOnTheAdminPage(Table table)
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.MenuTabOptionListOnAdminPage.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Menu options are different");
+        }
+
+        [Then(@"""(.*)"" dropdown is not displayed")]
+        public void ThenDropdownIsNotDisplayed(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(dropdown.GetMissingDropdownByName(dropdownName), $"{dropdownName} is displayed");
+        }
+
+        [Then(@"""(.*)"" dropdown is displayed")]
+        public void ThenDropdownIsDisplayed(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
+        }
+
+        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
+        public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]

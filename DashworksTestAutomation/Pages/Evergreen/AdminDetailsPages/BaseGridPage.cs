@@ -23,8 +23,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
+        public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
+
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
+
+        [FindsBy(How = How.XPath, Using = OptionTabsOnAdminPage)]
+        public IList<IWebElement> MenuTabOptionListOnAdminPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectBox { get; set; }
@@ -490,9 +495,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetDropdownValueByName(string value)
+        public IWebElement GetDropdownValueByName(string dropdownName)
         {
-            var selector = By.XPath($".//span[@class='mat-option-text'][text()='{value}']");
+            var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public bool GetMissingDropdownByName(string dropdownName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//mat-select[@aria-label='{dropdownName}']"));
+        }
+
+        public IWebElement GetDropdownByValueByName(string value, string dropdownName)
+        {
+            var selector = By.XPath($"//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -502,6 +519,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{value}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
+        public IWebElement GetDisabledTabByName(string tabName)
+        {
+            var selector = By.XPath($"//li[contains(@class, 'disabled')]//span[text()='{tabName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetLinkByText(string text)
