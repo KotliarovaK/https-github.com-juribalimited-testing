@@ -277,6 +277,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
         }
 
+        [Then(@"string filter is displayed for ""(.*)"" column on the Admin Page")]
+        public void ThenStringFilterIsDisplayedForColumnOnTheAdminPage(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")));
+        }
+
         [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
         public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
         {
@@ -865,6 +872,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<TeamsPage>();
             teamElement.DefaultTeamCheckbox.Click();
+        }
+
+        [When(@"User clicks Default unit checkbox")]
+        public void WhenUserClicksDefaultUnitCheckbox()
+        {
+            var capacityElement = _driver.NowAt<Capacity_UnitsPage>();
+            capacityElement.DefaultCapacityUnitCheckbox.Click();
         }
 
         [Then(@"Default Team checkbox is not active")]

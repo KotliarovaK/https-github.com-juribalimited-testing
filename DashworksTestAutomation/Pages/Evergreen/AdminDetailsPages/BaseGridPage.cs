@@ -254,6 +254,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).SendKeys(text);
         }
 
+        public IWebElement GetFilterByColumnName(string columnName)
+        {
+            var allFilters =
+                Driver.FindElements(By.XPath(".//div[@class='aggrid-input-styled']"));
+            return allFilters[GetColumnNumberByName(columnName) - 1];
+        }
+
         public void AddDateByFieldName(string fieldName, string date)
         {
             var byControl =

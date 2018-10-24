@@ -22,11 +22,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	And User clicks content from "Capacity Unit" column
+	Then Counter shows "1" found rows
+	When User clicks content from "Capacity Unit" column
 	And User changes Name to "Default Capacity Unit" in the "Capacity Unit Name" field on the Project details page 
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	Then Column is displayed in following order:
+	And Column is displayed in following order:
 	| ColumnName    |
 	|               |
 	| Capacity Unit |
@@ -55,11 +56,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
 	When User clicks the "ADD OVERRIDE DATE" Action button
-	When User enters "4 Oct 2018" date in the "Override Start Date" field
-	When User enters "7 Oct 2018" date in the "Override End Date" field
-	When User clicks the "CREATE" Action button
+	And User enters "4 Oct 2018" date in the "Override Start Date" field
+	And User enters "7 Oct 2018" date in the "Override End Date" field
+	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
-	Then "Unlimited" content is displayed in "Capacity" column
+	And "Unlimited" content is displayed in "Capacity" column
 	When User enters "1" text in the Search field for "Capacity" column
 	Then Counter shows "0" found rows
 
@@ -79,11 +80,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then Project "ProjectForCapacity13171" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE NEW SLOT" Action button
-	When User clicks on the Unlimited field on the Capacity Slots page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks on the Unlimited field on the Capacity Slots page
 	Then Unlimited text disappears from column
 	When User clicks the "CANCEL" Action button
-	When User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
 	When User selects "Capacity Units" in the "Capacity Type" dropdown
@@ -106,14 +107,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User type "NewDisplayName" Name in the "Display Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
-	Then "NewSlotName" text is displayed in the table content
+	And "NewSlotName" text is displayed in the table content
 	When User click on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in ascending order on the Admin page
 	When User click on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13790 @DAS13528 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -135,19 +136,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
+	When User enters "13720" text in the Search field for "Description" column
+	Then Counter shows "1" found rows
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
+	When User clicks Default unit checkbox
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The capacity unit details have been updated" text
+	When User enters "13720" text in the Search field for "Description" column
+	And User click content from "Capacity Unit" column
+	Then "Default unit" checkbox is checked and cannot be unchecked
 	When User clicks the "CANCEL" Action button
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE CAPACITY UNIT" Action button
 	And User type "CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	When User selects "Details" tab on the Project details page
-	When User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
+	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13636 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNONPublishedDateTasksIsAvailableOnTheCapacitySlotsPage
@@ -203,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User selects "Override Dates" tab on the Project details page
-	When User clicks the "ADD OVERRIDE DATE" Action button
+	And User clicks the "ADD OVERRIDE DATE" Action button
 	And User enters "1 Sep 2018" date in the "Override Start Date" field
 	And User enters "7 Sep 2018" date in the "Override End Date" field
 	And User selects "Slot13442" in the "Slot" dropdown
@@ -238,13 +247,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	And User selects "Slots" tab on the Project details page
 	Then "40" content is displayed in "MO" column
 	When User clicks content from "Capacity Slot" column
-	When User changes value to "0" for "Monday" column
-	When User clicks the "UPDATE" Action button
+	And User changes value to "0" for "Monday" column
+	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
-	Then "0" content is displayed in "MO" column
+	And "0" content is displayed in "MO" column
 	When User clicks content from "Capacity Slot" column
-	When User changes value to "40" for "Monday" column
-	When User clicks the "UPDATE" Action button
+	And User changes value to "40" for "Monday" column
+	And User clicks the "UPDATE" Action button
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13608
 Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
@@ -253,12 +262,12 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "Email Migration" text in the Search field for "Project" column
-	When User clicks content from "Project" column
+	And User clicks content from "Project" column
 	Then Project "Email Migration" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
 	| Personal Mailbox       |
@@ -267,25 +276,25 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Personal Mailbox - VIP |
 	| Personal Mailbox - EA  |
 	When User selects "User" in the "Object Type" dropdown
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items         |
 	| Standard User |
 	| VIP User      |
 	When User selects "Application" in the "Object Type" dropdown
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
 	| Public Folder          |
 	| Sharepoint Application |
 	When User clicks "Projects" navigation link on the Admin page
-	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
-	When User clicks content from "Project" column
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
 	Then Project "Windows 7 Migration (Computer Scheduled Project)" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks content from "Capacity Slot" column
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks content from "Capacity Slot" column
+	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                                            |
 	| [This is the Default Request Type for Computer)] |
@@ -294,7 +303,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Computer: Laptop Replacement                     |
 	| Computer: Virtual Machine                        |
 	When User selects "User" in the "Object Type" dropdown
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items            |
 	| [Default (User)] |
@@ -302,7 +311,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| User: VIP        |
 	| User; Maternity  |
 	When User selects "Application" in the "Object Type" dropdown
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                       |
 	| [Default (Application)]     |
