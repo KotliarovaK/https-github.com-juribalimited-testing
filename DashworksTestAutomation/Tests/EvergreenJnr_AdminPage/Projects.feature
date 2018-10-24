@@ -3558,7 +3558,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	And "Other mailbox permissions" associated checkbox is checked
 	And "Mailbox folder permissions" associated checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13606
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13606 @DAS13162
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3566,9 +3566,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "Projects" page should be displayed to the user
 	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	When User clicks content from "Project" column
+	Then "Capacity Mode" dropdown is not displayed
+	Then "Capacity Units" dropdown is not displayed
 	Then "Windows 7 Migration (Computer Scheduled Project)" content is displayed in "Project Name" field
 	Then "Windows7Mi" content is displayed in "Project Short Name" field
 	Then "Windows 7 Migration Phase 1Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill;" content is displayed in "Project Description" field
+	When User clicks "Scope" tab
+	Then "Scope Details" tab is disabled
+	Then "Scope Changes" tab is disabled
+	When User clicks "Capacity" tab
+	Then "Capacity Mode" dropdown is displayed
+	Then "Capacity Units" dropdown is displayed
+	Then "90" content is displayed in "Percentage capacity to reach before showing amber" field
+	Then Menu options are displayed in the following order on the Admin page:
+	| Options        |
+	| Details        |
+	| Slots          |
+	| Units          |
+	| Override Dates |
 	When User clicks "Administration" navigation link on the Admin page
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	When User clicks content from "Project" column
