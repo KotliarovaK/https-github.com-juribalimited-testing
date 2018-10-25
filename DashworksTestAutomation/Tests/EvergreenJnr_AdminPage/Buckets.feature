@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	And User clicks "Buckets" link on the Admin page
 	And User selects all rows on the grid
 	And User clicks Reset Filters button on the Admin page
-	#Then User sees "1" of "559" rows selected label
+	Then User sees "1" of "558" rows selected label
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User selects all rows on the grid

@@ -133,6 +133,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
 	When User close message on the Admin page
+	When User clicks refresh button in the browser
 	Then following Objects are displayed in "Devices" tab on the Capacity Units page:
 	| Objects         |
 	| 00I0COBFWHOF27  |
@@ -184,6 +185,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	When User refreshes agGrid
 	Then "5" rows are displayed in the agGrid on Capacity Units page
 	When User close message on the Admin page
+	When User clicks refresh button in the browser
 	Then following Objects are displayed in "Users" tab on the Capacity Units page:
 	| Objects              |
 	| $231000-3AC04R8AR431 |
@@ -232,6 +234,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	When User refreshes agGrid
 	Then "5" rows are displayed in the agGrid on Capacity Units page
 	When User close message on the Admin page
+	When User clicks refresh button in the browser
 	Then following Objects are displayed in "Mailboxes" tab on the Capacity Units page:
 	| Objects                          |
 	| 000F977AC8824FE39B8@bclabs.local |

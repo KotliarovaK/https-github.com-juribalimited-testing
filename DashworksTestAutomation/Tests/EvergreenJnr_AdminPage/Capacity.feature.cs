@@ -487,6 +487,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"Your capacity slot has been created\" t" +
                     "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"Override Dates\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"ADD OVERRIDE DATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User enters \"1 Sep 2018\" date in the \"Override Start Date\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

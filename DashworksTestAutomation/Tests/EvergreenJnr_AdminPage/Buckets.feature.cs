@@ -922,6 +922,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks \"Buckets\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User sees \"1\" of \"558\" rows selected label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"Unassigned\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

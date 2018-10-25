@@ -212,6 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User type "13442" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks newly created object link
 	When User selects "Override Dates" tab on the Project details page
 	And User clicks the "ADD OVERRIDE DATE" Action button
 	And User enters "1 Sep 2018" date in the "Override Start Date" field
