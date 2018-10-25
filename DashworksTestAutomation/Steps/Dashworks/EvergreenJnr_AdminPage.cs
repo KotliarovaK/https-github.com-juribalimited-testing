@@ -1892,6 +1892,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, actualList, "Menu options are different");
         }
 
+        [Then(@"column content is displayed in the following order:")]
+        public void ThenColumnContentIsDisplayedInTheFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.TableContentList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Column content is different");
+        }
+
         [Then(@"""(.*)"" dropdown is not displayed")]
         public void ThenDropdownIsNotDisplayed(string dropdownName)
         {

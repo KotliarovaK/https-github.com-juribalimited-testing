@@ -25,11 +25,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
 
+        public const string FirstColumnTableContent = "//div[@role='gridcell']//a[@href]";
+
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = OptionTabsOnAdminPage)]
         public IList<IWebElement> MenuTabOptionListOnAdminPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = FirstColumnTableContent)]
+        public IList<IWebElement> TableContentList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectBox { get; set; }

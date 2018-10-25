@@ -325,3 +325,43 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| [Default (Application)]     |
 	| Application: Request Type A |
 	| Application: Request Type B |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13159 @DAS13754 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "13159ProjectForCapacity" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "13159ProjectForCapacity" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "NewUnit" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "13159" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	Then column content is displayed in the following order:
+	| Items             |
+	| Unassigned        |
+	| 13159             |
+	| A13159Unit        |
+	| CapacityUnit13790 |
+	| NewUnit           |
