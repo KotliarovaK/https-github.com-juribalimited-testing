@@ -418,6 +418,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void ContextClickOnCell(string cellText)
         {
             var builder = new Actions(Driver);
+            Driver.WaitForDataLoading();
             builder.ContextClick(GetGridCellByText(cellText)).Build().Perform();
         }
 
