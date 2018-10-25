@@ -88,7 +88,7 @@ Examples:
 	| Buckets        | Evergreen  |
 	| Capacity Units | True       |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @DAS13930 @Project_Creation_and_Scope @Projects @Teams @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @DAS13930 @Project_Creation_and_Scope @Projects @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -103,10 +103,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User clicks newly created object link
 	Then Project "TestProject20" is displayed to user
 	When User clicks "Details" tab
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	#When User clicks the "UPDATE" Action button
-	#Then Success message is displayed and contains "The project details have been updated" text
-	When User selects "Scope Changes" tab on the Project details page
+	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User clicks "Scope" tab
+	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 	When User expands the object to add
 	And User selects following Objects
@@ -119,12 +118,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	When User click on Back button
-	When User clicks "Teams" link on the Admin page
+	And User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	When User clicks "Buckets" tab
-	When User enters "Unassigned2" text in the Search field for "Bucket" column
+	And User enters "Unassigned2" text in the Search field for "Bucket" column
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
