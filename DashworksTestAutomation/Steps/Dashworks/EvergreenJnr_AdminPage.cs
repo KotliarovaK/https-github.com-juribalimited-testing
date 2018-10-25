@@ -1906,6 +1906,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
         }
 
+        [Then(@"""(.*)"" text value is displayed in the ""(.*)"" dropdown")]
+        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
         [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {

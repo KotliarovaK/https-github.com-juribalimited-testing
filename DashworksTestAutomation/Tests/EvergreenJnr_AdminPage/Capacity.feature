@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	When User clicks newly created object link
 	Then Project "ProjectForCapacity13720" is displayed to user
 	When User clicks "Capacity" tab
-	Then "Capacity Units" value is displayed in the "Capacity Mode" dropdown
+	Then "Capacity Units" text value is displayed in the "Capacity Mode" dropdown
 	When User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then Counter shows "1" found rows
@@ -257,7 +257,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	And User changes value to "40" for "Monday" column
 	And User clicks the "UPDATE" Action button
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13608
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13608 @DAS13472
 Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -269,7 +269,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
-	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then "Scheduled date" value is displayed in the "Tasks" dropdown
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
 	| Personal Mailbox       |
@@ -278,13 +279,15 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Personal Mailbox - VIP |
 	| Personal Mailbox - EA  |
 	When User selects "User" in the "Object Type" dropdown
-	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then "" content is displayed in "Tasks" field
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items         |
 	| Standard User |
 	| VIP User      |
 	When User selects "Application" in the "Object Type" dropdown
-	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then "" content is displayed in "Tasks" field
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
 	| Public Folder          |
@@ -296,7 +299,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
-	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then "Scheduled Date" value is displayed in the "Tasks" dropdown
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                                            |
 	| [This is the Default Request Type for Computer)] |
@@ -305,7 +309,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Computer: Laptop Replacement                     |
 	| Computer: Virtual Machine                        |
 	When User selects "User" in the "Object Type" dropdown
-	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then "" content is displayed in "Tasks" field
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items            |
 	| [Default (User)] |
@@ -313,7 +318,8 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| User: VIP        |
 	| User; Maternity  |
 	When User selects "Application" in the "Object Type" dropdown
-	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	Then "" content is displayed in "Tasks" field
+	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                       |
 	| [Default (Application)]     |

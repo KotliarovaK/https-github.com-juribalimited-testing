@@ -507,18 +507,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//mat-select[@aria-label='{dropdownName}']"));
         }
 
-        public IWebElement GetDropdownByValueByName(string value, string dropdownName)
+        public IWebElement GetDropdownByTextValueByName(string value, string dropdownName)
         {
             var selector = By.XPath($"//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
-        public void SelectValueInTheDropdown(string value)
+        public IWebElement GetDropdownByValueByName(string value, string dropdownName)
         {
-            var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{value}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
+            var selector = By.XPath($"//mat-form-field//label[text()='{dropdownName}']//ancestor::div//span[text()='{value}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetDisabledTabByName(string tabName)
