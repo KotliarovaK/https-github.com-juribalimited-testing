@@ -467,6 +467,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("background-color");
         }
 
+        public string GetMessageHeightOnAdminPage()
+        {
+            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("Height");
+        }
+
         public string GetMessageWidthOnAdminPage()
         {
             return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("width");
