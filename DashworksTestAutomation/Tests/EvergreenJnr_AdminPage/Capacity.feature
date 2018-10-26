@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13157 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -158,6 +158,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	And There are no errors in the browser console
+	When User selects "Units" tab on the Project details page
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type " CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Error message with "A capacity unit already exists with this name" text is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13636 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNONPublishedDateTasksIsAvailableOnTheCapacitySlotsPage
