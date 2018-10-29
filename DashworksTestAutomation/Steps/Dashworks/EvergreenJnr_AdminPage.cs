@@ -1230,8 +1230,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
-            //Assert.AreEqual("1500px", page.GetMessageWidthOnAdminPage());
-            //Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
+            //Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
+            Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
@@ -1878,6 +1878,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.IsTrue(page.DropdownItemDisplayed(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in the dropdown");
             }
+        }
+
+        [When(@"User enters ""(.*)"" value to ""(.*)"" date field on Capacity Slot form page")]
+        public void WhenUserEntersValueToDateFieldOnCapacitySlotFormPage(string value, string field)
+        {
+            var page = _driver.NowAt<CreateCapacitySlotPage>();
+            page.EnterValueToTheDateByPlaceholder(value, field);
+        }
+
+        [Then(@"User sees ""(.*)"" value in the ""(.*)"" date field on Capacity Slot form page")]
+        public void ThenUserSeesValueInTheDateFieldOnCapacitySlotFormPage(string valueExpected, string field)
+        {
+            var page = _driver.NowAt<CreateCapacitySlotPage>();
+
+            Assert.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
         }
 
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
