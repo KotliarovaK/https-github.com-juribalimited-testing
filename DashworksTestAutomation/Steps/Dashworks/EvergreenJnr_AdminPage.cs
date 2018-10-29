@@ -1862,6 +1862,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User enters ""(.*)"" value to ""(.*)"" date field on Capacity Slot form page")]
+        public void WhenUserEntersValueToDateFieldOnCapacitySlotFormPage(string value, string field)
+        {
+            var page = _driver.NowAt<CreateCapacitySlotPage>();
+            page.EnterValueToTheDateByPlaceholder(value, field);
+        }
+
+        [Then(@"User sees ""(.*)"" value in the ""(.*)"" date field on Capacity Slot form page")]
+        public void ThenUserSeesValueInTheDateFieldOnCapacitySlotFormPage(string valueExpected, string field)
+        {
+            var page = _driver.NowAt<CreateCapacitySlotPage>();
+
+            Assert.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
+        }
+
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
         public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
