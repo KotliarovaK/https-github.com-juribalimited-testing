@@ -3483,14 +3483,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	When User selects "Do not include applications" checkbox on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Users" tab in the Project Scope Changes section
-	And User expands the object to remove 
+	When User expands the object to remove on "Users" tab
 	When User selects following Objects
-	| Objects                        |
-	| AAC860150 (Kerrie D. Ruiz)     |
-	| AAD1011948 (Pinabel Cinq-Mars) |
-	| AAG081456 (Melanie Z. Fowler)  |
-	| AAH0343264 (Luc Gauthier)      |
-	| AAK881049 (Miguel W. Owen)     |
+	| Objects    |
+	| AAC860150  |
+	| AAD1011948 |
+	| AAG081456  |
+	| AAH0343264 |
+	| AAK881049  |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Blue banner with "Object updates being queued, please wait" text is displayed

@@ -6420,19 +6420,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Do not include applications\" checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User expands the object to remove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User expands the object to remove on \"Users\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table161 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table161.AddRow(new string[] {
-                        "AAC860150 (Kerrie D. Ruiz)"});
+                        "AAC860150"});
             table161.AddRow(new string[] {
-                        "AAD1011948 (Pinabel Cinq-Mars)"});
+                        "AAD1011948"});
             table161.AddRow(new string[] {
-                        "AAG081456 (Melanie Z. Fowler)"});
+                        "AAG081456"});
             table161.AddRow(new string[] {
-                        "AAH0343264 (Luc Gauthier)"});
+                        "AAH0343264"});
             table161.AddRow(new string[] {
-                        "AAK881049 (Miguel W. Owen)"});
+                        "AAK881049"});
             testRunner.When("User selects following Objects", ((string)(null)), table161, "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

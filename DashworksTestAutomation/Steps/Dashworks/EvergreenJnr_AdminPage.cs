@@ -1401,12 +1401,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateBucketButton.Click();
         }
 
-        [When(@"User expands the object to remove")]
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             projectElement.PlusButton.Click();
+        }
+
+        [When(@"User expands the object to remove on ""(.*)"" tab")]
+        public void WhenUserExpandsTheObjectToRemoveOnTab(string tabName)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            try
+            {
+                projectElement.PlusButton.Click();
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(5000);
+                _driver.Navigate().Refresh();
+                var projectTabs = _driver.NowAt<ProjectsPage>();
+                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+                _driver.WaitForDataLoading();
+                projectElement.PlusButton.Click();
+            }
         }
 
         [When(@"User enters ""(.*)"" in the Search Object field")]

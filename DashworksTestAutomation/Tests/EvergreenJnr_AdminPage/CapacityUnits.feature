@@ -412,3 +412,46 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13481 @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacityUnitsIsDisplayedCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	And User type "OwnerObjectKey13481" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks newly created object link
+	And User selects "Devices" tab on the Capacity Units page
+	Then "Devices" tab is selected on the Admin page
+	When User clicks the "ADD DEVICE" Action button
+	And User selects following Objects
+	| Objects   |
+	| TIMSTRAIN |
+	| Macbook1  |
+	| Macbook2  |
+	| Macbook3  |
+	And User clicks the "ADD DEVICES" Action button
+	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
+
+	When User selects "Mailboxes" tab on the Capacity Units page
+	Then "Mailboxes" tab is selected on the Admin page
+	When User clicks the "ADD MAILBOX" Action button
+	And User selects following Objects
+	| Objects                   |
+	| alex.cristea@juriba.com   |
+	| alex.melnychuk@juriba.com |
+	| andrew.bell@juriba.com    |
+	| barry.angell@juriba.com   |
+	And User clicks the "ADD MAILBOXS" Action button
+	Then Success message is displayed and contains "The selected mailboxes have been queued for update, if they do not appear immediately try refreshing the grid" text
+
+	When User selects "Applications" tab on the Capacity Units page
+	Then "Applications" tab is selected on the Admin page
+	When User clicks the "ADD APPLICATION" Action button
+	And User selects following Objects
+	| Objects   |
+	And User clicks the "ADD APPLICATIONS" Action button
+	Then Success message is displayed and contains "The selected applications have been queued for update, if they do not appear immediately try refreshing the grid" text
