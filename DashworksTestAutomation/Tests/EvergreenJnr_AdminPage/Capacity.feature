@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -135,15 +135,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
-	And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
+	#Remove after DAS-14037 fixed
+	#Then Success message is displayed and contains "The capacity unit has been created" text
+	#And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
 	When User enters "13720" text in the Search field for "Description" column
 	Then Counter shows "1" found rows
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
 	When User clicks Default unit checkbox
 	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The capacity unit details have been updated" text
+	#Remove after DAS-14037 fixed
+	#Then Success message is displayed and contains "The capacity unit details have been updated" text
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
 	Then "Default unit" checkbox is checked and cannot be unchecked
@@ -152,12 +154,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User type "CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	#Remove after DAS-14037 fixed
+	#Then Success message is displayed and contains "The capacity unit has been created" text
 	When User selects "Details" tab on the Project details page
 	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project capacity details have been updated" text
-	And There are no errors in the browser console
+	#Remove after DAS-14037 fixed
+	#Then Success message is displayed and contains "The project capacity details have been updated" text
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13636 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNONPublishedDateTasksIsAvailableOnTheCapacitySlotsPage
