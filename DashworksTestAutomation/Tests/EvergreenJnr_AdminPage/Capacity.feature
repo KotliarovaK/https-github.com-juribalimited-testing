@@ -191,7 +191,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNONPublishedDateTasksIsAvailableOnTheC
 	| for project | for project | for project      | Normal         | Date            | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13442 @DAS13440 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -365,3 +365,36 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	| A13159Unit        |
 	| CapacityUnit13790 |
 	| NewUnit           |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13382 @DAS13149 @DAS13147 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExistingDisplayName
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "13382ProjectForCapacity" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "13382ProjectForCapacity" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Name1" Name in the "Slot Name" field on the Project details page
+	And User type "Name1" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	Then There are no errors in the browser console
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "NewName" Name in the "Slot Name" field on the Project details page
+	And User type "Name1" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	Then There are no errors in the browser console
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
+	And User type "Name13147" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
