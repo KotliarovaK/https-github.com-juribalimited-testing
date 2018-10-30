@@ -311,7 +311,68 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUni
 	And User type "Capacity Unit Sorting" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User click on "Capacity Unit" column header on the Admin page
+	When User clicks newly created object link
+	And User selects "Devices" tab on the Capacity Units page
+	Then "Devices" tab is selected on the Admin page
+	When User clicks the "ADD DEVICE" Action button
+	And User selects following Objects
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	| 00BDM1JUR8IF419 |
+	| 00CWZRC4UK6W20  |
+	| 00HA7MKAVVFDAV  |
+	And User clicks the "ADD DEVICES" Action button
+	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User selects "Users" tab on the Capacity Units page
+	Then "Users" tab is selected on the Admin page
+	When User clicks the "ADD USER" Action button
+	And User selects following Objects
+	| Objects                                          |
+	| BCLABS\002B5DC7D4D34D5C895 (Collor, Christopher) |
+	| DWLABS\003F5D8E1A844B1FAA5 (Hunter, Melanie)     |
+	| BCLABS\01AE08330912421F891 (Adlawan, Belen)      |
+	| DWLABS\02171CE96D0244BBB80 (Bernardo, Anita)     |
+	| BCLABS\024213574157421A9CD (Reyes, Natasha)      |
+	And User clicks the "ADD USERS" Action button
+	Then Success message is displayed and contains "The selected users have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User selects "Mailboxes" tab on the Capacity Units page
+	Then "Mailboxes" tab is selected on the Admin page
+	When User clicks the "ADD MAILBOX" Action button
+	And User selects following Objects
+	| Objects                          |
+	| 000F977AC8824FE39B8@bclabs.local |
+	| 002B5DC7D4D34D5C895@bclabs.local |
+	| 003F5D8E1A844B1FAA5@bclabs.local |
+	| 0072B088173449E3A93@bclabs.local |
+	| 00A5B910A1004CF5AC4@bclabs.local |
+	And User clicks the "ADD MAILBOXES" Action button
+	Then Success message is displayed and contains "The selected mailboxes have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User selects "Applications" tab on the Capacity Units page
+	Then "Applications" tab is selected on the Admin page
+	When User clicks the "ADD APPLICATION" Action button
+	And User selects following Objects
+	| Objects                                                         |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
+	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
+	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI                  |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
+	| 0036 - Microsoft Access 97 SR-2 English                         |
+	And User clicks the "ADD APPLICATIONS" Action button
+	Then Success message is displayed and contains "The selected applications have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User click on Back button
+	And User enters "ss" text in the Search field for "Capacity Unit" column
+	Then "Unassigned" text is displayed in the table content
+	And "1" rows are displayed in the agGrid on Capacity Units page
+	When User clicks Reset Filters button on the Admin page
+	And User clicks String Filter button for "Default" column on the Admin page
+	And User clicks "True" checkbox from String Filter on the Admin page
+	Then "1" rows are displayed in the agGrid on Capacity Units page
+	When User clicks Reset Filters button on the Admin page
+	And User enters "=5" text in the Search field for "Devices" column
+	Then "1" rows are displayed in the agGrid on Capacity Units page
+	When User clicks Reset Filters button on the Admin page
+	And User click on "Capacity Unit" column header on the Admin page
 	Then data in table is sorted by "Capacity Unit" column in ascending order on the Admin page	
 	When User click on "Devices" column header on the Admin page
 	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
@@ -322,7 +383,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUni
 	When User click on "Default" column header on the Admin page
 	Then color data in table is sorted by "Default" column in descending order on the Admin page
 	When User enters "Capacity Unit Sorting" text in the Search field for "Capacity Unit" column
-	When User select "Capacity Unit" rows in the grid
+	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName      |
 	| Capacity Unit Sorting |
 	And User clicks on Actions button
