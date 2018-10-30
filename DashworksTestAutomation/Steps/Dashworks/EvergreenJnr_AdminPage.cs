@@ -220,6 +220,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
         }
 
+        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
+        public void WhenUserEntersValueInTheField(string name, string fieldName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetFieldNameByPage(fieldName).Clear();
+            page.GetFieldNameByPage(fieldName).SendKeys(name);
+        }
+
         [When(@"User opens Scope section on the Project details page")]
         public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
         {
