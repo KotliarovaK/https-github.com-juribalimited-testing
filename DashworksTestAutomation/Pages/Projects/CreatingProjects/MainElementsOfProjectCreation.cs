@@ -35,6 +35,9 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         [FindsBy(How = How.XPath, Using = ".//a[text()='Create Project']")]
         public IWebElement CreatedProject { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Project']")]
+        public IWebElement CreatedProjectButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//li//a[text()='Manage Project']")]
         public IWebElement ManageProject { get; set; }
 

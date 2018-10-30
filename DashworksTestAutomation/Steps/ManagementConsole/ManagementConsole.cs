@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             if (!string.IsNullOrEmpty(_manageUsers.RolesString))
             {
                 //assign RolesString to RolesEnum
-                _manageUsers.Roles = (RolesEnum) Enum.Parse(typeof(RolesEnum), _manageUsers.RolesString);
+                _manageUsers.Roles = (RolesEnum)Enum.Parse(typeof(RolesEnum), _manageUsers.RolesString);
                 page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
             }
 
