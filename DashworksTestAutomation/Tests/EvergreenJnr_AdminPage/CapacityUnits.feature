@@ -466,3 +466,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacity
 	Then "" content is displayed in "Owner Object Key" column
 	When User enters "alex.melnychuk@juriba.com" text in the Search field for "Email Address" column
 	Then "" content is displayed in "Owner Object Key" column
+	When User click on Back button
+	And User select "Capacity Unit" rows in the grid
+	| SelectedRowsName    |
+	| OwnerObjectKey13481 |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
