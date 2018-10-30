@@ -431,11 +431,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacity
 	| Objects   |
 	| TIMSTRAIN |
 	| Macbook1  |
-	| Macbook2  |
-	| Macbook3  |
 	And User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
-
+	When User have opened Column Settings for "Hostname" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Owner Object Key" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName       |
+	| Owner Object Key |
+	When User enters "TIMSTRAIN" text in the Search field for "Hostname" column
+	Then "" content is displayed in "Owner Object Key" column
+	When User enters "Macbook1" text in the Search field for "Hostname" column
+	Then "" content is displayed in "Owner Object Key" column
 	When User selects "Mailboxes" tab on the Capacity Units page
 	Then "Mailboxes" tab is selected on the Admin page
 	When User clicks the "ADD MAILBOX" Action button
@@ -443,15 +452,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacity
 	| Objects                   |
 	| alex.cristea@juriba.com   |
 	| alex.melnychuk@juriba.com |
-	| andrew.bell@juriba.com    |
-	| barry.angell@juriba.com   |
-	And User clicks the "ADD MAILBOXS" Action button
+	And User clicks the "ADD MAILBOXES" Action button
 	Then Success message is displayed and contains "The selected mailboxes have been queued for update, if they do not appear immediately try refreshing the grid" text
-
-	When User selects "Applications" tab on the Capacity Units page
-	Then "Applications" tab is selected on the Admin page
-	When User clicks the "ADD APPLICATION" Action button
-	And User selects following Objects
-	| Objects   |
-	And User clicks the "ADD APPLICATIONS" Action button
-	Then Success message is displayed and contains "The selected applications have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User have opened Column Settings for "Email Address" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Owner Object Key" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName       |
+	| Owner Object Key |
+	When User enters "alex.cristea@juriba.com" text in the Search field for "Email Address" column
+	Then "" content is displayed in "Owner Object Key" column
+	When User enters "alex.melnychuk@juriba.com" text in the Search field for "Email Address" column
+	Then "" content is displayed in "Owner Object Key" column
