@@ -1239,7 +1239,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
             //Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
-            Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
+            //Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
