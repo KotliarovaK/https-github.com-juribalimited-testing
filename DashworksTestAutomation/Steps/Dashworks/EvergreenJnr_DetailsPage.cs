@@ -542,6 +542,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
         [Then(@"""(.*)"" rows found label displays on Details Page")]
+        [Then(@"""(.*)"" rows label displays in Action panel")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
         {
             var detailsPage = _driver.NowAt<BaseDashboardPage>();

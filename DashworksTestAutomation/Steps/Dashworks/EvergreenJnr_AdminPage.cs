@@ -220,6 +220,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
         }
 
+        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
+        public void WhenUserEntersValueInTheField(string name, string fieldName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetFieldNameByPage(fieldName).Clear();
+            page.GetFieldNameByPage(fieldName).SendKeys(name);
+        }
+
         [When(@"User opens Scope section on the Project details page")]
         public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
         {
@@ -1231,7 +1239,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
             //Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
-            Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
+            //Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
