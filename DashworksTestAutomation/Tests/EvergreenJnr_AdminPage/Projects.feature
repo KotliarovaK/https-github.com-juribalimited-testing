@@ -1918,7 +1918,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User navigate to "Project13096" Project
 	Then Project with "Project13096" name is displayed correctly
 	And "Manage Project Details" page is displayed to the user
-	When User update Project Name on "Project13096 upd"
+	When User updates Project Name to "Project13096 upd"
+	When User clicks "Update" button
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to Evergreen link
 	And User clicks Admin on the left-hand menu
@@ -3593,27 +3594,45 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "" content is displayed in "Project Description" field
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13498 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13498
 Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates Project
-	| ProjectName     | ProjectShortName | ProjectDescription   | ProjectTypeString        |
-	| SnrProject13498 | Project13498     | ComputerProject13498 | ComputerScheduledProject |
+	When User creates new Project
+	| ProjectName     | ShortName | Description | Type |
+	| SnrProject13498 | 13498Pr   |             |      |
 	And User navigate to Evergreen link
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "SnrProject13498" text in the Search field for "Project" column
-	When User clicks content from "Project" column
+	And User clicks content from "Project" column
 	Then "SnrProject13498" content is displayed in "Project Name" field
-	Then "Project13498" content is displayed in "Project Short Name" field
-	Then "ComputerProject13498" content is displayed in "Project Description" field
+	And "13498Pr" content is displayed in "Project Short Name" field
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
+	When User navigate to "SnrProject13498" Project
+	Then Project with "SnrProject13498" name is displayed correctly
+	And "Manage Project Details" page is displayed to the user
+	When User updates Project Name to "13498NewProjectName"
+	And User updates Project Short Name to "13498ShN"
+	When User clicks "Update" button
+	And User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "13498NewProjectName" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then "13498NewProjectName" content is displayed in "Project Name" field
+	And "13498ShN" content is displayed in "Project Short Name" field
+	When User clicks "Projects" navigation link on the Admin page
+	When User enters "13498NewProjectName" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14029 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
