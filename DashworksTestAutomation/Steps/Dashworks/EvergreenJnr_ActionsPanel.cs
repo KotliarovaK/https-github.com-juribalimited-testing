@@ -65,7 +65,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ActionsDropdown.Click();
-            action.GetOptionOnActionsPanelByName(actionsName).Click();
+            action.GetOptionByName(actionsName).Click();
         }
 
         [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             action.RequestTypeDropdown.Click();
             _driver.WaitForDataLoading();
-            action.GetOptionOnActionsPanelByName(typeName).Click();
+            action.GetOptionByName(typeName).Click();
         }
 
         [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
@@ -93,7 +93,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
             action.ProjectSection.Click();
-            //action.GetOptionOnActionsPanelByName(projectName).Click();
         }
 
         [Then(@"Projects are displayed in alphabetical order on Action panel")]
@@ -137,7 +136,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.RequestTypeField.Click();
             action.RequestTypeField.Clear();
             action.RequestTypeField.SendKeys(requestType);
-            action.GetOptionOnActionsPanelByName(requestType).Click();
+            action.GetOptionByName(requestType).Click();
         }
 
         [When(@"User selects ""(.*)"" Stage on Action panel")]
@@ -146,7 +145,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.StageField.Clear();
             action.StageField.SendKeys(stageValue);
-            action.GetOptionOnActionsPanelByName(stageValue).Click();
+            action.GetOptionByName(stageValue).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -179,7 +178,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TaskField.Clear();
             action.TaskField.SendKeys(taskNAme);
-            action.GetOptionOnActionsPanelByName(taskNAme).Click();
+            action.GetOptionByName(taskNAme).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -211,7 +210,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ValueDropdown.Click();
-            action.GetOptionOnActionsPanelByName(value).Click();
+            action.GetOptionByName(value).Click();
         }
 
         [Then(@"Value field is not displayed on Action panel")]
@@ -226,7 +225,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateValueDropdown.Click();
-            action.GetOptionOnActionsPanelByName(value).Click();
+            action.GetOptionByName(value).Click();
         }
 
         [Then(@"the Update Value options are displayed in following order:")]
@@ -246,7 +245,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateDateDropdown.Click();
-            action.GetOptionOnActionsPanelByName(updateDate).Click();
+            action.GetOptionByName(updateDate).Click();
         }
 
         [When(@"User selects ""(.*)"" Date on Action panel")]
@@ -275,7 +274,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateOwnerDropdown.Click();
-            action.GetOptionOnActionsPanelByName(owner).Click();
+            action.GetOptionByName(owner).Click();
         }
 
         [Then(@"the Update Owner options are displayed in following order:")]
@@ -297,7 +296,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TeamField.Click();
             action.TeamField.Clear();
             action.TeamField.SendKeys(team);
-            action.GetOptionOnActionsPanelByName(team).Click();
+            action.GetOptionByName(team).Click();
         }
 
         [Then(@"Teams are displayed in alphabetical order on Action panel")]
@@ -318,7 +317,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.OwnerField.Click();
             action.OwnerField.Clear();
             action.OwnerField.SendKeys(owner);
-            action.GetOptionOnActionsPanelByName(owner).Click();
+            action.GetOptionByName(owner).Click();
         }
 
         [Then(@"Owner field is not displayed on Action panel")]

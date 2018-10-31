@@ -648,7 +648,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
-        public IWebElement GetOptionOnActionsPanelByName(string optionName)
+        public IWebElement GetOptionByName(string optionName)
         {
             var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
@@ -720,13 +720,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath(".//span[@role='columnheader']");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector);
-        }
-
-        public IWebElement GetOptionOnListPanel(string optionName)
-        {
-            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(selector);
         }
 
         public void ExpandColumnsSectionByName(string sectionsName)

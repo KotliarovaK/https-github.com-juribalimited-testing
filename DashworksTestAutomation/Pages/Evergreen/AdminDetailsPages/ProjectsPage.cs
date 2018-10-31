@@ -10,6 +10,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='menu-wrapper']")]
+        public IWebElement LanguageMenu { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//label[text()='Select language']//ancestor::span[1]")]
+        public IWebElement LanguageDropDown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'add-language')]//i[contains(@class, 'check')]/ancestor::button")]
+        public IWebElement CheckLanguageButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'add-language')]//i[contains(@class, 'clear')]/ancestor::button")]
+        public IWebElement ClearLanguageButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
@@ -305,6 +317,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetFieldByName(string name)
         {
             var selector = By.XPath($"//input[@placeholder='{name}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetLanguageMenuOptionByName(string option)
+        {
+            var selector = By.XPath($"//div[@class='menu']//li[text()='{option}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

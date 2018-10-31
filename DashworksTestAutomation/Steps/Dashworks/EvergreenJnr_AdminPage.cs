@@ -1814,6 +1814,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ProjectName.SendKeys(projectName);
         }
 
+        [When(@"User selects ""(.*)"" language on the Project details page")]
+        public void WhenUserSelectsLanguageOnTheProjectDetailsPage(string language)
+        {
+            var projectPage = _driver.NowAt<ProjectsPage>();
+            projectPage.LanguageDropDown.Click();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetOptionByName(language).Click();
+            projectPage.CheckLanguageButton.Click();
+        }
+
+        [When(@"User opens menu for selected language")]
+        public void WhenUserOpensMenuForSelectedLanguage()
+        {
+            var projectPage = _driver.NowAt<ProjectsPage>();
+            projectPage.LanguageMenu.Click();
+        }
+
+        [Then(@"User selects ""(.*)"" option for selected language")]
+        public void ThenUserSelectsOptionForSelectedLanguage(string optionName)
+        {
+            var projectPage = _driver.NowAt<ProjectsPage>();
+            projectPage.GetLanguageMenuOptionByName(optionName).Click();
+        }
+
         [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
@@ -1911,6 +1935,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<CreateCapacitySlotPage>();
 
             Assert.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
+        }
+
+        [When(@"User clicks ""(.*)"" link on the Capacity Slot page")]
+        public void WhenUserClicksLinkOnTheCapacitySlotPage(string linkName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.GetLanguageLinkByName(linkName).Click();
+        }
+
+        [Then(@"""(.*)"" link on the Capacity Slot page is not displayed")]
+        public void ThenLinkOnTheCapacitySlotPageIsNotDisplayed(string linkName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsFalse(page.GetLanguageLinkByName(linkName).Displayed, $"{linkName} link is not displayed");
+        }
+
+        [Then(@"""(.*)"" Language is displayed in Translations table on the Capacity Slot page")]
+        public void ThenLanguageIsDisplayedInTranslationsTableOnTheCapacitySlotPage(string language)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
         }
 
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]

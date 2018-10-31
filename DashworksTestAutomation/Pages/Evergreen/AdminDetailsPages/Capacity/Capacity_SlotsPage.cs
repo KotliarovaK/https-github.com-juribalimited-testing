@@ -39,6 +39,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
         }
-    }
 
+        public IWebElement GetLanguageLinkByName(string link)
+        {
+            var selector = By.XPath($"//div[@class='form-item']//a[contains(text(),'{link}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetLanguageInTranslationsTableByName(string language)
+        {
+            var selector = By.XPath($"//div[contains(@class,'translations')]//span[text()='{language}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+    }
 }

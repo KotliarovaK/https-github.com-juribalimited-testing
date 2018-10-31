@@ -208,6 +208,40 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And "2" rows label displays in Action panel
 	And There are no errors in the browser console
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13779 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectDAS13779" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "SlotDAS13779" Name in the "Slot Name" field on the Project details page
+	And User type "13779" Name in the "Display Name" field on the Project details page
+	And User enters "29 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
+	And User enters "29 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
+	And User clicks the "CREATE" Action button
+	And User selects "Override Dates" tab on the Project details page
+	And User clicks the "ADD OVERRIDE DATE" Action button
+	And User enters "29 Oct 2018" date in the "Override Start Date" field
+	And User enters "29 Oct 2018" date in the "Override End Date" field
+	And User selects "SlotDAS13779" in the "Slot" dropdown
+	And User enters "0" value in the "Capacity" field
+	And User clicks the "CREATE" Action button
+	And User clicks the "ADD OVERRIDE DATE" Action button
+	And User enters "29 Oct 2018" date in the "Override Start Date" field
+	And User enters "29 Oct 2018" date in the "Override End Date" field
+	And User selects "SlotDAS13779" in the "Slot" dropdown
+	And User enters "0" value in the "Capacity" field
+	And User clicks the "CREATE" Action button
+	Then Error message with "An override already exists for this date" text is displayed
+	And "1" rows label displays in Action panel
+	And There are no errors in the browser console
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13636 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNONPublishedDateTasksIsAvailableOnTheCapacitySlotsPage
 	When User clicks Admin on the left-hand menu
