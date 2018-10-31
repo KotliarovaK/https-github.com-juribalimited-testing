@@ -435,7 +435,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsOptionOnTheAllListsDropdown(string optionName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            page.GetOptionOnListPanel(optionName).Click();
+            page.GetOptionByName(optionName).Click();
         }
 
         [Then(@"appropriate icon is displayed for All lists")]
