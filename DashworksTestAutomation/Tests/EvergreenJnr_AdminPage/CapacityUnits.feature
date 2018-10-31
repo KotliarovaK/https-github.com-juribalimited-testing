@@ -182,10 +182,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User clicks the "ADD USERS" Action button
 	Then Success message is displayed and contains "The selected users have been queued for update, if they do not appear immediately try refreshing the grid" text
 	And data in table is sorted by "Username" column in ascending order by default on the Admin page
-	When User refreshes agGrid
-	Then "5" rows are displayed in the agGrid on Capacity Units page
 	When User close message on the Admin page
+	When User refreshes agGrid
 	When User clicks refresh button in the browser
+	Then "5" rows are displayed in the agGrid on Capacity Units page
 	Then following Objects are displayed in "Users" tab on the Capacity Units page:
 	| Objects              |
 	| $231000-3AC04R8AR431 |
@@ -280,9 +280,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User clicks the "ADD APPLICATIONS" Action button
 	Then Success message is displayed and contains "The selected applications have been queued for update, if they do not appear immediately try refreshing the grid" text
 	And data in table is sorted by "Application" column in ascending order by default on the Admin page
-	When User refreshes agGrid
 	Then "5" rows are displayed in the agGrid on Capacity Units page
 	When User close message on the Admin page
+	When User refreshes agGrid
 	Then following Objects are displayed in "Applications" tab on the Capacity Units page:
 	| Objects                                                         |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
@@ -413,6 +413,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnTh
 	| 00I0COBFWHOF27  |
 	And User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User clicks refresh button in the browser
 	Then "5" rows are displayed in the agGrid on Capacity Units page
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |

@@ -1238,9 +1238,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
-            //Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
-            //Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Success message is displayed correctly")]
+        public void ThenSuccessMessageIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
+            Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
+            Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
         }
 
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
@@ -1778,6 +1786,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.BucketsProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
+            //Waiting for bucket change
+            Thread.Sleep(3000);
         }
 
         [When(@"user selects ""(.*)"" in the Bucket dropdown")]

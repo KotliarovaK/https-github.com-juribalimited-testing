@@ -546,7 +546,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
         {
             var detailsPage = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
+            //Wait for rows label is displayed
+            Thread.Sleep(2000);
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 detailsPage.FoundRowsLabel.Text,
                 "Incorrect rows count");
