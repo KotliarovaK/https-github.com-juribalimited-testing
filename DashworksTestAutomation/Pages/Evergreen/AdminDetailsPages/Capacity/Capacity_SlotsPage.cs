@@ -13,6 +13,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
         public IWebElement TitleContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='form-item']//a[contains(text(), 'See Translations')]")]
+        public IWebElement LanguageTranslationsLink { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -42,7 +45,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         public IWebElement GetLanguageLinkByName(string link)
         {
-            var selector = By.XPath($"//div[@class='form-item']//a[contains(text(),'{link}')]");
+            var selector = By.XPath($"//div[@class='form-item']//a[contains(text(), '{link}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

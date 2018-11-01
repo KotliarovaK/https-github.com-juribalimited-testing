@@ -228,13 +228,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetFieldNameByPage(fieldName).SendKeys(name);
         }
 
-        [When(@"User opens Scope section on the Project details page")]
-        public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.ScopeSection.Click();
-        }
-
         [When(@"User selects ""(.*)"" tab on the Project details page")]
         public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {
@@ -1206,14 +1199,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Delete button was clicked");
         }
 
+        [When(@"User clicks ""(.*)"" button in the warning message on Admin page")]
+        public void WhenUserClicksButtonInTheWarningMessageOnAdminPage(string buttonName)
+        {
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.WarningMessage);
+            button.GetButtonInWarningMessage(buttonName).Click();
+            Logger.Write($"{buttonName} button was clicked");
+        }
+
         [Then(@"Info message is displayed and contains ""(.*)"" text")]
         public void ThenInfoMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.InfoMessage);
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
             Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor()); //Blue color
             Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
-            StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
+            StringAssert.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
         }
 
         [Then(@"""(.*)"" message is displayed on the Admin Page")]
@@ -1298,6 +1300,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksNewlyCreatedObjectLink()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             projectElement.NewProjectLink.Click();
         }
 
@@ -1817,7 +1820,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User selects ""(.*)"" language on the Project details page")]
         public void WhenUserSelectsLanguageOnTheProjectDetailsPage(string language)
         {
-            var projectPage = _driver.NowAt<ProjectsPage>();
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
             projectPage.LanguageDropDown.Click();
             var page = _driver.NowAt<BaseDashboardPage>();
             page.GetOptionByName(language).Click();
@@ -1827,7 +1830,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User opens menu for selected language")]
         public void WhenUserOpensMenuForSelectedLanguage()
         {
-            var projectPage = _driver.NowAt<ProjectsPage>();
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            _driver.WaitForDataLoading();
             projectPage.LanguageMenu.Click();
         }
 
@@ -1944,11 +1948,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetLanguageLinkByName(linkName).Click();
         }
 
-        [Then(@"""(.*)"" link on the Capacity Slot page is not displayed")]
-        public void ThenLinkOnTheCapacitySlotPageIsNotDisplayed(string linkName)
+        [Then(@"See Translations link on the Capacity Slot page is not displayed")]
+        public void ThenSeeTranslationsLinkOnTheCapacitySlotPageIsNotDisplayed()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            Assert.IsFalse(page.GetLanguageLinkByName(linkName).Displayed, $"{linkName} link is not displayed");
+            Assert.IsFalse(page.LanguageTranslationsLink.Displayed(), "See Translations link is displayed");
         }
 
         [Then(@"""(.*)"" Language is displayed in Translations table on the Capacity Slot page")]
@@ -1979,6 +1983,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
                 $"Text in {fieldName} field is different");
+        }
+
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" drop-down field")]
+        public void ThenContentIsDisplayedInDrop_DownField(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            //TODO Check GetAttribute for drop-down field (does not work)
+            Assert.AreEqual(page.GetTextInDropDownByFieldName(fieldName).GetAttribute("value"), text,
+                $"Text for {fieldName} field is not correctly");
+        }
+
+        [Then(@"Capacity Units value is displayed for Capacity Mode field")]
+        public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
         }
 
         [Then(@"Menu options are displayed in the following order on the Admin page:")]

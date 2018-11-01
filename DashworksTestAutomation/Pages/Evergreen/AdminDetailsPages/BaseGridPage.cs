@@ -152,6 +152,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]")]
         public IWebElement OnboardedObjectsTable { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'mat-select-value-text')]//span[text()='Capacity Units']")]
+        public IWebElement DefaultCapacityMode { get; set; }
+
         [FindsBy(How = How.XPath, Using = ProjectInFilterDropdown)]
         public IList<IWebElement> ProjectListInFilterDropdown { get; set; }
 
@@ -182,9 +185,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-info')]")]
         public IWebElement BlueBanner { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-info')]")]
-        public IWebElement InfoMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
@@ -494,6 +494,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetTextInFieldByFieldName(string fieldName)
         {
             var selector = By.XPath($".//input[@placeholder='{fieldName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTextInDropDownByFieldName(string fieldName)
+        {
+            var selector = By.XPath($"//mat-select[@aria-label='{fieldName}']//ancestor::span[contains(@class, 'mat-select-value-text')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

@@ -10,18 +10,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='menu-wrapper']")]
-        public IWebElement LanguageMenu { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//label[text()='Select language']//ancestor::span[1]")]
-        public IWebElement LanguageDropDown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'add-language')]//i[contains(@class, 'check')]/ancestor::button")]
-        public IWebElement CheckLanguageButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'add-language')]//i[contains(@class, 'clear')]/ancestor::button")]
-        public IWebElement ClearLanguageButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
@@ -48,9 +36,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//button[@title='Update All Changes']")]
         public IWebElement UpdateAllChangesButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span['_ngcontent-c11'][text()='Scope']")]
-        public IWebElement ScopeSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='buckets']")]
         public IWebElement BucketsProjectField { get; set; }
@@ -324,6 +309,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetLanguageMenuOptionByName(string option)
         {
             var selector = By.XPath($"//div[@class='menu']//li[text()='{option}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetButtonInWarningMessage(string name)
+        {
+            var selector = By.XPath($"//div[@class='inline-buttons']//span[text()='{name}']//ancestor::button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	Then User sees "" value in the "Slot Available From" date field on Capacity Slot form page
 	And User sees "" value in the "Slot Available To" date field on Capacity Slot form page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -53,6 +53,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks "Details" tab
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
+	When User clicks "REMOVE" button in the warning message on Admin page
 	When User clicks the "ADD LANGUAGE" Action button
 	And User selects "German" language on the Project details page
 	And User clicks "Capacity" tab
@@ -65,6 +66,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks "Details" tab
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
+	When User clicks "REMOVE" button in the warning message on Admin page
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE NEW SLOT" Action button

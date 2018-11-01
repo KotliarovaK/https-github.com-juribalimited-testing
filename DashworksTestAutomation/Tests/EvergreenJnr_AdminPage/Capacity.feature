@@ -481,3 +481,40 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
 	And User type "Name13147" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @DAS14029
+Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User clicks create Project button
+	Then "Create Project" page is displayed to the user
+	When User creates new Project
+	| ProjectName      | ShortName | Description | Type |
+	| Project14029 Snr | 13498     |             |      |
+	And User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Project14029 Snr" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User clicks "Capacity" tab
+	And User selects "Details" tab on the Project details page
+	Then Capacity Units value is displayed for Capacity Mode field
+	When User click on Back button
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "Project14029" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks the "CREATE PROJECT" Action button
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	When User clicks "Capacity" tab
+	And User selects "Details" tab on the Project details page
+	Then Capacity Units value is displayed for Capacity Mode field
+	When User click on Back button
+	And User select "Project" rows in the grid
+	| SelectedRowsName |
+	| Project14029     |
+	| Project14029 Snr |
+	And User removes selected item
