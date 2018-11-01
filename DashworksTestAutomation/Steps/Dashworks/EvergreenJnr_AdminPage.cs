@@ -573,6 +573,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [Then(@"""(.*)"" is displayed in the dropdown filter for ""(.*)"" column")]
+        public void ThenIsDisplayedInTheDropdownFilterForColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"{text} is not displayed in the dropdown filter for {columnName}");
+        }
+
         [Then(@"All Associations are selected by default")]
         public void ThenAllAssociationsAreSelectedByDefault()
         {
@@ -1320,6 +1327,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
+        [Then(@"Error message is not displayed on the Capacity Slots page")]
         [Then(@"Error message is not displayed on the Projects page")]
         public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
         {

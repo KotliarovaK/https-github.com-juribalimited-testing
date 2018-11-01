@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -114,6 +114,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User click on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
 	And There are no errors in the browser console
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "CapacitySlot2" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13432" Name in the "Display Name" field on the Project details page
+	When User selects "Teams and Request Types" in the "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks String Filter button for "Capacity Units" column on the Admin page
+	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
+	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
@@ -163,7 +172,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13780 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13780 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -208,7 +217,110 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And "2" rows label displays in Action panel
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13779 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Units @DAS13789 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUsingTheSameNameWithDifferentCase
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectDAS13789" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "capacityslotDAS13789" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13779slot" Name in the "Display Name" field on the Project details page
+	And User enters "28 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
+	And User enters "29 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
+	And User clicks the "CREATE" Action button
+	And User clicks newly created object link
+	And User type "CAPACITYSLOTdas13789" Name in the "Slot Name" field on the Project details page
+	And User type "das13779SLOT" Name in the "Display Name" field on the Project details page
+	And User clicks the "UPDATE" Action button
+	Then Error message is not displayed on the Capacity Slots page
+	And Success message is displayed and contains "The capacity slot details have been updated" text
+	When User selects "Units" tab on the Project details page
+	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "capacityunitDAS13789" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "13789" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks newly created object link
+	And User type "CAPACITYUINTdas13789" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "UPDATE" Action button
+	Then Error message is not displayed on the Capacity Slots page
+	And Success message is displayed and contains "The capacity unit details have been updated" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13824 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForCapacityDAS13824" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "CapacitySlotDAS13824" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13824" Name in the "Display Name" field on the Project details page
+	And User selects "Capacity Units" in the "Capacity Type" dropdown
+	And User enters "29 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
+	And User enters "30 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
+	And User clicks the "CREATE" Action button
+	And User clicks newly created object link
+	And User enters "" value to "Slot Available From" date field on Capacity Slot form page
+	And User enters "" value to "Slot Available To" date field on Capacity Slot form page
+	And User clicks the "UPDATE" Action button
+	And User clicks content from "Capacity Slot" column
+	Then User sees "" value in the "Slot Available From" date field on Capacity Slot form page
+	And User sees "" value in the "Slot Available To" date field on Capacity Slot form page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @Delete_Newly_Created_Project @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ChecksLanguage13955" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Details" tab
+	And User clicks the "ADD LANGUAGE" Action button
+	And User selects "Dutch" language on the Project details page
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "ChecksLanguage" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13955" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks "Capacity" tab
+	And User clicks "Details" tab
+	And User opens menu for selected language
+	Then User selects "Remove" option for selected language
+	When User clicks the "ADD LANGUAGE" Action button
+	And User selects "German" language on the Project details page
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User enters "ChecksLanguage" text in the Search field for "Capacity Slot" column
+	And User clicks content from "Capacity Slot" column
+	And User clicks "See Translations" link on the Capacity Slot page
+	Then "German" Language is displayed in Translations table on the Capacity Slot page
+	When User clicks "Capacity" tab
+	And User clicks "Details" tab
+	And User opens menu for selected language
+	Then User selects "Remove" option for selected language
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "ChecksLanguage 2" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13955" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks newly created object link
+	Then "See Translations" link on the Capacity Slot page is not displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -518,3 +630,48 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	| Project14029     |
 	| Project14029 Snr |
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ChecksLanguage13955" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Details" tab
+	And User clicks the "ADD LANGUAGE" Action button
+	And User selects "Dutch" language on the Project details page
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "ChecksLanguage" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13955" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks "Capacity" tab
+	And User clicks "Details" tab
+	And User opens menu for selected language
+	Then User selects "Remove" option for selected language
+	When User clicks "REMOVE" button in the warning message on Admin page
+	When User clicks the "ADD LANGUAGE" Action button
+	And User selects "German" language on the Project details page
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User enters "ChecksLanguage" text in the Search field for "Capacity Slot" column
+	And User clicks content from "Capacity Slot" column
+	And User clicks "See Translations" link on the Capacity Slot page
+	Then "German" Language is displayed in Translations table on the Capacity Slot page
+	When User clicks "Capacity" tab
+	And User clicks "Details" tab
+	And User opens menu for selected language
+	Then User selects "Remove" option for selected language
+	When User clicks "REMOVE" button in the warning message on Admin page
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "ChecksLanguage 2" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13955" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks newly created object link
+	Then See Translations link on the Capacity Slot page is not displayed

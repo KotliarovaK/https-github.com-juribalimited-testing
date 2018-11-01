@@ -303,6 +303,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetDropdownFilterTextByColumnName(string columnName, string text)
+        {
+            var selector =
+                By.XPath($".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//div[@class='ag-floating-filter-full-body']//mat-placeholder[text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public void ClickContentByColumnName(string columnName)
         {
             var byControl =
@@ -474,7 +482,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetMessageWidthOnAdminPage()
         {
-            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("width");
+            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetAttribute("width");
         }
 
         public bool GetDefaultColumnValue(string defaultValue)
