@@ -277,6 +277,26 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	Then User sees "" value in the "Slot Available From" date field on Capacity Slot form page
 	And User sees "" value in the "Slot Available To" date field on Capacity Slot form page
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13866
+Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySlotOfParticularProject
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Project K-Computer Scheduled Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User select "Capacity Slot" rows in the grid
+	| SelectedRowsName                                           |
+	| Slot 2018-06-06 - 2020-11-30[Team: 2831; RequestType: 468] |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected slot has been deleted" text
+	When User selects "Units" tab on the Project details page
+	And User selects "Slots" tab on the Project details page
+	Then "No slots found" message is displayed on the Admin Page
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
