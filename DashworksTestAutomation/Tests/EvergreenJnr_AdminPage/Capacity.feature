@@ -632,3 +632,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks the "CREATE" Action button
 	And User clicks newly created object link
 	Then See Translations link on the Capacity Slot page is not displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13422
+Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Email Migration" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "Email Migration" is displayed to user
+	When User clicks "Capacity" tab
+	When User changes Percentage to reach before showing amber to "101"
+	Then "UPDATE" Action button is disabled
+	When User changes Percentage to reach before showing amber to "100"
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text

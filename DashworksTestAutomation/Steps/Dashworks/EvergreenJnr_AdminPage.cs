@@ -896,6 +896,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             capacityElement.DefaultCapacityUnitCheckbox.Click();
         }
 
+        [When(@"User changes Percentage to reach before showing amber to ""(.*)""")]
+        public void WhenUserChangesPercentageToReachBeforeShowingAmberTo(string value)
+        {
+            var capacityElement = _driver.NowAt<Capacity_DetailsPage>();
+            capacityElement.CapacityToReachBeforeShowAmber.Clear();
+            capacityElement.CapacityToReachBeforeShowAmber.SendKeys(value);
+        }
+
         [Then(@"Default Team checkbox is not active")]
         public void ThenDefaultTeamCheckboxIsNotActive()
         {

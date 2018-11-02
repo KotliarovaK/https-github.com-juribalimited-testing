@@ -11,6 +11,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = ".//div/h1")]
         public IWebElement PageTitle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@name='capacityToReachBeforeShowAmber']")]
+        public IWebElement CapacityToReachBeforeShowAmber { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
