@@ -669,7 +669,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @CapacityUnits @DAS14103 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @CapacityUnits @DAS14103 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
