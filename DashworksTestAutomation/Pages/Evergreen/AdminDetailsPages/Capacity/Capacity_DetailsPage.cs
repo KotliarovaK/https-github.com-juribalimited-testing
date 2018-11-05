@@ -22,5 +22,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
                 SelectorFor(this, p => p.PageTitle)
             };
         }
+
+        public IWebElement GetDropDownByFieldName(string fieldName)
+        {
+            var selector = By.XPath($"//mat-select[@aria-label='{fieldName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

@@ -668,3 +668,113 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	When User changes Percentage to reach before showing amber to "100"
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @CapacityUnits @DAS14103 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS14103" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
+	And User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+	When User click on Back button
+	And User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	And User type "Capacity Unit For DAS14103" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks newly created object link
+	And User selects "Devices" tab on the Capacity Units page
+	Then "Devices" tab is selected on the Admin page
+	When User clicks the "ADD DEVICE" Action button
+	And User selects following Objects
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	And User clicks the "ADD DEVICES" Action button
+	Then Success message is displayed and contains "The selected device has been queued for update, if it does not appear immediately try refreshing the grid" text
+	When User selects "Users" tab on the Capacity Units page
+	Then "Users" tab is selected on the Admin page
+	When User clicks the "ADD USER" Action button
+	And User selects following Objects
+	| Objects   |
+	| AAC860150 |
+	And User clicks the "ADD USERS" Action button
+	Then Success message is displayed and contains "The selected user has been queued for update, if it does not appear immediately try refreshing the grid" text
+	When User selects "Applications" tab on the Capacity Units page
+	Then "Applications" tab is selected on the Admin page
+	When User clicks the "ADD APPLICATION" Action button
+	And User selects following Objects
+	| Objects                                                         |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
+	And User clicks the "ADD APPLICATIONS" Action button
+	Then Success message is displayed and contains "The selected application has been queued for update, if it does not appear immediately try refreshing the grid" text
+	When User clicks "Administration" navigation link on the Admin page
+	And User enters "ProjectForDAS14103" text in the Search field for "Project" column
+	And User click content from "Project" column
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects        |
+	| 001BAQXT6JWFPI |
+	And User clicks "Users" tab in the Project Scope Changes section
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                    |
+	| AAC860150 (Kerrie D. Ruiz) |
+	And User clicks "Applications" tab in the Project Scope Changes section
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                                    |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	And User selects "Queue" tab on the Project details page
+	Then following Items are displayed in the Queue table
+	| Items                                      |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
+	| 001BAQXT6JWFPI                             |
+	| AAC860150                                  |
+	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	Then "To be created" italic content is displayed
+	When User enters "AAC860150" text in the Search field for "Item" column
+	Then "To be created" italic content is displayed
+	When User enters "0004 - Adobe Acrobat Reader 5.0.5 Francais" text in the Search field for "Item" column
+	Then "To be created" italic content is displayed
+	When User selects "History" tab on the Project details page
+	Then following Items are displayed in the History table
+	| Items                                      |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
+	| 001BAQXT6JWFPI                             |
+	| AAC860150                                  |
+	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	Then "Capacity Unit For DAS14103" content is displayed in "Capacity Unit" column
+	When User enters "AAC860150" text in the Search field for "Item" column
+	Then "Capacity Unit For DAS14103" content is displayed in "Capacity Unit" column
+	When User enters "0004 - Adobe Acrobat Reader 5.0.5 Francais" text in the Search field for "Item" column
+	Then "Capacity Unit For DAS14103" content is displayed in "Capacity Unit" column
+	When User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User enters "Capacity Unit For DAS14103" text in the Search field for "Capacity Unit" column
+	Then "1" content is displayed in "Devices" column
+	And "1" content is displayed in "Users" column
+	And "1" content is displayed in "Applications" column
+	When User clicks "Administration" navigation link on the Admin page
+	And User clicks "Capacity Units" link on the Admin page
+	And User select "Capacity Unit" rows in the grid
+	| SelectedRowsName           |
+	| Capacity Unit For DAS14103 |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message

@@ -2001,20 +2001,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Text in {fieldName} field is different");
         }
 
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" drop-down field")]
-        public void ThenContentIsDisplayedInDrop_DownField(string text, string fieldName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            //TODO Check GetAttribute for drop-down field (does not work)
-            Assert.AreEqual(page.GetTextInDropDownByFieldName(fieldName).GetAttribute("value"), text,
-                $"Text for {fieldName} field is not correctly");
-        }
-
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
         public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
+        }
+
+        [Then(@"User selects ""(.*)"" option in ""(.*)"" dropdown")]
+        public void ThenUserSelectsOptionInDropdown(string option, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<Capacity_DetailsPage>();
+            dropdown.GetDropDownByFieldName(dropdownName).Click();
+            var searchElement = _driver.NowAt<BaseDashboardPage>();
+            searchElement.GetOptionByName(option).Click();
         }
 
         [Then(@"Menu options are displayed in the following order on the Admin page:")]
