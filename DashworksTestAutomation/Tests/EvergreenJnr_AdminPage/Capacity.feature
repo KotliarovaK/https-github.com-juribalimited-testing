@@ -668,3 +668,87 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	When User changes Percentage to reach before showing amber to "100"
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @CapacityUnits @DAS14103 @Delete_Newly_Created_Project @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS14103" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
+	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+	When User click on Back button
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	And User type "Capacity Unit For DAS14103" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks newly created object link
+	And User selects "Devices" tab on the Capacity Units page
+	Then "Devices" tab is selected on the Admin page
+	When User clicks the "ADD DEVICE" Action button
+	And User selects following Objects
+	| Objects         |
+	| 001BAQXT6JWFPI  |
+	| 001PSUMZYOW581  |
+	And User clicks the "ADD DEVICES" Action button
+	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User selects "Users" tab on the Capacity Units page
+	Then "Users" tab is selected on the Admin page
+	When User clicks the "ADD USER" Action button
+	And User selects following Objects
+	| Objects                                          |
+	| BCLABS\002B5DC7D4D34D5C895 (Collor, Christopher) |
+	| DWLABS\003F5D8E1A844B1FAA5 (Hunter, Melanie)     |
+	And User clicks the "ADD USERS" Action button
+	Then Success message is displayed and contains "The selected users have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User selects "Applications" tab on the Capacity Units page
+	Then "Applications" tab is selected on the Admin page
+	When User clicks the "ADD APPLICATION" Action button
+	And User selects following Objects
+	| Objects                                                         |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
+	| 0036 - Microsoft Access 97 SR-2 English                         |
+	And User clicks the "ADD APPLICATIONS" Action button
+	Then Success message is displayed and contains "The selected applications have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "ProjectForDAS14103" text in the Search field for "Project" column
+	And User click content from "Project" column
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects        |
+	| 001BAQXT6JWFPI |
+	| 001PSUMZYOW581 |
+	And User clicks "Users" tab in the Project Scope Changes section
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                                          |
+	| BCLABS\002B5DC7D4D34D5C895 (Collor, Christopher) |
+	| DWLABS\003F5D8E1A844B1FAA5 (Hunter, Melanie)     |
+	And User clicks "Applications" tab in the Project Scope Changes section
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects                                    |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
+	| 0036 - Microsoft Access 97 SR-2 English    |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	When User clicks the "UPDATE PROJECT" Action button
+	Then Success message with "6 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
+	When User selects "Queue" tab on the Project details page
+	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	Then "Unassigned" content is displayed in "Bucket" column
+	When User selects "History" tab on the Project details page
+	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	Then "To be created" content is displayed in "Bucket" column
