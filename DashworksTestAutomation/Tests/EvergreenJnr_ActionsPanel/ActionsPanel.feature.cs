@@ -559,7 +559,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table18.AddRow(new string[] {
                         "Remove from static list"});
             table18.AddRow(new string[] {
-                        "Bulk update"});
+                        "Bulk Update"});
             testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table18, "Then ");
             this.ScenarioCleanup();
         }
