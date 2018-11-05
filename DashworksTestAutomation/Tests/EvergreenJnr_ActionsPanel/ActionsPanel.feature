@@ -110,7 +110,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 0DTXL41673EW7O   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Request Type on Action panel
@@ -163,7 +163,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Sharepoint Application" Request Type on Action panel
@@ -199,8 +199,8 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then following Values are displayed in Action drop-down:
 	| Value              |
 	| Create static list |
-	| Bulk update        |
-	When User selects "Bulk update" in the Actions dropdown
+	| Bulk Update        |
+	When User selects "Bulk Update" in the Actions dropdown
 	Then Bulk Update Type dropdown is displayed on Action panel
 	When User selects "Update task value" Bulk Update Type on Action panel
 	Then "UPDATE" Action button is disabled
@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	| 001PSUMZYOW581   |
 	| 00BDM1JUR8IF419  |
 	| 00RUUMAH9OZN9A   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -329,7 +329,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 001PSUMZYOW581   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Virtual Machine" Request Type on Action panel
@@ -343,7 +343,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[This is the Default Request Type for Computer)] " Request Type on Action panel
@@ -357,7 +357,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00RUUMAH9OZN9A   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Request Type on Action panel
@@ -390,7 +390,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| FMN5805290       |
 	| AKX995383        |
 	| AAD1011948       |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -415,7 +415,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| FMN5805290       |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User: VIP" Request Type on Action panel
@@ -430,7 +430,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| AKX995383        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User: No Agent" Request Type on Action panel
@@ -445,7 +445,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| AAD1011948       |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[Default (User)]" Request Type on Action panel
@@ -475,7 +475,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	| SelectedRowsName                                           |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -497,7 +497,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	When User select "Application" rows in the grid
 	| SelectedRowsName                                           |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[Default (Application)]" Request Type on Action panel
@@ -511,7 +511,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	When User select "Application" rows in the grid
 	| SelectedRowsName                           |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Application: Request Type A" Request Type on Action panel
@@ -542,7 +542,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	| 0F1ED67386AD4FA7BF4@bclabs.local |
 	| 10A919CA1E7641E08E7@bclabs.local |
 	| 229DCF8E575243E9928@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -566,7 +566,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 0F1ED67386AD4FA7BF4@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Shared Mailbox" Request Type on Action panel
@@ -580,7 +580,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 10A919CA1E7641E08E7@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox - EA" Request Type on Action panel
@@ -594,7 +594,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 229DCF8E575243E9928@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox" Request Type on Action panel
@@ -621,7 +621,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	| 018UQ6KL9TF4YF   |
 	| 019BFPQGKK5QT8N  |
 	| 01DRMO46G58SXK   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Workstation Replacement" Request Type on Action panel
@@ -648,7 +648,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00HA7MKAVVFDAV   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[This is the Default Request Type for Computer)] " Request Type on Action panel
@@ -662,7 +662,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Virtual Machine" Request Type on Action panel
@@ -682,7 +682,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| 00OMQQXWA1DRI6   |
 	| 00RUUMAH9OZN9A   |
 	| 00SH8162NAS524   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Babel (English, German and French)" Project on Action panel
 	And User selects "Machines" Request Type on Action panel
@@ -699,7 +699,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00OMQQXWA1DRI6   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	Then the following Projects are displayed in opened DLL on Action panel:
 	| Projects                                         |
@@ -735,7 +735,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Barry's User Project" Project on Action panel
 	And User selects "Desktop Replacement" Request Type on Action panel
@@ -752,7 +752,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Havoc (Big Data)" Project on Action panel
 	And User selects "User Request Type 2" Request Type on Action panel
@@ -769,7 +769,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	Then Projects are displayed in alphabetical order on Action panel
 	When User selects "User Scheduled Test (Jo)" Project on Action panel
@@ -787,7 +787,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox - VIP" Request Type on Action panel
@@ -804,7 +804,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExi
 	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Computer Scheduled Test (Jo)" Project on Action panel
 	And User selects "One" Stage on Action panel
@@ -847,7 +847,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "<ProjectName>" Project on Action panel
 	And User selects "<StageName>" Stage on Action panel
@@ -905,7 +905,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Barry's User Project" Project on Action panel
 	Then Stages are displayed in alphabetical order on Action panel
@@ -972,7 +972,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
 	And User selects "One" Stage on Action panel
@@ -1017,7 +1017,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer Information ---- Text fill; Text fill;" Stage on Action panel
@@ -1108,7 +1108,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1126,7 +1126,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1194,7 +1194,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1212,7 +1212,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User refreshes agGrid
 	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1279,7 +1279,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1297,7 +1297,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1365,7 +1365,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| LZI970280        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1382,7 +1382,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User refreshes agGrid
 	Then "Complete" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1441,7 +1441,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| LZI970280        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1458,7 +1458,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1501,7 +1501,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Havoc (Big Data)" Project on Action panel
 	And User selects "Stage 0" Stage on Action panel
@@ -1524,7 +1524,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	| 001PSUMZYOW581   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Pre-Migration" Stage on Action panel
@@ -1554,7 +1554,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	| SelectedRowsName    |
 	| 003F5D8E1A844B1FAA5 |
 	| 00A5B910A1004CF5AC4 |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
 	Then following Stage are displayed in drop-down:
