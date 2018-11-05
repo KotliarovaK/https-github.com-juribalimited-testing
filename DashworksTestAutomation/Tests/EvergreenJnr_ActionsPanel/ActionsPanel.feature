@@ -244,7 +244,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	| Value                   |
 	| Create static list      |
 	| Remove from static list |
-	| Bulk update             |
+	| Bulk Update             |
 
 Examples: 
 	| PageName     | ColumnHeader  | RowName                          |
