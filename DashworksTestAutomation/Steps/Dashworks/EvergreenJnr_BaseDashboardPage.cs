@@ -255,13 +255,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
-        [Then(@"""(.*)"" italic content is displayed in ""(.*)"" column")]
-        public void ThenItalicContentIsDisplayedInColumn(string textContent, string columnName)
+        [Then(@"""(.*)"" italic content is displayed")]
+        public void ThenItalicContentIsDisplayed(string textContent)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            var text = page.GetRowItalicContentByColumnName(columnName);
-            Assert.AreEqual(textContent, text, "Content is not styled in italic");
+            Assert.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
         }
 
         [Then(@"empty rows is displayed in ""(.*)"" column")]

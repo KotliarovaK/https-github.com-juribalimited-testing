@@ -706,7 +706,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Bucket" column
 	When User enters "00I0COBFWHOF27" text in the Search field for "Item" column
-	Then "Deleted bucket" italic content is displayed in "Bucket" column
+	Then "Deleted bucket" italic content is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12331 @Buckets @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfterSwitchingFocusToAnotherBucket 

@@ -562,11 +562,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(by).Text;
         }
 
-        public string GetRowItalicContentByColumnName(string columnName)
+        public IWebElement GetItalicContentByColumnName(string text)
         {
-            var by = By.XPath($"//span[@class='agEmptyValue'][{GetColumnNumberByName(columnName)}]");
-            Driver.WaitForDataLoading();
-            return Driver.FindElement(by).Text;
+            var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public string ActiveCustomListName()
