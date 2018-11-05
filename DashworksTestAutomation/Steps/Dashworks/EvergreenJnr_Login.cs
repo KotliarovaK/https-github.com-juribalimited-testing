@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void GivenUserIsLoggedInToTheProjects()
         {
             //Login to website via api
-            loginViaApi();
+            LoginViaApiOnSenior();
             //navigate to Projects page
             _driver.NavigateToUrl(UrlProvider.ProjectsUrl);
         }
@@ -179,6 +179,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 _client.ChangeUserProfileLanguage(_user.UserName, _user.Language);
             }
+        }
+
+        private void LoginViaApiOnSenior()
+        {
+            var user = GetFreeUserAndAddToUsedUsersList();
+
+            var restClient = new RestClient(UrlProvider.Url);
+            //Get cookies
+            var client = new HttpClientHelper(user, restClient);
+
+            //Init session
+            _driver.NavigateToUrl(UrlProvider.Url);
+
+            //Set cookies to browser
+            foreach (var cookie in client.SeleniumCookiesJar) _driver.Manage().Cookies.AddCookie(cookie);
+
+            // Add cookies to the RestClient to authorize it
+            _client.Value.AddCookies(client.CookiesJar);
         }
     }
 }
