@@ -282,7 +282,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And data in table is sorted by "Application" column in ascending order by default on the Admin page
 	Then "5" rows are displayed in the agGrid on Capacity Units page
 	When User close message on the Admin page
-	When User refreshes agGrid
+	When User clicks refresh button in the browser
 	Then following Objects are displayed in "Applications" tab on the Capacity Units page:
 	| Objects                                                         |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
