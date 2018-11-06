@@ -108,10 +108,12 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Accept-Encoding", "gzip, deflate");
             request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
             request.AddParameter("Access-Control-Request-Headers", "content-type");
-            request.AddParameter("Access-Control-Request-Method", "POST");
+            request.AddParameter("Access-Control-Request-Methods", "GET, POST, PUT, DELETE, OPTIONS");
             request.AddParameter("Connection", "keep-alive");
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            _client.Value.Options(request);
 
             #endregion
 
@@ -149,10 +151,12 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Accept-Encoding", "gzip, deflate");
             request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
             request.AddParameter("Access-Control-Request-Headers", "content-type");
-            request.AddParameter("Access-Control-Request-Method", "PUT");
+            request.AddParameter("Access-Control-Request-Methods", "GET, POST, PUT, DELETE, OPTIONS");
             request.AddParameter("Connection", "keep-alive");
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            _client.Value.Options(request);
 
             #endregion
 
@@ -189,10 +193,12 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Accept-Encoding", "gzip, deflate");
             request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
             request.AddParameter("Access-Control-Request-Headers", "content-type");
-            request.AddParameter("Access-Control-Request-Method", "POST");
+            request.AddParameter("Access-Control-Request-Methods", "GET, POST, PUT, DELETE, OPTIONS");
             request.AddParameter("Connection", "keep-alive");
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            _client.Value.Options(request);
 
             #endregion
 
