@@ -293,6 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            //Waiting for success green banner is displayed
             Thread.Sleep(4000);
         }
 
