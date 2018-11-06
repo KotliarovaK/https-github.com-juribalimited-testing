@@ -482,7 +482,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetMessageWidthOnAdminPage()
         {
-            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetAttribute("width");
+            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("width");
         }
 
         public bool GetDefaultColumnValue(string defaultValue)

@@ -495,6 +495,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacity
 	| Macbook1  |
 	And User clicks the "ADD DEVICES" Action button
 	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
+	When User clicks refresh button in the browser
 	When User have opened Column Settings for "Hostname" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
