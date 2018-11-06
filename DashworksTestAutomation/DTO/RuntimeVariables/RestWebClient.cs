@@ -24,7 +24,25 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
         {
             var userId = DatabaseWorker.GetUserIdByLogin(userName);
             var requestUri = $"{UrlProvider.RestClientBaseUrl}userProfile/updatePreferences";
+
+            #region Send Options to allow Put requests
+
             var request = new RestRequest(requestUri);
+
+            request.AddParameter("Accept", "*/*");
+            request.AddParameter("Accept-Encoding", "gzip, deflate");
+            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
+            request.AddParameter("Access-Control-Request-Headers", "content-type");
+            request.AddParameter("Access-Control-Request-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            request.AddParameter("Connection", "keep-alive");
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            Value.Options(request);
+
+            #endregion
+
+            request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
@@ -64,8 +82,8 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
         public string GetItemIdByName(string itemName, string pageName)
         {
-            var column = "";
-            var returnValue = "";
+            string column;
+            string returnValue;
             switch (pageName)
             {
                 case "Devices":
@@ -109,7 +127,7 @@ namespace DashworksTestAutomation.DTO.RuntimeVariables
 
         public List<string> GetAllItemsKeys(string pageName)
         {
-            var returnValue = "";
+            string returnValue;
             switch (pageName)
             {
                 case "Devices":
