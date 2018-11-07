@@ -1864,6 +1864,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.GetFieldByName(fieldName).SendKeys(name);
         }
 
+        [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]
+        public void WhenUserSelectsCheckboxInTheFieldOnTheProjectDetailsPage(string checkbox, string fieldName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.GetFieldByName(fieldName).Click();
+            var slot = _driver.NowAt<Capacity_SlotsPage>();
+            slot.GetCheckboxByName(checkbox).Click();
+        }
+
         [When(@"User changes Project Short Name to ""(.*)""")]
         public void WhenUserChangesProjectShortNameTo(string shortProjectName)
         {
