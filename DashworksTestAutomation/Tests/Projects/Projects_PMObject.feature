@@ -2,15 +2,14 @@
 	Runs Projects Page related tests
 
 Background: Pre-Conditions
-	Given User is logged in to the Evergreen
-	Then Evergreen Dashboards page should be displayed to the user
-
-@Senior @PMObject @Applications_tab @Dashworks @DAS12695
-Scenario: Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage
-	When User clicks "Projects" on the left-hand menu
+	Given User is logged in to the Projects
 	Then "Projects Home" page is displayed to the user
-	When User navigates to the PMObject page
+
+@Dashworks @Senior @PMObject @Applications_tab @DAS12695 @DAS14003
+Scenario: Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage
+	When User navigates to "61085" Object on PMObject page
 	Then "Project Object" page is displayed to the user
+	Then "Change Capacity Unit" button is displayed
 	When User navigate to "Applications" tab on PMObject page
 	Then Application tab content is displayed correctly
 	When User select "Current State" View State on Applications tab

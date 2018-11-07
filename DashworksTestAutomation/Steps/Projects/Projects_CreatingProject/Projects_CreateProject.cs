@@ -87,6 +87,13 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             _driver.WaitForDataLoadingOnProjects();
         }
 
+        [Then(@"""(.*)"" button is displayed")]
+        public void ThenButtonIsDisplayed(string buttonName)
+        {
+            var button = _driver.NowAt<MainElementsOfProjectCreation>();
+            Assert.IsTrue(button.GetButtonElementByName(buttonName).Displayed, $"{button} is not displayed");
+        }
+
         [Then(@"Success message is displayed with ""(.*)"" text")]
         public void ThenSuccessMessageIsDisplayedWithText(string text)
         {
