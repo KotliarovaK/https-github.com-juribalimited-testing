@@ -856,6 +856,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForTeamCreation(optionName);
         }
 
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
+        public void ThenContentIsDisplayedInField(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
+                $"Text in {fieldName} field is different");
+        }
+
+        [Then(@"Capacity Units value is displayed for Capacity Mode field")]
+        public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
+        }
+
+        [Then(@"User selects ""(.*)"" option in ""(.*)"" dropdown")]
+        public void ThenUserSelectsOptionInDropdown(string option, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
+            var searchElement = _driver.NowAt<BaseDashboardPage>();
+            searchElement.GetOptionByName(option).Click();
+        }
+
         [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
         public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
         {
@@ -2000,30 +2024,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Assert.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
                 "Text in search field is different");
-        }
-
-        [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
-        public void ThenContentIsDisplayedInField(string text, string fieldName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
-                $"Text in {fieldName} field is different");
-        }
-
-        [Then(@"Capacity Units value is displayed for Capacity Mode field")]
-        public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
-        }
-
-        [Then(@"User selects ""(.*)"" option in ""(.*)"" dropdown")]
-        public void ThenUserSelectsOptionInDropdown(string option, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<Capacity_DetailsPage>();
-            dropdown.GetDropDownByFieldName(dropdownName).Click();
-            var searchElement = _driver.NowAt<BaseDashboardPage>();
-            searchElement.GetOptionByName(option).Click();
         }
 
         [Then(@"Menu options are displayed in the following order on the Admin page:")]
