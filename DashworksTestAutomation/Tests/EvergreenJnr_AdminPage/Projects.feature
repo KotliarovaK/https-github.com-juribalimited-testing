@@ -1214,7 +1214,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @DAS13803 v@DAS13930 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @DAS13803 @DAS13930 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseDifferentBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3034,6 +3034,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User enters "AllDevices Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13733 @Projects
+Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTasksError
+	When User clicks Admin on the left-hand menu
+	And User clicks the "IMPORT PROJECT" Action button
+	And User selects "DAS_13733_Duplicates_in_project_tasks.xml" file to upload on Import Project page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User enters "TestProjectDAS13733" in the Project Name field on Import Project page
+	And User clicks Import Project button on the Import Project page
+	Then Error message with "This XML file contains duplicates in project tasks" text is displayed
+	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
+	And User clicks the "IMPORT PROJECT" Action button
+	Then "Projects" page should be displayed to the user
+	And Success message is displayed and contains "The project has been imported, click here to view the TestProjectDAS13733 project" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects @Not_Run
 Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage

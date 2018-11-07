@@ -695,6 +695,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\CorrectFile_DAS12370.xml" />
+    <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
+    <Content Include="Resources\DAS_13733_Valid_file.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">

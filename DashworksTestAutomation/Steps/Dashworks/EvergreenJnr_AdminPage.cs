@@ -776,26 +776,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows) checkbox.SelectCheckboxByName(row.Values.FirstOrDefault());
         }
 
-        [When(@"User selects incorrect file to upload on Import Project page")]
-        public void WhenUserSelectsIncorrectFileToUploadOnImportProjectPage()
+        [When(@"User selects ""(.*)"" file to upload on Import Project page")]
+        public void WhenUserSelectsFileToUploadOnImportProjectPage(string fileNameAndExtension)
         {
             var page = _driver.NowAt<ImportProjectPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                       ResourceFilesNamesProvider.IncorrectFile;
-            page.ButtonChooseFile.SendKeys(file);
-        }
 
-        [When(@"User selects correct file to upload on Import Project page")]
-        public void WhenUserSelectsCorrectFileToUploadOnImportProjectPage()
-        {
-            var page = _driver.NowAt<ImportProjectPage>();
-            IAllowsFileDetection allowsDetection = _driver;
-            allowsDetection.FileDetector = new LocalFileDetector();
-            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                       ResourceFilesNamesProvider.CorrectFileDas12370;
-            page.ButtonChooseFile.SendKeys(file);
+            try
+            {
+                var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                           ResourceFilesNamesProvider.ResourcesFolderRoot + $"{fileNameAndExtension}";
+                page.ButtonChooseFile.SendKeys(file);
+            }
+            catch(Exception e)
+            {
+                throw new Exception($"Unable to locate file in Resources folder: {e}");
+            }
         }
 
         [When(@"User enters ""(.*)"" in the Project Name field on Import Project page")]
