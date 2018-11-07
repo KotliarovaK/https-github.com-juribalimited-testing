@@ -9,7 +9,7 @@ Background: Pre-Conditions
 Scenario: Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage
 	When User navigates to "61085" Object on PMObject page
 	Then "Project Object" page is displayed to the user
-	Then "Change Capacity Unit" button is displayed
+	And "Change Capacity Unit" button is displayed
 	When User navigate to "Applications" tab on PMObject page
 	Then Application tab content is displayed correctly
 	When User select "Current State" View State on Applications tab

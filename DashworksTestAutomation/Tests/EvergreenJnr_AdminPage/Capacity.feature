@@ -530,7 +530,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	Then column content is displayed in the following order:
+	And column content is displayed in the following order:
 	| Items             |
 	| Unassigned        |
 	| 13159             |
@@ -559,13 +559,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	And User type "Name1" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User clicks the "CREATE NEW SLOT" Action button
 	And User type "NewName" Name in the "Slot Name" field on the Project details page
 	And User type "Name1" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
 	And User type "Name13147" Name in the "Display Name" field on the Project details page
@@ -586,19 +586,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "Project14029 Snr" text in the Search field for "Project" column
-	When User clicks content from "Project" column
-	When User clicks "Capacity" tab
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
 	And User selects "Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When User click on Back button
-	When User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project14029" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	When User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	When User clicks "Capacity" tab
+	And User clicks "Capacity" tab
 	And User selects "Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When User click on Back button
@@ -631,7 +631,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
 	When User clicks "REMOVE" button in the warning message on Admin page
-	When User clicks the "ADD LANGUAGE" Action button
+	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "German" language on the Project details page
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
@@ -644,7 +644,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
 	When User clicks "REMOVE" button in the warning message on Admin page
-	When User clicks "Capacity" tab
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "ChecksLanguage 2" Name in the "Slot Name" field on the Project details page
@@ -663,7 +663,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	And User clicks content from "Project" column
 	Then Project "Email Migration" is displayed to user
 	When User clicks "Capacity" tab
-	When User changes Percentage to reach before showing amber to "101"
+	And User changes Percentage to reach before showing amber to "101"
 	Then "UPDATE" Action button is disabled
 	When User changes Percentage to reach before showing amber to "100"
 	And User clicks the "UPDATE" Action button
@@ -790,10 +790,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
 	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	Then "" content is displayed in "Capacity Units" column
+	And "" content is displayed in "Capacity Units" column

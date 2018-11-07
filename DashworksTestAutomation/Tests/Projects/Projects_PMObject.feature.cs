@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.Projects
             this.FeatureBackground();
             testRunner.When("User navigates to \"61085\" Object on PMObject page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Project Object\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"Change Capacity Unit\" button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Change Capacity Unit\" button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigate to \"Applications\" tab on PMObject page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Application tab content is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Current State\" View State on Applications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
