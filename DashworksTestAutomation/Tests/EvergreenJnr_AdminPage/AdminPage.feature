@@ -66,12 +66,12 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	And "Projects" page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
 	Then "Import Project" page should be displayed to the user
-	When User selects incorrect file to upload on Import Project page
+	When User selects "IncorrectFile.zip" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	Then Error message with "Selected file is not in a valid format" text is displayed
-	When User selects correct file to upload on Import Project page
+	When User selects "CorrectFile_DAS12370.xml" file to upload on Import Project page
 	Then Import Project button is enabled
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766

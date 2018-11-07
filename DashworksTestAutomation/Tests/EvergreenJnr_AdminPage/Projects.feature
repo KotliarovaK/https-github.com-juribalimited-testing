@@ -3035,6 +3035,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 	And User selects all rows on the grid
 	And User removes selected item
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13733 @Projects
+Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTasksError
+	When User clicks Admin on the left-hand menu
+	And User clicks the "IMPORT PROJECT" Action button
+	And User selects "DAS_13733_Duplicates_in_project_tasks.xml" file to upload on Import Project page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User enters "TestProjectDAS13733" in the Project Name field on Import Project page
+	And User clicks Import Project button on the Import Project page
+	Then Error message with "This XML file contains duplicates in project tasks" text is displayed
+	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
+	And User clicks the "IMPORT PROJECT" Action button
+	Then "Projects" page should be displayed to the user
+	And Success message is displayed and contains "The project has been imported, click here to view the TestProjectDAS13733 project" text
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects @Not_Run
 Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
