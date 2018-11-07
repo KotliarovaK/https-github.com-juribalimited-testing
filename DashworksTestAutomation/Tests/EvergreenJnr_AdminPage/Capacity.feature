@@ -780,7 +780,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13661 @Delete_Newly_Created_Project
-Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue.
+Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User clicks the "CREATE PROJECT" Action button
@@ -797,3 +797,56 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And "" content is displayed in "Capacity Units" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @Delete_Newly_Created_Project @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13792" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 2" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 3" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 3" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User click on 'Capacity Units' column header
+	Then data in table is sorted by "Capacity Units" column in ascending order on the Admin page
+	When User click on 'Capacity Units' column header
+	Then data in table is sorted by "Capacity Units" column in descending order on the Admin page
+	And There are no errors in the browser console
+	When User click on 'Teams' column header
+	Then data in table is sorted by "Teams" column in ascending order on the Admin page
+	When User click on 'Teams' column header
+	Then data in table is sorted by "Teams" column in descending order on the Admin page
+	And There are no errors in the browser console
+	When User click on 'Request Types' column header
+	Then data in table is sorted by "Request Types" column in ascending order on the Admin page
+	When User click on 'Request Types' column header
+	Then data in table is sorted by "Request Types" column in descending order on the Admin page
+	And There are no errors in the browser console
+	When User clicks String Filter button for "Capacity Units" column on the Admin page
+	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
+	When User selects "Unassigned" checkbox from String Filter on the Admin page
+	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
+	And There are no errors in the browser console
+	When User selects "Unassigned" checkbox from String Filter on the Admin page
+	When User selects "No units" checkbox from String Filter on the Admin page
+	Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
+	And There are no errors in the browser console
