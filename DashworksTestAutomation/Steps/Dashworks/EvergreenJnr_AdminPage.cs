@@ -228,6 +228,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetFieldNameByPage(fieldName).SendKeys(name);
         }
 
+        [When(@"User open ""(.*)"" sub menu on Admin page")]
+        public void WhenUserOpenSubMenuOnAdminPage(string menuName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.GetSubMenuByName(menuName).Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User selects ""(.*)"" tab on the Project details page")]
         public void WhenUserSelectTabOnTheProjectDetailsPage(string tabName)
         {
@@ -908,13 +916,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var teamElement = _driver.NowAt<TeamsPage>();
             teamElement.DefaultTeamCheckbox.Click();
-        }
-
-        [When(@"User clicks Default unit checkbox")]
-        public void WhenUserClicksDefaultUnitCheckbox()
-        {
-            var capacityElement = _driver.NowAt<Capacity_UnitsPage>();
-            capacityElement.DefaultCapacityUnitCheckbox.Click();
         }
 
         [When(@"User changes Percentage to reach before showing amber to ""(.*)""")]
