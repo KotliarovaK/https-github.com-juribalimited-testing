@@ -859,7 +859,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
 	And There are no errors in the browser console
 
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13961 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged
 	When User clicks Admin on the left-hand menu
@@ -878,19 +877,57 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	| 001BAQXT6JWFPI |
 	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
-	When User selects "History" tab on the Project details page
+	And User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items          |
 	| 001BAQXT6JWFPI |
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 	When User open "Capacity" sub menu on Admin page
-	When User selects "Units" tab on the Project details page
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User selects "Units" tab on the Project details page
+	And User clicks the "CREATE CAPACITY UNIT" Action button
 	And User type "CapacityUnit13961" Name in the "Capacity Unit Name" field on the Project details page
 	And User updates the "Default unit" checkbox state
 	And User clicks the "CREATE" Action button
-	When User open "Scope" sub menu on Admin page
-	When User selects "History" tab on the Project details page
-	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	And User open "Scope" sub menu on Admin page
+	And User selects "History" tab on the Project details page
+	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	And User clicks content from "Capacity Unit" column
+	And User selects "Unit Settings" tab on the Capacity Units page
+	And User type "New Name" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "UPDATE" Action button
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13961" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User open "Capacity" sub menu on Admin page
+	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
+	When User clicks the "UPDATE" Action button
+	And User selects "Units" tab on the Project details page
+	Then Counter shows "1" found rows
+	When User have opened Column Settings for "Capacity Unit" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Maps to Evergreen" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then "New Name" text is displayed in the table content
+	When User clicks "Administration" navigation link on the Admin page
+	And User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User enters "New Name" text in the Search field for "Capacity Unit" column
+	And User clicks content from "Capacity Unit" column
+	And User selects "Unit Settings" tab on the Capacity Units page
+	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "UPDATE" Action button
