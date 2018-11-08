@@ -150,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Counter shows "1" found rows
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
-	When User clicks Default unit checkbox
+	When User updates the "Default unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	#Remove after DAS-14037 fixed
@@ -858,3 +858,39 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	When User selects "No units" checkbox from String Filter on the Admin page
 	Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
 	And There are no errors in the browser console
+
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13961 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13961" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	Then open tab in the Project Scope Changes section is active
+	When User expands the object to add 
+	And User selects following Objects
+	| Objects        |
+	| 001BAQXT6JWFPI |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	When User selects "History" tab on the Project details page
+	Then following Items are displayed in the History table
+	| Items          |
+	| 001BAQXT6JWFPI |
+	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	Then "Unassigned" content is displayed in "Capacity Unit" column
+	When User open "Capacity" sub menu on Admin page
+	When User selects "Units" tab on the Project details page
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "CapacityUnit13961" Name in the "Capacity Unit Name" field on the Project details page
+	And User updates the "Default unit" checkbox state
+	And User clicks the "CREATE" Action button
+	When User open "Scope" sub menu on Admin page
+	When User selects "History" tab on the Project details page
+	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
+	Then "Unassigned" content is displayed in "Capacity Unit" column
