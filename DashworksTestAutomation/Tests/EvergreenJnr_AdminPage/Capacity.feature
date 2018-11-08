@@ -933,7 +933,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User clicks the "UPDATE" Action button
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project
-Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnTheProjectCapacityUnitsPageDoesShowTheCorrectData
+Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User clicks the "CREATE PROJECT" Action button

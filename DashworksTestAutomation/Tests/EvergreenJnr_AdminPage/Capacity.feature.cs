@@ -1776,8 +1776,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnTheProjectCapacityUnitsPageDoesSh" +
-            "owTheCorrectData")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIs" +
+            "Displayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
@@ -1785,10 +1785,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13526")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnTheProjectCapacityUnitsPageDoesShowTheCorrectData()
+        public virtual void EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnTheProjectCapacityUnitsPageDoesSh" +
-                    "owTheCorrectData", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIs" +
+                    "Displayed", new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
