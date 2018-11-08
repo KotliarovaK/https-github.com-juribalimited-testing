@@ -908,7 +908,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13961" in the "Project Name" field
+	And User enters "ProjectForDAS13956" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	And User clicks newly created object link
@@ -931,3 +931,46 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User selects "Unit Settings" tab on the Capacity Units page
 	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnTheProjectCapacityUnitsPageDoesShowTheCorrectData
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13526" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User open "Capacity" sub menu on Admin page
+	And User selects "Units" tab on the Project details page
+	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "Unit 1" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "Unit 2" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User selects "Slots" tab on the Project details page
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	When User clicks the "CREATE" Action button
+	And User selects "Units" tab on the Project details page
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	Then "1" content is displayed in "Slots" column
+	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
+	Then "1" content is displayed in "Slots" column
+	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
+	Then "1" content is displayed in "Slots" column
+	When User selects "Slots" tab on the Project details page
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 2" Name in the "Display Name" field on the Project details page
+	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
+	When User clicks the "CREATE" Action button
+	And User selects "Units" tab on the Project details page
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	Then "2" content is displayed in "Slots" column
+	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
+	Then "1" content is displayed in "Slots" column
+	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
+	Then "1" content is displayed in "Slots" column
