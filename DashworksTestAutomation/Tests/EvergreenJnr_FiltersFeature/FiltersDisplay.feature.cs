@@ -2846,8 +2846,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Entitled to app"});
             testRunner.When("User add \"User Description\" filter where type is \"Empty\" with following Value and" +
                     " Association:", ((string)(null)), table92, "When ");
-            testRunner.Then("\"113\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"2,223\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2949,6 +2948,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Last Logon Date"});
             table94.AddRow(new string[] {
                         "Mailbox Count (Access)"});
+            table94.AddRow(new string[] {
+                        "Mailbox Count (Owned)"});
             table94.AddRow(new string[] {
                         "SID"});
             table94.AddRow(new string[] {

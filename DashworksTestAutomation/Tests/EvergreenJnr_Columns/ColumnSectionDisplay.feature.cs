@@ -1249,6 +1249,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table65.AddRow(new string[] {
                         "Mailbox Count (Access)"});
             table65.AddRow(new string[] {
+                        "Mailbox Count (Owned)"});
+            table65.AddRow(new string[] {
                         "SID"});
             table65.AddRow(new string[] {
                         "Surname"});
@@ -1658,7 +1660,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"User\" with \"22\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"User\" with \"23\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Location\" with \"8\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

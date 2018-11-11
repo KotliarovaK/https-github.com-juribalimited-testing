@@ -564,7 +564,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsAvaila
 	| Home Drive             |
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
-	#| Mailbox Count (Owned) |
+	| Mailbox Count (Owned) |
 	| SID                    |
 	| Surname                |
 	| User Key               |
@@ -759,7 +759,7 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "22" category is displayed on Filters panel
+	Then "User" with "23" category is displayed on Filters panel
 	And "Location" with "8" category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

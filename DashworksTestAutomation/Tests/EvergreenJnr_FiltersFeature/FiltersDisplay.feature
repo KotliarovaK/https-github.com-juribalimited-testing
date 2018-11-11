@@ -1186,8 +1186,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAdvancedFilterOfUserWhoseFilte
 	When User add "User Description" filter where type is "Empty" with following Value and Association:
 	| Values | Association     |
 	|        | Entitled to app |
-	Then "113" rows are displayed in the agGrid
-	And table content is present
+	#Then "113" rows are displayed in the agGrid
+	Then table content is present
 	When User have reset all filters
 	Then "2,223" rows are displayed in the agGrid
 	When User add "User Building" filter where type is "Equals" with following Lookup Value and Association:
@@ -1227,7 +1227,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Home Drive             |
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
-	#| Mailbox Count (Owned) |
+	| Mailbox Count (Owned)  |
 	| SID                    |
 	| Surname                |
 	| User Key               |

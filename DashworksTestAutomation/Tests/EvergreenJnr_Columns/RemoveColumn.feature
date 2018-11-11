@@ -346,7 +346,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	And ColumnName is removed from the list
 	| ColumnName        |
 	| Owner Common Name |
-	And "26" subcategories is displayed for "Device Owner" category
+	And "27" subcategories is displayed for "Device Owner" category
 
 @Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS11506
 Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL
@@ -366,8 +366,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	| Last Logon Date                              |
 	| Enabled                                      |
 	| Windows7Mi: Read Only on Project Object Page |
-	And "18" subcategories is displayed for "User" category
-	#And "50" subcategories is displayed for "Project Tasks: Windows7Mi" category
+	And "19" subcategories is displayed for "User" category
+	And "47" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
 @Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS12221 @DAS12351
 Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAColumnWhichAlsoExistsAsAFilter

@@ -783,7 +783,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table49.AddRow(new string[] {
                         "Owner Common Name"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table49, "And ");
-            testRunner.And("\"26\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"27\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -834,7 +834,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table51.AddRow(new string[] {
                         "Windows7Mi: Read Only on Project Object Page"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table51, "And ");
-            testRunner.And("\"18\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"19\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"47\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         

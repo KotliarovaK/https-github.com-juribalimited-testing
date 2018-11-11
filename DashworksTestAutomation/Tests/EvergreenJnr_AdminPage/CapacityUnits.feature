@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "Evergreen" checkbox is checked in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -155,7 +155,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -204,7 +204,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -301,7 +301,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUnitsPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -391,7 +391,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUni
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnThePowerUnitPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -437,7 +437,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnTh
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorkingCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -475,7 +475,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13481
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13481 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacityUnitsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
