@@ -1186,7 +1186,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAdvancedFilterOfUserWhoseFilte
 	When User add "User Description" filter where type is "Empty" with following Value and Association:
 	| Values | Association     |
 	|        | Entitled to app |
-	#Then "113" rows are displayed in the agGrid
+	Then "113" rows are displayed in the agGrid
 	Then table content is present
 	When User have reset all filters
 	Then "2,223" rows are displayed in the agGrid
