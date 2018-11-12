@@ -48,7 +48,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.RemoveButton),
                 SelectorFor(this, p => p.UpdateButton),
                 SelectorFor(this, p => p.FullNameField),
                 SelectorFor(this, p => p.EmailField),

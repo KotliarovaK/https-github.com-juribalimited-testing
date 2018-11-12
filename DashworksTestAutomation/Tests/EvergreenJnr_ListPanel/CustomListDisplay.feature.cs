@@ -1605,6 +1605,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
+        [NUnit.Framework.CategoryAttribute("DAS14183")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Type", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", new string[0])]
@@ -1616,7 +1618,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "AllLists",
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
-                    "DAS10972"};
+                    "DAS10972",
+                    "DAS14183",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1829,7 +1833,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
+        [NUnit.Framework.CategoryAttribute("DAS14183")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Type", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "Application", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Username", new string[0])]
@@ -1843,7 +1849,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "CustomListDisplay",
                     "DAS10972",
                     "DAS12602",
-                    "Delete_Newly_Created_List"};
+                    "DAS14183",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2180,7 +2188,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"list will be permanently deleted\" message is displayed in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"List Deleted\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"List deleted\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         

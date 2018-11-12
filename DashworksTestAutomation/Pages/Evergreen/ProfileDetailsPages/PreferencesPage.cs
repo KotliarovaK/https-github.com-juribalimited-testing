@@ -10,12 +10,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
     {
         [FindsBy(How = How.XPath,
             Using =
-                ".//label[contains(text(), 'Lang')]/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
+                "//div[contains(@class, 'SelectDropdown')]//mat-select[contains(@aria-label, 'Lang')]")]
         public IWebElement LanguageDropdown { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
-                ".//label[contains(text(), 'Mode')]/ancestor::div[@class='form-item']//div[@class='styleSelectDropdown']")]
+                "//div[contains(@class, 'SelectDropdown')]//mat-select[contains(@aria-label, 'Mode')]")]
         public IWebElement DisplayModeDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'mat-raised-button')]")]

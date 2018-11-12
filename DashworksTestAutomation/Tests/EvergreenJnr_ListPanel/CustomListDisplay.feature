@@ -767,7 +767,7 @@ Examples:
 	| Users        | City            | Description   | Floor                |
 	| Mailboxes    | Alias           | Time Zone     | Building             |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS14183 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -881,7 +881,7 @@ Examples:
 	| Applications | Application   | Adobe     | 40    | 1       |
 	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -1058,7 +1058,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	When User clicks Delete button for custom list
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
-	And "List Deleted" message is displayed
+	And "List deleted" message is displayed
 
 @Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter

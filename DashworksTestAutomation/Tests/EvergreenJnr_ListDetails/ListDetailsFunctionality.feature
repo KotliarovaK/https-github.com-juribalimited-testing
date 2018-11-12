@@ -206,7 +206,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsButtonIsDisabledForD
 	Then Profile page is displayed to user
 	When User navigates to the "Preferences" page on Account details
 	And User changes language to "English US"
-	And User clicks Update button on Preferences page
+	And User clicks the "UPDATE" Action button
 	And User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	And List details button is disabled

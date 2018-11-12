@@ -156,13 +156,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.UpdateButton.Click();
         }
 
-        [When(@"User clicks Update button on the Advanced page")]
-        public void WhenUserClicksUpdateButtonOnTheAdvancedPage()
-        {
-            var page = _driver.NowAt<AdvancedPage>();
-            page.UpdateButton.Click();
-        }
-
         [When(@"User clicks Update button on the Change Password page")]
         public void WhenUserClicksUpdateButtonOnTheChangePasswordPage()
         {
@@ -196,13 +189,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.FullNameField.SendKeys(fullName);
         }
 
-        [When(@"User clicks Update button on Profile page")]
-        public void WhenUserClicksUpdateButtonOnProfilePage()
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            page.UpdateButton.Click();
-        }
-
         [Then(@"Error message is not displayed on Profile page")]
         public void ThenErrorMessageIsNotDisplayedOnProfilePage()
         {
@@ -225,6 +211,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             page.EmailField.Clear();
             page.EmailField.SendKeys(email);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" is displayed in Email field")]
@@ -239,14 +226,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AccountDetailsPage>();
             page.FullNameField.ClearWithHomeButton(_driver);
-        }
-
-        [Then(@"""(.*)"" error message is displayed")]
-        public void ThenErrorMessageIsDisplayed(string errorMessage)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.ErrorMessage);
-            Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
         }
 
         [When(@"User clears Email field")]
@@ -282,9 +261,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetailsPage(string text)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
-            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
@@ -306,6 +283,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(4000);
         }
 
+        [Then(@"""(.*)"" error message is displayed")]
+        public void ThenErrorMessageIsDisplayed(string errorMessage)
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitForDataLoading();
+            Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
+        }
+
         [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnTheAdvancedPage(string text)
         {
@@ -320,13 +305,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             StringAssert.DoesNotContain("img/UnknownUser.jpg", page.UserPicture.GetAttribute("style"),
                 "Picture is not changed");
-        }
-
-        [When(@"User clicks Remove on Account details page")]
-        public void WhenUserClicksRemoveOnAccountDetailsPage()
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            page.RemoveButton.Click();
         }
 
         [Then(@"User picture changed to default")]

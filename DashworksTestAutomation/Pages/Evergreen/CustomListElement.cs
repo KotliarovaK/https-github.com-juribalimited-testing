@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
         public IWebElement SearchTextBoxResetButtonInListPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='List Name']")]
         public IWebElement ListNameTextBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-primary save-actions-save')]")]

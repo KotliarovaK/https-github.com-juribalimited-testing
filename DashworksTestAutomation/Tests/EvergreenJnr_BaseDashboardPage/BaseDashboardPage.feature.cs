@@ -223,6 +223,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS13766")]
+        [NUnit.Framework.CategoryAttribute("DAS14183")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "001PSUMZYOW581", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Spruill, Shea", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "11.2.5388.0", new string[0])]
@@ -234,7 +236,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                     "AllLists",
                     "EvergreenJnr_BaseDashboardPage",
                     "BaseDashboardPage",
-                    "DAS13766"};
+                    "DAS13766",
+                    "DAS14183",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -457,7 +461,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("DAS11693")]
         [NUnit.Framework.CategoryAttribute("DAS12867")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
+        [NUnit.Framework.CategoryAttribute("DAS14189")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAn" +
@@ -469,7 +475,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                         "DAS11693",
                         "DAS12867",
                         "DAS12999",
-                        "Projects"});
+                        "DAS14189",
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

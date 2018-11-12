@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AllList_CheckThatNoConsoleErrorsAreDisplayedAfterQuicklyN
 	Then "Mailboxes" list should be displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS13766
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS13766 @DAS14183 @Not_Run
 Scenario Outline: EvergreenJnr_AllList_CheckPositionOfContextMenuInGrid
 	When User clicks "<ListName>" on the left-hand menu
 	And User performs right-click on "<CellText>" cell in the grid
@@ -187,7 +187,7 @@ Examples:
 	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
 	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @Projects
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @DAS14189 @Projects @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

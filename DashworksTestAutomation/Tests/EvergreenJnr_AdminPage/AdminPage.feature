@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User selects "CorrectFile_DAS12370.xml" file to upload on Import Project page
 	Then Import Project button is enabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153 @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
 	When User clicks Admin on the left-hand menu
 	And User clicks "<PageName>" link on the Admin page
