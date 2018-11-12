@@ -50,6 +50,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             return Driver.FindElement(selector);
         }
 
+        public IList<IWebElement> GetTilesByDropdownName(string dropdownName)
+        {
+            var selector = By.XPath($".//input[@placeholder='{dropdownName}']/../*[@role='option']");
+            return Driver.FindElements(selector);
+        }
+
         public IWebElement GetLanguageInTranslationsTableByName(string language)
         {
             var selector = By.XPath($"//div[contains(@class,'translations')]//span[text()='{language}']");
