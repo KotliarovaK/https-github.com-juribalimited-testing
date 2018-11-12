@@ -1973,6 +1973,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User selects next items in the ""(.*)"" dropdown:")]
+        public void WhenUserSelectsNextItemsInTheDropdown(string dropdownName, Table items)
+        {
+            WhenUserClicksOnDropdownOnTheCapacitySlotsPage(dropdownName);
+
+            var page = _driver.NowAt<BaseGridPage>();
+            foreach (var row in items.Rows)
+            {
+                page.DropdownItemDisplayed(row["Items"]).Click();
+            }
+        }
+
         [When(@"User enters ""(.*)"" value to ""(.*)"" date field on Capacity Slot form page")]
         public void WhenUserEntersValueToDateFieldOnCapacitySlotFormPage(string value, string field)
         {
@@ -2226,6 +2238,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
             StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected",
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
+        }
+
+        [Then(@"User sees following tiles selected in the ""(.*)"" field:")]
+        public void ThenUserSeesFollowingTilesSelectedInTheField(string dropdownName, Table items)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            _driver.WaitForDataLoading();
+            var tiles = page.GetTilesByDropdownName(dropdownName);
+
+            if (tiles.Count > 0)
+            {
+                for (var i = 0; i < items.RowCount; i++)
+                    Assert.That(tiles[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
+                        "Tiles are not the same");
+            }
+            else
+            {
+                Assert.That(items.RowCount, Is.EqualTo(tiles.Count));
+            }
         }
 
         [Then(@"User sees Buckets in next default sort order:")]

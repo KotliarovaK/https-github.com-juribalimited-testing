@@ -277,6 +277,33 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	Then User sees "" value in the "Slot Available From" date field on Capacity Slot form page
 	And User sees "" value in the "Slot Available To" date field on Capacity Slot form page
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13441
+Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsChangedOnCapacitySlotForm
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "User Scheduled Project in Italian & Japanese (Jo)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "CapacitySlotDAS13441" Name in the "Slot Name" field on the Project details page
+	And User type "DAS13441" Name in the "Display Name" field on the Project details page
+	And User selects "Device" in the "Object Type" dropdown
+	And User selects next items in the "Tasks" dropdown:
+	| Items                            |
+	| DDL Task for a Computer          |
+	| Date Task for a Computer Italian |
+	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks the "CREATE" Action button
+	And User clicks newly created object link	
+	Then User sees following tiles selected in the "Tasks" field:
+	| Items                            |
+	| DDL Task for a Computer          |
+	| Date Task for a Computer Italian |
+	When User selects "User" in the "Object Type" dropdown
+	Then User sees following tiles selected in the "Tasks" field:
+	| Items                            |
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13866
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySlotOfParticularProject
 	When User clicks Admin on the left-hand menu
