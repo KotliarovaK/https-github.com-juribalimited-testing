@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
 	Then Create Project button is disabled on the Base Dashboard Page
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -212,7 +212,7 @@ Examples:
 	| Users        | 
 	| Mailboxes    | 
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
+@Evergreen @Applications @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

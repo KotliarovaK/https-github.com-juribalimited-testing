@@ -494,7 +494,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObje" +
             "ctListType")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS14189")]
@@ -506,7 +506,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Devices",
+                    "AllLists",
                     "EvergreenJnr_BaseDashboardPage",
                     "BaseDashboardPage",
                     "DAS14189",
@@ -533,7 +533,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForA" +
             "pplicationPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS14189")]
@@ -543,7 +543,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForA" +
                     "pplicationPage", new string[] {
                         "Evergreen",
-                        "Devices",
+                        "Applications",
                         "EvergreenJnr_BaseDashboardPage",
                         "BaseDashboardPage",
                         "DAS14189",
