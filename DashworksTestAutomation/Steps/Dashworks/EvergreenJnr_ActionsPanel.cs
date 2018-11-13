@@ -60,6 +60,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ActionsDropdown.Click();
         }
 
+        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown with search on Action panel")]
+        public void WhenUserSelectsValueForDropdownWithSearchOnActionPanel(string value, string field)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetDropdownWithSearchByFieldName(field).Click();
+            action.GetOptionByName(value).Click();
+        }
+
         [When(@"User selects ""(.*)"" in the Actions dropdown")]
         public void WhenUserSelectsInTheActionsDropdown(string actionsName)
         {

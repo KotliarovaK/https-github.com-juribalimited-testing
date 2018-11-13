@@ -24,8 +24,8 @@ Examples:
 Scenario Outline: EvergreenJnr_AllList_CheckDefaultSortOrderOnTheLists
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	Then The first cell of the table matches to default sorting "<ListName>" list
-	Then data in the table is sorted by "<ColumnName>" column in ascending order by default
+	And The first cell of the table matches to default sorting "<ListName>" list
+	And data in the table is sorted by "<ColumnName>" column in ascending order by default
 
 Examples: 
 	| ListName     | ColumnName    |
@@ -142,19 +142,19 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	And User adds columns to the list
 	| ColumnName  |
 	| <AddColumn> |
-	When User create dynamic list with "DynamicList1" name on "<ListName>" page
-	When User click on '<ColumnName>' column header
+	And User create dynamic list with "DynamicList1" name on "<ListName>" page
+	And User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in ascending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in descending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order
 	When User click on '<ColumnName>' column header
@@ -162,20 +162,20 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User selects "Create static list" in the Actions dropdown
-	When User create static list with "StaticList1" name
-	When User click on '<ColumnName>' column header
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "StaticList1" name
+	And User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in ascending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<AddSortOrders>' column header
 	Then data in table is sorted by '<AddSortOrders>' column in descending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
-	Then Edit List menu is displayed
+	And Edit List menu is displayed
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order
 	When User click on '<ColumnName>' column header
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 	Then data in table is sorted by 'Hostname' column in ascending order
 	When User clicks Create button on the Base Dashboard Page
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
-	Then Create Project button is disabled on the Base Dashboard Page
+	And Create Project button is disabled on the Base Dashboard Page
 
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
@@ -204,7 +204,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreD
 	Then Create button is displayed
 	When User clicks Create button on the Base Dashboard Page
 	Then "Project" button is displayed on the Base Dashboard Page
-	Then "Pivot" button is displayed on the Base Dashboard Page
+	And "Pivot" button is displayed on the Base Dashboard Page
 
 Examples:
 	| ListName     | 
@@ -216,7 +216,7 @@ Examples:
 Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	Then Create button is displayed
+	And Create button is displayed
 	When User clicks Create button on the Base Dashboard Page
 	Then "Pivot" button is displayed on the Base Dashboard Page
 
@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDi
 Scenario Outline: EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	Then Empty link is displayed for first row in the "<ColumnName>" column
+	And Empty link is displayed for first row in the "<ColumnName>" column
 
 Examples:
 	| ListName     | ColumnName    |
