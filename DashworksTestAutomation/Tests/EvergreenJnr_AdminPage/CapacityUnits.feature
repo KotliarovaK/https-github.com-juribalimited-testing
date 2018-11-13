@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "Evergreen" checkbox is checked in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626
 Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -37,12 +37,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And "" content is displayed in "Users" column
 	And "" content is displayed in "Mailboxes" column
 	And "" content is displayed in "Applications" column
-	When User clicks content from "Capacity Unit" column
-	Then "Devices" tab is selected on the Admin page
-	When User selects "Unit Settings" tab on the Capacity Units page
-	Then "Unit Settings" tab is selected on the Admin page
-	When User click on Back button
-	And User select "Capacity Unit" rows in the grid
+	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName            |
 	| NotDefaultCapacityUnit13720 |
 	And User clicks on Actions button
@@ -52,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -75,11 +70,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "FALSE" value is displayed for Default column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
-	And User clicks content from "Capacity Unit" column
-	Then "Devices" tab is selected on the Admin page
-	When User selects "Unit Settings" tab on the Capacity Units page
-	Then "Unit Settings" tab is selected on the Admin page
-	When User click on Back button
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName         |
 	| DefaultCapacityUnit13720 |
@@ -107,7 +97,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
 Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -120,31 +110,28 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Devices capacity unit" link
 	And "CapacityUnit12141Devices" text is displayed in the table content
-	When User clicks newly created object link
-	Then "Devices" tab is selected on the Admin page
-	When User clicks the "ADD DEVICE" Action button
-	And User selects following Objects
-	| Objects         |
-	| 00I0COBFWHOF27  |
-	| 00K4CEEQ737BA4L |
-	| 00KLL9S8NRF0X6  |
-	| 00KWQ4J3WKQM0G  |
-	| 01ERDGD48UDQKE  |
-	And User clicks the "ADD DEVICES" Action button
-	Then Success message is displayed and contains "The selected devices have been queued for update, if they do not appear immediately try refreshing the grid" text
-	When User close message on the Admin page
-	When User clicks refresh button in the browser
-	Then following Objects are displayed in "Devices" tab on the Capacity Units page:
-	| Objects         |
-	| 00I0COBFWHOF27  |
-	| 00K4CEEQ737BA4L |
-	| 00KLL9S8NRF0X6  |
-	| 00KWQ4J3WKQM0G  |
-	| 01ERDGD48UDQKE  |
-	And data in table is sorted by "Hostname" column in ascending order by default on the Admin page
-	When User refreshes agGrid
-	Then "5" rows are displayed in the agGrid on Capacity Units page
-	When User click on Back button
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	| 00K4CEEQ737BA4L  |
+	| 00KLL9S8NRF0X6   |
+	| 00KWQ4J3WKQM0G   |
+	| 01ERDGD48UDQKE   |
+	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit12141Devices" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Devices" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Devices" column
 	When User select "Capacity Unit" rows in the grid
@@ -155,7 +142,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
 Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -168,32 +155,28 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Users capacity unit" link
 	And "CapacityUnit12141Users" text is displayed in the table content
-	When User clicks newly created object link
-	And User selects "Users" tab on the Capacity Units page
-	Then "Users" tab is selected on the Admin page
-	When User clicks the "ADD USER" Action button
-	And User selects following Objects
-	| Objects                                                          |
-	| DWLABS\$231000-3AC04R8AR431 (Exchange Online-ApplicationAccount) |
-	| BCLABS\$6BE000-SUDQ9614UVO8 (Exchange Online-ApplicationAccount) |
-	| CORP\___ ___ (Escaping Test User\/, \/,)                         |
-	| DWLABS\002B5DC7D4D34D5C895 (Collor, Christopher)                 |
-	| BCLABS\00BDBAEA57334C7C8F4 (Basa, Rogelio)                       |
-	And User clicks the "ADD USERS" Action button
-	Then Success message is displayed and contains "The selected users have been queued for update, if they do not appear immediately try refreshing the grid" text
-	And data in table is sorted by "Username" column in ascending order by default on the Admin page
-	When User close message on the Admin page
-	When User refreshes agGrid
-	When User clicks refresh button in the browser
-	Then "5" rows are displayed in the agGrid on Capacity Units page
-	Then following Objects are displayed in "Users" tab on the Capacity Units page:
-	| Objects              |
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName     |
 	| $231000-3AC04R8AR431 |
 	| $6BE000-SUDQ9614UVO8 |
 	| ___ ___              |
 	| 002B5DC7D4D34D5C895  |
 	| 00BDBAEA57334C7C8F4  |
-	When User click on Back button
+	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit12141Users" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Users" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Users" column
 	When User select "Capacity Unit" rows in the grid
@@ -204,7 +187,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
 Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -217,32 +200,28 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Mailboxes capacity unit" link
 	And "CapacityUnit12141Mailboxes" text is displayed in the table content
-	When User clicks newly created object link
-	And User selects "Mailboxes" tab on the Capacity Units page
-	Then "Mailboxes" tab is selected on the Admin page
-	When User clicks the "ADD MAILBOX" Action button
-	And User selects following Objects
-	| Objects                          |
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
 	| 000F977AC8824FE39B8@bclabs.local |
 	| 002B5DC7D4D34D5C895@bclabs.local |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	| 0072B088173449E3A93@bclabs.local |
 	| 02171CE96D0244BBB80@bclabs.local |
-	And User clicks the "ADD MAILBOXES" Action button
-	Then Success message is displayed and contains "The selected mailboxes have been queued for update, if they do not appear immediately try refreshing the grid" text
-	And data in table is sorted by "Email Address" column in ascending order by default on the Admin page
-	When User refreshes agGrid
-	Then "5" rows are displayed in the agGrid on Capacity Units page
-	When User close message on the Admin page
-	When User clicks refresh button in the browser
-	Then following Objects are displayed in "Mailboxes" tab on the Capacity Units page:
-	| Objects                          |
-	| 000F977AC8824FE39B8@bclabs.local |
-	| 002B5DC7D4D34D5C895@bclabs.local |
-	| 003F5D8E1A844B1FAA5@bclabs.local |
-	| 0072B088173449E3A93@bclabs.local |
-	| 02171CE96D0244BBB80@bclabs.local |
-	When User click on Back button
+	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit12141Mailboxes" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Mailboxes" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Mailboxes" column
 	When User select "Capacity Unit" rows in the grid
@@ -253,7 +232,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808
 Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -266,31 +245,28 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Applications capacity unit" link
 	And "CapacityUnit12141Applications" text is displayed in the table content
-	When User clicks newly created object link
-	And User selects "Applications" tab on the Capacity Units page
-	Then "Applications" tab is selected on the Admin page
-	When User clicks the "ADD APPLICATION" Action button
-	And User selects following Objects
-	| Objects                                                         |
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName                                                |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI                  |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| ACD FotoCanvas 2.0 Trial                                        |
-	And User clicks the "ADD APPLICATIONS" Action button
-	Then Success message is displayed and contains "The selected applications have been queued for update, if they do not appear immediately try refreshing the grid" text
-	And data in table is sorted by "Application" column in ascending order by default on the Admin page
-	Then "5" rows are displayed in the agGrid on Capacity Units page
-	When User close message on the Admin page
-	When User clicks refresh button in the browser
-	Then following Objects are displayed in "Applications" tab on the Capacity Units page:
-	| Objects                                                         |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
-	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
-	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI                  |
-	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
-	| ACD FotoCanvas 2.0 Trial                                        |
-	When User click on Back button
+	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
 	When User enters "CapacityUnit12141Applications" text in the Search field for "Capacity Unit" column
 	Then "5" content is displayed in "Applications" column
 	When User select "Capacity Unit" rows in the grid
@@ -301,7 +277,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run @archived
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUnitsPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -391,7 +367,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUni
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run @archived
 Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnThePowerUnitPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -437,7 +413,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnTh
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS14172
 Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorkingCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -448,8 +424,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	When User clicks newly created object link
-	And User selects "Unit Settings" tab on the Capacity Units page
-	Then "Unit Settings" tab is selected on the Admin page
 	When User type "Capacity Unit Settings upd" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "upd" Name in the "Description" field on the Project details page
 	And User updates the "Default unit" checkbox state
@@ -475,7 +449,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13481 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13481 @Not_Run @archived
 Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacityUnitsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

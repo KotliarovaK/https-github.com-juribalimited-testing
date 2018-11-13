@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #region Action Panel
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
+        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
         public IWebElement ActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Actions']")]
         public IWebElement ActionsDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='request-label']")]
+        [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]
         public IWebElement RequestTypeDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project']")]
@@ -102,14 +102,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #endregion
 
-        [FindsBy(How = How.XPath,
-            Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable'][@id='_listDtlBtn']")]
+        [FindsBy(How = How.XPath, Using = "//button[contains(@id, 'listDtlBtn')]")]
         public IWebElement ListDetailsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
         public IWebElement ColumnButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_fltrBtn']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'fltrBtn')]")]
         public IWebElement FilterButton { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -155,14 +154,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement AmberMessageOnActionPanel { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = "//button[@class='btn mat-button _mat-animation-noopable']//span[text()='UPDATE']")]
+            Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButtonOnAmberMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//button/span[text()='UPDATE']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButton { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = "//button[@class='btn btn-transparent mat-button _mat-animation-noopable']//span[text()='CANCEL']")]
+            Using = "//div[contains(@class, 'notification')]//button[contains(@class, 'transparent')]//span[text()='CANCEL']/ancestor::button")]
         public IWebElement CancelButtonOnAmberMessage { get; set; }
 
         #region All Lists dropdown
@@ -264,18 +263,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a")]
-        public IWebElement FirstDevicesCell { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/user/71622/']")]
-        public IWebElement FirstUsersCell { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/application/4249/']")]
-        public IWebElement FirstApplicationsCell { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/mailbox/49258/']")]
-        public IWebElement FirstMailboxesCell { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']")]
         public IWebElement AgMenu { get; set; }
@@ -527,8 +514,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
         {
-            var selector = By.XPath(
-                $"//button[contains(@class, 'mat-button _mat-animation-noopable')]/span[text()='{button}']");
+            var selector = By.XPath($"//div[contains(@class, 'notification')]//span[text()='{button}']/ancestor::button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -767,6 +753,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetCreateButtonByName(string button)
         {
             var selector = By.XPath($"//span[text()='{button}']/ancestor::mat-option");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownWithSearchByFieldName(string name)
+        {
+            var selector = By.XPath($"//input[@aria-label='{name}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
