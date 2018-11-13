@@ -643,7 +643,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	| Project14029 Snr |
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @DAS13681 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -676,6 +676,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	Then "German" Language is displayed in Translations table on the Capacity Slot page
 	When User clicks "Capacity" tab
 	And User clicks "Details" tab
+	And User opens menu for selected language
+	Then User selects "Remove" option for selected language
+	Then Warning message with "Removing German will delete all translations for this language in this project" text is displayed on the Project Details Page
+	When User clicks "CANCEL" button in the warning message on Admin page
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
 	When User clicks "REMOVE" button in the warning message on Admin page
