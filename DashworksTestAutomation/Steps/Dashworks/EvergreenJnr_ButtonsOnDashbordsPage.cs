@@ -95,6 +95,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create button is displayed on the Base Dashboard Page");
         }
 
+        [Then(@"Create button is displayed")]
+        public void ThenCreateButtonIsDisplayed()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(button.CreateActionButton.Displayed(),
+                "Create button is not displayed on the Base Dashboard Page");
+        }
+
+        [Then(@"""(.*)"" button is displayed on the Base Dashboard Page")]
+        public void ThenButtonIsDisplayedOnTheBaseDashboardPage(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(button.GetCreateButtonByName(buttonName).Displayed(),
+                $"{buttonName} button is not displayed on the Base Dashboard Page");
+        }
+
         [Then(@"tooltip is displayed with ""(.*)"" text for Create Project button")]
         public void ThenTooltipIsDisplayedWithTextForCreateProjectButton(string text)
         {

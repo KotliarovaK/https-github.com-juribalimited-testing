@@ -187,11 +187,8 @@ Examples:
 	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
 	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |
 
-@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @DAS14189 @Projects @Not_Run
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11693 @DAS12867 @DAS12999 @DAS14189 @Projects
 Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList
-	When User clicks "Applications" on the left-hand menu
-	Then "Applications" list should be displayed to the user
-	Then Create button is not displayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
@@ -200,13 +197,36 @@ Scenario: EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectB
 	Then tooltip is displayed with "This list must be saved before using it to create a project" text for Create Project button
 	Then Create Project button is disabled on the Base Dashboard Page
 
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForEachObjectListType
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	Then Create button is displayed
+	When User clicks Create button on the Base Dashboard Page
+	Then "Project" button is displayed on the Base Dashboard Page
+	Then "Pivot" button is displayed on the Base Dashboard Page
+
+Examples:
+	| ListName     | 
+	| Devices      | 
+	| Users        | 
+	| Mailboxes    | 
+
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
+Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	Then Create button is displayed
+	When User clicks Create button on the Base Dashboard Page
+	Then "Pivot" button is displayed on the Base Dashboard Page
+
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12337
 Scenario Outline: EvergreenJnr_AllLists_CheckThatEmptyLinkIsDisplayedIfThereAreNoData
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	Then Empty link is displayed for first row in the "<ColumnName>" column
 
-	Examples:
+Examples:
 	| ListName     | ColumnName    |
 	| Users        | Username      |
 	| Applications | Application   |

@@ -279,7 +279,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']")]
         public IWebElement AgMenu { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']")]
         public IWebElement CreateActionButton { get; set; }
 
@@ -364,7 +364,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         //Null value can be returned
         public IWebElement GetGridCell(int rowIndex, int columnNumber)
         {
-            return (IWebElement) Driver.ExecuteScript(
+            return (IWebElement)Driver.ExecuteScript(
                 $"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
         }
 
@@ -431,7 +431,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return element.Location.Y + element.Size.Height;
         }
-        
+
         public int GetElementLeftXCoordinate(IWebElement element)
         {
             return element.Location.X;
@@ -762,6 +762,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
                         $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
                     .Click();
             }
+        }
+
+        public IWebElement GetCreateButtonByName(string button)
+        {
+            var selector = By.XPath($"//span[text()='{button}']/ancestor::mat-option");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }
