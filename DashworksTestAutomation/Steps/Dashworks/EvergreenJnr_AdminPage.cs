@@ -1873,6 +1873,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectPage.LanguageMenu.Click();
         }
 
+        [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
+        public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
+        {
+            var message = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(message.TextMessage(text), $"{text} is not displayed on the Project page");
+        }
+
         [Then(@"User selects ""(.*)"" option for selected language")]
         public void ThenUserSelectsOptionForSelectedLanguage(string optionName)
         {
