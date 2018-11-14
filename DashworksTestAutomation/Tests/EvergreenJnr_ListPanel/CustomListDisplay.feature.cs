@@ -1606,7 +1606,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS14183")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Type", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", new string[0])]
@@ -1619,8 +1618,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
                     "DAS10972",
-                    "DAS14183",
-                    "Not_Run"};
+                    "DAS14183"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1835,7 +1833,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS14183")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Type", "Hostname", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "Application", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Username", new string[0])]
@@ -1850,8 +1847,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "DAS10972",
                     "DAS12602",
                     "DAS14183",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

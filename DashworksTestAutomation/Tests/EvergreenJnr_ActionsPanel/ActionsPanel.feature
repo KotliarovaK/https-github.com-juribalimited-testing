@@ -483,7 +483,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with " Your changes have successfully been queued, 2 of 2 objects were valid for the update." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 2 of 2 objects were valid for the update." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column

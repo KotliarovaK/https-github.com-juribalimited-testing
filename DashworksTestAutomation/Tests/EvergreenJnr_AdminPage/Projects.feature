@@ -2650,7 +2650,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Delete_Newly_Created_Project @DAS11758 @DAS14190 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Delete_Newly_Created_Project @DAS11758 @DAS14190
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

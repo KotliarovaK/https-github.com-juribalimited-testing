@@ -118,7 +118,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("DAS11664")]
         [NUnit.Framework.CategoryAttribute("DAS12325")]
         [NUnit.Framework.CategoryAttribute("DAS14183")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch", new string[] {
@@ -129,8 +128,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         "DAS10836",
                         "DAS11664",
                         "DAS12325",
-                        "DAS14183",
-                        "Not_Run"});
+                        "DAS14183"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

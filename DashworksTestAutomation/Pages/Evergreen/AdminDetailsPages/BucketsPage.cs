@@ -22,6 +22,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]
         public IWebElement ResultsOnPageCount { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Search']")]
+        public IWebElement SearchFieldForBucketsPage { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -59,11 +62,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(tabNameSelector)).Click();
         }
 
-        public void SelectObjectByName(string objectName)
+        public IWebElement SelectObjectByName(string objectName)
         {
-            var objectNameSelector = $".//span[contains(text(), '{objectName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(objectNameSelector));
-            Driver.FindElement(By.XPath(objectNameSelector)).Click();
+            var selector = By.XPath($".//span[contains(text(), '{objectName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

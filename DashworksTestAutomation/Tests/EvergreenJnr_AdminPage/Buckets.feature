@@ -307,7 +307,8 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 	And data in table is sorted by "Username" column in ascending order by default on the Admin page
-	Then Counter shows "41,339" found rows
+	#Then Counter shows "41,339" found rows
+#This comment was added, because Evergreen Bucket (1-6) in GoldData blocks this check. ^
 	#When User click on "Username" column header on the Admin page
 	#Then data in table is sorted by "Username" column in ascending order on the Admin page
 	#When User click on "Username" column header on the Admin page

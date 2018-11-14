@@ -224,7 +224,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS13766")]
         [NUnit.Framework.CategoryAttribute("DAS14183")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "001PSUMZYOW581", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Spruill, Shea", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "11.2.5388.0", new string[0])]
@@ -237,8 +236,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                     "EvergreenJnr_BaseDashboardPage",
                     "BaseDashboardPage",
                     "DAS13766",
-                    "DAS14183",
-                    "Not_Run"};
+                    "DAS14183"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

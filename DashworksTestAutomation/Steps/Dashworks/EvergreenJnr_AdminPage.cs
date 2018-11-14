@@ -1114,7 +1114,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsObjectsToBucket(string objectName)
         {
             var objects = _driver.NowAt<BucketsPage>();
-            objects.SelectObjectByName(objectName);
+            objects.SearchFieldForBucketsPage.SendKeys(objectName);
+            objects.SelectObjectByName(objectName).Click();
         }
 
         [Then(@"Create Team button is disabled")]
