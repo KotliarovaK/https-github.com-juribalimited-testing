@@ -186,7 +186,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Values" page
-	And User clicks "Add Value" button
+	And User clicks "Add value" button
 	When User create new Value
 	| Name          | TaskStatusString | DefaultValue |
 	| TestValueName | Open             | true         |
