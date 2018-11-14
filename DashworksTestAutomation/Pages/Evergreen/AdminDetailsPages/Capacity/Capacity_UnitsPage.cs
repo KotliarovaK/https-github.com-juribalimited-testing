@@ -24,6 +24,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
                 SelectorFor(this, p => p.TitleContainer)
             };
         }
-
     }
 }
