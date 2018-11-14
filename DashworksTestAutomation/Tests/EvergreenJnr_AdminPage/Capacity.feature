@@ -332,7 +332,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	#And User selects "Slots" tab on the Project details page
 	#Then "No slots found" message is displayed on the Admin Page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -352,9 +352,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	Then Create Override Date is displayed correctly
+	And "CREATE" Action button is disabled
 	When User enters "29 Oct 2018" date in the "Override Start Date" field
-	And User enters "29 Oct 2018" date in the "Override End Date" field
-	And User selects "SlotDAS13779" in the "Slot" dropdown
+	Then "CREATE" Action button is disabled
+	When User enters "29 Oct 2018" date in the "Override End Date" field
+	Then "CREATE" Action button is active
+	When User selects "SlotDAS13779" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
 	And User clicks the "CREATE OVERRIDE DATE" Action button
