@@ -3134,16 +3134,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "1 May 2011",
                         "Has used app"});
             table102.AddRow(new string[] {
-                        "1 May 2011",
+                        "",
                         "Entitled to app"});
             table102.AddRow(new string[] {
-                        "1 May 2011",
+                        "",
                         "Owns a device which app was used on"});
             table102.AddRow(new string[] {
-                        "1 May 2011",
+                        "",
                         "Owns a device which app is entitled to"});
             table102.AddRow(new string[] {
-                        "1 May 2011",
+                        "",
                         "Owns a device which app is installed on"});
             testRunner.When("User add \"User Last Logon Date\" filter where type is \"After\" with following Data " +
                     "and Association:", ((string)(null)), table102, "When ");
