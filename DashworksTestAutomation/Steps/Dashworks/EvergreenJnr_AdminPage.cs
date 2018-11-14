@@ -2036,6 +2036,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.AddDateByFieldName(fieldName, date);
         }
 
+        [Then(@"Create Override Date is displayed correctly")]
+        public void ThenCreateOverrideDateIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<Capacity_OverrideDatesPage>();
+            Assert.IsTrue(page.CreateOverrideDatePageTitle.Displayed, "Create Override Date title is not displayed");
+        }
+
         [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]
         public void ThenTextInSearchFieldIsDisplayedCorrectlyForColumn(string searchText, string columnName)
         {

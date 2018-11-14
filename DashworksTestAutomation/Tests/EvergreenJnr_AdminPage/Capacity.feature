@@ -351,7 +351,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User clicks the "CREATE" Action button
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "29 Oct 2018" date in the "Override Start Date" field
+	Then Create Override Date is displayed correctly
+	When User enters "29 Oct 2018" date in the "Override Start Date" field
 	And User enters "29 Oct 2018" date in the "Override End Date" field
 	And User selects "SlotDAS13779" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
