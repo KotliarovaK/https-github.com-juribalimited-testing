@@ -348,7 +348,7 @@ namespace DashworksTestAutomation.Helpers
                 }
                 else
                 {
-                    selector = $".//li//div[contains(text(), '{row["Association"]}')]";
+                    selector = $".//li//span[contains(text(), '{row["Association"]}')]";
                 }
                 selectboxes.Last().SendkeysWithDelay(row["Association"]);
                 _driver.FindElement(By.XPath(selector)).Click();

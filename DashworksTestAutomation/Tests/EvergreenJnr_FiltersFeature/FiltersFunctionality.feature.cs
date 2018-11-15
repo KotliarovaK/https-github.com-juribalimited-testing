@@ -686,6 +686,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11469")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Application", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application (Saved List)", new string[0])]
@@ -702,7 +703,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Devices",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
-                    "DAS11469"};
+                    "DAS11469",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

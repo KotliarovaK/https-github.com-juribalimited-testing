@@ -31,7 +31,7 @@ Examples:
 	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
 	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @Not_Run
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -136,7 +136,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| UserSchedu: Target App ID |
 	| prK: Target App ID        |
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578 @DAS14159
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -148,7 +148,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Dashworks First Seen" filter
-	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
+	Then "Equals, Does not equal, Before, Before now, After, After now, Empty, Not empty" option is available for this filter
 	When User have created "Empty" Date filter with column and "" option
 	Then "Dashworks First Seen is empty" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid

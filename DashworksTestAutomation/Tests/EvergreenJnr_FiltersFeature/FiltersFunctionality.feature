@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,141" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
