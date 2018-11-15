@@ -882,6 +882,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11628")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilter" +
@@ -890,7 +891,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS11628"});
+                        "DAS11628",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

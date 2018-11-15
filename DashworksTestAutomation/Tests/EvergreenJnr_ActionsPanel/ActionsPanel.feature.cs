@@ -1337,6 +1337,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table49.AddRow(new string[] {
                         "Computer Scheduled Test (Jo)"});
             table49.AddRow(new string[] {
+                        "Devices Evergreen Capacity Project"});
+            table49.AddRow(new string[] {
                         "Havoc (Big Data)"});
             table49.AddRow(new string[] {
                         "I-Computer Scheduled Project"});
@@ -1344,6 +1346,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Migration Project Phase 2 (User Project)"});
             table49.AddRow(new string[] {
                         "Project K-Computer Scheduled Project"});
+            table49.AddRow(new string[] {
+                        "User Evergreen Capacity Project"});
             table49.AddRow(new string[] {
                         "User Scheduled Test (Jo)"});
             table49.AddRow(new string[] {
@@ -2460,6 +2464,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13290")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly", new string[] {
@@ -2468,7 +2473,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS12864",
-                        "DAS13290"});
+                        "DAS13290",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2579,6 +2585,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13291")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly", new string[] {
@@ -2587,7 +2594,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS12864",
-                        "DAS13291"});
+                        "DAS13291",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

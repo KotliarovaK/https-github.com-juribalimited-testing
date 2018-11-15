@@ -360,7 +360,7 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

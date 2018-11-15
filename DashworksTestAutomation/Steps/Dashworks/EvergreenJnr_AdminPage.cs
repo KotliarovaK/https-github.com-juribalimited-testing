@@ -547,14 +547,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectRecordByName(recordName);
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Admin page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheAdminPage(string filterName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GetBooleanStringFilterByName(filterName);
-            page.BodyContainer.Click();
-        }
-
         [Then(@"field for Date column is empty")]
         public void ThenFieldForDateColumnIsEmpty()
         {
@@ -578,6 +570,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Admin page")]
+        public void WhenUserClicksCheckboxFromStringFilterOnTheAdminPage(string filterName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetBooleanStringFilterByName(filterName);
             page.BodyContainer.Click();
         }
 

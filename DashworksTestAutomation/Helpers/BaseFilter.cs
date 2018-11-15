@@ -432,7 +432,7 @@ namespace DashworksTestAutomation.Helpers
                 }
                 else
                 {
-                    selector = $".//li//div[contains(text(), '{row["Association"]}')]";
+                    selector = $".//li//span[text()='{row["Association"]}']";
                 }
                 selectboxes.Last().SendkeysWithDelay(row["Association"]);
                 _driver.FindElement(By.XPath(selector)).Click();
@@ -512,8 +512,8 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
-                if (!_driver.IsElementDisplayed(By.XPath($".//li//div[contains(text(), '{row["Association"]}')]"))) continue;
-                _driver.FindElement(By.XPath($".//li//div[contains(text(), '{row["Association"]}')]")).Click();
+                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]"))) continue;
+                _driver.FindElement(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]")).Click();
             }
 
             SaveFilter();

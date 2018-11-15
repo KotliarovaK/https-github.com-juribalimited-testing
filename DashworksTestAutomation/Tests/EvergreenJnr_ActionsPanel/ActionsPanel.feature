@@ -706,10 +706,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Babel (English, German and French)               |
 	| Barry's User Project                             |
 	| Computer Scheduled Test (Jo)                     |
+	| Devices Evergreen Capacity Project               |
 	| Havoc (Big Data)                                 |
 	| I-Computer Scheduled Project                     |
 	| Migration Project Phase 2 (User Project)         |
 	| Project K-Computer Scheduled Project             |
+	| User Evergreen Capacity Project                  |
 	| User Scheduled Test (Jo)                         |
 	| Windows 7 Migration (Computer Scheduled Project) |
 	When User clicks the Columns button
@@ -1333,7 +1335,7 @@ Examples:
 	| DAS13283 | LZI970280  | Not Applicable | May 09, 2018 | Failed         | Sep 03, 2018 |
 	| DAS13284 | ZQX656408  | Not Applicable | Aug 15, 2018 | Complete       | Aug 30, 2018 |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1409,7 +1411,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13290" User
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

@@ -207,11 +207,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"test\" in the Team Description field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"CREATE TEAM\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message with \"A team already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"99770\" text in the Search field for \"Team\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The selected team has been deleted, an" +
-                    "d their buckets reassigned\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -766,7 +761,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Counter shows \"0\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User enters \"5\" text in the Search field for \"Project Buckets\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Counter shows \"2\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User enters \"2\" text in the Search field for \"Members\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
