@@ -634,7 +634,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
-        public IWebElement GetOptionByName(string optionName)
+        public IWebElement GetSettingOptionByName(string optionName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
+            return Driver.FindElement(
+                By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
+        }
+        
+        public IWebElement GetSettingIconByRowName(string rowName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(
+                $".//div[contains(@class, 'ag-body-container')]/div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
+            return Driver.FindElement(By.XPath(
+                $".//div[contains(@class, 'ag-body-container')]/div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
+        }
+        
+public IWebElement GetOptionByName(string optionName)
         {
             var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
