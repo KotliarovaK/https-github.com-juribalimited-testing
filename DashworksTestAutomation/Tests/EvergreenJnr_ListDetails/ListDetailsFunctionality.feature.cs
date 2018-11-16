@@ -958,7 +958,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12075")]
         [NUnit.Framework.CategoryAttribute("DAS12874")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Application1", "Used on device", "Any Application in list [List not found] used on device", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application1", "Used by device\'s owner", "Any Application in list [List not found] used by device\'s owner", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application1", "Not used by device\'s owner", "Any Application in list [List not found] not used by device\'s owner", new string[0])]
@@ -971,7 +973,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ListDetailsFunctionality",
                     "DAS12075",
                     "DAS12874",
-                    "Delete_Newly_Created_List"};
+                    "DAS14222",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1035,7 +1039,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12578")]
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesSta" +
@@ -1048,7 +1054,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12578",
                         "DAS12791",
                         "DAS12952",
-                        "Delete_Newly_Created_List"});
+                        "DAS14222",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1109,7 +1117,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12578")]
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLis" +
@@ -1122,7 +1132,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12578",
                         "DAS12791",
                         "DAS12952",
-                        "Delete_Newly_Created_List"});
+                        "DAS14222",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -1197,7 +1209,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12075")]
         [NUnit.Framework.CategoryAttribute("DAS12578")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependencies" +
@@ -1208,7 +1222,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "ListDetailsFunctionality",
                         "DAS12075",
                         "DAS12578",
-                        "Delete_Newly_Created_List"});
+                        "DAS14222",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

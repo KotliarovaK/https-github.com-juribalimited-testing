@@ -444,7 +444,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	And User clicks String Filter button for "Workflow" column
 	Then "(Blanks)" checkbox is checked on the Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -768,7 +768,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User opens "Related Devices" section on the Details Page
 	And User selects all rows on the grid on the Details Page
 	And User opens "Related Mailboxes" section on the Details Page
-	And User clicks the "CHANGE" Action button
+	And User clicks the "UPDATE" Action button
 	And User clicks "Devices" on the left-hand menu
 	And User perform search by "I55HL8MSBYK0VG"
 	And User click content from "Hostname" column

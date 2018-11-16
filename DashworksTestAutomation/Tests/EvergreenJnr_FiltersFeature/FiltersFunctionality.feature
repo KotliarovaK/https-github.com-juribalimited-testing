@@ -431,14 +431,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Application Name" filter
-	And User select "Not entitled to device" in Association 
-	Then Save button is not available on the Filter panel
-	When User have reset all filters
-	And User add "Application Name" filter where type is "Equals" with following Value and Association:
-	| Values | Association    |
-	| adobe  | Used on device |
-	And User create dynamic list with "TestListF58LY5" name on "Devices" page
+	And User enters "testText" text in Search field at selected Filter
+	And User select "Not entitled to device" Association for Application filter with Lookup value
+	When User clicks the "SAVE" Action button
+	Then "Application whose Name is testText not entitled to device" is displayed in added filter info
+	When User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "Application " filter
+	Then Search field in selected Filter is empty
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11838 @DAS13001
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTheColourOfTheTargetAppReadinessItemIsMatchingTheCaption
@@ -881,8 +883,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	| FR\APB5713645  | Has used app |
 	Then "1" rows are displayed in the agGrid
 	When User click Edit button for "User" filter
-	When User is deselect "Has used app" in Association
-	When User select "Has not used app" in Association
+	When User is deselect "Has used app" Association for Application filter with Lookup value
+	When User select "Has not used app" Association for Application filter with Lookup value
 	And User clicks Save filter button
 	Then "2,222" rows are displayed in the agGrid
 
@@ -1048,8 +1050,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	| ACD Display 3.4 | Installed on device |
 	Then "944" rows are displayed in the agGrid
 	When User click Edit button for "Application" filter
-	And User is deselect "Installed on device" in Association
-	And User select "Not installed on device" in Association
+	And User is deselect "Installed on device" Association for Application filter with Lookup value
+	And User select "Not installed on device" Association for Application filter with Lookup value
 	And User clicks Save filter button
 	Then "16,281" rows are displayed in the agGrid
 	When User have reset all filters
@@ -1058,8 +1060,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationFilterWorksCorrectlyForDi
 	| ACD Display 3.4 | Used on device |
 	Then message 'No devices found' is displayed to the user
 	When User click Edit button for "Application" filter
-	And User is deselect "Used on device" in Association
-	And User select "Not used on device" in Association
+	And User is deselect "Used on device" Association for Application filter with Lookup value
+	And User select "Not used on device" Association for Application filter with Lookup value
 	And User clicks Save filter button
 	Then "17,225" rows are displayed in the agGrid
 

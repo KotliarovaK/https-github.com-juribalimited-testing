@@ -866,9 +866,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedT
 	Then User closed "Selected Columns" columns category
 	And User is expand "Project Tasks: prK" columns category
 	Then the following Filters subcategories are displayed for open category:
-	| Subcategories                            |
-	| prK: Email Address CC                    |
-	| prK: Email Notifications Allowed?        |
-	| prK: Email Override Address              |
-	| prK: Email to be sent - All Placeholders |
-	| prK: user-group-radb-k                   |
+	| Subcategories                                   |
+	| prK: Email Address CC                           |
+	| prK: Email Notifications Allowed?               |
+	| prK: Email Override Address                     |
+	| prK: Email to be sent - All Placeholders        |
+	| prK: Email to be sent - All Placeholders (Slot) |
+	| prK: user-group-radb-k                          |

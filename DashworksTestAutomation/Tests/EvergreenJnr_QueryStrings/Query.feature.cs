@@ -662,6 +662,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamic" +
@@ -671,7 +672,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -868,7 +870,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<>%201%20WHERE%20(nioadobu%2Cnetdobu%" +
             "2Cnuodobu%2Cnetu%2Cnubu))", "41,339", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20%3E%3D%201%20WHERE%20(ubu))", "99", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))", "41,333", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))", "41,339", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/users?$filter=(applicationCustomField_80%20EQUALS%20(\'App%20Discovery" +
             "\')%20WHERE%20(ubu%2Cetu%2Ciodobu%2Cetdobu%2Cuodou))", "871", new string[0])]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList(string filterName, string queryString, string rows, string[] exampleTags)

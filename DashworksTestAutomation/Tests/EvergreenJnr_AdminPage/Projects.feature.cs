@@ -322,7 +322,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table3.AddRow(new string[] {
                         "ACDSee 4.0 (4.0.0)"});
             testRunner.When("User selects following Objects", ((string)(null)), table3, "When ");
-            testRunner.And("User clicks the \"UPDATE APPLICATION CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"3 applications will be added\" text is displayed on the Admi" +
                     "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -458,7 +458,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("\"Devices to add (1 of 17225 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -791,7 +790,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table16.AddRow(new string[] {
                         "01BQIYGGUW5PRP6"});
             testRunner.And("User selects following Objects", ((string)(null)), table16, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"1 object queued for onboarding, 0 obje" +
                     "cts offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1639,7 +1638,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects following Objects", ((string)(null)), table34, "And ");
             testRunner.Then("\"Devices to add (2 of 17225 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1814,7 +1813,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects following Objects", ((string)(null)), table37, "And ");
             testRunner.Then("\"Devices to add (2 of 2 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message with \"2 objects queued for onboarding, 0 objects offboarded\" text" +
                     " is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1901,7 +1900,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects following Objects", ((string)(null)), table40, "And ");
             testRunner.Then("\"Users to add (2 of 2 selected)\" is displayed to the user in the Project Scope Ch" +
                     "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message with \"2 objects queued for onboarding, 0 objects offboarded\" text" +
                     " is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2234,9 +2233,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes", "UPDATE MAILBOX CHANGES", "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)", "1 mailbox will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Devices", "Users", "UPDATE USER CHANGES", "ADC714277 (Dina Q. Knight)", "1 user will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
-        public virtual void EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropriateChangesButton(string allListName, string tabName, string buttonName, string objectsToAdd, string warningMessageText, string successMessageText, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes", "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)", "1 mailbox will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Devices", "Users", "ADC714277 (Dina Q. Knight)", "1 user will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
+        public virtual void EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropriateChangesButton(string allListName, string tabName, string objectsToAdd, string warningMessageText, string successMessageText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2276,7 +2275,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table45.AddRow(new string[] {
                         string.Format("{0}", objectsToAdd)});
             testRunner.And("User selects following Objects", ((string)(null)), table45, "And ");
-            testRunner.And(string.Format("User clicks the \"{0}\" Action button", buttonName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("Warning message with \"{0}\" text is displayed on the Admin page", warningMessageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("Success message is displayed and contains \"{0}\" text", successMessageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3728,14 +3727,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Devices to add (0 of 17224 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"Users to add (0 of 14630 selected)\" is displayed to the user in the Project Scop" +
-                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Users to add (0 of 14630 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3743,7 +3740,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table77.AddRow(new string[] {
                         "AAK881049 (Miguel W. Owen)"});
             testRunner.And("User selects following Objects", ((string)(null)), table77, "And ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3752,7 +3748,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table78.AddRow(new string[] {
                         "00SH8162NAS524"});
             testRunner.And("User selects following Objects", ((string)(null)), table78, "And ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -3812,7 +3808,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table80.AddRow(new string[] {
                         "00CFE13AAE104724AF5 (Hardieway, Linda)"});
             testRunner.And("User selects following Objects", ((string)(null)), table80, "And ");
-            testRunner.And("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"2 users will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Objects to add panel is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3821,11 +3817,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"Users to add (0 of 1 selected)\" is displayed to the user in the Project Scope Ch" +
-                    "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Users to add (0 of 1 selected)\" is displayed to the user in the Project Scope Ch" +
+                    "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3836,7 +3830,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table81.AddRow(new string[] {
                         "000F977AC8824FE39B8 (Spruill, Shea)"});
             testRunner.And("User selects following Objects", ((string)(null)), table81, "And ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -3907,7 +3900,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table82.AddRow(new string[] {
                         "CKB423934 (Tracie N. Bright)"});
             testRunner.And("User selects following Objects", ((string)(null)), table82, "And ");
-            testRunner.And("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"3 users will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
@@ -4144,7 +4137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table89.AddRow(new string[] {
                         "2QP6MWKI0BM87U"});
             testRunner.And("User selects following Objects", ((string)(null)), table89, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"4 devices will be added\" text is displayed on the Admin pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4239,7 +4232,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table92.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5 (Hunter, Melanie)"});
             testRunner.And("User selects following Objects", ((string)(null)), table92, "And ");
-            testRunner.And("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"1 object queued for onboarding, 0 obje" +
                     "cts offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -4611,11 +4604,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table105.AddRow(new string[] {
                         "03U75EKEMUQMUS"});
             testRunner.And("User selects following Objects", ((string)(null)), table105, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -6265,7 +6256,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table154.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
             testRunner.And("User selects following Objects", ((string)(null)), table154, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"10 objects queued for onboarding, 0 ob" +
                     "jects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -6341,7 +6332,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table157.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
             testRunner.And("User selects following Objects", ((string)(null)), table157, "And ");
-            testRunner.And("User clicks the \"UPDATE APPLICATION CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"5 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -6451,7 +6442,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table161.AddRow(new string[] {
                         "06T5FX3CUY08AE"});
             testRunner.And("User selects following Objects", ((string)(null)), table161, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

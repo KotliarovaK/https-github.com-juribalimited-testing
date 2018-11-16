@@ -113,7 +113,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 	| 20040610sqlserverck (1.0.0) |
 	| 7zip                        |
 	| ACDSee 4.0 (4.0.0)          |
-	And User clicks the "UPDATE APPLICATION CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "3 applications will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
@@ -176,7 +176,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then "UPDATE USER CHANGES" Action button is disabled
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
@@ -354,7 +353,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User selects following Objects
 	| Objects         |
 	| 01BQIYGGUW5PRP6 |
-	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
@@ -826,7 +825,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedAfterAddin
 	| 07RJRCQQJNBJIJQ |
 	| 0CFHJY5A8WLUB0J |
 	Then "Devices to add (2 of 17225 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks the "UPDATE DEVICE CHANGES" Action button
+	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Scope Details" tab on the Project details page
@@ -911,7 +910,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDevicesToAddAndRemoveAreChangingApprop
 	| 00BDM1JUR8IF419 |
 	| 011PLA470S0B9DJ |
 	Then "Devices to add (2 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks the "UPDATE DEVICE CHANGES" Action button
+	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
@@ -954,7 +953,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	| 000F977AC8824FE39B8 (Spruill, Shea)       |
 	| 002B5DC7D4D34D5C895 (Collor, Christopher) |
 	Then "Users to add (2 of 2 selected)" is displayed to the user in the Project Scope Changes section
-	When User clicks the "UPDATE USER CHANGES" Action button
+	When User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "2 objects queued for onboarding, 0 objects offboarded" text is displayed on the Projects page
 	When User selects "Scope Details" tab on the Project details page
@@ -1182,15 +1181,15 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropr
 	And User selects following Objects
 	| Objects        |
 	| <ObjectsToAdd> |
-	And User clicks the "<ButtonName>" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "<WarningMessageText>" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "<SuccessMessageText>" text
 
 Examples:
-	| AllListName   | TabName   | ButtonName             | ObjectsToAdd                                       | WarningMessageText      | SuccessMessageText                                   |
-	| All Mailboxes | Mailboxes | UPDATE MAILBOX CHANGES | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
-	| All Devices   | Users     | UPDATE USER CHANGES    | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
+	| AllListName   | TabName   | ObjectsToAdd                                       | WarningMessageText      | SuccessMessageText                                   |
+	| All Mailboxes | Mailboxes | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
+	| All Devices   | Users     | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @DAS13803 @DAS13930 @Projects @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
@@ -1965,25 +1964,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
-	Then "UPDATE DEVICE CHANGES" Action button is disabled
 	And "Devices to add (0 of 17224 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then "UPDATE USER CHANGES" Action button is disabled
-	And "Users to add (0 of 14630 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 14630 selected)" is displayed to the user in the Project Scope Changes section
 	Then Objects to add panel is active
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects                    |
 	| AAK881049 (Miguel W. Owen) |
-	Then "UPDATE USER CHANGES" Action button is active
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User clicks "Devices" tab in the Project Scope Changes section
 	When User expands the object to add 
 	And User selects following Objects
 	| Objects        |
 	| 00SH8162NAS524 |
-	Then "UPDATE DEVICE CHANGES" Action button is active
+	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
@@ -2010,7 +2006,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	| Objects                                |
 	| 00BDBAEA57334C7C8F4 (Basa, Rogelio)    |
 	| 00CFE13AAE104724AF5 (Hardieway, Linda) |
-	And User clicks the "UPDATE USER CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "2 users will be added" text is displayed on the Admin page
 	Then Objects to add panel is disabled
 	When User clicks "Devices" tab in the Project Scope Changes section
@@ -2018,10 +2014,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "UPDATE ALL CHANGES" Action button is disabled
-	Then "UPDATE DEVICE CHANGES" Action button is disabled
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then "UPDATE USER CHANGES" Action button is disabled
-	And "Users to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Users to add (0 of 1 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Devices" tab in the Project Scope Changes section
 	Then Objects to add panel is active
 	When User clicks "Users" tab in the Project Scope Changes section
@@ -2030,7 +2024,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	And User selects following Objects
 	| Objects                             |
 	| 000F977AC8824FE39B8 (Spruill, Shea) |
-	Then "UPDATE USER CHANGES" Action button is active
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
@@ -2065,7 +2058,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLe
 	| ADX520696 (Bridgett E. Cobb) |
 	| CKB423934 (Tracie N. Bright) |
 	| CKB423934 (Tracie N. Bright) |
-	And User clicks the "UPDATE USER CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "3 users will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "3 objects queued for onboarding, 0 objects offboarded" text
@@ -2192,7 +2185,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	| 05LG3HCJLEDEMTR |
 	| 2QP6MWKI0BM87U  |
 	| 2QP6MWKI0BM87U  |
-	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then Warning message with "4 devices will be added" text is displayed on the Admin page
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "4 objects queued for onboarding, 0 objects offboarded" text
@@ -2250,7 +2243,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	And User selects following Objects
 	| Objects                               |
 	| 003F5D8E1A844B1FAA5 (Hunter, Melanie) |
-	And User clicks the "UPDATE USER CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "1 object queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
@@ -2449,11 +2442,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| 02X387UDGZJPQY  |
 	| 03063X2ZUCDN0A1 |
 	| 03U75EKEMUQMUS  |
-	And User clicks the "UPDATE DEVICE CHANGES" Action button
-	Then "UPDATE DEVICE CHANGES" Action button is disabled
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	Then "UPDATE ALL CHANGES" Action button is disabled
 	When User clicks the "CANCEL" Action button
-	Then "UPDATE DEVICE CHANGES" Action button is active
 	Then "UPDATE ALL CHANGES" Action button is active
 	When User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
@@ -3369,7 +3360,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| 0E402TL1EG79GIT |
 	| 0GLO1UYQ5AKCZEA |
 	| DK1LF3X47N7PWX7 |
-	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
@@ -3412,7 +3403,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	| Intel(R) Processor Graphics (20.19.15.4568)                   |
 	| Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4) |
 	| NJStar Chinese Word Processor                                 |
-	And User clicks the "UPDATE APPLICATION CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "5 objects queued for onboarding, 0 objects offboarded" text
 	When User selects "Queue" tab on the Project details page
@@ -3476,7 +3467,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyTex
 	| 019BFPQGKK5QT8N |
 	| 02C80G8RFTPA9E  |
 	| 06T5FX3CUY08AE  |
-	And User clicks the "UPDATE DEVICE CHANGES" Action button
+	And User clicks the "UPDATE ALL CHANGES" Action button
 	And User clicks the "UPDATE PROJECT" Action button
 	And User clicks "Users" tab in the Project Scope Changes section
 	And User expands the object to add 
