@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache
 	And User clicks the "UPDATE" Action button
 	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS13026 @DAS14187 @Remove_Password_Changes @Not_Run
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS13026 @DAS14187 @Remove_Password_Changes
 Scenario: EvergreenJnr_UserProfile_ChangingPassword
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user

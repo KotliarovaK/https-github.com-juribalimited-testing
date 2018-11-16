@@ -103,7 +103,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppro
 	| Applications | Version            |
 	| Mailboxes    | Owner Display Name |
 
-@Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS12545 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS12545 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

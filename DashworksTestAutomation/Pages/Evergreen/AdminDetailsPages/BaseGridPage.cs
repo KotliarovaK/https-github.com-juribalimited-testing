@@ -443,7 +443,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void GetBooleanStringFilterByName(string filterName)
         {
-            var filterSelector = $"//span[(text()='{filterName}')]";
+            var filterSelector = $"//span[contains(text(), '{filterName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }

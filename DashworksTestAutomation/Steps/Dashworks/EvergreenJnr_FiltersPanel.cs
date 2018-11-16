@@ -247,7 +247,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var associationList = filterElement.GetAssociationsList().Select(element => element.Text).ToList();
             foreach (var association in associationList)
                 StringAssert.Contains(searchCriteria.ToLower(), association.ToLower(),
-                    $"Search in Associations list is not working for {searchCriteria} value");
+                    $"Search in Associations list is not working for '{searchCriteria}' value");
         }
 
         [Then(@"""(.*)"" filter is not presented in the filters list")]

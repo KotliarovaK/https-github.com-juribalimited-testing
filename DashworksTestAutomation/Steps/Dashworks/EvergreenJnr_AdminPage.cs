@@ -558,14 +558,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectRecordByName(recordName);
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Admin page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheAdminPage(string filterName)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.GetBooleanStringFilterByName(filterName);
-            page.BodyContainer.Click();
-        }
-
         [Then(@"field for Date column is empty")]
         public void ThenFieldForDateColumnIsEmpty()
         {
@@ -589,6 +581,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Admin page")]
+        public void WhenUserClicksCheckboxFromStringFilterOnTheAdminPage(string filterName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetBooleanStringFilterByName(filterName);
             page.BodyContainer.Click();
         }
 
@@ -1125,7 +1125,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsObjectsToBucket(string objectName)
         {
             var objects = _driver.NowAt<BucketsPage>();
-            objects.SelectObjectByName(objectName);
+            objects.SearchFieldForBucketsPage.SendKeys(objectName);
+            objects.SelectObjectByName(objectName).Click();
         }
 
         [Then(@"Create Team button is disabled")]
@@ -2051,6 +2052,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
             searchElement.AddDateByFieldName(fieldName, date);
+        }
+
+        [Then(@"Create Override Date is displayed correctly")]
+        public void ThenCreateOverrideDateIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<Capacity_OverrideDatesPage>();
+            Assert.IsTrue(page.CreateOverrideDatePageTitle.Displayed, "Create Override Date title is not displayed");
         }
 
         [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]

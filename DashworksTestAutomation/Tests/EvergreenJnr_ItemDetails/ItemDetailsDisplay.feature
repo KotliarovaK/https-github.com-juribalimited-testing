@@ -28,7 +28,7 @@ Examples:
 	| Mailboxes | alex.cristea@juriba.com       | Mailbox      | Mail Server       | False        |
 	| Devices   | 001BAQXT6JWFPI                | Device Owner | Last Logoff Date  | False        |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPage
 	When User type "NL00G001" in Global Search Field
 	Then User clicks on "NL00G001" search result
@@ -360,7 +360,7 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11628 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatTheFilterDropddownIsDisplayedFullyWhenTheFilterResultNotContainsValues
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -687,7 +687,7 @@ Examples:
 	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
 	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
 	When User type "NL00G001" in Global Search Field
 	Then User clicks on "NL00G001" search result

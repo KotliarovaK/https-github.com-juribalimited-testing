@@ -778,5 +778,12 @@ public IWebElement GetOptionByName(string optionName)
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetDropdownByFieldName(string name)
+        {
+            var selector = By.XPath($"//textarea[@placeholder='{name}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

@@ -71,10 +71,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User enters "test" in the Team Description field
 	And User clicks the "CREATE TEAM" Action button
 	Then Error message with "A team already exists with this name" text is displayed
-	When User enters "99770" text in the Search field for "Team" column
-	And User selects all rows on the grid
-	And User removes selected item
-	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
@@ -393,7 +389,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "5" text in the Search field for "Project Buckets" column
-	Then Counter shows "1" found rows
+	Then Counter shows "2" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
 	Then Counter shows "4" found rows

@@ -158,7 +158,7 @@ Examples:
 	#| Application Owner (App Custom Fields)                                                                   | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                      | 16,222 |                                                                                                                                                                                                                                                   |
 	#| Application Name                                                                                        | evergreen/#/devices?$filter=(applicationName%20IS%20EMPTY%20()%20WHERE%20(iod))                                                                                                                                              | 6      |                                                                                                                                                                                                                                                   |
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList
 	When User create static list with "StaticList13179" name on "Applications" page with following items
 	| ItemName |
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And "17,225" rows are displayed in the agGrid
 	And "Any Application in list Dynamic13179 not entitled to device's owner; not used by device's owner; not installed on device; not entitled to device; or not used on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                                                        | QueryStringURL                                                                                                                                               |
@@ -279,7 +279,7 @@ Examples:
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20NOT%20EQUALS%20('ACDSee%204.0')%20WHERE%20(nioadobu%2Cnuodobu%2Cnetu%2Cnubu%2Cnetdobu))        | 41,339 |
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20CONTAINS%20('%25')%20WHERE%20(netu))                                                           | 36,502 |
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20BEGINS%20WITH%20('A')%20WHERE%20(ubu%2Cetu))                                                   | 946    |
-	| Application Name                      | evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('A')%20WHERE%20(nuodobu%2Cnetdobu))                               | 41,241 |
+	| Application Name                      | evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('A')%20WHERE%20(nuodobu%2Cnetdobu))                               | 41,254 |
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20('a')%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))               | 14,956 |
 	| Application Vendor                    | evergreen/#/users?$filter=(applicationManufacturer%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(ubu))                                  | 94     |
 	| Application Vendor                    | evergreen/#/users?$filter=(applicationManufacturer%20NOT%20EQUALS%20('Abacre')%20WHERE%20(netu))                                            | 36,502 |

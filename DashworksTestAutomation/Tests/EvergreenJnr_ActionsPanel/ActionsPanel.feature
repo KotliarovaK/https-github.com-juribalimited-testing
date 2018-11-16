@@ -483,7 +483,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with " Your changes have successfully been queued, 2 of 2 objects were valid for the update." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 2 of 2 objects were valid for the update." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
@@ -706,10 +706,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Babel (English, German and French)               |
 	| Barry's User Project                             |
 	| Computer Scheduled Test (Jo)                     |
+	| Devices Evergreen Capacity Project               |
 	| Havoc (Big Data)                                 |
 	| I-Computer Scheduled Project                     |
 	| Migration Project Phase 2 (User Project)         |
 	| Project K-Computer Scheduled Project             |
+	| User Evergreen Capacity Project                  |
 	| User Scheduled Test (Jo)                         |
 	| Windows 7 Migration (Computer Scheduled Project) |
 	When User clicks the Columns button
@@ -1075,7 +1077,7 @@ Examples:
 	| 00HA7MKAVVFDAV | Your changes have successfully been queued, 1 of 1 object was valid for the update. |
 	| 00I0COBFWHOF27 | 0 of 1 object was valid for the update.                                           |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1161,7 +1163,7 @@ Examples:
 	| DAS1324 | LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
 	| DAS1325 | ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1246,7 +1248,7 @@ Examples:
 	| DAS1333 | LZI970280  | May 09, 2018 | Admin IT | Sep 03, 2018 | IB Team             | Not Applicable |
 	| DAS1334 | ZQX656408  | Aug 15, 2018 | Admin IT | Aug 30, 2018 | Migration Phase 2   | Not Applicable |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1288,6 +1290,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "<NewValue>" Value on Action panel
 	And User selects "Update" Update Date on Action panel
 	And User selects "<NewDate>" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
@@ -1326,13 +1329,13 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 
 Examples: 
 	| Name     | RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
-	| DAS13280 | CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
+	| DAS13280 | CQV0623434 | Complete       | Nov 15, 2018 | Started        | May 08, 2015 |
 	| DAS13281 | BBZ877343  | Failed         | Aug 28, 2001 | Not Applicable | Sep 07, 2018 |
 	| DAS13282 | DLL972653  | Complete       | Aug 30, 2018 | Not Started    | Sep 05, 2018 |
 	| DAS13283 | LZI970280  | Not Applicable | May 09, 2018 | Failed         | Sep 03, 2018 |
 	| DAS13284 | ZQX656408  | Not Applicable | Aug 15, 2018 | Complete       | Aug 30, 2018 |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1408,7 +1411,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13290" User
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Counter shows "2" found rows
 	When User resets Search fields for columns
 	And User enters "=2" text in the Search field for "Users" column
-	Then Counter shows "2" found rows
+	Then Counter shows "3" found rows
 	When User resets Search fields for columns
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column

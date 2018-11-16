@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then Project "ProjectForCapacity13723" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
-	When User clicks the "ADD OVERRIDE DATE" Action button
+	When User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "4 Oct 2018" date in the "Override Start Date" field
 	And User enters "7 Oct 2018" date in the "Override End Date" field
 	And User clicks the "CREATE" Action button
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -196,19 +196,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And User enters "18 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
 	And User clicks the "CREATE" Action button
 	And User selects "Override Dates" tab on the Project details page
-	And User clicks the "ADD OVERRIDE DATE" Action button
+	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "17 Oct 2018" date in the "Override Start Date" field
 	And User enters "17 Oct 2018" date in the "Override End Date" field
 	And User selects "SlotDAS13780_1" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
-	And User clicks the "ADD OVERRIDE DATE" Action button
+	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "17 Oct 2018" date in the "Override Start Date" field
 	And User enters "17 Oct 2018" date in the "Override End Date" field
 	And User selects "SlotDAS13780_2" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
-	And User clicks the "ADD OVERRIDE DATE" Action button
+	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "17 Oct 2018" date in the "Override Start Date" field
 	And User enters "17 Oct 2018" date in the "Override End Date" field
 	And User selects "All" in the "Slot" dropdown
@@ -332,7 +332,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	#And User selects "Slots" tab on the Project details page
 	#Then "No slots found" message is displayed on the Admin Page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -350,13 +350,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User enters "29 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
 	And User clicks the "CREATE" Action button
 	And User selects "Override Dates" tab on the Project details page
-	And User clicks the "ADD OVERRIDE DATE" Action button
-	And User enters "29 Oct 2018" date in the "Override Start Date" field
-	And User enters "29 Oct 2018" date in the "Override End Date" field
-	And User selects "SlotDAS13779" in the "Slot" dropdown
+	And User clicks the "CREATE OVERRIDE DATE" Action button
+	Then Create Override Date is displayed correctly
+	And "CREATE" Action button is disabled
+	When User enters "29 Oct 2018" date in the "Override Start Date" field
+	Then "CREATE" Action button is disabled
+	When User enters "29 Oct 2018" date in the "Override End Date" field
+	Then "CREATE" Action button is active
+	When User selects "SlotDAS13779" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
-	And User clicks the "ADD OVERRIDE DATE" Action button
+	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "29 Oct 2018" date in the "Override Start Date" field
 	And User enters "29 Oct 2018" date in the "Override End Date" field
 	And User selects "SlotDAS13779" in the "Slot" dropdown
@@ -421,13 +425,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks newly created object link
 	When User selects "Override Dates" tab on the Project details page
-	And User clicks the "ADD OVERRIDE DATE" Action button
+	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "1 Sep 2018" date in the "Override Start Date" field
 	And User enters "7 Sep 2018" date in the "Override End Date" field
 	And User selects "Slot13442" in the "Slot" dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
-	When User clicks the "ADD OVERRIDE DATE" Action button
+	When User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "5 Sep 2018" date in the "Override Start Date" field
 	And User enters "10 Sep 2018" date in the "Override End Date" field
 	And User selects "Slot13442" in the "Slot" dropdown

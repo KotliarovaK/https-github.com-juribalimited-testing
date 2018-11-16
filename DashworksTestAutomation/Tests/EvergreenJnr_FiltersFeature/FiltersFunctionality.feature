@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,141" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1287,10 +1287,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFiltersWorksProperlyWithPositiv
 	When User add "User Last Logon Date" filter where type is "After" with following Data and Association:
 	| Values     | Association                             |
 	| 1 May 2011 | Has used app                            |
-	| 1 May 2011 | Entitled to app                         |
-	| 1 May 2011 | Owns a device which app was used on     |
-	| 1 May 2011 | Owns a device which app is entitled to  |
-	| 1 May 2011 | Owns a device which app is installed on |
+	|            | Entitled to app                         |
+	|            | Owns a device which app was used on     |
+	|            | Owns a device which app is entitled to  |
+	|            | Owns a device which app is installed on |
 	Then "1,206" rows are displayed in the agGrid
 	When User click Edit button for " Last Logon Date" filter
 	Then only positive Associations is displayed

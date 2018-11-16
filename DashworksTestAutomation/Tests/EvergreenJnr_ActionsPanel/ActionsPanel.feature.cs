@@ -947,8 +947,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \" Your changes have successfully been queued, 2 of 2 objects" +
-                    " were valid for the update.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Success message with \"Your changes have successfully been queued, 2 of 2 objects " +
+                    "were valid for the update.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User perform search by \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007" +
                     ")\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1337,6 +1337,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table49.AddRow(new string[] {
                         "Computer Scheduled Test (Jo)"});
             table49.AddRow(new string[] {
+                        "Devices Evergreen Capacity Project"});
+            table49.AddRow(new string[] {
                         "Havoc (Big Data)"});
             table49.AddRow(new string[] {
                         "I-Computer Scheduled Project"});
@@ -1344,6 +1346,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Migration Project Phase 2 (User Project)"});
             table49.AddRow(new string[] {
                         "Project K-Computer Scheduled Project"});
+            table49.AddRow(new string[] {
+                        "User Evergreen Capacity Project"});
             table49.AddRow(new string[] {
                         "User Scheduled Test (Jo)"});
             table49.AddRow(new string[] {
@@ -2058,6 +2062,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1321", "CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1322", "BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1323", "DLL972653", "Complete", "Admin IT", "Not Started", "K-Team", new string[0])]
@@ -2073,7 +2078,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287"};
+                    "DAS13287",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2191,6 +2197,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1330", "CQV0623434", "May 19, 2018", "Admin IT", "May 08, 2015", "Administrative Team", "Complete", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1331", "BBZ877343", "Aug 28, 2001", "Admin IT", "Sep 07, 2018", "Retail Team", "Failed", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1332", "DLL972653", "Aug 30, 2018", "Admin IT", "Sep 05, 2018", "K-Team", "Complete", new string[0])]
@@ -2206,7 +2213,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287"};
+                    "DAS13287",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2322,7 +2330,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.TestCaseAttribute("DAS13280", "CQV0623434", "Complete", "Sep 01, 2009", "Started", "May 08, 2015", new string[0])]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("DAS13280", "CQV0623434", "Complete", "Nov 15, 2018", "Started", "May 08, 2015", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS13281", "BBZ877343", "Failed", "Aug 28, 2001", "Not Applicable", "Sep 07, 2018", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS13282", "DLL972653", "Complete", "Aug 30, 2018", "Not Started", "Sep 05, 2018", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS13283", "LZI970280", "Not Applicable", "May 09, 2018", "Failed", "Sep 03, 2018", new string[0])]
@@ -2337,7 +2346,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287"};
+                    "DAS13287",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2404,6 +2414,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User selects \"{0}\" Date on Action panel", newDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2453,6 +2464,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13290")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly", new string[] {
@@ -2461,7 +2473,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS12864",
-                        "DAS13290"});
+                        "DAS13290",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2572,6 +2585,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13291")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly", new string[] {
@@ -2580,7 +2594,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS12864",
-                        "DAS13291"});
+                        "DAS13291",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

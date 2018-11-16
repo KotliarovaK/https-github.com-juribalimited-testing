@@ -352,7 +352,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("DAS14187")]
         [NUnit.Framework.CategoryAttribute("Remove_Password_Changes")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UserProfile_ChangingPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_ChangingPassword", new string[] {
@@ -362,8 +361,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                         "UserProfile",
                         "DAS13026",
                         "DAS14187",
-                        "Remove_Password_Changes",
-                        "Not_Run"});
+                        "Remove_Password_Changes"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

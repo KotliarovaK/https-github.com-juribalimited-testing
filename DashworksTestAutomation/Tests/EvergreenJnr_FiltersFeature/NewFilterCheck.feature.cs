@@ -123,6 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Key", "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less t" +
             "han or equal to", "1051", "Windows7Mi: Target App Key is 1051", "4", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Key", "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less t" +
@@ -144,7 +145,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10828"};
+                    "DAS10828",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -331,6 +333,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10578")]
+        [NUnit.Framework.CategoryAttribute("DAS14159")]
         [NUnit.Framework.TestCaseAttribute("Devices", "17,225", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "41,335", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "2,223", new string[0])]
@@ -342,7 +345,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "AllLists",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10578"};
+                    "DAS10578",
+                    "DAS14159"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -362,8 +366,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Dashworks First Seen\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Equals, Does not equal, Before, After, Empty, Not empty\" option is available for" +
-                    " this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Equals, Does not equal, Before, Before now, After, After now, Empty, Not empty\" " +
+                    "option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have created \"Empty\" Date filter with column and \"\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Dashworks First Seen is empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

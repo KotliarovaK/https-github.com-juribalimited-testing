@@ -767,7 +767,7 @@ Examples:
 	| Users        | City            | Description   | Floor                |
 	| Mailboxes    | Alias           | Time Zone     | Building             |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS14183 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS14183
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -881,7 +881,7 @@ Examples:
 	| Applications | Application   | Adobe     | 40    | 1       |
 	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

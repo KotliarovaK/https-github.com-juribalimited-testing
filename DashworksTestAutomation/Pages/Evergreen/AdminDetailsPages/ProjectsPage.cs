@@ -247,9 +247,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void GetCheckboxStringFilterByName(string filterName)
         {
-            var filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
-            Driver.FindElement(By.XPath(filterSelector)).Click();
+            if (filterName.Equals("Select All"))
+            {
+                var selector = "//div[contains(@class, 'selectAll')]";
+                Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+                Driver.FindElement(By.XPath(selector)).Click();
+            }
+            else
+            {
+                var filterSelector = $"//div[@class='mat-list-item-content']//div[contains(text(), '{filterName}')]";
+                Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+                Driver.FindElement(By.XPath(filterSelector)).Click();
+            }
         }
 
         public void SelectProjectLanguage(string language)
@@ -301,7 +310,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetFieldNameByPage(string name)
         {
-            var selector = By.XPath($".//label[text()='{name}']/ancestor::div[@class='form-item']//input");
+            //var selector = By.XPath($".//label[text()='{name}']/ancestor::div[@class='form-item']//input");
+            var selector = By.XPath($".//input[@placeholder='{name}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
