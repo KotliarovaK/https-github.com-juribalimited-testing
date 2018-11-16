@@ -271,7 +271,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetChangeValueInPopUpByName(string value)
         {
-            var selector = By.XPath($"//td[text()='{value}']/..//div[@class='mat-form-field-infix']");
+            var selector = By.XPath($"//span[text()='{value}']/ancestor::mat-select");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

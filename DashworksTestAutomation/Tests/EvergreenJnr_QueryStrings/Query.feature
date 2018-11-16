@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And "17,196" rows are displayed in the agGrid
 	And "Any Application in list StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -286,7 +286,7 @@ Examples:
 	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20%3D%201%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))                                        | 367    |
 	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20<>%201%20WHERE%20(nioadobu%2Cnetdobu%2Cnuodobu%2Cnetu%2Cnubu))                                  | 41,339 |
 	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20%3E%3D%201%20WHERE%20(ubu))                                                                     | 99     |
-	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))                                                            | 41,333 |
+	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))                                                            | 41,339 |
 	| Application Owner (App Custom Fields) | evergreen/#/users?$filter=(applicationCustomField_80%20EQUALS%20('App%20Discovery')%20WHERE%20(ubu%2Cetu%2Ciodobu%2Cetdobu%2Cuodou))        | 871    |
 	#| Application Import                    | evergreen/#/users?$filter=(applicationImport%20NOT%20EQUALS%20('A01%20SMS%20(Spoof%C2%A7')%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu)) | 4,910  |
 	#| Application Name                      | evergreen/#/users?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20())                                                            | 26,802 |

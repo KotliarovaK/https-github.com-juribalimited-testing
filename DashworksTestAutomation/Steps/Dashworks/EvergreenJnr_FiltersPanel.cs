@@ -185,6 +185,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Search field in selected Filter is empty")]
+        public void ThenSearchFieldInSelectedFilterIsEmpty()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsEmpty(filterElement.FilterSearchTextBox.Text, "Search field in selected Filter is not empty");
+        }
+
         [When(@"User enters ""(.*)"" in Association search field")]
         public void WhenUserEntersInAssociationSearchField(string searchedText)
         {
@@ -206,6 +213,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.GetAssociationCheckbox(checkboxName);
         }
 
+        [When(@"User select ""(.*)"" Association for Application filter with Lookup value")]
+        public void WhenUserSelectAssociationForApplicationFilterWithLookupValue(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextBox.Click();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextBox);
+            filterElement.AssociationSearchTextBox.Clear();
+            filterElement.AssociationSearchTextBox.SendKeys(checkboxName);
+            filterElement.GetCheckboxForAssociationLookupFilter(checkboxName);
+        }
+
         [When(@"User is deselect ""(.*)"" in Association")]
         public void WhenUserIsDeselectInAssociation(string checkboxName)
         {
@@ -213,6 +231,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.AssociationSearchTextBox.Click();
             filterElement.AssociationSearchTextBox.SendKeys(checkboxName);
             filterElement.GetAssociationCheckbox(checkboxName);
+            filterElement.AssociationSearchTextBox.Clear();
+        }
+
+        [When(@"User is deselect ""(.*)"" Association for Application filter with Lookup value")]
+        public void WhenUserIsDeselectAssociationForApplicationFilterWithLookupValue(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AssociationSearchTextBox.Click();
+            filterElement.AssociationSearchTextBox.SendKeys(checkboxName);
+            filterElement.GetCheckboxForAssociationLookupFilter(checkboxName);
             filterElement.AssociationSearchTextBox.Clear();
         }
 

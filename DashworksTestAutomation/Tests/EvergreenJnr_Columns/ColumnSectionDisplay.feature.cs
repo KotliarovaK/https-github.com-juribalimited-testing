@@ -1898,6 +1898,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table87.AddRow(new string[] {
                         "prK: Email to be sent - All Placeholders"});
             table87.AddRow(new string[] {
+                        "prK: Email to be sent - All Placeholders (Slot)"});
+            table87.AddRow(new string[] {
                         "prK: user-group-radb-k"});
             testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table87, "Then ");
             this.ScenarioCleanup();

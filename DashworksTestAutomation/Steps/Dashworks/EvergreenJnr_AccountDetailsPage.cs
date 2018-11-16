@@ -108,6 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User changes List Page Size to ""(.*)""")]
@@ -244,6 +245,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                        ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User Upload correct avatar to Account Details")]
@@ -255,6 +257,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                        ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on Account Details page")]
@@ -289,6 +292,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitForDataLoading();
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
@@ -320,7 +324,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             Assert.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
             Assert.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 

@@ -770,7 +770,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
 
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @DAS13376 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @DAS13376 @DAS14222 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -796,7 +796,7 @@ Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfte
 	When User navigates to the "TestList8D5C03" list
 	Then "TestList8D5C03" list is displayed to user
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS13376 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS13376 @DAS14222 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
