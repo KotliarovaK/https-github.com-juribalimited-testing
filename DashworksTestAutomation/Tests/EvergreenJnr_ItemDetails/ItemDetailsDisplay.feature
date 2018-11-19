@@ -28,7 +28,7 @@ Examples:
 	| Mailboxes | alex.cristea@juriba.com       | Mailbox      | Mail Server       | False        |
 	| Devices   | 001BAQXT6JWFPI                | Device Owner | Last Logoff Date  | False        |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11721
 Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPage
 	When User type "NL00G001" in Global Search Field
 	Then User clicks on "NL00G001" search result
@@ -444,7 +444,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	And User clicks String Filter button for "Workflow" column
 	Then "(Blanks)" checkbox is checked on the Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
 Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -687,7 +687,7 @@ Examples:
 	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
 	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
 Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
 	When User type "NL00G001" in Global Search Field
 	Then User clicks on "NL00G001" search result
