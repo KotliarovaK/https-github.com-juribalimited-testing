@@ -521,7 +521,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks "True" checkbox from String Filter on the Admin page
 	Then There are no errors in the browser console
 	When User have opened Column Settings for "Project" column
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter on the Admin page
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	#Add sorting check for "Bucket" column

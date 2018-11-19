@@ -313,7 +313,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 3 of 3 object was in the selected project." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 3 of 3 objects were in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001PSUMZYOW581"
 	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
@@ -398,7 +398,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 3 of 3 object was in the selected project." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 3 of 3 objects were in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "FMN5805290"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
@@ -483,7 +483,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 2 of 2 object was in the selected project." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 2 of 2 objects were in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
@@ -1513,7 +1513,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 7578 of 7578 object was in the selected project." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 7578 of 7578 objects were in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Started" content is displayed in "Havoc(BigD: Task 0" column
 

@@ -571,9 +571,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filter = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             filter.ResetFiltersButton.Click();
-            foreach (var row in table.Rows) filter.DateFilterValue.SendKeys(row["FilterData"]);
-
-            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+                filter.DateFilterValue.SendKeys(row["FilterData"]);
+                filter.DateFilterValue.SendKeys(OpenQA.Selenium.Keys.Enter);
+            }
         }
 
         [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
@@ -2135,9 +2137,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(filterElement.CheckStringFilterByName(filterName));
+            Assert.IsFalse(filterElement.GetStringFilterByName(filterName).Displayed());
         }
-
+        
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
         public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {
@@ -2257,7 +2259,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsAreDisplayedInTheAgGrid(string numberOfRows)
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
@@ -2278,17 +2279,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForDataLoading();
-            var tiles = page.GetTilesByDropdownName(dropdownName);
-
-            if (tiles.Count > 0)
+            foreach (var row in items.Rows)
             {
-                for (var i = 0; i < items.RowCount; i++)
-                    Assert.That(tiles[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
-                        "Tiles are not the same");
-            }
-            else
-            {
-                Assert.That(items.RowCount, Is.EqualTo(tiles.Count));
+                Assert.IsTrue(page.GetTilesByDropdownName(row["Items"]).Displayed,
+                    $"{row["Items"]} is not displayed in {dropdownName} dropdown");
             }
         }
 

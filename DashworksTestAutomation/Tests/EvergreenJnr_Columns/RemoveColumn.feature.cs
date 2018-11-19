@@ -897,7 +897,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table55.AddRow(new string[] {
                         "Windows7Mi: Technical Test"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table55, "And ");
-            testRunner.And("\"10\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"11\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         

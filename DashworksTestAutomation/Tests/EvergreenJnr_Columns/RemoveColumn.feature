@@ -396,7 +396,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatColumnIsDisplayedInColumnsPanel
 	And ColumnName is removed from the list
 	| ColumnName                 |
 	| Windows7Mi: Technical Test |
-	And "10" subcategories is displayed for "Project Tasks: Windows7Mi" category
+	And "11" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
 @Evergreen @Devices @EvergreenJnr_Columns @RemoveColumn @DAS11037
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ErrorNotDisplayedAfterRemovingUsernameOrHostnameColumn 

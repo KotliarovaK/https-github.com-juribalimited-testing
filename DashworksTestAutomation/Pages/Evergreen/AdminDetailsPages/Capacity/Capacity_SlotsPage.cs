@@ -64,10 +64,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             return Driver.FindElement(selector);
         }
 
-        public IList<IWebElement> GetTilesByDropdownName(string dropdownName)
+        public IWebElement GetTilesByDropdownName(string dropdownName)
         {
-            var selector = By.XPath($".//input[@placeholder='{dropdownName}']/../*[@role='option']");
-            return Driver.FindElements(selector);
+            var selector = By.XPath($".//span[text()='{dropdownName}']//parent::mat-chip[@role='option']");
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetLanguageInTranslationsTableByName(string language)
