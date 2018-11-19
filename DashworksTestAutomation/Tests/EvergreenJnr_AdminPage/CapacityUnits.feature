@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDelet
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	Then Warning message with "These units will be permanently deleted and any objects within them reassigned to the default unit" text is displayed on the Admin page
-						  
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
