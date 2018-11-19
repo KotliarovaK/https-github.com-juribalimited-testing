@@ -436,7 +436,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             Assert.IsTrue(action.SuccessMessage.Displayed(), "Success message is not displayed");
-            Thread.Sleep(5000);
+            Thread.Sleep(7000);
             Assert.IsFalse(action.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
