@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'BulkUpdate')]")]
         public IWebElement BulkUpdate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelfService')]")]
+        [FindsBy(How = How.XPath, Using = "//tr[contains(@id, 'SelfService')]//input[contains(@id, 'SelfService')]")]
         public IWebElement SelfService { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update Task']")]
