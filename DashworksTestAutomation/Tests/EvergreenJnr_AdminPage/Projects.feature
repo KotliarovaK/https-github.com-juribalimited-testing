@@ -3043,7 +3043,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects
 Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	And User clicks the "IMPORT PROJECT" Action button
