@@ -332,6 +332,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	#And User selects "Slots" tab on the Project details page
 	#Then "No slots found" message is displayed on the Admin Page
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS12921
+Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| User Slot 1      |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	Then Warning message with "The selected slot will be deleted, do you want to proceed?" text is displayed on the Admin page
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| User Slot 2      |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	Then Warning message with "The selected slots will be deleted, do you want to proceed?" text is displayed on the Admin page
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
