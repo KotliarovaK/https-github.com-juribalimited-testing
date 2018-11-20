@@ -1876,6 +1876,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13792")]
         [NUnit.Framework.CategoryAttribute("DAS13788")]
+        [NUnit.Framework.CategoryAttribute("DAS14241")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage()
@@ -1889,6 +1890,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Slots",
                         "DAS13792",
                         "DAS13788",
+                        "DAS14241",
                         "Delete_Newly_Created_Project",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
