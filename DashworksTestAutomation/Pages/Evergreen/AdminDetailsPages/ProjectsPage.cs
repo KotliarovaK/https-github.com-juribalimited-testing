@@ -249,13 +249,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             if (filterName.Equals("Select All"))
             {
-                var selector = "//div[contains(@class, 'selectAll')]";
+                var selector = "//span[@class='mat-checkbox-label'][text()='Select All']";
                 Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
                 Driver.FindElement(By.XPath(selector)).Click();
             }
             else
             {
-                var filterSelector = $"//div[@class='mat-list-item-content']//div[contains(text(), '{filterName}')]";
+                var filterSelector = $"//mat-option//div//span[text()='{filterName}']";
                 Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
                 Driver.FindElement(By.XPath(filterSelector)).Click();
             }

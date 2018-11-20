@@ -444,7 +444,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void GetBooleanStringFilterByName(string filterName)
         {
-            var filterSelector = $"//mat-list-option//span[contains(text(), '{filterName}')]";
+            var filterSelector = $"//mat-option//span[text()='{filterName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }

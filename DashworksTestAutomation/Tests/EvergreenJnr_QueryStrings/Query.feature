@@ -76,7 +76,7 @@ Runs Evergreen URL query strings for the Mailboxes List.
 	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus                                                      |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684 @Not_Run
 Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -114,7 +114,7 @@ Examples:
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20('%25SQL_PRODUCT_SHORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                 | 17,225 |
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20CONTAINS%20('7zip')%20WHERE%20(nuod))                                                                                                                                  | 17,225 |
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20BEGINS%20WITH%20('7zip')%20WHERE%20(ubdo%2Cetd))                                                                                                                       | 11     |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('7zip')%20WHERE%20(nubdo%2Cnetdo))                                                                                                        | 17,066 |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('7zip')%20WHERE%20(nubdo%2Cnetdo))                                                                                                        | 17,096 |
 	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(etdo))                                                                                                         | 95     |
 	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20NOT%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(netdo))                                                                                                  | 12,200 |
 	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20EQUALS%20('App%20Discovery')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                                                      | 1,003  |
@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And "7,365" rows are displayed in the agGrid
 	And "Any Application in list StaticList12911 not installed on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                          | QueryStringURL                                                                              |
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	Then "Dynamic13579" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                                                        | QueryStringURL                                                                          |
-	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('392')%20WHERE%20(uod)) |
+	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('346')%20WHERE%20(uod)) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter

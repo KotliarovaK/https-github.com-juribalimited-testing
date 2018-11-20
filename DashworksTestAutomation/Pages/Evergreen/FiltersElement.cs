@@ -519,7 +519,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectSavedListByName(string listName)
         {
-            var checkboxSelector = $".//mat-checkbox//span[text()='{listName}']";
+            var checkboxSelector = $".//div//span[text()='{listName}']";
             Driver.FindElement(By.XPath(checkboxSelector)).Click();
         }
 

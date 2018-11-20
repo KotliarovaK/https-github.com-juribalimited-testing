@@ -3987,7 +3987,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Buckets\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Project\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks \"Select All\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Select All\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Project\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"1DevicesProject\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Unassigned\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5753,15 +5753,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table128.AddRow(new string[] {
                         "Computer Scheduled Test (Jo)"});
             table128.AddRow(new string[] {
+                        "Devices Evergreen Capacity Project"});
+            table128.AddRow(new string[] {
                         "Email Migration"});
             table128.AddRow(new string[] {
                         "Havoc (Big Data)"});
             table128.AddRow(new string[] {
                         "I-Computer Scheduled Project"});
             table128.AddRow(new string[] {
+                        "Mailbox Evergreen Capacity Project"});
+            table128.AddRow(new string[] {
                         "Migration Project Phase 2 (User Project)"});
             table128.AddRow(new string[] {
                         "Project K-Computer Scheduled Project"});
+            table128.AddRow(new string[] {
+                        "User Evergreen Capacity Project"});
             table128.AddRow(new string[] {
                         "User Scheduled Project in Italian & Japanese (Jo)"});
             table128.AddRow(new string[] {
@@ -5992,6 +5998,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticList" +
@@ -6003,7 +6010,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13110",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Project",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
@@ -6381,8 +6389,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table160.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
             testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table160, "Then ");
-            testRunner.When("User clicks String Filter button for \"Object Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Device\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
@@ -6652,9 +6658,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table164.AddRow(new string[] {
                         "Details"});
             table164.AddRow(new string[] {
-                        "Slots"});
-            table164.AddRow(new string[] {
                         "Units"});
+            table164.AddRow(new string[] {
+                        "Slots"});
             table164.AddRow(new string[] {
                         "Override Dates"});
             testRunner.Then("Menu options are displayed in the following order on the Admin page:", ((string)(null)), table164, "Then ");

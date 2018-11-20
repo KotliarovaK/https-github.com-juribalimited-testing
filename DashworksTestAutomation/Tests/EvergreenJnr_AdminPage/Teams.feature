@@ -247,8 +247,9 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then numeric data in table is sorted by "Mailboxes" column in descending order on the Admin page
 	When User click on "Mailboxes" column header on the Admin page
 	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
-	When User have opened Column Settings for "Default" column
-	And User clicks Filter button in the Column Settings panel on the Teams Page
+	#When User have opened Column Settings for "Default" column
+	#And User clicks Filter button in the Column Settings panel on the Teams Page
+	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "False" checkbox from String Filter on the Admin page
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
@@ -375,8 +376,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then There are no errors in the browser console
 	When User click on Back button
-	And User have opened Column Settings for "Default" column
-	And User clicks Filter button in the Column Settings panel on the Teams Page
+	#And User have opened Column Settings for "Default" column
+	#And User clicks Filter button in the Column Settings panel on the Teams Page
+	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "True" checkbox from String Filter on the Admin page
 	Then Counter shows "2,789" found rows
 	Then There are no errors in the browser console

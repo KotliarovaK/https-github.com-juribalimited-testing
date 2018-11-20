@@ -30,7 +30,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         {
             var byControl = By.XPath($".//das-datepicker/*//input[@placeholder='{placeholder}']");
 
-            Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).ClearWithBackspaces();

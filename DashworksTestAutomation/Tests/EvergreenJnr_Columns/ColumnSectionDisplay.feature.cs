@@ -1738,6 +1738,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13419")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks", new string[] {
@@ -1745,7 +1746,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Devices",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS13419"});
+                        "DAS13419",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1772,6 +1774,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table86.AddRow(new string[] {
                         "Windows7Mi: Computer Read Only Task in Self Service"});
             table86.AddRow(new string[] {
+                        "Windows7Mi: Computer Read Only Task in Self Service (Slot)"});
+            table86.AddRow(new string[] {
                         "Windows7Mi: Date & Time Task"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Date Workstation Task"});
@@ -1782,11 +1786,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table86.AddRow(new string[] {
                         "Windows7Mi: Forecast Date"});
             table86.AddRow(new string[] {
+                        "Windows7Mi: Forecast Date (Slot)"});
+            table86.AddRow(new string[] {
                         "Windows7Mi: Further Information"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Group Computer Non Rag Date Owner"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Group Computer Rag Radio Date Owner"});
+            table86.AddRow(new string[] {
+                        "Windows7Mi: Group Computer Rag Radio Date Owner (Slot)"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Group Date Computer Task"});
             table86.AddRow(new string[] {

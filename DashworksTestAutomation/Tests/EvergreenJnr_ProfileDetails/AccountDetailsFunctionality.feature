@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 	When User changes Email to "automation@juriba.com"
 	And User clicks the "UPDATE" Action button
 
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @API @Not_Run
 Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
 	Then default list page Size is "1000" and Cache "10"
 

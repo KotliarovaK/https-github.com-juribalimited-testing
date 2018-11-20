@@ -797,7 +797,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 	And User create custom list with "Object ID != EMPTY" name
 	Then "Object ID != EMPTY" list is displayed to user
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -812,14 +812,17 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublish
 	| Windows7Mi: Computer Read Only Task for Project Object                                                           |
 	| Windows7Mi: Computer Read Only Task in Bulk Update                                                               |
 	| Windows7Mi: Computer Read Only Task in Self Service                                                              |
+	| Windows7Mi: Computer Read Only Task in Self Service (Slot)                                                       |
 	| Windows7Mi: Date & Time Task                                                                                     |
 	| Windows7Mi: Date Workstation Task                                                                                |
 	| Windows7Mi: DateTime                                                                                             |
 	| Windows7Mi: Forecast Code                                                                                        |
 	| Windows7Mi: Forecast Date                                                                                        |
+	| Windows7Mi: Forecast Date (Slot)                                                                                 |
 	| Windows7Mi: Further Information                                                                                  |
 	| Windows7Mi: Group Computer Non Rag Date Owner                                                                    |
 	| Windows7Mi: Group Computer Rag Radio Date Owner                                                                  |
+	| Windows7Mi: Group Computer Rag Radio Date Owner (Slot)                                                           |
 	| Windows7Mi: Group Date Computer Task                                                                             |
 	| Windows7Mi: h1                                                                                                   |
 	| Windows7Mi: IP Address                                                                                           |

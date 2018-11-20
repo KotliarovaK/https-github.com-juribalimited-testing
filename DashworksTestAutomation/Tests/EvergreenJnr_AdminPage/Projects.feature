@@ -2104,7 +2104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1DevicesProject" checkbox from String Filter on the Admin page
 	Then "Unassigned" text is displayed in the table content
@@ -3063,11 +3063,14 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| Babel (English, German and French)                |
 	| Barry's User Project                              |
 	| Computer Scheduled Test (Jo)                      |
+	| Devices Evergreen Capacity Project                |
 	| Email Migration                                   |
 	| Havoc (Big Data)                                  |
 	| I-Computer Scheduled Project                      |
+	| Mailbox Evergreen Capacity Project                |
 	| Migration Project Phase 2 (User Project)          |
 	| Project K-Computer Scheduled Project              |
+	| User Evergreen Capacity Project                   |
 	| User Scheduled Project in Italian & Japanese (Jo) |
 	| User Scheduled Test (Jo)                          |
 	| Windows 7 Migration (Computer Scheduled Project)  |
@@ -3201,7 +3204,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope
 	When User create static list with "Static13110" name on "Devices" page with following items
 	| ItemName        |
@@ -3438,8 +3441,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	#| Intel(R) Processor Graphics                     |
 	#| Microsoft Exchange Client Language Pack - Hindi |
 	#| NJStar Chinese Word Processor                   |
-	When User clicks String Filter button for "Object Type" column on the Admin page
-	When User selects "Device" checkbox from String Filter on the Admin page
+	#When User clicks String Filter button for "Object Type" column on the Admin page
+	#When User clicks "Device" checkbox from String Filter on the Admin page
 	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	Then data in table is sorted by "Date" column in descending order by default on the Admin page
 
@@ -3585,8 +3588,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then Menu options are displayed in the following order on the Admin page:
 	| Options        |
 	| Details        |
-	| Slots          |
 	| Units          |
+	| Slots          |
 	| Override Dates |
 	When User clicks "Administration" navigation link on the Admin page
 	When User enters "Barry's User Project" text in the Search field for "Project" column

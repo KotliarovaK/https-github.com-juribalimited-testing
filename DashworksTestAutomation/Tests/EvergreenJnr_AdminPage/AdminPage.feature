@@ -250,7 +250,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1Project12763" checkbox from String Filter on the Admin page
 	Then "Unassigned" text is displayed in the table content
@@ -267,7 +267,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "2Project12763" checkbox from String Filter on the Admin page
 	#Then Counter shows "3" found rows
@@ -287,6 +287,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "3Project12763" is not displayed in the filter dropdown

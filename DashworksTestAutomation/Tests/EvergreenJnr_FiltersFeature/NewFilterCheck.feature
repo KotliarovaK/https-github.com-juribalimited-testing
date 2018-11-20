@@ -148,7 +148,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Dashworks First Seen" filter
-	Then "Equals, Does not equal, Before, Before now, After, After now, Empty, Not empty" option is available for this filter
+	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
 	When User have created "Empty" Date filter with column and "" option
 	Then "Dashworks First Seen is empty" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
