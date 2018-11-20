@@ -118,6 +118,32 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013
+Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	And User type "SameNameCaseSensative" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks the "CREATE UNIT" Action button
+	And User type "samenamecaseSensative" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Error message with "A capacity unit already exists with this name" text is displayed
+	And There are no errors in the browser console
+	When User select "Capacity Unit" rows in the grid
+	| SelectedRowsName         |
+	| SameNameCaseSensative |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected unit has been deleted" text
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
