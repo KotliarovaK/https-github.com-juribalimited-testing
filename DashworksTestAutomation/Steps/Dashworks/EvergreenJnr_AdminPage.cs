@@ -1500,6 +1500,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User waits and expands the ""(.*)"" panel to remove")]
+        public void WhenUserWaitsAndExpandsThePanelToRemove(string tabName)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            try
+            {
+                projectElement.PlusButton.Click();
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(60000);
+                _driver.Navigate().Refresh();
+                var projectTabs = _driver.NowAt<ProjectsPage>();
+                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+                _driver.WaitForDataLoading();
+                projectElement.PlusButton.Click();
+            }
+        }
+
         [When(@"User enters ""(.*)"" in the Search Object field")]
         public void WhenUserEntersInTheSearchObjectField(string text)
         {
@@ -2054,8 +2073,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
         public void WhenUserEntersDateInTheField(string date, string fieldName)
         {
-            var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.AddDateByFieldName(fieldName, date);
+            var page = _driver.NowAt<BaseGridPage>();
+            page.AddDateByFieldName(fieldName, date);
+            page.BodyContainer.Click();
         }
 
         [Then(@"Create Override Date is displayed correctly")]

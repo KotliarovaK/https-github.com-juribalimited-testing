@@ -251,7 +251,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity unit details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13824 @DAS14250 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13824 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -375,11 +375,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	Then Create Override Date is displayed correctly
+	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	And "CREATE" Action button is disabled
 	When User enters "29 Oct 2018" date in the "Override Start Date" field
+	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
+	#Then "CANCEL" Action button have tooltip with "" text
 	Then "CREATE" Action button is disabled
+	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	When User enters "29 Oct 2018" date in the "Override End Date" field
-	#Then "CREATE" Action button is active
+	Then "CREATE" Action button is active
 	When User selects "SlotDAS13779" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
@@ -1022,7 +1026,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
