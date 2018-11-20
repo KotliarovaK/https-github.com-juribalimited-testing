@@ -418,8 +418,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS12345")]
         [NUnit.Framework.CategoryAttribute("DAS12823")]
-        [NUnit.Framework.CategoryAttribute("DAS13668")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("DAS1366")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "Operating System", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", "Display Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "Version", new string[0])]
@@ -433,8 +432,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                     "ColumnOrder",
                     "DAS12345",
                     "DAS12823",
-                    "DAS13668",
-                    "Not_Run"};
+                    "DAS1366"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

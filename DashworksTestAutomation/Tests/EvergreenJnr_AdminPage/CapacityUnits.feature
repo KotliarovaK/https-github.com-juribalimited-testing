@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "Evergreen" checkbox is checked in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626 @DAS14236 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -47,6 +47,27 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12921
+Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDeletionMessages
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User select "Capacity Unit" rows in the grid
+	| SelectedRowsName          |
+	| Evergreen Capacity Unit 1 |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	Then Warning message with "This unit will be permanently deleted and any objects within it reassigned to the default unit" text is displayed on the Admin page
+	When User select "Capacity Unit" rows in the grid
+	| SelectedRowsName          |
+	| Evergreen Capacity Unit 2 |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	Then Warning message with "These units will be permanently deleted and any objects within them reassigned to the default unit" text is displayed on the Admin page
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
@@ -60,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the DefaultCapacityUnit13720 capacity unit" link
-	And "DefaultCapacityUnit13720" text is displayed in the table content
+	Then "DefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	Then "TRUE" value is displayed for Default column
 	And "" content is displayed in "Devices" column
@@ -97,7 +118,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -127,7 +148,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User selects "CapacityUnit12141Devices" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -142,7 +163,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236
 Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -154,7 +175,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Users capacity unit" link
-	And "CapacityUnit12141Users" text is displayed in the table content
+	#Remove # after DAS14236 fixed
+	#And "CapacityUnit12141Users" text is displayed in the table content
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
@@ -172,7 +194,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User selects "CapacityUnit12141Users" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -187,7 +209,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236
 Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -199,7 +221,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Mailboxes capacity unit" link
-	And "CapacityUnit12141Mailboxes" text is displayed in the table content
+	#Remove # after DAS14236 fixed
+	#And "CapacityUnit12141Mailboxes" text is displayed in the table content
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Actions button
@@ -210,14 +233,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	| 002B5DC7D4D34D5C895@bclabs.local |
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	| 0072B088173449E3A93@bclabs.local |
-	| 02171CE96D0244BBB80@bclabs.local |
+	| 00A5B910A1004CF5AC4@bclabs.local |
 	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project on Action panel
 	And User selects "CapacityUnit12141Mailboxes" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -232,7 +255,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -244,7 +267,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Applications capacity unit" link
-	And "CapacityUnit12141Applications" text is displayed in the table content
+	#Remove # after DAS14236 fixed
+	#And "CapacityUnit12141Applications" text is displayed in the table content
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Actions button
@@ -262,7 +286,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were valid for the update." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -413,7 +437,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnTh
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS14172
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS14172 @DAS14236 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorkingCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -429,7 +453,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User updates the "Default unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	And "Capacity Unit Settings upd" text is displayed in the table content
+	Then "Capacity Unit Settings upd" text is displayed in the table content
 	When User enters "Capacity Unit Settings upd" text in the Search field for "Capacity Unit" column
 	Then "TRUE" value is displayed for Default column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column

@@ -413,7 +413,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997 @DAS13837 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12997 @DAS13837 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfDevicesAndUsersAndMailboxesListsOfParticularBucket
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
@@ -521,7 +521,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User clicks "True" checkbox from String Filter on the Admin page
 	Then There are no errors in the browser console
 	When User have opened Column Settings for "Project" column
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter on the Admin page
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	#Add sorting check for "Bucket" column
@@ -744,3 +744,24 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	| SelectedRowsName |
 	| 2Bucket12331     |
 	Then "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" warning message is not displayed on the Buckets page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12921 @Buckets
+Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMessages
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User select "Bucket" rows in the grid
+	| SelectedRowsName   |
+	| Evergreen Bucket 3 |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
+	When User select "Bucket" rows in the grid
+	| SelectedRowsName   |
+	| Evergreen Bucket 4 |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	Then Warning message with "These buckets will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page

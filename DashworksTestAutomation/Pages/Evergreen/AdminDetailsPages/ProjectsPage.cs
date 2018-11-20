@@ -310,7 +310,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetFieldNameByPage(string name)
         {
-            //var selector = By.XPath($".//label[text()='{name}']/ancestor::div[@class='form-item']//input");
             var selector = By.XPath($".//input[@placeholder='{name}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);

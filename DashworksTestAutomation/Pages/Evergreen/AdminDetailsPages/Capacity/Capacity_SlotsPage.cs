@@ -13,6 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
         public IWebElement TitleContainer { get; set; }
 
+        [FindsBy(How = How.XPath,
+            Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']/div[@col-id='slotName']")]
+        public IList<IWebElement> GridSlotsNames { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[@class='form-item']//a[contains(text(), 'See Translations')]")]
         public IWebElement LanguageTranslationsLink { get; set; }
 
@@ -35,6 +39,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             Driver.FindElement(byControl).SendKeys(value);
         }
 
+        public void EnterValueByDayName(string value, string columnName)
+        {
+            var byControl = By.XPath($".//input[@id='{columnName.ToLower()}']");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+            Driver.FindElement(byControl).Clear();
+            Driver.FindElement(byControl).SendKeys(value);
+        }
+
         public void ClickDropdownByName(string dropdownName)
         {
             var byControl = By.XPath($"//div//input[@placeholder='{dropdownName}']");
@@ -50,10 +64,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             return Driver.FindElement(selector);
         }
 
-        public IList<IWebElement> GetTilesByDropdownName(string dropdownName)
+        public IWebElement GetTilesByDropdownName(string dropdownName)
         {
-            var selector = By.XPath($".//input[@placeholder='{dropdownName}']/../*[@role='option']");
-            return Driver.FindElements(selector);
+            var selector = By.XPath($".//span[text()='{dropdownName}']//parent::mat-chip[@role='option']");
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetLanguageInTranslationsTableByName(string language)

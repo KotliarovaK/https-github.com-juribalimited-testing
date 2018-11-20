@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
 	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -153,7 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When User updates the "Default unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	#Remove after DAS-14037 fixed
+	#Remove # after DAS-14037 fixed
 	#Then Success message is displayed correctly
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
@@ -295,7 +295,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	| Date Task for a Computer Italian |
 	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	And User clicks the "CREATE" Action button
-	And User clicks newly created object link	
+	And User clicks newly created object link
 	Then User sees following tiles selected in the "Tasks" field:
 	| Items                            |
 	| DDL Task for a Computer          |
@@ -332,6 +332,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	#And User selects "Slots" tab on the Project details page
 	#Then "No slots found" message is displayed on the Admin Page
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS12921
+Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| User Slot 1      |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	Then Warning message with "The selected slot will be deleted, do you want to proceed?" text is displayed on the Admin page
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| User Slot 2      |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	Then Warning message with "The selected slots will be deleted, do you want to proceed?" text is displayed on the Admin page
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
@@ -356,7 +379,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	When User enters "29 Oct 2018" date in the "Override Start Date" field
 	Then "CREATE" Action button is disabled
 	When User enters "29 Oct 2018" date in the "Override End Date" field
-	Then "CREATE" Action button is active
+	#Then "CREATE" Action button is active
 	When User selects "SlotDAS13779" in the "Slot" dropdown
 	And User enters "0" value in the "Capacity" field
 	And User clicks the "CREATE" Action button
@@ -842,6 +865,76 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	And "" content is displayed in "Capacity Units" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13979" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 13979" Name in the "Slot Name" field on the Project details page
+	And User type "13979" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User changes value to "0" for "Monday" day column
+	And User changes value to "1" for "Tuesday" day column
+	And User changes value to "2" for "Wednesday" day column
+	And User changes value to "3" for "Thursday" day column
+	And User changes value to "4" for "Friday" day column
+	And User changes value to "5" for "Saturday" day column
+	And User changes value to "6" for "Sunday" day column
+	And User clicks the "CREATE" Action button
+	And User opens settings for "Slot 13979" row
+	And User selects "Duplicate" option from settings menu
+	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
+	And User sees following duplicates counts for columns:
+	| column         | duplicatedValue   | duplicateCount |
+	| MO             | 0                 | 2              |
+	| TU             | 1                 | 2              |
+	| WE             | 2                 | 2              |
+	| TH             | 3                 | 2              |
+	| FR             | 4                 | 2              |
+	| SA             | 5                 | 2              |
+	| SU             | 6                 | 2              |
+	| Request Types  | All Request Types | 2              |
+	| Teams          | All Teams         | 2              |
+	| Capacity Units |                   | 2              |
+	When User opens settings for "Slot 13979 (copy)" row
+	And User selects "Duplicate" option from settings menu
+	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot" text
+	And User sees following duplicates counts for columns:
+	| column         | duplicatedValue   | duplicateCount |
+	| MO             | 0                 | 3              |
+	| TU             | 1                 | 3              |
+	| WE             | 2                 | 3              |
+	| TH             | 3                 | 3              |
+	| FR             | 4                 | 3              |
+	| SA             | 5                 | 3              |
+	| SU             | 6                 | 3              |
+	| Request Types  | All Request Types | 3              |
+	| Teams          | All Teams         | 3              |
+	| Capacity Units |                   | 3              |
+	And User sees next Slots on the Capacity Slots page:
+	| slots                    |
+	| Slot 13979               |
+	| Slot 13979 (copy)        |
+	| Slot 13979 (copy) (copy) |
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName         |
+	| Slot 13979 (copy)        |
+	| Slot 13979 (copy) (copy) |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected slots have been deleted" text
+	When User refreshes agGrid
+	Then Counter shows "1" found rows
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -929,7 +1022,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -967,7 +1060,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page

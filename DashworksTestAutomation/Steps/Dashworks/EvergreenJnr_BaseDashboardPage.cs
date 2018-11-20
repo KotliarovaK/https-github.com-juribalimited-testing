@@ -49,6 +49,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(columnName, page.GetPinnedColumnName(pinStatus), "Column is pinned incorrectly");
         }
 
+        [When(@"User opens settings for ""(.*)"" row")]
+        public void WhenUserOpensSettingsForRow(string rowName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetSettingIconByRowName(rowName).Click();
+        }
+
+        [When(@"User selects ""(.*)"" option from settings menu")]
+        public void WhenUserSelectsOptionFromSettingsMenu(string optionName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetSettingOptionByName(optionName).Click();
+        }
+
         [When(@"User move '(.*)' column to '(.*)' column")]
         public void WhenUserMoveColumnToColumn(string columnName, string columnNameToMove)
         {
@@ -410,6 +424,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 .Where(x => x.Count > 1).ToList();
             if (duplicates.Any())
                 throw new Exception($"Some duplicates are spotted in the '{columnName}' column");
+        }
+
+        [Then(@"User sees following duplicates counts for columns:")]
+        public void ThenUserSeesFollowingDuplicatesCountsForColumns(Table table)
+        {
+            var grid = _driver.NowAt<BaseDashboardPage>();
+            foreach (var column in table.Rows)
+            {
+                var columnData = grid.GetColumnDataByScrolling(column["column"]);
+
+                //Get all elements that has more than one occurence in the list
+                var duplicates = columnData.GroupBy(x => x)
+                    .Select(g => new {Value = g.Key, Count = g.Count()})
+                    .Where(x => x.Count > 1).ToList();
+
+                Assert.That(
+                    duplicates.Where(x => x.Value.Equals(column["duplicatedValue"])).FirstOrDefault().Count.ToString(),
+                    Is.EqualTo(column["duplicateCount"]), "Duplicates counts are not equal");
+            }
         }
 
         [Then(@"Content is empty in the column")]
