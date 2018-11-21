@@ -541,6 +541,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
+        public string GetColumnContentByColumnName(string columnName)
+        {
+            var by = By.XPath(
+                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
         public string GetRowContentByColumnName(string columnName)
         {
             var by = By.XPath(

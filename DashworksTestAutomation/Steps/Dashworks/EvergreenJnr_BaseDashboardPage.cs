@@ -269,6 +269,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
+        [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
+        public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            var originalList = page.GetColumnContentByColumnName(columnName);
+            Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
+        }
+
         [Then(@"""(.*)"" italic content is displayed")]
         public void ThenItalicContentIsDisplayed(string textContent)
         {

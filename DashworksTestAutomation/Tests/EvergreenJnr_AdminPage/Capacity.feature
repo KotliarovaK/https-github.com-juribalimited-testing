@@ -1025,7 +1025,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @DAS14068 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1046,14 +1046,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User open "Capacity" sub menu on Admin page
 	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button
-	And User selects "Units" tab on the Project details page
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+	When User selects "Units" tab on the Project details page
 	Then Counter shows "1" found rows
-	When User have opened Column Settings for "Capacity Unit" column
-	And User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Maps to Evergreen" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then "New Name" text is displayed in the table content
+	And "Unassigned" content is displayed for "Capacity Unit" column
+	And "New Name" content is displayed for "Maps to Evergreen" column
 	When User clicks "Administration" navigation link on the Admin page
 	And User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
