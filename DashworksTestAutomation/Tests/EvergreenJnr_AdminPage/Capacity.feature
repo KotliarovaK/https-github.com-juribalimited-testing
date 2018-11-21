@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
 	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -153,8 +153,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When User updates the "Default unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
-	#Remove # after DAS-14037 fixed
-	#Then Success message is displayed correctly
+	Then Success message is displayed correctly
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
 	Then "Default unit" checkbox is checked and cannot be unchecked
@@ -167,8 +166,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	When User selects "Details" tab on the Project details page
 	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
-	#Remove after DAS-14037 fixed
-	#Then Success message is displayed correctly
+	Then Success message is displayed correctly
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
@@ -974,7 +972,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	When User refreshes agGrid
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1017,15 +1015,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	When User click on 'Request Types' column header
 	Then data in table is sorted by "Request Types" column in descending order on the Admin page
 	And There are no errors in the browser console
-	When User clicks String Filter button for "Capacity Units" column on the Admin page
-	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
-	When User selects "Unassigned" checkbox from String Filter on the Admin page
-	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
-	And There are no errors in the browser console
-	When User selects "Unassigned" checkbox from String Filter on the Admin page
-	When User selects "No units" checkbox from String Filter on the Admin page
-	Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
-	And There are no errors in the browser console
+	#When User clicks String Filter button for "Capacity Units" column on the Admin page
+	#When User selects "All Capacity Units" checkbox from String Filter on the Admin page
+	#Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
+	#And There are no errors in the browser console
+	#When User clicks String Filter button for "Capacity Units" column on the Admin page
+	#When User selects "All Capacity Units" checkbox from String Filter on the Admin page
+	#When User selects "Unassigned" checkbox from String Filter on the Admin page
+	#Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	#And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13961 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged
@@ -1097,7 +1095,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
