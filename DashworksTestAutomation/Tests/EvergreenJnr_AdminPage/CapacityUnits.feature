@@ -392,7 +392,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUni
 	And "1" rows are displayed in the agGrid on Capacity Units page
 	When User clicks Reset Filters button on the Admin page
 	And User clicks String Filter button for "Default" column on the Admin page
-	And User clicks "True" checkbox from String Filter on the Admin page
+	When User clicks "True" checkbox from boolean filter on the Admin page
 	Then "1" rows are displayed in the agGrid on Capacity Units page
 	When User clicks Reset Filters button on the Admin page
 	And User enters "=5" text in the Search field for "Devices" column

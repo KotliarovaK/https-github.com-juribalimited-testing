@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading;
-using DashworksTestAutomation.DTO;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
@@ -19,6 +13,12 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Threading;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -586,8 +586,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Admin page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheAdminPage(string filterName)
+        [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
+        public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetCheckboxStringFilterWithItemListByName(filterName);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox from boolean filter on the Admin page")]
+        public void WhenUserClicksCheckboxFromBooleanFilterOnTheAdminPage(string filterName)
         {
             var page = _driver.NowAt<BaseGridPage>();
             page.GetBooleanStringFilterByName(filterName);
@@ -2159,7 +2167,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(filterElement.GetStringFilterByName(filterName).Displayed());
+            Assert.IsFalse(filterElement.GetStringFilterByName(filterName));
         }
         
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]

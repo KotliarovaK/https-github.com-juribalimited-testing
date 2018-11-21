@@ -230,7 +230,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Active" column on the Admin page
-	When User clicks "True" checkbox from String Filter on the Admin page
+	When User clicks "True" checkbox from boolean filter on the Admin page
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
@@ -464,14 +464,14 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Object Type" column on the Admin page
-	When User clicks "User" checkbox from String Filter on the Admin page
+	When User clicks "User" checkbox from boolean filter on the Admin page
 	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
+	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Counter shows "4" found rows
 	When User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
@@ -524,7 +524,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
+	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Counter shows "4" found rows
 	When User clicks String Filter button for "Status" column on the Admin page
 	When User selects "Succeeded" checkbox from String Filter on the Admin page
@@ -2104,9 +2104,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "1DevicesProject" checkbox from String Filter on the Admin page
+	When User selects "1DevicesProject" checkbox from String Filter with item list on the Admin page
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -2204,7 +2204,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	Then Success message with "0 objects queued for onboarding, 2 objects offboarded" text is displayed on the Projects page
 	When User selects "Queue" tab on the Project details page
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Onboard Computer Object" checkbox from String Filter on the Admin page
+	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Counter shows "2" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12787 @DAS13529 @Delete_Newly_Created_Project
@@ -3442,9 +3442,9 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	#| Microsoft Exchange Client Language Pack - Hindi |
 	#| NJStar Chinese Word Processor                   |
 	#When User clicks String Filter button for "Object Type" column on the Admin page
-	#When User clicks "Device" checkbox from String Filter on the Admin page
-	Then data in table is sorted by "Item" column in ascending order by default on the Admin page
-	Then data in table is sorted by "Date" column in descending order by default on the Admin page
+	#When User clicks "Device" checkbox from boolean filter on the Admin page
+	#Then data in table is sorted by "Item" column in ascending order by default on the Admin page
+	#Then data in table is sorted by "Date" column in descending order by default on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13347 @DAS11978 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText

@@ -245,11 +245,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public void GetCheckboxStringFilterByName(string filterName)
+        public void GetCheckboxStringFilterWithItemListByName(string filterName)
         {
             if (filterName.Equals("Select All"))
             {
-                var selector = "//span[@class='mat-checkbox-label'][text()='Select All']";
+                var selector = "//span[text()='Select All']";
                 Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
                 Driver.FindElement(By.XPath(selector)).Click();
             }
@@ -259,6 +259,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
                 Driver.FindElement(By.XPath(filterSelector)).Click();
             }
+        }
+
+        public void GetCheckboxStringFilterByName(string filterName)
+        {
+            var filterSelector = $".//mat-option//span[text()='{filterName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
         public void SelectProjectLanguage(string language)

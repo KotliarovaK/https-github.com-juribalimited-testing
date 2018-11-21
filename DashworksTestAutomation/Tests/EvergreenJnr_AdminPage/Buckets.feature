@@ -433,8 +433,8 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	And User clicks Reset Filters button on the Admin page
 	Then User sees "7" of "577" rows selected label
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter on the Admin page
-	When User selects "Evergreen" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User selects all rows on the grid
@@ -518,10 +518,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Content is present in the table on the Admin page
 	Then There are no errors in the browser console
 	When User have opened Column Settings for "Default" column
-	When User clicks "True" checkbox from String Filter on the Admin page
+	When User clicks "True" checkbox from boolean filter on the Admin page
 	Then There are no errors in the browser console
 	When User have opened Column Settings for "Project" column
-	When User selects "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	#Add sorting check for "Bucket" column
@@ -671,9 +671,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then "Buckets" page should be displayed to the user
 	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Evergreen" checkbox from String Filter on the Admin page
+	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Project12905" checkbox from String Filter on the Admin page
+	When User selects "Project12905" checkbox from String Filter with item list on the Admin page
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
@@ -681,9 +681,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks Delete button 
 	When User clicks Delete button in the warning message
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Evergreen" checkbox from String Filter on the Admin page
+	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Project12905" checkbox from String Filter on the Admin page
+	When User selects "Project12905" checkbox from String Filter with item list on the Admin page
 	When User enters "2Bucket12905" text in the Search field for "Bucket" column
 	Then "5" content is displayed in "Devices" column
 	When User enters "Unassigned" text in the Search field for "Bucket" column

@@ -250,11 +250,11 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	#When User have opened Column Settings for "Default" column
 	#And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks String Filter button for "Default" column on the Admin page
-	When User clicks "False" checkbox from String Filter on the Admin page
+	When User clicks "False" checkbox from boolean filter on the Admin page
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Email Migration" checkbox from String Filter on the Admin page
+	When User selects "Email Migration" checkbox from String Filter with item list on the Admin page
 	Then Counter shows "2" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Glasgow" text in the Search field for "Bucket" column
@@ -379,7 +379,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	#And User have opened Column Settings for "Default" column
 	#And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks String Filter button for "Default" column on the Admin page
-	When User clicks "True" checkbox from String Filter on the Admin page
+	When User clicks "True" checkbox from boolean filter on the Admin page
 	Then Counter shows "2,789" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page

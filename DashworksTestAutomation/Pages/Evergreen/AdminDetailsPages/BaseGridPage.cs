@@ -435,16 +435,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
-        public IWebElement GetStringFilterByName(string filterName)
+        public bool GetStringFilterByName(string filterName)
         {
-            var selector = By.XPath($"//div[@class='ag-filter']/span[(text()='{filterName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            return Driver.IsElementDisplayed(By.XPath($"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
         }
 
         public void GetBooleanStringFilterByName(string filterName)
         {
-            var filterSelector = $"//mat-option//span[text()='{filterName}']";
+            var filterSelector = $"//span[text()='{filterName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }

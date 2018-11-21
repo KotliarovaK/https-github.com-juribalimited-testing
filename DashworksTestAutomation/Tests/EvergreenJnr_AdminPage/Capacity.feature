@@ -1026,7 +1026,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
