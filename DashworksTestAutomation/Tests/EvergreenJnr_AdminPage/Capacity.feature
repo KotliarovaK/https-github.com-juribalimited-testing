@@ -172,6 +172,43 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240
+Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdatingOrCreation
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	And User enters "Email Migration" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "CapacityUnit14240" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "14240" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	And User sees next Units on the Capacity Units page:
+	| units             |
+	| Unassigned        |
+	| CapacityUnit14240 |
+	When User enters "CapacityUnit14240" text in the Search field for "Capacity Unit" column
+	And User click content from "Capacity Unit" column
+	And User type "CapacityUnit14240NameUpdated" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The capacity unit details have been updated" text
+	And User sees next Units on the Capacity Units page:
+	| units                        |
+	| Unassigned                   |
+	| CapacityUnit14240NameUpdated |
+	When User select "Capacity Unit" rows in the grid
+	| SelectedRowsName  |
+	| CapacityUnit14240NameUpdated |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected unit has been deleted" text
+	And There are no errors in the browser console
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13780 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate
 	When User clicks Admin on the left-hand menu

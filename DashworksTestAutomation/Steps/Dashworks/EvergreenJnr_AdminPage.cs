@@ -514,6 +514,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
+        [Then(@"User sees next Units on the Capacity Units page:")]
+        public void ThenUserSeesNextUnitsOnTheCapacityUnitsPage(Table slots)
+        {
+            var page = _driver.NowAt<Capacity_UnitsPage>();
+            _driver.WaitForDataLoading();
+
+            for (var i = 0; i < slots.RowCount; i++)
+                Assert.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
+                    "Units are not the same");
+        }
+
         [Then(@"User sees next Slots on the Capacity Slots page:")]
         public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
         {
