@@ -1310,8 +1310,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
-            Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
-            Assert.AreEqual("34px", page.GetMessageHeightOnAdminPage());
+            Assert.AreEqual("1658px", page.GetMessageWidthOnAdminPage());
+            Assert.AreEqual("33.6px", page.GetMessageHeightOnAdminPage());
         }
 
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]

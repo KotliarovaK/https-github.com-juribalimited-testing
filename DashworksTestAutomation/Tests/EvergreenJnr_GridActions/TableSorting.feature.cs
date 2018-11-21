@@ -325,6 +325,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS12545")]
+        [NUnit.Framework.CategoryAttribute("DAS14287")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", new string[0])]
@@ -339,6 +340,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                     "EvergreenJnr_GridActions",
                     "TableSorting",
                     "DAS12545",
+                    "DAS14287",
                     "Delete_Newly_Created_List",
                     "Not_Run"};
             if ((exampleTags != null))

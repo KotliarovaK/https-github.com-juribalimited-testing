@@ -123,6 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
+        [NUnit.Framework.CategoryAttribute("DAS14287")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Key", "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less t" +
             "han or equal to", "1051", "Windows7Mi: Target App Key is 1051", "4", new string[0])]
@@ -146,6 +147,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
                     "DAS10828",
+                    "DAS14287",
                     "Not_Run"};
             if ((exampleTags != null))
             {
