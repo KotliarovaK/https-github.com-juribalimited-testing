@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "Evergreen" checkbox is checked in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626 @DAS14236 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @DAS13626 @DAS14236
 Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -144,7 +144,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWith
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236
 Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -201,8 +201,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Users capacity unit" link
-	#Remove # after DAS14236 fixed
-	#And "CapacityUnit12141Users" text is displayed in the table content
+	And "CapacityUnit12141Users" text is displayed in the table content
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Actions button
@@ -247,8 +246,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Mailboxes capacity unit" link
-	#Remove # after DAS14236 fixed
-	#And "CapacityUnit12141Mailboxes" text is displayed in the table content
+	And "CapacityUnit12141Mailboxes" text is displayed in the table content
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Actions button
@@ -293,8 +291,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12141Applications capacity unit" link
-	#Remove # after DAS14236 fixed
-	#And "CapacityUnit12141Applications" text is displayed in the table content
+	And "CapacityUnit12141Applications" text is displayed in the table content
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Actions button
@@ -463,7 +460,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnTh
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS14172 @DAS14236 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS14172 @DAS14236
 Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorkingCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
