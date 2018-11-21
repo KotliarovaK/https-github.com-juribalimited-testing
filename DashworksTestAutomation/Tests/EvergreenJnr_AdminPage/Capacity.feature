@@ -379,7 +379,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And "CREATE" Action button is disabled
 	When User enters "29 Oct 2018" date in the "Override Start Date" field
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
-	#Then "CANCEL" Action button have tooltip with "" text
 	Then "CREATE" Action button is disabled
 	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	When User enters "29 Oct 2018" date in the "Override End Date" field
