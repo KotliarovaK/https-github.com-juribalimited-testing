@@ -1015,15 +1015,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	When User click on 'Request Types' column header
 	Then data in table is sorted by "Request Types" column in descending order on the Admin page
 	And There are no errors in the browser console
-	#When User clicks String Filter button for "Capacity Units" column on the Admin page
-	#When User selects "All Capacity Units" checkbox from String Filter on the Admin page
-	#Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
-	#And There are no errors in the browser console
-	#When User clicks String Filter button for "Capacity Units" column on the Admin page
-	#When User selects "All Capacity Units" checkbox from String Filter on the Admin page
-	#When User selects "Unassigned" checkbox from String Filter on the Admin page
-	#Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
-	#And There are no errors in the browser console
+	When User clicks String Filter button for "Capacity Units" column on the Admin page
+	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
+	Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
+	And There are no errors in the browser console
+	When User clicks String Filter button for "Capacity Units" column on the Admin page
+	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Capacity Units" column on the Admin page
+	When User selects "Unassigned" checkbox from String Filter on the Admin page
+	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13961 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged

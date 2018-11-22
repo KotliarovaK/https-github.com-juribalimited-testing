@@ -31,7 +31,7 @@ Examples:
 	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
 	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS14287 @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS14287
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -50,7 +50,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
 	| ColumnName                 | Operators                                                                                        | FilterOption | Text                               | RowsCount |
