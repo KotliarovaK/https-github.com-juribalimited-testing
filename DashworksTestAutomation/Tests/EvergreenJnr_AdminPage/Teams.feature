@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	Then User sees "2" of "2" rows selected label
 	When User clicks "Buckets" tab
 	And User selects all rows on the grid
-	Then User sees "3" of "3" rows selected label
+	Then User sees "6" of "6" rows selected label
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam

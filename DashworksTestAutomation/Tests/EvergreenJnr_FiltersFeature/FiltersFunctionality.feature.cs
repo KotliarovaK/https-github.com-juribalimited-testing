@@ -2430,7 +2430,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Application Development", "873", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "Application Development", "1,857", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Application Development", "1,858", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Application Development", "1,118", new string[0])]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter(string pageName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
