@@ -558,3 +558,50 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacity
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13812
+Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User clicks create Project button
+	Then "Create Project" page is displayed to the user
+	When User creates new Project
+	| ProjectName        | ShortName | Description | Type |
+	| ProjectForDAS13812 | 13812     |             |      |
+	When User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName  |
+	| Stage13812 |
+	When User clicks "Create Stage" button
+	When User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User create Task
+	| Name       | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| 1Task13812 | Forecast Date | 1Stage13812      | Normal         | Date            | Computer         |                          | true               |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Create Task" button
+	And User create Task
+	| Name       | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| 2Task13812 | Forecast Date | 2Stage13812      | Normal         | Date            | Computer         |                          | true               |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Create Task" button
+	And User create Task
+	| Name       | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| 3Task13812 | Forecast Date | 3Stage13812      | Normal         | Date            | Computer         |                          | true               |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
+	And User clicks content from "Project" column
