@@ -271,6 +271,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.DateField.Click();
             action.DateField.Clear();
             action.DateField.SendKeys(dateValue);
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [Then(@"the Update Date options are displayed in following order:")]
@@ -411,15 +413,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.WarningMessageText);
+            Assert.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
         }
 
         [Then(@"the amber message is displayed correctly")]
         public void ThenTheAmberMessageIsDisplayedCorrectly()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(action.AmberMessageOnActionPanel.Displayed(), "Amber message is not displayed");
+            Assert.IsTrue(action.WarningMessage.Displayed(), "Amber message is not displayed");
             Assert.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
             Assert.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
         }
@@ -428,15 +430,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheAmberMessageIsNotDisplayed()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsFalse(action.AmberMessageOnActionPanel.Displayed(), "Amber message is displayed");
+            Assert.IsFalse(action.WarningMessage.Displayed(), "Amber message is displayed");
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.SuccessMessage);
+            Assert.AreEqual(textMessage, action.SuccessMessage.Text, $"{textMessage} are not equal");
             Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
                 "Close button in Success message is not displayed");
         }
