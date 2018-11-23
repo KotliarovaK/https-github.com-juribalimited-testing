@@ -174,7 +174,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	And User selects "CapacityUnit12141Devices" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
+	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	And User selects "CapacityUnit12141Users" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
+	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User selects "CapacityUnit12141Mailboxes" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
+	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
@@ -279,7 +279,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237
 Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -305,11 +305,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	| ACD FotoCanvas 2.0 Trial                                        |
 	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	#And User selects "Evergreen" Project on Action panel
 	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 5 of 5 objects were in the selected project." text is displayed on Action panel
+	And Success message with "5 updates have been queued" text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page

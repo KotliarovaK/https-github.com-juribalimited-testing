@@ -172,7 +172,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 changes have successfully been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Sharepoint Application" text is displayed in the table content
+	Then "Sharepoint Application" content is displayed for "EmailMigra: Request Type" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -212,7 +212,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	When User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 changes have successfully been queued" text is displayed on Action panel
+	And Success message with "Your update has been queued, 0 of 1 object was in the selected project" text is displayed on Action panel
 	Then There are no errors in the browser console
 
 Examples: 
@@ -1073,9 +1073,9 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User removes "DAS13281" User
 
 Examples:
-	| RowName        | MessageText                             |
-	| 00HA7MKAVVFDAV | 1 changes have successfully been queued |
-	| 00I0COBFWHOF27 | 1 changes have successfully been queued |
+	| RowName        | MessageText                                                            |
+	| 00HA7MKAVVFDAV | Your update has been queued, 1 of 1 object was in the selected project |
+	| 00I0COBFWHOF27 | Your update has been queued, 0 of 1 object was in the selected project |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
@@ -1468,14 +1468,15 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects "Perform User Acceptance Test" Task on Action panel
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "Sep 03, 2018" Date on Action panel
+	And User selects "Dec 27, 2018" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
 	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	Then "Failed" content is displayed for "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

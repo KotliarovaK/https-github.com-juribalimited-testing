@@ -205,7 +205,7 @@ Examples:
 	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
 	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
 	| Applications | Import Type                                     | Altiris 6                                   | 31           |
-	| Users        | Department                                      | The Last Department With A Really Lond Name | 10           |
+	| Users        | department                                      | The Last Department With A Really Lond Name | 10           |
 
 @Evergreen @Applications @EvergreenJnr_Search @Search @DAS11511
 Scenario: EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn

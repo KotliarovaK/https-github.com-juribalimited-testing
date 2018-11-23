@@ -186,7 +186,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Windows7Mi: Group Computer Rag Radio Date Owner":
                     return "project_task_1_12865_1_Task";
 
-                case "Department":
+                case "department":
                     return "lDAP_231";
 
                 case "Owner Username":
