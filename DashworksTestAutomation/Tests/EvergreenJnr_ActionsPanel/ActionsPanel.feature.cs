@@ -496,8 +496,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 changes have successfully been queued\" text is displayed " +
-                    "on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Success message with \"Your update has been queued, 0 of 1 object was in the selec" +
+                    "ted project\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1930,8 +1930,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13284")]
         [NUnit.Framework.CategoryAttribute("DAS13285")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
-        [NUnit.Framework.TestCaseAttribute("00HA7MKAVVFDAV", "1 changes have successfully been queued", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("00I0COBFWHOF27", "1 changes have successfully been queued", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("00HA7MKAVVFDAV", "Your update has been queued, 1 of 1 object was in the selected project", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("00I0COBFWHOF27", "Your update has been queued, 0 of 1 object was in the selected project", new string[0])]
         public virtual void EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly(string rowName, string messageText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
