@@ -150,9 +150,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='inline-tip ng-star-inserted']")]
-        public IWebElement AmberMessageOnActionPanel { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
         public IWebElement UpdateButtonOnAmberMessage { get; set; }
@@ -249,10 +246,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='inline-success ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]//div[@class='inline-box-text']")]
+        public IWebElement WarningMessageText { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@id='context-container']//div//div[@class='ps__thumb-y']")]
@@ -332,20 +332,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.Heading),
                 //SelectorFor(this, p => p.List)
             };
-        }
-
-        public bool WarningMessageActionPanel(string text)
-        {
-            Driver.WaitForElement(By.XPath("//div[@class='inline-tip ng-star-inserted']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($"//div[@class='inline-tip ng-star-inserted']/div[text()='{text}']"));
-        }
-
-        public bool SuccessMessageActionPanel(string text)
-        {
-            Driver.WaitForElement(By.XPath("//div[@class='inline-success ng-star-inserted']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($"//div[@class='inline-success ng-star-inserted']/div[text()='{text}']"));
         }
 
         //Null value can be returned
