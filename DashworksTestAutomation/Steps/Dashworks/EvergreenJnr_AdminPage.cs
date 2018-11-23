@@ -99,6 +99,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
+                case "Capacity Units":
+                    var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Create Project":
+                    var createProjectPage = _driver.NowAt<CreateProjectPage>();
+                    StringAssert.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
                 case "Create Team":
                     var createTeamPage = _driver.NowAt<CreateTeamPage>();
                     StringAssert.Contains(createTeamPage.CreateTeamFormTitle.Text.ToLower(), pageTitle.ToLower(),
@@ -111,9 +123,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
-                case "Create Project":
-                    var createProjectPage = _driver.NowAt<CreateProjectPage>();
-                    StringAssert.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                case "Create Capacity Unit":
+                    var createCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
+                    StringAssert.Contains(createCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -121,13 +133,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var importProjectPage = _driver.NowAt<ImportProjectPage>();
                     StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
-                    break;
-
-                case "Capacity Units":
-                    var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
+                    break;      
 
                 default:
                     throw new Exception($"'{pageTitle}' menu item is not valid ");

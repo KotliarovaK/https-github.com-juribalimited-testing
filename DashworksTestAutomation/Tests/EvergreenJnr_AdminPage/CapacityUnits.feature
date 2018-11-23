@@ -118,14 +118,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013 @DAS12926
 Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase
 	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Capacity Units" link on the Admin page
+	And User clicks "Capacity Units" link on the Admin page
+	And User clicks the "CREATE UNIT" Action button
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
-	And User type "SameNameCaseSensative" Name in the "Capacity Unit Name" field on the Project details page
+	And "Create Capacity Unit" page should be displayed to the user
+	When User type "SameNameCaseSensative" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
