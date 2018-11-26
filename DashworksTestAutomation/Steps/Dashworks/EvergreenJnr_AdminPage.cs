@@ -1963,6 +1963,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.GetFieldByName(fieldName).Click();
             var slot = _driver.NowAt<Capacity_SlotsPage>();
             slot.GetCheckboxByName(checkbox).Click();
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            filterElement.BodyContainer.Click();
         }
 
         [When(@"User changes Project Short Name to ""(.*)""")]
@@ -2027,8 +2029,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             page.EnterValueByDayName(value, columnName);
+            var body = _driver.NowAt<BaseGridPage>();
+            body.BodyContainer.Click();
         }
-        
+
         [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
         public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
         {
