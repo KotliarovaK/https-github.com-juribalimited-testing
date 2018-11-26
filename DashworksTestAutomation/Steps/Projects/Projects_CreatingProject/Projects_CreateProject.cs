@@ -381,6 +381,27 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             //page.ConfirmCreateStageButton.Click();
         }
 
+        [When(@"User creates new Task")]
+        public void WhenUserCreatesNewTask(Table table)
+        {
+            var page = _driver.NowAt<TaskPropertiesPage>();
+            foreach (var row in table.Rows)
+            {
+                page.Name.SendKeys(row["Name"]);
+                page.Help.SendKeys(row["Help"]);
+                page.StageName.SelectboxSelect(row["StagesName"]);
+                if (!string.IsNullOrEmpty(row["TaskType"]))
+                    page.TaskType.SelectboxSelect(row["TaskType"]);
+                if (!string.IsNullOrEmpty(row["ValueType"]))
+                    page.ValueType.SelectboxSelect(row["ValueType"]);
+                _driver.WaitForDataLoadingOnProjects();
+                page.ObjectType.SelectboxSelect(row["ObjectType"]);
+                if (!string.IsNullOrEmpty(row["TaskValuesTemplate"]))
+                    page.TaskValuesTemplate.SelectboxSelect(row["TaskValuesTemplate"]);
+                page.ConfirmCreateTaskButton.Click();
+            }
+        }
+
         [When(@"User create Task")]
         public void WhenUserCreateTask(Table table)
         {
@@ -549,6 +570,13 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.UpdateTaskButton.Click();
         }
 
+        [When(@"User navigate to ""(.*)"" Task")]
+        public void WhenUserNavigateToTask(string taskName)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            page.GetTaskByName(taskName).Click();
+        }
+
         [When(@"User publishes the task")]
         public void WhenUserPublishesTheTask()
         {
@@ -562,7 +590,6 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void WhenUserUnpublishesTheTask()
         {
             var page = _driver.NowAt<TaskProperties_DetailsPage>();
-
             page.UnpublishTaskButton.Click();
             _driver.AcceptAlert();
         }

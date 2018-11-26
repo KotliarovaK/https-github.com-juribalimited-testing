@@ -214,5 +214,12 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetTaskByName(string taskName)
+        {
+            var selector = By.XPath($"//a[contains(@id, 'Tasks')][text()='{taskName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

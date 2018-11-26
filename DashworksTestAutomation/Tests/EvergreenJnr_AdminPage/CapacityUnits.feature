@@ -559,7 +559,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacity
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13812
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13812 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -578,23 +578,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User create Task
-	| Name       | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| 1Task13812 | Forecast Date | 1Stage13812      | Normal         | Date            | Computer         |                          | true               |
+	When User creates new Task
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| 1Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
+	When User clicks "Cancel" button
 	When User clicks "Create Task" button
-	And User create Task
-	| Name       | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| 2Task13812 | Forecast Date | 2Stage13812      | Normal         | Date            | Computer         |                          | true               |
+	And User creates new Task
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| 2Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
+	When User clicks "Cancel" button
 	When User clicks "Create Task" button
-	And User create Task
-	| Name       | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| 3Task13812 | Forecast Date | 3Stage13812      | Normal         | Date            | Computer         |                          | true               |
+	And User creates new Task
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| 3Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -605,3 +607,56 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then "Projects" page should be displayed to the user
 	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
 	And User clicks content from "Project" column
+	And User open "Capacity" sub menu on Admin page
+	When User selects "Slots" tab on the Project details page
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	And User selects "1Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "2Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "3Task13812" checkbox in the "Tasks" field on the Project details page
+	When User clicks the "CREATE" Action button
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "ProjectForDAS13812" Project
+	When User navigate to "Tasks" tab
+	When User navigate to "1Task13812" Task
+	When User unpublishes the task
+	When User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User open "Capacity" sub menu on Admin page
+	When User selects "Slots" tab on the Project details page
+	And User clicks content from "Capacity Slot" column
+	And User changes value to "1" for "Tuesday" day column
+	Then "UPDATE" Action button is disabled
+	Then "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (1Task13812)" text
+	When User clicks the "CANCEL" Action button
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 2" Name in the "Display Name" field on the Project details page
+	And User selects "2Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "3Task13812" checkbox in the "Tasks" field on the Project details page
+	When User clicks the "CREATE" Action button
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "ProjectForDAS13812" Project
+	When User navigate to "Tasks" tab
+	When User removes "2Task13812" Task
+	When User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User open "Capacity" sub menu on Admin page
+	When User selects "Slots" tab on the Project details page
+	When User enters "Slot 2" text in the Search field for "Capacity Slot" column
+	And User clicks content from "Capacity Slot" column
+	And User changes value to "1" for "Tuesday" day column
+	Then "UPDATE" Action button is active

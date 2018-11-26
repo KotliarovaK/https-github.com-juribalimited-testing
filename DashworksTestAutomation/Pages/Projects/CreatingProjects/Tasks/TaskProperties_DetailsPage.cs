@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
         [FindsBy(How = How.XPath, Using = ".//input[@value='Publish Task...']")]
         public IWebElement PublishTaskButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@value='Unpublish Task...']']")]
+        [FindsBy(How = How.XPath, Using = "//input[contains(@value, 'Unpublish Task')]")]
         public IWebElement UnpublishTaskButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
