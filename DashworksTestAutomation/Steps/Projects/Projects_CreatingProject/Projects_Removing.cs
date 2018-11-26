@@ -75,6 +75,14 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             _projectDto.Tasks.RemoveAt(_projectDto.Tasks.Count - 1);
         }
 
+        [When(@"User removes ""(.*)"" Task")]
+        public void WhenUserRemovesTask(string taskName)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            page.GetDeleteButtonElementByName(taskName).Click();
+            _driver.AcceptAlert();
+        }
+
         [When(@"User removes created Team")]
         public void ThenUserRemovesCreatedTeam()
         {

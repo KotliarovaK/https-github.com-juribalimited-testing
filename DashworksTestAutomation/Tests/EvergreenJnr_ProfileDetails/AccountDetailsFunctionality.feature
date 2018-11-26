@@ -42,6 +42,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed
 	Then "Enter a valid email address" error message is displayed
 	When User changes Email to "automation2@juriba.com"
 	When User Upload incorrect avatar to Account Details
+	And User clicks the "UPDATE" Action button
 	Then "The file uploaded is not recognised as an image" error message is displayed
 	When User Upload correct avatar to Account Details
 	Then Success message with "Image changed" text is displayed on Account Details page
