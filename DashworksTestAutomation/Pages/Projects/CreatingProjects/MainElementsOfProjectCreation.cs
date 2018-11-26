@@ -221,5 +221,12 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($"//label[text()='{checkboxName}']/ancestor::td/input");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

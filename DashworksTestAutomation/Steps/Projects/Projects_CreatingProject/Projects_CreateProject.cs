@@ -94,6 +94,13 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             Assert.IsTrue(button.GetButtonElementByName(buttonName).Displayed, $"{button} is not displayed");
         }
 
+        [When(@"User changes state of the checkbox ""(.*)"" on Senior")]
+        public void WhenUserChangesStateOfTheCheckboxOnSenior(string checkboxName)
+        {
+            var checkbox = _driver.NowAt<MainElementsOfProjectCreation>();
+            checkbox.GetCheckboxByName(checkboxName).Click();
+        }
+
         [Then(@"Success message is displayed with ""(.*)"" text")]
         public void ThenSuccessMessageIsDisplayedWithText(string text)
         {
