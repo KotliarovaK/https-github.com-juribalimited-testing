@@ -1309,6 +1309,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Update" Update Date on Action panel
 	And User selects "Nov 28, 2018" Date on Action panel
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	When User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
@@ -1328,6 +1329,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Update" Update Date on Action panel
 	And User selects "Jan 9, 2019" Date on Action panel
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	When User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User navigate to the bottom of the Action panel
 	And User clicks the "UPDATE" Action button

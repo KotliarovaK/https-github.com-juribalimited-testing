@@ -290,6 +290,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsDisplayed(string errorMessage)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitForDataLoading();
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
             page.CloseMessageButton.Click();
         }
