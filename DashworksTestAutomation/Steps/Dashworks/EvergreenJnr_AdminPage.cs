@@ -2095,6 +2095,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
         }
 
+        [When(@"User enters ""(.*)"" value in Move to position dialog")]
+        public void WhenUserEntersValueInTheMoveToPositionDialog(string value)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.MoveToPositionInput.Clear();
+            page.MoveToPositionInput.SendKeys(value);
+        }
+
+        [Then (@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
+        public void ThenButtonInMoveToPositionDialogIsDisplayedDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var actionBtn = page.GetMoveToPositionDialogButtonByText(buttonName);
+            Assert.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
+        }
+
+        [Then(@"Alert message is displayed and contains ""(.*)"" text")]
+        public void ThenAlertMessageIsDisplayedAndContainsText(string text)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<Capacity_SlotsPage>(() => page.MoveToPositionAlert);
+            StringAssert.Contains(text, page.MoveToPositionAlert.Text, "Alert Message is not displayed");
+        }
+
         [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
         public void WhenUserEntersDateInTheField(string date, string fieldName)
         {

@@ -20,6 +20,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = "//div[@class='form-item']//a[contains(text(), 'See Translations')]")]
         public IWebElement LanguageTranslationsLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//input[contains(@placeholder, 'Move to position')]")]
+        public IWebElement MoveToPositionInput { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//*[@role='alert']//span[1]")]
+        public IWebElement MoveToPositionAlert { get; set; }
+
+     
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -83,5 +90,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetMoveToPositionDialogButtonByText(string buttonText)
+        {
+            var selector = By.XPath($"//div[@class='dialog-small mat-dialog-content']/following-sibling :: div//button/span[contains(text(), '{buttonText.ToUpper()}')]/parent :: button");
+            return Driver.FindElement(selector);
+        }
+
     }
 }
