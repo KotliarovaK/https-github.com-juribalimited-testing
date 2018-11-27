@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Configuration;
 using System.Reflection;
 using BoDi;
@@ -28,6 +29,9 @@ namespace DashworksTestAutomation.Base
         [BeforeScenario]
         public void OnStartUp()
         {
+            IList categories = TestContext.CurrentContext.Test.Properties["Category"];
+            LockCategory.AwaitForCategory(categories);
+
             var driverInstance = CreateBrowserDriver();
 
             driverInstance.Manage().Window.Maximize();
@@ -40,6 +44,9 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
+                IList categories = TestContext.CurrentContext.Test.Properties["Category"];
+                LockCategory.FreeCategory(categories);
+
                 var driver = _objectContainer.Resolve<RemoteWebDriver>();
 
                 try
