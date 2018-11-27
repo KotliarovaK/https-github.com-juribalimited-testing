@@ -989,6 +989,48 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 	And Alert message is displayed and contains "Enter integer value between 1 and 32767" text
 	And There are no errors in the browser console
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13791 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEnteredInMoveToPositionIsGreaterThanTotalresocordsNumber
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13791" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 10001" Name in the "Slot Name" field on the Project details page
+	And User type "10001" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 10002" Name in the "Slot Name" field on the Project details page
+	And User type "10002" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 10003" Name in the "Slot Name" field on the Project details page
+	And User type "10003" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then User sees next Slots on the Capacity Slots page:
+	| slots      |
+	| Slot 10001 |
+	| Slot 10002 |
+	| Slot 10003 |
+	When User opens settings for "Slot 10001" row
+	And User selects "Move to position" option from settings menu
+	And User enters "32767" value in Move to position dialog
+	And User clicks "Move" bth in Move to position dialog
+	Then User sees next Slots on the Capacity Slots page:
+	| slots      |
+	| Slot 10002 |
+	| Slot 10003 |
+	| Slot 10001 |
+	And There are no errors in the browser console
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage
 	When User clicks Admin on the left-hand menu
