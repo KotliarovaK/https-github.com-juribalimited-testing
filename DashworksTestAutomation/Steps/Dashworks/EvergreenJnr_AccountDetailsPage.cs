@@ -212,7 +212,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             page.EmailField.Clear();
             page.EmailField.SendKeys(email);
-            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" is displayed in Email field")]
@@ -245,7 +244,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
                        ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
-            _driver.WaitForDataLoading();
         }
 
         [When(@"User Upload correct avatar to Account Details")]
@@ -290,9 +288,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsDisplayed(string errorMessage)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitForDataLoading();
+            Thread.Sleep(500);
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
             page.CloseMessageButton.Click();
+            Thread.Sleep(500);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]

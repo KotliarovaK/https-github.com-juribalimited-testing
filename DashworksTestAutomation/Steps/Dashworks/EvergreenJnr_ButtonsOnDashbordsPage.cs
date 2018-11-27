@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
@@ -184,6 +185,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListDetailsButtonIsDisabled()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
+            //Waiting for changed List details button state
+            Thread.Sleep(500);
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
             Assert.IsTrue(Convert.ToBoolean(menu.ListDetailsButton.GetAttribute("disabled")),
                 "List Details Button is active");
