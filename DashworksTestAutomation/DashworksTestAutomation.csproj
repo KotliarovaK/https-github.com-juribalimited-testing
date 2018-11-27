@@ -535,6 +535,7 @@
     <Compile Include="Utils\FileSystemHelper.cs" />
     <Compile Include="Utils\FluentWait.cs" />
     <Compile Include="Utils\KillDriverProcesses.cs" />
+    <Compile Include="Utils\LockCategory.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\TestDataGenerator.cs" />
   </ItemGroup>
