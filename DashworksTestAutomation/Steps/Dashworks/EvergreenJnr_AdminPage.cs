@@ -2110,8 +2110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            var t = page.GetDisplayNameFieldByLanguage(language).Text;
-            Assert.AreEqual(text, t, $"'{text}' text is not displayed in Display Name field");
+            Assert.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
         }
 
         [When(@"User enters ""(.*)"" value in Move to position dialog")]
