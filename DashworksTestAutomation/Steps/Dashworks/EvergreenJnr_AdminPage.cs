@@ -2115,6 +2115,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
         }
 
+        [When (@"User clicks ""(.*)"" bth in Move to position dialog")]
+        public void WhenUserClicksButtonInMoveToPositionDialog(string buttonName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.GetMoveToPositionDialogButtonByText(buttonName).Click();
+        }
+
         [Then(@"Alert message is displayed and contains ""(.*)"" text")]
         public void ThenAlertMessageIsDisplayedAndContainsText(string text)
         {
