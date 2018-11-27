@@ -21,6 +21,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
+        public const string ObjectsBucketsToAdd = "//span[contains(@class, 'text-container')]//span";
+
         public const string Row = "//div[@col-id='name']//a";
 
         public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
@@ -105,6 +107,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ObjectsBucketsToAdd)]
+        public IList<IWebElement> ObjectsBucketsList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }

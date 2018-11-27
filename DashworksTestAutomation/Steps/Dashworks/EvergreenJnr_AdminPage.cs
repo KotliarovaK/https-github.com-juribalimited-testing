@@ -1658,6 +1658,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
+        [Then(@"Objects for Buckets are displayed in alphabetical order on the Admin page")]
+        public void ThenObjectsForBucketsAreDisplayedInAlphabeticalOrderOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var originalList = page.ObjectsBucketsList.Select(x => x.Text).ToList();
+            SortingHelper.IsListSorted(originalList);
+        }
+
         [When(@"User adds following Objects to the Project")]
         public void WhenUserAddsFollowingObjectsToTheProject(Table table)
         {

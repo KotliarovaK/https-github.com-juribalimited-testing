@@ -765,3 +765,26 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMess
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	Then Warning message with "These buckets will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13808 @Buckets @Delete_Newly_Created_Bucket
+Scenario: EvergreenJnr_AdminPage_CheckTheDefaultSortOrderIsCorrectWhenYouAddDevicesUsersOrMailboxListToEvergreenBucket 
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "BucketForDAS13808" in the "Bucket Name" field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks newly created object link
+	And User clicks "Devices" tab
+	And User clicks the "ADD DEVICE" Action button
+	Then Objects for Buckets are displayed in alphabetical order on the Admin page
+	#When User clicks "Users" tab
+	#And User clicks the "ADD USER" Action button
+	#Then Objects for Buckets are displayed in alphabetical order on the Admin page
+	When User clicks "Mailboxes" tab
+	And User clicks the "ADD MAILBOX" Action button
+	Then Objects for Buckets are displayed in alphabetical order on the Admin page

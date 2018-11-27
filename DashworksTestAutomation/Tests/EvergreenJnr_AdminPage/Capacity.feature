@@ -1185,11 +1185,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User clicks the "CREATE" Action button
 	And User selects "Units" tab on the Project details page
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then "1" content is displayed for "Slots" column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then "1" content is displayed for "Slots" column
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then "1" content is displayed for "Slots" column
 	When User selects "Slots" tab on the Project details page
 	When User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
@@ -1198,11 +1198,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User clicks the "CREATE" Action button
 	And User selects "Units" tab on the Project details page
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "2" content is displayed in "Slots" column
+	Then "2" content is displayed for "Slots" column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then "1" content is displayed for "Slots" column
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed in "Slots" column
+	Then "1" content is displayed for "Slots" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13812 @DAS13676 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
