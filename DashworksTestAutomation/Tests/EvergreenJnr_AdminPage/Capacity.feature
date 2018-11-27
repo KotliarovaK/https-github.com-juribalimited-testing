@@ -746,7 +746,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User enters "ChecksLanguage" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User clicks "See Translations" link on the Capacity Slot page
-	#Then "CheckName" is displayed in Display Name field for "German" Language in Translations table on the Capacity Slot page
+	Then "CheckName" is displayed in Display Name field for "German" Language in Translations table on the Capacity Slot page
 	When User clicks "Capacity" tab
 	And User clicks "Details" tab
 	And User opens menu for selected language
