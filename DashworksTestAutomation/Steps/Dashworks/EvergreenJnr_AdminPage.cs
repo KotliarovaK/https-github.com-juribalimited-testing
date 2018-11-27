@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var importProjectPage = _driver.NowAt<ImportProjectPage>();
                     StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
-                    break;      
+                    break;
 
                 default:
                     throw new Exception($"'{pageTitle}' menu item is not valid ");
@@ -218,20 +218,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
         }
 
-        [Then(@"Scope field is automatically populated")]
-        public void ThenScopeFieldIsAutomaticallyPopulated()
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
-        }
-
         [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
         public void WhenUserEntersValueInTheField(string name, string fieldName)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetFieldNameByPage(fieldName).Clear();
             page.GetFieldNameByPage(fieldName).SendKeys(name);
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"Scope field is automatically populated")]
+        public void ThenScopeFieldIsAutomaticallyPopulated()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
         }
 
         [When(@"User open ""(.*)"" sub menu on Admin page")]
@@ -835,7 +836,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                            ResourceFilesNamesProvider.ResourcesFolderRoot + $"{fileNameAndExtension}";
                 page.ButtonChooseFile.SendKeys(file);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception($"Unable to locate file in Resources folder: {e}");
             }
@@ -2130,7 +2131,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.MoveToPositionInput.SendKeys(value);
         }
 
-        [Then (@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
+        [Then(@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
         public void ThenButtonInMoveToPositionDialogIsDisplayedDisabled(string buttonName)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
@@ -2138,7 +2139,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
         }
 
-        [When (@"User clicks ""(.*)"" bth in Move to position dialog")]
+        [When(@"User clicks ""(.*)"" bth in Move to position dialog")]
         public void WhenUserClicksButtonInMoveToPositionDialog(string buttonName)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
@@ -2244,7 +2245,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(filterElement.GetStringFilterByName(filterName));
         }
-        
+
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
         public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {

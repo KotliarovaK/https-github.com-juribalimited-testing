@@ -3635,6 +3635,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	Then "13498NewProjectName" content is displayed in "Project Name" field
 	And "13498ShN" content is displayed in "Project Short Name" field
 	When User clicks "Projects" navigation link on the Admin page
-	When User enters "13498NewProjectName" text in the Search field for "Project" column
+	And User enters "13498NewProjectName" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13501 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User clicks create Project button
+	Then "Create Project" page is displayed to the user
+	When User creates new Project
+	| ProjectName     | ShortName | Description | Type |
+	| ProjectDAS13501 | 13501     |             |      |
+	And User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "ProjectDAS13501" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User enters "ProjectDAS13501 upd" in the "Project Name" field
+	Then There are no errors in the browser console
+	When User click on Back button
+	And User enters "ProjectDAS13501 upd" text in the Search field for "Project" column
+	Then "ProjectDAS13501 upd" content is displayed for "Project" column
