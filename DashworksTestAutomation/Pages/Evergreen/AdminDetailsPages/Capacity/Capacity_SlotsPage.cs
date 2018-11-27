@@ -84,6 +84,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetDisplayNameFieldByLanguage(string language)
+        {
+            var selector = By.XPath($"//span[text()='{language}']/../following-sibling::td//input[@name='displayName']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetCheckboxByName(string checkboxName)
         {
             var selector = By.XPath($".//div[@role='presentation']//span[text()='{checkboxName}']");
