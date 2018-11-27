@@ -2099,6 +2099,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
         }
 
+        [When(@"User types ""(.*)"" in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
+        public void WhenUserTypesInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.GetDisplayNameFieldByLanguage(language).SendKeys(text);
+        }
+
+        [Then(@"""(.*)"" is displayed in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
+        public void ThenIsDisplayedInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var t = page.GetDisplayNameFieldByLanguage(language).Text;
+            Assert.AreEqual(text, t, $"'{text}' text is not displayed in Display Name field");
+        }
+
         [When(@"User enters ""(.*)"" value in Move to position dialog")]
         public void WhenUserEntersValueInTheMoveToPositionDialog(string value)
         {
