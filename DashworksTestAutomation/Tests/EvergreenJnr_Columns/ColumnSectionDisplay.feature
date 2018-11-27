@@ -564,7 +564,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsAvaila
 	| Home Drive             |
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
-	#| Mailbox Count (Owned) |
+	| Mailbox Count (Owned) |
 	| SID                    |
 	| Surname                |
 	| User Key               |
@@ -759,7 +759,7 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "22" category is displayed on Filters panel
+	Then "User" with "23" category is displayed on Filters panel
 	And "Location" with "8" category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -797,7 +797,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 	And User create custom list with "Object ID != EMPTY" name
 	Then "Object ID != EMPTY" list is displayed to user
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -812,14 +812,17 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublish
 	| Windows7Mi: Computer Read Only Task for Project Object                                                           |
 	| Windows7Mi: Computer Read Only Task in Bulk Update                                                               |
 	| Windows7Mi: Computer Read Only Task in Self Service                                                              |
+	| Windows7Mi: Computer Read Only Task in Self Service (Slot)                                                       |
 	| Windows7Mi: Date & Time Task                                                                                     |
 	| Windows7Mi: Date Workstation Task                                                                                |
 	| Windows7Mi: DateTime                                                                                             |
 	| Windows7Mi: Forecast Code                                                                                        |
 	| Windows7Mi: Forecast Date                                                                                        |
+	| Windows7Mi: Forecast Date (Slot)                                                                                 |
 	| Windows7Mi: Further Information                                                                                  |
 	| Windows7Mi: Group Computer Non Rag Date Owner                                                                    |
 	| Windows7Mi: Group Computer Rag Radio Date Owner                                                                  |
+	| Windows7Mi: Group Computer Rag Radio Date Owner (Slot)                                                           |
 	| Windows7Mi: Group Date Computer Task                                                                             |
 	| Windows7Mi: h1                                                                                                   |
 	| Windows7Mi: IP Address                                                                                           |
@@ -833,6 +836,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublish
 	| Windows7Mi: Radiobutton Task for Workstation                                                                     |
 	| Windows7Mi: Scheduled Code                                                                                       |
 	| Windows7Mi: Scheduled Date                                                                                       |
+	| Windows7Mi: Scheduled Date (Slot)                                                                                |
 	| Windows7Mi: Self Service Enabled                                                                                 |
 	| Windows7Mi: Send Applications List - Computer Object Task                                                        |
 	| Windows7Mi: SS Application List Completed                                                                        |
@@ -865,9 +869,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedT
 	Then User closed "Selected Columns" columns category
 	And User is expand "Project Tasks: prK" columns category
 	Then the following Filters subcategories are displayed for open category:
-	| Subcategories                            |
-	| prK: Email Address CC                    |
-	| prK: Email Notifications Allowed?        |
-	| prK: Email Override Address              |
-	| prK: Email to be sent - All Placeholders |
-	| prK: user-group-radb-k                   |
+	| Subcategories                                   |
+	| prK: Email Address CC                           |
+	| prK: Email Notifications Allowed?               |
+	| prK: Email Override Address                     |
+	| prK: Email to be sent - All Placeholders        |
+	| prK: Email to be sent - All Placeholders (Slot) |
+	| prK: user-group-radb-k                          |

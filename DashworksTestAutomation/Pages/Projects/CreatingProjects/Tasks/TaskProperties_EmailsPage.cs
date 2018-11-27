@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects.Tasks
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 {
     internal class TaskProperties_EmailsPage : SeleniumBasePage
     {
@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
         public IWebElement RequestTypesAll { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'AllGroups')]")]
-        public IWebElement ApllyEmailToAll { get; set; }
+        public IWebElement ApplyEmailToAll { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'GroupTypeId')]")]
         public IWebElement GroupType { get; set; }
@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Pages.Projects.Tasks
                 SelectorFor(this, p => p.Importance),
                 SelectorFor(this, p => p.SendOnceOnly),
                 SelectorFor(this, p => p.RequestTypesAll),
-                SelectorFor(this, p => p.ApllyEmailToAll),
+                SelectorFor(this, p => p.ApplyEmailToAll),
                 SelectorFor(this, p => p.GroupType),
                 SelectorFor(this, p => p.To)
             };

@@ -52,7 +52,8 @@ namespace DashworksTestAutomation.Steps.API
             var response = _client.Value.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                throw new Exception(
+                    $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
 
             var content = response.Content;
 
@@ -97,10 +98,29 @@ namespace DashworksTestAutomation.Steps.API
 
             items = items.TrimEnd(',');
 
-            #region Create list
+            #region Send Options to allow Post requests
 
             var requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
+
             var request = new RestRequest(requestUri);
+
+            request.AddParameter("Accept", "*/*");
+            request.AddParameter("Accept-Encoding", "gzip, deflate");
+            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
+            request.AddParameter("Access-Control-Request-Headers", "content-type");
+            request.AddParameter("Access-Control-Request-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            request.AddParameter("Connection", "keep-alive");
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            _client.Value.Options(request);
+
+            #endregion
+
+            #region Create list
+
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}";
+            request = new RestRequest(requestUri);
 
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
@@ -131,26 +151,22 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("Accept-Encoding", "gzip, deflate");
             request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
             request.AddParameter("Access-Control-Request-Headers", "content-type");
-            request.AddParameter("Access-Control-Request-Method", "PUT");
+            request.AddParameter("Access-Control-Request-Methods", "GET, POST, PUT, DELETE, OPTIONS");
             request.AddParameter("Connection", "keep-alive");
             request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
 
-            response = _client.Value.Options(request);
+            _client.Value.Options(request);
 
             #endregion
 
             #region Add query to list
 
             var queryString = GetStaticQueryStringFromUrl(pageName, listId);
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}";
             request = new RestRequest(requestUri);
 
-            request.AddParameter("Accept", "application/json");
-            request.AddParameter("Accept-Encoding", "gzip, deflate");
-            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
-            request.AddParameter("Connection", "keep-alive");
-            request.AddParameter("Content-Type", "application/json");
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
             request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
             request.AddParameter("listId", listId);
@@ -162,7 +178,31 @@ namespace DashworksTestAutomation.Steps.API
 
             response = _client.Value.Put(request);
 
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception($"Unable to execute request. URI: {requestUri}");
+
             #endregion
+
+            #region Send Options to allow Put requests
+
+            requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}/items";
+
+            request = new RestRequest(requestUri);
+
+            request.AddParameter("Accept", "*/*");
+            request.AddParameter("Accept-Encoding", "gzip, deflate");
+            request.AddParameter("Accept-Language", "en-GB,en;q=0.9,en-US;q=0.8,ru;q=0.7");
+            request.AddParameter("Access-Control-Request-Headers", "content-type");
+            request.AddParameter("Access-Control-Request-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+            request.AddParameter("Connection", "keep-alive");
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl.TrimEnd('/'));
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+
+            _client.Value.Options(request);
+
+            #endregion
+
+            #region Add items to list
 
             requestUri = $"{UrlProvider.RestClientBaseUrl}lists/{pageName.ToLower()}/{listId}/items";
             request = new RestRequest(requestUri);
@@ -175,11 +215,14 @@ namespace DashworksTestAutomation.Steps.API
             response = _client.Value.Post(request);
 
             if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception($"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+                throw new Exception(
+                    $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
 
             var url = $"{UrlProvider.EvergreenUrl}#/{pageName.ToLower()}?$listid={listId}";
 
             _driver.Navigate().GoToUrl(url);
+
+            #endregion
 
             //Add created list to context
             _listsDetails.AddList(listName, listId);
@@ -217,11 +260,11 @@ namespace DashworksTestAutomation.Steps.API
                 throw new Exception($"Unable to execute request. URI: {requestUri}");
         }
 
-        private string GetDynamicQueryStringFromUrl(string url, string pageName)
+        private static string GetDynamicQueryStringFromUrl(string url, string pageName)
         {
-            var queryString = string.Empty;
-            var pattern = @"\?\$(.*)";
-            string originalPart = Regex.Match(url, pattern).Groups[1].Value;
+            string queryString;
+            const string pattern = @"\?\$(.*)";
+            var originalPart = Regex.Match(url, pattern).Groups[1].Value;
             if (originalPart.Contains("select="))
                 queryString = "$" + originalPart;
             else
@@ -232,10 +275,9 @@ namespace DashworksTestAutomation.Steps.API
             return queryString;
         }
 
-        private string GetStaticQueryStringFromUrl(string pageName, string listId)
+        private static string GetStaticQueryStringFromUrl(string pageName, string listId)
         {
-            var queryString = string.Empty;
-            queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + "&$listid=" + $"{listId}";
+            var queryString = RestWebClient.GetDefaultColumnsUrlByPageName(pageName) + $"&$listid={listId}";
             return queryString;
         }
     }

@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditM
 	Then Filters panel is displayed to the user
 	When User add "Department" filter where type is "Equals" with added column and "Technology" Tree List option
 	Then "Department" filter is added to the list
-	Then "7,020" rows are displayed in the agGrid
+	Then "7,021" rows are displayed in the agGrid
 	When User create dynamic list with "DAS12941" name on "Users" page
 	When User navigates to the "All Users" list
 	When User navigates to the "DAS12941" list

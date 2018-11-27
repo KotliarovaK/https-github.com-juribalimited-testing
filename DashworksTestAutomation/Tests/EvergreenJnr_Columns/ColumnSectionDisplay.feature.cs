@@ -1249,6 +1249,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table65.AddRow(new string[] {
                         "Mailbox Count (Access)"});
             table65.AddRow(new string[] {
+                        "Mailbox Count (Owned)"});
+            table65.AddRow(new string[] {
                         "SID"});
             table65.AddRow(new string[] {
                         "Surname"});
@@ -1658,7 +1660,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"User\" with \"22\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"User\" with \"23\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Location\" with \"8\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1736,6 +1738,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13419")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks", new string[] {
@@ -1743,7 +1746,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Devices",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS13419"});
+                        "DAS13419",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1770,6 +1774,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table86.AddRow(new string[] {
                         "Windows7Mi: Computer Read Only Task in Self Service"});
             table86.AddRow(new string[] {
+                        "Windows7Mi: Computer Read Only Task in Self Service (Slot)"});
+            table86.AddRow(new string[] {
                         "Windows7Mi: Date & Time Task"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Date Workstation Task"});
@@ -1780,11 +1786,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table86.AddRow(new string[] {
                         "Windows7Mi: Forecast Date"});
             table86.AddRow(new string[] {
+                        "Windows7Mi: Forecast Date (Slot)"});
+            table86.AddRow(new string[] {
                         "Windows7Mi: Further Information"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Group Computer Non Rag Date Owner"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Group Computer Rag Radio Date Owner"});
+            table86.AddRow(new string[] {
+                        "Windows7Mi: Group Computer Rag Radio Date Owner (Slot)"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Group Date Computer Task"});
             table86.AddRow(new string[] {
@@ -1811,6 +1821,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Windows7Mi: Scheduled Code"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Scheduled Date"});
+            table86.AddRow(new string[] {
+                        "Windows7Mi: Scheduled Date (Slot)"});
             table86.AddRow(new string[] {
                         "Windows7Mi: Self Service Enabled"});
             table86.AddRow(new string[] {
@@ -1893,6 +1905,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "prK: Email Override Address"});
             table87.AddRow(new string[] {
                         "prK: Email to be sent - All Placeholders"});
+            table87.AddRow(new string[] {
+                        "prK: Email to be sent - All Placeholders (Slot)"});
             table87.AddRow(new string[] {
                         "prK: user-group-radb-k"});
             testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table87, "Then ");

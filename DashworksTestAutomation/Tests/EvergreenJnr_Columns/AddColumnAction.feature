@@ -80,6 +80,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAft
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName               |
 	| UserSchedu: Readiness ID |
+	When User click on 'UserSchedu: Readiness ID' column header
 	Then Content is present in the newly added column
 	| ColumnName               |
 	| UserSchedu: Readiness ID |

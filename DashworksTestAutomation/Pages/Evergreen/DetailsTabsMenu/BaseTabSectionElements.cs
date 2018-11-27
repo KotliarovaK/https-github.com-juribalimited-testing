@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            string columnSettingsSelector =
+            var columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
             Driver.MouseHover(By.XPath(columnSettingsSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));

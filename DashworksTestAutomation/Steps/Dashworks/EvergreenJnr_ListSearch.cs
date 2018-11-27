@@ -18,31 +18,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        private void PerformSearch(string searchTerm)
-        {
-            var listPageElement = _driver.NowAt<BaseDashboardPage>();
-
-            if (listPageElement.TableSearchTextbox.Displayed())
-            {
-                listPageElement.TableSearchTextbox.Clear();
-                Thread.Sleep(3000);
-                _driver.WaitForDataLoading();
-                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
-                Thread.Sleep(3000);
-                _driver.WaitForDataLoading();
-            }
-            else
-            {
-                listPageElement.TableSearchButton.Click();
-                listPageElement.TableSearchTextbox.Clear();
-                Thread.Sleep(3000);
-                _driver.WaitForDataLoading();
-                listPageElement.TableSearchTextbox.SendKeys(searchTerm);
-                Thread.Sleep(5000);
-                _driver.WaitForDataLoading();
-            }
-        }
-
         [When(@"User perform search by ""(.*)""")]
         public void WhenUserPerformSearchBy(string searchTerm)
         {
@@ -89,9 +64,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            var inputLength = listPageElement.TableSearchTextbox.GetAttribute("value").Length;
-            for (int i = 0; i < inputLength; i++)
-                listPageElement.TableSearchTextbox.SendKeys(OpenQA.Selenium.Keys.Backspace);
+            var inputLength = listPageElement.TableSearchTextBox.GetAttribute("value").Length;
+            for (var i = 0; i < inputLength; i++)
+                listPageElement.TableSearchTextBox.SendKeys(OpenQA.Selenium.Keys.Backspace);
 
             _driver.WaitForDataLoading();
         }
@@ -106,16 +81,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
 
-                if (numberOfRows == "1" )
-                {
-                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsOnPageCount.Text,
-                        "Incorrect rows count");
-                }
-                else
-                {
-                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsOnPageCount.Text,
-                        "Incorrect rows count");
-                }
+                StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                    listPageElement.ResultsOnPageCount.Text,
+                    "Incorrect rows count");
+
                 Logger.Write(
                     $"Evergreen agGrid Search returned the correct number of rows for: {numberOfRows}  search");
             }
@@ -138,14 +107,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
-            if (listPageElement.TableSearchTextbox.Displayed())
-                Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+            if (listPageElement.TableSearchTextBox.Displayed())
+            {
+                Assert.IsEmpty(listPageElement.TableSearchTextBox.GetAttribute("value"), "Search textbox is not empty");
+            }
             else
             {
                 listPageElement.TableSearchButton.Click();
-                Assert.IsEmpty(listPageElement.TableSearchTextbox.GetAttribute("value"), "Search textbox is not empty");
+                Assert.IsEmpty(listPageElement.TableSearchTextBox.GetAttribute("value"), "Search textbox is not empty");
             }
-
         }
 
         [When(@"User click content from ""(.*)"" column")]
@@ -159,9 +129,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"reset button in Table Search field is displayed")]
         public void ThenResetButtonInTableSearchFieldIsDisplayed()
         {
-            var resetbutton = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetbutton.SearchTextboxResetButton);
-            Assert.IsTrue(resetbutton.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            var resetButton = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetButton.SearchTextBoxResetButton);
+            Assert.IsTrue(resetButton.SearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
 
@@ -169,18 +139,43 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCrossIconInTableSearchField()
         {
             var button = _driver.NowAt<BaseDashboardPage>();
-            button.SearchTextboxResetButton.Click();
+            button.SearchTextBoxResetButton.Click();
         }
 
         [Then(@"reset button in Search field at selected Panel is displayed")]
         public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
         {
-            var resetbutton = _driver.NowAt<BaseDashboardPage>();
+            var resetButton = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() =>
-                resetbutton.SearchTextboxResetButtonInPanel);
+                resetButton.SearchTextBoxResetButtonInPanel);
 
-            Assert.IsTrue(resetbutton.SearchTextboxResetButtonInPanel.Displayed(), "Reset button is not displayed");
+            Assert.IsTrue(resetButton.SearchTextBoxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
+        }
+
+        private void PerformSearch(string searchTerm)
+        {
+            var listPageElement = _driver.NowAt<BaseDashboardPage>();
+
+            if (listPageElement.TableSearchTextBox.Displayed())
+            {
+                listPageElement.TableSearchTextBox.Clear();
+                Thread.Sleep(3000);
+                _driver.WaitForDataLoading();
+                listPageElement.TableSearchTextBox.SendKeys(searchTerm);
+                Thread.Sleep(3000);
+                _driver.WaitForDataLoading();
+            }
+            else
+            {
+                listPageElement.TableSearchButton.Click();
+                listPageElement.TableSearchTextBox.Clear();
+                Thread.Sleep(3000);
+                _driver.WaitForDataLoading();
+                listPageElement.TableSearchTextBox.SendKeys(searchTerm);
+                Thread.Sleep(5000);
+                _driver.WaitForDataLoading();
+            }
         }
     }
 }

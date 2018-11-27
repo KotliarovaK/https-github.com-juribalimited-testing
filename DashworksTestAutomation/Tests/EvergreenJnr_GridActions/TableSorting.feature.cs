@@ -325,6 +325,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS12545")]
+        [NUnit.Framework.CategoryAttribute("DAS14287")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Windows7Mi: Team ID", "All Users", "DynamicList1857", new string[0])]
@@ -338,6 +339,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                     "EvergreenJnr_GridActions",
                     "TableSorting",
                     "DAS12545",
+                    "DAS14287",
                     "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
@@ -361,7 +363,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                         string.Format("{0}", columnName)});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table11, "Then ");
             testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("numeric data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("numeric data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User create dynamic list with \"{0}\" name on \"{1}\" page", dynamicListName, listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" list is displayed to user", dynamicListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User navigates to the \"{0}\" list", allListName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -373,7 +375,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             table12.AddRow(new string[] {
                         string.Format("{0}", columnName)});
             testRunner.Then("ColumnName is added to the list", ((string)(null)), table12, "Then ");
-            testRunner.Then(string.Format("numeric data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("numeric data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Edit List menu is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

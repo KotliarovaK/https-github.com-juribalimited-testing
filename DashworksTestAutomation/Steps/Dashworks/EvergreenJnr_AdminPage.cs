@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading;
-using DashworksTestAutomation.DTO;
+﻿using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
-using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Threading;
 using TechTalk.SpecFlow;
-using TeamsPage = DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.TeamsPage;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
@@ -29,17 +28,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
     {
         private readonly RemoteWebDriver _driver;
         private readonly TeamName _teamName;
-        private readonly UsedUsers _usedUsers;
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Buckets _buckets;
         private readonly RestWebClient _client;
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, UsedUsers usedUsers, TeamName teamName, DTO.RuntimeVariables.Projects projects, RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, TeamName teamName, DTO.RuntimeVariables.Projects projects,
+            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects)
         {
             _driver = driver;
-            _usedUsers = usedUsers;
             _teamName = teamName;
             _projects = projects;
             _client = client;
@@ -101,6 +99,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
+                case "Capacity Units":
+                    var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Create Project":
+                    var createProjectPage = _driver.NowAt<CreateProjectPage>();
+                    StringAssert.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
                 case "Create Team":
                     var createTeamPage = _driver.NowAt<CreateTeamPage>();
                     StringAssert.Contains(createTeamPage.CreateTeamFormTitle.Text.ToLower(), pageTitle.ToLower(),
@@ -113,9 +123,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
-                case "Create Project":
-                    var createProjectPage = _driver.NowAt<CreateProjectPage>();
-                    StringAssert.Contains(createProjectPage.CreateProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                case "Create Capacity Unit":
+                    var createCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
+                    StringAssert.Contains(createCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -123,19 +133,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var importProjectPage = _driver.NowAt<ImportProjectPage>();
                     StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
-                    break;
-
-                case "Capacity Units":
-                    var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
-                    StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
-                        "Incorrect page is displayed to user");
-                    break;
+                    break;      
 
                 default:
                     throw new Exception($"'{pageTitle}' menu item is not valid ");
             }
 
             Logger.Write($"'{pageTitle}' page is visible");
+        }
+
+        [When(@"User clicks ""(.*)"" navigation link on the Admin page")]
+        public void WhenUserClicksNavigationLinkOnTheAdminPage(string linkName)
+        {
+            var link = _driver.NowAt<ProjectsPage>();
+            link.GetNavigationLinkByName(linkName).Click();
         }
 
         #region Check button state
@@ -188,11 +199,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             bucketName.GetFieldNameByPage(fieldName).Clear();
             bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
 
-            //Please add switch here
             if (!string.IsNullOrEmpty(name))
-                _buckets.Value.Add(name);
-
-            _projects.Value.Add(name);
+                switch (fieldName)
+                {
+                    case "Project Name":
+                        _projects.Value.Add(name);
+                        break;
+                    case "Team Name":
+                        _teamName.Value.Add(name);
+                        break;
+                    case "Bucket Name":
+                        _buckets.Value.Add(name);
+                        break;
+                    //case "Capacity Unit Name":
+                    //    break;
+                    default:
+                        throw new Exception($"{fieldName} not found");
+                }
         }
 
         [Then(@"Scope field is automatically populated")]
@@ -203,11 +226,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
         }
 
-        [When(@"User opens Scope section on the Project details page")]
-        public void WhenUserOpensScopeSectionOnTheProjectDetailsPage()
+        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
+        public void WhenUserEntersValueInTheField(string name, string fieldName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            page.ScopeSection.Click();
+            page.GetFieldNameByPage(fieldName).Clear();
+            page.GetFieldNameByPage(fieldName).SendKeys(name);
+        }
+
+        [When(@"User open ""(.*)"" sub menu on Admin page")]
+        public void WhenUserOpenSubMenuOnAdminPage(string menuName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.GetSubMenuByName(menuName).Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User selects ""(.*)"" tab on the Project details page")]
@@ -216,6 +248,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabByName(tabName);
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" tab is selected on the Admin page")]
+        public void ThenTabIsSelectedOnTheAdminPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
+        }
+
+        [When(@"User selects ""(.*)"" tab on the Capacity Units page")]
+        public void WhenUserSelectsTabOnTheCapacityUnitsPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
+        }
+
+        [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
+        public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
+        {
+            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
+            projectElement.UnlimitedField.Click();
+        }
+
+        [Then(@"Unlimited text disappears from column")]
+        public void ThenUnlimitedTextDisappearsFromColumn()
+        {
+            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
+            Assert.IsTrue(projectElement.EmptyUnlimitedField.Displayed());
         }
 
         [Then(@"Bucket dropdown is not displayed on the Project details page")]
@@ -232,11 +292,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.EvergreenUnit.Displayed(), "Evergreen Unit is not displayed");
         }
 
+        [Then(@"string filter is displayed for ""(.*)"" column on the Admin Page")]
+        public void ThenStringFilterIsDisplayedForColumnOnTheAdminPage(string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(Convert.ToBoolean(page.GetFilterByColumnName(columnName).GetAttribute("readonly")));
+        }
+
         [When(@"User navigates to the ""(.*)"" tab in the Scope section on the Project details page")]
         public void WhenUserNavigatesToTheTabInTheScopeSectionOnTheProjectDetailsPage(string tabName)
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
-            projectTabs.NavigateToProjectTabInScopSectionByName(tabName);
+            projectTabs.NavigateToProjectTabInScopeSectionByName(tabName);
             _driver.WaitForDataLoading();
         }
 
@@ -289,10 +356,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            foreach (var row in table.Rows)
-            {
-                projectsPage.RemovePermissionsByName(row["Permissions"]);
-            }
+            foreach (var row in table.Rows) projectsPage.RemovePermissionsByName(row["Permissions"]);
         }
 
         [Then(@"following Mailbox permissions are displayed to the user")]
@@ -301,9 +365,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectsPage = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
-            {
-                Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]), $"'{row["Permissions"]}' are not displayed");
-            }
+                Assert.IsTrue(projectsPage.PermissionsDisplay(row["Permissions"]),
+                    $"'{row["Permissions"]}' are not displayed");
         }
 
         [Then(@"following checkboxes are checked in the Scope section")]
@@ -312,9 +375,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectsPage = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
-            {
-                Assert.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]), $"'{row["Checkboxes"]}' are not displayed");
-            }
+                Assert.IsTrue(projectsPage.CheckboxesDisplay(row["Checkboxes"]),
+                    $"'{row["Checkboxes"]}' are not displayed");
         }
 
         [Then(@"following associations are disabled:")]
@@ -357,6 +419,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     page = _driver.NowAt<ProjectsPage>();
                 }
             }
+
             Assert.IsTrue(page.SelectedTabInProjectScopeChangesSection(tabName),
                 $"{tabName} is not displayed in the Project Scope Changes section");
         }
@@ -382,7 +445,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
-            List<string> actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
             Assert.IsTrue(adminTable.AscendingSortingIcon.Displayed);
@@ -393,7 +456,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
-            List<string> expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
             Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
@@ -404,7 +467,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
-            List<string> actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(actualList);
             _driver.WaitForDataLoading();
         }
@@ -414,7 +477,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var adminTable = _driver.NowAt<BaseGridPage>();
 
-            List<string> expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
             _driver.WaitForDataLoading();
         }
@@ -422,57 +485,79 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
 
-            List<string> actualList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
         [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"color data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenColorDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList));
-            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
         [Then(@"color data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenColorDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
-            List<string> expectedList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"User sees next Units on the Capacity Units page:")]
+        public void ThenUserSeesNextUnitsOnTheCapacityUnitsPage(Table slots)
+        {
+            var page = _driver.NowAt<Capacity_UnitsPage>();
+            _driver.WaitForDataLoading();
+
+            for (var i = 0; i < slots.RowCount; i++)
+                Assert.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
+                    "Units are not the same");
+        }
+
+        [Then(@"User sees next Slots on the Capacity Slots page:")]
+        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            _driver.WaitForDataLoading();
+
+            for (var i = 0; i < slots.RowCount; i++)
+                Assert.That(page.GridSlotsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
+                    "Slots are not the same");
         }
 
         [Then(@"date in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenDateInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
-            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Assert.IsTrue(listpageMenu.AscendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
         [Then(@"date in table is sorted by ""(.*)"" column in descending order on the Admin page")]
         public void ThenDateInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
         {
-            var listpageMenu = _driver.NowAt<BaseGridPage>();
-            List<string> originalList = listpageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var listPageMenu = _driver.NowAt<BaseGridPage>();
+            var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
-            Assert.IsTrue(listpageMenu.DescendingSortingIcon.Displayed);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
         [Then(@"Project ""(.*)"" is displayed to user")]
@@ -490,12 +575,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectRecordByName(recordName);
         }
 
-        [When(@"User clicks ""(.*)"" checkbox from String Filter on the Admin page")]
-        public void WhenUserClicksCheckboxFromStringFilterOnTheAdminPage(string filterName)
+        [Then(@"field for Date column is empty")]
+        public void ThenFieldForDateColumnIsEmpty()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            page.GetBooleanStringFilterByName(filterName);
-            page.BodyContainer.Click();
+            Assert.IsEmpty(page.DateSearchField.GetAttribute("value"), "Date Search textbox is not empty");
         }
 
         [When(@"User selects following date filter on the Projects page")]
@@ -507,8 +591,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 filter.DateFilterValue.SendKeys(row["FilterData"]);
+                filter.DateFilterValue.SendKeys(OpenQA.Selenium.Keys.Enter);
             }
-            _driver.WaitForDataLoading();
         }
 
         [When(@"User selects ""(.*)"" checkbox from String Filter on the Admin page")]
@@ -517,6 +601,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ProjectsPage>();
             page.GetCheckboxStringFilterByName(filterName);
             page.BodyContainer.Click();
+        }
+
+        [When(@"User selects ""(.*)"" checkbox from String Filter with item list on the Admin page")]
+        public void WhenUserSelectsCheckboxFromStringFilterWithItemListOnTheAdminPage(string filterName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetCheckboxStringFilterWithItemListByName(filterName);
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User clicks ""(.*)"" checkbox from boolean filter on the Admin page")]
+        public void WhenUserClicksCheckboxFromBooleanFilterOnTheAdminPage(string filterName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetBooleanStringFilterByName(filterName);
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"""(.*)"" is displayed in the dropdown filter for ""(.*)"" column")]
+        public void ThenIsDisplayedInTheDropdownFilterForColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetDropdownFilterTextByColumnName(columnName, text).Displayed(), $"{text} is not displayed in the dropdown filter for {columnName}");
         }
 
         [Then(@"All Associations are selected by default")]
@@ -551,14 +658,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenApplicationScopeCheckboxesAreDisabled()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.ApplicationScopeCheckboxes.Displayed(), "Application Scope checkboxes are active");
+            Assert.IsTrue(projectsPage.ApplicationScopeCheckboxes.Displayed(),
+                "Application Scope checkboxes are active");
+        }
+
+        [Then(@"""(.*)"" tab is disabled")]
+        public void ThenTabIsDisabled(string tabName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetDisabledTabByName(tabName).Displayed(), $"{tabName} is active");
         }
 
         [Then(@"Application Scope checkboxes are active")]
         public void ThenApplicationScopeCheckboxesAreActive()
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(projectsPage.ApplicationScopeCheckboxes.Displayed(), "Application Scope checkboxes are disabled");
+            Assert.IsFalse(projectsPage.ApplicationScopeCheckboxes.Displayed(),
+                "Application Scope checkboxes are disabled");
         }
 
         [Then(@"""(.*)"" checkbox is not displayed on the Admin page")]
@@ -603,14 +719,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRequestTypeIsDisplayedToTheUser(string requestTypeName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(requestTypeName).Displayed(), "Incorrect Request Type is displayed");
+            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(requestTypeName).Displayed(),
+                "Incorrect Request Type is displayed");
         }
 
         [Then(@"""(.*)"" Category is displayed to the user")]
         public void ThenCategoryIsDisplayedToTheUser(string categoryName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(categoryName).Displayed(), "Incorrect Category is displayed");
+            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(categoryName).Displayed(),
+                "Incorrect Category is displayed");
         }
 
         [Then(@"""(.*)"" is displayed to the user in the Project Scope Changes section")]
@@ -625,6 +743,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 page = _driver.NowAt<ProjectsPage>();
             }
+
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.SelectedItemInProjectScopeChangesSection(text),
                 $"{text} is not displayed in the Project Scope Changes section");
@@ -644,18 +763,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAllRowsOnTheGrid()
         {
             var checkbox = _driver.NowAt<BaseGridPage>();
+            checkbox.BodyContainer.Click();
             checkbox.SelectAllCheckBox.Click();
         }
 
         [Then(@"Select All selectbox is checked on the Admin page")]
-        public void ThenSelectAllSelectboxIsCheckedOnTheAdminPage()
+        public void ThenSelectAllSelectBoxIsCheckedOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is unchecked");
         }
 
         [Then(@"Select All selectbox is unchecked on the Admin page")]
-        public void ThenSelectAllSelectboxIsUncheckedOnTheAdminPage()
+        public void ThenSelectAllSelectBoxIsUncheckedOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is checked");
@@ -668,20 +788,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectRadioButtonByName(radioButtonName).Click();
         }
 
+        [Then(@"""(.*)"" checkbox is checked and cannot be unchecked")]
         [Then(@"""(.*)"" associated checkbox is checked and cannot be unchecked")]
         public void ThenAssociatedCheckboxIsCheckedAndCannotBeUnchecked(string radioButtonName)
         {
-            var checkbox = _driver.NowAt<ProjectsPage>();
-            var t = checkbox.GetAssociatedCheckboxByName(radioButtonName);
-            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
-            Assert.AreEqual(true, Convert.ToBoolean(t.GetAttribute("disabled")), "Checkbox state is incorrect");
+            var page = _driver.NowAt<ProjectsPage>();
+            var checkbox = page.GetAssociatedCheckboxByName(radioButtonName);
+            Assert.AreEqual(true, page.GetAssociatedCheckboxByName(radioButtonName).Selected,
+                "Checkbox state is incorrect");
+            Assert.AreEqual(true, Convert.ToBoolean(checkbox.GetAttribute("disabled")), "Checkbox state is incorrect");
         }
 
         [Then(@"""(.*)"" associated checkbox is checked")]
         public void ThenAssociatedCheckboxIsChecked(string radioButtonName)
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
-            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected, "Cheked state is incorrect");
+            Assert.AreEqual(true, checkbox.GetAssociatedCheckboxByName(radioButtonName).Selected,
+                "Checkbox state is incorrect");
         }
 
         [When(@"User clicks ""(.*)"" checkbox on the Project details page")]
@@ -696,32 +819,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
 
-            foreach (var row in table.Rows)
+            foreach (var row in table.Rows) checkbox.SelectCheckboxByName(row.Values.FirstOrDefault());
+        }
+
+        [When(@"User selects ""(.*)"" file to upload on Import Project page")]
+        public void WhenUserSelectsFileToUploadOnImportProjectPage(string fileNameAndExtension)
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            IAllowsFileDetection allowsDetection = _driver;
+            allowsDetection.FileDetector = new LocalFileDetector();
+
+            try
             {
-                checkbox.SelectCheckboxByName(row.Values.FirstOrDefault());
+                var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                           ResourceFilesNamesProvider.ResourcesFolderRoot + $"{fileNameAndExtension}";
+                page.ButtonChooseFile.SendKeys(file);
             }
-        }
-
-        [When(@"User selects incorrect file to upload on Import Project page")]
-        public void WhenUserSelectsIncorrectFileToUploadOnImportProjectPage()
-        {
-            var page = _driver.NowAt<ImportProjectPage>();
-            IAllowsFileDetection allowsDetection = _driver;
-            allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                          ResourceFilesNamesProvider.IncorrectFile;
-            page.ButtonChooseFile.SendKeys(file);
-        }
-
-        [When(@"User selects correct file to upload on Import Project page")]
-        public void WhenUserSelectsCorrectFileToUploadOnImportProjectPage()
-        {
-            var page = _driver.NowAt<ImportProjectPage>();
-            IAllowsFileDetection allowsDetection = _driver;
-            allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                          ResourceFilesNamesProvider.CorrectFileDas12370;
-            page.ButtonChooseFile.SendKeys(file);
+            catch(Exception e)
+            {
+                throw new Exception($"Unable to locate file in Resources folder: {e}");
+            }
         }
 
         [When(@"User enters ""(.*)"" in the Project Name field on Import Project page")]
@@ -741,40 +858,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
-        [When(@"User selects ""(.*)"" in the Import dropdown on the Import Project Page")]
-        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName)
+        [Then(@"User sees folloing options in ""(.*)"" dropdown on Import Projects page:")]
+        public void ThenUserSeesFollowingOptionsInDropdownOnImportProjectPage(string dropdownName, Table options)
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
+
+            for (int i = 0; i < options.RowCount; i++)
+            {
+                Assert.That(actualBucketsOptions[i], Is.EqualTo(options.Rows[i].Values.FirstOrDefault()), "Options do not match!");
+            }
+        }
+
+        [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown on the Import Project Page")]
+        public void ThenUserSelectsInTheImportDropdownOnTheImportProjectPage(string optionName, string dropdownName)
         {
             var importProjectPage = _driver.NowAt<ImportProjectPage>();
-            importProjectPage.SelectImportOption(optionName);
+            importProjectPage.SelectDropdownOption(dropdownName, optionName);
         }
 
         [Then(@"Delete ""(.*)"" Team in the Administration")]
         public void ThenDeleteTeamInTheAdministration(string teamName)
         {
             DeleteTeam(teamName);
-        }
-
-        [AfterScenario("Delete_Newly_Created_Team")]
-        public void DeleteAllTeamsAfterScenarioRun()
-        {
-            try
-            {
-                if (!_teamName.Value.Any())
-                    return;
-
-                foreach (string name in _teamName.Value)
-                    try
-                    {
-                        DeleteTeam(name);
-                    }
-                    catch { }
-            }
-            catch { }
-        }
-
-        private void DeleteTeam(string teamName)
-        {
-            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[Teams] where [TeamName] = '{teamName}'");
         }
 
         [When(@"User enters ""(.*)"" in the Team Description field")]
@@ -791,6 +897,38 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<CreateTeamPage>();
             createProjectElement.AddMembersCheckbox.Click();
             createProjectElement.SelectObjectForTeamCreation(optionName);
+        }
+
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" field")]
+        public void ThenContentIsDisplayedInField(string text, string fieldName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
+                $"Text in {fieldName} field is different");
+        }
+
+        [Then(@"Capacity Units value is displayed for Capacity Mode field")]
+        public void ThenCapacityUnitsValueIsDisplayedForCapacityModeField()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.DefaultCapacityMode.Displayed, "Default value is not displayed for Capacity Mode");
+        }
+
+        [Then(@"User selects ""(.*)"" option in ""(.*)"" dropdown")]
+        public void ThenUserSelectsOptionInDropdown(string option, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
+            var searchElement = _driver.NowAt<BaseDashboardPage>();
+            searchElement.GetOptionByName(option).Click();
+        }
+
+        [When(@"User selects ""(.*)"" in the ""(.*)"" dropdown")]
+        public void WhenUserSelectsInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.GetDropdownByName(dropdownName).Click();
+            dropdown.GetDropdownValueByName(value).Click();
         }
 
         [When(@"User clicks Update Team button")]
@@ -815,14 +953,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDefaultTeamCheckbox()
         {
             var teamElement = _driver.NowAt<TeamsPage>();
-            teamElement.DefaulTeamCheckbox.Click();
+            teamElement.DefaultTeamCheckbox.Click();
+        }
+
+        [When(@"User changes Percentage to reach before showing amber to ""(.*)""")]
+        public void WhenUserChangesPercentageToReachBeforeShowingAmberTo(string value)
+        {
+            var capacityElement = _driver.NowAt<Capacity_DetailsPage>();
+            capacityElement.CapacityToReachBeforeShowAmber.Clear();
+            capacityElement.CapacityToReachBeforeShowAmber.SendKeys(value);
         }
 
         [Then(@"Default Team checkbox is not active")]
         public void ThenDefaultTeamCheckboxIsNotActive()
         {
             var teamElement = _driver.NowAt<TeamsPage>();
-            Assert.IsTrue(teamElement.DefaulTeamCheckbox.Displayed(), "Default Team checkbox is active");
+            Assert.IsTrue(teamElement.DefaultTeamCheckbox.Displayed(), "Default Team checkbox is active");
         }
 
         [When(@"User selects ""(.*)"" tab on the Team details page")]
@@ -856,9 +1002,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypeSearchCriteriaInSelectANewTeamField(string text)
         {
             var teamPage = _driver.NowAt<AddToAnotherTeamPage>();
-            teamPage.TeamSelectbox.Click();
-            teamPage.TeamSelectbox.Clear();
-            teamPage.TeamSelectbox.SendKeys(text);
+            teamPage.TeamSelectBox.Click();
+            teamPage.TeamSelectBox.Clear();
+            teamPage.TeamSelectBox.SendKeys(text);
         }
 
         [Then(@"following Team are displayed in Select a new Team drop-down:")]
@@ -1006,7 +1152,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsObjectsToBucket(string objectName)
         {
             var objects = _driver.NowAt<BucketsPage>();
-            objects.SelectObjectByName(objectName);
+            objects.SearchFieldForBucketsPage.SendKeys(objectName);
+            objects.SelectObjectByName(objectName).Click();
         }
 
         [Then(@"Create Team button is disabled")]
@@ -1054,11 +1201,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createBucketElement.SelectTeam(teamName);
         }
 
-        [When(@"User updates the Default Bucket checkbox state")]
-        public void WhenUserUpdatesTheDefaultBucketCheckboxState()
+        [When(@"User updates the ""(.*)"" checkbox state")]
+        public void WhenUserUpdatesTheCheckboxState(string checkbox)
         {
             var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.DefaultBucketCheckbox.Click();
+            createBucketElement.GetDefaultCheckboxByName(checkbox).Click();
         }
 
         #region Message
@@ -1090,8 +1237,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     message = _driver.NowAt<BaseGridPage>();
                 }
             }
+
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
-            Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor());//Amber color
+            Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor()); //Amber color
+            //Waiting for message text change
+            Thread.Sleep(1000);
             Assert.IsTrue(message.TextMessage(text),
                 $"{text} is not displayed on the Project page");
         }
@@ -1127,23 +1277,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Delete button was clicked");
         }
 
-        [Then(@"Success message is displayed and contains ""(.*)"" text")]
-        public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
+        [When(@"User clicks ""(.*)"" button in the warning message on Admin page")]
+        public void WhenUserClicksButtonInTheWarningMessageOnAdminPage(string buttonName)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
-            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor());//Green color
-            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            var button = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.WarningMessage);
+            button.GetButtonInWarningMessage(buttonName).Click();
+            Logger.Write($"{buttonName} button was clicked");
         }
 
         [Then(@"Info message is displayed and contains ""(.*)"" text")]
         public void ThenInfoMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.InfoMessage);
-            Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor());//Blue color
-            Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
-            StringAssert.Contains(text, page.InfoMessage.Text, "Success Message is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
+            Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor()); //Blue color
+            //Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
+            StringAssert.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"""(.*)"" message is displayed on the Admin Page")]
+        public void ThenMessageIsDisplayedOnTheAdminPage(string message)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.NoFoundMessage);
+            Assert.AreEqual(message, page.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
         [Then(@"User sees banner at the top of work area")]
@@ -1152,6 +1310,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.Banner);
             Assert.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
+        }
+
+        [Then(@"Success message is displayed and contains ""(.*)"" text")]
+        public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
+            StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Success message is displayed correctly")]
+        public void ThenSuccessMessageIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
+            Assert.AreEqual("1658px", page.GetMessageWidthOnAdminPage());
+            Assert.AreEqual("33.6px", page.GetMessageHeightOnAdminPage());
         }
 
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]
@@ -1183,6 +1360,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     projectElement = _driver.NowAt<BaseGridPage>();
                 }
             }
+
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.SuccessMessage);
             Thread.Sleep(10000);
             Assert.IsTrue(projectElement.TextMessage(textMessage),
@@ -1200,7 +1378,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksNewlyCreatedObjectLink()
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             projectElement.NewProjectLink.Click();
+        }
+
+        [Then(@"Success message is displayed and contains ""(.*)"" link")]
+        public void ThenSuccessMessageIsDisplayedAndContainsLink(string text)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(projectElement.GetLinkByText(text).Displayed(), $"Message with {text} link is not displayed");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed")]
@@ -1212,11 +1398,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
+        [Then(@"Error message is not displayed on the Capacity Slots page")]
         [Then(@"Error message is not displayed on the Projects page")]
         public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
+        }
+
+        [When(@"User close message on the Admin page")]
+        public void WhenUserCloseMessageOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.CloseMessageButton.Click();
         }
 
         #endregion
@@ -1233,14 +1427,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            Assert.IsTrue(page.BucketSelectbox.Displayed, "Move To Another Bucket Page is not displayed to the user");
+            Assert.IsTrue(page.MoveToSelectBox.Displayed, "Move To Another Bucket Page is not displayed to the user");
         }
 
+        [When(@"User moves selected objects to ""(.*)"" Capacity Unit")]
         [When(@"User moves selected objects to ""(.*)"" bucket")]
         public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
         {
             var page = _driver.NowAt<MoveToAnotherBucketPage>();
             page.MoveToBucketByName(bucketName);
+        }
+
+        [Then(@"""(.*)"" is displayed on the Admin page")]
+        public void ThenIsDisplayedOnTheAdminPage(string name)
+        {
+            var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+            Assert.IsTrue(page.GetMovingElementByName(name).Displayed(), $"{name} Page is not displayed to the user");
         }
 
         [Then(@"Actions dropdown is displayed correctly")]
@@ -1297,7 +1499,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.UpdateBucketButton.Click();
         }
 
-        [When(@"User expands the object to remove")]
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
@@ -1305,12 +1506,50 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.PlusButton.Click();
         }
 
+        [When(@"User expands the object to remove on ""(.*)"" tab")]
+        public void WhenUserExpandsTheObjectToRemoveOnTab(string tabName)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            try
+            {
+                projectElement.PlusButton.Click();
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(5000);
+                _driver.Navigate().Refresh();
+                var projectTabs = _driver.NowAt<ProjectsPage>();
+                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+                _driver.WaitForDataLoading();
+                projectElement.PlusButton.Click();
+            }
+        }
+
+        [When(@"User waits and expands the ""(.*)"" panel to remove")]
+        public void WhenUserWaitsAndExpandsThePanelToRemove(string tabName)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            try
+            {
+                projectElement.PlusButton.Click();
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(60000);
+                _driver.Navigate().Refresh();
+                var projectTabs = _driver.NowAt<ProjectsPage>();
+                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+                _driver.WaitForDataLoading();
+                projectElement.PlusButton.Click();
+            }
+        }
+
         [When(@"User enters ""(.*)"" in the Search Object field")]
         public void WhenUserEntersInTheSearchObjectField(string text)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
-            projectElement.SearchTextbox.Clear();
-            projectElement.SearchTextbox.SendKeys(text);
+            projectElement.SearchTextBox.Clear();
+            projectElement.SearchTextBox.SendKeys(text);
             _driver.WaitForDataLoading();
         }
 
@@ -1334,7 +1573,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var text = row["Objects"];
                 bucketElement.AddItem(text);
-                bucketElement.SearchTextbox.ClearWithHomeButton(_driver);
+                bucketElement.SearchTextBox.ClearWithHomeButton(_driver);
                 //Save added objects to remove it from the bucket
                 _addedObjects.Value.Add(text, _lastUsedBucket.Value);
             }
@@ -1347,8 +1586,51 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualRowList = page.BucketRowList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedRowList, actualRowList, "Tasks value are different");
+            var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
+        }
+
+        [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
+        public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
+        {
+            try
+            {
+                if (tabName.Equals("Applications"))
+                {
+                    var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+                else
+                {
+                    var page = _driver.NowAt<BaseGridPage>();
+
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+            }
+            catch (Exception)
+            {
+                if (tabName.Equals("Applications"))
+                {
+                    var page = _driver.NowAt<Capacity_CapacityUnitsPage>();
+                    _driver.Navigate().Refresh();
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.ApplicationsRowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+                else
+                {
+                    var page = _driver.NowAt<BaseGridPage>();
+                    _driver.Navigate().Refresh();
+                    var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
+                    var actualRowList = page.RowsList.Select(value => value.Text).ToList();
+                    Assert.AreEqual(expectedRowList, actualRowList, "Rows value in the lists are different");
+                }
+            }
         }
 
         [When(@"User searches and selects following rows in the grid:")]
@@ -1356,11 +1638,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.TableSearchButton.Click();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextbox);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextBox);
             foreach (var row in table.Rows)
             {
-                dashboardPage.TableSearchTextbox.Clear();
-                dashboardPage.TableSearchTextbox.SendKeys(row["SelectedRowsName"]);
+                dashboardPage.TableSearchTextBox.Clear();
+                dashboardPage.TableSearchTextBox.SendKeys(row["SelectedRowsName"]);
                 Thread.Sleep(5000);
                 _driver.WaitForDataLoading();
                 dashboardPage.SelectOneRowsCheckboxes.Click();
@@ -1372,7 +1654,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            List<string> originalList = page.ObjectsList.Select(x => x.Text).ToList();
+            var originalList = page.ObjectsList.Select(x => x.Text).ToList();
             SortingHelper.IsListSorted(originalList);
         }
 
@@ -1384,7 +1666,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var row in table.Rows)
             {
                 projectElement.AddItem(row["Objects"]);
-                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
 
             projectElement.UpdateButton.Click();
@@ -1394,10 +1676,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsFollowingObjects(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
             {
                 projectElement.AddItem(row["Objects"]);
-                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
         }
 
@@ -1406,9 +1689,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
-            {
                 if (!projectElement.OnboardedObjectsTable.Displayed())
-                {
                     try
                     {
                         Thread.Sleep(20000);
@@ -1421,10 +1702,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         _driver.Navigate().Refresh();
                         Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
                     }
-                }
                 else
                     Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
-            }
         }
 
         [Then(@"additional onboarded Items are displayed in the History table")]
@@ -1432,20 +1711,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
-            {
                 try
                 {
                     Thread.Sleep(20000);
                     _driver.Navigate().Refresh();
-                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed, $"{row["Items"]} is not displayed in History table");
+                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed,
+                        $"{row["Items"]} is not displayed in History table");
                 }
                 catch (Exception)
                 {
-                    Thread.Sleep(40000);
+                    Thread.Sleep(30000);
                     _driver.Navigate().Refresh();
-                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed, $"{row["Items"]} is not displayed in History table");
+                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed,
+                        $"{row["Items"]} is not displayed in History table");
                 }
-            }
         }
 
         [Then(@"following Items are displayed in the Queue table")]
@@ -1454,7 +1733,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
             {
-                Assert.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed, $"{row["Items"]} is not displayed in Queue table");
+                Assert.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed,
+                    $"{row["Items"]} is not displayed in Queue table");
+            }
+        }
+
+        [Then(@"following Items are displayed at the top of the list")]
+        public void ThenFollowingItemsAreDisplayedAtTheTopOfTheList(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+
+            for (var i = 0; i < table.RowCount; i++)
+            {
+                var row = table.Rows.ElementAt(i);
+                Assert.AreEqual(projectElement.GetTableStringRowNumber(row["Items"]), i.ToString(),
+                    $"{row["Items"]} is not displayed in History table");
             }
         }
 
@@ -1467,7 +1760,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 projectElement.CheckItemDisplay(row["Objects"]);
                 Assert.IsTrue(projectElement.CheckedAllItemCheckbox.Displayed(), "Some object is present");
-                projectElement.SearchTextbox.ClearWithHomeButton(_driver);
+                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
         }
 
@@ -1491,7 +1784,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInTheObjectSearchField(string text)
         {
             var searchElement = _driver.NowAt<BaseGridPage>();
-            searchElement.GetObgectField(text);
+            searchElement.GetObjectField(text);
         }
 
         [Then(@"following items are still selected")]
@@ -1594,6 +1887,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.BucketsProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
+            //Waiting for bucket change
+            Thread.Sleep(3000);
         }
 
         [When(@"user selects ""(.*)"" in the Bucket dropdown")]
@@ -1608,7 +1903,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInTheBucketDropdown(string textBucket)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectElement.BucketDropdownDisplay(textBucket), "Incorrect text is displayed in the Bucket dropdown");
+            Assert.IsTrue(projectElement.BucketDropdownDisplay(textBucket),
+                "Incorrect text is displayed in the Bucket dropdown");
         }
 
         [When(@"User changes Project Name to ""(.*)""")]
@@ -1617,6 +1913,58 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ProjectName.Clear();
             projectElement.ProjectName.SendKeys(projectName);
+        }
+
+        [When(@"User selects ""(.*)"" language on the Project details page")]
+        public void WhenUserSelectsLanguageOnTheProjectDetailsPage(string language)
+        {
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            projectPage.LanguageDropDown.Click();
+            var page = _driver.NowAt<BaseDashboardPage>();
+            page.GetOptionByName(language).Click();
+            projectPage.CheckLanguageButton.Click();
+        }
+
+        [When(@"User opens menu for selected language")]
+        public void WhenUserOpensMenuForSelectedLanguage()
+        {
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            _driver.WaitForDataLoading();
+            projectPage.LanguageMenu.Click();
+        }
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on the Project Details Page")]
+        public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
+        {
+            var message = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(message.TextMessage(text), $"{text} is not displayed on the Project page");
+        }
+
+        [Then(@"User selects ""(.*)"" option for selected language")]
+        public void ThenUserSelectsOptionForSelectedLanguage(string optionName)
+        {
+            var projectPage = _driver.NowAt<ProjectsPage>();
+            projectPage.GetLanguageMenuOptionByName(optionName).Click();
+        }
+
+        [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
+        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
+        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.GetFieldByName(fieldName).Clear();
+            projectElement.GetFieldByName(fieldName).SendKeys(name);
+        }
+
+        [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]
+        public void WhenUserSelectsCheckboxInTheFieldOnTheProjectDetailsPage(string checkbox, string fieldName)
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            projectElement.GetFieldByName(fieldName).Click();
+            var slot = _driver.NowAt<Capacity_SlotsPage>();
+            slot.GetCheckboxByName(checkbox).Click();
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            filterElement.BodyContainer.Click();
         }
 
         [When(@"User changes Project Short Name to ""(.*)""")]
@@ -1669,11 +2017,201 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _lastUsedBucket.Value = text;
         }
 
+        [When(@"User changes value to ""(.*)"" for ""(.*)"" column")]
+        public void WhenUserChangesValueToForColumn(string value, string columnName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.EnterValueByColumnName(value, columnName);
+        }
+
+        [When(@"User changes value to ""(.*)"" for ""(.*)"" day column")]
+        public void WhenUserChangesValueToForDayColumn(string value, string columnName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.EnterValueByDayName(value, columnName);
+            var body = _driver.NowAt<BaseGridPage>();
+            body.BodyContainer.Click();
+        }
+
+        [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
+        public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.ClickDropdownByName(dropdownName);
+        }
+
+        [Then(@"following items are displayed in the dropdown:")]
+        public void ThenFollowingItemsAreDisplayedInTheDropdown(Table items)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            foreach (var row in items.Rows)
+            {
+                Assert.IsTrue(page.DropdownItemDisplayed(row["Items"]).Displayed,
+                    $"{row["Items"]} is not displayed in the dropdown");
+            }
+        }
+
+        [When(@"User selects next items in the ""(.*)"" dropdown:")]
+        public void WhenUserSelectsNextItemsInTheDropdown(string dropdownName, Table items)
+        {
+            WhenUserClicksOnDropdownOnTheCapacitySlotsPage(dropdownName);
+
+            var page = _driver.NowAt<BaseGridPage>();
+            foreach (var row in items.Rows)
+            {
+                page.DropdownItemDisplayed(row["Items"]).Click();
+            }
+        }
+
+        [When(@"User enters ""(.*)"" value to ""(.*)"" date field on Capacity Slot form page")]
+        public void WhenUserEntersValueToDateFieldOnCapacitySlotFormPage(string value, string field)
+        {
+            var page = _driver.NowAt<CreateCapacitySlotPage>();
+            page.EnterValueToTheDateByPlaceholder(value, field);
+        }
+
+        [Then(@"User sees ""(.*)"" value in the ""(.*)"" date field on Capacity Slot form page")]
+        public void ThenUserSeesValueInTheDateFieldOnCapacitySlotFormPage(string valueExpected, string field)
+        {
+            var page = _driver.NowAt<CreateCapacitySlotPage>();
+
+            Assert.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
+        }
+
+        [When(@"User clicks ""(.*)"" link on the Capacity Slot page")]
+        public void WhenUserClicksLinkOnTheCapacitySlotPage(string linkName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.GetLanguageLinkByName(linkName).Click();
+        }
+
+        [Then(@"See Translations link on the Capacity Slot page is not displayed")]
+        public void ThenSeeTranslationsLinkOnTheCapacitySlotPageIsNotDisplayed()
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsFalse(page.LanguageTranslationsLink.Displayed(), "See Translations link is displayed");
+        }
+
+        [Then(@"""(.*)"" Language is displayed in Translations table on the Capacity Slot page")]
+        public void ThenLanguageIsDisplayedInTranslationsTableOnTheCapacitySlotPage(string language)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
+        }
+
+        [When(@"User types ""(.*)"" in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
+        public void WhenUserTypesInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.GetDisplayNameFieldByLanguage(language).SendKeys(text);
+        }
+
+        [Then(@"""(.*)"" is displayed in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
+        public void ThenIsDisplayedInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var t = page.GetDisplayNameFieldByLanguage(language).Text;
+            Assert.AreEqual(text, t, $"'{text}' text is not displayed in Display Name field");
+        }
+
+        [When(@"User enters ""(.*)"" value in Move to position dialog")]
+        public void WhenUserEntersValueInTheMoveToPositionDialog(string value)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.MoveToPositionInput.Clear();
+            page.MoveToPositionInput.SendKeys(value);
+        }
+
+        [Then (@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
+        public void ThenButtonInMoveToPositionDialogIsDisplayedDisabled(string buttonName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var actionBtn = page.GetMoveToPositionDialogButtonByText(buttonName);
+            Assert.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
+        }
+
+        [When (@"User clicks ""(.*)"" bth in Move to position dialog")]
+        public void WhenUserClicksButtonInMoveToPositionDialog(string buttonName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.GetMoveToPositionDialogButtonByText(buttonName).Click();
+        }
+
+        [Then(@"Alert message is displayed and contains ""(.*)"" text")]
+        public void ThenAlertMessageIsDisplayedAndContainsText(string text)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<Capacity_SlotsPage>(() => page.MoveToPositionAlert);
+            StringAssert.Contains(text, page.MoveToPositionAlert.Text, "Alert Message is not displayed");
+        }
+
+        [When(@"User enters ""(.*)"" date in the ""(.*)"" field")]
+        public void WhenUserEntersDateInTheField(string date, string fieldName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.AddDateByFieldName(fieldName, date);
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"Create Override Date is displayed correctly")]
+        public void ThenCreateOverrideDateIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<Capacity_OverrideDatesPage>();
+            Assert.IsTrue(page.CreateOverrideDatePageTitle.Displayed, "Create Override Date title is not displayed");
+        }
+
         [Then(@"""(.*)"" text in search field is displayed correctly for ""(.*)"" column")]
         public void ThenTextInSearchFieldIsDisplayedCorrectlyForColumn(string searchText, string columnName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText, "Text in search field is different");
+            Assert.AreEqual(page.GetTextInSearchFieldByColumnName(columnName).GetAttribute("value"), searchText,
+                "Text in search field is different");
+        }
+
+        [Then(@"Menu options are displayed in the following order on the Admin page:")]
+        public void ThenMenuOptionsAreDisplayedInTheFollowingOrderOnTheAdminPage(Table table)
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.MenuTabOptionListOnAdminPage.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Menu options are different");
+        }
+
+        [Then(@"column content is displayed in the following order:")]
+        public void ThenColumnContentIsDisplayedInTheFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.TableContentList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Column content is different");
+        }
+
+        [Then(@"""(.*)"" dropdown is not displayed")]
+        public void ThenDropdownIsNotDisplayed(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(dropdown.GetMissingDropdownByName(dropdownName), $"{dropdownName} is displayed");
+        }
+
+        [Then(@"""(.*)"" dropdown is displayed")]
+        public void ThenDropdownIsDisplayed(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
+        }
+
+        [Then(@"""(.*)"" text value is displayed in the ""(.*)"" dropdown")]
+        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
+        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
+        public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
@@ -1696,14 +2234,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsNotDisplayedInTheFilterDropdown(string filterName)
         {
             var filterElement = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(filterElement.CheckStringFilterByName(filterName));
+            Assert.IsFalse(filterElement.GetStringFilterByName(filterName));
         }
-
+        
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
         public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            List<string> list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
+            var list = page.ProjectListInFilterDropdown.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
             page.BodyContainer.Click();
         }
@@ -1712,7 +2250,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTeamsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            List<string> list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
+            var list = page.TeamListInFilterDropdown.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s, StringComparer.Ordinal), list, "Teams are not in alphabetical order");
             page.BodyContainer.Click();
         }
@@ -1721,7 +2259,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTypeOfProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            List<string> list = page.ProjectsTypeListInFilterDropdown.Select(x => x.Text).ToList();
+            var list = page.ProjectsTypeListInFilterDropdown.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Projects Type are not in alphabetical order");
             page.BodyContainer.Click();
         }
@@ -1730,14 +2268,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenValueIsDisplayedForDefaultColumn(string defaultValue)
         {
             var column = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(column.GetDefaultColumnValue(defaultValue), "Incorrect value is displayed for Default column");
+            Assert.IsTrue(column.GetDefaultColumnValue(defaultValue),
+                "Incorrect value is displayed for Default column");
         }
 
         [Then(@"Search fields for ""(.*)"" column contain correctly value")]
         public void ThenSearchFieldsForColumnContainCorrectlyValue(string columnName)
         {
-            var searchFild = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(searchFild.GetSearchFieldTextByColumnName(columnName).Displayed(), "Incorrect contain value for search field");
+            var searchField = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(searchField.GetSearchFieldTextByColumnName(columnName).Displayed(),
+                "Incorrect contain value for search field");
         }
 
         [When(@"User clicks Reset Filters button on the Admin page")]
@@ -1816,11 +2356,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsAreDisplayedInTheAgGrid(string numberOfRows)
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
-                foundRowsCounter.RowsCounter.Text,
-                "Incorrect rows count");
+                foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
 
         [Then(@"User sees ""(.*)"" of ""(.*)"" rows selected label")]
@@ -1829,8 +2367,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
-            StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected", foundRowsCounter.RowsCounter.Text,
-                "Incorrect rows count");
+            StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} selected",
+                foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
+        }
+
+        [Then(@"User sees following tiles selected in the ""(.*)"" field:")]
+        public void ThenUserSeesFollowingTilesSelectedInTheField(string dropdownName, Table items)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in items.Rows)
+            {
+                Assert.IsTrue(page.GetTilesByDropdownName(row["Items"]).Displayed,
+                    $"{row["Items"]} is not displayed in {dropdownName} dropdown");
+            }
         }
 
         [Then(@"User sees Buckets in next default sort order:")]
@@ -1839,10 +2389,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
 
-            for (int i = 0; i < buckets.RowCount; i++)
-            {
-                Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()), "Buckets are not the same");
-            }
+            for (var i = 0; i < buckets.RowCount; i++)
+                Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
+                    "Buckets are not the same");
         }
 
         [When(@"User creates following buckets in Administration:")]
@@ -1871,40 +2420,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [AfterScenario("Delete_Newly_Created_Bucket")]
-        public void DeleteAllBucketAfterScenarioRun()
-        {
-            try
-            {
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
-
-                foreach (var bucketName in _buckets.Value)
-                {
-                    if (string.IsNullOrEmpty(bucketName))
-                        continue;
-
-                    var bucketId = DatabaseHelper.ExecuteReader($"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
-
-                    var request = new RestRequest(requestUri);
-
-                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                    request.AddParameter("objectId", null);
-                    request.AddParameter("selectedObjectsList", bucketId);
-
-                    var response = _client.Value.Put(request);
-
-                    if (response.StatusCode != HttpStatusCode.OK)
-                        throw new Exception($"Unable to execute request. URI: {requestUri}");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
-
         [Then(@"Delete ""(.*)"" Project in the Administration")]
         public void ThenDeleteProjectInTheAdministration(string projectName)
         {
@@ -1918,6 +2433,44 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"delete from[PM].[dbo].[SelfServiceScreenValues] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
+        }
+
+        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
+        [When(@"User deletes ""(.*)"" Bucket in the Administration")]
+        public void ThenDeleteBucketInTheAdministration(string bucketName)
+        {
+            //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
+        }
+
+        [Then(@"Delete following Buckets in the Administration:")]
+        public void ThenDeleteFollowingBucketsInTheAdministration(Table buckets)
+        {
+            foreach (var bucket in buckets.Rows)
+                DatabaseHelper.ExecuteQuery(
+                    $"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
+        }
+
+        [AfterScenario("Delete_Newly_Created_Team")]
+        public void DeleteAllTeamsAfterScenarioRun()
+        {
+            try
+            {
+                if (!_teamName.Value.Any())
+                    return;
+
+                foreach (var name in _teamName.Value)
+                    try
+                    {
+                        DeleteTeam(name);
+                    }
+                    catch
+                    {
+                    }
+            }
+            catch
+            {
+            }
         }
 
         [AfterScenario("Delete_Newly_Created_Project")]
@@ -1953,29 +2506,53 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [AfterScenario("Delete_Newly_Created_Bucket")]
+        public void DeleteAllBucketAfterScenarioRun()
+        {
+            try
+            {
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
+
+                foreach (var bucketName in _buckets.Value)
+                {
+                    if (string.IsNullOrEmpty(bucketName))
+                        continue;
+
+                    var bucketId = DatabaseHelper.ExecuteReader(
+                        $"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
+
+                    var request = new RestRequest(requestUri);
+
+                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                    request.AddParameter("objectId", null);
+                    request.AddParameter("selectedObjectsList", bucketId);
+
+                    var response = _client.Value.Put(request);
+
+                    if (response.StatusCode != HttpStatusCode.OK)
+                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+
+        private void DeleteTeam(string teamName)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[Teams] where [TeamName] = '{teamName}'");
+        }
+
         private string GetProjectId(string projectName)
         {
             var projectId =
                 DatabaseHelper.ExecuteReader(
-                    $"SELECT [ProjectID] FROM [PM].[dbo].[Projects] where [ProjectName] = '{projectName}' AND [IsDeleted] = 0", 0).LastOrDefault();
+                    $"SELECT [ProjectID] FROM [PM].[dbo].[Projects] where [ProjectName] = '{projectName}' AND [IsDeleted] = 0",
+                    0).LastOrDefault();
             return projectId;
-        }
-
-        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
-        [When(@"User deletes ""(.*)"" Bucket in the Administration")]
-        public void ThenDeleteBucketInTheAdministration(string bucketName)
-        {
-            //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
-            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
-        }
-
-        [Then(@"Delete following Buckets in the Administration:")]
-        public void ThenDeleteFollowingBucketsInTheAdministration(Table buckets)
-        {
-            foreach (var bucket in buckets.Rows)
-            {
-                DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
-            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
@@ -7,7 +6,6 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -62,12 +60,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ActionsDropdown.Click();
         }
 
+        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown with search on Action panel")]
+        public void WhenUserSelectsValueForDropdownWithSearchOnActionPanel(string value, string field)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetDropdownWithSearchByFieldName(field).Click();
+            action.GetOptionByName(value).Click();
+        }
+
+        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown on Action panel")]
+        public void WhenUserSelectsValueForDropdownOnActionPanel(string value, string field)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetDropdownByFieldName(field).Click();
+            action.GetOptionByName(value).Click();
+        }
+
         [When(@"User selects ""(.*)"" in the Actions dropdown")]
         public void WhenUserSelectsInTheActionsDropdown(string actionsName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ActionsDropdown.Click();
-            action.GetOptionOnActionsPanelByName(actionsName).Click();
+            action.GetOptionByName(actionsName).Click();
         }
 
         [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
@@ -76,14 +90,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             action.RequestTypeDropdown.Click();
-            action.GetOptionOnActionsPanelByName(typeName).Click();
+            _driver.WaitForDataLoading();
+            action.GetOptionByName(typeName).Click();
         }
 
         [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
         public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(action.RequestTypeDropdown.Displayed(), "Bulk Update Type dropdown is not displayed on Action panel");
+            Assert.IsTrue(action.RequestTypeDropdown.Displayed(),
+                "Bulk Update Type dropdown is not displayed on Action panel");
         }
 
         [When(@"User selects ""(.*)"" Project on Action panel")]
@@ -93,7 +109,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
             action.ProjectSection.Click();
-            //action.GetOptionOnActionsPanelByName(projectName).Click();
         }
 
         [Then(@"Projects are displayed in alphabetical order on Action panel")]
@@ -101,7 +116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
         }
 
@@ -137,7 +152,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.RequestTypeField.Click();
             action.RequestTypeField.Clear();
             action.RequestTypeField.SendKeys(requestType);
-            action.GetOptionOnActionsPanelByName(requestType).Click();
+            action.GetOptionByName(requestType).Click();
         }
 
         [When(@"User selects ""(.*)"" Stage on Action panel")]
@@ -146,7 +161,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.StageField.Clear();
             action.StageField.SendKeys(stageValue);
-            action.GetOptionOnActionsPanelByName(stageValue).Click();
+            action.GetOptionByName(stageValue).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -167,7 +182,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.StageField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Stages are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -179,7 +194,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TaskField.Clear();
             action.TaskField.SendKeys(taskNAme);
-            action.GetOptionOnActionsPanelByName(taskNAme).Click();
+            action.GetOptionByName(taskNAme).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -188,7 +203,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TaskField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -211,7 +226,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ValueDropdown.Click();
-            action.GetOptionOnActionsPanelByName(value).Click();
+            action.GetOptionByName(value).Click();
         }
 
         [Then(@"Value field is not displayed on Action panel")]
@@ -226,7 +241,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateValueDropdown.Click();
-            action.GetOptionOnActionsPanelByName(value).Click();
+            action.GetOptionByName(value).Click();
         }
 
         [Then(@"the Update Value options are displayed in following order:")]
@@ -246,7 +261,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateDateDropdown.Click();
-            action.GetOptionOnActionsPanelByName(updateDate).Click();
+            action.GetOptionByName(updateDate).Click();
         }
 
         [When(@"User selects ""(.*)"" Date on Action panel")]
@@ -256,6 +271,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.DateField.Click();
             action.DateField.Clear();
             action.DateField.SendKeys(dateValue);
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [Then(@"the Update Date options are displayed in following order:")]
@@ -275,7 +292,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.UpdateOwnerDropdown.Click();
-            action.GetOptionOnActionsPanelByName(owner).Click();
+            action.GetOptionByName(owner).Click();
         }
 
         [Then(@"the Update Owner options are displayed in following order:")]
@@ -297,7 +314,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TeamField.Click();
             action.TeamField.Clear();
             action.TeamField.SendKeys(team);
-            action.GetOptionOnActionsPanelByName(team).Click();
+            action.GetOptionByName(team).Click();
         }
 
         [Then(@"Teams are displayed in alphabetical order on Action panel")]
@@ -305,7 +322,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TeamField.Click();
-            List<string> list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
@@ -318,7 +335,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.OwnerField.Click();
             action.OwnerField.Clear();
             action.OwnerField.SendKeys(owner);
-            action.GetOptionOnActionsPanelByName(owner).Click();
+            action.GetOptionByName(owner).Click();
         }
 
         [Then(@"Owner field is not displayed on Action panel")]
@@ -360,6 +377,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
+        [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]
+        public void ThenActionButtonHaveTooltipWithText(string button, string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var t = page.GetActionsButtonByName(button);
+            _driver.MouseHover(t);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText);
+        }
+
         [Then(@"""(.*)"" Action button is active")]
         public void ThenActionButtonIsActive(string buttonName)
         {
@@ -386,15 +413,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.WarningMessageText);
+            Assert.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
         }
 
         [Then(@"the amber message is displayed correctly")]
         public void ThenTheAmberMessageIsDisplayedCorrectly()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(action.AmberMessageOnActionPanel.Displayed(), "Amber message is not displayed");
+            Assert.IsTrue(action.WarningMessage.Displayed(), "Amber message is not displayed");
             Assert.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
             Assert.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
         }
@@ -403,24 +430,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheAmberMessageIsNotDisplayed()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsFalse(action.AmberMessageOnActionPanel.Displayed(), "Amber message is displayed");
+            Assert.IsFalse(action.WarningMessage.Displayed(), "Amber message is displayed");
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
-            Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(), "Close button in Success message is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.SuccessMessage);
+            Assert.AreEqual(textMessage, action.SuccessMessage.Text, $"{textMessage} are not equal");
+            Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
+                "Close button in Success message is not displayed");
         }
 
         [Then(@"Success message is hidden after five seconds")]
         public void ThenSuccessMessageIsHiddenAfterFiveSeconds()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Thread.Sleep(10000);
-            Assert.IsFalse(action.SuccessMessage.Displayed(), "Success Message is displayed");
+            Assert.IsTrue(action.SuccessMessage.Displayed(), "Success message is not displayed");
+            Thread.Sleep(7000);
+            Assert.IsFalse(action.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
         [Then(@"User clicks ""(.*)"" button on message box")]
@@ -510,11 +539,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))
                 throw new Exception("Rows count in table is missed");
-            var numberoOfRowsInTable =
+            var numberOfRowsInTable =
                 dashboardPage.ResultsOnPageCount.Text.Split(' ').First().Replace(",", string.Empty);
             var actionsPanel = _driver.NowAt<ActionsElement>();
             var numberOfRowsInActions = actionsPanel.GetSelectedRowsCount();
-            Assert.AreEqual(numberoOfRowsInTable, numberOfRowsInActions,
+            Assert.AreEqual(numberOfRowsInTable, numberOfRowsInActions,
                 "Number of rows are not equal in table and in Actions");
         }
 
@@ -529,7 +558,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypesStaticListName(string listName)
         {
             var listElement = _driver.NowAt<ActionsElement>();
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
         }
 
         [When(@"User clicks Cancel button on the Actions panel")]
@@ -544,7 +573,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.CreateButton.Click();
 
@@ -559,7 +588,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
         }
 
         [When(@"User select ""(.*)"" option in Actions panel")]
@@ -580,7 +609,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
-            _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
+            actionsElement.ListsDropdown.Click();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
                 actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }

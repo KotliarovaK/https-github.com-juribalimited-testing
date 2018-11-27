@@ -298,6 +298,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table9.AddRow(new string[] {
                         "UserSchedu: Readiness ID"});
             testRunner.When(string.Format("User add following columns using URL to the \"{0}\" page:", listName), ((string)(null)), table9, "When ");
+            testRunner.When("User click on \'UserSchedu: Readiness ID\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table10.AddRow(new string[] {

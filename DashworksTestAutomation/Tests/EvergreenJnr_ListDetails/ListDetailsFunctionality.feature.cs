@@ -500,7 +500,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Preferences\" page on Account details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User changes language to \"English US\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks Update button on Preferences page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("List details button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -956,6 +956,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12075")]
         [NUnit.Framework.CategoryAttribute("DAS12874")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.TestCaseAttribute("Application1", "Used on device", "Any Application in list [List not found] used on device", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application1", "Used by device\'s owner", "Any Application in list [List not found] used by device\'s owner", new string[0])]
@@ -969,6 +970,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "ListDetailsFunctionality",
                     "DAS12075",
                     "DAS12874",
+                    "DAS14222",
                     "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
@@ -1033,6 +1035,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12578")]
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists()
         {
@@ -1046,6 +1049,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12578",
                         "DAS12791",
                         "DAS12952",
+                        "DAS14222",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1107,6 +1111,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12578")]
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists()
         {
@@ -1120,6 +1125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12578",
                         "DAS12791",
                         "DAS12952",
+                        "DAS14222",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1195,6 +1201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12075")]
         [NUnit.Framework.CategoryAttribute("DAS12578")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists()
         {
@@ -1206,6 +1213,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "ListDetailsFunctionality",
                         "DAS12075",
                         "DAS12578",
+                        "DAS14222",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();

@@ -5,7 +5,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
-using NUnit.Framework;
 
 namespace DashworksTestAutomation.Extensions
 {

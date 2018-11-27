@@ -31,7 +31,7 @@ Examples:
 	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
 	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS14287
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -50,7 +50,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
 Examples: 
 	| ColumnName                 | Operators                                                                                        | FilterOption | Text                               | RowsCount |
@@ -136,7 +136,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| UserSchedu: Target App ID |
 	| prK: Target App ID        |
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578 @DAS14159
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -215,7 +215,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 Examples: 
 	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
 	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
-	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
+	#| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
 	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
 	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 15        |
 	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,067     |

@@ -123,6 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10828")]
+        [NUnit.Framework.CategoryAttribute("DAS14287")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Target App Key", "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less t" +
             "han or equal to", "1051", "Windows7Mi: Target App Key is 1051", "4", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Target App Key", "Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less t" +
@@ -144,7 +145,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Applications",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10828"};
+                    "DAS10828",
+                    "DAS14287"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -173,7 +175,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -331,6 +333,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10578")]
+        [NUnit.Framework.CategoryAttribute("DAS14159")]
         [NUnit.Framework.TestCaseAttribute("Devices", "17,225", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "41,335", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "2,223", new string[0])]
@@ -342,7 +345,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "AllLists",
                     "Evergreen_FiltersFeature",
                     "NewFilterCheck",
-                    "DAS10578"};
+                    "DAS10578",
+                    "DAS14159"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -441,7 +445,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS12026")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", "Equals, Does not equal", "RETIRE", "Windows7Mi: Application Rationalisation is Retire", "85", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Babel(Engl: Application Rationalisation is Uncategorised", "302", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Rationalisation", "Equals, Does not equal", "KEEP", "Barry\'sUse: Application Rationalisation is Keep", "2", new string[0])]
         [NUnit.Framework.TestCaseAttribute("ComputerSc: Application Rationalisation", "Equals, Does not equal", "FORWARD PATH", "ComputerSc: Application Rationalisation is Forward Path", "15", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "Havoc(BigD: Application Rationalisation is Uncategorised", "1,067", new string[0])]

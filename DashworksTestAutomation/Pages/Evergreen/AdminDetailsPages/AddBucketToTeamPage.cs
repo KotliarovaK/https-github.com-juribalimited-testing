@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -10,7 +6,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
-    class AddBucketToTeamPage : SeleniumBasePage
+    internal class AddBucketToTeamPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = "//h2[text()='Add Buckets']")]
         public IWebElement PageTitle { get; set; }

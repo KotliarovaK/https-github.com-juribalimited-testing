@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithoutRoles" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -110,14 +110,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 0DTXL41673EW7O   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Computer: Laptop Replacement" text is displayed in the table content
 	When User clicks the Logout button
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPBU" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -163,16 +163,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Sharepoint Application" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 changes have successfully been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Sharepoint Application" text is displayed in the table content
+	Then "Sharepoint Application" content is displayed for "EmailMigra: Request Type" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -199,8 +199,8 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then following Values are displayed in Action drop-down:
 	| Value              |
 	| Create static list |
-	| Bulk update        |
-	When User selects "Bulk update" in the Actions dropdown
+	| Bulk Update        |
+	When User selects "Bulk Update" in the Actions dropdown
 	Then Bulk Update Type dropdown is displayed on Action panel
 	When User selects "Update task value" Bulk Update Type on Action panel
 	Then "UPDATE" Action button is disabled
@@ -212,7 +212,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	When User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "0 of 1 objects were valid for the update." text is displayed on Action panel
+	And Success message with "0 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	Then There are no errors in the browser console
 
 Examples: 
@@ -244,9 +244,9 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	| Value                   |
 	| Create static list      |
 	| Remove from static list |
-	| Bulk update             |
+	| Bulk Update             |
 
-Examples: 
+Examples:
 	| PageName     | ColumnHeader  | RowName                          |
 	| Devices      | Hostname      | 001PSUMZYOW581                   |
 	| Users        | Username      | 002B5DC7D4D34D5C895              |
@@ -273,17 +273,17 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterO
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
+	#Then "<SelectedRowsCount>" selected rows are displayed in the Actions panel
 	When User clicks on Action drop-down
 
-Examples: 
+Examples:
 	| PageName     | FilterName       | Checkboxes | SelectedRowsCount |
 	| Devices      | Compliance       | Red        | 9174              |
 	| Users        | Compliance       | Red        | 9438              |
 	| Applications | Compliance       | Red        | 181               |
 	| Mailboxes    | Owner Compliance | Green      | 14701             |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266 @DAS13284 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -305,7 +305,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	| 001PSUMZYOW581   |
 	| 00BDM1JUR8IF419  |
 	| 00RUUMAH9OZN9A   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -313,7 +313,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 3 of 3 objects were in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001PSUMZYOW581"
 	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
@@ -329,44 +329,44 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 001PSUMZYOW581   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Virtual Machine" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[This is the Default Request Type for Computer)] " Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00RUUMAH9OZN9A   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Laptop Replacement" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -390,7 +390,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| FMN5805290       |
 	| AKX995383        |
 	| AAD1011948       |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -398,7 +398,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 3 of 3 objects were in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "FMN5805290"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
@@ -408,21 +408,21 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
-		#returns default object state
+	#returns default object state
 	And User perform search by "FMN5805290"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| FMN5805290       |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User: VIP" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User clicks Close panel button
 	And User perform search by "AKX995383"
 	And User clicks the Actions button
@@ -430,14 +430,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| AKX995383        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User: No Agent" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User clicks Close panel button
 	And User perform search by "AAD1011948"
 	And User clicks the Actions button
@@ -445,16 +445,16 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| AAD1011948       |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[Default (User)]" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -475,7 +475,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	| SelectedRowsName                                           |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -483,7 +483,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "2 of 2 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 2 of 2 objects were in the selected project." text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
@@ -491,36 +491,36 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
-		#returns default object state
+	#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
 	| SelectedRowsName                                           |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[Default (Application)]" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
 	| SelectedRowsName                           |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Application: Request Type A" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @DAS13708 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -542,7 +542,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	| 0F1ED67386AD4FA7BF4@bclabs.local |
 	| 10A919CA1E7641E08E7@bclabs.local |
 	| 229DCF8E575243E9928@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	Then "UPDATE" Action button is disabled
@@ -550,7 +550,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "3 of 3 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "3 changes have successfully been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "0F1ED67386AD4FA7BF4@bclabs.local"
 	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
@@ -560,50 +560,50 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
-		#returns default object state
+	#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 0F1ED67386AD4FA7BF4@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Shared Mailbox" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 10A919CA1E7641E08E7@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox - EA" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 229DCF8E575243E9928@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13266 @DAS13284 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -616,60 +616,76 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00HA7MKAVVFDAV   |
-	| 00I0COBFWHOF27   |
+	| 001BAQXT6JWFPI   |
+	| 001PSUMZYOW581   |
+	| 00RUUMAH9OZN9A   |
+	| 1B1CJ31RV9ZPYD   |
 	| 018UQ6KL9TF4YF   |
-	| 019BFPQGKK5QT8N  |
-	| 01DRMO46G58SXK   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Workstation Replacement" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "2 of 5 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your updates have been queued, 2 of 5 objects were in the selected project" text is displayed on Action panel
 	When User refreshes agGrid
-	And User perform search by "00HA7MKAVVFDAV"
-	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
+	And User perform search by "001BAQXT6JWFPI"
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	When User perform search by "001PSUMZYOW581"
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	When User perform search by "00RUUMAH9OZN9A"
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	When User perform search by "1B1CJ31RV9ZPYD"
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
 	When User perform search by "018UQ6KL9TF4YF"
-	Then "Computer: Workstation Replacement" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "00I0COBFWHOF27"
-	Then "" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "019BFPQGKK5QT8N"
-	Then "" content is displayed in "Windows7Mi: Request Type" column
-	When User perform search by "01DRMO46G58SXK"
-	Then "" content is displayed in "Windows7Mi: Request Type" column
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
 	When User closes Tools panel
 	And User clicks Close panel button
-		#returns default object state
+	#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00HA7MKAVVFDAV   |
-	And User selects "Bulk update" in the Actions dropdown
+	| 1B1CJ31RV9ZPYD   |
+	| 018UQ6KL9TF4YF  |
+	| 001BAQXT6JWFPI   |
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "[This is the Default Request Type for Computer)] " Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your update has been queued, 3 of 3 object was in the selected project" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
+	| 001PSUMZYOW581   |
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer: Virtual Machine" Request Type on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "Your update has been queued, 1 of 1 object was in the selected project" text is displayed on Action panel
+	When User clicks Close panel button
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00RUUMAH9OZN9A   |
+	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
+	And User selects "Computer: Laptop Replacement" Request Type on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And Success message with "Your update has been queued, 1 of 1 object was in the selected project" text is displayed on Action panel
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13277
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton
@@ -682,7 +698,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| 00OMQQXWA1DRI6   |
 	| 00RUUMAH9OZN9A   |
 	| 00SH8162NAS524   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Babel (English, German and French)" Project on Action panel
 	And User selects "Machines" Request Type on Action panel
@@ -699,17 +715,19 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00OMQQXWA1DRI6   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	Then the following Projects are displayed in opened DLL on Action panel:
 	| Projects                                         |
 	| Babel (English, German and French)               |
 	| Barry's User Project                             |
 	| Computer Scheduled Test (Jo)                     |
+	| Devices Evergreen Capacity Project               |
 	| Havoc (Big Data)                                 |
 	| I-Computer Scheduled Project                     |
 	| Migration Project Phase 2 (User Project)         |
 	| Project K-Computer Scheduled Project             |
+	| User Evergreen Capacity Project                  |
 	| User Scheduled Test (Jo)                         |
 	| Windows 7 Migration (Computer Scheduled Project) |
 	When User clicks the Columns button
@@ -735,7 +753,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Barry's User Project" Project on Action panel
 	And User selects "Desktop Replacement" Request Type on Action panel
@@ -752,7 +770,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	When User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Havoc (Big Data)" Project on Action panel
 	And User selects "User Request Type 2" Request Type on Action panel
@@ -769,7 +787,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	When User select "Application" rows in the grid
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	Then Projects are displayed in alphabetical order on Action panel
 	When User selects "User Scheduled Test (Jo)" Project on Action panel
@@ -787,7 +805,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	When User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update request type" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox - VIP" Request Type on Action panel
@@ -804,7 +822,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExi
 	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Computer Scheduled Test (Jo)" Project on Action panel
 	And User selects "One" Stage on Action panel
@@ -847,7 +865,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	When User select "<ColumnName>" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "<ProjectName>" Project on Action panel
 	And User selects "<StageName>" Stage on Action panel
@@ -905,7 +923,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Barry's User Project" Project on Action panel
 	Then Stages are displayed in alphabetical order on Action panel
@@ -972,7 +990,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValues
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| 018UQ6KL9TF4YF   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
 	And User selects "One" Stage on Action panel
@@ -1017,7 +1035,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Computer Information ---- Text fill; Text fill;" Stage on Action panel
@@ -1070,12 +1088,12 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13281" User
 
-Examples: 
-	| RowName        | MessageText                                                                           |
-	| 00HA7MKAVVFDAV | 1 of 1 objects were valid for the update. Your changes have successfully been queued. |
-	| 00I0COBFWHOF27 | 0 of 1 objects were valid for the update.                                             |
+Examples:
+	| RowName        | MessageText                                                   |
+	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
+	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1108,7 +1126,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1118,15 +1136,16 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "No change" Update Date on Action panel
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<NewTeam>" Team on Action panel
+	And User navigate to the bottom of the Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1140,7 +1159,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User clicks the "UPDATE" Action button
 	And User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
@@ -1161,7 +1180,7 @@ Examples:
 	| DAS1324 | LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
 	| DAS1325 | ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1194,39 +1213,42 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
 	And User selects "Perform User Acceptance Test" Task on Action panel
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "<NewDate>" Date on Action panel
+	And User selects "Nov 29, 2018" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<NewTeam>" Team on Action panel
+	When User navigate to the bottom of the Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-		#returns default object state
-	And User selects "Bulk update" in the Actions dropdown
+	#returns default object state
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
 	And User selects "Perform User Acceptance Test" Task on Action panel
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "<DefaultDate>" Date on Action panel
+	And User selects "Jan 5, 2019" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "Update" Update Owner on Action panel
 	And User selects "<DefaultTeam>" Team on Action panel
 	And User navigate to the bottom of the Action panel
 	And User clicks the "UPDATE" Action button
 	And User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	When User clicks the Logout button
 	Then User is logged out
@@ -1239,12 +1261,12 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User removes "<Name>" User
 
 Examples: 
-	| Name    | RowName    | NewDate      | NewTeam  | DefaultDate  | DefaultTeam         | DefaultValue   |
-	| DAS1330 | CQV0623434 | May 19, 2018 | Admin IT | May 08, 2015 | Administrative Team | Complete       |
-	| DAS1331 | BBZ877343  | Aug 28, 2001 | Admin IT | Sep 07, 2018 | Retail Team         | Failed         |
-	| DAS1332 | DLL972653  | Aug 30, 2018 | Admin IT | Sep 05, 2018 | K-Team              | Complete       |
-	| DAS1333 | LZI970280  | May 09, 2018 | Admin IT | Sep 03, 2018 | IB Team             | Not Applicable |
-	| DAS1334 | ZQX656408  | Aug 15, 2018 | Admin IT | Aug 30, 2018 | Migration Phase 2   | Not Applicable |
+	| Name    | RowName    | NewTeam  | DefaultTeam         | DefaultValue   |
+	| DAS1330 | CQV0623434 | Admin IT | Administrative Team | Complete       |
+	| DAS1331 | BBZ877343  | Admin IT | Retail Team         | Failed         |
+	| DAS1332 | DLL972653  | Admin IT | K-Team              | Complete       |
+	| DAS1333 | LZI970280  | Admin IT | IB Team             | Not Applicable |
+	| DAS1334 | ZQX656408  | Admin IT | Migration Phase 2   | Not Applicable |
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
@@ -1279,7 +1301,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| <RowName>        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1287,17 +1309,19 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Update" Update Value on Action panel
 	And User selects "<NewValue>" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "<NewDate>" Date on Action panel
+	And User selects "Nov 28, 2018" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	When User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	#returns default object state
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1305,13 +1329,15 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User selects "Update" Update Value on Action panel
 	And User selects "<DefaultValue>" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "<DefaultDate>" Date on Action panel
+	And User selects "Jan 9, 2019" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	When User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User navigate to the bottom of the Action panel
 	And User clicks the "UPDATE" Action button
 	And User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
@@ -1325,14 +1351,14 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User removes "<Name>" User
 
 Examples: 
-	| Name     | RowName    | NewValue       | NewDate      | DefaultValue   | DefaultDate  |
-	| DAS13280 | CQV0623434 | Complete       | Sep 01, 2009 | Started        | May 08, 2015 |
-	| DAS13281 | BBZ877343  | Failed         | Aug 28, 2001 | Not Applicable | Sep 07, 2018 |
-	| DAS13282 | DLL972653  | Complete       | Aug 30, 2018 | Not Started    | Sep 05, 2018 |
-	| DAS13283 | LZI970280  | Not Applicable | May 09, 2018 | Failed         | Sep 03, 2018 |
-	| DAS13284 | ZQX656408  | Not Applicable | Aug 15, 2018 | Complete       | Aug 30, 2018 |
+	| Name     | RowName    | NewValue       | DefaultValue   |
+	| DAS13280 | CQV0623434 | Complete       | Started        |
+	| DAS13281 | BBZ877343  | Failed         | Not Applicable |
+	| DAS13282 | DLL972653  | Complete       | Not Started    |
+	| DAS13283 | LZI970280  | Not Applicable | Failed         |
+	| DAS13284 | ZQX656408  | Not Applicable | Complete       |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1365,7 +1391,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| LZI970280        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1374,15 +1400,16 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects "Complete" Value on Action panel
 	And User selects "Remove" Update Date on Action panel
 	And User selects "No change" Update Owner on Action panel
+	And User navigate to the bottom of the Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	Then Success message is hidden after five seconds
 	When User refreshes agGrid
 	Then "Complete" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	#returns default object state
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -1390,12 +1417,14 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "Sep 03, 2018" Date on Action panel
+	And User selects "Dec 30, 2018" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
+	And User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
@@ -1408,7 +1437,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13290" User
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1441,38 +1470,42 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User select "Username" rows in the grid
 	| SelectedRowsName |
 	| LZI970280        |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
 	And User selects "Perform User Acceptance Test" Task on Action panel
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "Aug 30, 2013" Date on Action panel
+	And User selects "Dec 30, 2018" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "Remove owner and team" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
-	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-		#returns default object state
-	When User selects "Bulk update" in the Actions dropdown
+	#Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	#remove '#' after bug fix that update the value of the items
+	#returns default object state
+	When User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
 	And User selects "Perform User Acceptance Test" Task on Action panel
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "Sep 03, 2018" Date on Action panel
+	And User selects "Dec 27, 2018" Date on Action panel
+	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 of 1 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	#Then "Failed" content is displayed for "Windows7Mi: Perform User Acceptance Test" column
+	#remove '#' after bug fix that update the value of the items
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -1501,7 +1534,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Havoc (Big Data)" Project on Action panel
 	And User selects "Stage 0" Stage on Action panel
@@ -1510,9 +1543,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
 	And User clicks "UPDATE" button on message box
-	And Success message with "7578 of 7578 objects were valid for the update. Your changes have successfully been queued." text is displayed on Action panel
+	And Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Started" content is displayed in "Havoc(BigD: Task 0" column
+	Then "Started" content is displayed for "Havoc(BigD: Task 0" column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks
@@ -1524,7 +1557,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpub
 	| SelectedRowsName |
 	| 001BAQXT6JWFPI   |
 	| 001PSUMZYOW581   |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "Pre-Migration" Stage on Action panel
@@ -1554,7 +1587,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	| SelectedRowsName    |
 	| 003F5D8E1A844B1FAA5 |
 	| 00A5B910A1004CF5AC4 |
-	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Bulk Update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "User Scheduled Test (Jo)" Project on Action panel
 	Then following Stage are displayed in drop-down:

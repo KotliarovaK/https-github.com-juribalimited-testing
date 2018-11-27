@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
+namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
     internal class CreateBucketPage : SeleniumBasePage
     {
@@ -18,9 +16,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//label[text()='Bucket Name']/ancestor::div[@class='form-item']//input")]
         public IWebElement BucketNameField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Default Bucket']")]
-        public IWebElement DefaultBucketCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='teams']")]
         public IWebElement TeamsNameField { get; set; }
@@ -39,6 +34,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var teamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(teamNameSelector));
             Driver.FindElement(By.XPath(teamNameSelector)).Click();
+        }
+
+        public IWebElement GetDefaultCheckboxByName(string checkbox)
+        {
+            var selector = By.XPath($".//span[text()='{checkbox}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(selector);
         }
     }
 }

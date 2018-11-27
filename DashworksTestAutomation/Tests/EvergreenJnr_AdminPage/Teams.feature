@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @12846 @DAS13602 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -42,12 +42,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
-	When User click on Back button
+	When User clicks "Teams" navigation link on the Admin page
 	When User enters "99770" text in the Search field for "Team" column
 	When User clicks content from "Team" column
 	When User clicks "Team Settings" tab
 	Then Default Team checkbox is not active
-	When User click on Back button
+	When User clicks "Teams" navigation link on the Admin page
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	When User clicks on Actions button
@@ -62,7 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
-	When User click on Back button
+	When User clicks "Teams" navigation link on the Admin page
 	When User enters "My Team" text in the Search field for "Team" column
 	Then "TRUE" value is displayed for Default column
 	When User clicks the "CREATE TEAM" Action button
@@ -71,10 +71,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User enters "test" in the Team Description field
 	And User clicks the "CREATE TEAM" Action button
 	Then Error message with "A team already exists with this name" text is displayed
-	When User enters "99770" text in the Search field for "Team" column
-	And User selects all rows on the grid
-	And User removes selected item
-	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
@@ -161,7 +157,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	Then data in table is sorted by "Full Name" column in ascending order on the Admin page
 	When User click on "Full Name" column header on the Admin page
 	Then data in table is sorted by "Full Name" column in descending order on the Admin page
-	When User enters "Automation " text in the Search field for "Full Name" column
+	When User enters "Admin" text in the Search field for "Full Name" column
 	Then Counter shows "3" found rows
 	When User enters "automation_admin1" text in the Search field for "Username" column
 	Then Counter shows "1" found rows
@@ -194,7 +190,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	Then User sees "2" of "2" rows selected label
 	When User clicks "Buckets" tab
 	And User selects all rows on the grid
-	Then User sees "3" of "3" rows selected label
+	Then User sees "6" of "6" rows selected label
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
@@ -251,13 +247,14 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then numeric data in table is sorted by "Mailboxes" column in descending order on the Admin page
 	When User click on "Mailboxes" column header on the Admin page
 	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
-	When User have opened Column Settings for "Default" column
-	And User clicks Filter button in the Column Settings panel on the Teams Page
-	When User clicks "False" checkbox from String Filter on the Admin page
+	#When User have opened Column Settings for "Default" column
+	#And User clicks Filter button in the Column Settings panel on the Teams Page
+	When User clicks String Filter button for "Default" column on the Admin page
+	When User clicks "False" checkbox from boolean filter on the Admin page
 	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Email Migration" checkbox from String Filter on the Admin page
+	When User selects "Email Migration" checkbox from String Filter with item list on the Admin page
 	Then Counter shows "2" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Glasgow" text in the Search field for "Bucket" column
@@ -379,9 +376,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then There are no errors in the browser console
 	When User click on Back button
-	And User have opened Column Settings for "Default" column
-	And User clicks Filter button in the Column Settings panel on the Teams Page
-	When User clicks "True" checkbox from String Filter on the Admin page
+	#And User have opened Column Settings for "Default" column
+	#And User clicks Filter button in the Column Settings panel on the Teams Page
+	When User clicks String Filter button for "Default" column on the Admin page
+	When User clicks "True" checkbox from boolean filter on the Admin page
 	Then Counter shows "2,789" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
@@ -389,11 +387,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User enters "Team 10" text in the Search field for "Description" column
 	Then Counter shows "111" found rows
 	When User clicks Reset Filters button on the Admin page
-	And User enters "1" text in the Search field for "Evergreen Buckets" column
-	Then Counter shows "1" found rows
+	And User enters "0" text in the Search field for "Evergreen Buckets" column
+	Then Counter shows "0" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "5" text in the Search field for "Project Buckets" column
-	Then Counter shows "1" found rows
+	Then Counter shows "2" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
 	Then Counter shows "4" found rows
@@ -518,3 +516,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	| Migration Phase 2      |
 	| Migration Phase 3 Team |
 	| My Team                |
+	When User click on Back button
+	When User enters "DAS12326" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text

@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsOrderSavedAfterSearch
 	| Smith          | 11           |
 	Then "Owner Display Name" column is "Left" Pinned
 
-@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11664 @DAS12325
+@Evergreen @Users @EvergreenJnr_GridActions @ColumnOrder @DAS10836 @DAS11664 @DAS12325 @DAS14183
 Scenario: EvergreenJnr_UsersList_CheckThatColumnsOrderSavedAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAfterDeletingFirstColumnTheColu
 	| Vendor     |
 	| Version    |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @DAS13668 @Not_Run
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnOrder @DAS12345 @DAS12823 @DAS1366
 Scenario Outline: EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

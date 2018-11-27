@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Static List TestName" list is displayed to user
 	And Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @DAS11951 @DAS12199 @DAS13001 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @DAS11951 @DAS12199 @DAS13001 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -477,7 +477,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	When User navigates to the "Applications List TestName" list
 	Then Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -767,7 +767,7 @@ Examples:
 	| Users        | City            | Description   | Floor                |
 	| Mailboxes    | Alias           | Time Zone     | Building             |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS14183
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -881,7 +881,7 @@ Examples:
 	| Applications | Application   | Adobe     | 40    | 1       |
 	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -1058,9 +1058,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	When User clicks Delete button for custom list
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
-	And "List Deleted" message is displayed
+	And "List deleted" message is displayed
 
-@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
+@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1127,7 +1127,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectly
 	Then Cancel button is displayed with correctly color
 	Then User confirm removed list
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDropdown 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

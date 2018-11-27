@@ -1,13 +1,12 @@
 ﻿using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
-using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -109,6 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             _driver.SelectCustomSelectbox(page.LanguageDropdown, language);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User changes List Page Size to ""(.*)""")]
@@ -157,13 +157,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.UpdateButton.Click();
         }
 
-        [When(@"User clicks Update button on the Advanced page")]
-        public void WhenUserClicksUpdateButtonOnTheAdvancedPage()
-        {
-            var page = _driver.NowAt<AdvancedPage>();
-            page.UpdateButton.Click();
-        }
-
         [When(@"User clicks Update button on the Change Password page")]
         public void WhenUserClicksUpdateButtonOnTheChangePasswordPage()
         {
@@ -195,13 +188,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             page.FullNameField.Clear();
             page.FullNameField.SendKeys(fullName);
-        }
-
-        [When(@"User clicks Update button on Profile page")]
-        public void WhenUserClicksUpdateButtonOnProfilePage()
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            page.UpdateButton.Click();
         }
 
         [Then(@"Error message is not displayed on Profile page")]
@@ -242,14 +228,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.FullNameField.ClearWithHomeButton(_driver);
         }
 
-        [Then(@"""(.*)"" error message is displayed")]
-        public void ThenErrorMessageIsDisplayed(string errorMessage)
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.ErrorMessage);
-            Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
-        }
-
         [When(@"User clears Email field")]
         public void WhenUserClearsEmailField()
         {
@@ -263,8 +241,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                          ResourceFilesNamesProvider.IncorrectFile;
+            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                       ResourceFilesNamesProvider.IncorrectFile;
             page.UploadButton.SendKeys(file);
         }
 
@@ -274,18 +252,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             IAllowsFileDetection allowsDetection = _driver;
             allowsDetection.FileDetector = new LocalFileDetector();
-            string file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
-                          ResourceFilesNamesProvider.CorrectFile;
+            var file = Path.GetDirectoryName(Path.GetDirectoryName(TestContext.CurrentContext.TestDirectory)) +
+                       ResourceFilesNamesProvider.CorrectFile;
             page.UploadButton.SendKeys(file);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on Account Details page")]
         public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetailsPage(string text)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
-            _driver.WaitForDataLoading();
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
@@ -294,6 +271,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            //Waiting for success green banner is displayed
             Thread.Sleep(4000);
         }
 
@@ -304,6 +282,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
             StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
             Thread.Sleep(4000);
+        }
+
+        [Then(@"""(.*)"" error message is displayed")]
+        public void ThenErrorMessageIsDisplayed(string errorMessage)
+        {
+            var page = _driver.NowAt<AccountDetailsPage>();
+            Thread.Sleep(500);
+            Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
+            page.CloseMessageButton.Click();
+            Thread.Sleep(500);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
@@ -322,13 +310,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Picture is not changed");
         }
 
-        [When(@"User clicks Remove on Account details page")]
-        public void WhenUserClicksRemoveOnAccountDetailsPage()
-        {
-            var page = _driver.NowAt<AccountDetailsPage>();
-            page.RemoveButton.Click();
-        }
-
         [Then(@"User picture changed to default")]
         public void ThenUserPictureChangedToDefault()
         {
@@ -342,7 +323,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PreferencesPage>();
             Assert.IsTrue(page.SuccessMessage.Displayed(), "Success message is not displayed");
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
             Assert.IsFalse(page.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
@@ -356,11 +337,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [AfterScenario("Remove_Profile_Changes")]
-        public void RemoveProfileChangesAfterscenario()
+        public void RemoveProfileChangesAfterScenario()
         {
             try
             {
+                _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
+                WhenUserClicksProfileInAccountDropdown();
                 var page = _driver.NowAt<AccountDetailsPage>();
+                page.AccountDetails.Click();
                 page.FullNameField.Clear();
                 page.FullNameField.SendKeys(_userDto.FullName);
                 page.EmailField.Clear();
@@ -369,18 +353,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     : _userDto.Email);
                 page.RemoveButton.Click();
                 page.UpdateButton.Click();
+                page.NavigateToPage("Preferences");
                 var preferencesPage = _driver.NowAt<PreferencesPage>();
                 preferencesPage.PreferencesLink.Click();
                 preferencesPage.DisplayModeDropdown.Click();
                 preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
+                page.NavigateToPage("Advanced");
+                var advancedPage = _driver.NowAt<AdvancedPage>();
+                advancedPage.ListPageSizeField.Clear();
+                advancedPage.ListPageSizeField.SendKeys("0");
+                advancedPage.UpdateButton.Click();
             }
             catch
-            {}
+            {
+            }
         }
 
         [AfterScenario("Remove_Password_Changes")]
-        public void RemovePasswordChangesAfterscenario()
+        public void RemovePasswordChangesAfterScenario()
         {
             try
             {
@@ -394,7 +385,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.UpdateButton.Click();
             }
             catch
-            {}
+            {
+            }
         }
 
         [AfterScenario("Delete_Newly_Created_User")]
@@ -408,8 +400,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var loginPage1 = _driver.NowAt<LoginPanelPage>();
                 loginPage1.LoginLink.Click();
                 var loginPage = _driver.NowAt<LoginPage>();
-                loginPage.SplashUserNameTextbox.SendKeys("admin");
-                loginPage.SplashPasswordTextbox.SendKeys("m!gration");
+                loginPage.SplashUserNameTextBox.SendKeys("admin");
+                loginPage.SplashPasswordTextBox.SendKeys("m!gration");
                 loginPage.SplashLoginButton.Click();
                 _driver.WaitForDataLoading();
                 var page = _driver.NowAt<ManagementConsolePage>();
@@ -418,8 +410,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.ManageUsersLink.Click();
                 _driver.WaitForDataLoading();
                 var page1 = _driver.NowAt<MainElementsOfProjectCreation>();
-                page1.SearchTextbox.Clear();
-                page1.SearchTextbox.SendKeys("DAS13288");
+                page1.SearchTextBox.Clear();
+                page1.SearchTextBox.SendKeys("DAS13288");
                 page1.SearchButton.Click();
                 _driver.WaitForDataLoading();
                 page1.GetDeleteButtonElementByName("DAS13288").Click();
@@ -427,7 +419,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.AcceptAlert();
             }
             catch
-            {}
+            {
+            }
         }
     }
 }

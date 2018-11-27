@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath,
             Using =
                 ".//span[text()='Application Summary']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement ApplicationSummarySection { get; set; } //CHANGE ALL xpATH
+        public IWebElement ApplicationSummarySection { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =

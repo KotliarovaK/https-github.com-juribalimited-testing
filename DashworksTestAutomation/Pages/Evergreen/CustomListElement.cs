@@ -18,13 +18,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement CreateNewListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
-        public IWebElement ListPanelSearchTextbox { get; set; }
+        public IWebElement ListPanelSearchTextBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
-        public IWebElement SearchTextboxResetButtonInListPanel { get; set; }
+        public IWebElement SearchTextBoxResetButtonInListPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
-        public IWebElement ListNameTextbox { get; set; }
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='List Name']")]
+        public IWebElement ListNameTextBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-primary save-actions-save')]")]
         public IWebElement SaveButton { get; set; }
@@ -94,7 +94,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement OpenSettingsByListName(string listName)
         {
             var listSettingsSelector =
-                By.XPath($".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
+                By.XPath(
+                    $".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
             Driver.MouseHover(listSettingsSelector);
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(listSettingsSelector);
@@ -113,7 +114,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
         public IWebElement ManageButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Make Favourite']")]
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Make Favorite']")]
         public IWebElement MakeFavoriteButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]

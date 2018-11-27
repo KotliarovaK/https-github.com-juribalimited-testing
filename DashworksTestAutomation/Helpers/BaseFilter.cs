@@ -193,7 +193,7 @@ namespace DashworksTestAutomation.Helpers
     public class CheckBoxesFilter : BaseFilter
     {
         protected string CheckboxSelector =
-            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/ancestor::mat-checkbox";
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/ancestor::div/mat-checkbox";
 
         protected string CheckboxSelectorName =
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']";
@@ -348,7 +348,7 @@ namespace DashworksTestAutomation.Helpers
                 }
                 else
                 {
-                    selector = $".//li//span[text()='{row["Association"]}']";
+                    selector = $".//li//span[contains(text(), '{row["Association"]}')]";
                 }
                 selectboxes.Last().SendkeysWithDelay(row["Association"]);
                 _driver.FindElement(By.XPath(selector)).Click();
@@ -386,7 +386,10 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-4']")).SendKeys(row["Association"]);
-                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                if (_driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Displayed)
+                    _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                else
+                    _driver.FindElement(By.XPath($".//li//div[text()='{row["Association"]}']")).Click();
                 _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-4']")).Clear();
             }
 
@@ -593,8 +596,8 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
-                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[text()='{row["Association"]}']"))) continue;
-                _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
+                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]"))) continue;
+                _driver.FindElement(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]")).Click();
             }
 
             SaveFilter();

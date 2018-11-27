@@ -322,7 +322,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table3.AddRow(new string[] {
                         "ACDSee 4.0 (4.0.0)"});
             testRunner.When("User selects following Objects", ((string)(null)), table3, "When ");
-            testRunner.And("User clicks the \"UPDATE APPLICATION CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"3 applications will be added\" text is displayed on the Admi" +
                     "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -345,11 +345,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table5.AddRow(new string[] {
-                        "20040610sqlserverck (1.0.0)"});
+                        "20040610sqlserverck"});
             table5.AddRow(new string[] {
-                        "7zip (Unknown)"});
+                        "7zip"});
             table5.AddRow(new string[] {
-                        "ACDSee 4.0 (4.0.0)"});
+                        "ACDSee 4.0"});
             testRunner.Then("following Items are displayed in the History table", ((string)(null)), table5, "Then ");
             testRunner.Then("\"\" content is displayed in \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -458,7 +458,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("\"Devices to add (1 of 17225 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -555,12 +554,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Active\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks \"True\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"True\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"0\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"Device scoped\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Counter shows \"6\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"DDPP\" text in the Search field for \"Short Name\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -580,7 +579,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table11.AddRow(new string[] {
                         "Project ID"});
             testRunner.And("content is present in the following newly added columns:", ((string)(null)), table11, "And ");
-            testRunner.When("User enters \"01\" text in the Search field for \"Project ID\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"0\" text in the Search field for \"Project ID\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"0\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -675,6 +674,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12796")]
         [NUnit.Framework.CategoryAttribute("DAS12872")]
+        [NUnit.Framework.CategoryAttribute("DAS13401")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
@@ -691,6 +691,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "AdminPage",
                     "DAS12796",
                     "DAS12872",
+                    "DAS13401",
                     "Delete_Newly_Created_List",
                     "Delete_Newly_Created_Project",
                     "Project_Creation_and_Scope",
@@ -789,7 +790,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table16.AddRow(new string[] {
                         "01BQIYGGUW5PRP6"});
             testRunner.And("User selects following Objects", ((string)(null)), table16, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"1 object queued for onboarding, 0 obje" +
                     "cts offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -830,9 +831,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS12680")]
         [NUnit.Framework.CategoryAttribute("DAS12485")]
+        [NUnit.Framework.CategoryAttribute("DAS13949")]
+        [NUnit.Framework.CategoryAttribute("DAS14180")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCo" +
@@ -847,9 +851,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13199",
                         "DAS12680",
                         "DAS12485",
+                        "DAS13949",
+                        "DAS14180",
                         "Project_Creation_and_Scope",
                         "Delete_Newly_Created_Project",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -949,39 +956,46 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("data in table is sorted by \"Bucket\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \"Bucket\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \"Bucket\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FilterData"});
+            table23.AddRow(new string[] {
+                        "30 Jul 2017"});
+            testRunner.When("User selects following date filter on the Projects page", ((string)(null)), table23, "When ");
+            testRunner.Then("Counter shows \"0\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("field for Date column is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"0IJB93JZPG72PX\" text in the Search field for \"Item\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Object Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"User\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"User\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"Unassigned\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter on the Admin p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter with item list" +
+                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Error message is not displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "0IJB93JZPG72PX"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "04I01QSFL1AWKM"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "ABQ575757"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "ADG685492"});
-            table23.AddRow(new string[] {
-                        "ACDSee 4.0.1 Std Trial Version (Unknown)"});
-            table23.AddRow(new string[] {
-                        "ACDSee 8 (8.0.39)"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table23, "Then ");
+            table24.AddRow(new string[] {
+                        "ACDSee 4.0.1 Std Trial Version"});
+            table24.AddRow(new string[] {
+                        "ACDSee 8"});
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table24, "Then ");
             testRunner.Then("Counter shows \"6\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1009,7 +1023,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("data in table is sorted by \"Status\" column in ascending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \"Status\" column header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \"Status\" column in descending order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "FilterData"});
+            table25.AddRow(new string[] {
+                        "30 Jul 2017"});
+            testRunner.When("User selects following date filter on the Projects page", ((string)(null)), table25, "When ");
+            testRunner.Then("Counter shows \"0\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("field for Date column is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"0IJB93JZPG72PX\" text in the Search field for \"Item\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1021,8 +1042,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter on the Admin p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter with item list" +
+                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"4\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks String Filter button for \"Status\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"Succeeded\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1031,7 +1052,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("User clicks on \"0IJB93JZPG72PX (Carmen H. Benson)\" search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Projects\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User opens \"Device Projects\" section on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1073,16 +1093,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Project ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table24.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "Project ID"});
-            testRunner.Then("following columns added to the table:", ((string)(null)), table24, "Then ");
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.Then("following columns added to the table:", ((string)(null)), table26, "Then ");
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table25.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "Project ID"});
-            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table25, "And ");
+            testRunner.And("content is present in the following newly added columns:", ((string)(null)), table27, "And ");
             this.ScenarioCleanup();
         }
         
@@ -1185,13 +1205,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"\" in the Search Object field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table26.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5 (Hunter, Melanie)"});
-            table26.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "01FF97A1FFAC48A1803 (Aultman, Chanel)"});
-            testRunner.When("User selects following Objects", ((string)(null)), table26, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table28, "When ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices to add (0 of 16765 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1201,17 +1221,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"\" in the Search Object field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table27.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "0SH2BQ3EPXTEWN"});
-            table27.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "30LA8G32UF7HQC"});
-            table27.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "174HB6RFAHA5CT"});
-            table27.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "174HB6RFAHA5CT"});
-            testRunner.When("User selects following Objects", ((string)(null)), table27, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table29, "When ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications to add (0 of 2081 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1221,13 +1241,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"\" in the Search Object field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table28.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "ACDSee 4.0.2 PowerPack Trial Version (4.00.0002)"});
-            table28.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "Backburner (2.1.2.0)"});
-            testRunner.When("User selects following Objects", ((string)(null)), table28, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table30, "When ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"6 objects queued for onboarding, 0 obj" +
@@ -1259,6 +1279,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedList" +
@@ -1270,7 +1291,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS11729",
                         "DAS13199",
                         "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1450,26 +1472,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table29.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "8"});
             testRunner.When("User add \"Application Key\" filter where type is \"Equals\" without added column and" +
-                    " following value:", ((string)(null)), table29, "When ");
+                    " following value:", ((string)(null)), table31, "When ");
             testRunner.And("User create dynamic list with \"ListName12349\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"ListName12349\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table30.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "ListName12349",
                         "Used on device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                    "Value and following Association:", ((string)(null)), table30, "When ");
+                    "Value and following Association:", ((string)(null)), table32, "When ");
             testRunner.Then("\"Application (Saved List)\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"99\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Any Application in list ListName12349 used on device\" is displayed in added filt" +
@@ -1495,13 +1517,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table31.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "0QLZFK7RHMWJLQM"});
-            table31.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "0RGBQGA7XOOPJSW"});
-            testRunner.And("User selects following Objects", ((string)(null)), table31, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table33, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
@@ -1609,16 +1631,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Devices to add (5 of 17225 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User cancels the selection objects in the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table32.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "07RJRCQQJNBJIJQ"});
-            table32.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "0CFHJY5A8WLUB0J"});
-            testRunner.And("User selects following Objects", ((string)(null)), table32, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table34, "And ");
             testRunner.Then("\"Devices to add (2 of 17225 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1729,6 +1751,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS12680")]
         [NUnit.Framework.CategoryAttribute("DAS12157")]
+        [NUnit.Framework.CategoryAttribute("DAS13014")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -1743,28 +1766,29 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13199",
                         "DAS12680",
                         "DAS12157",
+                        "DAS13014",
                         "Delete_Newly_Created_Project",
                         "Delete_Newly_Created_List",
                         "Projects"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table33.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            table33.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
             testRunner.When("User create static list with \"StaticList6527\" name on \"Devices\" page with followi" +
-                    "ng items", ((string)(null)), table33, "When ");
+                    "ng items", ((string)(null)), table35, "When ");
             testRunner.Then("\"StaticList6527\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table34.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "041V8ZALQ4XPL9"});
-            table34.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "04WJ5P9DN0VEEW"});
             testRunner.When("User create static list with \"StaticList6528\" name on \"Devices\" page with followi" +
-                    "ng items", ((string)(null)), table34, "When ");
+                    "ng items", ((string)(null)), table36, "When ");
             testRunner.Then("\"StaticList6528\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1782,16 +1806,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Devices to add (0 of 2 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table35.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            table35.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
-            testRunner.And("User selects following Objects", ((string)(null)), table35, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table37, "And ");
             testRunner.Then("\"Devices to add (2 of 2 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message with \"2 objects queued for onboarding, 0 objects offboarded\" text" +
                     " is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1832,23 +1856,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Projects"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "000F977AC8824FE39B8"});
-            table36.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "002B5DC7D4D34D5C895"});
             testRunner.When("User create static list with \"StaticList6529\" name on \"Users\" page with following" +
-                    " items", ((string)(null)), table36, "When ");
+                    " items", ((string)(null)), table38, "When ");
             testRunner.Then("\"StaticList6529\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "02642091E2484C9C989"});
-            table37.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "02769746B44A414593E"});
             testRunner.When("User create static list with \"StaticList6530\" name on \"Users\" page with following" +
-                    " items", ((string)(null)), table37, "When ");
+                    " items", ((string)(null)), table39, "When ");
             testRunner.Then("\"StaticList6530\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1869,16 +1893,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Users to add (0 of 2 selected)\" is displayed to the user in the Project Scope Ch" +
                     "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table38.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "000F977AC8824FE39B8 (Spruill, Shea)"});
-            table38.AddRow(new string[] {
+            table40.AddRow(new string[] {
                         "002B5DC7D4D34D5C895 (Collor, Christopher)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table38, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table40, "And ");
             testRunner.Then("\"Users to add (2 of 2 selected)\" is displayed to the user in the Project Scope Ch" +
                     "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message with \"2 objects queued for onboarding, 0 objects offboarded\" text" +
                     " is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1936,11 +1960,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When(string.Format("User enters \"{0}\" text in the Search field for \"Project\" column", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table39.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         string.Format("{0}", item)});
-            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, listName), ((string)(null)), table39, "When ");
+            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, listName), ((string)(null)), table41, "When ");
             testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2012,12 +2036,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is displayed and contains \"The selected project has been deleted\"" +
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table40.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "000F977AC8824FE39B8@bclabs.local"});
             testRunner.When("User create static list with \"StaticList5846\" name on \"Mailboxes\" page with follo" +
-                    "wing items", ((string)(null)), table40, "When ");
+                    "wing items", ((string)(null)), table42, "When ");
             testRunner.Then("\"StaticList5846\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2049,6 +2073,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Clone evergreen buckets\" in the Buckets Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"MailboxesProject27\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2095,11 +2122,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When(string.Format("User enters \"{0}\" text in the Search field for \"Project\" column", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table41.AddRow(new string[] {
+            table43.AddRow(new string[] {
                         string.Format("{0}", item)});
-            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table41, "When ");
+            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table43, "When ");
             testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2168,11 +2195,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When(string.Format("User enters \"{0}\" text in the Search field for \"Project\" column", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table42.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         string.Format("{0}", item)});
-            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table42, "When ");
+            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table44, "When ");
             testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2208,9 +2235,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes", "UPDATE MAILBOX CHANGES", "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)", "1 mailbox will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Devices", "Users", "UPDATE USER CHANGES", "ADC714277 (Dina Q. Knight)", "1 user will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
-        public virtual void EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropriateChangesButton(string allListName, string tabName, string buttonName, string objectsToAdd, string warningMessageText, string successMessageText, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes", "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)", "1 mailbox will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Devices", "Users", "ADC714277 (Dina Q. Knight)", "1 user will be added", "1 object queued for onboarding, 0 objects offboarded", new string[0])]
+        public virtual void EvergreenJnr_AdminPage_CheckOnboardingObjectUsingUpdateAppropriateChangesButton(string allListName, string tabName, string objectsToAdd, string warningMessageText, string successMessageText, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -2245,12 +2272,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User clicks \"{0}\" tab in the Project Scope Changes section", tabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table43.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         string.Format("{0}", objectsToAdd)});
-            testRunner.And("User selects following Objects", ((string)(null)), table43, "And ");
-            testRunner.And(string.Format("User clicks the \"{0}\" Action button", buttonName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table45, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("Warning message with \"{0}\" text is displayed on the Admin page", warningMessageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("Success message is displayed and contains \"{0}\" text", successMessageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2270,6 +2297,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12781")]
         [NUnit.Framework.CategoryAttribute("DAS12903")]
         [NUnit.Framework.CategoryAttribute("DAS12485")]
+        [NUnit.Framework.CategoryAttribute("DAS13803")]
+        [NUnit.Framework.CategoryAttribute("DAS13930")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
@@ -2286,6 +2315,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12781",
                         "DAS12903",
                         "DAS12485",
+                        "DAS13803",
+                        "DAS13930",
                         "Projects",
                         "Delete_Newly_Created_Project",
                         "Not_Run"});
@@ -2307,11 +2338,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Mailbox scoped project\" is displayed in the disabled Project Type field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
                     "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
-                    " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Scope\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Match to Evergreen Bucket\" is displayed in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -2327,6 +2356,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS13471")]
+        [NUnit.Framework.CategoryAttribute("DAS13803")]
+        [NUnit.Framework.CategoryAttribute("DAS13803")]
+        [NUnit.Framework.CategoryAttribute("DAS13930")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -2342,6 +2374,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "DAS12999",
                     "DAS13199",
                     "DAS13471",
+                    "DAS13803",
+                    "DAS13803",
+                    "DAS13930",
                     "Delete_Newly_Created_Project",
                     "Project_Creation_and_Scope",
                     "Projects"};
@@ -2367,12 +2402,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Use project buckets\" in the Buckets Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
-                    " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Use project buckets\" in the Buckets Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Scope\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Unassigned\" is displayed in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -2414,12 +2447,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table44.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Laptop"});
             testRunner.When("User add \"Device Type\" filter where type is \"Equals\" with added column and Lookup" +
-                    " option", ((string)(null)), table44, "When ");
+                    " option", ((string)(null)), table46, "When ");
             testRunner.Then("\"3,808\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList54\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList54\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2476,23 +2509,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table45.AddRow(new string[] {
+            table47.AddRow(new string[] {
                         "OS X 10.10"});
             testRunner.When("User add \"Operating System\" filter where type is \"Equals\" with added column and L" +
-                    "ookup option", ((string)(null)), table45, "When ");
+                    "ookup option", ((string)(null)), table47, "When ");
             testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList56\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList56\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table46.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "00SH8162NAS524"});
-            table46.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
             testRunner.When("User create static list with \"StaticList6579\" name on \"Devices\" page with followi" +
-                    "ng items", ((string)(null)), table46, "When ");
+                    "ng items", ((string)(null)), table48, "When ");
             testRunner.Then("\"StaticList6579\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2545,14 +2578,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Projects"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table47.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "barbosaj"});
-            table47.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         "clarkc"});
             testRunner.When("User create static list with \"StaticList6179\" name on \"Users\" page with following" +
-                    " items", ((string)(null)), table47, "When ");
+                    " items", ((string)(null)), table49, "When ");
             testRunner.Then("\"StaticList6179\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2615,23 +2648,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table48.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "Adobe"});
             testRunner.When("User add \"Vendor\" filter where type is \"Equals\" with added column and following v" +
-                    "alue:", ((string)(null)), table48, "When ");
+                    "alue:", ((string)(null)), table50, "When ");
             testRunner.Then("\"39\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList57\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList57\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table49.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "ACD Display 3.4"});
-            table49.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Acrobat Reader 4"});
             testRunner.When("User create static list with \"StaticList6379\" name on \"Applications\" page with fo" +
-                    "llowing items", ((string)(null)), table49, "When ");
+                    "llowing items", ((string)(null)), table51, "When ");
             testRunner.Then("\"StaticList6379\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2700,23 +2733,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table50.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "DEV50"});
             testRunner.When("User add \"Domain\" filter where type is \"Equals\" with added column and Lookup opti" +
-                    "on", ((string)(null)), table50, "When ");
+                    "on", ((string)(null)), table52, "When ");
             testRunner.Then("\"92\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList37\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList37\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table51.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "barbosaj"});
-            table51.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "clarkc"});
             testRunner.When("User create static list with \"StaticList6329\" name on \"Users\" page with following" +
-                    " items", ((string)(null)), table51, "When ");
+                    " items", ((string)(null)), table53, "When ");
             testRunner.Then("\"StaticList6329\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2779,11 +2812,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table52.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         string.Format("{0}", filterValue)});
-            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and Lookup option", filterName), ((string)(null)), table52, "When ");
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and Lookup option", filterName), ((string)(null)), table54, "When ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User create dynamic list with \"DynamicList58\" name on \"{0}\" page", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList58\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2852,23 +2885,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table53.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         "97.1.0.0918(1031)"});
             testRunner.When("User add \"Version\" filter where type is \"Does not contain\" with added column and " +
-                    "following value:", ((string)(null)), table53, "When ");
+                    "following value:", ((string)(null)), table55, "When ");
             testRunner.Then("\"1,741\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList17\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList17\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table54.AddRow(new string[] {
+            table56.AddRow(new string[] {
                         "WMI Tools"});
-            table54.AddRow(new string[] {
+            table56.AddRow(new string[] {
                         "Windows Live Toolbar"});
             testRunner.When("User create static list with \"StaticList6429\" name on \"Applications\" page with fo" +
-                    "llowing items", ((string)(null)), table54, "When ");
+                    "llowing items", ((string)(null)), table56, "When ");
             testRunner.Then("\"StaticList6429\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2937,23 +2970,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table55.AddRow(new string[] {
+            table57.AddRow(new string[] {
                         "Exchange 2003"});
             testRunner.When("User add \"Mailbox Platform\" filter where type is \"Equals\" without added column an" +
-                    "d following checkboxes:", ((string)(null)), table55, "When ");
+                    "d following checkboxes:", ((string)(null)), table57, "When ");
             testRunner.Then("\"6\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList77\" name on \"Mailboxes\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList77\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table56.AddRow(new string[] {
+            table58.AddRow(new string[] {
                         "ZVF5144799@bclabs.local"});
-            table56.AddRow(new string[] {
+            table58.AddRow(new string[] {
                         "zunigamn@bclabs.local"});
             testRunner.When("User create static list with \"StaticList1429\" name on \"Mailboxes\" page with follo" +
-                    "wing items", ((string)(null)), table56, "When ");
+                    "wing items", ((string)(null)), table58, "When ");
             testRunner.Then("\"StaticList1429\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3137,24 +3170,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Mailboxes to add (0 of 14784 selected)\" is displayed to the user in the Project " +
                     "Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table57.AddRow(new string[] {
+            table59.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
-            table57.AddRow(new string[] {
+            table59.AddRow(new string[] {
                         "00DB4000EDD84951993@bclabs.local (CSC, SS)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table57, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table59, "And ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users to add (0 of 14747 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table58.AddRow(new string[] {
+            table60.AddRow(new string[] {
                         "02E0346DF7804F25835 (Gill, Donna)"});
-            table58.AddRow(new string[] {
+            table60.AddRow(new string[] {
                         "037AF4CF47C1452D8A4 (Vanetti, Joe)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table58, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table60, "And ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"4 objects queued for onboarding, 0 obj" +
@@ -3203,23 +3236,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table59.AddRow(new string[] {
+            table61.AddRow(new string[] {
                         "Adobe"});
             testRunner.When("User add \"Vendor\" filter where type is \"Equals\" with added column and following v" +
-                    "alue:", ((string)(null)), table59, "When ");
+                    "alue:", ((string)(null)), table61, "When ");
             testRunner.Then("\"39\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList87\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList87\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table60.AddRow(new string[] {
+            table62.AddRow(new string[] {
                         "WMI Tools"});
-            table60.AddRow(new string[] {
+            table62.AddRow(new string[] {
                         "Windows Live Toolbar"});
             testRunner.When("User create static list with \"StaticList1529\" name on \"Applications\" page with fo" +
-                    "llowing items", ((string)(null)), table60, "When ");
+                    "llowing items", ((string)(null)), table62, "When ");
             testRunner.Then("\"StaticList1529\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3243,6 +3276,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
                     " details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3250,6 +3284,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" is displayed to the user in the Project Scope Changes section", objectsToAdd2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -3296,62 +3331,37 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Other mailbox permissions\" associated checkbox on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
-            table61.AddRow(new string[] {
-                        "FullAccess"});
-            table61.AddRow(new string[] {
-                        "ChangeOwner"});
-            testRunner.And("User selects following Mailbox permissions", ((string)(null)), table61, "And ");
-            testRunner.And("User clicks \"Mailbox folder permissions\" associated checkbox on the Project detai" +
-                    "ls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
-            table62.AddRow(new string[] {
-                        "Author"});
-            table62.AddRow(new string[] {
-                        "AvailabilityOnly"});
-            testRunner.And("User selects following Mailbox folder permissions", ((string)(null)), table62, "And ");
             TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
             table63.AddRow(new string[] {
                         "FullAccess"});
             table63.AddRow(new string[] {
                         "ChangeOwner"});
-            table63.AddRow(new string[] {
+            testRunner.And("User selects following Mailbox permissions", ((string)(null)), table63, "And ");
+            testRunner.And("User clicks \"Mailbox folder permissions\" associated checkbox on the Project detai" +
+                    "ls page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Permissions"});
+            table64.AddRow(new string[] {
                         "Author"});
-            table63.AddRow(new string[] {
+            table64.AddRow(new string[] {
                         "AvailabilityOnly"});
-            testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table63, "Then ");
+            testRunner.And("User selects following Mailbox folder permissions", ((string)(null)), table64, "And ");
+            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Permissions"});
+            table65.AddRow(new string[] {
+                        "FullAccess"});
+            table65.AddRow(new string[] {
+                        "ChangeOwner"});
+            table65.AddRow(new string[] {
+                        "Author"});
+            table65.AddRow(new string[] {
+                        "AvailabilityOnly"});
+            testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table65, "Then ");
             testRunner.When("User clicks \"Delegated mailboxes\" associated checkbox on the Project details page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Owned mailboxes\" associated checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
-                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Permissions"});
-            table64.AddRow(new string[] {
-                        "FullAccess"});
-            table64.AddRow(new string[] {
-                        "ChangeOwner"});
-            table64.AddRow(new string[] {
-                        "Author"});
-            table64.AddRow(new string[] {
-                        "AvailabilityOnly"});
-            testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table64, "Then ");
-            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Checkboxes"});
-            table65.AddRow(new string[] {
-                        "Owned mailboxes"});
-            table65.AddRow(new string[] {
-                        "Delegated mailboxes"});
-            testRunner.And("following checkboxes are checked in the Scope section", ((string)(null)), table65, "And ");
-            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +
-                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3359,19 +3369,44 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table66.AddRow(new string[] {
                         "FullAccess"});
             table66.AddRow(new string[] {
+                        "ChangeOwner"});
+            table66.AddRow(new string[] {
                         "Author"});
-            testRunner.And("User removes following Mailbox permissions", ((string)(null)), table66, "And ");
+            table66.AddRow(new string[] {
+                        "AvailabilityOnly"});
+            testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table66, "Then ");
+            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Checkboxes"});
+            table67.AddRow(new string[] {
+                        "Owned mailboxes"});
+            table67.AddRow(new string[] {
+                        "Delegated mailboxes"});
+            testRunner.And("following checkboxes are checked in the Scope section", ((string)(null)), table67, "And ");
+            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Users to add (0 of 14753 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
+                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Permissions"});
+            table68.AddRow(new string[] {
+                        "FullAccess"});
+            table68.AddRow(new string[] {
+                        "Author"});
+            testRunner.And("User removes following Mailbox permissions", ((string)(null)), table68, "And ");
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "Permissions"});
-            table67.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "ChangeOwner"});
-            table67.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "AvailabilityOnly"});
-            testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table67, "Then ");
+            testRunner.Then("following Mailbox permissions are displayed to the user", ((string)(null)), table69, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -3384,6 +3419,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13205")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage", new string[] {
@@ -3391,7 +3427,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "DAS13205"});
+                        "DAS13205",
+                        "Delete_Newly_Created_Project"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3449,27 +3486,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Request Types\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Request Type\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
                         "ObjectTypeString"});
-            table68.AddRow(new string[] {
+            table70.AddRow(new string[] {
                         "18RequestTypeName",
                         "MailboxScheduledProject",
                         "Mailbox"});
-            testRunner.And("User create Request Type", ((string)(null)), table68, "And ");
+            testRunner.And("User create Request Type", ((string)(null)), table70, "And ");
             testRunner.When("User navigate to \"Categories\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Categories\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Category\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Description",
                         "ObjectTypeString"});
-            table69.AddRow(new string[] {
+            table71.AddRow(new string[] {
                         "18MailboxCategory",
                         "UserScheduledProject",
                         "Mailbox"});
-            testRunner.And("User create Category", ((string)(null)), table69, "And ");
+            testRunner.And("User create Category", ((string)(null)), table71, "And ");
             testRunner.Then("Success message is displayed with \"Category successfully created.\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3489,17 +3526,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "cope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Mailboxes 0/0\" is displayed in the tab header on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table70.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
-            table70.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "00DB4000EDD84951993@bclabs.local (CSC, SS)"});
-            table70.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
-            table70.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "0E3406ED5D8349D0996@bclabs.local (Mickley, Leslie)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table70, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table72, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"2 mailboxes will be added\" text is displayed on the Admin p" +
                     "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3543,18 +3580,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table71.AddRow(new string[] {
+            table73.AddRow(new string[] {
                         "Windows Vista"});
             testRunner.When("User add \"Operating System\" filter where type is \"Equals\" with added column and L" +
-                    "ookup option", ((string)(null)), table71, "When ");
-            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+                    "ookup option", ((string)(null)), table73, "When ");
+            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table72.AddRow(new string[] {
+            table74.AddRow(new string[] {
                         "Desktop"});
             testRunner.When("User Add And \"Device Type\" filter where type is \"Equals\" with added column and Lo" +
-                    "okup option", ((string)(null)), table72, "When ");
+                    "okup option", ((string)(null)), table74, "When ");
             testRunner.Then("\"222\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DynamicList4811\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicList4811\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3615,7 +3652,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User navigate to \"Project13096\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Project with \"Project13096\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User update Project Name on \"Project13096 upd\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User updates Project Name to \"Project13096 upd\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Update\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Success message is displayed with \"Project was successfully updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3669,18 +3707,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Project \"TestProject12776\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table73.AddRow(new string[] {
+            table75.AddRow(new string[] {
                         "SZ46M6IS71DPZ1"});
-            testRunner.And("User selects following Objects", ((string)(null)), table73, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table75, "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table74.AddRow(new string[] {
+            table76.AddRow(new string[] {
                         "ACD252468 (Nicolas O. Mc Millan)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table74, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table76, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"1 device will be added, 1 user will be added\" text is displ" +
                     "ayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3691,31 +3729,28 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Devices to add (0 of 17224 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"Users to add (0 of 14630 selected)\" is displayed to the user in the Project Scop" +
-                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Users to add (0 of 14630 selected)\" is displayed to the user in the Project Scop" +
+                    "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table75.AddRow(new string[] {
+            table77.AddRow(new string[] {
                         "AAK881049 (Miguel W. Owen)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table75, "And ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User selects following Objects", ((string)(null)), table77, "And ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table76.AddRow(new string[] {
+            table78.AddRow(new string[] {
                         "00SH8162NAS524"});
-            testRunner.And("User selects following Objects", ((string)(null)), table76, "And ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User selects following Objects", ((string)(null)), table78, "And ");
+            testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -3744,16 +3779,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table77.AddRow(new string[] {
+            table79.AddRow(new string[] {
                         "00CFE13AAE104724AF5"});
-            table77.AddRow(new string[] {
+            table79.AddRow(new string[] {
                         "00BDBAEA57334C7C8F4"});
-            table77.AddRow(new string[] {
+            table79.AddRow(new string[] {
                         "000F977AC8824FE39B8"});
             testRunner.When("User create static list with \"StaticList12776\" name on \"Users\" page with followin" +
-                    "g items", ((string)(null)), table77, "When ");
+                    "g items", ((string)(null)), table79, "When ");
             testRunner.Then("\"StaticList12776\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Create Project from the main list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3768,14 +3803,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Project \"TestProject12777\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table78.AddRow(new string[] {
+            table80.AddRow(new string[] {
                         "00BDBAEA57334C7C8F4 (Basa, Rogelio)"});
-            table78.AddRow(new string[] {
+            table80.AddRow(new string[] {
                         "00CFE13AAE104724AF5 (Hardieway, Linda)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table78, "And ");
-            testRunner.And("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table80, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"2 users will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Objects to add panel is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3784,22 +3819,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is displayed and contains \"2 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"Users to add (0 of 1 selected)\" is displayed to the user in the Project Scope Ch" +
-                    "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Users to add (0 of 1 selected)\" is displayed to the user in the Project Scope Ch" +
+                    "anges section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects to add panel is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table79.AddRow(new string[] {
+            table81.AddRow(new string[] {
                         "000F977AC8824FE39B8 (Spruill, Shea)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table79, "And ");
-            testRunner.Then("\"UPDATE USER CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User selects following Objects", ((string)(null)), table81, "And ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -3857,42 +3889,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Objects"});
-            table80.AddRow(new string[] {
-                        "ADD135461 (Luke W. Clark)"});
-            table80.AddRow(new string[] {
-                        "ADO048752 (Elena Z. Le)"});
-            table80.AddRow(new string[] {
-                        "ADX520696 (Bridgett E. Cobb)"});
-            table80.AddRow(new string[] {
-                        "CKB423934 (Tracie N. Bright)"});
-            table80.AddRow(new string[] {
-                        "CKB423934 (Tracie N. Bright)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table80, "And ");
-            testRunner.And("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"3 users will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
-                    "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Objects"});
-            table81.AddRow(new string[] {
-                        "Adobe Reader 5ver2.1"});
-            table81.AddRow(new string[] {
-                        "allCLEAR 6.0 Viewer"});
-            table81.AddRow(new string[] {
-                        "AnalogX TrackSeek"});
-            testRunner.And("User selects following Objects", ((string)(null)), table81, "And ");
-            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"3 applications will be added\" text is displayed on the Admi" +
-                    "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
-                    "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table82.AddRow(new string[] {
@@ -3901,8 +3897,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "ADO048752 (Elena Z. Le)"});
             table82.AddRow(new string[] {
                         "ADX520696 (Bridgett E. Cobb)"});
-            testRunner.Then("following objects were not found", ((string)(null)), table82, "Then ");
+            table82.AddRow(new string[] {
+                        "CKB423934 (Tracie N. Bright)"});
+            table82.AddRow(new string[] {
+                        "CKB423934 (Tracie N. Bright)"});
+            testRunner.And("User selects following Objects", ((string)(null)), table82, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Warning message with \"3 users will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
+                    "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
             table83.AddRow(new string[] {
@@ -3911,7 +3917,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "allCLEAR 6.0 Viewer"});
             table83.AddRow(new string[] {
                         "AnalogX TrackSeek"});
-            testRunner.Then("following objects were not found", ((string)(null)), table83, "Then ");
+            testRunner.And("User selects following Objects", ((string)(null)), table83, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Warning message with \"3 applications will be added\" text is displayed on the Admi" +
+                    "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
+                    "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table84.AddRow(new string[] {
+                        "ADD135461 (Luke W. Clark)"});
+            table84.AddRow(new string[] {
+                        "ADO048752 (Elena Z. Le)"});
+            table84.AddRow(new string[] {
+                        "ADX520696 (Bridgett E. Cobb)"});
+            testRunner.Then("following objects were not found", ((string)(null)), table84, "Then ");
+            testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Objects"});
+            table85.AddRow(new string[] {
+                        "Adobe Reader 5ver2.1"});
+            table85.AddRow(new string[] {
+                        "allCLEAR 6.0 Viewer"});
+            table85.AddRow(new string[] {
+                        "AnalogX TrackSeek"});
+            testRunner.Then("following objects were not found", ((string)(null)), table85, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("onboarded objects are displayed in the dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -3955,9 +3987,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Buckets\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Project\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks \"Select All\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Select All\" checkbox from String Filter with item list on the Admin" +
+                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Project\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"1DevicesProject\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"1DevicesProject\" checkbox from String Filter with item list on the " +
+                    "Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Unassigned\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -4018,28 +4052,28 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table84.AddRow(new string[] {
+            table86.AddRow(new string[] {
                         "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook"});
-            testRunner.And("User selects following Objects", ((string)(null)), table84, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table86, "And ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"1 object queued for onboarding, 0 obje" +
                     "cts offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table85.AddRow(new string[] {
+            table87.AddRow(new string[] {
                         "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table85, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table87, "Then ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table86.AddRow(new string[] {
-                        "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook (Unknown)"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table86, "Then ");
+            table88.AddRow(new string[] {
+                        "ALS - Designing a Microsoft Windows 2000 Dir. Services eBook"});
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table88, "Then ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User enters \"ALS - Designing a Microsoft Windows 2000 Dir. Services eBook\" text i" +
                     "n the Search field for \"Item\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4092,22 +4126,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table87.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "01HMZTRG6OQAOF"});
-            table87.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            table87.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "04FPR090BNW80E"});
-            table87.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "05LG3HCJLEDEMTR"});
-            table87.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "2QP6MWKI0BM87U"});
-            table87.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "2QP6MWKI0BM87U"});
-            testRunner.And("User selects following Objects", ((string)(null)), table87, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table89, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"4 devices will be added\" text is displayed on the Admin pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4122,20 +4156,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Do not include applications\" checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table88.AddRow(new string[] {
+            table90.AddRow(new string[] {
                         "01HMZTRG6OQAOF"});
-            table88.AddRow(new string[] {
+            table90.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            testRunner.When("User adds following Objects to the Project", ((string)(null)), table88, "When ");
+            testRunner.When("User adds following Objects to the Project", ((string)(null)), table90, "When ");
             testRunner.When("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Success message with \"0 objects queued for onboarding, 2 objects offboarded\" text" +
                     " is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks String Filter button for \"Action\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter on the Admin p" +
-                    "age", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Onboard Computer Object\" checkbox from String Filter with item list" +
+                    " on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Counter shows \"2\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -4149,6 +4183,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12787")]
+        [NUnit.Framework.CategoryAttribute("DAS13529")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory()
         {
@@ -4159,6 +4194,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS12787",
+                        "DAS13529",
                         "Delete_Newly_Created_Project"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -4180,11 +4216,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User navigate to \"Groups\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Manage Groups\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Create Group\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
                         "GroupName"});
-            table89.AddRow(new string[] {
+            table91.AddRow(new string[] {
                         "UsersProject3Group"});
-            testRunner.And("User create Group owned existing \"Admin IT\" Team", ((string)(null)), table89, "And ");
+            testRunner.And("User create Group owned existing \"Admin IT\" Team", ((string)(null)), table91, "And ");
             testRunner.When("User clicks \"Create Group\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -4195,29 +4231,67 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Project \"UsersProject3\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user selects \"UsersProject3Group\" in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table90.AddRow(new string[] {
+            table92.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5 (Hunter, Melanie)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table90, "And ");
-            testRunner.And("User clicks the \"UPDATE USER CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table92, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"1 object queued for onboarding, 0 obje" +
                     "cts offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table91.AddRow(new string[] {
+            table93.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table91, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table93, "Then ");
             testRunner.Then("\"UsersProject3Group\" content is displayed in \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Unassigned\" content is displayed in \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table94.AddRow(new string[] {
+                        "Date"});
+            table94.AddRow(new string[] {
+                        "Item"});
+            table94.AddRow(new string[] {
+                        "Object Type"});
+            table94.AddRow(new string[] {
+                        "Action"});
+            table94.AddRow(new string[] {
+                        "Bucket"});
+            table94.AddRow(new string[] {
+                        "Capacity Unit"});
+            testRunner.Then("Column is displayed in following order:", ((string)(null)), table94, "Then ");
+            testRunner.When("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Counter shows \"1\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table92.AddRow(new string[] {
+            table95.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table92, "Then ");
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table95, "Then ");
             testRunner.And("\"UsersProject3Group\" content is displayed in \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Unassigned\" content is displayed in \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table96.AddRow(new string[] {
+                        "Date"});
+            table96.AddRow(new string[] {
+                        "Item"});
+            table96.AddRow(new string[] {
+                        "Object Type"});
+            table96.AddRow(new string[] {
+                        "Action"});
+            table96.AddRow(new string[] {
+                        "Bucket"});
+            table96.AddRow(new string[] {
+                        "Capacity Unit"});
+            table96.AddRow(new string[] {
+                        "Status"});
+            testRunner.Then("Column is displayed in following order:", ((string)(null)), table96, "Then ");
+            testRunner.When("User enters \"Units\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Counter shows \"0\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -4232,10 +4306,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12157")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.TestCaseAttribute("All Devices", "Devices to add (0 of 1 selected)", "DevicesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Users", "Users to add (0 of 1 selected)", "UsersList12157", "Device Scope", "DevicesList12157", "Devices", "Devices to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes to add (0 of 1 selected)", "MailboxesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
-        public virtual void EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList(string mainList, string objectsToAdd1, string listToScope1, string scopeTab1, string listToScope2, string scopeChanges1, string objectsToAdd2, string objectsToAdd3, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("All Devices", "DAS12157A", "Devices to add (0 of 1 selected)", "DevicesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Users", "DAS12157B", "Users to add (0 of 1 selected)", "UsersList12157", "Device Scope", "DevicesList12157", "Devices", "Devices to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("All Mailboxes", "DAS12157C", "Mailboxes to add (0 of 1 selected)", "MailboxesList12157", "User Scope", "UsersList12157", "Users", "Users to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", new string[0])]
+        public virtual void EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList(string mainList, string testName, string objectsToAdd1, string listToScope1, string scopeTab1, string listToScope2, string scopeChanges1, string objectsToAdd2, string objectsToAdd3, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -4253,33 +4327,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "ingProjectScopeToACustomList", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table93.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "0I29CJMQ159EOR"});
             testRunner.When("User create static list with \"DevicesList12157\" name on \"Devices\" page with follo" +
-                    "wing items", ((string)(null)), table93, "When ");
+                    "wing items", ((string)(null)), table97, "When ");
             testRunner.Then("\"DevicesList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table94.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "AJC243596"});
             testRunner.When("User create static list with \"UsersList12157\" name on \"Users\" page with following" +
-                    " items", ((string)(null)), table94, "When ");
+                    " items", ((string)(null)), table98, "When ");
             testRunner.Then("\"UsersList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table95.AddRow(new string[] {
+            table99.AddRow(new string[] {
                         "elsonje@bclabs.local"});
             testRunner.When("User create static list with \"MailboxesList12157\" name on \"Mailboxes\" page with f" +
-                    "ollowing items", ((string)(null)), table95, "When ");
+                    "ollowing items", ((string)(null)), table99, "When ");
             testRunner.Then("\"MailboxesList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table96.AddRow(new string[] {
+            table100.AddRow(new string[] {
                         "AtomixMP3"});
             testRunner.When("User create static list with \"ApplicationsStaticList12157\" name on \"Applications\"" +
-                    " page with following items", ((string)(null)), table96, "When ");
+                    " page with following items", ((string)(null)), table100, "When ");
             testRunner.Then("\"ApplicationsStaticList12157\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -4287,12 +4361,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"Project12157\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User enters \"{0}\" in the \"Project Name\" field", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User selects \"{0}\" in the Scope Project dropdown", mainList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Project \"Project12157\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("Project \"{0}\" is displayed to user", testName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User selects \"{0}\" in the Scope Project details", listToScope1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User navigates to the \"{0}\" tab in the Scope section on the Project details page", scopeTab1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User selects \"{0}\" in the Scope Project details", listToScope2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -4341,19 +4415,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
                     " details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
                         "CheckboxesToBeClicked"});
-            table97.AddRow(new string[] {
+            table101.AddRow(new string[] {
                         "Entitled to the device"});
-            table97.AddRow(new string[] {
+            table101.AddRow(new string[] {
                         "Installed on the device"});
-            table97.AddRow(new string[] {
+            table101.AddRow(new string[] {
                         "Used by the device owner on any device"});
-            table97.AddRow(new string[] {
+            table101.AddRow(new string[] {
                         "Used on the device by the device owner"});
-            table97.AddRow(new string[] {
+            table101.AddRow(new string[] {
                         "Used on the device by any user"});
-            testRunner.And("User clicks following checkboxes on the Project details page:", ((string)(null)), table97, "And ");
+            testRunner.And("User clicks following checkboxes on the Project details page:", ((string)(null)), table101, "And ");
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Applications to add (0 of 212 selected)\" is displayed to the user in the Project" +
@@ -4414,27 +4488,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table98.AddRow(new string[] {
+            table102.AddRow(new string[] {
                         "0623U41CZ73RV2Q"});
-            testRunner.And("User selects following Objects", ((string)(null)), table98, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table102, "And ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"1 object queued for onboarding, 0 obje" +
                     "cts offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table99.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "0623U41CZ73RV2Q"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table99, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table103, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table100.AddRow(new string[] {
+            table104.AddRow(new string[] {
                         "0623U41CZ73RV2Q"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table100, "Then ");
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table104, "Then ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Success message is not displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -4481,175 +4555,173 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00CWZRC4UK6W20"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00I0COBFWHOF27"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00KLL9S8NRF0X6"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00KWQ4J3WKQM0G"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00RUUMAH9OZN9A"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00SH8162NAS524"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00YTY8U3ZYP2WT"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "00YWR8TJU4ZF8V"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "011PLA470S0B9DJ"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "018UQ6KL9TF4YF"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "01COJATLYVAR7A6"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "01DRMO46G58SXK"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "01KFZ6XUVQSII0"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "0281Z793OLLLDU6"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "02X387UDGZJPQY"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "03063X2ZUCDN0A1"});
-            table101.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         "03U75EKEMUQMUS"});
-            testRunner.And("User selects following Objects", ((string)(null)), table101, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User selects following Objects", ((string)(null)), table105, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE DEVICE CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"UPDATE ALL CHANGES\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAC860150 (Kerrie D. Ruiz)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAD1011948 (Pinabel Cinq-Mars)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAG081456 (Melanie Z. Fowler)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAH0343264 (Luc Gauthier)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAK881049 (Miguel W. Owen)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAL852547 (Robbie A. Roach)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAM044531 (Dustin R. Alvarez)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAO271828 (Ramona D. Curtis)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAO3000042 (Georgette Pichette)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAO438834 (James Y. Mc Bride)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAO798996 (Darren J. Walter)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAQ9911340 (Javier Lanctot)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAT858228 (Cheri B. Evans)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAT891621 (Henry F. Mccall)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAV4528222 (Felicienne Vadnais)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAV500479 (Wendi H. Dougherty)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "AAY704360 (Micah H. Mccall)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABE8110806 (Brice Grimard)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABG5308934 (Carolos Vallée)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABK350523 (Alyssa A. Williams)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABM798049 (Roland C. Bond)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABN563832 (Dewayne D. Butler)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABP977697 (Rocky Y. Stout)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABQ575757 (Salvador K. Waller)"});
-            table102.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "ABS188911 (Jesus W. Kirk)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table102, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table106, "And ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "0047 - Microsoft Access 97 SR-2 Francais (8.0)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "20040610sqlserverck (1.0.0)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "32VerSee v.231 en (C:\\32VerSee\\)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Access 97 Rumtime"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "ACDSee 4.0 SendPix & Email Update (1.00.0000)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "ACDSee Mobile 1.2 for Palm OS? (1.2)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "ActiveBar Version 2.0 Upgrade"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "AddFlow 4"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Adobe Acrobat Reader 3.0 ((Not Available))"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Adobe SVG Viewer 3.0 (3.0)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "aktion (0.3.6)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "AltaVista Power Tools for IE5"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Amazon Redshift ODBC Driver 64-bit (1.2.1)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "AnalogX TrackSeek"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "AppForge 2.0 Professional (02.00.0110)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Ask Toolbar 4.0 (OEM1000) (4.0.1.1)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "AtomixMP3"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "aumix (2.7)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Avery Zweckform Assistent"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Axosoft OnTime 2005 Enterprise Server (5.3.0)"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "BDE 5.01 Upgrade"});
-            table103.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "Brava! Reader 2.5 (2.5)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table103, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table107, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Warning message with \"25 devices will be added, 25 users will be added, 25 applic" +
                     "ations will be added\" text is displayed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -4658,56 +4730,56 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "t is displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Applications to add (0 of 2104 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table104.AddRow(new string[] {
+            table108.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            testRunner.And("following objects were not found", ((string)(null)), table104, "And ");
+            testRunner.And("following objects were not found", ((string)(null)), table108, "And ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users to add (0 of 14606 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table105.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "AAC860150 (Kerrie D. Ruiz)"});
-            testRunner.And("following objects were not found", ((string)(null)), table105, "And ");
+            testRunner.And("following objects were not found", ((string)(null)), table109, "And ");
             testRunner.When("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices to add (0 of 17200 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table106.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            testRunner.And("following objects were not found", ((string)(null)), table106, "And ");
+            testRunner.And("following objects were not found", ((string)(null)), table110, "And ");
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
                         "Password",
                         "ConfirmPassword",
                         "Roles"});
-            table107.AddRow(new string[] {
+            table111.AddRow(new string[] {
                         "DAS13390",
                         "13390",
                         "1234qwer",
                         "1234qwer",
                         "Project Administrator"});
-            testRunner.And("User create new User", ((string)(null)), table107, "And ");
+            testRunner.And("User create new User", ((string)(null)), table111, "And ");
             testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
-            table108.AddRow(new string[] {
+            table112.AddRow(new string[] {
                         "DAS13390",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table108, "When ");
+            testRunner.When("User login with following credentials:", ((string)(null)), table112, "When ");
             testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -4721,27 +4793,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Success message is not displayed on the Projects page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Devices to add (0 of 17200 selected)\" is displayed to the user in the Project Sc" +
                     "ope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table109.AddRow(new string[] {
+            table113.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            testRunner.And("following objects were not found", ((string)(null)), table109, "And ");
+            testRunner.And("following objects were not found", ((string)(null)), table113, "And ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users to add (0 of 14606 selected)\" is displayed to the user in the Project Scop" +
                     "e Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table110.AddRow(new string[] {
+            table114.AddRow(new string[] {
                         "AAC860150 (Kerrie D. Ruiz)"});
-            testRunner.And("following objects were not found", ((string)(null)), table110, "And ");
+            testRunner.And("following objects were not found", ((string)(null)), table114, "And ");
             testRunner.When("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications to add (0 of 2104 selected)\" is displayed to the user in the Projec" +
                     "t Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table111.AddRow(new string[] {
+            table115.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            testRunner.And("following objects were not found", ((string)(null)), table111, "And ");
+            testRunner.And("following objects were not found", ((string)(null)), table115, "And ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4755,37 +4827,37 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table116 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table112.AddRow(new string[] {
+            table116.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table112.AddRow(new string[] {
+            table116.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table112.AddRow(new string[] {
+            table116.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.And("User selects following Objects", ((string)(null)), table112, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table116, "And ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table117 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table113.AddRow(new string[] {
+            table117.AddRow(new string[] {
                         "AAC860150 (Kerrie D. Ruiz)"});
-            table113.AddRow(new string[] {
+            table117.AddRow(new string[] {
                         "AAD1011948 (Pinabel Cinq-Mars)"});
-            table113.AddRow(new string[] {
+            table117.AddRow(new string[] {
                         "AAG081456 (Melanie Z. Fowler)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table113, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table117, "And ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table114.AddRow(new string[] {
+            table118.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            table114.AddRow(new string[] {
+            table118.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
-            table114.AddRow(new string[] {
+            table118.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table114, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table118, "And ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4833,28 +4905,28 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table115.AddRow(new string[] {
+            table119.AddRow(new string[] {
                         "000F977AC8824FE39B8@bclabs.local (Spruill, Shea)"});
-            table115.AddRow(new string[] {
+            table119.AddRow(new string[] {
                         "002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher)"});
-            table115.AddRow(new string[] {
+            table119.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
-            testRunner.When("User selects following Objects", ((string)(null)), table115, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table119, "When ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table116 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table116.AddRow(new string[] {
+            table120.AddRow(new string[] {
                         "000F977AC8824FE39B8@bclabs.local (Spruill, Shea)"});
-            table116.AddRow(new string[] {
+            table120.AddRow(new string[] {
                         "002B5DC7D4D34D5C895@bclabs.local (Collor, Christopher)"});
-            table116.AddRow(new string[] {
+            table120.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)"});
-            testRunner.Then("following objects were not found", ((string)(null)), table116, "Then ");
+            testRunner.Then("following objects were not found", ((string)(null)), table120, "Then ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4869,7 +4941,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("DAS11758")]
+        [NUnit.Framework.CategoryAttribute("DAS14190")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage", new string[] {
@@ -4877,7 +4951,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "DAS11758"});
+                        "Delete_Newly_Created_Project",
+                        "DAS11758",
+                        "DAS14190"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4904,19 +4980,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("created Project with \"3Checkbox11758\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Select All selectbox is checked on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table117 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table117.AddRow(new string[] {
+            table121.AddRow(new string[] {
                         "1Checkbox11758"});
-            testRunner.When("User select \"Project\" rows in the grid", ((string)(null)), table117, "When ");
+            testRunner.When("User select \"Project\" rows in the grid", ((string)(null)), table121, "When ");
             testRunner.Then("Select All selectbox is unchecked on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedRowsName"});
-            table118.AddRow(new string[] {
-                        "1Checkbox11758"});
-            testRunner.When("User select \"Project\" rows in the grid", ((string)(null)), table118, "When ");
-            testRunner.Then("Select All selectbox is checked on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"Checkbox11758\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User deselect all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User enters \"Checkbox11758\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -5012,12 +5085,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table119.AddRow(new string[] {
+            table122.AddRow(new string[] {
                         "Red"});
             testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
-                    "ng checkboxes:", ((string)(null)), table119, "When ");
+                    "ng checkboxes:", ((string)(null)), table122, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"TestList0A78U9\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestList0A78U9\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5061,6 +5134,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS13297")]
         [NUnit.Framework.CategoryAttribute("DAS12485")]
+        [NUnit.Framework.CategoryAttribute("DAS13803")]
+        [NUnit.Framework.CategoryAttribute("DAS13930")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -5077,6 +5152,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13199",
                         "DAS13297",
                         "DAS12485",
+                        "DAS13803",
+                        "DAS13930",
                         "Delete_Newly_Created_Project",
                         "Project_Creation_and_Scope",
                         "Projects"});
@@ -5111,15 +5188,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Scope List dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
                     " details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                         "AssociationName"});
-            table120.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "Entitled to a device owned by the user"});
-            table120.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "Installed on a device owned by the user"});
-            table120.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "Used on an owned device by any user"});
-            testRunner.Then("following associations are disabled:", ((string)(null)), table120, "Then ");
+            testRunner.Then("following associations are disabled:", ((string)(null)), table123, "Then ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Applications to add (0 of 247 selected)\" is displayed to the user in the Project" +
@@ -5128,13 +5205,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Devices to add (0 of 0 selected)\" is displayed to the user in the Project Scope " +
                     "Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
-                    "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
-                    " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User selects \"Clone evergreen buckets to project buckets\" in the Buckets Project " +
+                    "dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Scope\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Match to Evergreen Bucket\" is displayed in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -5226,6 +5301,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13254")]
         [NUnit.Framework.CategoryAttribute("DAS13323")]
         [NUnit.Framework.CategoryAttribute("DAS13393")]
+        [NUnit.Framework.CategoryAttribute("DAS13803")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
@@ -5248,6 +5324,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13254",
                         "DAS13323",
                         "DAS13393",
+                        "DAS13803",
                         "Delete_Newly_Created_Project",
                         "Project_Creation_and_Scope",
                         "Projects",
@@ -5272,10 +5349,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User changes Project Description to \"45978DescriptionText\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User changes project language to \"Dutch\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Use evergreen buckets\" in the Buckets Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
-                    " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Actions dropdown is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5294,13 +5368,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Scope List dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
                     " details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
                         "AssociationName"});
-            table121.AddRow(new string[] {
+            table124.AddRow(new string[] {
                         "Entitled to the device owner"});
-            table121.AddRow(new string[] {
+            table124.AddRow(new string[] {
                         "Used by the device owner on any device"});
-            testRunner.Then("following associations are disabled:", ((string)(null)), table121, "Then ");
+            testRunner.Then("following associations are disabled:", ((string)(null)), table124, "Then ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Users to add (0 of 0 selected)\" is displayed to the user in the Project Scope Ch" +
@@ -5332,9 +5406,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User changes Project Name to \"NewProjectName\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User changes Project Short Name to \"NewShort4875\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
-                    " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User enters \"NewProjectName\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -5370,6 +5441,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User enters \"TestProjectDAS11944\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User enters \"Barry\'s User Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("User sees \"1\" of \"1\" rows selected label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -5439,11 +5511,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("\"{0}\" item was removed", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table122.AddRow(new string[] {
+            table125.AddRow(new string[] {
                         string.Format("{0}", item)});
-            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table122, "When ");
+            testRunner.When(string.Format("User create static list with \"{0}\" name on \"{1}\" page with following items", staticList, pageName), ((string)(null)), table125, "When ");
             testRunner.Then(string.Format("\"{0}\" list is displayed to user", staticList), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5491,6 +5563,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS11892")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectName()
         {
@@ -5505,6 +5578,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS12999",
                         "DAS11892",
                         "Project_Creation_and_Scope",
+                        "Delete_Newly_Created_Project",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -5517,22 +5591,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User enters \" \" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Create Project button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"All Devices Project\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"AllDevices Project\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \" all devices project\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \" alldevices project\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message with \"A project already exists with this name\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table123.AddRow(new string[] {
+            table126.AddRow(new string[] {
                         "0AN6PG99INA7R2"});
-            table123.AddRow(new string[] {
+            table126.AddRow(new string[] {
                         "0B4UHHUZQBRXKE"});
             testRunner.When("User create static list with \"StaticList4581\" name on \"Devices\" page with followi" +
-                    "ng items", ((string)(null)), table123, "When ");
+                    "ng items", ((string)(null)), table126, "When ");
             testRunner.Then("\"StaticList4581\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5559,12 +5633,151 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"DevicesProject1258\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"AllDevices Project1258\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"DynamicList5531\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User enters \"Devices\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User enters \"AllDevices Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTa" +
+            "sksError")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS13733")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
+        public virtual void EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTasksError()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTa" +
+                    "sksError", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS13733",
+                        "Projects"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"IMPORT PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"DAS_13733_Duplicates_in_project_tasks.xml\" file to upload on Import" +
+                    " Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Import to new project\" option in the \"Import\" dropdown on the Impor" +
+                    "t Project Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User enters \"TestProjectDAS13733\" in the Project Name field on Import Project pag" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Import Project button on the Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Error message with \"This XML file contains duplicates in project tasks\" text is d" +
+                    "isplayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"DAS_13733_Valid_file.xml\" file to upload on Import Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"IMPORT PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Success message is displayed and contains \"The project has been imported, click h" +
+                    "ere to view the TestProjectDAS13733 project\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User enters \"TestProjectDAS13733\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS13782")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
+        public virtual void EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS13782",
+                        "Projects"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"IMPORT PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Import to new project\" option in the \"Import\" dropdown on the Impor" +
+                    "t Project Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
+                        "OptionLabel"});
+            table127.AddRow(new string[] {
+                        "Use project buckets"});
+            table127.AddRow(new string[] {
+                        "Clone evergreen buckets to project buckets"});
+            testRunner.Then("User sees folloing options in \"Buckets\" dropdown on Import Projects page:", ((string)(null)), table127, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportPr" +
+            "ojectPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS13783")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
+        public virtual void EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportPr" +
+                    "ojectPage", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS13783",
+                        "Projects"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"IMPORT PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Import to existing project\" option in the \"Import\" dropdown on the " +
+                    "Import Project Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
+                        "OptionLabel"});
+            table128.AddRow(new string[] {
+                        "Babel (English, German and French)"});
+            table128.AddRow(new string[] {
+                        "Barry\'s User Project"});
+            table128.AddRow(new string[] {
+                        "Computer Scheduled Test (Jo)"});
+            table128.AddRow(new string[] {
+                        "Devices Evergreen Capacity Project"});
+            table128.AddRow(new string[] {
+                        "Email Migration"});
+            table128.AddRow(new string[] {
+                        "Havoc (Big Data)"});
+            table128.AddRow(new string[] {
+                        "I-Computer Scheduled Project"});
+            table128.AddRow(new string[] {
+                        "Mailbox Evergreen Capacity Project"});
+            table128.AddRow(new string[] {
+                        "Migration Project Phase 2 (User Project)"});
+            table128.AddRow(new string[] {
+                        "Project K-Computer Scheduled Project"});
+            table128.AddRow(new string[] {
+                        "User Evergreen Capacity Project"});
+            table128.AddRow(new string[] {
+                        "User Scheduled Project in Italian & Japanese (Jo)"});
+            table128.AddRow(new string[] {
+                        "User Scheduled Test (Jo)"});
+            table128.AddRow(new string[] {
+                        "Windows 7 Migration (Computer Scheduled Project)"});
+            testRunner.Then("User sees folloing options in \"Select Existing Project\" dropdown on Import Projec" +
+                    "ts page:", ((string)(null)), table128, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -5614,76 +5827,76 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table124.AddRow(new string[] {
+            table129.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table124.AddRow(new string[] {
+            table129.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table124.AddRow(new string[] {
+            table129.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.When("User selects following Objects", ((string)(null)), table124, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table129, "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table125.AddRow(new string[] {
+            table130.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table125.AddRow(new string[] {
+            table130.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table125.AddRow(new string[] {
+            table130.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table125, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table130, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table126.AddRow(new string[] {
+            table131.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table126.AddRow(new string[] {
+            table131.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table126.AddRow(new string[] {
+            table131.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table126, "Then ");
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table131, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table127.AddRow(new string[] {
+            table132.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            table127.AddRow(new string[] {
+            table132.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
-            table127.AddRow(new string[] {
+            table132.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table127, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table132, "And ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table128.AddRow(new string[] {
+            table133.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            table128.AddRow(new string[] {
+            table133.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
-            table128.AddRow(new string[] {
+            table133.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table128, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table133, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table129.AddRow(new string[] {
+            table134.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            table129.AddRow(new string[] {
+            table134.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
-            table129.AddRow(new string[] {
+            table134.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English"});
-            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table129, "Then ");
+            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table134, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5700,77 +5913,77 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table130.AddRow(new string[] {
+            table135.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            table130.AddRow(new string[] {
+            table135.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
-            table130.AddRow(new string[] {
+            table135.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table130, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table135, "And ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table136 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table131.AddRow(new string[] {
+            table136.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            table131.AddRow(new string[] {
+            table136.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
-            table131.AddRow(new string[] {
+            table136.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table131, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table136, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table137 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table132.AddRow(new string[] {
+            table137.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            table132.AddRow(new string[] {
+            table137.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
-            table132.AddRow(new string[] {
+            table137.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table132, "Then ");
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table137, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Devices\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table133.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table133.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table133.AddRow(new string[] {
+            table138.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.When("User selects following Objects", ((string)(null)), table133, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table138, "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table134.AddRow(new string[] {
+            table139.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table134.AddRow(new string[] {
+            table139.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table134.AddRow(new string[] {
+            table139.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table134, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table139, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table140 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table135.AddRow(new string[] {
+            table140.AddRow(new string[] {
                         "00HA7MKAVVFDAV"});
-            table135.AddRow(new string[] {
+            table140.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table135.AddRow(new string[] {
+            table140.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table135, "Then ");
+            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table140, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -5787,6 +6000,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticList" +
@@ -5798,19 +6012,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13110",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Project",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table136 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
-            table136.AddRow(new string[] {
+            table141.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table136.AddRow(new string[] {
+            table141.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table136.AddRow(new string[] {
+            table141.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             testRunner.When("User create static list with \"Static13110\" name on \"Devices\" page with following " +
-                    "items", ((string)(null)), table136, "When ");
+                    "items", ((string)(null)), table141, "When ");
             testRunner.Then("\"Static13110\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5827,76 +6042,76 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table137 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table137.AddRow(new string[] {
+            table142.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table137.AddRow(new string[] {
+            table142.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table137.AddRow(new string[] {
+            table142.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.When("User selects following Objects", ((string)(null)), table137, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table142, "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table138.AddRow(new string[] {
+            table143.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table138.AddRow(new string[] {
+            table143.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table138.AddRow(new string[] {
+            table143.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table138, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table143, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table139 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table139.AddRow(new string[] {
+            table144.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table139.AddRow(new string[] {
+            table144.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table139.AddRow(new string[] {
+            table144.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table139, "Then ");
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table144, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table140 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table140.AddRow(new string[] {
+            table145.AddRow(new string[] {
                         "20040610sqlserverck (1.0.0)"});
-            table140.AddRow(new string[] {
+            table145.AddRow(new string[] {
                         "AddressGrabber Standard (3.1)"});
-            table140.AddRow(new string[] {
+            table145.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0 (1.0)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table140, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table145, "And ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table141.AddRow(new string[] {
+            table146.AddRow(new string[] {
                         "20040610sqlserverck"});
-            table141.AddRow(new string[] {
+            table146.AddRow(new string[] {
                         "AddressGrabber Standard"});
-            table141.AddRow(new string[] {
+            table146.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table141, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table146, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table147 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table142.AddRow(new string[] {
-                        "20040610sqlserverck (1.0.0)"});
-            table142.AddRow(new string[] {
-                        "AddressGrabber Standard (3.1)"});
-            table142.AddRow(new string[] {
-                        "Adobe Acrobat Reader 5.0 (1.0)"});
-            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table142, "Then ");
+            table147.AddRow(new string[] {
+                        "20040610sqlserverck"});
+            table147.AddRow(new string[] {
+                        "AddressGrabber Standard"});
+            table147.AddRow(new string[] {
+                        "Adobe Acrobat Reader 5.0"});
+            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table147, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User click on Back button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5912,76 +6127,76 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table148 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table143.AddRow(new string[] {
+            table148.AddRow(new string[] {
                         "20040610sqlserverck (1.0.0)"});
-            table143.AddRow(new string[] {
+            table148.AddRow(new string[] {
                         "AddressGrabber Standard (3.1)"});
-            table143.AddRow(new string[] {
+            table148.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0 (1.0)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table143, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table148, "And ");
             testRunner.When("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table149 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table144.AddRow(new string[] {
+            table149.AddRow(new string[] {
                         "20040610sqlserverck"});
-            table144.AddRow(new string[] {
+            table149.AddRow(new string[] {
                         "AddressGrabber Standard"});
-            table144.AddRow(new string[] {
+            table149.AddRow(new string[] {
                         "Adobe Acrobat Reader 5.0"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table144, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table149, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table150 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table145.AddRow(new string[] {
-                        "20040610sqlserverck (1.0.0)"});
-            table145.AddRow(new string[] {
-                        "AddressGrabber Standard (3.1)"});
-            table145.AddRow(new string[] {
-                        "Adobe Acrobat Reader 5.0 (1.0)"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table145, "Then ");
+            table150.AddRow(new string[] {
+                        "20040610sqlserverck"});
+            table150.AddRow(new string[] {
+                        "AddressGrabber Standard"});
+            table150.AddRow(new string[] {
+                        "Adobe Acrobat Reader 5.0"});
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table150, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Objects are displayed in alphabetical order on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table146.AddRow(new string[] {
+            table151.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table146.AddRow(new string[] {
+            table151.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table146.AddRow(new string[] {
+            table151.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.When("User selects following Objects", ((string)(null)), table146, "When ");
+            testRunner.When("User selects following Objects", ((string)(null)), table151, "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"3 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table147 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table152 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table147.AddRow(new string[] {
+            table152.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table147.AddRow(new string[] {
+            table152.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table147.AddRow(new string[] {
+            table152.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table147, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table152, "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table148 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table153 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table148.AddRow(new string[] {
+            table153.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            table148.AddRow(new string[] {
+            table153.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            table148.AddRow(new string[] {
+            table153.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table148, "Then ");
+            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table153, "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -6028,85 +6243,85 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table149 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "00YWR8TJU4ZF8V"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "06T5FX3CUY08AE"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "0BET6XYEOG5ESB"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "07RJRCQDVK1KLR"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "0E402TL1EG79GIT"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "0GLO1UYQ5AKCZEA"});
-            table149.AddRow(new string[] {
+            table154.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
-            testRunner.And("User selects following Objects", ((string)(null)), table149, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table154, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"10 objects queued for onboarding, 0 ob" +
                     "jects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table150 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table155 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "00YWR8TJU4ZF8V"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "06T5FX3CUY08AE"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "0BET6XYEOG5ESB"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "07RJRCQDVK1KLR"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "0E402TL1EG79GIT"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "0GLO1UYQ5AKCZEA"});
-            table150.AddRow(new string[] {
+            table155.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table150, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table155, "Then ");
             testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table156 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "00YWR8TJU4ZF8V"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "06T5FX3CUY08AE"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "0BET6XYEOG5ESB"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "07RJRCQDVK1KLR"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "0E402TL1EG79GIT"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "0GLO1UYQ5AKCZEA"});
-            table151.AddRow(new string[] {
+            table156.AddRow(new string[] {
                         "DK1LF3X47N7PWX7"});
-            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table151, "Then ");
+            testRunner.Then("following Items are displayed in the History table", ((string)(null)), table156, "Then ");
             testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
@@ -6114,61 +6329,68 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table152 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table157 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table152.AddRow(new string[] {
+            table157.AddRow(new string[] {
                         "Advantage Data Architect"});
-            table152.AddRow(new string[] {
+            table157.AddRow(new string[] {
                         "Hilfe zu Blockdiagrammen"});
-            table152.AddRow(new string[] {
+            table157.AddRow(new string[] {
                         "Intel(R) Processor Graphics (20.19.15.4568)"});
-            table152.AddRow(new string[] {
+            table157.AddRow(new string[] {
                         "Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4)"});
-            table152.AddRow(new string[] {
+            table157.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
-            testRunner.And("User selects following Objects", ((string)(null)), table152, "And ");
-            testRunner.And("User clicks the \"UPDATE APPLICATION CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table157, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Success message is displayed and contains \"5 objects queued for onboarding, 0 obj" +
                     "ects offboarded\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Queue\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table153 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table153.AddRow(new string[] {
+            table158.AddRow(new string[] {
                         "Advantage Data Architect"});
-            table153.AddRow(new string[] {
+            table158.AddRow(new string[] {
                         "Hilfe zu Blockdiagrammen"});
-            table153.AddRow(new string[] {
+            table158.AddRow(new string[] {
                         "Intel(R) Processor Graphics"});
-            table153.AddRow(new string[] {
+            table158.AddRow(new string[] {
                         "Microsoft Exchange Client Language Pack - Hindi"});
-            table153.AddRow(new string[] {
+            table158.AddRow(new string[] {
                         "NJStar Chinese Word Processor"});
-            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table153, "Then ");
+            testRunner.Then("following Items are displayed in the Queue table", ((string)(null)), table158, "Then ");
+            TechTalk.SpecFlow.Table table159 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table159.AddRow(new string[] {
+                        "Advantage Data Architect"});
+            table159.AddRow(new string[] {
+                        "Hilfe zu Blockdiagrammen"});
+            table159.AddRow(new string[] {
+                        "Intel(R) Processor Graphics"});
+            table159.AddRow(new string[] {
+                        "Microsoft Exchange Client Language Pack - Hindi"});
+            table159.AddRow(new string[] {
+                        "NJStar Chinese Word Processor"});
+            testRunner.Then("following Items are displayed at the top of the list", ((string)(null)), table159, "Then ");
             testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
                     "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"History\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table160 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table154.AddRow(new string[] {
-                        "Advantage Data Architect (Unknown)"});
-            table154.AddRow(new string[] {
-                        "Hilfe zu Blockdiagrammen (Unknown)"});
-            table154.AddRow(new string[] {
-                        "Intel(R) Processor Graphics (20.19.15.4568)"});
-            table154.AddRow(new string[] {
-                        "Microsoft Exchange Client Language Pack - Hindi (15.0.1178.4)"});
-            table154.AddRow(new string[] {
-                        "NJStar Chinese Word Processor (Unknown)"});
-            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table154, "Then ");
-            testRunner.When("User clicks String Filter button for \"Object Type\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Device\" checkbox from String Filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("data in table is sorted by \"Item\" column in ascending order by default on the Adm" +
-                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("data in table is sorted by \"Date\" column in descending order by default on the Ad" +
-                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            table160.AddRow(new string[] {
+                        "Advantage Data Architect"});
+            table160.AddRow(new string[] {
+                        "Hilfe zu Blockdiagrammen"});
+            table160.AddRow(new string[] {
+                        "Intel(R) Processor Graphics"});
+            table160.AddRow(new string[] {
+                        "Microsoft Exchange Client Language Pack - Hindi"});
+            table160.AddRow(new string[] {
+                        "NJStar Chinese Word Processor"});
+            testRunner.Then("additional onboarded Items are displayed in the History table", ((string)(null)), table160, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -6211,39 +6433,39 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("open tab in the Project Scope Changes section is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table155 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table161 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table155.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "00K4CEEQ737BA4L"});
-            table155.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "00YWR8TJU4ZF8V"});
-            table155.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "019BFPQGKK5QT8N"});
-            table155.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "02C80G8RFTPA9E"});
-            table155.AddRow(new string[] {
+            table161.AddRow(new string[] {
                         "06T5FX3CUY08AE"});
-            testRunner.And("User selects following Objects", ((string)(null)), table155, "And ");
-            testRunner.And("User clicks the \"UPDATE DEVICE CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table161, "And ");
+            testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User selects all objects to the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"Applications\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands the object to add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table156 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table162 = new TechTalk.SpecFlow.Table(new string[] {
                         "Objects"});
-            table156.AddRow(new string[] {
+            table162.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007) (0.8.5.0)"});
-            table156.AddRow(new string[] {
+            table162.AddRow(new string[] {
                         "%SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 (12.0.2430.0)"});
-            table156.AddRow(new string[] {
+            table162.AddRow(new string[] {
                         "%SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI (12.0.2430.0)"});
-            table156.AddRow(new string[] {
+            table162.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5)"});
-            table156.AddRow(new string[] {
+            table162.AddRow(new string[] {
                         "0036 - Microsoft Access 97 SR-2 English (8.0)"});
-            testRunner.And("User selects following Objects", ((string)(null)), table156, "And ");
+            testRunner.And("User selects following Objects", ((string)(null)), table162, "And ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Blue banner with \"Object updates being queued, please wait\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -6258,20 +6480,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Do not include applications\" checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Users\" tab in the Project Scope Changes section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User expands the object to remove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table157 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Objects"});
-            table157.AddRow(new string[] {
-                        "AAC860150 (Kerrie D. Ruiz)"});
-            table157.AddRow(new string[] {
-                        "AAD1011948 (Pinabel Cinq-Mars)"});
-            table157.AddRow(new string[] {
-                        "AAG081456 (Melanie Z. Fowler)"});
-            table157.AddRow(new string[] {
-                        "AAH0343264 (Luc Gauthier)"});
-            table157.AddRow(new string[] {
-                        "AAK881049 (Miguel W. Owen)"});
-            testRunner.When("User selects following Objects", ((string)(null)), table157, "When ");
+            testRunner.When("User waits and expands the \"Users\" panel to remove", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects all objects to the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"UPDATE ALL CHANGES\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Blue banner with \"Object updates being queued, please wait\" text is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -6385,6 +6595,142 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("\"Delegated mailboxes \" associated checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Other mailbox permissions\" associated checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Mailbox folder permissions\" associated checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS13606")]
+        [NUnit.Framework.CategoryAttribute("DAS13162")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS13606",
+                        "DAS13162"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
+                    " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Capacity Mode\" dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Capacity Units\" dropdown is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Windows 7 Migration (Computer Scheduled Project)\" content is displayed in \"Proje" +
+                    "ct Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Windows7Mi\" content is displayed in \"Project Short Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(@"""Windows 7 Migration Phase 1Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill; Test fill;"" content is displayed in ""Project Description"" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Scope\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Scope Details\" tab is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Scope Changes\" tab is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Capacity Mode\" dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Capacity Units\" dropdown is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"90\" content is displayed in \"Percentage capacity to reach before showing amber\" " +
+                    "field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table163 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table163.AddRow(new string[] {
+                        "Details"});
+            table163.AddRow(new string[] {
+                        "Units"});
+            table163.AddRow(new string[] {
+                        "Slots"});
+            table163.AddRow(new string[] {
+                        "Override Dates"});
+            testRunner.Then("Menu options are displayed in the following order on the Admin page:", ((string)(null)), table163, "Then ");
+            testRunner.When("User clicks \"Administration\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"Barry\'s User Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Barry\'s User Project\" content is displayed in \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Barry\'sUse\" content is displayed in \"Project Short Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Barry\'s User Project\" content is displayed in \"Project Description\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Administration\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"Email Migration\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Email Migration\" content is displayed in \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"EmailMigra\" content is displayed in \"Project Short Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"\" content is displayed in \"Project Description\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflec" +
+            "tedInEvergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("DAS13498")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflec" +
+                    "tedInEvergreen", new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "AdminPage",
+                        "DAS13498"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks create Project button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table164 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ProjectName",
+                        "ShortName",
+                        "Description",
+                        "Type"});
+            table164.AddRow(new string[] {
+                        "SnrProject13498",
+                        "13498Pr",
+                        "",
+                        ""});
+            testRunner.When("User creates new Project", ((string)(null)), table164, "When ");
+            testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"SnrProject13498\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"SnrProject13498\" content is displayed in \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"13498Pr\" content is displayed in \"Project Short Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"SnrProject13498\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Project with \"SnrProject13498\" name is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Manage Project Details\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User updates Project Name to \"13498NewProjectName\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User updates Project Short Name to \"13498ShN\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Update\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User navigate to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"13498NewProjectName\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"13498NewProjectName\" content is displayed in \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"13498ShN\" content is displayed in \"Project Short Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Projects\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"13498NewProjectName\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }

@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 {
     internal class TaskPropertiesPage : SeleniumBasePage
     {
@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'TaskControlTypeID')]")]
         public IWebElement ValueType { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ObjectTypeID')]")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ObjectType')]")]
         public IWebElement ObjectType { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'TaskTemplateID')]")]
@@ -42,13 +42,6 @@ namespace DashworksTestAutomation.Pages.Projects
             return new List<By>
             {
                 SelectorFor(this, p => p.Name),
-                SelectorFor(this, p => p.Help),
-                SelectorFor(this, p => p.StageName),
-                SelectorFor(this, p => p.TaskType),
-                SelectorFor(this, p => p.ValueType),
-                SelectorFor(this, p => p.ObjectType),
-                SelectorFor(this, p => p.TaskValuesTemplate),
-                SelectorFor(this, p => p.ApplyToAllCheckbox)
             };
         }
     }

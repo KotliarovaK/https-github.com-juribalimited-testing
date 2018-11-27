@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Counter shows "2" found rows
 	When User resets Search fields for columns
 	And User enters "=2" text in the Search field for "Users" column
-	Then Counter shows "2" found rows
+	Then Counter shows "3" found rows
 	When User resets Search fields for columns
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -66,17 +66,29 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	And "Projects" page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
 	Then "Import Project" page should be displayed to the user
-	When User selects incorrect file to upload on Import Project page
-	And User selects "Import to new project" in the Import dropdown on the Import Project Page
+	When User selects "IncorrectFile.zip" file to upload on Import Project page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "TestProjectNameDAS12370" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	Then Error message with "Selected file is not in a valid format" text is displayed
-	When User selects correct file to upload on Import Project page
+	When User selects "CorrectFile_DAS12370.xml" file to upload on Import Project page
 	Then Import Project button is enabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153 @Not_Run
+Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
+	When User clicks Admin on the left-hand menu
+	And User clicks "<PageName>" link on the Admin page
+	And User performs right-click on "<CellText>" cell in the grid
+	Then User sees context menu placed near "<CellText>" cell in the grid
 
-@Project_Creation_and_Scope @Projects @Teams
+Examples: 
+	| PageName       | CellText   |
+	| Projects       | EmailMigra |
+	| Teams          | IB Team    |
+	| Buckets        | Evergreen  |
+	| Capacity Units | True       |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @DAS13930 @Project_Creation_and_Scope @Projects @Teams @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -91,10 +103,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	When User clicks newly created object link
 	Then Project "TestProject20" is displayed to user
 	When User clicks "Details" tab
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	When User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project details have been updated" text
-	When User selects "Scope Changes" tab on the Project details page
+	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User clicks "Scope" tab
+	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 	When User expands the object to add
 	And User selects following Objects
@@ -107,12 +118,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	Then "Devices 0/0" is displayed in the tab header on the Admin page
 	When User click on Back button
-	When User clicks "Teams" link on the Admin page
+	And User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	When User clicks "Buckets" tab
-	When User enters "Unassigned2" text in the Search field for "Bucket" column
+	And User enters "Unassigned2" text in the Search field for "Bucket" column
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
@@ -139,7 +150,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then "Create Bucket" page should be displayed to the user
 	When User enters "Bucket12948" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks "Projects" link on the Admin page
@@ -173,7 +184,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User clicks content from "Bucket" column
 	Then "[Unassigned]" bucket details is displayed to the user
 	When User clicks "Bucket Settings" tab
-	And User updates the Default Bucket checkbox state
+	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "Bucket12948" Bucket in the Administration
@@ -239,9 +250,9 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "1Project12763" checkbox from String Filter on the Admin page
+	When User selects "1Project12763" checkbox from String Filter with item list on the Admin page
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -256,9 +267,9 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "2Project12763" checkbox from String Filter on the Admin page
+	When User selects "2Project12763" checkbox from String Filter with item list on the Admin page
 	#Then Counter shows "3" found rows
 	Then "Unassigned" text is displayed in the table content
 	Then "1Bucket12763" text is displayed in the table content
@@ -276,6 +287,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User clicks "Select All" checkbox from String Filter on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "3Project12763" is not displayed in the filter dropdown

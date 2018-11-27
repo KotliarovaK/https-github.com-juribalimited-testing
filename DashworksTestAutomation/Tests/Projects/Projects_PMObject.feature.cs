@@ -62,32 +62,33 @@ namespace DashworksTestAutomation.Tests.Projects
         
         public virtual void FeatureBackground()
         {
-            testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Given("User is logged in to the Projects", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
         }
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage")]
+        [NUnit.Framework.CategoryAttribute("Dashworks")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("PMObject")]
         [NUnit.Framework.CategoryAttribute("Applications_tab")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
         [NUnit.Framework.CategoryAttribute("DAS12695")]
+        [NUnit.Framework.CategoryAttribute("DAS14003")]
         public virtual void Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage", new string[] {
+                        "Dashworks",
                         "Senior",
                         "PMObject",
                         "Applications_tab",
-                        "Dashworks",
-                        "DAS12695"});
+                        "DAS12695",
+                        "DAS14003"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigates to the PMObject page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to \"61085\" Object on PMObject page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Project Object\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Change Capacity Unit\" button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User navigate to \"Applications\" tab on PMObject page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Application tab content is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select \"Current State\" View State on Applications tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

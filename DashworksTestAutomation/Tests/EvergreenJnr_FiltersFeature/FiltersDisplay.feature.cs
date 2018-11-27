@@ -741,7 +741,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When(string.Format("User add \"Compliance\" filter where type is \"{0}\" with added column and following " +
                         "checkboxes:", operatorValue), ((string)(null)), table30, "When ");
             testRunner.Then("\"Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table31.AddRow(new string[] {
@@ -1673,7 +1672,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Green",
                         "true"});
             testRunner.When("User change selected checkboxes:", ((string)(null)), table69, "When ");
-            testRunner.Then("\"71\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1854,6 +1852,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS13376")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList()
         {
@@ -1867,6 +1866,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "DAS12152",
                         "DAS12602",
                         "DAS13376",
+                        "DAS14222",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -1912,6 +1912,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11468")]
         [NUnit.Framework.CategoryAttribute("DAS13376")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList()
         {
@@ -1923,6 +1924,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FiltersDisplay",
                         "DAS11468",
                         "DAS13376",
+                        "DAS14222",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -2407,6 +2409,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12121")]
         [NUnit.Framework.CategoryAttribute("DAS13376")]
+        [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName()
         {
@@ -2417,6 +2420,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "FiltersDisplay",
                         "DAS12121",
                         "DAS13376",
+                        "DAS14222",
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -2849,7 +2853,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"User Description\" filter where type is \"Empty\" with following Value and" +
                     " Association:", ((string)(null)), table92, "When ");
             testRunner.Then("\"113\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"2,223\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2951,6 +2955,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Last Logon Date"});
             table94.AddRow(new string[] {
                         "Mailbox Count (Access)"});
+            table94.AddRow(new string[] {
+                        "Mailbox Count (Owned)"});
             table94.AddRow(new string[] {
                         "SID"});
             table94.AddRow(new string[] {
@@ -3180,6 +3186,73 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table98.AddRow(new string[] {
                         "Amber"});
             testRunner.Then("color for following values are displayed correctly:", ((string)(null)), table98, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS12547")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock", new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "Evergreen_FiltersFeature",
+                        "FiltersDisplay",
+                        "DAS12547"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("user select \"Owner Floor\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks in search field in the Filter block", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Value"});
+            table99.AddRow(new string[] {
+                        "Empty"});
+            table99.AddRow(new string[] {
+                        "0"});
+            table99.AddRow(new string[] {
+                        "1"});
+            table99.AddRow(new string[] {
+                        "2"});
+            table99.AddRow(new string[] {
+                        "3"});
+            table99.AddRow(new string[] {
+                        "4"});
+            table99.AddRow(new string[] {
+                        "5"});
+            table99.AddRow(new string[] {
+                        "6"});
+            table99.AddRow(new string[] {
+                        "11"});
+            table99.AddRow(new string[] {
+                        "12"});
+            table99.AddRow(new string[] {
+                        "18"});
+            table99.AddRow(new string[] {
+                        "19"});
+            table99.AddRow(new string[] {
+                        "20"});
+            table99.AddRow(new string[] {
+                        "21"});
+            table99.AddRow(new string[] {
+                        "25"});
+            table99.AddRow(new string[] {
+                        "26"});
+            table99.AddRow(new string[] {
+                        "49"});
+            table99.AddRow(new string[] {
+                        "51"});
+            testRunner.Then("the values are displayed for \"OwnerFloor\" filter on \"Mailboxes\" page in the follo" +
+                    "wing order:", ((string)(null)), table99, "Then ");
             this.ScenarioCleanup();
         }
     }

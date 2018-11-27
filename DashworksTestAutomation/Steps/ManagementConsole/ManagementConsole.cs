@@ -6,15 +6,14 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.ManagementConsole;
-using DashworksTestAutomation.Pages.Projects;
+using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
-namespace DashworksTestAutomation.Steps
+namespace DashworksTestAutomation.Steps.ManagementConsole
 {
     [Binding]
     internal class ManagementConsole : SpecFlowContext
@@ -24,7 +23,8 @@ namespace DashworksTestAutomation.Steps
         private readonly ProjectDto _projectDto;
         private readonly ManageUsersDto _manageUsers;
 
-        public ManagementConsole(RemoteWebDriver driver, ProjectDto projectDto, ManageUsersDto manageUsers, PrjLastDeletedUserName deletedUserName)
+        public ManagementConsole(RemoteWebDriver driver, ProjectDto projectDto, ManageUsersDto manageUsers,
+            PrjLastDeletedUserName deletedUserName)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -55,6 +55,7 @@ namespace DashworksTestAutomation.Steps
                 if (!string.IsNullOrEmpty(row["Roles"]))
                     page.Roles.SelectboxSelect(row["Roles"]);
             }
+
             page.Roles.SelectboxSelect("Dashworks Users");
             page.Roles.SelectboxSelect("Dashworks Evergreen Users");
             page.AddRoleButton.Click();
@@ -70,7 +71,7 @@ namespace DashworksTestAutomation.Steps
 
             table.CreateInstance<ManageUsersDto>().CopyPropertiesTo(_manageUsers);
             _manageUsers.Username += TestDataGenerator.RandomString();
-            ManageUsersDto tempManageUsersDto = new ManageUsersDto();
+            var tempManageUsersDto = new ManageUsersDto();
             _manageUsers.CopyPropertiesTo(tempManageUsersDto);
             _projectDto.ManageUsers.Add(tempManageUsersDto);
 
@@ -87,6 +88,7 @@ namespace DashworksTestAutomation.Steps
                 _manageUsers.Roles = (RolesEnum)Enum.Parse(typeof(RolesEnum), _manageUsers.RolesString);
                 page.Roles.SelectboxSelect(_manageUsers.Roles.GetValue());
             }
+
             page.AddRoleButton.Click();
 
             page.CreateUserButton.Click();
@@ -98,7 +100,7 @@ namespace DashworksTestAutomation.Steps
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             //Perform search because newly created items not always on first page
-            page.SearchTextbox.SendKeys(_projectDto.ManageUsers.Last().Username);
+            page.SearchTextBox.SendKeys(_projectDto.ManageUsers.Last().Username);
             page.SearchButton.Click();
 
             var user = page.GetTheCreatedElementInTableByName(_projectDto.ManageUsers.Last().Username);
@@ -110,8 +112,8 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             // Perform search because created items not always on first page
-            page.SearchTextboxForMembers.Clear();
-            page.SearchTextboxForMembers.SendKeys(userName);
+            page.SearchTextBoxForMembers.Clear();
+            page.SearchTextBoxForMembers.SendKeys(userName);
             page.SearchButtonForMembers.Click();
             page.SelectUserForMembersByName(userName).Click();
             page.GetButtonElementByName("Add Selected").Click();
@@ -124,8 +126,8 @@ namespace DashworksTestAutomation.Steps
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             // Perform search because created items not always on first page
-            page.SearchTextboxForMembers.Clear();
-            page.SearchTextboxForMembers.SendKeys(_projectDto.ManageUsers[userIndex - 1].Username);
+            page.SearchTextBoxForMembers.Clear();
+            page.SearchTextBoxForMembers.SendKeys(_projectDto.ManageUsers[userIndex - 1].Username);
             page.SearchButtonForMembers.Click();
             page.SelectUserForMembersByName(_projectDto.ManageUsers[userIndex - 1].Username).Click();
             page.GetButtonElementByName("Add Selected").Click();
@@ -138,8 +140,8 @@ namespace DashworksTestAutomation.Steps
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
             //Perform search because newly created items not always on first page
-            page.SearchTextbox.Clear();
-            page.SearchTextbox.SendKeys(_projectDto.ManageUsers.Last().Username);
+            page.SearchTextBox.Clear();
+            page.SearchTextBox.SendKeys(_projectDto.ManageUsers.Last().Username);
             page.SearchButton.Click();
 
             _deletedUserName.Value = _projectDto.ManageUsers.Last().Username;
@@ -154,8 +156,8 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             //Perform search because newly created items not always on first page
-            page.SearchTextbox.Clear();
-            page.SearchTextbox.SendKeys(userName);
+            page.SearchTextBox.Clear();
+            page.SearchTextBox.SendKeys(userName);
             page.SearchButton.Click();
             page.GetDeleteButtonElementByName(userName).Click();
             _driver.AcceptAlert();
@@ -166,7 +168,8 @@ namespace DashworksTestAutomation.Steps
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value), "Selected User is displayed in the table");
+            Assert.IsFalse(page.CheckThatCreatedElementIsRemoved(_deletedUserName.Value),
+                "Selected User is displayed in the table");
         }
     }
 }

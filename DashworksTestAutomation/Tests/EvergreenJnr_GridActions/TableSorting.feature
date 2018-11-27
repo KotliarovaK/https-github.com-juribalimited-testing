@@ -103,7 +103,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatTheDataInTheTablesAreSortedAppro
 	| Applications | Version            |
 	| Mailboxes    | Owner Display Name |
 
-@Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS12545 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_GridActions @TableSorting @DAS12545 @DAS14287 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -116,7 +116,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	| ColumnName   |
 	| <ColumnName> |
 	When User click on '<ColumnName>' column header
-	Then numeric data in table is sorted by '<ColumnName>' column in descending order
+	Then numeric data in table is sorted by '<ColumnName>' column in ascending order
 	When User create dynamic list with "<DynamicListName>" name on "<ListName>" page
 	Then "<DynamicListName>" list is displayed to user
 	When User navigates to the "<AllListName>" list
@@ -126,7 +126,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 	Then ColumnName is added to the list
 	| ColumnName   |
 	| <ColumnName> |
-	Then numeric data in table is sorted by '<ColumnName>' column in descending order
+	Then numeric data in table is sorted by '<ColumnName>' column in ascending order
 	Then Edit List menu is not displayed
 
 Examples: 

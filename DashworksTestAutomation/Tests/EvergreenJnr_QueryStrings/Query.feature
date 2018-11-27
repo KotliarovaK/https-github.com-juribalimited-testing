@@ -76,7 +76,7 @@ Runs Evergreen URL query strings for the Mailboxes List.
 	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus                                                      |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684 @Not_Run
 Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -114,7 +114,7 @@ Examples:
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20('%25SQL_PRODUCT_SHORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))                 | 17,225 |
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20CONTAINS%20('7zip')%20WHERE%20(nuod))                                                                                                                                  | 17,225 |
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20BEGINS%20WITH%20('7zip')%20WHERE%20(ubdo%2Cetd))                                                                                                                       | 11     |
-	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('7zip')%20WHERE%20(nubdo%2Cnetdo))                                                                                                        | 17,066 |
+	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('7zip')%20WHERE%20(nubdo%2Cnetdo))                                                                                                        | 17,096 |
 	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(etdo))                                                                                                         | 95     |
 	| Application Vendor                              | evergreen/#/devices?$filter=(applicationManufacturer%20NOT%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(netdo))                                                                                                  | 12,200 |
 	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20EQUALS%20('App%20Discovery')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))                                                                                      | 1,003  |
@@ -158,7 +158,7 @@ Examples:
 	#| Application Owner (App Custom Fields)                                                                   | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                      | 16,222 |                                                                                                                                                                                                                                                   |
 	#| Application Name                                                                                        | evergreen/#/devices?$filter=(applicationName%20IS%20EMPTY%20()%20WHERE%20(iod))                                                                                                                                              | 6      |                                                                                                                                                                                                                                                   |
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList
 	When User create static list with "StaticList13179" name on "Applications" page with following items
 	| ItemName |
@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And "17,196" rows are displayed in the agGrid
 	And "Any Application in list StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And "17,225" rows are displayed in the agGrid
 	And "Any Application in list Dynamic13179 not entitled to device's owner; not used by device's owner; not installed on device; not entitled to device; or not used on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                                                        | QueryStringURL                                                                                                                                               |
@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And "7,365" rows are displayed in the agGrid
 	And "Any Application in list StaticList12911 not installed on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                          | QueryStringURL                                                                              |
@@ -245,7 +245,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	Then "Dynamic13579" list is displayed to user
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                                                        | QueryStringURL                                                                          |
-	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('392')%20WHERE%20(uod)) |
+	| Application (Saved List) - Static - Specific rows selected by Compliance = Red, Amber or Unknown | evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20('346')%20WHERE%20(uod)) |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Application" filter
@@ -279,14 +279,14 @@ Examples:
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20NOT%20EQUALS%20('ACDSee%204.0')%20WHERE%20(nioadobu%2Cnuodobu%2Cnetu%2Cnubu%2Cnetdobu))        | 41,339 |
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20CONTAINS%20('%25')%20WHERE%20(netu))                                                           | 36,502 |
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20BEGINS%20WITH%20('A')%20WHERE%20(ubu%2Cetu))                                                   | 946    |
-	| Application Name                      | evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('A')%20WHERE%20(nuodobu%2Cnetdobu))                               | 41,241 |
+	| Application Name                      | evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20('A')%20WHERE%20(nuodobu%2Cnetdobu))                               | 41,254 |
 	| Application Name                      | evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20('a')%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))               | 14,956 |
 	| Application Vendor                    | evergreen/#/users?$filter=(applicationManufacturer%20EQUALS%20('Aaronbock%20Development')%20WHERE%20(ubu))                                  | 94     |
 	| Application Vendor                    | evergreen/#/users?$filter=(applicationManufacturer%20NOT%20EQUALS%20('Abacre')%20WHERE%20(netu))                                            | 36,502 |
 	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20%3D%201%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))                                        | 367    |
 	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20<>%201%20WHERE%20(nioadobu%2Cnetdobu%2Cnuodobu%2Cnetu%2Cnubu))                                  | 41,339 |
 	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20%3E%3D%201%20WHERE%20(ubu))                                                                     | 99     |
-	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))                                                            | 41,333 |
+	| Application Key                       | evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))                                                            | 41,339 |
 	| Application Owner (App Custom Fields) | evergreen/#/users?$filter=(applicationCustomField_80%20EQUALS%20('App%20Discovery')%20WHERE%20(ubu%2Cetu%2Ciodobu%2Cetdobu%2Cuodou))        | 871    |
 	#| Application Import                    | evergreen/#/users?$filter=(applicationImport%20NOT%20EQUALS%20('A01%20SMS%20(Spoof%C2%A7')%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu)) | 4,910  |
 	#| Application Name                      | evergreen/#/users?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20())                                                            | 26,802 |

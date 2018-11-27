@@ -359,6 +359,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS10789")]
         [NUnit.Framework.CategoryAttribute("DAS13684")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_ApplicationsOnDevicesList", new string[] {
@@ -367,7 +368,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS10789",
-                        "DAS13684"});
+                        "DAS13684",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -467,7 +469,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20BEGINS%20WITH%20(\'7zip\')%20WHERE%2" +
             "0(ubdo%2Cetd))", "11", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20(\'7zip" +
-            "\')%20WHERE%20(nubdo%2Cnetdo))", "17,066", new string[0])]
+            "\')%20WHERE%20(nubdo%2Cnetdo))", "17,096", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20(\'Aaronbock%20Dev" +
             "elopment\')%20WHERE%20(etdo))", "95", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/devices?$filter=(applicationManufacturer%20NOT%20EQUALS%20(\'Aaronbock" +
@@ -604,6 +606,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticL" +
@@ -613,7 +616,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -660,6 +664,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamic" +
@@ -669,7 +674,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -714,6 +720,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWit" +
@@ -723,7 +730,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -778,6 +786,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilter()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWit" +
@@ -787,7 +796,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
-                        "Delete_Newly_Created_List"});
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -806,7 +816,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             table18.AddRow(new string[] {
                         "Application (Saved List) - Static - Specific rows selected by Compliance = Red, A" +
                             "mber or Unknown",
-                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'392\')%20WHERE%20" +
+                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'346\')%20WHERE%20" +
                             "(uod))"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table18, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -852,7 +862,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20BEGINS%20WITH%20(\'A\')%20WHERE%20(ubu" +
             "%2Cetu))", "946", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20(\'A\')%20" +
-            "WHERE%20(nuodobu%2Cnetdobu))", "41,241", new string[0])]
+            "WHERE%20(nuodobu%2Cnetdobu))", "41,254", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/users?$filter=(applicationName%20DOES%20NOT%20END%20WITH%20(\'a\')%20WH" +
             "ERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu))", "14,956", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/users?$filter=(applicationManufacturer%20EQUALS%20(\'Aaronbock%20Devel" +
@@ -864,7 +874,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<>%201%20WHERE%20(nioadobu%2Cnetdobu%" +
             "2Cnuodobu%2Cnetu%2Cnubu))", "41,339", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20%3E%3D%201%20WHERE%20(ubu))", "99", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))", "41,333", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%3D%202%20WHERE%20(netdobu%2Cnubu))", "41,339", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/users?$filter=(applicationCustomField_80%20EQUALS%20(\'App%20Discovery" +
             "\')%20WHERE%20(ubu%2Cetu%2Ciodobu%2Cetdobu%2Cuodou))", "871", new string[0])]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList(string filterName, string queryString, string rows, string[] exampleTags)

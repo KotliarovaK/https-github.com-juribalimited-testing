@@ -301,7 +301,7 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatFilterOperatorsIsCorrectInFilt
 	| SelectedCheckboxes |
 	| <filterOption>     |
 	Then "Compliance" filter is added to the list
-	And "<rowsCount>" rows are displayed in the agGrid
+	#And "<rowsCount>" rows are displayed in the agGrid
 	And Options is displayed in added filter info
 	| Values                |
 	| <operatorValueInInfo> |
@@ -703,7 +703,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatRelevantDataSetBeDisplayedAfterEditi
 	| Option         | State |
 	| Not Applicable | false |
 	| Green          | true  |
-	Then "71" rows are displayed in the agGrid
+	#Then "71" rows are displayed in the agGrid
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS11552 @DAS12207
 Scenario: EvergreenJnr_UsersList_CheckThatRelevantDataSetBeDisplayedAfterResettingFilter
@@ -770,7 +770,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultipleFilterCriteriaToApplicationN
 	And "(Application Name ~ (adobe, microsoft) ASSOCIATION = (installed on device))" text is displayed in filter container
 
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @DAS13376 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS12152 @DAS12602 @DAS13376 @DAS14222 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfterRemovingAssociationsList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -796,7 +796,7 @@ Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForStaticListAfte
 	When User navigates to the "TestList8D5C03" list
 	Then "TestList8D5C03" list is displayed to user
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS13376 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS11468 @DAS13376 @DAS14222 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThat500ErrorIsNotDisplayedForDynamicListAfterRemovingAssociationsList
 	When User add following columns using URL to the "Applications" page:
 	| ColumnName      |
@@ -1004,7 +1004,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatFilterTextDisplaysActualListName
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] entitled to device" is displayed in added filter info
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @DAS13376 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12121 @DAS13376 @DAS14222 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatTextInTheFilterPanelDisplaysTheCurrentListName
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1187,7 +1187,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAdvancedFilterOfUserWhoseFilte
 	| Values | Association     |
 	|        | Entitled to app |
 	Then "113" rows are displayed in the agGrid
-	And table content is present
+	Then table content is present
 	When User have reset all filters
 	Then "2,223" rows are displayed in the agGrid
 	When User add "User Building" filter where type is "Equals" with following Lookup Value and Association:
@@ -1227,7 +1227,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Home Drive             |
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
-	#| Mailbox Count (Owned) |
+	| Mailbox Count (Owned)  |
 	| SID                    |
 	| Surname                |
 	| User Key               |
@@ -1325,3 +1325,32 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayed
 	| Color |
 	| Red   |
 	| Amber |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS12547
+Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Owner Floor" filter
+	When User clicks in search field in the Filter block
+	Then the values are displayed for "OwnerFloor" filter on "Mailboxes" page in the following order:
+	| Value |
+	| Empty |
+	| 0     |
+	| 1     |
+	| 2     |
+	| 3     |
+	| 4     |
+	| 5     |
+	| 6     |
+	| 11    |
+	| 12    |
+	| 18    |
+	| 19    |
+	| 20    |
+	| 21    |
+	| 25    |
+	| 26    |
+	| 49    |
+	| 51    |

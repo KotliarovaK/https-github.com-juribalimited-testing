@@ -337,7 +337,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| true           | DateOnly       | None                  | true           | true                 | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Values" page
-	And User clicks "Add Value" button
+	And User clicks "Add value" button
 	And User create new Value
 	| Name    | TaskStatusString | DefaultValue |
 	| Blocked | Open             | false        |
@@ -363,7 +363,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| false          |                | Workflow              | false          | false                | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Values" page
-	And User clicks "Add Value" button
+	And User clicks "Add value" button
 	And User create new Value
 	| Name | TaskStatusString | DefaultValue |
 	| None | Closed           | false        |
@@ -389,7 +389,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| false          | DateTime       | None                  | true           | true                 | true        | false              | true       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Values" page
-	And User clicks "Add Value" button
+	And User clicks "Add value" button
 	And User create new Value
 	| Name    | TaskStatusString | DefaultValue |
 	| Unknown | Open             | true         |
@@ -448,7 +448,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| true           | DateTime       | SelfServiceEnabledUserMode | true                 | true           | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Value" page
-	And User clicks "Add Value" button
+	And User clicks "Add value" button
 	And User create new Value
 	| Name    | TaskStatusString | DefaultValue |
 	| Blocked | Open             | false        |
@@ -513,7 +513,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| true           | DateTime       | Workflow              | true        | false         | false      | false       |
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Value" page
-	And User clicks "Add Value" button
+	And User clicks "Add value" button
 	And User create new Value
 	| Name    | TaskStatusString | DefaultValue |
 	| Unknown | Open             | true         |
@@ -539,7 +539,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	| false          |                | None                  | true                 | true        | false         | false      | true        |
 	Then Success message is displayed with "Task successfully updated" text
 	When User navigate to "Value" page
-	And User clicks "Add Value" button
+	And User clicks "Add value" button
 	And User create new Value
 	| Name                | TaskStatusString | DefaultValue |
 	| Under Investigation | Open             | false        |
