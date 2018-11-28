@@ -78,6 +78,13 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             tab.GetTabElementByName(tabName).Click();
         }
 
+        [When(@"User clicks the Use Dashworks Evergreen to configure capacity link")]
+        public void WhenUserClicksTheUseDashworksEvergreenToConfigureCapacityLink()
+        {
+            var tab = _driver.NowAt<MainElementsOfProjectCreation>();
+            tab.DashworksEvergreenCapacityLink.Click();
+        }
+
         [When(@"User clicks ""(.*)"" button")]
         public void WhenUserClicksCreateButton(string buttonName)
         {

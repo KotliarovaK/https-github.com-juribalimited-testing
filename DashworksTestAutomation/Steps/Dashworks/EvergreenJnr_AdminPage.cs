@@ -258,6 +258,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
         }
 
+        [Then(@"""(.*)"" tab in Project selected on the Admin page")]
+        public void ThenTabInProjectSelectedOnTheAdminPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectTabs.GetsSelectedTabInProjectByName(tabName).Displayed(), $"'{tabName}' tab is not active");
+        }
+
         [When(@"User selects ""(.*)"" tab on the Capacity Units page")]
         public void WhenUserSelectsTabOnTheCapacityUnitsPage(string tabName)
         {
