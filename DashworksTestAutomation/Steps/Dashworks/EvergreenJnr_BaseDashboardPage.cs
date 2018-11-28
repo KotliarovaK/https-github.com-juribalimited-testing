@@ -7,6 +7,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -267,6 +268,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var originalList = page.GetRowContentByColumnName(columnName);
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
+        public void ThenTextIsDisplayedInTheColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var originalList = page.GetColumnContentByColumnNameForCapacity(columnName);
+            Assert.AreEqual(text, originalList, "Content is not displayed correctly");
         }
 
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]

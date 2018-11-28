@@ -1204,7 +1204,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed for "Slots" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13812 @DAS13676 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13812 @DAS13676 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1305,3 +1305,36 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then "UPDATE" Action button is active
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14218
+Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDifferentProjectTypes
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "User Evergreen Capacity Project" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	When User enters "1" text in the Search field for "Capacity Unit" column
+	Then "Evergreen Capacity Unit 1" content is displayed for "Maps to Evergreen" column
+	When User enters "2" text in the Search field for "Capacity Unit" column
+	Then "Evergreen Capacity Unit 2" content is displayed for "Maps to Evergreen" column
+	When User enters "3" text in the Search field for "Capacity Unit" column
+	Then "Evergreen Capacity Unit 3" content is displayed for "Maps to Evergreen" column
+	When User clicks "Projects" navigation link on the Admin page
+	When User enters "Devices Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "Devices Evergreen Capacity Project" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	When User have opened Column Settings for "Capacity Unit" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Maps to Evergreen" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then "" text is displayed in the "Maps to Evergreen" column
+	When User enters "1" text in the Search field for "Capacity Unit" column
+	Then "" text is displayed in the "Maps to Evergreen" column
+	When User enters "2" text in the Search field for "Capacity Unit" column
+	Then "" text is displayed in the "Maps to Evergreen" column

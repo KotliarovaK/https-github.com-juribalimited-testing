@@ -257,6 +257,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
+        public int GetColumnNumberByNameForCapacity(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 2;
+
+            return columnNumber;
+        }
+
+        public string GetColumnContentByColumnNameForCapacity(string columnName)
+        {
+            var by = By.XPath(
+                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByNameForCapacity(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
         public void GetSearchFieldByColumnName(string columnName, string text)
         {
             var byControl =
