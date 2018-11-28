@@ -1954,7 +1954,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var message = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(message.TextMessage(text), $"{text} is not displayed on the Project page");
+            StringAssert.Contains(text, message.WarningMessage.Text, $"{text} is not displayed in Warning message");
         }
 
         [Then(@"User selects ""(.*)"" option for selected language")]
@@ -1977,11 +1977,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsCheckboxInTheFieldOnTheProjectDetailsPage(string checkbox, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).Click();
+            projectElement.GetFieldByName(fieldName).SendKeys(checkbox);
             var slot = _driver.NowAt<Capacity_SlotsPage>();
             slot.GetCheckboxByName(checkbox).Click();
             var filterElement = _driver.NowAt<BaseGridPage>();
             filterElement.BodyContainer.Click();
+        }
+
+        [Then(@"next checkboxes in the ""(.*)"" field are not available to select:")]
+        public void ThenNextCheckboxesInTheFieldAreNotAvailableToSelect(string fieldName, Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                var projectElement = _driver.NowAt<ProjectsPage>();
+                projectElement.GetFieldByName(fieldName).SendKeys(row["Value"]);
+                var page = _driver.NowAt<Capacity_SlotsPage>();
+                Assert.IsFalse(page.GetCheckboxByName(row["Value"]).Displayed(),
+                    $"'{row["Value"]}' is available for '{fieldName}' field");
+            }
         }
 
         [When(@"User changes Project Short Name to ""(.*)""")]
@@ -2228,6 +2241,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dropdown = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
+        [Then(@"next values are displayed in the ""(.*)"" dropdown:")]
+        public void ThenNextValuesAreDisplayedInTheDropdown(string dropdownName, Table table)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            if (page.ExpandItemsButton.Displayed)
+                page.ExpandItemsButton.Click();
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
+                    $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
+            }
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
