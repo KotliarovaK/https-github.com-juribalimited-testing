@@ -3599,7 +3599,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "" content is displayed in "Project Description" field
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13498
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13498 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -3660,3 +3660,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	When User click on Back button
 	And User enters "ProjectDAS13501 upd" text in the Search field for "Project" column
 	Then "ProjectDAS13501 upd" content is displayed for "Project" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13424 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectScreen
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
+	When User navigate to "Capacity" tab
+	When User clicks the Use Dashworks Evergreen to configure capacity link
+	Then "Slots" tab in Project selected on the Admin page

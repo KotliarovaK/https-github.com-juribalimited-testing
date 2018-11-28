@@ -59,6 +59,9 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         [FindsBy(How = How.XPath, Using = ".//input[@value='Add']")]
         public IWebElement AddButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[@class='pmform']//a[text()='Dashworks Evergreen']")]
+        public IWebElement DashworksEvergreenCapacityLink { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
