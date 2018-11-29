@@ -1406,6 +1406,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
+        [Then(@"Error message is not displayed on the Capacity Units page")]
         [Then(@"Error message is not displayed on the Capacity Slots page")]
         [Then(@"Error message is not displayed on the Projects page")]
         public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
@@ -1477,6 +1478,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.SelectActions(actionName);
         }
 
+        [Then(@"Create Capacity Unit button is disabled")]
         [Then(@"Create Bucket button is disabled")]
         public void ThenCreateBucketButtonIsDisabled()
         {
