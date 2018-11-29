@@ -1987,14 +1987,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"next checkboxes in the ""(.*)"" field are not available to select:")]
         public void ThenNextCheckboxesInTheFieldAreNotAvailableToSelect(string fieldName, Table table)
         {
-            foreach (var row in table.Rows)
-            {
-                var projectElement = _driver.NowAt<ProjectsPage>();
-                projectElement.GetFieldByName(fieldName).SendKeys(row["Value"]);
-                var page = _driver.NowAt<Capacity_SlotsPage>();
-                Assert.IsFalse(page.GetCheckboxByName(row["Value"]).Displayed(),
-                    $"'{row["Value"]}' is available for '{fieldName}' field");
-            }
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualOptionList = page.OptionListForDropDown.Select(value => value.Text).ToList();
+            foreach (var value in expectedList)
+                Assert.IsFalse(actualOptionList.Contains(value), $"'{value}' is available for '{fieldName}' field");
+        }
+
+        [Then(@"""(.*)"" checkbox in the ""(.*)"" field are available to select")]
+        public void ThenCheckboxInTheFieldAreAvailableToSelect(string checkbox, string fieldName)
+        {
+            var field = _driver.NowAt<ProjectsPage>();
+            field.GetFieldByName(fieldName).SendKeys(checkbox);
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var actualOptionList = page.OptionListForDropDown.Select(value => value.Text).ToList();
+            Assert.IsTrue(actualOptionList.Contains(checkbox), $"'{checkbox}' is available for '{fieldName}' field");
         }
 
         [When(@"User changes Project Short Name to ""(.*)""")]
@@ -2247,13 +2254,49 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNextValuesAreDisplayedInTheDropdown(string dropdownName, Table table)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            if (page.ExpandItemsButton.Displayed)
-                page.ExpandItemsButton.Click();
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            foreach (var row in table.Rows)
+            if (page.ExpandItemsButton.Displayed())
             {
-                Assert.IsTrue(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
-                    $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
+                page.ExpandItemsButton.Click();
+                var dropdown = _driver.NowAt<BaseGridPage>();
+                foreach (var row in table.Rows)
+                {
+                    Assert.IsTrue(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
+                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
+                }
+            }
+            else
+            {
+                var dropdown = _driver.NowAt<BaseGridPage>();
+                foreach (var row in table.Rows)
+                {
+                    Assert.IsTrue(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
+                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
+                }
+            }
+        }
+
+        [Then(@"next values are not displayed in the ""(.*)"" dropdown:")]
+        public void ThenNextValuesAreNotDisplayedInTheDropdown(string dropdownName, Table table)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            if (page.ExpandItemsButton.Displayed())
+            {
+                page.ExpandItemsButton.Click();
+                var dropdown = _driver.NowAt<BaseGridPage>();
+                foreach (var row in table.Rows)
+                {
+                    Assert.IsFalse(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
+                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
+                }
+            }
+            else
+            {
+                var dropdown = _driver.NowAt<BaseGridPage>();
+                foreach (var row in table.Rows)
+                {
+                    Assert.IsFalse(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
+                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
+                }
             }
         }
 

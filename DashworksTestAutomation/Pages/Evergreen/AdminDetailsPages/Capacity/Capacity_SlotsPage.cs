@@ -10,6 +10,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 {
     internal class Capacity_SlotsPage : SeleniumBasePage
     {
+        public const string OptionForDropDown = "//div[@role='presentation']";
+
         [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
         public IWebElement TitleContainer { get; set; }
 
@@ -29,7 +31,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//*[@role='alert']//span[1]")]
         public IWebElement MoveToPositionAlert { get; set; }
 
-     
+        [FindsBy(How = How.XPath, Using = OptionForDropDown)]
+        public IList<IWebElement> OptionListForDropDown { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -107,5 +111,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetOptionByName(string optionName)
+        {
+            var selector = By.XPath($"//span[text()='{optionName}']/ancestor::div[@role='presentation']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
