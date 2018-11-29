@@ -13,18 +13,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         public const string ItemImageSelector = ".//i";
 
-        public const string LinkSelector = ".//a";
-
         public const string ColumnWithImageAndLinkSelector = ".//div[@col-id='userName'][@role='gridcell']";
-
-        public const string TableContent =
-            ".//div[@class='ag-cell ag-cell-not-inline-editing ag-cell-with-height ag-cell-no-focus ag-cell-value']";
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div/div/span/a[@href]")]
-        public IWebElement ColumnWithLinkSelector { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
         public IWebElement GroupIcon { get; set; }
@@ -37,12 +29,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='category-content ng-star-inserted']")]
         public IWebElement SectionContainer { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-person']")]
-        public IWebElement ColumnItemImage { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='category-content ng-star-inserted']")]
-        public IWebElement TableContentDetails { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoFoundMessage { get; set; }
@@ -69,12 +55,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']")]
         public IWebElement SelectAllCheckBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'field-category')]")]
-        public IWebElement CategoryField { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//i[@class='material-icons mat-filter-edit']")]
-        public IWebElement EditButton { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -97,10 +77,16 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement NavigateToFieldByName(string fieldName)
+        public IWebElement GetExpandedSectionByName(string sectionName)
         {
             return Driver.FindElement(
-                By.XPath($".//div[@class='ng-star-inserted']//td[@class='fld-label']//span[text()='{fieldName}']"));
+                By.XPath($"//mat-tab-body//div[contains(@class, 'collapsed')]//span[text()='{sectionName}']"));
+        }
+
+        public IWebElement GetTextInExpandedSection(string text)
+        {
+            return Driver.FindElement(
+                By.XPath($"//mat-tab-body//div[contains(@class, 'collapsed')]//tr//span[text()='{text}']"));
         }
 
         public IWebElement GetCellByTextFromKeyValueGrid(string text)
