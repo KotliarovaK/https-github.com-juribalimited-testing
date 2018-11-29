@@ -34,6 +34,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed
 	When User changes Email to "testEmail"
 	And User clicks the "UPDATE" Action button
 	Then "Enter a valid email address" error message is displayed
+	When User clicks refresh button in the browser
 	When User changes Email to "@test.com"
 	And User clicks the "UPDATE" Action button
 	Then "Enter a valid email address" error message is displayed

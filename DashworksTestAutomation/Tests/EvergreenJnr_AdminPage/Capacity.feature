@@ -1343,7 +1343,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" text is displayed in the "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
