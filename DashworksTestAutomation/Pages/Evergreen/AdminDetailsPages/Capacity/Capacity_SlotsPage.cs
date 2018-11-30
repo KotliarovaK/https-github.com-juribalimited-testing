@@ -10,6 +10,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 {
     internal class Capacity_SlotsPage : SeleniumBasePage
     {
+        public const string SelectedValueTextBox = "//mat-chip[@class='mat-chip mat-primary mat-standard-chip mat-chip-with-trailing-icon ng-star-inserted']//span";
+
         [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
         public IWebElement TitleContainer { get; set; }
 
@@ -32,7 +34,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//*[@role='alert']//span[1]")]
         public IWebElement MoveToPositionAlert { get; set; }
 
-     
+        [FindsBy(How = How.XPath, Using = "//div[@aria-live='assertive'][text()='0 shown']")]
+        public IWebElement NoValuesAvailableInDropDown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = SelectedValueTextBox)]
+        public IList<IWebElement> SelectedValuesList { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -109,6 +116,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             var selector = By.XPath($"//div[@class='dialog-small mat-dialog-content']/following-sibling :: div//button/span[contains(text(), '{buttonText.ToUpper()}')]/parent :: button");
             return Driver.FindElement(selector);
         }
-
     }
 }
