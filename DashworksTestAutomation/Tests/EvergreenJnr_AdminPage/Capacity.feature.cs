@@ -2789,7 +2789,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Forecast Date"});
             table48.AddRow(new string[] {
                         "Group Computer Rag Radio Date Owner"});
-            testRunner.Then("Next checkboxes are not displayed in the \"Tasks\" dropdown:", ((string)(null)), table48, "Then ");
+            testRunner.Then("Next checkboxes in the \"Tasks\" dropdown are not available to select:", ((string)(null)), table48, "Then ");
             testRunner.And("\"Scheduled Date\" checkbox in the \"Tasks\" field are available to select", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -2920,7 +2920,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "1Task13500"});
             table52.AddRow(new string[] {
                         "2Task13500"});
-            testRunner.Then("Next checkboxes are not displayed in the \"Tasks\" dropdown:", ((string)(null)), table52, "Then ");
+            testRunner.Then("Next checkboxes in the \"Tasks\" dropdown are not available to select:", ((string)(null)), table52, "Then ");
             testRunner.And("\"Scheduled Date\" checkbox in the \"Tasks\" field are available to select", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }

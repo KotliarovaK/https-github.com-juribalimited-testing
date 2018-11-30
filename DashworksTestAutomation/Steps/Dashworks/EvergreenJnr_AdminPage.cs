@@ -2297,8 +2297,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetCheckboxByName(checkbox).Displayed(), $"'{checkbox}' is available for '{fieldName}' field");
         }
 
-        [Then(@"Next checkboxes are not displayed in the ""(.*)"" dropdown:")]
-        public void ThenNextCheckboxesAreNotDisplayedInTheDropdown(string dropdownName, Table table)
+        [Then(@"Next checkboxes in the ""(.*)"" dropdown are not available to select:")]
+        public void ThenNextCheckboxesInTheDropdownAreNotAvailableToSelect(string dropdownName, Table table)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForDataLoading();

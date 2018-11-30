@@ -1438,7 +1438,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	Then Next checkboxes are not displayed in the "Tasks" dropdown:
+	Then Next checkboxes in the "Tasks" dropdown are not available to select:
 	| Value                               |
 	| Forecast Date                       |
 	| Group Computer Rag Radio Date Owner |
@@ -1507,7 +1507,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	Then Next checkboxes are not displayed in the "Tasks" dropdown:
+	Then Next checkboxes in the "Tasks" dropdown are not available to select:
 	| Value          |
 	| 1Task13500     |
 	| 2Task13500     |
