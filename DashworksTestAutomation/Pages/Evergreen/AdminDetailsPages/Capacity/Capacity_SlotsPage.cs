@@ -20,6 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = "//div[@class='form-item']//a[contains(text(), 'See Translations')]")]
         public IWebElement LanguageTranslationsLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'chips-item-text')][text()='1 more']/ancestor::button")]
+        public IWebElement ExpandItemsButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[@class='cdk-overlay-pane small-dialogs-styling']")]
         public IWebElement MoveToPositionDialog { get; set; }
         

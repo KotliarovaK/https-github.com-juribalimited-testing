@@ -44,6 +44,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.GetLinkByName(linkName).Click();
         }
 
+        [Then(@"""(.*)"" section is expanded on the Details Page")]
+        public void ThenSectionIsExpandedOnTheDetailsPage(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section {sectionName} is not displayed");
+        }
+
         [Then(@"section is loaded correctly")]
         public void ThenSectionIsLoadedCorrectly()
         {
@@ -53,6 +60,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
             else
                 Assert.IsTrue(detailsPage.NoFoundContent.Displayed(), "Section is not loaded");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the expanded section on the Details Page")]
+        public void ThenTextIsDisplayedInTheExpandedSectionOnTheDetailsPage(string text)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetTextInExpandedSection(text).Displayed(), $"{text} is not displayed in the expanded section");
         }
 
         [Then(@"Highcharts graphic is displayed on the Details Page")]

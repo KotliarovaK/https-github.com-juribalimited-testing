@@ -1067,3 +1067,21 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccess
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
 	Then There are no errors in the browser console
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks content from "<ColumnName>" column
+	And User navigates to the "Projects" tab
+	Then "Project Summary" section is expanded on the Details Page
+	And "Project Count" text is displayed in the expanded section on the Details Page
+	And "Evergreen Bucket" text is displayed in the expanded section on the Details Page
+	And "Evergreen Capacity Unit" text is displayed in the expanded section on the Details Page
+	And There are no errors in the browser console
+
+Examples:
+	| ListName  | ColumnName    |
+	| Devices   | Hostname      |
+	| Users     | Username      |
+	| Mailboxes | Email Address |

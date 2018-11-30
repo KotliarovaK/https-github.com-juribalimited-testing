@@ -1391,3 +1391,57 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	Then "" text is displayed in the "Maps to Evergreen" column
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" text is displayed in the "Maps to Evergreen" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Not_Run
+Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	And User selects "Scheduled Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Forecast Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
+	And User clicks the "CREATE" Action button
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	And User navigate to "Tasks" tab
+	And User navigate to "Forecast Date" Task
+	And User unpublishes the task
+	When User clicks "Cancel" button
+	And User navigate to "Group Computer Rag Radio Date Owner" Task
+	And User unpublishes the task
+	And User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User open "Capacity" sub menu on Admin page
+	And User selects "Slots" tab on the Project details page
+	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
+	And User clicks content from "Capacity Slot" column
+	#Then "Scheduled Date" value is displayed in the "Tasks" dropdown
+	#Then "Forecast Date" value is displayed in the "Tasks" dropdown
+	#Then "Group Computer Rag Radio Date Owner" value is displayed in the "Tasks" dropdown
+	Then next values are displayed in the "Tasks" dropdown:
+	| Value                               |
+	| Scheduled Date                      |
+	| Forecast Date                       |
+	| Group Computer Rag Radio Date Owner |
+	When User clicks the "CANCEL" Action button
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	Then next checkboxes in the "Tasks" field are not available to select:
+	| Value                               |
+	| Forecast Date                       |
+	| Group Computer Rag Radio Date Owner |
