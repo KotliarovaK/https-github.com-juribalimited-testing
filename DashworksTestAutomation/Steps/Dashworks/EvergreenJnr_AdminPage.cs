@@ -2133,11 +2133,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User enters ""(.*)"" value in Move to position dialog")]
-        public void WhenUserEntersValueInTheMoveToPositionDialog(string value)
+        public void WhenUserEntersValueInMoveToPositionDialog(string value)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             page.MoveToPositionInput.Clear();
             page.MoveToPositionInput.SendKeys(value);
+        }
+
+        [When (@"User remembers the Move to position dialog size")]
+        public void WhenUserRemembersMoveToPositionDialogSize()
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.Storage.SessionStorage.SetItem("dialog_Height", page.MoveToPositionDialog.Size.Height.ToString());
+            page.Storage.SessionStorage.SetItem("dialog_Width", page.MoveToPositionDialog.Size.Width.ToString());
+        }
+
+        [Then(@"User checks that Move to position dialog has the same size")]
+        public void ThenUserChecksThatMoveToPositionDialogHasTheSameSize()
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            int height = Int32.Parse(page.Storage.SessionStorage.GetItem("dialog_Height"));
+            int width = Int32.Parse(page.Storage.SessionStorage.GetItem("dialog_Width"));
+
+            Assert.That(page.MoveToPositionDialog.Size.Height, Is.InRange(height, height + 5)); // 5pxls is max height allowed scaling
+            Assert.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(width));
         }
 
         [Then(@"Button ""(.*)"" in Move to position dialog is displayed disabled")]

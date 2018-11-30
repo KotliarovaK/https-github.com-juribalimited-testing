@@ -1027,7 +1027,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	When User refreshes agGrid
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981
 Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhenInvalidValueEnteredInSlotMoveToPositionDialog
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1037,8 +1037,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 	And User selects "Slots" tab on the Project details page
 	And User opens settings for "User Slot" row
 	And User selects "Move to position" option from settings menu
+	And User remembers the Move to position dialog size
 	And User enters "1.2" value in Move to position dialog
-	Then Button "Move" in Move to position dialog is displayed disabled
+	Then User checks that Move to position dialog has the same size
+	And Button "Move" in Move to position dialog is displayed disabled
 	And Alert message is displayed and contains "Enter integer value between 1 and 32767" text
 	And There are no errors in the browser console
 
