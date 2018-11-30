@@ -1390,15 +1390,15 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" text is displayed in the "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
-	When User clicks content from "Project" column
-	When User clicks "Capacity" tab
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
@@ -1407,7 +1407,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User selects "Forecast Date" checkbox in the "Tasks" field on the Project details page
 	And User selects "Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
-	When User clicks "Projects" on the left-hand menu
+	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
 	And User navigate to "Tasks" tab
@@ -1427,28 +1427,29 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User selects "Slots" tab on the Project details page
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
-	Then next values are displayed in the "Tasks" dropdown:
+	Then Next values are selected for the "Tasks" field:
 	| Value                               |
-	| Scheduled Date                      |
 	| Forecast Date                       |
 	| Group Computer Rag Radio Date Owner |
+	| Scheduled Date                      |
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	Then next checkboxes in the "Tasks" field are not available to select:
+	Then Next checkboxes are not displayed in the "Tasks" dropdown:
 	| Value                               |
 	| Forecast Date                       |
 	| Group Computer Rag Radio Date Owner |
+	And "Scheduled Date" checkbox in the "Tasks" field are available to select
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedToACapacitySlot
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
 	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
 	When User navigate to "Tasks" tab
-	When User clicks "Create Task" button
+	And User clicks "Create Task" button
 	And User creates new Task
 	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
 	| 1Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    | 
@@ -1456,7 +1457,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
-	When User clicks "Create Task" button
+	And User clicks "Create Task" button
 	And User creates new Task
 	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
 	| 2Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Group    | Date      | Computer   |                    |
@@ -1479,14 +1480,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User selects "2Task13500" checkbox in the "Tasks" field on the Project details page
 	And User selects "Scheduled Date" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
-	When User clicks "Projects" on the left-hand menu
+	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
 	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
 	When User navigate to "Tasks" tab
-	When User removes "1Task13500" Task
-	When User removes "2Task13500" Task
-	When User navigate to Evergreen link
+	And User removes "1Task13500" Task
+	And User removes "2Task13500" Task
+	And User navigate to Evergreen link
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -1495,21 +1496,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User clicks content from "Project" column
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
-	When User enters "Slot 1" text in the Search field for "Capacity Slot" column
+	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
-	Then next values are displayed in the "Tasks" dropdown:
-	| Value                               |
-	| Scheduled Date                      |
-	Then next values are not displayed in the "Tasks" dropdown:
-	| Value      |
-	| 1Task13500 |
-	| 2Task13500 |
+	Then Next values are selected for the "Tasks" field:
+	| Value          |
+	| Scheduled Date |
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	Then next checkboxes in the "Tasks" field are not available to select:
-	| Value      |
-	| 1Task13500 |
-	| 2Task13500 |
-	Then "Scheduled Date" checkbox in the "Tasks" field are available to select
+	Then Next checkboxes are not displayed in the "Tasks" dropdown:
+	| Value          |
+	| 1Task13500     |
+	| 2Task13500     |
+	And "Scheduled Date" checkbox in the "Tasks" field are available to select

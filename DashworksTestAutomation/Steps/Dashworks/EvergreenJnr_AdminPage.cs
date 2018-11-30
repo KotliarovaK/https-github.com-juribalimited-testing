@@ -1986,26 +1986,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.BodyContainer.Click();
         }
 
-        [Then(@"next checkboxes in the ""(.*)"" field are not available to select:")]
-        public void ThenNextCheckboxesInTheFieldAreNotAvailableToSelect(string fieldName, Table table)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualOptionList = page.OptionListForDropDown.Select(value => value.Text).ToList();
-            foreach (var value in expectedList)
-                Assert.IsFalse(actualOptionList.Contains(value), $"'{value}' is available for '{fieldName}' field");
-        }
-
-        [Then(@"""(.*)"" checkbox in the ""(.*)"" field are available to select")]
-        public void ThenCheckboxInTheFieldAreAvailableToSelect(string checkbox, string fieldName)
-        {
-            var field = _driver.NowAt<ProjectsPage>();
-            field.GetFieldByName(fieldName).SendKeys(checkbox);
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            var actualOptionList = page.OptionListForDropDown.Select(value => value.Text).ToList();
-            Assert.IsTrue(actualOptionList.Contains(checkbox), $"'{checkbox}' is available for '{fieldName}' field");
-        }
-
         [When(@"User changes Project Short Name to ""(.*)""")]
         public void WhenUserChangesProjectShortNameTo(string shortProjectName)
         {
@@ -2248,57 +2228,67 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
             var dropdown = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+            if (page.ExpandItemsButton.Displayed())
+            {
+                page.ExpandItemsButton.Click();
+                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+            }
+            else
+                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
-        [Then(@"next values are displayed in the ""(.*)"" dropdown:")]
-        public void ThenNextValuesAreDisplayedInTheDropdown(string dropdownName, Table table)
+        [Then(@"Next values are selected for the ""(.*)"" field:")]
+        public void ThenNextValuesAreSelectedForTheField(string dropdownName, Table table)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             if (page.ExpandItemsButton.Displayed())
             {
                 page.ExpandItemsButton.Click();
-                var dropdown = _driver.NowAt<BaseGridPage>();
-                foreach (var row in table.Rows)
-                {
-                    Assert.IsTrue(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
-                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
-                }
+                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedList, actualList, "The list of task values ​​is different");
             }
             else
             {
-                var dropdown = _driver.NowAt<BaseGridPage>();
-                foreach (var row in table.Rows)
-                {
-                    Assert.IsTrue(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
-                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
-                }
+                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedList, actualList, "The list of task values ​​is different");
             }
         }
 
-        [Then(@"next values are not displayed in the ""(.*)"" dropdown:")]
-        public void ThenNextValuesAreNotDisplayedInTheDropdown(string dropdownName, Table table)
+        [Then(@"""(.*)"" checkbox in the ""(.*)"" field are not available to select")]
+        public void ThenCheckboxInTheFieldAreNotAvailableToSelect(string checkbox, string fieldName)
+        {
+            var field = _driver.NowAt<ProjectsPage>();
+            field.GetFieldByName(fieldName).SendKeys(checkbox);
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is available for select");
+        }
+
+        [Then(@"""(.*)"" checkbox in the ""(.*)"" field are available to select")]
+        public void ThenCheckboxInTheFieldAreAvailableToSelect(string checkbox, string fieldName)
+        {
+            var field = _driver.NowAt<ProjectsPage>();
+            field.GetFieldByName(fieldName).Clear();
+            field.GetFieldByName(fieldName).SendKeys(checkbox);
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsFalse(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is not available for select");
+            Assert.IsTrue(page.GetCheckboxByName(checkbox).Displayed(), $"'{checkbox}' is available for '{fieldName}' field");
+        }
+
+        [Then(@"Next checkboxes are not displayed in the ""(.*)"" dropdown:")]
+        public void ThenNextCheckboxesAreNotDisplayedInTheDropdown(string dropdownName, Table table)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            if (page.ExpandItemsButton.Displayed())
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
             {
-                page.ExpandItemsButton.Click();
-                var dropdown = _driver.NowAt<BaseGridPage>();
-                foreach (var row in table.Rows)
-                {
-                    Assert.IsFalse(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
-                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
-                }
-            }
-            else
-            {
-                var dropdown = _driver.NowAt<BaseGridPage>();
-                foreach (var row in table.Rows)
-                {
-                    Assert.IsFalse(dropdown.GetDropdownByValueByName(row["Value"], dropdownName).Displayed(),
-                        $"'{row["Value"]}' is not displayed in '{dropdownName}' dropdown");
-                }
+                var projectElement = _driver.NowAt<ProjectsPage>();
+                projectElement.GetFieldByName(dropdownName).Clear();
+                projectElement.GetFieldByName(dropdownName).SendKeys(row["Value"]);
+                Assert.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"{row["Value"]} is not displayed in {dropdownName} dropdown");
             }
         }
 

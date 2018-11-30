@@ -10,7 +10,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 {
     internal class Capacity_SlotsPage : SeleniumBasePage
     {
-        public const string OptionForDropDown = "//div[@role='presentation']";
+        public const string SelectedValueTextBox = "//mat-chip[@class='mat-chip mat-primary mat-standard-chip mat-chip-with-trailing-icon ng-star-inserted']//span";
 
         [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
         public IWebElement TitleContainer { get; set; }
@@ -31,8 +31,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//*[@role='alert']//span[1]")]
         public IWebElement MoveToPositionAlert { get; set; }
 
-        [FindsBy(How = How.XPath, Using = OptionForDropDown)]
-        public IList<IWebElement> OptionListForDropDown { get; set; }
+        [FindsBy(How = How.XPath, Using = "//div[@aria-live='assertive'][text()='0 shown']")]
+        public IWebElement NoValuesAvailableInDropDown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = SelectedValueTextBox)]
+        public IList<IWebElement> SelectedValuesList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -108,13 +111,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public IWebElement GetMoveToPositionDialogButtonByText(string buttonText)
         {
             var selector = By.XPath($"//div[@class='dialog-small mat-dialog-content']/following-sibling :: div//button/span[contains(text(), '{buttonText.ToUpper()}')]/parent :: button");
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetOptionByName(string optionName)
-        {
-            var selector = By.XPath($"//span[text()='{optionName}']/ancestor::div[@role='presentation']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }
