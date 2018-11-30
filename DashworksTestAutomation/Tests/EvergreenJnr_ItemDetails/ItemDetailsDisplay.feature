@@ -1062,7 +1062,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccess
 	Then "Devices" list should be displayed to the user
 	When User clicks content from "Hostname" column
 	And User navigates to the "Projects" tab
-	When User clicks on Unassigned link for "Capacity Unit" field
+	When User clicks on Unassigned link for "Evergreen Capacity Unit" field
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
