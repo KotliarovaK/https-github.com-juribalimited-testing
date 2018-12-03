@@ -1443,6 +1443,20 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	| Forecast Date                       |
 	| Group Computer Rag Radio Date Owner |
 	And "Scheduled Date" checkbox in the "Tasks" field are available to select
+	When User clicks the "CANCEL" Action button
+	And User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| Slot 1           |
+	And User removes selected item
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	And User navigate to "Tasks" tab
+	And User navigate to "Forecast Date" Task
+	And User publishes the task
+	And User navigate to "Tasks" tab
+	And User navigate to "Group Computer Rag Radio Date Owner" Task
+	And User publishes the task
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedToACapacitySlot
