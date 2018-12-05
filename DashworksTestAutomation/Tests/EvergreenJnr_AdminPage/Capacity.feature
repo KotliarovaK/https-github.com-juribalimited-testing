@@ -439,6 +439,111 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDelet
 	And User clicks Delete button
 	Then Warning message with "The selected slots will be deleted, do you want to proceed?" text is displayed on the Admin page
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835
+Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "User Scheduled Project in Italian & Japanese (Jo)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	#prepare data
+	And User selects "Details" tab on the Project details page
+	Then User selects "Capacity Units" option in "Capacity Mode" dropdown
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+	When User selects "Units" tab on the Project details page
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "Capacity Unit 1" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "Capacity Unit 2" Name in the "Capacity Unit Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot1" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot2" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 2" Name in the "Display Name" field on the Project details page
+	And User selects "Capacity Unit 1" checkbox in the "Capacity Units" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot3" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 3" Name in the "Display Name" field on the Project details page
+	And User selects "Capacity Unit 2" checkbox in the "Capacity Units" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot4" Name in the "Slot Name" field on the Project details page
+	And User type "Slot 4" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	#act1
+	When User clicks "Units" tab
+	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	Then "1" content is displayed in "Slots" column
+	When User clicks content from "Slots" column
+	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	And "1" rows are displayed in the agGrid on Capacity Slots page
+	And User sees next Slots on the Capacity Slots page:
+	| slots |
+	| Slot1 |
+	#act2
+	When User clicks "Units" tab
+	And User enters "Capacity Unit 1" text in the Search field for "Capacity Unit" column
+	Then "2" content is displayed in "Slots" column
+	When User clicks content from "Slots" column
+	Then "Capacity Unit 1,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	And "2" rows are displayed in the agGrid on Capacity Slots page
+	And User sees next Slots on the Capacity Slots page:
+	| slots |
+	| Slot1 |
+	| Slot2 |
+	#act3
+	When User clicks "Units" tab
+	And User enters "Capacity Unit 2" text in the Search field for "Capacity Unit" column
+	Then "2" content is displayed in "Slots" column
+	When User clicks content from "Slots" column
+	Then "Capacity Unit 2,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	And "2" rows are displayed in the agGrid on Capacity Slots page
+	And User sees next Slots on the Capacity Slots page:
+	| slots |
+	| Slot1 |
+	| Slot3 |
+	#remove tests data
+	When User selects "Slots" tab on the Project details page
+	And User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| Slot1           |
+	| Slot2           |
+	| Slot3           |
+	| Slot4           |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected slots have been deleted" text
+	When User selects "Units" tab on the Project details page
+	And User select "Capacity Unit" rows in the grid
+	| SelectedRowsName |
+	| Capacity Unit 1  |
+	| Capacity Unit 2  |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected units have been deleted" text
+	When User selects "Details" tab on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
