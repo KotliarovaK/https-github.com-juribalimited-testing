@@ -1175,6 +1175,50 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13811
+Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForRequestTypeTeamsAndCapacityUnitsColumnOnCapacitySlotsGrid
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "DAS_13811_1" Name in the "Slot Name" field on the Project details page
+	And User type "13811_1" Name in the "Display Name" field on the Project details page
+	And User selects following items in "Request Types" dropdown:
+	| items                             |
+	| Computer: PC Rebuild              |
+	| Computer: Workstation Replacement |
+	And User selects following items in "Teams" dropdown:
+	| items                 |
+	| Administrative Team   |
+	| Another Team Again    |
+	And User clicks the "CREATE" Action button
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "DAS_13811_2" Name in the "Slot Name" field on the Project details page
+	And User type "13811_2" Name in the "Display Name" field on the Project details page
+	And User selects "Capacity Units" in the "Capacity Type" dropdown
+	And User selects following items in "Capacity Units" dropdown:
+	| items           |
+	| Unassigned      |
+	| Capacity Unit 1 |
+	| Capacity Unit 2 |
+	And User clicks the "CREATE" Action button
+	Then User sees following text in cell truncated with ellipsis:
+	| cellText                                               |
+	| Computer: PC Rebuild,Computer: Workstation Replacement |
+	| Administrative Team,Another Team Again                 |
+	| Capacity Unit 1,Capacity Unit 2,Unassigned             |
+	When User select "Capacity Slot" rows in the grid
+	| SelectedRowsName |
+	| DAS_13811_1      |
+	| DAS_13811_2      |
+	And User clicks Actions button on the Projects page
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @DAS14068 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
