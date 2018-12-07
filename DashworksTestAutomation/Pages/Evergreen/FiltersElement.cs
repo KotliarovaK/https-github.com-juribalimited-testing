@@ -142,6 +142,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-container')]")]
         public IList<IWebElement> FilterCheckboxOptions { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-container')]//span/span/span")]
+        public IList<IWebElement> FilterCheckboxOptionsLabels { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-label']")]
         public IList<IWebElement> AddedFilterLabels { get; set; }
 

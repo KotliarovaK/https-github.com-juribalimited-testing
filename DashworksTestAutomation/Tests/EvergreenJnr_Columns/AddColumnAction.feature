@@ -185,6 +185,23 @@ Examples:
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
 
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12940
+Scenario Outline: EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Evergreen Bucket |
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeUsedOnUsersPage
 	When User clicks "Users" on the left-hand menu

@@ -1123,6 +1123,50 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValu
 	Then Filters panel is displayed to the user
 	And "User whose Region is Empty has used app" is displayed in added filter info
 
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940
+Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940
+Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User clicks the "CREATE BUCKET" Action button
+	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	And User select "Bucket" rows in the grid
+	| SelectedRowsName              |
+	| Bucket_DAS12940_to_be_deleted |
+	And User clicks on Actions button
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And user select "Evergreen Bucket" filter
+	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Users" on the left-hand menu
+	And user select "Evergreen Bucket" filter
+	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Mailboxes" on the left-hand menu
+	And user select "Evergreen Bucket" filter
+	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
+
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812 @DAS12056
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly
 	When User clicks "Applications" on the left-hand menu

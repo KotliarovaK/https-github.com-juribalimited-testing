@@ -1643,11 +1643,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User searches and selects following rows in the grid:")]
-        public void WhenUserSearchesAndSelectsFollowingRowsInTheGrid(Table table)
+        [When(@"User searches by ""(.*)"" column and selects following rows in the grid:")]
+        public void WhenUserSearchesByColumnAndSelectsFollowingRowsInTheGrid(string columnName, Table table)
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            foreach (var row in table.Rows)
+            {
+                dashboardPage.GetSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
+                _driver.WaitForDataLoading();
+                dashboardPage.SelectAllCheckBox.Click();
+            }
+        }
+
+        [When(@"User searches and selects following rows in the grid on Details page:")]
+        public void WhenUserSearchesAndSelectsFollowingRowsInTheGridOnDetails(Table table)
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            dashboardPage.TableSearchButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextBox);
             foreach (var row in table.Rows)
             {

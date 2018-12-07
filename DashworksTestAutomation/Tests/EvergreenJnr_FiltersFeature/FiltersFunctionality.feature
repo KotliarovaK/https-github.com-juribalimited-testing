@@ -385,6 +385,71 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| 1      |
 	Then Save button is not available on the Filter panel
 
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @Delete_Newly_Created_Bucket @DAS12940
+Scenario: EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrectItems
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User clicks the "CREATE BUCKET" Action button
+	And User enters "Bucket_DAS12940" in the "Bucket Name" field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	And User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	And User searches by "Hostname" column and selects following rows in the grid:
+	| rows            |
+	| 0HC2CS2NEPO3LS  |
+	| 0HUVO2WWZETSLA4 |
+	| 0N9D8VEPQHD6E4  |
+	And User selects "Move To Another Bucket" in the Actions dropdown
+	And User clicks the "CONTINUE" Action button
+	And User moves selected objects to "Bucket_DAS12940" bucket
+	And User clicks "Users" tab
+	And User searches by "Username" column and selects following rows in the grid:
+	| rows                |
+	| 1722AD6F9FA44D43A13 |
+	| 2A4B66030D684D5E83E |
+	| 2D3BABC7BF194E0AA1B |
+	And User selects "Move To Another Bucket" in the Actions dropdown
+	And User clicks the "CONTINUE" Action button
+	And User moves selected objects to "Bucket_DAS12940" bucket
+	And User clicks "Mailboxes" tab
+	And User searches by "Email Address (Primary)" column and selects following rows in the grid:
+	| SelectedRowsName    |
+	| 18D0C5A2859A4000A14@bclabs.local |
+	| 27B0DF97ACB3435D940@bclabs.local |
+	| 2C1025C15E304D11AA2@bclabs.local |
+	And User selects "Move To Another Bucket" in the Actions dropdown
+	And User clicks the "CONTINUE" Action button
+	And User moves selected objects to "Bucket_DAS12940" bucket
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| Bucket_DAS12940 |
+	Then "Evergreen Bucket" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	And "3" rows are displayed in the agGrid
+	When User clicks "Users" on the left-hand menu
+	And User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| Bucket_DAS12940 |
+	Then "Evergreen Bucket" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	And "3" rows are displayed in the agGrid
+	When User clicks "Mailboxes" on the left-hand menu
+	And User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| Bucket_DAS12940 |
+	Then "Evergreen Bucket" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	And "3" rows are displayed in the agGrid
+
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11559
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardFilters
 	When User clicks "Devices" on the left-hand menu
