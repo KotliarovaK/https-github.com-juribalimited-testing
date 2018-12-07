@@ -88,7 +88,7 @@ Examples:
 	| Buckets        | Evergreen  |
 	| Capacity Units | True       |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @DAS13930 @Project_Creation_and_Scope @Projects @Teams @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @DAS13930 @DAS13973 @Project_Creation_and_Scope @Projects @Teams @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @Delete_Newly_Created_Project @Buckets @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Buckets @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12948" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	And User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -193,14 +193,14 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks "Details" tab
-	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	And User selects "Clone evergreen buckets to project buckets" in the Mode Project dropdown
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project details have been updated" text
 	And There are no errors in the browser console
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12763 @DAS12767 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -260,7 +260,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Create Project" page should be displayed to the user
 	When User enters "2Project12763" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
@@ -280,7 +280,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Create Project" page should be displayed to the user
 	When User enters "3Project12763" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page

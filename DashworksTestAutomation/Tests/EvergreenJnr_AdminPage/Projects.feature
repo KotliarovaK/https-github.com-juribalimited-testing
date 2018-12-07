@@ -332,7 +332,7 @@ Examples:
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @DAS13199 @Project_Creation_and_Scope
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @DAS13199 @DAS13973 @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -342,7 +342,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject19" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
@@ -777,7 +777,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then There are no errors in the browser console
 	Then Error message is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @Project_Creation_and_Scope
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @DAS13973 @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -787,7 +787,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject22" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
@@ -963,7 +963,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropri
 	#And "Users to remove (0 of 2 selected)" is displayed to the user in the Project Scope Changes section
 	And Add Objects panel is collapsed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUseEvergreenBucket
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -971,7 +971,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -985,7 +985,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -1000,7 +1000,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationFromListPageWithUse
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 
@@ -1009,7 +1009,7 @@ Examples:
 	| Devices   | Project2587 | StaticList6521 | 00KLL9S8NRF0X6         | Hostname      | TestList6584 |
 	| Mailboxes | Project2587 | StaticList6522 | ZVI880605@bclabs.local | Email Address | TestList6583 |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12799 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12799 @DAS13973 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1018,7 +1018,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject25" in the "Project Name" field
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -1041,7 +1041,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject26" in the "Project Name" field
 	And User selects "StaticList5846" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "MailboxesProject26" text in the Search field for "Project" column
@@ -1060,14 +1060,14 @@ Scenario: EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBu
 	Then "Create Project" page should be displayed to the user
 	When User enters "MailboxesProject27" in the "Project Name" field
 	And User selects "DynamicList9513" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "MailboxesProject27" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenBucketsFromListPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -1075,7 +1075,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
@@ -1091,7 +1091,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -1106,7 +1106,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckProjectCreationWithCloneEvergreenB
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	Then Scope field is automatically populated
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 
@@ -1191,7 +1191,7 @@ Examples:
 	| All Mailboxes | Mailboxes | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @DAS13803 @DAS13930 @Projects @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @DAS13803 @DAS13930 @DAS13973 @Projects @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1200,7 +1200,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "1MailboxesProject" in the "Project Name" field
-	And User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User selects "Evergreen" in the Mode Project dropdown
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
@@ -1213,7 +1213,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @DAS13803 @DAS13930 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @DAS13803 @DAS13930 @DAS13973 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseDifferentBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1223,7 +1223,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects "<ScopeValue>" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -1240,7 +1240,7 @@ Examples:
 	| UsersProject5     | All Users     |
 	| MailboxesProject5 | All Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1256,8 +1256,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject34" in the "Project Name" field
 	Then Scope field is automatically populated
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
-	And User clicks Create button on the Create Project page
+	When User selects "Evergreen" in the Mode Project dropdown
+	And User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
@@ -1389,7 +1389,7 @@ Examples:
 	| All Applications | DynamicList57    | Applications to add (0 of 2129 selected) | Applications to add (0 of 39 selected)   |
 	| StaticList6379   | All Applications | Applications to add (0 of 2 selected)    | Applications to add (0 of 2129 selected) |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1413,7 +1413,7 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject5" in the "Project Name" field
 	And User selects "All Users" in the Scope Project dropdown
-	When User selects "<Buckets>" in the Buckets Project dropdown
+	When User selects "<Mode>" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -1430,9 +1430,9 @@ Scenario Outline: EvergreenJnr_ChangingUsersScopeListToAnotherListForUserProject
 	Then There are no errors in the browser console
 
 Examples:
-	| ChangingToList1 | ChangingToList2 | Buckets                                    | ObjectsToAdd1                      | ObjectsToAdd2                  |
-	| All Users       | StaticList6329  | Clone evergreen buckets to project buckets | Users to add (0 of 41339 selected) | Users to add (0 of 2 selected) |
-	| StaticList6329  | DynamicList37   | Use project buckets                        |Users to add (0 of 2 selected)     | Users to add (0 of 92 selected) |
+	| ChangingToList1 | ChangingToList2 | Mode                            | ObjectsToAdd1                      | ObjectsToAdd2                   |
+	| All Users       | StaticList6329  | Clone from Evergreen to Project | Users to add (0 of 41339 selected) | Users to add (0 of 2 selected)  |
+	| StaticList6329  | DynamicList37   | Evergreen                       | Users to add (0 of 2 selected)     | Users to add (0 of 92 selected) |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_ChangingDynamicListToAllListForUserAndMailboxProjects
@@ -1982,7 +1982,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then "UPDATE ALL CHANGES" Action button is active
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @Delete_Newly_Created_Project @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12776 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList
 	When User create static list with "StaticList12776" name on "Users" page with following items
 	| ItemName            |
@@ -1995,7 +1995,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject12777" in the "Project Name" field
-	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
@@ -2821,7 +2821,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	When User selects "Scope Changes" tab on the Project details page
 	Then Warning message is not displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2839,8 +2839,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
 	And User changes Project Description to "45978DescriptionText"
-	And User changes project language to "Dutch"
-	And User selects "Use evergreen buckets" in the Buckets Project dropdown
+	And User clicks the "ADD LANGUAGE" Action button
+	And User selects "Dutch" language on the Project details page
+	And User opens menu for selected language
+	Then User selects "Set as default" option for selected language
+	When User selects "Use evergreen buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid
@@ -2908,7 +2911,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnProjectsGrid
 	And User selects all rows on the grid
 	Then User sees "1" of "1" rows selected label
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @DAS13973 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2918,7 +2921,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects "<ScopeList>" in the Scope Project dropdown
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Projects" link on the Admin page
@@ -2941,7 +2944,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects "<StaticList>" in the Scope Project dropdown
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "<ProjectName>" text in the Search field for "Project" column
@@ -2960,7 +2963,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfully
 	Then "Create Project" page should be displayed to the user
 	When User enters "<ProjectName>" in the "Project Name" field
 	And User selects "<DynamicList>" in the Scope Project dropdown
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 

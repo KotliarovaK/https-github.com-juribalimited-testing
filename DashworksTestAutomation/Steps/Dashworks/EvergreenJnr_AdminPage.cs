@@ -1921,6 +1921,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(3000);
         }
 
+        [When(@"User selects ""(.*)"" in the Mode Project dropdown")]
+        public void WhenUserSelectsInTheModeProjectDropdown(string optionName)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ModeProjectField.Click();
+            createProjectElement.SelectObjectForProjectCreation(optionName);
+            //Waiting for option change
+            Thread.Sleep(3000);
+        }
+
         [When(@"user selects ""(.*)"" in the Bucket dropdown")]
         public void WhenUserSelectsInTheBucketDropdown(string objectName)
         {

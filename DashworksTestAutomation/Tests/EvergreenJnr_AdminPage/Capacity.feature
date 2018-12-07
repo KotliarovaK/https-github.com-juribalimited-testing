@@ -383,7 +383,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User clicks the "CREATE" Action button
 	Then Error message with "A capacity unit already exists with this name" text is displayed
 	And User sees next Units on the Capacity Units page:
-	| units |
+	| units      |
 	| Unassigned |
 	| test1      |
 
