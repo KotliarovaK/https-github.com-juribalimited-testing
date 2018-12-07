@@ -919,6 +919,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //filterElement.FilterCheckboxOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
         }
 
+        [Then(@"""(.*)"" checkbox is not available for current opened filter")]
+        public void ThenCheckboxIsNotAvailableForCurrentOpenedFilter(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var availableOptions = filterElement.FilterCheckboxOptionsLabels.Select(value => value.GetAttribute("textContent")).ToList();
+
+            Assert.That(availableOptions, Does.Not.Contain(checkboxName), "Checkbox available for current opened filter");
+        }
+
         [When(@"User deletes one character from the Search field")]
         public void WhenUserDeletesOneCharacterFromTheSearchField()
         {

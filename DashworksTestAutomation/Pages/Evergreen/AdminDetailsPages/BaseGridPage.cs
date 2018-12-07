@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement CorrectActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]")]
         public IWebElement DeleteButtonInActions { get; set; }
 
         [FindsBy(How = How.XPath,
