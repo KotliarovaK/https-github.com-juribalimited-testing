@@ -365,7 +365,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 return;
 
             var selectedActionName =
-                $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//span[text()='{actionName}']";
+                $"//span[text()='{actionName}']/ancestor::mat-option";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedActionName));
             Driver.FindElement(By.XPath(selectedActionName)).Click();
         }
