@@ -423,7 +423,7 @@ namespace DashworksTestAutomation.Extensions
             //Small wait for dropdown display
             Thread.Sleep(300);
             var options = driver.FindElements(By.XPath(
-                ".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
+                ".//div[contains(@class,'transformPanel')]/mat-option"));
             if (!options.Any())
             {
                 options = driver.FindElements(By.XPath(

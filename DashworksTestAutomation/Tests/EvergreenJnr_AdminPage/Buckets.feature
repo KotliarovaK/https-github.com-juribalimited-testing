@@ -574,7 +574,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @DAS13973 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory 
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -598,7 +598,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12905" in the "Project Name" field
 	And User selects "All Users" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
