@@ -172,6 +172,58 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS12672 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForCapacity12672" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	Then Project "ProjectForCapacity12672" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	Then User sees next Units on the Capacity Units page:
+	| units             |
+	| Unassigned        |
+	And "TRUE" content is displayed in "Default" column
+	When User select "Capacity Unit" rows in the grid
+	| SelectedRowsName |
+	| Unassigned       |
+	And User clicks on Actions button
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
+	When User close message on the Admin page
+	Then "Unassigned" text is displayed in the table content
+	When User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type "CapacityUnit12672" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "12672" Name in the "Description" field on the Project details page
+	And User updates the "Default unit" checkbox state
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	And Success message is displayed and contains "Click here to view the CapacityUnit12672 capacity unit" link
+	When User clicks newly created object link
+	Then URL contains "capacity/units/unit/"
+	And "Default unit" checkbox is checked and cannot be unchecked
+	# commented until DAS-13151
+	# And "UPDATE" Action button is disabled 
+	# And "CANCEL" Action button is disabled
+	When User selects "Units" tab on the Project details page
+	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
+	Then "TRUE" content is displayed in "Default" column
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	Then "FALSE" content is displayed in "Default" column
+	When User clicks content from "Capacity Unit" column
+	And User updates the "Default unit" checkbox state
+	And User clicks the "UPDATE" Action button
+	And User selects "Units" tab on the Project details page
+	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
+	Then "FALSE" content is displayed in "Default" column
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	Then "TRUE" content is displayed in "Default" column
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdatingOrCreation
 	When User clicks Admin on the left-hand menu
@@ -304,7 +356,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	And User type "13945" Name in the "Description" field on the Project details page
 	Then Create Capacity Unit button is disabled
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
