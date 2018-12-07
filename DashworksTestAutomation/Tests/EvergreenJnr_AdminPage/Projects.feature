@@ -50,6 +50,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	When  User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @Delete_Newly_Created_Project @Project_Creation_and_Scope
+Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "TestProject14283" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User enters "TestProject14283" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject14283" is displayed to user
+	When User clicks "Details" tab
+	And User enters "" in the "Project Name" field
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then created Project with "TestProject14283" name is displayed correctly
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12189 @DAS12523 @DAS12521 @DAS12744 @DAS12162 @DAS12532 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList
 	When User clicks "Applications" on the left-hand menu
