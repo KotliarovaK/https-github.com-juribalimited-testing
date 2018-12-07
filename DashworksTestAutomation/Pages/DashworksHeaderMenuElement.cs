@@ -7,7 +7,7 @@ namespace DashworksTestAutomation.Pages
 {
     internal class DashworksHeaderMenuElement : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@id='maincontent']/descendant::h1[position()=1]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='mainContentContainer']/descendant::h1[position()=1]")]
         public IWebElement PageHeader { get; set; }
 
         [FindsBy(How = How.Id, Using = "ctl00_DwTopBar1_DwLogin1_UserLink")]
