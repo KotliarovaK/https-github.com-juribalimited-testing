@@ -427,7 +427,7 @@ namespace DashworksTestAutomation.Extensions
             //var options = driver.FindElements(By.XPath(
             //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
             var options = driver.FindElements(By.XPath(
-                ".//div[contains(@class,'transformPanel')]/mat-option"));
+                ".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
                 
             if (!options.Any())
             {
