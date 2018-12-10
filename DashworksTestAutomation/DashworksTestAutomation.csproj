@@ -261,6 +261,7 @@
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
     <Compile Include="Pages\Evergreen\MailboxesPage.cs" />
+    <Compile Include="Pages\Evergreen\PivotElementPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AccountDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
@@ -312,6 +313,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
     <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_CreateProject.cs" />
@@ -450,6 +452,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\Pivot.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pivot.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -628,6 +635,10 @@
     <None Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\Pivot.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Pivot.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
