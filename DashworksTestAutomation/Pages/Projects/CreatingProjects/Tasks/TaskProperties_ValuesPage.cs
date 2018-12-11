@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 {
     internal class TaskProperties_ValuesPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//div[@id='maincontent']/descendant::h1[position()=1]")]
+        [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeader { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
