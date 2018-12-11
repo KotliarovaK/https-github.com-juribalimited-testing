@@ -67,37 +67,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TestPivot")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_TestPivot")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
-        public virtual void EvergreenJnr_DevicesList_TestPivot()
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS14224")]
+        public virtual void EvergreenJnr_ApplicationsList_TestPivot()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_TestPivot", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_TestPivot", new string[] {
                         "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_Pivot"});
+                        "Applications",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS14224"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
             table1.AddRow(new string[] {
-                        "Boot Up Date"});
+                        "Import"});
             table1.AddRow(new string[] {
-                        "Build Date"});
+                        "Application"});
             testRunner.When("User adds the following Row Groups:", ((string)(null)), table1, "When ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table2.AddRow(new string[] {
-                        ""});
+                        "Application Owner"});
             testRunner.When("User adds the following Columns:", ((string)(null)), table2, "When ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
-                        ""});
+                        "Vendor"});
             testRunner.When("User adds the following Values:", ((string)(null)), table3, "When ");
             this.ScenarioCleanup();
         }
