@@ -422,9 +422,11 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var page = _driver.NowAt<TaskPropertiesPage>();
 
             table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
+            
             //assign StagesNameString to StageNameEnum
-            _taskPropertiesDto.Stages =
-                (StageNameEnum)Enum.Parse(typeof(StageNameEnum), _taskPropertiesDto.StagesNameString);
+            //_taskPropertiesDto.Stages =
+            //    (StageNameEnum)Enum.Parse(typeof(StageNameEnum), _taskPropertiesDto.StagesNameString);
+            
             //assign TaskTypeString to TaskTypeEnum
             _taskPropertiesDto.TaskType =
                 (TaskTypeEnum)Enum.Parse(typeof(TaskTypeEnum), _taskPropertiesDto.TaskTypeString);
@@ -441,7 +443,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
 
             page.Name.SendKeys(_taskPropertiesDto.Name);
             page.Help.SendKeys(_taskPropertiesDto.Help);
-            page.StageName.SelectboxSelect(_taskPropertiesDto.Stages.GetValue());
+            page.StageName.SelectboxSelect(table.Rows.FirstOrDefault()["StagesNameString"]);
             page.TaskType.SelectboxSelect(_taskPropertiesDto.TaskType.GetValue());
             page.ValueType.SelectboxSelect(_taskPropertiesDto.ValueType.GetValue());
             _driver.WaitForDataLoadingOnProjects();

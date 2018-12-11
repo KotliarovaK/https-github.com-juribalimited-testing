@@ -506,27 +506,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login_Logout.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature.cs">
+    <Compile Include="Tests\Senior\CreatingProjects\ComputerScheduledProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature.cs">
+    <Compile Include="Tests\Senior\CreatingProjects\MailboxScheduledProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MailboxScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature.cs">
+    <Compile Include="Tests\Senior\CreatingProjects\UserScheduledProject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\Projects_Dashboards.feature.cs">
+    <Compile Include="Tests\Senior\Projects_Dashboards.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Projects_Dashboards.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\Projects_PMObject.feature.cs">
+    <Compile Include="Tests\Senior\Projects_PMObject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Projects_PMObject.feature</DependentUpon>
@@ -673,23 +673,23 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature">
+    <None Include="Tests\Senior\CreatingProjects\ComputerScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ComputerScheduledProject.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature">
+    <None Include="Tests\Senior\CreatingProjects\MailboxScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MailboxScheduledProject.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature">
+    <None Include="Tests\Senior\CreatingProjects\UserScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>UserScheduledProject.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\Projects_Dashboards.feature">
+    <None Include="Tests\Senior\Projects_Dashboards.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Projects_Dashboards.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\Projects_PMObject.feature">
+    <None Include="Tests\Senior\Projects_PMObject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Projects_PMObject.feature.cs</LastGenOutput>
     </None>
