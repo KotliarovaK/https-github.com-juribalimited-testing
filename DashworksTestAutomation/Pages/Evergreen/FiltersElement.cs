@@ -136,7 +136,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@mat-container-class='my-container']")]
         public IWebElement OperatorDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'mat-select-content')]/mat-option")]
+        [FindsBy(How = How.XPath, Using = ".//body")]
+        public IWebElement BodyContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
         public IList<IWebElement> OperatorOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'list-container')]")]
@@ -335,7 +338,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectFilterType(string filterType)
         {
-            var selectedFilterType = $".//div[@style='opacity: 1;']//span[text()='{filterType}']";
+            var selectedFilterType = $".//mat-option//span[text()='{filterType}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedFilterType));
             Driver.FindElement(By.XPath(selectedFilterType)).Click();
         }
