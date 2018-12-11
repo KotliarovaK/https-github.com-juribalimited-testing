@@ -759,6 +759,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{listName} is not displayed for Saved List filter");
         }
 
+        [Then(@"""(.*)"" list is not displayed for Saved List filter")]
+        public void ThenListIsNotDisplayedForSavedListFilter(string listName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.ListNameForSavedListFilter(listName),
+                $"{listName} is displayed for Saved List filter");
+        }
+
         [Then(@"tooltip is displayed with ""(.*)"" text for edit filter button")]
         public void ThenTooltipIsDisplayedWithTextForEditFilterButton(string text)
         {

@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -52,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             foreach (var value in table.Rows)
             {
-                columnElement.AddColumn(value["RowGroups"]);
+                columnElement.AddColumn(value["Columns"]);
                 //Clear the textBox after adding a column, so it is reset for the next loop
                 columnElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
@@ -67,11 +69,39 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnElement = _driver.NowAt<ColumnsElement>();
             foreach (var value in table.Rows)
             {
-                columnElement.AddColumn(value["RowGroups"]);
+                columnElement.AddColumn(value["Values"]);
                 //Clear the textBox after adding a column, so it is reset for the next loop
                 columnElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
             page.GetButtonByNameOnPivot("DONE").Click();
+        }
+
+        [When(@"User creates Pivot list with ""(.*)"" name")]
+        public void WhenUserCreatesPivotListWithName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
+            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is mot displayed");
+            listElement.CreateNewListButton.Click();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(listElement.SaveButton.Displayed(), "'Save' button is not displayed");
+            var page = _driver.NowAt<PivotElementPage>();
+            page.PivotNameTextBox.SendKeys(listName);
+            listElement.SaveButton.Click();
+
+            //Small wait for message display
+            Thread.Sleep(300);
+            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+        }
+
+        [Then(@"Pivot run was completed")]
+        public void ThenPivotRunWasCompleted()
+        {
+            _driver.WaitForDataLoading();
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
         }
     }
 }

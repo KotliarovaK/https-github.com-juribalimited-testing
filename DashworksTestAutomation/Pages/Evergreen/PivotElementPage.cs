@@ -18,6 +18,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'plus')]")]
         public IWebElement PlusButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Pivot Name']")]
+        public IWebElement PivotNameTextBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='nopivot ng-star-inserted']")]
+        public IWebElement NoPivotTableMessage { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
