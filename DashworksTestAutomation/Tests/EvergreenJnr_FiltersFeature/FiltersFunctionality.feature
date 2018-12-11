@@ -172,10 +172,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User perform search by "<ObjectName>"
-	And User click content from "<ColumnName>" column
+	Then "1" rows are displayed in the agGrid
+	When User click content from "<ColumnName>" column
 	Then User click back button in the browser
-	Then "<RowsCount>" rows are displayed in the agGrid
-	When User clicks the Filters button
+	Then "1" rows are displayed in the agGrid
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
@@ -1332,7 +1332,6 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 	When User perform search by "<Search>"
 	And User click content from "<ColumnName>" column
 	Then User click back button in the browser
-	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "<FilterInfo>" is displayed in added filter info
 
