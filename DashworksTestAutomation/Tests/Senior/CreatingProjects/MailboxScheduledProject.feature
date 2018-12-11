@@ -177,7 +177,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| TestTaskName0 | MailboxScheduledProject | Stage1           | Normal         | Radiobutton     | User             |                          | true               |
+	| TestTaskName0 | MailboxScheduledProject | Stage 1          | Normal         | Radiobutton     | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -197,7 +197,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| TestTaskName1 | ComputerScheduledProject | Stage2           | Group          | DropDownList    | User             | ReadinessNnsfc           | true               |
+	| TestTaskName1 | ComputerScheduledProject | Stage 2          | Group          | DropDownList    | User             | ReadinessNnsfc           | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | BulkUpdate | GroupTaskDashboard |
@@ -208,7 +208,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | ApplyToAllCheckbox |
-	| TestTaskName2 | MailboxScheduledProject | Stage3           | Normal         | Text            | Mailbox          | true               |
+	| TestTaskName2 | MailboxScheduledProject | Stage 3          | Normal         | Text            | Mailbox          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TextModeString | TaskProjectRoleString | ShowDetails | ProjectObject | BulkUpdate | SelfService |

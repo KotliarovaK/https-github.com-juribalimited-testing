@@ -177,7 +177,7 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| TestTaskName0 | UserScheduledProject | Stage1           | Normal         | Radiobutton     | Computer         |                          | true               |
+	| TestTaskName0 | UserScheduledProject | Stage 1          | Normal         | Radiobutton     | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
@@ -206,7 +206,7 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| TestTaskName1 | UserScheduledProject | Stage2           | Normal         | Radiobutton     | Application      |                          | true               |
+	| TestTaskName1 | UserScheduledProject | Stage 2          | Normal         | Radiobutton     | Application      |                          | true               |
 	When User updates the Task page
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
 	| true           | DateOnly       | None                  | true                 | false          | false       | false         | false      | false       |
@@ -225,7 +225,7 @@ Scenario: Projects_CreateUserScheduledProject
 	When User clicks "Create Task" button
 	And User create Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| TestTaskName2 | UserScheduledProject | Stage3           | Normal         | Radiobutton     | User             |                          | true               |
+	| TestTaskName2 | UserScheduledProject | Stage 3          | Normal         | Radiobutton     | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User updates the Task page
 	| TaskHaADueDate | DateModeString | TaskProjectRoleString | TaskImpactsReadiness | TaskHasAnOwner | ShowDetails | ProjectObject | BulkUpdate | SelfService |
