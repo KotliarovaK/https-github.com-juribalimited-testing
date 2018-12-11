@@ -914,7 +914,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var availableOptions = filterElement.OperatorOptions.Select(value => value.Text).ToList();
             Assert.AreEqual(optionName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some options are not available for selected filter");
-            filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
+            filterElement.BodyContainer.Click();
         }
 
         [Then(@"""(.*)"" checkbox is available for this filter")]
@@ -924,7 +924,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var availableOptions = filterElement.FilterCheckboxOptions.Select(value => value.Text).ToList();
             Assert.AreEqual(checkboxName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some checkbox are not available for selected filter");
-            //filterElement.FilterCheckboxOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
+            filterElement.BodyContainer.Click();
         }
 
         [Then(@"""(.*)"" checkbox is not available for current opened filter")]

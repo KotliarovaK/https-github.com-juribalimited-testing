@@ -783,7 +783,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table49.AddRow(new string[] {
                         "Owner Common Name"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table49, "And ");
-            testRunner.And("\"27\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"28\" subcategories is displayed for \"Device Owner\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -797,6 +797,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS11515")]
         [NUnit.Framework.CategoryAttribute("DAS11506")]
+        [NUnit.Framework.CategoryAttribute("DAS14288")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllCo" +
@@ -806,7 +807,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "EvergreenJnr_Columns",
                         "RemoveColumn",
                         "DAS11515",
-                        "DAS11506"});
+                        "DAS11506",
+                        "DAS14288"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
@@ -815,13 +817,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Last Logon Date"});
             table50.AddRow(new string[] {
                         "Enabled"});
-            table50.AddRow(new string[] {
-                        "Windows7Mi: Read Only on Project Object Page"});
             testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table50, "When ");
             testRunner.Then("\"Last Logon Date\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Enabled\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"Windows7Mi: Read Only on Project Object Page\" column is added to URL on \"Users\" " +
-                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User removes all columns by URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -834,8 +832,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table51.AddRow(new string[] {
                         "Windows7Mi: Read Only on Project Object Page"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table51, "And ");
-            testRunner.And("\"19\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"49\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"20\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -897,7 +894,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table55.AddRow(new string[] {
                         "Windows7Mi: Technical Test"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table55, "And ");
-            testRunner.And("\"11\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"24\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
