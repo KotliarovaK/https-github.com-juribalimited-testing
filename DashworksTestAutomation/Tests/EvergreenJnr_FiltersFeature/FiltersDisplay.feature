@@ -869,7 +869,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForA
 	When user select "<FilterName>" filter
 	Then "Add column"checkbox is checked and cannot be unchecked
 
-Examples: 
+Examples:
 	| ListName     | FilterName              |
 	| Devices      | Hostname                |
 	| Devices      | Device Type             |
@@ -1328,8 +1328,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
 	| Mailbox Count (Owned)  |
+	| Organizational Unit    |
 	| SID                    |
 	| Surname                |
+	| User (Saved List)      |
 	| User Key               |
 	
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182

@@ -37,7 +37,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@title='Update All Changes']")]
         public IWebElement UpdateAllChangesButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='buckets']")]
+        [FindsBy(How = How.XPath, Using = "//mat-select[@id='mode']")]
+        public IWebElement ModeProjectField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[@id='buckets']")]
         public IWebElement BucketsProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@role='combobox']")]
@@ -58,7 +61,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Name']")]
         public IWebElement ProjectName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project Short Name']")]
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Short Name']")]
         public IWebElement ProjectShortName { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Description']")]
