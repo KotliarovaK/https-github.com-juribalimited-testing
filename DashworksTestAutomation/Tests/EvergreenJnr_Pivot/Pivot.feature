@@ -28,9 +28,9 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	When user select "<FilterName>" filter
+	And user select "<FilterName>" filter
 	Then "<PivotName>" list is not displayed for Saved List filter
-	Then User remove list with "<PivotName>" name on "<PageNameForPivot>" page
+	And User remove list with "<PivotName>" name on "<PageNameForPivot>" page
 
 Examples: 
 	| PageNameForPivot | RowGroups  | Columns         | Values               | PivotName                     | PageNameForFilter | FilterName               |
@@ -54,7 +54,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSe
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User creates Pivot list with "Pivot_DAS_14224" name
-	When User clicks Admin on the left-hand menu
+	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -65,8 +65,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSe
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
-	When User selects "Scope Details" tab on the Project details page
-	When User navigates to the "Device Scope" tab in the Scope section on the Project details page
+	And User selects "Scope Details" tab on the Project details page
+	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Scope" drop-down on the Project details page:
 	| Values      |
 	| All Devices |
@@ -78,4 +78,4 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSe
 	Then following Values are displayed in "Application Scope" drop-down on the Project details page:
 	| Values           |
 	| All Applications |
-	Then User remove list with "Pivot_DAS_14224" name on "Devices" page
+	And User remove list with "Pivot_DAS_14224" name on "Devices" page
