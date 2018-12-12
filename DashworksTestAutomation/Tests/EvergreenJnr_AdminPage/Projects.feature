@@ -1936,7 +1936,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	When User navigate to "Project13096" Project
 	Then Project with "Project13096" name is displayed correctly
 	And "Manage Project Details" page is displayed to the user
-	When User updates Project Name to "Project13096 upd"
+	When User updates Project Name to "Project13096 upd" on Senior
 	When User clicks "Update" button
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to Evergreen link
@@ -3627,7 +3627,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates new Project
+	When User creates new Project on Senior
 	| ProjectName     | ShortName | Description | Type |
 	| SnrProject13498 | 13498Pr   |             |      |
 	And User navigate to Evergreen link
@@ -3644,8 +3644,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	When User navigate to "SnrProject13498" Project
 	Then Project with "SnrProject13498" name is displayed correctly
 	And "Manage Project Details" page is displayed to the user
-	When User updates Project Name to "13498NewProjectName"
-	And User updates Project Short Name to "13498ShN"
+	When User updates Project Name to "13498NewProjectName" on Senior
+	And User updates Project Short Name to "13498ShN" on Senior
 	When User clicks "Update" button
 	And User navigate to Evergreen link
 	When User clicks Admin on the left-hand menu
@@ -3667,7 +3667,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates new Project
+	When User creates new Project on Senior
 	| ProjectName     | ShortName | Description | Type |
 	| ProjectDAS13501 | 13501     |             |      |
 	And User navigate to Evergreen link

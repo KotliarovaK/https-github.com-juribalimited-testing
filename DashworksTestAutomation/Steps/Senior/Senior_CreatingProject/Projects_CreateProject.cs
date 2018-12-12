@@ -144,23 +144,6 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
                     $"Error message is displayed with following text: {page.ErrorMessage.Text}");
         }
 
-        [When(@"User creates new Project")]
-        public void WhenUserCreatesNewProject(Table table)
-        {
-            var page = _driver.NowAt<ProjectPropertiesPage>();
-            foreach (var row in table.Rows)
-            {
-                page.ProjectName.SendKeys(row["ProjectName"]);
-                page.ProjectShortName.SendKeys(row["ShortName"]);
-                if (!string.IsNullOrEmpty(row["Description"]))
-                    page.ProjectDescription.SendKeys(row["Description"]);
-                if (!string.IsNullOrEmpty(row["Type"]))
-                    page.ProjectType.SelectboxSelect(row["Type"]);
-            }
-            var tab = _driver.NowAt<MainElementsOfProjectCreation>();
-            tab.CreatedProjectButton.Click();
-        }
-
         [When(@"User creates Project")]
         public void WhenUserCreatesProject(Table table)
         {
@@ -232,66 +215,6 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             upd.UpdateButton.Click();
 
             _projectDto.Details = _detailsDto;
-        }
-
-        [When(@"User updates Project Name to ""(.*)""")]
-        public void WhenUserUpdatesProjectNameTo(string projectName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            page.ProjectName.Clear();
-            page.ProjectName.SendKeys(projectName);
-        }
-
-        [When(@"User updates Project Short Name to ""(.*)""")]
-        public void WhenUserUpdatesProjectShortNameTo(string shortProjectName)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            page.ProjectShortName.Clear();
-            page.ProjectShortName.SendKeys(shortProjectName);;
-        }
-
-        [Then(@"CC email field is displayed with ""(.*)"" text")]
-        public void ThenCсEmailFieldIsDisplayedWithText(string emailText)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(page.GetTextInCcEmailAddressField(emailText).Displayed(),
-                $"Email with '{emailText}' text is not displayed");
-        }
-
-        [Then(@"BCC email field is displayed with ""(.*)"" text")]
-        public void ThenBCсEmailFieldIsDisplayedWithText(string emailText)
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(page.GetTextInBccEmailAddressField(emailText).Displayed(),
-                $"Email with '{emailText}' text is not displayed");
-        }
-
-        [When(@"User clearing CC email field")]
-        public void WhenUserClearingCсEmailField()
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            page.CcEmail.Clear();
-        }
-
-        [When(@"User clearing BCC email field")]
-        public void WhenUserClearingBссEmailField()
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            page.BccEmail.Clear();
-        }
-
-        [Then(@"CC email field is empty")]
-        public void ThenCсEmailFieldIsEmpty()
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            Assert.IsEmpty(page.CcEmail.GetAttribute("value"), "CC email field is not empty");
-        }
-
-        [Then(@"BCC email field is empty")]
-        public void ThenBссEmailFieldIsEmpty()
-        {
-            var page = _driver.NowAt<DetailsPage>();
-            Assert.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
         }
 
         [When(@"User create Request Type")]
@@ -393,27 +316,6 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             _driver.WaitForDataLoadingOnProjects();
 
             //page.ConfirmCreateStageButton.Click();
-        }
-
-        [When(@"User creates new Task")]
-        public void WhenUserCreatesNewTask(Table table)
-        {
-            var page = _driver.NowAt<TaskPropertiesPage>();
-            foreach (var row in table.Rows)
-            {
-                page.Name.SendKeys(row["Name"]);
-                page.Help.SendKeys(row["Help"]);
-                page.StageName.SelectboxSelect(row["StagesName"]);
-                if (!string.IsNullOrEmpty(row["TaskType"]))
-                    page.TaskType.SelectboxSelect(row["TaskType"]);
-                if (!string.IsNullOrEmpty(row["ValueType"]))
-                    page.ValueType.SelectboxSelect(row["ValueType"]);
-                _driver.WaitForDataLoadingOnProjects();
-                page.ObjectType.SelectboxSelect(row["ObjectType"]);
-                if (!string.IsNullOrEmpty(row["TaskValuesTemplate"]))
-                    page.TaskValuesTemplate.SelectboxSelect(row["TaskValuesTemplate"]);
-                page.ConfirmCreateTaskButton.Click();
-            }
         }
 
         [When(@"User create Task")]
