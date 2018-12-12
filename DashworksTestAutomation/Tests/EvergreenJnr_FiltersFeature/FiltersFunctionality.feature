@@ -385,6 +385,93 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| 1      |
 	Then Save button is not available on the Filter panel
 
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201
+Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
+	When User clicks Admin on the left-hand menu
+	And User clicks "Capacity Units" link on the Admin page
+	And User clicks the "CREATE UNIT" Action button
+	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "13201" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Actions button
+	And User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	| 01P96J2EQ0HZSV   |
+	| 024LVE4WMTLUK2J  |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "3" rows are displayed in the agGrid
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Actions button
+	And User clicks Close panel button
+	And User clicks the Actions button
+	And User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 0072B088173449E3A93 |
+	| 00DBB114BE1B41B0A38 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "2" rows are displayed in the agGrid
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Actions button
+	And User clicks Close panel button
+	And User clicks the Actions button
+	And User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 0105AF7E8E154E87B1A@bclabs.local |
+	| 0141713E5CF84ADE907@bclabs.local |
+	| 01C4FB7C6D2C4F979BD@bclabs.local |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "3" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	And User clicks "Capacity Units" link on the Admin page
+	And User select "Capacity Unit" rows in the grid
+	| SelectedRowsName  |
+	| CapacityUnit13201 |
+	And User clicks on Actions button
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @Delete_Newly_Created_Bucket @DAS12940
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
