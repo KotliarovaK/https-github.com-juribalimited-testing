@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 	Then "Applications to add (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	When  User selects "Include applications" checkbox on the Project details page
+	When User selects "Include applications" checkbox on the Project details page
 	Then All Associations are selected by default
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @Delete_Newly_Created_Project @Project_Creation_and_Scope

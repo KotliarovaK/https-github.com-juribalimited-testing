@@ -196,8 +196,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersInTheField(string name, string fieldName)
         {
             var bucketName = _driver.NowAt<ProjectsPage>();
-            bucketName.GetFieldNameByPage(fieldName).Clear();
-            bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
+            bucketName.GetFieldByName(fieldName).Clear();
+            bucketName.GetFieldByName(fieldName).SendKeys(name);
 
             if (!string.IsNullOrEmpty(name))
                 switch (fieldName)
@@ -222,8 +222,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersValueInTheField(string name, string fieldName)
         {
             var page = _driver.NowAt<ProjectsPage>();
-            page.GetFieldNameByPage(fieldName).Clear();
-            page.GetFieldNameByPage(fieldName).SendKeys(name);
+            page.GetFieldByName(fieldName).Clear();
+            page.GetFieldByName(fieldName).SendKeys(name);
             page.BodyContainer.Click();
         }
 
@@ -313,6 +313,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabInScopeSectionByName(tabName);
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"following Values are displayed in ""(.*)"" drop-down on the Project details page:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheProjectDetailsPage(string dropDownName, Table table)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetDropDownByName(dropDownName).Click();
+            var element = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            body.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]

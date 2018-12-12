@@ -67,53 +67,61 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdv" +
-            "ancedFilter")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFil" +
+            "ter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14224")]
-        public virtual void EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter()
+        [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "Application Key", "Vendor", "Pivot_Applications_List_14224", "Devices", "Application (Saved List)", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "Enabled", "Cost Centre", "Department Full Path", "Pivot_User_List_14224", "Applications", "User (Saved List)", new string[0])]
+        public virtual void EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter(string pageNameForPivot, string rowGroups, string columns, string values, string pivotName, string pageNameForFilter, string filterName, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdv" +
-                    "ancedFilter", new string[] {
-                        "Evergreen",
-                        "Applications",
-                        "EvergreenJnr_Pivot",
-                        "Pivot",
-                        "DAS14224"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_Pivot",
+                    "Pivot",
+                    "DAS14224"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFil" +
+                    "ter", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageNameForPivot), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageNameForPivot), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
             table1.AddRow(new string[] {
-                        "Compliance"});
+                        string.Format("{0}", rowGroups)});
             testRunner.And("User adds the following Row Groups:", ((string)(null)), table1, "And ");
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table2.AddRow(new string[] {
-                        "Application"});
+                        string.Format("{0}", columns)});
             testRunner.And("User adds the following Columns:", ((string)(null)), table2, "And ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table3.AddRow(new string[] {
-                        "Vendor"});
+                        string.Format("{0}", values)});
             testRunner.And("User adds the following Values:", ((string)(null)), table3, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User creates Pivot list with \"Pivot_Saved_List_14224\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User creates Pivot list with \"{0}\" name", pivotName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list is displayed to user", pivotName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageNameForFilter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageNameForFilter), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("user select \"Application (Saved List)\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Pivot_Saved_List_14224\" list is not displayed for Saved List filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("User remove list with \"Pivot_Saved_List_14224\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list is not displayed for Saved List filter", pivotName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("User remove list with \"{0}\" name on \"{1}\" page", pivotName, pageNameForPivot), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -125,6 +133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14224")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectOnScope" +
@@ -133,7 +142,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Applications",
                         "EvergreenJnr_Pivot",
                         "Pivot",
-                        "DAS14224"});
+                        "DAS14224",
+                        "Delete_Newly_Created_Project"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -147,16 +157,52 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table5.AddRow(new string[] {
-                        "Application"});
+                        "City"});
             testRunner.And("User adds the following Columns:", ((string)(null)), table5, "And ");
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table6.AddRow(new string[] {
-                        "Vendor"});
+                        "Cost Centre"});
             testRunner.And("User adds the following Values:", ((string)(null)), table6, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User creates Pivot list with \"Pivot_DAS_14224\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User enters \"Pivot_Project_14224\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Scope Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"Device Scope\" tab in the Scope section on the Project deta" +
+                    "ils page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table7.AddRow(new string[] {
+                        "All Devices"});
+            testRunner.Then("following Values are displayed in \"Scope\" drop-down on the Project details page:", ((string)(null)), table7, "Then ");
+            testRunner.When("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
+                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table8.AddRow(new string[] {
+                        "All Users"});
+            testRunner.Then("following Values are displayed in \"User Scope\" drop-down on the Project details p" +
+                    "age:", ((string)(null)), table8, "Then ");
+            testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
+                    " details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table9.AddRow(new string[] {
+                        "All Applications"});
+            testRunner.Then("following Values are displayed in \"Application Scope\" drop-down on the Project de" +
+                    "tails page:", ((string)(null)), table9, "Then ");
+            testRunner.Then("User remove list with \"Pivot_DAS_14224\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }
