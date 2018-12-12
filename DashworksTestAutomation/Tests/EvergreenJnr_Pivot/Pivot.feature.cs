@@ -126,20 +126,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectOnScope" +
-            "ChangesPage")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChang" +
+            "esPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14224")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage()
+        public virtual void EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectOnScope" +
-                    "ChangesPage", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChang" +
+                    "esPage", new string[] {
                         "Evergreen",
-                        "Applications",
+                        "Devices",
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS14224",

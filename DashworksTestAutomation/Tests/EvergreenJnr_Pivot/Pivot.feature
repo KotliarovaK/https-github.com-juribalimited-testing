@@ -37,8 +37,8 @@ Examples:
 	| Applications     | Compliance | Application Key | Vendor               | Pivot_Applications_List_14224 | Devices           | Application (Saved List) |
 	| Users            | Enabled    | Cost Centre     | Department Full Path | Pivot_User_List_14224         | Applications      | User (Saved List)        |
 
-@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14224 @Delete_Newly_Created_Project
-Scenario: EvergreenJnr_ApplicationsList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
