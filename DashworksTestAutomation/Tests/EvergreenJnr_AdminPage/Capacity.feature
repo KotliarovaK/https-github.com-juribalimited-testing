@@ -883,7 +883,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates new Project
+	When User creates new Project on Senior
 	| ProjectName      | ShortName | Description | Type |
 	| Project14029 Snr | 13498     |             |      |
 	And User navigate to Evergreen link
@@ -1460,7 +1460,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates new Project
+	When User creates new Project on Senior
 	| ProjectName        | ShortName | Description | Type |
 	| ProjectForDAS13812 | 13812     |             |      |
 	And User navigate to "Stages" tab
@@ -1473,7 +1473,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | 
 	| 1Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | 
 	Then Success message is displayed with "Task successfully created" text
@@ -1481,7 +1481,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | 
 	| 2Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | 
 	Then Success message is displayed with "Task successfully created" text
@@ -1489,7 +1489,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | 
 	| 3Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | 
 	Then Success message is displayed with "Task successfully created" text
@@ -1667,7 +1667,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
 	| 1Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    | 
 	Then Success message is displayed with "Task successfully created" text
@@ -1675,7 +1675,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
 	| 2Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Group    | Date      | Computer   |                    |
 	Then Success message is displayed with "Task successfully created" text
@@ -1734,7 +1734,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates new Project
+	When User creates new Project on Senior
 	| ProjectName        | ShortName | Description | Type |
 	| ProjectForDAS13152 | 13152     |             |      |
 	And User navigate to "Stages" tab
@@ -1747,7 +1747,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name      | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
 	| Task13152 | 13152 | Stage13152 | Normal   | Date      | Computer   |                    | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -1793,7 +1793,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates new Project
+	When User creates new Project on Senior
 	| ProjectName         | ShortName | Description | Type |
 	| ProjectForDAS131522 | 131522    |             |      |
 	And User navigate to "Stages" tab
@@ -1806,7 +1806,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name       | Help   | StagesName  | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
 	| Task131522 | 131522 | Stage131522 | Normal   | Date      | Computer   |                    | true               |
 	Then Success message is displayed with "Task successfully created" text
