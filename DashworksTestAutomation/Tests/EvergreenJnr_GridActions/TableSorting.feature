@@ -132,6 +132,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList
 Examples: 
 	| ListName     | ColumnName             | AllListName      | DynamicListName |
 	| Devices      | ComputerSc: Team ID    | All Devices      | DynamicList4857 |
-	| Users        | Windows7Mi: Team ID    | All Users        | DynamicList1857 |
+	| Users        | UserEvergr: Team ID    | All Users        | DynamicList1857 |
 	| Applications | ComputerSc: Project ID | All Applications | DynamicList2857 |
 	| Mailboxes    | EmailMigra: Team ID    | All Mailboxes    | DynamicList3857 |
