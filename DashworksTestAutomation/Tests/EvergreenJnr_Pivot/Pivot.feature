@@ -79,3 +79,21 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Values           |
 	| All Applications |
 	And User remove list with "Pivot_DAS_14224" name on "Devices" page
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @Not_Run
+Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRemovingColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User adds the following Row Groups:
+	| RowGroups  |
+	| Compliance |
+	And User adds the following Columns:
+	| Columns |
+	| City    |
+	And User adds the following Values:
+	| Values            |
+	| BIOS Manufacturer |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User remove "x" value for Pivot
