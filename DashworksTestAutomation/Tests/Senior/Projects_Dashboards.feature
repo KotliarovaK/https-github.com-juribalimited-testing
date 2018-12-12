@@ -81,3 +81,13 @@ Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	And There are no errors in the browser console
 	When User navigate to "Details" tab
 	When User removes the Project
+
+
+@Senior @DAS14171 @Projects_Dashboards
+Scenario: Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "User Scheduled Test (Jo)" Project
+	And User removes the Project
+	Then Error message is not displayed
+	And There are no errors in the browser console
