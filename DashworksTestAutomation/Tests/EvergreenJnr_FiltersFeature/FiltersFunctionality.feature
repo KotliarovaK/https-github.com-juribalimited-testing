@@ -462,6 +462,29 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| ColumnName              |
 	| Evergreen Capacity Unit |
 	And "3" rows are displayed in the agGrid
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Actions button
+	And User clicks Close panel button
+	And User clicks the Actions button
+	And User select "Application" rows in the grid
+	| SelectedRowsName         |
+	| 20040610sqlserverck      |
+	| 7-Zip 9.20 (x64 edition) |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "2" rows are displayed in the agGrid
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
 	And User select "Capacity Unit" rows in the grid

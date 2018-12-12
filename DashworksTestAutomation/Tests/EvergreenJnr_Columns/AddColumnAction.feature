@@ -218,6 +218,7 @@ Examples:
 	| Devices      |
 	| Users        |
 	| Mailboxes    |
+	| Applications |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeUsedOnUsersPage

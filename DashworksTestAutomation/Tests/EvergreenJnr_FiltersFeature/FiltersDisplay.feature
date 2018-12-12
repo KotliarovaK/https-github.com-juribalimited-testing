@@ -1141,6 +1141,17 @@ Examples:
 	| Users        |
 	| Mailboxes    |
 
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13201
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInFiltersPanel
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
+
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Delete_Newly_Created_Project @DAS13201
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks Admin on the left-hand menu
@@ -1170,6 +1181,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 	Then Following checkboxes are available for current opened filter:
 	| checkboxes                |
 	| Unassigned                |
+	When User clicks "Applications" on the left-hand menu
+	And user select "DeviceSche: Capacity Unit" filter
+	Then Following checkboxes are available for current opened filter:
+	| checkboxes              |
+	| Project Capacity Unit 1 |
+	| Project Capacity Unit 2 |
+	| Unassigned              |
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
@@ -1220,6 +1238,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEver
 	And user select "Evergreen Capacity Unit" filter
 	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
 	When User clicks "Mailboxes" on the left-hand menu
+	And user select "Evergreen Capacity Unit" filter
+	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Applications" on the left-hand menu
 	And user select "Evergreen Capacity Unit" filter
 	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
 
