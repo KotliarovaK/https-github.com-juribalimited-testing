@@ -1310,18 +1310,18 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	When User add "MigrationP: Readiness" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Light Blue     |
 	| Out Of Scope   |
 	| Blue           |
-	Then "EmailMigra: Readiness" filter is added to the list
-	When User click Edit button for "EmailMigra: Readiness" filter
+	Then "MigrationP: Readiness" filter is added to the list
+	When User click Edit button for "MigrationP: Readiness" filter
 	And User create custom list with "DynamicList13384" name
 	Then "DynamicList13384" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And Edit button is displayed correctly for "EmailMigra: Readiness" filter
+	And Edit button is displayed correctly for "MigrationP: Readiness" filter
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13588
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsingUserLDAPFilterDoesNotProduceServerError
