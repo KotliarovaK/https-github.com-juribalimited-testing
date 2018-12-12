@@ -936,6 +936,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(availableOptions, Does.Not.Contain(checkboxName), "Checkbox available for current opened filter");
         }
 
+        [Then(@"Following checkboxes are available for current opened filter:")]
+        public void ThenCheckboxIsNotAvailableForCurrentOpenedFilter(Table checkboxes)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var availableOptions = filterElement.FilterCheckboxOptionsLabels
+                .Select(value => value.GetAttribute("textContent")).ToList();
+
+            foreach (var row in checkboxes.Rows)
+            {
+                Assert.That(availableOptions, Does.Contain(row.Values.FirstOrDefault()), "Checkbox available for current opened filter");
+            }
+        }
+
         [When(@"User deletes one character from the Search field")]
         public void WhenUserDeletesOneCharacterFromTheSearchField()
         {

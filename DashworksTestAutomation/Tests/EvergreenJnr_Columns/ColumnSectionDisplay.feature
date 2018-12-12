@@ -647,7 +647,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 	When User clicks Add New button on the Filter panel
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 
-@Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940
+@Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel
 	When User clicks "<ListName>" on the left-hand menu
 	And User clicks the Columns button
@@ -663,6 +663,16 @@ Examples:
 	| Devices      |
 	| Users        |
 	| Mailboxes    |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInColumnsPanel
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	And User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters

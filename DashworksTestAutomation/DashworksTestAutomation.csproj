@@ -315,10 +315,10 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_CreateProject.cs" />
-    <Compile Include="Steps\Projects\Projects_Dashboards.cs" />
-    <Compile Include="Steps\Projects\Projects_Login.cs" />
+    <Compile Include="Steps\Senior\Projects_CreatingProject\Projects_Capacity.cs" />
+    <Compile Include="Steps\Senior\Projects_CreatingProject\Projects_CreateProject.cs" />
+    <Compile Include="Steps\Senior\Projects_Dashboards.cs" />
+    <Compile Include="Steps\Senior\Projects_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Browser.cs" />
     <Compile Include="Providers\Database.cs" />
@@ -349,10 +349,10 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
-    <Compile Include="Steps\Projects\Projects_PMObject.cs" />
-    <Compile Include="Steps\Projects\Projects_ProjectsHome.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Removing.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_SelfService.cs" />
+    <Compile Include="Steps\Senior\Projects_PMObject.cs" />
+    <Compile Include="Steps\Senior\Projects_ProjectsHome.cs" />
+    <Compile Include="Steps\Senior\Projects_CreatingProject\Projects_Removing.cs" />
+    <Compile Include="Steps\Senior\Projects_CreatingProject\Projects_SelfService.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

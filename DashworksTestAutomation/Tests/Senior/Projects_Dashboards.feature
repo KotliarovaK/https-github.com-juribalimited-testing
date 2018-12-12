@@ -45,7 +45,6 @@ Scenario: Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	Then information message is displayed with "Team was successfully updated." text
 	And Default Team checkbox is checked and cannot be unchecked
 
-
 @Senior @DAS14322 @Tasks @Delete_Newly_Created_Project
 Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User clicks "Projects" on the left-hand menu
@@ -59,14 +58,14 @@ Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
 	And User create Stage
-	| StageName  |
-	| Stage14322 |
+	| StageName   |
+	| Stage 14322 |
 	And User clicks "Create Stage" button
 	And User navigate to "Tasks" tab
 	And User clicks "Create Task" button
-	And User create Task
-	| Name      | Help      | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
-	| for 14322 | for 14322 | Stage14322       | Normal         | Radiobutton            | User             | None                     | false              |
+	And User creates new Task
+	| Name      | Help      | StagesName  | TaskType | ValueType   | ObjectType | TaskValuesTemplate |
+	| for 14322 | for 14322 | Stage 14322 | Normal   | Radiobutton | User       | None               |
 	Then Success message is displayed with "Task successfully created" text
 	When User navigate to "Values" page
 	And User clicks "Add value" button
@@ -80,5 +79,5 @@ Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
 	And There are no errors in the browser console
-
-	
+	When User navigate to "Details" tab
+	When User removes the Project

@@ -141,15 +141,20 @@ namespace DashworksTestAutomation.Helpers
             _driver.WaitForDataLoading();
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(
+                if (_driver.FindElements(
                         By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
-                    .Click();
-                _driver.FindElement(
-                        By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
-                    .SendKeys(row["SelectedValues"]);
-                _driver.FindElement(By.XPath(
-                        ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
-                    .Clear();
+                    .Count > 0)
+                {
+                    _driver.FindElement(
+                            By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                        .Click();
+                    _driver.FindElement(
+                            By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                        .SendKeys(row["SelectedValues"]);
+                    _driver.FindElement(By.XPath(
+                            ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
+                        .Clear();
+                }
                 _driver.FindElement(By.XPath(
                         $".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{row["SelectedValues"]}')]"))
                     .Click();
