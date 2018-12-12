@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Senior @Projects_Dashboards @Dashboards @DAS12651
+@Senior @Dashworks @Senior_Projects @DAS12651
 Scenario Outline: Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -20,7 +20,7 @@ Examples:
 	| User Dashboard     |
 	| Computer Dashboard |
 
-@Senior @Projects_Dashboards @Dashboards @DAS13000 @Teams
+@Senior @Dashworks @Projects_Dashworks @Senior_Teams @DAS13000
 Scenario: Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -45,15 +45,15 @@ Scenario: Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	Then information message is displayed with "Team was successfully updated." text
 	And Default Team checkbox is checked and cannot be unchecked
 
-@Senior @DAS14322 @Tasks @Delete_Newly_Created_Project
+@Senior @Dashworks @Projects_Dashworks @Senior_Tasks @DAS14322
 Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user
-	When User creates new Project
+	When User creates new Project on Senior
 	| ProjectName        | ShortName | Description | Type |
-	| ProjectForDAS14322 | 14322    |             |      |
+	| ProjectForDAS14322 | 14322     |             |      |
 	And User navigate to "Stages" tab
 	Then "Manage Stages" page is displayed to the user
 	When User clicks "Create Stage" button
@@ -63,7 +63,7 @@ Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	And User clicks "Create Stage" button
 	And User navigate to "Tasks" tab
 	And User clicks "Create Task" button
-	And User creates new Task
+	And User creates new Task on Senior
 	| Name      | Help      | StagesName  | TaskType | ValueType   | ObjectType | TaskValuesTemplate |
 	| for 14322 | for 14322 | Stage 14322 | Normal   | Radiobutton | User       | None               |
 	Then Success message is displayed with "Task successfully created" text
@@ -81,3 +81,13 @@ Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	And There are no errors in the browser console
 	When User navigate to "Details" tab
 	When User removes the Project
+
+
+@Senior @DAS14171 @Projects_Dashboards
+Scenario: Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "User Scheduled Test (Jo)" Project
+	And User removes the Project
+	Then Error message is not displayed
+	And There are no errors in the browser console

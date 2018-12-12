@@ -53,13 +53,13 @@ Scenario: Projects_CreateComputerScheduledProject
 	| ShowOriginalColumn | IncludeSiteName | NotApplicableApplications | InstalledApplications | EntitledApplications | TaskEmailCcEmailAddress | TaskEmailBccEmailAddress | StartDate  | EndDate     |
 	| true               | true            | true                      | true                  | true                 | TestOne@test.com        | TestTwo@test.com         | 8 May 2012 | 10 Apr 2018 |
 	Then Success message is displayed with "Project was successfully updated" text
-	Then CC email field is displayed with "TestOne@test.com" text
-	Then BCC email field is displayed with "TestTwo@test.com" text
-	When User clearing CC email field
-	When User clearing BCC email field
+	Then CC email field is displayed with "TestOne@test.com" text on Senior
+	Then BCC email field is displayed with "TestTwo@test.com" text on Senior
+	When User clears the CC email field on Senior
+	When User clears the BCC email field on Senior
 	And User clicks "Update" button
-	Then CC email field is empty
-	Then BCC email field is empty
+	Then CC email field on Senior is empty
+	Then BCC email field on Senior is empty
 		#Creating Request Types
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
