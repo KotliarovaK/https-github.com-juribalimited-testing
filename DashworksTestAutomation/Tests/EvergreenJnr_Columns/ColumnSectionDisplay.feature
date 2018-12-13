@@ -564,7 +564,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsAvaila
 	| Home Drive             |
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
-	| Mailbox Count (Owned) |
+	| Mailbox Count (Owned)  |
+	| Organizational Unit    |
 	| SID                    |
 	| Surname                |
 	| User Key               |

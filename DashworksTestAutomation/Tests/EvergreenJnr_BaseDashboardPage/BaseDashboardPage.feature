@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	Then default URL is displayed on "Users" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Babel(Engl: Readiness" filter where type is "Equals" with added column and "Blue" Lookup option
+	When User add "MigrationP: Readiness" filter where type is "Equals" with added column and "Blue" Lookup option
 	Then Appropriate filter is added to URL
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
@@ -182,7 +182,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatEditListFunctionIsAvailableAfter
 
 Examples:
 	| ListName     | ColumnName    | AddSortOrders    | AddColumn                |
-	| Devices      | Hostname      | Device Type      | UserSchedu: Readiness ID |
+	| Devices      | Hostname      | Device Type      | ComputerSc: Readiness ID |
 	| Users        | Username      | Domain           | UserSchedu: Readiness ID |
 	| Applications | Application   | Vendor           | UserSchedu: Readiness ID |
 	| Mailboxes    | Email Address | Mailbox Platform | EmailMigra: Readiness ID |

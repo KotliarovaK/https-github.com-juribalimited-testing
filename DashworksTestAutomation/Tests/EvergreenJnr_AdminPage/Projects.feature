@@ -567,7 +567,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplay
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject11700" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
+	When User clicks the "CREATE PROJECT" Action button
 	When User have opened Column Settings for "Project" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -3051,7 +3051,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyProjectN
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13733 @Projects
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicatesInProjectTasksError
 	When User clicks Admin on the left-hand menu
-	And User clicks the "IMPORT PROJECT" Action button
+	Then Admin page should be displayed to the user
+	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "DAS_13733_Duplicates_in_project_tasks.xml" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "TestProjectDAS13733" in the Project Name field on Import Project page
@@ -3068,7 +3069,8 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects
 Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
-	And User clicks the "IMPORT PROJECT" Action button
+	Then Admin page should be displayed to the user
+	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	Then User sees folloing options in "Buckets" dropdown on Import Projects page:
 	| OptionLabel                                |
@@ -3078,7 +3080,8 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProje
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects
 Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
-	And User clicks the "IMPORT PROJECT" Action button
+	Then Admin page should be displayed to the user
+	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
 	Then User sees folloing options in "Select Existing Project" dropdown on Import Projects page:
 	| OptionLabel                                       |

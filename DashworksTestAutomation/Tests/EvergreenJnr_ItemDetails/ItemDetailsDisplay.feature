@@ -713,7 +713,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	And User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	And User navigates to the "Projects" tab
-	And User closes "Project Summary" section on the Details Page
+	And User closes "Evergreen" section on the Details Page
 	And User opens "Device Projects" section on the Details Page
 	Then All data is unique in the 'Project' column
 
@@ -723,7 +723,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetail
 	And User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
 	And User navigates to the "Projects" tab
-	And User closes "Project Summary" section on the Details Page
+	And User closes "Evergreen" section on the Details Page
 	And User opens "<SectionOpen>" section on the Details Page
 	Then "Bucket" column is displayed to the user
 

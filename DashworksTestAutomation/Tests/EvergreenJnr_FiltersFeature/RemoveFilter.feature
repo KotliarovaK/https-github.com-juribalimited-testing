@@ -46,10 +46,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeleteByUrlIsUpdatingRowCount
 	| ColumnName |
 	| Compliance |
 	And "17,225" rows are displayed in the agGrid
-	#When User clicks the Filters button
-	Then "Compliance" filter is removed from filters
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Compliance" filter is removed from filters
 
-@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044 @DAS12199
+@Evergreen @Users @Evergreen_FiltersFeature @RemoveFilter @DAS11009 @DAS11044 @DAS12199 @DAS14603 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatDeletePartOfFilterFromUrlIsUpdatingRowCount
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -105,8 +106,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 	When User deletes filter and agGrid does not reload
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	#When User clicks the Filters button
-	#Then Filters panel is displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	When user select "Owner Enabled" filter
 	When User cancels filter and agGrid does not reload
 	When User clicks "Users" on the left-hand menu
@@ -125,8 +126,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 	When User deletes filter and agGrid does not reload
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
-	#When User clicks the Filters button
-	#Then Filters panel is displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
 	When User add "User Count (Entitled)" filter where type is "Equals" without added column and following value:
 	| Values |
 	| 100    |

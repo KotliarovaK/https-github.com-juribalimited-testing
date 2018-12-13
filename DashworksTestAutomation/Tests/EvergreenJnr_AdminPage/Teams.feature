@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	When User enters "99770" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	When User clicks on Actions button
-	And User selects "Delete Team" in the Actions
+	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks Reset Filters button on the Admin page
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	When User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
 	When User clicks on Actions button
-	And User selects "Delete Team" in the Actions
+	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks the "CREATE TEAM" Action button
@@ -284,7 +284,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User enters "TestTeam5" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete Team" in the Actions
+	And User selects "Delete" in the Actions
 	And User clicks the "DELETE" Action button
 	Then Reassign Buckets page is displayed to the user
 	When User selects "Team 0" in the Select a team dropdown
@@ -350,7 +350,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	And User enters "Group IB Team" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete Buckets" in the Actions
+	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	And There are no errors in the browser console
@@ -461,7 +461,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User enters "000Team13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete Team" in the Actions
+	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks the "CREATE TEAM" Action button
@@ -473,7 +473,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User enters "000Team13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
-	And User selects "Delete Team" in the Actions
+	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text

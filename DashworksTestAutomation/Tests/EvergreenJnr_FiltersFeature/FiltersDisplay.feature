@@ -939,7 +939,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfter
 	| 55     |
 	Then "50 of 55 shown" results are displayed in the Filter panel
 	When User deletes one character from the Search field
-	Then "50 of 773 shown" results are displayed in the Filter panel
+	Then "50 of 774 shown" results are displayed in the Filter panel
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
 Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
@@ -1154,7 +1154,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Delete_Newly_Created_Project @DAS13201
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Delete_Newly_Created_Project @DAS13201 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks Admin on the left-hand menu
 	And User clicks the "CREATE PROJECT" Action button

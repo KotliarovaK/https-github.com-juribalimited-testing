@@ -479,7 +479,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessag
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then "Application1" list "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the list panel
+	Then "Application1" list "list has 1 list that are dependent on it, and will be permanently deleted" message is displayed in the list panel
 	When User removes custom list with "Application1" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -518,7 +518,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	When User clicks Settings button in the list panel
 	Then Settings panel is displayed to the user
 	When User clicks Delete in the list panel
-	Then "Application2" list "list has 1 list(s) that are dependent on it, and will be permanently deleted" message is displayed in the list panel
+	Then "Application2" list "list has 1 list that are dependent on it, and will be permanently deleted" message is displayed in the list panel
 	When User removes custom list with "Application2" name
 	And User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -662,7 +662,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWas
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "<ListName>" name
 	And User clicks Settings button in the list panel
-	And User clicks Manage in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Manage in the list panel
 	Then List details panel is displayed to the user
 
 	Examples: 
@@ -694,7 +695,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSe
 	When User navigates to the "StaticList2845" list
 	Then "StaticList2845" list is displayed to user
 	When User clicks Settings button in the list panel
-	And User clicks Manage in the list panel
+	Then Settings panel is displayed to the user
+	When User clicks Manage in the list panel
 	Then "StaticList2845" list is displayed to user
 	And List details panel is displayed to the user
 
