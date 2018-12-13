@@ -657,7 +657,8 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWasOpenedFromManageMenu
 	When User clicks "<PageName>" on the left-hand menu
 	And User clicks the Actions button
-	And User select all rows
+	Then Actions panel is displayed to the user
+	When User select all rows
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "<ListName>" name
 	And User clicks Settings button in the list panel

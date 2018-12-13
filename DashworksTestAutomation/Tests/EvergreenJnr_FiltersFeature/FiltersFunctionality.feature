@@ -532,8 +532,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichRet
 	And User clicks the "CONTINUE" Action button
 	And User moves selected objects to "Bucket_DAS12940" bucket
 	And User clicks "Devices" on the left-hand menu
-	And User clicks the Filters button
-	And User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues  |
 	| Bucket_DAS12940 |
 	Then "Evergreen Bucket" filter is added to the list
@@ -542,7 +543,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichRet
 	| Evergreen Bucket |
 	And "3" rows are displayed in the agGrid
 	When User clicks "Users" on the left-hand menu
-	And User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues  |
 	| Bucket_DAS12940 |
 	Then "Evergreen Bucket" filter is added to the list
@@ -551,7 +554,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichRet
 	| Evergreen Bucket |
 	And "3" rows are displayed in the agGrid
 	When User clicks "Mailboxes" on the left-hand menu
-	And User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues  |
 	| Bucket_DAS12940 |
 	Then "Evergreen Bucket" filter is added to the list
@@ -1428,7 +1433,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfte
 	Then Filters panel is displayed to the user
 	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381 @DAS14603 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
