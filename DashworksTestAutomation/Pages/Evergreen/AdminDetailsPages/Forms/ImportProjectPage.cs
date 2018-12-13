@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 
         private IWebElement GetDropdownByName(string name)
         {
-            return Driver.FindElement(By.XPath($".//div[@class='form']//*/mat-select[@aria-label='{name}']//*/span"));
+            return Driver.FindElement(By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select"));
         }
     }
 }

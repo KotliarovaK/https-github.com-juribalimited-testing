@@ -1232,6 +1232,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             table65.AddRow(new string[] {
                         "Mailbox Count (Owned)"});
             table65.AddRow(new string[] {
+                        "Organizational Unit"});
+            table65.AddRow(new string[] {
                         "SID"});
             table65.AddRow(new string[] {
                         "Surname"});

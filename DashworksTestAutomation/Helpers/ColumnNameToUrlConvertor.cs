@@ -231,6 +231,9 @@ namespace DashworksTestAutomation.Helpers
                 case "Owner admincount":
                     return "userLDAPField_43";
 
+                case "MigrationP: Readiness":
+                    return "project_34_ragStatus";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
