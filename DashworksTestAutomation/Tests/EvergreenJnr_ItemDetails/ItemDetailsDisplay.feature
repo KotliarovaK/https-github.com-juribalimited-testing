@@ -785,8 +785,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	| <Column>   |
 	When User click content from "<Column>" column
 	Then Details object page is displayed to the user
-	#Remove after @DAS fixed
-	#And URL is "<URLpart>"
+	And URL is "<URLpart>"
 
 Examples:
 	| PageName     | Column          | URLpart                      |
