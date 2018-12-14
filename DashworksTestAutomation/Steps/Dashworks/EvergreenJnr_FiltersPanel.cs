@@ -1112,6 +1112,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{categoryName} category stil displayed in Filter Panel");
         }
 
+        [Then(@"""(.*)"" section is displayed in the Filter panel")]
+        public void ThenSectionIsDisplayedInTheFilterPanel(string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category is not displayed in Filter Panel");
+        }
+
         [Then(@"Minimize buttons are displayed for all category in Filters panel")]
         public void ThenMinimizeButtonsAreDisplayedForAllCategoryInFiltersPanel()
         {

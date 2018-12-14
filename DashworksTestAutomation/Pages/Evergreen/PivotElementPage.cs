@@ -21,6 +21,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Pivot Name']")]
         public IWebElement PivotNameTextBox { get; set; }
 
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//div[@class='columns-panel']//div[contains(@class,'filter-category-label') and contains(@class,'bold')]")]
+        public IList<IWebElement> PivotCategories { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'pivot-choice')]/button[contains(@class,'back')]")]
+        public IWebElement CloseAddItemIcon { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//div[@class='nopivot ng-star-inserted']")]
         public IWebElement NoPivotTableMessage { get; set; }
 

@@ -228,6 +228,7 @@ namespace DashworksTestAutomation.Tests.Senior
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("DAS14171")]

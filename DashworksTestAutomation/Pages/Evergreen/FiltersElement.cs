@@ -347,7 +347,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             return Driver.IsElementDisplayed(
                 By.XPath(
-                    $".//div[@class='filter-category-label blue-color bold-text'][contains(text(),'{sectionsName}"));
+                    $".//div[@class='filter-category-label blue-color bold-text'][contains(text(),'{sectionsName}')]"));
         }
 
         public List<string> GetFiltersNames()

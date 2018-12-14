@@ -1123,14 +1123,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValu
 	Then Filters panel is displayed to the user
 	And "User whose Region is Empty has used app" is displayed in added filter info
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940 @DAS13201
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940 @DAS13201 @DAS14325
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInFiltersPanel
 	When User clicks "<ListName>" on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	And User closed "Selected Columns" columns category
-	And User is expand "Evergreen" columns category
+	Then "Evergreen" section is displayed in the Filter panel
+	When User closes "Selected Columns" filter category
+	And User expands "Evergreen" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Bucket        |
@@ -1142,14 +1143,15 @@ Examples:
 	| Users        |
 	| Mailboxes    |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13201
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13201 @DAS14325
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInFiltersPanel
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	And User closed "Selected Columns" columns category
-	And User is expand "Evergreen" columns category
+	Then "Evergreen" section is displayed in the Filter panel
+	When User closes "Selected Columns" filter category
+	And User expands "Evergreen" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Capacity Unit |
