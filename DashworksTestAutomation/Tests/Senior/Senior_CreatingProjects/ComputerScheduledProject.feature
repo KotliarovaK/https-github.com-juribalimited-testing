@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Projects
 	Then "Projects Home" page is displayed to the user
 
-@Senior @Projects_Administration @ComputerScheduledProject @Delete_Newly_Created_Team
+@ProjectsOnSenior @Projects_Administration @ComputerScheduledProject @Delete_Newly_Created_Team
 Scenario: Projects_CreateComputerScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user

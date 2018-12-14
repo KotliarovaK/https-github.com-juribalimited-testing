@@ -47,6 +47,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.Projects.Click();
                     break;
 
+                case "Admin":
+                    menu.Admin.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{listPage}' menu name is not valid menu item and can not be opened");
             }
@@ -75,6 +79,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 case "Mailboxes":
                     menu.Mailboxes.Click();
+                    break;
+
+                case "Admin":
+                    menu.Admin.Click();
                     break;
 
                 default:
@@ -114,6 +122,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     //Check Mailboxes heading is visible
                     var mailboxesPage = _driver.NowAt<MailboxesPage>();
                     StringAssert.Contains(mailboxesPage.Heading.Text.ToLower(), listPage.ToLower(),
+                        "Incorrect list is displayed to user");
+                    break;
+
+                case "Admin":
+                    //Check Admin heading is visible
+                    var adminPage = _driver.NowAt<AdminPage>();
+                    StringAssert.Contains(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
 
