@@ -43,7 +43,7 @@ Examples:
 	| Max Receive Size (MB) |
 	| Max Send Size (MB)    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                        |
@@ -75,7 +75,7 @@ Examples:
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName               |
