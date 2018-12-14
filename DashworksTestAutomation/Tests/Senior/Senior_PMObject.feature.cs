@@ -69,8 +69,7 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage")]
-        [NUnit.Framework.CategoryAttribute("Dashworks")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
+        [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
         [NUnit.Framework.CategoryAttribute("PMObject")]
         [NUnit.Framework.CategoryAttribute("Applications_tab")]
         [NUnit.Framework.CategoryAttribute("DAS12695")]
@@ -78,8 +77,7 @@ namespace DashworksTestAutomation.Tests.Senior
         public virtual void Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage", new string[] {
-                        "Dashworks",
-                        "Senior",
+                        "ProjectsOnSenior",
                         "PMObject",
                         "Applications_tab",
                         "DAS12695",

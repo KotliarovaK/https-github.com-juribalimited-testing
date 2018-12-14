@@ -22,8 +22,8 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11982 @DAS12773 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInTheProjectApplicationsScope
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -52,9 +52,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInT
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14283 @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
 	And User enters "TestProject14283" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -107,8 +109,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12236 @DAS12999 @DAS13199 @DAS13408 @DAS12645 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -155,8 +157,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdati
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12333 @DAS12999 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDevicesIsSelected
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Rainbow" in the "Project Name" field
@@ -172,8 +174,8 @@ Scenario: EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDe
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12751 @DAS12747 @DAS12999 @DAS12645 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -207,8 +209,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -275,8 +277,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12485 @DAS12645 @DAS11877 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -353,8 +355,8 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12816 @DAS12873 @DAS13007 @DAS13199 @DAS13973 @Project_Creation_and_Scope
 Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
@@ -1316,7 +1318,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject2" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
@@ -1345,7 +1347,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingUserScopeListToAnotherList
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject6" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
@@ -1383,7 +1385,7 @@ Scenario Outline: EvergreenJnr_ChangingApplicationsScopeListToAnotherList
 	Then "Create Project" page should be displayed to the user
 	When User enters "DevicesProject4" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
+	And User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
@@ -3624,7 +3626,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "" content is displayed in "Project Description" field
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13498 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS13498 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -3664,7 +3666,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13501 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @Senior_Projects @DAS13501 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

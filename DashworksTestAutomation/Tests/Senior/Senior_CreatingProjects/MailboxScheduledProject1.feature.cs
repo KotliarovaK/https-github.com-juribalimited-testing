@@ -69,14 +69,14 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Projects_CreateMailboxScheduledProject")]
-        [NUnit.Framework.CategoryAttribute("Senior")]
+        [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
         [NUnit.Framework.CategoryAttribute("MailboxScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         public virtual void Projects_CreateMailboxScheduledProject()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateMailboxScheduledProject", new string[] {
-                        "Senior",
+                        "ProjectsOnSenior",
                         "Projects_Administration",
                         "MailboxScheduledProject",
                         "Delete_Newly_Created_Team"});

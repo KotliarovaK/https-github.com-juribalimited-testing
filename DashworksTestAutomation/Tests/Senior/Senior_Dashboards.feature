@@ -45,7 +45,7 @@ Scenario: Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	Then information message is displayed with "Team was successfully updated." text
 	And Default Team checkbox is checked and cannot be unchecked
 
-@Senior @Dashworks @Projects_Dashworks @Senior_Tasks @DAS14322
+@Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322
 Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -82,8 +82,7 @@ Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User navigate to "Details" tab
 	When User removes the Project
 
-
-@Senior @DAS14171 @Projects_Dashboards
+@Senior @Projects_Dashboards @Senior_Projects @DAS14171 
 Scenario: Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
