@@ -644,7 +644,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetOptionByName(string optionName)
         {
-            var selector = By.XPath($"//span[text()='{optionName}']/ancestor::mat-option");
+            var selector = By.XPath($".//span[text()='{optionName}']/ancestor::mat-option");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

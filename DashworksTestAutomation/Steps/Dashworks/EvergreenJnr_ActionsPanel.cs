@@ -80,6 +80,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsInTheActionsDropdown(string actionsName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            //Wait until all rows are selected
+            Thread.Sleep(3000);
             action.ActionsDropdown.Click();
             action.GetOptionByName(actionsName).Click();
         }

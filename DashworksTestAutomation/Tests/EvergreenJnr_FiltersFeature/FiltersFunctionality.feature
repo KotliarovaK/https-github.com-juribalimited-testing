@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| SelectedRowsName |
 	| 00I0COBFWHOF27   |
 	| 01P96J2EQ0HZSV   |
-	| 024LVE4WMTLUK2J  |
+	| 00KLL9S8NRF0X6   |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project on Action panel

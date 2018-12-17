@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select-required')]")]
         public IWebElement MoveToSelectBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Move']")]
+        [FindsBy(How = How.XPath, Using = ".//button/span[text()='MOVE']")]
         public IWebElement MoveButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
