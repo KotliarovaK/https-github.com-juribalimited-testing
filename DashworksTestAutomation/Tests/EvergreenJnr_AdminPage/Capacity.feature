@@ -1560,6 +1560,124 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User selects all rows on the grid
 	And User removes selected item
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13593 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectDAS13593 " in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks "Projects" on the left-hand menu
+	And User navigate to "ProjectDAS13593" Project
+	And User navigate to "Stages" tab
+	And User clicks "Create Stage" button
+	And User create Stage
+	| StageName  |
+	| Stage13593 |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |
+	| 1Task13593 | 13593 | Stage13593 | Normal   | Date      | Computer   |                    | 
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType  | TaskValuesTemplate |
+	| 2Task13593 | 13593 | Stage13593 | Normal   | Date      | Application |                    | 
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |
+	| 3Task13593 | 13593 | Stage13593 | Normal   | Date      | User       |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType    | ObjectType | TaskValuesTemplate              |
+	| 4Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Computer   | Readiness (NNSFC) with due date |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType | TaskValuesTemplate              |
+	| 5Task13593 | 13593 | Stage13593 | Normal   | Radiobutton | User       | Readiness (NNSFC) with due date |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType  | TaskValuesTemplate              |
+	| 6Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Application | Readiness (NNSFC) with due date |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType    | ObjectType | TaskValuesTemplate |
+	| 7Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Computer   |                    | 
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType  | TaskValuesTemplate |
+	| 8Task13593 | 13593 | Stage13593 | Normal   | Text      | Application |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType | TaskValuesTemplate |
+	| 9Task13593 | 13593 | Stage13593 | Normal   | Radiobutton | User       |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "ProjectDAS13593" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User open "Capacity" sub menu on Admin page
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User selects "Device" in the "Object Type" dropdown
+	And User clicks on "Tasks" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items      |
+	| 1Task13593 |
+	| 4Task13593 |
+	When User selects "User" in the "Object Type" dropdown
+	And User clicks on "Tasks" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items      |
+	| 3Task13593 |
+	| 5Task13593 |
+	When User selects "Application" in the "Object Type" dropdown
+	And User clicks on "Tasks" dropdown on the Capacity Slots page
+	Then following items are displayed in the dropdown:
+	| Items      |
+	| 2Task13593 |
+	| 6Task13593 |
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14218
 Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDifferentProjectTypes
 	When User clicks Admin on the left-hand menu
