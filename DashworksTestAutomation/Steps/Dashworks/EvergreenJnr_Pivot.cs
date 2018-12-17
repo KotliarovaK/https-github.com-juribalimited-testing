@@ -76,6 +76,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonByNameOnPivot("DONE").Click();
         }
 
+        [When(@"User clicks ""(.*)"" button in Pivot panel")]
+        public void WhenUserClicksButtonInPivotPanel(string buttonLabel)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+
+            page.GetButtonByNameOnPivot(buttonLabel).Click();
+        }
+
+        [When(@"User clicks Close Add Item icon in Pivot panel")]
+        public void WhenUserClicksCloseAddItemIconInPivotPanel()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+
+            page.CloseAddItemIcon.Click();
+        }
+
+        [Then(@"User sees ""(.*)"" category in Pivot panel")]
+        public void ThenUserSeesCategoryInPivotPanel(string categoryName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            var allCategories = page.PivotCategories.Select(x => x.Text).ToList();
+
+            Assert.That(allCategories, Does.Contain(categoryName));
+        }
+
         [When(@"User creates Pivot list with ""(.*)"" name")]
         public void WhenUserCreatesPivotListWithName(string listName)
         {

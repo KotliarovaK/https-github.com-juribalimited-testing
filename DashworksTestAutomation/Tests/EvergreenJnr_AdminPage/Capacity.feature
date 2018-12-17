@@ -877,7 +877,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	And User type "Name13147" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @DAS14029
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @DAS14029
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1454,7 +1454,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed for "Slots" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13812 @DAS13676 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1728,7 +1728,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	| 2Task13500     |
 	And "Scheduled Date" checkbox in the "Tasks" field are available to select
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13152 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1787,7 +1787,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13152 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTeamsAndRequestTypes
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

@@ -366,8 +366,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Dashworks First Seen\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Equals, Does not equal, Before, Before now, On or before, After, After now, On o" +
-                    "r after, Empty, Not empty\" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Equals, Equals (relative), Does not equal, Does not equal (relative), Before, Be" +
+                    "fore (relative), On or before, On or before (relative), After, After (relative)," +
+                    " On or after, On or after (relative), Empty, Not empty\" option is available for " +
+                    "this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have created \"Empty\" Date filter with column and \"\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Dashworks First Seen is empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

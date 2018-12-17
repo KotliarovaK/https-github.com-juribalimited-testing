@@ -346,7 +346,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForDataLoading(this RemoteWebDriver driver)
         {
-            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner')]", waitTimeout);
+            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", waitTimeout);
         }
 
         public static void WaitForDataLoadingOnProjects(this RemoteWebDriver driver)

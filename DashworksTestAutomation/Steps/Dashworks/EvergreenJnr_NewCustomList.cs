@@ -238,9 +238,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.ListNameWarningMessage(listName),
-                $"{listName} is not displayed in the list details panel");
+                $"'{listName}' is not displayed in the list details panel");
             Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText),
-                $"{warningText} message is not displayed in the list details panel");
+                $"'{warningText}' message is not displayed in the list details panel");
         }
 
         [When(@"User update current custom list")]

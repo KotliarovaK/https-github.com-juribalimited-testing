@@ -148,6 +148,7 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Dashworks")]
         [NUnit.Framework.CategoryAttribute("Projects_Dashworks")]
+        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
         [NUnit.Framework.CategoryAttribute("DAS14322")]
         public virtual void Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
@@ -156,6 +157,7 @@ namespace DashworksTestAutomation.Tests.Senior
                         "Senior",
                         "Dashworks",
                         "Projects_Dashworks",
+                        "Senior_Projects",
                         "Senior_Tasks",
                         "DAS14322"});
             this.ScenarioSetup(scenarioInfo);
@@ -228,16 +230,19 @@ namespace DashworksTestAutomation.Tests.Senior
         }
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError")]
         [NUnit.Framework.CategoryAttribute("Senior")]
-        [NUnit.Framework.CategoryAttribute("DAS14171")]
         [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Senior_Projects")]
+        [NUnit.Framework.CategoryAttribute("DAS14171")]
         public virtual void Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError", new string[] {
                         "Senior",
-                        "DAS14171",
-                        "Projects_Dashboards"});
+                        "Projects_Dashboards",
+                        "Senior_Projects",
+                        "DAS14171"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -37,6 +37,71 @@ Examples:
 	| Applications     | Compliance | Application Key | Vendor               | Pivot_Applications_List_14224 | Devices           | Application (Saved List) |
 	| Users            | Enabled    | Cost Centre     | Department Full Path | Pivot_User_List_14224         | Applications      | User (Saved List)        |
 
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14325
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesCantainEvergreenCatagoryWithCorrectSubcategories
+	When User clicks "<ListName>" on the left-hand menu
+	And User navigates to Pivot
+	And User clicks "ADD ROW GROUP" button in Pivot panel
+	Then User sees "Evergreen" category in Pivot panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	When User clicks Close Add Item icon in Pivot panel
+	And User clicks "ADD COLUMN" button in Pivot panel
+	Then User sees "Evergreen" category in Pivot panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	When User clicks Close Add Item icon in Pivot panel
+	And User clicks "ADD VALUE" button in Pivot panel
+	Then User sees "Evergreen" category in Pivot panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14325
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesCantainEvergreenCatagoryWithCorrectSubcategories
+	When User clicks "Applications" on the left-hand menu
+	And User navigates to Pivot
+	And User clicks "ADD ROW GROUP" button in Pivot panel
+	Then User sees "Evergreen" category in Pivot panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
+	When User clicks Close Add Item icon in Pivot panel
+	And User clicks "ADD COLUMN" button in Pivot panel
+	Then User sees "Evergreen" category in Pivot panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
+	When User clicks Close Add Item icon in Pivot panel
+	And User clicks "ADD VALUE" button in Pivot panel
+	Then User sees "Evergreen" category in Pivot panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
+
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks "Devices" on the left-hand menu

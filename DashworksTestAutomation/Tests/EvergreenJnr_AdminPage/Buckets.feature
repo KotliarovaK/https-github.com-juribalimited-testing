@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @DAS13172 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesToTheBucketWhereNoMailboxesExist
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page

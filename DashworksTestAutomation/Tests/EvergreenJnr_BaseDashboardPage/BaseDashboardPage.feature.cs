@@ -334,7 +334,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.Then("default URL is displayed on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User add \"Babel(Engl: Readiness\" filter where type is \"Equals\" with added column " +
+            testRunner.When("User add \"MigrationP: Readiness\" filter where type is \"Equals\" with added column " +
                     "and \"Blue\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Appropriate filter is added to URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -379,7 +379,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "UserSchedu: Readiness ID", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "ComputerSc: Readiness ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", "UserSchedu: Readiness ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "UserSchedu: Readiness ID", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Mailbox Platform", "EmailMigra: Readiness ID", new string[0])]
