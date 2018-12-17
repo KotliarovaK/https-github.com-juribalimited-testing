@@ -31,8 +31,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCreateButtonByName("Pivot").Click();
         }
 
-        [When(@"User adds the following Row Groups:")]
-        public void WhenUserAddsTheFollowingRowGroups(Table table)
+        [When(@"User adds the following Row Groups on Pivot:")]
+        public void WhenUserAddsTheFollowingRowGroupsOnPivot(Table table)
         {
             var page = _driver.NowAt<PivotElementPage>();
             page.GetButtonByNameOnPivot("ADD ROW GROUP").Click();
@@ -46,8 +46,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonByNameOnPivot("DONE").Click();
         }
 
-        [When(@"User adds the following Columns:")]
-        public void WhenUserAddsTheFollowingColumns(Table table)
+        [When(@"User adds the following Columns on Pivot:")]
+        public void WhenUserAddsTheFollowingColumnsOnPivot(Table table)
         {
             var page = _driver.NowAt<PivotElementPage>();
             page.GetButtonByNameOnPivot("ADD COLUMN").Click();
@@ -61,8 +61,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonByNameOnPivot("DONE").Click();
         }
 
-        [When(@"User adds the following Values:")]
-        public void WhenUserAddsTheFollowingValues(Table table)
+        [When(@"User adds the following Values on Pivot:")]
+        public void WhenUserAddsTheFollowingValuesOnPivot(Table table)
         {
             var page = _driver.NowAt<PivotElementPage>();
             page.GetButtonByNameOnPivot("ADD VALUE").Click();
@@ -76,6 +76,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonByNameOnPivot("DONE").Click();
         }
 
+        [When(@"User removes ""(.*)"" Column for Pivot")]
+        [When(@"User removes ""(.*)"" Row Group for Pivot")]
+        public void WhenUserRemovesRowGroupForPivot(string closeButtonName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.GetCloseButtonForElementsByNameOnPivot(closeButtonName).Click();
+        }
+
+        [When(@"User removes ""(.*)"" Value for Pivot")]
+        public void WhenUserRemoveValueForPivot(string closeButtonName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.GetCloseButtonForValueElementsByNameOnPivot(closeButtonName).Click();
+        }
+        
         [When(@"User clicks ""(.*)"" button in Pivot panel")]
         public void WhenUserClicksButtonInPivotPanel(string buttonLabel)
         {
@@ -127,6 +142,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             var page = _driver.NowAt<PivotElementPage>();
             Assert.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
+        }
+
+        [Then(@"No pivot generated message is displayed")]
+        public void ThenNoPivotGeneratedMessageIsDisplayed()
+        {
+            _driver.WaitForDataLoading();
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.NoPivotTableMessage.Displayed(), "'No pivot generated' is not displayed");
+        }
+
+        [Then(@"Save button is inactive for Pivot list")]
+        public void ThenSaveButtonIsInactiveForPivotList()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            var state = page.SaveButton.GetAttribute("disabled");
+            Assert.AreEqual("true", state, "Save button is active");
         }
     }
 }
