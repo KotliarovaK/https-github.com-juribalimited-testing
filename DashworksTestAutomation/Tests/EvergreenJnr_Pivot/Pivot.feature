@@ -38,7 +38,7 @@ Examples:
 	| Users            | Enabled    | Cost Centre     | Department Full Path | Pivot_User_List_14224         | Applications      | User (Saved List)        |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14325
-Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesCantainEvergreenCatagoryWithCorrectSubcategories
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to Pivot
 	And User clicks "ADD ROW GROUP" button in Pivot panel
@@ -75,7 +75,7 @@ Examples:
 	| Mailboxes    |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14325
-Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesCantainEvergreenCatagoryWithCorrectSubcategories
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainEvergreenCatagoryWithCorrectSubcategories
 	When User clicks "Applications" on the left-hand menu
 	And User navigates to Pivot
 	And User clicks "ADD ROW GROUP" button in Pivot panel
@@ -101,6 +101,37 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesCantainE
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
 	| Evergreen Capacity Unit |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
+	When User clicks "<ListName>" on the left-hand menu
+	And User navigates to Pivot
+	And User adds the following Row Groups:
+	| RowGroups  |
+	| <RowGroup> |
+	And User adds the following Columns:
+	| Columns  |
+	| <Column> |
+	And User adds the following Values:
+	| Values  |
+	| <Value> |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User clicks "<Link>" link in Lists panel
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName        |
+	| <ColumnToBeAdded> |
+	Then ColumnName is added to the list
+	| ColumnName        |
+	| <ColumnToBeAdded> |
+
+Examples:
+	| ListName     | RowGroup    | Column                            | Value          | Link             | ColumnToBeAdded |
+	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | All Devices      | Build Date      |
+	| Users        | Compliance  | App Count (Entitled)              | Domain         | All Users        | Common Name     |
+	| Mailboxes    | Alias       | Owner City                        | Created Date   | All Mailboxes    | Alias           |
+	| Applications | Application | Evergreen Capacity Unit           | Vendor         | All Applications | Application Key |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
