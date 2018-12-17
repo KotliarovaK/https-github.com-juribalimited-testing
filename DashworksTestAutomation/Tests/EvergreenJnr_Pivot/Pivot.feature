@@ -10,13 +10,13 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User clicks "<PageNameForPivot>" on the left-hand menu
 	Then "<PageNameForPivot>" list should be displayed to the user
 	When User navigates to Pivot
-	And User adds the following Row Groups:
+	And User adds the following Row Groups on Pivot:
 	| RowGroups   |
 	| <RowGroups> |
-	And User adds the following Columns:
+	And User adds the following Columns on Pivot:
 	| Columns   |
 	| <Columns> |
-	And User adds the following Values:
+	And User adds the following Values on Pivot:
 	| Values   |
 	| <Values> |
 	And User clicks the "RUN PIVOT" Action button
@@ -138,13 +138,13 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
-	And User adds the following Row Groups:
+	And User adds the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
-	And User adds the following Columns:
+	And User adds the following Columns on Pivot:
 	| Columns |
 	| City    |
-	And User adds the following Values:
+	And User adds the following Values on Pivot:
 	| Values      |
 	| Cost Centre |
 	And User clicks the "RUN PIVOT" Action button
@@ -175,3 +175,24 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Values           |
 	| All Applications |
 	And User remove list with "Pivot_DAS_14224" name on "Devices" page
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765
+Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRemovingColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User adds the following Row Groups on Pivot:
+	| RowGroups  |
+	| Compliance |
+	And User adds the following Columns on Pivot:
+	| Columns     |
+	| City        |
+	| Description |
+	And User adds the following Values on Pivot:
+	| Values            |
+	| Owner Cost Centre |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User removes "Description" Column for Pivot
+	Then Save button is inactive for Pivot list
+	And No pivot generated message is displayed
