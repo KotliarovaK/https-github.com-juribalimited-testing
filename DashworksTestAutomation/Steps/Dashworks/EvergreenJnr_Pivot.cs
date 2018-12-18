@@ -159,5 +159,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var state = page.SaveButton.GetAttribute("disabled");
             Assert.AreEqual("true", state, "Save button is active");
         }
+
+        [Then(@"Pivot Name field is empty")]
+        public void ThenPivotNameFieldIsEmpty()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsEmpty(page.PivotNameTextBox.GetAttribute("value"), "Pivot Name field is not empty");
+        }
     }
 }

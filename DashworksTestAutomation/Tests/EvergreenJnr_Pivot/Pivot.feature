@@ -199,3 +199,64 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	When User removes "Description" Column for Pivot
 	Then Save button is inactive for Pivot list
 	And No pivot generated message is displayed
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206
+Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User adds the following Row Groups on Pivot:
+	| RowGroups   |
+	| Common Name |
+	And User adds the following Values on Pivot:
+	| Values   |
+	| Building |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "Pivot_DAS_14206" name
+	Then "Pivot_DAS_14206" list is displayed to user
+	When User navigates to the "All Users" list
+	And User navigates to Pivot
+	Then "ADD ROW GROUP" Action button is active
+	And "ADD COLUMN" Action button is active
+	And "ADD VALUE" Action button is active
+	And User remove list with "Pivot_DAS_14206" name on "Users" page
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206
+Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User click on 'Username' column header
+	Then data in table is sorted by 'Username' column in ascending order
+	When User create dynamic list with "Dynamic_List_DAS14206" name on "Users" page
+	Then "Dynamic_List_DAS14206" list is displayed to user
+	When User navigates to the "All Users" list
+	When User navigates to Pivot
+	And User adds the following Row Groups on Pivot:
+	| RowGroups   |
+	| Common Name |
+	And User adds the following Values on Pivot:
+	| Values   |
+	| Building |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotList_DAS_14206" name
+	Then "PivotList_DAS_14206" list is displayed to user
+	When User navigates to the "Dynamic_List_DAS14206" list
+	Then "Dynamic_List_DAS14206" list is displayed to user
+	When User navigates to Pivot
+	Then "ADD ROW GROUP" Action button is active
+	And "ADD COLUMN" Action button is active
+	And "ADD VALUE" Action button is active
+	When User adds the following Row Groups on Pivot:
+	| RowGroups   |
+	| Common Name |
+	And User adds the following Values on Pivot:
+	| Values   |
+	| Building |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User clicks the "SAVE" Action button
+	Then Pivot Name field is empty
+	And User remove list with "Dynamic_List_DAS14206" name on "Users" page
+	And User remove list with "PivotList_DAS_14206" name on "Users" page
