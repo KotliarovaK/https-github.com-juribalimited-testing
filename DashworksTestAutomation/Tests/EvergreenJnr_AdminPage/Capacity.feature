@@ -969,6 +969,36 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks newly created object link
 	Then See Translations link on the Capacity Slot page is not displayed
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @DAS13928 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLanguageDoesNotHaveTranslations
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ChecksDefaultLanguage13928" in the "Project Name" field
+	And User selects "All Users" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add
+	And User selects following Objects
+	| Objects                                |
+	| 1A701E05916148A6A3F (Fairlchild, Sara) |
+	| 2BA1590F2E4B43F2946 (Childs, Meg)      |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
+	When User clicks "Details" tab
+	And User clicks the "ADD LANGUAGE" Action button
+	And User selects "Brazilian" language on the Project details page
+	And User opens menu for selected language
+	Then User selects "Set as default" option for selected language
+	And Error message with "You cannot update the default language to Brazilian because there are items in the project which have not been translated into this language." text is displayed
+	#When User clicks "Scope" tab
+	#And User selects "History" tab on the Project details page
+	#And User enters "1A701E05916148A6A3F" text in the Search field for "Item" column
+	#Then User clicks on "1A701E05916148A6A3F" search result
+	#When User navigates to the "Projects" tab
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13422
 Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField
 	When User clicks Admin on the left-hand menu
