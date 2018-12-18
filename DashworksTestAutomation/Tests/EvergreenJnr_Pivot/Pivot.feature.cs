@@ -166,6 +166,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Evergreen Bucket"});
             table4.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
+            table4.AddRow(new string[] {
+                        "Evergreen Ring"});
             testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table4, "Then ");
             testRunner.When("User clicks Close Add Item icon in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"ADD COLUMN\" button in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -178,6 +180,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Evergreen Bucket"});
             table5.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
+            table5.AddRow(new string[] {
+                        "Evergreen Ring"});
             testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table5, "Then ");
             testRunner.When("User clicks Close Add Item icon in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks \"ADD VALUE\" button in Pivot panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -190,6 +194,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Evergreen Bucket"});
             table6.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
+            table6.AddRow(new string[] {
+                        "Evergreen Ring"});
             testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table6, "Then ");
             this.ScenarioCleanup();
         }
@@ -281,17 +287,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "RowGroups"});
             table10.AddRow(new string[] {
                         string.Format("{0}", rowGroup)});
-            testRunner.And("User adds the following Row Groups:", ((string)(null)), table10, "And ");
+            testRunner.And("User adds the following Row Groups on Pivot:", ((string)(null)), table10, "And ");
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table11.AddRow(new string[] {
                         string.Format("{0}", column)});
-            testRunner.And("User adds the following Columns:", ((string)(null)), table11, "And ");
+            testRunner.And("User adds the following Columns on Pivot:", ((string)(null)), table11, "And ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table12.AddRow(new string[] {
                         string.Format("{0}", value)});
-            testRunner.And("User adds the following Values:", ((string)(null)), table12, "And ");
+            testRunner.And("User adds the following Values on Pivot:", ((string)(null)), table12, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User clicks \"{0}\" link in Lists panel", link), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

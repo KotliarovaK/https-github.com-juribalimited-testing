@@ -2728,6 +2728,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen Bucket"});
             table88.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
+            table88.AddRow(new string[] {
+                        "Evergreen Ring"});
             testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table88, "Then ");
             this.ScenarioCleanup();
         }

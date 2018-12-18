@@ -1483,6 +1483,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Evergreen Bucket"});
             table74.AddRow(new string[] {
                         "Evergreen Capacity Unit"});
+            table74.AddRow(new string[] {
+                        "Evergreen Ring"});
             testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table74, "Then ");
             this.ScenarioCleanup();
         }

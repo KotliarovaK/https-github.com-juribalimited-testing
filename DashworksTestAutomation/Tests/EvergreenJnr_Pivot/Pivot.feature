@@ -49,6 +49,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories           |
 	| Evergreen Bucket        |
 	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD COLUMN" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -58,6 +59,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories           |
 	| Evergreen Bucket        |
 	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
 	When User clicks Close Add Item icon in Pivot panel
 	And User clicks "ADD VALUE" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
@@ -67,6 +69,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories           |
 	| Evergreen Bucket        |
 	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
 
 Examples:
 	| ListName     |
@@ -106,13 +109,13 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to Pivot
-	And User adds the following Row Groups:
+	And User adds the following Row Groups on Pivot:
 	| RowGroups  |
 	| <RowGroup> |
-	And User adds the following Columns:
+	And User adds the following Columns on Pivot:
 	| Columns  |
 	| <Column> |
-	And User adds the following Values:
+	And User adds the following Values on Pivot:
 	| Values  |
 	| <Value> |
 	And User clicks the "RUN PIVOT" Action button

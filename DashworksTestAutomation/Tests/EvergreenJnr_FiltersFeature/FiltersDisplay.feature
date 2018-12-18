@@ -1136,6 +1136,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategor
 	| Subcategories           |
 	| Evergreen Bucket        |
 	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
 
 Examples:
 	| ListName     |
