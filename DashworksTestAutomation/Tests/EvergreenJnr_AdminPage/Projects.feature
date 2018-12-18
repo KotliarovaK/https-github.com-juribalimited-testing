@@ -3231,7 +3231,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope
 	When User create static list with "Static13110" name on "Devices" page with following items
 	| ItemName        |
