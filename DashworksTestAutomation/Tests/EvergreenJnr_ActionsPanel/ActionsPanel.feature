@@ -1060,7 +1060,6 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	| Options   |
 	| Update    |
 	| Remove    |
-	#| No change |
 	When User selects "Computer Read Only Task in Self Service" Task on Action panel
 	Then the Update Value options are displayed in following order:
 	| Options               |
@@ -1069,6 +1068,7 @@ Scenario Outline: EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorre
 	When User selects "Update" Update Value on Action panel
 	And User selects "Started" Value on Action panel
 	And User selects "No change" Update Date on Action panel
+	And User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
 	Then the amber message is displayed correctly
