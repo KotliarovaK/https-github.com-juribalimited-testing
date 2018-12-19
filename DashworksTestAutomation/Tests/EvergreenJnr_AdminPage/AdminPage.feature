@@ -59,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
 	Then Counter shows "6" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @DAS12369
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @DAS12369 @DAS14212
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

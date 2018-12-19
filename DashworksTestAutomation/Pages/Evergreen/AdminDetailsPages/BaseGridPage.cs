@@ -59,7 +59,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@col-id='onboardAction']/span[contains(text(), 'Re-Onboard')]")]
         public IWebElement ReonboardedItem { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter']/span")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter ng-star-inserted']/span")]
         public IWebElement RowsCounter { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]

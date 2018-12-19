@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
 	Then "" is displayed in the dropdown filter for "Capacity Units" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @DAS13157 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -160,6 +160,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then "Default unit" checkbox is checked and cannot be unchecked
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User type " CapacityUnit13790 " Name in the "Capacity Unit Name" field on the Project details page
+	And User type "DAS13528" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Error message with "A capacity unit already exists with this name" text is displayed
+	When User clicks the "CREATE CAPACITY UNIT" Action button
 	And User type "CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
