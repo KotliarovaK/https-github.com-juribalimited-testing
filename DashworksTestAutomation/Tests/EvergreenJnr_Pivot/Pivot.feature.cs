@@ -609,11 +609,59 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Value"});
             table33.AddRow(new string[] {
                         "Owner City"});
-            testRunner.When("User adds the following \"Columns\" on Pivot:", ((string)(null)), table33, "When ");
-            testRunner.When("User clicks reset button on main panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User adds the following \"Columns\" on Pivot:", ((string)(null)), table33, "And ");
+            testRunner.And("User clicks reset button on main panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"ADD ROW GROUP\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"ADD COLUMN\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"ADD VALUE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksTooltipsOnPivot")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS14379")]
+        [NUnit.Framework.CategoryAttribute("DAS11291")]
+        public virtual void EvergreenJnr_DevicesList_ChecksTooltipsOnPivot()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksTooltipsOnPivot", new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS14379",
+                        "DAS11291"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"ADD ROW GROUP\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("\"Compliance\" value is entered into the search box and the selection is clicked on" +
+                    " Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"DONE\" Action button have tooltip with \"Confirm changes\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"DONE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table34.AddRow(new string[] {
+                        "City"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table34, "And ");
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table35.AddRow(new string[] {
+                        "Owner Cost Centre"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table35, "And ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Row Groups\" plus button have tooltip with \"Add row group\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Columns\" plus button have tooltip with \"Add column\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"Values\" plus button have tooltip with \"Add value\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("close button for \"City\" chip have tooltip with \"Delete this item\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"City\" chip have tooltip with \"City\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }

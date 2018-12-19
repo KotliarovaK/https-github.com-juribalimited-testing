@@ -195,5 +195,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             Assert.IsEmpty(page.PivotNameTextBox.GetAttribute("value"), "Pivot Name field is not empty");
         }
+
+        #region Tooltip on Pivot
+
+        [Then(@"""(.*)"" plus button have tooltip with ""(.*)"" text")]
+        public void ThenPlusButtonHaveTooltipWithText(string buttonName, string text)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            var button = page.GetPlusButtonOnPivotByName(buttonName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+        }
+
+        [Then(@"close button for ""(.*)"" chip have tooltip with ""(.*)"" text")]
+        public void ThenCloseButtonForChipHaveTooltipWithText(string chipName, string text)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            var element = page.GetCloseButtonForElementsByNameOnPivot(chipName);
+            _driver.MouseHover(element);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+        }
+
+        [Then(@"""(.*)"" chip have tooltip with ""(.*)"" text")]
+        public void ThenChipHaveTooltipWithText(string chipName, string text)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            var element = page.GetChipByNameOnPivot(chipName);
+            _driver.MouseHover(element);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+        }
+
+        #endregion
+
+        [When(@"""(.*)"" value is entered into the search box and the selection is clicked on Pivot")]
+        public void WhenValueIsEnteredIntoTheSearchBoxAndTheSelectionIsClickedOnPivot(string value)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            //Clear the textbox after adding a column, so it is reset for the next loop
+            columnElement.SearchTextBox.ClearWithHomeButton(_driver);
+            columnElement.AddColumn(value);
+        }
     }
 }
