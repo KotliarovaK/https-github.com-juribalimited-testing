@@ -10,13 +10,13 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User clicks "<PageNameForPivot>" on the left-hand menu
 	Then "<PageNameForPivot>" list should be displayed to the user
 	When User navigates to Pivot
-	And User adds the following Row Groups on Pivot:
+	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| <RowGroups> |
-	And User adds the following Columns on Pivot:
+	And User selects the following Columns on Pivot:
 	| Columns   |
 	| <Columns> |
-	And User adds the following Values on Pivot:
+	And User selects the following Values on Pivot:
 	| Values   |
 	| <Values> |
 	And User clicks the "RUN PIVOT" Action button
@@ -109,13 +109,13 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to Pivot
-	And User adds the following Row Groups on Pivot:
+	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| <RowGroup> |
-	And User adds the following Columns on Pivot:
+	And User selects the following Columns on Pivot:
 	| Columns  |
 	| <Column> |
-	And User adds the following Values on Pivot:
+	And User selects the following Values on Pivot:
 	| Values  |
 	| <Value> |
 	And User clicks the "RUN PIVOT" Action button
@@ -136,18 +136,18 @@ Examples:
 	| Mailboxes    | Alias       | Owner City                        | Created Date   | All Mailboxes    | Alias           |
 	| Applications | Application | Evergreen Capacity Unit           | Vendor         | All Applications | Application Key |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @Delete_Newly_Created_Project
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
-	And User adds the following Row Groups on Pivot:
+	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
-	And User adds the following Columns on Pivot:
+	And User selects the following Columns on Pivot:
 	| Columns |
 	| City    |
-	And User adds the following Values on Pivot:
+	And User selects the following Values on Pivot:
 	| Values      |
 	| Cost Centre |
 	And User clicks the "RUN PIVOT" Action button
@@ -184,14 +184,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
-	And User adds the following Row Groups on Pivot:
+	And User selects the following Row Groups on Pivot:
 	| RowGroups  |
 	| Compliance |
-	And User adds the following Columns on Pivot:
+	And User selects the following Columns on Pivot:
 	| Columns     |
 	| City        |
 	| Description |
-	And User adds the following Values on Pivot:
+	And User selects the following Values on Pivot:
 	| Values            |
 	| Owner Cost Centre |
 	And User clicks the "RUN PIVOT" Action button
@@ -200,15 +200,16 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	Then Save button is inactive for Pivot list
 	And No pivot generated message is displayed
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User navigates to Pivot
-	And User adds the following Row Groups on Pivot:
+	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
-	And User adds the following Values on Pivot:
+	Then reset button on main panel is displayed
+	When User selects the following Values on Pivot:
 	| Values   |
 	| Building |
 	And User clicks the "RUN PIVOT" Action button
@@ -232,10 +233,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	Then "Dynamic_List_DAS14206" list is displayed to user
 	When User navigates to the "All Users" list
 	When User navigates to Pivot
-	And User adds the following Row Groups on Pivot:
+	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
-	And User adds the following Values on Pivot:
+	And User selects the following Values on Pivot:
 	| Values   |
 	| Building |
 	And User clicks the "RUN PIVOT" Action button
@@ -248,10 +249,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	Then "ADD ROW GROUP" Action button is active
 	And "ADD COLUMN" Action button is active
 	And "ADD VALUE" Action button is active
-	When User adds the following Row Groups on Pivot:
+	When User selects the following Row Groups on Pivot:
 	| RowGroups   |
 	| Common Name |
-	And User adds the following Values on Pivot:
+	And User selects the following Values on Pivot:
 	| Values   |
 	| Building |
 	And User clicks the "RUN PIVOT" Action button
@@ -260,3 +261,32 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	Then Pivot Name field is empty
 	And User remove list with "Dynamic_List_DAS14206" name on "Users" page
 	And User remove list with "PivotList_DAS_14206" name on "Users" page
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14413
+Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnResetButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Compliance |
+	Then reset button on main panel is displayed
+	When User selects the following Columns on Pivot:
+	| Columns     |
+	| City        |
+	| Description |
+	Then reset button on main panel is displayed
+	When User selects the following Values on Pivot:
+	| Values            |
+	| Owner Cost Centre |
+	Then reset button on main panel is displayed
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User removes "City" Column for Pivot
+	When User adds the following "Columns" on Pivot: 
+	| Value      |
+	| Owner City |
+	When User clicks reset button on main panel
+	Then "ADD ROW GROUP" Action button is active
+	And "ADD COLUMN" Action button is active
+	And "ADD VALUE" Action button is active

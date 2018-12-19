@@ -31,8 +31,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCreateButtonByName("Pivot").Click();
         }
 
-        [When(@"User adds the following Row Groups on Pivot:")]
-        public void WhenUserAddsTheFollowingRowGroupsOnPivot(Table table)
+        [When(@"User selects the following Row Groups on Pivot:")]
+        public void WhenUserSelectsTheFollowingRowGroupsOnPivot(Table table)
         {
             var page = _driver.NowAt<PivotElementPage>();
             page.GetButtonByNameOnPivot("ADD ROW GROUP").Click();
@@ -46,8 +46,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonByNameOnPivot("DONE").Click();
         }
 
-        [When(@"User adds the following Columns on Pivot:")]
-        public void WhenUserAddsTheFollowingColumnsOnPivot(Table table)
+        [When(@"User selects the following Columns on Pivot:")]
+        public void WhenUserSelectsTheFollowingColumnsOnPivot(Table table)
         {
             var page = _driver.NowAt<PivotElementPage>();
             page.GetButtonByNameOnPivot("ADD COLUMN").Click();
@@ -61,8 +61,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonByNameOnPivot("DONE").Click();
         }
 
-        [When(@"User adds the following Values on Pivot:")]
-        public void WhenUserAddsTheFollowingValuesOnPivot(Table table)
+        [When(@"User selects the following Values on Pivot:")]
+        public void WhenUserSelectsTheFollowingValuesOnPivot(Table table)
         {
             var page = _driver.NowAt<PivotElementPage>();
             page.GetButtonByNameOnPivot("ADD VALUE").Click();
@@ -70,6 +70,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var value in table.Rows)
             {
                 columnElement.AddColumn(value["Values"]);
+                //Clear the textBox after adding a column, so it is reset for the next loop
+                columnElement.SearchTextBox.ClearWithHomeButton(_driver);
+            }
+            page.GetButtonByNameOnPivot("DONE").Click();
+        }
+
+        [When(@"User adds the following ""(.*)"" on Pivot:")]
+        public void WhenUserAddsTheFollowingOnPivot(string button, Table table)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.GetPlusButtonOnPivotByName(button).Click();
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            foreach (var value in table.Rows)
+            {
+                columnElement.AddColumn(value["Value"]);
                 //Clear the textBox after adding a column, so it is reset for the next loop
                 columnElement.SearchTextBox.ClearWithHomeButton(_driver);
             }
@@ -105,6 +120,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
 
             page.CloseAddItemIcon.Click();
+        }
+
+        [Then(@"reset button on main panel is displayed")]
+        public void ThenResetButtonOnMainPanelIsDisplayed()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.ResetPivotButton.Displayed(), "Reset button on main panel is not displayed");
+        }
+
+        [When(@"User clicks reset button on main panel")]
+        public void WhenUserClicksResetButtonOnMainPanel()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.ResetPivotButton.Click();
         }
 
         [Then(@"User sees ""(.*)"" category in Pivot panel")]

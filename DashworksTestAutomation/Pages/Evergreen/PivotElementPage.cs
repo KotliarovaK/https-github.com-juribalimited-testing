@@ -15,9 +15,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeader { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'plus')]")]
-        public IWebElement PlusButton { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Pivot Name']")]
         public IWebElement PivotNameTextBox { get; set; }
 
@@ -34,6 +31,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//div[@class='nopivot ng-star-inserted']")]
         public IWebElement NoPivotTableMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[text()='RESET']/ancestor::button")]
+        public IWebElement ResetPivotButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -61,6 +61,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetCloseButtonForValueElementsByNameOnPivot(string button)
         {
             var selector = By.XPath($"//div[text()='{button}']/..//following-sibling::button");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetPlusButtonOnPivotByName(string button)
+        {
+            var selector = By.XPath($"//div[@class='context-block-title'][text()='{button}']/following-sibling::div//button[contains(@class, 'plus')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
