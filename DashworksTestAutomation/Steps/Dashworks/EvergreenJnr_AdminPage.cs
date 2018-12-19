@@ -1735,13 +1735,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (!projectElement.OnboardedObjectsTable.Displayed())
                     try
                     {
-                        Thread.Sleep(20000);
+                        Thread.Sleep(30000);
                         _driver.Navigate().Refresh();
                         Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
                     }
                     catch (Exception)
                     {
-                        Thread.Sleep(40000);
+                        Thread.Sleep(50000);
                         _driver.Navigate().Refresh();
                         Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
                     }
