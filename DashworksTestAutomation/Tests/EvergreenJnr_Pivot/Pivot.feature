@@ -283,10 +283,34 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	When User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User removes "City" Column for Pivot
-	When User adds the following "Columns" on Pivot: 
+	And User adds the following "Columns" on Pivot: 
 	| Value      |
 	| Owner City |
-	When User clicks reset button on main panel
+	And User clicks reset button on main panel
 	Then "ADD ROW GROUP" Action button is active
 	And "ADD COLUMN" Action button is active
 	And "ADD VALUE" Action button is active
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291
+Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User clicks the "ADD ROW GROUP" Action button
+	When "Compliance" value is entered into the search box and the selection is clicked on Pivot
+	Then "DONE" Action button have tooltip with "Confirm changes" text
+	When User clicks the "DONE" Action button
+	And User selects the following Columns on Pivot:
+	| Columns     |
+	| City        |
+	And User selects the following Values on Pivot:
+	| Values            |
+	| Owner Cost Centre |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	Then "Row Groups" plus button have tooltip with "Add row group" text
+	And "Columns" plus button have tooltip with "Add column" text
+	And "Values" plus button have tooltip with "Add value" text
+	#And "RESET" Action button have tooltip with "Reset pivot" text
+	And close button for "City" chip have tooltip with "Delete this item" text
+	And "City" chip have tooltip with "City" text

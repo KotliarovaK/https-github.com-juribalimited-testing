@@ -58,6 +58,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetChipByNameOnPivot(string button)
+        {
+            var selector = By.XPath($"//span[@class='pivot-filter-name'][text()='{button}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetCloseButtonForValueElementsByNameOnPivot(string button)
         {
             var selector = By.XPath($"//div[text()='{button}']/..//following-sibling::button");
