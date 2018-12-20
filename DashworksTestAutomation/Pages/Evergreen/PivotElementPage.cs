@@ -35,6 +35,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//span[text()='RESET']/ancestor::button")]
         public IWebElement ResetPivotButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'arrow_back')]/ancestor::button")]
+        public IWebElement BackButtonOnPivotPanel { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
