@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.Extensions;
+﻿using System.Linq;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
 using DashworksTestAutomation.Pages.Projects.Projects_Dashboards;
@@ -140,5 +141,24 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.ConfirmCreateTaskButton.Click();
             }
         }
+
+        [When(@"User selects ""(.*)"" as Task Value Type")]
+        public void WhenUserSetsTaskValueTypeOnSenior(string valueType)
+        {
+            var page = _driver.NowAt<TaskPropertiesPage>();
+            if (!string.IsNullOrEmpty(valueType))
+                page.ValueType.SelectboxSelect(valueType);
+        }
+
+        [Then(@"Next items are displayed as options of Object Type property:")]
+        public void ThenNextItemsAreDisplayedAsPropertyOptions(Table table)
+        {
+            var action = _driver.NowAt<TaskPropertiesPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            System.Threading.Thread.Sleep(500);
+            var actualList = action.OptionsOfObjectTypeProperty.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Items are different");
+        }
+
     }
 }

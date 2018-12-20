@@ -1983,3 +1983,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User enters "ProjectForDAS131522" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Task @DAS13887
+Scenario: EvergreenJnr_AdminPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User selects "Date" as Task Value Type
+	Then Next items are displayed as options of Object Type property:
+	| Items       |
+	| [Select]    |
+	| User        |
+	| Computer    |
+	| Application |
+	When User selects "Text" as Task Value Type
+	Then Next items are displayed as options of Object Type property:
+	| Items       |
+	| [Select]    |
+	| User        |
+	| Computer    |
+	| Application |
+	
