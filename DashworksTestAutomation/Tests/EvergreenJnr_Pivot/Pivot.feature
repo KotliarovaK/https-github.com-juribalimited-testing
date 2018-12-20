@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14224
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter
 	When User clicks "<PageNameForPivot>" on the left-hand menu
-	Then "<PageNameForPivot>" list should be displayed to the user
+	#Then "<PageNameForPivot>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
@@ -26,7 +26,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User clicks "<PageNameForFilter>" on the left-hand menu
 	Then "<PageNameForFilter>" list should be displayed to the user
 	When User clicks the Filters button
-	Then Filters panel is displayed to the user
+	#Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	And user select "<FilterName>" filter
 	Then "<PivotName>" list is not displayed for Saved List filter
@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to Pivot
@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	Then Save button is inactive for Pivot list
 	And No pivot generated message is displayed
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -347,7 +347,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	And "ADD COLUMN" Action button is active
 	And "ADD VALUE" Action button is active
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14379 @DAS11291 @DAS14745
 Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -355,6 +355,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	And User clicks the "ADD ROW GROUP" Action button
 	When "Compliance" value is entered into the search box and the selection is clicked on Pivot
 	Then "DONE" Action button have tooltip with "Confirm changes" text
+	Then back button on Pivot panel have tooltip with "Close" text
 	When User clicks the "DONE" Action button
 	And User selects the following Columns on Pivot:
 	| Columns     |

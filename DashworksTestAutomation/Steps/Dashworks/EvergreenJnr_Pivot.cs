@@ -231,6 +231,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
         }
 
+        [Then(@"back button on Pivot panel have tooltip with ""(.*)"" text")]
+        public void ThenBackButtonOnPivotPanelHaveTooltipWithText(string text)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            _driver.MouseHover(page.BackButtonOnPivotPanel);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+        }
+
         #endregion
 
         [When(@"""(.*)"" value is entered into the search box and the selection is clicked on Pivot")]
