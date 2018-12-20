@@ -147,7 +147,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-ascending-icon']")]
         public IWebElement AscendingSortingIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@aria-controls='submenu']")]
         public IWebElement List { get; set; }
 
         [FindsBy(How = How.XPath,
