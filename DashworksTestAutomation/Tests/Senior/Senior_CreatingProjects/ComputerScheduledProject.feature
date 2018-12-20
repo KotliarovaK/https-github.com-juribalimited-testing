@@ -215,7 +215,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name         | Help         | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| for removing | for removing | Stage 1          | Normal         | Date            | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -230,7 +230,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Forecast Date | Forecast Date | Stage 1          | Normal         | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -244,7 +244,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 2
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name        | Help        | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Target Date | Target Date | Stage 2          | Normal         | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -258,7 +258,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 3
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name           | Help           | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Scheduled Date | Scheduled Date | Stage 3          | Normal         | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -272,7 +272,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 4
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help          | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Migrated Date | Migrated Date | Stage 4          | Normal         | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -286,7 +286,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 5
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name           | Help           | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Completed Date | Completed Date | Stage 4          | Normal         | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -300,7 +300,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 6
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name            | Help            | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Group Date Task | Group Date Task | Stage 1          | Group          | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -314,7 +314,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 7
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name      | Help      | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Text Task | Text Task | Stage 2          | Normal         | Text            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -328,7 +328,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 8
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                       | Help                       | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString       | ApplyToAllCheckbox |
 	| Radiobutton RAG Owner Date | Radiobutton RAG Owner Date | Stage 3          | Normal         | Radiobutton     | Computer         | ReadinessNnsfcWithDueDateOwner | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -354,7 +354,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 9
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                   | Help                   | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString     | ApplyToAllCheckbox |
 	| Dropdown Non RAG Owner | Dropdown Non RAG Owner | Stage 4          | Normal         | DropDownList    | Computer         | NoReadinessNaEnabledDisabled | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -380,7 +380,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 10
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                                  | Help                                  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString       | ApplyToAllCheckbox |
 	| Group Radiobutton RAG Date Time Owner | Group Radiobutton RAG Date Time Owner | Stage 2          | Group          | Radiobutton     | Computer         | ReadinessNnsfcWithDueDateOwner | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -406,7 +406,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 11
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                     | Help                     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString  | ApplyToAllCheckbox |
 	| Dropdown RAG Date & Time | Dropdown RAG Date & Time | Stage 3          | Normal         | DropDownList    | Computer         | ReadinessNnsfcWithDueDate | false              |
 	Then Success message is displayed with "Task successfully created" text
@@ -425,7 +425,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 12
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name             | Help             | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Text Task (User) | Text Task (User) | Stage 1          | Normal         | Text            | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -439,7 +439,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 13
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                              | Help                              | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString  | ApplyToAllCheckbox |
 	| Radiobutton RAG Owner Date (User) | Radiobutton RAG Owner Date (User) | Stage 2          | Normal         | Radiobutton     | User             | ReadinessNnsfcWithDueDate | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -465,7 +465,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 14
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                      | Help                      | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Group Dropdown RAG (User) | Group Dropdown RAG (User) | Stage 3          | Group          | DropDownList    | User             | ReadinessNnsfc           | false              |
 	Then Success message is displayed with "Task successfully created" text
@@ -490,7 +490,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 15
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name             | Help             | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Date Task (User) | Date Task (User) | Stage 4          | Normal         | Date            | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -504,7 +504,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 16
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                                         | Help                                         | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString         | ApplyToAllCheckbox |
 	| Radiobutton Non RAG Owner Date (Application) | Radiobutton Non RAG Owner Date (Application) | Stage 1          | Normal         | Radiobutton     | Application      | NoReadinessNnsfcWithDueDateOwner | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -530,7 +530,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 17
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                             | Help                             | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Dropdown RAG Owner (Application) | Dropdown RAG Owner (Application) | Stage 2          | Normal         | DropDownList    | Application      | ReadinessNnsfc           | false              |
 	Then Success message is displayed with "Task successfully created" text
@@ -560,7 +560,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 18
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                      | Help                      | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Application Delivery Date | Application Delivery Date | Stage 3          | Normal         | Date            | Application      |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -574,7 +574,7 @@ Scenario: Projects_CreateComputerScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 19
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name                    | Help                    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| Text Task (Application) | Text Task (Application) | Stage 4          | Normal         | Text            | Application      |                          | true               |
 	Then Success message is displayed with "Task successfully created" text

@@ -318,8 +318,8 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             //page.ConfirmCreateStageButton.Click();
         }
 
-        [When(@"User create Task")]
-        public void WhenUserCreateTask(Table table)
+        [When(@"User creates Task")]
+        public void WhenUserCreatesTask(Table table)
         {
             var page = _driver.NowAt<TaskPropertiesPage>();
 

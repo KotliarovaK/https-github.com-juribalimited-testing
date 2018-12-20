@@ -325,6 +325,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10771")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
+        [NUnit.Framework.CategoryAttribute("DAS14748")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Category", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "UserSchedu: Category", "Compliance", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Havoc(BigD: Category", "Compliance", new string[0])]
@@ -337,7 +338,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
                     "DAS10771",
-                    "DAS10972"};
+                    "DAS10972",
+                    "DAS14748"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
