@@ -113,6 +113,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserCreatesNewCustomListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.TopToolsSubmenu);
+            listElement.TopToolsSubmenu.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextBox.SendKeys(listName);

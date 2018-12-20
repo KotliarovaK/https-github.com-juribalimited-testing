@@ -136,6 +136,62 @@ Examples:
 	| Mailboxes    | Alias       | Owner City                        | Created Date   | All Mailboxes    | Alias           |
 	| Applications | Application | Evergreen Capacity Unit           | Vendor         | All Applications | Application Key |
 
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingNewPivot
+	When User clicks "<ListName>" on the left-hand menu
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| <RowGroup> |
+	And User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	And User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User clicks the Filters button
+	And User selects "<FilterName>" filter from "<CategoryName>" category
+	Then "Add column" checkbox is not displayed
+
+Examples:
+	| ListName     | RowGroup    | Column                            | Value           | FilterName      | CategoryName |
+	| Devices      | Hostname    | DeviceSche: Bucket                | Building        | Boot Up Date    | Device       |
+	| Users        | Common Name | UserSchedu: Application Readiness | Cost Centre     | Description     | User         |
+	| Mailboxes    | Alias       | Department Name                   | Country         | Display Name    | Mailbox      |
+	| Applications | Vendor      | Babel(Engl: Category              | Application Key | Application Key | Application  |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13747
+Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckBoxRemovedFromFilterPanelWhenUsingSavedPivot
+	When User clicks "<ListName>" on the left-hand menu
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| <RowGroup> |
+	And User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	And User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "<PivotName>" name
+	And User clicks "<ListName>" on the left-hand menu
+	And User navigates to the "<PivotName>" list
+	And User clicks the Filters button
+	And User selects "<FilterName>" filter from "<CategoryName>" category
+	Then "Add column" checkbox is not displayed
+	And User remove list with "<PivotName>" name on "<ListName>" page
+
+Examples:
+	| ListName     | RowGroup    | Column                            | Value          | PivotName                     | FilterName      | CategoryName |
+	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | Pivot_Devices_List_13747      | Boot Up Date    | Device       |
+	| Users        | Compliance  | App Count (Entitled)              | Domain         | Pivot_Users_List_13747        | Description     | User         |
+	| Mailboxes    | Alias       | Owner City                        | Created Date   | Pivot_Mailboxes_List_13747    | Display Name    | Mailbox      |
+	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Pivot_Applications_List_13747 | Application Key | Application  |
+
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks "Devices" on the left-hand menu
