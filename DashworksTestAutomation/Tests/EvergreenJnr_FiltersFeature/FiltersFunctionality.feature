@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| 1      |
 	Then Save button is not available on the Filter panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
