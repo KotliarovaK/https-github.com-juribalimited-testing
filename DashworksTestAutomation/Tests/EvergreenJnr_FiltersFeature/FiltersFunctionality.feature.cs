@@ -993,6 +993,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13201")]
+        [NUnit.Framework.CategoryAttribute("DAS14757")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsC" +
@@ -1001,7 +1003,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "AllLists",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
-                        "DAS13201"});
+                        "DAS13201",
+                        "DAS14757",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1022,7 +1026,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table22.AddRow(new string[] {
                         "00KLL9S8NRF0X6"});
             testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table22, "And ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
@@ -1054,7 +1058,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table25.AddRow(new string[] {
                         "00DBB114BE1B41B0A38"});
             testRunner.And("User select \"Username\" rows in the grid", ((string)(null)), table25, "And ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
@@ -1088,7 +1092,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table28.AddRow(new string[] {
                         "01C4FB7C6D2C4F979BD@bclabs.local"});
             testRunner.And("User select \"Email Address\" rows in the grid", ((string)(null)), table28, "And ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
@@ -1120,7 +1124,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table31.AddRow(new string[] {
                         "7-Zip 9.20 (x64 edition)"});
             testRunner.And("User select \"Application\" rows in the grid", ((string)(null)), table31, "And ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
