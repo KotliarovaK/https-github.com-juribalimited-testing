@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page

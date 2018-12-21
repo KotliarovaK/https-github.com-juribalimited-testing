@@ -666,7 +666,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWas
 	When User clicks Manage in the list panel
 	Then List details panel is displayed to the user
 
-	Examples: 
+	Examples:
 	| PageName     | ListName              |
 	| Devices      | Devices DAS11498      |
 	| Users        | Users DAS11498        |

@@ -487,7 +487,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table15.AddRow(new string[] {
                         "Create static list"});
             table15.AddRow(new string[] {
-                        "Bulk Update"});
+                        "Bulk update"});
             testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table15, "Then ");
             testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Bulk Update Type dropdown is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -520,7 +520,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13258")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001PSUMZYOW581", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "002B5DC7D4D34D5C895", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "20040610sqlserverck", new string[0])]
@@ -535,8 +534,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12946",
                     "DAS12864",
                     "DAS13258",
-                    "Delete_Newly_Created_List",
-                    "Not_Run"};
+                    "Delete_Newly_Created_List"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -572,7 +570,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table18.AddRow(new string[] {
                         "Remove from static list"});
             table18.AddRow(new string[] {
-                        "Bulk Update"});
+                        "Bulk update"});
             testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table18, "Then ");
             this.ScenarioCleanup();
         }

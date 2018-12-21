@@ -55,6 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksSettingsButtonInTheListPanel()
         {
             var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitForDataLoading();
             _driver.MouseHover(listElement.SettingsButton);
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SettingsButton);
             listElement.SettingsButton.Click();

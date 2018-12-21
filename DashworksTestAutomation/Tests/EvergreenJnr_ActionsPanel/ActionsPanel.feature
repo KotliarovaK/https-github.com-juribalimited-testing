@@ -199,7 +199,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then following Values are displayed in Action drop-down:
 	| Value              |
 	| Create static list |
-	| Bulk Update        |
+	| Bulk update        |
 	When User selects "Bulk update" in the Actions dropdown
 	Then Bulk Update Type dropdown is displayed on Action panel
 	When User selects "Update task value" Bulk Update Type on Action panel
@@ -222,8 +222,8 @@ Examples:
 	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo) | Two            | Radio Non Rag App       | Not Applicable           |
 	| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration              | Mobile Devices | Mobile Device Status    | Identified & In Progress |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @DAS12864 @DAS13258 @Delete_Newly_Created_List @Not_Run
-Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelWhenOnlOneStaticListExists 
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @DAS12864 @DAS13258 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelWhenOnlOneStaticListExists
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Actions button
@@ -244,7 +244,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShow
 	| Value                   |
 	| Create static list      |
 	| Remove from static list |
-	| Bulk Update             |
+	| Bulk update             |
 
 Examples:
 	| PageName     | ColumnHeader  | RowName                          |
