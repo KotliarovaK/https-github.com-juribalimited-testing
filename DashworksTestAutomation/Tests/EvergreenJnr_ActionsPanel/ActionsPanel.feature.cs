@@ -694,8 +694,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"Your changes have successfully been queued, 3 of 3 objects " +
-                    "were in the selected project.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
+                    "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1380,6 +1380,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "Projects"});
             table50.AddRow(new string[] {
+                        "1803 Rollout"});
+            table50.AddRow(new string[] {
                         "Babel (English, German and French)"});
             table50.AddRow(new string[] {
                         "Barry\'s User Project"});
@@ -1399,6 +1401,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "User Evergreen Capacity Project"});
             table50.AddRow(new string[] {
                         "User Scheduled Test (Jo)"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Migration - Depot"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Teams and Request Types"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Updates - Migration"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Updates - New York"});
             table50.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)"});
             testRunner.Then("the following Projects are displayed in opened DLL on Action panel:", ((string)(null)), table50, "Then ");
@@ -1657,7 +1667,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13278")]
         [NUnit.Framework.CategoryAttribute("DAS14448")]
         [NUnit.Framework.TestCaseAttribute("DAS13264_Devices", "Devices", "Hostname", "00CWZRC4UK6W20", "Babel (English, German and French)", "Initiation", "Scheduled Date", "Remove", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("DAS13264_Users", "Users", "Username", "0088FC8A50DD4344B92", "Project K-Computer Scheduled Project", "email", "Email to be sent - All Placeholders", "Remove", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13264_Users", "Users", "Username", "0088FC8A50DD4344B92", "Barry\'s User Project", "Project Dates", "Scheduled Date", "Remove", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS13264_Applications", "Applications", "Application", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", "Audit & Configuration", "Package Delivery Date", "Remove", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS13264_Mailboxes", "Mailboxes", "Email Address", "00C8BC63E7424A6E862@bclabs.local", "Email Migration", "Pre-Migration", "Out Of Office Start Date", "Remove", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole(string userName, string pageName, string columnName, string rowName, string projectName, string stageName, string taskName, string updateDate, string[] exampleTags)

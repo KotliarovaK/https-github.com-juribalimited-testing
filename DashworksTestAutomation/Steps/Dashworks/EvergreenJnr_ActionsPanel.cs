@@ -556,6 +556,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var numberOfRowsInTable =
                 dashboardPage.ResultsOnPageCount.Text.Split(' ').First().Replace(",", string.Empty);
             var actionsPanel = _driver.NowAt<ActionsElement>();
+            //Wait for Selected Rows are displayed in the Action panel
+            Thread.Sleep(1300);
             var numberOfRowsInActions = actionsPanel.GetSelectedRowsCount();
             Assert.AreEqual(numberOfRowsInTable, numberOfRowsInActions,
                 "Number of rows are not equal in table and in Actions");
@@ -616,6 +618,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAllCheckboxesAreCheckedInTheTable()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            //Wait for All checkboxes are checked
+            Thread.Sleep(1000);
             Assert.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
         }
 

@@ -313,7 +313,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 3 of 3 objects were in the selected project." text is displayed on Action panel
+	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001PSUMZYOW581"
 	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
@@ -719,6 +719,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	And User selects "Update request type" Bulk Update Type on Action panel
 	Then the following Projects are displayed in opened DLL on Action panel:
 	| Projects                                         |
+	| 1803 Rollout                                     |
 	| Babel (English, German and French)               |
 	| Barry's User Project                             |
 	| Computer Scheduled Test (Jo)                     |
@@ -729,6 +730,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Project K-Computer Scheduled Project             |
 	| User Evergreen Capacity Project                  |
 	| User Scheduled Test (Jo)                         |
+	| Windows 10 Migration - Depot                     |
+	| Windows 10 Teams and Request Types               |
+	| Windows 10 Updates - Migration                   |
+	| Windows 10 Updates - New York                    |
 	| Windows 7 Migration (Computer Scheduled Project) |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
@@ -889,12 +894,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnable
 	And User select "Manage Users" option in Management Console
 	And User removes "<UserName>" User
 
-Examples: 
-	| UserName              | PageName     | ColumnName    | RowName                                  | ProjectName                          | StageName             | TaskName                            | UpdateDate |
-	| DAS13264_Devices      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Babel (English, German and French)   | Initiation            | Scheduled Date                      | Remove     |
-	| DAS13264_Users        | Users        | Username      | 0088FC8A50DD4344B92                      | Project K-Computer Scheduled Project | email                 | Email to be sent - All Placeholders | Remove     |
-	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project                 | Audit & Configuration | Package Delivery Date               | Remove     |
-	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration                      | Pre-Migration         | Out Of Office Start Date            | Remove     |
+Examples:
+	| UserName              | PageName     | ColumnName    | RowName                                  | ProjectName                        | StageName             | TaskName                 | UpdateDate |
+	| DAS13264_Devices      | Devices      | Hostname      | 00CWZRC4UK6W20                           | Babel (English, German and French) | Initiation            | Scheduled Date           | Remove     |
+	| DAS13264_Users        | Users        | Username      | 0088FC8A50DD4344B92                      | Barry's User Project               | Project Dates         | Scheduled Date           | Remove     |
+	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project               | Audit & Configuration | Package Delivery Date    | Remove     |
+	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration                    | Pre-Migration         | Out Of Office Start Date | Remove     |
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner

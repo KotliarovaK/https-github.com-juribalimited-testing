@@ -81,17 +81,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
-	And User enters "Birmingham" text in the Search field for "Bucket" column
+	And User enters "Cape Town" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User clicks "Mailboxes" tab
-	Then Counter shows "147" found rows
+	Then Counter shows "63" found rows
 	When User clicks the "ADD MAILBOX" Action button
 	And User adds following Objects from list
 	| Objects                          |
 	| 040698EE82354C17B60@bclabs.local |
 	| 04D8FC40F25547E7B4D@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
-	And Counter shows "149" found rows
+	And Counter shows "65" found rows
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
@@ -307,16 +307,17 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 	And data in table is sorted by "Username" column in ascending order by default on the Admin page
-	#Then Counter shows "41,339" found rows
-	#This comment was added, because Evergreen Bucket (1-6) in GoldData blocks this check
-	#When User click on "Username" column header on the Admin page
-	#Then data in table is sorted by "Username" column in ascending order on the Admin page
+	Then Counter shows "41,050" found rows
+	When User click on "Username" column header on the Admin page
+	Then data in table is sorted by "Username" column in ascending order on the Admin page
+	#Remove after descending order fixed
 	#When User click on "Username" column header on the Admin page
 	#Then data in table is sorted by "Username" column in descending order on the Admin page
 	When User click on "Domain" column header on the Admin page
 	Then data in table is sorted by "Domain" column in ascending order on the Admin page
 	When User click on "Domain" column header on the Admin page
 	Then data in table is sorted by "Domain" column in descending order on the Admin page
+	#Remove after sorting order fixed
 	#When User click on "Display Name" column header on the Admin page
 	#Then data in table is sorted by "Display Name" column in ascending order on the Admin page
 	#When User click on "Display Name" column header on the Admin page
@@ -329,7 +330,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "UK" text in the Search field for "Domain" column
-	Then Counter shows "4,649" found rows
+	Then Counter shows "4,635" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Anitra" text in the Search field for "Display Name" column
 	Then Counter shows "18" found rows
