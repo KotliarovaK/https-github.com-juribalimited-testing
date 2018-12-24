@@ -175,7 +175,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help                    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| TestTaskName0 | MailboxScheduledProject | Stage 1          | Normal         | Radiobutton     | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -195,7 +195,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 2
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help                     | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| TestTaskName1 | ComputerScheduledProject | Stage 2          | Group          | DropDownList    | User             | ReadinessNnsfc           | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -206,7 +206,7 @@ Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks "Cancel" button
 	Then created Task is displayed in the table
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help                    | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | ApplyToAllCheckbox |
 	| TestTaskName2 | MailboxScheduledProject | Stage 3          | Normal         | Text            | Mailbox          | true               |
 	Then Success message is displayed with "Task successfully created" text

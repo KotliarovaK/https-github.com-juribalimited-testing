@@ -175,7 +175,7 @@ Scenario: Projects_CreateUserScheduledProject
 	When User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| TestTaskName0 | UserScheduledProject | Stage 1          | Normal         | Radiobutton     | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
@@ -204,7 +204,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 2
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| TestTaskName1 | UserScheduledProject | Stage 2          | Normal         | Radiobutton     | Application      |                          | true               |
 	When User updates the Task page
@@ -223,7 +223,7 @@ Scenario: Projects_CreateUserScheduledProject
 	Then created Task is displayed in the table
 		#Creating Tasks 3
 	When User clicks "Create Task" button
-	And User create Task
+	And User creates Task
 	| Name          | Help                 | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
 	| TestTaskName2 | UserScheduledProject | Stage 3          | Normal         | Radiobutton     | User             |                          | true               |
 	Then Success message is displayed with "Task successfully created" text

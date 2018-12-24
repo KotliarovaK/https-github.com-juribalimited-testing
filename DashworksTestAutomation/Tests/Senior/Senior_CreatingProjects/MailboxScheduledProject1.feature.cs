@@ -393,7 +393,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
                         "User",
                         "",
                         "true"});
-            testRunner.And("User create Task", ((string)(null)), table22, "And ");
+            testRunner.And("User creates Task", ((string)(null)), table22, "And ");
             testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "TaskHaADueDate",
@@ -452,7 +452,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
                         "User",
                         "ReadinessNnsfc",
                         "true"});
-            testRunner.And("User create Task", ((string)(null)), table25, "And ");
+            testRunner.And("User creates Task", ((string)(null)), table25, "And ");
             testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "TaskHaADueDate",
@@ -493,7 +493,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
                         "Text",
                         "Mailbox",
                         "true"});
-            testRunner.And("User create Task", ((string)(null)), table27, "And ");
+            testRunner.And("User creates Task", ((string)(null)), table27, "And ");
             testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "TextModeString",
