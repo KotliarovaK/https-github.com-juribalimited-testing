@@ -386,7 +386,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectly
 	And User have select "Autosize This column" option from column settings on the Details Page
 	Then Site column has standard size
 
-	Examples:
+Examples:
 	| SectionName    |
 	| Advertisements |
 	| Collections    |

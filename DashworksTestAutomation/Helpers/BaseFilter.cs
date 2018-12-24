@@ -512,7 +512,7 @@ namespace DashworksTestAutomation.Helpers
                         .SendKeys(row["Values"]);
                     _driver.FindElement(
                             By.XPath(
-                                ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable ng-star-inserted']"))
+                                ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable']"))
                         .Click();
                 }
             }

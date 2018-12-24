@@ -1352,9 +1352,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	| Computer: PC Rebuild              |
 	| Computer: Workstation Replacement |
 	And User selects following items in "Teams" dropdown:
-	| items                 |
-	| Administrative Team   |
-	| Another Team Again    |
+	| items               |
+	| Administrative Team |
+	| Admin IT            |
 	And User clicks the "CREATE" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "DAS_13811_2" Name in the "Slot Name" field on the Project details page
@@ -1369,7 +1369,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	Then User sees following text in cell truncated with ellipsis:
 	| cellText                                               |
 	| Computer: PC Rebuild,Computer: Workstation Replacement |
-	| Administrative Team,Another Team Again                 |
+	| Administrative Team,Admin IT                           |
 	| Capacity Unit 1,Capacity Unit 2,Unassigned             |
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
