@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Reflection;
 using BoDi;
 using DashworksTestAutomation.Extensions;
@@ -29,8 +31,9 @@ namespace DashworksTestAutomation.Base
         [BeforeScenario]
         public void OnStartUp()
         {
-            IList categories = TestContext.CurrentContext.Test.Properties["Category"];
-            LockCategory.AwaitForCategory(categories);
+            List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+            LockCategory.AwaitTags(testTags);
+            LockCategory.AddTags(testTags);
 
             var driverInstance = CreateBrowserDriver();
 
@@ -44,8 +47,8 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
-                IList categories = TestContext.CurrentContext.Test.Properties["Category"];
-                LockCategory.FreeCategory(categories);
+                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+                LockCategory.RemoveTags(testTags);
 
                 var driver = _objectContainer.Resolve<RemoteWebDriver>();
 
