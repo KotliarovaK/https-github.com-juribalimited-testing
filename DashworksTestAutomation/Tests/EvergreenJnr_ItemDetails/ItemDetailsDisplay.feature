@@ -157,7 +157,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	| <NewColumnName> |
 	#Then There are no errors in the browser console
 
-Examples: 
+Examples:
 	| PageName | ItemName | TabName    | SectionName                | ColumnName  | CheckboxName     | NewColumnName    |
 	| Devices  | Hostname | Compliance | Software Compliance Issues | Application | PackageKey       | PackageKey       |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |

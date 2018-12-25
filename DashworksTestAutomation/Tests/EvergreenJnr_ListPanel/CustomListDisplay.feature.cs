@@ -705,6 +705,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12595")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAnd" +
@@ -716,8 +717,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS11011",
                         "DAS12152",
                         "DAS12595",
-                        "Delete_Newly_Created_List"});
-            this.ScenarioInitialize(scenarioInfo);
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioStart();
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2240,6 +2241,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("DAS12917")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateVal" +
@@ -2248,37 +2250,45 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "Devices",
                         "CustomListDisplay",
                         "EvergreenJnr_ListPanel",
-                        "DAS12917"});
-            this.ScenarioInitialize(scenarioInfo);
+                        "DAS12917",
+                        "Not_Run"});
             this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects \"Application Compliance\" filter from \"Application\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedCheckboxes",
-                        "Association"});
+                        "Option",
+                        "State"});
             table66.AddRow(new string[] {
                         "Red",
+                        "true"});
+            testRunner.When("User change selected checkboxes:", ((string)(null)), table66, "When ");
+            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes",
+                        "Association"});
+            table67.AddRow(new string[] {
+                        "Red",
                         "Used on device"});
-            table66.AddRow(new string[] {
+            table67.AddRow(new string[] {
                         "Green",
                         "Entitled to device"});
             testRunner.When("User add \"Application Compliance\" filter where type is \"Equals\" with selected Che" +
-                    "ckboxes and following Association:", ((string)(null)), table66, "When ");
+                    "ckboxes and following Association:", ((string)(null)), table67, "When ");
             testRunner.And("User create custom list with \"Test_Device_Filter_DAS_12917\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User changes list name to \"EDITED_Device_Filter_DAS_12917\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User click Edit button for \"Application \" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option",
                         "State"});
-            table67.AddRow(new string[] {
+            table68.AddRow(new string[] {
                         "Red",
                         "false"});
-            testRunner.And("User change selected checkboxes:", ((string)(null)), table67, "And ");
+            testRunner.And("User change selected checkboxes:", ((string)(null)), table68, "And ");
             testRunner.Then("\"EDITED_Device_Filter_DAS_12917\" edited list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -2308,26 +2318,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table68.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "Red"});
-            table68.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "Amber"});
             testRunner.When("User add \"Compliance\" filter where type is \"Equals\" without added column and foll" +
-                    "owing checkboxes:", ((string)(null)), table68, "When ");
+                    "owing checkboxes:", ((string)(null)), table69, "When ");
             testRunner.And("User create custom list with \"Test_Application_Filter_DAS_12917\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User changes list name to \"EDITED_Application_Filter_DAS_12917\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User click Edit button for \"Compliance\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option",
                         "State"});
-            table69.AddRow(new string[] {
+            table70.AddRow(new string[] {
                         "Amber",
                         "false"});
-            testRunner.And("User change selected checkboxes:", ((string)(null)), table69, "And ");
+            testRunner.And("User change selected checkboxes:", ((string)(null)), table70, "And ");
             testRunner.Then("\"EDITED_Application_Filter_DAS_12917\" edited list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

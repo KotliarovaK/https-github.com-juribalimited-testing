@@ -505,6 +505,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Values"});
             table24.AddRow(new string[] {
                         "All Devices"});
+            table24.AddRow(new string[] {
+                        "1803 Rollout"});
             testRunner.Then("following Values are displayed in \"Scope\" drop-down on the Project details page:", ((string)(null)), table24, "Then ");
             testRunner.When("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

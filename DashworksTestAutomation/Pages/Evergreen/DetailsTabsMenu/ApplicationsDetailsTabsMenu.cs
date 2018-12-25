@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public IWebElement DeviceDetailsIcon { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[@class='button-small mat-default reset mat-raised-button _mat-animation-noopable']")]
+            Using = ".//button[contains(@class, 'button-small mat-default reset')]")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//body")]

@@ -61,9 +61,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantC
 	| Compliance |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then "9" subcategories is displayed for "Device" category
-	When User have reset all columns
 	Then "11" subcategories is displayed for "Device" category
+	When User have reset all columns
+	Then "13" subcategories is displayed for "Device" category
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548 @DAS13423
 Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns
@@ -541,35 +541,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	| Owner Display Name |
 	| Import             |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
-Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsAvailableUnderUserCategoryInColumnsPanelOnUsersPage
-	When User clicks "Users" on the left-hand menu
-	And User clicks the Columns button
-	And User closed "Selected Columns" columns category
-	And User is expand "User" columns category
-	Then the following Column subcategories are displayed for open category:
-	| Subcategories          |
-	| Common Name            |
-	| Compliance             |
-	| Dashworks First Seen   |
-	| Description            |
-	| Device Count           |
-	| Directory Type         |
-	| Email Address          |
-	| Enabled                |
-	| Given Name             |
-	| Group Count            |
-	| GUID                   |
-	| Home Directory         |
-	| Home Drive             |
-	| Last Logon Date        |
-	| Mailbox Count (Access) |
-	| Mailbox Count (Owned)  |
-	| Organizational Unit    |
-	| SID                    |
-	| Surname                |
-	| User Key               |
-
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245
 Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch
 	When User clicks "Devices" on the left-hand menu
@@ -790,7 +761,7 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "25" category is displayed on Filters panel
+	Then "User" with "28" category is displayed on Filters panel
 	And "Location" with "8" category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

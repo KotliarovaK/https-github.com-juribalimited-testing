@@ -448,7 +448,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 }
                 catch (StaleElementReferenceException)
                 {
-                    Thread.Sleep(4000);
+                    Thread.Sleep(5000);
                     element = GetGridCell(iter, columnNumber);
                     Driver.MouseHoverByJavascript(element);
                 }

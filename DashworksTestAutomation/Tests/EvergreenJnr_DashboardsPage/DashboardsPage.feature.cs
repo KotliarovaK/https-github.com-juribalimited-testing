@@ -80,6 +80,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("DAS13114")]
         [NUnit.Framework.CategoryAttribute("DAS13721")]
+        [NUnit.Framework.CategoryAttribute("archived")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDevicesPageWithProperItems()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDe" +
@@ -87,9 +89,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Evergreen",
                         "Dashboards",
                         "DAS13114",
-                        "DAS13721"});
-            this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
+                        "DAS13721",
+                        "archived",
+                        "Not_Run"});
             this.FeatureBackground();
             testRunner.When("User clicks \"Unknown\" section from \"Windows 10 Branch\" circle chart on Dashboards" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

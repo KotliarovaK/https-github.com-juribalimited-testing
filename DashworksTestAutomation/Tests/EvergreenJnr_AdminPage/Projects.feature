@@ -2122,6 +2122,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
+	#Remove after Buckets loaded faster
+	When User clicks "Teams" link on the Admin page
+	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -3068,7 +3071,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects @Not_Run
 Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3087,6 +3090,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
 	Then User sees folloing options in "Select Existing Project" dropdown on Import Projects page:
 	| OptionLabel                                       |
+	| 1803 Rollout                                      |
 	| Babel (English, German and French)                |
 	| Barry's User Project                              |
 	| Computer Scheduled Test (Jo)                      |
@@ -3100,6 +3104,10 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	| User Evergreen Capacity Project                   |
 	| User Scheduled Project in Italian & Japanese (Jo) |
 	| User Scheduled Test (Jo)                          |
+	| Windows 10 Migration - Depot                      |
+	| Windows 10 Teams and Request Types                |
+	| Windows 10 Updates - Migration                    |
+	| Windows 10 Updates - New York                     |
 	| Windows 7 Migration (Computer Scheduled Project)  |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects

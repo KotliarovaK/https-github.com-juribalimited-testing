@@ -421,7 +421,7 @@ namespace DashworksTestAutomation.Extensions
         {
             selectbox.Click();
             //Small wait for dropdown display
-            Thread.Sleep(300);
+            Thread.Sleep(500);
 
             //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
             //var options = driver.FindElements(By.XPath(

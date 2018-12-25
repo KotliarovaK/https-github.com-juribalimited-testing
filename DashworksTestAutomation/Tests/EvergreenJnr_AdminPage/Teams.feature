@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	When User clicks Admin on the left-hand menu
 	And User clicks "Teams" link on the Admin page
 	And User enters "K-Team" text in the Search field for "Team" column
-	Then Counter shows "1" found rows
+	Then Counter shows "2" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
-	Then Counter shows "2,790" found rows
+	Then Counter shows "2,794" found rows
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
 	When User clicks the "CANCEL" Action button
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User clicks Admin on the left-hand menu
 	And User clicks "Teams" link on the Admin page
 	And User selects all rows on the grid
-	Then User sees "2790" of "2790" rows selected label
+	Then User sees "2794" of "2794" rows selected label
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User selects all rows on the grid
@@ -380,7 +380,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	#And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "True" checkbox from boolean filter on the Admin page
-	Then Counter shows "2,789" found rows
+	Then Counter shows "2,793" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page
@@ -394,7 +394,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Counter shows "2" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
-	Then Counter shows "4" found rows
+	Then Counter shows "5" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User click on "Team" column header on the Admin page
 	#Remove hash after fix sort order
