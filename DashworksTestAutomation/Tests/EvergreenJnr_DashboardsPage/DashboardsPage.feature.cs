@@ -92,6 +92,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "DAS13721",
                         "archived",
                         "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks \"Unknown\" section from \"Windows 10 Branch\" circle chart on Dashboards" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

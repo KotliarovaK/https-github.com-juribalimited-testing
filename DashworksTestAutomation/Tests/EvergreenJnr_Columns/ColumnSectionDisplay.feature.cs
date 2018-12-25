@@ -1216,7 +1216,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-            this.ScenarioStart();
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilter" +
             "Search")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]

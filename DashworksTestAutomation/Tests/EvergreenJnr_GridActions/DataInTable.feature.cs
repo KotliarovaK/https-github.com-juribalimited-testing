@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "User Key", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "User Key", null)]
         public virtual void EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {

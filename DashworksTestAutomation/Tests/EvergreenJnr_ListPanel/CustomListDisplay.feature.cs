@@ -719,6 +719,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS12595",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -2252,6 +2253,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "EvergreenJnr_ListPanel",
                         "DAS12917",
                         "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
