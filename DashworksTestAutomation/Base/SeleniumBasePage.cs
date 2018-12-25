@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Html5;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.PageObjects;
@@ -17,9 +18,12 @@ namespace DashworksTestAutomation.Base
 
         public Actions Actions { get; set; }
 
+        public IWebStorage Storage;
+
         public void InitElements()
         {
             PageFactory.InitElements(Driver, this);
+            Storage = new RemoteWebStorage((RemoteWebDriver)Driver);
         }
 
         public virtual List<By> GetPageIdentitySelectors()

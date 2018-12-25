@@ -43,7 +43,7 @@ Examples:
 	| Max Receive Size (MB) |
 	| Max Send Size (MB)    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                        |
@@ -75,7 +75,7 @@ Examples:
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName               |
@@ -184,6 +184,41 @@ Examples:
 	| Users        | User Key        |
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12940
+Scenario Outline: EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Evergreen Bucket |
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS13201
+Scenario Outline: EvergreenJnr_AllLists_CheckThatEvergreenCapacityUnitColumnCanBeAddedToTheGrid
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+	| Applications |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeUsedOnUsersPage

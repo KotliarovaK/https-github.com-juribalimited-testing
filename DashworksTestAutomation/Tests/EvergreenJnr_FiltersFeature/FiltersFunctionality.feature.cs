@@ -448,6 +448,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Babel(Engl: Category", "None", "17,225", "Hostname", "01COJATLYVAR7A6", "Babel(Engl: Category is None", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Barry\'sUse: In Scope", "FALSE", "15,896", "Hostname", "00BDM1JUR8IF419", "Barry\'sUse: In Scope is false", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", new string[0])]
@@ -464,7 +465,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "DAS10977",
                     "DAS11507",
                     "DAS12221",
-                    "DAS12351"};
+                    "DAS12351",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -486,10 +488,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("User perform search by \"{0}\"", objectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" is displayed in added filter info", text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -984,6 +986,299 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsC" +
+            "orrectItems")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS13201")]
+        [NUnit.Framework.CategoryAttribute("DAS14757")]
+        public virtual void EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsC" +
+                    "orrectItems", new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS13201",
+                        "DAS14757"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Capacity Units\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"CREATE UNIT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User type \"CapacityUnit13201\" Name in the \"Capacity Unit Name\" field on the Proje" +
+                    "ct details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User type \"13201\" Name in the \"Description\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table22.AddRow(new string[] {
+                        "00I0COBFWHOF27"});
+            table22.AddRow(new string[] {
+                        "01P96J2EQ0HZSV"});
+            table22.AddRow(new string[] {
+                        "00KLL9S8NRF0X6"});
+            testRunner.And("User select \"Hostname\" rows in the grid", ((string)(null)), table22, "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
+                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table23.AddRow(new string[] {
+                        "CapacityUnit13201"});
+            testRunner.And("User add \"Evergreen Capacity Unit\" filter where type is \"Equals\" with added colum" +
+                    "n and Lookup option", ((string)(null)), table23, "And ");
+            testRunner.Then("\"Evergreen Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table24.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table24, "And ");
+            testRunner.And("\"3\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table25.AddRow(new string[] {
+                        "0072B088173449E3A93"});
+            table25.AddRow(new string[] {
+                        "00DBB114BE1B41B0A38"});
+            testRunner.And("User select \"Username\" rows in the grid", ((string)(null)), table25, "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
+                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table26.AddRow(new string[] {
+                        "CapacityUnit13201"});
+            testRunner.And("User add \"Evergreen Capacity Unit\" filter where type is \"Equals\" with added colum" +
+                    "n and Lookup option", ((string)(null)), table26, "And ");
+            testRunner.Then("\"Evergreen Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table27.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table27, "And ");
+            testRunner.And("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table28.AddRow(new string[] {
+                        "0105AF7E8E154E87B1A@bclabs.local"});
+            table28.AddRow(new string[] {
+                        "0141713E5CF84ADE907@bclabs.local"});
+            table28.AddRow(new string[] {
+                        "01C4FB7C6D2C4F979BD@bclabs.local"});
+            testRunner.And("User select \"Email Address\" rows in the grid", ((string)(null)), table28, "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
+                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table29.AddRow(new string[] {
+                        "CapacityUnit13201"});
+            testRunner.And("User add \"Evergreen Capacity Unit\" filter where type is \"Equals\" with added colum" +
+                    "n and Lookup option", ((string)(null)), table29, "And ");
+            testRunner.Then("\"Evergreen Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table30.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table30, "And ");
+            testRunner.And("\"3\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table31.AddRow(new string[] {
+                        "20040610sqlserverck"});
+            table31.AddRow(new string[] {
+                        "7-Zip 9.20 (x64 edition)"});
+            testRunner.And("User select \"Application\" rows in the grid", ((string)(null)), table31, "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Evergreen\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"CapacityUnit13201\" value for \"Capacity Unit\" dropdown with search o" +
+                    "n Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table32.AddRow(new string[] {
+                        "CapacityUnit13201"});
+            testRunner.And("User add \"Evergreen Capacity Unit\" filter where type is \"Equals\" with added colum" +
+                    "n and Lookup option", ((string)(null)), table32, "And ");
+            testRunner.Then("\"Evergreen Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table33.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table33, "And ");
+            testRunner.And("\"2\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Capacity Units\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table34.AddRow(new string[] {
+                        "CapacityUnit13201"});
+            testRunner.And("User select \"Capacity Unit\" rows in the grid", ((string)(null)), table34, "And ");
+            testRunner.And("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button in Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrect" +
+            "Items")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("DAS12940")]
+        public virtual void EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrectItems()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrect" +
+                    "Items", new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "Delete_Newly_Created_Bucket",
+                        "DAS12940"});
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Buckets\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"CREATE BUCKET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User enters \"Bucket_DAS12940\" in the \"Bucket Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User enters \"Unassigned\" text in the Search field for \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks content from \"Bucket\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "rows"});
+            table35.AddRow(new string[] {
+                        "0HC2CS2NEPO3LS"});
+            table35.AddRow(new string[] {
+                        "0HUVO2WWZETSLA4"});
+            table35.AddRow(new string[] {
+                        "0N9D8VEPQHD6E4"});
+            testRunner.And("User searches by \"Hostname\" column and selects following rows in the grid:", ((string)(null)), table35, "And ");
+            testRunner.And("User selects \"Move To Another Bucket\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"CONTINUE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User moves selected objects to \"Bucket_DAS12940\" bucket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Users\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "rows"});
+            table36.AddRow(new string[] {
+                        "1722AD6F9FA44D43A13"});
+            table36.AddRow(new string[] {
+                        "2A4B66030D684D5E83E"});
+            table36.AddRow(new string[] {
+                        "2D3BABC7BF194E0AA1B"});
+            testRunner.And("User searches by \"Username\" column and selects following rows in the grid:", ((string)(null)), table36, "And ");
+            testRunner.And("User selects \"Move To Another Bucket\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"CONTINUE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User moves selected objects to \"Bucket_DAS12940\" bucket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Mailboxes\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table37.AddRow(new string[] {
+                        "18D0C5A2859A4000A14@bclabs.local"});
+            table37.AddRow(new string[] {
+                        "27B0DF97ACB3435D940@bclabs.local"});
+            table37.AddRow(new string[] {
+                        "2C1025C15E304D11AA2@bclabs.local"});
+            testRunner.And("User searches by \"Email Address (Primary)\" column and selects following rows in t" +
+                    "he grid:", ((string)(null)), table37, "And ");
+            testRunner.And("User selects \"Move To Another Bucket\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"CONTINUE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User moves selected objects to \"Bucket_DAS12940\" bucket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table38.AddRow(new string[] {
+                        "Bucket_DAS12940"});
+            testRunner.When("User add \"Evergreen Bucket\" filter where type is \"Equals\" with added column and L" +
+                    "ookup option", ((string)(null)), table38, "When ");
+            testRunner.Then("\"Evergreen Bucket\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table39.AddRow(new string[] {
+                        "Evergreen Bucket"});
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table39, "And ");
+            testRunner.And("\"3\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table40.AddRow(new string[] {
+                        "Bucket_DAS12940"});
+            testRunner.When("User add \"Evergreen Bucket\" filter where type is \"Equals\" with added column and L" +
+                    "ookup option", ((string)(null)), table40, "When ");
+            testRunner.Then("\"Evergreen Bucket\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table41.AddRow(new string[] {
+                        "Evergreen Bucket"});
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table41, "And ");
+            testRunner.And("\"3\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table42.AddRow(new string[] {
+                        "Bucket_DAS12940"});
+            testRunner.When("User add \"Evergreen Bucket\" filter where type is \"Equals\" with added column and L" +
+                    "ookup option", ((string)(null)), table42, "When ");
+            testRunner.Then("\"Evergreen Bucket\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table43.AddRow(new string[] {
+                        "Evergreen Bucket"});
+            testRunner.And("ColumnName is added to the list", ((string)(null)), table43, "And ");
+            testRunner.And("\"3\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardF" +
             "ilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1006,20 +1301,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table22.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "Altiris",
                         "Used on device"});
             testRunner.When("User add \"Application Import\" filter where type is \"Equals\" with Selected Value a" +
-                    "nd following Association:", ((string)(null)), table22, "When ");
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                    "nd following Association:", ((string)(null)), table44, "When ");
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table23.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "07 Dec 2017"});
             testRunner.And("User add \"Boot Up Date\" filter where type is \"Equals\" with added column and follo" +
-                    "wing value:", ((string)(null)), table23, "And ");
+                    "wing value:", ((string)(null)), table45, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1050,38 +1345,38 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Red"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Blue"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Out Of Scope"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Light Blue"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Brown"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Amber"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Really Extremely Orange"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Purple"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Green"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "Grey"});
-            table24.AddRow(new string[] {
+            table46.AddRow(new string[] {
                         "None"});
             testRunner.When("User add \"Windows7Mi: Application Readiness\" filter where type is \"Equals\" with a" +
-                    "dded column and Lookup option", ((string)(null)), table24, "When ");
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                    "dded column and Lookup option", ((string)(null)), table46, "When ");
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table25.AddRow(new string[] {
+            table47.AddRow(new string[] {
                         "TRUE"});
             testRunner.When("User Add And \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added colu" +
-                    "mn and following checkboxes:", ((string)(null)), table25, "When ");
+                    "mn and following checkboxes:", ((string)(null)), table47, "When ");
             testRunner.Then("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -1169,12 +1464,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table26.AddRow(new string[] {
+            table48.AddRow(new string[] {
                         string.Format("{0}", selectedCheckbox)});
             testRunner.When("User add \"ComputerSc: Target App Readiness\" filter where type is \"Equals\" with ad" +
-                    "ded column and Lookup option", ((string)(null)), table26, "When ");
+                    "ded column and Lookup option", ((string)(null)), table48, "When ");
             testRunner.Then(string.Format("\"{0}\" color is matching the caption", colorName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1212,12 +1507,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table27.AddRow(new string[] {
+            table49.AddRow(new string[] {
                         string.Format("{0}", selectedCheckbox)});
             testRunner.When("User add \"ComputerSc: Application Rationalisation\" filter where type is \"Equal\" w" +
-                    "ith added column and following checkboxes:", ((string)(null)), table27, "When ");
+                    "ith added column and following checkboxes:", ((string)(null)), table49, "When ");
             testRunner.Then(string.Format("\"{0}\" image is matching the caption", imageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1248,29 +1543,29 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table28.AddRow(new string[] {
+            table50.AddRow(new string[] {
                         "None"});
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Equals\" with added column a" +
-                    "nd following checkboxes:", ((string)(null)), table28, "When ");
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                    "nd following checkboxes:", ((string)(null)), table50, "When ");
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table29.AddRow(new string[] {
+            table51.AddRow(new string[] {
                         "Windows7Mi: Category"});
-            testRunner.Then("Content is empty in the column", ((string)(null)), table29, "Then ");
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.Then("Content is empty in the column", ((string)(null)), table51, "Then ");
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table30.AddRow(new string[] {
+            table52.AddRow(new string[] {
                         "None"});
             testRunner.When("User add \"Windows7Mi: Category\" filter where type is \"Does not equal\" without add" +
-                    "ed column and following checkboxes:", ((string)(null)), table30, "When ");
+                    "ed column and following checkboxes:", ((string)(null)), table52, "When ");
             testRunner.When("User click on \'Windows7Mi: Category\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table31.AddRow(new string[] {
+            table53.AddRow(new string[] {
                         "Windows7Mi: Category"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table31, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table53, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1307,17 +1602,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table32.AddRow(new string[] {
+            table54.AddRow(new string[] {
                         "None"});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Does not equal\" with added column and follow" +
-                        "ing checkboxes:", filterName), ((string)(null)), table32, "When ");
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ing checkboxes:", filterName), ((string)(null)), table54, "When ");
+            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table33.AddRow(new string[] {
+            table55.AddRow(new string[] {
                         string.Format("{0}", newlyAddedColumn)});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table33, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table55, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -1349,26 +1644,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table34.AddRow(new string[] {
+            table56.AddRow(new string[] {
                         "Light Blue"});
             testRunner.When("User add \"EmailMigra: Readiness\" filter where type is \"Equals\" with added column " +
-                    "and Lookup option", ((string)(null)), table34, "When ");
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                    "and Lookup option", ((string)(null)), table56, "When ");
+            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table35.AddRow(new string[] {
+            table57.AddRow(new string[] {
                         "EmailMigra: Readiness"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table35, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table57, "Then ");
             testRunner.When("User create dynamic list with \"TestListF544Y5\" name on \"Mailboxes\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestListF544Y5\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table36.AddRow(new string[] {
+            table58.AddRow(new string[] {
                         "Light Blue"});
-            testRunner.And("Values is displayed in added filter info", ((string)(null)), table36, "And ");
+            testRunner.And("Values is displayed in added filter info", ((string)(null)), table58, "And ");
             testRunner.When("User click Edit button for \"EmailMigra: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Add column\" checkbox is checked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"EmailMigra: Readiness\" filter is displayed in the Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1411,27 +1706,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User select \"Not empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User adds column for the selected filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table37.AddRow(new string[] {
+            table59.AddRow(new string[] {
                         "Postal Code"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table37, "Then ");
-            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table59, "Then ");
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table38.AddRow(new string[] {
+            table60.AddRow(new string[] {
                         string.Format("{0}", filterValue)});
             testRunner.When("User Add And \"State/County\" filter where type is \"Equals\" with added column and L" +
-                    "ookup option", ((string)(null)), table38, "When ");
+                    "ookup option", ((string)(null)), table60, "When ");
             testRunner.Then(string.Format("\"{0}\" text is displayed in the table content", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"State/County\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And(string.Format("User deletes the selected lookup filter \"{0}\" value", filterValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User have created \"Equals\" Lookup filter with column and \"Empty\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"State/County is Empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table39.AddRow(new string[] {
+            table61.AddRow(new string[] {
                         "State/County"});
-            testRunner.And("Content is empty in the column", ((string)(null)), table39, "And ");
+            testRunner.And("Content is empty in the column", ((string)(null)), table61, "And ");
             this.ScenarioCleanup();
         }
         
@@ -1459,14 +1754,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table40.AddRow(new string[] {
+            table62.AddRow(new string[] {
                         "__",
                         "Entitled to device"});
             testRunner.When("User add \"Application Name\" filter where type is \"Equals\" with following Value an" +
-                    "d Association:", ((string)(null)), table40, "When ");
+                    "d Association:", ((string)(null)), table62, "When ");
             testRunner.Then("\"Application Name\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1497,24 +1792,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table41.AddRow(new string[] {
+            table63.AddRow(new string[] {
                         "Device Count (Entitled)"});
-            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table41, "When ");
-            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table63, "When ");
+            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table42.AddRow(new string[] {
+            table64.AddRow(new string[] {
                         "Device Count (Entitled)"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table42, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table64, "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table43.AddRow(new string[] {
+            table65.AddRow(new string[] {
                         "Exemples de conception de bases de données"});
             testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
-                    "ing value:", ((string)(null)), table43, "When ");
+                    "ing value:", ((string)(null)), table65, "When ");
             testRunner.When("User click on \'Device Count (Entitled)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1525,14 +1820,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table44.AddRow(new string[] {
+            table66.AddRow(new string[] {
                         "StaticList6581",
                         "Entitled to device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                    "Value and following Association:", ((string)(null)), table44, "When ");
+                    "Value and following Association:", ((string)(null)), table66, "When ");
             testRunner.Then("\"38\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1559,32 +1854,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table45.AddRow(new string[] {
+            table67.AddRow(new string[] {
                         "Device Count (Entitled)"});
-            table45.AddRow(new string[] {
+            table67.AddRow(new string[] {
                         "Device Count (Used)"});
-            table45.AddRow(new string[] {
+            table67.AddRow(new string[] {
                         "Device Count (Installed)"});
-            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table45, "When ");
-            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table67, "When ");
+            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table46.AddRow(new string[] {
+            table68.AddRow(new string[] {
                         "Device Count (Entitled)"});
-            table46.AddRow(new string[] {
+            table68.AddRow(new string[] {
                         "Device Count (Used)"});
-            table46.AddRow(new string[] {
+            table68.AddRow(new string[] {
                         "Device Count (Installed)"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table46, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table68, "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table47.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "MKS Source Integrity 7.3d"});
             testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
-                    "ing value:", ((string)(null)), table47, "When ");
+                    "ing value:", ((string)(null)), table69, "When ");
             testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1594,14 +1889,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table48.AddRow(new string[] {
+            table70.AddRow(new string[] {
                         "StaticList6778",
                         "Entitled to device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                    "Value and following Association:", ((string)(null)), table48, "When ");
+                    "Value and following Association:", ((string)(null)), table70, "When ");
             testRunner.Then("\"123\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1628,46 +1923,46 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table49.AddRow(new string[] {
+            table71.AddRow(new string[] {
                         "Device Count (Entitled)"});
-            table49.AddRow(new string[] {
+            table71.AddRow(new string[] {
                         "Device Count (Used)"});
-            table49.AddRow(new string[] {
+            table71.AddRow(new string[] {
                         "Device Count (Installed)"});
-            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table49, "When ");
-            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table71, "When ");
+            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table50.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "Device Count (Entitled)"});
-            table50.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "Device Count (Used)"});
-            table50.AddRow(new string[] {
+            table72.AddRow(new string[] {
                         "Device Count (Installed)"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table50, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table72, "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table51.AddRow(new string[] {
+            table73.AddRow(new string[] {
                         "MKS Source Integrity 7.3d"});
             testRunner.When("User add \"Application\" filter where type is \"Equals\" with added column and follow" +
-                    "ing value:", ((string)(null)), table51, "When ");
+                    "ing value:", ((string)(null)), table73, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User create dynamic list with \"DynamicList4116\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table52.AddRow(new string[] {
+            table74.AddRow(new string[] {
                         "DynamicList4116",
                         "Entitled to device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
-                    "Value and following Association:", ((string)(null)), table52, "When ");
+                    "Value and following Association:", ((string)(null)), table74, "When ");
             testRunner.Then("\"123\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -1696,17 +1991,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table53.AddRow(new string[] {
+            table75.AddRow(new string[] {
                         "Cotuand",
                         "Entitled to app"});
-            table53.AddRow(new string[] {
+            table75.AddRow(new string[] {
                         "Courtemanche",
                         ""});
             testRunner.When("User add \"User Surname\" filter where type is \"Equals\" with following Value and As" +
-                    "sociation:", ((string)(null)), table53, "When ");
+                    "sociation:", ((string)(null)), table75, "When ");
             testRunner.When("User click Edit button for \"User \" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -1740,26 +2035,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table54.AddRow(new string[] {
+            table76.AddRow(new string[] {
                         "YOG2259571"});
             testRunner.When("User add \"Username\" filter where type is \"Equals\" without added column and follow" +
-                    "ing value:", ((string)(null)), table54, "When ");
+                    "ing value:", ((string)(null)), table76, "When ");
             testRunner.When("User create dynamic list with \"YOG2259571 Users\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"YOG2259571 Users\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table55.AddRow(new string[] {
+            table77.AddRow(new string[] {
                         "YOG2259571 Users",
                         "Entitled to app"});
             testRunner.When("User add \"User (Saved List)\" filter where type is \"In list\" with Selected Value a" +
-                    "nd following Association:", ((string)(null)), table55, "When ");
+                    "nd following Association:", ((string)(null)), table77, "When ");
             testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"Any User in list YOG2259571 Users entitled to app\" is displayed in added filter " +
                     "info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1802,41 +2097,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table56.AddRow(new string[] {
+            table78.AddRow(new string[] {
                         "Bob",
                         "Has used app"});
-            table56.AddRow(new string[] {
+            table78.AddRow(new string[] {
                         "Bob",
                         "Entitled to app"});
-            table56.AddRow(new string[] {
+            table78.AddRow(new string[] {
                         "Bob",
                         "Owns a device which app was used on"});
-            table56.AddRow(new string[] {
+            table78.AddRow(new string[] {
                         "Bob",
                         "Owns a device which app is entitled to"});
             testRunner.When("User add \"User Username\" filter where type is \"Contains\" with following Value and" +
-                    " Association:", ((string)(null)), table56, "When ");
+                    " Association:", ((string)(null)), table78, "When ");
             testRunner.When("User create dynamic list with \"UsersBob\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"UsersBob\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedList",
                         "Association"});
-            table57.AddRow(new string[] {
+            table79.AddRow(new string[] {
                         "StaticList8546",
                         "Has used app"});
-            table57.AddRow(new string[] {
+            table79.AddRow(new string[] {
                         "StaticList8546",
                         "Entitled to app"});
-            table57.AddRow(new string[] {
+            table79.AddRow(new string[] {
                         "StaticList8546",
                         "Owns a device which app was used on"});
             testRunner.When("User Add And \"User (Saved List)\" filter where type is \"In list\" with Selected Val" +
-                    "ue and following Association:", ((string)(null)), table57, "When ");
+                    "ue and following Association:", ((string)(null)), table79, "When ");
             testRunner.Then("\"5\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -1868,30 +2163,30 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table58.AddRow(new string[] {
+            table80.AddRow(new string[] {
                         "DWLABS\\$231000-3AC04R8AR431",
                         "Has used app"});
             testRunner.When("User add Advanced \"User\" filter where type is \"Does not equal\" with following Loo" +
-                    "kup Value and Association:", ((string)(null)), table58, "When ");
-            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                    "kup Value and Association:", ((string)(null)), table80, "When ");
+            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table59.AddRow(new string[] {
+            table81.AddRow(new string[] {
                         "1 Feb 2018",
                         "Entitled to app"});
             testRunner.When("User add \"User Last Logon Date\" filter where type is \"Before\" with following Data" +
-                    " and Association:", ((string)(null)), table59, "When ");
-            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                    " and Association:", ((string)(null)), table81, "When ");
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table60.AddRow(new string[] {
+            table82.AddRow(new string[] {
                         "555",
                         "Owns a device which app was used on"});
             testRunner.When("User add \"User SID\" filter where type is \"Begins with\" with following Value and A" +
-                    "ssociation:", ((string)(null)), table60, "When ");
+                    "ssociation:", ((string)(null)), table82, "When ");
             testRunner.Then("\"247\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -1925,42 +2220,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes",
                         "Association"});
-            table61.AddRow(new string[] {
+            table83.AddRow(new string[] {
                         "Red",
                         "Has used app"});
             testRunner.When("User add \"User Compliance\" filter where type is \"Equals\" with selected Checkboxes" +
-                    " and following Association:", ((string)(null)), table61, "When ");
-            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                    " and following Association:", ((string)(null)), table83, "When ");
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes",
                         "Association"});
-            table62.AddRow(new string[] {
+            table84.AddRow(new string[] {
                         "TRUE",
                         "Entitled to app"});
             testRunner.When("User add \"User Enabled\" filter where type is \"Equals\" with selected Checkboxes an" +
-                    "d following Association:", ((string)(null)), table62, "When ");
-            TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                    "d following Association:", ((string)(null)), table84, "When ");
+            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table63.AddRow(new string[] {
+            table85.AddRow(new string[] {
                         "15 Feb 2016",
                         "Entitled to app"});
             testRunner.When("User Add And \"User Last Logon Date\" filter where type is \"Before\" with following " +
-                    "Data and Association:", ((string)(null)), table63, "When ");
-            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                    "Data and Association:", ((string)(null)), table85, "When ");
+            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table64.AddRow(new string[] {
+            table86.AddRow(new string[] {
                         "Office"});
             testRunner.When("User add \"Application\" filter where type is \"Contains\" with added column and foll" +
-                    "owing value:", ((string)(null)), table64, "When ");
-            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                    "owing value:", ((string)(null)), table86, "When ");
+            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table65.AddRow(new string[] {
+            table87.AddRow(new string[] {
                         "Microsoft"});
             testRunner.When("User add \"Vendor\" filter where type is \"Contains\" with added column and following" +
-                    " value:", ((string)(null)), table65, "When ");
+                    " value:", ((string)(null)), table87, "When ");
             testRunner.Then("\"1,514\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -1990,14 +2285,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table66.AddRow(new string[] {
+            table88.AddRow(new string[] {
                         "30 Apr 2018",
                         "Has used app"});
             testRunner.When("User add \"User Last Logon Date\" filter where type is \"Equals\" with following Data" +
-                    " and Association:", ((string)(null)), table66, "When ");
+                    " and Association:", ((string)(null)), table88, "When ");
             testRunner.Then("message \'No applications found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Filter name is colored in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Filter value is shown in bold in the added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2027,11 +2322,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table67.AddRow(new string[] {
+            table89.AddRow(new string[] {
                         "Windows7Mi: Application Rationalisation"});
-            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table67, "When ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table89, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User add \"Windows7Mi: Group (Current State)\" filter where type is \"Equal\" without" +
@@ -2045,36 +2340,36 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "ns\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table68.AddRow(new string[] {
+            table90.AddRow(new string[] {
                         "FORWARD PATH"});
             testRunner.When("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table68, "When ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table90, "When ");
             testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Application Rationalisation\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table69.AddRow(new string[] {
+            table91.AddRow(new string[] {
                         "RETIRE"});
             testRunner.And("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table69, "And ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table91, "And ");
             testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Application Rationalisation\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table70.AddRow(new string[] {
+            table92.AddRow(new string[] {
                         "KEEP"});
             testRunner.And("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table70, "And ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table92, "And ");
             testRunner.Then("\"8\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Application Rationalisation\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table71.AddRow(new string[] {
+            table93.AddRow(new string[] {
                         "UNCATEGORISED"});
             testRunner.And("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table71, "And ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table93, "And ");
             testRunner.Then("\"21\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -2101,11 +2396,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Delete_Newly_Created_List"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table72.AddRow(new string[] {
+            table94.AddRow(new string[] {
                         "Windows7Mi: Application Rationalisation"});
-            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table72, "When ");
+            testRunner.When("User add following columns using URL to the \"Applications\" page:", ((string)(null)), table94, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User add \"Windows7Mi: Group (Target State)\" filter where type is \"Equal\" without " +
@@ -2119,36 +2414,36 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "s\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table73.AddRow(new string[] {
+            table95.AddRow(new string[] {
                         "KEEP"});
             testRunner.When("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table73, "When ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table95, "When ");
             testRunner.Then("\"9\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Application Rationalisation\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table74.AddRow(new string[] {
+            table96.AddRow(new string[] {
                         "UNCATEGORISED"});
             testRunner.And("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table74, "And ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table96, "And ");
             testRunner.Then("\"20\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Application Rationalisation\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table75.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "RETIRE"});
             testRunner.And("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table75, "And ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table97, "And ");
             testRunner.Then("message \'No applications found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Windows7Mi: Application Rationalisation\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table76.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "FORWARD PATH"});
             testRunner.And("User Add And \"Windows7Mi: Application Rationalisation\" filter where type is \"Equa" +
-                    "l\" without added column and following checkboxes:", ((string)(null)), table76, "And ");
+                    "l\" without added column and following checkboxes:", ((string)(null)), table98, "And ");
             testRunner.Then("message \'No applications found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -2175,14 +2470,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table77.AddRow(new string[] {
+            table99.AddRow(new string[] {
                         "FR\\APB5713645",
                         "Has used app"});
             testRunner.When("User add Advanced \"User\" filter where type is \"Equals\" with following Lookup Valu" +
-                    "e and Association:", ((string)(null)), table77, "When ");
+                    "e and Association:", ((string)(null)), table99, "When ");
             testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"User\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User is deselect \"Has used app\" Association for Application filter with Lookup va" +
@@ -2203,6 +2498,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "None", "17,194", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Values but no RAG", "Three", "1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: SS Application List Completed", "Not Applicable", "5,161", new string[0])]
@@ -2218,7 +2514,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Devices",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
-                    "DAS12351"};
+                    "DAS12351",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2231,12 +2528,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table78.AddRow(new string[] {
+            table100.AddRow(new string[] {
                         string.Format("{0}", selectedCheckboxes)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
-                        "kboxes:", filterName), ((string)(null)), table78, "When ");
+                        "kboxes:", filterName), ((string)(null)), table100, "When ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2252,6 +2549,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "Terminated", "1", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Read Only on Bulk Update Page", "Not Applicable", "4,642", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "None", "41,339", new string[0])]
@@ -2265,7 +2563,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "Users",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
-                    "DAS12351"};
+                    "DAS12351",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2278,12 +2577,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table79.AddRow(new string[] {
+            table101.AddRow(new string[] {
                         string.Format("{0}", selectedCheckboxes)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
-                        "kboxes:", filterName), ((string)(null)), table79, "When ");
+                        "kboxes:", filterName), ((string)(null)), table101, "When ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2325,12 +2624,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table80.AddRow(new string[] {
+            table102.AddRow(new string[] {
                         string.Format("{0}", selectedCheckboxes)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
-                        "kboxes:", filterName), ((string)(null)), table80, "When ");
+                        "kboxes:", filterName), ((string)(null)), table102, "When ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2367,12 +2666,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table81.AddRow(new string[] {
+            table103.AddRow(new string[] {
                         "#&"});
             testRunner.And(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
-                        "e:", filterName), ((string)(null)), table81, "And ");
+                        "e:", filterName), ((string)(null)), table103, "And ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And(string.Format("message \'{0}\' is displayed to the user", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -2408,12 +2707,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table82.AddRow(new string[] {
+            table104.AddRow(new string[] {
                         string.Format("{0}", selectedCheckboxes)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
-                        "kboxes:", filterName), ((string)(null)), table82, "When ");
+                        "kboxes:", filterName), ((string)(null)), table104, "When ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table data is filtered correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rows), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2489,12 +2788,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table83.AddRow(new string[] {
+            table105.AddRow(new string[] {
                         string.Format("{0}", values)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
-                        "e:", filterName), ((string)(null)), table83, "When ");
+                        "e:", filterName), ((string)(null)), table105, "When ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -2524,14 +2823,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table84.AddRow(new string[] {
+            table106.AddRow(new string[] {
                         "FR\\RZM6552051",
                         "Owns a device which app was used on"});
             testRunner.When("User add Advanced \"User\" filter where type is \"Does not equal\" with following Loo" +
-                    "kup Value and Association:", ((string)(null)), table84, "When ");
+                    "kup Value and Association:", ((string)(null)), table106, "When ");
             testRunner.Then("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -2561,14 +2860,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table85.AddRow(new string[] {
+            table107.AddRow(new string[] {
                         "ACD Display 3.4",
                         "Installed on device"});
             testRunner.When("User add Advanced \"Application\" filter where type is \"Equals\" with following Look" +
-                    "up Value and Association:", ((string)(null)), table85, "When ");
+                    "up Value and Association:", ((string)(null)), table107, "When ");
             testRunner.Then("\"944\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"Application\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User is deselect \"Installed on device\" Association for Application filter with Lo" +
@@ -2578,14 +2877,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"16,281\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have reset all filters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table86.AddRow(new string[] {
+            table108.AddRow(new string[] {
                         "ACD Display 3.4",
                         "Used on device"});
             testRunner.And("User add Advanced \"Application\" filter where type is \"Equals\" with following Look" +
-                    "up Value and Association:", ((string)(null)), table86, "And ");
+                    "up Value and Association:", ((string)(null)), table108, "And ");
             testRunner.Then("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \"Application\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User is deselect \"Used on device\" Association for Application filter with Lookup " +
@@ -2621,24 +2920,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table87.AddRow(new string[] {
+            table109.AddRow(new string[] {
                         "AU"});
             testRunner.When("User add \"Domain\" filter where type is \"Equals\" with added column and Lookup opti" +
-                    "on", ((string)(null)), table87, "When ");
+                    "on", ((string)(null)), table109, "When ");
             testRunner.Then("\"Domain\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
-            table88.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "AAO798996"});
-            table88.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "AGC788194"});
-            table88.AddRow(new string[] {
+            table110.AddRow(new string[] {
                         "AIU705098"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table88, "When ");
+            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table110, "When ");
             testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User create static list with \"StaticList8543\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"StaticList8543\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2673,26 +2972,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table89.AddRow(new string[] {
+            table111.AddRow(new string[] {
                         "Red"});
             testRunner.When("User add \"Compliance\" filter where type is \"Equals\" with added column and followi" +
-                    "ng checkboxes:", ((string)(null)), table89, "When ");
+                    "ng checkboxes:", ((string)(null)), table111, "When ");
             testRunner.Then("\"Compliance is Red\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table90.AddRow(new string[] {
+            table112.AddRow(new string[] {
                         "Green"});
             testRunner.When("User Add And \"Compliance\" filter where type is \"Equals\" with added column and fol" +
-                    "lowing checkboxes:", ((string)(null)), table90, "When ");
+                    "lowing checkboxes:", ((string)(null)), table112, "When ");
             testRunner.Then("\"Compliance is Green\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table91.AddRow(new string[] {
+            table113.AddRow(new string[] {
                         "Unknown"});
             testRunner.When("User Add And \"Compliance\" filter where type is \"Equals\" with added column and fol" +
-                    "lowing checkboxes:", ((string)(null)), table91, "When ");
+                    "lowing checkboxes:", ((string)(null)), table113, "When ");
             testRunner.Then("\"Compliance is Unknown\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Add And button is displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have removed \"Compliance\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2726,14 +3025,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table92.AddRow(new string[] {
+            table114.AddRow(new string[] {
                         "12 Sep 2018",
                         "Has used app"});
             testRunner.When("User add \"User Last Logon Date\" filter where type is \"Equals\" with following Data" +
-                    " and Association:", ((string)(null)), table92, "When ");
+                    " and Association:", ((string)(null)), table114, "When ");
             testRunner.Then("\"User Last Logon Date\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"DAS13414\" name on \"Applications\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DAS13414\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2772,23 +3071,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table93.AddRow(new string[] {
+            table115.AddRow(new string[] {
                         "Light Blue"});
-            table93.AddRow(new string[] {
+            table115.AddRow(new string[] {
                         "Out Of Scope"});
-            table93.AddRow(new string[] {
+            table115.AddRow(new string[] {
                         "Blue"});
-            testRunner.When("User add \"EmailMigra: Readiness\" filter where type is \"Equals\" with added column " +
-                    "and Lookup option", ((string)(null)), table93, "When ");
-            testRunner.Then("\"EmailMigra: Readiness\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User click Edit button for \"EmailMigra: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add \"MigrationP: Readiness\" filter where type is \"Equals\" with added column " +
+                    "and Lookup option", ((string)(null)), table115, "When ");
+            testRunner.Then("\"MigrationP: Readiness\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User click Edit button for \"MigrationP: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User create custom list with \"DynamicList13384\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"DynamicList13384\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Edit button is displayed correctly for \"EmailMigra: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Edit button is displayed correctly for \"MigrationP: Readiness\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -2814,17 +3113,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table116 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table94.AddRow(new string[] {
+            table116.AddRow(new string[] {
                         "test",
                         "Has used app"});
-            table94.AddRow(new string[] {
+            table116.AddRow(new string[] {
                         "",
                         "Entitled to app"});
             testRunner.And("User add \"badpasswordtime\" filter where type is \"Equals\" with following Value and" +
-                    " Association:", ((string)(null)), table94, "And ");
+                    " Association:", ((string)(null)), table116, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("message \'No applications found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2855,14 +3154,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table117 = new TechTalk.SpecFlow.Table(new string[] {
                         "Number",
                         "Association"});
-            table95.AddRow(new string[] {
+            table117.AddRow(new string[] {
                         "86",
                         "Used by device\'s owner"});
             testRunner.When("User add \"Application Key\" filter where type is \"Equals\" with following Number an" +
-                    "d Association:", ((string)(null)), table95, "When ");
+                    "d Association:", ((string)(null)), table117, "When ");
             testRunner.Then("\"Application Key\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Application whose Key is 86 used by device\'s owner\" is displayed in added filter" +
                     " info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2902,12 +3201,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table96.AddRow(new string[] {
+            table118.AddRow(new string[] {
                         string.Format("{0}", values)});
             testRunner.And(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
-                        "e:", filterName), ((string)(null)), table96, "And ");
+                        "e:", filterName), ((string)(null)), table118, "And ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -2947,13 +3246,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("user select \"Application\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks in search field for selected Association filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"50 of 2223 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
-            table97.AddRow(new string[] {
+            table119.AddRow(new string[] {
                         "Acrobat Reader 6.0.1 (500)"});
-            table97.AddRow(new string[] {
+            table119.AddRow(new string[] {
                         "ACT Data Collection Packages (1104)"});
-            testRunner.And(string.Format("the following values are displayed for \"Application\" filter on \"{0}\" page:", pageName), ((string)(null)), table97, "And ");
+            testRunner.And(string.Format("the following values are displayed for \"Application\" filter on \"{0}\" page:", pageName), ((string)(null)), table119, "And ");
             testRunner.Then("\"ACT Data Collection Packages (1104)\" is displayed after \"Acrobat Reader 6.0.1 (5" +
                     "00)\" in Application list filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"1104\" text in Search field at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2989,17 +3288,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues",
                         "Association"});
-            table98.AddRow(new string[] {
+            table120.AddRow(new string[] {
                         "",
                         "Has used app"});
-            table98.AddRow(new string[] {
+            table120.AddRow(new string[] {
                         "",
                         "Entitled to app"});
             testRunner.When("User add Advanced \"User Description\" filter where type is \"Empty\" with following " +
-                    "Lookup Value and Association:", ((string)(null)), table98, "When ");
+                    "Lookup Value and Association:", ((string)(null)), table120, "When ");
             testRunner.Then("\"User Description\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"User whose Description is empty has used app; or entitled to app\" is displayed i" +
                     "n added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3040,12 +3339,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table99.AddRow(new string[] {
+            table121.AddRow(new string[] {
                         "Python 2.2a4 (SMS_GEN)"});
             testRunner.When("User add \"Barry\'sUse: Target App\" filter where type is \"Equals\" with added column" +
-                    " and Lookup option", ((string)(null)), table99, "When ");
+                    " and Lookup option", ((string)(null)), table121, "When ");
             testRunner.Then("\"Barry\'sUse: Target App\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Barry\'sUse: Target App is Python 2.2a4 (SMS_GEN)\" is displayed in added filter i" +
                     "nfo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3067,8 +3366,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13381")]
+        [NUnit.Framework.CategoryAttribute("DAS14603")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Babel(Engl: Category", "None", "00KLL9S8NRF0X6", "Babel(Engl: Category is None", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Barry\'sUse: In Scope", "FALSE", "00OMQQXWA1DRI6", "Barry\'sUse: In Scope is false", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Babel(Engl: In Scope", "FALSE", "00I0COBFWHOF27", "Babel(Engl: In Scope is false", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ComputerSc: Request Type", "Request Type A", "47NK3ATE5DM2HD", "ComputerSc: Request Type is Request Type A", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Havoc(BigD: Hide from End Users", "UNKNOWN", "Adobe Flash Player 10 ActiveX (10.0.12.36)", "Havoc(BigD: Hide from End Users is Unknown", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "MigrationP: Core Application", "FALSE", "Adobe Download Manager 2.0 (Remove Only)", "MigrationP: Core Application is false", new string[0])]
@@ -3080,7 +3380,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "AllLists",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
-                    "DAS13381"};
+                    "DAS13381",
+                    "DAS14603"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -3093,12 +3394,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
-            table100.AddRow(new string[] {
+            table122.AddRow(new string[] {
                         string.Format("{0}", filterValue)});
             testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following chec" +
-                        "kboxes:", filterName), ((string)(null)), table100, "When ");
+                        "kboxes:", filterName), ((string)(null)), table122, "When ");
             testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And(string.Format("\"{0}\" is displayed in added filter info", filterInfo), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When(string.Format("User perform search by \"{0}\"", search), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3134,26 +3435,26 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table101.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "1 May 2011",
                         "Has used app"});
-            table101.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "",
                         "Entitled to app"});
-            table101.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "",
                         "Owns a device which app was used on"});
-            table101.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "",
                         "Owns a device which app is entitled to"});
-            table101.AddRow(new string[] {
+            table123.AddRow(new string[] {
                         "",
                         "Owns a device which app is installed on"});
             testRunner.When("User add \"User Last Logon Date\" filter where type is \"After\" with following Data " +
-                    "and Association:", ((string)(null)), table101, "When ");
+                    "and Association:", ((string)(null)), table123, "When ");
             testRunner.Then("\"1,206\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \" Last Logon Date\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("only positive Associations is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3174,14 +3475,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table102.AddRow(new string[] {
+            table124.AddRow(new string[] {
                         "Adobe",
                         "Used on device"});
             testRunner.When("User add \"Application Name\" filter where type is \"Begins with\" with following Val" +
-                    "ue and Association:", ((string)(null)), table102, "When ");
+                    "ue and Association:", ((string)(null)), table124, "When ");
             testRunner.When("User click Edit button for \"Application \" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("only positive Associations is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User is deselect \"Used on device\" in Association", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3214,14 +3515,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table103.AddRow(new string[] {
+            table125.AddRow(new string[] {
                         "26 Apr 2018",
                         "Has used app"});
             testRunner.When("User add \"User Last Logon Date\" filter where type is \"Does not equal\" with follow" +
-                    "ing Data and Association:", ((string)(null)), table103, "When ");
+                    "ing Data and Association:", ((string)(null)), table125, "When ");
             testRunner.Then("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click Edit button for \" Last Logon Date\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User changes filter type to \"Equals\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3255,28 +3556,28 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values",
                         "Association"});
-            table104.AddRow(new string[] {
+            table126.AddRow(new string[] {
                         "Sed quad ut novum vobis regit, et pladior venit.  Tam quo, et nomen transit. Pro " +
                             "linguens imaginator pars fecit.  Et quad",
                         "Has used app"});
-            table104.AddRow(new string[] {
+            table126.AddRow(new string[] {
                         "Tam quo, et pladior venit.  Tam quo, et quis gravis delerium.  Versus esset in do" +
                             "lorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.",
                         "Has used app"});
-            table104.AddRow(new string[] {
+            table126.AddRow(new string[] {
                         @"Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et nomen transit. Multum gravum et pladior venit.  Tam quo, et bono quorum glavans e funem.  Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.",
                         "Has used app"});
-            table104.AddRow(new string[] {
+            table126.AddRow(new string[] {
                         @"Longam, e gravis et quis gravis delerium.  Versus esset in volcans essit.  Pro linguens non apparens vantis. Sed quad ut novum eggredior.  Longam, e gravis delerium.  Versus esset in volcans essit.  Pro linguens non quo linguens imaginator pars fecit.  Et quad fecit, non apparens vantis. Sed",
                         "Has used app"});
-            table104.AddRow(new string[] {
+            table126.AddRow(new string[] {
                         @"Sed quad fecit, non quo linguens non trepicandor si quad fecit, non trepicandor si nomen transit. Id eudis quo plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et pladior venit.  Tam quo, et quis gravis et nomen transit. Sed quad ut novum eggredior.  Longam, e gravis et bono",
                         "Has used app"});
             testRunner.When("User add \"User Description\" filter where type is \"Does not equal\" with following " +
-                    "Value and Association:", ((string)(null)), table104, "When ");
+                    "Value and Association:", ((string)(null)), table126, "When ");
             testRunner.Then("\"User Description\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"100\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3304,46 +3605,46 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "DAS10020"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
-            TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table105.AddRow(new string[] {
+            table127.AddRow(new string[] {
                         "Owner title"});
-            table105.AddRow(new string[] {
+            table127.AddRow(new string[] {
                         "Owner usncreated"});
-            table105.AddRow(new string[] {
+            table127.AddRow(new string[] {
                         "Owner lastlogon"});
-            table105.AddRow(new string[] {
+            table127.AddRow(new string[] {
                         "Owner admincount"});
-            testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table105, "When ");
+            testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table127, "When ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Owner Display Name\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User select \"Empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"460\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table106.AddRow(new string[] {
+            table128.AddRow(new string[] {
                         "Owner title"});
-            table106.AddRow(new string[] {
+            table128.AddRow(new string[] {
                         "Owner usncreated"});
-            table106.AddRow(new string[] {
+            table128.AddRow(new string[] {
                         "Owner lastlogon"});
-            table106.AddRow(new string[] {
+            table128.AddRow(new string[] {
                         "Owner admincount"});
-            testRunner.Then("Content is empty in the column", ((string)(null)), table106, "Then ");
+            testRunner.Then("Content is empty in the column", ((string)(null)), table128, "Then ");
             testRunner.When("User click on \'Owner title\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table129 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table107.AddRow(new string[] {
+            table129.AddRow(new string[] {
                         "Owner title"});
-            table107.AddRow(new string[] {
+            table129.AddRow(new string[] {
                         "Owner usncreated"});
-            table107.AddRow(new string[] {
+            table129.AddRow(new string[] {
                         "Owner lastlogon"});
-            table107.AddRow(new string[] {
+            table129.AddRow(new string[] {
                         "Owner admincount"});
-            testRunner.Then("Content is empty in the column", ((string)(null)), table107, "Then ");
+            testRunner.Then("Content is empty in the column", ((string)(null)), table129, "Then ");
             this.ScenarioCleanup();
         }
     }

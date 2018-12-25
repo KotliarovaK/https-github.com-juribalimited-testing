@@ -186,6 +186,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11689")]
         [NUnit.Framework.CategoryAttribute("DAS12780")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
@@ -196,7 +197,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
                     "DAS11689",
-                    "DAS12780"};
+                    "DAS12780",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -274,6 +276,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11871")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
@@ -284,7 +287,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11871"};
+                    "DAS11871",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -511,6 +515,89 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS12940")]
+        [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid(string listName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_Columns",
+                    "AddColumnAction",
+                    "DAS12940"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table19.AddRow(new string[] {
+                        "Evergreen Bucket"});
+            testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table19, "And ");
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table20.AddRow(new string[] {
+                        "Evergreen Bucket"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table20, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatEvergreenCapacityUnitColumnCanBeAddedToTheGrid")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("AddColumnAction")]
+        [NUnit.Framework.CategoryAttribute("DAS13201")]
+        [NUnit.Framework.TestCaseAttribute("Devices", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Applications", new string[0])]
+        public virtual void EvergreenJnr_AllLists_CheckThatEvergreenCapacityUnitColumnCanBeAddedToTheGrid(string listName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_Columns",
+                    "AddColumnAction",
+                    "DAS13201"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatEvergreenCapacityUnitColumnCanBeAddedToTheGrid", @__tags);
+            this.ScenarioSetup(scenarioInfo);
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table21.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "And ");
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table22.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table22, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeUsedOnUsersP" +
             "age")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -533,24 +620,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table19.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Device Count"});
-            table19.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Group Count"});
-            table19.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Mailbox Count (Access)"});
-            testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table19, "And ");
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table23, "And ");
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table20.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "Device Count"});
-            table20.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "Group Count"});
-            table20.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "Mailbox Count (Access)"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table20, "Then ");
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table24, "Then ");
             this.ScenarioCleanup();
         }
         
@@ -578,20 +665,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table21.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "Owner accountexpires"});
-            table21.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "frscomputerreferencebl"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "When ");
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table25, "When ");
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table22.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "Owner accountexpires"});
-            table22.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "frscomputerreferencebl"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table22, "Then ");
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table26, "Then ");
             testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -631,28 +718,28 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.And("User removes \"Mailbox Platform\" column by Column panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table23.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "Blue"});
-            table23.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "Light Blue"});
             testRunner.When("User add \"EmailMigra: Readiness\" filter where type is \"Equals\" with added column " +
-                    "and Lookup option", ((string)(null)), table23, "When ");
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                    "and Lookup option", ((string)(null)), table27, "When ");
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table24.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "EmailMigra: Readiness"});
-            testRunner.Then("Content is present in the newly added column", ((string)(null)), table24, "Then ");
+            testRunner.Then("Content is present in the newly added column", ((string)(null)), table28, "Then ");
             testRunner.And("full list content is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Add And button is displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table25.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "Out Of Scope"});
             testRunner.When("User selects And \"EmailMigra: Readiness\" filter where type is \"Equals\" with added" +
-                    " column and Lookup option:", ((string)(null)), table25, "When ");
+                    " column and Lookup option:", ((string)(null)), table29, "When ");
             testRunner.And("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Add And button is displayed on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -688,20 +775,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table26.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "State/County"});
-            table26.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "Postal Code"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table26, "When ");
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table30, "When ");
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table27.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "State/County"});
-            table27.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Postal Code"});
-            testRunner.Then("ColumnName is added to the list", ((string)(null)), table27, "Then ");
+            testRunner.Then("ColumnName is added to the list", ((string)(null)), table31, "Then ");
             testRunner.When("User click on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("data in table is sorted by \'State/County\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User click on \'State/County\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

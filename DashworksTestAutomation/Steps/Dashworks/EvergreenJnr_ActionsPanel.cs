@@ -6,6 +6,7 @@ using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -80,6 +81,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsInTheActionsDropdown(string actionsName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            //Wait until all rows are selected
+            Thread.Sleep(3000);
             action.ActionsDropdown.Click();
             action.GetOptionByName(actionsName).Click();
         }
@@ -527,8 +530,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectedRowsAreDisplayedInTheActionsPanel(string selectedRowsCount)
         {
             var actionsPanel = _driver.NowAt<ActionsElement>();
-            Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
-                $"Number of rows is not {selectedRowsCount}");
+            _driver.WaitForDataLoading();
+            //Delete 'if' after the row selection will be faster
+            if (actionsPanel.ActionsSpinner.Displayed())
+            {
+                Thread.Sleep(3000);
+                Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
+                    $"Number of rows is not {selectedRowsCount}");
+            }
+            else
+            {
+                Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
+                    $"Number of rows is not {selectedRowsCount}");
+            }
         }
 
         [Then(@"The number of rows selected matches the number of rows of the main object list")]
@@ -542,6 +556,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var numberOfRowsInTable =
                 dashboardPage.ResultsOnPageCount.Text.Split(' ').First().Replace(",", string.Empty);
             var actionsPanel = _driver.NowAt<ActionsElement>();
+            //Wait for Selected Rows are displayed in the Action panel
+            Thread.Sleep(1300);
             var numberOfRowsInActions = actionsPanel.GetSelectedRowsCount();
             Assert.AreEqual(numberOfRowsInTable, numberOfRowsInActions,
                 "Number of rows are not equal in table and in Actions");
@@ -602,6 +618,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenAllCheckboxesAreCheckedInTheTable()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            //Wait for All checkboxes are checked
+            Thread.Sleep(1000);
             Assert.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
         }
 

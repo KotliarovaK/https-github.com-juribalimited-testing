@@ -7,6 +7,7 @@ using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -269,6 +270,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
+        [Then(@"""(.*)"" text is displayed in the ""(.*)"" column")]
+        public void ThenTextIsDisplayedInTheColumn(string text, string columnName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var originalList = page.GetColumnContentByColumnNameForCapacity(columnName);
+            Assert.AreEqual(text, originalList, "Content is not displayed correctly");
+        }
+
         [Then(@"""(.*)"" content is displayed for ""(.*)"" column")]
         public void ThenContentIsDisplayedForColumn(string textContent, string columnName)
         {
@@ -451,6 +460,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.That(
                     duplicates.Where(x => x.Value.Equals(column["duplicatedValue"])).FirstOrDefault().Count.ToString(),
                     Is.EqualTo(column["duplicateCount"]), "Duplicates counts are not equal");
+            }
+        }
+
+        [Then(@"User sees following text in cell truncated with ellipsis:")]
+        public void ThenUserSeesFollowingTextInCellTruncatedWithEllipsis(Table table)
+        {
+            var grid = _driver.NowAt<BaseDashboardPage>();
+            foreach (var column in table.Rows)
+            {
+                var cell = grid.GetGridCellByText(column["cellText"]);
+
+                Assert.That(cell.GetCssValue("text-overflow"), Is.EqualTo("ellipsis"), "Data in cell not truncated");
+                Assert.That(cell.GetCssValue("overflow"), Is.EqualTo("hidden"), "Data in cell not truncated");
             }
         }
 

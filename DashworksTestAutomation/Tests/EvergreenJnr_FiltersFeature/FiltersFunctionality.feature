@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSav
 	Then "Add column" checkbox is unchecked
 	And "Add column" checkbox is not disabled
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507 @DAS12221 @DAS12351
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507 @DAS12221 @DAS12351 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -172,10 +172,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterL
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User perform search by "<ObjectName>"
-	And User click content from "<ColumnName>" column
+	Then "1" rows are displayed in the agGrid
+	When User click content from "<ColumnName>" column
 	Then User click back button in the browser
-	Then "<RowsCount>" rows are displayed in the agGrid
-	When User clicks the Filters button
+	Then "1" rows are displayed in the agGrid
 	Then "<Text>" is displayed in added filter info
 
 Examples: 
@@ -384,6 +384,186 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| Values |
 	| 1      |
 	Then Save button is not available on the Filter panel
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757
+Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
+	When User clicks Admin on the left-hand menu
+	And User clicks "Capacity Units" link on the Admin page
+	And User clicks the "CREATE UNIT" Action button
+	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "13201" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Actions button
+	And User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 00I0COBFWHOF27   |
+	| 01P96J2EQ0HZSV   |
+	| 00KLL9S8NRF0X6   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "3" rows are displayed in the agGrid
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Actions button
+	And User clicks Close panel button
+	And User clicks the Actions button
+	And User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 0072B088173449E3A93 |
+	| 00DBB114BE1B41B0A38 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "2" rows are displayed in the agGrid
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Actions button
+	And User clicks Close panel button
+	And User clicks the Actions button
+	And User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 0105AF7E8E154E87B1A@bclabs.local |
+	| 0141713E5CF84ADE907@bclabs.local |
+	| 01C4FB7C6D2C4F979BD@bclabs.local |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "3" rows are displayed in the agGrid
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Actions button
+	And User clicks Close panel button
+	And User clicks the Actions button
+	And User select "Application" rows in the grid
+	| SelectedRowsName         |
+	| 20040610sqlserverck      |
+	| 7-Zip 9.20 (x64 edition) |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
+	And User clicks the "UPDATE" Action button
+	Then User clicks "UPDATE" button on message box
+	When User clicks the Filters button
+	And User add "Evergreen Capacity Unit" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues    |
+	| CapacityUnit13201 |
+	Then "Evergreen Capacity Unit" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	And "2" rows are displayed in the agGrid
+	When User clicks Admin on the left-hand menu
+	And User clicks "Capacity Units" link on the Admin page
+	And User select "Capacity Unit" rows in the grid
+	| SelectedRowsName  |
+	| CapacityUnit13201 |
+	And User clicks on Actions button
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @Delete_Newly_Created_Bucket @DAS12940
+Scenario: EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrectItems
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User clicks the "CREATE BUCKET" Action button
+	And User enters "Bucket_DAS12940" in the "Bucket Name" field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	And User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	And User searches by "Hostname" column and selects following rows in the grid:
+	| rows            |
+	| 0HC2CS2NEPO3LS  |
+	| 0HUVO2WWZETSLA4 |
+	| 0N9D8VEPQHD6E4  |
+	And User selects "Move To Another Bucket" in the Actions dropdown
+	And User clicks the "CONTINUE" Action button
+	And User moves selected objects to "Bucket_DAS12940" bucket
+	And User clicks "Users" tab
+	And User searches by "Username" column and selects following rows in the grid:
+	| rows                |
+	| 1722AD6F9FA44D43A13 |
+	| 2A4B66030D684D5E83E |
+	| 2D3BABC7BF194E0AA1B |
+	And User selects "Move To Another Bucket" in the Actions dropdown
+	And User clicks the "CONTINUE" Action button
+	And User moves selected objects to "Bucket_DAS12940" bucket
+	And User clicks "Mailboxes" tab
+	And User searches by "Email Address (Primary)" column and selects following rows in the grid:
+	| SelectedRowsName    |
+	| 18D0C5A2859A4000A14@bclabs.local |
+	| 27B0DF97ACB3435D940@bclabs.local |
+	| 2C1025C15E304D11AA2@bclabs.local |
+	And User selects "Move To Another Bucket" in the Actions dropdown
+	And User clicks the "CONTINUE" Action button
+	And User moves selected objects to "Bucket_DAS12940" bucket
+	And User clicks "Devices" on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| Bucket_DAS12940 |
+	Then "Evergreen Bucket" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	And "3" rows are displayed in the agGrid
+	When User clicks "Users" on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| Bucket_DAS12940 |
+	Then "Evergreen Bucket" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	And "3" rows are displayed in the agGrid
+	When User clicks "Mailboxes" on the left-hand menu
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Evergreen Bucket" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| Bucket_DAS12940 |
+	Then "Evergreen Bucket" filter is added to the list
+	And ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	And "3" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11559
 Scenario: EvergreenJnr_DevicesList_CheckThatErrorsDoNotAppearWhenAddingAdvancedAndStandardFilters
@@ -888,7 +1068,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	And User clicks Save filter button
 	Then "2,222" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351 @Not_Run
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -912,7 +1092,7 @@ Examples:
 	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
 	| UserSchedu: Request Type                  | Request Type A       | 60     |
 	
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1135,18 +1315,18 @@ Scenario: EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSection
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	When User add "MigrationP: Readiness" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues |
 	| Light Blue     |
 	| Out Of Scope   |
 	| Blue           |
-	Then "EmailMigra: Readiness" filter is added to the list
-	When User click Edit button for "EmailMigra: Readiness" filter
+	Then "MigrationP: Readiness" filter is added to the list
+	When User click Edit button for "MigrationP: Readiness" filter
 	And User create custom list with "DynamicList13384" name
 	Then "DynamicList13384" list is displayed to user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And Edit button is displayed correctly for "EmailMigra: Readiness" filter
+	And Edit button is displayed correctly for "MigrationP: Readiness" filter
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13588
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsingUserLDAPFilterDoesNotProduceServerError
@@ -1253,7 +1433,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationNameIsDisplayedAfte
 	Then Filters panel is displayed to the user
 	And "Barry'sUse: Target App is Python 2.2a4 (SMS_GEN)" is displayed in added filter info
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13381 @DAS14603
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectlyAfterSelectingObjectAndThenReturningBackToSerachResult
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -1274,7 +1454,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 Examples: 
 	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
 	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
-	| Devices      | Hostname      | Barry'sUse: In Scope            | FALSE          | 00OMQQXWA1DRI6                             | Barry'sUse: In Scope is false              |
+	| Devices      | Hostname      | Babel(Engl: In Scope            | FALSE          | 00I0COBFWHOF27                             | Babel(Engl: In Scope is false              |
 	| Devices      | Hostname      | ComputerSc: Request Type        | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
 	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
 	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is false      |

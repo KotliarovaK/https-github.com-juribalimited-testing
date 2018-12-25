@@ -759,6 +759,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{listName} is not displayed for Saved List filter");
         }
 
+        [Then(@"""(.*)"" list is not displayed for Saved List filter")]
+        public void ThenListIsNotDisplayedForSavedListFilter(string listName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.ListNameForSavedListFilter(listName),
+                $"{listName} is displayed for Saved List filter");
+        }
+
         [Then(@"tooltip is displayed with ""(.*)"" text for edit filter button")]
         public void ThenTooltipIsDisplayedWithTextForEditFilterButton(string text)
         {
@@ -906,7 +914,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var availableOptions = filterElement.OperatorOptions.Select(value => value.Text).ToList();
             Assert.AreEqual(optionName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some options are not available for selected filter");
-            filterElement.OperatorOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
+            filterElement.BodyContainer.Click();
         }
 
         [Then(@"""(.*)"" checkbox is available for this filter")]
@@ -916,7 +924,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var availableOptions = filterElement.FilterCheckboxOptions.Select(value => value.Text).ToList();
             Assert.AreEqual(checkboxName.Split(',').Select(x => x.TrimStart(' ').TrimEnd(' ')).ToList(),
                 availableOptions, "Some checkbox are not available for selected filter");
-            //filterElement.FilterCheckboxOptions.First().SendKeys(OpenQA.Selenium.Keys.Escape);
+            filterElement.BodyContainer.Click();
+        }
+
+        [Then(@"""(.*)"" checkbox is not available for current opened filter")]
+        public void ThenCheckboxIsNotAvailableForCurrentOpenedFilter(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var availableOptions = filterElement.FilterCheckboxOptionsLabels.Select(value => value.GetAttribute("textContent")).ToList();
+
+            Assert.That(availableOptions, Does.Not.Contain(checkboxName), "Checkbox available for current opened filter");
+        }
+
+        [Then(@"Following checkboxes are available for current opened filter:")]
+        public void ThenCheckboxIsNotAvailableForCurrentOpenedFilter(Table checkboxes)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            var availableOptions = filterElement.FilterCheckboxOptionsLabels
+                .Select(value => value.GetAttribute("textContent")).ToList();
+
+            foreach (var row in checkboxes.Rows)
+            {
+                Assert.That(availableOptions, Does.Contain(row.Values.FirstOrDefault()), "Checkbox available for current opened filter");
+            }
         }
 
         [When(@"User deletes one character from the Search field")]
@@ -1080,6 +1110,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             Assert.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
                 $"{categoryName} category stil displayed in Filter Panel");
+        }
+
+        [Then(@"""(.*)"" section is displayed in the Filter panel")]
+        public void ThenSectionIsDisplayedInTheFilterPanel(string categoryName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsTrue(filterElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category is not displayed in Filter Panel");
         }
 
         [Then(@"Minimize buttons are displayed for all category in Filters panel")]

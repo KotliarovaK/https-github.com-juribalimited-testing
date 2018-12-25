@@ -328,7 +328,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("DAS14287")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users", "Windows7Mi: Team ID", "All Users", "DynamicList1857", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Users", "UserEvergr: Team ID", "All Users", "DynamicList1857", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Project ID", "All Applications", "DynamicList2857", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Team ID", "All Mailboxes", "DynamicList3857", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatSortingIsSavedForNewSavedList(string listName, string columnName, string allListName, string dynamicListName, string[] exampleTags)

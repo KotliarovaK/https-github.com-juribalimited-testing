@@ -564,7 +564,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsAvaila
 	| Home Drive             |
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
-	| Mailbox Count (Owned) |
+	| Mailbox Count (Owned)  |
+	| Organizational Unit    |
 	| SID                    |
 	| Surname                |
 	| User Key               |
@@ -646,6 +647,36 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
+
+@Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201 @DAS14325
+Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	Then "Evergreen" section is displayed in the Columns panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201 @DAS14325
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInColumnsPanel
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	Then "Evergreen" section is displayed in the Columns panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
 
 @Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
@@ -759,14 +790,14 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "23" category is displayed on Filters panel
+	Then "User" with "25" category is displayed on Filters panel
 	And "Location" with "8" category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "24" category is displayed on Filters panel
+	Then "User" with "25" category is displayed on Filters panel
 	And "User Location" with "8" category is displayed on Filters panel
 
 @Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
@@ -859,7 +890,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublish
 	| Windows7Mi: Workflow for Devices                                                                                 |
 	| Windows7Mi: Workstation Text Task                                                                                |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419 @DAS14288 @Not_Run
+#Update for missing "Project Tasks: prK" columns category
 Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

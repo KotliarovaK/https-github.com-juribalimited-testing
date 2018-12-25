@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder=\"Project Name\"]")]
         public IWebElement ProjectNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'select-content')]//*/span")]
+        [FindsBy(How = How.XPath, Using = ".//mat-option[@class='mat-option mat-active']/span")]
         public IList<IWebElement> DropdownOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='form']/div[contains(@class,'input')]/input")]
@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 
         private IWebElement GetDropdownByName(string name)
         {
-            return Driver.FindElement(By.XPath($".//div[@class='form']//*/mat-select[@aria-label='{name}']//*/span"));
+            return Driver.FindElement(By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select"));
         }
     }
 }

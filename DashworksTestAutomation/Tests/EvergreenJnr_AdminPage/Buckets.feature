@@ -7,8 +7,8 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11765 @DAS12170 @DAS13011 @DAS13172 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterAddingMailboxesToTheBucketWhereNoMailboxesExist
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
+	When User clicks "Admin" on the left-hand menu
+	Then "Admin" list should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
@@ -81,17 +81,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMailboxesAreSuccessfullyAddedToBuckets
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
-	And User enters "Birmingham" text in the Search field for "Bucket" column
+	And User enters "Cape Town" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User clicks "Mailboxes" tab
-	Then Counter shows "147" found rows
+	Then Counter shows "63" found rows
 	When User clicks the "ADD MAILBOX" Action button
 	And User adds following Objects from list
 	| Objects                          |
 	| 040698EE82354C17B60@bclabs.local |
 	| 04D8FC40F25547E7B4D@bclabs.local |
 	Then Success message is displayed and contains "The selected mailboxes have been added to the selected bucket" text
-	And Counter shows "149" found rows
+	And Counter shows "65" found rows
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
@@ -195,7 +195,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
@@ -307,16 +307,17 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Success message is displayed and contains "The selected users have been added to the selected bucket" text
 	And There are no errors in the browser console
 	And data in table is sorted by "Username" column in ascending order by default on the Admin page
-	#Then Counter shows "41,339" found rows
-	#This comment was added, because Evergreen Bucket (1-6) in GoldData blocks this check
-	#When User click on "Username" column header on the Admin page
-	#Then data in table is sorted by "Username" column in ascending order on the Admin page
+	Then Counter shows "41,050" found rows
+	When User click on "Username" column header on the Admin page
+	Then data in table is sorted by "Username" column in ascending order on the Admin page
+	#Remove after descending order fixed
 	#When User click on "Username" column header on the Admin page
 	#Then data in table is sorted by "Username" column in descending order on the Admin page
 	When User click on "Domain" column header on the Admin page
 	Then data in table is sorted by "Domain" column in ascending order on the Admin page
 	When User click on "Domain" column header on the Admin page
 	Then data in table is sorted by "Domain" column in descending order on the Admin page
+	#Remove after sorting order fixed
 	#When User click on "Display Name" column header on the Admin page
 	#Then data in table is sorted by "Display Name" column in ascending order on the Admin page
 	#When User click on "Display Name" column header on the Admin page
@@ -329,7 +330,7 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "UK" text in the Search field for "Domain" column
-	Then Counter shows "4,649" found rows
+	Then Counter shows "4,635" found rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Anitra" text in the Search field for "Display Name" column
 	Then Counter shows "18" found rows
@@ -574,7 +575,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @DAS13973 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory 
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -598,7 +599,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12905" in the "Project Name" field
 	And User selects "All Users" in the Scope Project dropdown
-	When User selects "Clone evergreen buckets" in the Buckets Project dropdown
+	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks "Buckets" link on the Admin page
@@ -765,3 +766,26 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMess
 	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	Then Warning message with "These buckets will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13808 @Buckets @Delete_Newly_Created_Bucket
+Scenario: EvergreenJnr_AdminPage_CheckTheDefaultSortOrderIsCorrectWhenYouAddDevicesUsersOrMailboxListToEvergreenBucket 
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE BUCKET" Action button
+	Then "Create Bucket" page should be displayed to the user
+	When User enters "BucketForDAS13808" in the "Bucket Name" field
+	And User selects "K-Team" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The bucket has been created" text
+	When User clicks newly created object link
+	And User clicks "Devices" tab
+	And User clicks the "ADD DEVICE" Action button
+	Then Objects for Buckets are displayed in alphabetical order on the Admin page
+	#When User clicks "Users" tab
+	#And User clicks the "ADD USER" Action button
+	#Then Objects for Buckets are displayed in alphabetical order on the Admin page
+	When User clicks "Mailboxes" tab
+	And User clicks the "ADD MAILBOX" Action button
+	Then Objects for Buckets are displayed in alphabetical order on the Admin page

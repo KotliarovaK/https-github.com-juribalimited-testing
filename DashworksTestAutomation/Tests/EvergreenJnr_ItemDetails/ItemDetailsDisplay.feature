@@ -386,7 +386,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectly
 	And User have select "Autosize This column" option from column settings on the Details Page
 	Then Site column has standard size
 
-	Examples:
+Examples:
 	| SectionName    |
 	| Advertisements |
 	| Collections    |
@@ -713,7 +713,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	And User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	And User navigates to the "Projects" tab
-	And User closes "Project Summary" section on the Details Page
+	And User closes "Evergreen" section on the Details Page
 	And User opens "Device Projects" section on the Details Page
 	Then All data is unique in the 'Project' column
 
@@ -723,7 +723,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetail
 	And User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
 	And User navigates to the "Projects" tab
-	And User closes "Project Summary" section on the Details Page
+	And User closes "Evergreen" section on the Details Page
 	And User opens "<SectionOpen>" section on the Details Page
 	Then "Bucket" column is displayed to the user
 
@@ -1062,8 +1062,26 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccess
 	Then "Devices" list should be displayed to the user
 	When User clicks content from "Hostname" column
 	And User navigates to the "Projects" tab
-	When User clicks on Unassigned link for "Capacity Unit" field
+	When User clicks on Unassigned link for "Evergreen Capacity Unit" field
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
 	Then There are no errors in the browser console
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks content from "<ColumnName>" column
+	And User navigates to the "Projects" tab
+	Then "Evergreen" section is expanded on the Details Page
+	And "Project Count" text is displayed in the expanded section on the Details Page
+	And "Evergreen Bucket" text is displayed in the expanded section on the Details Page
+	And "Evergreen Capacity Unit" text is displayed in the expanded section on the Details Page
+	And There are no errors in the browser console
+
+Examples:
+	| ListName  | ColumnName    |
+	| Devices   | Hostname      |
+	| Users     | Username      |
+	| Mailboxes | Email Address |

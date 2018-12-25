@@ -210,6 +210,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesEmailTo(string email)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitForDataLoading();
             page.EmailField.Clear();
             page.EmailField.SendKeys(email);
         }
@@ -288,7 +289,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsDisplayed(string errorMessage)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            Thread.Sleep(500);
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
             page.CloseMessageButton.Click();
             Thread.Sleep(500);
@@ -360,10 +360,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
                 page.NavigateToPage("Advanced");
-                var advancedPage = _driver.NowAt<AdvancedPage>();
-                advancedPage.ListPageSizeField.Clear();
-                advancedPage.ListPageSizeField.SendKeys("0");
-                advancedPage.UpdateButton.Click();
+                //var advancedPage = _driver.NowAt<AdvancedPage>();
+                //advancedPage.ListPageSizeField.Clear();
+                //advancedPage.ListPageSizeField.SendKeys("0");
+                //advancedPage.UpdateButton.Click();
             }
             catch
             {

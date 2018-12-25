@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnOptionIsNotAvailableForAppl
 	When User selects "Application Owner" filter from "Application Custom Fields" category
 	Then "Add column" checkbox is not displayed
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS10771 @DAS10972 @DAS14748
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoneOptionIsAvailableForFilters
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -869,7 +869,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddColumnCheckboxIsDisabledForA
 	When user select "<FilterName>" filter
 	Then "Add column"checkbox is checked and cannot be unchecked
 
-Examples: 
+Examples:
 	| ListName     | FilterName              |
 	| Devices      | Hostname                |
 	| Devices      | Device Type             |
@@ -939,7 +939,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfter
 	| 55     |
 	Then "50 of 55 shown" results are displayed in the Filter panel
 	When User deletes one character from the Search field
-	Then "50 of 773 shown" results are displayed in the Filter panel
+	Then "50 of 774 shown" results are displayed in the Filter panel
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
 Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
@@ -1123,6 +1123,151 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserRegionFilterEqualsEmptyValu
 	Then Filters panel is displayed to the user
 	And "User whose Region is Empty has used app" is displayed in added filter info
 
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940 @DAS13201 @DAS14325
+Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInFiltersPanel
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "Evergreen" section is displayed in the Filter panel
+	When User closes "Selected Columns" filter category
+	And User expands "Evergreen" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13201 @DAS14325
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInFiltersPanel
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then "Evergreen" section is displayed in the Filter panel
+	When User closes "Selected Columns" filter category
+	And User expands "Evergreen" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Delete_Newly_Created_Project @DAS13201 @Not_Run
+Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
+	When User clicks Admin on the left-hand menu
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "13201" in the "Project Name" field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	Then User selects "Evergreen" option in "Mode" dropdown
+	When User clicks Create button on the Create Project page
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "DeviceSche: Capacity Unit" filter
+	Then Following checkboxes are available for current opened filter:
+	| checkboxes              |
+	| Project Capacity Unit 1 |
+	| Project Capacity Unit 2 |
+	| Unassigned              |
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "UserEvergr: Capacity Unit" filter
+	Then Following checkboxes are available for current opened filter:
+	| checkboxes                |
+	| Evergreen Capacity Unit 1 |
+	| Evergreen Capacity Unit 2 |
+	| Evergreen Capacity Unit 3 |
+	| Unassigned                |
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "13201: Capacity Unit" filter
+	Then Following checkboxes are available for current opened filter:
+	| checkboxes                |
+	| Unassigned                |
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "DeviceSche: Capacity Unit" filter
+	Then Following checkboxes are available for current opened filter:
+	| checkboxes              |
+	| Project Capacity Unit 1 |
+	| Project Capacity Unit 2 |
+	| Unassigned              |
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940
+Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User clicks the "CREATE BUCKET" Action button
+	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	And User select "Bucket" rows in the grid
+	| SelectedRowsName              |
+	| Bucket_DAS12940_to_be_deleted |
+	And User clicks on Actions button
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Evergreen Bucket" filter
+	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Evergreen Bucket" filter
+	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Evergreen Bucket" filter
+	Then "Bucket_DAS12940_to_be_deleted" checkbox is not available for current opened filter
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13201
+Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter
+	When User clicks Admin on the left-hand menu
+	And User clicks "Capacity Units" link on the Admin page
+	And User clicks the "CREATE UNIT" Action button
+	And User type "Capacity_Unit_DAS13201_to_be_deleted" Name in the "Capacity Unit Name" field on the Project details page
+	And User type "13201" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	And User select "Capacity Unit" rows in the grid
+	| SelectedRowsName                     |
+	| Capacity_Unit_DAS13201_to_be_deleted |
+	And User clicks on Actions button
+	And User clicks Delete button in Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
+	And User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Evergreen Capacity Unit" filter
+	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Evergreen Capacity Unit" filter
+	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Evergreen Capacity Unit" filter
+	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Evergreen Capacity Unit" filter
+	Then "Capacity_Unit_DAS13201_to_be_deleted" checkbox is not available for current opened filter
+
 @Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS12812 @DAS12056
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTextInTheAdvancedFilterWithCheckboxesIsDisplayedCorrectly
 	When User clicks "Applications" on the left-hand menu
@@ -1228,8 +1373,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Last Logon Date        |
 	| Mailbox Count (Access) |
 	| Mailbox Count (Owned)  |
+	| Organizational Unit    |
 	| SID                    |
 	| Surname                |
+	| User (Saved List)      |
 	| User Key               |
 	
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182

@@ -75,6 +75,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("DAS10859")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
+        [NUnit.Framework.CategoryAttribute("DAS14603")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorDoesNotContinueToRun()
         {
@@ -85,6 +87,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "DAS10859",
                         "DAS12602",
+                        "DAS14603",
+                        "archived",
                         "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
@@ -297,7 +301,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table9.AddRow(new string[] {
                         "0DTXL41673EW7O"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table9, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -397,7 +401,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table13.AddRow(new string[] {
                         "0047 - Microsoft Access 97 SR-2 Francais"});
             testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table13, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Sharepoint Application\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -437,6 +441,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13260")]
         [NUnit.Framework.CategoryAttribute("DAS13263")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001PSUMZYOW581", "User Scheduled Test (Jo)", "Two", "Radio Non Rag only Comp", "Not Applicable", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", "Computer Scheduled Test (Jo)", "Two", "Radio Non Rag User", "Not Applicable", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7zip", "Computer Scheduled Test (Jo)", "Two", "Radio Non Rag App", "Not Applicable", new string[0])]
@@ -454,7 +459,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS13259",
                     "DAS13260",
                     "DAS13263",
-                    "Delete_Newly_Created_List"};
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -481,9 +487,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table15.AddRow(new string[] {
                         "Create static list"});
             table15.AddRow(new string[] {
-                        "Bulk Update"});
+                        "Bulk update"});
             testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table15, "Then ");
-            testRunner.When("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Bulk Update Type dropdown is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -564,7 +570,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table18.AddRow(new string[] {
                         "Remove from static list"});
             table18.AddRow(new string[] {
-                        "Bulk Update"});
+                        "Bulk update"});
             testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table18, "Then ");
             this.ScenarioCleanup();
         }
@@ -579,6 +585,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12946")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Red", "9174", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "Red", "9438", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "Red", "181", new string[0])]
@@ -591,7 +598,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS12946",
-                    "Delete_Newly_Created_List"};
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -676,7 +684,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table22.AddRow(new string[] {
                         "00RUUMAH9OZN9A"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table22, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -686,8 +694,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"Your changes have successfully been queued, 3 of 3 objects " +
-                    "were in the selected project.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
+                    "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -704,7 +712,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table23.AddRow(new string[] {
                         "001PSUMZYOW581"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table23, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -723,7 +731,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table24.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table24, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -743,7 +751,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table25.AddRow(new string[] {
                         "00RUUMAH9OZN9A"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table25, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -811,8 +819,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "AKX995383"});
             table28.AddRow(new string[] {
                         "AAD1011948"});
-            testRunner.When("User searches and selects following rows in the grid:", ((string)(null)), table28, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table28, "When ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -841,7 +849,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table29.AddRow(new string[] {
                         "FMN5805290"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table29, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -861,7 +869,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table30.AddRow(new string[] {
                         "AKX995383"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table30, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -881,7 +889,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table31.AddRow(new string[] {
                         "AAD1011948"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table31, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -948,7 +956,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table34.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table34, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -977,7 +985,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table35.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
             testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table35, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -996,7 +1004,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table36.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
             testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table36, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1067,7 +1075,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table39.AddRow(new string[] {
                         "229DCF8E575243E9928@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table39, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1097,7 +1105,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table40.AddRow(new string[] {
                         "0F1ED67386AD4FA7BF4@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table40, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Shared Mailbox\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1115,7 +1123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table41.AddRow(new string[] {
                         "10A919CA1E7641E08E7@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table41, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Personal Mailbox - EA\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1133,7 +1141,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table42.AddRow(new string[] {
                         "229DCF8E575243E9928@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table42, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Personal Mailbox\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1198,7 +1206,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table44.AddRow(new string[] {
                         "018UQ6KL9TF4YF"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table44, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1238,7 +1246,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table45.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table45, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1258,7 +1266,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table46.AddRow(new string[] {
                         "001PSUMZYOW581"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table46, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1277,7 +1285,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table47.AddRow(new string[] {
                         "00RUUMAH9OZN9A"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table47, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1328,7 +1336,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table48.AddRow(new string[] {
                         "00SH8162NAS524"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table48, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Babel (English, German and French)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Machines\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1367,10 +1375,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table49.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table49, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "Projects"});
+            table50.AddRow(new string[] {
+                        "1803 Rollout"});
             table50.AddRow(new string[] {
                         "Babel (English, German and French)"});
             table50.AddRow(new string[] {
@@ -1391,6 +1401,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "User Evergreen Capacity Project"});
             table50.AddRow(new string[] {
                         "User Scheduled Test (Jo)"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Migration - Depot"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Teams and Request Types"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Updates - Migration"});
+            table50.AddRow(new string[] {
+                        "Windows 10 Updates - New York"});
             table50.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)"});
             testRunner.Then("the following Projects are displayed in opened DLL on Action panel:", ((string)(null)), table50, "Then ");
@@ -1447,7 +1465,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table52.AddRow(new string[] {
                         "00KLL9S8NRF0X6"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table52, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Barry\'s User Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Desktop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1486,7 +1504,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table53.AddRow(new string[] {
                         "002B5DC7D4D34D5C895"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table53, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Havoc (Big Data)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"User Request Type 2\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1529,7 +1547,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table54.AddRow(new string[] {
                         "0047 - Microsoft Access 97 SR-2 Francais"});
             testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table54, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Projects are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1569,7 +1587,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table55.AddRow(new string[] {
                         "00A5B910A1004CF5AC4@bclabs.local"});
             testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table55, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Personal Mailbox - VIP\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1620,7 +1638,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table56.AddRow(new string[] {
                         string.Format("{0}", rowName)});
             testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table56, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Computer Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1647,10 +1665,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13264")]
         [NUnit.Framework.CategoryAttribute("DAS13265")]
         [NUnit.Framework.CategoryAttribute("DAS13278")]
-        [NUnit.Framework.TestCaseAttribute("Devices13264", "Devices", "Hostname", "00CWZRC4UK6W20", "Babel (English, German and French)", "Initiation", "Scheduled Date", "Remove", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Users13264", "Users", "Username", "0088FC8A50DD4344B92", "Project K-Computer Scheduled Project", "email", "Email to be sent - All Placeholders", "Remove", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Applications13264", "Applications", "Application", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", "Audit & Configuration", "Package Delivery Date", "Remove", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes13264", "Mailboxes", "Email Address", "00C8BC63E7424A6E862@bclabs.local", "Email Migration", "Pre-Migration", "Out Of Office Start Date", "Remove", new string[0])]
+        [NUnit.Framework.CategoryAttribute("DAS14448")]
+        [NUnit.Framework.TestCaseAttribute("DAS13264_Devices", "Devices", "Hostname", "00CWZRC4UK6W20", "Babel (English, German and French)", "Initiation", "Scheduled Date", "Remove", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13264_Users", "Users", "Username", "0088FC8A50DD4344B92", "Barry\'s User Project", "Project Dates", "Scheduled Date", "Remove", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13264_Applications", "Applications", "Application", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", "Audit & Configuration", "Package Delivery Date", "Remove", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("DAS13264_Mailboxes", "Mailboxes", "Email Address", "00C8BC63E7424A6E862@bclabs.local", "Email Migration", "Pre-Migration", "Out Of Office Start Date", "Remove", new string[0])]
         public virtual void EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole(string userName, string pageName, string columnName, string rowName, string projectName, string stageName, string taskName, string updateDate, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -1661,7 +1680,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13264",
                     "DAS13265",
-                    "DAS13278"};
+                    "DAS13278",
+                    "DAS14448"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1711,7 +1731,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table60.AddRow(new string[] {
                         string.Format("{0}", rowName)});
             testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table60, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User selects \"{0}\" Project on Action panel", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User selects \"{0}\" Stage on Action panel", stageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1752,6 +1772,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13273")]
         [NUnit.Framework.CategoryAttribute("DAS13276")]
         [NUnit.Framework.CategoryAttribute("DAS13275")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTask" +
@@ -1766,7 +1787,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS13272",
                         "DAS13273",
                         "DAS13276",
-                        "DAS13275"});
+                        "DAS13275",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1810,7 +1832,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table63.AddRow(new string[] {
                         "018UQ6KL9TF4YF"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table63, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Barry\'s User Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Stages are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1924,7 +1946,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table69.AddRow(new string[] {
                         "018UQ6KL9TF4YF"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table69, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2018,7 +2040,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table72.AddRow(new string[] {
                         string.Format("{0}", rowName)});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table72, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2046,6 +2068,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table75.AddRow(new string[] {
                         "Update"});
             table75.AddRow(new string[] {
+                        "Remove Owner"});
+            table75.AddRow(new string[] {
                         "Remove owner and team"});
             table75.AddRow(new string[] {
                         "No change"});
@@ -2069,6 +2093,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.When("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2103,6 +2128,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1321", "CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1322", "BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1323", "DLL972653", "Complete", "Admin IT", "Not Started", "K-Team", new string[0])]
@@ -2119,7 +2145,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS13288",
                     "DAS13289",
                     "DAS13287",
-                    "DAS14127"};
+                    "DAS14127",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2176,7 +2203,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table81.AddRow(new string[] {
                         string.Format("{0}", rowName)});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table81, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2196,7 +2223,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2239,6 +2266,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1330", "CQV0623434", "Admin IT", "Administrative Team", "Complete", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1331", "BBZ877343", "Admin IT", "Retail Team", "Failed", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS1332", "DLL972653", "Admin IT", "K-Team", "Complete", new string[0])]
@@ -2255,7 +2283,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS13288",
                     "DAS13289",
                     "DAS13287",
-                    "DAS14127"};
+                    "DAS14127",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2312,7 +2341,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table85.AddRow(new string[] {
                         string.Format("{0}", rowName)});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table85, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2332,7 +2361,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2374,6 +2403,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS13280", "CQV0623434", "Complete", "Started", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS13281", "BBZ877343", "Failed", "Not Applicable", new string[0])]
         [NUnit.Framework.TestCaseAttribute("DAS13282", "DLL972653", "Complete", "Not Started", new string[0])]
@@ -2389,7 +2419,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287"};
+                    "DAS13287",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2446,7 +2477,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table89.AddRow(new string[] {
                         string.Format("{0}", rowName)});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table89, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2467,7 +2498,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2510,6 +2541,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13290")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly", new string[] {
@@ -2519,7 +2551,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13290",
-                        "DAS14127"});
+                        "DAS14127",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2571,7 +2604,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table93.AddRow(new string[] {
                         "LZI970280"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table93, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2591,7 +2624,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Complete\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2634,6 +2667,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13291")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly", new string[] {
@@ -2643,7 +2677,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13291",
-                        "DAS14127"});
+                        "DAS14127",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2695,7 +2730,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table97.AddRow(new string[] {
                         "LZI970280"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table97, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2713,7 +2748,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2753,6 +2788,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13293")]
         [NUnit.Framework.CategoryAttribute("DAS13359")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuccessfulBannerMessage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuccessfulBann" +
@@ -2763,7 +2799,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13293",
-                        "DAS13359"});
+                        "DAS13359",
+                        "Not_Run"});
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2787,7 +2824,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Havoc (Big Data)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Stage 0\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2834,7 +2871,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table100.AddRow(new string[] {
                         "001PSUMZYOW581"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table100, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2902,7 +2939,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table102.AddRow(new string[] {
                         "00A5B910A1004CF5AC4"});
             testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table102, "When ");
-            testRunner.And("User selects \"Bulk Update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {

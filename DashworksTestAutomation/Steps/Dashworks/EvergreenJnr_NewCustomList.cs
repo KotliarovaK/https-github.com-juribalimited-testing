@@ -55,6 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksSettingsButtonInTheListPanel()
         {
             var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitForDataLoading();
             _driver.MouseHover(listElement.SettingsButton);
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SettingsButton);
             listElement.SettingsButton.Click();
@@ -113,6 +114,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserCreatesNewCustomListWithName(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.TopToolsSubmenu);
+            listElement.TopToolsSubmenu.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextBox.SendKeys(listName);
@@ -238,9 +242,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.ListNameWarningMessage(listName),
-                $"{listName} is not displayed in the list details panel");
+                $"'{listName}' is not displayed in the list details panel");
             Assert.IsTrue(listElement.RemovingDependencyListMessage(warningText),
-                $"{warningText} message is not displayed in the list details panel");
+                $"'{warningText}' message is not displayed in the list details panel");
         }
 
         [When(@"User update current custom list")]

@@ -21,6 +21,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string ObjectsToAdd = "//div[@class='mat-list-text']/span";
 
+        public const string ObjectsBucketsToAdd = "//span[contains(@class, 'text-container')]//span";
+
         public const string Row = "//div[@col-id='name']//a";
 
         public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
@@ -57,7 +59,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@col-id='onboardAction']/span[contains(text(), 'Re-Onboard')]")]
         public IWebElement ReonboardedItem { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter']/span")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter ng-star-inserted']/span")]
         public IWebElement RowsCounter { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]
@@ -106,13 +108,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ObjectsBucketsToAdd)]
+        public IList<IWebElement> ObjectsBucketsList { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement ActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
         public IWebElement CorrectActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]")]
         public IWebElement DeleteButtonInActions { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -252,6 +257,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return columnNumber;
         }
 
+        public int GetColumnNumberByNameForCapacity(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//span[@class='ag-header-cell-text']")).Text.Equals(columnName))) + 2;
+
+            return columnNumber;
+        }
+
+        public string GetColumnContentByColumnNameForCapacity(string columnName)
+        {
+            var by = By.XPath(
+                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByNameForCapacity(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
         public void GetSearchFieldByColumnName(string columnName, string text)
         {
             var byControl =
@@ -338,7 +365,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 return;
 
             var selectedActionName =
-                $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//span[text()='{actionName}']";
+                $"//span[text()='{actionName}']/ancestor::mat-option";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selectedActionName));
             Driver.FindElement(By.XPath(selectedActionName)).Click();
         }

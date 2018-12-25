@@ -27,6 +27,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[text()='Select at least one row']")]
         public IWebElement ActionsContainerMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='spinner small-grey']")]
+        public IWebElement ActionsSpinner { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
         public IWebElement ListNameTextBox { get; set; }
 
@@ -60,7 +63,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void SelectList(string listName)
         {
             var listNameSelector =
-                $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//mat-option//span[text()='{listName}']";
+                $".//mat-option//span[text()='{listName}']";
             Driver.FindElement(By.XPath(ListsDropdownSelector)).Click();
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();

@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var importProjectPage = _driver.NowAt<ImportProjectPage>();
                     StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
-                    break;      
+                    break;
 
                 default:
                     throw new Exception($"'{pageTitle}' menu item is not valid ");
@@ -196,8 +196,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersInTheField(string name, string fieldName)
         {
             var bucketName = _driver.NowAt<ProjectsPage>();
-            bucketName.GetFieldNameByPage(fieldName).Clear();
-            bucketName.GetFieldNameByPage(fieldName).SendKeys(name);
+            bucketName.GetFieldByName(fieldName).Clear();
+            bucketName.GetFieldByName(fieldName).SendKeys(name);
 
             if (!string.IsNullOrEmpty(name))
                 switch (fieldName)
@@ -218,20 +218,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
         }
 
+        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
+        public void WhenUserEntersValueInTheField(string name, string fieldName)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetFieldByName(fieldName).Clear();
+            page.GetFieldByName(fieldName).SendKeys(name);
+            page.BodyContainer.Click();
+        }
+
         [Then(@"Scope field is automatically populated")]
         public void ThenScopeFieldIsAutomaticallyPopulated()
         {
             var page = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
             Assert.IsFalse(page.EmptyScopeField.Displayed(), "Scope field is empty");
-        }
-
-        [When(@"User enters ""(.*)"" value in the ""(.*)"" field")]
-        public void WhenUserEntersValueInTheField(string name, string fieldName)
-        {
-            var page = _driver.NowAt<ProjectsPage>();
-            page.GetFieldNameByPage(fieldName).Clear();
-            page.GetFieldNameByPage(fieldName).SendKeys(name);
         }
 
         [When(@"User open ""(.*)"" sub menu on Admin page")]
@@ -255,6 +256,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             Assert.IsTrue(projectTabs.GetsSelectedTabByName(tabName).Displayed(), "Selected tab is not active");
+        }
+
+        [Then(@"""(.*)"" tab in Project selected on the Admin page")]
+        public void ThenTabInProjectSelectedOnTheAdminPage(string tabName)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(projectTabs.GetsSelectedTabInProjectByName(tabName).Displayed(), $"'{tabName}' tab is not active");
         }
 
         [When(@"User selects ""(.*)"" tab on the Capacity Units page")]
@@ -305,6 +313,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.NavigateToProjectTabInScopeSectionByName(tabName);
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"following Values are displayed in ""(.*)"" drop-down on the Project details page:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheProjectDetailsPage(string dropDownName, Table table)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetDropDownByName(dropDownName).Click();
+            var element = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = element.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, $"Value for {dropDownName} are different");
+            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            body.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" color in the Application Scope tab on the Project details page")]
@@ -835,7 +856,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                            ResourceFilesNamesProvider.ResourcesFolderRoot + $"{fileNameAndExtension}";
                 page.ButtonChooseFile.SendKeys(file);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception($"Unable to locate file in Resources folder: {e}");
             }
@@ -1398,6 +1419,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
+        [Then(@"Error message is not displayed on the Capacity Units page")]
         [Then(@"Error message is not displayed on the Capacity Slots page")]
         [Then(@"Error message is not displayed on the Projects page")]
         public void ThenErrorMessageIsNotDisplayedOnTheProjectsPage()
@@ -1469,6 +1491,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.SelectActions(actionName);
         }
 
+        [Then(@"Create Capacity Unit button is disabled")]
         [Then(@"Create Bucket button is disabled")]
         public void ThenCreateBucketButtonIsDisabled()
         {
@@ -1633,11 +1656,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User searches and selects following rows in the grid:")]
-        public void WhenUserSearchesAndSelectsFollowingRowsInTheGrid(Table table)
+        [When(@"User searches by ""(.*)"" column and selects following rows in the grid:")]
+        public void WhenUserSearchesByColumnAndSelectsFollowingRowsInTheGrid(string columnName, Table table)
+        {
+            var dashboardPage = _driver.NowAt<BaseGridPage>();
+            foreach (var row in table.Rows)
+            {
+                dashboardPage.GetSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
+                _driver.WaitForDataLoading();
+                dashboardPage.SelectAllCheckBox.Click();
+            }
+        }
+
+        [When(@"User searches and selects following rows in the grid on Details page:")]
+        public void WhenUserSearchesAndSelectsFollowingRowsInTheGridOnDetails(Table table)
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            dashboardPage.TableSearchButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextBox);
             foreach (var row in table.Rows)
             {
@@ -1655,6 +1689,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             var originalList = page.ObjectsList.Select(x => x.Text).ToList();
+            SortingHelper.IsListSorted(originalList);
+        }
+
+        [Then(@"Objects for Buckets are displayed in alphabetical order on the Admin page")]
+        public void ThenObjectsForBucketsAreDisplayedInAlphabeticalOrderOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            var originalList = page.ObjectsBucketsList.Select(x => x.Text).ToList();
             SortingHelper.IsListSorted(originalList);
         }
 
@@ -1692,13 +1735,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (!projectElement.OnboardedObjectsTable.Displayed())
                     try
                     {
-                        Thread.Sleep(20000);
+                        Thread.Sleep(30000);
                         _driver.Navigate().Refresh();
                         Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
                     }
                     catch (Exception)
                     {
-                        Thread.Sleep(40000);
+                        Thread.Sleep(50000);
                         _driver.Navigate().Refresh();
                         Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
                     }
@@ -1891,6 +1934,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(3000);
         }
 
+        [When(@"User selects ""(.*)"" in the Mode Project dropdown")]
+        public void WhenUserSelectsInTheModeProjectDropdown(string optionName)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ModeProjectField.Click();
+            createProjectElement.SelectObjectForProjectCreation(optionName);
+            //Waiting for option change
+            Thread.Sleep(3000);
+        }
+
         [When(@"user selects ""(.*)"" in the Bucket dropdown")]
         public void WhenUserSelectsInTheBucketDropdown(string objectName)
         {
@@ -1937,7 +1990,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnTheProjectDetailsPage(string text)
         {
             var message = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(message.TextMessage(text), $"{text} is not displayed on the Project page");
+            StringAssert.Contains(text, message.WarningMessage.Text, $"{text} is not displayed in Warning message");
         }
 
         [Then(@"User selects ""(.*)"" option for selected language")]
@@ -1960,7 +2013,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsCheckboxInTheFieldOnTheProjectDetailsPage(string checkbox, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).Click();
+            projectElement.GetFieldByName(fieldName).SendKeys(checkbox);
             var slot = _driver.NowAt<Capacity_SlotsPage>();
             slot.GetCheckboxByName(checkbox).Click();
             var filterElement = _driver.NowAt<BaseGridPage>();
@@ -2110,19 +2163,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIsDisplayedInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
-            var t = page.GetDisplayNameFieldByLanguage(language).Text;
-            Assert.AreEqual(text, t, $"'{text}' text is not displayed in Display Name field");
+            Assert.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
         }
 
         [When(@"User enters ""(.*)"" value in Move to position dialog")]
-        public void WhenUserEntersValueInTheMoveToPositionDialog(string value)
+        public void WhenUserEntersValueInMoveToPositionDialog(string value)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             page.MoveToPositionInput.Clear();
             page.MoveToPositionInput.SendKeys(value);
         }
 
-        [Then (@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
+        [When (@"User remembers the Move to position dialog size")]
+        public void WhenUserRemembersMoveToPositionDialogSize()
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.Storage.SessionStorage.SetItem("dialog_Height", page.MoveToPositionDialog.Size.Height.ToString());
+            page.Storage.SessionStorage.SetItem("dialog_Width", page.MoveToPositionDialog.Size.Width.ToString());
+        }
+
+        [Then(@"User checks that Move to position dialog has the same size")]
+        public void ThenUserChecksThatMoveToPositionDialogHasTheSameSize()
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            int height = Int32.Parse(page.Storage.SessionStorage.GetItem("dialog_Height"));
+            int width = Int32.Parse(page.Storage.SessionStorage.GetItem("dialog_Width"));
+
+            Assert.That(page.MoveToPositionDialog.Size.Height, Is.InRange(height, height + 5)); // 5pxls is max height allowed scaling
+            Assert.That(page.MoveToPositionDialog.Size.Width, Is.EqualTo(width));
+        }
+
+        [Then(@"Button ""(.*)"" in Move to position dialog is displayed disabled")]
         public void ThenButtonInMoveToPositionDialogIsDisplayedDisabled(string buttonName)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
@@ -2130,7 +2201,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
         }
 
-        [When (@"User clicks ""(.*)"" bth in Move to position dialog")]
+        [When(@"User clicks ""(.*)"" bth in Move to position dialog")]
         public void WhenUserClicksButtonInMoveToPositionDialog(string buttonName)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
@@ -2210,8 +2281,68 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
         public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
         {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
             var dropdown = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+            if (page.ExpandItemsButton.Displayed())
+            {
+                page.ExpandItemsButton.Click();
+                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+            }
+            else
+                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
+        [Then(@"Next values are selected for the ""(.*)"" field:")]
+        public void ThenNextValuesAreSelectedForTheField(string dropdownName, Table table)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            if (page.ExpandItemsButton.Displayed())
+            {
+                page.ExpandItemsButton.Click();
+                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedList, actualList, "The list of task values ​​is different");
+            }
+            else
+            {
+                var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+                var actualList = page.SelectedValuesList.Select(value => value.Text).ToList();
+                Assert.AreEqual(expectedList, actualList, "The list of task values ​​is different");
+            }
+        }
+
+        [Then(@"""(.*)"" checkbox in the ""(.*)"" field are not available to select")]
+        public void ThenCheckboxInTheFieldAreNotAvailableToSelect(string checkbox, string fieldName)
+        {
+            var field = _driver.NowAt<ProjectsPage>();
+            field.GetFieldByName(fieldName).SendKeys(checkbox);
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is available for select");
+        }
+
+        [Then(@"""(.*)"" checkbox in the ""(.*)"" field are available to select")]
+        public void ThenCheckboxInTheFieldAreAvailableToSelect(string checkbox, string fieldName)
+        {
+            var field = _driver.NowAt<ProjectsPage>();
+            field.GetFieldByName(fieldName).Clear();
+            field.GetFieldByName(fieldName).SendKeys(checkbox);
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            Assert.IsFalse(page.NoValuesAvailableInDropDown.Displayed(), $"'{checkbox}' is not available for select");
+            Assert.IsTrue(page.GetCheckboxByName(checkbox).Displayed(), $"'{checkbox}' is available for '{fieldName}' field");
+        }
+
+        [Then(@"Next checkboxes in the ""(.*)"" dropdown are not available to select:")]
+        public void ThenNextCheckboxesInTheDropdownAreNotAvailableToSelect(string dropdownName, Table table)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+                var projectElement = _driver.NowAt<ProjectsPage>();
+                projectElement.GetFieldByName(dropdownName).Clear();
+                projectElement.GetFieldByName(dropdownName).SendKeys(row["Value"]);
+                Assert.IsTrue(page.NoValuesAvailableInDropDown.Displayed(), $"{row["Value"]} is not displayed in {dropdownName} dropdown");
+            }
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column on the Admin page")]
@@ -2236,7 +2367,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(filterElement.GetStringFilterByName(filterName));
         }
-        
+
         [Then(@"Projects in filter dropdown are displayed in alphabetical order")]
         public void ThenProjectsInFilterDropdownAreDisplayedInAlphabeticalOrder()
         {

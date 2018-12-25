@@ -410,35 +410,35 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturned" +
-            "ToDefaultPositionWhenActionsPanelWasOpen")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturne" +
+            "dToDefaultPositionWhenActionsPanelWasOpen")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnOrder")]
         [NUnit.Framework.CategoryAttribute("DAS12345")]
         [NUnit.Framework.CategoryAttribute("DAS12823")]
-        [NUnit.Framework.CategoryAttribute("DAS1366")]
+        [NUnit.Framework.CategoryAttribute("DAS13668")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "Operating System", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", "Display Name", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "Version", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "Mailbox Platform", "Mail Server", new string[0])]
-        public virtual void EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen(string pageName, string firstColumnName, string secondColumnName, string toColumnName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturnedToDefaultPositionWhenActionsPanelWasOpen(string pageName, string firstColumnName, string secondColumnName, string toColumnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Applications",
+                    "AllLists",
                     "EvergreenJnr_Columns",
                     "ColumnOrder",
                     "DAS12345",
                     "DAS12823",
-                    "DAS1366"};
+                    "DAS13668"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllList_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturned" +
-                    "ToDefaultPositionWhenActionsPanelWasOpen", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatSaveButtonIsNotDisplayedIfTheGridColumnsWasReturne" +
+                    "dToDefaultPositionWhenActionsPanelWasOpen", @__tags);
             this.ScenarioSetup(scenarioInfo);
             this.FeatureBackground();
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

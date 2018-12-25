@@ -313,6 +313,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{categoryName} category stil displayed in Column Panel");
         }
 
+        [Then(@"""(.*)"" section is displayed in the Columns panel")]
+        public void ThenSectionIsDisplayedInTheColumnsPanel(string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.IsTrue(columnElement.CategoryIsDisplayed(categoryName),
+                $"{categoryName} category is not displayed in Column Panel");
+        }
+
         [When(@"User close all columns categories")]
         public void WhenUserCloseAllColumnsCategories()
         {

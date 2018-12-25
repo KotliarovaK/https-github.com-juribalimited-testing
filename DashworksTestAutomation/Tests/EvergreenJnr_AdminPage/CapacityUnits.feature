@@ -5,13 +5,18 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13169 @DAS131168 @DAS12632
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13169 @DAS131168 @DAS12632 @DAS13012
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefault
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	And Evergreen Icon is displayed to the user
+	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
+	When User clicks Reset Filters button on the Admin page
+	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
+	When User clicks "Buckets" link on the Admin page
+	When User clicks "Capacity Units" link on the Admin page
+	Then Evergreen Icon is displayed to the user
 	And "Unassigned" text is displayed in the table content
 	And Evergreen Unit is displayed to the user
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -168,7 +173,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	| 00KLL9S8NRF0X6   |
 	| 00KWQ4J3WKQM0G   |
 	| 01ERDGD48UDQKE   |
-	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project on Action panel
 	And User selects "CapacityUnit12141Devices" value for "Capacity Unit" dropdown with search on Action panel
@@ -213,7 +218,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	| ___ ___              |
 	| 002B5DC7D4D34D5C895  |
 	| 00BDBAEA57334C7C8F4  |
-	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project on Action panel
 	And User selects "CapacityUnit12141Users" value for "Capacity Unit" dropdown with search on Action panel
@@ -258,7 +263,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	| 003F5D8E1A844B1FAA5@bclabs.local |
 	| 0072B088173449E3A93@bclabs.local |
 	| 00A5B910A1004CF5AC4@bclabs.local |
-	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project on Action panel
 	And User selects "CapacityUnit12141Mailboxes" value for "Capacity Unit" dropdown with search on Action panel
@@ -279,7 +284,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS13808 @DAS14200 @DAS14236 @DAS14237 @DAS14757
 Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -303,7 +308,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI                  |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| ACD FotoCanvas 2.0 Trial                                        |
-	And User selects "Bulk Update" in the Actions dropdown
+	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
 	#And User selects "Evergreen" Project on Action panel
 	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel

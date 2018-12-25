@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderCounter']//span[@class='ng-star-inserted' and count(*)=0]")]
+        [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
@@ -633,7 +633,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(
                 By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
         }
-        
+
         public IWebElement GetSettingIconByRowName(string rowName)
         {
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(
@@ -641,10 +641,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(
                 $".//div[contains(@class, 'ag-body-container')]/div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
         }
-        
-public IWebElement GetOptionByName(string optionName)
+
+        public IWebElement GetOptionByName(string optionName)
         {
-            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
+            var selector = By.XPath($".//span[text()='{optionName}']/ancestor::mat-option");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

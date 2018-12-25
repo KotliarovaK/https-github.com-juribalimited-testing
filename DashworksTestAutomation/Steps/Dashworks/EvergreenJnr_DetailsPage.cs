@@ -44,6 +44,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.GetLinkByName(linkName).Click();
         }
 
+        [Then(@"""(.*)"" section is expanded on the Details Page")]
+        public void ThenSectionIsExpandedOnTheDetailsPage(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section {sectionName} is not displayed");
+        }
+
         [Then(@"section is loaded correctly")]
         public void ThenSectionIsLoadedCorrectly()
         {
@@ -53,6 +60,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
             else
                 Assert.IsTrue(detailsPage.NoFoundContent.Displayed(), "Section is not loaded");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the expanded section on the Details Page")]
+        public void ThenTextIsDisplayedInTheExpandedSectionOnTheDetailsPage(string text)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetTextInExpandedSection(text).Displayed(), $"{text} is not displayed in the expanded section");
         }
 
         [Then(@"Highcharts graphic is displayed on the Details Page")]
@@ -540,10 +554,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Incorrect number of rows in agGrid.");
         }
 
-        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
+        
         [Then(@"""(.*)"" rows found label displays on Details Page")]
-        [Then(@"""(.*)"" rows label displays in Action panel")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            //Wait for rows label is displayed
+            Thread.Sleep(2000);
+            StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                detailsPage.RowsLabel.Text,
+                "Incorrect rows count");
+        }
+
+        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
+        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Slots page")]
+        [Then(@"""(.*)"" rows label displays in Action panel")]
+        public void ThenRowsAreDisplayedInTheAgGridOnCapacityUnitsPage(string numberOfRows)
         {
             var detailsPage = _driver.NowAt<BaseDashboardPage>();
             //Wait for rows label is displayed

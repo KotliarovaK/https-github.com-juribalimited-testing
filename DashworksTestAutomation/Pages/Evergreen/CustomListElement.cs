@@ -20,6 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
         public IWebElement ListPanelSearchTextBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools']//div[@aria-controls='submenu']")]
+        public IWebElement TopToolsSubmenu { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
         public IWebElement SearchTextBoxResetButtonInListPanel { get; set; }
 
