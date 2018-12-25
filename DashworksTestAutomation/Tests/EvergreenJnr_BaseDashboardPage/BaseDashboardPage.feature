@@ -13,7 +13,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	And Appropriate header font weight is displayed
 	Then "v5.3.2.0" Application version is displayed
 
-Examples: 
+Examples:
 	| ListName     |
 	| Devices      |
 	| Users        |

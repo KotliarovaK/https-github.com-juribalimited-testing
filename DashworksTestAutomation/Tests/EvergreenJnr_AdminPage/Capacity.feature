@@ -967,8 +967,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLang
 	And Error message with "You cannot update the default language to Brazilian because there are items in the project which have not been translated into this language." text is displayed
 	When User clicks "Scope" tab
 	And User selects "Queue" tab on the Project details page
-	Then "1" rows found label displays on Details Page
-	#And User selects "History" tab on the Project details page
+	Then Counter shows "1" found rows
+	#When User selects "History" tab on the Project details page
 	#And User enters "1A701E05916148A6A3F" text in the Search field for "Item" column
 	#Then User clicks on "1A701E05916148A6A3F" search result
 	#When User navigates to the "Projects" tab
@@ -1715,7 +1715,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" text is displayed in the "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1964,7 +1964,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	#Change data in the slot
 	When User selects "Application" in the "Object Type" dropdown
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
-	And User selects "IB Team" checkbox in the "Teams" field on the Project details page
+	And User selects "1803 Team" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Application)]" checkbox in the "Request Types" field on the Project details page
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
@@ -1973,7 +1973,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then "Teams and Request Types" text value is displayed in the "Capacity Type" dropdown
 	And "Application" text value is displayed in the "Object Type" dropdown
 	And "[Default (Application)]" value is displayed in the "Request Types" dropdown
-	And "IB Team" value is displayed in the "Teams" dropdown
+	And "1803 Team" value is displayed in the "Teams" dropdown
 	When User selects "Capacity Units" in the "Capacity Type" dropdown
 	And User clicks the "UPDATE" Action button
 	#Check updated Capacity Type value
@@ -1983,7 +1983,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User enters "ProjectForDAS131522" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
-
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Task @DAS13887
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType

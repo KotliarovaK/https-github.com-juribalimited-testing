@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder=\"Project Name\"]")]
         public IWebElement ProjectNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-option[@class='mat-option mat-active']/span")]
+        [FindsBy(How = How.XPath, Using = ".//mat-option[contains(@class, 'mat-option ng-star-inserted')]/span")]
         public IList<IWebElement> DropdownOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='form']/div[contains(@class,'input')]/input")]
@@ -49,12 +49,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         public void SelectDropdownOption(string dropdownName, string optionName)
         {
             GetDropdownByName(dropdownName).Click();
-            DropdownOptions.First(x => x.Text.Equals(optionName)).Click();
+            GetDropdownItemByName(optionName).Click();
         }
 
         private IWebElement GetDropdownByName(string name)
         {
-            return Driver.FindElement(By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select"));
+            return Driver.FindElement(By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select"));
+        }
+
+        private IWebElement GetDropdownItemByName(string name)
+        {
+            return Driver.FindElement(By.XPath($".//mat-option/span[text()='{name}']"));
         }
     }
 }

@@ -2239,7 +2239,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "d following value:", ((string)(null)), table81, "When ");
             testRunner.Then("\"50 of 55 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User deletes one character from the Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"50 of 774 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"50 of 773 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
         
@@ -3226,7 +3226,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table102.AddRow(new string[] {
                         "Description"});
             table102.AddRow(new string[] {
+                        "Device Application Compliance"});
+            table102.AddRow(new string[] {
                         "Device Count"});
+            table102.AddRow(new string[] {
+                        "Device Hardware Compliance"});
             table102.AddRow(new string[] {
                         "Directory Type"});
             table102.AddRow(new string[] {
@@ -3257,6 +3261,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Surname"});
             table102.AddRow(new string[] {
                         "User (Saved List)"});
+            table102.AddRow(new string[] {
+                        "User Application Compliance"});
             table102.AddRow(new string[] {
                         "User Key"});
             testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table102, "Then ");
