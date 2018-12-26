@@ -3705,3 +3705,28 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	When User navigate to "Capacity" tab
 	And User clicks the Use Dashworks Evergreen to configure capacity link
 	Then "Slots" tab in Project selected on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "13510TestProject" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "13510TestProject" is displayed to user
+	When User clicks "Capacity" tab
+	And User selects "Use evergreen capacity units" in the "Capacity Units" dropdown
+	And User clicks the "UPDATE" Action button
+	When User clicks "UPDATE" button in the warning message on Admin page
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+	When User clicks "Administration" navigation link on the Admin page
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks String Filter button for "Project" column
+	Then "13510TestProject" is not displayed in the filter dropdown
