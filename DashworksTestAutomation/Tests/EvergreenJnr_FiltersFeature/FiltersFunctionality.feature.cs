@@ -3288,7 +3288,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13145")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {

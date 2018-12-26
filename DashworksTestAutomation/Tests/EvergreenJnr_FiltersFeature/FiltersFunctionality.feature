@@ -1391,7 +1391,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcluded
 Examples:
 	| PageName |
 	| Devices  |
-	| Users    |
+	#| Users    |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13473 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescriptionIsEmptyFilterIsSavedAndOpenedNotInEditMode
