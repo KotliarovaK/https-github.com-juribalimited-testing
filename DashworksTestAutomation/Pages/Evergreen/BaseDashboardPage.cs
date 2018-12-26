@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//admin-header//span[@class='ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
         public IWebElement FoundRowsLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
@@ -448,7 +448,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 }
                 catch (StaleElementReferenceException)
                 {
-                    Thread.Sleep(4000);
+                    Thread.Sleep(5000);
                     element = GetGridCell(iter, columnNumber);
                     Driver.MouseHoverByJavascript(element);
                 }

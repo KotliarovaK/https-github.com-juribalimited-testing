@@ -1388,7 +1388,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcluded
 	Then "1 shown" results are displayed in the Filter panel
 	And "ACT Data Collection Packages (1104)" value is displayed for selected Lookup Filter
 
-Examples: 
+Examples:
 	| PageName |
 	| Devices  |
 	| Users    |

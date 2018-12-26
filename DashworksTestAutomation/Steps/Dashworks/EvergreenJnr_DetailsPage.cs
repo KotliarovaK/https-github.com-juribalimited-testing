@@ -554,11 +554,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Incorrect number of rows in agGrid.");
         }
 
-        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Slots page")]
-        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
+        
         [Then(@"""(.*)"" rows found label displays on Details Page")]
-        [Then(@"""(.*)"" rows label displays in Action panel")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            //Wait for rows label is displayed
+            Thread.Sleep(2000);
+            StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                detailsPage.RowsLabel.Text,
+                "Incorrect rows count");
+        }
+
+        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
+        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Slots page")]
+        [Then(@"""(.*)"" rows label displays in Action panel")]
+        public void ThenRowsAreDisplayedInTheAgGridOnCapacityUnitsPage(string numberOfRows)
         {
             var detailsPage = _driver.NowAt<BaseDashboardPage>();
             //Wait for rows label is displayed

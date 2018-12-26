@@ -939,7 +939,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfter
 	| 55     |
 	Then "50 of 55 shown" results are displayed in the Filter panel
 	When User deletes one character from the Search field
-	Then "50 of 774 shown" results are displayed in the Filter panel
+	Then "50 of 773 shown" results are displayed in the Filter panel
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
 Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList
@@ -1356,29 +1356,32 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	And User closes "Selected Columns" filter category
 	And User expands "User" filter category
 	Then the following Filters subcategories are displayed for open category:
-	| Subcategories          |
-	| Common Name            |
-	| Compliance             |
-	| Dashworks First Seen   |
-	| Description            |
-	| Device Count           |
-	| Directory Type         |
-	| Email Address          |
-	| Enabled                |
-	| Given Name             |
-	| Group Count            |
-	| GUID                   |
-	| Home Directory         |
-	| Home Drive             |
-	| Last Logon Date        |
-	| Mailbox Count (Access) |
-	| Mailbox Count (Owned)  |
-	| Organizational Unit    |
-	| SID                    |
-	| Surname                |
-	| User (Saved List)      |
-	| User Key               |
-	
+	| Subcategories                 |
+	| Common Name                   |
+	| Compliance                    |
+	| Dashworks First Seen          |
+	| Description                   |
+	| Device Application Compliance |
+	| Device Count                  |
+	| Device Hardware Compliance    |
+	| Directory Type                |
+	| Email Address                 |
+	| Enabled                       |
+	| Given Name                    |
+	| Group Count                   |
+	| GUID                          |
+	| Home Directory                |
+	| Home Drive                    |
+	| Last Logon Date               |
+	| Mailbox Count (Access)        |
+	| Mailbox Count (Owned)         |
+	| Organizational Unit           |
+	| SID                           |
+	| Surname                       |
+	| User (Saved List)             |
+	| User Application Compliance   |
+	| User Key                      |
+
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded
 	When User clicks "<ListName>" on the left-hand menu
@@ -1390,7 +1393,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClick
 	Then Filters panel is displayed to the user
 	And Add New button is displayed on the Filter panel
 
-Examples: 
+Examples:
 	| ListName     | LinkName         |
 	| Devices      | All Devices      |
 	| Users        | All Users        |

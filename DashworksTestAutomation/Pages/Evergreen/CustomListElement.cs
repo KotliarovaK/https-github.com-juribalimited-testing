@@ -23,6 +23,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools']//div[@aria-controls='submenu']")]
         public IWebElement TopToolsSubmenu { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']")]
+        public IWebElement SavePivotButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
         public IWebElement SearchTextBoxResetButtonInListPanel { get; set; }
 

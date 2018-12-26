@@ -278,7 +278,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User create static list with "Static List TestName" name on "Devices" page with following items
 	| ItemName        |
@@ -1060,12 +1060,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	And User clicks Delete button on the warning message in the lists panel
 	And "List deleted" message is displayed
 
-@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917
+@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
+	When User selects "Application Compliance" filter from "Application" category
+	When User change selected checkboxes:
+	| Option | State |
+	| Red    | true |
 	When User add "Application Compliance" filter where type is "Equals" with selected Checkboxes and following Association:
 	| SelectedCheckboxes | Association        |
 	| Red                | Used on device     |

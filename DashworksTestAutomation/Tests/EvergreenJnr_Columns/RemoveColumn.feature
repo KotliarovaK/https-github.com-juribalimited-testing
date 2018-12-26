@@ -366,7 +366,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	| Last Logon Date                              |
 	| Enabled                                      |
 	| Windows7Mi: Read Only on Project Object Page |
-	And "20" subcategories is displayed for "User" category
+	And "23" subcategories is displayed for "User" category
 	#And "49" subcategories is displayed for "Project Tasks: Windows7Mi" category
 
 @Evergreen @Applications @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS12221 @DAS12351

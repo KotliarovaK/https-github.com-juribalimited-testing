@@ -390,12 +390,12 @@ namespace DashworksTestAutomation.Helpers
 
             foreach (var row in Table.Rows)
             {
-                _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-4']")).SendKeys(row["Association"]);
+                _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-7']")).SendKeys(row["Association"]);
                 if (_driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Displayed)
                     _driver.FindElement(By.XPath($".//li//span[text()='{row["Association"]}']")).Click();
                 else
                     _driver.FindElement(By.XPath($".//li//div[text()='{row["Association"]}']")).Click();
-                _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-4']")).Clear();
+                _driver.FindElement(By.XPath("//div[contains(@class, 'associationmultiselect')]//input[@id='mat-input-7']")).Clear();
             }
 
             SaveFilter();
@@ -512,7 +512,7 @@ namespace DashworksTestAutomation.Helpers
                         .SendKeys(row["Values"]);
                     _driver.FindElement(
                             By.XPath(
-                                ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable ng-star-inserted']"))
+                                ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable']"))
                         .Click();
                 }
             }

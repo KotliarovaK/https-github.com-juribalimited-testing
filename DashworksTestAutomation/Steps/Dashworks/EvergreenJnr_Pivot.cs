@@ -150,11 +150,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.TopToolsSubmenu);
-            listElement.TopToolsSubmenu.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SavePivotButton);
+            listElement.SavePivotButton.Click();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
-            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is mot displayed");
+            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is not displayed");
             listElement.CreateNewListButton.Click();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);

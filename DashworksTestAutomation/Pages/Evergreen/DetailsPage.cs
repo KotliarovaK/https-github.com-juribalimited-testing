@@ -21,6 +21,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
         public IWebElement GroupIcon { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter ng-star-inserted']//span[@class='ng-star-inserted']")]
+        public IWebElement RowsLabel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']")]
         public IWebElement NoFoundContent { get; set; }
 
