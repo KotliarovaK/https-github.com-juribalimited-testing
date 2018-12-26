@@ -278,13 +278,13 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @DAS14783 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User create static list with "Static List TestName" name on "Devices" page with following items
-	| ItemName        |
-	| 00BDM1JUR8IF419 |
-	| 011PLA470S0B9DJ |
-	| 00OMQQXWA1DRI6  |
+	| ItemName       |
+	| 00HA7MKAVVFDAV |
+	| 001PSUMZYOW581 |
+	| 00I0COBFWHOF27 |
 	Then "Static List TestName" list is displayed to user
 	Then "3" rows are displayed in the agGrid
 	When User clicks the Columns button
@@ -302,7 +302,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	And Edit List menu is not displayed
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00OMQQXWA1DRI6   |
+	| 00I0COBFWHOF27   |
 	Then User removes selected rows
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -1069,7 +1069,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhi
 	When User selects "Application Compliance" filter from "Application" category
 	When User change selected checkboxes:
 	| Option | State |
-	| Red    | true |
+	| Red    | true  |
 	When User add "Application Compliance" filter where type is "Equals" with selected Checkboxes and following Association:
 	| SelectedCheckboxes | Association        |
 	| Red                | Used on device     |
