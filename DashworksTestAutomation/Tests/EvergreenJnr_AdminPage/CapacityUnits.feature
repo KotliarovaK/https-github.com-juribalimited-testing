@@ -329,7 +329,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run @archived
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @archived
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUnitsPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -419,7 +419,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUni
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @Not_Run @archived
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @archived
 Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnThePowerUnitPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -501,7 +501,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13481 @Not_Run @archived
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13481 @archived
 Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacityUnitsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

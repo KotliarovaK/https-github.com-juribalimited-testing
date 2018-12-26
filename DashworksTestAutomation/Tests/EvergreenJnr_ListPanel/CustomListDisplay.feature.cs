@@ -704,6 +704,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS11011")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12595")]
+        [NUnit.Framework.CategoryAttribute("DAS14783")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
@@ -717,6 +718,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS11011",
                         "DAS12152",
                         "DAS12595",
+                        "DAS14783",
                         "Delete_Newly_Created_List",
                         "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
@@ -725,11 +727,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemName"});
             table19.AddRow(new string[] {
-                        "00BDM1JUR8IF419"});
+                        "00HA7MKAVVFDAV"});
             table19.AddRow(new string[] {
-                        "011PLA470S0B9DJ"});
+                        "001PSUMZYOW581"});
             table19.AddRow(new string[] {
-                        "00OMQQXWA1DRI6"});
+                        "00I0COBFWHOF27"});
             testRunner.When("User create static list with \"Static List TestName\" name on \"Devices\" page with f" +
                     "ollowing items", ((string)(null)), table19, "When ");
             testRunner.Then("\"Static List TestName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -754,7 +756,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table22.AddRow(new string[] {
-                        "00OMQQXWA1DRI6"});
+                        "00I0COBFWHOF27"});
             testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table22, "When ");
             testRunner.Then("User removes selected rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
