@@ -9,12 +9,6 @@ namespace DashworksTestAutomation.Pages
 {
     internal class EvergreenDashboardsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
-        public IWebElement SubMenuIcon { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'CREATE DASHBOARD')]")]
-        public IWebElement CreateDashboard { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 

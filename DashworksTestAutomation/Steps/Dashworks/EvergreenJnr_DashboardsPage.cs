@@ -21,5 +21,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.ClickSectionFromCircleChart(chartName, sectionName);
         }
+
+        
+       
     }
 }

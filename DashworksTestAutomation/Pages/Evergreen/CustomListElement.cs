@@ -32,6 +32,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='List Name']")]
         public IWebElement ListNameTextBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Dashboard Name']")]
+        public IWebElement DashboardNameTextBox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-primary save-actions-save')]")]
         public IWebElement SaveButton { get; set; }
 
