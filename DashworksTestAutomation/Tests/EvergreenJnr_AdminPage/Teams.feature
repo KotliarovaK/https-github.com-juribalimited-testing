@@ -71,6 +71,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTh
 	And User enters "test" in the Team Description field
 	And User clicks the "CREATE TEAM" Action button
 	Then Error message with "A team already exists with this name" text is displayed
+	When User enters "99770" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button 
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13254 @DAS13172 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
@@ -78,7 +83,7 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
-	Then Counter shows "2,794" found rows
+	#Then Counter shows "2,794" found rows
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
 	When User clicks the "CANCEL" Action button
@@ -183,7 +188,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User clicks Admin on the left-hand menu
 	And User clicks "Teams" link on the Admin page
 	And User selects all rows on the grid
-	Then User sees "2794" of "2794" rows selected label
+	#Then User sees "2794" of "2794" rows selected label
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User selects all rows on the grid
