@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
-	Then "" is displayed in the dropdown filter for "Capacity Units" column
+	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @DAS13157 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
@@ -1292,13 +1292,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	And There are no errors in the browser console
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
-	Then "Unassigned" is displayed in the dropdown filter for "Capacity Units" column
+	Then "No units,Unassigned" is displayed in the dropdown filter for "Capacity Units" column
 	And There are no errors in the browser console
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "Unassigned" checkbox from String Filter on the Admin page
-	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
+	Then "All Capacity Units,No units" is displayed in the dropdown filter for "Capacity Units" column
 	And There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13961 @Delete_Newly_Created_Project
@@ -1369,7 +1369,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	Then User sees following text in cell truncated with ellipsis:
 	| cellText                                               |
 	| Computer: PC Rebuild,Computer: Workstation Replacement |
-	| Administrative Team,Admin IT                           |
+	| Admin IT,Administrative Team                           |
 	| Capacity Unit 1,Capacity Unit 2,Unassigned             |
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
@@ -1715,7 +1715,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" text is displayed in the "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

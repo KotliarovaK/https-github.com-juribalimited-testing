@@ -4,7 +4,9 @@ using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
+using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -121,6 +123,74 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextBox.SendKeys(listName);
             listElement.SaveButton.Click();
+        }
+
+        [When(@"User creates new Dashboard with ""(.*)"" name")]
+        public void WhenUserCreatesNewDashboardWithName(string dashboardName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            listElement.DashboardNameTextBox.SendKeys(dashboardName);
+            listElement.SaveButton.Click();
+        }
+
+        [When(@"User creates new Widget")]
+        public void WhenUserCreatesNewWidget(Table table)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            foreach (var row in table.Rows)
+            {
+                var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+                createWidgetElement.WidgetType.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
+
+                if (string.IsNullOrEmpty(row["Title"]))
+                {
+                    page.Title.SendKeys(" ");
+                }
+                else
+                {
+                    page.Title.SendKeys(row["Title"]);
+                }
+                createWidgetElement.List.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
+
+                _driver.WaitForDataLoadingOnProjects();
+
+                createWidgetElement.SplitBy.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
+
+                createWidgetElement.AggregateBy.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
+
+                createWidgetElement.AggregateFunction.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
+
+                createWidgetElement.OrderBy.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
+
+                page.MaxValues.SendKeys(row["MaxValues"]);
+
+                //color scheme
+
+                //checkbox set
+
+                _driver.WaitForDataLoadingOnProjects();
+              
+                page.ConfirmCreateWidgetButton.Click();
+            }
+        }
+
+        [Then(@"Error message with ""(.*)"" text is displayed on Widget page")]
+        public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => page.ErrorMessage);
+            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
         [When(@"User clicks Save button on the list panel")]

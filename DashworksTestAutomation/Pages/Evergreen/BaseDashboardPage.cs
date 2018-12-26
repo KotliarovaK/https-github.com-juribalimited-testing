@@ -493,7 +493,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetActionsButtonByName(string button)
         {
             var selector = By.XPath(
-                $"//span[text()='{button}']/ancestor::button");
+                $".//span[text()='{button}']/ancestor::button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

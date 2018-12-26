@@ -348,7 +348,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetButtonInWarningMessage(string name)
         {
-            var selector = By.XPath($"//div[@class='inline-buttons']//span[text()='{name}']//ancestor::button");
+            var selector = By.XPath($".//div[@class='inline-tip ng-star-inserted']//button/span[text()='{name}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
