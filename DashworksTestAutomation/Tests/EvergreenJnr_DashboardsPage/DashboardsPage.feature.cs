@@ -101,6 +101,141 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("\"16\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS14358")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS14358"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Ellipsis menu for \"Top 10 App Vendors\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "items"});
+            table1.AddRow(new string[] {
+                        "Edit"});
+            table1.AddRow(new string[] {
+                        "Duplicate"});
+            table1.AddRow(new string[] {
+                        "Move to Start"});
+            table1.AddRow(new string[] {
+                        "Move to End"});
+            table1.AddRow(new string[] {
+                        "Move to position"});
+            table1.AddRow(new string[] {
+                        "Delete"});
+            testRunner.Then("User sees following Ellipsis menu items on Dashboards page:", ((string)(null)), table1, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Sections")]
+        [NUnit.Framework.CategoryAttribute("DAS14358")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Sections",
+                        "DAS14358"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Ellipsis menu for Section having \"Operating System\" Widget on Dashboa" +
+                    "rds page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "items"});
+            table2.AddRow(new string[] {
+                        "Hide"});
+            table2.AddRow(new string[] {
+                        "1 Column"});
+            table2.AddRow(new string[] {
+                        "3 Column"});
+            table2.AddRow(new string[] {
+                        "Duplicate"});
+            table2.AddRow(new string[] {
+                        "Move to Start"});
+            table2.AddRow(new string[] {
+                        "Move to End"});
+            table2.AddRow(new string[] {
+                        "Move to position"});
+            table2.AddRow(new string[] {
+                        "Delete"});
+            testRunner.Then("User sees following Ellipsis menu items on Dashboards page:", ((string)(null)), table2, "Then ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS14358")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS14358"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User remembers number of Sections and Widgets on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Ellipsis menu for \"Device Profile\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Duplicate\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User sees Widget with \"Cloned - Device Profile\" name on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User sees number of Widgets increased by \"1\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User deletes \"Cloned - Device Profile\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Sections")]
+        [NUnit.Framework.CategoryAttribute("DAS14358")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Sections",
+                        "DAS14358"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User remembers number of Sections and Widgets on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Ellipsis menu for Section having \"Domain Profile\" Widget on Dashboard" +
+                    "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Duplicate\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User sees number of Sections increased by \"1\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("User sees number of Widgets increased by \"4\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User deletes duplicated Section having \"Domain Profile\" Widget on Dashboards page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
