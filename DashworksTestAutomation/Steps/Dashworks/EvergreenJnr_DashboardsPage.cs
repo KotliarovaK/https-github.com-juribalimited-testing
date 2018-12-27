@@ -126,6 +126,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.AllWidgetsTitles.Select(x=>x.Text).ToList(), Does.Contain(widgetName), "Widget name is missing");
         }
 
+        [Then(@"Widget name ""(.*)"" has word break style on Dashboards page")]
+        public void WhenUserSeesWordBreakAttributesForNameOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            try
+            {
+                var widget = page.AllWidgetsTitles.FirstOrDefault(x => x.Text.Equals(widgetName));
+                Assert.That(widget.GetCssValue("word-break"), Is.EqualTo("break-word"), "Word break formatting is missing");
+                Assert.That(widget.GetCssValue("word-wrap"), Is.EqualTo("break-word"), "Word break formatting is missing");
+            }
+            catch (NullReferenceException)
+            {
+               Assert.False(true, "Widget not found");
+            }
+        }
+
         [Then(@"User sees Widget with ""(.*)"" name on Dashboards page")]
         public void WhenUserSeesWidgetWithNameOnDashboardsPage(string widgetName)
         {
