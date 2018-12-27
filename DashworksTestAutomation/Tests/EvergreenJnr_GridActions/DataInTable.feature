@@ -21,5 +21,5 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScr
 	| ListName     | ColumnName      |
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
-	| Devices      | Device Key      |
+	#| Devices      | Device Key      |
 	| Users        | User Key        |
