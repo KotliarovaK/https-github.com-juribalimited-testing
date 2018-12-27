@@ -335,6 +335,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("DAS14578")]
+        [NUnit.Framework.CategoryAttribute("DAS14584")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         public virtual void EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars()
         {
@@ -342,6 +343,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Evergreen",
                         "Dashboards",
                         "DAS14578",
+                        "DAS14584",
                         "Widgets"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -372,6 +374,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User creates new Widget", ((string)(null)), table5, "And ");
             testRunner.Then("User sees widget with the next name \"Line with one hundred and seven chars Line w" +
                     "ith one hundred and seven chars Line with one hundred an\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("Widget name \"Line with one hundred and seven chars Line with one hundred and seve" +
+                    "n chars Line with one hundred an\" has word break style on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }
