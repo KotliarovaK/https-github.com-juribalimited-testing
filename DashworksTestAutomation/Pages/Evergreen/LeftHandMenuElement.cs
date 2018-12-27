@@ -8,6 +8,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class LeftHandMenuElement : SeleniumBasePage
     {
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Dashboards']")]
+        public IWebElement Dashboards { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//span[text()='Devices']")]
         public IWebElement Devices { get; set; }
 

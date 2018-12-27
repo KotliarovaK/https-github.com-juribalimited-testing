@@ -27,6 +27,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             switch (listPage)
             {
+                case "Dashboards":
+                    menu.Dashboards.Click();
+                    break;
+
                 case "Devices":
                     menu.Devices.Click();
                     break;
