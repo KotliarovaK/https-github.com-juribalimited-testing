@@ -34,6 +34,25 @@ Examples:
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
 
+@Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14700
+Scenario Outline: EvergreenJnr_AllList_CheckDefaultColumnsDisplayingWhenUsingAllLink
+	When User clicks "<ListName>" on the left-hand menu
+	And User navigates to the "<AllItems>" list
+	Then Column is displayed in following order:
+	| ColumnName |
+	| <Column1>  |
+	| <Column2>  |
+	| <Column3>  |
+	| <Column4>  |
+	| <Column5>  |
+
+Examples: 
+	| ListName     | AllItems         | Column1       | Column2          | Column3          | Column4            | Column5            |
+	| Devices      | All Devices      | Hostname      | Device Type      | Operating System | Owner Display Name |                    |
+	| Users        | All Users        | Username      | Domain           | Display Name     | Distinguished Name |                    |
+	| Applications | All Applications | Application   | Vendor           | Version          |                    |                    |
+	| Mailboxes    | All Mailboxes    | Email Address | Mailbox Platform | Mail Server      | Mailbox Type       | Owner Display Name |
+
 @Evergreen @AllLists @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11988 @DAS10972
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveListFunctionIsAvailableAfterSortingColumns
 	When User clicks "<ListName>" on the left-hand menu

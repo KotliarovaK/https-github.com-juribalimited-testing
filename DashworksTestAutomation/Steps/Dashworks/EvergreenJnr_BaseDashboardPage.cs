@@ -373,7 +373,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
 
             var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
         }
 
