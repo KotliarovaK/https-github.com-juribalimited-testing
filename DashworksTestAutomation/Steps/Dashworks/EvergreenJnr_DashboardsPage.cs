@@ -118,6 +118,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.AllWidgetsTitles.Count, Is.EqualTo(expectedCount), "Number of Widgets is different");
         }
 
+        [Then(@"User sees widget with the next name ""(.*)"" on Dashboards page")]
+        public void WhenUserSeesWidgetWithTheNextNameOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.AllWidgetsTitles.Select(x=>x.Text).ToList(), Does.Contain(widgetName), "Widget name is missing");
+        }
+
         [Then(@"User sees Widget with ""(.*)"" name on Dashboards page")]
         public void WhenUserSeesWidgetWithNameOnDashboardsPage(string widgetName)
         {

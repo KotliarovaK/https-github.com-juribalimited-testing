@@ -328,6 +328,52 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("DAS14578")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "DAS14578",
+                        "Widgets"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User creates new Dashboard with \"Dashboard for DAS14578\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"New dashboard created\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "MaxValues"});
+            table5.AddRow(new string[] {
+                        "Table",
+                        "Line with one hundred and seven chars Line with one hundred and seven chars Line " +
+                            "with one hundred and seven",
+                        "All Applications",
+                        "Application",
+                        "Application",
+                        "Count",
+                        "Application ASC",
+                        "10"});
+            testRunner.And("User creates new Widget", ((string)(null)), table5, "And ");
+            testRunner.Then("User sees widget with the next name \"Line with one hundred and seven chars Line w" +
+                    "ith one hundred and seven chars Line with one hundred an\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

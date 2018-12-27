@@ -139,18 +139,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User creates new Widget")]
         public void WhenUserCreatesNewWidget(Table table)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
             foreach (var row in table.Rows)
             {
-                var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
                 createWidgetElement.WidgetType.Click();
                 createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
 
-                if (string.IsNullOrEmpty(row["Title"])) page.Title.SendKeys(" ");
+                if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
 
-                if (!string.IsNullOrEmpty(row["Title"])) page.Title.SendKeys(row["Title"]); ;
-                
+                if (!string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(row["Title"]);
+
                 if (!string.IsNullOrEmpty(row["List"]))
                 {
                     createWidgetElement.List.Click();
@@ -188,12 +187,87 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (!string.IsNullOrEmpty(row["MaxValues"]))
                 {
-                    page.MaxValues.Clear();
-                    page.MaxValues.SendKeys(row["MaxValues"]);
+                    createWidgetElement.MaxValues.Clear();
+                    createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
                 }
-                    
-                page.ConfirmCreateWidgetButton.Click();
+
+                createWidgetElement.ConfirmCreateWidgetButton.Click();
             }
+        }
+
+        [When(@"User selects ""(.*)"" as Widget Type")]
+        public void WhenUserSetsWidgetType(string widgetType)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.WidgetType.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(widgetType);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [When(@"User enters ""(.*)"" as Widget Title")]
+        public void WhenUserSetsWidgetTitle(string widgetTitle)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.Title.SendKeys(widgetTitle);
+        }
+
+        [When(@"User selects ""(.*)"" as Widget List")]
+        public void WhenUserSetsWidgetList(string widgetList)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.List.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(widgetList);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [When(@"User selects ""(.*)"" as Widget SplitBy")]
+        public void WhenUserSetsWidgetSplitBy(string splitBy)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.SplitBy.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(splitBy);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [When(@"User selects ""(.*)"" as Widget AggregateBy")]
+        public void WhenUserSetsWidgetAggregateBy(string aggregateBy)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.AggregateBy.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(aggregateBy);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [When(@"User selects ""(.*)"" as Widget Aggregate Function")]
+        public void WhenUserSetsWidgetAggregateFunction(string aggregateFunc)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.AggregateFunction.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(aggregateFunc);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [When(@"User selects ""(.*)"" as Widget OrderBy")]
+        public void WhenUserSetsWidgetOrderBy(string orderBy)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.OrderBy.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(orderBy);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [Then(@"Widget title ""(.*)"" is displayed on Widget page")]
+        public void ThenWidgetTitleDisplayedOnThePage(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.AreEqual(text, page.Title.GetAttribute("innerHTML"), "Widget title is not the same");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed on Widget page")]
