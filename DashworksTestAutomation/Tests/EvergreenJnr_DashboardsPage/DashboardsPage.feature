@@ -59,14 +59,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 	And User sees number of Widgets increased by "4" on Dashboards page
 	When User deletes duplicated Section having "Domain Profile" Widget on Dashboards page
 
-@Evergreen @Dashboards @DAS14587
+@Evergreen @Dashboards @DAS14587 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14587" name
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues | ColorScheme | ShowLegend |
-	| Pie        |       | All Devices | Device Type | Hostname    | Count             | Device Type ASC | 10        | Multi       | No         |
+	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Pie        |       | All Devices | Device Type | Hostname    | Count             | Device Type ASC | 10        |
 	Then Error message with "Widget Title should not be empty" text is displayed on Widget page
 	And There are no errors in the browser console
+
+@Evergreen @Dashboards @DAS14685 @Widgets
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14685" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | MaxValues |
+	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count             | Application ASC | 10        | 
+	Then There are no errors in the browser console

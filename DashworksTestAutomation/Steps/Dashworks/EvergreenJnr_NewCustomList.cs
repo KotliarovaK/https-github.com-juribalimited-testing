@@ -147,39 +147,51 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 createWidgetElement.WidgetType.Click();
                 createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
 
-                if (string.IsNullOrEmpty(row["Title"]))
+                if (string.IsNullOrEmpty(row["Title"])) page.Title.SendKeys(" ");
+
+                if (!string.IsNullOrEmpty(row["Title"])) page.Title.SendKeys(row["Title"]); ;
+                
+                if (!string.IsNullOrEmpty(row["List"]))
                 {
-                    page.Title.SendKeys(" ");
+                    createWidgetElement.List.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
+                    _driver.WaitForDataLoadingOnProjects();
                 }
-                else
+
+                if (!string.IsNullOrEmpty(row["SplitBy"]))
                 {
-                    page.Title.SendKeys(row["Title"]);
+                    createWidgetElement.SplitBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
+                    _driver.WaitForDataLoadingOnProjects();
                 }
-                createWidgetElement.List.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
 
-                _driver.WaitForDataLoadingOnProjects();
+                if (!string.IsNullOrEmpty(row["AggregateBy"]))
+                {
+                    createWidgetElement.AggregateBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
 
-                createWidgetElement.SplitBy.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
+                if (!string.IsNullOrEmpty(row["AggregateFunction"]))
+                {
+                    createWidgetElement.AggregateFunction.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
 
-                createWidgetElement.AggregateBy.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
+                if (!string.IsNullOrEmpty(row["OrderBy"]))
+                {
+                    createWidgetElement.OrderBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
 
-                createWidgetElement.AggregateFunction.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
-
-                createWidgetElement.OrderBy.Click();
-                createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
-
-                page.MaxValues.SendKeys(row["MaxValues"]);
-
-                //color scheme
-
-                //checkbox set
-
-                _driver.WaitForDataLoadingOnProjects();
-              
+                if (!string.IsNullOrEmpty(row["MaxValues"]))
+                {
+                    page.MaxValues.Clear();
+                    page.MaxValues.SendKeys(row["MaxValues"]);
+                }
+                    
                 page.ConfirmCreateWidgetButton.Click();
             }
         }

@@ -242,13 +242,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("DAS14587")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavi" +
                     "ngInvalidName", null, new string[] {
                         "Evergreen",
                         "Dashboards",
-                        "DAS14587"});
+                        "DAS14587",
+                        "Widgets"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -256,7 +258,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User creates new Dashboard with \"Dashboard for DAS14587\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"New dashboard created\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
@@ -264,10 +266,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "MaxValues",
-                        "ColorScheme",
-                        "ShowLegend"});
-            table1.AddRow(new string[] {
+                        "MaxValues"});
+            table3.AddRow(new string[] {
                         "Pie",
                         "",
                         "All Devices",
@@ -275,13 +275,57 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Hostname",
                         "Count",
                         "Device Type ASC",
-                        "10",
-                        "Multi",
-                        "No"});
-            testRunner.And("User creates new Widget", ((string)(null)), table1, "And ");
+                        "10"});
+            testRunner.And("User creates new Widget", ((string)(null)), table3, "And ");
             testRunner.Then("Error message with \"Widget Title should not be empty\" text is displayed on Widget" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("DAS14685")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget" +
+                    "", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "DAS14685",
+                        "Widgets"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User creates new Dashboard with \"Dashboard for DAS14685\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"New dashboard created\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "MaxValues"});
+            table4.AddRow(new string[] {
+                        "Table",
+                        "WidgetForDAS14685",
+                        "All Applications",
+                        "Application",
+                        "Application",
+                        "Count",
+                        "Application ASC",
+                        "10"});
+            testRunner.And("User creates new Widget", ((string)(null)), table4, "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
     }
