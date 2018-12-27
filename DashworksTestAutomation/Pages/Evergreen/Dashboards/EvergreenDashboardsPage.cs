@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Pages
 
         public bool IsWidgetExists(string widgetName)
         {
-            return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]")).Displayed;
+            return Driver.FindElements(By.XPath($".//div[@class='widgets']//h5[contains(text(),'{widgetName}')]")).Count > 0;
         }
 
         public IWebElement GetEllipsisMenuForWidget(string widgetName)
