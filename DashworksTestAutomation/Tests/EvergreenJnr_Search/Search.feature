@@ -372,3 +372,11 @@ Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTh
 	Then "395" rows are displayed in the agGrid
 	When User opens filter container
 	Then "1,067" rows are displayed in the agGrid
+
+	@Evergreen @EvergreenJnr_Search @Search @DAS14731
+Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed
+	When User type "jet" in Global Search Field and presses Enter key
+	Then list of results is displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	And There are no errors in the browser console

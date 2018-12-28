@@ -127,10 +127,14 @@ Scenario: EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	When User click on Back button
+	When User enters "TestTeam88" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 	When User enters "TestTeam8" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User removes selected item
-	Then Success message is displayed and contains "The selected teams have been deleted, and their buckets reassigned" text
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13254 @DAS13421 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
@@ -385,7 +389,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	#And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "True" checkbox from boolean filter on the Admin page
-	Then Counter shows "2,793" found rows
+	#Then Counter shows "2,793" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page
@@ -451,7 +455,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	Then Error message with "A team already exists with this name" text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13000 @DAS13632 @DAS13602 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13000 @DAS13632 @DAS13602 @Delete_Newly_Created_Team @Teams @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -488,6 +492,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User clicks Default Team checkbox
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
+	When User click on Back button
+	And User enters "001Team13000" text in the Search field for "Team" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly
@@ -515,14 +524,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	And User clicks on Actions button
 	And User selects "Add to another team" in the Actions
 	And User clicks the "CONTINUE" Action button
-	When User type "M" search criteria in Select a new Team field
+	And User type "M" search criteria in Select a new Team field
 	Then following Team are displayed in Select a new Team drop-down:
 	| Options                |
 	| Migration Phase 2      |
 	| Migration Phase 3 Team |
 	| My Team                |
 	When User click on Back button
-	When User enters "DAS12326" text in the Search field for "Team" column
+	And User enters "DAS12326" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User removes selected item
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text

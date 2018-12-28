@@ -1050,7 +1050,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenReassignBucketsPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<ReassignBucketsPage>();
-            Assert.IsTrue(page.PageTitle.Displayed(), "Reassign Buckets page is not displayed");
+            Assert.IsTrue(page.PageReassignBucketsTitle.Displayed(), "Reassign Buckets page is not displayed");
         }
 
         [Then(@"Change Team page is displayed to the user")]
@@ -2523,6 +2523,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < buckets.RowCount; i++)
                 Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
                     "Buckets are not the same");
+        }
+
+
+        [Then(@"Columns on Admin page is displayed in following order:")]
+        public void ThenColumnsOnAdminPageIsDisplayedInFollowingOrder(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
         }
 
         [When(@"User creates following buckets in Administration:")]
