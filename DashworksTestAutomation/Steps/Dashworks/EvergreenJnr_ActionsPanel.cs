@@ -608,13 +608,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.ListNameTextBox.SendKeys(listName);
         }
 
-        [When(@"User select ""(.*)"" option in Actions panel")]
-        public void WhenUserSelectOptionInActionsPanel(string option)
-        {
-            var actionsElement = _driver.NowAt<ActionsElement>();
-            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
-        }
-
         [Then(@"All checkboxes are checked in the table")]
         public void ThenAllCheckboxesAreCheckedInTheTable()
         {
