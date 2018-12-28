@@ -111,6 +111,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(listSettingsSelector);
         }
 
+        public IWebElement OpenSettingsByDashboardName(string dashboardName)
+        {
+            var dashboardSettingsSelector =
+                By.XPath(
+                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i");
+            Driver.MouseHover(dashboardSettingsSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
+            return Driver.FindElement(dashboardSettingsSelector);
+        }
+
         public IWebElement ListInBottomSection(string listName)
         {
             var listSelector =

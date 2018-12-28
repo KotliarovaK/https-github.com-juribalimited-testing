@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='ColorScheme']")]
         public IWebElement ColorScheme { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form-item ng-star-inserted']//input[@type='checkbox']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-item ng-star-inserted']//div[@class='mat-checkbox-inner-container']")]
         public IWebElement ShowLegend { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'CREATE')]")]
