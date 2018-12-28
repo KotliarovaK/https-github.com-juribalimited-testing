@@ -8,8 +8,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ReassignBucketsPage : SeleniumBasePage
     {
+        [FindsBy(How = How.XPath, Using = ".//h1")]
+        public IWebElement PageHeader { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//h2[text()='Reassign Buckets']")]
-        public IWebElement PageTitle { get; set; }
+        public IWebElement PageReassignBucketsTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@id='teams']")]
         public IWebElement SelectTeamDropdown { get; set; }
@@ -19,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.PageTitle)
+                SelectorFor(this, p => p.PageHeader)
             };
         }
 
