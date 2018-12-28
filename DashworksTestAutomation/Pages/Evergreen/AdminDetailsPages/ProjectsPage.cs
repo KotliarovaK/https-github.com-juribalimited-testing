@@ -255,6 +255,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
+        public void SelectProjectsMode(string objectName)
+        {
+            var listNameSelector = $".//span[@class='mat-option-text'][text()='{objectName}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
         public void GetCheckboxStringFilterWithItemListByName(string filterName)
         {
             if (filterName.Equals("Select All"))

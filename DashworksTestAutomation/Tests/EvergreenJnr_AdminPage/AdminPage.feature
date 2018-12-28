@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Buckets @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Buckets @Projects
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -193,10 +193,9 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Project12948" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks "Details" tab
-	And User selects "Clone evergreen buckets to project buckets" in the Mode Project dropdown
-	And User clicks the "UPDATE" Action button
-	Then Success message is displayed and contains "The project details have been updated" text
-	And There are no errors in the browser console
+	And user selects "Clone evergreen buckets to project buckets" in the Bucket dropdown
+	Then There are no errors in the browser console
+	When User clicks "Scope" tab
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 

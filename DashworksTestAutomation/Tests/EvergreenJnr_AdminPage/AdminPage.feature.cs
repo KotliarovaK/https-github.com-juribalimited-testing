@@ -332,7 +332,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects", null, new string[] {
@@ -346,8 +345,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13973",
                         "Delete_Newly_Created_Project",
                         "Buckets",
-                        "Projects",
-                        "Not_Run"});
+                        "Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -422,12 +420,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User enters \"Project12948\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Clone evergreen buckets to project buckets\" in the Mode Project dro" +
-                    "pdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is displayed and contains \"The project details have been updated\"" +
-                    " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("user selects \"Clone evergreen buckets to project buckets\" in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Scope\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User selects \"Scope Changes\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Match to Evergreen Bucket\" is displayed in the Bucket dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

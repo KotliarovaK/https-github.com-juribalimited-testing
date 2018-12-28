@@ -1939,7 +1939,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ModeProjectField.Click();
-            createProjectElement.SelectObjectForProjectCreation(optionName);
+            createProjectElement.SelectProjectsMode(optionName);
             //Waiting for option change
             Thread.Sleep(3000);
         }
