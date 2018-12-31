@@ -1715,7 +1715,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" text is displayed in the "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1781,7 +1781,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User navigate to "Group Computer Rag Radio Date Owner" Task
 	And User publishes the task
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedToACapacitySlot
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
