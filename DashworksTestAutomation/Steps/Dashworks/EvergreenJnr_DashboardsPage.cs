@@ -122,7 +122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSeesWidgetWithTheNextNameOnDashboardsPage(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
+            _driver.WaitForDataLoading();
             Assert.That(page.AllWidgetsTitles.Select(x=>x.Text).ToList(), Does.Contain(widgetName), "Widget name is missing");
         }
 
