@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Projects
 	Then "Projects Home" page is displayed to the user
 
-@ProjectsOnSenior @PMObject @Applications_tab @DAS12695 @DAS14003
+@ProjectsOnSenior @PMObject @Applications_tab @DAS12695 @DAS14003 @Not_Run
 Scenario: Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage
 	When User navigates to "61085" Object on PMObject page
 	Then "Project Object" page is displayed to the user

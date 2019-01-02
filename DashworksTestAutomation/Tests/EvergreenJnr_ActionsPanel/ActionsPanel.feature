@@ -706,7 +706,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13074 @Do_Not_Run_With_Projects
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13074 @Do_Not_Run_With_AdminPage @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsDllAndInSelectedSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
