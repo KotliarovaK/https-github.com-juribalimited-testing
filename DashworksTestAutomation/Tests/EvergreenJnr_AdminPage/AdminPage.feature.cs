@@ -247,6 +247,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13803")]
         [NUnit.Framework.CategoryAttribute("DAS13930")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
+        [NUnit.Framework.CategoryAttribute("DAS12768")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Teams")]
@@ -267,6 +268,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13803",
                         "DAS13930",
                         "DAS13973",
+                        "DAS12768",
                         "Project_Creation_and_Scope",
                         "Projects",
                         "Teams",
