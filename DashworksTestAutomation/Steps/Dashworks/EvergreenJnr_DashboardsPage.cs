@@ -239,6 +239,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
                 }
 
+                if (!string.IsNullOrEmpty(row["TableOrientation"]))
+                {
+                    createWidgetElement.TableOrientation.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
                 if (!string.IsNullOrEmpty(row["ShowLegend"]) && row["ShowLegend"].Equals("true"))
                 {
                     createWidgetElement.ShowLegend.Click();

@@ -80,6 +80,7 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.CategoryAttribute("Applications_tab")]
         [NUnit.Framework.CategoryAttribute("DAS12695")]
         [NUnit.Framework.CategoryAttribute("DAS14003")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage", null, new string[] {
@@ -87,7 +88,8 @@ namespace DashworksTestAutomation.Tests.Senior
                         "PMObject",
                         "Applications_tab",
                         "DAS12695",
-                        "DAS14003"});
+                        "DAS14003",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

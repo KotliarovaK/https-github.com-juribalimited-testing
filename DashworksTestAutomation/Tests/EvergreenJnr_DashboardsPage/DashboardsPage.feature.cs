@@ -287,7 +287,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "MaxValues"});
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend"});
             table5.AddRow(new string[] {
                         "Pie",
                         "Test_Widget_DAS14668_1",
@@ -296,7 +298,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "ICSP: i-Schedule",
                         "Count",
                         "ICSP: i-Schedule ASC",
-                        "5"});
+                        "",
+                        "5",
+                        ""});
             testRunner.And("User creates new Widget", ((string)(null)), table5, "And ");
             testRunner.Then("User sees widget with the next name \"Test_Widget_DAS14668_1\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -308,7 +312,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "MaxValues"});
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend"});
             table6.AddRow(new string[] {
                         "Pie",
                         "Test_Widget_DAS14668_2",
@@ -317,9 +323,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "ICSP: i-Schedule",
                         "Count Distinct",
                         "ICSP: i-Schedule DESC",
-                        "20"});
+                        "",
+                        "20",
+                        ""});
             testRunner.And("User creates new Widget", ((string)(null)), table6, "And ");
             testRunner.Then("User sees widget with the next name \"Test_Widget_DAS14668_2\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Settings button for \"Dashboard for DAS14668\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -362,6 +373,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
+                        "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
             table7.AddRow(new string[] {
@@ -372,6 +384,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         string.Format("{0}", aggregateBy),
                         string.Format("{0}", aggregateFunctio),
                         string.Format("{0}", orderBy),
+                        "",
                         "10",
                         string.Format("{0}", showLegend)});
             testRunner.And("User creates new Widget", ((string)(null)), table7, "And ");
@@ -382,7 +395,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User sees number of Widgets increased by \"1\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User sees Widget with \"{0}\" name on Dashboards page", titleCloned), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks Settings button for \"Dashboard for DAS14586\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
@@ -407,7 +420,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User creates new Dashboard with \"Dashboard for DAS14587\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User creates new Dashboard with \"Dashboard for DAS14587 1\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"New dashboard created\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -418,7 +431,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "MaxValues"});
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend"});
             table8.AddRow(new string[] {
                         "Pie",
                         "",
@@ -427,11 +442,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Hostname",
                         "Count",
                         "Device Type ASC",
-                        "10"});
+                        "",
+                        "10",
+                        ""});
             testRunner.And("User creates new Widget", ((string)(null)), table8, "And ");
             testRunner.Then("Error message with \"Widget Title should not be empty\" text is displayed on Widget" +
                     " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("User sees widget with the next name \"Dashboard for DAS14587 1\" on Dashboards page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Settings button for \"Dashboard for DAS14587 1\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -466,7 +488,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "MaxValues"});
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend"});
             table9.AddRow(new string[] {
                         "Table",
                         "WidgetForDAS14685",
@@ -475,9 +499,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Application",
                         "Count",
                         "Application ASC",
-                        "10"});
+                        "Horizontal",
+                        "10",
+                        ""});
             testRunner.And("User creates new Widget", ((string)(null)), table9, "And ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("User sees widget with the next name \"Dashboard for DAS14685\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Settings button for \"Dashboard for DAS14685\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
         
@@ -501,7 +531,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User creates new Dashboard with \"Dashboard for DAS14578\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User creates new Dashboard with \"Dashboard for DAS14578 2\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("\"New dashboard created\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -512,7 +542,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "AggregateBy",
                         "AggregateFunction",
                         "OrderBy",
-                        "MaxValues"});
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend"});
             table10.AddRow(new string[] {
                         "Table",
                         "Line with one hundred and seven chars Line with one hundred and seven chars Line " +
@@ -522,12 +554,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Application",
                         "Count",
                         "Application ASC",
-                        "10"});
+                        "Horizontal",
+                        "10",
+                        ""});
             testRunner.And("User creates new Widget", ((string)(null)), table10, "And ");
             testRunner.Then("User sees widget with the next name \"Line with one hundred and seven chars Line w" +
                     "ith one hundred and seven chars Line with one hundred an\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("Widget name \"Line with one hundred and seven chars Line with one hundred and seve" +
                     "n chars Line with one hundred an\" has word break style on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks Settings button for \"Dashboard for DAS14578 2\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
     }
