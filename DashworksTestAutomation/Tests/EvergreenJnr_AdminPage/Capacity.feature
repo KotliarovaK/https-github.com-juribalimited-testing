@@ -2006,4 +2006,3 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplic
 	| User        |
 	| Computer    |
 	| Application |
-	

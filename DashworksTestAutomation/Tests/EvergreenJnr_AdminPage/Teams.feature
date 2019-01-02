@@ -24,7 +24,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "K-Team" text in the Search field for "Team" column
 	Then Counter shows "2" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Delete_Newly_Created_Team @Teams @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -187,12 +187,12 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Teams @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User clicks Admin on the left-hand menu
 	And User clicks "Teams" link on the Admin page
 	And User selects all rows on the grid
-	#Then User sees "2794" of "2794" rows selected label
+	Then User sees "2794" of "2794" rows selected label
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User selects all rows on the grid
@@ -256,8 +256,6 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then numeric data in table is sorted by "Mailboxes" column in descending order on the Admin page
 	When User click on "Mailboxes" column header on the Admin page
 	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
-	#When User have opened Column Settings for "Default" column
-	#And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "False" checkbox from boolean filter on the Admin page
 	Then Counter shows "0" found rows
@@ -364,7 +362,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -385,11 +383,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then There are no errors in the browser console
 	When User click on Back button
-	#And User have opened Column Settings for "Default" column
-	#And User clicks Filter button in the Column Settings panel on the Teams Page
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "True" checkbox from boolean filter on the Admin page
-	#Then Counter shows "2,793" found rows
+	Then Counter shows "2,793" found rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page

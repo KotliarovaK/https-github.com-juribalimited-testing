@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS10859 @DAS12602 @DAS14603 @archived @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS10859 @DAS12602 @DAS14603 @archived
 Scenario: EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorDoesNotContinueToRun
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -130,7 +130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPBU" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @Not_Run
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "1 changes have successfully been queued" text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Sharepoint Application" content is displayed for "EmailMigra: Request Type" column
 	When User clicks the Logout button
@@ -706,7 +706,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13074
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13074 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyInTheActionsDllAndInSelectedSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

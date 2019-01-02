@@ -1256,7 +1256,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then "Unassigned" is displayed in the Bucket dropdown
 	And There are no errors in the browser console
 
-Examples: 
+Examples:
 	| ProjectName       | ScopeValue    |
 	| UsersProject5     | All Users     |
 	| MailboxesProject5 | All Mailboxes |
@@ -3082,7 +3082,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProje
 	| Use project buckets                        |
 	| Clone evergreen buckets to project buckets |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
