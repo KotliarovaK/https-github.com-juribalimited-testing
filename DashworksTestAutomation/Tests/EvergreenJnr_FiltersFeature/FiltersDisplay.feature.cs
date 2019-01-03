@@ -2842,6 +2842,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("DAS13201")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
@@ -2853,6 +2854,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "AllLists",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
+                        "Projects",
                         "Delete_Newly_Created_Project",
                         "DAS13201",
                         "Not_Run"});

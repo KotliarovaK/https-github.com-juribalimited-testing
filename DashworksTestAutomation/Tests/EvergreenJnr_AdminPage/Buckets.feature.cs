@@ -1219,6 +1219,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12905")]
         [NUnit.Framework.CategoryAttribute("DAS12930")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
@@ -1234,6 +1235,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
+                        "Projects",
                         "DAS12905",
                         "DAS12930",
                         "DAS13973",

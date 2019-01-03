@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	| Users         |
 	| Applications  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13723 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13723 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Counter shows "1" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User selects "All Capacity Units" checkbox from String Filter on the Admin page
 	Then "No units" is displayed in the dropdown filter for "Capacity Units" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @DAS13157 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @DAS13157 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS12672 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -266,7 +266,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13780 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13780 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -311,7 +311,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And "2" rows label displays in Action panel
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Units @DAS13789 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Units @Projects @DAS13789 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUsingTheSameNameWithDifferentCase
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -345,7 +345,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity unit details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13945 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -392,7 +392,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| Unassigned |
 	| test1      |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13824 @DAS14250 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13824 @DAS14250 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -601,7 +601,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -642,7 +642,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And "1" rows label displays in Action panel
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @DAS13442 @DAS13440 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @Projects @DAS13442 @DAS13440 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -777,7 +777,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Application: Request Type A |
 	| Application: Request Type B |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13159 @DAS13754 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13159 @DAS13754 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -817,7 +817,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	| CapacityUnit13790 |
 	| NewUnit           |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13382 @DAS13149 @DAS13147 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13382 @DAS13149 @DAS13147 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExistingDisplayName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -850,7 +850,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	And User type "Name13147" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @DAS14029
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS14029
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -887,7 +887,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	| Project14029 Snr |
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -942,7 +942,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks newly created object link
 	Then See Translations link on the Capacity Slot page is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @DAS13928 @DAS14614 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13928 @DAS14614 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLanguageDoesNotHaveTranslations
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -989,7 +989,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS14103 @DAS14172 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS14103 @DAS14172 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1099,7 +1099,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13661 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13661 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1205,7 +1205,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 	And Alert message is displayed and contains "Enter integer value between 1 and 32767" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13791 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13791 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEnteredInMoveToPositionIsGreaterThanTotalresocordsNumber
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1247,7 +1247,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	| Slot 10001 |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1301,7 +1301,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	Then "All Capacity Units,No units" is displayed in the dropdown filter for "Capacity Units" column
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13961 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13961 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1336,7 +1336,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13811
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13811
 Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForRequestTypeTeamsAndCapacityUnitsColumnOnCapacitySlotsGrid
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1380,7 +1380,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13956 @DAS14068 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @Projects @DAS13956 @DAS14068 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1415,7 +1415,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13526 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1564,7 +1564,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13593 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS13593 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page

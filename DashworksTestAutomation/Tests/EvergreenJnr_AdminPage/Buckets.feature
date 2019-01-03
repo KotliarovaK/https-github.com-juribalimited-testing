@@ -575,7 +575,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And There are no errors in the browser console
 	Then Delete "TestBucket1" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12905 @DAS12930 @DAS13973 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12905 @DAS12930 @DAS13973 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory 
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

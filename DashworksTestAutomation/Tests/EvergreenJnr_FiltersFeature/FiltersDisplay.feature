@@ -1157,7 +1157,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Delete_Newly_Created_Project @DAS13201 @Not_Run
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Delete_Newly_Created_Project @DAS13201 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks Admin on the left-hand menu
 	And User clicks the "CREATE PROJECT" Action button

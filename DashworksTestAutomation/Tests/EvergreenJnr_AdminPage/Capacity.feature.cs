@@ -158,6 +158,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13723")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn()
@@ -168,6 +169,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Override_Dates",
+                        "Projects",
                         "DAS13723",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -207,6 +209,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13171")]
         [NUnit.Framework.CategoryAttribute("DAS13432")]
         [NUnit.Framework.CategoryAttribute("DAS13430")]
@@ -223,6 +226,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13171",
                         "DAS13432",
                         "DAS13430",
@@ -319,6 +323,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13790")]
         [NUnit.Framework.CategoryAttribute("DAS13528")]
         [NUnit.Framework.CategoryAttribute("DAS13165")]
@@ -337,6 +342,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Units",
+                        "Projects",
                         "DAS13790",
                         "DAS13528",
                         "DAS13165",
@@ -416,6 +422,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12672")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated()
@@ -426,6 +433,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Units",
+                        "Projects",
                         "DAS12672",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -573,6 +581,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13780")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate()
@@ -584,6 +593,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Override_Dates",
+                        "Projects",
                         "DAS13780",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -650,6 +660,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("Units")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13789")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUsingTheSameNameWithDifferentCase()
@@ -662,6 +673,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Capacity",
                         "Slots",
                         "Units",
+                        "Projects",
                         "DAS13789",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -719,6 +731,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13945")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName()
@@ -729,6 +742,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Units",
+                        "Projects",
                         "DAS13945",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -824,6 +838,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13824")]
         [NUnit.Framework.CategoryAttribute("DAS14250")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -836,6 +851,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13824",
                         "DAS14250",
                         "Delete_Newly_Created_Project"});
@@ -1209,6 +1225,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13779")]
         [NUnit.Framework.CategoryAttribute("DAS14176")]
         [NUnit.Framework.CategoryAttribute("DAS14177")]
@@ -1222,6 +1239,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Override_Dates",
+                        "Projects",
                         "DAS13779",
                         "DAS14176",
                         "DAS14177",
@@ -1283,6 +1301,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("Override_Dates")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13442")]
         [NUnit.Framework.CategoryAttribute("DAS13440")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -1296,6 +1315,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Capacity",
                         "Slots",
                         "Override_Dates",
+                        "Projects",
                         "DAS13442",
                         "DAS13440",
                         "Delete_Newly_Created_Project"});
@@ -1524,6 +1544,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13159")]
         [NUnit.Framework.CategoryAttribute("DAS13754")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -1535,6 +1556,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Units",
+                        "Projects",
                         "DAS13159",
                         "DAS13754",
                         "Delete_Newly_Created_Project"});
@@ -1604,6 +1626,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13382")]
         [NUnit.Framework.CategoryAttribute("DAS13149")]
         [NUnit.Framework.CategoryAttribute("DAS13147")]
@@ -1617,6 +1640,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13382",
                         "DAS13149",
                         "DAS13147",
@@ -1671,6 +1695,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14029")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits()
         {
@@ -1683,6 +1708,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Capacity",
                         "Slots",
                         "Senior_Projects",
+                        "Projects",
                         "DAS14029"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1744,6 +1770,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13955")]
         [NUnit.Framework.CategoryAttribute("DAS13681")]
         [NUnit.Framework.CategoryAttribute("DAS14208")]
@@ -1757,6 +1784,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13955",
                         "DAS13681",
                         "DAS14208",
@@ -1833,6 +1861,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13928")]
         [NUnit.Framework.CategoryAttribute("DAS14614")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -1843,6 +1872,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
+                        "Projects",
                         "DAS13928",
                         "DAS14614",
                         "Delete_Newly_Created_Project"});
@@ -1928,6 +1958,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14103")]
         [NUnit.Framework.CategoryAttribute("DAS14172")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -1941,6 +1972,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS14103",
                         "DAS14172",
                         "Delete_Newly_Created_Project",
@@ -2099,6 +2131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13661")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue()
@@ -2110,6 +2143,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13661",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -2367,6 +2401,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13791")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEnteredInMoveToPositionIsGreaterThanTotalresocordsNumber()
@@ -2378,6 +2413,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13791",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -2442,6 +2478,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13792")]
         [NUnit.Framework.CategoryAttribute("DAS13788")]
         [NUnit.Framework.CategoryAttribute("DAS14241")]
@@ -2455,6 +2492,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13792",
                         "DAS13788",
                         "DAS14241",
@@ -2537,6 +2575,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13961")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged()
@@ -2548,6 +2587,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Units",
+                        "Projects",
                         "DAS13961",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -2602,6 +2642,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13811")]
         public virtual void EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForRequestTypeTeamsAndCapacityUnitsColumnOnCapacitySlotsGrid()
         {
@@ -2612,6 +2653,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13811"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2688,6 +2730,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("CapacityUnits")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13956")]
         [NUnit.Framework.CategoryAttribute("DAS14068")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -2700,6 +2743,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "CapacityUnits",
+                        "Projects",
                         "DAS13956",
                         "DAS14068",
                         "Delete_Newly_Created_Project",
@@ -2755,6 +2799,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13526")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed()
@@ -2766,6 +2811,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "Slots",
+                        "Projects",
                         "DAS13526",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
@@ -3020,6 +3066,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13593")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage()
@@ -3032,6 +3079,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Capacity",
                         "Slots",
                         "Senior_Projects",
+                        "Projects",
                         "DAS13593",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);

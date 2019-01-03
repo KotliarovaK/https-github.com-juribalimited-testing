@@ -192,7 +192,7 @@ Examples:
 	| Mailboxes    | Alias       | Owner City                        | Created Date   | Pivot_Mailboxes_List_13747    | Display Name    | Mailbox      |
 	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Pivot_Applications_List_13747 | Application Key | Application  |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @Delete_Newly_Created_Project
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @Projects @DAS14224 @DAS14413 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
