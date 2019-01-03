@@ -1400,6 +1400,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.NewProjectLink);
             projectElement.NewProjectLink.Click();
         }
 

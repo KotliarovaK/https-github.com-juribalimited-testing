@@ -119,7 +119,7 @@ Examples:
 @Evergreen @Dashboards @DAS14587 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
 	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14587 1" name
+	And User creates new Dashboard with "Dashboard for DAS14587" name
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -127,8 +127,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	| Pie        |       | All Devices | Device Type | Hostname    | Count             | Device Type ASC |                  | 10        |            |
 	Then Error message with "Widget Title should not be empty" text is displayed on Widget page
 	And There are no errors in the browser console
-	Then User sees widget with the next name "Dashboard for DAS14587 1" on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14587 1" dashboard
+	When User creates new Widget
+	| WidgetType | Title                  | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
+	|            | Dashboard for DAS14587 |      |         |             |                   |         |                  |           |            |
+	Then User sees widget with the next name "Dashboard for DAS14587" on Dashboards page
+	When User clicks Settings button for "Dashboard for DAS14587" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
@@ -140,9 +143,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count             | Application ASC | Horizontal       | 10        |            |
+	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count             | Application ASC |                  | 10        |            |
 	Then There are no errors in the browser console
-	Then User sees widget with the next name "Dashboard for DAS14685" on Dashboards page
+	Then User sees widget with the next name "WidgetForDAS14685" on Dashboards page
 	When User clicks Settings button for "Dashboard for DAS14685" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
@@ -150,7 +153,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 @Evergreen @Dashboards @DAS14578 @DAS14584 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14578 2" name
+	And User creates new Dashboard with "Dashboard for DAS14578" name
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -158,6 +161,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	| Table      | Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred and seven | All Applications | Application | Application | Count             | Application ASC | Horizontal       | 10        |            |
 	Then User sees widget with the next name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" on Dashboards page
 	And Widget name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" has word break style on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14578 2" dashboard
+	When User clicks Settings button for "Dashboard for DAS14578" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
