@@ -374,7 +374,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS10789")]
         [NUnit.Framework.CategoryAttribute("DAS13684")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_ApplicationsOnDevicesList", "Runs Evergreen URL query strings for the Applications on Devices List.", new string[] {
@@ -383,8 +382,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS10789",
-                        "DAS13684",
-                        "Not_Run"});
+                        "DAS13684"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

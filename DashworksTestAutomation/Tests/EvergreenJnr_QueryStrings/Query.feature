@@ -76,7 +76,7 @@ Runs Evergreen URL query strings for the Mailboxes List.
 	| EmailMigra filters | evergreen/#/mailboxes?$filter=(project_48_inScope%20EQUALS%20('1')%20AND%20project_48_objectStatus%20EQUALS%20('Onboarded'))&$select=principalEmailAddress,mailboxPlatform,serverName,mailboxType,ownerDisplayName,project_48_inScope,project_48_objectStatus                                                      |
 	Then agGrid Main Object List is returned with data
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684 @Not_Run
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS10789 @DAS13684
 Scenario: EvergreenJnr_QueryString_ApplicationsOnDevicesList
 Runs Evergreen URL query strings for the Applications on Devices List.
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -305,7 +305,7 @@ Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCh
 	Then Filters panel is displayed to the user
 	Then "<FilterInfo>" is displayed in added filter info
 
-Examples: 
+Examples:
 	| FilterName             | QueryString                                                                                                                            | Rows   | FilterInfo                                                                                                                                                                                                              |
 	| App Count (Entitled)   | evergreen/#/users?$filter=(entitledApplications%20%3D%2010)                                                                            | 32     | App Count (Entitled) is 10                                                                                                                                                                                              |
 	| App Count (Installed)  | evergreen/#/users?$filter=(installedApplications%20%3E%3D%2010)                                                                        | 1,068  | App Count (Installed) is greater than or equal to 10                                                                                                                                                                    |
