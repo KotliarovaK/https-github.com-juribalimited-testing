@@ -74,14 +74,14 @@ namespace DashworksTestAutomation.Tests.Senior
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly")]
+        [NUnit.Framework.DescriptionAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Dashworks")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12651")]
         [NUnit.Framework.TestCaseAttribute("User Dashboard", null)]
         [NUnit.Framework.TestCaseAttribute("Computer Dashboard", null)]
-        public virtual void Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
+        public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Senior",
@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.Senior
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly", null, @__tags);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -108,15 +108,15 @@ namespace DashworksTestAutomation.Tests.Senior
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage")]
+        [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Dashworks")]
         [NUnit.Framework.CategoryAttribute("Projects_Dashworks")]
         [NUnit.Framework.CategoryAttribute("Senior_Teams")]
         [NUnit.Framework.CategoryAttribute("DAS13000")]
-        public virtual void Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage()
+        public virtual void Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage", null, new string[] {
                         "Senior",
                         "Dashworks",
                         "Projects_Dashworks",
@@ -152,16 +152,16 @@ namespace DashworksTestAutomation.Tests.Senior
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask")]
+        [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Dashworks")]
         [NUnit.Framework.CategoryAttribute("Projects_Dashworks")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
         [NUnit.Framework.CategoryAttribute("DAS14322")]
-        public virtual void Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
+        public virtual void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask", null, new string[] {
                         "Senior",
                         "Dashworks",
                         "Projects_Dashworks",
@@ -240,14 +240,16 @@ namespace DashworksTestAutomation.Tests.Senior
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError")]
+        [NUnit.Framework.DescriptionAttribute("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
+            "")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14171")]
-        public virtual void Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError()
+        public virtual void Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
+                    "", null, new string[] {
                         "Senior",
                         "Projects_Dashboards",
                         "Senior_Projects",
@@ -261,6 +263,59 @@ namespace DashworksTestAutomation.Tests.Senior
             testRunner.And("User removes the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.Retry(2)]
+        [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
+            "gValueType")]
+        [NUnit.Framework.CategoryAttribute("Senior")]
+        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
+        [NUnit.Framework.CategoryAttribute("DAS13887")]
+        public virtual void Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
+                    "gValueType", null, new string[] {
+                        "Senior",
+                        "Projects_Dashboards",
+                        "Senior_Tasks",
+                        "DAS13887"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
+                    " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Date\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table5.AddRow(new string[] {
+                        "[Select]"});
+            table5.AddRow(new string[] {
+                        "User"});
+            table5.AddRow(new string[] {
+                        "Computer"});
+            table5.AddRow(new string[] {
+                        "Application"});
+            testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table5, "Then ");
+            testRunner.When("User selects \"Text\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table6.AddRow(new string[] {
+                        "[Select]"});
+            table6.AddRow(new string[] {
+                        "User"});
+            table6.AddRow(new string[] {
+                        "Computer"});
+            table6.AddRow(new string[] {
+                        "Application"});
+            testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table6, "Then ");
             this.ScenarioCleanup();
         }
     }
