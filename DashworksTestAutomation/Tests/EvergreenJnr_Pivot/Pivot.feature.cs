@@ -591,7 +591,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS14206")]
         [NUnit.Framework.CategoryAttribute("DAS14413")]
         [NUnit.Framework.CategoryAttribute("DAS14748")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage", null, new string[] {
@@ -601,8 +600,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Pivot",
                         "DAS14206",
                         "DAS14413",
-                        "DAS14748",
-                        "Not_Run"});
+                        "DAS14748"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
