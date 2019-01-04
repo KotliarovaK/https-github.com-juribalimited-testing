@@ -1078,7 +1078,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 	And "Project Count" text is displayed in the expanded section on the Details Page
 	And "Evergreen Bucket" text is displayed in the expanded section on the Details Page
 	And "Evergreen Capacity Unit" text is displayed in the expanded section on the Details Page
-	#And There are no errors in the browser console
+	And There are no errors in the browser console
 
 Examples:
 	| ListName  | ColumnName    |

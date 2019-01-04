@@ -148,8 +148,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS12846")]
         [NUnit.Framework.CategoryAttribute("DAS13602")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         [NUnit.Framework.CategoryAttribute("Teams")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         public virtual void EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol()
         {
@@ -164,8 +164,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13199",
                         "DAS12846",
                         "DAS13602",
-                        "Delete_Newly_Created_Team",
                         "Teams",
+                        "Delete_Newly_Created_Team",
                         "Do_Not_Run_With_Teams"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

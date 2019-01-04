@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14224
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSelectAsAnAdvancedFilter
 	When User clicks "<PageNameForPivot>" on the left-hand menu
-	#Then "<PageNameForPivot>" list should be displayed to the user
+	Then "<PageNameForPivot>" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
@@ -26,7 +26,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatPivotsAreNotShownInTheListToSe
 	When User clicks "<PageNameForFilter>" on the left-hand menu
 	Then "<PageNameForFilter>" list should be displayed to the user
 	When User clicks the Filters button
-	#Then Filters panel is displayed to the user
+	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	And user select "<FilterName>" filter
 	Then "<PivotName>" list is not displayed for Saved List filter
@@ -369,6 +369,5 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	Then "Row Groups" plus button have tooltip with "Add row group" text
 	And "Columns" plus button have tooltip with "Add column" text
 	And "Values" plus button have tooltip with "Add value" text
-	#And "RESET" Action button have tooltip with "Reset pivot" text
 	And close button for "City" chip have tooltip with "Delete this item" text
 	And "City" chip have tooltip with "City" text

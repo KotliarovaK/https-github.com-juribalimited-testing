@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 @Senior @Dashworks @Senior_Projects @DAS12651
-Scenario Outline: Projects_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly
+Scenario Outline: Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigates to the "<PageName>" page on Dashboards tab
@@ -21,7 +21,7 @@ Examples:
 	| Computer Dashboard |
 
 @Senior @Dashworks @Projects_Dashworks @Senior_Teams @DAS13000
-Scenario: Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
+Scenario: Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Computer Scheduled Test (Jo)" Project
@@ -46,7 +46,7 @@ Scenario: Projects_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	And Default Team checkbox is checked and cannot be unchecked
 
 @Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322
-Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
+Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
@@ -83,10 +83,33 @@ Scenario: Projects_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User removes the Project
 
 @Senior @Projects_Dashboards @Senior_Projects @DAS14171 
-Scenario: Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
+Scenario: Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "User Scheduled Test (Jo)" Project
 	And User removes the Project
 	Then Error message is not displayed
 	And There are no errors in the browser console
+
+@Senior @Projects_Dashboards @Senior_Tasks @DAS13887
+Scenario: Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User selects "Date" as Task Value Type
+	Then Next items are displayed as options of Object Type property:
+	| Items       |
+	| [Select]    |
+	| User        |
+	| Computer    |
+	| Application |
+	When User selects "Text" as Task Value Type
+	Then Next items are displayed as options of Object Type property:
+	| Items       |
+	| [Select]    |
+	| User        |
+	| Computer    |
+	| Application |

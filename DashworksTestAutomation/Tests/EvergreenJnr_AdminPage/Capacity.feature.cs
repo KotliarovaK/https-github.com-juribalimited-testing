@@ -3897,61 +3897,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRe" +
-            "chosingValueType")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Task")]
-        [NUnit.Framework.CategoryAttribute("DAS13887")]
-        public virtual void EvergreenJnr_AdminPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRe" +
-                    "chosingValueType", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "Task",
-                        "DAS13887"});
-            this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
-                    " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Date\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
-            table84.AddRow(new string[] {
-                        "[Select]"});
-            table84.AddRow(new string[] {
-                        "User"});
-            table84.AddRow(new string[] {
-                        "Computer"});
-            table84.AddRow(new string[] {
-                        "Application"});
-            testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table84, "Then ");
-            testRunner.When("User selects \"Text\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Items"});
-            table85.AddRow(new string[] {
-                        "[Select]"});
-            table85.AddRow(new string[] {
-                        "User"});
-            table85.AddRow(new string[] {
-                        "Computer"});
-            table85.AddRow(new string[] {
-                        "Application"});
-            testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table85, "Then ");
-            this.ScenarioCleanup();
-        }
     }
 }
 #pragma warning restore
