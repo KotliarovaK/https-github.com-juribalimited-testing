@@ -3706,7 +3706,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	And User clicks the Use Dashworks Evergreen to configure capacity link
 	Then "Slots" tab in Project selected on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3725,6 +3725,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	And User clicks the "UPDATE" Action button
 	When User clicks "UPDATE" button in the warning message on Admin page
 	Then Success message is displayed and contains "The project capacity details have been updated" text
+	When User selects "Units" tab on the Project details page
+	Then Blue banner with "This project uses evergreen capacity units" text is displayed
+	Then "CREATE CAPACITY UNIT" button is not displayed
+	Then Actions menu is not displayed to the user
+	Then Cog menu is not displayed on the Admin page
 	When User clicks "Administration" navigation link on the Admin page
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -379,6 +380,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var button = _driver.NowAt<BaseDashboardPage>();
             var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
             Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+        }
+
+        [Then(@"""(.*)"" button is not displayed")]
+        public void ThenButtonIsNotDisplayed(string buttonName)
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(action.GetButtonByName(buttonName), $"{buttonName} is displayed");
+        }
+
+        [Then(@"Actions menu is not displayed to the user")]
+        public void ThenActionsMenuIsNotDisplayedToTheUser()
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(action.ActionsButton.Displayed(), "Actions menu is displayed");
+        }
+
+        [Then(@"Cog menu is not displayed on the Admin page")]
+        public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(action.CogMenu.Displayed(), "Cog menu is displayed");
         }
 
         [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]

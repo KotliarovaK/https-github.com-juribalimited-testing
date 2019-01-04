@@ -1473,7 +1473,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.ActionsButton);
-            Assert.IsTrue(button.CorrectActionsButton.Displayed(), "Actions dropdown is not displayed correctly");
+            Assert.IsTrue(button.ActionsButton.Displayed(), "Actions dropdown is not displayed correctly");
         }
 
         [When(@"User clicks on Actions button")]

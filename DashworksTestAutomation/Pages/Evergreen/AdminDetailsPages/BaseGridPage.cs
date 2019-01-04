@@ -111,11 +111,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ObjectsBucketsToAdd)]
         public IList<IWebElement> ObjectsBucketsList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']")]
         public IWebElement ActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']")]
-        public IWebElement CorrectActionsButton { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]
+        public IWebElement CogMenu { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]")]
         public IWebElement DeleteButtonInActions { get; set; }
@@ -484,6 +484,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool GetCreatedProjectName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
+        }
+
+        public bool GetButtonByName(string buttonName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//button//span[text()='{buttonName}']"));
         }
 
         public void GetStringFilterByColumnName(string columnName)
