@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("DAS13169")]
-        [NUnit.Framework.CategoryAttribute("DAS131168")]
+        [NUnit.Framework.CategoryAttribute("DAS13168")]
         [NUnit.Framework.CategoryAttribute("DAS12632")]
         [NUnit.Framework.CategoryAttribute("DAS13012")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefault()
@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "CapacityUnits",
                         "DAS13169",
-                        "DAS131168",
+                        "DAS13168",
                         "DAS12632",
                         "DAS13012"});
             this.ScenarioInitialize(scenarioInfo);
