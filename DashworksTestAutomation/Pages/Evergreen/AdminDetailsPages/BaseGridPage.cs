@@ -298,6 +298,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 
+        public IWebElement GetFillingFieldErrorByText(string text)
+        {
+            var selector = By.XPath($".//mat-error/span[text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public void AddDateByFieldName(string fieldName, string date)
         {
             var byControl =

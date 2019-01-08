@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	| Users         |
 	| Applications  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13723 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13723 @DAS13370 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -57,13 +57,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
 	When User clicks the "CREATE OVERRIDE DATE" Action button
-	And User enters "4 Oct 2018" date in the "Override Start Date" field
+	And User enters "5 Jan 2019" date in the "Override Start Date" field
+	And User enters "" date in the "Override End Date" field
+	Then Filling field error with "An override end date must be entered" text is displayed
+	When User enters "4 Oct 2018" date in the "Override End Date" field
+	Then "CREATE" Action button is disabled
+	When User enters "" date in the "Override Start Date" field
+	Then Filling field error with "An override start date must be entered" text is displayed
+	When User enters "4 Oct 2018" date in the "Override Start Date" field
 	And User enters "7 Oct 2018" date in the "Override End Date" field
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	And "Unlimited" content is displayed in "Capacity" column
 	When User enters ">1" text in the Search field for "Capacity" column
 	Then Counter shows "1" found rows
+	When User clicks content from "Start Date" column
+	And User enters "3 Oct 2018" date in the "Override End Date" field
+	Then "UPDATE" Action button is disabled
+	When User enters "" date in the "Override Start Date" field
+	And User enters "" date in the "Override End Date" field
+	Then Filling field error with "An override start date must be entered" text is displayed
+	And Filling field error with "An override end date must be entered" text is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell

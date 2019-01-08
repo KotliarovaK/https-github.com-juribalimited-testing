@@ -1429,6 +1429,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.ErrorMessage.Displayed(), "Error Message is displayed");
         }
 
+        [Then(@"Filling field error with ""(.*)"" text is displayed")]
+        public void ThenFillingFieldErrorWithTextIsDisplayed(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetFillingFieldErrorByText(text).Displayed(), $"Filling field error with {text} is not displayed");
+        }
+
         [When(@"User close message on the Admin page")]
         public void WhenUserCloseMessageOnTheAdminPage()
         {
