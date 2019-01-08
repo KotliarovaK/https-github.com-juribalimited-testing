@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TestList_DAS14668" name
 	And User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD	" Action button
 	And User creates new Dashboard with "Dashboard for DAS14668" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -93,7 +93,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 
 @Evergreen @Dashboards @Widgets @DAS14586
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists
-	When User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD	" Action button
 	And User creates new Dashboard with "Dashboard for DAS14586" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -109,7 +109,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidget
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-Examples: 
+Examples:
 	| Type   | Title                                 | List             | SplitBy       | AggregateBy  | AggregateFunctio | OrderBy         | TitleCloned                                    | ShowLegend |
 	| Line   | All Devices Widget For DAS_14586      | All Devices      | Hostname      | Device Type  | Count            | Hostname DESC   | Cloned - All Devices Widget For DAS_14586      | false      |
 	| Pie    | All Users Widget For DAS_14586        | All Users        | Username      | Display Name | Count Distinct   | Username ASC    | Cloned - All Users Widget For DAS_14586        | false      |
@@ -118,7 +118,7 @@ Examples:
 
 @Evergreen @Dashboards @DAS14587 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
-	When User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD	" Action button
 	And User creates new Dashboard with "Dashboard for DAS14587" name
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 
 @Evergreen @Dashboards @DAS14685 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
-	When User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD	" Action button
 	And User creates new Dashboard with "Dashboard for DAS14685" name
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
@@ -152,7 +152,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 
 @Evergreen @Dashboards @DAS14578 @DAS14584 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
-	When User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD	" Action button
 	And User creates new Dashboard with "Dashboard for DAS14578" name
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
