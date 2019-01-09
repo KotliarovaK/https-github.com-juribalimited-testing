@@ -19,8 +19,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	| items            |
 	| Edit             |
 	| Duplicate        |
-	| Move to Start    |
-	| Move to End      |
+	| Move to start    |
+	| Move to end      |
 	| Move to position |
 	| Delete           |
 
@@ -31,11 +31,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |
 	| Hide             |
-	| 1 Column         |
-	| 3 Column         |
+	| 1 column         |
+	| 3 column         |
 	| Duplicate        |
-	| Move to Start    |
-	| Move to End      |
+	| Move to top      |
+	| Move to bottom   |
 	| Move to position |
 	| Delete           |
 
