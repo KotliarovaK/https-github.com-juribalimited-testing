@@ -168,6 +168,7 @@
     <Compile Include="Helpers\FilterOperatorsConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
@@ -314,6 +315,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings.feature.cs">
+      <DependentUpon>Rings.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets.feature.cs">
       <AutoGen>True</AutoGen>
@@ -515,6 +521,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Rings.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
