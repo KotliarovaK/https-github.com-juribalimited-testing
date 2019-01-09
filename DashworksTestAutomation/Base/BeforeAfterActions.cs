@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Base
                     }
 
                     var testStatus = GetTestStatus();
-                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("TestError"))
+                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
@@ -116,12 +116,8 @@ namespace DashworksTestAutomation.Base
 
         private string GetTestStatus()
         {
-            PropertyInfo pInfo =
-                typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
-            MethodInfo getter = pInfo.GetGetMethod(true);
-            object testResult = getter.Invoke(_scenarioContext, null);
-            var testResults = testResult.ToString();
-            return testResults;
+            var testStatus = TestContext.CurrentContext.Result.Outcome.Status;
+            return testStatus.ToString();
         }
 
         private string GetTestName()
