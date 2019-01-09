@@ -18,7 +18,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         public IWebElement RingNameField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='description']")]
-        public IWebElement DescriptionNameField { get; set; }
+        public IWebElement DescriptionField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@id='evergreenRings']")]
+        public IWebElement MapsToEvergreenField { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -29,6 +32,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
             };
         }
 
-      
+
+        public void SelectOptionInMapsToEvergreenRingDropdown(string option)
+        {
+            var listNameSelector = $"//span[@class='mat-option-text' and contains(text(), '{option}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
     }
 }

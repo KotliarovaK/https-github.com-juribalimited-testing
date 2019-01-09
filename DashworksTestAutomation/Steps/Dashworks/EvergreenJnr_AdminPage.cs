@@ -1879,6 +1879,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Create Ring button was clicked");
         }
 
+        [When(@"User sets ""(.*)"" value in Maps to evergreen ring field")]
+        public void WhenUserSetsMapsToEvergreenRingValue(string option)
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            page.MapsToEvergreenField.Clear();
+            page.MapsToEvergreenField.SendKeys(option);
+            page.SelectOptionInMapsToEvergreenRingDropdown(option);
+            Logger.Write("Create Ring button was clicked");
+        }
+
+        [Then(@"Ring settings Maps to evergreen ring is displayed as ""(.*)""")]
+        public void ThenRingSettingsMapsToEvergreenIsDisplayedCorrectly(string ringName)
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            Assert.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
+        }
+
         [Then(@"created Project with ""(.*)"" name is displayed correctly")]
         public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
         {
