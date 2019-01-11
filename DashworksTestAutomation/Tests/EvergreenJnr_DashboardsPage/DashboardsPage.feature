@@ -135,6 +135,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
+@Evergreen @Dashboards @Widgets @Sections @DAS14728
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14728" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14728 | All Applications | Vendor | Version | Count             | Vendor ASC |                  | 10        | true       |
+	And User remembers number of Widgets with Legend on Dashboards page
+	And User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
+	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
+	Then User sees number of Widgets with Legend increased by "1" on Dashboards page
+	When User clicks Settings button for "Dashboard for DAS14728" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
 @Evergreen @Dashboards @DAS14685 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
 	When User clicks the "CREATE DASHBOARD" Action button
