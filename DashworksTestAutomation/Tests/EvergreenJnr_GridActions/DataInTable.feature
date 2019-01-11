@@ -8,7 +8,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_GridActions @BaseDashboardPage @DAS10871 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_GridActions @BaseDashboardPage @DAS10871
 Scenario Outline: EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -22,4 +22,4 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScr
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
 	| Devices      | Device Key      |
-	| Users        | User Key        |
+	#| Users        | User Key        |

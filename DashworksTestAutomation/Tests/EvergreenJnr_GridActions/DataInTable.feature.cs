@@ -84,11 +84,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_GridActions")]
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS10871")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "User Key", null)]
         public virtual void EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling(string listName, string columnName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -96,8 +94,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
                     "AllLists",
                     "EvergreenJnr_GridActions",
                     "BaseDashboardPage",
-                    "DAS10871",
-                    "Not_Run"};
+                    "DAS10871"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

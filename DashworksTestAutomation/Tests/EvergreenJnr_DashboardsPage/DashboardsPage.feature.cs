@@ -126,9 +126,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table1.AddRow(new string[] {
                         "Duplicate"});
             table1.AddRow(new string[] {
-                        "Move to Start"});
+                        "Move to start"});
             table1.AddRow(new string[] {
-                        "Move to End"});
+                        "Move to end"});
             table1.AddRow(new string[] {
                         "Move to position"});
             table1.AddRow(new string[] {
@@ -162,15 +162,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table2.AddRow(new string[] {
                         "Hide"});
             table2.AddRow(new string[] {
-                        "1 Column"});
+                        "1 column"});
             table2.AddRow(new string[] {
-                        "3 Column"});
+                        "3 column"});
             table2.AddRow(new string[] {
                         "Duplicate"});
             table2.AddRow(new string[] {
-                        "Move to Start"});
+                        "Move to top"});
             table2.AddRow(new string[] {
-                        "Move to End"});
+                        "Move to bottom"});
             table2.AddRow(new string[] {
                         "Move to position"});
             table2.AddRow(new string[] {
@@ -276,7 +276,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User create static list with \"TestList_DAS14668\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User creates new Dashboard with \"Dashboard for DAS14668\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {

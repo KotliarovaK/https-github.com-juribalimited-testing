@@ -246,6 +246,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS12026")]
         [NUnit.Framework.CategoryAttribute("DAS12156")]
         [NUnit.Framework.CategoryAttribute("DAS12780")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Rationalisation", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", null)]
@@ -260,7 +261,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "DAS10997",
                     "DAS12026",
                     "DAS12156",
-                    "DAS12780"};
+                    "DAS12780",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

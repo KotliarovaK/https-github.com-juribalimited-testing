@@ -69,6 +69,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.CapacityUnits.Click();
                     break;
 
+                case "Rings":
+                    menu.Rings.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }
@@ -126,6 +130,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Create Capacity Unit":
                     var createCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
                     StringAssert.Contains(createCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Create Ring":
+                    var createRingPage = _driver.NowAt<CreateRingPage>();
+                    StringAssert.Contains(createRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -1861,6 +1871,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.CreateProjectButton.Click();
             _driver.WaitForDataLoading();
             Logger.Write("Create Project button was clicked");
+        }
+
+        [When(@"User clicks Create button on the Create Ring page")]
+        public void WhenUserClicksCreateButtonOnTheCreateRingPage()
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            _driver.WaitWhileControlIsNotDisplayed<CreateRingPage>(() => page.CreateRingButton);
+            page.CreateRingButton.Click();
+            _driver.WaitForDataLoading();
+            Logger.Write("Create Ring button was clicked");
+        }
+
+        [When(@"User sets ""(.*)"" value in Maps to evergreen ring field")]
+        public void WhenUserSetsMapsToEvergreenRingValue(string option)
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            page.MapsToEvergreenField.Clear();
+            page.MapsToEvergreenField.SendKeys(option);
+            page.SelectOptionInMapsToEvergreenRingDropdown(option);
+            Logger.Write("Create Ring button was clicked");
+        }
+
+        [Then(@"Ring settings Maps to evergreen ring is displayed as ""(.*)""")]
+        public void ThenRingSettingsMapsToEvergreenIsDisplayedCorrectly(string ringName)
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            Assert.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
+        }
+
+        [When(@"User doubleclicks Create button on Create Ring page")]
+        public void WhenUserDoubleclicksCreateButtonOnTheCreateRingPage()
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            page.Actions.Click(page.CreateRingButton).DoubleClick().Build().Perform();
         }
 
         [Then(@"created Project with ""(.*)"" name is displayed correctly")]

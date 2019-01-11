@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.DTO.Projects
     {
         public string Name { get; set; }
         public int ReadinessIndex { get; set; }
-        public List<KeyValuePair<int, string>> Readiness;  
+        public List<KeyValuePair<int, string>> Readiness;
         public string TaskStatusString { get; set; }
         public TaskStatusEnum TaskStatus;
         public bool DefaultValue { get; set; }

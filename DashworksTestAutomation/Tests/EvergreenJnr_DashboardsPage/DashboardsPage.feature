@@ -19,8 +19,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	| items            |
 	| Edit             |
 	| Duplicate        |
-	| Move to Start    |
-	| Move to End      |
+	| Move to start    |
+	| Move to end      |
 	| Move to position |
 	| Delete           |
 
@@ -31,11 +31,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |
 	| Hide             |
-	| 1 Column         |
-	| 3 Column         |
+	| 1 column         |
+	| 3 column         |
 	| Duplicate        |
-	| Move to Start    |
-	| Move to End      |
+	| Move to top      |
+	| Move to bottom   |
 	| Move to position |
 	| Delete           |
 
@@ -75,7 +75,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TestList_DAS14668" name
 	And User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14668" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -109,7 +109,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidget
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-Examples: 
+Examples:
 	| Type   | Title                                 | List             | SplitBy       | AggregateBy  | AggregateFunctio | OrderBy         | TitleCloned                                    | ShowLegend |
 	| Line   | All Devices Widget For DAS_14586      | All Devices      | Hostname      | Device Type  | Count            | Hostname DESC   | Cloned - All Devices Widget For DAS_14586      | false      |
 	| Pie    | All Users Widget For DAS_14586        | All Users        | Username      | Display Name | Count Distinct   | Username ASC    | Cloned - All Users Widget For DAS_14586        | false      |
