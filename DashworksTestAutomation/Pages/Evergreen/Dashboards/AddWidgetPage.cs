@@ -42,8 +42,8 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-item ng-star-inserted']//div[@class='mat-checkbox-inner-container']")]
         public IWebElement ShowLegend { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[contains(text(), 'CREATE')]")]
-        public IWebElement ConfirmCreateWidgetButton { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@class='actions']/button[contains(@class,'star')]")]
+        public IWebElement CreateUpdateWidgetButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }

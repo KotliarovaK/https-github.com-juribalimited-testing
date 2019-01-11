@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
@@ -108,7 +109,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             page.Storage.SessionStorage.SetItem("numberOfWidgetsWithLegend", page.NumberOfWidgetLegends.Count.ToString());
         }
-
+        
         [Then(@"User sees number of Widgets with Legend increased by ""(.*)"" on Dashboards page")]
         public void WhenUserSeesNumberOfWidgetsWithLegendIncreasedByOnDashboardsPage(int increasedBy)
         {
@@ -137,6 +138,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             int expectedCount = Int32.Parse(page.Storage.SessionStorage.GetItem("numberOfWidgets")) + increasedBy;
             Assert.That(page.AllWidgetsTitles.Count, Is.EqualTo(expectedCount), "Number of Widgets is different");
+        }
+
+        [Then(@"User sees following Widgets on Dashboards page:")]
+        public void WhenUserSeesFollowingWidgetsOnDashboardsPage(Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            List<string> expectedWidgetsNames =
+                table.Rows.Select(x => x.Values).Select(c => c.FirstOrDefault()).ToList();
+
+            Assert.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Is.EqualTo(expectedWidgetsNames),
+                "Names of Widgets are different");
         }
 
         [Then(@"User sees widget with the next name ""(.*)"" on Dashboards page")]
@@ -205,6 +219,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User updates Widget with following info:")]
         [When(@"User creates new Widget")]
         public void WhenUserCreatesNewWidget(Table table)
         {
@@ -272,7 +287,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     createWidgetElement.ShowLegend.Click();
                 }
 
-                createWidgetElement.ConfirmCreateWidgetButton.Click();
+                createWidgetElement.CreateUpdateWidgetButton.Click();
             }
         }
 
