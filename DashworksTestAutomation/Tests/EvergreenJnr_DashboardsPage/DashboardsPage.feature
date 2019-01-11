@@ -151,6 +151,38 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
+@Evergreen @Dashboards @Widgets @Sections @DAS14583
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14583" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14583_1 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Bar        | WidgetForDAS14583_2 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | false      |
+	And User clicks Ellipsis menu for "WidgetForDAS14583_3" Widget on Dashboards page
+	And User clicks "Move to start" item from Ellipsis menu on Dashboards page
+	And User clicks Ellipsis menu for "WidgetForDAS14583_3" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	And User updates Widget with following info:
+	| WidgetType | Title | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
+	|            |       |      |         | Vendor      |                   |         |                  |           |            |
+	Then User sees following Widgets on Dashboards page:
+	| WidgetTitles        |
+	| WidgetForDAS14583_3 |
+	| WidgetForDAS14583_1 |
+	| WidgetForDAS14583_2 |
+	When User clicks Settings button for "Dashboard for DAS14583" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
 @Evergreen @Dashboards @DAS14685 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
 	When User clicks the "CREATE DASHBOARD" Action button
