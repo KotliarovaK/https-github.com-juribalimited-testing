@@ -73,7 +73,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDe" +
             "vicesPageWithProperItems")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -82,6 +81,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("DAS13721")]
         [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDevicesPageWithProperItems()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDevicesPageWithProperItemsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDevicesPageWithProperItemsInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRedirectsToDe" +
                     "vicesPageWithProperItems", null, new string[] {
@@ -99,15 +124,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("\"16\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14358")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget()
+        public virtual void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidgetInternal("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidgetInternal("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget", null, new string[] {
                         "Evergreen",
@@ -136,15 +187,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.Then("User sees following Ellipsis menu items on Dashboards page:", ((string)(null)), table1, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Sections")]
         [NUnit.Framework.CategoryAttribute("DAS14358")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection()
+        public virtual void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSectionInternal("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSectionInternal("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection", null, new string[] {
                         "Evergreen",
@@ -178,15 +255,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.Then("User sees following Ellipsis menu items on Dashboards page:", ((string)(null)), table2, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14358")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated()
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated("EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedInternal("EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedInternal("EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated", null, new string[] {
                         "Evergreen",
@@ -205,15 +308,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.When("User deletes \"Cloned - Device Profile\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Sections")]
         [NUnit.Framework.CategoryAttribute("DAS14358")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated()
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicatedInternal("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicatedInternal("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated", null, new string[] {
                         "Evergreen",
@@ -234,9 +363,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggreg" +
             "ateByDateColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -245,6 +374,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("DAS14668")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumnInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggreg" +
                     "ateByDateColumn", null, new string[] {
@@ -333,9 +488,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -346,17 +501,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.TestCaseAttribute("Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count Distinct", "Username ASC", "Cloned - All Users Widget For DAS_14586", "false", null)]
         [NUnit.Framework.TestCaseAttribute("Bar", "All Applications Widget For DAS_14586", "All Applications", "Application", "Vendor", "Count", "Vendor DESC", "Cloned - All Applications Widget For DAS_14586", "true", null)]
         [NUnit.Framework.TestCaseAttribute("Column", "All Mailboxes Widget For DAS_14586", "All Mailboxes", "Email Address", "Mail Server", "Count Distinct", "Mail Server ASC", "Cloned - All Mailboxes Widget For DAS_14586", "true", null)]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists(string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists("EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Dashboards"]        [NUnit.Framework.CategoryAttribute("Widgets"]        [NUnit.Framework.CategoryAttribute("DAS14586"]        [NUnit.Framework.TestCaseAttribute("Line", "All Devices Widget For DAS_14586", "All Devices", "Hostname", "Device Type", "Count", "Hostname DESC", "Cloned - All Devices Widget For DAS_14586", "false", null]        [NUnit.Framework.TestCaseAttribute("Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count Distinct", "Username ASC", "Cloned - All Users Widget For DAS_14586", "false", null]        [NUnit.Framework.TestCaseAttribute("Bar", "All Applications Widget For DAS_14586", "All Applications", "Application", "Vendor", "Count", "Vendor DESC", "Cloned - All Applications Widget For DAS_14586", "true", null]        [NUnit.Framework.TestCaseAttribute("Column", "All Mailboxes Widget For DAS_14586", "All Mailboxes", "Email Address", "Mail Server", "Count Distinct", "Mail Server ASC", "Cloned - All Mailboxes Widget For DAS_14586", "true", null]        public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists(string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Dashboards",
-                    "Widgets",
-                    "DAS14586"};
-            if ((exampleTags != null))
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllListsInternal([NUnit.Framework.TestCaseAttribute"Line",DAS_14586",Devices","Hostname",Type","Count",DESC",DAS_14586","false",[NUnit.Framework.TestCaseAttribute"Pie",DAS_14586",Users","Username",Name",Distinct",ASC",DAS_14586","false",[NUnit.Framework.TestCaseAttribute"Bar",DAS_14586",Applications","Application","Vendor","Count",DESC",DAS_14586","true",[NUnit.Framework.TestCaseAttribute"Column",DAS_14586",Mailboxes",Address",Server",Distinct",ASC",DAS_14586","true",type,title,list,splitBy,aggregateBy,aggregateFunctio,orderBy,titleCloned,showLegend,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
             }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllListsInternal("EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Dashboards"]        [NUnit.Framework.CategoryAttribute("Widgets"]        [NUnit.Framework.CategoryAttribute("DAS14586"]        [NUnit.Framework.TestCaseAttribute("Line", "All Devices Widget For DAS_14586", "All Devices", "Hostname", "Device Type", "Count", "Hostname DESC", "Cloned - All Devices Widget For DAS_14586", "false", null]        [NUnit.Framework.TestCaseAttribute("Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count Distinct", "Username ASC", "Cloned - All Users Widget For DAS_14586", "false", null]        [NUnit.Framework.TestCaseAttribute("Bar", "All Applications Widget For DAS_14586", "All Applications", "Application", "Vendor", "Count", "Vendor DESC", "Cloned - All Applications Widget For DAS_14586", "true", null]        [NUnit.Framework.TestCaseAttribute("Column", "All Mailboxes Widget For DAS_14586", "All Mailboxes", "Email Address", "Mail Server", "Count Distinct", "Mail Server ASC", "Cloned - All Mailboxes Widget For DAS_14586", "true", null]        public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists(string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists" +
                     "", null, @__tags);
             this.ScenarioInitialize(scenarioInfo);
@@ -399,9 +570,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavi" +
             "ngInvalidName")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -409,6 +580,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("DAS14587")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidNameInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidNameInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavi" +
                     "ngInvalidName", null, new string[] {
@@ -478,22 +675,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("DAS14685")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget()
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Dashboards"]        [NUnit.Framework.CategoryAttribute("DAS14685"]        [NUnit.Framework.CategoryAttribute("Widgets"]        public virtual void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget" +
-                    "", null, new string[] {
-                        "Evergreen",
-                        "Dashboards",
-                        "DAS14685",
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidgetInternal(EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidgetInternal("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Dashboards"]        [NUnit.Framework.CategoryAttribute("DAS14685"]        [NUnit.Framework.CategoryAttribute("Widgets"]        public virtual void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget()
                         "Widgets"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -532,16 +749,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("DAS14578")]
         [NUnit.Framework.CategoryAttribute("DAS14584")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars()
+        public virtual void EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars("EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredCharsInternal("EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredCharsInternal("EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars", null, new string[] {
                         "Evergreen",
@@ -589,6 +832,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

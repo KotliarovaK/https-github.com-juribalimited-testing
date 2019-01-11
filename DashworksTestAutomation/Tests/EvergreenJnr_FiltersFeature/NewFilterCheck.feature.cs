@@ -75,7 +75,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -89,7 +88,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App", "Equals, Does not equal", "WebZIP (A01)", "Havoc(BigD: Target App is WebZIP (A01)", "1", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Target App", "Equals, Does not equal", "Zune (A01)", "MigrationP: Target App is Zune (A01)", "1", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App", "Equals, Does not equal", "Zune (A01)", "UserSchedu: Target App is Zune (A01)", "1", null)]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList("EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedToTheList")
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -121,9 +146,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -188,7 +213,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -203,7 +227,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Target App Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Target App Readiness is None", "1,067", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Target App Readiness", "Equals, Does not equal", "Blue", "MigrationP: Target App Readiness is Blue", "189", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App Readiness", "Equals, Does not equal", "Grey", "UserSchedu: Target App Readiness is Grey", "981", null)]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList("EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilterIsAddedToTheList")
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -240,9 +290,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppKe" +
             "yFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -259,6 +309,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App Key", null)]
         [NUnit.Framework.TestCaseAttribute("prK: Target App Key", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppKeyFilters(string filterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppKeyFiltersInternal(filterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppKeyFiltersInternal(string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -287,9 +363,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("checkboxes are displayed to the User:", ((string)(null)), table5, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppID" +
             "Filters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -307,6 +383,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Target App ID", null)]
         [NUnit.Framework.TestCaseAttribute("prK: Target App ID", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppIDFilters(string filterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppIDFiltersInternal(filterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppIDFiltersInternal(string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -335,9 +437,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("checkboxes are displayed to the User:", ((string)(null)), table6, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -349,7 +451,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Users", "41,335", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "2,223", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "14,784", null)]
-        public virtual void EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList(string listName, string rowsCount, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList("EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterListInternal("EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterListInternal("EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList")
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -389,9 +517,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("data in table is sorted by \'Dashworks First Seen\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList" +
             "")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -407,22 +535,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Application Readiness is None", "1,067", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Application Readiness", "Equals, Does not equal", "Blue", "MigrationP: Application Readiness is Blue", "189", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Application Readiness", "Equals, Does not equal", "None", "UserSchedu: Application Readiness is None", "981", null)]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList("EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Applications"]        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature"]        [NUnit.Framework.CategoryAttribute("NewFilterCheck"]        [NUnit.Framework.CategoryAttribute("DAS10512"]        [NUnit.Framework.CategoryAttribute("DAS13001"]        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", "Equals, Does not equal", "Red", "Windows7Mi: Application Readiness is Red", "27", null]        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Application Readiness", "Equals, Does not equal", "None", "Babel(Engl: Application Readiness is None", "302", null]        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Application Readiness is None", "1,072", null]        [NUnit.Framework.TestCaseAttribute("ComputerSc: Application Readiness", "Equals, Does not equal", "Green", "ComputerSc: Application Readiness is Green", "901", null]        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Application Readiness is None", "1,067", null]        [NUnit.Framework.TestCaseAttribute("MigrationP: Application Readiness", "Equals, Does not equal", "Blue", "MigrationP: Application Readiness is Blue", "189", null]        [NUnit.Framework.TestCaseAttribute("UserSchedu: Application Readiness", "Equals, Does not equal", "None", "UserSchedu: Application Readiness is None", "981", null]        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "Applications",
-                    "Evergreen_FiltersFeature",
-                    "NewFilterCheck",
-                    "DAS10512",
-                    "DAS13001"};
-            if ((exampleTags != null))
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
             {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheListInternal(Readiness","Equals,equal","Red",Red","27",Readiness","Equals,equal","None",None","302",Readiness","Equals,equal","None",None","1,072",Readiness","Equals,equal","Green",Green","901",Readiness","Equals,equal","None",None","1,067",Readiness","Equals,equal","Blue",Blue","189",Readiness","Equals,equal","None",None","981",columnName,operators,filterOption,text,rowsCount,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList" +
-                    "", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Applications"]        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature"]        [NUnit.Framework.CategoryAttribute("NewFilterCheck"]        [NUnit.Framework.CategoryAttribute("DAS10512"]        [NUnit.Framework.CategoryAttribute("DAS13001"]        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Application Readiness", "Equals, Does not equal", "Red", "Windows7Mi: Application Readiness is Red", "27", null]        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Application Readiness", "Equals, Does not equal", "None", "Babel(Engl: Application Readiness is None", "302", null]        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Application Readiness", "Equals, Does not equal", "None", "Barry\'sUse: Application Readiness is None", "1,072", null]        [NUnit.Framework.TestCaseAttribute("ComputerSc: Application Readiness", "Equals, Does not equal", "Green", "ComputerSc: Application Readiness is Green", "901", null]        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Application Readiness", "Equals, Does not equal", "None", "Havoc(BigD: Application Readiness is None", "1,067", null]        [NUnit.Framework.TestCaseAttribute("MigrationP: Application Readiness", "Equals, Does not equal", "Blue", "MigrationP: Application Readiness is Blue", "189", null]        [NUnit.Framework.TestCaseAttribute("UserSchedu: Application Readiness", "Equals, Does not equal", "None", "UserSchedu: Application Readiness is None", "981", null]        public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
             this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -445,9 +584,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToT" +
             "heList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -466,6 +605,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("MigrationP: Application Rationalisation", "Equals, Does not equal", "RETIRE", "MigrationP: Application Rationalisation is Retire", "1", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Application Rationalisation", "Equals, Does not equal", "UNCATEGORISED", "UserSchedu: Application Rationalisation is Uncategorised", "981", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheListInternal(columnName,operators,filterOption,text,rowsCount,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisationFilterIsAddedToTheListInternal(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -510,9 +675,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -527,7 +692,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Core Application", "Equals, Does not equal", "UNKNOWN", "Havoc(BigD: Core Application is Unknown", "1,156", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Core Application", "Equals, Does not equal", "FALSE", "MigrationP: Core Application is false", "220", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Core Application", "Equals, Does not equal", "UNKNOWN", "UserSchedu: Core Application is Unknown", "1,242", null)]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList("EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList")
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -568,9 +759,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -587,7 +778,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "Havoc(BigD: Hide from End Users is Unknown", "1,156", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Hide from End Users", "Equals, Does not equal", "FALSE", "MigrationP: Hide from End Users is false", "220", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "UserSchedu: Hide from End Users is Unknown", "1,242", null)]
-        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList("EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheListInternal("EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList")
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -630,9 +847,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in descending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrec" +
             "tlyOnDevicesPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -645,6 +862,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS14288")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPageInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrec" +
                     "tlyOnDevicesPage", null, new string[] {
@@ -736,9 +979,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectl" +
             "yOnUsersPage")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -750,6 +993,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS14288")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPageInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectl" +
                     "yOnUsersPage", null, new string[] {
@@ -838,9 +1107,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User update current custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategorie" +
             "s")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -852,6 +1121,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Computer Off/On", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Application Off/On", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories(string pageName, string filterName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategoriesInternal(pageName,filterName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategoriesInternal(string pageName, string filterName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -877,6 +1172,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("\"Off, On\" checkbox is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

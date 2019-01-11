@@ -75,7 +75,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -84,7 +83,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("DAS10704")]
         [NUnit.Framework.CategoryAttribute("DAS12762")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
+        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenListsInternal("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenListsInternal("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists", null, new string[] {
                         "Evergreen",
@@ -116,16 +141,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS10704")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu()
+        public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenuInternal("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenuInternal("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatQuickSearchDoesntTriggersNewListMenu", null, new string[] {
                         "Evergreen",
@@ -149,9 +200,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("Save to New Custom List element is NOT displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
             "s")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -165,6 +216,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("DAS10667")]
         [NUnit.Framework.CategoryAttribute("DAS10624")]
         public virtual void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPages()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPagesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPagesInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigationBetweenPage" +
                     "s", null, new string[] {
@@ -234,9 +311,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.And("Search field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_SearchTests")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -244,7 +321,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS12206")]
         [NUnit.Framework.CategoryAttribute("DAS10475")]
-        public virtual void EvergreenJnr_DevicesList_SearchTests()
+        public virtual void EvergreenJnr_DevicesList_SearchTests("EvergreenJnr_DevicesList_SearchTests")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_SearchTestsInternal("EvergreenJnr_DevicesList_SearchTests");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_SearchTestsInternal("EvergreenJnr_DevicesList_SearchTests")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_SearchTests", null, new string[] {
                         "Evergreen",
@@ -293,9 +396,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table9, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -303,7 +406,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11012")]
         [NUnit.Framework.CategoryAttribute("DAS12206")]
-        public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet()
+        public virtual void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSetInternal("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSetInternal("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ClearingSearchReturnsTheFullDataSet", null, new string[] {
                         "Evergreen",
@@ -331,9 +460,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("URL is \"evergreen/#/devices\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -341,7 +470,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11012")]
         [NUnit.Framework.CategoryAttribute("DAS12206")]
-        public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet()
+        public virtual void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSetInternal("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSetInternal("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ClearingSearchReturnsTheFullDataSet", null, new string[] {
                         "Evergreen",
@@ -369,15 +524,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("URL is \"evergreen/#/users\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_NoDevicesFound")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
-        public virtual void EvergreenJnr_DevicesList_Search_NoDevicesFound()
+        public virtual void EvergreenJnr_DevicesList_Search_NoDevicesFound("EvergreenJnr_DevicesList_Search_NoDevicesFound")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_NoDevicesFoundInternal("EvergreenJnr_DevicesList_Search_NoDevicesFound");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_NoDevicesFoundInternal("EvergreenJnr_DevicesList_Search_NoDevicesFound")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_NoDevicesFound", null, new string[] {
                         "Evergreen",
@@ -420,16 +601,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "nd\" message is displayed", ((string)(null)), table13, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11350")]
-        public virtual void EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton()
+        public virtual void EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButtonInternal("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButtonInternal("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton", null, new string[] {
                         "Evergreen",
@@ -446,16 +653,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("reset button in Global Search field is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11350")]
-        public virtual void EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton()
+        public virtual void EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButtonInternal("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButtonInternal("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton", null, new string[] {
                         "Evergreen",
@@ -472,16 +705,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("reset button in Table Search field is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11350")]
-        public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel()
+        public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanelInternal("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanelInternal("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel", null, new string[] {
                         "Evergreen",
@@ -501,16 +760,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("reset button in Search field at selected Panel is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11350")]
-        public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel()
+        public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanelInternal("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanelInternal("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtColumnPanel", null, new string[] {
                         "Evergreen",
@@ -529,9 +814,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("reset button in Search field at selected Panel is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
             "ton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -540,6 +825,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11350")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButton()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButtonInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetButtonInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_CheckThatMultiSelectFilterSearchFieldHaveResetBut" +
                     "ton", null, new string[] {
@@ -560,9 +871,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("reset button in Search field at selected Filter is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -571,7 +882,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("DAS11350")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel()
+        public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanelInternal("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanelInternal("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel", null, new string[] {
                         "Evergreen",
@@ -593,9 +930,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("reset button in Search field at List Panel is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringT" +
             "heSpecificCharacters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -608,6 +945,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters(string pageName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharactersInternal(pageName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharactersInternal(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -630,9 +993,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -643,7 +1006,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.TestCaseAttribute("Devices", "Windows7Mi: Readiness", "OUT OF SCOPE", "5,118", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Import Type", "Altiris 6", "31", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "department", "The Last Department With A Really Lond Name", "10", null)]
-        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly(string pageName, string columnName, string searchCriteria, string numberOfRows, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectlyInternal("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectlyInternal("EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly")
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -674,9 +1063,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table15, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
             "plicationColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -685,6 +1074,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11511")]
         public virtual void EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumnInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForAp" +
                     "plicationColumn", null, new string[] {
@@ -708,9 +1123,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table16, "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDispla" +
             "yNameColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -719,6 +1134,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11664")]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumnInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDispla" +
                     "yNameColumn", null, new string[] {
@@ -762,9 +1203,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table19, "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUserna" +
             "meColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -773,6 +1214,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11664")]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumnInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUserna" +
                     "meColumn", null, new string[] {
@@ -823,9 +1290,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table23, "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameCo" +
             "lumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -834,6 +1301,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11664")]
         public virtual void EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameColumnInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersLists_Search_CheckThatTableSearchWorksCorrectlyForDisplayNameCo" +
                     "lumn", null, new string[] {
@@ -877,9 +1370,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table26, "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisp" +
             "layNameColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -888,6 +1381,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11664")]
         public virtual void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisplayNameColumnInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerDisp" +
                     "layNameColumn", null, new string[] {
@@ -935,9 +1454,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table29, "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUser" +
             "nameColumn")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -946,6 +1465,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11664")]
         public virtual void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUsernameColumnInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesLists_Search_CheckThatTableSearchWorksCorrectlyForOwnerUser" +
                     "nameColumn", null, new string[] {
@@ -1000,9 +1545,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table33, "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFo" +
             "undAfterUsingAgGrid")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1011,6 +1556,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11663")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGrid()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGridInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFoundAfterUsingAgGridInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_CheckThatRowCountIsNotDisplayedWhenNoObjectsAreFo" +
                     "undAfterUsingAgGrid", null, new string[] {
@@ -1034,9 +1605,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "s are returned", ((string)(null)), table34, "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchE" +
             "verythingAndSearchTableFieldsIsPresented")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1045,6 +1616,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11706")]
         public virtual void EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresented()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresentedInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchEverythingAndSearchTableFieldsIsPresentedInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharactersInSearchE" +
                     "verythingAndSearchTableFieldsIsPresented", null, new string[] {
@@ -1068,9 +1665,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                     "nd\" message is displayed", ((string)(null)), table35, "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAft" +
             "erClickingTheSearchCrossButton")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1079,6 +1676,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS13342")]
         public virtual void EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButton()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButtonInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButtonInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAft" +
                     "erClickingTheSearchCrossButton", null, new string[] {
@@ -1099,9 +1722,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCou" +
             "ntAfterClickingTheFilterButtonAfterRunningASearch")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -1111,6 +1734,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("DAS13342")]
         [NUnit.Framework.CategoryAttribute("DAS13366")]
         public virtual void EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearch()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearchInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearchInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCou" +
                     "ntAfterClickingTheFilterButtonAfterRunningASearch", null, new string[] {
@@ -1149,15 +1798,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.Then("\"1,067\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS14731")]
-        public virtual void EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed()
+        public virtual void EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed("EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformedInternal("EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformedInternal("EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed", null, new string[] {
                         "Evergreen",
@@ -1174,6 +1849,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

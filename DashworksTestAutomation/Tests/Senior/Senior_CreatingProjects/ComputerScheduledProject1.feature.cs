@@ -73,13 +73,38 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Projects_CreateComputerScheduledProject")]
         [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
         [NUnit.Framework.CategoryAttribute("ComputerScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
-        public virtual void Projects_CreateComputerScheduledProject()
+        public virtual void Projects_CreateComputerScheduledProject("Projects_CreateComputerScheduledProject")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Projects_CreateComputerScheduledProjectInternal("Projects_CreateComputerScheduledProject");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Projects_CreateComputerScheduledProjectInternal("Projects_CreateComputerScheduledProject")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateComputerScheduledProject", null, new string[] {
                         "ProjectsOnSenior",
@@ -1763,6 +1788,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore
