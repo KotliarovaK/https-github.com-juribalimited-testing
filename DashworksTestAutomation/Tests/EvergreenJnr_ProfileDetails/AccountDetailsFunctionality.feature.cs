@@ -75,7 +75,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -84,7 +83,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS10756")]
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData()
+        public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataInternal("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileData", null, new string[] {
                         "Evergreen",
@@ -110,9 +135,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -122,7 +147,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("DAS11523")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed()
+        public virtual void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayedInternal("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayedInternal("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatCorrectErrorMessagesAreDisplayed", null, new string[] {
                         "Evergreen",
@@ -166,9 +217,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.Then("User picture changed to default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
             "e")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -179,6 +230,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         public virtual void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwice()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwiceInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProfileDataTwic" +
                     "e", null, new string[] {
@@ -207,9 +284,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -218,7 +295,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS11723")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API()
+        public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000APIInternal("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000APIInternal("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API", null, new string[] {
                         "Evergreen",
@@ -234,9 +337,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.Then("default list page Size is \"1000\" and Cache \"10\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChecksListPageSizeAPI")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -245,7 +348,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_UserProfile_ChecksListPageSizeAPI()
+        public virtual void EvergreenJnr_UserProfile_ChecksListPageSizeAPI("EvergreenJnr_UserProfile_ChecksListPageSizeAPI")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_ChecksListPageSizeAPIInternal("EvergreenJnr_UserProfile_ChecksListPageSizeAPI");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_ChecksListPageSizeAPIInternal("EvergreenJnr_UserProfile_ChecksListPageSizeAPI")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_ChecksListPageSizeAPI", null, new string[] {
                         "Evergreen",
@@ -277,9 +406,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                     "e Advanced page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -289,7 +418,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS12947")]
         [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
-        public virtual void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds()
+        public virtual void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5SecondsInternal("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5SecondsInternal("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds", null, new string[] {
                         "Evergreen",
@@ -321,16 +476,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
             testRunner.And("User clicks Update button on Preferences page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ProfileDetails")]
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS13026")]
-        public virtual void EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache()
+        public virtual void EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCacheInternal("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCacheInternal("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_ChangingListPageSizeAndListPagesToCache", null, new string[] {
                         "Evergreen",
@@ -359,9 +540,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                     "e Advanced page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UserProfile_ChangingPassword")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("ProfileDetails")]
@@ -370,7 +551,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
         [NUnit.Framework.CategoryAttribute("DAS13026")]
         [NUnit.Framework.CategoryAttribute("DAS14187")]
         [NUnit.Framework.CategoryAttribute("Remove_Password_Changes")]
-        public virtual void EvergreenJnr_UserProfile_ChangingPassword()
+        public virtual void EvergreenJnr_UserProfile_ChangingPassword("EvergreenJnr_UserProfile_ChangingPassword")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UserProfile_ChangingPasswordInternal("EvergreenJnr_UserProfile_ChangingPassword");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UserProfile_ChangingPasswordInternal("EvergreenJnr_UserProfile_ChangingPassword")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UserProfile_ChangingPassword", null, new string[] {
                         "Evergreen",
@@ -419,6 +626,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ProfileDetails
                     "Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

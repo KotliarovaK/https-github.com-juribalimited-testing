@@ -77,7 +77,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
@@ -87,7 +86,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
         [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", null)]
-        public virtual void EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling(string listName, string columnName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling("EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrollingInternal("EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrollingInternal("EvergreenJnr_AllLists_CheckDataIsNotDuplicatedInTableDuringScrolling")
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -111,6 +136,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_GridActions
             testRunner.Then(string.Format("All data is unique in the \'{0}\' column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore

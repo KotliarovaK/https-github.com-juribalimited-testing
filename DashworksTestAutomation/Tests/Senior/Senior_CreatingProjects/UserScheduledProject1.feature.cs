@@ -73,13 +73,38 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Projects_CreateUserScheduledProject")]
         [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
         [NUnit.Framework.CategoryAttribute("UserScheduledProject")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
-        public virtual void Projects_CreateUserScheduledProject()
+        public virtual void Projects_CreateUserScheduledProject("Projects_CreateUserScheduledProject")
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Projects_CreateUserScheduledProjectInternal("Projects_CreateUserScheduledProject");
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Projects_CreateUserScheduledProjectInternal("Projects_CreateUserScheduledProject")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Projects_CreateUserScheduledProject", null, new string[] {
                         "ProjectsOnSenior",
@@ -870,6 +895,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore
