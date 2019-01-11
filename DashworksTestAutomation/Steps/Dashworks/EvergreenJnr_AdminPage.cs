@@ -69,6 +69,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.CapacityUnits.Click();
                     break;
 
+                case "Rings":
+                    menu.Rings.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }
@@ -1894,6 +1898,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<CreateRingPage>();
             Assert.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
+        }
+
+        [When(@"User doubleclicks Create button on Create Ring page")]
+        public void WhenUserDoubleclicksCreateButtonOnTheCreateRingPage()
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            page.Actions.Click(page.CreateRingButton).DoubleClick().Build().Perform();
         }
 
         [Then(@"created Project with ""(.*)"" name is displayed correctly")]

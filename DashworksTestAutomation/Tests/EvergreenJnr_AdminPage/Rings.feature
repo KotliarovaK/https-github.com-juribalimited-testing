@@ -50,3 +50,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	Then Ring settings Maps to evergreen ring is displayed as "Unassigned"
 	When User sets "None" value in Maps to evergreen ring field
 	Then Ring settings Maps to evergreen ring is displayed as "None"
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14901 @Rings
+Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
+	When User clicks Admin on the left-hand menu
+	And User clicks "Rings" link on the Admin page
+	And User clicks the "CREATE RING" Action button
+	And User type "OneRing" Name in the "Ring name" field on the Project details page
+	And User doubleclicks Create button on Create Ring page
+	Then Success message is displayed and contains "The ring has been created" text
+	When User enters "OneRing" text in the Search field for "Ring" column
+	Then Counter shows "1" found rows
+	And There are no errors in the browser console
