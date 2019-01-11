@@ -75,7 +75,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_DateComboAndApostrophe")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -88,6 +87,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("DAS10615")]
         [NUnit.Framework.CategoryAttribute("DAS10475")]
         public virtual void EvergreenJnr_QueryString_DateComboAndApostrophe()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_DateComboAndApostropheInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_DateComboAndApostropheInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_DateComboAndApostrophe", "Runs Evergreen URL query strings which include a date field combos query and filt" +
                     "ers using apostrophes.", new string[] {
@@ -125,9 +150,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Complex")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -138,6 +163,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS10782")]
         public virtual void EvergreenJnr_QueryString_Complex()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_ComplexInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_ComplexInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Complex", "Runs Evergreen URL query strings that are complex, with lots of columns and advan" +
                     "ced filters applied", new string[] {
@@ -171,9 +222,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -183,6 +234,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         public virtual void EvergreenJnr_QueryString_AllLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_AllListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_AllListsInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AllLists", "Runs Evergreen URL query strings for the 4 default all lists.", new string[] {
                         "Evergreen",
@@ -216,9 +293,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Applications")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
@@ -226,6 +303,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS11023")]
         public virtual void EvergreenJnr_QueryString_Applications()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_ApplicationsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_ApplicationsInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Applications", "Runs Evergreen URL query strings for the Applications List.", new string[] {
                         "Evergreen",
@@ -254,9 +357,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Devices")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -264,6 +367,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS11023")]
         public virtual void EvergreenJnr_QueryString_Devices()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_DevicesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_DevicesInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Devices", "Runs Evergreen URL query strings for the Devices List.", new string[] {
                         "Evergreen",
@@ -284,9 +413,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Users")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -294,6 +423,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS11023")]
         public virtual void EvergreenJnr_QueryString_Users()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_UsersInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_UsersInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Users", "Runs Evergreen URL query strings for the Users List.", new string[] {
                         "Evergreen",
@@ -316,9 +471,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_Mailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
@@ -326,6 +481,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS11023")]
         public virtual void EvergreenJnr_QueryString_Mailboxes()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_MailboxesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_MailboxesInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_Mailboxes", "Runs Evergreen URL query strings for the Mailboxes List.", new string[] {
                         "Evergreen",
@@ -364,9 +545,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_ApplicationsOnDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -375,6 +556,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("DAS10789")]
         [NUnit.Framework.CategoryAttribute("DAS13684")]
         public virtual void EvergreenJnr_QueryString_ApplicationsOnDevicesList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_ApplicationsOnDevicesListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_ApplicationsOnDevicesListInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_ApplicationsOnDevicesList", "Runs Evergreen URL query strings for the Applications on Devices List.", new string[] {
                         "Evergreen",
@@ -401,9 +608,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AllListsSortByKeys")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -415,6 +622,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS10598")]
         public virtual void EvergreenJnr_QueryString_AllListsSortByKeys()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_AllListsSortByKeysInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_AllListsSortByKeysInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AllListsSortByKeys", "Runs Evergreen URL query strings which include being sorted by object key columns" +
                     ".", new string[] {
@@ -453,9 +686,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -530,7 +763,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
@@ -613,7 +845,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticL" +
             "ist")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -624,6 +855,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticListInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticL" +
                     "ist", null, new string[] {
@@ -670,9 +927,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                     "ayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamic" +
             "List")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -683,6 +940,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicListInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamic" +
                     "List", null, new string[] {
@@ -727,9 +1010,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                     " device\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWit" +
             "hComplianceIsRedAmberOrUnknownFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -740,6 +1023,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilterInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWit" +
                     "hComplianceIsRedAmberOrUnknownFilter", null, new string[] {
@@ -794,9 +1103,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                     " added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWit" +
             "hVendorContainsMicrosoftOrAdobeFilter")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
@@ -807,6 +1116,32 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilterInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWit" +
                     "hVendorContainsMicrosoftOrAdobeFilter", null, new string[] {
@@ -856,9 +1191,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                     "r info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForUserList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]
@@ -927,7 +1262,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Users")]

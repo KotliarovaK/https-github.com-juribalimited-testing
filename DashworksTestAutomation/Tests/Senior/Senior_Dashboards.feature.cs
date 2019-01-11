@@ -73,7 +73,6 @@ namespace DashworksTestAutomation.Tests.Senior
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Dashworks")]
@@ -82,6 +81,32 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.TestCaseAttribute("User Dashboard", null)]
         [NUnit.Framework.TestCaseAttribute("Computer Dashboard", null)]
         public virtual void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectly(string pageName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectlyInternal(pageName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_CheckThatDataInGroupWithApostrophesOnDashboardsPageIsDisplayedCorectlyInternal(string pageName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Senior",
@@ -105,9 +130,9 @@ namespace DashworksTestAutomation.Tests.Senior
             testRunner.Then("content for the \"Barry\'s Pilot Group 1\" group is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Dashworks")]
@@ -115,6 +140,32 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.CategoryAttribute("Senior_Teams")]
         [NUnit.Framework.CategoryAttribute("DAS13000")]
         public virtual void Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPageInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage", null, new string[] {
                         "Senior",
@@ -149,9 +200,9 @@ namespace DashworksTestAutomation.Tests.Senior
             testRunner.And("Default Team checkbox is checked and cannot be unchecked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask")]
         [NUnit.Framework.CategoryAttribute("Senior")]
         [NUnit.Framework.CategoryAttribute("Dashworks")]
@@ -160,6 +211,32 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
         [NUnit.Framework.CategoryAttribute("DAS14322")]
         public virtual void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTaskInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTaskInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask", null, new string[] {
                         "Senior",
@@ -237,9 +314,9 @@ namespace DashworksTestAutomation.Tests.Senior
             testRunner.When("User removes the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
             "")]
         [NUnit.Framework.CategoryAttribute("Senior")]
@@ -247,6 +324,32 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14171")]
         public virtual void Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutErrorInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutErrorInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError" +
                     "", null, new string[] {
@@ -265,9 +368,9 @@ namespace DashworksTestAutomation.Tests.Senior
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
+
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.Retry(2)]
         [NUnit.Framework.DescriptionAttribute("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
             "gValueType")]
         [NUnit.Framework.CategoryAttribute("Senior")]
@@ -275,6 +378,32 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
         [NUnit.Framework.CategoryAttribute("DAS13887")]
         public virtual void Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueType()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueTypeInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosingValueTypeInternal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAfterRechosin" +
                     "gValueType", null, new string[] {
@@ -318,6 +447,7 @@ namespace DashworksTestAutomation.Tests.Senior
             testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table6, "Then ");
             this.ScenarioCleanup();
         }
+
     }
 }
 #pragma warning restore
