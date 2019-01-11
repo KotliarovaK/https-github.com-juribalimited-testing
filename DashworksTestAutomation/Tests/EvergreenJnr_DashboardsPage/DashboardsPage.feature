@@ -141,8 +141,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	And User creates new Dashboard with "Dashboard for DAS14728" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14728 | All Applications | Vendor | Version | Count             | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14728 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
 	And User remembers number of Widgets with Legend on Dashboards page
 	And User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
