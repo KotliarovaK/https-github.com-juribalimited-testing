@@ -187,14 +187,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13723")]
         [NUnit.Framework.CategoryAttribute("DAS13370")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn()
+        public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn("EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumnInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumnInternal("EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn");
                     return;
                 }
                 catch (System.Exception exc)
@@ -213,7 +213,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumnInternal()
+        private void EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumnInternal("EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn", null, new string[] {
                         "Evergreen",
@@ -289,14 +289,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13375")]
         [NUnit.Framework.CategoryAttribute("DAS13711")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell()
+        public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell("EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCellInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCellInternal("EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell");
                     return;
                 }
                 catch (System.Exception exc)
@@ -315,7 +315,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCellInternal()
+        private void EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCellInternal("EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell", null, new string[] {
                         "Evergreen",
@@ -548,14 +548,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12672")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated()
+        public virtual void EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated("EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreatedInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreatedInternal("EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated");
                     return;
                 }
                 catch (System.Exception exc)
@@ -574,7 +574,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreatedInternal()
+        private void EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreatedInternal("EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated", null, new string[] {
                         "Evergreen",
@@ -961,14 +961,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13945")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName()
+        public virtual void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNameInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNameInternal("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName");
                     return;
                 }
                 catch (System.Exception exc)
@@ -987,7 +987,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNameInternal()
+        private void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNameInternal("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName", null, new string[] {
                         "Evergreen",
@@ -1028,14 +1028,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13945")]
         [NUnit.Framework.CategoryAttribute("DAS12672")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace()
+        public virtual void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpaceInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpaceInternal("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace");
                     return;
                 }
                 catch (System.Exception exc)
@@ -1054,7 +1054,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpaceInternal()
+        private void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpaceInternal("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace", null, new string[] {
                         "Evergreen",
@@ -1373,14 +1373,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS12921")]
-        public virtual void EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages()
+        public virtual void EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages("EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Admin"]        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage"]        [NUnit.Framework.CategoryAttribute("Capacity"]        [NUnit.Framework.CategoryAttribute("Slots"]        [NUnit.Framework.CategoryAttribute("DAS12921"]        public virtual void EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessagesInternal();
+                    this.EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessagesInternal(EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages);
                     return;
                 }
                 catch (System.Exception exc)
@@ -1399,15 +1399,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessagesInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages" +
-                    "", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "Capacity",
-                        "Slots",
+        private void EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessagesInternal("EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages" +            ""]        [NUnit.Framework.CategoryAttribute("Evergreen"]        [NUnit.Framework.CategoryAttribute("Admin"]        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage"]        [NUnit.Framework.CategoryAttribute("Capacity"]        [NUnit.Framework.CategoryAttribute("Slots"]        [NUnit.Framework.CategoryAttribute("DAS12921"]        public virtual void EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages()
                         "DAS12921"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1451,14 +1443,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13835")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage()
+        public virtual void EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage("EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPageInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPageInternal("EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage");
                     return;
                 }
                 catch (System.Exception exc)
@@ -1477,7 +1469,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPageInternal()
+        private void EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPageInternal("EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage", null, new string[] {
                         "Evergreen",
@@ -1842,14 +1834,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13490")]
-        public virtual void EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen()
+        public virtual void EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen("EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreenInternal();
+                    this.EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreenInternal("EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen");
                     return;
                 }
                 catch (System.Exception exc)
@@ -1868,7 +1860,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreenInternal()
+        private void EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreenInternal("EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacitySlotsScreen", null, new string[] {
                         "Evergreen",
@@ -1913,14 +1905,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13608")]
         [NUnit.Framework.CategoryAttribute("DAS13472")]
-        public virtual void EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType()
+        public virtual void EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType("EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectTypeInternal();
+                    this.EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectTypeInternal("EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType");
                     return;
                 }
                 catch (System.Exception exc)
@@ -1939,7 +1931,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectTypeInternal()
+        private void EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectTypeInternal("EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType", null, new string[] {
                         "Evergreen",
@@ -2061,14 +2053,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13159")]
         [NUnit.Framework.CategoryAttribute("DAS13754")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        public virtual void EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits()
+        public virtual void EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits("EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnitsInternal();
+                    this.EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnitsInternal("EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits");
                     return;
                 }
                 catch (System.Exception exc)
@@ -2087,7 +2079,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnitsInternal()
+        private void EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnitsInternal("EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits", null, new string[] {
                         "Evergreen",
@@ -2563,14 +2555,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13422")]
-        public virtual void EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField()
+        public virtual void EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField("EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberFieldInternal();
+                    this.EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberFieldInternal("EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField");
                     return;
                 }
                 catch (System.Exception exc)
@@ -2589,7 +2581,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberFieldInternal()
+        private void EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberFieldInternal("EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingAmberField", null, new string[] {
                         "Evergreen",
@@ -4539,7 +4531,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User navigate to \"Group Computer Rag Radio Date Owner\" Task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User publishes the task", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
 
@@ -5018,14 +5009,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13156")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits()
+        public virtual void EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits("EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits")
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnitsInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnitsInternal("EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits");
                     return;
                 }
                 catch (System.Exception exc)
@@ -5044,7 +5035,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnitsInternal()
+        private void EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnitsInternal("EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits")
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits", null, new string[] {
                         "Evergreen",
