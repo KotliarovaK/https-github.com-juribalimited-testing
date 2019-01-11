@@ -100,7 +100,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomLis
 	| Applications | Hen    | 5    | 1       |
 	| Mailboxes    | Henry  | 22   | 73      |
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
