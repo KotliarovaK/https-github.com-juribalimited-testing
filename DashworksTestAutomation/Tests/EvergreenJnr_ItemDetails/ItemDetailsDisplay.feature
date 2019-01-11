@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 	Then User clicks on "NL00G001" search result
 	And Group Icon for Group Details page is displayed
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -169,7 +169,7 @@ Examples:
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11053
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11053 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDetailsPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -227,7 +227,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Slot         |
 	| Readiness    |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummarySectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -244,7 +244,7 @@ Examples:
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -263,7 +263,7 @@ Examples:
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -322,7 +322,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInThe
 	And Links from "Name" column is displayed to the user on the Details Page
 	And Links from "Display Name" column is displayed to the user on the Details Page
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -340,7 +340,7 @@ Examples:
 	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Details | Mailbox           | Department and Location |
 	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Details | Mailbox           | Mailbox                 |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -643,7 +643,7 @@ Examples:
 	| Devices      | 001BAQXT6JWFPI                            |
 	| Users        | $231000-3AC04R8AR431                      |
 
-@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491
+@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
@@ -668,7 +668,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	And User clicks "Tricia G. Huang" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
@@ -717,7 +717,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	And User opens "Device Projects" section on the Details Page
 	Then All data is unique in the 'Project' column
 
-@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
@@ -750,7 +750,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 5222014  | 5202018 |
 	Then "2" rows found label displays on Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @Delete_Newly_Created_Bucket
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @Delete_Newly_Created_Bucket @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
@@ -1068,7 +1068,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccess
 	Then section is loaded correctly
 	#Then There are no errors in the browser console
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

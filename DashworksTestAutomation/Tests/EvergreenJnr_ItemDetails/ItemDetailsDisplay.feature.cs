@@ -187,6 +187,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
         [NUnit.Framework.CategoryAttribute("DAS13657")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application", "Key", "Key", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "svc_dashworks", "Username", "Groups", "Group", "Key", "Key", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "Projects", "Project", "Object ID", "Object ID", null)]
@@ -203,7 +204,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "DAS11732",
                     "DAS12235",
                     "DAS13409",
-                    "DAS13657"};
+                    "DAS13657",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -440,6 +442,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11053")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDetailsPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDetailsPage", null, new string[] {
@@ -447,7 +450,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS11053"});
+                        "DAS11053",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -578,6 +582,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11091")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "ZZZ588323", "Username", null)]
         public virtual void EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummarySectionOnTheDetailsPage(string pageName, string selectedName, string columnName, string[] exampleTags)
@@ -587,7 +592,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS11091"};
+                    "DAS11091",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -620,6 +626,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11091")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "ZZZ588323", "Username", null)]
         public virtual void EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSectionOnTheDetailsPage(string pageName, string selectedName, string columnName, string[] exampleTags)
@@ -629,7 +636,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS11091"};
+                    "DAS11091",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -664,6 +672,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11091")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "2", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "EKS951231", "Username", "4", null)]
         public virtual void EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage(string pageName, string selectedName, string columnName, string countRows, string[] exampleTags)
@@ -673,7 +682,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS11091"};
+                    "DAS11091",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -818,6 +828,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11983")]
         [NUnit.Framework.CategoryAttribute("DAS11926")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "00K4CEEQ737BA4L", "Hostname", "Details", "Device", "Department and Location", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "$231000-3AC04R8AR431", "Username", "Details", "AD Object", "Department and Location", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Details", "Mailbox", "Department and Location", null)]
@@ -830,7 +841,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS11983",
-                    "DAS11926"};
+                    "DAS11926",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -861,6 +873,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("DAS11762")]
         [NUnit.Framework.CategoryAttribute("DAS12235")]
         [NUnit.Framework.CategoryAttribute("DAS13813")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Application", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "svc_dashworks", "Username", "Groups", "Group", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "MSI", "File Name", null)]
@@ -874,7 +887,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "ItemDetailsDisplay",
                     "DAS11762",
                     "DAS12235",
-                    "DAS13813"};
+                    "DAS13813",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1525,6 +1539,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12491")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Applications", "IEWatch 2.1", "Application", "MSI", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "01A921EFD05545818AA", "Username", "Mailboxes", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages(string pageName, string searchTerm, string column, string tab, string[] exampleTags)
@@ -1535,7 +1550,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "Users",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS12491"};
+                    "DAS12491",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1593,6 +1609,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13341")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "02C80G8RFTPA9E", "Hostname", "Specification", "Manufacturer", "FES0798481167", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "05PFM2OWVCSCZ1", "Hostname", "Details", "Hostname", "05PFM2OWVCSCZ1", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "03714167684E45F7A8F", "Username", "Details", "Username", "03714167684E45F7A8F", null)]
@@ -1605,7 +1622,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "ALlLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
-                    "DAS13341"};
+                    "DAS13341",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1727,6 +1745,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12765")]
         [NUnit.Framework.CategoryAttribute("DAS12860")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Device Owner Projects", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "User Projects", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "hurstbl", "Username", "Mailbox Projects", null)]
@@ -1740,7 +1759,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS12765",
-                    "DAS12860"};
+                    "DAS12860",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1809,6 +1829,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13335")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhe" +
@@ -1818,7 +1839,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS13335",
-                        "Delete_Newly_Created_Bucket"});
+                        "Delete_Newly_Created_Bucket",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -2301,6 +2323,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13679")]
         [NUnit.Framework.CategoryAttribute("DAS14216")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", null)]
@@ -2312,7 +2335,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS13679",
-                    "DAS14216"};
+                    "DAS14216",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
