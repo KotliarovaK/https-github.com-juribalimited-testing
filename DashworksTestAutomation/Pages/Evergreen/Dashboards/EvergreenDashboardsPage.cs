@@ -33,6 +33,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='widgets']//h5")]
         public IList<IWebElement> AllWidgetsTitles { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@class='highcharts-legend']")]
+        public IList<IWebElement> NumberOfWidgetLegends { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
 

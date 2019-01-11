@@ -101,6 +101,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.Storage.SessionStorage.SetItem("numberOfWidgets", page.AllWidgetsTitles.Count.ToString());
         }
 
+        [When(@"User remembers number of Widgets with Legend on Dashboards page")]
+        public void WhenUserRemembersNumberOfWidgetsWithLegendOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            page.Storage.SessionStorage.SetItem("numberOfWidgetsWithLegend", page.NumberOfWidgetLegends.Count.ToString());
+        }
+
+        [Then(@"User sees number of Widgets with Legend increased by ""(.*)"" on Dashboards page")]
+        public void WhenUserSeesNumberOfWidgetsWithLegendIncreasedByOnDashboardsPage(int increasedBy)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            int expectedCount = Int32.Parse(page.Storage.SessionStorage.GetItem("numberOfWidgetsWithLegend")) +
+                                increasedBy;
+            Assert.That(page.NumberOfWidgetLegends.Count, Is.EqualTo(expectedCount),
+                "Number of Widgets with Legend is different");
+        }
+
         [Then(@"User sees number of Sections increased by ""(.*)"" on Dashboards page")]
         public void WhenUserSeesNumberOfSectionsIncreasedByOnDashboardsPage(int increasedBy)
         {
@@ -182,6 +202,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.DashboardNameTextBox.SendKeys(dashboardName);
             listElement.SaveButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User creates new Widget")]
