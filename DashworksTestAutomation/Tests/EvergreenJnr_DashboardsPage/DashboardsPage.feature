@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title                  | List              | SplitBy          | AggregateBy      | AggregateFunction | OrderBy               | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-Schedule | ICSP: i-Schedule | Count Distinct    | ICSP: i-Schedule DESC |                  | 20        |            |
+	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-Schedule | ICSP: i-Schedule | Count distinct    | ICSP: i-Schedule DESC |                  | 20        |            |
 	Then User sees widget with the next name "Test_Widget_DAS14668_2" on Dashboards page
 	When User clicks Settings button for "Dashboard for DAS14668" dashboard
 	And User clicks Delete button for custom list
@@ -112,9 +112,9 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidget
 Examples:
 	| Type   | Title                                 | List             | SplitBy       | AggregateBy  | AggregateFunctio | OrderBy         | TitleCloned                                    | ShowLegend |
 	| Line   | All Devices Widget For DAS_14586      | All Devices      | Hostname      | Device Type  | Count            | Hostname DESC   | Cloned - All Devices Widget For DAS_14586      | false      |
-	| Pie    | All Users Widget For DAS_14586        | All Users        | Username      | Display Name | Count Distinct   | Username ASC    | Cloned - All Users Widget For DAS_14586        | false      |
+	| Pie    | All Users Widget For DAS_14586        | All Users        | Username      | Display Name | Count distinct   | Username ASC    | Cloned - All Users Widget For DAS_14586        | false      |
 	| Bar    | All Applications Widget For DAS_14586 | All Applications | Application   | Vendor       | Count            | Vendor DESC     | Cloned - All Applications Widget For DAS_14586 | true       |
-	| Column | All Mailboxes Widget For DAS_14586    | All Mailboxes    | Email Address | Mail Server  | Count Distinct   | Mail Server ASC | Cloned - All Mailboxes Widget For DAS_14586    | true       |
+	| Column | All Mailboxes Widget For DAS_14586    | All Mailboxes    | Email Address | Mail Server  | Count distinct   | Mail Server ASC | Cloned - All Mailboxes Widget For DAS_14586    | true       |
 
 @Evergreen @Dashboards @DAS14587 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName

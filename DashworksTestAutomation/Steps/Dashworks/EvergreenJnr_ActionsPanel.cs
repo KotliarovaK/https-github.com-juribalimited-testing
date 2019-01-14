@@ -155,8 +155,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            action.RequestTypeField.Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.RequestTypeField);
             action.RequestTypeField.Clear();
             action.RequestTypeField.SendKeys(requestType);
             action.GetOptionByName(requestType).Click();
@@ -166,6 +165,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsStageOnActionPanel(string stageValue)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.StageField);
             action.StageField.Clear();
             action.StageField.SendKeys(stageValue);
             action.GetOptionByName(stageValue).Click();

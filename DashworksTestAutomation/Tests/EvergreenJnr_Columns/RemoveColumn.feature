@@ -348,7 +348,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnIsDisplayedInColumnsPanelAfter
 	| Owner Common Name |
 	And "28" subcategories is displayed for "Device Owner" category
 
-@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS11506 @DAS14288
+@Evergreen @Users @EvergreenJnr_Columns @RemoveColumn @DAS11515 @DAS11506 @DAS14288 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                                   |
@@ -365,7 +365,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRe
 	| ColumnName                                   |
 	| Last Logon Date                              |
 	| Enabled                                      |
-	| Windows7Mi: Read Only on Project Object Page |
+	#| Windows7Mi: Read Only on Project Object Page |
 	And "23" subcategories is displayed for "User" category
 	#And "49" subcategories is displayed for "Project Tasks: Windows7Mi" category
 

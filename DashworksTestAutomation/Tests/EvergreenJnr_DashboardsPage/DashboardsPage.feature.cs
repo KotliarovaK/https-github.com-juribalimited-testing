@@ -315,7 +315,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "TestList_DAS14668",
                         "ICSP: i-Schedule",
                         "ICSP: i-Schedule",
-                        "Count Distinct",
+                        "Count distinct",
                         "ICSP: i-Schedule DESC",
                         "",
                         "20",
@@ -336,9 +336,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14586")]
         [NUnit.Framework.TestCaseAttribute("Line", "All Devices Widget For DAS_14586", "All Devices", "Hostname", "Device Type", "Count", "Hostname DESC", "Cloned - All Devices Widget For DAS_14586", "false", null)]
-        [NUnit.Framework.TestCaseAttribute("Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count Distinct", "Username ASC", "Cloned - All Users Widget For DAS_14586", "false", null)]
+        [NUnit.Framework.TestCaseAttribute("Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count distinct", "Username ASC", "Cloned - All Users Widget For DAS_14586", "false", null)]
         [NUnit.Framework.TestCaseAttribute("Bar", "All Applications Widget For DAS_14586", "All Applications", "Application", "Vendor", "Count", "Vendor DESC", "Cloned - All Applications Widget For DAS_14586", "true", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", "All Mailboxes Widget For DAS_14586", "All Mailboxes", "Email Address", "Mail Server", "Count Distinct", "Mail Server ASC", "Cloned - All Mailboxes Widget For DAS_14586", "true", null)]
+        [NUnit.Framework.TestCaseAttribute("Column", "All Mailboxes Widget For DAS_14586", "All Mailboxes", "Email Address", "Mail Server", "Count distinct", "Mail Server ASC", "Cloned - All Mailboxes Widget For DAS_14586", "true", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists(string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
         {
             string[] @__tags = new string[] {
