@@ -1100,6 +1100,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS11515")]
         [NUnit.Framework.CategoryAttribute("DAS11506")]
         [NUnit.Framework.CategoryAttribute("DAS14288")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL()
         {
             System.Exception lastException = null;
@@ -1136,7 +1137,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "RemoveColumn",
                         "DAS11515",
                         "DAS11506",
-                        "DAS14288"});
+                        "DAS14288",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1158,8 +1160,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Last Logon Date"});
             table51.AddRow(new string[] {
                         "Enabled"});
-            table51.AddRow(new string[] {
-                        "Windows7Mi: Read Only on Project Object Page"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table51, "And ");
             testRunner.And("\"23\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();

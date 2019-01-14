@@ -1376,6 +1376,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Mailbox Count (Access)        |
 	| Mailbox Count (Owned)         |
 	| Organizational Unit           |
+	| Parent Distinguished Name     |
 	| SID                           |
 	| Surname                       |
 	| User (Saved List)             |

@@ -162,7 +162,7 @@ Examples:
 	| Applications | Compliance       | Compliance       |
 	| Mailboxes    | Owner Compliance | Owner Compliance |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500 @DAS14923 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

@@ -656,7 +656,7 @@ Examples:
 	| Applications | IEWatch 2.1         | Application | MSI       |
 	| Users        | 01A921EFD05545818AA | Username    | Mailboxes |
 	
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS14923 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -696,7 +696,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupD
 	When User selects "Unknown" text from key value grid on the Details Page
 	Then "Unknown" text selected from key value grid on the Details Page
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321 @DAS14923 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -775,7 +775,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User navigates to the "Projects" tab
 	Then User sees "AutoTestBucket_DAS_13335" Evergreen Bucket in Project Summary section on the Details Page
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12386
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12386 @DAS14923 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage
 	When User add following columns using URL to the "<PageName>" page:
 	| ColumnName |
@@ -1066,7 +1066,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccess
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
