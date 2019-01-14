@@ -39,5 +39,19 @@ namespace DashworksTestAutomation.Steps.Base
                     errorsList.Add(entry);
             Assert.IsEmpty(errorsList, "Error message is displayed in the console");
         }
+
+        [Then(@"There are only page not found errors in console")]
+        public void ThenThereAreOnlyPageNotFoundErrorsInTheBrowserConsole()
+        {
+            var errorsList = new List<LogEntry>();
+
+            foreach (var entry in _driver.Manage().Logs.GetLog(LogType.Browser).ToList())
+                if (entry.Level == LogLevel.Severe)
+                    errorsList.Add(entry);
+
+            Assert.That(errorsList.Count, 
+                Is.EqualTo(errorsList.FindAll(x=>x.Message.Contains("the server responded with a status of 404 (Not Found)")).Count), 
+                "There are another errors in console");
+        }
     }
 }

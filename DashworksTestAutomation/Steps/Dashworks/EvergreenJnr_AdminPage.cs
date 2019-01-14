@@ -1907,6 +1907,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.Actions.Click(page.CreateRingButton).DoubleClick().Build().Perform();
         }
 
+        [When(@"User tries to see details of an not existing ring")]
+        public void WhenUserOpensDetailsInfoOfAnNotExistingRing()
+        {
+            string current = _driver.Url;
+            int index = current.LastIndexOf("/");
+
+            if (index > 0)
+                current = current.Substring(0, index) + "/99999999";
+            _driver.Navigate().GoToUrl(current);
+        }
+
+        [Then(@"Page not found displayed for Ring details page")]
+        public void ThenPageNotFoundDisplayedForRingDetailsPage()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => page.DetailsPageWasNotFound);
+            Assert.That(page.DetailsPageWasNotFound.Text, Is.EqualTo("404"), "Page 404 was not opened");
+        }
+
         [Then(@"created Project with ""(.*)"" name is displayed correctly")]
         public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
         {
