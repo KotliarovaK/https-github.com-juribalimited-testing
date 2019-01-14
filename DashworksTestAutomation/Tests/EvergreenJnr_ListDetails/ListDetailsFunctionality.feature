@@ -463,7 +463,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessag
 	Then Filters panel is displayed to the user
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association   |
-	| <ListName1>   | <Association> |
+	| <ListName1>  | <Association> |
 	When User create dynamic list with "<ListName2>" name on "Devices" page
 	And User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
