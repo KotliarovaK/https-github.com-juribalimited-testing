@@ -349,6 +349,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingOnProjects();
         }
 
+        [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
+        public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.AreEqual(text, page.TextInDeleteAlert.Text);
+        }
+
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
         public void WhenUserSetsWidgetOrderBy(string orderBy)
         {

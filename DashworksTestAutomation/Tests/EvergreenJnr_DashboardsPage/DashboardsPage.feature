@@ -198,6 +198,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
+@Evergreen @Dashboards @Widgets @DAS14855
+Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingWidget
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14855" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
+	And User clicks "Delete" item from Ellipsis menu on Dashboards page
+	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
+	When User clicks Settings button for "Dashboard for DAS14855" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
 @Evergreen @Dashboards @DAS14578 @DAS14584 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When User clicks the "CREATE DASHBOARD" Action button
