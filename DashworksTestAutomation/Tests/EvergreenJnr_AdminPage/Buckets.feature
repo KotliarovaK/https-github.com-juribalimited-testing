@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "birmingham" text in the Search field for "Bucket" column
 	Then Counter shows "3" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then Actions dropdown is displayed correctly
 	When User clicks on Actions button
 	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	When User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User clicks the "CREATE BUCKET" Action button
 	Then "Create Bucket" page should be displayed to the user
@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then Warning message is not displayed on the Admin page
 	When User clicks on Actions button
 	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	When User clicks Delete button 
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected bucket has been deleted" text
@@ -762,8 +762,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMess
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName   |
 	| Evergreen Bucket 4 |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	Then Warning message with "These buckets will be permanently deleted and any objects within them reassigned to the default bucket" text is displayed on the Admin page
 

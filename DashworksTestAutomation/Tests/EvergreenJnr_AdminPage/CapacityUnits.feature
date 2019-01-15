@@ -69,8 +69,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDelet
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName          |
 	| Evergreen Capacity Unit 2 |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
 	And User clicks Delete button
 	Then Warning message with "These units will be permanently deleted and any objects within them reassigned to the default unit" text is displayed on the Admin page
 
@@ -311,7 +309,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	| ACD FotoCanvas 2.0 Trial                                        |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	#And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" Project on Action panel
 	And User selects "CapacityUnit12141Applications" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
