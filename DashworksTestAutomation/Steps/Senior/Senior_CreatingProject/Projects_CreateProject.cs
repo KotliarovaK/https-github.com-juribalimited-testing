@@ -117,6 +117,13 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"""(.*)"" displayed in the table on Senior")]
+        public void ThenDisplayedInTheTableOnSenior(string text)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            Assert.IsTrue(page.GetTableContentByText(text).Displayed(), $"{text} is not displayed in the table on Senior");
+        }
+
         [Then(@"information message is displayed with ""(.*)"" text")]
         public void ThenInformationMessageIsDisplayedWithText(string text)
         {
