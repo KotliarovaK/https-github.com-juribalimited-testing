@@ -153,6 +153,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Names of Widgets are different");
         }
 
+        [Then(@"User sees following Widgets in one Section on Dashboards page:")]
+        public void WhenUserSeesFollowingWidgetsInOneSectionOnDashboardsPage(Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            List<string> expectedWidgetsNames =
+                table.Rows.Select(x => x.Values).Select(c => c.FirstOrDefault()).ToList();
+
+            Assert.That(page.GetWidgetsNamesInSections(), Does.Contain(expectedWidgetsNames),
+                "Names of Widgets are different");
+        }
+
+        [When(@"User clicks ""(.*)"" button for ""(.*)"" Section on Dashboards page")]
+        public void WhenUserClicksButtonForSectionOnDashboardsPage(string buttonLabel, int section)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            page.GetButtonsByName(buttonLabel).ElementAt(section - 1).Click();
+        }
+
         [Then(@"User sees widget with the next name ""(.*)"" on Dashboards page")]
         public void WhenUserSeesWidgetWithTheNextNameOnDashboardsPage(string widgetName)
         {

@@ -39,15 +39,38 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	| Move to position |
 	| Delete           |
 
-@Evergreen @Dashboards @Widgets @DAS14358
-Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicated
-	When User clicks Edit mode trigger on Dashboards page
+@Evergreen @Dashboards @Widgets @DAS14358 @DAS12989
+Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIntoSameSection
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS12989" name
+	And User clicks the "ADD SECTION" Action button
+	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
+	And User creates new Widget
+	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | Section1_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	And User clicks "ADD WIDGET" button for "2" Section on Dashboards page
+	And User creates new Widget
+	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Bar        | Section2_WidgetForDAS12989_1 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	And User clicks "ADD WIDGET" button for "2" Section on Dashboards page
+	And User creates new Widget
+	| WidgetType | Title                        | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | Section2_WidgetForDAS12989_2 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
 	And User remembers number of Sections and Widgets on Dashboards page
-	And User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks Ellipsis menu for "Section1_WidgetForDAS12989_1" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
-	Then User sees Widget with "Cloned - Device Profile" name on Dashboards page
+	Then User sees following Widgets in one Section on Dashboards page:
+	| WidgetNames                           |
+	| Section1_WidgetForDAS12989_1          |
+	| Cloned - Section1_WidgetForDAS12989_1 |
+	And User sees following Widgets in one Section on Dashboards page:
+	| WidgetNames                  |
+	| Section2_WidgetForDAS12989_1 |
+	| Section2_WidgetForDAS12989_2 |
 	And User sees number of Widgets increased by "1" on Dashboards page
-	When User deletes "Cloned - Device Profile" Widget on Dashboards page
+	When User clicks Settings button for "Dashboard for DAS12989" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
 
 @Evergreen @Dashboards @Sections @DAS14358
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated

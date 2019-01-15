@@ -63,6 +63,26 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(By.XPath($".//div[@class='widgets']//h5[contains(text(),'{widgetName}')]")).Count > 0;
         }
 
+        public List<List<string>> GetWidgetsNamesInSections()
+        {
+            List<List<string>> widgetsInSections = new List<List<string>>();
+
+            foreach (var section in AllSections)
+            {
+                widgetsInSections.Add(section.FindElements(By.XPath(".//following-sibling::div[@class='widgets']//h5")).Select(x => x.Text).ToList());
+            }
+
+            return widgetsInSections;
+        }
+
+        public IList<IWebElement> GetButtonsByName(string buttonLabel)
+        {
+            var selector = By.XPath(
+                $".//span[text()='{buttonLabel}']/ancestor::button");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElements(selector);
+        }
+
         public IWebElement GetEllipsisMenuForWidget(string widgetName)
         {
             return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::div/i"));
