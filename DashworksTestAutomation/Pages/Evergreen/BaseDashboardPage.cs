@@ -378,7 +378,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
             }
-
+            
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }

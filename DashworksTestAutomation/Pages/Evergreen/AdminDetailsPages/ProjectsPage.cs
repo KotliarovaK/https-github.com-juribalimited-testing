@@ -104,6 +104,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'mat-tab-label-active')]")]
         public IWebElement ActiveTabOnScopeChangesSection { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='error-status-box']//span[contains(text(),'404')]")]
+        public IWebElement DetailsPageWasNotFound { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

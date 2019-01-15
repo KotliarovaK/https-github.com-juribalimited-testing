@@ -4991,6 +4991,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             table102.AddRow(new string[] {
                         "Organizational Unit"});
             table102.AddRow(new string[] {
+                        "Parent Distinguished Name"});
+            table102.AddRow(new string[] {
                         "SID"});
             table102.AddRow(new string[] {
                         "Surname"});

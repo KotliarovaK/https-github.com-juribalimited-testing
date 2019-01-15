@@ -62,3 +62,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	When User enters "OneRing" text in the Search field for "Ring" column
 	Then Counter shows "1" found rows
 	And There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS14903 @Rings
+Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetailsExist
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Rings" tab
+	And User enters "Unassigned" text in the Search field for "Ring" column
+	And User clicks content from "Ring" column
+	And User tries to see details of an not existing ring
+	Then Page not found displayed for Ring details page
+	And There are only page not found errors in console
