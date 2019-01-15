@@ -250,3 +250,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When User clicks Settings button for "Dashboard for DAS14578" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Sections @DAS14610
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard
+	When User tries to open same page with another item id
+	Then User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
+	And There are no errors in the browser console

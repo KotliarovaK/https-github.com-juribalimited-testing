@@ -377,6 +377,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.TextInDeleteAlert.Text);
         }
 
+        [Then(@"User sees ""(.*)"" text in warning message on Dashboards submenu pane")]
+        public void ThenUserSeesTextInWarningMessageOnSubmenuDashboardsPage(string text)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.AreEqual(text, page.SubmenuAlertMessage.Text);
+        }
+
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
         public void WhenUserSetsWidgetOrderBy(string orderBy)
         {

@@ -1907,8 +1907,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.Actions.Click(page.CreateRingButton).DoubleClick().Build().Perform();
         }
 
-        [When(@"User tries to see details of an not existing ring")]
-        public void WhenUserOpensDetailsInfoOfAnNotExistingRing()
+        [When(@"User tries to open same page with another item id")]
+        public void WhenUserOpensSamePageForNotExistingItem()
         {
             string current = _driver.Url;
             int index = current.LastIndexOf("/");
