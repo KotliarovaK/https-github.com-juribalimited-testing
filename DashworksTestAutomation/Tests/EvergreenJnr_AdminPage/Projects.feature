@@ -3381,7 +3381,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject55" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
