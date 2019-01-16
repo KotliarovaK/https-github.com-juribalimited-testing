@@ -395,6 +395,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
             builder.ContextClick(GetGridCellByText(cellText)).Build().Perform();
         }
 
+        public void ClearInput(IWebElement input)
+        {
+            int attempt = 0;
+
+            Driver.WaitForDataLoading();
+
+            while (!input.GetAttribute("value").Equals(string.Empty) && attempt < 10)
+            {
+                input.Clear();
+                Thread.Sleep(500);
+                attempt++;
+            }
+        }
+
         public int GetElementTopYCoordinate(IWebElement element)
         {
             return element.Location.Y;

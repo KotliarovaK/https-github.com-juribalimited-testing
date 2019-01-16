@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string FirstColumnTableContent = "//div[@role='gridcell']//a[@href]";
 
-        [FindsBy(How = How.XPath, Using = ".//div/h1")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement PageTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = OptionTabsOnAdminPage)]

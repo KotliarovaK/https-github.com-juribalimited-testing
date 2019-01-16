@@ -112,7 +112,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectField.Clear();
+            action.ClearInput(action.ProjectField);
             action.ProjectField.SendKeys(projectName);
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
             action.ProjectSection.Click();

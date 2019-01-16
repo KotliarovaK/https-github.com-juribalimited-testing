@@ -28,6 +28,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.ClickSectionFromCircleChart(chartName, sectionName);
         }
 
+        [When(@"User clicks Show Dashboards panel icon on Dashboards page")]
+        public void WhenUserClicksShowDashboardsPanelOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            page.DashboardsPanelIcon.Click();
+        }
+
         [When(@"User clicks Edit mode trigger on Dashboards page")]
         public void WhenUserClicksEditModeTriggerOnDashboardsPage()
         {
@@ -50,8 +58,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            page.GetEllipsisMenusForSectionsHavingWidget(widgetName).FirstOrDefault().Click();
+            page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Click();
             _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.EllipsisMenu);
+        }
+
+        [Then(@"User sees Ellipsis icon enabled for Section having ""(.*)"" Widget on Dashboards page")]
+        public void ThenUserSeesEllipsisIconEnabledForSectionHavingWidgetOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(), Is.True);
+        }
+
+        [Then(@"User sees Collapse/Expand icon enabled for Section having ""(.*)"" Widget on Dashboards page")]
+        public void ThenUserSeesCollapseExpandIconEnabledForSectionHavingWidgetOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
+                Is.True);
         }
 
         [When(@"User collapses all sections on Dashboards page")]
@@ -59,7 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            foreach (var arrow in page.CollapseExpandSectionArrow)
+            foreach (var arrow in page.AllCollapseExpandSectionsArrows)
             {
                 if (arrow.GetAttribute("class").Contains("arrow_up"))
                 {
@@ -107,9 +132,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            page.Storage.SessionStorage.SetItem("numberOfWidgetsWithLegend", page.NumberOfWidgetLegends.Count.ToString());
+            page.Storage.SessionStorage.SetItem("numberOfWidgetsWithLegend",
+                page.NumberOfWidgetLegends.Count.ToString());
         }
-        
+
         [Then(@"User sees number of Widgets with Legend increased by ""(.*)"" on Dashboards page")]
         public void WhenUserSeesNumberOfWidgetsWithLegendIncreasedByOnDashboardsPage(int increasedBy)
         {
@@ -175,11 +201,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees widget with the next name ""(.*)"" on Dashboards page")]
-        public void WhenUserSeesWidgetWithTheNextNameOnDashboardsPage(string widgetName)
+        public void ThenUserSeesWidgetWithTheNextNameOnDashboardsPage(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            Assert.That(page.AllWidgetsTitles.Select(x=>x.Text).ToList(), Does.Contain(widgetName), "Widget name is missing");
+            Assert.That(page.AllWidgetsTitles.Select(x => x.Text).ToList(), Does.Contain(widgetName),
+                "Widget name is missing");
+        }
+
+        [Then(@"User sees Edit mode trigger is in the On position on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerIsInTheOnPositionOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Assert.That(page.GetEditModeState(), Is.True, "Trigger is in the OFF position");
+        }
+
+        [Then(@"User sees Edit mode trigger has blue style on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerHasBlueStyleOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Assert.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(49, 122, 193, 0.54)"),
+                "Edit mode slider is not blue");
+            Assert.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(49, 122, 193, 1)"),
+                "Edit mode trigger is not blue");
         }
 
         [Then(@"Widget name ""(.*)"" has word break style on Dashboards page")]
@@ -190,12 +236,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             try
             {
                 var widget = page.AllWidgetsTitles.FirstOrDefault(x => x.Text.Equals(widgetName));
-                Assert.That(widget.GetCssValue("word-break"), Is.EqualTo("break-word"), "Word break formatting is missing");
-                Assert.That(widget.GetCssValue("word-wrap"), Is.EqualTo("break-word"), "Word break formatting is missing");
+                Assert.That(widget.GetCssValue("word-break"), Is.EqualTo("break-word"),
+                    "Word break formatting is missing");
+                Assert.That(widget.GetCssValue("word-wrap"), Is.EqualTo("break-word"),
+                    "Word break formatting is missing");
             }
             catch (NullReferenceException)
             {
-               Assert.False(true, "Widget not found");
+                Assert.False(true, "Widget not found");
             }
         }
 
@@ -223,7 +271,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            page.GetEllipsisMenusForSectionsHavingWidget(widgetName).LastOrDefault().Click();
+            page.GetEllipsisIconsForSectionsHavingWidget(widgetName).LastOrDefault().Click();
             page.EllipsisMenuItems.Select(x => x).Where(c => c.Text.Equals("Delete")).FirstOrDefault().Click();
             page.DeleteButtonInAlert.Click();
         }
@@ -253,7 +301,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
 
-                if (!string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(row["Title"]);
+                if (!string.IsNullOrEmpty(row["Title"]))
+                {
+                    createWidgetElement.Title.Clear();
+                    createWidgetElement.Title.SendKeys(row["Title"]);
+                }
 
                 if (!string.IsNullOrEmpty(row["List"]))
                 {

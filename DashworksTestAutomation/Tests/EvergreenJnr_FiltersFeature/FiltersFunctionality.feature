@@ -417,8 +417,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And "3" rows are displayed in the agGrid
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Actions button
-	And User clicks Close panel button
-	And User clicks the Actions button
 	And User select "Username" rows in the grid
 	| SelectedRowsName    |
 	| 0072B088173449E3A93 |
@@ -439,8 +437,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| Evergreen Capacity Unit |
 	And "2" rows are displayed in the agGrid
 	When User clicks "Mailboxes" on the left-hand menu
-	And User clicks the Actions button
-	And User clicks Close panel button
 	And User clicks the Actions button
 	And User select "Email Address" rows in the grid
 	| SelectedRowsName                 |
@@ -463,8 +459,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| Evergreen Capacity Unit |
 	And "3" rows are displayed in the agGrid
 	When User clicks "Applications" on the left-hand menu
-	And User clicks the Actions button
-	And User clicks Close panel button
 	And User clicks the Actions button
 	And User select "Application" rows in the grid
 	| SelectedRowsName         |

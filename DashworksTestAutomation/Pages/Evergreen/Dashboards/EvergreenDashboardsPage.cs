@@ -10,13 +10,10 @@ namespace DashworksTestAutomation.Pages
     internal class EvergreenDashboardsPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
-        public IWebElement SubMenuIcon { get; set; }
+        public IWebElement DashboardsPanelIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools-toggle']//div[@class='mat-slide-toggle-thumb']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//span[contains(text(),'CREATE DASHBOARD')]")]
-        public IWebElement CreateDashboard { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -28,7 +25,7 @@ namespace DashworksTestAutomation.Pages
         public IList<IWebElement> EllipsisMenuItems { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]//i[contains(@class,'arrow')]")]
-        public IList<IWebElement> CollapseExpandSectionArrow { get; set; }
+        public IList<IWebElement> AllCollapseExpandSectionsArrows { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='widgets']//h5")]
         public IList<IWebElement> AllWidgetsTitles { get; set; }
@@ -44,6 +41,12 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
         public IWebElement TextInDeleteAlert { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-bar']")]
+        public IWebElement EditModeSlideBar { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
+        public IWebElement EditModeSlideToggle { get; set; }
         
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
@@ -88,12 +91,33 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::div/i"));
         }
 
-        public IList<IWebElement> GetEllipsisMenusForSectionsHavingWidget(string widgetName)
+        public IList<IWebElement> GetEllipsisIconsForSectionsHavingWidget(string widgetName)
         {
             return Driver.FindElements(By.XPath(
                 $".//h5[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//button//i[contains(@class,'more')]"));
         }
 
+        public IList<IWebElement> GetExpandCollapseIconsForSectionsHavingWidget(string widgetName)
+        {
+            return Driver.FindElements(By.XPath(
+                $".//h5[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
+        }
+
+        public string GetEditModeSlideBarColor()
+        {
+            return EditModeSlideBar.GetCssValue("background-color");
+        }
+
+        public string GetEditModeSlideToggleColor()
+        {
+            return EditModeSlideToggle.GetCssValue("background-color");
+        }
+
+        public bool GetEditModeState()
+        {
+            return EditModeOnOffTrigger.GetAttribute("class").Contains("checked");
+        }
+        
         public void ClickSectionFromCircleChart(string chartName, string sectionName)
         {
             //JavaScript to get all circle charts on page
