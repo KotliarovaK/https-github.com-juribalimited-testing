@@ -1297,6 +1297,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CancelButtonInWarning);
             page.CancelButtonInWarning.Click();
         }
 

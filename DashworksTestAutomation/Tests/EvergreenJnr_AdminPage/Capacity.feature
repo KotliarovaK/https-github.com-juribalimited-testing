@@ -507,9 +507,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDelet
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| User Slot 2      |
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
+	And User clicks Delete button 
 	Then Warning message with "The selected slots will be deleted, do you want to proceed?" text is displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835
@@ -1725,13 +1723,12 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	And User clicks Column button on the Column Settings panel
 	And User select "Maps to Evergreen" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then "" text is displayed in the "Maps to Evergreen" column
 	When User enters "1" text in the Search field for "Capacity Unit" column
-	Then "" text is displayed in the "Maps to Evergreen" column
+	Then "" content is displayed for "Maps to Evergreen" column
 	When User enters "2" text in the Search field for "Capacity Unit" column
-	Then "" text is displayed in the "Maps to Evergreen" column
+	Then "" content is displayed for "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @DAS13636 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociatedToACapacitySlot
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
