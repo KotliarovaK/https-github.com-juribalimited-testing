@@ -42,6 +42,27 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
         public IWebElement TextInDeleteAlert { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
+        public IWebElement SubmenuAlertMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']")]
+        public IWebElement PermissionPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//span[contains(text(), 'ADD USER')]")]
+        public IWebElement PermissionAddUserButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//input[@placeholder='User']")]
+        public IWebElement PermissionUserField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//mat-select[@role='listbox']//span[contains(text(), 'Permission')]")]
+        public IWebElement PermissionTypeField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='userName']")]
+        public IWebElement PermissionNameOfAddedUser { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='permission']")]
+        public IWebElement PermissionAccessTypeOfAddedUser { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-bar']")]
         public IWebElement EditModeSlideBar { get; set; }
 
@@ -51,6 +72,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
+
+        
+
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -159,6 +183,39 @@ namespace DashworksTestAutomation.Pages
                     section.Click();
                     break;
                 }
+        }
+
+        public void ChangePermissionSharingFieldFromTo(string valueInField, string newValue)
+        {
+            var from = $" .//div[@class='permissions-container']//span[contains(text(), '{valueInField}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(from));
+            Driver.FindElement(By.XPath(from)).Click();
+
+            var to = $".//span[@class='mat-option-text'][contains(text(), '{newValue}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(to));
+            Driver.FindElement(By.XPath(to)).Click();
+        }
+
+        public void SelectOptionFromList(string option)
+        {
+            var selector = $".//span[@class='mat-option-text'][contains(text(), '{option}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public IWebElement GetSettingsMenuOfSharedUser(string username)
+        {
+            var dashboardSettingsSelector =
+                By.XPath($".//div[@class='permissions-container']//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]");
+            Driver.MouseHover(dashboardSettingsSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
+            return Driver.FindElement(dashboardSettingsSelector);
+        }
+
+        public IWebElement GetSettingsOption(string option)
+        {
+            return Driver.FindElement(By.XPath($".//div[@class='permissions-container']//ul[@class='menu-settings']/li[contains(text(),'{option}')]"));
         }
 
         private int GetIndexOfElementContainingText(IEnumerable<IWebElement> webElements, string text)

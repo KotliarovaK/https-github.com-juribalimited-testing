@@ -231,5 +231,12 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetTableContentByText(string text)
+        {
+            var selector = By.XPath($".//tr[@class='grid-rowstyle']//td/a[contains(text(), '{text}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

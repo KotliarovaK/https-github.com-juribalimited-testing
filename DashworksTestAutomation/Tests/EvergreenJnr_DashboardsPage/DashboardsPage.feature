@@ -293,3 +293,49 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When User clicks Settings button for "Dashboard for DAS14578" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Sections @DAS14610
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard
+	When User tries to open same page with another item id
+	Then User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
+	And There are no errors in the browser console
+
+@Evergreen @Dashboards @DAS14911 
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWithDifferentPermissions
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14911" name
+	And User clicks Settings button for "Dashboard for DAS14911" dashboard
+	And User clicks Manage in the list panel
+	Then Permission panel is displayed to the user
+	When User changes sharing type from "Private" to "Specific users"
+	And User adds user to list of shared person
+	| User          | Permission |
+	| Administrator | Admin      |
+	Then User "Administrator" was added to shared list with "Admin" permission
+	And There are no errors in the browser console
+	When User clicks Settings button for "Administrator" shared user
+	And User selects "Remove" option from Settings
+	Then There is no user in shared list
+	And There are no errors in the browser console
+	When User adds user to list of shared person
+	| User          | Permission |
+	| Administrator | Edit       |
+	Then User "Administrator" was added to shared list with "Edit" permission
+	And There are no errors in the browser console
+	When User clicks Settings button for "Administrator" shared user
+	And User selects "Remove" option from Settings
+	Then There is no user in shared list
+	And There are no errors in the browser console
+	When User adds user to list of shared person
+	| User          | Permission |
+	| Administrator | Read       |
+	Then User "Administrator" was added to shared list with "Read Only" permission
+	And There are no errors in the browser console
+	When User clicks Settings button for "Administrator" shared user
+	And User selects "Remove" option from Settings
+	Then There is no user in shared list
+	And There are no errors in the browser console
+	#teardown
+	When User clicks Settings button for "Dashboard for DAS14911" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel

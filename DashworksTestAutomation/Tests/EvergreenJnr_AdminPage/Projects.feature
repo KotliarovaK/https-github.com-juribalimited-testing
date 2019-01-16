@@ -3381,7 +3381,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject55" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
 	Then "Show Original Application Column On Application Dashboards" checkbox is not displayed on the Admin page
 	When User selects "Scope Changes" tab on the Project details page
 	Then open tab in the Project Scope Changes section is active
@@ -3724,7 +3723,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	And User selects "Use evergreen capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
 	When User clicks "UPDATE" button in the warning message on Admin page
-	Then Success message is displayed and contains "The project capacity details have been updated" text
+	Then Success message with "The project capacity details have been updated" text is displayed on the Projects page
 	When User selects "Units" tab on the Project details page
 	Then Blue banner with "This project uses evergreen capacity units" text is displayed
 	Then "CREATE CAPACITY UNIT" button is not displayed
@@ -3758,3 +3757,61 @@ Examples:
 	| All Devices   |
 	| All Users     |
 	| All Mailboxes |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @Senior_Projects @DAS13499 @Delete_Newly_Created_Project @Projects
+Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User clicks create Project button
+	Then "Create Project" page is displayed to the user
+	When User creates new Project on Senior
+	| ProjectName     | ShortName | Description | Type |
+	| DAS13499Project | 13499     |             |      |
+	And User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName  |
+	| Stage13499 |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name      | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |
+	| 13499Task | 13499 | Stage13499 | Normal   | Date      | Computer   |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User navigate to "Categories" tab
+	Then "Manage Categories" page is displayed to the user
+	When User clicks "Create Category" button
+	And User create Category
+	| Name           | Description              | ObjectTypeString |
+	| 13499Categorie | ComputerScheduledProject | Computer         |
+	Then Success message is displayed with "Category successfully created." text
+	When User navigate to "Request Types" tab
+	Then "Manage Request Types" page is displayed to the user
+	When User clicks "Create Request Type" button
+	And User create Request Type
+	| Name             | Description     | ObjectTypeString |
+	| 13499RequestType | DAS13499Project | Computer         |
+	And User navigate to Evergreen link
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "DAS13499Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User enters "New_DAS13499_Project_Name" in the "Project Name" field
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	#Update bottom step to "New_DAS13499_Project_Name" after Project renamed faster
+	When User navigate to "DAS13499Project" Project
+	Then Project with "New_DAS13499_Project_Name" name is displayed correctly
+	When User navigate to "Request Types" tab
+	Then "13499RequestType" displayed in the table on Senior
+	When User navigate to "Categories" tab
+	Then "13499Categorie" displayed in the table on Senior
+	When User navigate to "Tasks" tab
+	Then "13499Task" displayed in the table on Senior
+	When User navigate to "Stages" tab
+	Then "Stage13499" displayed in the table on Senior
