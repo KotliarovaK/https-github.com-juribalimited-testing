@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "birmingham" text in the Search field for "Bucket" column
 	Then Counter shows "3" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -111,16 +111,14 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
-	And User selects all rows on the grid
+	Then Actions dropdown is displayed correctly
+	When User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User selects all rows on the grid
-	Then Actions dropdown is displayed correctly
-	When User clicks on Actions button
-	And User selects "Delete" in the Actions
 	When User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	When User clicks the "CREATE BUCKET" Action button
@@ -137,8 +135,6 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Cancel button in the warning message on the Admin page
 	Then Warning message is not displayed on the Admin page
-	When User clicks on Actions button
-	And User selects "Delete" in the Actions
 	When User clicks Delete button 
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 	When User clicks Delete button in the warning message

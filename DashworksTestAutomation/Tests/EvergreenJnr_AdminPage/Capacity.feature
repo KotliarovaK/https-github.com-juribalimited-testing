@@ -507,7 +507,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDelet
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| User Slot 2      |
-	And User clicks Delete button
+	And User clicks Delete button 
 	Then Warning message with "The selected slots will be deleted, do you want to proceed?" text is displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835
