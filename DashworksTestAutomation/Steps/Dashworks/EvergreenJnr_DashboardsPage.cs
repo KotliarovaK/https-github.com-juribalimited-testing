@@ -5,6 +5,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -377,6 +378,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, page.TextInDeleteAlert.Text);
         }
 
+        [Then(@"User sees ""(.*)"" text in warning message on Dashboards submenu pane")]
+        public void ThenUserSeesTextInWarningMessageOnSubmenuDashboardsPage(string text)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.AreEqual(text, page.SubmenuAlertMessage.Text);
+        }
+
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
         public void WhenUserSetsWidgetOrderBy(string orderBy)
         {
@@ -401,6 +409,77 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => page.ErrorMessage);
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+        }
+
+        [Then(@"Permission panel is displayed to the user")]
+        public void ThenPermissionPanelIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.PermissionPanel.Displayed(), "Actions panel was not displayed");
+        }
+
+        [When(@"User changes sharing type from ""(.*)"" to ""(.*)""")]
+        public void WhenUserSelectsSharingType(string from, string to)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.ChangePermissionSharingFieldFromTo(from,to);
+        }
+
+        [When(@"User adds user to list of shared person")]
+        public void WhenUserAddsNewPersonToSharingList(Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.PermissionAddUserButton);
+            page.PermissionAddUserButton.Click();
+            
+            foreach (var row in table.Rows)
+            {
+                if (!string.IsNullOrEmpty(row["User"]))
+                {
+                    page.PermissionUserField.Click();
+                    page.PermissionUserField.Clear();
+                    page.PermissionUserField.SendKeys(row["User"]);
+                    page.SelectOptionFromList(row["User"]);
+                }
+
+                if (!string.IsNullOrEmpty(row["Permission"]))
+                {
+                    page.PermissionTypeField.Click();
+                    page.SelectOptionFromList(row["Permission"]);
+                }
+
+                page.PermissionAddUserButton.Click();
+            }
+        }
+
+        [Then(@"User ""(.*)"" was added to shared list with ""(.*)"" permission")]
+        public void ThenUserWasAddedToSharedList(string username, string permission)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.PermissionNameOfAddedUser.Text, Is.EqualTo(username), "Username is not one that expected");
+            Assert.That(page.PermissionAccessTypeOfAddedUser.Text, Is.EqualTo(permission), "Permission is not one that expected");
+        }
+
+        [Then(@"There is no user in shared list")]
+        public void ThenNoUserFoundInSharedList()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitWhileControlIsDisplayed<EvergreenDashboardsPage>(()=>page.PermissionNameOfAddedUser);
+            Assert.That(page.PermissionNameOfAddedUser.Displayed(), Is.False, "Username found in shared list");
+        }
+        
+        [When(@"User clicks Settings button for ""(.*)"" shared user")]
+        public void WhenUserClickSettingsMenuForSharedUser(string user)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetSettingsMenuOfSharedUser(user).Click();
+        }
+
+        [When(@"User selects ""(.*)"" option from Settings")]
+        public void WhenUserClicksOptionFromSettingsMenuForSharedUser(string option)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetSettingsOption(option).Click();
         }
     }
 }

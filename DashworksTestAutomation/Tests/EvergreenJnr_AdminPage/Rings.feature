@@ -72,6 +72,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User clicks "Rings" tab
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
-	And User tries to see details of an not existing ring
+	And User tries to open same page with another item id
 	Then Page not found displayed for Ring details page
 	And There are only page not found errors in console

@@ -62,6 +62,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then Filling field error with "An override end date must be entered" text is displayed
 	When User enters "4 Oct 2018" date in the "Override End Date" field
 	Then "CREATE" Action button is disabled
+	Then "CREATE" Action button have tooltip with "Some settings are not valid" text
 	When User enters "" date in the "Override Start Date" field
 	Then Filling field error with "An override start date must be entered" text is displayed
 	When User enters "4 Oct 2018" date in the "Override Start Date" field
@@ -74,6 +75,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User clicks content from "Start Date" column
 	And User enters "3 Oct 2018" date in the "Override End Date" field
 	Then "UPDATE" Action button is disabled
+	Then "UPDATE" Action button have tooltip with "Some settings are not valid" text
 	When User enters "" date in the "Override Start Date" field
 	And User enters "" date in the "Override End Date" field
 	Then Filling field error with "An override start date must be entered" text is displayed
