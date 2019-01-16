@@ -208,6 +208,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var bucketName = _driver.NowAt<ProjectsPage>();
             bucketName.GetFieldByName(fieldName).Clear();
             bucketName.GetFieldByName(fieldName).SendKeys(name);
+            bucketName.BodyContainer.Click();
 
             if (!string.IsNullOrEmpty(name))
                 switch (fieldName)

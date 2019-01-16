@@ -3804,8 +3804,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	When User enters "New_DAS13499_Project_Name" in the "Project Name" field
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
-	When User clicks refresh button in the browser
-	When User navigate to "New_DAS13499_Project_Name" Project
+	#Update bottom step to "New_DAS13499_Project_Name" after Project renamed faster
+	When User navigate to "DAS13499Project" Project
 	Then Project with "New_DAS13499_Project_Name" name is displayed correctly
 	When User navigate to "Request Types" tab
 	Then "13499RequestType" displayed in the table on Senior
