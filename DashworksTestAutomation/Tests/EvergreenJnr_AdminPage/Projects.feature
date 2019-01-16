@@ -3758,7 +3758,7 @@ Examples:
 	| All Users     |
 	| All Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @Senior_Projects @DAS13499 @Delete_Newly_Created_Project @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @Senior_Projects @DAS13499 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
