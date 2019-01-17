@@ -80,7 +80,6 @@ namespace DashworksTestAutomation.Tests.Senior
         [NUnit.Framework.CategoryAttribute("DAS12695")]
         [NUnit.Framework.CategoryAttribute("DAS14003")]
         [NUnit.Framework.CategoryAttribute("DAS14912")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void Projects_CheckThatErrorIsNotDisplayedWhenUsedDDLForApplicationsTabOnPMObjectPage()
         {
             System.Exception lastException = null;
@@ -115,8 +114,7 @@ namespace DashworksTestAutomation.Tests.Senior
                         "Applications_tab",
                         "DAS12695",
                         "DAS14003",
-                        "DAS14912",
-                        "Not_Run"});
+                        "DAS14912"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

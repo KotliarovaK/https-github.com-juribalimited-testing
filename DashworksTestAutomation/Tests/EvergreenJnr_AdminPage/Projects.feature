@@ -3082,7 +3082,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProje
 	| Use project buckets                        |
 	| Clone evergreen buckets to project buckets |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects @Do_Not_Run_With_Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects @Do_Not_Run_With_Projects @Do_Not_Run_With_AdminPage
 Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
