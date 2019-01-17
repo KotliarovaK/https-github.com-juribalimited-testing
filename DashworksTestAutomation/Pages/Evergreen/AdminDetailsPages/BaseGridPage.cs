@@ -41,9 +41,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[contains(text(), 'Evergreen')]")]
-        public IWebElement EvergreenLink { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 

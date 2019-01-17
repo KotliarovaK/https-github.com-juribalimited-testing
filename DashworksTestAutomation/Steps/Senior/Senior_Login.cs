@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Steps.Projects
         [When(@"User navigate to Evergreen link")]
         public void WhenUserNavigateToEvergreenLink()
         {
-            var page = _driver.NowAt<BaseGridPage>();
+            var page = _driver.NowAt<ProjectLogin>();
 
             _driver.MouseHover(page.EvergreenLink);
             page.EvergreenLink.Click();
