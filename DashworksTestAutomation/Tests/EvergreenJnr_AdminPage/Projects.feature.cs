@@ -7804,6 +7804,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13783")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_AdminPage")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage()
         {
             System.Exception lastException = null;
@@ -7840,7 +7841,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "AdminPage",
                         "DAS13783",
                         "Projects",
-                        "Do_Not_Run_With_Projects"});
+                        "Do_Not_Run_With_Projects",
+                        "Do_Not_Run_With_AdminPage"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

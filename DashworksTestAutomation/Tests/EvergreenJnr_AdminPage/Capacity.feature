@@ -40,6 +40,62 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	| Users         |
 	| Applications  |
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUnits
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "13431DevicesProject" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "13431DevicesProject" is displayed to user
+	When User clicks "Capacity" tab
+	When User selects "Units" tab on the Project details page
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName    |
+	|               |
+	| Capacity Unit |
+	|               |
+	| Description   |
+	| Default       |
+	| Slots         |
+	| Devices       |
+	| Users         |
+	| Applications  |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityUnits
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "13431MailboxesProject" in the "Project Name" field
+	And User selects "All Mailboxes" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "13431MailboxesProject" is displayed to user
+	When User clicks "Capacity" tab
+	When User selects "Units" tab on the Project details page
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName    |
+	|               |
+	| Capacity Unit |
+	|               |
+	| Description   |
+	| Default       |
+	| Slots         |
+	| Users         |
+	| Mailboxes     |
+	| Applications  |
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13723 @DAS13370 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn
 	When User clicks Admin on the left-hand menu

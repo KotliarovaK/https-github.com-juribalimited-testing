@@ -337,7 +337,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	And User select "Manage Users" option in Management Console
 	And User removes "2User2" User
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @DAS13207 @DAS14963 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12190 @DAS12204 @DAS13207 @DAS14963 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -377,7 +377,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	Then "NewDevice" list is displayed in the Dependants section
 	And "Device1" list is displayed in the Dependants section
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @DAS12623 @DAS12687 @DAS14963 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12169 @DAS12286 @DAS12192 @DAS12623 @DAS12687 @DAS14963 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	Then "Devices with Adobe" list is displayed to user
 	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12192 @DAS14963 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS10713 @DAS12192 @DAS14963 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
