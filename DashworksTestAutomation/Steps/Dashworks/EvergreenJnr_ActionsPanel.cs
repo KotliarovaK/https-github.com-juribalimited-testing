@@ -184,6 +184,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [When(@"User selects ""(.*)"" Capacity Unit on Action panel")]
+        public void WhenUserSelectsCapacityUnitOnActionPanel(string capacityUnit)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.CapacityUnitField);
+            action.CapacityUnitField.Clear();
+            action.CapacityUnitField.SendKeys(capacityUnit);
+            action.GetOptionByName(capacityUnit).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"following Move Mailboxes are displayed in drop-down:")]
+        public void ThenFollowingMoveMailboxesAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.AlsoMoveMailboxesField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Move Mailboxes lists are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+
+
         [Then(@"Stages are displayed in alphabetical order on Action panel")]
         public void ThenStagesAreDisplayedInAlphabeticalOrderOnActionPanel()
         {

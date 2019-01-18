@@ -1089,8 +1089,8 @@ Examples:
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @DAS14431
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
 	When User clicks "Applications" on the left-hand menu
-	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
-	When User click content from "Application" column
+	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	And User click content from "Application" column
 	And User navigates to the "Projects" tab
 	And User have opened Column Settings for "Delivery Date" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel

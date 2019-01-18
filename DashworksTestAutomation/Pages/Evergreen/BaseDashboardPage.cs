@@ -73,6 +73,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
         public IWebElement StageField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit']")]
+        public IWebElement CapacityUnitField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[contains(text(),'Also Move Mailboxes')]/parent::span//preceding-sibling::mat-select")]
+        public IWebElement AlsoMoveMailboxesField { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Task']")]
         public IWebElement TaskField { get; set; }
 

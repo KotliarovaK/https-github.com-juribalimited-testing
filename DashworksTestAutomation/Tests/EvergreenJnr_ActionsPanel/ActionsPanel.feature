@@ -1616,3 +1616,21 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfTasksDoesNotIncludeGroupTa
 	| Radio Rag Date Owner User Req B    |
 	| Radio Rag Date Owner Req B         |
 	| SS Department and Location Enabled |
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14421
+Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsForAlsoMoveMailboxes
+	When User clicks "Users" on the left-hand menu
+	When User clicks the Actions button
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 00A5B910A1004CF5AC4 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Email Migration" Project on Action panel
+	And User selects "Unassigned" Capacity Unit on Action panel
+	Then following Move Mailboxes are displayed in drop-down:
+	| Options              |
+	| None                 |
+	| Owned mailboxes only |
+	| All linked mailboxes |
+	
