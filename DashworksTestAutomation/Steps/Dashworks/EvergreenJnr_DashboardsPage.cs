@@ -54,6 +54,63 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.EllipsisMenu);
         }
 
+        [When(@"User clicks Dashboards Details icon on Dashboards page")]
+        public void WhenUserClicksDashboardsDetailsIconOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            page.DashboardsDetailsIcon.Click();
+            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.DashboardsContextMenu);
+        }
+
+        [Then(@"User sees Ellipsis icon enabled for ""(.*)"" Widget on Dashboards page")]
+        public void ThenUserSeesEllipsisIconEnabledForWidgetOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetEllipsisMenuForWidget(widgetName).Displayed(), Is.True);
+        }
+
+        [Then(@"User sees Dashboards context menu on Dashboards page")]
+        public void ThenUserSeesDashboardsContextMenuOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.DashboardsContextMenu.Displayed(), Is.True);
+        }
+
+        [Then(@"Dashboards context menu is hidden on Dashboards page")]
+        public void ThenDashboardsContextMenuIsHiddenOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.DashboardsContextMenu.Displayed(), Is.False);
+        }
+
+        [Then(@"User sees Dashboards sub menu on Dashboards page")]
+        public void ThenUserSeesDashboardsSubMenuOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.DashboardsSubmenu.Displayed(), Is.True);
+        }
+
+        [Then(@"Dashboards sub menu is hidden on Dashboards page")]
+        public void ThenDashboardsSubMenuIsHiddenOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.DashboardsSubmenu.Displayed(), Is.False);
+        }
+
+        [Then(@"User sees Ellipsis icon disabled for ""(.*)"" Widget on Dashboards page")]
+        public void ThenUserSeesEllipsisIconDisabledForWidgetOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetEllipsisMenuForWidget(widgetName), Is.Null);
+        }
+
         [When(@"User clicks Ellipsis menu for Section having ""(.*)"" Widget on Dashboards page")]
         public void WhenUserClicksEllipsisMenuForSectionHavingWidgetOnDashboardsPage(string widgetName)
         {
@@ -71,6 +128,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(), Is.True);
         }
 
+        [Then(@"User sees Ellipsis icon disabled for Section having ""(.*)"" Widget on Dashboards page")]
+        public void ThenUserSeesEllipsisIconDisabledForSectionHavingWidgetOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(), Is.False);
+        }
+
         [Then(@"User sees Collapse/Expand icon enabled for Section having ""(.*)"" Widget on Dashboards page")]
         public void ThenUserSeesCollapseExpandIconEnabledForSectionHavingWidgetOnDashboardsPage(string widgetName)
         {
@@ -78,6 +143,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Assert.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
                 Is.True);
+        }
+
+        [Then(@"User sees Collapse/Expand icon disabled for Section having ""(.*)"" Widget on Dashboards page")]
+        public void ThenUserSeesCollapseExpandIconDisabledForSectionHavingWidgetOnDashboardsPage(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetExpandCollapseIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Displayed(),
+                Is.False);
         }
 
         [When(@"User collapses all sections on Dashboards page")]
@@ -218,6 +292,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.GetEditModeState(), Is.True, "Trigger is in the OFF position");
         }
 
+        [Then(@"User sees Edit mode trigger is in the Off position on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerIsInTheOffPositionOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Assert.That(page.GetEditModeState(), Is.False, "Trigger is in the ON position");
+        }
+
         [Then(@"User sees Edit mode trigger has blue style on Dashboards page")]
         public void ThenUserSeesEditModeTriggerHasBlueStyleOnDashboardsPage()
         {
@@ -227,6 +309,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Edit mode slider is not blue");
             Assert.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(49, 122, 193, 1)"),
                 "Edit mode trigger is not blue");
+        }
+
+        [Then(@"User sees Edit mode trigger has grey style on Dashboards page")]
+        public void ThenUserSeesEditModeTriggerHasGreyStyleOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Assert.That(page.GetEditModeSlideBarColor(), Is.EqualTo("rgba(0, 0, 0, 0.38)"),
+                "Edit mode slider is not grey");
+            Assert.That(page.GetEditModeSlideToggleColor(), Is.EqualTo("rgba(250, 250, 250, 1)"),
+                "Edit mode trigger is not grey");
         }
 
         [Then(@"Widget name ""(.*)"" has word break style on Dashboards page")]
