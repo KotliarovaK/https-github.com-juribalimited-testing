@@ -297,6 +297,45 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User select criteria with following date:")]
+        public void WhenUserSelectFilterCriteriaAndFollowingDate(Table table)
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            foreach (var row in table.Rows)
+            {
+                menu.SelectConditionForDateColumn(row["Criteria"]);
+
+                menu.DateRegularValueFirst.Clear();
+
+                
+                if (!string.IsNullOrEmpty(row["Date"]))
+                    menu.DateRegularValueFirst.SendKeys(row["Date"]);
+
+                menu.DateRegularValueFirst.SendKeys(OpenQA.Selenium.Keys.Enter);
+            }
+        }
+
+        [When(@"User remembers the date input position")]
+        public void WhenUserRemembersInputPosition()
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.Storage.SessionStorage.SetItem("date_input_X", page.DateRegularValueFirst.Location.X.ToString());
+            page.Storage.SessionStorage.SetItem("date_input_Y", page.DateRegularValueFirst.Location.Y.ToString());
+        }
+
+        [Then(@"User checks that date input has same position")]
+        public void ThenUserChecksThatHasSamePosition()
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            int xCoord = Int32.Parse(page.Storage.SessionStorage.GetItem("date_input_X"));
+            int yCoord = Int32.Parse(page.Storage.SessionStorage.GetItem("date_input_Y"));
+
+            Assert.That(page.DateRegularValueFirst.Location.X, Is.InRange(xCoord - 10, xCoord + 10)); // calibration
+            Assert.That(page.DateRegularValueFirst.Location.Y, Is.InRange(yCoord - 10, yCoord + 10)); // calibration
+        }
+
+
         [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
         public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
         {

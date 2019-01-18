@@ -1085,3 +1085,18 @@ Examples:
 	| Devices   | Hostname      |
 	| Users     | Username      |
 	| Mailboxes | Email Address |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @DAS14431
+Scenario: EvergreenJnr_ApplicationsList_ChecksTest
+	When User clicks "Applications" on the left-hand menu
+	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	When User click content from "Application" column
+	And User navigates to the "Projects" tab
+	And User have opened Column Settings for "Delivery Date" column in the Details Page table
+	And User clicks Filter button on the Column Settings panel
+	And User remembers the date input position
+	And User select criteria with following date:
+	| Criteria  | Date     |
+	| Not Equal | 23032018 |
+	Then User checks that date input has same position
+	And There are no errors in the browser console
