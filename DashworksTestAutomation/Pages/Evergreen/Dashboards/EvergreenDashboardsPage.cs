@@ -60,6 +60,15 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='userName']")]
         public IWebElement PermissionNameOfAddedUser { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@id='context']/app-dashboards-details/div[@class='context-container']")]
+        public IWebElement DashboardsContextMenu { get; set; }
+        
+        [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
+        public IWebElement DashboardsSubmenu { get; set; }
+        
+        [FindsBy(How = How.XPath, Using = "//div[@id='pagetitle-actions']/button")]
+        public IWebElement DashboardsDetailsIcon { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='permission']")]
         public IWebElement PermissionAccessTypeOfAddedUser { get; set; }
         
@@ -72,10 +81,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
-
         
-
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -112,7 +118,14 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetEllipsisMenuForWidget(string widgetName)
         {
-            return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::div/i"));
+            try
+            {
+                return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::div/i"));
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public IList<IWebElement> GetEllipsisIconsForSectionsHavingWidget(string widgetName)

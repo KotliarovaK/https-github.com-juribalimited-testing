@@ -185,10 +185,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And User clicks refresh button in the browser
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User navigates to the "Dashboard for DAS12978" list
-	Then "CREATE DASHBOARD" Action button is active
-	And "ADD SECTION" button is not displayed
-	And "ADD WIDGET" button is not displayed
-	When User clicks Edit mode trigger on Dashboards page
+	And User clicks Edit mode trigger on Dashboards page
 	Then User sees Edit mode trigger is in the On position on Dashboards page
 	And User sees Edit mode trigger has blue style on Dashboards page
 	And "CREATE DASHBOARD" Action button is disabled
@@ -196,6 +193,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And "ADD WIDGET" Action button is active
 	And User sees Collapse/Expand icon enabled for Section having "WidgetForDAS12978" Widget on Dashboards page
 	And User sees Ellipsis icon enabled for Section having "WidgetForDAS12978" Widget on Dashboards page
+	And User sees Ellipsis icon enabled for "WidgetForDAS12978" Widget on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
@@ -214,6 +212,34 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	| WidgetTitles               |
 	| WidgetForDAS12978_2_Edited |
 	When User clicks Settings button for "Dashboard for DAS12978" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Widgets @Sections @DAS12977
+Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS12977" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS12977 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	And User clicks refresh button in the browser
+	Then Dashboards sub menu is hidden on Dashboards page
+	When User clicks Show Dashboards panel icon on Dashboards page
+	Then User sees Dashboards sub menu on Dashboards page
+	When User navigates to the "Dashboard for DAS12977" list
+	Then "CREATE DASHBOARD" Action button is active
+	And "ADD SECTION" button is not displayed
+	And "ADD WIDGET" button is not displayed
+	And User sees Edit mode trigger is in the Off position on Dashboards page
+	And User sees Edit mode trigger has grey style on Dashboards page
+	And User sees Collapse/Expand icon disabled for Section having "WidgetForDAS12977" Widget on Dashboards page
+	And User sees Ellipsis icon disabled for Section having "WidgetForDAS12977" Widget on Dashboards page
+	And User sees Ellipsis icon disabled for "WidgetForDAS12977" Widget on Dashboards page
+	And Dashboards context menu is hidden on Dashboards page
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User clicks Settings button for "Dashboard for DAS12977" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
