@@ -54,6 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.SelectAllCheckbox.Click();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [When(@"User clicks on Action drop-down")]
