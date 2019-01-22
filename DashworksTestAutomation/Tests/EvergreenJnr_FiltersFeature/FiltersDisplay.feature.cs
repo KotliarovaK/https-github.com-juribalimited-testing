@@ -4906,6 +4906,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS9820")]
         [NUnit.Framework.CategoryAttribute("DAS13296")]
+        [NUnit.Framework.CategoryAttribute("DAS14629")]
+        [NUnit.Framework.CategoryAttribute("DAS14659")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage()
         {
             System.Exception lastException = null;
@@ -4941,12 +4943,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS9820",
-                        "DAS13296"});
+                        "DAS13296",
+                        "DAS14629",
+                        "DAS14659"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User closes \"Selected Columns\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User expands \"User\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -5454,6 +5459,73 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "51"});
             testRunner.Then("the values are displayed for \"OwnerFloor\" filter on \"Mailboxes\" page in the follo" +
                     "wing order:", ((string)(null)), table107, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatPrimaryComputerOperatorsShowTextBoxCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS14629")]
+        [NUnit.Framework.CategoryAttribute("DAS14664")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Empty", null)]
+        [NUnit.Framework.TestCaseAttribute("Not empty", null)]
+        public virtual void EvergreenJnr_UsersList_CheckThatPrimaryComputerOperatorsShowTextBoxCorrectly(string operatorValue, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatPrimaryComputerOperatorsShowTextBoxCorrectlyInternal(operatorValue,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatPrimaryComputerOperatorsShowTextBoxCorrectlyInternal(string operatorValue, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Users",
+                    "Evergreen_FiltersFeature",
+                    "FiltersDisplay",
+                    "DAS14629",
+                    "DAS14664",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatPrimaryComputerOperatorsShowTextBoxCorrectly", null, @__tags);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("user select \"Primary Computer\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User select \"{0}\" Operator value", operatorValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User adds column for the selected filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
 

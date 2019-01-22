@@ -2725,6 +2725,66 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPan" +
+            "elForUsersList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS14629")]
+        [NUnit.Framework.CategoryAttribute("DAS14660")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPan" +
+                    "elForUsersList", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS14629",
+                        "DAS14660",
+                        "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User is expand \"User\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User add \"Primary Device\" Column from expanded category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

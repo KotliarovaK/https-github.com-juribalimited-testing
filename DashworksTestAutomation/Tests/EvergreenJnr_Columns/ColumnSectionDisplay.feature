@@ -879,3 +879,12 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedT
 	| prK: Email to be sent - All Placeholders        |
 	| prK: Email to be sent - All Placeholders (Slot) |
 	| prK: user-group-radb-k                          |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @Not_Run
+Scenario: EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User is expand "User" columns category
+	When User add "Primary Device" Column from expanded category

@@ -21,7 +21,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
-Examples: 
+Examples:
 	| ColumnName             | Operators              | FilterOption      | Text                                        | RowsCount |
 	| Windows7Mi: Target App | Equals, Does not equal | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
 	| Babel(Engl: Target App | Equals, Does not equal | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
@@ -45,14 +45,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 	When user select "<ColumnName>" filter
 	Then "<Operators>" option is available for this filter
 	When User have create "Equals" Values filter with column and following options:
-     | Values         |
-     | <FilterOption> |
+	| Values         |
+	| <FilterOption> |
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
-Examples: 
+Examples:
 	| ColumnName                 | Operators                                                                                        | FilterOption | Text                               | RowsCount |
 	| Windows7Mi: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1051         | Windows7Mi: Target App Key is 1051 | 4         |
 	| Babel(Engl: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 15           | Babel(Engl: Target App Key is 15   | 1         |
@@ -81,7 +81,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilte
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
-Examples: 
+Examples:
 	| ColumnName                       | Operators              | FilterOption | Text                                      | RowsCount |
 	| Windows7Mi: Target App Readiness | Equals, Does not equal | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
 	| Babel(Engl: Target App Readiness | Equals, Does not equal | None         | Babel(Engl: Target App Readiness is None  | 302       |
@@ -102,7 +102,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| SelectedCheckboxes        |
 	| Add Target App Key column |
 
-	Examples: 
+Examples:
 	| FilterName                 |
 	| Windows7Mi: Target App Key |
 	| Babel(Engl: Target App Key |
@@ -113,7 +113,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| UserSchedu: Target App Key |
 	| prK: Target App Key        |
 
-	@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS12388
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS12388
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppIDFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -124,7 +124,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| SelectedCheckboxes        |
 	| Add Target App ID column |
 
-	Examples: 
+Examples:
 	| FilterName                |
 	| Windows7Mi: Target App ID |
 	| Babel(Engl: Target App ID |
@@ -155,7 +155,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	When User click on 'Dashworks First Seen' column header
 	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
 
-Examples: 
+Examples:
 	| ListName     | RowsCount |
 	| Devices      | 17,225    |
 	| Users        | 41,335    |
@@ -181,7 +181,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
-Examples: 
+Examples:
 	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
 	| Windows7Mi: Application Readiness | Equals, Does not equal | Red          | Windows7Mi: Application Readiness is Red   | 27        |
 	| Babel(Engl: Application Readiness | Equals, Does not equal | None         | Babel(Engl: Application Readiness is None  | 302       |
@@ -380,8 +380,23 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfP
 	When user select "<FilterName>" filter
 	Then "Off, On" checkbox is available for this filter
 
-Examples: 
+Examples:
 	| PageName     | FilterName                     |
-	#| Users        | ComputerSc: User Off/On        |
+	| Users        | ComputerSc: User Off/On        |
 	| Devices      | ComputerSc: Computer Off/On    |
 	| Applications | ComputerSc: Application Off/On |
+
+@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @API @DAS14629 @DAS14663 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList
+Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Users" page:
+	| OperatorValues      |
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
+	| Empty               |
+	| Not empty           |
