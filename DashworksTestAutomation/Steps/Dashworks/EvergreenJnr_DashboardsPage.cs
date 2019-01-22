@@ -463,6 +463,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
 
                 createWidgetElement.CreateUpdateWidgetButton.Click();
+                _driver.WaitForDataLoading();
             }
         }
 
