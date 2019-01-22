@@ -49,9 +49,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksEllipsisMenuForWidgetOnDashboardsPage(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var ellipsisMenu = page.GetEllipsisMenuForWidget(widgetName);
 
-            page.GetEllipsisMenuForWidget(widgetName).Click();
-            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.EllipsisMenu);
+            if (ellipsisMenu != null)
+            {
+                page.GetEllipsisMenuForWidget(widgetName).Click();
+                _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.EllipsisMenu);
+            }
+            else
+            {
+                throw new Exception($"Ellipsis menu is not available");
+            }
         }
 
         [When(@"User clicks Dashboards Details icon on Dashboards page")]

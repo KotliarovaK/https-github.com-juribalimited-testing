@@ -33,6 +33,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheListDetailsButton()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
             menu.ListDetailsButton.Click();
