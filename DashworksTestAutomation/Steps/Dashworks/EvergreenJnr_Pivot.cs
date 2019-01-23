@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -199,6 +200,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsEmpty(page.PivotNameTextBox.GetAttribute("value"), "Pivot Name field is not empty");
         }
 
+        [When(@"User selects aggregate function ""(.*)"" on Pivot")]
+        public void WhenUserSelectsAggregateFunctionOnPivot(string functionName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.SelectAggregateFunctionByName(functionName);
+        }
+
         #region Tooltip on Pivot
 
         [Then(@"""(.*)"" plus button have tooltip with ""(.*)"" text")]
@@ -250,5 +258,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.SearchTextBox.ClearWithHomeButton(_driver);
             columnElement.AddColumn(value);
         }
+
+        #region Sort order on Pivot
+
+        [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order for the Pivot")]
+        public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderForThePivot(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var actualList = listPageMenu.GetPivotColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(actualList);
+            //Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), "Ascending Sorting Icon is not displayed");
+        }
+
+        [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order for the Pivot")]
+        public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderForThePivot(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var expectedList = listPageMenu.GetPivotColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsNumericListSorted(expectedList, false);
+            //Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        #endregion
     }
 }

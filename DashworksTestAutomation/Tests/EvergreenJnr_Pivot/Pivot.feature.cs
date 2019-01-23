@@ -1119,6 +1119,321 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOr" +
+            "der")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS14377")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrderInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrderInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOr" +
+                    "der", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS14377",
+                        "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table42.AddRow(new string[] {
+                        "MigrationP: Computer Owner Idenitfied"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table42, "And ");
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table43.AddRow(new string[] {
+                        "City"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table43, "And ");
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table44.AddRow(new string[] {
+                        "Owner Cost Centre"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table44, "And ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("numeric data in table is sorted by \"Empty\" column in descending order for the Piv" +
+                    "ot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("numeric data in table is sorted by \"Belfast\" column in descending order for the P" +
+                    "ivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("numeric data in table is sorted by \"Cardiff\" column in descending order for the P" +
+                    "ivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrec" +
+            "tOrder")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS14378")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrderInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrderInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrec" +
+                    "tOrder", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS14378",
+                        "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table45.AddRow(new string[] {
+                        "Hostname"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table45, "And ");
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table46.AddRow(new string[] {
+                        "Windows7Mi: Target Date"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table46, "And ");
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table47.AddRow(new string[] {
+                        "Owner Cost Centre"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table47, "And ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("numeric data in table is sorted by \" \" column in descending order for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFiel" +
+            "d")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS14555")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "UserEvergr: Readiness", "1803: Application Readiness", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "EmailMigra: Readiness", "1803: Application Readiness", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Owner Compliance", "EmailMigra: Readiness", "MailboxEve: Readiness", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "EmailMigra: Readiness", "1803: Application Readiness", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessField(string listName, string rowGroups, string columns, string values, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldInternal(listName,rowGroups,columns,values,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldInternal(string listName, string rowGroups, string columns, string values, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_Pivot",
+                    "Pivot",
+                    "DAS14555",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFiel" +
+                    "d", null, @__tags);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table48.AddRow(new string[] {
+                        string.Format("{0}", rowGroups)});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table48, "And ");
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table49.AddRow(new string[] {
+                        string.Format("{0}", columns)});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table49, "And ");
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table50.AddRow(new string[] {
+                        string.Format("{0}", values)});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table50, "And ");
+            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFie" +
+            "ld")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS14556")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Compliance", "1803: Application Readiness", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Compliance", "1803: Application Readiness", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner Compliance", "MailboxEve: Readiness", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Import", "Compliance", "1803: Application Readiness", null)]
+        public virtual void EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceField(string listName, string rowGroups, string columns, string values, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldInternal(listName,rowGroups,columns,values,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldInternal(string listName, string rowGroups, string columns, string values, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "AllLists",
+                    "EvergreenJnr_Pivot",
+                    "Pivot",
+                    "DAS14556",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFie" +
+                    "ld", null, @__tags);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table51.AddRow(new string[] {
+                        string.Format("{0}", rowGroups)});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table51, "And ");
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table52.AddRow(new string[] {
+                        string.Format("{0}", columns)});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table52, "And ");
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table53.AddRow(new string[] {
+                        string.Format("{0}", values)});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table53, "And ");
+            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
