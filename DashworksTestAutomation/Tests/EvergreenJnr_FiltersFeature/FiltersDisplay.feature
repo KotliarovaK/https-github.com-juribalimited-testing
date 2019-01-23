@@ -1508,18 +1508,27 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilt
 	| 49    |
 	| 51    |
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS14629 @DAS14664 @Not_Run
-Scenario Outline: EvergreenJnr_UsersList_CheckThatPrimaryComputerOperatorsShowTextBoxCorrectly
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS14629 @DAS14664 @DAS14665 @DAS14667 @Not_Run
+Scenario Outline: EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When user select "Primary Computer" filter
+	When user select "Primary Device" filter
 	When User select "<OperatorValue>" Operator value
+	Then User Description field is not displayed
+	When User clicks the "CANCEL" Action button
+	When user select "Primary Device" filter
+	When User select "<OperatorValue>" Operator value
+	Then User Description field is not displayed
 	When User adds column for the selected filter
 	When User clicks Save filter button
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Primary Device |
+	Then "<RowsCount>" rows are displayed in the agGrid
 
 Examples:
-	| OperatorValue |
-	| Empty         |
-	| Not empty     |
+	| OperatorValue | RowsCount |
+	| Empty         |           |
+	| Not empty     |           |
