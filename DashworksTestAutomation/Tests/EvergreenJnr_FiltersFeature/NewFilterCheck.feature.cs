@@ -1262,8 +1262,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Empty"});
             table23.AddRow(new string[] {
                         "Not empty"});
-            testRunner.Then("following operators are displayed in \"<CategoryName>\" category for \"<FilterName>\"" +
-                    " filter on \"Users\" page:", ((string)(null)), table23, "Then ");
+            testRunner.Then("following operators are displayed in \"User\" category for \"Primary Device\" filter " +
+                    "on \"Users\" page:", ((string)(null)), table23, "Then ");
             this.ScenarioCleanup();
         }
 
