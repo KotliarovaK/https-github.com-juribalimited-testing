@@ -185,6 +185,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User clicks Add button for input filter value")]
+        public void WhenUserClicksAddButtonForInputFilterValue()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.AddFilterSearchTextBoxValueButton.Click();
+        }
+
+        [When(@"User closes ""(.*)"" Chip item in the Filter panel")]
+        public void WhenUserClosesChipItemInTheFilterPanel(string chipName)
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            filterElement.GetCloseChipButtonByName(chipName).Click();
+        }
+
+        [Then(@"Chip box is not displayed in the Filter panel")]
+        public void ThenChipBoxIsNotDisplayedInTheFilterPanel()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.FilterChipBox.Displayed(), "Chip box is displayed in the Filter panel");
+        }
+
         [Then(@"Search field in selected Filter is empty")]
         public void ThenSearchFieldInSelectedFilterIsEmpty()
         {

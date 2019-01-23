@@ -1348,10 +1348,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedTo
 	Then "Application Manufacturer" filter is not presented in the filters list
 	And "Application Vendor" filter is presented in the filters list
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage
 	When User clicks "Users" on the left-hand menu
-	And User clicks the Filters button
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
 	And User closes "Selected Columns" filter category
 	And User expands "User" filter category
@@ -1382,6 +1383,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| User (Saved List)             |
 	| User Application Compliance   |
 	| User Key                      |
+	#|Primary Device|
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded
@@ -1408,7 +1410,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpande
 	And User clicks Add New button on the Filter panel
 	Then User sees "Selected Columns" section expanded by default in Filters panel
 
-Examples: 
+Examples:
 	| ListName     |
 	| Devices      |
 	| Users        |
@@ -1505,3 +1507,28 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilt
 	| 26    |
 	| 49    |
 	| 51    |
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS14629 @DAS14664 @DAS14665 @DAS14667 @Not_Run
+Scenario Outline: EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Primary Device" filter
+	When User select "<OperatorValue>" Operator value
+	Then User Description field is not displayed
+	When User clicks the "CANCEL" Action button
+	When user select "Primary Device" filter
+	When User select "<OperatorValue>" Operator value
+	Then User Description field is not displayed
+	When User adds column for the selected filter
+	When User clicks Save filter button
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Primary Device |
+	Then "<RowsCount>" rows are displayed in the agGrid
+
+Examples:
+	| OperatorValue | RowsCount |
+	| Empty         |           |
+	| Not empty     |           |

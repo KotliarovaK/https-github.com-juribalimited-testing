@@ -349,6 +349,11 @@ namespace DashworksTestAutomation.Extensions
             WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", waitTimeout);
         }
 
+        public static void WaitForDataLoadingInActionsPanel(this RemoteWebDriver driver)
+        {
+            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'action-progress')]", waitTimeout);
+        }
+
         public static void WaitForDataLoadingOnProjects(this RemoteWebDriver driver)
         {
             WaitForDataToBeLoaded(driver, ".//div[@id='ajaxProgressMessage']/img", waitTimeout);

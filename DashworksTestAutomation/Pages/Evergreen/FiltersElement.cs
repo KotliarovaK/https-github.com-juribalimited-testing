@@ -61,10 +61,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement FilterSearchTextBox { get; set; }
 
         [FindsBy(How = How.XPath,
+            Using = ".//ul/li[@class='chips-item ng-star-inserted']")]
+        public IWebElement FilterChipBox { get; set; }
+
+        [FindsBy(How = How.XPath,
             Using = ".//div[contains(text(),'ASSOCIATION')]/../following-sibling::div//input")]
         public IWebElement AssociationSearchTextBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='dropdown-select input-wrapper']//button")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='mat-button-wrapper']/i[@class='material-icons mat-arrow_forward']")]
+        public IWebElement AddFilterSearchTextBoxValueButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='dropdown-select input-wrapper']//button")]
         public IWebElement CloseAssociationSearchButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'filter-category ng-star-inserted')]")]
@@ -531,7 +538,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetValueForLookupFilter(string name)
         {
-            var selector = By.XPath($"//span[text()='{name}']");
+            var selector = By.XPath($".//span[text()='{name}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetCloseChipButtonByName(string chipName)
+        {
+            var selector = By.XPath($".//li/span[text()='{chipName}']/ancestor::li/button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

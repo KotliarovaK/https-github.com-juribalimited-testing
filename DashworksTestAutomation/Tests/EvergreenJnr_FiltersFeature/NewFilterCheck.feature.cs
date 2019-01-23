@@ -1133,6 +1133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS11830")]
         [NUnit.Framework.CategoryAttribute("DAS14288")]
+        [NUnit.Framework.TestCaseAttribute("Users", "ComputerSc: User Off/On", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Computer Off/On", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Application Off/On", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories(string pageName, string filterName, string[] exampleTags)
@@ -1185,6 +1186,84 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When(string.Format("user select \"{0}\" filter", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Off, On\" checkbox is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
+        [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("DAS14629")]
+        [NUnit.Framework.CategoryAttribute("DAS14663")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "Evergreen_FiltersFeature",
+                        "NewFilterCheck",
+                        "API",
+                        "DAS14629",
+                        "DAS14663",
+                        "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "OperatorValues"});
+            table23.AddRow(new string[] {
+                        "Equals"});
+            table23.AddRow(new string[] {
+                        "Does not equal"});
+            table23.AddRow(new string[] {
+                        "Contains"});
+            table23.AddRow(new string[] {
+                        "Does not contain"});
+            table23.AddRow(new string[] {
+                        "Begins with"});
+            table23.AddRow(new string[] {
+                        "Does not begin with"});
+            table23.AddRow(new string[] {
+                        "Ends with"});
+            table23.AddRow(new string[] {
+                        "Does not end with"});
+            table23.AddRow(new string[] {
+                        "Empty"});
+            table23.AddRow(new string[] {
+                        "Not empty"});
+            testRunner.Then("following operators are displayed in \"User\" category for \"Primary Device\" filter " +
+                    "on \"Users\" page:", ((string)(null)), table23, "Then ");
             this.ScenarioCleanup();
         }
 
