@@ -259,6 +259,7 @@
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_CreatingValuesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamsPage.cs" />
+    <Compile Include="Pages\Projects\BulkUpdatePage.cs" />
     <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
@@ -268,6 +269,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
+    <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_CreateProject.cs" />
     <Compile Include="Steps\Senior\Senior_Dashboards.cs" />
@@ -491,6 +493,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Senior_Dashboards.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Senior\Senior_BulkUpdate.feature.cs">
+      <DependentUpon>Senior_BulkUpdate.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\Senior\Senior_PMObject.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -661,6 +668,10 @@
     <None Include="Tests\Senior\Senior_Dashboards.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Senior_Dashboards.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Senior\Senior_BulkUpdate.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Senior_BulkUpdate.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\Senior\Senior_PMObject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

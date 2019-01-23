@@ -7,6 +7,9 @@ namespace DashworksTestAutomation.Pages.Projects
 {
     internal class ProjectsBaseElements : SeleniumBasePage
     {
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Actions']")]
+        public IWebElement ActionsTab { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdministrationTab { get; set; }
 
