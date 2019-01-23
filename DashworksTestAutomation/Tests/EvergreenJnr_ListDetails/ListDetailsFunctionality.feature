@@ -820,3 +820,78 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrde
 	Then List details panel is displayed to the user
 	When User clears Owner field on List Details panel
 	Then Owners is displayed in alphabetical order
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWorks
+	When User clicks "<PageName>" on the left-hand menu
+	And User performs right-click on "<TargetCell>" cell in the grid
+	Then User sees context menu with next options
+	| OptionsName        |
+	| Copy cell          |
+	| Copy row           |
+	| Open in new tab    |
+	| Open in new window | 
+	When User selects 'Copy cell' option in context menu
+	Then Next data '<TargetCell>' is copied
+	When User clicks refresh button in the browser
+	And User clicks the Actions button
+	And User select "<Columnname>" rows in the grid
+	| SelectedRowsName |
+	| <SelectedRow>    |
+	And User performs right-click on "<TargetCell>" cell in the grid
+	Then User sees context menu with next options
+	| OptionsName        |
+	| Copy cell          |
+	| Copy row           |
+	| Copy selected rows |
+	| Open in new tab    |
+	| Open in new window | 
+	When User selects 'Copy cell' option in context menu
+	Then Next data '<TargetCell>' is copied
+
+Examples: 
+	| PageName     | Columnname    | TargetCell                                 | SelectedRow                             |
+	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          |
+	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     |
+	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local           | 002B5DC7D4D34D5C895@bclabs.local        |
+
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks
+	When User clicks "<PageName>" on the left-hand menu
+	And User clicks the Actions button
+	And User select "<Columnname>" rows in the grid
+	| SelectedRowsName |
+	| <SelectedRow>    |
+	And User performs right-click on "<TargetCell>" cell in the grid
+	And User selects 'Copy row' option in context menu
+	Then Next data '<ExpectedData>' is copied
+
+Examples: 
+	| PageName     | Columnname    | TargetCell                                 | SelectedRow                             | ExpectedData                                                                                                              |
+	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | \t00HA7MKAVVFDAV\tLaptop\tWindows XP\tKris C. Herman                                                                      |
+	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     | \t$6BE000-SUDQ9614UVO8\tBCLABS\tExchange Online-ApplicationAccount\tExchange Online-ApplicationAccount.Users.bclabs.local |
+	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English | \t0004 - Adobe Acrobat Reader 5.0.5 Francais\tAdobe\t5.0.5                                                                |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local           | 002B5DC7D4D34D5C895@bclabs.local        | \t000F977AC8824FE39B8@bclabs.local\tExchange 2007\tbc-exch07\tUserMailbox\tSpruill, Shea                                  |
+	
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks
+
+	When User clicks "<PageName>" on the left-hand menu
+	And User clicks the Actions button
+	And User select "<Columnname>" rows in the grid
+	| SelectedRowsName |
+	| <SelectedRow1>    |
+	| <SelectedRow2>    |
+	And User performs right-click on "<TargetCell>" cell in the grid
+	And User selects 'Copy selected rows' option in context menu
+	Then Next data '<ExpectedData>' is copied
+
+Examples: 
+	| PageName     | Columnname    | TargetCell                                 | SelectedRow1                            | SelectedRow2                     | ExpectedData                                                                                                                                                                                             |
+	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | 001PSUMZYOW581                   | \t001BAQXT6JWFPI\tDesktop\tWindows XP\tNicole P. Braun \t001PSUMZYOW581\tLaptop\tWindows XP\tTricia G. Huang                                                                                               |
+	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     | 002B5DC7D4D34D5C895              | \t000F977AC8824FE39B8\tBCLABS\tSpruill, Shea\tSpruill\\, Shea.Employees.Birmingham.UK.bclabs.local \t002B5DC7D4D34D5C895\tDWLABS\tCollor, Christopher\tCollor\\, Christopher.Users.Birmingham.dwlabs.local |
+	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English | 20040610sqlserverck              | \t0036 - Microsoft Access 97 SR-2 English\tMicrosoft\t8.0 \t20040610sqlserverck\tMicrosoft\t1.0.0                                                                                                          |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local           | 002B5DC7D4D34D5C895@bclabs.local        | 0072B088173449E3A93@bclabs.local | \t002B5DC7D4D34D5C895@bclabs.local\tExchange 2013\tbc-exch13\tUserMailbox\tCollor, Christopher \t0072B088173449E3A93@bclabs.local\tExchange 2007\tbc-exch07\tUserMailbox\tRegister, Donna                  |

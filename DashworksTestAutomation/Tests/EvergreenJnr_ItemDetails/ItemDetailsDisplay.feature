@@ -1100,3 +1100,37 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	| Not Equal | 23032018 |
 	Then User checks that date input has same position
 	And There are no errors in the browser console
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User performs right-click on "<TargetCell>" cell in the grid
+	And User selects 'Copy cell' option in context menu
+	Then Next data '<TargetCell>' is copied
+	
+Examples:
+	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn | TargetCell    |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    | Access 95     |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group          | Domain Admins |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968 @NotRun
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User performs right-click on "<TargetCell>" cell in the grid
+	And User selects 'Copy cell' option in context menu
+	Then Next data '<ExpectedData>' is copied
+	
+Examples:
+	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn | TargetCell    | ExpectedData          |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    | Access 95     | !should be scpecified |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group          | Domain Admins | !should be scpecified |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi | !should be scpecified |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      | !should be scpecified |

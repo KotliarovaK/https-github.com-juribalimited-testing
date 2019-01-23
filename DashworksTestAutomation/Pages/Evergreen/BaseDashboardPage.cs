@@ -273,6 +273,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']")]
         public IWebElement AgMenu { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']//span[@id='eName']")]
+        public IList<IWebElement> AgMenuOptions { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']")]
         public IWebElement CreateActionButton { get; set; }
 
@@ -398,7 +401,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var builder = new Actions(Driver);
             Driver.WaitForDataLoading();
-            builder.ContextClick(GetGridCellByText(cellText)).Build().Perform();
+            builder.ContextClick(GetGridCellByText(cellText)).Perform();
         }
 
         public void ClearInput(IWebElement input)

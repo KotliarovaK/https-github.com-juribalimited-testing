@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -122,6 +123,47 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(manuLeftXCoordinate, Is.GreaterThan(cellLeftXCoordinte));
             Assert.That(manuLeftXCoordinate, Is.LessThan(cellRightXCoordinte));
         }
+
+        [Then(@"User sees context menu with next options")]
+        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+
+            List<string> options = page.AgMenuOptions.Select(x => x.Text).ToList();
+
+            foreach (var row in table.Rows)
+            {
+                Assert.That(options.FindAll(x=>x.Equals(row["OptionsName"])).Count==1);
+            }
+            Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
+        }
+
+        [When(@"User selects '(.*)' option in context menu")]
+        public void WhenUserClickOptionInContextMenu(string option)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+           // _driver.WaitForDataLoading();
+
+            page.AgMenuOptions.FirstOrDefault(x => x.Text.Equals(option)).Click();
+        }
+
+        [Then(@"Next data '(.*)' is copied")]
+        public void ThenUserCopiedNextDataToClipboard(string data)
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitForDataLoading();
+
+            new Actions(_driver)
+                .Click(searchElement.SearchEverythingField)
+                .SendKeys(OpenQA.Selenium.Keys.LeftControl+"v")
+                .KeyUp(OpenQA.Selenium.Keys.LeftControl)
+                .Perform();
+
+            Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "), 
+                Is.EqualTo(data.Replace(@"\t", "   ")));
+        }
+
 
         [When(@"User click on '(.*)' column header")]
         public void WhenUserClickOnColumnHeader(string columnName)
