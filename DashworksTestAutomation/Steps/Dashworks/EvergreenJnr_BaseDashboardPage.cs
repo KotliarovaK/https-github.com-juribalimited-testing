@@ -232,7 +232,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrder(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
-
             var actualList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);

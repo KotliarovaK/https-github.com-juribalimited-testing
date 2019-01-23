@@ -371,3 +371,91 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	And "Values" plus button have tooltip with "Add value" text
 	And close button for "City" chip have tooltip with "Delete this item" text
 	And "City" chip have tooltip with "City" text
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14377 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups                             |
+	| MigrationP: Computer Owner Idenitfied |
+	And User selects the following Columns on Pivot:
+	| Columns     |
+	| City        |
+	And User selects the following Values on Pivot:
+	| Values            |
+	| Owner Cost Centre |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	Then numeric data in table is sorted by "Empty" column in descending order for the Pivot
+	Then numeric data in table is sorted by "Belfast" column in descending order for the Pivot
+	Then numeric data in table is sorted by "Cardiff" column in descending order for the Pivot
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Hostname  |
+	And User selects the following Columns on Pivot:
+	| Columns                 |
+	| Windows7Mi: Target Date |
+	And User selects the following Values on Pivot:
+	| Values            |
+	| Owner Cost Centre |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	Then numeric data in table is sorted by " " column in descending order for the Pivot
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14555 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessField
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| <Values> |
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+
+Examples:
+	| ListName     | RowGroups        | Columns               | Values                      |
+	| Devices      | Compliance       | UserEvergr: Readiness | 1803: Application Readiness |
+	| Users        | Compliance       | EmailMigra: Readiness | 1803: Application Readiness |
+	| Mailboxes    | Owner Compliance | EmailMigra: Readiness | MailboxEve: Readiness       |
+	| Applications | Compliance       | EmailMigra: Readiness | 1803: Application Readiness |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14556 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceField
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| <Values> |
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+
+Examples:
+	| ListName     | RowGroups | Columns          | Values                      |
+	| Devices      | Hostname  | Compliance       | 1803: Application Readiness |
+	| Users        | Domain    | Compliance       | 1803: Application Readiness |
+	| Mailboxes    | Alias     | Owner Compliance | MailboxEve: Readiness       |
+	| Applications | Import    | Compliance       | 1803: Application Readiness |
