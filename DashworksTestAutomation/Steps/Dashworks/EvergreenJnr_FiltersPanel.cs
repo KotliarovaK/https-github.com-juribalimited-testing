@@ -1130,7 +1130,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             Assert.IsFalse(filterElement.CategoryIsDisplayed(categoryName),
-                $"{categoryName} category stil displayed in Filter Panel");
+                $"{categoryName} category still displayed in Filter Panel");
+        }
+
+        [Then(@"Category with counter is displayed on Filter panel")]
+        public void ThenCounterWithCategoryIsDisplayedOnColumnsPanel(Table table)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+
+            foreach (var row in table.Rows)
+                Assert.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(), Is.EqualTo(row["Number"]),
+                    $"Check {row["Category"]} category");
+        }
+
+        [Then(@"Category is not displayed in the Filter panel")]
+        public void ThenCategoryIsNotDisplayedInTheColumnsPanel(Table table)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+
+            foreach (var row in table.Rows)
+                Assert.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
+                    $"Check {row["Category"]} category");
         }
 
         [Then(@"""(.*)"" section is displayed in the Filter panel")]

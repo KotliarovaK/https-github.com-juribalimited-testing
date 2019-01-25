@@ -435,5 +435,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
                     $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
         }
+
+        [Then(@"Category with counter is displayed on Columns panel")]
+        public void ThenCounterWithCategoryIsDisplayedOnColumnsPanel(Table table)
+        {
+            var page = _driver.NowAt<ColumnsElement>();
+
+            foreach (var row in table.Rows)
+                Assert.That(page.GetSubcategoriesCountByCategoryName(row["Category"]).ToString(),Is.EqualTo(row["Number"]),
+                    $"Check {row["Category"]} category");
+        }
+
+        [Then(@"Category is not displayed in the Columns panel")]
+        public void ThenCategoryIsNotDisplayedInTheColumnsPanel(Table table)
+        {
+            var page = _driver.NowAt<ColumnsElement>();
+
+            foreach (var row in table.Rows)
+                Assert.That(page.CategoryIsDisplayed(row["Category"]), Is.False,
+                    $"Check {row["Category"]} category");
+        }
     }
 }
