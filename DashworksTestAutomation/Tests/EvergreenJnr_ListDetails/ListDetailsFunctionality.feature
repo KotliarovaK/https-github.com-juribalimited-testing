@@ -835,7 +835,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyCellOptionWor
 	Then Next data '<TargetCell>' is copied
 	When User clicks refresh button in the browser
 	And User clicks the Actions button
-	And User select "<Columnname>" rows in the grid
+	Then Actions panel is displayed to the user
+	When User select "<Columnname>" rows in the grid
 	| SelectedRowsName |
 	| <SelectedRow>    |
 	And User performs right-click on "<TargetCell>" cell in the grid
@@ -861,7 +862,8 @@ Examples:
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWorks
 	When User clicks "<PageName>" on the left-hand menu
 	And User clicks the Actions button
-	And User select "<Columnname>" rows in the grid
+	Then Actions panel is displayed to the user
+	When User select "<Columnname>" rows in the grid
 	| SelectedRowsName |
 	| <SelectedRow>    |
 	And User performs right-click on "<TargetCell>" cell in the grid
@@ -881,7 +883,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOp
 
 	When User clicks "<PageName>" on the left-hand menu
 	And User clicks the Actions button
-	And User select "<Columnname>" rows in the grid
+	Then Actions panel is displayed to the user
+	When User select "<Columnname>" rows in the grid
 	| SelectedRowsName |
 	| <SelectedRow1>    |
 	| <SelectedRow2>    |
