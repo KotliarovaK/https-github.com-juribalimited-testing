@@ -549,11 +549,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInThe
 	Then numeric data in table is sorted by "<SortedColumn>" column in descending order for the Pivot
 
 Examples:
-	| ListName     | RowGroups | Columns                 | Values                | SortedColumn |
-	| Devices      | Region    | Babel(Engl: Initiation  | CPU Count             |              |
-	| Users        | Region    | EmailMigra: Migration   | Compliance            |              |
-	| Mailboxes    | Language  | EmailMigra: Sync Status | EmailMigra: Readiness |              |
-	| Applications | Import    | ComputerSc: One         | DeviceSche: Readiness |              |
+	| ListName     | RowGroups | Columns                | Values                | SortedColumn |
+	| Devices      | Region    | Babel(Engl: Initiation | CPU Count             |              |
+	| Users        | Region    | EmailMigra: Migration  | Compliance            |              |
+	| Mailboxes    | Language  | EmailMigra: Migration  | EmailMigra: Readiness |              |
+	| Applications | Import    | UserEvergr: Stage 3    | DeviceSche: Readiness |              |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14427 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder

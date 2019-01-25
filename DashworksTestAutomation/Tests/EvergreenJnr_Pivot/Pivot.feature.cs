@@ -1680,8 +1680,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Region", "Babel(Engl: Initiation", "CPU Count", "", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Region", "EmailMigra: Migration", "Compliance", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Language", "EmailMigra: Sync Status", "EmailMigra: Readiness", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Import", "ComputerSc: One", "DeviceSche: Readiness", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Language", "EmailMigra: Migration", "EmailMigra: Readiness", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Import", "UserEvergr: Stage 3", "DeviceSche: Readiness", "", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrder(string listName, string rowGroups, string columns, string values, string sortedColumn, string[] exampleTags)
         {
             System.Exception lastException = null;
