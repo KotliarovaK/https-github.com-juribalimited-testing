@@ -263,6 +263,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetailsPage(string text)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 

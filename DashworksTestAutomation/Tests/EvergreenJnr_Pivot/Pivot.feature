@@ -459,3 +459,180 @@ Examples:
 	| Users        | Domain    | Compliance       | 1803: Application Readiness |
 	| Mailboxes    | Alias     | Owner Compliance | MailboxEve: Readiness       |
 	| Applications | Import    | Compliance       | 1803: Application Readiness |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14422 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrder
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| <Values> |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add sort column
+	Then numeric data in table is sorted by "<SortedColumn>" column in descending order for the Pivot
+
+Examples:
+	| ListName     | RowGroups | Columns                                                    | Values           | SortedColumn |
+	| Devices      | Import    | UserEvergr: Dropdown Readiness Date (Computer)             | Compliance       |              |
+	| Users        | Enabled   | Windows7Mi: Group User Radiobutton Readiness Only          | Compliance       |              |
+	| Mailboxes    | Enabled   | EmailMigra: Infrastructure Readiness                       | Owner Compliance |              |
+	| Applications | Vendor    | UserEvergr: Radiobutton Readiness Date Owner (Application) | Compliance       |              |
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14423 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrder
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| <Values> |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add sort column
+	Then numeric data in table is sorted by "<SortedColumn>" column in descending order for the Pivot
+
+Examples:
+	| ListName | RowGroups | Columns                           | Values     | SortedColumn |
+	| Devices  | Import    | Windows7Mi: Application Readiness | Compliance |              |
+	| Users    | Domain    | Windows7Mi: Application Readiness | Compliance |              |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Import    |
+	And User selects the following Columns on Pivot:
+	| Columns                     |
+	| DeviceSche: Owner Readiness |
+	And User selects the following Values on Pivot:
+	| Values                      |
+	| 1803: Application Readiness |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add column name
+	Then numeric data in table is sorted by " " column in descending order for the Pivot
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14426 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrder
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| <Values> |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add sort column
+	Then numeric data in table is sorted by "<SortedColumn>" column in descending order for the Pivot
+
+Examples:
+	| ListName     | RowGroups | Columns                 | Values                | SortedColumn |
+	| Devices      | Region    | Babel(Engl: Initiation  | CPU Count             |              |
+	| Users        | Region    | EmailMigra: Migration   | Compliance            |              |
+	| Mailboxes    | Language  | EmailMigra: Sync Status | EmailMigra: Readiness |              |
+	| Applications | Import    | ComputerSc: One         | DeviceSche: Readiness |              |
+
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14427 @Not_Run
+Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Import    |
+	And User selects the following Columns on Pivot:
+	| Columns                    |
+	| 1803: Target App Readiness |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Compliance |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add column name
+	Then numeric data in table is sorted by " " column in descending order for the Pivot
+
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS14428 @Not_Run
+Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| City      |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Owner Compliance |
+	And User selects the following Values on Pivot:
+	| Values                |
+	| EmailMigra: Readiness |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add column name
+	Then numeric data in table is sorted by "Empty" column in descending order for the Pivot
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14429 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceColumnsDisplayInTheCorrectOrder
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values   |
+	| <Values> |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add sort column
+	Then numeric data in table is sorted by "<SortedColumn>" column in descending order for the Pivot
+
+Examples:
+	| ListName     | RowGroups     | Columns    | Values                | SortedColumn |
+	| Devices      | Purchase Date | Compliance | 1803: Readiness       |              |
+	| Users        | Domain        | Compliance | UserEvergr: Readiness |              |
+	| Applications | Vendor        | Compliance | Import                |              |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14430 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Hostname  |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Owner Compliance |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	#Add column name
+	Then numeric data in table is sorted by "Empty" column in descending order for the Pivot
