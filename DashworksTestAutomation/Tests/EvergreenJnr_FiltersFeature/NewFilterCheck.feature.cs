@@ -1199,6 +1199,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("DAS14663")]
+        [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList()
         {
@@ -1236,6 +1237,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "API",
                         "DAS14629",
                         "DAS14663",
+                        "DAS14629",
                         "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -1565,56 +1565,56 @@ Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Primary Device" filter
-	#Operator value
+	#Equals Operator value
 	When User select "Equals" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
-	#Operator value
+	#Does not equal Operator value
 	When User select "Does not equal" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
-	#Operator value
+	#Contains Operator value
 	When User select "Contains" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
-	#Operator value
+	#Does not contain Operator value
 	When User select "Does not contain" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
-	#Operator value
+	#Begins with Operator value
 	When User select "Begins with" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
-	#Operator value
+	#Does not begin with Operator value
 	When User select "Does not begin with" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
-	#Operator value
+	#Ends with Operator value
 	When User select "Ends with" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
-	#Operator value
+	#Does not end with Operator value
 	When User select "Does not end with" Operator value
 	And User enters "Text" text in Search field at selected Filter
 	When User clicks Add button for input filter value

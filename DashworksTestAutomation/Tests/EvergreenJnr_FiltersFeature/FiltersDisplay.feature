@@ -1348,7 +1348,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedTo
 	Then "Application Manufacturer" filter is not presented in the filters list
 	And "Application Vendor" filter is presented in the filters list
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659 @DAS14629
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

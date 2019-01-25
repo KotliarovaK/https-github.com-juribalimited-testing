@@ -386,7 +386,7 @@ Examples:
 	| Devices      | ComputerSc: Computer Off/On    |
 	| Applications | ComputerSc: Application Off/On |
 
-@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @API @DAS14629 @DAS14663 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @API @DAS14629 @DAS14663 @DAS14629 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList
 Then following operators are displayed in "User" category for "Primary Device" filter on "Users" page:
 	| OperatorValues      |

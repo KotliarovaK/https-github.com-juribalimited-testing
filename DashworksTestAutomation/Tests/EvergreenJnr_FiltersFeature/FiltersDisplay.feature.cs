@@ -4908,6 +4908,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS13296")]
         [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("DAS14659")]
+        [NUnit.Framework.CategoryAttribute("DAS14629")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage()
         {
             System.Exception lastException = null;
@@ -4945,7 +4946,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "DAS9820",
                         "DAS13296",
                         "DAS14629",
-                        "DAS14659"});
+                        "DAS14659",
+                        "DAS14629"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
