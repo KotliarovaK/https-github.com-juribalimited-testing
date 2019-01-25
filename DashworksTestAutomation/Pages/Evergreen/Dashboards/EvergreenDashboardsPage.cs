@@ -77,7 +77,10 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']//chart")]
+        public IWebElement WidgetPreview { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
@@ -239,6 +242,14 @@ namespace DashworksTestAutomation.Pages
         private IReadOnlyCollection<IWebElement> GetWebElementsByJavaScript(string javaScriptCode)
         {
             return (IReadOnlyCollection<IWebElement>) ((IJavaScriptExecutor) Driver).ExecuteScript(javaScriptCode);
+        }
+
+        public IWebElement GetWidgetByName(string widgetName)
+        {
+            var dashboardWidget =
+                By.XPath($".//div[@class='widget drag-n-drop']/div//h5[text()='{widgetName}']//ancestor::div//app-chart/div[@class='chartContainer ng-star-inserted']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(dashboardWidget);
         }
     }
 }
