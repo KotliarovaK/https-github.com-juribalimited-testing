@@ -1621,3 +1621,84 @@ Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	Then "Text" value is displayed for selected Lookup Filter
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+Scenario: EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	Then Category with counter is displayed on Filter panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 12     |
+	| Project Owner: Windows7Mi  | 12     |
+	| Project Tasks: Windows7Mi  | 91     |
+	| Project Stages: Windows7Mi | 7      |
+	| Project: UserEvergr        | 11     |
+	| Project Owner: UserEvergr  | 12     |
+	| Project Tasks: UserEvergr  | 12     |
+	| Project Stages: UserEvergr | 1      |
+	And Category is not displayed in the Filter panel
+	| Category                   |
+	| Project: EmailMigra        |
+	| Project Tasks: EmailMigra  |
+	| Project Stages: EmailMigra |
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	Then Category with counter is displayed on Filter panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 11     |
+	| Project Tasks: Windows7Mi  | 79     |
+	| Project Stages: Windows7Mi | 6      |
+	| Project: UserEvergr        | 12     |
+	| Project Tasks: UserEvergr  | 26     |
+	| Project Stages: UserEvergr | 2      |
+	| Project: EmailMigra        | 11     |
+	| Project Tasks: EmailMigra  | 9      |
+	| Project Stages: EmailMigra | 3      |
+
+@Evergreen @Applicatios @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	Then Category with counter is displayed on Filter panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 23     |
+	#| Project User: Windows7Mi   | 12     |
+	#| Project Device: Windows7Mi | 13     |
+	| Project Tasks: Windows7Mi  | 24     |
+	| Project Stages: Windows7Mi | 2      |
+	| Project: UserEvergr        | 23     |
+	#| Project User: UserEvergr   | 12     |
+	#| Project Device: UserEvergr | 13     |
+	| Project Tasks: UserEvergr  | 14     |
+	| Project Stages: UserEvergr  | 1      |
+	| Project: EmailMigra        | 23     |
+	#| Project User: EmailMigra   | 12     |
+	| Project Tasks: EmailMigra  | 5      |
+	| Project Stages: EmailMigra | 1      |
+
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+Scenario: EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	Then Category with counter is displayed on Filter panel
+	| Category                   | Number |
+	| Project: EmailMigra        | 11     |
+	| Project Tasks: EmailMigra  | 54     |
+	| Project Stages: EmailMigra | 6      |
+	| Project: MailboxEve        | 11     |
+	| Project Tasks: MailboxEve  | 15     |
+	And Category is not displayed in the Filter panel
+	| Category                   |
+	| Project: Windows7Mi        |
+	| Project Tasks: Windows7Mi  |
+	| Project Stages: Windows7Mi |
+	| Project: UserEvergr        |
+	| Project Tasks: UserEvergr  |
+	| Project Stages:UserEvergr  |

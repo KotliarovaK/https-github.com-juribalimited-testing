@@ -5589,6 +5589,347 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table130.AddRow(new string[] {
+                        "Project: Windows7Mi",
+                        "12"});
+            table130.AddRow(new string[] {
+                        "Project Owner: Windows7Mi",
+                        "12"});
+            table130.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi",
+                        "91"});
+            table130.AddRow(new string[] {
+                        "Project Stages: Windows7Mi",
+                        "7"});
+            table130.AddRow(new string[] {
+                        "Project: UserEvergr",
+                        "11"});
+            table130.AddRow(new string[] {
+                        "Project Owner: UserEvergr",
+                        "12"});
+            table130.AddRow(new string[] {
+                        "Project Tasks: UserEvergr",
+                        "12"});
+            table130.AddRow(new string[] {
+                        "Project Stages: UserEvergr",
+                        "1"});
+            testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table130, "Then ");
+            TechTalk.SpecFlow.Table table131 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category"});
+            table131.AddRow(new string[] {
+                        "Project: EmailMigra"});
+            table131.AddRow(new string[] {
+                        "Project Tasks: EmailMigra"});
+            table131.AddRow(new string[] {
+                        "Project Stages: EmailMigra"});
+            testRunner.And("Category is not displayed in the Filter panel", ((string)(null)), table131, "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table132 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table132.AddRow(new string[] {
+                        "Project: Windows7Mi",
+                        "11"});
+            table132.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi",
+                        "79"});
+            table132.AddRow(new string[] {
+                        "Project Stages: Windows7Mi",
+                        "6"});
+            table132.AddRow(new string[] {
+                        "Project: UserEvergr",
+                        "12"});
+            table132.AddRow(new string[] {
+                        "Project Tasks: UserEvergr",
+                        "26"});
+            table132.AddRow(new string[] {
+                        "Project Stages: UserEvergr",
+                        "2"});
+            table132.AddRow(new string[] {
+                        "Project: EmailMigra",
+                        "11"});
+            table132.AddRow(new string[] {
+                        "Project Tasks: EmailMigra",
+                        "9"});
+            table132.AddRow(new string[] {
+                        "Project Stages: EmailMigra",
+                        "3"});
+            testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table132, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCatego" +
+            "ries")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applicatios")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCatego" +
+                    "ries", null, new string[] {
+                        "Evergreen",
+                        "Applicatios",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table133 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table133.AddRow(new string[] {
+                        "Project: Windows7Mi",
+                        "23"});
+            table133.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi",
+                        "24"});
+            table133.AddRow(new string[] {
+                        "Project Stages: Windows7Mi",
+                        "2"});
+            table133.AddRow(new string[] {
+                        "Project: UserEvergr",
+                        "23"});
+            table133.AddRow(new string[] {
+                        "Project Tasks: UserEvergr",
+                        "14"});
+            table133.AddRow(new string[] {
+                        "Project Stages: UserEvergr",
+                        "1"});
+            table133.AddRow(new string[] {
+                        "Project: EmailMigra",
+                        "23"});
+            table133.AddRow(new string[] {
+                        "Project Tasks: EmailMigra",
+                        "5"});
+            table133.AddRow(new string[] {
+                        "Project Stages: EmailMigra",
+                        "1"});
+            testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table133, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategorie" +
+            "s")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategorie" +
+                    "s", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table134 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table134.AddRow(new string[] {
+                        "Project: EmailMigra",
+                        "11"});
+            table134.AddRow(new string[] {
+                        "Project Tasks: EmailMigra",
+                        "54"});
+            table134.AddRow(new string[] {
+                        "Project Stages: EmailMigra",
+                        "6"});
+            table134.AddRow(new string[] {
+                        "Project: MailboxEve",
+                        "11"});
+            table134.AddRow(new string[] {
+                        "Project Tasks: MailboxEve",
+                        "15"});
+            testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table134, "Then ");
+            TechTalk.SpecFlow.Table table135 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category"});
+            table135.AddRow(new string[] {
+                        "Project: Windows7Mi"});
+            table135.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi"});
+            table135.AddRow(new string[] {
+                        "Project Stages: Windows7Mi"});
+            table135.AddRow(new string[] {
+                        "Project: UserEvergr"});
+            table135.AddRow(new string[] {
+                        "Project Tasks: UserEvergr"});
+            table135.AddRow(new string[] {
+                        "Project Stages:UserEvergr"});
+            testRunner.And("Category is not displayed in the Filter panel", ((string)(null)), table135, "And ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

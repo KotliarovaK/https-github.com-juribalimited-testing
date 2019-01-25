@@ -2785,6 +2785,345 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories" +
+                    "", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table89.AddRow(new string[] {
+                        "Project: Windows7Mi",
+                        "19"});
+            table89.AddRow(new string[] {
+                        "Project Owner: Windows7Mi",
+                        "16"});
+            table89.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi",
+                        "91"});
+            table89.AddRow(new string[] {
+                        "Project Stages: Windows7Mi",
+                        "7"});
+            table89.AddRow(new string[] {
+                        "Project: UserEvergr",
+                        "17"});
+            table89.AddRow(new string[] {
+                        "Project Owner: UserEvergr",
+                        "16"});
+            table89.AddRow(new string[] {
+                        "Project Tasks: UserEvergr",
+                        "12"});
+            table89.AddRow(new string[] {
+                        "Project Stages: UserEvergr",
+                        "1"});
+            testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table89, "Then ");
+            TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category"});
+            table90.AddRow(new string[] {
+                        "Project: EmailMigra"});
+            table90.AddRow(new string[] {
+                        "Project Tasks: EmailMigra"});
+            table90.AddRow(new string[] {
+                        "Project Stages: EmailMigra"});
+            testRunner.And("Category is not displayed in the Columns panel", ((string)(null)), table90, "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table91.AddRow(new string[] {
+                        "Project: Windows7Mi",
+                        "17"});
+            table91.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi",
+                        "79"});
+            table91.AddRow(new string[] {
+                        "Project Stages: Windows7Mi",
+                        "6"});
+            table91.AddRow(new string[] {
+                        "Project: UserEvergr",
+                        "19"});
+            table91.AddRow(new string[] {
+                        "Project Tasks: UserEvergr",
+                        "26"});
+            table91.AddRow(new string[] {
+                        "Project Stages: UserEvergr",
+                        "2"});
+            table91.AddRow(new string[] {
+                        "Project: EmailMigra",
+                        "17"});
+            table91.AddRow(new string[] {
+                        "Project Tasks: EmailMigra",
+                        "9"});
+            table91.AddRow(new string[] {
+                        "Project Stages: EmailMigra",
+                        "3"});
+            testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table91, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCateg" +
+            "ories")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCateg" +
+                    "ories", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table92.AddRow(new string[] {
+                        "Project: Windows7Mi",
+                        "25"});
+            table92.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi",
+                        "24"});
+            table92.AddRow(new string[] {
+                        "Project Stages: Windows7Mi",
+                        "2"});
+            table92.AddRow(new string[] {
+                        "Project: UserEvergr",
+                        "25"});
+            table92.AddRow(new string[] {
+                        "Project Tasks: UserEvergr",
+                        "14"});
+            table92.AddRow(new string[] {
+                        "Project Stages: UserEvergr",
+                        "1"});
+            table92.AddRow(new string[] {
+                        "Project: EmailMigra",
+                        "25"});
+            table92.AddRow(new string[] {
+                        "Project Tasks: EmailMigra",
+                        "5"});
+            table92.AddRow(new string[] {
+                        "Project Stages: EmailMigra",
+                        "1"});
+            testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table92, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategori" +
+            "es")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS14969")]
+        public virtual void EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategoriesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategori" +
+                    "es", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS14969"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+            table93.AddRow(new string[] {
+                        "Project: EmailMigra",
+                        "18"});
+            table93.AddRow(new string[] {
+                        "Project Tasks: EmailMigra",
+                        "54"});
+            table93.AddRow(new string[] {
+                        "Project Stages: EmailMigra",
+                        "6"});
+            table93.AddRow(new string[] {
+                        "Project: MailboxEve",
+                        "18"});
+            table93.AddRow(new string[] {
+                        "Project Tasks: MailboxEve",
+                        "15"});
+            testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table93, "Then ");
+            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category"});
+            table94.AddRow(new string[] {
+                        "Project: Windows7Mi"});
+            table94.AddRow(new string[] {
+                        "Project Tasks: Windows7Mi"});
+            table94.AddRow(new string[] {
+                        "Project Stages: Windows7Mi"});
+            table94.AddRow(new string[] {
+                        "Project: UserEvergr"});
+            table94.AddRow(new string[] {
+                        "Project Tasks: UserEvergr"});
+            table94.AddRow(new string[] {
+                        "Project Stages: UserEvergr"});
+            testRunner.And("Category is not displayed in the Columns panel", ((string)(null)), table94, "And ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

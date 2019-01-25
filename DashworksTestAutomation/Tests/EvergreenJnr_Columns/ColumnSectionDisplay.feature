@@ -888,3 +888,79 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTh
 	Then Columns panel is displayed to the user
 	When User is expand "User" columns category
 	When User add "Primary Device" Column from expanded category
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 19     |
+	| Project Owner: Windows7Mi  | 16     |
+	| Project Tasks: Windows7Mi  | 91     |
+	| Project Stages: Windows7Mi | 7      |
+	| Project: UserEvergr        | 17     |
+	| Project Owner: UserEvergr  | 16     |
+	| Project Tasks: UserEvergr  | 12     |
+	| Project Stages: UserEvergr | 1      |
+	And Category is not displayed in the Columns panel
+	| Category                 |
+	| Project: EmailMigra        |
+	| Project Tasks: EmailMigra  |
+	| Project Stages: EmailMigra |	
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 17     |
+	| Project Tasks: Windows7Mi  | 79     |
+	| Project Stages: Windows7Mi | 6      |
+	| Project: UserEvergr        | 19     |
+	| Project Tasks: UserEvergr  | 26     |
+	| Project Stages: UserEvergr | 2      |
+	| Project: EmailMigra        | 17     |
+	| Project Tasks: EmailMigra  | 9      |
+	| Project Stages: EmailMigra | 3      |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 25     |
+	| Project Tasks: Windows7Mi  | 24     |
+	| Project Stages: Windows7Mi | 2      |
+	| Project: UserEvergr        | 25     |
+	| Project Tasks: UserEvergr  | 14     |
+	| Project Stages: UserEvergr  | 1      |
+	| Project: EmailMigra        | 25     |
+	| Project Tasks: EmailMigra  | 5      |
+	| Project Stages: EmailMigra | 1      |
+	
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: EmailMigra        | 18     |
+	| Project Tasks: EmailMigra  | 54     |
+	| Project Stages: EmailMigra | 6      |
+	| Project: MailboxEve        | 18     |
+	| Project Tasks: MailboxEve  | 15     |
+	And Category is not displayed in the Columns panel
+	| Category                   |
+	| Project: Windows7Mi        |
+	| Project Tasks: Windows7Mi  |
+	| Project Stages: Windows7Mi |
+	| Project: UserEvergr        |
+	| Project Tasks: UserEvergr  |
+	| Project Stages: UserEvergr |
+
+
+
+ 

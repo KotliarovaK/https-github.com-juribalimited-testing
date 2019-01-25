@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
@@ -186,6 +187,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 SelectorFor(this, p => p.FiltersPanel)
             };
+        }
+
+        private IWebElement FilterCategory(string filterCategoryName)
+        {
+            return Driver.FindElement(By.XPath(
+                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
         public List<string> GetFilterValuesByFilterName(string filterName)
@@ -558,5 +565,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public int GetSubcategoriesCountByCategoryName(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            Driver.MouseHover(filterCategory);
+            return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
+        }
+
     }
 }
