@@ -283,16 +283,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
             StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
-            Thread.Sleep(4000);
+            page.CloseMessageButton.Click();
+            _driver.WaitWhileControlIsDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
         }
 
         [Then(@"""(.*)"" error message is displayed")]
         public void ThenErrorMessageIsDisplayed(string errorMessage)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
             page.CloseMessageButton.Click();
-            Thread.Sleep(500);
+            _driver.WaitWhileControlIsDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]

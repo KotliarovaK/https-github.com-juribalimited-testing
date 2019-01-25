@@ -459,11 +459,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	Then "Teams" page should be displayed to the user
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "000Team13000" in the "Team Name" field
+	When User enters "DASTeam13000" in the "Team Name" field
 	And User enters "13000" in the Team Description field
 	And User clicks Default Team checkbox
 	And User clicks the "CREATE TEAM" Action button
-	And User enters "000Team13000" text in the Search field for "Team" column
+	And User enters "DASTeam13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
@@ -471,11 +471,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	Then Warning message with "You cannot delete the default team" text is displayed on the Admin page
 	When User clicks the "CREATE TEAM" Action button
 	Then "Create Team" page should be displayed to the user
-	When User enters "001Team13000" in the "Team Name" field
+	When User enters "DAS1Team13000" in the "Team Name" field
 	And User enters "13000" in the Team Description field
 	And User clicks Default Team checkbox
 	And User clicks the "CREATE TEAM" Action button
-	And User enters "000Team13000" text in the Search field for "Team" column
+	And User enters "DASTeam13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
@@ -489,7 +489,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User clicks the "UPDATE TEAM" Action button
 	Then Success message is displayed and contains "The team was successfully updated" text
 	When User click on Back button
-	And User enters "001Team13000" text in the Search field for "Team" column
+	And User enters "DAS1Team13000" text in the Search field for "Team" column
 	And User selects all rows on the grid
 	And User removes selected item
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
