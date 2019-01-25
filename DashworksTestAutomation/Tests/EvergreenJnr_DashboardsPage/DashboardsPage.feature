@@ -365,3 +365,29 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	When User clicks Settings button for "Dashboard for DAS14911" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @DAS14920 @Widgets @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName    |
+	| Owner Enabled |
+	When User create dynamic list with "14920_List" name on "Devices" page
+	When User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14920" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User adds new Widget
+	| WidgetType | Title     | List       | SplitBy     | AggregateBy   | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | DAS-14920 | 14920_List | Device Type | Owner Enabled | Count             | Device Type ASC |                  | 10        |            |
+	Then Widget Preview is displayed to the user
+	Then There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+	Then "DAS-14920" Widget is displayed to the user
+	When User clicks Settings button for "Dashboard for DAS14920" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel

@@ -467,6 +467,79 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User adds new Widget")]
+        public void WhenUserAddsNewWidget(Table table)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            foreach (var row in table.Rows)
+            {
+                createWidgetElement.WidgetType.Click();
+                createWidgetElement.SelectObjectForWidgetCreation(row["WidgetType"]);
+
+                if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
+
+                if (!string.IsNullOrEmpty(row["Title"]))
+                {
+                    createWidgetElement.Title.Clear();
+                    createWidgetElement.Title.SendKeys(row["Title"]);
+                }
+
+                if (!string.IsNullOrEmpty(row["List"]))
+                {
+                    createWidgetElement.List.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["SplitBy"]))
+                {
+                    createWidgetElement.SplitBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["AggregateBy"]))
+                {
+                    createWidgetElement.AggregateBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["AggregateFunction"]))
+                {
+                    createWidgetElement.AggregateFunction.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["OrderBy"]))
+                {
+                    createWidgetElement.OrderBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["MaxValues"]))
+                {
+                    createWidgetElement.MaxValues.Clear();
+                    createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
+                }
+
+                if (!string.IsNullOrEmpty(row["TableOrientation"]))
+                {
+                    createWidgetElement.TableOrientation.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["ShowLegend"]) && row["ShowLegend"].Equals("true"))
+                {
+                    createWidgetElement.ShowLegend.Click();
+                }
+            }
+        }
+
         [When(@"User selects ""(.*)"" as Widget Type")]
         public void WhenUserSetsWidgetType(string widgetType)
         {
@@ -537,6 +610,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.AreEqual(text, page.SubmenuAlertMessage.Text);
+        }
+
+        [Then(@"Widget Preview is displayed to the user")]
+        public void ThenWidgetPreviewIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
+        }
+
+        [Then(@"""(.*)"" Widget is displayed to the user")]
+        public void ThenWidgetIsDisplayedToTheUser(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
