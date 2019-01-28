@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']//chart")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]
         public IWebElement WidgetPreview { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -247,7 +247,14 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($".//div[@class='widget drag-n-drop']/div//h5[text()='{widgetName}']//ancestor::div//app-chart/div[@class='chartContainer ng-star-inserted']");
+                By.XPath($".//div[@class='widget drag-n-drop']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='inner-widget disable-actions']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(dashboardWidget);
+        }
+
+        public IWebElement GetCountForTableWidget(string boolean, string number)
+        {
+            var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//td[text()='{number}']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }

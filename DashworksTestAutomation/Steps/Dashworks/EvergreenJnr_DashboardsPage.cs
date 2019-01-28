@@ -626,6 +626,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
+        [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]
+        public void ThenCountIsDisplayedForInTheTableWidget(string boolean, string count)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetCountForTableWidget(count, boolean).Displayed(), $"{count} is not display for {boolean}");
+        }
+
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
         public void WhenUserSetsWidgetOrderBy(string orderBy)
         {

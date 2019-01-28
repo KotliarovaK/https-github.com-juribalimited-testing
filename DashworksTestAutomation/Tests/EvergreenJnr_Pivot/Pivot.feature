@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	Then Pivot run was completed
 	Then numeric data in table is sorted by " " column in descending order for the Pivot
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14555 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessField
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

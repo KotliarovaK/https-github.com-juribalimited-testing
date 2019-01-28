@@ -1667,8 +1667,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             "hatUsesBooleanField")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
-        [NUnit.Framework.CategoryAttribute("DAS14920")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS14920")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField()
         {
@@ -1702,8 +1702,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                     "hatUsesBooleanField", null, new string[] {
                         "Evergreen",
                         "Dashboards",
-                        "DAS14920",
                         "Widgets",
+                        "DAS14920",
                         "Delete_Newly_Created_List"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1714,7 +1714,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table33.AddRow(new string[] {
-                        "Owner Enabled"});
+                        "Secure Boot Enabled"});
+            table33.AddRow(new string[] {
+                        "Windows7Mi: In Scope"});
             testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table33, "And ");
             testRunner.When("User create dynamic list with \"14920_List\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1734,11 +1736,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "MaxValues",
                         "ShowLegend"});
             table34.AddRow(new string[] {
-                        "Pie",
-                        "DAS-14920",
+                        "Table",
+                        "DAS-14920_1",
                         "14920_List",
+                        "Secure Boot Enabled",
                         "Device Type",
-                        "Owner Enabled",
                         "Count",
                         "Device Type ASC",
                         "",
@@ -1749,7 +1751,38 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"DAS-14920\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"DAS-14920_1\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"2190\" count is displayed for \"False\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"2192\" count is displayed for \"True\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"12843\" count is displayed for \"Unknown\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend"});
+            table35.AddRow(new string[] {
+                        "Table",
+                        "DAS-14920_2",
+                        "14920_List",
+                        "Windows7Mi: In Scope",
+                        "Device Type",
+                        "Count",
+                        "Device Type ASC",
+                        "",
+                        "10",
+                        ""});
+            testRunner.And("User creates new Widget", ((string)(null)), table35, "And ");
+            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"DAS-14920_2\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"12064\" count is displayed for \"False\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"5161\" count is displayed for \"True\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks Settings button for \"Dashboard for DAS14920\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

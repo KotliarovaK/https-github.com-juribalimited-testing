@@ -1278,6 +1278,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS13860")]
         [NUnit.Framework.CategoryAttribute("DAS14555")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "UserEvergr: Readiness", "1803: Application Readiness", null)]
@@ -1317,6 +1318,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "AllLists",
                     "EvergreenJnr_Pivot",
                     "Pivot",
+                    "DAS13860",
                     "DAS14555",
                     "Not_Run"};
             if ((exampleTags != null))
