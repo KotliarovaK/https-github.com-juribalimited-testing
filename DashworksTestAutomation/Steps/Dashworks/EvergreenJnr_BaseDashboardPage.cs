@@ -297,7 +297,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefault(string columnName)
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
-
             var originalList = listPageMenu.GetColumnContent(columnName).ToList();
             SortingHelper.IsListSorted(originalList);
         }

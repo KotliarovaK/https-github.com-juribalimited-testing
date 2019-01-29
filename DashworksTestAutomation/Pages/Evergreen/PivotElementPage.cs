@@ -91,26 +91,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public List<string> GetPivotColumnContent(string columnName)
+        public List<string> GetPivotColumnContent()
         {
             var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
+                $".//div[@class='ag-pinned-left-cols-viewport-wrapper']//div[@role='row']//span[@ref='eValue']");
+            return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
         }
 
-        public int GetColumnNumberByName(string columnName)
+        public List<string> GetPivotHeadersContent()
         {
-            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']//div[@class='ag-header-group-cell-label']");
-            Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
-            var allHeaders = Driver.FindElements(allHeadersSelector);
-            if (!allHeaders.Any())
-                throw new Exception("Table does not contains any columns");
-            var columnNumber =
-                allHeaders.IndexOf(allHeaders.First(x =>
-                    x.FindElement(By.XPath(".//span[@class='ag-header-group-text']")).Text.Equals(columnName))) + 1;
-
-            return columnNumber;
+            var by = By.XPath($".//div[@class='ag-header-row']//div[@ref='agContainer']");
+            return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
         }
 
         public void SelectAggregateFunctionByName(string functionName)

@@ -265,18 +265,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderForThePivot(string columnName)
         {
             var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var actualList = listPageMenu.GetPivotColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var actualList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
-            //Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed(), "Ascending Sorting Icon is not displayed");
         }
 
         [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order for the Pivot")]
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderForThePivot(string columnName)
         {
             var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var expectedList = listPageMenu.GetPivotColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
-            //Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"data in the table is sorted by ""(.*)"" column in ascending order by default for the Pivot")]
+        public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefaultForThePivot(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList);
+        }
+
+        [Then(@"data in the table is sorted by ""(.*)"" column in descending order by default for the Pivot")]
+        public void ThenDataInTheTableIsSortedByColumnInDescendingOrderByDefaultForThePivot(string p0)
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+        }
+
+        [Then(@"column headers data are sorted in ascending order for the Pivot")]
+        public void ThenColumnHeadersDataAreSortedInAscendingOrderForThePivot()
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var expectedList = listPageMenu.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList);
         }
 
         #endregion

@@ -460,7 +460,7 @@ Examples:
 	| Mailboxes    | Alias     | Owner Compliance | MailboxEve: Readiness       |
 	| Applications | Import    | Compliance       | 1803: Application Readiness |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrder
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -476,15 +476,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectReadinessTaskColumnsDisp
 	| <Values> |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	#Add sort column
-	Then numeric data in table is sorted by "<SortedColumn>" column in descending order for the Pivot
+	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
 
 Examples:
-	| ListName     | RowGroups | Columns                                                    | Values           | SortedColumn |
-	| Devices      | Import    | UserEvergr: Dropdown Readiness Date (Computer)             | Compliance       |              |
-	| Users        | Enabled   | Windows7Mi: Group User Radiobutton Readiness Only          | Compliance       |              |
-	| Mailboxes    | Enabled   | EmailMigra: Infrastructure Readiness                       | Owner Compliance |              |
-	| Applications | Vendor    | UserEvergr: Radiobutton Readiness Date Owner (Application) | Compliance       | Vendor       |
+	| ListName     | RowGroups        | Columns                                                    | Values           | SortedColumn     |
+	| Devices      | Import           | UserEvergr: Dropdown Readiness Date (Computer)             | Compliance       | Import           |
+	| Users        | City             | Windows7Mi: Group User Radiobutton Readiness Only          | Compliance       | City             |
+	| Mailboxes    | Evergreen Bucket | EmailMigra: Infrastructure Readiness                       | Owner Compliance | Evergreen Bucket |
+	| Applications | Vendor           | UserEvergr: Radiobutton Readiness Date Owner (Application) | Compliance       | Vendor           |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrder
