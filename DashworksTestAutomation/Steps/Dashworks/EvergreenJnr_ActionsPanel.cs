@@ -173,18 +173,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"following Stage are displayed in drop-down:")]
-        public void ThenFollowingStageAreDisplayedInDrop_Down(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.StageField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, "Stage lists are different");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
         [When(@"User selects ""(.*)"" Capacity Unit on Action panel")]
         public void WhenUserSelectsCapacityUnitOnActionPanel(string capacityUnit)
         {
@@ -193,6 +181,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.CapacityUnitField.Clear();
             action.CapacityUnitField.SendKeys(capacityUnit);
             action.GetOptionByName(capacityUnit).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User selects ""(.*)"" option in ""(.*)"" field on Action panel")]
+        public void WhenUserSelectsOptionInFieldOnActionPanel(string option, string fieldName)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetFieldOnActionPanelByName(fieldName).Clear();
+            field.GetFieldOnActionPanelByName(fieldName).SendKeys(option);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetOptionByName(option).Click();
             _driver.WaitForDataLoading();
         }
 
@@ -208,7 +207,43 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [Then(@"following Stage are displayed in drop-down:")]
+        public void ThenFollowingStageAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Stage lists are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
 
+        [Then(@"following Tasks are displayed in drop-down:")]
+        public void ThenFollowingTasksAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Tasks value are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following values are displayed in ""(.*)"" drop-down:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_Down(string fieldName, Table table)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            var t = field.GetDropdownOnActionPanelByName(fieldName);
+            t.Click();
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, $"Values in {fieldName} drop-down are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
 
         [Then(@"Stages are displayed in alphabetical order on Action panel")]
         public void ThenStagesAreDisplayedInAlphabeticalOrderOnActionPanel()
@@ -238,18 +273,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.TaskField.Click();
             var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
             Assert.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            page.BodyContainer.Click();
-        }
-
-        [Then(@"following Tasks are displayed in drop-down:")]
-        public void ThenFollowingTasksAreDisplayedInDrop_Down(Table table)
-        {
-            var action = _driver.NowAt<BaseDashboardPage>();
-            action.TaskField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, "Tasks value are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }

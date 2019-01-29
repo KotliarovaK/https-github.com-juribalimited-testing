@@ -1634,3 +1634,22 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsFo
 	| Owned mailboxes only |
 	| All linked mailboxes |
 	
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14140
+Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForEvergreenProjectAreDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	| 001PSUMZYOW581   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "Unassigned" option in "Bucket" field on Action panel
+	Then following values are displayed in "Also Move Users" drop-down:
+	| Options          |
+	| None             |
+	| Owners only      |
+	| All linked users |
