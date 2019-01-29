@@ -2727,23 +2727,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPan" +
-            "elForUsersList")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelFo" +
+            "rUsersList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("DAS14660")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList()
+        public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersListInternal();
+                    this.EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersListInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -2762,12 +2762,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             }
         }
 
-        private void EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersListInternal()
+        private void EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersListInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPan" +
-                    "elForUsersList", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelFo" +
+                    "rUsersList", null, new string[] {
                         "Evergreen",
-                        "Mailboxes",
+                        "Users",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS14629",

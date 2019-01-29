@@ -880,8 +880,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedT
 	| prK: Email to be sent - All Placeholders (Slot) |
 	| prK: user-group-radb-k                          |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @Not_Run
-Scenario: EvergreenJnr_MailboxesList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -904,10 +904,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListe
 	| Project Tasks: UserEvergr  | 12     |
 	| Project Stages: UserEvergr | 1      |
 	And Category is not displayed in the Columns panel
-	| Category                 |
+	| Category                   |
 	| Project: EmailMigra        |
 	| Project Tasks: EmailMigra  |
-	| Project Stages: EmailMigra |	
+	| Project Stages: EmailMigra |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
@@ -960,7 +960,3 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveLis
 	| Project: UserEvergr        |
 	| Project Tasks: UserEvergr  |
 	| Project Stages: UserEvergr |
-
-
-
- 

@@ -372,7 +372,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	And close button for "City" chip have tooltip with "Delete this item" text
 	And "City" chip have tooltip with "City" text
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14377 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14377 @DAS13864 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -392,7 +392,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInT
 	Then numeric data in table is sorted by "Belfast" column in descending order for the Pivot
 	Then numeric data in table is sorted by "Cardiff" column in descending order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -435,7 +435,7 @@ Examples:
 	| Mailboxes    | Owner Compliance | EmailMigra: Readiness | MailboxEve: Readiness       |
 	| Applications | Compliance       | EmailMigra: Readiness | 1803: Application Readiness |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14556 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceField
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -460,7 +460,7 @@ Examples:
 	| Mailboxes    | Alias     | Owner Compliance | MailboxEve: Readiness       |
 	| Applications | Import    | Compliance       | 1803: Application Readiness |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14422 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrder
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -484,9 +484,9 @@ Examples:
 	| Devices      | Import    | UserEvergr: Dropdown Readiness Date (Computer)             | Compliance       |              |
 	| Users        | Enabled   | Windows7Mi: Group User Radiobutton Readiness Only          | Compliance       |              |
 	| Mailboxes    | Enabled   | EmailMigra: Infrastructure Readiness                       | Owner Compliance |              |
-	| Applications | Vendor    | UserEvergr: Radiobutton Readiness Date Owner (Application) | Compliance       |              |
+	| Applications | Vendor    | UserEvergr: Radiobutton Readiness Date Owner (Application) | Compliance       | Vendor       |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14423 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -510,7 +510,7 @@ Examples:
 	| Devices  | Import    | Windows7Mi: Application Readiness | Compliance |              |
 	| Users    | Domain    | Windows7Mi: Application Readiness | Compliance |              |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -529,7 +529,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	#Add column name
 	Then numeric data in table is sorted by " " column in descending order for the Pivot
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14426 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrder
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -555,7 +555,7 @@ Examples:
 	| Mailboxes    | Language  | EmailMigra: Migration  | EmailMigra: Readiness |              |
 	| Applications | Import    | UserEvergr: Stage 3    | DeviceSche: Readiness |              |
 
-@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS14427 @Not_Run
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -574,7 +574,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessCo
 	#Add column name
 	Then numeric data in table is sorted by " " column in descending order for the Pivot
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS14428 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -593,7 +593,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 	#Add column name
 	Then numeric data in table is sorted by "Empty" column in descending order for the Pivot
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14429 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceColumnsDisplayInTheCorrectOrder
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -618,7 +618,7 @@ Examples:
 	| Users        | Domain        | Compliance | UserEvergr: Readiness |              |
 	| Applications | Vendor        | Compliance | Import                |              |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14430 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14430 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

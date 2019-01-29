@@ -5492,6 +5492,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS14629")]
+        [NUnit.Framework.CategoryAttribute("DAS14664")]
         [NUnit.Framework.CategoryAttribute("DAS14669")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved()
@@ -5528,6 +5529,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS14629",
+                        "DAS14664",
                         "DAS14669",
                         "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);

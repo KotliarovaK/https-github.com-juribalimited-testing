@@ -1558,7 +1558,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
 	| Owner lastlogon  |
 	| Owner admincount |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14629 @DAS14669 @Not_Run
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14629 @DAS14664 @DAS14669 @Not_Run
 Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
