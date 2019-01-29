@@ -265,6 +265,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            try
+            {
+                page.CloseMessageButton.Click();
+            }
+            catch
+            {
+            }
+            _driver.WaitWhileControlIsDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
@@ -283,7 +291,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ChangePasswordPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
             StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
-            page.CloseMessageButton.Click();
+            try
+            {
+                page.CloseMessageButton.Click();
+            }
+            catch
+            {
+            }
             _driver.WaitWhileControlIsDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
         }
 
@@ -293,7 +307,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AccountDetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
-            page.CloseMessageButton.Click();
+            try
+            {
+                page.CloseMessageButton.Click();
+            }
+            catch
+            {
+            }
             _driver.WaitWhileControlIsDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
         }
 
@@ -303,6 +323,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AdvancedPage>();
             _driver.WaitWhileControlIsNotDisplayed<AdvancedPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
+            page.CloseMessageButton.Click();
+            _driver.WaitWhileControlIsDisplayed<AdvancedPage>(() => page.SuccessMessage);
         }
 
         [Then(@"User picture is changed to uploaded photo")]

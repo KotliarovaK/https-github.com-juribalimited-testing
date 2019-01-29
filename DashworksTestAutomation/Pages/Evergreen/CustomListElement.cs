@@ -140,7 +140,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
         public IWebElement DuplicateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//app-action-messages/div")]
+        [FindsBy(How = How.XPath, Using = ".//span/div[contains(@class,'inline-tip')]")]
         public IWebElement DeleteWarning { get; set; }
         
         [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'Delete')]")]

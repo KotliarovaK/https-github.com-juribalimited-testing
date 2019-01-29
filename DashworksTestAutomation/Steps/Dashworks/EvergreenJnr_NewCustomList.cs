@@ -214,6 +214,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksManageInTheListPanel()
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listDetailsElement.ManageButton);
             listDetailsElement.ManageButton.Click();
         }
 
