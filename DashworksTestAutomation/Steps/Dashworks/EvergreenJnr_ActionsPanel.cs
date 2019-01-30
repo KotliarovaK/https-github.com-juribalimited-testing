@@ -195,6 +195,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User selects ""(.*)"" option in ""(.*)"" drop-down on Action panel")]
+        public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetDropdownOnActionPanelByName(fieldName);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetOptionByName(option).Click();
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"following Move Mailboxes are displayed in drop-down:")]
         public void ThenFollowingMoveMailboxesAreDisplayedInDrop_Down(Table table)
         {
@@ -231,16 +241,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [Then(@"following values are displayed in ""(.*)"" drop-down:")]
-        public void ThenFollowingValuesAreDisplayedInDrop_Down(string fieldName, Table table)
+        [Then(@"following values are displayed in ""(.*)"" drop-down on Action panel:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownOnActionPanel(string fieldName, Table table)
         {
             var field = _driver.NowAt<ActionsElement>();
-            var t = field.GetDropdownOnActionPanelByName(fieldName);
-            t.Click();
+            field.GetDropdownOnActionPanelByName(fieldName);
             var action = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, $"Values in {fieldName} drop-down are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following values are displayed in ""(.*)"" drop-down with searchfield on Action panel:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownWithSearchfieldOnActionPanel(string fieldName, Table table)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetSearchDropDownOnActionPanelByName(fieldName).Click();
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, $"Values in {fieldName} drop-down with searchfield are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }

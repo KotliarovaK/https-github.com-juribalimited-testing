@@ -1648,8 +1648,140 @@ Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForE
 	And User selects "Update bucket" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project on Action panel
 	And User selects "Unassigned" option in "Bucket" field on Action panel
-	Then following values are displayed in "Also Move Users" drop-down:
+	Then following values are displayed in "Also Move Users" drop-down on Action panel:
 	| Options          |
 	| None             |
 	| Owners only      |
 	| All linked users |
+	When User selects "Owners only" option in "Also Move Users" field on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14142
+Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForEvergreenProjectAreDisplayedCorrectly
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 0072B088173449E3A93 |
+	| 00C8BC63E7424A6E862 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project on Action panel
+	And User selects "Unassigned" option in "Bucket" field on Action panel
+	Then following values are displayed in "Also Move Devices" drop-down on Action panel:
+	| Options            |
+	| None               |
+	| Owned devices only |
+	| All linked devices |
+	When User selects "Owned devices only" option in "Also Move Devices" drop-down on Action panel
+	Then following values are displayed in "Also Move Mailboxes" drop-down on Action panel:
+	| Options              |
+	| None                 |
+	| Owned mailboxes only |
+	| All linked mailboxes |
+	When User selects "Owned mailboxes only" option in "Also Move Mailboxes" drop-down on Action panel
+	Then "UPDATE" Action button is active
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14143
+Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForUserScopedProjectAreDisplayedCorrectly
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 0072B088173449E3A93 |
+	| 00C8BC63E7424A6E862 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "User Evergreen Capacity Project" Project on Action panel
+	And User selects "Unassigned" option in "Bucket" field on Action panel
+	Then following values are displayed in "Also Move Devices" drop-down on Action panel:
+	| Options            |
+	| None               |
+	| Owned devices only |
+	| All linked devices |
+	When User selects "Owned devices only" option in "Also Move Devices" drop-down on Action panel
+	Then "UPDATE" Action button is active
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14160
+Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailboxScopedProjectAreDisplayedCorrectly
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName    |
+	| 0072B088173449E3A93 |
+	| 00C8BC63E7424A6E862 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
+	And User selects "Unassigned" option in "Bucket" field on Action panel
+	Then following values are displayed in "Also Move Mailboxes" drop-down on Action panel:
+	| Options          |
+	| None             |
+	| Owners only      |
+	| All linked users |
+	When User selects "Owners only" option in "Also Move Mailboxes" drop-down on Action panel
+	Then "UPDATE" Action button is active
+
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14161
+Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesListForMailboxScopedProjectAreDisplayedCorrectly
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 00BDBAEA57334C7C8F4@bclabs.local |
+	| 016E1B57C2DD4FCC986@bclabs.local |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
+	And User selects "Unassigned" option in "Bucket" field on Action panel
+	Then following values are displayed in "Also Move Users" drop-down on Action panel:
+	| Options          |
+	| None             |
+	| Owners only      |
+	| All linked users |
+	When User selects "Owners only" option in "Also Move Users" drop-down on Action panel
+	Then "UPDATE" Action button is active
+
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14162
+Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdateOptionsOnlyDisplayedEvergreenOrMailboxScopedProjects 
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 00BDBAEA57334C7C8F4@bclabs.local |
+	| 016E1B57C2DD4FCC986@bclabs.local |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update bucket" Bulk Update Type on Action panel
+	Then following values are displayed in "Project" drop-down with searchfield on Action panel:
+	| Options                            |
+	| Evergreen                          |
+	| Email Migration                    |
+	| Mailbox Evergreen Capacity Project |
+
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14164
+Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvailableOnApplicationsList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Application" rows in the grid
+	| SelectedRowsName                                           |
+	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI             |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
+	And User selects "Bulk update" in the Actions dropdown
+	Then following values are displayed in "Bulk Update Type" drop-down with searchfield on Action panel:
+	| Options              |
+	| Update capacity unit |
+	| Update request type  |
+	| Update task value    |
