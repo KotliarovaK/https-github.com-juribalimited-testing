@@ -81,6 +81,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonForCustomList()
         {
             var button = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => button.DeleteButton);
             button.DeleteButton.Click();
         }
 
