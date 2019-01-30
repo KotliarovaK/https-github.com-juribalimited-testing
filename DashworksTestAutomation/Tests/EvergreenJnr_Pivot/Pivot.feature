@@ -477,6 +477,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectReadinessTaskColumnsDisp
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
+	#Then Columns on Admin page is displayed in following order:
+	#| ColumnName    |
 
 Examples:
 	| ListName     | RowGroups        | Columns                                                    | Values           | SortedColumn     |

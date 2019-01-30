@@ -1348,7 +1348,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedTo
 	Then "Application Manufacturer" filter is not presented in the filters list
 	And "Application Vendor" filter is presented in the filters list
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659 @DAS14629
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659 @DAS14629 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1378,12 +1378,12 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Mailbox Count (Owned)         |
 	| Organizational Unit           |
 	| Parent Distinguished Name     |
+	| Primary Device                |
 	| SID                           |
 	| Surname                       |
 	| User (Saved List)             |
 	| User Application Compliance   |
 	| User Key                      |
-	#|Primary Device|
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13182
 Scenario Outline: EvergreenJnr_AllLists_CheckThatAddNewOptionAvailableAfterClickOnAllOptionInListsPanelWhileFiltersSectionExpanded
@@ -1530,5 +1530,5 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowText
 
 Examples:
 	| OperatorValue | RowsCount |
-	| Empty         |           |
-	| Not empty     |           |
+	| Empty         | 28,067    |
+	| Not empty     | 13,272    |

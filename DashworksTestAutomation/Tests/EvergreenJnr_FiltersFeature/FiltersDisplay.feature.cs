@@ -4909,6 +4909,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("DAS14659")]
         [NUnit.Framework.CategoryAttribute("DAS14629")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage()
         {
             System.Exception lastException = null;
@@ -4947,7 +4948,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "DAS13296",
                         "DAS14629",
                         "DAS14659",
-                        "DAS14629"});
+                        "DAS14629",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4999,6 +5001,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Organizational Unit"});
             table102.AddRow(new string[] {
                         "Parent Distinguished Name"});
+            table102.AddRow(new string[] {
+                        "Primary Device"});
             table102.AddRow(new string[] {
                         "SID"});
             table102.AddRow(new string[] {
@@ -5476,8 +5480,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS14665")]
         [NUnit.Framework.CategoryAttribute("DAS14667")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Empty", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Not empty", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Empty", "28,067", null)]
+        [NUnit.Framework.TestCaseAttribute("Not empty", "13,272", null)]
         public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly(string operatorValue, string rowsCount, string[] exampleTags)
         {
             System.Exception lastException = null;

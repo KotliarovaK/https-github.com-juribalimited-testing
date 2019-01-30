@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -291,14 +292,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageMenu = _driver.NowAt<PivotElementPage>();
             var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
-        }
-
-        [Then(@"column headers data are sorted in ascending order for the Pivot")]
-        public void ThenColumnHeadersDataAreSortedInAscendingOrderForThePivot()
-        {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var expectedList = listPageMenu.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSorted(expectedList);
         }
 
         #endregion

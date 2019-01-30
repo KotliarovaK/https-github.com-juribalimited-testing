@@ -100,7 +100,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetPivotHeadersContent()
         {
-            var by = By.XPath($".//div[@class='ag-header-row']//div[@ref='agContainer']");
+            var by = By.XPath($".//div[@class='ag-header-row']//div[@ref='agContainer']//span[@class='status-text']");
             return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
         }
 
