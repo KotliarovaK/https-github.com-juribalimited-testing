@@ -79,5 +79,26 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(RowsSelectedCountSelector));
             return Driver.FindElement(By.XPath(RowsSelectedCountSelector)).Text.Split(' ').First();
         }
+
+        public void GetDropdownOnActionPanelByName(string name)
+        {
+            var listNameSelector = $"//*[contains(text(),'{name}')]/parent::span//preceding-sibling::mat-select";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
+        public IWebElement GetFieldOnActionPanelByName(string name)
+        {
+            var selector = By.XPath($"//div//input[@placeholder='{name}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetSearchDropDownOnActionPanelByName(string name)
+        {
+            var selector = By.XPath($"//*[contains(text(), '{name}')]/ancestor::div[@class='mat-form-field-infix']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
