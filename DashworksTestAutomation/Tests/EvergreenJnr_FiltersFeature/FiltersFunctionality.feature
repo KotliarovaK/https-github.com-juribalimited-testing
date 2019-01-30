@@ -1622,7 +1622,7 @@ Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1643,7 +1643,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListed
 	| Project Tasks: EmailMigra  |
 	| Project Stages: EmailMigra |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Filters button
@@ -1682,7 +1682,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveL
 	| Project Tasks: EmailMigra  | 5      |
 	| Project Stages: EmailMigra | 1      |
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Filters button

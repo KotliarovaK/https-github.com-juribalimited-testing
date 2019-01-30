@@ -889,7 +889,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheCol
 	When User is expand "User" columns category
 	When User add "Primary Device" Column from expanded category
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -909,7 +909,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListe
 	| Project Tasks: EmailMigra  |
 	| Project Stages: EmailMigra |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Columns button
@@ -941,7 +941,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHave
 	| Project Tasks: EmailMigra  | 5      |
 	| Project Stages: EmailMigra | 1      |
 	
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Columns button

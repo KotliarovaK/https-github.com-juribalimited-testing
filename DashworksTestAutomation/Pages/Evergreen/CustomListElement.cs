@@ -146,7 +146,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'Delete')]")]
         public IWebElement DeleteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn mat-button')]/span[text()='DELETE']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//button[contains(@class, 'btn mat-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-transparent ')]/span[text()='CANCEL']")]
