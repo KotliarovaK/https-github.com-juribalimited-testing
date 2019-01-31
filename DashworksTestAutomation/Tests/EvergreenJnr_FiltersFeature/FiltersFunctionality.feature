@@ -1722,7 +1722,7 @@ Examples:
 	| Users        | Organizational Unit       | Begins with | Users                  | 23,728 |
 	| Mailboxes    | Owner Organizational Unit | Not Empty   |                        | 14,747 |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524 @DAS15223
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524 @DAS15223 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUnitFilterWithEmptyValue
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

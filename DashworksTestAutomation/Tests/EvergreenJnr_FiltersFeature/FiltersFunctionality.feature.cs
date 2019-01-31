@@ -6018,6 +6018,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("FiltersFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS14524")]
         [NUnit.Framework.CategoryAttribute("DAS15223")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUnitFilterWithEmptyValue()
         {
             System.Exception lastException = null;
@@ -6053,7 +6054,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen_FiltersFeature",
                         "FiltersFunctionality",
                         "DAS14524",
-                        "DAS15223"});
+                        "DAS15223",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
