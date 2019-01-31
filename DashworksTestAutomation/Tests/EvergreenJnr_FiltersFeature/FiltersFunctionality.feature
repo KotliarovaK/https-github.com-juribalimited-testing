@@ -1702,3 +1702,34 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveList
 	| Project: UserEvergr        |
 	| Project Tasks: UserEvergr  |
 	| Project Stages:UserEvergr  |
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524
+Scenario Outline: EvergreenJnr_AllLists_CheckRowsCountedForOrganizationalUnitFilterWithSelectedValue
+	When User clicks "<Page>" on the left-hand menu
+	Then "<Page>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "<Type>" with added column and following value:
+	| Values  |
+	| <Value> |
+	Then "<FilterName>" filter is added to the list
+	And "<Rows>" rows are displayed in the agGrid
+
+Examples:
+	| Page         | FilterName                | Type        | Value                  | Rows   |
+	| Devices      | Owner Organizational Unit | Equals      | Users.Cardiff.UK.local | 1,458  |
+	| Devices      | Owner Organizational Unit | Contains    | Users                  | 11,665 |
+	| Users        | Organizational Unit       | Begins with | Users                  | 23,728 |
+	| Mailboxes    | Owner Organizational Unit | Not Empty   |                        | 14,747 |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524 @DAS15223 @Not_Run
+Scenario: EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUnitFilterWithEmptyValue
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Organizational Unit" filter where type is "Empty" without added column and following value:
+	| Values |
+	|        |
+	Then "User Organizational Unit" filter is added to the list
+	And "215" rows are displayed in the agGrid
