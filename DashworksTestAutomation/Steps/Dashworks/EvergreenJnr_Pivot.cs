@@ -9,6 +9,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
@@ -292,6 +293,36 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listPageMenu = _driver.NowAt<PivotElementPage>();
             var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
+        }
+
+        [Then(@"color data in the column headers is sorted in correct order for the Pivot")]
+        public void ThenColorDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
+        {
+            //var listPageMenu = _driver.NowAt<PivotElementPage>();
+            //var colorItem = listPageMenu.GetPivotColorColumnContent();
+            //var colors = _driver.FindElements(colorItem).ToString();
+            //foreach (var color in colors)
+            //{
+            //    var styleColorItem = color.GetAttribute("style");
+            //}
+            //var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            //SortingHelper.IsListSorted(expectedList, false);
+        }
+
+        [Then(@"data in the column headers is sorted in correct order for the Pivot")]
+        public void ThenDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var expectedList = listPageMenu.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList);
+        }
+
+        [Then(@"date in the column headers is sorted in correct order for the Pivot")]
+        public void ThenDateInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var expectedList = listPageMenu.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByDate(expectedList, false);
         }
 
         #endregion

@@ -1129,7 +1129,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14377")]
         [NUnit.Framework.CategoryAttribute("DAS13864")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder()
         {
             System.Exception lastException = null;
@@ -1165,8 +1164,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS14377",
-                        "DAS13864",
-                        "Not_Run"});
+                        "DAS13864"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1190,12 +1188,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table44, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("numeric data in table is sorted by \"Empty\" column in descending order for the Piv" +
-                    "ot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("numeric data in table is sorted by \"Belfast\" column in descending order for the P" +
-                    "ivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("numeric data in table is sorted by \"Cardiff\" column in descending order for the P" +
-                    "ivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("data in the column headers is sorted in correct order for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
@@ -1209,7 +1202,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14378")]
         [NUnit.Framework.CategoryAttribute("DAS13864")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder()
         {
             System.Exception lastException = null;
@@ -1245,8 +1237,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS14378",
-                        "DAS13864",
-                        "Not_Run"});
+                        "DAS13864"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1270,7 +1261,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table47, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("numeric data in table is sorted by \" \" column in descending order for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("date in the column headers is sorted in correct order for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("data in the table is sorted by \"Hostname\" column in ascending order by default fo" +
+                    "r the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
@@ -1534,8 +1527,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS13865")]
         [NUnit.Framework.CategoryAttribute("DAS14423")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Import", "Windows7Mi: Application Readiness", "Compliance", "", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Windows7Mi: Application Readiness", "Compliance", "", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Import", "Windows7Mi: Application Readiness", "Compliance", "Import", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Windows7Mi: Application Readiness", "Compliance", "Domain", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrder(string listName, string rowGroups, string columns, string values, string sortedColumn, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1601,8 +1594,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table59, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then(string.Format("numeric data in table is sorted by \"{0}\" column in descending order for the Pivot" +
-                        "", sortedColumn), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And(string.Format("data in the table is sorted by \"{0}\" column in ascending order by default for the" +
+                        " Pivot", sortedColumn), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
 
@@ -1668,7 +1661,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table61.AddRow(new string[] {
-                        "DeviceSche: Owner Readiness"});
+                        "Barry\'sUse: Validate User Device Ownership"});
             testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table61, "And ");
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
@@ -1677,7 +1670,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table62, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("numeric data in table is sorted by \" \" column in descending order for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("data in the table is sorted by \"Import\" column in ascending order by default for " +
+                    "the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
 

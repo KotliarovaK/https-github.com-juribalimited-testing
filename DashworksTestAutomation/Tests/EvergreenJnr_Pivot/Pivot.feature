@@ -372,7 +372,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksTooltipsOnPivot
 	And close button for "City" chip have tooltip with "Delete this item" text
 	And "City" chip have tooltip with "City" text
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14377 @DAS13864 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14377 @DAS13864
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -388,11 +388,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInT
 	| Owner Cost Centre |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	Then numeric data in table is sorted by "Empty" column in descending order for the Pivot
-	Then numeric data in table is sorted by "Belfast" column in descending order for the Pivot
-	Then numeric data in table is sorted by "Cardiff" column in descending order for the Pivot
+	Then data in the column headers is sorted in correct order for the Pivot
+	#Then color data in the column headers is sorted in correct order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -408,7 +407,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	| Owner Cost Centre |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	Then numeric data in table is sorted by " " column in descending order for the Pivot
+	Then date in the column headers is sorted in correct order for the Pivot
+	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessField
@@ -503,13 +503,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTask
 	| <Values> |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	#Add sort column
-	Then numeric data in table is sorted by "<SortedColumn>" column in descending order for the Pivot
+	And data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
 
 Examples:
 	| ListName | RowGroups | Columns                           | Values     | SortedColumn |
-	| Devices  | Import    | Windows7Mi: Application Readiness | Compliance |              |
-	| Users    | Domain    | Windows7Mi: Application Readiness | Compliance |              |
+	| Devices  | Import    | Windows7Mi: Application Readiness | Compliance | Import       |
+	| Users    | Domain    | Windows7Mi: Application Readiness | Compliance | Domain       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
@@ -520,15 +519,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	| RowGroups |
 	| Import    |
 	And User selects the following Columns on Pivot:
-	| Columns                     |
-	| DeviceSche: Owner Readiness |
+	| Columns                                    |
+	| Barry'sUse: Validate User Device Ownership |
 	And User selects the following Values on Pivot:
 	| Values                      |
 	| 1803: Application Readiness |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	#Add column name
-	Then numeric data in table is sorted by " " column in descending order for the Pivot
+	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrder
