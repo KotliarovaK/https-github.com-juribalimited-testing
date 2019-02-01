@@ -646,7 +646,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayI
 	#Remove # after DAS-15230 fixed
 	#Then color data in the column headers is sorted in correct order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139 @DAS13833 @DAS13843 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfThatWereAppliedToTheCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -662,3 +662,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	Then "ADD ROW GROUP" Action button is displayed
 	Then "ADD COLUMN" Action button is displayed
 	Then "ADD VALUE" Action button is displayed
+	When User clicks Close panel button
+	Then Actions panel is not displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	Then "ADD ROW GROUP" Action button is displayed
+	Then "ADD COLUMN" Action button is displayed
+	Then "ADD VALUE" Action button is displayed
+	When User navigates to the "All Devices" list
+	Then Actions panel is not displayed to the user
