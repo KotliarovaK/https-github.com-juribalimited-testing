@@ -880,7 +880,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedT
 	| prK: Email to be sent - All Placeholders (Slot) |
 	| prK: user-group-radb-k                          |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @Not_Run
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @DAS15167 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -888,6 +888,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheCol
 	Then Columns panel is displayed to the user
 	When User is expand "User" columns category
 	When User add "Primary Device" Column from expanded category
+	When User click on 'Primary Device' column header
+	When User click on 'Primary Device' column header
+	When  User click content from "Primary Device" column
+	Then Details object page is displayed to the user
 
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
@@ -936,7 +940,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHave
 	| Project Stages: Windows7Mi | 2      |
 	| Project: UserEvergr        | 25     |
 	| Project Tasks: UserEvergr  | 14     |
-	| Project Stages: UserEvergr  | 1      |
+	| Project Stages: UserEvergr | 1      |
 	| Project: EmailMigra        | 25     |
 	| Project Tasks: EmailMigra  | 5      |
 	| Project Stages: EmailMigra | 1      |
