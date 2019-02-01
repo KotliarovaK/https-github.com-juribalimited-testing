@@ -440,12 +440,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, actualList, "Project list are different");
         }
 
+        #region  Action button
+
         [When(@"User clicks the ""(.*)"" Action button")]
         public void WhenUserClicksTheActionButton(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName(buttonName).Click();
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" Action button is displayed")]
+        public void ThenActionButtonIsDisplayed(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(button.GetActionsButtonByName(buttonName).Displayed(), $"{buttonName} Action button is not displayed");
         }
 
         [Then(@"""(.*)"" Action button is disabled")]
@@ -455,6 +464,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
             Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
+
+        [Then(@"""(.*)"" Action button is active")]
+        public void ThenActionButtonIsActive(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            Assert.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+        }
+
+        [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]
+        public void ThenActionButtonHaveTooltipWithText(string buttonName, string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetActionsButtonByName(buttonName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText);
+        }
+
+        #endregion
 
         [Then(@"""(.*)"" button is not displayed")]
         public void ThenButtonIsNotDisplayed(string buttonName)
@@ -475,24 +504,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(action.CogMenu.Displayed(), "Cog menu is displayed");
-        }
-
-        [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]
-        public void ThenActionButtonHaveTooltipWithText(string button, string text)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            var t = page.GetActionsButtonByName(button);
-            _driver.MouseHover(t);
-            var toolTipText = _driver.GetTooltipText();
-            Assert.AreEqual(text, toolTipText);
-        }
-
-        [Then(@"""(.*)"" Action button is active")]
-        public void ThenActionButtonIsActive(string buttonName)
-        {
-            var button = _driver.NowAt<BaseDashboardPage>();
-            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
-            Assert.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
         [Then(@"Objects to add panel is disabled")]

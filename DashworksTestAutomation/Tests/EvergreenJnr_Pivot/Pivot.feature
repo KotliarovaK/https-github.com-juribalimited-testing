@@ -635,3 +635,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayI
 	Then Pivot run was completed
 	#Add column name
 	Then numeric data in table is sorted by "Empty" column in descending order for the Pivot
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139
+Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfThatWereAppliedToTheCustomList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Compliance" filter where type is "Equals" with added column and following value:
+	| Values |
+	| Red    |
+	Then "Application Compliance" filter is added to the list
+	When User create dynamic list with "TestListForDAS15139" name on "Devices" page
+	Then "TestListForDAS15139" list is displayed to user
+	When User navigates to Pivot
+	Then "ADD ROW GROUP" Action button is displayed
+	Then "ADD COLUMN" Action button is displayed
+	Then "ADD VALUE" Action button is displayed
