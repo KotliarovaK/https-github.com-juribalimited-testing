@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -298,15 +299,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"color data in the column headers is sorted in correct order for the Pivot")]
         public void ThenColorDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
-            //var listPageMenu = _driver.NowAt<PivotElementPage>();
-            //var colorItem = listPageMenu.GetPivotColorColumnContent();
-            //var colors = _driver.FindElements(colorItem).ToString();
-            //foreach (var color in colors)
-            //{
-            //    var styleColorItem = color.GetAttribute("style");
-            //}
-            //var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
-            //SortingHelper.IsListSorted(expectedList, false);
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var colorItem = listPageMenu.GetHeadersPivotColorContent();
+            var expectedList = new List<string>();
+            foreach (var color in colorItem)
+            {
+                expectedList.Add(listPageMenu.GetPivotNumberByColor(color));
+            }
+            SortingHelper.IsNumericListSorted(expectedList);
+        }
+
+        [Then(@"color data in the left-pinned column is sorted in descending order for the Pivot")]
+        public void ThenColorDataInTheLeft_PinnedColumnIsSortedInDescendingOrderForThePivot()
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var colorItem = listPageMenu.GetLeftPinnedPivotColorColumnContent();
+            var expectedList = new List<string>();
+            foreach (var color in colorItem)
+            {
+                expectedList.Add(listPageMenu.GetPivotNumberByColor(color));
+            }
+            SortingHelper.IsNumericListSorted(expectedList);
+        }
+
+        [Then(@"color data in the left-pinned column is sorted in ascending order for the Pivot")]
+        public void ThenColorDataInTheLeft_PinnedColumnIsSortedInAscendingOrderForThePivot()
+        {
+            var listPageMenu = _driver.NowAt<PivotElementPage>();
+            var colorItem = listPageMenu.GetLeftPinnedPivotColorColumnContent();
+            var expectedList = new List<string>();
+            foreach (var color in colorItem)
+            {
+                expectedList.Add(listPageMenu.GetPivotNumberByColor(color));
+            }
+            SortingHelper.IsNumericListSorted(expectedList);
         }
 
         [Then(@"data in the column headers is sorted in correct order for the Pivot")]

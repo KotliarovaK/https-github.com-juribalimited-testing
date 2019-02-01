@@ -98,11 +98,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
         }
 
-        public List<string> GetPivotColorColumnContent()
+        public List<string> GetLeftPinnedPivotColorColumnContent()
         {
             var by = By.XPath(
-                $".//div[@class='ag-pinned-left-cols-container']//span[@class='ag-group-value']//span[contains(@style, 'color:')]");
-            return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
+                $".//div[@class='ag-pinned-left-cols-container']//span[@class='ag-group-value']//div[@class='status']");
+            return Driver.FindElements(by).Select(x => x.GetCssValue("background-color")).ToList();
+        }
+
+        public List<string> GetHeadersPivotColorContent()
+        {
+            var by = By.XPath(
+                $".//div[@class='ag-header-group-cell-label']//div[@class='status']");
+            return Driver.FindElements(by).Select(x => x.GetCssValue("background-color")).ToList();
         }
 
         public List<string> GetPivotHeadersContent()
@@ -117,6 +124,36 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var byControl = By.XPath($".//option[value='{functionName}']");
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
+        }
+
+        public string GetPivotNumberByColor(string BackgroundColorItem)
+        {
+            switch (BackgroundColorItem)
+            {
+                case "rgba(47, 133, 184, 0.5)": //Blue
+                    return "1";
+                case "rgba(71, 209, 209, 0.5)": //Light Blue
+                    return "2";
+                case "rgba(245, 96, 86, 0.5)": //Red
+                    return "3";
+                case "rgba(153, 118, 84, 0.5)": //Brown
+                    return "4";
+                case "rgba(235, 175, 37, 0.5)": //Amber
+                    return "5";
+                case "rgba(226, 123, 54, 0.5)": //Really Extremely Orange
+                    return "6";
+                case "rgba(186, 94, 186, 0.5)": //Purple
+                    return "7";
+                case "rgba(126, 189, 56, 0.5)": //Green
+                    return "8";
+                case "rgba(128, 139, 153, 0.5)": //Grey
+                    return "9";
+                case "rgba(198, 203, 210, 0.5)": //None
+                    return "10";
+                case "rgba(55, 61, 69, 0.5)": //Out Of Scope
+                    return "11";
+                default: throw new Exception($"{BackgroundColorItem} is not valid Color");
+            }
         }
     }
 }
