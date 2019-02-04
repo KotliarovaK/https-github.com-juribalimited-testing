@@ -1212,7 +1212,7 @@ Examples:
 	| All Mailboxes | Mailboxes | 003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie) | 1 mailbox will be added | 1 object queued for onboarding, 0 objects offboarded |
 	| All Devices   | Users     | ADC714277 (Dina Q. Knight)                         | 1 user will be added    | 1 object queued for onboarding, 0 objects offboarded |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @DAS13803 @DAS13930 @DAS13973 @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS12781 @DAS12903 @DAS12485 @DAS13803 @DAS13930 @DAS13973 @DAS13530 @Projects @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -1221,18 +1221,74 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "1MailboxesProject" in the "Project Name" field
-	And User selects "Evergreen" in the Mode Project dropdown
-	And User selects "All Mailboxes" in the Scope Project dropdown
+	#And User selects "Evergreen" in the Mode Project dropdown
+	When User selects "All Mailboxes" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	And User clicks "Details" tab
+	When User clicks "Buckets" link on the Admin page
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
+	Then Counter shows "1" found rows
+	Then "Unassigned" text is displayed in the table content
+	When User clicks "Projects" link on the Admin page
+	When User enters "1MailboxesProject" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "1MailboxesProject" is displayed to user
+	When User clicks "Details" tab
 	Then "Mailbox scoped project" is displayed in the disabled Project Type field
 	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User clicks "Scope" tab
 	And User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
+	When User clicks "Administration" navigation link on the Admin page
+	When User clicks "Buckets" link on the Admin page
+	When User clicks Reset Filters button on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
+	Then Counter shows "1" found rows
+	Then "Unassigned" text is displayed in the table content
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13530 @Projects @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhenChangingCapacityUnitsMode
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "13530Project" in the "Project Name" field
+	When User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks "Capacity Units" link on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "13530Project" checkbox from String Filter with item list on the Admin page
+	Then Counter shows "1" found rows
+	Then "Unassigned" text is displayed in the table content
+	When User clicks "Projects" link on the Admin page
+	When User enters "13530Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "13530Project" is displayed to user
+	When User clicks "Capacity" tab
+	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
+	When User clicks "Administration" navigation link on the Admin page
+	When User clicks "Capacity Units" link on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "13530Project" checkbox from String Filter with item list on the Admin page
+	Then Counter shows "1" found rows
+	Then "Unassigned" text is displayed in the table content
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @DAS13803 @DAS13930 @DAS13973 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBucketsToUseDifferentBuckets

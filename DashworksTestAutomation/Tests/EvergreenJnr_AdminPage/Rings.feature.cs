@@ -77,9 +77,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14867")]
         [NUnit.Framework.CategoryAttribute("Rings")]
+        [NUnit.Framework.CategoryAttribute("DAS14867")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing()
         {
             System.Exception lastException = null;
@@ -112,9 +111,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
-                        "DAS14867",
-                        "Rings"});
+                        "Rings",
+                        "DAS14867"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -150,9 +148,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14780")]
         [NUnit.Framework.CategoryAttribute("Rings")]
+        [NUnit.Framework.CategoryAttribute("DAS14780")]
+        [NUnit.Framework.CategoryAttribute("DAS13530")]
+        [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged()
         {
@@ -186,9 +185,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
-                        "DAS14780",
                         "Rings",
+                        "DAS14780",
+                        "DAS13530",
+                        "Buckets",
                         "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -215,6 +215,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("Ring settings Maps to evergreen ring is displayed as \"Unassigned\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User sets \"None\" value in Maps to evergreen ring field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Ring settings Maps to evergreen ring is displayed as \"None\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Administration\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"Buckets\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks String Filter button for \"Project\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Select All\" checkbox from String Filter with item list on the Admin" +
+                    " page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks String Filter button for \"Project\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"ProjectForDAS14780\" checkbox from String Filter with item list on t" +
+                    "he Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Unassigned\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
@@ -224,9 +234,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14901")]
         [NUnit.Framework.CategoryAttribute("Rings")]
+        [NUnit.Framework.CategoryAttribute("DAS14901")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton()
         {
             System.Exception lastException = null;
@@ -259,9 +268,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
-                        "DAS14901",
-                        "Rings"});
+                        "Rings",
+                        "DAS14901"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -284,9 +292,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS14903")]
         [NUnit.Framework.CategoryAttribute("Rings")]
+        [NUnit.Framework.CategoryAttribute("DAS14903")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetailsExist()
         {
             System.Exception lastException = null;
@@ -320,9 +327,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
-                        "DAS14903",
-                        "Rings"});
+                        "Rings",
+                        "DAS14903"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
