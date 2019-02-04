@@ -3871,3 +3871,27 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	Then "13499Task" displayed in the table on Senior
 	When User navigate to "Stages" tab
 	Then "Stage13499" displayed in the table on Senior
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConvertingProjectToEvergreen
+	When User clicks "Projects" on the left-hand menu
+	When User clicks create Project button
+	When User creates new Project on Senior
+	| ProjectName     | ShortName | Description | Type |
+	| DAS15262Project | 15262     |             |      |
+	And User clicks the Switch to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	When User enters "DAS15262Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then "Use project buckets" text value is displayed in the "Buckets" dropdown
+	And "Use project rings" text value is displayed in the "Rings" dropdown
+	When User clicks "Capacity" tab
+	Then "Use project capacity units" text value is displayed in the "Capacity Units" dropdown
+	When User clicks "Details" tab
+	And User converts project to evergreen project
+	Then "Use project buckets" text value is displayed in the "Buckets" dropdown
+	And "Use project rings" text value is displayed in the "Rings" dropdown
+	When User clicks "Capacity" tab
+	Then "Use project capacity units" text value is displayed in the "Capacity Units" dropdown

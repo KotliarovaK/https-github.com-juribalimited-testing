@@ -24,6 +24,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'add-language')]//i[contains(@class, 'check')]/ancestor::button")]
         public IWebElement CheckLanguageButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class,'mat-button-wrapper') and contains(text(),'CONVERT TO EVERGREEN')]")]
+        public IWebElement ConvertToEvergreen { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'inline-buttons')]//span[contains(text(),'CONVERT')]")]
+        public IWebElement ConfirmConvertToEvergreenButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

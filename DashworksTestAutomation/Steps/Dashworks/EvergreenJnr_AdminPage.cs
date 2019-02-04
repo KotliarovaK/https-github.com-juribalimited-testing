@@ -2074,6 +2074,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectPage.GetLanguageMenuOptionByName(optionName).Click();
         }
 
+        [When(@"User converts project to evergreen project")]
+        public void WhenUserConvertsProjectOnTheProjectDetailsPage()
+        {
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            projectPage.ConvertToEvergreen.Click();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectDetailsPage>(() => projectPage.ConfirmConvertToEvergreenButton);
+            projectPage.ConfirmConvertToEvergreenButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
