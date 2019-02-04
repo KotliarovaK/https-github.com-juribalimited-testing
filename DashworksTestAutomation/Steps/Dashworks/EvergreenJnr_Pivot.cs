@@ -35,6 +35,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetCreateButtonByName("Pivot").Click();
         }
 
+        [When(@"User clicks the Pivot button")]
+        public void WhenUserClicksTheFiltersButton()
+        {
+            var menu = _driver.NowAt<PivotElementPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => menu.PivotButton);
+            menu.PivotButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User selects the following Row Groups on Pivot:")]
         public void WhenUserSelectsTheFollowingRowGroupsOnPivot(Table table)
         {
@@ -133,6 +143,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ResetPivotButton.Displayed(), "Reset button on main panel is not displayed");
         }
 
+        [Then(@"reset button on main panel is not displayed")]
+        public void ThenResetButtonOnMainPanelIsNotDisplayed()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.ResetPivotButton.Displayed(), "Reset button on main panel is displayed");
+        }
+
         [When(@"User clicks reset button on main panel")]
         public void WhenUserClicksResetButtonOnMainPanel()
         {
@@ -194,6 +211,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             var state = page.SaveButton.GetAttribute("disabled");
             Assert.AreEqual("true", state, "Save button is active");
+        }
+
+        [Then(@"Save button is active for Pivot list")]
+        public void ThenSaveButtonIsActiveForPivotList()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            var state = page.SaveButton.GetAttribute("disabled");
+            Assert.AreEqual("false", state, "Save button is not active");
         }
 
         [Then(@"Pivot Name field is empty")]

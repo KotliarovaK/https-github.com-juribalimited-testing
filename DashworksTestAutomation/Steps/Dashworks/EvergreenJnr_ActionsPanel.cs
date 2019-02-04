@@ -457,6 +457,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(button.GetActionsButtonByName(buttonName).Displayed(), $"{buttonName} Action button is not displayed");
         }
 
+        [Then(@"""(.*)"" Action button is not displayed")]
+        public void ThenActionButtonIsNotDisplayed(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(button.GetActionsButtonByName(buttonName).Displayed(), $"{buttonName} Action button is displayed");
+        }
+
         [Then(@"""(.*)"" Action button is disabled")]
         public void ThenActionButtonIsDisabled(string buttonName)
         {
