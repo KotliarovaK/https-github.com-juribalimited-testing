@@ -2084,6 +2084,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [Then(@"Convert to Evergreen button is not displayed")]
+        public void ThenConvertsToEvergreenButtonIsNotDisplayed()
+        {
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            Assert.IsFalse(projectPage.ConvertToEvergreen.Displayed(),
+                "Convert to Evergreen button is displayed");
+        }
+
         [When(@"User changes Name to ""(.*)"" in the ""(.*)"" field on the Project details page")]
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Project details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)

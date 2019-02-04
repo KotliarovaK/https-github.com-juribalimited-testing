@@ -3895,3 +3895,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	And "Use project rings" text value is displayed in the "Rings" dropdown
 	When User clicks "Capacity" tab
 	Then "Use project capacity units" text value is displayed in the "Capacity Units" dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject
+	When User clicks Admin on the left-hand menu
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "TestNegativeProject15262" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	And User clicks "Details" tab
+	Then Convert to Evergreen button is not displayed
