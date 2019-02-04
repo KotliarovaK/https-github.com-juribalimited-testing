@@ -1722,14 +1722,18 @@ Examples:
 	| Users        | Organizational Unit       | Begins with | Users                  | 23,728 |
 	| Mailboxes    | Owner Organizational Unit | Not Empty   |                        | 14,747 |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524 @DAS15223 @Not_Run
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersFunctionality @DAS14524 @DAS15223
 Scenario: EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUnitFilterWithEmptyValue
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User Organizational Unit" filter where type is "Empty" without added column and following value:
-	| Values |
-	|        |
+	When User add "User Organizational Unit" filter where type is "Empty" with following Value and Association:
+	| Values | Association                             |
+	|        | Has used app                            |
+	|        | Entitled to app                         |
+	|        | Owns a device which app was used on     |
+	|        | Owns a device which app is entitled to  |
+	|        | Owns a device which app is installed on |
 	Then "User Organizational Unit" filter is added to the list
 	And "215" rows are displayed in the agGrid
