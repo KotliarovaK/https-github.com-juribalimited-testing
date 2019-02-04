@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| All Applications |
 	And User remove list with "Pivot_DAS_14224" name on "Devices" page
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRemovingColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -660,15 +660,108 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	Then "TestListForDAS15139" list is displayed to user
 	When User navigates to Pivot
 	Then "ADD ROW GROUP" Action button is displayed
-	Then "ADD COLUMN" Action button is displayed
-	Then "ADD VALUE" Action button is displayed
+	And "ADD COLUMN" Action button is displayed
+	And "ADD VALUE" Action button is displayed
 	When User clicks Close panel button
 	Then Actions panel is not displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
 	Then "ADD ROW GROUP" Action button is displayed
-	Then "ADD COLUMN" Action button is displayed
-	Then "ADD VALUE" Action button is displayed
+	And "ADD COLUMN" Action button is displayed
+	And "ADD VALUE" Action button is displayed
 	When User navigates to the "All Devices" list
 	Then Actions panel is not displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13844
+Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Hostname  |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Owner Compliance |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotList_DAS_13844" name
+	Then "PivotList_DAS_13844" list is displayed to user
+	When User clicks the Pivot button
+	#Then reset button on main panel is not displayed
+	When User adds the following "Columns" on Pivot: 
+	| Value      |
+	| Owner City |
+	Then reset button on main panel is displayed
+	When User clicks reset button on main panel
+	Then "ADD ROW GROUP" Action button is displayed
+	And "ADD COLUMN" Action button is displayed
+	And "ADD VALUE" Action button is displayed
+	#2
+	When User navigates to the "All Devices" list
+	When User navigates to Pivot
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Hostname  |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Owner Compliance |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	#aggregate function?
+	Then "RUN PIVOT" Action button is active
+	Then "SAVE" Action button is disabled
+	When User clicks reset button on main panel
+	Then "ADD ROW GROUP" Action button is displayed
+	And "ADD COLUMN" Action button is displayed
+	And "ADD VALUE" Action button is displayed
+	#And "SAVE" Action button is not displayed
+	#3
+	When User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Hostname  |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Owner Compliance |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	#aggregate function?
+	Then "RUN PIVOT" Action button is active
+	Then "SAVE" Action button is disabled
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And "SAVE" Action button is active
+	When User clicks reset button on main panel
+	Then "ADD ROW GROUP" Action button is displayed
+	And "ADD COLUMN" Action button is displayed
+	And "ADD VALUE" Action button is displayed
+	#And "SAVE" Action button is not displayed
+	#4
+	When User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Operating System |  
+	And User selects the following Values on Pivot:
+	| Values                            |
+	| Owner General information field 1 |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotList_DAS_13844_1" name
+	Then "PivotList_DAS_13844_1" list is displayed to user
+	When User clicks the Pivot button
+	When User clicks reset button on main panel
+	Then "ADD ROW GROUP" Action button is displayed
+	And "ADD COLUMN" Action button is displayed
+	And "ADD VALUE" Action button is displayed
+	And "SAVE" Action button is disabled
+	And "RUN PIVOT" Action button is disabled
+	And User remove list with "PivotList_DAS_13844" name on "Devices" page
+	And User remove list with "PivotList_DAS_13844_1" name on "Devices" page
