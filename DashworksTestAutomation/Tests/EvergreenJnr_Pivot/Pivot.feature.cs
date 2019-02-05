@@ -1448,6 +1448,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13865")]
         [NUnit.Framework.CategoryAttribute("DAS14422")]
+        [NUnit.Framework.CategoryAttribute("DAS15252")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Import", "UserEvergr: Dropdown Readiness Date (Computer)", "Compliance", "Import", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "City", "Windows7Mi: Group User Radiobutton Readiness Only", "Compliance", "City", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Evergreen Bucket", "EmailMigra: Infrastructure Readiness", "Owner Compliance", "Evergreen Bucket", null)]
@@ -1486,7 +1487,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "EvergreenJnr_Pivot",
                     "Pivot",
                     "DAS13865",
-                    "DAS14422"};
+                    "DAS14422",
+                    "DAS15252"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1530,6 +1532,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13865")]
         [NUnit.Framework.CategoryAttribute("DAS14423")]
+        [NUnit.Framework.CategoryAttribute("DAS15252")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Import", "Windows7Mi: Application Readiness", "Compliance", "Import", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Windows7Mi: Application Readiness", "Compliance", "Domain", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrder(string listName, string rowGroups, string columns, string values, string sortedColumn, string[] exampleTags)
@@ -1566,7 +1569,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "EvergreenJnr_Pivot",
                     "Pivot",
                     "DAS13865",
-                    "DAS14423"};
+                    "DAS14423",
+                    "DAS15252"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1611,6 +1615,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14424")]
         [NUnit.Framework.CategoryAttribute("DAS13865")]
+        [NUnit.Framework.CategoryAttribute("DAS15252")]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder()
         {
             System.Exception lastException = null;
@@ -1646,7 +1651,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS14424",
-                        "DAS13865"});
+                        "DAS13865",
+                        "DAS15252"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
