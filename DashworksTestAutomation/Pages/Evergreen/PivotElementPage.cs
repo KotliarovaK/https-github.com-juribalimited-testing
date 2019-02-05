@@ -18,6 +18,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//button[contains(@id, 'pivot')]")]
         public IWebElement PivotButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//*[text()='Pivot']/ancestor::div[@id='context-container']")]
+        public IWebElement PivotPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Pivot Name']")]
         public IWebElement PivotNameTextBox { get; set; }
 
@@ -69,6 +72,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public void GetSubCategoryOnPivotByName(string name)
+        {
+            var selector = By.XPath($"//*[text()='{name}']/ancestor::div[contains(@class, 'sub-categories-item')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.MouseHover(selector);
+            Driver.FindElement(selector).Click();
+        }
+
         public IWebElement GetCloseButtonForElementsByNameOnPivot(string button)
         {
             var selector = By.XPath($"//span[text()='{button}']/..//following-sibling::button");
@@ -86,6 +97,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetCloseButtonForValueElementsByNameOnPivot(string button)
         {
             var selector = By.XPath($"//div[text()='{button}']/..//following-sibling::button");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetPanelByName(string button)
+        {
+            var selector = By.XPath($"//*[text()='{button}']/ancestor::div[@id='context-container']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
