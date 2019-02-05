@@ -678,7 +678,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
-	When User selects the following Row Groups on Pivot:
+	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |
 	And User selects the following Columns on Pivot:
@@ -687,13 +687,13 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
-	When User clicks the "RUN PIVOT" Action button
+	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User creates Pivot list with "PivotList_DAS_13844" name
 	Then "PivotList_DAS_13844" list is displayed to user
 	When User clicks the Pivot button
 	#Then reset button on main panel is not displayed
-	When User adds the following "Columns" on Pivot: 
+	And User adds the following "Columns" on Pivot: 
 	| Value      |
 	| Owner City |
 	Then reset button on main panel is displayed
@@ -703,8 +703,8 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	And "ADD VALUE" Action button is displayed
 	#2
 	When User navigates to the "All Devices" list
-	When User navigates to Pivot
-	When User selects the following Row Groups on Pivot:
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
 	| RowGroups |
 	| Hostname  |
 	And User selects the following Columns on Pivot:
@@ -715,7 +715,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	| Owner City |
 	#aggregate function?
 	Then "RUN PIVOT" Action button is active
-	Then "SAVE" Action button is disabled
+	And "SAVE" Action button is disabled
 	When User clicks reset button on main panel
 	Then "ADD ROW GROUP" Action button is displayed
 	And "ADD COLUMN" Action button is displayed
@@ -733,7 +733,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	| Owner City |
 	#aggregate function?
 	Then "RUN PIVOT" Action button is active
-	Then "SAVE" Action button is disabled
+	And "SAVE" Action button is disabled
 	When User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And "SAVE" Action button is active
@@ -757,7 +757,7 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	When User creates Pivot list with "PivotList_DAS_13844_1" name
 	Then "PivotList_DAS_13844_1" list is displayed to user
 	When User clicks the Pivot button
-	When User clicks reset button on main panel
+	And User clicks reset button on main panel
 	Then "ADD ROW GROUP" Action button is displayed
 	And "ADD COLUMN" Action button is displayed
 	And "ADD VALUE" Action button is displayed
@@ -765,3 +765,48 @@ Scenario: EvergreenJnr_DevicesList_CheckResetButtonOnPivot
 	And "RUN PIVOT" Action button is disabled
 	And User remove list with "PivotList_DAS_13844" name on "Devices" page
 	And User remove list with "PivotList_DAS_13844_1" name on "Devices" page
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13842
+Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterClicksOnManagerButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	Then "Pivot" panel is displayed to the user
+	When User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Operating System |  
+	And User selects the following Values on Pivot:
+	| Values               |
+	| App Count (Entitled) |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotList_DAS13842" name
+	Then "PivotList_DAS13842" list is displayed to user
+	When User navigates to the "All Devices" list
+	And User navigates to the "PivotList_DAS13842" list
+	Then "PivotList_DAS13842" list is displayed to user
+	When User clicks Settings button in the list panel
+	And User clicks Manage in the list panel
+	Then "Dynamic Pivot Details" panel is displayed to the user
+	And User remove list with "PivotList_DAS13842" name on "Devices" page
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13846
+Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyForFilteredList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device Key" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 4553   |
+	Then "Device Key" filter is added to the list
+	When User navigates to Pivot
+	And User clicks the "ADD COLUMN" Action button
+	Then "1" subcategories is displayed for "Selected Filters" category
+	And "Device Key" subcategory is selected in Column panel
+	When User adds the "Device Key" category on Pivot
+	Then "Selected Filters" section is not displayed in the Columns panel
+	And "Device Key" subcategory is selected in Column panel

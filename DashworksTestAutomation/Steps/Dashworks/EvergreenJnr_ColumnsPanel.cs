@@ -285,7 +285,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             CheckColumnDisplayedState(table, false);
         }
 
-        //checks the number of subcategories
+        //checks the NUMBER of subcategories
         [Then(@"""(.*)"" subcategories is displayed for ""(.*)"" category")]
         public void ThenSubcategoriesIsDisplayedForCategory(int subCategoriesCount, string categoryName)
         {

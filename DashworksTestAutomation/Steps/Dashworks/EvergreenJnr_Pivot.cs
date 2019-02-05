@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -43,6 +44,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => menu.PivotButton);
             menu.PivotButton.Click();
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Pivot panel is displayed to the user")]
+        public void ThenColumnsPanelIsDisplayedToTheUser()
+        {
+            var pivotElement = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivotElement.PivotPanel.Displayed(), "Pivot panel is not displayed");
+            Logger.Write("Pivot panel is visible");
+        }
+
+        [Then(@"""(.*)"" panel is displayed to the user")]
+        public void ThenPanelIsDisplayedToTheUser(string panelName)
+        {
+            var pivotElement = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivotElement.GetPanelByName(panelName).Displayed(), $"{panelName} panel is not displayed");
+            Logger.Write($"{panelName} panel is visible");
         }
 
         [When(@"User selects the following Row Groups on Pivot:")]
@@ -105,6 +122,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonByNameOnPivot("DONE").Click();
         }
 
+        [When(@"User adds the ""(.*)"" category on Pivot")]
+        public void WhenUserAddsTheCategoryOnPivot(string categoryName)
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            columnElement.GetSubCategoryOnPivotByName(categoryName);
+        }
+
         [When(@"User removes ""(.*)"" Column for Pivot")]
         [When(@"User removes ""(.*)"" Row Group for Pivot")]
         public void WhenUserRemovesRowGroupForPivot(string closeButtonName)
@@ -119,7 +143,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             page.GetCloseButtonForValueElementsByNameOnPivot(closeButtonName).Click();
         }
-        
+
         [When(@"User clicks ""(.*)"" button in Pivot panel")]
         public void WhenUserClicksButtonInPivotPanel(string buttonLabel)
         {
