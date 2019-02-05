@@ -798,7 +798,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then There are no errors in the browser console
 	Then Error message is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @DAS13973 @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12777 @DAS13973 @DAS13530 @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProjectWithCloneEvergreenBucketsToProjectBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -812,6 +812,34 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	And There are no errors in the browser console
+	When User clicks "Buckets" link on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "TestProject22" checkbox from String Filter with item list on the Admin page
+	And User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Maps to Evergreen" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then "Unassigned" content is displayed in "Maps to Evergreen" column
+	When User clicks "Capacity Units" link on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Project" column on the Admin page
+	When User selects "TestProject22" checkbox from String Filter with item list on the Admin page
+	And User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Maps to Evergreen" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then "Unassigned" content is displayed in "Maps to Evergreen" column
+	When User clicks "Projects" link on the Admin page
+	When User enters "TestProject22" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "TestProject22" is displayed to user
+	When User clicks "Capacity" tab
+	When User selects "Units" tab on the Project details page
+	Then "Unassigned" content is displayed in "Maps to Evergreen" column
+	When User clicks "Projects" navigation link on the Admin page
 	When User enters "TestProject22" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
