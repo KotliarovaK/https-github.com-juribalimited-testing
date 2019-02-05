@@ -461,7 +461,7 @@ Examples:
 	| Mailboxes    | Alias     | Owner Compliance | MailboxEve: Readiness       |
 	| Applications | Import    | Compliance       | 1803: Application Readiness |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrder
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -478,6 +478,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectReadinessTaskColumnsDisp
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
+	#Remove # after DAS-15252 fixed
+	#Then Empty value is displayed on the first place for the Pivot
 	#Remove # after DAS-15230 fixed
 	#Then color data in the left-pinned column is sorted in descending order for the Pivot
 
@@ -488,7 +490,7 @@ Examples:
 	| Mailboxes    | Evergreen Bucket | EmailMigra: Infrastructure Readiness                       | Owner Compliance | Evergreen Bucket |
 	| Applications | Vendor           | UserEvergr: Radiobutton Readiness Date Owner (Application) | Compliance       | Vendor           |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -505,6 +507,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTask
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
+	#Remove # after DAS-15252 fixed
+	#Then Empty value is displayed on the first place for the Pivot
 	#Remove # after DAS-15230 fixed
 	#Then color data in the column headers is sorted in correct order for the Pivot
 
@@ -513,7 +517,7 @@ Examples:
 	| Devices  | Import    | Windows7Mi: Application Readiness | Compliance | Import       |
 	| Users    | Domain    | Windows7Mi: Application Readiness | Compliance | Domain       |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -530,6 +534,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
+	#Remove # after DAS-15252 fixed
+	#Then Empty value is displayed on the first place for the Pivot
 	#Remove # after DAS-15230 fixed
 	#Then color data in the column headers is sorted in correct order for the Pivot
 

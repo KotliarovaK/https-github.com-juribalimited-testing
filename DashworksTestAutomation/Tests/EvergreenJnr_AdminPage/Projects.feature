@@ -834,13 +834,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorIsNotDisplayedWhenCreatingProject
 	Then "Unassigned" content is displayed in "Maps to Evergreen" column
 	When User clicks "Projects" link on the Admin page
 	When User enters "TestProject22" text in the Search field for "Project" column
-	And User clicks content from "Project" column
-	Then Project "TestProject22" is displayed to user
-	When User clicks "Capacity" tab
-	When User selects "Units" tab on the Project details page
-	Then "Unassigned" content is displayed in "Maps to Evergreen" column
-	When User clicks "Projects" navigation link on the Admin page
-	When User enters "TestProject22" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 

@@ -50,6 +50,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//select[@class='ng-untouched ng-pristine ng-valid']")]
         public IWebElement ValueSectionSelectBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@style, 'left: 0px')]//div[@ref='agContainer']//span[text()='Empty']")]
+        public IWebElement FirstEmptyValueHeaders { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

@@ -287,49 +287,56 @@ namespace DashworksTestAutomation.Steps.Dashworks
             columnElement.AddColumn(value);
         }
 
+        [Then(@"Empty value is displayed on the first place for the Pivot")]
+        public void ThenEmptyValueIsDisplayedOnTheFirstPlaceForThePivot()
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(columnElement.FirstEmptyValueHeaders.Displayed(), "Empty value is not displayed on the first place");
+        }
+
         #region Sort order on Pivot
 
         [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order for the Pivot")]
         public void ThenNumericDataInTableIsSortedByColumnInAscendingOrderForThePivot(string columnName)
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var actualList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var actualList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(actualList);
         }
 
         [Then(@"numeric data in table is sorted by ""(.*)"" column in descending order for the Pivot")]
         public void ThenNumericDataInTableIsSortedByColumnInDescendingOrderForThePivot(string columnName)
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsNumericListSorted(expectedList, false);
         }
 
         [Then(@"data in the table is sorted by ""(.*)"" column in ascending order by default for the Pivot")]
         public void ThenDataInTheTableIsSortedByColumnInAscendingOrderByDefaultForThePivot(string columnName)
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList);
         }
 
         [Then(@"data in the table is sorted by ""(.*)"" column in descending order by default for the Pivot")]
         public void ThenDataInTheTableIsSortedByColumnInDescendingOrderByDefaultForThePivot(string p0)
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var expectedList = listPageMenu.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var expectedList = pivot.GetPivotColumnContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList, false);
         }
 
         [Then(@"color data in the column headers is sorted in correct order for the Pivot")]
         public void ThenColorDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var colorItem = listPageMenu.GetHeadersPivotColorContent();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var colorItem = pivot.GetHeadersPivotColorContent();
             var expectedList = new List<string>();
             foreach (var color in colorItem)
             {
-                expectedList.Add(listPageMenu.GetPivotNumberByColor(color));
+                expectedList.Add(pivot.GetPivotNumberByColor(color));
             }
             SortingHelper.IsNumericListSorted(expectedList);
         }
@@ -337,12 +344,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"color data in the left-pinned column is sorted in descending order for the Pivot")]
         public void ThenColorDataInTheLeft_PinnedColumnIsSortedInDescendingOrderForThePivot()
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var colorItem = listPageMenu.GetLeftPinnedPivotColorColumnContent();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var colorItem = pivot.GetLeftPinnedPivotColorColumnContent();
             var expectedList = new List<string>();
             foreach (var color in colorItem)
             {
-                expectedList.Add(listPageMenu.GetPivotNumberByColor(color));
+                expectedList.Add(pivot.GetPivotNumberByColor(color));
             }
             SortingHelper.IsNumericListSorted(expectedList);
         }
@@ -350,12 +357,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"color data in the left-pinned column is sorted in ascending order for the Pivot")]
         public void ThenColorDataInTheLeft_PinnedColumnIsSortedInAscendingOrderForThePivot()
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var colorItem = listPageMenu.GetLeftPinnedPivotColorColumnContent();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var colorItem = pivot.GetLeftPinnedPivotColorColumnContent();
             var expectedList = new List<string>();
             foreach (var color in colorItem)
             {
-                expectedList.Add(listPageMenu.GetPivotNumberByColor(color));
+                expectedList.Add(pivot.GetPivotNumberByColor(color));
             }
             SortingHelper.IsNumericListSorted(expectedList);
         }
@@ -363,16 +370,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"data in the column headers is sorted in correct order for the Pivot")]
         public void ThenDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var expectedList = listPageMenu.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var expectedList = pivot.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList);
         }
 
         [Then(@"date in the column headers is sorted in correct order for the Pivot")]
         public void ThenDateInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
-            var listPageMenu = _driver.NowAt<PivotElementPage>();
-            var expectedList = listPageMenu.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            var expectedList = pivot.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(expectedList, false);
         }
 
