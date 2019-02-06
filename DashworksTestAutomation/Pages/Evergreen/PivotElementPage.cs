@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.GetCssValue("background-color")).ToList();
         }
 
-        public List<string> GetHeadersPivotColorContent()
+        public List<string> GetHeadersPivotBackgroundColor()
         {
             var by = By.XPath(
                 $".//div[@class='ag-header-group-cell-label']//div[@class='status']");
