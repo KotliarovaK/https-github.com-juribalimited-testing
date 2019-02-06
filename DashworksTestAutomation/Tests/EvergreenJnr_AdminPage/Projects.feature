@@ -3929,3 +3929,51 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplaye
 	When User clicks newly created object link
 	And User clicks "Details" tab
 	Then Convert to Evergreen button is not displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15260 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridForDeviceScopedProject
+	When User clicks "Projects" on the left-hand menu
+	And User clicks create Project button
+	And User creates new Project on Senior
+	| ProjectName     | ShortName | Description | Type |
+	| DAS15260Project | 15260     |             |      |
+	And User clicks the Switch to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	And User enters "DAS15260Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Details" tab
+	And User converts project to evergreen project
+	And User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "DAS15260Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
+	And User selects following Objects to the Project
+	| Objects         |
+	| 001PSUMZYOW581  |
+	And User clicks "Users" tab in the Project Scope Changes section
+	And User selects following Objects to the Project
+	| Objects                        |
+	| AAD1011948 (Pinabel Cinq-Mars) |
+	And User clicks "Applications" tab in the Project Scope Changes section
+	And User selects following Objects to the Project
+	| Objects                                            |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais (5.0.5) |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	Then Warning message with "1 device will be added, 1 user will be added, 1 application will be added" text is displayed on the Admin page
+	When User clicks the "UPDATE PROJECT" Action button
+	And User selects "Queue" tab on the Project details page
+	And User waits until Queue disappears
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Rings" link on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "DAS15260Project" checkbox from String Filter with item list on the Admin page
+	Then "1" content is displayed in "Devices" column
+	And "" content is displayed in "Users" column
+	And "" content is displayed in "Mailboxes" column

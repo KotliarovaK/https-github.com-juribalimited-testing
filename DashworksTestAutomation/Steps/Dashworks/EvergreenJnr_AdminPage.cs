@@ -1736,6 +1736,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.UpdateButton.Click();
         }
 
+        [When(@"User selects following Objects to the Project")]
+        public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            projectElement.PlusButton.Click();
+            foreach (var row in table.Rows)
+            {
+                projectElement.AddItem(row["Objects"]);
+                projectElement.SearchTextBox.ClearWithHomeButton(_driver);
+            }
+        }
+
         [When(@"User selects following Objects")]
         public void WhenUserSelectsFollowingObjects(Table table)
         {
@@ -1799,6 +1811,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.IsTrue(projectElement.QueueOnboardedObjectDisplayed(row["Items"]).Displayed,
                     $"{row["Items"]} is not displayed in Queue table");
+            }
+        }
+
+        [When(@"User waits until Queue disappears")]
+        public void WhenUserWaitsForQueueDisappears()
+        {
+            var refresh_icon = ".//i[@class='material-icons' and contains(text(),'refresh')]";
+            var filter_label = ".//div[@class='top-tools-inner']//span[contains(text(),'row')]";
+
+            var projectElement = _driver.NowAt<BaseGridPage>();
+
+            for (int i = 0; i < 30; i++)
+            {
+                if (i == 29)
+                {
+                    throw new Exception("Queue processing took too much time: 60 sec");
+                }
+                
+                if (!_driver.FindElement(By.XPath(filter_label)).Text.Equals("0 rows"))
+                {
+                    Thread.Sleep(2000);
+                   _driver.FindElement(By.XPath(refresh_icon)).Click();
+                   _driver.WaitForDataLoading();
+                }
+                else
+                {
+                    break;
+                }
+                
             }
         }
 
