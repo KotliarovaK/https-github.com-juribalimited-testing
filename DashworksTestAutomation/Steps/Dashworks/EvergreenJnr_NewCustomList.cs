@@ -204,6 +204,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(listName, listElement.CheckAllListName(listName).Text, "Incorrect list name is displayed");
         }
 
+        [Then(@"""(.*)"" list name is displayed correctly on top tools panel")]
+        public void ThenListNameIsDisplayedCorrectlyOnTopToolsPanel(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(listElement.GetListNameOnTopToolsPanel(listName).Displayed(), $"'{listName}' list is not displayed on top tools panel");
+        }
+
+        [When(@"User open sub menu for ""(.*)"" list")]
+        public void WhenUserOpenSubMenuForList(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.GetListNameOnTopToolsPanel(listName).Click();
+        }
+
         [When(@"User clicks ""(.*)"" link in Lists panel")]
         public void WhenUserClicksLinkInListsPanel(string listName)
         {
@@ -504,6 +518,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 listElement.SearchTextBoxResetButtonInListPanel);
             Assert.IsTrue(listElement.SearchTextBoxResetButtonInListPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
+        }
+
+        [When(@"User closed list panel")]
+        public void WhenUserClosedListPanel()
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            listElement.CloseButton.Click();
         }
 
         [AfterScenario("Delete_Newly_Created_List")]

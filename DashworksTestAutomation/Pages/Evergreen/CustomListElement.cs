@@ -41,6 +41,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small save-actions-cancel')]")]
         public IWebElement CancelButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'material-icons mat-clear')]/ancestor::button[contains(@class, 'btn mat-icon-button ')]")]
+        public IWebElement CloseButton { get; set; }
+
         [FindsBy(How = How.XPath,
             Using =
                 ".//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']")]
@@ -127,6 +130,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var listSelector =
                 By.XPath($".//li[contains(@class, 'menu-show-on-hover ng-star-inserted')]/span[text()='{listName}']");
             return Driver.FindElement(listSelector);
+        }
+
+        public IWebElement GetListNameOnTopToolsPanel(string listName)
+        {
+            var allListName = $".//*[text()='{listName}']/ancestor::div[@class='top-tools']//div[@aria-controls='submenu']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
+            return Driver.FindElement(By.XPath(allListName));
         }
 
         #region ListSettings

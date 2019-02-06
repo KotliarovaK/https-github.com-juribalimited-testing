@@ -816,3 +816,30 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 	When User adds the "Device Key" category on Pivot
 	Then "Selected Filters" section is not displayed in the Columns panel
 	And "Device Key" subcategory is selected in Column panel
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13119 @DAS13652
+Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Operating System |  
+	And User selects the following Values on Pivot:
+	| Values               |
+	| App Count (Entitled) |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotList_DAS13652" name
+	Then "PivotList_DAS13652" list is displayed to user
+	When User closed list panel
+	Then Dashboards sub menu is hidden on Dashboards page
+	And "PivotList_DAS13652" list name is displayed correctly on top tools panel
+	And "RUN PIVOT" Action button is displayed
+	Then "EXPORT" Action button is displayed
+	When User open sub menu for "PivotList_DAS13652" list
+	Then User sees Dashboards sub menu on Dashboards page
+	And User remove list with "PivotList_DAS13652" name on "Devices" page
