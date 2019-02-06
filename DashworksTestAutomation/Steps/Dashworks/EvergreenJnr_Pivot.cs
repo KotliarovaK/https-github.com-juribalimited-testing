@@ -318,6 +318,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(columnElement.FirstEmptyValueHeaders.Displayed(), "Empty value is not displayed on the first place");
         }
 
+        [Then(@"Pivot column headers is displayed in following order:")]
+        public void ThenPivotColumnHeadersIsDisplayedInFollowingOrder(Table table)
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+
+            var columnNames = columnElement.GetPivotHeadersContent();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+        }
+
         #region Sort order on Pivot
 
         [Then(@"numeric data in table is sorted by ""(.*)"" column in ascending order for the Pivot")]
@@ -356,13 +366,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var colorItem = pivot.GetHeadersPivotColorContent();
+            var colorItem = pivot.GetHeadersPivotBackgroundColor();
             var expectedList = new List<string>();
             foreach (var color in colorItem)
             {
                 expectedList.Add(pivot.GetPivotNumberByColor(color));
             }
-            SortingHelper.IsNumericListSorted(expectedList);
+            SortingHelper.IsNumericListSorted(expectedList, false);
         }
 
         [Then(@"color data in the left-pinned column is sorted in descending order for the Pivot")]
