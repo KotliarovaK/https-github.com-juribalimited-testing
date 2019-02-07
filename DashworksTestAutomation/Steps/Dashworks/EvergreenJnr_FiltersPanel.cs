@@ -139,6 +139,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.SearchTextBox.Clear();
             filterElement.SearchTextBox.SendKeys(searchedText);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User clears search textbox in Filters panel")]

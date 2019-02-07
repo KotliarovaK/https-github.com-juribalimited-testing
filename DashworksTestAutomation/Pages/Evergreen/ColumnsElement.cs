@@ -100,7 +100,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         private IWebElement FilterCategory(string filterCategoryName)
         {
             return Driver.FindElement(By.XPath(
-                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']"));
+                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\"" + filterCategoryName + "\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
         public void AddAllColumnsFromCategory(string categoryName)

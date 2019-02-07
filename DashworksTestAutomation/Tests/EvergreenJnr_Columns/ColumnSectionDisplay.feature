@@ -964,3 +964,59 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveLis
 	| Project: UserEvergr        |
 	| Project Tasks: UserEvergr  |
 	| Project Stages: UserEvergr |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	| Evergreen           | 1      |
+	| Project: 1803       | 1      |
+	| Project: Babel(Engl | 1      |
+	| Project: ComputerSc | 1      |
+	| Project: DeviceSche | 1      |
+	| Project: Havoc(BigD | 1      |
+	| Project: ICSP       | 1      |
+	| Project: prK        | 1      |
+	| Project: TestProj16 | 1      |
+	| Project: Windows101 | 1      |
+	| Project: Windows102 | 1      |
+	| Project: Windows10T | 1      |
+	| Project: Windows10U | 1      |
+	| Project: Windows7Mi | 1      |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	| Evergreen           | 1      |
+	| Project: Barry'sUse | 1      |
+	| Project: MigrationP | 1      |
+	| Project: UserEvergr | 1      |
+	| Project: UserSched2 | 1      |
+	| Project: UserSchedu | 1      |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	| Evergreen           | 1      |
+	| Project: EmailMigra | 1      |
+	| Project: MailboxEve | 1      |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	
