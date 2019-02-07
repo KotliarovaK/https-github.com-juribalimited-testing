@@ -372,7 +372,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 expectedList.Add(pivot.GetPivotNumberByColor(color));
             }
-            SortingHelper.IsNumericListSorted(expectedList, false);
+            SortingHelper.IsNumericListSorted(expectedList);
         }
 
         [Then(@"color data in the left-pinned column is sorted in descending order for the Pivot")]

@@ -478,9 +478,8 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
-	#Remove # after DAS-15252 fixed
+	#Remove # after DAS-15252, DAS-15230 fixed
 	#Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
 	#Then Pivot column headers is displayed in following order:
 	#| ColumnName     |
 	#| Not Applicable |
@@ -503,9 +502,8 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDispla
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Evergreen Bucket" column in ascending order by default for the Pivot
-	#Remove # after DAS-15252 fixed
+	#Remove # after DAS-15252, DAS-15230 fixed
 	#Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
 	#Then Pivot column headers is displayed in following order:
 	#| ColumnName               |
 	#| Infrastructure Not Ready |
@@ -528,9 +526,8 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInC
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "City" column in ascending order by default for the Pivot
-	#Remove # after DAS-15252 fixed
+	#Remove # after DAS-15252, DAS-15230 fixed
 	#Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
 	#Then Pivot column headers is displayed in following order:
 	#| ColumnName     |
 	#| Not Applicable |
@@ -552,9 +549,8 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	#Remove # after DAS-15252 fixed
+	#Remove # after DAS-15252, DAS-15230 fixed
 	#Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
 	#Then Pivot column headers is displayed in following order:
 	#| ColumnName     |
 	#| Not Applicable |
@@ -563,32 +559,47 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	#| Failed         |
 	#| Complete       |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
-Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrder
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
+Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForUsers
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
-	| RowGroups   |
-	| <RowGroups> |
+	| RowGroups           |
+	| Organizational Unit |
 	And User selects the following Columns on Pivot:
-	| Columns   |
-	| <Columns> |
+	| Columns                           |
+	| Windows7Mi: Application Readiness |
 	And User selects the following Values on Pivot:
-	| Values   |
-	| <Values> |
+	| Values     |
+	| Compliance |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	And data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
-	#Remove # after DAS-15252 fixed
+	And data in the table is sorted by "Organizational Unit" column in ascending order by default for the Pivot
+	#Remove # after DAS-15252, DAS-15230 fixed
 	#Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
 	#Then color data in the column headers is sorted in correct order for the Pivot
 
-Examples:
-	| ListName | RowGroups           | Columns                           | Values     | SortedColumn        |
-	| Devices  | Import              | Windows7Mi: Application Readiness | Compliance | Import              |
-	| Users    | Organizational Unit | Windows7Mi: Application Readiness | Compliance | Organizational Unit |
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
+Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForDevices
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Import    |
+	And User selects the following Columns on Pivot:
+	| Columns                           |
+	| Windows7Mi: Application Readiness |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Compliance |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
+	#Remove # after DAS-15252, DAS-15230 fixed
+	#Then Empty value is displayed on the first place for the Pivot
+	#Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
@@ -607,37 +618,92 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	#Remove # after DAS-15252 fixed
-	#Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	#Remove # after DAS-15252, DAS-15230 fixed
+	Then Empty value is displayed on the first place for the Pivot
+	#Then Pivot column headers is displayed in following order:
+	#| ColumnName     |
+	#| Not Applicable |
+	#| Audit Failed   |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
-Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrder
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
+Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForApplications
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
-	| RowGroups   |
-	| <RowGroups> |
+	| RowGroups |
+	| Import    |
 	And User selects the following Columns on Pivot:
-	| Columns   |
-	| <Columns> |
+	| Columns             |
+	| UserEvergr: Stage 3 |
 	And User selects the following Values on Pivot:
-	| Values   |
-	| <Values> |
+	| Values                |
+	| DeviceSche: Readiness |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	Then data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
+	Then data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	#Remove # after DAS-15230 fixed
 	#Then color data in the column headers is sorted in correct order for the Pivot
 
-Examples:
-	| ListName     | RowGroups | Columns                | Values                | SortedColumn |
-	| Devices      | Region    | Babel(Engl: Initiation | CPU Count             | Region       |
-	| Users        | Region    | EmailMigra: Migration  | Compliance            | Region       |
-	| Mailboxes    | Language  | EmailMigra: Migration  | EmailMigra: Readiness | Language     |
-	| Applications | Import    | UserEvergr: Stage 3    | DeviceSche: Readiness | Import       |
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
+Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForMailboxes
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Language  |
+	And User selects the following Columns on Pivot:
+	| Columns               |
+	| EmailMigra: Migration |
+	And User selects the following Values on Pivot:
+	| Values                |
+	| EmailMigra: Readiness |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	Then data in the table is sorted by "Language" column in ascending order by default for the Pivot
+	#Remove # after DAS-15230 fixed
+	#Then color data in the column headers is sorted in correct order for the Pivot
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
+Scenario: EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForUsers
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Region    |
+	And User selects the following Columns on Pivot:
+	| Columns               |
+	| EmailMigra: Migration |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Compliance |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
+	#Remove # after DAS-15230 fixed
+	#Then color data in the column headers is sorted in correct order for the Pivot
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
+Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForDevices
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Region    |
+	And User selects the following Columns on Pivot:
+	| Columns                |
+	| Babel(Engl: Initiation |
+	And User selects the following Values on Pivot:
+	| Values    |
+	| CPU Count |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
+	#Remove # after DAS-15230 fixed
+	#Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder
