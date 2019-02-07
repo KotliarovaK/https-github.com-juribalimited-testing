@@ -929,7 +929,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedC
 	| Project Tasks: EmailMigra  | 9      |
 	| Project Stages: EmailMigra | 3      |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Columns button

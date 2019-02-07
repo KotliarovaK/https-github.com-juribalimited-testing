@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12948" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	And User selects "Evergreen" in the Mode Project dropdown
+	And User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
