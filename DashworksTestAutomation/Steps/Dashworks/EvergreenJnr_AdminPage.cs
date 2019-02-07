@@ -2737,6 +2737,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 foreach (var name in _teamName.Value)
                     try
                     {
+                        UnlinkTeamWithBucket(name);
                         DeleteTeam(name);
                     }
                     catch
@@ -2814,6 +2815,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Console.WriteLine(e);
             }
+        }
+
+        private void UnlinkTeamWithBucket(string teamName)
+        {
+            DatabaseHelper.ExecuteQuery(
+                $"update [PM].[dbo].[ProjectGroups] set OwnedByTeamID = null where GroupID = (select TOP 1 GroupID from[PM].[dbo].[ProjectGroups] buckets join[PM].[dbo].[Teams] teams on buckets.OwnedByTeamID = teams.TeamID where teams.TeamName = '{teamName}') ");
         }
 
         private void DeleteTeam(string teamName)
