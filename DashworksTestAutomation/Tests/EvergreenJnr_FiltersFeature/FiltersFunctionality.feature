@@ -1660,7 +1660,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCa
 	| Project Tasks: EmailMigra  | 9      |
 	| Project Stages: EmailMigra | 3      |
 
-@Evergreen @Applicatios @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969
+@Evergreen @Applicatios @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
