@@ -1130,7 +1130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectly
 	Then Cancel button is displayed with correctly color
 	Then User confirm removed list
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300 @archived
 Scenario: EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDropdown 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1143,3 +1143,32 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDro
 	When User selects "Favourites" option on the All lists dropdown
 	When User clicks All lists dropdown on Lists panel
 	Then appropriate icon is displayed for All lists
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13638 @DAS13639 @DAS13640 @DAS13643 @DAS13649 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatListFilterIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User create static list with "StaticListDAS13637" name on "Devices" page with following items
+	| ItemName       |
+	| 001BAQXT6JWFPI |
+	| 001PSUMZYOW581 |
+	Then "<ListName>" list should be displayed to the user
+	When User click on 'Hostname' column header
+	When User create dynamic list with "DynamicListDAS13637" name on "Devices" page
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Operating System |  
+	And User selects the following Values on Pivot:
+	| Values               |
+	| App Count (Entitled) |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotListDAS13637" name
+	Then "PivotListDAS13637" list is displayed to user
+	When User navigates to the "All Devices" list
+	Then "All Devices" list is displayed to user
+	When User apply "x" filter to lists panel
