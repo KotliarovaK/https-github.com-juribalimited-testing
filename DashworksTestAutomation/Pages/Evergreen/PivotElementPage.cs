@@ -15,13 +15,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeader { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//button[contains(@id, 'pivot')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'pivot')]")]
         public IWebElement PivotButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//*[text()='Pivot']/ancestor::div[@id='context-container']")]
+        [FindsBy(How = How.XPath, Using = ".//*[text()='Pivot']/ancestor::div[@id='context-container']")]
         public IWebElement PivotPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Pivot Name']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Pivot Name']")]
         public IWebElement PivotNameTextBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='SAVE']/ancestor::button")]
@@ -72,6 +72,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetLeftPinnedExpandButtonByName(string text)
+        {
+            var selector = By.XPath($"//div[@role='gridcell']//span[text()='{text}']//ancestor::div[@col-id='ag-Grid-AutoColumn']//span[@class='ag-icon ag-icon-expanded']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public void GetSubCategoryOnPivotByName(string name)
         {
             var selector = By.XPath($"//*[text()='{name}']/ancestor::div[contains(@class, 'sub-categories-item')]");
@@ -115,6 +122,49 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public int GetColumnNumberByNameOnPivot(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//span[@class='ag-header-group-text']")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
+        }
+
+        public List<string> GetColumnHeaders()
+        {
+            var headers = Driver.FindElements(By.XPath($".//div[@class='ag-header-container']/div/div//span[@class='ag-header-group-text']"));
+            return headers.Select(x => x.Text).ToList();
+        }
+
+        public List<string> GetColId()
+        {
+            var headers = Driver.FindElements(By.XPath($".//div[@ref='eCenterContainer']/div[1]/div"));
+            return headers.Select(x => x.GetAttribute("col-id")).ToList();
+        }
+
+        public string GetColIdByColumnName(string columnName)
+        {
+            var columnHeaders = GetColumnHeaders();
+            var colIds = GetColId();
+            var index = columnHeaders.IndexOf(columnName);
+            var colId = colIds[index];
+            return colId;
+        }
+
+        public string GetColumnContentByColumnName(string columnName)
+        {
+            var by = By.XPath(
+                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByNameOnPivot(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
         public List<string> GetPivotColumnContent()
         {
             var by = By.XPath(
@@ -142,12 +192,25 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
         }
 
-        public void SelectAggregateFunctionByName(string functionName)
+        public IList<IWebElement> GetLeftPinnedColumnContentOnPivot()
         {
-            ValueSectionSelectBox.Click();
-            var byControl = By.XPath($".//option[value='{functionName}']");
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
+            var selector = By.XPath(".//div[contains(@class, 'ag-pinned-left-cols-container')]//span[@class='ag-group-value']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector);
+        }
+
+        public IList<IWebElement> GetColumnContentOnPivotByName(string columnName)
+        {
+            var selector = By.XPath($".//div[@role='gridcell'][@col-id='{GetColIdByColumnName(columnName)}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector);
+        }
+
+        public IWebElement SelectAggregateFunctionByName(string functionName)
+        {
+            var selector = By.XPath($".//option[@class='ng-star-inserted'][text()='{functionName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public string GetPivotNumberByColor(string BackgroundColorItem)
