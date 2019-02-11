@@ -82,6 +82,19 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static bool IsElementExists(this IWebElement element, By by)
+        {
+            try
+            {
+                element.FindElement(by);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         #region Checkboxes
 
         public static void CheckCheckBox(this IWebElement checkbox)

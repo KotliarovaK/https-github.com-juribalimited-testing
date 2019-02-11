@@ -411,30 +411,120 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	Then date in the column headers is sorted in correct order for the Pivot
 	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @Not_Run
-Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForReadinessField
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
+Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
-	| RowGroups   |
-	| <RowGroups> |
+	| RowGroups             |
+	| MailboxEve: In Scope  |
+	| MailboxEve: Readiness |
 	And User selects the following Columns on Pivot:
-	| Columns   |
-	| <Columns> |
+	| Columns |
+	| City    |
 	And User selects the following Values on Pivot:
-	| Values   |
-	| <Values> |
+	| Values                |
+	| MailboxEve: Readiness |
 	When User selects aggregate function "severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
+	When User expanded "TRUE" left-pinned value on Pivot
+	Then following values are displayed for "London" column on Pivot
+	| Value1 | Value2 |
+	| TRUE   | NONE   |
+	| NONE   | NONE   |
 
-Examples:
-	| ListName     | RowGroups        | Columns               | Values                      |
-	| Devices      | Compliance       | UserEvergr: Readiness | 1803: Application Readiness |
-	| Users        | Compliance       | EmailMigra: Readiness | 1803: Application Readiness |
-	| Mailboxes    | Owner Compliance | EmailMigra: Readiness | MailboxEve: Readiness       |
-	| Applications | Compliance       | EmailMigra: Readiness | 1803: Application Readiness |
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
+Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| Vendor      |
+	| Application |
+	And User selects the following Columns on Pivot:
+	| Columns        |
+	| Inventory Site |
+	And User selects the following Values on Pivot:
+	| Values                           |
+	| ComputerSc: Target App Readiness |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Vendor" filter
+	When User select "Equals" Operator value
+	When User enters "Microsoft" text in Search field at selected Filter
+	When User clicks Save filter button
+	When User clicks the Pivot button
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User expanded "Microsoft" left-pinned value on Pivot
+	Then following values are displayed for "TierA Site01" column on Pivot
+	| Value1                                                     | Value2     |
+	| Microsoft                                                  | BLUE       |
+	| "WPF/E" (codename) Community Technology Preview (Feb 2007) | GREEN      |
+	| 0036 - Microsoft Access 97 SR-2 English                    | LIGHT BLUE |
+	| 0047 - Microsoft Access 97 SR-2 Francais                   | GREEN      |
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
+Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForUsers
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	| Floor     |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| Country |
+	And User selects the following Values on Pivot:
+	| Values                            |
+	| Babel(Engl: Application Readiness |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Country" filter
+	When User select "Equals" Operator value
+	When User enters "USA" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	When User clicks Save filter button
+	When User clicks the Pivot button
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User expanded "101 Hudson Street" left-pinned value on Pivot
+	Then following values are displayed for "USA" column on Pivot
+	| Value1            | Value2 |
+	| 101 Hudson Street | BLUE   |
+	| 20                | NONE   |
+	| 21                | BLUE   |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
+Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForDevices
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Country   |
+	| City      |
+	And User selects the following Columns on Pivot:
+	| Columns      |
+	| Manufacturer |
+	And User selects the following Values on Pivot:
+	| Values          |
+	| 1803: Readiness |
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User expanded "USA" left-pinned value on Pivot
+	Then following values are displayed for "Asus" column on Pivot
+	| Value1      | Value2 |
+	| USA         | RED    |
+	| Los Angeles | GREEN  |
+	| San Diego   | RED    |
 
 @Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceField
