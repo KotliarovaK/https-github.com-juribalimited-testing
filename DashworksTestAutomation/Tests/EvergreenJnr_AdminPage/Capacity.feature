@@ -1188,6 +1188,34 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And "" content is displayed in "Capacity Units" column
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13417 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13417" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
+	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "capacity type = Capacity Units" Name in the "Slot Name" field on the Project details page
+	And User type "capacity type = Capacity Units" Name in the "Display Name" field on the Project details page
+	Then User selects "Capacity Units" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks String Filter button for "Capacity Units" column on the Admin page
+	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
+	Then Counter shows "1" found rows
+	And "" content is displayed in "Capacity Units" column
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent
 	When User clicks Admin on the left-hand menu
