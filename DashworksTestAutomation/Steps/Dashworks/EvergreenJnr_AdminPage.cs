@@ -2125,6 +2125,39 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User clicks Converts to Evergreen button")]
+        public void WhenUserClicksConvertsToEvergreenButtonOnDetailsPage()
+        {
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            projectPage.ConvertToEvergreen.Click();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectDetailsPage>(() => projectPage.ConfirmConvertToEvergreenButton);
+        }
+
+        [Then(@"Cancel button is displayed in warning message")]
+        public void ThenCancelButtonIsDisplayedInWarning()
+        {
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            Assert.IsTrue(projectPage.CancelConvertToEvergreenButton.Displayed(),
+                "Cancel button is not displayed in warning");
+        }
+
+        [When(@"User confirms converting to Evergreen process")]
+        public void WhenUserConfirmsConvertingToEvergreenProcess()
+        {
+            var projectPage = _driver.NowAt<ProjectDetailsPage>();
+            projectPage.ConfirmConvertToEvergreenButton.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Success converting message appears with the next ""(.*)"" text")]
+        public void ThenSuccessConvertingMessageIsDisplayedAndContainsText(string text)
+        {
+            var page = _driver.NowAt<ProjectDetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectDetailsPage>(() => page.SuccessConvertMessage);
+            Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
+            StringAssert.Contains(text, page.SuccessConvertMessage.Text, "Success Message is not displayed");
+        }
+
         [Then(@"Convert to Evergreen button is not displayed")]
         public void ThenConvertsToEvergreenButtonIsNotDisplayed()
         {

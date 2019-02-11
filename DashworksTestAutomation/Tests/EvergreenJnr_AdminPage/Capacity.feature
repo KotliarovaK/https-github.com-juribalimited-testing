@@ -1188,6 +1188,34 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And "" content is displayed in "Capacity Units" column
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13417 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13417" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
+	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks the "CREATE NEW SLOT" Action button
+	And User type "capacity type = Capacity Units" Name in the "Slot Name" field on the Project details page
+	And User type "capacity type = Capacity Units" Name in the "Display Name" field on the Project details page
+	Then User selects "Capacity Units" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks String Filter button for "Capacity Units" column on the Admin page
+	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
+	Then Counter shows "1" found rows
+	And "" content is displayed in "Capacity Units" column
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent
 	When User clicks Admin on the left-hand menu
@@ -1496,10 +1524,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	And User clicks newly created object link
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "Unit 1" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "Unit 2" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User selects "Slots" tab on the Project details page
@@ -1509,11 +1537,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User clicks the "CREATE" Action button
 	And User selects "Units" tab on the Project details page
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed for "Slots" column
+	Then "1" content is displayed in "Slots" column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed for "Slots" column
+	Then "1" content is displayed in "Slots" column
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed for "Slots" column
+	Then "1" content is displayed in "Slots" column
 	When User selects "Slots" tab on the Project details page
 	When User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
@@ -1522,11 +1550,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User clicks the "CREATE" Action button
 	And User selects "Units" tab on the Project details page
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then "2" content is displayed for "Slots" column
+	Then "2" content is displayed in "Slots" column
 	When User enters "Unit 1" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed for "Slots" column
+	Then "1" content is displayed in "Slots" column
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
-	Then "1" content is displayed for "Slots" column
+	Then "1" content is displayed in "Slots" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged

@@ -30,6 +30,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'inline-buttons')]//span[contains(text(),'CONVERT')]")]
         public IWebElement ConfirmConvertToEvergreenButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'inline-buttons')]//span[contains(text(),'CANCEL')]")]
+        public IWebElement CancelConvertToEvergreenButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
+        public IWebElement SuccessConvertMessage { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -37,6 +43,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             {
                 SelectorFor(this, p => p.PageTitle)
             };
+        }
+
+        public string GetMessageColor()
+        {
+            return SuccessConvertMessage.GetCssValue("background-color");
         }
     }
 }

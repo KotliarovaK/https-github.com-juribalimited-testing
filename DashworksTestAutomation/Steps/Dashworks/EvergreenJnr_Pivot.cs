@@ -256,7 +256,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAggregateFunctionOnPivot(string functionName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            page.SelectAggregateFunctionByName(functionName);
+            page.ValueSectionSelectBox.Click();
+            page.SelectAggregateFunctionByName(functionName).Click();
         }
 
         #region Tooltip on Pivot
@@ -326,6 +327,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnNames = columnElement.GetPivotHeadersContent();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+        }
+
+        [When(@"User expanded ""(.*)"" left-pinned value on Pivot")]
+        public void WhenUserExpandedLeft_PinnedValueOnPivot(string value)
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            columnElement.GetLeftPinnedExpandButtonByName(value).Click();
+        }
+
+        [Then(@"following values are displayed for ""(.*)"" column on Pivot")]
+        public void ThenFollowingValuesAreDisplayedForColumnOnPivot(string columnName, Table table)
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            var leftPinnedContentList = columnElement.GetLeftPinnedColumnContentOnPivot().Select(column => column.Text).ToList();
+            var columnContentList = columnElement.GetColumnContentOnPivotByName(columnName).Select(column => column.Text).ToList();
+            foreach (var row in table.Rows)
+            {
+                for (var i = 0; i < columnElement.GetLeftPinnedColumnContentOnPivot().Count; i++)
+                    if (leftPinnedContentList[i].Equals(row["Value1"]))
+                    {
+                        Assert.AreEqual(columnContentList[i], row["Value2"]);
+                    }
+            }
         }
 
         #region Sort order on Pivot
