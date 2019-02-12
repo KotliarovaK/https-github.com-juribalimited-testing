@@ -936,7 +936,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenContentIsDisplayedInField(string text, string fieldName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.AreEqual(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value"), text,
+            Assert.IsTrue(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
         }
 
@@ -1130,7 +1130,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksContentFromColumn(string columnName)
         {
             var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
-            tableElement.ClickContentByColumnName(columnName);
+            tableElement.ClickContentByColumnNameNew(columnName);
             _driver.WaitForDataLoading();
         }
 

@@ -83,3 +83,41 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User tries to open same page with another item id
 	Then Page not found displayed for Ring details page
 	And There are only page not found errors in console
+
+@Evergreen @Admin @@EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS15370 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "14690_Project" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "14690_Project" is displayed to user
+	When User clicks "Details" tab
+	And User changes Project Name to "New_14690_Project"
+	Then "14690_Pro" content is displayed in "Project Short Name" field
+	When User changes Project Short Name to "New_Short"
+	Then "14690_Project" content is displayed in "Project Description" field
+	When User changes Project Description to "New_14690_Description"
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	Then "Device scoped project" is displayed in the disabled Project Type field
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
+	Then "Use project rings" text value is displayed in the "Rings" dropdown
+	When User selects "Clone evergreen rings to project rings" in the "Rings" dropdown
+	When User clicks "Projects" navigation link on the Admin page
+	When User enters "New_14690_Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then Project "New_14690_Project" is displayed to user
+	When User clicks "Details" tab
+	Then "Clone evergreen buckets to project buckets" text value is displayed in the "Buckets" dropdown
+	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
+	#Update after DAS-15370 fixed
+	#Then "14690_Proj" content is displayed in "Project Short Name" field
+	When User clicks "Projects" navigation link on the Admin page
+	When User enters "New_14690_Project" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item

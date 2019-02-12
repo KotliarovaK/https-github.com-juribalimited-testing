@@ -342,6 +342,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public void ClickContentByColumnNameNew(string columnName) //2.12.19 - Kotliarova K.
+        {
+            var byControl =
+                By.XPath(
+                    $".//div[@class='ag-center-cols-clipper']//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.FindElement(byControl).Click();
+        }
+
         public void ClickContentByColumnName(string columnName)
         {
             var byControl =
