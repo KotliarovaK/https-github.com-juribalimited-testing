@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ResultsOnPageCount { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
+            Using = ".//button[contains(@class, 'addNewContainer')]")]
         public IWebElement AddAndFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = SearchTextBoxSelector)]

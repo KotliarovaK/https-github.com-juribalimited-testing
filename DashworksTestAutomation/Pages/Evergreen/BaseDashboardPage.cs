@@ -801,5 +801,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IList<IWebElement> GetListContentByColumnName(string columnName)
+        {
+            var selector = By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector);
+        }
     }
 }

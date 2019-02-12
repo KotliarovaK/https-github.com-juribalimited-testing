@@ -53,8 +53,8 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath(
                         ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            _driver.MouseHover(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button"));
-            _driver.FindElement(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button")).Click();
+            _driver.MouseHover(By.XPath("//div[contains(@class, 'actions')]//span[text()='SAVE']/ancestor::button"));
+            _driver.FindElement(By.XPath("//div[contains(@class, 'actions')]//span[text()='SAVE']/ancestor::button")).Click();
         }
     }
 
@@ -609,6 +609,44 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]")).Click();
             }
 
+            SaveFilter();
+        }
+    }
+
+    public class BetweenOperatorFilter : BaseFilter
+    {
+        public BetweenOperatorFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, true)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date Inclusive']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date Inclusive']"))
+                    .SendKeys(row["StartDateInclusive"]);
+            }
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date Inclusive']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date Inclusive']"))
+                    .SendKeys(row["EndDateInclusive"]);
+            }
+            _driver.FindElement(By.XPath(".//body")).Click();
             SaveFilter();
         }
     }
