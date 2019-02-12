@@ -1286,6 +1286,30 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	When User refreshes agGrid
 	Then Counter shows "1" found rows
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS14478 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS14478" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 14478" Name in the "Slot Name" field on the Project details page
+	And User type "14478" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User opens settings for "Slot 14478" row
+	And User selects "Duplicate" option from settings menu
+	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 14478 (copy) slot" text
+	When User clicks newly created object link
+	Then "Slot 14478 (copy)" content is displayed in "Slot Name" field
+	And "14478" content is displayed in "Display Name" field
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981
 Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhenInvalidValueEnteredInSlotMoveToPositionDialog
 	When User clicks Admin on the left-hand menu
