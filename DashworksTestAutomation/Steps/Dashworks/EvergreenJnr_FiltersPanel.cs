@@ -522,6 +522,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and Date options")]
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new BetweenOperatorFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
         [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with following Number and Association:")]
         public void WhenUserAddAndFilterWhereTypeIsWithFollowingNumberAndAssociation(string filterName,
             string operatorValue, Table table)

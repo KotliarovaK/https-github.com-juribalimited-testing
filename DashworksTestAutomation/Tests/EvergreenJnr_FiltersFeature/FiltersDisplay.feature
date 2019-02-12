@@ -1534,10 +1534,53 @@ Examples:
 	| Not empty     | 13,272    |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS13831
-Scenario: EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperator
+Scenario: EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Build Date" filter
 	Then "Equals, Equals (relative), Does not equal, Between, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS13831 @Not_Run
+Scenario: EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperatorWorksCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Build Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 17 Feb 2017        | 08 Aug 2017      |
+	Then "22" rows are displayed in the agGrid
+	Then "17 Feb 2017" content is displayed in the "Build Date" column
+	Then "08 Aug 2017" content is displayed in the "Build Date" column
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Last Logon Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "22" rows are displayed in the agGrid
+	Then "25 Apr 2018" content is displayed in "Last Logon Date" column
+	Then "02 May 2018" content is displayed in "Last Logon Date" column
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Created Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 14 Sep 2016        | 22 Jun 2017      |
+	Then "7" rows are displayed in the agGrid
+	Then "14 Sep 2016" content is displayed in "Created Date" column
+	Then "22 Jun 2017" content is displayed in "Created Date" column
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "MigrationP: Date Task for Package Stage" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 11 Nov 2012        | 22 Feb 2019      |
+	Then "19" rows are displayed in the agGrid
+	Then "11 Nov 2012" content is displayed in "MigrationP: Date Task for Package Stage" column
+	Then "22 Feb 2019" content is displayed in "MigrationP: Date Task for Package Stage" column
