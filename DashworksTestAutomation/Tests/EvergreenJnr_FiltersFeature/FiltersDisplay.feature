@@ -1533,12 +1533,11 @@ Examples:
 	| Empty         | 28,067    |
 	| Not empty     | 13,272    |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS13831 @Not_Run
-#remove 'not_run' when the 'Between' operator will be aviable.
+@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS13831
 Scenario: EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperator
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Build Date" filter
-	Then "Equals, Equals (relative), Does not equal, Does not equal (relative), Between, Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
+	Then "Equals, Equals (relative), Does not equal, Between, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
