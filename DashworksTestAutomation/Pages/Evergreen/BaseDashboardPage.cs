@@ -660,9 +660,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetSettingIconByRowName(string rowName)
         {
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(
-                $".//div[contains(@class, 'ag-body-container')]/div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
+                $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
             return Driver.FindElement(By.XPath(
-                $".//div[contains(@class, 'ag-body-container')]/div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
+                $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
         }
 
         public IWebElement GetOptionByName(string optionName)
