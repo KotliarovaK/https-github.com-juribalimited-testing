@@ -411,7 +411,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	Then date in the column headers is sorted in correct order for the Pivot
 	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @Not_Run
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -430,10 +430,12 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "TRUE" left-pinned value on Pivot
-	Then following values are displayed for "London" column on Pivot
-	| Value1 | Value2 |
-	| TRUE   | NONE   |
-	| NONE   | NONE   |
+	Then following values are displayed for "Empty" column on Pivot
+	| Value1       | Value2       |
+	| TRUE         | OUT OF SCOPE |
+	| OUT OF SCOPE | OUT OF SCOPE |
+	| PURPLE       | PURPLE       |
+	| NONE         | NONE         |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
