@@ -432,6 +432,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	And User type " " Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
 	Then Create Capacity Unit button is disabled
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13166 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlreadyUsedInDifferentProject
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13945" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	#next capacity name used in "1803 Rollout" project
+	And User type "Manchester" Name in the "Capacity Unit Name" field on the Project details page 
+	And User type "Manchester Operations" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	And Counter shows "2" found rows
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace
