@@ -74,7 +74,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div//span[text()='Evergreen']")]
         public IWebElement EvergreenUnit { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button//span[contains(text(), 'RESET FILTERS')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
