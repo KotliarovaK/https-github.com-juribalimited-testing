@@ -545,9 +545,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetColumnContent(string columnName)
         {
-            var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
+            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+        private string GetColIdByColumnName(string columnName)
+        {
+            var by = By.XPath($".//span[text()='{columnName}']/ancestor::div[@col-id]");
+            return Driver.FindElement(by).GetAttribute("col-id");
         }
 
         public string GetColumnContentByColumnName(string columnName)
@@ -610,7 +615,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string CheckColumnContent(string columnContent)
         {
             var byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div/div[@title='{columnContent}']");
+                By.XPath($".//div[@role='grid']//div/div[@title='{columnContent}']");
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             return Driver.FindElement(byControl).Text;
         }

@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "NotDefaultCapacityUnit13720" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "DefaultCapacityUnit13720" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
 	And User updates the "Default unit" checkbox state
@@ -126,14 +126,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
-	And User clicks the "CREATE UNIT" Action button
+	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	Then "Capacity Units" page should be displayed to the user
-	And "Create Capacity Unit" page should be displayed to the user
+	And "Create Evergreen Capacity Unit" page should be displayed to the user
 	When User type "SameNameCaseSensative" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "samenamecaseSensative" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -154,7 +154,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit12141Devices" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "Devices" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit12141Users" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "Users" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -244,7 +244,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit12141Mailboxes" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "Mailboxes" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -289,7 +289,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit12141Applications" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "Applications" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -334,7 +334,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorksCorrectlyOnTheCapacityUni
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity Unit Sorting" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMovementOfTheObjectWorksCorrectlyOnTh
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit12141" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -470,7 +470,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity Unit Settings" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -506,7 +506,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValueForEmptyOwnerObjectKeyOnCapacity
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "OwnerObjectKey13481" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
