@@ -809,9 +809,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IList<IWebElement> GetListContentByColumnName(string columnName)
         {
-            var selector = By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
+            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]");
             Driver.WaitForDataLoading();
-            return Driver.FindElements(selector);
+            return Driver.FindElements(selector).ToList();
         }
     }
 }
