@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	Then Page not found displayed for Ring details page
 	And There are only page not found errors in console
 
-@Evergreen @Admin @@EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS15370 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -93,10 +93,25 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then "Create Project" page should be displayed to the user
 	When User enters "14690_Project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "None" in the "Project Template" dropdown
+	When User selects "Standalone Project" in the "Mode" dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "14690_Project" is displayed to user
+	When User clicks "Rings" tab
+	When User clicks content from "Ring" column
+	Then "Unassigned" content is displayed in "Ring name" field
+	Then "Unassigned" content is displayed in "Description" field
+	When User clicks the "CANCEL" Action button
+	Then "TRUE" content is displayed in "Default" column
+	When User have opened Column Settings for "Ring" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Maps to Evergreen" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then Content is empty in the column
+	| ColumnName        |
+	| Maps to Evergreen |
 	When User clicks "Details" tab
 	And User changes Project Name to "New_14690_Project"
 	Then "14690_Pro" content is displayed in "Project Short Name" field
@@ -115,8 +130,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks "Details" tab
 	Then "Clone evergreen buckets to project buckets" text value is displayed in the "Buckets" dropdown
 	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
-	#Update after DAS-15370 fixed
-	#Then "14690_Proj" content is displayed in "Project Short Name" field
+	Then "New_Short" content is displayed in "Project Short Name" field
 	When User clicks "Projects" navigation link on the Admin page
 	When User enters "New_14690_Project" text in the Search field for "Project" column
 	And User selects all rows on the grid

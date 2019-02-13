@@ -546,6 +546,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public List<string> GetColumnContent(string columnName)
         {
             var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
+                $".//div[@class='ag-center-cols-clipper']//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
