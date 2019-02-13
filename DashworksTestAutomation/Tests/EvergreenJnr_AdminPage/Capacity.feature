@@ -212,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Project "ProjectForCapacity13790" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -231,12 +231,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User click content from "Capacity Unit" column
 	Then "Default unit" checkbox is checked and cannot be unchecked
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " CapacityUnit13790 " Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Error message with "A capacity unit already exists with this name" text is displayed
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page
 	Then "Unassigned" text is displayed in the table content
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit12672" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "12672" Name in the "Description" field on the Project details page
 	And User updates the "Default unit" checkbox state
@@ -310,7 +310,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit14240" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "14240" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -407,7 +407,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity slot details have been updated" text
 	When User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "capacityunitDAS13789" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13789" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -428,7 +428,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " " Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
 	Then Create Capacity Unit button is disabled
@@ -463,7 +463,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -473,7 +473,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| Unassigned |
 	| test1      |
 	When User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945_2" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -598,11 +598,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User selects "Units" tab on the Project details page
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "Capacity Unit 1" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "Capacity Unit 2" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -882,19 +882,19 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	Then Project "13159ProjectForCapacity" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "NewUnit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "13159" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -1468,7 +1468,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 	When User open "Capacity" sub menu on Admin page
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13961" Name in the "Capacity Unit Name" field on the Project details page
 	And User updates the "Default unit" checkbox state
 	And User clicks the "CREATE" Action button
@@ -2135,7 +2135,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	Then Project "Email Migration" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " 1Test" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13156" Name in the "Description" field on the Project details page
 	And User updates the "Default unit" checkbox state
