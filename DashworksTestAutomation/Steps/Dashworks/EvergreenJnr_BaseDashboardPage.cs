@@ -306,8 +306,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            var originalList = page.GetListContentByColumnName(columnName).ToList();
-            Assert.Contains(textContent, originalList, "Content is not displayed correctly");
+            var contentId = page.GetListContentByColumnName(columnName).ToList();
+            var contentList = contentId.Select(x => x.Text).ToList();
+            Assert.Contains(textContent, contentList, $"{textContent} is not displayed");
         }
 
         [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]

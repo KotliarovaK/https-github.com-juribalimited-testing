@@ -5606,21 +5606,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperatorWorksCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS13831")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        public virtual void EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperatorWorksCorrectly()
+        public virtual void EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperatorWorksCorrectlyInternal();
+                    this.EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFiltersInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -5639,15 +5638,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             }
         }
 
-        private void EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperatorWorksCorrectlyInternal()
+        private void EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFiltersInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperatorWorksCorrectly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters", null, new string[] {
                         "Evergreen",
                         "AllLists",
                         "Evergreen_FiltersFeature",
                         "NewFilterCheck",
-                        "DAS13831",
-                        "Not_Run"});
+                        "DAS13831"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -5665,7 +5663,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "ptions", ((string)(null)), table109, "When ");
             testRunner.Then("\"22\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"17 Feb 2017\" content is displayed in the \"Build Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"08 Aug 2017\" content is displayed in the \"Build Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"8 Aug 2017\" content is displayed in the \"Build Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5679,8 +5677,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"Last Logon Date\" filter where type is \"Between\" with added column and D" +
                     "ate options", ((string)(null)), table110, "When ");
             testRunner.Then("\"22\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"25 Apr 2018\" content is displayed in \"Last Logon Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"02 May 2018\" content is displayed in \"Last Logon Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"25 Apr 2018\" content is displayed in the \"Last Logon Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"2 May 2018\" content is displayed in the \"Last Logon Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5694,8 +5692,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User add \"Created Date\" filter where type is \"Between\" with added column and Date" +
                     " options", ((string)(null)), table111, "When ");
             testRunner.Then("\"7\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"14 Sep 2016\" content is displayed in \"Created Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"22 Jun 2017\" content is displayed in \"Created Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"14 Sep 2016\" content is displayed in the \"Created Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"22 Jun 2017\" content is displayed in the \"Created Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5705,14 +5703,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "EndDateInclusive"});
             table112.AddRow(new string[] {
                         "11 Nov 2012",
-                        "22 Feb 2019"});
+                        "22 Nov 2019"});
             testRunner.When("User add \"MigrationP: Date Task for Package Stage\" filter where type is \"Between\"" +
                     " with added column and Date options", ((string)(null)), table112, "When ");
             testRunner.Then("\"19\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"11 Nov 2012\" content is displayed in \"MigrationP: Date Task for Package Stage\" c" +
-                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("\"22 Feb 2019\" content is displayed in \"MigrationP: Date Task for Package Stage\" c" +
-                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"12 Nov 2012\" content is displayed in the \"MigrationP: Date Task for Package Stag" +
+                    "e\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"22 Nov 2012\" content is displayed in the \"MigrationP: Date Task for Package Stag" +
+                    "e\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
