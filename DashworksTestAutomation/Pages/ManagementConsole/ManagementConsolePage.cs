@@ -11,6 +11,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//a[contains(text(), 'Manage')]")]
         public IWebElement ManageLink { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//a[contains(text(), 'Manage Users')]")]
+        public IWebElement ManageUsersLink { get; set; }
+
         public IWebElement GetLinkInManagementConsoleByName(string linkName)
         {
             var selector = By.XPath($".//table[@class='table_features']/..//a[text()='{linkName}']");

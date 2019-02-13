@@ -5,6 +5,7 @@ using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
@@ -25,9 +26,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FilterSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
 
-        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div//div";
+        public const string SelectedFiltersSubcategory = "//div[contains(@class, 'sub-categories')]//div";
 
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
+
+        public const string OptionOnActionsPanel = "//mat-option[@role='option']";
+
+        public const string GridCellByText = ".//div[@role='gridcell' and @title='{0}']";
+
+        public const string ColumnWithEvergreenIconSelector = ".//div[@col-id='projectName'][@role='gridcell']";
+
+        public const string ImageSelector = ".//i";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
@@ -35,28 +44,40 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//admin-header//span[@class='ng-star-inserted']")]
+        public IWebElement FoundRowsLabel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'active')]//i[contains(@class, 'static-list')]")]
         public IWebElement ActiveActionsButton { get; set; }
 
         #region Action Panel
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_staticListModeBtn']")]
+        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'static-list')]/ancestor::button")]
         public IWebElement ActionsButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'actions-container-row')]")]
+        public IWebElement ActionsRowsCount { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Actions']")]
         public IWebElement ActionsDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='request-label']")]
+        [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]
         public IWebElement RequestTypeDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project']")]
         public IWebElement ProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
-        public IWebElement OptionName { get; set; }
+        public IWebElement ProjectSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Stage']")]
         public IWebElement StageField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit']")]
+        public IWebElement CapacityUnitField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//*[contains(text(),'Also Move Mailboxes')]/parent::span//preceding-sibling::mat-select")]
+        public IWebElement AlsoMoveMailboxesField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Task']")]
         public IWebElement TaskField { get; set; }
@@ -64,21 +85,40 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Value']")]
         public IWebElement ValueDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Value']")]
+        public IWebElement UpdateValueDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Date']")]
+        public IWebElement UpdateDateDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select')]//span[text()='Update Owner']")]
+        public IWebElement UpdateOwnerDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Team']")]
+        public IWebElement TeamField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Owner']")]
+        public IWebElement OwnerField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
+        public IWebElement DateField { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
         public IWebElement RequestTypeField { get; set; }
 
         #endregion
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button _mat-animation-noopable'][@id='_listDtlBtn']")]
+        [FindsBy(How = How.XPath, Using = "//button[contains(@id, 'listDtlBtn')]")]
         public IWebElement ListDetailsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'clmnBtn')]")]
         public IWebElement ColumnButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@id='_fltrBtn']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'fltrBtn')]")]
         public IWebElement FilterButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'pull-left context-toggle')]//i[@class='material-icons mat-clear']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//button[contains(@class, 'pull-left context-toggle')]//i[@class='material-icons mat-clear']")]
         public IWebElement ClosePanelButton { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -88,20 +128,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn input-toggle')]")]
-        public IWebElement SearchTextboxResetButton { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-close')]")]
+        public IWebElement SearchTextBoxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//button[contains(@class, 'resetButton mat-button')]")]
-        public IWebElement SearchTextboxResetButtonInPanel { get; set; }
+        public IWebElement SearchTextBoxResetButtonInPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//button[@aria-label='search']")]
         public IWebElement TableSearchButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Search Table']")]
-        public IWebElement TableSearchTextbox { get; set; }
+        public IWebElement TableSearchTextBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@aria-label='reload']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'tools-item')]//button[@aria-label='close']")]
+        public IWebElement CloseToolsPanelButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'reload')]")]
         public IWebElement RefreshTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
@@ -113,27 +156,50 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'submenu-selected-list')]")]
         public IWebElement List { get; set; }
 
+        [FindsBy(How = How.XPath,
+            Using = "//div[contains(@class, 'notification')]//span[text()='UPDATE']/ancestor::button")]
+        public IWebElement UpdateButtonOnAmberMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'edit-action')]//span[text()='UPDATE']/ancestor::button")]
+        public IWebElement UpdateButton { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using = "//div[contains(@class, 'notification')]//button[contains(@class, 'transparent')]//span[text()='CANCEL']/ancestor::button")]
+        public IWebElement CancelButtonOnAmberMessage { get; set; }
+
         #region All Lists dropdown
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownActionsLists')]")]
         public IWebElement DropdownLists { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-star')]/..//following-sibling::span[text()='Favourites']")]
-        public IWebElement FavouritesIcon { get; set; }
+        [FindsBy(How = How.XPath,
+            Using =
+                "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-star')]/..//following-sibling::span[text()='Favourites']")]
+        public IWebElement FavoritesIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'person')]/..//following-sibling::span[text()='My lists']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'person')]/..//following-sibling::span[text()='My lists']")]
         public IWebElement MyListsIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'share')]/..//following-sibling::span[text()='Shared with me']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'share')]/..//following-sibling::span[text()='Shared with me']")]
         public IWebElement SharedWithMeIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-filter_list')]/..//following-sibling::span[text()='Dynamic lists']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-filter_list')]/..//following-sibling::span[text()='Dynamic lists']")]
         public IWebElement DynamicListsIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'done')]/..//following-sibling::span[text()='Static lists']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'done')]/..//following-sibling::span[text()='Static lists']")]
         public IWebElement StaticListsIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
         public IWebElement AllListsIcon { get; set; }
 
         #endregion
@@ -168,32 +234,47 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//button[@aria-label='filters']")]
         public IWebElement FilterContainerButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sectionAddObjects wrapper-disabled')]")]
+        public IWebElement DisabledObjectsToAddPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='sectionAddObjects']")]
+        public IWebElement ActiveObjectsToAddPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-content']")]
         public IWebElement FilterContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']//span[@class='checkbox-unchecked']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
+        public IWebElement SelectOneRowsCheckboxes { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-error ng-star-inserted']")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='inline-tip ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]//div[@class='inline-box-text']")]
+        public IWebElement WarningMessageText { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-success')]")]
+        public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@id='context-container']//div//div[@class='ps__thumb-y']")]
+        public IWebElement ActionsScrollBar { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'close')]")]
+        public IWebElement CloseButtonInSuccessMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
         public IWebElement DoesNotExistListMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a")]
-        public IWebElement FirstDevicesCell { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']")]
+        public IWebElement AgMenu { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/user/71622/']")]
-        public IWebElement FirstUsersCell { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/application/4249/']")]
-        public IWebElement FirstApplicationsCell { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@tabindex='-1']//span//a[@href='#/mailbox/49258/']")]
-        public IWebElement FirstMailboxesCell { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-menu']//span[@id='eName']")]
+        public IList<IWebElement> AgMenuOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']")]
         public IWebElement CreateActionButton { get; set; }
@@ -204,7 +285,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']")]
         public IList<IWebElement> GridRows { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-selected-save')]//span[@class='list-selected-name']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']/div[@col-id='groupName']")]
+        public IList<IWebElement> GridBucketsNames { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using = "//div[contains(@class, 'list-selected-save')]//span[@class='list-selected-name']")]
         public IWebElement ActiveCustomListEdited { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'transformPanel')]//span[text()='Project']")]
@@ -215,6 +301,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//div[@class='top-tools-item top-tools-left-side']")]
         public IWebElement OutsideGridPanel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
+        public IList<IWebElement> ColumnSubcategories { get; set; }
 
         [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
         public IList<IWebElement> OptionsDll { get; set; }
@@ -230,6 +319,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = SelectedColumnSubcategory)]
         public IList<IWebElement> SelectedColumnsSubcategoryList { get; set; }
+
+        [FindsBy(How = How.XPath, Using = OptionOnActionsPanel)]
+        public IList<IWebElement> OptionListOnActionsPanel { get; set; }
 
         #region TableColumns
 
@@ -251,24 +343,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             };
         }
 
-        public bool WarningMessageActionPanel(string text)
-        {
-            Driver.WaitForElement(By.XPath("//div[@class='inline-tip ng-star-inserted']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($"//div[@class='inline-tip ng-star-inserted']/div[text()='{text}']"));
-        }
-
-        public bool SuccessMessageActionPanel(string text)
-        {
-            Driver.WaitForElement(By.XPath("//div[@class='inline-success ng-star-inserted']"));
-            return Driver.IsElementDisplayed(
-                By.XPath($"//div[@class='inline-success ng-star-inserted']/div[text()='{text}']"));
-        }
-
         //Null value can be returned
         public IWebElement GetGridCell(int rowIndex, int columnNumber)
         {
-            return (IWebElement)Driver.ExecuteScript($"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
+            return (IWebElement)Driver.ExecuteScript(
+                $"return document.querySelector(\"div[row-index = '{rowIndex}']>div:nth-of-type({columnNumber})\")");
         }
 
         public string GetHeaderFontWeight()
@@ -280,7 +359,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             Driver.WaitForDataLoading();
 
-            var selector = string.Empty;
+            string selector;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -297,7 +376,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetColumnHeaderByName(string columnName)
         {
-            var selector = string.Empty;
+            string selector;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -308,9 +387,55 @@ namespace DashworksTestAutomation.Pages.Evergreen
             {
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
             }
-
+            
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
+        }
+
+        public IWebElement GetGridCellByText(string cellText)
+        {
+            return Driver.FindElement(By.XPath(string.Format(GridCellByText, cellText)));
+        }
+
+        public void ContextClickOnCell(string cellText)
+        {
+            var builder = new Actions(Driver);
+            Driver.WaitForDataLoading();
+            builder.ContextClick(GetGridCellByText(cellText)).Perform();
+        }
+
+        public void ClearInput(IWebElement input)
+        {
+            int attempt = 0;
+
+            Driver.WaitForDataLoading();
+
+            while (!input.GetAttribute("value").Equals(string.Empty) && attempt < 10)
+            {
+                input.Clear();
+                Thread.Sleep(500);
+                attempt++;
+            }
+        }
+
+        public int GetElementTopYCoordinate(IWebElement element)
+        {
+            return element.Location.Y;
+        }
+
+        public int GetElementBottomYCoordinate(IWebElement element)
+        {
+            return element.Location.Y + element.Size.Height;
+        }
+
+        public int GetElementLeftXCoordinate(IWebElement element)
+        {
+            return element.Location.X;
+        }
+
+        public int GetElementRightXCoordinate(IWebElement element)
+        {
+            return element.Location.X + element.Size.Width;
         }
 
         public IWebElement GetCorrectApplicationVersion(string versionNumber)
@@ -331,9 +456,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetColumnDataByScrolling(string columnName)
         {
-            List<string> columnData = new List<string>();
+            var columnData = new List<string>();
             var columnNumber = GetColumnNumberByName(columnName);
-            int iter = 0;
+            var iter = 0;
             var element = GetGridCell(iter, columnNumber);
             columnData.Add(element.Text);
             do
@@ -346,7 +471,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 }
                 catch (StaleElementReferenceException)
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(5000);
                     element = GetGridCell(iter, columnNumber);
                     Driver.MouseHoverByJavascript(element);
                 }
@@ -354,16 +479,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 //Data loading
                 if (element == null)
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(3000);
                     element = GetGridCell(iter, columnNumber);
                 }
+
                 try
                 {
                     columnData.Add(element.Text);
                 }
                 catch (StaleElementReferenceException)
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(3000);
                     element = GetGridCell(iter, columnNumber);
                     columnData.Add(element.Text);
                 }
@@ -390,15 +516,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetActionsButtonByName(string button)
         {
             var selector = By.XPath(
-                $"//span[text()='{button}']/ancestor::button");
+                $".//span[text()='{button}']/ancestor::button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
         {
-            var selector = By.XPath(
-                $"//button[contains(@class, 'mat-button _mat-animation-noopable')]/span[text()='{button}']");
+            var selector = By.XPath($"//div[contains(@class, 'notification')]//span[text()='{button}']/ancestor::button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -420,21 +545,35 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetColumnContent(string columnName)
         {
-            By by = By.XPath(
+            var by = By.XPath(
                 $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
+        public string GetColumnContentByColumnName(string columnName)
+        {
+            var by = By.XPath(
+                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
         public string GetRowContentByColumnName(string columnName)
         {
-            By by = By.XPath(
-                $"//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
+            var by = By.XPath(
+                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
             return Driver.FindElement(by).Text;
+        }
+
+        public IWebElement GetItalicContentByColumnName(string text)
+        {
+            var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         public string ActiveCustomListName()
         {
-            By by = By.XPath(
+            var by = By.XPath(
                 ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span");
             Driver.WaitForElement(by);
             return Driver.FindElement(by).Text;
@@ -442,13 +581,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ClickContentByColumnName(string columnName)
         {
-            By byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+            var byControl =
+                By.XPath(
+                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             Driver.FindElement(byControl).Click();
         }
+
 
         /// <summary>
         /// Get just data from first row
@@ -457,8 +598,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         /// <returns></returns>
         public IWebElement GetContentByColumnName(string columnName)
         {
-            By byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
+            var byControl =
+                By.XPath(
+                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
@@ -467,7 +609,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string CheckColumnContent(string columnContent)
         {
-            By byControl =
+            var byControl =
                 By.XPath($".//div[contains(@class, 'ag-body-container')]/div/div[@title='{columnContent}']");
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             return Driver.FindElement(byControl).Text;
@@ -475,8 +617,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetHrefByColumnName(string columnName)
         {
-            By byControl =
-                By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/span/a[@href]");
+            var byControl =
+                By.XPath(
+                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell/div/a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
@@ -493,7 +636,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            string columnSettingsSelector =
+            var columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             Driver.WaitForDataLoading();
             Driver.MouseHover(By.XPath(columnSettingsSelector));
@@ -507,9 +650,24 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
-        public IWebElement GetOptionOnActionsPanelByName(string optionName)
+        public IWebElement GetSettingOptionByName(string optionName)
         {
-            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
+            return Driver.FindElement(
+                By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
+        }
+
+        public IWebElement GetSettingIconByRowName(string rowName)
+        {
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(
+                $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
+            return Driver.FindElement(By.XPath(
+                $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
+        }
+
+        public IWebElement GetOptionByName(string optionName)
+        {
+            var selector = By.XPath($".//span[text()='{optionName}']/ancestor::mat-option");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -581,11 +739,74 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(selector);
         }
 
-        public IWebElement GetOptionOnListPanel(string optionName)
+        public void ExpandColumnsSectionByName(string sectionsName)
         {
-            var selector = By.XPath($".//mat-option[@role='option']//span[text()='{optionName}']");
-            Driver.WaitForDataLoading();
+            if (Driver.IsElementExists(By.XPath(
+                $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
+            )
+                try
+                {
+                    Driver.FindElement(By.XPath(
+                            $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
+                        .Click();
+                }
+                catch
+                {
+                    Driver.MouseHover(By.XPath(
+                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"));
+                    Driver.FindElement(By.XPath(
+                            $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"))
+                        .Click();
+                }
+
+            if (ColumnSubcategories.Any())
+                Driver.MouseHover(ColumnSubcategories.Last());
+        }
+
+        public void CloseColumnsSectionByName(string sectionsName)
+        {
+            try
+            {
+                Driver.FindElement(By.XPath(
+                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
+                    .Click();
+            }
+            catch
+            {
+                Driver.MouseHover(By.XPath(
+                    $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"));
+                Driver.FindElement(By.XPath(
+                        $".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"))
+                    .Click();
+            }
+        }
+
+        public IWebElement GetCreateButtonByName(string button)
+        {
+            var selector = By.XPath($"//span[text()='{button}']/ancestor::mat-option");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownWithSearchByFieldName(string name)
+        {
+            var selector = By.XPath($"//input[@aria-label='{name}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownByFieldName(string name)
+        {
+            var selector = By.XPath($"//textarea[@placeholder='{name}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IList<IWebElement> GetListContentByColumnName(string columnName)
+        {
+            var selector = By.XPath($".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector);
         }
     }
 }

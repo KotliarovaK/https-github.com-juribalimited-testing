@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
     internal class GroupPropertiesPage : SeleniumBasePage
     {
@@ -23,6 +23,12 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.GroupName),
                 SelectorFor(this, p => p.OwnedByTeam)
             };
+        }
+
+        public void SelectTeamForGroup(string teamName)
+        {
+            var listNameSelector = $"//select//option[text()='{teamName}']";
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
     }
 }

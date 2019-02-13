@@ -9,23 +9,29 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class ActionsElement : SeleniumBasePage
     {
-        public const string ActionValuesSelector = ".//mat-option[contains(@id, 'mat-option')]";
+        private const string ActionValuesSelector = ".//mat-option[contains(@id, 'mat-option')]";
+        private const string RowsSelectedCountSelector = ".//div[@class='actions-container-row-select']";
+        private const string ListsDropdownSelector = ".//mat-select[@aria-label='Static Lists']";
 
-        private const string RowsSelectedCountSelctor = ".//div[@class='actions-container-row-select']";
-
-        public string listsDropdown = ".//mat-select[@aria-label='Static Lists']";
+        [FindsBy(How = How.XPath, Using = ListsDropdownSelector)]
+        public IWebElement ListsDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions-container']")]
         public IWebElement ActionsPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn btn-default mat-icon-button']/span/i[@class='material-icons mat-static-list']")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//button[@class='btn btn-default mat-icon-button']/span/i[@class='material-icons mat-static-list']")]
         public IWebElement InactiveActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[text()='Select at least one row']")]
         public IWebElement ActionsContainerMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='spinner small-grey']")]
+        public IWebElement ActionsSpinner { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
-        public IWebElement ListNameTextbox { get; set; }
+        public IWebElement ListNameTextBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE']//ancestor::button")]
         public IWebElement CreateButton { get; set; }
@@ -57,9 +63,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void SelectList(string listName)
         {
             var listNameSelector =
-                $".//div[@class='mat-select-content ng-trigger ng-trigger-fadeInContent']//mat-option//span[text()='{listName}']";
-            var dropdownBoxList = listsDropdown;
-            Driver.FindElement(By.XPath(dropdownBoxList)).Click();
+                $".//mat-option//span[text()='{listName}']";
+            Driver.FindElement(By.XPath(ListsDropdownSelector)).Click();
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
@@ -71,8 +76,29 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetSelectedRowsCount()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(RowsSelectedCountSelctor));
-            return Driver.FindElement(By.XPath(RowsSelectedCountSelctor)).Text.Split(' ').First();
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(RowsSelectedCountSelector));
+            return Driver.FindElement(By.XPath(RowsSelectedCountSelector)).Text.Split(' ').First();
+        }
+
+        public void GetDropdownOnActionPanelByName(string name)
+        {
+            var listNameSelector = $"//*[contains(text(),'{name}')]/parent::span//preceding-sibling::mat-select";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
+        public IWebElement GetFieldOnActionPanelByName(string name)
+        {
+            var selector = By.XPath($"//div//input[@placeholder='{name}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetSearchDropDownOnActionPanelByName(string name)
+        {
+            var selector = By.XPath($"//*[contains(text(), '{name}')]/ancestor::div[@class='mat-form-field-infix']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

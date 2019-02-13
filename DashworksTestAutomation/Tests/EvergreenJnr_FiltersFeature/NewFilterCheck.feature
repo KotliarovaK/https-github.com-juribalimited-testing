@@ -21,7 +21,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppFilterIsAddedT
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
-Examples: 
+Examples:
 	| ColumnName             | Operators              | FilterOption      | Text                                        | RowsCount |
 	| Windows7Mi: Target App | Equals, Does not equal | WebZIP (A01)      | Windows7Mi: Target App is WebZIP (A01)      | 3         |
 	| Babel(Engl: Target App | Equals, Does not equal | sndconfig         | Babel(Engl: Target App is sndconfig         | 1         |
@@ -31,7 +31,7 @@ Examples:
 	| MigrationP: Target App | Equals, Does not equal | Zune (A01)        | MigrationP: Target App is Zune (A01)        | 1         |
 	| UserSchedu: Target App | Equals, Does not equal | Zune (A01)        | UserSchedu: Target App is Zune (A01)        | 1         |
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10828 @DAS14287
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAddedToTheList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -45,14 +45,14 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppKeyFilterIsAdd
 	When user select "<ColumnName>" filter
 	Then "<Operators>" option is available for this filter
 	When User have create "Equals" Values filter with column and following options:
-     | Values         |
-     | <FilterOption> |
+	| Values         |
+	| <FilterOption> |
 	Then "<Text>" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on '<ColumnName>' column header
-	Then data in table is sorted by '<ColumnName>' column in descending order 
+	Then data in table is sorted by '<ColumnName>' column in ascending order 
 
-Examples: 
+Examples:
 	| ColumnName                 | Operators                                                                                        | FilterOption | Text                               | RowsCount |
 	| Windows7Mi: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 1051         | Windows7Mi: Target App Key is 1051 | 4         |
 	| Babel(Engl: Target App Key | Equals, Does not equal, Greater than, Greater than or equal to, Less than, Less than or equal to | 15           | Babel(Engl: Target App Key is 15   | 1         |
@@ -81,7 +81,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatTargetAppReadinessFilte
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
-Examples: 
+Examples:
 	| ColumnName                       | Operators              | FilterOption | Text                                      | RowsCount |
 	| Windows7Mi: Target App Readiness | Equals, Does not equal | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
 	| Babel(Engl: Target App Readiness | Equals, Does not equal | None         | Babel(Engl: Target App Readiness is None  | 302       |
@@ -102,7 +102,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| SelectedCheckboxes        |
 	| Add Target App Key column |
 
-	Examples: 
+Examples:
 	| FilterName                 |
 	| Windows7Mi: Target App Key |
 	| Babel(Engl: Target App Key |
@@ -113,7 +113,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| UserSchedu: Target App Key |
 	| prK: Target App Key        |
 
-	@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS12388
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS12388
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisplayedForTargetAppIDFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -124,7 +124,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| SelectedCheckboxes        |
 	| Add Target App ID column |
 
-	Examples: 
+Examples:
 	| FilterName                |
 	| Windows7Mi: Target App ID |
 	| Babel(Engl: Target App ID |
@@ -136,7 +136,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxIsDisp
 	| UserSchedu: Target App ID |
 	| prK: Target App ID        |
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS10578 @DAS14159
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAddedToTheFilterList
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -148,14 +148,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Dashworks First Seen" filter
-	Then "Equals, Does not equal, Before, After, Empty, Not empty" option is available for this filter
+	Then "Equals, Equals (relative), Does not equal, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
 	When User have created "Empty" Date filter with column and "" option
 	Then "Dashworks First Seen is empty" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
 	When User click on 'Dashworks First Seen' column header
 	Then data in table is sorted by 'Dashworks First Seen' column in descending order 
 
-Examples: 
+Examples:
 	| ListName     | RowsCount |
 	| Devices      | 17,225    |
 	| Users        | 41,335    |
@@ -181,7 +181,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationReadinessFil
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in descending order 
 
-Examples: 
+Examples:
 	| ColumnName                        | Operators              | FilterOption | Text                                       | RowsCount |
 	| Windows7Mi: Application Readiness | Equals, Does not equal | Red          | Windows7Mi: Application Readiness is Red   | 27        |
 	| Babel(Engl: Application Readiness | Equals, Does not equal | None         | Babel(Engl: Application Readiness is None  | 302       |
@@ -215,7 +215,7 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatApplicationRationalisat
 Examples: 
 	| ColumnName                              | Operators              | FilterOption  | Text                                                     | RowsCount |
 	| Windows7Mi: Application Rationalisation | Equals, Does not equal | RETIRE        | Windows7Mi: Application Rationalisation is Retire        | 85        |
-	| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
+	#| Babel(Engl: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Babel(Engl: Application Rationalisation is Uncategorised | 302       |
 	| Barry'sUse: Application Rationalisation | Equals, Does not equal | KEEP          | Barry'sUse: Application Rationalisation is Keep          | 2         |
 	| ComputerSc: Application Rationalisation | Equals, Does not equal | FORWARD PATH  | ComputerSc: Application Rationalisation is Forward Path  | 15        |
 	| Havoc(BigD: Application Rationalisation | Equals, Does not equal | UNCATEGORISED | Havoc(BigD: Application Rationalisation is Uncategorised | 1,067     |
@@ -284,7 +284,7 @@ Examples:
 	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is false   | 220       |
 	| UserSchedu: Hide from End Users | Equals, Does not equal | UNKNOWN      | UserSchedu: Hide from End Users is Unknown | 1,242     |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @DAS12639
+@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @DAS12639 @DAS14288 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -328,7 +328,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisp
 	Then "1" rows are displayed in the agGrid
 	When User update current custom list
 
-@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351
+@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @DAS14288 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -371,7 +371,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDispla
 	Then "4,642" rows are displayed in the agGrid
 	When User update current custom list
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS11830 @DAS14288
 Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfProjectTaskCategories
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -380,8 +380,23 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatOptionsIsAvailableForFiltersOfP
 	When user select "<FilterName>" filter
 	Then "Off, On" checkbox is available for this filter
 
-Examples: 
+Examples:
 	| PageName     | FilterName                     |
 	| Users        | ComputerSc: User Off/On        |
 	| Devices      | ComputerSc: Computer Off/On    |
 	| Applications | ComputerSc: Application Off/On |
+
+@Evergreen @Users @Evergreen_FiltersFeature @NewFilterCheck @API @DAS14629 @DAS14663 @DAS14629 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList
+Then following operators are displayed in "User" category for "Primary Device" filter on "Users" page:
+	| OperatorValues      |
+	| Equals              |
+	| Does not equal      |
+	| Contains            |
+	| Does not contain    |
+	| Begins with         |
+	| Does not begin with |
+	| Ends with           |
+	| Does not end with   |
+	| Empty               |
+	| Not empty           |

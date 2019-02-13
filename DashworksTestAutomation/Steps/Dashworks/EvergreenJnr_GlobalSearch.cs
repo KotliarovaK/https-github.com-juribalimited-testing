@@ -3,14 +3,13 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
 {
     [Binding]
-    internal class EvergreenJnr_GlobalSearch
+    internal class EvergreenJnr_GlobalSearch : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
@@ -35,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             searchElement.SearchEverythingField.Clear();
             searchElement.SearchEverythingField.SendKeys(searchText);
             _driver.WaitForDataLoading();
-            searchElement.SearchEverythingField.SendKeys(Keys.Enter);
+            searchElement.SearchEverythingField.SendKeys(OpenQA.Selenium.Keys.Enter);
         }
 
         [Then(@"""(.*)"" is displayed below Global Search field")]
@@ -55,16 +54,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
 
-                if (numberOfRows == "1")
-                {
-                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", listPageElement.ResultsRowsCount.Text,
-                        "Incorrect rows count");
-                }
-                else
-                {
-                    StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", listPageElement.ResultsRowsCount.Text,
-                        "Incorrect rows count");
-                }
+                StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                    listPageElement.ResultsRowsCount.Text, "Incorrect rows count");
                 Logger.Write(
                     $"Evergreen Global Search returned the correct number of rows for: {numberOfRows}  search");
             }
@@ -98,6 +89,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
         }
 
+        [Then(@"""(.*)"" message is not displayed below Global Search field")]
+        public void ThenMessageIsNotDisplayedBelowGlobalSearchField(string text)
+        {
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            Assert.IsFalse(searchElement.NoResultFound.Displayed(), $"{text} is not displayed");
+        }
+
+        [Then(@"message ""(.*)"" is displayed to the user below Search results")]
+        public void ThenMessageIsDisplayedToTheUserBelowSearchResults(string message)
+        {
+            var page = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitForDataLoading();
+            Assert.AreEqual(message, page.NoResultsFoundMessage.Text, $"{message} is not displayed");
+        }
+
         [Then(@"Search results are displayed below Global Search field")]
         public void ThenSearchResultsAreDisplayedBelowGlobalSearchField()
         {
@@ -118,9 +124,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"reset button in Global Search field is displayed")]
         public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
         {
-            var searchElement = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => searchElement.SearchTextboxResetButton);
-            Assert.IsTrue(searchElement.SearchTextboxResetButton.Displayed(), "Reset button is not displayed");
+            var searchElement = _driver.NowAt<GlobalSearchElement>();
+            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() =>
+                searchElement.GlobalSearchTextBoxResetButton);
+            Assert.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
     }

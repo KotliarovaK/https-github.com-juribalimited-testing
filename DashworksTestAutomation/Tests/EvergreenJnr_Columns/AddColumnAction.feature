@@ -43,7 +43,7 @@ Examples:
 	| Max Receive Size (MB) |
 	| Max Send Size (MB)    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                        |
@@ -75,11 +75,12 @@ Examples:
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName               |
 	| UserSchedu: Readiness ID |
+	When User click on 'UserSchedu: Readiness ID' column header
 	Then Content is present in the newly added column
 	| ColumnName               |
 	| UserSchedu: Readiness ID |
@@ -88,7 +89,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAft
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
 
-Examples: 
+Examples:
 	| ListName     |
 	| Devices      |
 	| Users        |
@@ -161,7 +162,7 @@ Examples:
 	| Applications | Compliance       | Compliance       |
 	| Mailboxes    | Owner Compliance | Owner Compliance |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500 @DAS14923 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -184,6 +185,58 @@ Examples:
 	| Applications | Application Key |
 	| Mailboxes    | Mailbox Key     |
 
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12940
+Scenario Outline: EvergreenJnr_AllLists_CheckThatEvergreenBucketColumnCanBeAddedToTheGrid
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Evergreen Bucket |
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS13201
+Scenario Outline: EvergreenJnr_AllLists_CheckThatEvergreenCapacityUnitColumnCanBeAddedToTheGrid
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+	| Applications |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS9820 @DAS13296
+Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxColumnsCanBeUsedOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName              |
+	| Device Count            |
+	| Group Count             |
+	| Mailbox Count (Access)  |
+	#| Mailbox Count (Owned) |
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Device Count            |
+	| Group Count             |
+	| Mailbox Count (Access)  |
+	#| Mailbox Count (Owned) |
+
 @Evergreen @Devices @EvergreenJnr_Columns @AddColumnAction @DAS13024
 Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAddingDeviceOwnerLdapAndComputerAdObjectLdapAttributeColumnToTheDevicesList
 	When User clicks "Devices" on the left-hand menu
@@ -198,7 +251,64 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatGridIsDisplayedCorrectlyAfterAdding
 	| ColumnName             |
 	| Owner accountexpires   |
 	| frscomputerreferencebl |
-	Then "17,225" rows are displayed in the agGrid
-	Then full list content is displayed to the user
-	Then There are no errors in the browser console
-	Then table content is present
+	And "17,225" rows are displayed in the agGrid
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And table content is present
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @RemoveColumn @AddColumnAction @DAS12910
+Scenario: EvergreenJnr_MailboxesList_ChecksThatNewlyAddedColumnIsDisplayedCorrectlyAfterAddingEmailMigraReadinessFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Owner Display Name" column by Column panel
+	And User removes "Mailbox Type" column by Column panel
+	And User removes "Mail Server" column by Column panel
+	And User removes "Mailbox Platform" column by Column panel
+	And User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Blue           |
+	| Light Blue     |
+	Then Content is present in the newly added column
+	| ColumnName            |
+	| EmailMigra: Readiness |
+	And full list content is displayed to the user
+	And There are no errors in the browser console
+	And Add And button is displayed on the Filter panel
+	When User selects And "EmailMigra: Readiness" filter where type is "Equals" with added column and Lookup option:
+	| SelectedValues |
+	| Out Of Scope   |
+	And User clicks the "CANCEL" Action button
+	Then Add And button is displayed on the Filter panel
+
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12481
+Scenario Outline: EvergreenJnr_AllLists_CheckThatStateCountyAndPostalCodeColumnsAreDisplayed
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName   |
+	| State/County |
+	| Postal Code  |
+	Then ColumnName is added to the list
+	| ColumnName   |
+	| State/County |
+	| Postal Code  |
+	When User click on 'State/County' column header
+	Then data in table is sorted by 'State/County' column in ascending order
+	When User click on 'State/County' column header
+	Then data in table is sorted by 'State/County' column in descending order
+	When User click on 'Postal Code' column header
+	Then data in table is sorted by 'Postal Code' column in ascending order
+	When User click on 'Postal Code' column header
+	Then data in table is sorted by 'Postal Code' column in descending order
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |

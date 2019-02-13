@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DashworksTestAutomation</RootNamespace>
     <AssemblyName>DashworksTestAutomation</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -38,104 +39,59 @@
       <HintPath>..\packages\HtmlAgilityPack.1.6.11\lib\Net45\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.Win32.Primitives">
-      <HintPath>..\packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VS.QualityTools.UnitTestFramework.15.0.27323.2\lib\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp">
-      <HintPath>..\packages\RestSharp.106.2.0\lib\net452\RestSharp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.6.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.7\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.AppContext">
-      <HintPath>..\packages\System.AppContext.4.1.0\lib\net46\System.AppContext.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.configuration" />
-    <Reference Include="System.Console">
-      <HintPath>..\packages\System.Console.4.0.0\lib\net46\System.Console.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Diagnostics.DiagnosticSource">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Globalization.Calendars">
-      <HintPath>..\packages\System.Globalization.Calendars.4.0.1\lib\net46\System.Globalization.Calendars.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.IO.Compression">
-      <HintPath>..\packages\System.IO.Compression.4.1.0\lib\net46\System.IO.Compression.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression.FileSystem" />
-    <Reference Include="System.IO.Compression.ZipFile">
-      <HintPath>..\packages\System.IO.Compression.ZipFile.4.0.1\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.IO.FileSystem">
-      <HintPath>..\packages\System.IO.FileSystem.4.0.1\lib\net46\System.IO.FileSystem.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.Primitives">
-      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>..\packages\System.Net.Http.4.1.0\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Sockets">
-      <HintPath>..\packages\System.Net.Sockets.4.1.0\lib\net46\System.Net.Sockets.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.Loader">
-      <HintPath>..\packages\System.Runtime.Loader.4.0.0\lib\netstandard1.5\System.Runtime.Loader.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.ValueTuple">
-      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.2.4.1\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver, Version=3.12.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.12.0\lib\net45\WebDriver.dll</HintPath>
@@ -211,20 +167,33 @@
     <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\BaseFilter.cs" />
+    <Compile Include="Helpers\ColorsConvertor.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />
     <Compile Include="Helpers\FilterOperatorsConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
-    <Compile Include="Pages\EvergreenDashboardsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
+    <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
+    <Compile Include="Pages\Evergreen\Dashboards\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AdminLeftHandMenu.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BaseGridPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\BucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AddToAnotherTeamPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AddBucketToTeamPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_CapacityUnitsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_DetailsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_OverrideDatesPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_SlotsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\Capacity_UnitsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Capacity\CreateCapacitySlotPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ChangeTeamPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\BaseFormPagePage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateCapacityUnitPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateNewSlotPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReassignBucketsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\ImportProjectPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateProjectPage.cs" />
@@ -233,6 +202,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\MoveToAnotherBucketPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\TeamsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ProjectsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminPage.cs" />
     <Compile Include="Pages\Evergreen\ApplicationsPage.cs" />
     <Compile Include="Pages\Evergreen\BaseDashboardPage.cs" />
     <Compile Include="Pages\Evergreen\ColumnsElement.cs" />
@@ -250,6 +220,7 @@
     <Compile Include="Pages\Evergreen\LeftHandMenuElement.cs" />
     <Compile Include="Pages\Evergreen\ListDetailsElement.cs" />
     <Compile Include="Pages\Evergreen\MailboxesPage.cs" />
+    <Compile Include="Pages\Evergreen\PivotElementPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AccountDetailsPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\AdvancedPage.cs" />
     <Compile Include="Pages\Evergreen\ProfileDetailsPages\ChangePasswordPage.cs" />
@@ -294,16 +265,21 @@
     <Compile Include="Pages\Projects\CreatingProjects\Tasks\TaskProperties_CreatingValuesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamPropertiesPage.cs" />
     <Compile Include="Pages\Projects\CreatingProjects\TeamsPage.cs" />
+    <Compile Include="Pages\Projects\BulkUpdatePage.cs" />
     <Compile Include="Pages\Projects\ProjectsBaseElements.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage_AfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Capacity.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_CreateProject.cs" />
-    <Compile Include="Steps\Projects\Projects_Dashboards.cs" />
-    <Compile Include="Steps\Projects\Projects_Login.cs" />
+    <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
+    <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
+    <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_CreateProject.cs" />
+    <Compile Include="Steps\Senior\Senior_Dashboards.cs" />
+    <Compile Include="Steps\Senior\Senior_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Browser.cs" />
     <Compile Include="Providers\Database.cs" />
@@ -334,10 +310,10 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_QueryStrings.cs" />
     <Compile Include="Steps\Logout.cs" />
-    <Compile Include="Steps\Projects\Projects_PMObject.cs" />
-    <Compile Include="Steps\Projects\Projects_ProjectsHome.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_Removing.cs" />
-    <Compile Include="Steps\Projects\Projects_CreatingProject\Projects_SelfService.cs" />
+    <Compile Include="Steps\Senior\Senior_PMObject.cs" />
+    <Compile Include="Steps\Senior\Senior_ProjectsHome.cs" />
+    <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Removing.cs" />
+    <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_SelfService.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -347,6 +323,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings.feature.cs">
+      <DependentUpon>Rings.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Buckets.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Capacity.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapacityUnits.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Projects.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teams.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -362,6 +368,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DashboardsPage.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature.cs">
       <AutoGen>True</AutoGen>
@@ -407,6 +418,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RemoveColumn.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Pivot\Pivot.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pivot.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature.cs">
       <AutoGen>True</AutoGen>
@@ -463,30 +479,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Login_Logout.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature.cs">
+    <Compile Include="Tests\Senior\Senior_CreatingProjects\ComputerScheduledProject1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ComputerScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature.cs">
+    <Compile Include="Tests\Senior\Senior_CreatingProjects\MailboxScheduledProject1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MailboxScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature.cs">
+    <Compile Include="Tests\Senior\Senior_CreatingProjects\UserScheduledProject1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UserScheduledProject.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\Projects_Dashboards.feature.cs">
+    <Compile Include="Tests\Senior\Senior_Dashboards.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Projects_Dashboards.feature</DependentUpon>
+      <DependentUpon>Senior_Dashboards.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\Projects\Projects_PMObject.feature.cs">
+    <Compile Include="Tests\Senior\Senior_BulkUpdate.feature.cs">
+      <DependentUpon>Senior_BulkUpdate.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Projects_PMObject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Senior\Senior_PMObject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Senior_PMObject.feature</DependentUpon>
     </Compile>
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\CustomRemoteWebDriver.cs" />
@@ -494,6 +515,7 @@
     <Compile Include="Utils\FileSystemHelper.cs" />
     <Compile Include="Utils\FluentWait.cs" />
     <Compile Include="Utils\KillDriverProcesses.cs" />
+    <Compile Include="Utils\LockCategory.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Utils\TestDataGenerator.cs" />
   </ItemGroup>
@@ -513,6 +535,30 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Rings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Buckets.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Capacity.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityUnits.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Projects.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Teams.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseDashboardPage.feature.cs</LastGenOutput>
@@ -524,6 +570,10 @@
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DashboardsPage.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -560,6 +610,10 @@
     <None Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>RemoveColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Pivot\Pivot.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Pivot.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ProfileDetails\AccountDetailsFunctionality.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -605,25 +659,29 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login_Logout.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\CreatingProjects\ComputerScheduledProject.feature">
+    <None Include="Tests\Senior\Senior_CreatingProjects\ComputerScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ComputerScheduledProject.feature.cs</LastGenOutput>
+      <LastGenOutput>ComputerScheduledProject1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\CreatingProjects\MailboxScheduledProject.feature">
+    <None Include="Tests\Senior\Senior_CreatingProjects\MailboxScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MailboxScheduledProject.feature.cs</LastGenOutput>
+      <LastGenOutput>MailboxScheduledProject1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\CreatingProjects\UserScheduledProject.feature">
+    <None Include="Tests\Senior\Senior_CreatingProjects\UserScheduledProject.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UserScheduledProject.feature.cs</LastGenOutput>
+      <LastGenOutput>UserScheduledProject1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\Projects_Dashboards.feature">
+    <None Include="Tests\Senior\Senior_Dashboards.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Projects_Dashboards.feature.cs</LastGenOutput>
+      <LastGenOutput>Senior_Dashboards.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\Projects\Projects_PMObject.feature">
+    <None Include="Tests\Senior\Senior_BulkUpdate.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Projects_PMObject.feature.cs</LastGenOutput>
+      <LastGenOutput>Senior_BulkUpdate.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\Senior\Senior_PMObject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Senior_PMObject.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -631,6 +689,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\CorrectFile_DAS12370.xml" />
+    <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
+    <Content Include="Resources\DAS_13733_Valid_file.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">
@@ -638,13 +698,16 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets'))" />
     <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.1\build\SpecFlow.targets'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
   </Target>
   <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\SpecFlow.2.4.1\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
 </Project>

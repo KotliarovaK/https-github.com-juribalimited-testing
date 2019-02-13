@@ -20,6 +20,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button/i[@class='material-icons mat-clear']")]
+        public IWebElement CloseMessageButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 

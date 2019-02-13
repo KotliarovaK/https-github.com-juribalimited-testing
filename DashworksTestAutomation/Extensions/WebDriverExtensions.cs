@@ -346,7 +346,12 @@ namespace DashworksTestAutomation.Extensions
 
         public static void WaitForDataLoading(this RemoteWebDriver driver)
         {
-            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner')]", waitTimeout);
+            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", waitTimeout);
+        }
+
+        public static void WaitForDataLoadingInActionsPanel(this RemoteWebDriver driver)
+        {
+            WaitForDataToBeLoaded(driver, ".//div[contains(@class,'action-progress')]", waitTimeout);
         }
 
         public static void WaitForDataLoadingOnProjects(this RemoteWebDriver driver)
@@ -421,13 +426,18 @@ namespace DashworksTestAutomation.Extensions
         {
             selectbox.Click();
             //Small wait for dropdown display
-            Thread.Sleep(300);
+            Thread.Sleep(500);
+
+            //TODO: [Yurii Timchenko] commented code below doesn't work on 6 Dec 2018. Temporary fixed below, will be rewritten when new filters functionality is ready (per K. Kim's answer)
+            //var options = driver.FindElements(By.XPath(
+            //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
             var options = driver.FindElements(By.XPath(
-                ".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
+                "//div[contains(@class,'mat-select-panel mat-primary')]/mat-option"));
+                
             if (!options.Any())
             {
                 options = driver.FindElements(By.XPath(
-                    ".//div[contains(@class,'mat-select-content ng-trigger ng-trigger-fadeInContent')]/mat-option"));
+                    "//mat-option[@class='mat-option ng-star-inserted']"));
                 if (!options.Any())
                     throw new Exception($"Filter options were not loaded, unable to select '{option}'");
             }
@@ -542,6 +552,14 @@ namespace DashworksTestAutomation.Extensions
         {
             IJavaScriptExecutor ex = driver;
             ex.ExecuteScript($"arguments[0].setAttribute('{attribute}', '{text}')", element);
+        }
+
+        public static String GetNetworkLogByJavascript(this RemoteWebDriver driver)
+        {
+            String scriptToExecute = "var performance = window.performance  || window.mozPerformance  || window.msPerformance  || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return JSON.stringify(network);";
+            IJavaScriptExecutor ex = driver;
+            var netData = ex.ExecuteScript(scriptToExecute);
+            return netData.ToString();
         }
 
         #endregion Actions with Javascript

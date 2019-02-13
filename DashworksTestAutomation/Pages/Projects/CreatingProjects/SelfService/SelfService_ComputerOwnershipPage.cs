@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
     internal class SelfService_ComputerOwnershipPage : SeleniumBasePage
     {
@@ -12,7 +11,7 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement ShowScreen { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'ShowComputerNameFromHTTPHeader')]")]
-        public IWebElement NamefromHttp { get; set; }
+        public IWebElement NameFromHttp { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ShowComputersUsedButNotOwnedByTheUser')]")]
         public IWebElement ShowComputers { get; set; }

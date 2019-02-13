@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Pages
         #region Forced login splash page
 
         [FindsBy(How = How.ClassName, Using = "loginsplash-panel")]
-        public IWebElement LoginsplashPanel { get; set; }
+        public IWebElement LoginSplashPanel { get; set; }
 
         [FindsBy(How = How.Id, Using = "ctl00_DwTopBar1_DwLogin1_UserLink")]
         public IWebElement LoginLink { get; set; }

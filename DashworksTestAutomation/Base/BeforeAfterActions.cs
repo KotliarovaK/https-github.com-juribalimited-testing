@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Reflection;
 using BoDi;
 using DashworksTestAutomation.Extensions;
@@ -28,6 +31,10 @@ namespace DashworksTestAutomation.Base
         [BeforeScenario]
         public void OnStartUp()
         {
+            List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+            LockCategory.AwaitTags(testTags);
+            LockCategory.AddTags(testTags);
+
             var driverInstance = CreateBrowserDriver();
 
             driverInstance.Manage().Window.Maximize();
@@ -40,6 +47,9 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
+                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+                LockCategory.RemoveTags(testTags);
+
                 var driver = _objectContainer.Resolve<RemoteWebDriver>();
 
                 try
@@ -63,7 +73,7 @@ namespace DashworksTestAutomation.Base
                     }
 
                     var testStatus = GetTestStatus();
-                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("TestError"))
+                    if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
@@ -106,12 +116,8 @@ namespace DashworksTestAutomation.Base
 
         private string GetTestStatus()
         {
-            PropertyInfo pInfo =
-                typeof(ScenarioContext).GetProperty("TestStatus", BindingFlags.Instance | BindingFlags.NonPublic);
-            MethodInfo getter = pInfo.GetGetMethod(true);
-            object testResult = getter.Invoke(_scenarioContext, null);
-            var testResults = testResult.ToString();
-            return testResults;
+            var testStatus = TestContext.CurrentContext.Result.Outcome.Status;
+            return testStatus.ToString();
         }
 
         private string GetTestName()

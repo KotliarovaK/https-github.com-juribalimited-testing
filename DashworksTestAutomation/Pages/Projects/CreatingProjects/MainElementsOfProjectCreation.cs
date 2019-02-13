@@ -4,21 +4,21 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
     internal class MainElementsOfProjectCreation : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//h1")]
-        public IWebElement PageHeder { get; set; }
+        public IWebElement PageHeader { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsers_TB_Narrow')]")]
-        public IWebElement SearchTextbox { get; set; }
+        public IWebElement SearchTextBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsers_Btn_Narrow')]")]
         public IWebElement SearchButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_TB_Narrow')]")]
-        public IWebElement SearchTextboxForMembers { get; set; }
+        public IWebElement SearchTextBoxForMembers { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id,'SelectUsersToAdd_Btn_Narrow')]")]
         public IWebElement SearchButtonForMembers { get; set; }
@@ -29,23 +29,23 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = "//a[text()='Next  >']")]
         public IWebElement NextTeamsListLink { get; set; }
 
-        public override List<By> GetPageIdentitySelectors()
-        {
-            Driver.WaitForDataLoading();
-            return new List<By>
-            {
-                SelectorFor(this, p => p.PageHeder)
-            };
-        }
+        [FindsBy(How = How.XPath, Using = "//span[@title='Default Team']/input")]
+        public IWebElement DefaultTeamCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//a[text()='Create Project']")]
         public IWebElement CreatedProject { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@value='Create Project']")]
+        public IWebElement CreatedProjectButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//li//a[text()='Manage Project']")]
         public IWebElement ManageProject { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-success')]")]
         public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[contains(@class, 'tooltip-information')]")]
+        public IWebElement InformationMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'tooltipbar-alert')]")]
         public IWebElement ErrorMessage { get; set; }
@@ -58,6 +58,18 @@ namespace DashworksTestAutomation.Pages.Projects
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Add']")]
         public IWebElement AddButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='pmform']//a[text()='Dashworks Evergreen']")]
+        public IWebElement DashworksEvergreenCapacityLink { get; set; }
+
+        public override List<By> GetPageIdentitySelectors()
+        {
+            Driver.WaitForDataLoading();
+            return new List<By>
+            {
+                SelectorFor(this, p => p.PageHeader)
+            };
+        }
 
         #region Tabs for creating Projects page
 
@@ -77,7 +89,9 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public IWebElement GetTabElementByNameOnSelfServiceTab(string tabName)
         {
-            var selector = By.XPath($".//div[@class='dwmenu navigation-menu alignList manageSelfServiceMenu']//a[contains(text(), '{tabName}')]");
+            var selector =
+                By.XPath(
+                    $".//div[@class='dwmenu navigation-menu alignList manageSelfServiceMenu']//a[contains(text(), '{tabName}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -176,6 +190,13 @@ namespace DashworksTestAutomation.Pages.Projects
 
         #endregion
 
+        public IWebElement GetTeamByName(string teamName)
+        {
+            var selector = By.XPath($"//td[contains(@title, '{teamName}')]/a");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public int GetGroupsCountByTeamName(string teamName)
         {
             var groupsCount = Driver.FindElement(By.XPath($".//td[@title='{teamName}']/..//td[5]")).Text;
@@ -190,7 +211,30 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public IWebElement GetDefaultRequestTypeCountByName(string requestName)
         {
-            var selector = By.XPath($".//a[contains(text(), '{requestName}')]/../following-sibling::td//input[@src='/images/tick2.png']");
+            var selector =
+                By.XPath(
+                    $".//a[contains(text(), '{requestName}')]/../following-sibling::td//input[@src='/images/tick2.png']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTaskByName(string taskName)
+        {
+            var selector = By.XPath($"//a[contains(@id, 'Tasks')][text()='{taskName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($"//label[text()='{checkboxName}']/ancestor::td/input");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetTableContentByText(string text)
+        {
+            var selector = By.XPath($".//tr[@class='grid-rowstyle']//td/a[contains(text(), '{text}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

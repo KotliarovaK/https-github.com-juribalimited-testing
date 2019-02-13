@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656 @DAS12602
+@Evergreen @Users @Evergreen_ActionsPanel @AllCheckbox @DAS10769 @DAS10656 @DAS12206
 Scenario: EvergreenJnr_UsersList_SelectAllCheckboxStatusCheckAfterSearch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -85,7 +85,7 @@ Scenario Outline: EvergreenJnr_AllLists_SelectAllChecboxMainFunctionalityTest
 Examples: 
 	| PageName     | SelectedRowsCount | Columnname    | SelectedRowName                                            | SelectedRowsCountAfterDiselect |
 	| Devices      | 17225             | Hostname      | 00BDM1JUR8IF419                                            | 17224                          |
-	| Users        | 41339             | Username      | $6BE000-SUDQ9614UVO8                                       | 41338                          |
+	| Users        | 41339             | Username      | 002B5DC7D4D34D5C895                                        | 41338                          |
 	| Applications | 2223              | Application   | "WPF/E" (codename) Community Technology Preview (Feb 2007) | 2222                           |
 	| Mailboxes    | 14784             | Email Address | 000F977AC8824FE39B8@bclabs.local                           | 14783                          |
 

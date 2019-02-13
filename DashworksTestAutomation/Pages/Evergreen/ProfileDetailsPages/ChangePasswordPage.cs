@@ -27,6 +27,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
         public IWebElement ErrorMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button/i[@class='material-icons mat-clear']")]
+        public IWebElement CloseMessageButton { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

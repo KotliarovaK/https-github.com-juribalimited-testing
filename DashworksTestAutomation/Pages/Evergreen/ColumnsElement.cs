@@ -18,12 +18,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ColumnsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@name='search']")]
-        public IWebElement SearchTextbox { get; set; }
+        public IWebElement SearchTextBox { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
                 "//button[@class='btn btn-default input-toggle mat-icon-button _mat-animation-noopable ng-star-inserted']")]
-        public IWebElement SearchTextboxResetButton { get; set; }
+        public IWebElement SearchTextBoxResetButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//div[@class='columns-panel']//i[@class='material-icons mat-clear mat-18']")]
@@ -51,14 +51,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return new List<By>
             {
                 SelectorFor(this, p => p.ColumnsPanel),
-                //SelectorFor(this, p => p.SearchTextbox)
+                //SelectorFor(this, p => p.SearchTextBox)
             };
         }
 
         public void AddColumn(string columnName)
         {
-            SearchTextbox.SendKeys(columnName);
-            var selector = string.Empty;
+            SearchTextBox.SendKeys(columnName);
+            string selector;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void AddColumnFromExpandedSection(string columnName)
         {
-            var selector = string.Empty;
+            string selector;
             if (columnName.Contains("'"))
             {
                 var strings = columnName.Split('\'');
@@ -90,21 +90,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 selector = $".//div[@class='columns-panel']//span[text()='{columnName}']";
             }
 
-            if (!Driver.IsElementDisplayed(By.XPath(selector)))
-            {
-                Driver.MouseHover(ColumnSubcategories.First());
-            }
+            if (!Driver.IsElementDisplayed(By.XPath(selector))) Driver.MouseHover(ColumnSubcategories.First());
 
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
-
             Driver.WaitForDataLoading();
         }
 
         private IWebElement FilterCategory(string filterCategoryName)
         {
             return Driver.FindElement(By.XPath(
-                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()='{filterCategoryName}']/ancestor::div[@class='filter-category ng-star-inserted']"));
+                $".//div[contains(@class,'filter-category-label blue-color bold-text')][text()=\"" + filterCategoryName + "\"]/ancestor::div[@class='filter-category ng-star-inserted']"));
         }
 
         public void AddAllColumnsFromCategory(string categoryName)
@@ -112,7 +108,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var filterCategory = FilterCategory(categoryName);
             filterCategory.FindElement(By.XPath(GroupTitleSelector)).Click();
 
-            //Small wait for subcategoris display
+            //Small wait for subcategories display
             Thread.Sleep(350);
             var subCategories =
                 filterCategory.FindElements(By.XPath(".//div[@class='sub-categories ng-star-inserted']/div"));
@@ -162,35 +158,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector =
                 $".//div[@class='columns-panel']//span[text()='{columnName}']/ancestor::div[@class='sub-categories-item selected-column ng-star-inserted']//button";
             return Driver.FindElement(By.XPath(selector));
-        }
-
-        public void ExpandColumnsSectionByName(string sectionsName)
-        {
-            if (Driver.IsElementExists(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")))
-            try
-            {
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
-            }
-            catch
-            {
-                Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]"));
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'add')]")).Click();
-            }
-            if (ColumnSubcategories.Any())
-                Driver.MouseHover(ColumnSubcategories.Last());
-        }
-
-        public void CloseColumnsSectionByName(string sectionsName)
-        {
-            try
-            {
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
-            }
-            catch
-            {
-                Driver.MouseHover(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]"));
-                Driver.FindElement(By.XPath($".//div[contains(@class, 'filter-category-label')][text()='{sectionsName}']//ancestor::div[contains(@class, 'filter-category-title')]//i[contains(@class, 'clear')]")).Click();
-            }
         }
 
         public bool CategoryIsDisplayed(string sectionsName)

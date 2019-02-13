@@ -6,6 +6,6 @@
 
         public static string CorrectFile => $"{ResourcesFolderName}\\CorrectFile.png";
         public static string IncorrectFile => $"{ResourcesFolderName}\\IncorrectFile.zip";
-        public static string CorrectFileDas12370 => $"{ResourcesFolderName}\\CorrectFile_DAS12370.xml";
+        public static string ResourcesFolderRoot => $"{ResourcesFolderName}\\";
     }
 }

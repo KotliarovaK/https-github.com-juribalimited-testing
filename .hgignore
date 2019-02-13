@@ -1,8 +1,0 @@
-syntax: glob
-bin
-obj
-.vs
-TestResults
-*.suo
-packages
-DashworksTestAutomation/App.config

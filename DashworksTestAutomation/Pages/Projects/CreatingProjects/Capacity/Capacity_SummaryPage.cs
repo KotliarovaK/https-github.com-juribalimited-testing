@@ -3,11 +3,10 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects.Capacity
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Capacity
 {
     internal class Capacity_SummaryPage : SeleniumBasePage
     {
-
         [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'RequestType')]")]
         public IWebElement RequestType { get; set; }
 

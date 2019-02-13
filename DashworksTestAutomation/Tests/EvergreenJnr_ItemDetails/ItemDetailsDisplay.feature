@@ -13,6 +13,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	When User perform search by "alex.cristea@juriba.com"
 	And User click content from "Email Address" column
 	When User closes "Mailbox" section on the Details Page
+	When User opens "Mailbox Owner" section on the Details Page
 	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
@@ -33,7 +34,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatGroupIconsAreDisplayedForGroupDetailsPa
 	Then User clicks on "NL00G001" search result
 	And Group Icon for Group Details page is displayed
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS13409 @DAS13657 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -50,7 +51,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
-	And There are no errors in the browser console
+	#And There are no errors in the browser console
 
 Examples: 
 	| PageName     | SearchTerm                                              | ItemName      | TabName      | ColumnName  | CheckboxName        | NewColumnName       |
@@ -61,7 +62,7 @@ Examples:
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Key                 | Key                 |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Domain      | Evergreen Object ID | Evergreen Object ID |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @DAS13657
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -80,7 +81,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples: 
 	| PageName     | SearchTerm                                              | ItemName      | TabName      | ExpandedSectionName | SectionName         | ColumnName    | CheckboxName         | NewColumnName        |
@@ -137,7 +138,7 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Collection Key       | Collection Key       |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Distribution | Users               | Devices             | Device        | Program Key          | Program Key          |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @DAS13657
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -154,9 +155,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And content is present in the following newly added columns:
 	| ColumnName      |
 	| <NewColumnName> |
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
-Examples: 
+Examples:
 	| PageName | ItemName | TabName    | SectionName                | ColumnName  | CheckboxName     | NewColumnName    |
 	| Devices  | Hostname | Compliance | Software Compliance Issues | Application | PackageKey       | PackageKey       |
 	| Devices  | Hostname | Projects   | Device Projects            | Project     | Object ID        | Object ID        |
@@ -168,7 +169,7 @@ Examples:
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Category Key     | Category Key     |
 	| Devices  | Hostname | Projects   | Device Owner Projects      | Username    | Status Key       | Status Key       |
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11053
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11053 @DAS14923
 Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDetailsPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -186,7 +187,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDe
 	| IP Address     |
 	| Compliance     |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11393 @DAS12765 @DAS13657
 Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -206,26 +207,29 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Project      |
 	| Project Type |
 	| Bucket       |
+	| Ring         |
 	| Request Type |
 	| Workflow     |
 	| Category     |
 	| Status       |
 	| Date         |
-	| Readiness    |
+	| Slot         |
 	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
 	| Checkbox     |
 	| Key          |
 	| Project      |
 	| Project Type |
 	| Bucket       |
+	| Ring         |
 	| Request Type |
 	| Workflow     |
 	| Category     |
 	| Status       |
 	| Date         |
+	| Slot         |
 	| Readiness    |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummarySectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -242,7 +246,7 @@ Examples:
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -261,7 +265,7 @@ Examples:
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -279,7 +283,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 Examples:
 	| PageName | SelectedName   | ColumnName | CountRows |
 	| Devices  | 001BAQXT6JWFPI | Hostname   | 2         |
-	| Users    | ZZZ588323      | Username   | 1         |
+	| Users    | EKS951231      | Username   | 4         |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667 @DAS12321 @DAS11921
 Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxDetails
@@ -320,7 +324,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksAndImageItemAreDisplayedInThe
 	And Links from "Name" column is displayed to the user on the Details Page
 	And Links from "Display Name" column is displayed to the user on the Details Page
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11983 @DAS11926 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRowsInTheTableAreEmptyIfTheDataIsUnknown
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -338,7 +342,7 @@ Examples:
 	| Mailboxes | aaron.u.flores@dwlabs.local      | Email Address | Details | Mailbox           | Department and Location |
 	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Details | Mailbox           | Mailbox                 |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11762 @DAS12235 @DAS13813 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextField
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -349,7 +353,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoConsoleErrorsAreDisplayedWhen
 	And User clicks Filter button on the Column Settings panel
 	When  User enters "123455465" text in the Filter field
 	When User clears Filter field
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 Examples:
 	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn |
@@ -384,12 +388,12 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAutosizeOptionWorksCorrectly
 	And User have select "Autosize This column" option from column settings on the Details Page
 	Then Site column has standard size
 
-	Examples:
+Examples:
 	| SectionName    |
 	| Advertisements |
 	| Collections    |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12043
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12043 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedWhenOpenedDeviceDetailsThatDoesNotContainOwnerInformation
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -528,10 +532,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User selects "TierA Site01" checkbox from String Filter on the Details Page
 	Then "0" rows found label displays on Details Page
 	When User clicks Reset Filters button on the Details Page
-	When User selects following date filter on the Details Page
-	| FilterData |
-	| 7302017    |
-	Then "0" rows found label displays on Details Page
+	#When User selects following date filter on the Details Page
+	#| FilterData |
+	#| 7302017    |
+	#Then "0" rows found label displays on Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12088 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermissionsDataAreDisplayedCorrectly
@@ -549,7 +553,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermiss
 	Then Content is present in the table on the Details Page
 	And "14" rows found label displays on Details Page 
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -580,7 +584,7 @@ Examples:
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | User Projects         | 1         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | Mailbox Projects      | 1         |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForExpandedSections
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -599,7 +603,7 @@ Examples:
 	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
 	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409
 Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -641,7 +645,7 @@ Examples:
 	| Devices      | 001BAQXT6JWFPI                            |
 	| Users        | $231000-3AC04R8AR431                      |
 
-@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491
+@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
@@ -654,7 +658,7 @@ Examples:
 	| Applications | IEWatch 2.1         | Application | MSI       |
 	| Users        | 01A921EFD05545818AA | Username    | Mailboxes |
 	
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS14923 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -666,7 +670,35 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	And User clicks "Tricia G. Huang" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
+Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
+	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
+	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
+	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
+
+Examples:
+	| PageName     | SearchTerm                       | ColumnName    | TabName       | KeyToBeSelected | ValueToBeSelected   |
+	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Manufacturer    | FES0798481167       |
+	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Hostname        | 05PFM2OWVCSCZ1      |
+	| Users        | 03714167684E45F7A8F              | Username      | Details       | Username        | 03714167684E45F7A8F |
+	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
+	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341
+Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
+	When User type "NL00G001" in Global Search Field
+	Then User clicks on "NL00G001" search result
+	When User selects "Description" text from key value grid on the Details Page
+	Then "Description" text selected from key value grid on the Details Page
+	When User selects "Unknown" text from key value grid on the Details Page
+	Then "Unknown" text selected from key value grid on the Details Page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS12321 @DAS14923 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirectedToTheRelevantUserDetailsPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -677,13 +709,23 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13849
+Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProjectsGridOnProjectsTabOfParticularDevice
+	When User clicks "Devices" on the left-hand menu
+	And User perform search by "00BDM1JUR8IF419"
+	And User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	And User closes "Evergreen" section on the Details Page
+	And User opens "Device Projects" section on the Details Page
+	Then All data is unique in the 'Project' column
+
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
 Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetailsProjectsPages
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
 	And User navigates to the "Projects" tab
-	And User closes "Project Summary" section on the Details Page
+	And User closes "Evergreen" section on the Details Page
 	And User opens "<SectionOpen>" section on the Details Page
 	Then "Bucket" column is displayed to the user
 
@@ -695,7 +737,7 @@ Examples:
 	| Users     | ZZZ588323                        | Username      | Device Projects       |
 	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox User Projects |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -710,7 +752,32 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 5222014  | 5202018 |
 	Then "2" rows found label displays on Details Page
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12386
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @Delete_Newly_Created_Bucket
+Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
+	When User clicks Admin on the left-hand menu
+	And User clicks "Buckets" link on the Admin page
+	And User clicks the "CREATE BUCKET" Action button
+	And User enters "AutoTestBucket_DAS_13335" in the "Bucket Name" field
+	And User selects "Admin IT" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	And User clicks "Users" on the left-hand menu
+	And User perform search by "AAG081456"
+	And User click content from "Username" column
+	And User navigates to the "Projects" tab
+	And User clicks on Unassigned link for "Evergreen Bucket" field
+	And User clicks on "New Bucket" dropdown
+	And User select "AutoTestBucket_DAS_13335" value on the Details Page
+	And User opens "Related Devices" section on the Details Page
+	And User selects all rows on the grid on the Details Page
+	And User opens "Related Mailboxes" section on the Details Page
+	And User clicks the "UPDATE" Action button
+	And User clicks "Devices" on the left-hand menu
+	And User perform search by "I55HL8MSBYK0VG"
+	And User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	Then User sees "AutoTestBucket_DAS_13335" Evergreen Bucket in Project Summary section on the Details Page
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12386 @DAS14923 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage
 	When User add following columns using URL to the "<PageName>" page:
 	| ColumnName |
@@ -720,13 +787,14 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	| <Column>   |
 	When User click content from "<Column>" column
 	Then Details object page is displayed to the user
+	And URL is "<URLpart>"
 
 Examples:
-	| PageName     | Column          |
-	| Devices      | Device Key      |
-	| Users        | User Key        |
-	| Applications | Application Key |
-	| Mailboxes    | Mailbox Key     |
+	| PageName     | Column          | URLpart                      |
+	| Devices      | Device Key      | evergreen/#/device/9141      |
+	| Users        | User Key        | evergreen/#/user/71622       |
+	| Applications | Application Key | evergreen/#/application/4249 |
+	| Mailboxes    | Mailbox Key     | evergreen/#/mailbox/49258    |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
@@ -754,73 +822,210 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @Not_Run
-Scenario: EvergreenJnr_AllLists_CheckThatPopupIsBiggerAndIsShownProperlyBucketIsChangedSuccessfully
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @Not_Run
+Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE BUCKET" Action button
 	Then "Create Bucket" page should be displayed to the user
-	When User enters "Bucket12883" in the Bucket Name field
+	When User enters "Bucket12883" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	And User clicks Create button on the Create Bucket page
+	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
+		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User perform search by "05NITEIIH3CGB55"
+	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
+	When User clicks refresh button in the browser
 	When User navigates to the "Projects" tab
-	When User clicks on Evergreen Bucket link
-	Then Change Bucket pop-up is opened
+	When User clicks on Unassigned link for "Evergreen Bucket" field
+	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
-	Then User clicks on New Bucket dropdown
-	When User select "Bucket12883" Bucket on the Details Page
+	Then User clicks on "New Bucket" dropdown
+	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
-	When User clicks "CHANGE" button on Change Bucket window
-	Then Evergreen Bucket link "Bucket12883" is displayed
+	When User clicks the "CHANGE" Action button
+	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "Bucket12883" link on the Details Page
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Bucket" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#go to Users page
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "01C44C91EB7E4BE88F6"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
-	When User clicks on Evergreen Bucket link
-	Then Change Bucket pop-up is opened
+	When User clicks on Unassigned link for "Evergreen Bucket" field
+	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Mailboxes" section on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
-	Then User clicks on New Bucket dropdown
-	When User select "Bucket12883" Bucket on the Details Page
+	Then User clicks on "New Bucket" dropdown
+	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
-	When User clicks "CHANGE" button on Change Bucket window
-	Then Evergreen Bucket link "Bucket12883" is displayed
+	When User clicks the "CHANGE" Action button
+	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "Bucket12883" link on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Bucket" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#go to Mailboxes page
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "05A694C737C045C2B4F@bclabs.local"
+	When User perform search by "00BDBAEA57334C7C8F4@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
 	When User navigates to the "Projects" tab
-	When User clicks on Evergreen Bucket link
-	Then Change Bucket pop-up is opened
+	When User clicks on Unassigned link for "Evergreen Bucket" field
+	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
 	When User selects all rows on the grid on the Details Page
-	Then User clicks on New Bucket dropdown
-	When User select "Bucket12883" Bucket on the Details Page
+	Then User clicks on "New Bucket" dropdown
+	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
-	When User clicks "CHANGE" button on Change Bucket window
-	Then Evergreen Bucket link "Bucket12883" is displayed
+	When User clicks the "CHANGE" Action button
+	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
-	And Delete "Bucket12883" Bucket in the Administration
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "Bucket12883" link on the Details Page
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Bucket" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
+	Then Delete "Bucket12883" Bucket in the Administration
+	
+@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @Not_Run
+Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE UNIT" Action button
+	Then "Capacity Units" page should be displayed to the user
+	When User type "CapacityUnit12883" Name in the "Capacity Unit Name" field on the Project details page
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+		#go to Devices page
+	When User clicks on Unassigned link for "Capacity Unit" field
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#go to Users page
+	When User clicks on Unassigned link for "Capacity Unit" field
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Mailboxes" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#go to Mailboxes page
+	When User clicks on Unassigned link for "Capacity Unit" field
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	Then There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	Then Bucket pop-up has standard size on the Details Page
+	Then section is loaded correctly
+	When User selects all rows on the grid on the Details Page
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "Unassigned" value on the Details Page
+	Then Bucket pop-up has standard size on the Details Page
+	When User clicks the "CHANGE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	Then There are no errors in the browser console
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Capacity Units" link on the Admin page
+	Then "Capacity Units" page should be displayed to the user
+	When User select "Bucket" rows in the grid
+	| SelectedRowsName  |
+	| CapacityUnit12883 |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
 
 @Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
@@ -852,3 +1057,82 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then "99" rows found label displays on Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13892
+Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccessfullyLoaded
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks content from "Hostname" column
+	And User navigates to the "Projects" tab
+	When User clicks on Unassigned link for "Evergreen Capacity Unit" field
+	Then Bucket pop-up has standard size on the Details Page
+	When User opens "Related Users" section on the Details Page
+	Then section is loaded correctly
+	Then There are no errors in the browser console
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks content from "<ColumnName>" column
+	And User navigates to the "Projects" tab
+	Then "Evergreen" section is expanded on the Details Page
+	And "Project Count" text is displayed in the expanded section on the Details Page
+	And "Evergreen Bucket" text is displayed in the expanded section on the Details Page
+	And "Evergreen Capacity Unit" text is displayed in the expanded section on the Details Page
+	And There are no errors in the browser console
+
+Examples:
+	| ListName  | ColumnName    |
+	| Devices   | Hostname      |
+	| Users     | Username      |
+	| Mailboxes | Email Address |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @DAS14431
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
+	When User clicks "Applications" on the left-hand menu
+	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	And User click content from "Application" column
+	And User navigates to the "Projects" tab
+	And User have opened Column Settings for "Delivery Date" column in the Details Page table
+	And User clicks Filter button on the Column Settings panel
+	And User remembers the date input position
+	And User select criteria with following date:
+	| Criteria  | Date     |
+	| Not Equal | 23032018 |
+	Then User checks that date input has same position
+	And There are no errors in the browser console
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User performs right-click on "<TargetCell>" cell in the grid
+	And User selects 'Copy cell' option in context menu
+	Then Next data '<TargetCell>' is copied
+	
+Examples:
+	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn | TargetCell    |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    | Access 95     |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group          | Domain Admins |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968 @Not_Run
+Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
+	When User clicks "<PageName>" on the left-hand menu
+	And User perform search by "<SearchTerm>"
+	And User click content from "<ColumnName>" column
+	And User navigates to the "<TabName>" tab
+	And User performs right-click on "<TargetCell>" cell in the grid
+	And User selects 'Copy cell' option in context menu
+	Then Next data '<ExpectedData>' is copied
+	
+Examples:
+	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn | TargetCell    | ExpectedData          |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    | Access 95     | !should be scpecified |
+	| Users        | svc_dashworks                                           | Username      | Groups       | Group          | Domain Admins | !should be scpecified |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi | !should be scpecified |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      | !should be scpecified |

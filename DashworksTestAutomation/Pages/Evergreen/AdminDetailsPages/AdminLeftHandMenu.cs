@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='submenu ps']")]
         public IWebElement AdminSubMenu { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[@aria-describedby='cdk-describedby-message-7']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Projects']/ancestor::li[@class='ng-star-inserted']")]
         public IWebElement Projects { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Teams']")]
@@ -22,6 +22,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Buckets']")]
         public IWebElement Buckets { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Capacity Units']")]
+        public IWebElement CapacityUnits { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Rings']")]
+        public IWebElement Rings { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//h1[text()='Projects']")]
         public IWebElement ProjectsPage { get; set; }
@@ -31,6 +37,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//h1[text()='Buckets']")]
         public IWebElement BucketsPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//h1[text()='Capacity Units']")]
+        public IWebElement CapacityUnitsPage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

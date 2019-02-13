@@ -5,7 +5,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
-using NUnit.Framework;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -76,6 +75,19 @@ namespace DashworksTestAutomation.Extensions
             try
             {
                 return element.Displayed;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool IsElementExists(this IWebElement element, By by)
+        {
+            try
+            {
+                element.FindElement(by);
+                return true;
             }
             catch
             {

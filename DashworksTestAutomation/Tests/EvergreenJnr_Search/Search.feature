@@ -49,7 +49,7 @@ Scenario: EvergreenJnr_AllLists_CheckSearchFilterAndTableContentDuringNavigation
 	And Search field is empty
 	And User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned
 	| SearchCriteria | NumberOfRows |
-	| Python          | 7           |
+	| Python         | 7            |
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	And "14,784" rows are displayed in the agGrid
@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_DevicesList_SearchTests
 	| O'Connor            | 13           |
 	| @demo.juriba.com    | 16,717       |
 	| 192.168.6           | 5,100        |
-	| RED                 | 9,238        |
+	#| RED                 | 9,238        |
 	| 0JIE                | 1            |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11012 @DAS12206
@@ -203,9 +203,9 @@ Examples:
 	| PageName     | ColumnName                                      | SearchCriteria                              | NumberOfRows |
 	| Devices      | Compliance                                      | GREEN                                       | 100          |
 	| Devices      | Windows7Mi: Readiness                           | OUT OF SCOPE                                | 5,118        |
-	| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
+	#| Devices      | Windows7Mi: Group Computer Rag Radio Date Owner | Not Applicable                              | 5,161        |
 	| Applications | Import Type                                     | Altiris 6                                   | 31           |
-	| Users        | Department                                      | The Last Department With A Really Lond Name | 10           |
+	| Users        | department                                      | The Last Department With A Really Lond Name | 10           |
 
 @Evergreen @Applications @EvergreenJnr_Search @Search @DAS11511
 Scenario: EvergreenJnr_ApplicationsLists_Search_CheckThatTableSearchIsWorkingCorrectlyForApplicationColumn
@@ -342,3 +342,41 @@ Scenario: EvergreenJnr_DevicesLists_Search_CheckThatValidationForSpecialCharacte
 	Then User enters invalid SearchCriteria into the agGrid Search Box and "No devices found" message is displayed
 	| SearchCriteria |
 	| %%%            |
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS13342
+Scenario: EvergreenJnr_DevicesList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheSearchCrossButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	And "17,225" rows are displayed in the agGrid
+	When User perform search by "00K"
+	Then "8" rows are displayed in the agGrid
+	When User clicks cross icon in Table search field
+	Then "17,225" rows are displayed in the agGrid
+
+@Evergreen @Applications @EvergreenJnr_Search @Search @DAS13342 @DAS13366
+Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTheFullRowCountAfterClickingTheFilterButtonAfterRunningASearch
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	Then "2,223" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Hide from End Users" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| FALSE              |
+	When User add "Application" filter where type is "Equals" with added column and following value:
+	| Values                             |
+	| DirectX SDK (Version 8.1) (3663.0) |
+	Then "1,067" rows are displayed in the agGrid
+	Then "(Windows7Mi: Hide from End Users = false) OR (Application = DirectX SDK (Version 8.1) (3663.0))" text is displayed in filter container
+	When User perform search by "microsoft"
+	Then "395" rows are displayed in the agGrid
+	When User opens filter container
+	Then "1,067" rows are displayed in the agGrid
+
+	@Evergreen @EvergreenJnr_Search @Search @DAS14731
+Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed
+	When User type "jet" in Global Search Field and presses Enter key
+	Then list of results is displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	And There are no errors in the browser console

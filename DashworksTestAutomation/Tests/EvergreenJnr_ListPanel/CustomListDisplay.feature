@@ -100,7 +100,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatSearchDoesNotTriggerNewCustomLis
 	| Applications | Hen    | 5    | 1       |
 	| Mailboxes    | Henry  | 22   | 73      |
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11081 @DAS11951 @DAS12152 @DAS12602 @DAS15032 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -113,10 +113,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	When User click on 'Hostname' column header
 	Then data in table is sorted by 'Hostname' column in ascending order
 	And User save changes in list with "UnbelievableTestList" name
-	And "New list created" message is displayed
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @DAS13838 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -278,13 +277,13 @@ Scenario: EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNot
 	When User have reset all columns
 	Then data in table is sorted by 'Owner Display Name' column in ascending order
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11011 @DAS12152 @DAS12595 @DAS14783 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData
 	When User create static list with "Static List TestName" name on "Devices" page with following items
-	| ItemName        |
-	| 00BDM1JUR8IF419 |
-	| 011PLA470S0B9DJ |
-	| 00OMQQXWA1DRI6  |
+	| ItemName       |
+	| 00HA7MKAVVFDAV |
+	| 001PSUMZYOW581 |
+	| 00I0COBFWHOF27 |
 	Then "Static List TestName" list is displayed to user
 	Then "3" rows are displayed in the agGrid
 	When User clicks the Columns button
@@ -302,7 +301,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrec
 	And Edit List menu is not displayed
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00OMQQXWA1DRI6   |
+	| 00I0COBFWHOF27   |
 	Then User removes selected rows
 	When User navigates to the "All Devices" list
 	Then "Devices" list should be displayed to the user
@@ -410,7 +409,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveLis
 	Then "Static List TestName" list is displayed to user
 	And Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @DAS11951 @DAS12199 @DAS13001 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11026 @DAS11951 @DAS12199 @DAS13001 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -477,7 +476,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	When User navigates to the "Applications List TestName" list
 	Then Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS10647 @DAS13001 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -767,7 +766,7 @@ Examples:
 	| Users        | City            | Description   | Floor                |
 	| Mailboxes    | Alias           | Time Zone     | Building             |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS14183
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheSaveListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -827,11 +826,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsTriggeredO
 	Then Edit List menu is not displayed
 
 Examples:
-	| ListName     | ColumnName    | NewColumnName   | SelectedItem                                               | AddColumnName | AddAnotherColumn |
-	| Devices      | Hostname      | Import          | 001BAQXT6JWFPI                                             | Network Card  | Owner City       |
-	| Applications | Application   | Application Key | "WPF/E" (codename) Community Technology Preview (Feb 2007) | prK: In Scope | Compliance       |
-	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                                       | Cost Centre   | Department Name  |
-	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local                           | Enabled       | Import           |
+	| ListName     | ColumnName    | NewColumnName   | SelectedItem                               | AddColumnName | AddAnotherColumn |
+	| Devices      | Hostname      | Import          | 001BAQXT6JWFPI                             | Network Card  | Owner City       |
+	| Applications | Application   | Application Key | 0004 - Adobe Acrobat Reader 5.0.5 Francais | prK: In Scope | Compliance       |
+	| Users        | Username      | City            | $6BE000-SUDQ9614UVO8                       | Cost Centre   | Department Name  |
+	| Mailboxes    | Email Address | Alias           | 000F977AC8824FE39B8@bclabs.local           | Enabled       | Import           |
 
 @Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10998 @DAS10972 @DAS12602 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllList_CheckThatTheEditListFunctionIsHiddenAfterAddingChangingAndRemovingSearchCriteria
@@ -881,7 +880,7 @@ Examples:
 	| Applications | Application   | Adobe     | 40    | 1       |
 	| Mailboxes    | Email Address | bc-exch07 | 4,188 | 73      |
 
-@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListPanel @CustomListDisplay @DAS10972 @DAS12602 @DAS14183 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTheEditListFunctionIsHiddenAfterChangingPinnedColumns
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -1036,8 +1035,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewL
 	Then ColumnName is added to the list
 	| ColumnName |
 	| Enabled    |
-	#When User click on 'Username' column header
-	#Then data in table is sorted by 'Username' column in ascending order
 	When User clicks Save button on the list panel
 	When User selects Save as new list option
 	When User creates new custom list with "CustomList5588" name
@@ -1060,14 +1057,18 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	When User clicks Delete button for custom list
 	Then "list will be permanently deleted" message is displayed in the lists panel
 	And User clicks Delete button on the warning message in the lists panel
-	And "List Deleted" message is displayed
+	And "List deleted" message is displayed
 
-@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 
+@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
+	When User selects "Application Compliance" filter from "Application" category
+	When User change selected checkboxes:
+	| Option | State |
+	| Red    | true  |
 	When User add "Application Compliance" filter where type is "Equals" with selected Checkboxes and following Association:
 	| SelectedCheckboxes | Association        |
 	| Red                | Used on device     |
@@ -1129,7 +1130,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectly
 	Then Cancel button is displayed with correctly color
 	Then User confirm removed list
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300 @Not_Run
 Scenario: EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDropdown 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

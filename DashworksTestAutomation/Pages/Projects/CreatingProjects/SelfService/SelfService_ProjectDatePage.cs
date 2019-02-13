@@ -4,7 +4,7 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
     internal class SelfService_ProjectDatePage : SeleniumBasePage
     {

@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 {
     internal class TaskProperties_DetailsPage : SeleniumBasePage
     {
@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'BulkUpdate')]")]
         public IWebElement BulkUpdate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'SelfService')]")]
+        [FindsBy(How = How.XPath, Using = "//tr[contains(@id, 'SelfService')]//input[contains(@id, 'SelfService')]")]
         public IWebElement SelfService { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@value='Update Task']")]
@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[@value='Publish Task...']")]
         public IWebElement PublishTaskButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@value='Unpublish Task...']']")]
+        [FindsBy(How = How.XPath, Using = "//input[contains(@value, 'Unpublish Task')]")]
         public IWebElement UnpublishTaskButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

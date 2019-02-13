@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DashworksTestAutomation.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -32,11 +33,25 @@ namespace DashworksTestAutomation.Steps.Base
         [Then(@"There are no errors in the browser console")]
         public void ThenThereAreNoErrorsInTheBrowserConsole()
         {
-            List<LogEntry> errorsList = new List<LogEntry>();
+            var errorsList = new List<LogEntry>();
             foreach (var entry in _driver.Manage().Logs.GetLog(LogType.Browser).ToList())
                 if (entry.Level == LogLevel.Severe)
                     errorsList.Add(entry);
             Assert.IsEmpty(errorsList, "Error message is displayed in the console");
+        }
+
+        [Then(@"There are only page not found errors in console")]
+        public void ThenThereAreOnlyPageNotFoundErrorsInTheBrowserConsole()
+        {
+            var errorsList = new List<LogEntry>();
+
+            foreach (var entry in _driver.Manage().Logs.GetLog(LogType.Browser).ToList())
+                if (entry.Level == LogLevel.Severe)
+                    errorsList.Add(entry);
+
+            Assert.That(errorsList.Count, 
+                Is.EqualTo(errorsList.FindAll(x=>x.Message.Contains("the server responded with a status of 404 (Not Found)")).Count), 
+                "There are another errors in console");
         }
     }
 }

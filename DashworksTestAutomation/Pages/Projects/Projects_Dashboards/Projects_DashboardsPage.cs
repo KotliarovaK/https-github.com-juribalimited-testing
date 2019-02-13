@@ -3,7 +3,7 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
 {
     internal class Projects_DashboardsPage : SeleniumBasePage
     {
@@ -12,34 +12,38 @@ namespace DashworksTestAutomation.Pages.Projects
 
         public void GetGroupInTableByName(string groupName)
         {
-            var selector = string.Empty;
+            string selector;
 
             if (groupName.Contains("'"))
             {
                 var strings = groupName.Split('\'');
-                selector = $"//td[contains(@aria-describedby, 'GroupName')]//a[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                selector =
+                    $"//td[contains(@aria-describedby, 'GroupName')]//a[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
             }
             else
             {
                 selector = $"//td[contains(@aria-describedby, 'GroupName')]//a[text()='{groupName}']";
             }
+
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
 
         public void GetProjectByNameOnToolbar(string projectName)
         {
-            var selector = string.Empty;
+            string selector;
 
             if (projectName.Contains("'"))
             {
                 var strings = projectName.Split('\'');
-                selector = $".//select[contains(@name, 'ProjectId')]//option[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
+                selector =
+                    $".//select[contains(@name, 'ProjectId')]//option[contains(text(),'{strings[0]}')][contains(text(), '{strings[1]}')]";
             }
             else
             {
                 selector = $".//select[contains(@name, 'ProjectId')]//option[text()='{projectName}']";
             }
+
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }

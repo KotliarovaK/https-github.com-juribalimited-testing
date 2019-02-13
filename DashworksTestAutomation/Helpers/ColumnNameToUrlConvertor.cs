@@ -186,7 +186,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Windows7Mi: Group Computer Rag Radio Date Owner":
                     return "project_task_1_12865_1_Task";
 
-                case "Department":
+                case "department":
                     return "lDAP_231";
 
                 case "Owner Username":
@@ -218,6 +218,21 @@ namespace DashworksTestAutomation.Helpers
 
                 case "Device Count (Used)":
                     return "computerUsage";
+
+                case "Owner title":
+                    return "userLDAPField_242";
+
+                case "Owner usncreated":
+                    return "userLDAPField_37";
+
+                case "Owner lastlogon":
+                    return "userLDAPField_115";
+
+                case "Owner admincount":
+                    return "userLDAPField_43";
+
+                case "MigrationP: Readiness":
+                    return "project_34_ragStatus";
 
                 default:
                     throw new Exception($"{columnName} column not found in convertor");

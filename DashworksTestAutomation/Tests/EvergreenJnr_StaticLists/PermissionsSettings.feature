@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_StaticLists @PermissionsSettings @DAS11022 @DAS11553 @DAS10880 @DAS12152 @DAS12602 @Delete_Newly_Created_List @Do_Not_Run_With_PermissionsSettings
 Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel
 	When User create static list with "OwnerPrivate" name on "Devices" page with following items
 	| ItemName        |
@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifie
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select all rows
-	When User select "Add to static list" option in Actions panel
+	When User selects "Add to static list" in the Actions dropdown
 	Then Following options are available in lists dropdown:
 	| Listnames               |
 	| NotOwnerEveryoneCanEdit |

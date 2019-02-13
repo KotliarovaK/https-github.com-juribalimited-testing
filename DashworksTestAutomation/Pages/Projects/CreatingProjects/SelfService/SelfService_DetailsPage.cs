@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
     internal class SelfService_DetailsPage : SeleniumBasePage
     {
@@ -38,13 +38,13 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement CustomUrlTextField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_BackgroundColor']")]
-        public IWebElement BackgroundColour { get; set; }
+        public IWebElement BackgroundColor { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_PrimaryColor']")]
-        public IWebElement PrimaryColour { get; set; }
+        public IWebElement PrimaryColor { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_SecondaryColor']")]
-        public IWebElement SecondaryColour { get; set; }
+        public IWebElement SecondaryColor { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@id='TB_HighlightFontColour']")]
         public IWebElement HighlightFontColor { get; set; }
@@ -60,9 +60,9 @@ namespace DashworksTestAutomation.Pages.Projects
                 SelectorFor(this, p => p.AllowAnonymousUsers),
                 SelectorFor(this, p => p.ThisProjectDefault),
                 SelectorFor(this, p => p.BaseUrl),
-                SelectorFor(this, p => p.BackgroundColour),
-                SelectorFor(this, p => p.PrimaryColour),
-                SelectorFor(this, p => p.SecondaryColour),
+                SelectorFor(this, p => p.BackgroundColor),
+                SelectorFor(this, p => p.PrimaryColor),
+                SelectorFor(this, p => p.SecondaryColor),
                 SelectorFor(this, p => p.HighlightFontColor),
                 SelectorFor(this, p => p.MenuHeaderFontColor),
             };

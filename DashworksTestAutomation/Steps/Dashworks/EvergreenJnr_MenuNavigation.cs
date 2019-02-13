@@ -27,6 +27,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             switch (listPage)
             {
+                case "Dashboards":
+                    menu.Dashboards.Click();
+                    break;
+
                 case "Devices":
                     menu.Devices.Click();
                     break;
@@ -45,6 +49,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 case "Projects":
                     menu.Projects.Click();
+                    break;
+
+                case "Admin":
+                    menu.Admin.Click();
                     break;
 
                 default:
@@ -75,6 +83,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 case "Mailboxes":
                     menu.Mailboxes.Click();
+                    break;
+
+                case "Admin":
+                    menu.Admin.Click();
                     break;
 
                 default:
@@ -117,6 +129,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect list is displayed to user");
                     break;
 
+                case "Admin":
+                    //Check Admin heading is visible
+                    var adminPage = _driver.NowAt<AdminPage>();
+                    StringAssert.Contains(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
+                        "Incorrect list is displayed to user");
+                    break;
+
                 default:
                     throw new Exception($"'{listPage}' menu item is not valid ");
             }
@@ -127,7 +146,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Admin on the left-hand menu")]
         public void WhenUserClicksAdminOnTheLeft_HandMenu()
         {
-            var menu = _driver.NowAt<LeftHandMenuElement>();
+            _driver.NowAt<LeftHandMenuElement>();
             //menu.Admin.Click();
             //Admin tab on the left-hand menu is temporarily unavailable
             _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
@@ -142,11 +161,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Admin page is visible");
         }
 
-        [When(@"User navigates to the PMObject page")]
-        public void WhenUserNavigatesToThePMObjectPage()
+        [When(@"User navigates to ""(.*)"" Object on PMObject page")]
+        public void WhenUserNavigatesToObjectOnPMObjectPage(int objectId)
         {
-            _driver.NavigateToUrl($"{UrlProvider.Url}/PMObject.aspx?ObjectId=61085");
-            Logger.Write("PMOObject page was loaded");
+            _driver.NavigateToUrl($"{UrlProvider.Url}PMObject.aspx?ObjectId={objectId}");
+            Logger.Write("PMObject page was loaded");
         }
     }
 }

@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.DTO.Projects
         public string Name { get; set; }
         public string Help { get; set; }
         public string StagesNameString { get; set; }
-        public StageNameEnum Stages;
+        public string Stages { get; set; }
         public string TaskTypeString { get; set; }
         public TaskTypeEnum TaskType;
         public string ValueTypeString { get; set; }
@@ -18,18 +18,6 @@ namespace DashworksTestAutomation.DTO.Projects
         public string TaskValuesTemplateString { get; set; }
         public TaskValuesTemplateEnum TaskValuesTemplate;
         public bool ApplyToAllCheckbox { get; set; }
-    }
-
-    public enum StageNameEnum
-    {
-        [Description("Stage 1")]
-        Stage1,
-        [Description("Stage 2")]
-        Stage2,
-        [Description("Stage 3")]
-        Stage3,
-        [Description("Stage 4")]
-        Stage4,
     }
 
     public enum TaskTypeEnum

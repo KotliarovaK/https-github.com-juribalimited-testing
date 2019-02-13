@@ -8,6 +8,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class LeftHandMenuElement : SeleniumBasePage
     {
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Dashboards']")]
+        public IWebElement Dashboards { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//span[text()='Devices']")]
         public IWebElement Devices { get; set; }
 
@@ -34,8 +37,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 SelectorFor(this, p => p.Devices),
                 SelectorFor(this, p => p.Users),
                 SelectorFor(this, p => p.Applications),
-                SelectorFor(this, p => p.Mailboxes)
-                //SelectorFor(this, p => p.Admin)
+                SelectorFor(this, p => p.Mailboxes),
             };
         }
     }

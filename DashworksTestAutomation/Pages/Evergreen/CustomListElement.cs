@@ -18,19 +18,31 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement CreateNewListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='search']")]
-        public IWebElement ListPanelSearchTextbox { get; set; }
+        public IWebElement ListPanelSearchTextBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='top-tools']//div[@aria-controls='submenu']")]
+        public IWebElement TopToolsSubmenu { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='save-action-bar ng-star-inserted']")]
+        public IWebElement SavePivotButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='clearButton ng-star-inserted']")]
-        public IWebElement SearchTextboxResetButtonInListPanel { get; set; }
+        public IWebElement SearchTextBoxResetButtonInListPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='List Name']")]
-        public IWebElement ListNameTextbox { get; set; }
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='List Name']")]
+        public IWebElement ListNameTextBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Dashboard Name']")]
+        public IWebElement DashboardNameTextBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small mat-primary save-actions-save')]")]
         public IWebElement SaveButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'button-small save-actions-cancel')]")]
         public IWebElement CancelButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//i[contains(@class, 'material-icons mat-clear')]/ancestor::button[contains(@class, 'btn mat-icon-button ')]")]
+        public IWebElement CloseButton { get; set; }
 
         [FindsBy(How = How.XPath,
             Using =
@@ -61,7 +73,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void ClickSettingsButtonByListName(string listName)
         {
             var settingsButton =
-                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[@class='menu-trigger material-icons mat-settings mat-18 pull-right settings-icon settings-area']";
+                $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[contains(@class,'settings')]";
             Driver.WaitWhileControlIsDisplayed<CustomListElement>(() => UpdateCurrentListButton);
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
@@ -94,11 +106,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement OpenSettingsByListName(string listName)
         {
             var listSettingsSelector =
-                By.XPath($".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
+                By.XPath(
+                    $".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
             Driver.MouseHover(listSettingsSelector);
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(listSettingsSelector);
             return Driver.FindElement(listSettingsSelector);
+        }
+
+        public IWebElement OpenSettingsByDashboardName(string dashboardName)
+        {
+            var dashboardSettingsSelector =
+                By.XPath(
+                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i");
+            Driver.MouseHover(dashboardSettingsSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
+            return Driver.FindElement(dashboardSettingsSelector);
         }
 
         public IWebElement ListInBottomSection(string listName)
@@ -108,24 +132,34 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(listSelector);
         }
 
+        public IWebElement GetListNameOnTopToolsPanel(string listName)
+        {
+            var allListName = $".//*[text()='{listName}']/ancestor::div[@class='top-tools']//div[@aria-controls='submenu']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
+            return Driver.FindElement(By.XPath(allListName));
+        }
+
         #region ListSettings
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
         public IWebElement ManageButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//li[text()='Make Favourite']")]
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Make Favorite']")]
         public IWebElement MakeFavoriteButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//li[text()='Duplicate']")]
         public IWebElement DuplicateButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span/div[contains(@class,'inline-tip')]")]
+        public IWebElement DeleteWarning { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'Delete')]")]
         public IWebElement DeleteButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn mat-button')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//button[contains(@class, 'btn mat-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-transparent mat-button')]")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-transparent ')]/span[text()='CANCEL']")]
         public IWebElement CancelButtonInWarningMessage { get; set; }
 
         #endregion ListSettings

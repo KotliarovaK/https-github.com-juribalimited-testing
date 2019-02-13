@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Projects
+namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
     internal class SelfService_DepartmentAndLocationPage : SeleniumBasePage
     {
@@ -22,37 +22,53 @@ namespace DashworksTestAutomation.Pages.Projects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'DisplayDepartment')]")]
         public IWebElement Department { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'DoNotPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//td[contains(@id, 'DoNotPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
         public IWebElement DepartmentDoNotPush { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'PushChangeToOwnedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//td[contains(@id, 'PushChangeToOwnedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
         public IWebElement DepartmentPushToOwned { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'departmentLocationPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//td[contains(@id, 'departmentLocationPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Department')]")]
         public IWebElement DepartmentPushToAll { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'departmentLocationDisplayLocation')]")]
         public IWebElement Location { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'DoNotPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//td[contains(@id, 'DoNotPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
         public IWebElement LocationDoNotPush { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'PushChangeToOwnedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//td[contains(@id, 'PushChangeToOwnedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
         public IWebElement LocationPushToOwned { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@id, 'departmentLocationPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//td[contains(@id, 'departmentLocationPushChangeToLinkedComputers')]//following-sibling::td/input[contains(@name, 'Location')]")]
         public IWebElement LocationPushToAll { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Department Feed']//following-sibling::td/input[@type='checkbox']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//td[text()='Department Feed']//following-sibling::td/input[@type='checkbox']")]
         public IWebElement DepartmentFeed { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='HR Location Feed']//following-sibling::td/input[@type='checkbox']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//td[text()='HR Location Feed']//following-sibling::td/input[@type='checkbox']")]
         public IWebElement HrLocationFeed { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Manual Location Feed']//following-sibling::td/input[@type='checkbox']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//td[text()='Manual Location Feed']//following-sibling::td/input[@type='checkbox']")]
         public IWebElement ManualLocationFeed { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[text()='Historic Location Feed']//following-sibling::td/input[@type='checkbox']")]
+        [FindsBy(How = How.XPath,
+            Using = ".//td[text()='Historic Location Feed']//following-sibling::td/input[@type='checkbox']")]
         public IWebElement HistoricLocationFeed { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Long Name']")]

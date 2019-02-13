@@ -61,11 +61,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllColumnsAreVisibleInTheirRelevantC
 	| Compliance |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then "9" subcategories is displayed for "Device" category
-	When User have reset all columns
 	Then "11" subcategories is displayed for "Device" category
+	When User have reset all columns
+	Then "13" subcategories is displayed for "Device" category
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11548 @DAS13423
 Scenario: EvergreenJnr_MailboxesList_CheckThatCategoryRemainsOpenAfterAddingColumns
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -261,7 +261,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatColumnsIsNotRemovedAfterDraggingThemOut
 	| Mailbox Type       |
 	| Owner Display Name |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13181 @DAS13376
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfterApplyAnyFilterFromApplicationCustomFieldsCategory
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -377,8 +377,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
-	| SelectedRowsName    |
-	| "WPF/E" (codename) Community Technology Preview (Feb 2007)      |
+	| SelectedRowsName                                                |
+	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                      |
 	| %SQL_PRODUCT_SHORT_NAME% Data Tools - BI for Visual Studio 2013 |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListFromTheAllList" name
@@ -431,7 +431,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	| 00BDBAEA57334C7C8F4@bclabs.local |
 	| 00B5CCB89AD0404B965@bclabs.local |
 	Then User add selected rows in "StaticListFromTheAllList" list
-	Then "4" rows are displayed in the agGrid
+	And "4" rows are displayed in the agGrid
 	And Column is displayed in following order:
 	| ColumnName         |
 	| Email Address      |
@@ -455,8 +455,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	| ColumnName |
 	| Compliance |
 	When User create dynamic list with "DynamicList13059" name on "Devices" page
-	When User navigates to the "All Devices" list
-	When User clicks the Columns button
+	And User navigates to the "All Devices" list
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
@@ -468,16 +468,16 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00BDM1JUR8IF419  |
+	| 00YTY8U3ZYP2WT   |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "StaticListFromADynamicList" name
 	Then "StaticListFromADynamicList" list is displayed to user
 	When User navigates to the "DynamicList13059" list
-	When User clicks the Actions button
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
-	| 00YWR8TJU4ZF8V   |
+	| 018UQ6KL9TF4YF   |
 	Then User add selected rows in "StaticListFromADynamicList" list
 	Then "2" rows are displayed in the agGrid
 	And Column is displayed in following order:
@@ -509,7 +509,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	And User create static list with "FirstStaticList13059" name
 	Then "FirstStaticList13059" list is displayed to user
 	When User navigates to the "All Devices" list
-	When User clicks the Columns button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
@@ -526,7 +526,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	And User create static list with "SecondStaticList13059" name
 	Then "SecondStaticList13059" list is displayed to user
 	When User navigates to the "FirstStaticList13059" list
-	When User clicks the Actions button
+	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
 	| SelectedRowsName |
@@ -555,7 +555,7 @@ Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsi
 	| Operating System   |
 	| Owner Display Name |
 	When User enters "Hostname" text in Search field at Filters Panel
-	When User clears search textbox in Filters panel
+	And User clears search textbox in Filters panel
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories      |
 	| Device Type        |
@@ -619,7 +619,37 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatSubcategoriesOnFiltersPanelAreDispl
 	When User clicks Add New button on the Filter panel
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861
+@Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201 @DAS14325
+Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategoriesPlacedInEvergreenCategoryInColumnsPanel
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	Then "Evergreen" section is displayed in the Columns panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Bucket        |
+	| Evergreen Capacity Unit |
+	| Evergreen Ring          |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Mailboxes    |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12940 @DAS13201 @DAS14325
+Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedInEvergreenCategoryInColumnsPanel
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	Then "Evergreen" section is displayed in the Columns panel
+	When User closed "Selected Columns" columns category
+	And User is expand "Evergreen" columns category
+	Then the following Column subcategories are displayed for open category:
+	| Subcategories           |
+	| Evergreen Capacity Unit |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS12861 @DAS13299
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAreDisplayedInAlphabeticalOrderAfterAddingFilters
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -642,7 +672,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatSubcategoriesOnColumnsPanelAre
 	Then the subcategories are displayed for open category in alphabetical order on Filters panel
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then the following subcategories are displayed for Selected Columns category:
+	And the following subcategories are displayed for Selected Columns category:
 	| Subcategories   |
 	| Application     |
 	| Vendor          |
@@ -666,17 +696,17 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Department Name    |
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then the following subcategories are displayed for Selected Columns category:
+	And the following subcategories are displayed for Selected Columns category:
 	| Subcategories      |
 	| Username           |
 	| Domain             |
 	| Display Name       |
 	| Distinguished Name |
 	| Department Name    |
-	Then User closed "Selected Columns" columns category
+	And User closed "Selected Columns" columns category
 	When User add "Department Full Path" Column from expanded category
 	Then User is expand "Selected Columns" columns category
-	Then the following subcategories are displayed for Selected Columns category:
+	And the following subcategories are displayed for Selected Columns category:
 	| Subcategories        |
 	| Username             |
 	| Domain               |
@@ -702,11 +732,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User have reset all filters
-	When User clicks the Columns button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
-	Then User closed "Selected Columns" columns category
-	Then User is expand "Organisation" columns category
-	Then the following Column subcategories are displayed for open category:
+	And User closed "Selected Columns" columns category
+	And User is expand "Organisation" columns category
+	And the following Column subcategories are displayed for open category:
 	| Subcategories        |
 	| Cost Centre          |
 	| Department Code      |
@@ -714,7 +744,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSubcategoriesOnColumnsPanelAreDisplay
 	| Department Name      |
 
 @Evergreen @AllLists @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12922
-Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs	
+Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicationsTabs
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Columns button
@@ -722,21 +752,271 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	When ColumnName is entered into the search box and the selection is clicked
 	| ColumnName       |
 	| App Count (Used) |
-	When User clicks the Columns button
+	And User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Username" column by Column panel
-	When User removes "Domain" column by Column panel
-	When User removes "Display Name" column by Column panel
-	When User removes "Distinguished Name" column by Column panel
-	When User clicks the Filters button
+	And User removes "Domain" column by Column panel
+	And User removes "Display Name" column by Column panel
+	And User removes "Distinguished Name" column by Column panel
+	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User (22)" category is displayed on Filters panel
-	Then "Location (8)" category is displayed on Filters panel
+	Then "User" with "29" category is displayed on Filters panel
+	And "Location" with "8" category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User (24)" category is displayed on Filters panel
-	Then "User Location (8)" category is displayed on Filters panel
+	Then "User" with "26" category is displayed on Filters panel
+	And "User Location" with "8" category is displayed on Filters panel
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS12910
+Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisplayedCorrectlyAfterAddingObjectIdFilter
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "EmailMigra: Object ID" filter where type is "Equals" with added column and following value:
+	| Values |
+	| 1      |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	And the following subcategories are displayed for Selected Columns category:
+	| Subcategories         |
+	| Email Address         |
+	| Mailbox Platform      |
+	| Mail Server           |
+	| Mailbox Type          |
+	| Owner Display Name    |
+	| EmailMigra: Object ID |
+	And There are no errors in the browser console
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for "EmailMigra: Object ID" filter
+	And User select "Not empty" Operator value
+	And User clicks Save filter button
+	And User create custom list with "Object ID != EMPTY" name
+	Then "Object ID != EMPTY" list is displayed to user
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419 @Not_Run
+Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	And the following subcategories are displayed for "Project Tasks: Windows7Mi" Columns category:
+	| Value                                                                                                            |
+	| Windows7Mi: A new group task thats long long long long long long long long long long long long long long long!!! |
+	| Windows7Mi: Additional Information                                                                               |
+	| Windows7Mi: Applications List                                                                                    |
+	| Windows7Mi: C&C Computer Test Task 1                                                                             |
+	| Windows7Mi: Completed Date                                                                                       |
+	| Windows7Mi: Computer Off/On                                                                                      |
+	| Windows7Mi: Computer Read Only Task for Project Object                                                           |
+	| Windows7Mi: Computer Read Only Task in Bulk Update                                                               |
+	| Windows7Mi: Computer Read Only Task in Self Service                                                              |
+	| Windows7Mi: Computer Read Only Task in Self Service (Slot)                                                       |
+	| Windows7Mi: Date & Time Task                                                                                     |
+	| Windows7Mi: Date Workstation Task                                                                                |
+	| Windows7Mi: DateTime                                                                                             |
+	| Windows7Mi: Forecast Code                                                                                        |
+	| Windows7Mi: Forecast Date                                                                                        |
+	| Windows7Mi: Forecast Date (Slot)                                                                                 |
+	| Windows7Mi: Further Information                                                                                  |
+	| Windows7Mi: Group Computer Non Rag Date Owner                                                                    |
+	| Windows7Mi: Group Computer Rag Radio Date Owner                                                                  |
+	| Windows7Mi: Group Computer Rag Radio Date Owner (Slot)                                                           |
+	| Windows7Mi: Group Date Computer Task                                                                             |
+	| Windows7Mi: h1                                                                                                   |
+	| Windows7Mi: IP Address                                                                                           |
+	| Windows7Mi: Laptop & Physical Task                                                                               |
+	| Windows7Mi: Laptop & Workstation 2                                                                               |
+	| Windows7Mi: Laptop Only Task                                                                                     |
+	| Windows7Mi: Laptop Replacement Task                                                                              |
+	| Windows7Mi: Mail 1                                                                                               |
+	| Windows7Mi: Migrated Date                                                                                        |
+	| Windows7Mi: Physical Only Task                                                                                   |
+	| Windows7Mi: Radiobutton Task for Workstation                                                                     |
+	| Windows7Mi: Scheduled Code                                                                                       |
+	| Windows7Mi: Scheduled Date                                                                                       |
+	| Windows7Mi: Scheduled Date (Slot)                                                                                |
+	| Windows7Mi: Self Service Enabled                                                                                 |
+	| Windows7Mi: Send Applications List - Computer Object Task                                                        |
+	| Windows7Mi: SS Application List Completed                                                                        |
+	| Windows7Mi: SS Application List Enabled (Computer Mode)                                                          |
+	| Windows7Mi: SS Computer Ownership Completed                                                                      |
+	| Windows7Mi: SS Computer Ownership Enabled                                                                        |
+	| Windows7Mi: SS Dept & Location Completed                                                                         |
+	| Windows7Mi: SS Dept & Location Enabled                                                                           |
+	| Windows7Mi: SS Other Options 1 Enabled                                                                           |
+	| Windows7Mi: SS Other Options 2 Completed                                                                         |
+	| Windows7Mi: SS Other Options 2 Enabled                                                                           |
+	| Windows7Mi: SS Other Options Completed                                                                           |
+	| Windows7Mi: SS Project Date Enabled                                                                              |
+	| Windows7Mi: SSP Project Date Completed                                                                           |
+	| Windows7Mi: Target Code                                                                                          |
+	| Windows7Mi: Target Date                                                                                          |
+	| Windows7Mi: Targeting Information                                                                                |
+	| Windows7Mi: Values but no RAG                                                                                    |
+	| Windows7Mi: VDI Only Task                                                                                        |
+	| Windows7Mi: Workflow for Devices                                                                                 |
+	| Windows7Mi: Workstation Text Task                                                                                |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13419 @DAS14288 @Not_Run
+#Update for missing "Project Tasks: prK" columns category
+Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User clicks Add New button on the Filter panel
+	Then User closed "Selected Columns" columns category
+	And User is expand "Project Tasks: prK" columns category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                                   |
+	| prK: Email Address CC                           |
+	| prK: Email Notifications Allowed?               |
+	| prK: Email Override Address                     |
+	| prK: Email to be sent - All Placeholders        |
+	| prK: Email to be sent - All Placeholders (Slot) |
+	| prK: user-group-radb-k                          |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @DAS15167 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User is expand "User" columns category
+	When User add "Primary Device" Column from expanded category
+	When User click on 'Primary Device' column header
+	When User click on 'Primary Device' column header
+	When  User click content from "Primary Device" column
+	Then Details object page is displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 19     |
+	| Project Owner: Windows7Mi  | 16     |
+	| Project Tasks: Windows7Mi  | 91     |
+	| Project Stages: Windows7Mi | 7      |
+	| Project: UserEvergr        | 17     |
+	| Project Owner: UserEvergr  | 16     |
+	| Project Tasks: UserEvergr  | 12     |
+	| Project Stages: UserEvergr | 1      |
+	And Category is not displayed in the Columns panel
+	| Category                   |
+	| Project: EmailMigra        |
+	| Project Tasks: EmailMigra  |
+	| Project Stages: EmailMigra |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 17     |
+	| Project Tasks: Windows7Mi  | 79     |
+	| Project Stages: Windows7Mi | 6      |
+	| Project: UserEvergr        | 19     |
+	| Project Tasks: UserEvergr  | 26     |
+	| Project Stages: UserEvergr | 2      |
+	| Project: EmailMigra        | 17     |
+	| Project Tasks: EmailMigra  | 9      |
+	| Project Stages: EmailMigra | 3      |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: Windows7Mi        | 25     |
+	| Project Tasks: Windows7Mi  | 24     |
+	| Project Stages: Windows7Mi | 2      |
+	| Project: UserEvergr        | 25     |
+	| Project Tasks: UserEvergr  | 14     |
+	| Project Stages: UserEvergr | 1      |
+	| Project: EmailMigra        | 25     |
+	| Project Tasks: EmailMigra  | 5      |
+	| Project Stages: EmailMigra | 1      |
+	
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Columns button
+	Then Category with counter is displayed on Columns panel
+	| Category                   | Number |
+	| Project: EmailMigra        | 18     |
+	| Project Tasks: EmailMigra  | 54     |
+	| Project Stages: EmailMigra | 6      |
+	| Project: MailboxEve        | 18     |
+	| Project Tasks: MailboxEve  | 15     |
+	And Category is not displayed in the Columns panel
+	| Category                   |
+	| Project: Windows7Mi        |
+	| Project Tasks: Windows7Mi  |
+	| Project Stages: Windows7Mi |
+	| Project: UserEvergr        |
+	| Project Tasks: UserEvergr  |
+	| Project Stages: UserEvergr |
+
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	| Evergreen           | 1      |
+	| Project: 1803       | 1      |
+	| Project: Babel(Engl | 1      |
+	| Project: ComputerSc | 1      |
+	| Project: DeviceSche | 1      |
+	| Project: Havoc(BigD | 1      |
+	| Project: ICSP       | 1      |
+	| Project: prK        | 1      |
+	| Project: TestProj16 | 1      |
+	| Project: Windows101 | 1      |
+	| Project: Windows102 | 1      |
+	| Project: Windows10T | 1      |
+	| Project: Windows10U | 1      |
+	| Project: Windows7Mi | 1      |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	| Evergreen           | 1      |
+	| Project: Barry'sUse | 1      |
+	| Project: MigrationP | 1      |
+	| Project: UserEvergr | 1      |
+	| Project: UserSched2 | 1      |
+	| Project: UserSchedu | 1      |
+
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Mailboxes" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	| Evergreen           | 1      |
+	| Project: EmailMigra | 1      |
+	| Project: MailboxEve | 1      |
+
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	And User enters "ring" text in Search field at Columns Panel
+	Then Category with counter is displayed on Columns panel
+	| Category            | Number |
+	

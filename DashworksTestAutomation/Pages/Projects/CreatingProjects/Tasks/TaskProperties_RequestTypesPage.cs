@@ -12,7 +12,9 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 
         public void GetRequestTypeCheckboxByName(string requestTypeName)
         {
-            var selector = By.XPath($".//table[@class='grid']//tr[not(@class='grid-headerstyle')][@class='grid-alternatingrowstyle' or @class='grid-rowstyle']//a[text()='{requestTypeName}']/../..//input");
+            var selector =
+                By.XPath(
+                    $".//table[@class='grid']//tr[not(@class='grid-headerstyle')][@class='grid-alternatingrowstyle' or @class='grid-rowstyle']//a[text()='{requestTypeName}']/../..//input");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             Driver.FindElement(selector).Click();
         }

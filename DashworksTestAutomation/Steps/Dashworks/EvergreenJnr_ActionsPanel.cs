@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
@@ -52,6 +53,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             dashboardPage.SelectAllCheckbox.Click();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [When(@"User clicks on Action drop-down")]
@@ -61,29 +64,82 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.ActionsDropdown.Click();
         }
 
+        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown with search on Action panel")]
+        public void WhenUserSelectsValueForDropdownWithSearchOnActionPanel(string value, string field)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetDropdownWithSearchByFieldName(field).Click();
+            action.GetOptionByName(value).Click();
+        }
+
+        [When(@"User selects ""(.*)"" value for ""(.*)"" dropdown on Action panel")]
+        public void WhenUserSelectsValueForDropdownOnActionPanel(string value, string field)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetDropdownByFieldName(field).Click();
+            action.GetOptionByName(value).Click();
+        }
+
         [When(@"User selects ""(.*)"" in the Actions dropdown")]
         public void WhenUserSelectsInTheActionsDropdown(string actionsName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            //Wait until all rows are selected
+            Thread.Sleep(3000);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ActionsDropdown);
             action.ActionsDropdown.Click();
-            action.GetOptionOnActionsPanelByName(actionsName).Click();
+            action.GetOptionByName(actionsName).Click();
         }
 
         [When(@"User selects ""(.*)"" Bulk Update Type on Action panel")]
         public void WhenUserSelectsBulkUpdateTypeOnActionPanel(string typeName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             action.RequestTypeDropdown.Click();
-            action.GetOptionOnActionsPanelByName(typeName).Click();
+            _driver.WaitForDataLoading();
+            action.GetOptionByName(typeName).Click();
+        }
+
+        [Then(@"Bulk Update Type dropdown is displayed on Action panel")]
+        public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.RequestTypeDropdown.Displayed(),
+                "Bulk Update Type dropdown is not displayed on Action panel");
         }
 
         [When(@"User selects ""(.*)"" Project on Action panel")]
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ProjectField.Clear();
+            action.ClearInput(action.ProjectField);
             action.ProjectField.SendKeys(projectName);
-            action.GetOptionOnActionsPanelByName(projectName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
+            action.ProjectSection.Click();
+        }
+
+        [Then(@"Projects are displayed in alphabetical order on Action panel")]
+        public void ThenProjectsAreDisplayedInAlphabeticalOrderOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Click();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Projects are not in alphabetical order");
+        }
+
+        [Then(@"""(.*)"" Project is displayed on Action panel")]
+        public void ThenProjectIsDisplayedOnActionPanel(string projectName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.AreEqual(projectName, action.ProjectField.GetAttribute("value"), "Project is not displayed");
+        }
+
+        [When(@"User clears Project field")]
+        public void WhenUserClearsProjectField()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectField.Clear();
         }
 
         [Then(@"the following Projects are displayed in opened DLL on Action panel:")]
@@ -91,27 +147,135 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = action.OptionsDll.Select(value => value.Text);
-            Assert.AreEqual(expectedList, actualList, "Project list are different");
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Project lists are different");
         }
 
         [When(@"User selects ""(.*)"" Request Type on Action panel")]
         public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.RequestTypeField);
             action.RequestTypeField.Clear();
             action.RequestTypeField.SendKeys(requestType);
-            action.GetOptionOnActionsPanelByName(requestType).Click();
+            action.GetOptionByName(requestType).Click();
         }
 
         [When(@"User selects ""(.*)"" Stage on Action panel")]
         public void WhenUserSelectsStageOnActionPanel(string stageValue)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.StageField);
             action.StageField.Clear();
             action.StageField.SendKeys(stageValue);
-            action.GetOptionOnActionsPanelByName(stageValue).Click();
+            action.GetOptionByName(stageValue).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User selects ""(.*)"" Capacity Unit on Action panel")]
+        public void WhenUserSelectsCapacityUnitOnActionPanel(string capacityUnit)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.CapacityUnitField);
+            action.CapacityUnitField.Clear();
+            action.CapacityUnitField.SendKeys(capacityUnit);
+            action.GetOptionByName(capacityUnit).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User selects ""(.*)"" option in ""(.*)"" field on Action panel")]
+        public void WhenUserSelectsOptionInFieldOnActionPanel(string option, string fieldName)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetFieldOnActionPanelByName(fieldName).Clear();
+            field.GetFieldOnActionPanelByName(fieldName).SendKeys(option);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetOptionByName(option).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User selects ""(.*)"" option in ""(.*)"" drop-down on Action panel")]
+        public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetDropdownOnActionPanelByName(fieldName);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetOptionByName(option).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"following Move Mailboxes are displayed in drop-down:")]
+        public void ThenFollowingMoveMailboxesAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.AlsoMoveMailboxesField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Move Mailboxes lists are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following Stage are displayed in drop-down:")]
+        public void ThenFollowingStageAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Stage lists are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following Tasks are displayed in drop-down:")]
+        public void ThenFollowingTasksAreDisplayedInDrop_Down(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Tasks value are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following values are displayed in ""(.*)"" drop-down on Action panel:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownOnActionPanel(string fieldName, Table table)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetDropdownOnActionPanelByName(fieldName);
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, $"Values in {fieldName} drop-down are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"following values are displayed in ""(.*)"" drop-down with searchfield on Action panel:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownWithSearchfieldOnActionPanel(string fieldName, Table table)
+        {
+            var field = _driver.NowAt<ActionsElement>();
+            field.GetSearchDropDownOnActionPanelByName(fieldName).Click();
+            var action = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, $"Values in {fieldName} drop-down with searchfield are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"Stages are displayed in alphabetical order on Action panel")]
+        public void ThenStagesAreDisplayedInAlphabeticalOrderOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.StageField.Click();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Stages are not in alphabetical order");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" Task on Action panel")]
@@ -120,7 +284,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.TaskField.Clear();
             action.TaskField.SendKeys(taskNAme);
-            action.GetOptionOnActionsPanelByName(taskNAme).Click();
+            action.GetOptionByName(taskNAme).Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Tasks are displayed in alphabetical order on Action panel")]
+        public void ThenTasksAreDisplayedInAlphabeticalOrderOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Click();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Tasks are not in alphabetical order");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" Value on Action panel")]
@@ -128,8 +304,143 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ValueDropdown.Click();
-            action.GetOptionOnActionsPanelByName(value).Click();
+            action.GetOptionByName(value).Click();
         }
+
+        [Then(@"Value field is not displayed on Action panel")]
+        public void ThenValueFieldIsNotDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(action.ValueDropdown.Displayed(), "Value field is displayed");
+        }
+
+        [When(@"User selects ""(.*)"" Update Value on Action panel")]
+        public void WhenUserSelectsUpdateValueOnActionPanel(string value)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateValueDropdown.Click();
+            action.GetOptionByName(value).Click();
+        }
+
+        [Then(@"the Update Value options are displayed in following order:")]
+        public void ThenTheUpdateValueOptionsAreDisplayedInFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateValueDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Update Value options are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User selects ""(.*)"" Update Date on Action panel")]
+        public void WhenUserSelectsUpdateDateOnActionPanel(string updateDate)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateDateDropdown.Click();
+            action.GetOptionByName(updateDate).Click();
+        }
+
+        [When(@"User selects ""(.*)"" Date on Action panel")]
+        public void WhenUserSelectsDateOnActionPanel(string dateValue)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.DateField.Click();
+            action.DateField.Clear();
+            action.DateField.SendKeys(dateValue);
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [Then(@"the Update Date options are displayed in following order:")]
+        public void ThenTheUpdateDateOptionsAreDisplayedInFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateDateDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Update Date options are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User selects ""(.*)"" Update Owner on Action panel")]
+        public void WhenUserSelectsUpdateOwnerOnActionPanel(string owner)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateOwnerDropdown.Click();
+            action.GetOptionByName(owner).Click();
+        }
+
+        [Then(@"the Update Owner options are displayed in following order:")]
+        public void ThenTheUpdateOwnerOptionsAreDisplayedInFollowingOrder(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateOwnerDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Update Owner options are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User selects ""(.*)"" Team on Action panel")]
+        public void WhenUserSelectsTeamOnActionPanel(string team)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TeamField.Click();
+            action.TeamField.Clear();
+            action.TeamField.SendKeys(team);
+            action.GetOptionByName(team).Click();
+        }
+
+        [Then(@"Teams are displayed in alphabetical order on Action panel")]
+        public void ThenTeamsAreDisplayedInAlphabeticalOrderOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.TeamField.Click();
+            var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+            Assert.AreEqual(list.OrderBy(s => s), list, "Teams are not in alphabetical order");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User selects ""(.*)"" Owner on Action panel")]
+        public void WhenUserSelectsOwnerOnActionPanel(string owner)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.OwnerField.Click();
+            action.OwnerField.Clear();
+            action.OwnerField.SendKeys(owner);
+            action.GetOptionByName(owner).Click();
+        }
+
+        [Then(@"Owner field is not displayed on Action panel")]
+        public void ThenOwnerFieldIsNotDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(action.OwnerField.Displayed(), "Owner Field is displayed");
+        }
+
+        [Then(@"Owner field is displayed on Action panel")]
+        public void ThenOwnerFieldIsDisplayedOnActionPanel()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.OwnerField.Displayed(), "Owner Field is not displayed");
+        }
+
+        [Then(@"the following Update Value are displayed in opened DLL on Action panel:")]
+        public void ThenTheFollowingUpdateValueAreDisplayedInOpenedDLLOnActionPanel(Table table)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.UpdateValueDropdown.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = action.OptionsDll.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Project list are different");
+        }
+
+        #region  Action button
 
         [When(@"User clicks the ""(.*)"" Action button")]
         public void WhenUserClicksTheActionButton(string buttonName)
@@ -137,6 +448,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName(buttonName).Click();
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"""(.*)"" Action button is displayed")]
+        public void ThenActionButtonIsDisplayed(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(button.GetActionsButtonByName(buttonName).Displayed(), $"{buttonName} Action button is not displayed");
+        }
+
+        [Then(@"""(.*)"" Action button is not displayed")]
+        public void ThenActionButtonIsNotDisplayed(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(button.GetActionsButtonByName(buttonName).Displayed(), $"{buttonName} Action button is displayed");
         }
 
         [Then(@"""(.*)"" Action button is disabled")]
@@ -147,25 +472,109 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
         }
 
+        [Then(@"""(.*)"" Action button is active")]
+        public void ThenActionButtonIsActive(string buttonName)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
+            Assert.AreNotEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+        }
+
+        [Then(@"""(.*)"" Action button have tooltip with ""(.*)"" text")]
+        public void ThenActionButtonHaveTooltipWithText(string buttonName, string text)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var button = page.GetActionsButtonByName(buttonName);
+            _driver.MouseHover(button);
+            var toolTipText = _driver.GetTooltipText();
+            Assert.AreEqual(text, toolTipText);
+        }
+
+        #endregion
+
+        [Then(@"""(.*)"" button is not displayed")]
+        public void ThenButtonIsNotDisplayed(string buttonName)
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(action.GetButtonByName(buttonName), $"{buttonName} is displayed");
+        }
+
+        [Then(@"Actions menu is not displayed to the user")]
+        public void ThenActionsMenuIsNotDisplayedToTheUser()
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(action.ActionsButton.Displayed(), "Actions menu is displayed");
+        }
+
+        [Then(@"Cog menu is not displayed on the Admin page")]
+        public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
+        {
+            var action = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(action.CogMenu.Displayed(), "Cog menu is displayed");
+        }
+
+        [Then(@"Objects to add panel is disabled")]
+        public void ThenObjectsToAddPanelIsDisabled()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(component.DisabledObjectsToAddPanel.Displayed(), "Objects to add panel is active");
+        }
+
+        [Then(@"Objects to add panel is active")]
+        public void ThenObjectsToAddPanelIsActive()
+        {
+            var component = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(component.ActiveObjectsToAddPanel.Displayed(), "Objects to add panel is active");
+        }
+
         [Then(@"Warning message with ""(.*)"" text is displayed on Action panel")]
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(action.WarningMessageActionPanel(textMessage), "Warning Message is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.WarningMessageText);
+            Assert.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
+        }
+
+        [Then(@"the amber message is displayed correctly")]
+        public void ThenTheAmberMessageIsDisplayedCorrectly()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.WarningMessage.Displayed(), "Amber message is not displayed");
+            Assert.IsTrue(action.UpdateButtonOnAmberMessage.Displayed(), "Update Button is not displayed");
+            Assert.IsTrue(action.CancelButtonOnAmberMessage.Displayed(), "Cancel Button is not displayed");
+        }
+
+        [Then(@"the amber message is not displayed")]
+        public void ThenTheAmberMessageIsNotDisplayed()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsFalse(action.WarningMessage.Displayed(), "Amber message is displayed");
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on Action panel")]
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(action.SuccessMessageActionPanel(textMessage), "Success Message is not displayed");
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.SuccessMessage);
+            Assert.AreEqual(textMessage, action.SuccessMessage.Text, $"{textMessage} are not equal");
+            Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
+                "Close button in Success message is not displayed");
+        }
+
+        [Then(@"Success message is hidden after five seconds")]
+        public void ThenSuccessMessageIsHiddenAfterFiveSeconds()
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(action.SuccessMessage.Displayed(), "Success message is not displayed");
+            Thread.Sleep(7000);
+            Assert.IsFalse(action.SuccessMessage.Displayed(), "Success message is displayed for more than 5 seconds");
         }
 
         [Then(@"User clicks ""(.*)"" button on message box")]
         public void ThenUserClicksButtonOnMessageBox(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             action.GetButtonOnMessageBoxByNameOnActionPanel(buttonName).Click();
         }
 
@@ -187,6 +596,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var rowIndex = columnContent.IndexOf(row["SelectedRowsName"]);
                 if (rowIndex < 0)
                     throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
+                _driver.WaitForDataLoading();
                 dashboardPage.SelectRowsCheckboxes[rowIndex].Click();
             }
         }
@@ -235,8 +645,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectedRowsAreDisplayedInTheActionsPanel(string selectedRowsCount)
         {
             var actionsPanel = _driver.NowAt<ActionsElement>();
-            Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
-                $"Number of rows is not {selectedRowsCount}");
+            _driver.WaitForDataLoading();
+            //Delete 'if' after the row selection will be faster
+            if (actionsPanel.ActionsSpinner.Displayed())
+            {
+                Thread.Sleep(3000);
+                Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
+                    $"Number of rows is not {selectedRowsCount}");
+            }
+            else
+            {
+                Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
+                    $"Number of rows is not {selectedRowsCount}");
+            }
         }
 
         [Then(@"The number of rows selected matches the number of rows of the main object list")]
@@ -247,11 +668,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))
                 throw new Exception("Rows count in table is missed");
-            var numberoOfRowsInTable =
+            var numberOfRowsInTable =
                 dashboardPage.ResultsOnPageCount.Text.Split(' ').First().Replace(",", string.Empty);
             var actionsPanel = _driver.NowAt<ActionsElement>();
+            //Wait for Selected Rows are displayed in the Action panel
+            Thread.Sleep(1300);
             var numberOfRowsInActions = actionsPanel.GetSelectedRowsCount();
-            Assert.AreEqual(numberoOfRowsInTable, numberOfRowsInActions,
+            Assert.AreEqual(numberOfRowsInTable, numberOfRowsInActions,
                 "Number of rows are not equal in table and in Actions");
         }
 
@@ -266,7 +689,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypesStaticListName(string listName)
         {
             var listElement = _driver.NowAt<ActionsElement>();
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
         }
 
         [When(@"User clicks Cancel button on the Actions panel")]
@@ -281,7 +704,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
-            listElement.ListNameTextbox.SendKeys(listName);
+            listElement.ListNameTextBox.SendKeys(listName);
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
             listElement.CreateButton.Click();
 
@@ -296,20 +719,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<ActionsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
-            listElement.ListNameTextbox.SendKeys(listName);
-        }
-
-        [When(@"User select ""(.*)"" option in Actions panel")]
-        public void WhenUserSelectOptionInActionsPanel(string option)
-        {
-            var actionsElement = _driver.NowAt<ActionsElement>();
-            _driver.SelectCustomSelectbox(actionsElement.DropdownBox, "Add to static list");
+            listElement.ListNameTextBox.SendKeys(listName);
         }
 
         [Then(@"All checkboxes are checked in the table")]
         public void ThenAllCheckboxesAreCheckedInTheTable()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            //Wait for All checkboxes are checked
+            Thread.Sleep(1000);
             Assert.IsFalse(dashboardPage.UncheckedCheckbox.Displayed(), "Not all checkboxes are checked in the table");
         }
 
@@ -317,7 +735,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingOptionsAreAvailableInListsDropdown(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
-            _driver.FindElement(By.XPath(actionsElement.listsDropdown)).Click();
+            actionsElement.ListsDropdown.Click();
             Assert.AreEqual(table.Rows.SelectMany(row => row.Values).ToList(),
                 actionsElement.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
         }
@@ -326,8 +744,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingValuesAreDisplayedInActionDrop_Down(Table table)
         {
             var actionsElement = _driver.NowAt<ActionsElement>();
-            var expectedList = table.Rows.SelectMany(row => row.Values);
-            var actualList = actionsElement.ActionValues.Select(value => value.Text);
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = actionsElement.ActionValues.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Action values are different");
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.BodyContainer.Click();

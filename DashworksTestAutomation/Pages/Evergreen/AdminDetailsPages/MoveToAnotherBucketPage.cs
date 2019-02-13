@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -15,10 +11,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//h2")]
         public IWebElement PageTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='buckets']")]
-        public IWebElement BucketSelectbox { get; set; }
+        [FindsBy(How = How.XPath, Using = "//mat-select[contains(@class, 'mat-select-required')]")]
+        public IWebElement MoveToSelectBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@mattooltip='Move']")]
+        [FindsBy(How = How.XPath, Using = ".//button/span[text()='MOVE']")]
         public IWebElement MoveButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -27,19 +23,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return new List<By>
             {
                 SelectorFor(this, p => p.PageTitle),
-                SelectorFor(this, p => p.BucketSelectbox)
+                SelectorFor(this, p => p.MoveToSelectBox)
             };
         }
 
         public void MoveToBucketByName(string bucketName)
         {
-            BucketSelectbox.Click();
+            MoveToSelectBox.Click();
             Driver.WaitForDataLoading();
-            string bucketSelector = $".//mat-option/span[contains(text(), '{bucketName}')]";
+            var bucketSelector = $".//mat-option/span[contains(text(), '{bucketName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(bucketSelector));
             Driver.FindElement(By.XPath(bucketSelector)).Click();
             MoveButton.Click();
         }
-
     }
 }

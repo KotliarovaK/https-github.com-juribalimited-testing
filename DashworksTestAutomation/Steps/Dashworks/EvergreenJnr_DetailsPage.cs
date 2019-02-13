@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
-using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -32,17 +29,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [When(@"User closes ""(.*)"" section on the Details Page")]
-        public void WhenUserClosesSectionOnTheDetailsPage(string sectionName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NavigateToSectionByName(sectionName);
-        }
-
         [When(@"User opens ""(.*)"" section on the Details Page")]
         public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NavigateToSectionByName(sectionName);
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            detailsPage.NavigateToSectionByName(sectionName).Click();
         }
 
         [When(@"User clicks ""(.*)"" link on the Details Page")]
@@ -52,21 +44,29 @@ namespace DashworksTestAutomation.Steps.Dashworks
             detailsPage.GetLinkByName(linkName).Click();
         }
 
+        [Then(@"""(.*)"" section is expanded on the Details Page")]
+        public void ThenSectionIsExpandedOnTheDetailsPage(string sectionName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section {sectionName} is not displayed");
+        }
+
         [Then(@"section is loaded correctly")]
         public void ThenSectionIsLoadedCorrectly()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-
             _driver.WaitForDataLoading();
-            if (!detailsPage.OpenedSection.Displayed())
-            {
-                Assert.IsTrue(detailsPage.NoFoundContent.Displayed());
-            }
-            else
-            {
-                _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.OpenedSection);
+            if (detailsPage.PopupChangesPanel.Displayed())
                 Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
-            }
+            else
+                Assert.IsTrue(detailsPage.NoFoundContent.Displayed(), "Section is not loaded");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the expanded section on the Details Page")]
+        public void ThenTextIsDisplayedInTheExpandedSectionOnTheDetailsPage(string text)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetTextInExpandedSection(text).Displayed(), $"{text} is not displayed in the expanded section");
         }
 
         [Then(@"Highcharts graphic is displayed on the Details Page")]
@@ -195,6 +195,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.IsFalse(filterElement.UncheckedStringFilters.Displayed(), "Checkbox is selected");
             }
+
+            filterElement.BodyContainer.Click();
         }
 
         [When(@"User clicks Reset Filters button on the Details Page")]
@@ -204,6 +206,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.BodyContainer.Click();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => filterElement.ResetFiltersButton);
             filterElement.ResetFiltersButton.Click();
+        }
+
+        [When(@"User selects ""(.*)"" text from key value grid on the Details Page")]
+        public void WhenUserSelectsFollowingTextFromKeyValueGridOnTheDetailsPage(string textToBeSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            page.Actions.Click(page.GetCellByTextFromKeyValueGrid(textToBeSelected)).DoubleClick().Build().Perform();
+        }
+
+        [Then(@"""(.*)"" text selected from key value grid on the Details Page")]
+        public void ThenTextSelectedFromKeyValueGridOnTheDetailsPage(string textSelected)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+
+            Assert.That(page.GetSelectedText(), Is.EqualTo(textSelected));
         }
 
         [Then(@"following Values are displayed in the filter on the Details Page")]
@@ -252,6 +269,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.FilterButton.Click();
         }
 
+        [When(@"User clicks the  filter type dropdown on the Column Settings panel")]
+        public void WhenUserClicksTheFilterTypeDropdownOnTheColumnSettingsPanel()
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.FilterTypeDropdownOnTheColumnPanel.Click();
+        }
+
+        [Then(@"following Values are displayed in the filter type dropdown")]
+        public void ThenFollowingValuesAreDisplayedInTheFilterTypeDropdown(Table table)
+        {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var expectedList = table.Rows.SelectMany(row => row.Values);
+            var actualList = filterElement.FilterTypeValues.Select(value => value.Text);
+            Assert.AreEqual(expectedList, actualList, "Filter type values are different");
+        }
+
         [When(@"User select In Range value with following date:")]
         public void WhenUserSelectInRangeValueWithFollowingDate(Table table)
         {
@@ -263,6 +296,45 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 menu.DateToValue.SendKeys(row["DateTo"]);
             }
         }
+
+        [When(@"User select criteria with following date:")]
+        public void WhenUserSelectFilterCriteriaAndFollowingDate(Table table)
+        {
+            var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            foreach (var row in table.Rows)
+            {
+                menu.SelectConditionForDateColumn(row["Criteria"]);
+
+                menu.DateRegularValueFirst.Clear();
+
+                
+                if (!string.IsNullOrEmpty(row["Date"]))
+                    menu.DateRegularValueFirst.SendKeys(row["Date"]);
+
+                menu.DateRegularValueFirst.SendKeys(OpenQA.Selenium.Keys.Enter);
+            }
+        }
+
+        [When(@"User remembers the date input position")]
+        public void WhenUserRemembersInputPosition()
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.Storage.SessionStorage.SetItem("date_input_X", page.DateRegularValueFirst.Location.X.ToString());
+            page.Storage.SessionStorage.SetItem("date_input_Y", page.DateRegularValueFirst.Location.Y.ToString());
+        }
+
+        [Then(@"User checks that date input has same position")]
+        public void ThenUserChecksThatHasSamePosition()
+        {
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            int xCoord = Int32.Parse(page.Storage.SessionStorage.GetItem("date_input_X"));
+            int yCoord = Int32.Parse(page.Storage.SessionStorage.GetItem("date_input_Y"));
+
+            Assert.That(page.DateRegularValueFirst.Location.X, Is.InRange(xCoord - 10, xCoord + 10)); // calibration
+            Assert.That(page.DateRegularValueFirst.Location.Y, Is.InRange(yCoord - 10, yCoord + 10)); // calibration
+        }
+
 
         [Then(@"User select ""(.*)"" checkbox from filter on the Details Page")]
         public void ThenUserSelectCheckboxFromFilterOnTheDetailsPage(string filterName)
@@ -302,10 +374,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filter = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitForDataLoading();
             filter.ResetFiltersButton.Click();
-            foreach (var row in table.Rows)
-            {
-                filter.DateFilterValue.SendKeys(row["FilterData"]);
-            }
+            foreach (var row in table.Rows) filter.DateFilterValue.SendKeys(row["FilterData"]);
+
             _driver.WaitForDataLoading();
         }
 
@@ -321,7 +391,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("153px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
@@ -330,9 +400,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
-            { }
+            {
+            }
             else
-                Assert.AreEqual("101px", filterPanel.PackageSiteColumnWidt());
+            {
+                Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidth());
+            }
         }
 
         [Then(@"Bucket pop-up has standard size on the Details Page")]
@@ -347,8 +420,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() =>
-                filterElement.FilterSearchTextbox);
-            filterElement.FilterSearchTextbox.SendKeys(searchedText);
+                filterElement.FilterSearchTextBox);
+            filterElement.FilterSearchTextBox.SendKeys(searchedText);
         }
 
         [When(@"User clears Filter field")]
@@ -356,7 +429,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Thread.Sleep(500);
-            page.FilterSearchTextbox.ClearWithHomeButton(_driver);
+            page.FilterSearchTextBox.ClearWithHomeButton(_driver);
             page.BodyContainer.Click();
         }
 
@@ -410,21 +483,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
 
-                List<string> columnNames = page.GetAllColumnHeadersOnTheDetailsPage().Select(column => column.Text)
-                    .ToList();
+                var columnNames = page.GetAllColumnHeadersOnTheDetailsPage()
+                    .Select(column => column.Text).ToList();
                 var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
                 Assert.AreEqual(expectedList, columnNames, "Columns order is incorrect");
-            }
-        }
-
-        private void CheckColumnDisplayedState(Table table, bool displayedState)
-        {
-            var listpageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            foreach (var row in table.Rows)
-            {
-                _driver.WaitForDataLoading();
-                Assert.AreEqual(displayedState, listpageMenu.IsColumnPresent(row["ColumnName"]),
-                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
             }
         }
 
@@ -455,7 +517,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
             detailsPage.ExpandAllSections();
             var table = detailsPage.GetFieldsWithContent(sectionName);
-            foreach (KeyValuePair<string, string> pair in table)
+            foreach (var pair in table)
             {
                 if (pair.Key.Equals("Address 2") || pair.Key.Equals("Address 3") || pair.Key.Equals("Address 4"))
                     continue;
@@ -476,7 +538,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            //detailsPage.CloseAllSections();
             detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
@@ -488,6 +549,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsFalse(Convert.ToBoolean(detailsPage.GetFilterByColumnName(columnName).GetAttribute("readonly")));
+        }
+
+        [Then(@"User sees ""(.*)"" Evergreen Bucket in Project Summary section on the Details Page")]
+        public void ThenUserSeesEvergreenBucketInProjectSummarySectionOnTheDetailsPage(string bucketName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+
+            Assert.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
@@ -507,7 +576,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Rows do not have unknown values")]
-        public void ThenRowsDoNotHaveUnkonwnValues()
+        public void ThenRowsDoNotHaveUnknownValues()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             foreach (var element in page.GridRows)
@@ -524,74 +593,94 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Incorrect number of rows in agGrid.");
         }
 
+        
         [Then(@"""(.*)"" rows found label displays on Details Page")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            if (numberOfRows == "1")
-            {
-                StringAssert.AreEqualIgnoringCase($"{numberOfRows} row", detailsPage.FoundRowsLabel.Text,
-                    "Incorrect rows count");
-            }
-            else
-            {
-                StringAssert.AreEqualIgnoringCase($"{numberOfRows} rows", detailsPage.FoundRowsLabel.Text,
-                    "Incorrect rows count");
-            }
+            //Wait for rows label is displayed
+            Thread.Sleep(2000);
+            StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                detailsPage.RowsLabel.Text,
+                "Incorrect rows count");
         }
 
-        [When(@"User clicks on Evergreen Bucket link")]
-        public void WhenUserClicksOnEvergreenBucketLink()
+        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
+        [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Slots page")]
+        [Then(@"""(.*)"" rows label displays in Action panel")]
+        public void ThenRowsAreDisplayedInTheAgGridOnCapacityUnitsPage(string numberOfRows)
         {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.MouseHover(detailsPage.BucketLink);
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.EditButtonBucketLink);
-            detailsPage.EditButtonBucketLink.Click();
-            _driver.WaitForDataLoading();
+            var detailsPage = _driver.NowAt<BaseDashboardPage>();
+            //Wait for rows label is displayed
+            Thread.Sleep(2000);
+            StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
+                detailsPage.FoundRowsLabel.Text,
+                "Incorrect rows count");
         }
 
-        [Then(@"Evergreen Bucket link ""(.*)"" is displayed")]
-        public void ThenEvergreenBucketLinkIsDisplayed(string bucketName)
+        [When(@"User clicks on ""(.*)"" link on the Details Page")]
+        public void WhenUserClicksOnLinkOnTheDetailsPage(string link)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetLinkOnTheDetailsPageByName(link).Click();
+        }
+
+        [When(@"User clicks on Unassigned link for ""(.*)"" field")]
+        public void WhenUserClicksOnUnassignedLinkForField(string fieldName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetUnassignedLinkByFieldName(fieldName).Click();
+        }
+
+        [Then(@"""(.*)"" link is displayed on the Details Page")]
+        public void ThenLinkIsDisplayedOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             Assert.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
         }
 
-        [Then(@"Change Bucket pop-up is opened")]
-        public void ThenChangeBucketPop_UpIsOpened()
+        [Then(@"popup changes window opened")]
+        public void ThenPopupChangesWindowOpened()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(detailsPage.EditBucketWindow.Displayed(), "Bucket Window is not loaded");
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            Assert.IsTrue(detailsPage.PopupChangesPanel.Displayed(), "Popup changes panel is not loaded");
         }
 
-        [Then(@"User clicks on New Bucket dropdown")]
-        public void ThenUserClicksOnNewBucketDropdown()
+        [Then(@"User clicks on ""(.*)"" dropdown")]
+        [When(@"User clicks on ""(.*)"" dropdown")]
+        public void ThenUserClicksOnDropdown(string value)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NewBucketDropdown.Click();
+            detailsPage.GetChangeValueInPopUpByName(value).Click();
         }
 
-        [When(@"User clicks ""(.*)"" button on Change Bucket window")]
-        public void WhenUserClicksButtonOnChangeBucketWindow(string buttonName)
+        [When(@"User select ""(.*)"" value on the Details Page")]
+        public void WhenUserSelectValueOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetButtonByNameOnBucketWindow(buttonName).Click();
-        }
-
-        [When(@"User select ""(.*)"" Bucket on the Details Page")]
-        public void WhenUserSelectBucketOnTheDetailsPage(string bucketName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetBucketByName(bucketName).Click();
+            detailsPage.GetValueByName(bucketName).Click();
         }
 
         [When(@"User selects all rows on the grid on the Details Page")]
         public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
             detailsPage.SelectAllCheckBox.Click();
+        }
+
+        private void CheckColumnDisplayedState(Table table, bool displayedState)
+        {
+            var listPageMenu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            foreach (var row in table.Rows)
+            {
+                _driver.WaitForDataLoading();
+                Assert.AreEqual(displayedState, listPageMenu.IsColumnPresent(row["ColumnName"]),
+                    $"Column '{row["ColumnName"]}' displayed state should be {displayedState}");
+            }
         }
     }
 }
