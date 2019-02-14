@@ -530,7 +530,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public int GetColumnNumberByName(string columnName)
         {
-            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']//div[@col-id]");
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
