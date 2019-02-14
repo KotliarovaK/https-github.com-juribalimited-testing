@@ -570,6 +570,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//mat-select[@aria-label='{dropdownName}']"));
         }
 
+        public bool GetMissingDropdownOnSettingsScreenByName(string dropdownName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='mat-form-field-infix']//label[text()='{dropdownName}']"));
+        }
+
         public IWebElement GetDropdownByTextValueByName(string value, string dropdownName)
         {
             var selector = By.XPath($"//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");

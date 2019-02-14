@@ -2435,6 +2435,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dropdown = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(dropdown.GetMissingDropdownByName(dropdownName), $"{dropdownName} is displayed");
         }
+        [Then(@"""(.*)"" dropdown is not displayed on the Admin Settings screen")]
+        public void ThenDropdownIsNotDisplayedOnTheAdminSettingsScreen(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(dropdown.GetMissingDropdownOnSettingsScreenByName(dropdownName), $"{dropdownName} is displayed");
+        }
 
         [Then(@"""(.*)"" dropdown is displayed")]
         public void ThenDropdownIsDisplayed(string dropdownName)
