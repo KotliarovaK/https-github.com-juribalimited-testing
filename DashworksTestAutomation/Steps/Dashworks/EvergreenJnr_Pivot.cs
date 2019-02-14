@@ -260,6 +260,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectAggregateFunctionByName(functionName).Click();
         }
 
+        [When(@"User clicks Plus button for ""(.*)"" Pivot value")]
+        public void WhenUserClicksPlusButtonForPivotValue(string buttonName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.GetPlusButtonOnPivotByName(buttonName).Click();
+        }
+
         #region Tooltip on Pivot
 
         [Then(@"""(.*)"" plus button have tooltip with ""(.*)"" text")]
@@ -299,6 +306,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(page.BackButtonOnPivotPanel);
             var toolTipText = _driver.GetTooltipText();
             Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+        }
+
+        #endregion
+
+        #region Chips
+
+        [Then(@"""(.*)"" chip is not displayed")]
+        public void ThenChipIsNotDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.GetChipByNameOnPivot(chipName).Displayed(), $"'{chipName}' chip is displayed");
+        }
+
+        [When(@"User clicks close button for ""(.*)"" chip")]
+        public void WhenUserClicksCloseButtonForChip(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.GetChipByNameOnPivot(chipName).Click();
         }
 
         #endregion

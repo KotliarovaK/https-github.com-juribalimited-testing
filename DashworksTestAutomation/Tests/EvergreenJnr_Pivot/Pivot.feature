@@ -1233,3 +1233,35 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	When User open sub menu for "PivotList_DAS13652" list
 	Then User sees Dashboards sub menu on Dashboards page
 	And User remove list with "PivotList_DAS13652" name on "Devices" page
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectly
+When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application Compliance" filter where type is "Equals" with added column and following value:
+	| Values |
+	| Red    |
+	Then "Application Compliance" filter is added to the list
+	When User create dynamic list with "TestListForDAS11264" name on "Devices" page
+	Then "TestListForDAS11264" list is displayed to user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Operating System |  
+	And User selects the following Values on Pivot:
+	| Values               |
+	| App Count (Entitled) |
+	When User clicks the "RUN PIVOT" Action button
+	And User adds the following "Values" on Pivot: 
+	| Value     |
+	| OS Branch |
+	When User clicks close button for "OS Branch" chip
+	Then "OS Branch" chip is not displayed
+	When User clicks Plus button for "Values" Pivot value
+	When "OS Branch" value is entered into the search box and the selection is clicked on Pivot
+	Then "OS Branch" subcategories is displayed for "Operating System" category
