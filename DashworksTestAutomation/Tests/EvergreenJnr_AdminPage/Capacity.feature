@@ -1263,13 +1263,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue   | duplicateCount |
-	| MO             | 0                 | 2              |
-	| TU             | 1                 | 2              |
-	| WE             | 2                 | 2              |
-	| TH             | 3                 | 2              |
-	| FR             | 4                 | 2              |
-	| SA             | 5                 | 2              |
-	| SU             | 6                 | 2              |
+	| Monday         | 0                 | 2              |
+	| Tuesday        | 1                 | 2              |
+	| Wednesday      | 2                 | 2              |
+	| Thursday       | 3                 | 2              |
+	| Friday         | 4                 | 2              |
+	| Saturday       | 5                 | 2              |
+	| Sunday         | 6                 | 2              |
 	| Request Types  | All Request Types | 2              |
 	| Teams          | All Teams         | 2              |
 	| Capacity Units |                   | 2              |
@@ -1278,13 +1278,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot" text
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue   | duplicateCount |
-	| MO             | 0                 | 3              |
-	| TU             | 1                 | 3              |
-	| WE             | 2                 | 3              |
-	| TH             | 3                 | 3              |
-	| FR             | 4                 | 3              |
-	| SA             | 5                 | 3              |
-	| SU             | 6                 | 3              |
+	| Monday         | 0                 | 3              |
+	| Tuesday        | 1                 | 3              |
+	| Wednesday      | 2                 | 3              |
+	| Thursday       | 3                 | 3              |
+	| Friday         | 4                 | 3              |
+	| Saturday       | 5                 | 3              |
+	| Sunday         | 6                 | 3              |
 	| Request Types  | All Request Types | 3              |
 	| Teams          | All Teams         | 3              |
 	| Capacity Units |                   | 3              |
@@ -1302,7 +1302,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected slots have been deleted" text
-	When User refreshes agGrid
+	When User clicks refresh button in the browser
 	Then Counter shows "1" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS14478 @Delete_Newly_Created_Project
