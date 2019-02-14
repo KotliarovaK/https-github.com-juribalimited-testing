@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	Then Page not found displayed for Ring details page
 	And There are only page not found errors in console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS15415 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -103,6 +103,12 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks content from "Ring" column
 	Then "Unassigned" content is displayed in "Ring name" field
 	Then "Unassigned" content is displayed in "Description" field
+	Then "UPDATE" Action button is disabled
+	When User changes Name to "NewDescription" in the "Description" field on the Project details page
+	Then "UPDATE" Action button is active
+	#Update after DAS-15415 fixed
+	#Then "Default Ring" checkbox is checked and cannot be unchecked
+	#Then "Maps to Evergreen Ring" dropdown is not displayed on the Admin Settings screen
 	When User clicks the "CANCEL" Action button
 	Then "TRUE" content is displayed in "Default" column
 	When User have opened Column Settings for "Ring" column in the Details Page table
