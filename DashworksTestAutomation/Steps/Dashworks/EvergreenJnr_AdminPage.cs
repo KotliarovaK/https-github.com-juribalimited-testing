@@ -139,6 +139,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
+                case "Create Project Ring":
+                    var createProjectRingPage = _driver.NowAt<CreateRingPage>();
+                    StringAssert.Contains(createProjectRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
                 case "Import Project":
                     var importProjectPage = _driver.NowAt<ImportProjectPage>();
                     StringAssert.Contains(importProjectPage.ImportProjectFormTitle.Text.ToLower(), pageTitle.ToLower(),
