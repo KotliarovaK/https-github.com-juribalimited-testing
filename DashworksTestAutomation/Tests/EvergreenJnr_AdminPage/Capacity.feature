@@ -1095,7 +1095,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User click on Back button
 	And User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity Unit For DAS14103" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text

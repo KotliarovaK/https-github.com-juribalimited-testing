@@ -389,7 +389,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
-	And User clicks the "CREATE UNIT" Action button
+	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button

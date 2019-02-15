@@ -127,9 +127,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
-                case "Create Capacity Unit":
-                    var createCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
-                    StringAssert.Contains(createCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
+                case "Create Project Capacity Unit":
+                    var createProjectCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
+                    StringAssert.Contains(createProjectCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Create Evergreen Capacity Unit":
+                    var createEvergreenCapacityUnitPage = _driver.NowAt<CreateCapacityUnitPage>();
+                    StringAssert.Contains(createEvergreenCapacityUnitPage.CreateCapacityUnitTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
