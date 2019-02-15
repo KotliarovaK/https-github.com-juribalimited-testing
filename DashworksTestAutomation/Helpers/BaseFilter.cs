@@ -650,4 +650,50 @@ namespace DashworksTestAutomation.Helpers
             SaveFilter();
         }
     }
+
+    public class BetweenDataAssociationFilter : BaseFilter
+    {
+        public BetweenDataAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
+                    .SendKeys(row["StartDateInclusive"]);
+            }
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
+                    .SendKeys(row["EndDateInclusive"]);
+            }
+            _driver.FindElement(By.XPath(".//body")).Click();
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]"))) continue;
+                _driver.FindElement(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]")).Click();
+            }
+
+            SaveFilter();
+        }
+    }
 }
