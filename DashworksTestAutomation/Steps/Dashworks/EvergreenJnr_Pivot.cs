@@ -319,6 +319,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.GetChipByNameOnPivot(chipName).Displayed(), $"'{chipName}' chip is displayed");
         }
 
+        [Then(@"""(.*)"" chip is displayed")]
+        public void ThenChipIsDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.GetChipByNameOnPivot(chipName).Displayed(), $"'{chipName}' chip is not displayed");
+        }
+
         [When(@"User clicks close button for ""(.*)"" chip")]
         public void WhenUserClicksCloseButtonForChip(string chipName)
         {

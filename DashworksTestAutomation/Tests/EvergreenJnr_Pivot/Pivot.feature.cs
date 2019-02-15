@@ -3805,15 +3805,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS11103")]
         [NUnit.Framework.CategoryAttribute("DAS11264")]
+        [NUnit.Framework.CategoryAttribute("DAS11360")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectly()
+        [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Babel(Engl: Application Readiness", "Last Seen Date", "OS Branch", "Devices_List_11103", "Application Compliance", "Red", "Operating System", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "App Count (Entitled)", "Domain", "Domain", "Users_List_11103", "Application Compliance", "Red", "User", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "Alias", "Mailboxes_List_11103", "Enabled", "TRUE", "Mailbox", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Evergreen Capacity Unit", "Vendor", "Application Owner", "Applications_List_11103", "Compliance", "Red", "Custom Fields", null)]
+        public virtual void EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectly(string pageName, string rowGroup, string column, string value, string additionalValue, string listName, string filterName, string valuesForFilter, string categoryName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectlyInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectlyInternal(pageName,rowGroup,column,value,additionalValue,listName,filterName,valuesForFilter,categoryName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -3832,60 +3837,67 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectlyInternal()
+        private void EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectlyInternal(string pageName, string rowGroup, string column, string value, string additionalValue, string listName, string filterName, string valuesForFilter, string categoryName, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectly", null, new string[] {
-                        "Evergreen",
-                        "Devices",
-                        "EvergreenJnr_Pivot",
-                        "Pivot",
-                        "DAS11103",
-                        "DAS11264",
-                        "Delete_Newly_Created_List"});
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_Pivot",
+                    "Pivot",
+                    "DAS11103",
+                    "DAS11264",
+                    "DAS11360",
+                    "Delete_Newly_Created_List"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectly", null, @__tags);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table152 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table152.AddRow(new string[] {
-                        "Red"});
-            testRunner.When("User add \"Application Compliance\" filter where type is \"Equals\" with added column" +
-                    " and following value:", ((string)(null)), table152, "When ");
-            testRunner.Then("\"Application Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User create dynamic list with \"TestListForDAS11264\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"TestListForDAS11264\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                        string.Format("{0}", valuesForFilter)});
+            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" with added column and following valu" +
+                        "e:", filterName), ((string)(null)), table152, "When ");
+            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User create dynamic list with \"{0}\" name on \"{1}\" page", listName, pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list is displayed to user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table153 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
             table153.AddRow(new string[] {
-                        "Application Compliance"});
+                        string.Format("{0}", rowGroup)});
             testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table153, "And ");
             TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
             table154.AddRow(new string[] {
-                        "Operating System"});
+                        string.Format("{0}", column)});
             testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table154, "And ");
             TechTalk.SpecFlow.Table table155 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table155.AddRow(new string[] {
-                        "App Count (Entitled)"});
+                        string.Format("{0}", value)});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table155, "And ");
             testRunner.When("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table156 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table156.AddRow(new string[] {
-                        "OS Branch"});
+                        string.Format("{0}", additionalValue)});
             testRunner.And("User adds the following \"Values\" on Pivot:", ((string)(null)), table156, "And ");
-            testRunner.When("User clicks close button for \"OS Branch\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"OS Branch\" chip is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" chip is displayed", value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(string.Format("\"{0}\" chip is displayed", additionalValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("User clicks close button for \"{0}\" chip", additionalValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" chip is not displayed", additionalValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Plus button for \"Values\" Pivot value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("\"OS Branch\" value is entered into the search box and the selection is clicked on " +
-                    "Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"OS Branch\" subcategories is displayed for \"Operating System\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When(string.Format("\"{0}\" value is entered into the search box and the selection is clicked on Pivot", additionalValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" subcategories is displayed for \"{1}\" category", additionalValue, categoryName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 

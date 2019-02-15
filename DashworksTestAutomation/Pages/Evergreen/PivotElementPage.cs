@@ -94,11 +94,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetChipByNameOnPivot(string button)
+        public IWebElement GetChipByNameOnPivot(string chipName)
         {
-            var selector = By.XPath($"//span[@class='pivot-filter-name'][text()='{button}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            if (Driver.IsElementExists(By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipName}']")))
+            {
+                var selector = By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipName}']");
+                Driver.WaitWhileControlIsNotDisplayed(By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipName}']"));
+                return Driver.FindElement(selector);
+            }      
+            else
+            {
+                var selector = By.XPath($"//span[@class='pivot-filter-name'][text()='{chipName}']");
+                Driver.WaitWhileControlIsNotDisplayed(selector);
+                return Driver.FindElement(selector);
+            } 
         }
 
         public IWebElement GetCloseButtonForValueElementsByNameOnPivot(string button)
