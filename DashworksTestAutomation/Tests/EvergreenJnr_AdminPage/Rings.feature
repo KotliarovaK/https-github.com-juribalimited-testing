@@ -84,7 +84,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	Then Page not found displayed for Ring details page
 	And There are only page not found errors in console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS15415 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS14695 @DAS15415 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -137,7 +137,71 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then "Clone evergreen buckets to project buckets" text value is displayed in the "Buckets" dropdown
 	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
 	Then "New_Short" content is displayed in "Project Short Name" field
-	When User clicks "Projects" navigation link on the Admin page
-	When User enters "New_14690_Project" text in the Search field for "Project" column
-	And User selects all rows on the grid
-	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "14695_Project" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "14695_Project" is displayed to user
+	When User clicks "Rings" tab
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName |
+	|            |
+	|            |
+	| Ring       |
+	|            |
+	| Default    |
+	| Devices    |
+	When User clicks Cog-menu on the Admin page
+	Then User sees following cog-menu items on Admin page:
+	| items            |
+	| Edit             |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	When User clicks the "CREATE PROJECT RING" Action button
+	Then "Create Project Ring" page should be displayed to the user
+	When User type "14695_Ring" Name in the "Ring name" field on the Project details page
+	And User clicks Create button on the Create Ring page
+	Then Success message is displayed and contains "The ring has been created" text
+	When User clicks the "CREATE PROJECT RING" Action button
+	Then "Create Project Ring" page should be displayed to the user
+	When User type "Ring_Test" Name in the "Ring name" field on the Project details page
+	When User clicks Default Ring checkbox
+	And User clicks Create button on the Create Ring page
+	Then column content is displayed in the following order:
+    | Items      |
+    | Unassigned |
+    | 14695_Ring |
+    | Ring_Test  |
+	When User click on 'Ring' column header
+	Then data in table is sorted by "Ring" column in ascending order on the Admin page
+	When User click on 'Ring' column header
+	Then data in table is sorted by "Ring" column in descending order on the Admin page
+	When User clicks Cog-menu on the Admin page
+	Then User sees following cog-menu items on Admin page:
+	| items            |
+	| Edit             |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	| Set default      |
+	| Delete           |
+	When User select "Ring" rows in the grid
+	| SelectedRowsName |
+	| Unassigned       |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	Then Warning message with "This ring will be permanently deleted and any objects within it reassigned to the default ring" text is displayed on the Admin page
+	When User clicks Delete button in the warning message

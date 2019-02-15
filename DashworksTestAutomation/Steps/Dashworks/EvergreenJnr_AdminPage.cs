@@ -2703,6 +2703,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Buckets are not the same");
         }
 
+        [Then(@"User sees following cog-menu items on Admin page:")]
+        public void ThenUserSeesFollowingCog_MenuItemsOnAdminPage(Table items)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            for (var i = 0; i < items.RowCount; i++)
+                Assert.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
+                    "Items are not the same");
+        }
 
         [Then(@"Columns on Admin page is displayed in following order:")]
         public void ThenColumnsOnAdminPageIsDisplayedInFollowingOrder(Table table)
@@ -2738,6 +2746,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.CreateBucketButton.Click();
                 Logger.Write("Create Team button was clicked");
             }
+        }
+
+        [When(@"User clicks Default Ring checkbox")]
+        public void WhenUserClicksDefaultRingCheckbox()
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            page.DefaultRingCheckbox.Click();
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]

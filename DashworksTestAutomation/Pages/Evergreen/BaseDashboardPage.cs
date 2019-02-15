@@ -305,6 +305,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> ColumnSubcategories { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//ul[@class='menu-settings']/li[@class='ng-star-inserted']")]
+        public IList<IWebElement> CogMenuItems { get; set; }
+
         [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
         public IList<IWebElement> OptionsDll { get; set; }
 
