@@ -146,8 +146,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User click on Back button
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "Bucket12948" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User updates the "Default Bucket" checkbox state
@@ -205,8 +205,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "1Bucket12763" in the "Bucket Name" field
 	And User selects "Team 1045" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -221,8 +221,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	| 4AII611FFHAZXWG |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	When User click on Back button
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "2Bucket12763" in the "Bucket Name" field
 	And User selects "Team 1045" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button

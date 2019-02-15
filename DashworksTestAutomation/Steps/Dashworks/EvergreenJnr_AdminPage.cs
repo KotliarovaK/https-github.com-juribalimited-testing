@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
-                case "Create Bucket":
+                case "Create Evergreen Bucket":
                     var createBucketPage = _driver.NowAt<CreateBucketPage>();
                     StringAssert.Contains(createBucketPage.CreateBucketFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
@@ -2720,7 +2720,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var bucket in buckets.Rows)
             {
                 var action = _driver.NowAt<BaseDashboardPage>();
-                action.GetActionsButtonByName("CREATE BUCKET").Click();
+                action.GetActionsButtonByName("CREATE EVERGREEN BUCKET").Click();
                 _driver.WaitForDataLoading();
 
                 var page = _driver.NowAt<CreateBucketPage>();

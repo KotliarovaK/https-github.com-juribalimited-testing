@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Counter shows "1" found rows
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
-	When User updates the "Default unit" checkbox state
+	When User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	#Remove # after DAS-14037 fixed
@@ -277,7 +277,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit12672" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "12672" Name in the "Description" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12672 capacity unit" link
@@ -293,7 +293,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "FALSE" content is displayed in "Default" column
 	When User clicks content from "Capacity Unit" column
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	And User selects "Units" tab on the Project details page
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
@@ -1470,7 +1470,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13961" Name in the "Capacity Unit Name" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
 	And User open "Scope" sub menu on Admin page
 	And User selects "History" tab on the Project details page
@@ -2138,7 +2138,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " 1Test" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13156" Name in the "Description" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	When User clicks "Applications" on the left-hand menu
@@ -2167,7 +2167,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	Then "2" content is displayed in "Applications" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User click content from "Capacity Unit" column
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	When User clicks Reset Filters button on the Admin page
 	When User select "Capacity Unit" rows in the grid
