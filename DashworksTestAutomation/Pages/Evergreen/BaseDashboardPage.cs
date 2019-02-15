@@ -144,7 +144,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'tools-item')]//button[@aria-label='close']")]
         public IWebElement CloseToolsPanelButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'reload')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'top-tools')]//button[@aria-label='reload']")]
         public IWebElement RefreshTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
@@ -304,6 +304,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'sub-categories-item')]")]
         public IList<IWebElement> ColumnSubcategories { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//ul[@class='menu-settings']/li[@class='ng-star-inserted']")]
+        public IList<IWebElement> CogMenuItems { get; set; }
 
         [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
         public IList<IWebElement> OptionsDll { get; set; }
@@ -530,7 +533,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public int GetColumnNumberByName(string columnName)
         {
-            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
+            var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']//div[@col-id]");
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);

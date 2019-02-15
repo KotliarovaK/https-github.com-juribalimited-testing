@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
-                case "Create Bucket":
+                case "Create Evergreen Bucket":
                     var createBucketPage = _driver.NowAt<CreateBucketPage>();
                     StringAssert.Contains(createBucketPage.CreateBucketFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
@@ -136,6 +136,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Create Ring":
                     var createRingPage = _driver.NowAt<CreateRingPage>();
                     StringAssert.Contains(createRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Create Project Ring":
+                    var createProjectRingPage = _driver.NowAt<CreateRingPage>();
+                    StringAssert.Contains(createProjectRingPage.CreateRingFormTitle.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
@@ -2429,6 +2435,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dropdown = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(dropdown.GetMissingDropdownByName(dropdownName), $"{dropdownName} is displayed");
         }
+        [Then(@"""(.*)"" dropdown is not displayed on the Admin Settings screen")]
+        public void ThenDropdownIsNotDisplayedOnTheAdminSettingsScreen(string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsFalse(dropdown.GetMissingDropdownOnSettingsScreenByName(dropdownName), $"{dropdownName} is displayed");
+        }
 
         [Then(@"""(.*)"" dropdown is displayed")]
         public void ThenDropdownIsDisplayed(string dropdownName)
@@ -2691,6 +2703,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Buckets are not the same");
         }
 
+        [Then(@"User sees following cog-menu items on Admin page:")]
+        public void ThenUserSeesFollowingCog_MenuItemsOnAdminPage(Table items)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            for (var i = 0; i < items.RowCount; i++)
+                Assert.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
+                    "Items are not the same");
+        }
 
         [Then(@"Columns on Admin page is displayed in following order:")]
         public void ThenColumnsOnAdminPageIsDisplayedInFollowingOrder(Table table)
@@ -2708,7 +2728,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var bucket in buckets.Rows)
             {
                 var action = _driver.NowAt<BaseDashboardPage>();
-                action.GetActionsButtonByName("CREATE BUCKET").Click();
+                action.GetActionsButtonByName("CREATE EVERGREEN BUCKET").Click();
                 _driver.WaitForDataLoading();
 
                 var page = _driver.NowAt<CreateBucketPage>();
@@ -2726,6 +2746,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.CreateBucketButton.Click();
                 Logger.Write("Create Team button was clicked");
             }
+        }
+
+        [When(@"User clicks Default Ring checkbox")]
+        public void WhenUserClicksDefaultRingCheckbox()
+        {
+            var page = _driver.NowAt<CreateRingPage>();
+            page.DefaultRingCheckbox.Click();
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]

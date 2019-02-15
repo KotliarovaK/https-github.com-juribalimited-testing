@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Pages
         {
             try
             {
-                return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::div/i"));
+                return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::button//i"));
             }
             catch
             {

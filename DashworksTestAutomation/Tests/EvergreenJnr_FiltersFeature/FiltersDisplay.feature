@@ -1205,7 +1205,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
-	And User clicks the "CREATE BUCKET" Action button
+	And User clicks the "CREATE EVERGREEN BUCKET" Action button
 	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -1236,7 +1236,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
-	And User clicks the "CREATE UNIT" Action button
+	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity_Unit_DAS13201_to_be_deleted" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button

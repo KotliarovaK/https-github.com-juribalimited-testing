@@ -15,8 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = "//div[@class='title-container']/h1")]
         public IWebElement TitleContainer { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']/div[@col-id='slotName']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@role='row']/div[@col-id='slotName']")]
         public IList<IWebElement> GridSlotsNames { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@class='form-item']//a[contains(text(), 'See Translations')]")]

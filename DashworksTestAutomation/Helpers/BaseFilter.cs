@@ -630,20 +630,20 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date Inclusive']"))
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
                     .Click();
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date Inclusive']"))
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
                     .SendKeys(row["StartDateInclusive"]);
             }
 
             foreach (var row in Table.Rows)
             {
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date Inclusive']"))
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
                     .Click();
                 _driver.FindElement(By.XPath(
-                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date Inclusive']"))
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
                     .SendKeys(row["EndDateInclusive"]);
             }
             _driver.FindElement(By.XPath(".//body")).Click();

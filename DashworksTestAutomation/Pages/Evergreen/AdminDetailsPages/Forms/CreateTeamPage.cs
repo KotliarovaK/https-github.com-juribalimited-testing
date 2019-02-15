@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = "//span[text()='Add Members (Optional)']")]
         public IWebElement AddMembersCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Team Description']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[contains(@placeholder,'Description')]")]
         public IWebElement TeamDescriptionField { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
