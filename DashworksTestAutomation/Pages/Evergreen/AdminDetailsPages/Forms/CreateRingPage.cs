@@ -11,6 +11,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]/h2")]
         public IWebElement CreateRingFormTitle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']/span[text()='Default Ring']")]
+        public IWebElement DefaultRingCheckbox { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class,'mat-primary mat-raised-button')]")]
         public IWebElement CreateRingButton { get; set; }
 
@@ -31,7 +34,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
                 SelectorFor(this, p => p.CreateRingFormTitle)
             };
         }
-
 
         public void SelectOptionInMapsToEvergreenRingDropdown(string option)
         {
