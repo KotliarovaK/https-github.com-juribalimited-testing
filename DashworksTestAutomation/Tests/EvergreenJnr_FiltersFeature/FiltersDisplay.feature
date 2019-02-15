@@ -1584,3 +1584,18 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	Then "19" rows are displayed in the agGrid
 	Then "12 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
 	Then "22 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
+
+@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS13831
+Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
+	| StartDateInclusive | EndDateInclusive | Association                             |
+	| 11 Nov 2012        | 22 Nov 2019      | Has used app                            |
+	|                    |                  | Entitled to app                         |
+	|                    |                  | Owns a device which app was used on     |
+	|                    |                  | Owns a device which app is entitled to  |
+	|                    |                  | Owns a device which app is installed on |
+	Then "979" rows are displayed in the agGrid
