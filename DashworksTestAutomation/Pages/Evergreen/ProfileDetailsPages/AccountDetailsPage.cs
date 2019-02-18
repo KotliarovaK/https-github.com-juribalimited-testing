@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button/i[@class='material-icons mat-clear']")]
         public IWebElement CloseMessageButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='user-profile']//div[@class='img-bg']")]
+        [FindsBy(How = How.XPath, Using = ".//userprofile-account-details//div[@class='img-bg']")]
         public IWebElement UserPicture { get; set; }
 
         [FindsBy(How = How.XPath, Using = RoleSelector)]
@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         public void NavigateToPage(string pageName)
         {
-            Driver.FindElement(By.XPath($".//span[text()='{pageName}']")).Click();
+            Driver.FindElement(By.XPath($".//mat-sidenav//a//div[text()='{pageName}']")).Click();
         }
     }
 }

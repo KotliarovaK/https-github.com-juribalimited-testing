@@ -935,8 +935,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Admin page should be displayed to the user
 	When User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
-	Then "Capacity Units" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN CAPCITY UNIT" Action button
+	Then "Capacity Evergreen Capacity Unit" page should be displayed to the user
 	When User type "CapacityUnit12883" Name in the "Capacity Unit Name" field on the Project details page
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
