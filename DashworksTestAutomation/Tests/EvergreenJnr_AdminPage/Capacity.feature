@@ -1095,7 +1095,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User click on Back button
 	And User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity Unit For DAS14103" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -2028,7 +2028,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
 	And User type "13152" Name in the "Display Name" field on the Project details page
-	And User selects "Task13152" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
