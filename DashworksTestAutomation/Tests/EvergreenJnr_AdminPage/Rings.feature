@@ -71,7 +71,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	Then Counter shows "1" found rows
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetailsExist
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -80,7 +80,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User clicks "Rings" tab
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
-	And User tries to open same page with another item id
+	Then "Default Ring" checkbox is checked and cannot be unchecked
+	When User tries to open same page with another item id
 	Then Page not found displayed for Ring details page
 	And There are only page not found errors in console
 
@@ -138,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
 	Then "New_Short" content is displayed in "Project Short Name" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @DAS15180 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
