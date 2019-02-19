@@ -1240,9 +1240,9 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChips
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "<FilterName>" filter where type is "Equals" with added column and following value:
-	| Values            |
-	| <ValuesForFilter> |
+	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <ValuesForFilter>  |
 	Then "<FilterName>" filter is added to the list
 	When User create dynamic list with "<ListName>" name on "<PageName>" page
 	Then "<ListName>" list is displayed to user
@@ -1270,10 +1270,11 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChips
 
 Examples:
 	| PageName     | RowGroup    | Column                            | Value          | AdditionalValue   | ListName                | FilterName             | ValuesForFilter | CategoryName     |
-	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | OS Branch         | Devices_List_11103      | Application Compliance | Red             | Operating System |
+	| Devices      | Compliance  | Babel(Engl: Application Readiness |Last Seen Date| OS Branch         | Devices_List_11103      | Application Compliance | Red             | Operating System |
 	| Users        | Compliance  | App Count (Entitled)              | Domain         | Domain            | Users_List_11103        | Application Compliance | Red             | User             |
 	| Mailboxes    | Alias       | Owner City                        | Created Date   | Alias             | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
 	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
+
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu

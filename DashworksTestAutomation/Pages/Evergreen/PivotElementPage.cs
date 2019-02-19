@@ -87,33 +87,27 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(selector).Click();
         }
 
-        public IWebElement GetCloseButtonForElementsByNameOnPivot(string button)
+        public IWebElement GetChipByNameOnPivot(string chipName)
         {
-            var selector = By.XPath($"//span[text()='{button}']/..//following-sibling::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            var selector = By.XPath($"//span[contains(@class, 'pivot-filter')][text()='{chipName}']");
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetChipByNameOnPivot(string chipName)
+        public IWebElement GetChipValueByNameOnPivot(string chipValueName)
         {
-            if (Driver.IsElementExists(By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipName}']")))
-            {
-                var selector = By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipName}']");
-                Driver.WaitWhileControlIsNotDisplayed(By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipName}']"));
-                return Driver.FindElement(selector);
-            }      
-            else
-            {
-                var selector = By.XPath($"//span[@class='pivot-filter-name'][text()='{chipName}']");
-                Driver.WaitWhileControlIsNotDisplayed(selector);
-                return Driver.FindElement(selector);
-            } 
+            var selector = By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipValueName}']");
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetCloseButtonForElementsByNameOnPivot(string button)
+        {
+            var selector = By.XPath($"//span[text()='{button}']/..//following-sibling::button");
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetCloseButtonForValueElementsByNameOnPivot(string button)
         {
             var selector = By.XPath($"//div[text()='{button}']/..//following-sibling::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

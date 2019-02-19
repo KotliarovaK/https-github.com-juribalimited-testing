@@ -330,7 +330,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCloseButtonForChip(string chipName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            page.GetChipByNameOnPivot(chipName).Click();
+            if (page.GetCloseButtonForValueElementsByNameOnPivot(chipName).Displayed())
+                page.GetCloseButtonForValueElementsByNameOnPivot(chipName).Click();
+            else
+                page.GetCloseButtonForElementsByNameOnPivot(chipName).Click();
         }
 
         #endregion
