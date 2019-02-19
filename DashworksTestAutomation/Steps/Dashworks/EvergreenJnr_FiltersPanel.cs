@@ -652,7 +652,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToTheList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.GetFiltersNamesFromFilterPanel(filterName);
+            Assert.IsTrue(filterElement.GetFiltersNamesFromFilterPanel(filterName));
         }
 
         [Then(@"table data is filtered correctly")]

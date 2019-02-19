@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
 
-        public const string FirstColumnTableContent = "//div[@role='gridcell']//a[@href]";
+        public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement PageTitle { get; set; }

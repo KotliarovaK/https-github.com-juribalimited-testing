@@ -1233,3 +1233,66 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	When User open sub menu for "PivotList_DAS13652" list
 	Then User sees Dashboards sub menu on Dashboards page
 	And User remove list with "PivotList_DAS13652" name on "Devices" page
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
+
+Examples: 
+	| RowGroups              | Columns               |
+	| Operating System       | Owner Compliance      |
+	| Service Pack or Build  | Owner Compliance      |
+	| Application Compliance | Operating System      |
+	| Application Compliance | Service Pack or Build |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372
+Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups             |
+	| Operating System      |
+	| Service Pack or Build |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Owner Compliance |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And data in the table is sorted by "Operating System" column in ascending order by default for the Pivot
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
+Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Operating System      |
+	| Service Pack or Build |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And data in the table is sorted by "Application Compliance" column in ascending order by default for the Pivot
