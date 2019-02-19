@@ -213,7 +213,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement Checkbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
         public IWebElement TableBody { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div")]
@@ -225,7 +225,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
         public IList<IWebElement> ContentColor { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted'][text()='No devices found']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span[contains(text(),'No devices found')]")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'save')]//button")]
@@ -560,8 +560,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetColumnContentByColumnName(string columnName)
         {
-            var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
+            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
             return Driver.FindElement(by).Text;
         }
 
@@ -589,9 +588,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void ClickContentByColumnName(string columnName)
         {
-            var byControl =
-                By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+            var byControl = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);

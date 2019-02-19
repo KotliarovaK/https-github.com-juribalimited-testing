@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks newly created object link
 	Then "TestBucket5" bucket details is displayed to the user
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	And User enters "NewBucket5" in the "Bucket Name" field
 	And User selects "I-Team" team in the Team dropdown on the Buckets page
 	And User clicks the "UPDATE BUCKET" Action button
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "FALSE" value is displayed for Default column
 	When User clicks content from "Bucket" column
-	And User clicks "Bucket Settings" tab
+	And User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
@@ -206,7 +206,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	And User clicks "Bucket Settings" tab
+	And User clicks "Evergreen Bucket Settings" tab
 	And User enters "a1ba" in the "Bucket Name" field
 	And User clicks the "UPDATE BUCKET" Action button
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
@@ -458,19 +458,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "TestBucket2" bucket details is displayed to the user
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	Then Default Bucket checkbox is selected
 	When User click on Back button
 	And User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "FALSE" value is displayed for Default column
 	When User clicks content from "Bucket" column
-	And User clicks "Bucket Settings" tab
+	And User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	Then Default Bucket checkbox is selected
 	When User click on Back button
 	When User clicks Reset Filters button on the Admin page

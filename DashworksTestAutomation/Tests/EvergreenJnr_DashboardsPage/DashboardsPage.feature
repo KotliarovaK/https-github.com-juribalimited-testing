@@ -404,3 +404,45 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	When User clicks Settings button for "Dashboard for DAS14920" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Widgets @DAS15372 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| CPU Architecture |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "List15372" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy                         | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count             | CPU Architecture ASC (split by) |                  | 10        | true       |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15365 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Model      |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "List15365" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count             | Model ASC (split by) |                  | 10        | true       |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console

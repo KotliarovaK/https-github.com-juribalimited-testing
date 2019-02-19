@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
 
-        public const string FirstColumnTableContent = "//div[@role='gridcell']//a[@href]";
+        public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement PageTitle { get; set; }
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'checkbox-partial')]")]
         public IWebElement CheckedSomeItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div[@ref='eCenterColsClipper']")]
         public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
