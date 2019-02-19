@@ -560,8 +560,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetColumnContentByColumnName(string columnName)
         {
-            var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
+            var by = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']");
             return Driver.FindElement(by).Text;
         }
 

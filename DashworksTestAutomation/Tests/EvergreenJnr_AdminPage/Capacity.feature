@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	#Then Success message is displayed correctly
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
-	Then "Default unit" checkbox is checked and cannot be unchecked
+	Then "Default Unit" checkbox is checked and cannot be unchecked
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " CapacityUnit13790 " Name in the "Capacity Unit Name" field on the Project details page
@@ -283,7 +283,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	And Success message is displayed and contains "Click here to view the CapacityUnit12672 capacity unit" link
 	When User clicks newly created object link
 	Then URL contains "capacity/units/unit/"
-	And "Default unit" checkbox is checked and cannot be unchecked
+	And "Default Unit" checkbox is checked and cannot be unchecked
 	# commented until DAS-13151
 	# And "UPDATE" Action button is disabled 
 	# And "CANCEL" Action button is disabled
@@ -522,16 +522,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	And User type "DAS13441" Name in the "Display Name" field on the Project details page
 	And User selects "Device" in the "Object Type" dropdown
 	And User selects next items in the "Tasks" dropdown:
-	| Items                            |
-	| DDL Task for a Computer          |
-	| Date Task for a Computer Italian |
+	| Items                                      |
+	| Stage 1 \ DDL Task for a Computer          |
+	| Stage 1 \ Date Task for a Computer Italian |
 	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	And User clicks the "CREATE" Action button
 	And User clicks newly created object link
 	Then User sees following tiles selected in the "Tasks" field:
-	| Items                            |
-	| DDL Task for a Computer          |
-	| Date Task for a Computer Italian |
+	| Items                                      |
+	| Stage 1 \ DDL Task for a Computer          |
+	| Stage 1 \ Date Task for a Computer Italian |
 	When User selects "User" in the "Object Type" dropdown
 	Then User sees following tiles selected in the "Tasks" field:
 	| Items                            |
@@ -787,12 +787,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	Then Project "User Scheduled Test (Jo)" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	Then "40" content is displayed in "MO" column
+	Then "40" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "0" for "Monday" column
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
-	And "0" content is displayed in "MO" column
+	And "0" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "40" for "Monday" column
 	And User clicks the "UPDATE" Action button
@@ -809,7 +809,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
-	Then "Scheduled date" value is displayed in the "Tasks" dropdown
+	Then "Pre-Migration \ Scheduled date" value is displayed in the "Tasks" dropdown
 	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
@@ -839,7 +839,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
-	Then "Scheduled Date" value is displayed in the "Tasks" dropdown
+	Then "Pre-Migration \ Scheduled Date" value is displayed in the "Tasks" dropdown
 	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                                            |
@@ -1529,7 +1529,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Unit Settings" tab on the Capacity Units page
+	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
 	And User type "New Name" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 	And User clicks "Projects" link on the Admin page
@@ -1552,7 +1552,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "New Name" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Unit Settings" tab on the Capacity Units page
+	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
 	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 
@@ -1652,9 +1652,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "1Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "2Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "3Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 1Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 2Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 3Task13812" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1674,13 +1674,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then "UPDATE" Action button is disabled
-	And "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (1Task13812)" text
+	And "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (Stage13812 \ 1Task13812)" text
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	And User selects "2Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "3Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 2Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 3Task13812" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1868,9 +1868,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "Scheduled Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Forecast Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
+	And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1893,19 +1893,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	Then Next values are selected for the "Tasks" field:
-	| Value                               |
-	| Forecast Date                       |
-	| Group Computer Rag Radio Date Owner |
-	| Scheduled Date                      |
+	| Value                                                                                 |
+	| Pre-Migration \ Forecast Date                                                         |
+	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
+	| Pre-Migration \ Scheduled Date                                                        |
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
-	| Value                               |
-	| Forecast Date                       |
-	| Group Computer Rag Radio Date Owner |
-	And "Scheduled Date" checkbox in the "Tasks" field are available to select
+	| Value                                                                                 |
+	| Pre-Migration \ Forecast Date                                                         |
+	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
+	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
 	When User clicks the "CANCEL" Action button
 	And User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
@@ -1955,9 +1955,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "1Task13500" checkbox in the "Tasks" field on the Project details page
-	And User selects "2Task13500" checkbox in the "Tasks" field on the Project details page
-	And User selects "Scheduled Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ 1Task13500" checkbox in the "Tasks" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ 2Task13500" checkbox in the "Tasks" field on the Project details page
+	And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1978,17 +1978,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	Then Next values are selected for the "Tasks" field:
-	| Value          |
-	| Scheduled Date |
+	| Value                          |
+	| Pre-Migration \ Scheduled Date |
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
-	| Value          |
-	| 1Task13500     |
-	| 2Task13500     |
-	And "Scheduled Date" checkbox in the "Tasks" field are available to select
+	| Value                                                        |
+	| Computer Information ---- Text fill; Text fill; \ 1Task13500 |
+	| Computer Information ---- Text fill; Text fill; \ 2Task13500 |
+	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType
@@ -2033,7 +2033,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks content from "Capacity Slot" column
-	Then "Task13152" value is displayed in the "Tasks" dropdown
+	Then "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
 	And "Unassigned" value is displayed in the "Capacity Units" dropdown
 	And "Device" text value is displayed in the "Object Type" dropdown
 	When User selects "Application" in the "Object Type" dropdown
@@ -2088,7 +2088,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User type "Slot131522" Name in the "Slot Name" field on the Project details page
 	And User type "131522" Name in the "Display Name" field on the Project details page
 	And User selects "Teams and Request Types" in the "Capacity Type" dropdown
-	And User selects "Task131522" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage131522 \ Task131522" checkbox in the "Tasks" field on the Project details page
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Computer)]" checkbox in the "Request Types" field on the Project details page
 	When User selects "Device" in the "Object Type" dropdown
@@ -2097,7 +2097,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
 	Then "Teams and Request Types" value is displayed in the "Capacity Type" dropdown
-	And "Task131522" value is displayed in the "Tasks" dropdown
+	And "Stage131522 \ Task131522" value is displayed in the "Tasks" dropdown
 	And "Device" text value is displayed in the "Object Type" dropdown
 	And "[Default (Computer)]" value is displayed in the "Request Types" dropdown
 	And "Admin IT" value is displayed in the "Teams" dropdown

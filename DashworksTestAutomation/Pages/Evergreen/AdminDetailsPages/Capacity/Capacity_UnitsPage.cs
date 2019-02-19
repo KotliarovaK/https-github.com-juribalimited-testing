@@ -14,7 +14,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public IWebElement TitleContainer { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']/div[@col-id='unitName']")]
+            Using = ".//div[contains(@class, 'ag-body-viewport ')]//div[@role='row']/div[@col-id='unitName']")]
         public IList<IWebElement> GridUnitsNames { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[text()='Default unit']")]
