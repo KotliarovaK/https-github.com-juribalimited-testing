@@ -568,6 +568,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingOnProjects();
         }
 
+        [When(@"User selects ""(.*)"" as Type")]
+        public void WhenUserSetsTypesOnWidget(string type)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.Type.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(type);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
         [When(@"User selects ""(.*)"" as Widget SplitBy")]
         public void WhenUserSetsWidgetSplitBy(string splitBy)
         {

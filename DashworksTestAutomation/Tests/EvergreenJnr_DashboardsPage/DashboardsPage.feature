@@ -446,3 +446,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15364 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| CPU Virtualisation Capable |
+	And User have opened column settings for "CPU Virtualisation Capable" column
+	And User have select "Pin Left" option from column settings
+	And User clicks Save button on the list panel
+	And User create dynamic list with "List15364" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Card" as Widget Type
+	And User enters "WidgetForDAS15364" as Widget Title
+	And User selects "List15364" as Widget List
+	And User selects "First Cell" as Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
