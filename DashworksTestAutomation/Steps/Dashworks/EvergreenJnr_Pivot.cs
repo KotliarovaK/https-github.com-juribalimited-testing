@@ -260,6 +260,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectAggregateFunctionByName(functionName).Click();
         }
 
+        [When(@"User clicks Plus button for ""(.*)"" Pivot value")]
+        public void WhenUserClicksPlusButtonForPivotValue(string buttonName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.GetPlusButtonOnPivotByName(buttonName).Click();
+        }
+
         #region Tooltip on Pivot
 
         [Then(@"""(.*)"" plus button have tooltip with ""(.*)"" text")]
@@ -299,6 +306,50 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(page.BackButtonOnPivotPanel);
             var toolTipText = _driver.GetTooltipText();
             Assert.AreEqual(text, toolTipText, "Tooltip text is not correctly");
+        }
+
+        #endregion
+
+        #region Chips
+
+        [Then(@"""(.*)"" chip for Row Groups is not displayed")]
+        [Then(@"""(.*)"" chip for Columns is not displayed")]
+        public void ThenChipIsNotDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Value is not displayed")]
+        public void ThenChipForValueIsNotDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Row Groups is displayed")]
+        [Then(@"""(.*)"" chip for Columns is displayed")]
+        public void ThenChipIsDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Value is displayed")]
+        public void ThenChipForValueIsDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
+        }
+
+        [When(@"User clicks close button for ""(.*)"" chip")]
+        public void WhenUserClicksCloseButtonForChip(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            if (page.GetCloseButtonForValueElementsByNameOnPivot(chipName).Displayed())
+                page.GetCloseButtonForValueElementsByNameOnPivot(chipName).Click();
+            else
+                page.GetCloseButtonForElementsByNameOnPivot(chipName).Click();
         }
 
         #endregion

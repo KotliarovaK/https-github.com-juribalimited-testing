@@ -1234,6 +1234,49 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	Then User sees Dashboards sub menu on Dashboards page
 	And User remove list with "PivotList_DAS13652" name on "Devices" page
 
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectly
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <ValuesForFilter>  |
+	Then "<FilterName>" filter is added to the list
+	When User create dynamic list with "<ListName>" name on "<PageName>" page
+	Then "<ListName>" list is displayed to user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| <RowGroup> |
+	And User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	And User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks the "RUN PIVOT" Action button
+	And User adds the following "Values" on Pivot: 
+	| Value             |
+	| <AdditionalValue> |
+	Then "<Value>" chip for Value is displayed
+	Then "<AdditionalValue>" chip for Value is displayed
+	When User clicks close button for "<AdditionalValue>" chip
+	Then "<AdditionalValue>" chip for Value is not displayed
+	When User clicks Plus button for "Values" Pivot value
+	When User enters "<AdditionalValue>" text in Search field at Columns Panel
+	When User closed "Selected Columns" columns category
+	When User closed "Selected Filters" columns category
+	Then "<AdditionalValue>" subcategory is displayed for "<CategoryName>" category
+
+Examples:
+	| PageName     | RowGroup    | Column                            | Value          | AdditionalValue      | ListName                | FilterName             | ValuesForFilter | CategoryName     |
+	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | OS Branch            | Devices_List_11103      | Application Compliance | Red             | Operating System |
+	| Users        | Compliance  | App Count (Entitled)              | Domain         | Dashworks First Seen | Users_List_11103        | Compliance             | Red             | User             |
+	| Mailboxes    | Alias       | Owner City                        | Created Date   | Alias                | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
+	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner    | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
+
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
