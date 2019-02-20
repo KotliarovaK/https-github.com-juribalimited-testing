@@ -93,10 +93,20 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public bool GetChipNameOnPivot(string chipName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[contains(@class, 'pivot-filter')][text()='{chipName}']"));
+        }
+
         public IWebElement GetChipValueByNameOnPivot(string chipValueName)
         {
             var selector = By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipValueName}']");
             return Driver.FindElement(selector);
+        }
+
+        public bool GetChipValueNameOnPivot(string chipValueName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[contains(@class, 'pivot-filter')][text()='{chipValueName}']"));
         }
 
         public IWebElement GetCloseButtonForElementsByNameOnPivot(string button)

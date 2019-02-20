@@ -297,6 +297,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Incorrect subcategories count for {categoryName} category");
         }
 
+        [Then(@"""(.*)"" subcategory is displayed for ""(.*)"" category")]
+        public void ThenSubcategoryIsDisplayedForCategory(string subCategory, string categoryName)
+        {
+            var columnElement = _driver.NowAt<ColumnsElement>();
+            Assert.AreEqual(subCategory, columnElement.GetSubcategoryByCategoryName(categoryName),
+                $"Incorrect subcategory for {categoryName} category");
+        }
+
         [Then(@"""(.*)"" subcategory is selected in Column panel")]
         public void ThenSubcategoryIsSelectedInColumnPanel(string subCategoriesName)
         {

@@ -1260,20 +1260,22 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChips
 	And User adds the following "Values" on Pivot: 
 	| Value             |
 	| <AdditionalValue> |
-	Then "<Value>" chip is displayed
-	Then "<AdditionalValue>" chip is displayed
+	Then "<Value>" chip for Value is displayed
+	Then "<AdditionalValue>" chip for Value is displayed
 	When User clicks close button for "<AdditionalValue>" chip
-	Then "<AdditionalValue>" chip is not displayed
+	Then "<AdditionalValue>" chip for Value is not displayed
 	When User clicks Plus button for "Values" Pivot value
-	When "<AdditionalValue>" value is entered into the search box and the selection is clicked on Pivot
-	Then "<AdditionalValue>" subcategories is displayed for "<CategoryName>" category
+	When User enters "<AdditionalValue>" text in Search field at Columns Panel
+	When User closed "Selected Columns" columns category
+	When User closed "Selected Filters" columns category
+	Then "<AdditionalValue>" subcategory is displayed for "<CategoryName>" category
 
 Examples:
-	| PageName     | RowGroup    | Column                            | Value          | AdditionalValue   | ListName                | FilterName             | ValuesForFilter | CategoryName     |
-	| Devices      | Compliance  | Babel(Engl: Application Readiness |Last Seen Date| OS Branch         | Devices_List_11103      | Application Compliance | Red             | Operating System |
-	| Users        | Compliance  | App Count (Entitled)              | Domain         | Domain            | Users_List_11103        | Application Compliance | Red             | User             |
-	| Mailboxes    | Alias       | Owner City                        | Created Date   | Alias             | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
-	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
+	| PageName     | RowGroup    | Column                            | Value          | AdditionalValue      | ListName                | FilterName             | ValuesForFilter | CategoryName     |
+	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | OS Branch            | Devices_List_11103      | Application Compliance | Red             | Operating System |
+	| Users        | Compliance  | App Count (Entitled)              | Domain         | Dashworks First Seen | Users_List_11103        | Compliance             | Red             | User             |
+	| Mailboxes    | Alias       | Owner City                        | Created Date   | Alias                | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
+	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner    | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder

@@ -312,18 +312,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #region Chips
 
-        [Then(@"""(.*)"" chip is not displayed")]
+        [Then(@"""(.*)"" chip for Row Groups is not displayed")]
+        [Then(@"""(.*)"" chip for Columns is not displayed")]
         public void ThenChipIsNotDisplayed(string chipName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsFalse(page.GetChipByNameOnPivot(chipName).Displayed(), $"'{chipName}' chip is displayed");
+            Assert.IsFalse(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is displayed");
         }
 
-        [Then(@"""(.*)"" chip is displayed")]
+        [Then(@"""(.*)"" chip for Value is not displayed")]
+        public void ThenChipForValueIsNotDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Row Groups is displayed")]
+        [Then(@"""(.*)"" chip for Columns is displayed")]
         public void ThenChipIsDisplayed(string chipName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(page.GetChipByNameOnPivot(chipName).Displayed(), $"'{chipName}' chip is not displayed");
+            Assert.IsTrue(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Value is displayed")]
+        public void ThenChipForValueIsDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
         }
 
         [When(@"User clicks close button for ""(.*)"" chip")]
