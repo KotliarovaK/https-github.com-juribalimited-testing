@@ -360,6 +360,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
+        [Then(@"User sees ""(.*)"" rows in grid")]
+        public void ThenUserSeesRowsInGrid(int rowsCount)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
+            Assert.That(page.TableRows.Count, Is.EqualTo(rowsCount));
+        }
+
         [Then(@"Content is present in the newly added column")]
         public void ThenContentIsPresentInTheNewlyAddedColumn(Table table)
         {
@@ -401,12 +409,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"table content is present")]
         public void ThenTableContentIsPresent()
         {
-            var content = _driver.FindElements(By.XPath(BaseDashboardPage.FullTable));
+            var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            foreach (var element in content)
+            var rows = page.TableRows;
+            foreach (var row in rows)
             {
-                var tableText = element.FindElement(By.XPath(BaseDashboardPage.TableTextContent));
-                Assert.IsTrue(_driver.IsElementExists(tableText), "Table is empty");
+                Assert.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
             }
         }
 

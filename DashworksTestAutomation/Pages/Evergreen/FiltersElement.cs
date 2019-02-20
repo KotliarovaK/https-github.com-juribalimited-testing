@@ -376,9 +376,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='filter-label-name'][text()='{filterName}]"));
         }
 
-        public bool GetFiltersNamesFromFilterPanel(string filterName)
+        public string GetFiltersNamesFromFilterPanel(string filterName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));
+            return Driver.FindElement(By.XPath($".//div[@class='filter-label']//span[@class='filter-label-name']")).Text;
+
+            //return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));//TODO: remove if fix above works for all
         }
 
         public IWebElement CloseFiltersLookupValue(string filterValue)
@@ -396,8 +398,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetFilterValue(string value)
         {
-            var editFilterSelector =
-                $".//li//span[text()='{value}']";
+            var editFilterSelector = $".//li//span[text()='{value}']";
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 

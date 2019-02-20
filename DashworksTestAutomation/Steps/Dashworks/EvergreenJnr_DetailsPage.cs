@@ -493,7 +493,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Content is present in the column of the Details Page table")]
         public void ThenContentIsPresentInTheColumnOfTheDetailsPageTable(Table table)
         {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             foreach (var row in table.Rows)
             {
