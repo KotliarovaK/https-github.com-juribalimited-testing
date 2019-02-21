@@ -541,7 +541,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	| Owner Display Name |
 	| Import             |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245 @DAS15566 @Not_Run
 Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -761,7 +761,7 @@ Scenario: EvergreenJnr_AllLists_LocationAndUserFiltersEqualsOnUsersAndApplicatio
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
-	Then "User" with "29" category is displayed on Filters panel
+	Then "User" with "30" category is displayed on Filters panel
 	And "Location" with "8" category is displayed on Filters panel
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

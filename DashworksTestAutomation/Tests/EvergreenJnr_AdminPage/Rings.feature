@@ -70,6 +70,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	When User enters "OneRing" text in the Search field for "Ring" column
 	Then Counter shows "1" found rows
 	And There are no errors in the browser console
+	When User select "Ring" rows in the grid
+	| SelectedRowsName |
+	| OneRing          |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetailsExist

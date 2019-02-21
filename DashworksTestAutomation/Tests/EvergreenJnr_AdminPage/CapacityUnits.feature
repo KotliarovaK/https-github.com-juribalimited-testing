@@ -81,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "DefaultCapacityUnit13720" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the DefaultCapacityUnit13720 capacity unit" link
@@ -112,7 +112,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
 	And User selects "Unit Settings" tab on the Capacity Units page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName         |

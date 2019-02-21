@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
         public IWebElement TableOfSearchResults { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@ref='eCenterViewport']")]
         public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'no-result')]")]

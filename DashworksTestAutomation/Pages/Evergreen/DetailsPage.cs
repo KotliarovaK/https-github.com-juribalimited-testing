@@ -216,12 +216,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var byControl =
                 By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell//a");
+                    $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             var attribute = Driver.FindElement(byControl).GetAttribute("href");
             return attribute;
+        }
+
+        private string GetColIdByColumnName(string columnName)
+        {
+            var by = By.XPath($".//span[text()=\"{columnName}\"]/ancestor::div[@col-id]");
+            return Driver.FindElement(by).GetAttribute("col-id");
         }
 
         public bool IsFieldPresent(string fieldName)
@@ -260,7 +266,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetChangeValueInPopUpByName(string value)
         {
-            var selector = By.XPath($"//span[text()='{value}']/ancestor::mat-select");
+            var selector = By.XPath($".//label[text()='{value}']/ancestor::mat-form-field");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
