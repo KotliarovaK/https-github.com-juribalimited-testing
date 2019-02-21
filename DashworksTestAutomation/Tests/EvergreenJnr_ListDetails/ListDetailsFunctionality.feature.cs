@@ -1133,7 +1133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "Entitled to device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
                     "Value and following Association:", ((string)(null)), table7, "When ");
-            testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"Device1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Device1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1255,7 +1255,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "Entitled to device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
                     "Value and following Association:", ((string)(null)), table11, "When ");
-            testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"Devices with Adobe\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices with Adobe\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1346,7 +1346,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "Entitled to device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
                     "Value and following Association:", ((string)(null)), table12, "When ");
-            testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"D1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"D1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1377,7 +1377,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12075")]
         [NUnit.Framework.CategoryAttribute("DAS12874")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
+        [NUnit.Framework.CategoryAttribute("DAS15551")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Application1", "Devices1", "Used on device", "Any Application in list [List not found] used on device", null)]
         [NUnit.Framework.TestCaseAttribute("Application2", "Devices2", "Used by device\'s owner", "Any Application in list [List not found] used by device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("Application3", "Devices3", "Not used by device\'s owner", "Any Application in list [List not found] not used by device\'s owner", null)]
@@ -1417,7 +1419,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "DAS12075",
                     "DAS12874",
                     "DAS14222",
-                    "Delete_Newly_Created_List"};
+                    "DAS15551",
+                    "Delete_Newly_Created_List",
+                    "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1483,7 +1487,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
+        [NUnit.Framework.CategoryAttribute("DAS15551")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists()
         {
             System.Exception lastException = null;
@@ -1523,7 +1529,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12791",
                         "DAS12952",
                         "DAS14222",
-                        "Delete_Newly_Created_List"});
+                        "DAS15551",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1586,7 +1594,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
+        [NUnit.Framework.CategoryAttribute("DAS15551")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists()
         {
             System.Exception lastException = null;
@@ -1626,7 +1636,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12791",
                         "DAS12952",
                         "DAS14222",
-                        "Delete_Newly_Created_List"});
+                        "DAS15551",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1703,7 +1715,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12075")]
         [NUnit.Framework.CategoryAttribute("DAS12578")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
+        [NUnit.Framework.CategoryAttribute("DAS15551")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists()
         {
             System.Exception lastException = null;
@@ -1741,7 +1755,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12075",
                         "DAS12578",
                         "DAS14222",
-                        "Delete_Newly_Created_List"});
+                        "DAS15551",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -2341,7 +2357,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13066")]
+        [NUnit.Framework.CategoryAttribute("DAS15561")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAfterSwitchingBetweenTabsWhileAddUserFormIsOpen()
         {
             System.Exception lastException = null;
@@ -2377,7 +2395,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS13066",
-                        "Delete_Newly_Created_List"});
+                        "DAS15561",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -2388,8 +2408,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
             testRunner.Then("\"DynamicList13066\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select \"Specific users\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Specific users\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Specific users / teams\" sharing option is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("form container is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects the \"Administrator\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

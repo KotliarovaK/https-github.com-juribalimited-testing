@@ -351,7 +351,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependent
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Application1 | Entitled to device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	When User create dynamic list with "Device1" name on "Devices" page
 	Then "Device1" list is displayed to user
 	When User clicks the Columns button
@@ -402,7 +402,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDepende
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| Adobe Apps   | Entitled to device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	When User create dynamic list with "Devices with Adobe" name on "Devices" page
 	Then "Devices with Adobe" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
@@ -434,7 +434,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList | Association        |
 	| A1           | Entitled to device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	When User create dynamic list with "D1" name on "Devices" page
 	Then "D1" list is displayed to user
 	When User clicks "Applications" on the left-hand menu
@@ -451,7 +451,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDe
 	Then "D1" list is displayed to user
 	And "This list does not exist or you do not have access to it" message is not displayed in the lists panel
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12874 @DAS14222 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12874 @DAS14222 @DAS15551 @Delete_Newly_Created_List @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesDynamicLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -494,7 +494,7 @@ Examples:
 	| Application2 | Devices2  | Used by device's owner     | Any Application in list [List not found] used by device's owner     |
 	| Application3 | Devices3  | Not used by device's owner | Any Application in list [List not found] not used by device's owner |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS12791 @DAS12952 @DAS14222 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS12791 @DAS12952 @DAS14222 @DAS15551 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists
 	When User create static list with "Application12075" name on "Applications" page with following items
 	| ItemName                  |
@@ -528,7 +528,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS12791 @DAS12952 @DAS14222 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS12791 @DAS12952 @DAS14222 @DAS15551 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists
 	When User create static list with "Application3_12075" name on "Applications" page with following items
 	| ItemName                                        |
@@ -573,7 +573,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And "Any Application in list [List not found] used on device" is displayed in added filter info
 	And message 'No devices found' is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS14222 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS14222 @DAS15551 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -780,7 +780,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	When User clicks the List Details button
 	Then current user is selected as a owner of a list
 
-@Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS13066 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS13066 @DAS15561 @Delete_Newly_Created_List @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAfterSwitchingBetweenTabsWhileAddUserFormIsOpen
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -789,8 +789,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	Then "DynamicList13066" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	When User select "Specific users" sharing option
-	Then "Specific users" sharing option is selected
+	When User select "Specific users / teams" sharing option
+	Then "Specific users / teams" sharing option is selected
 	When User clicks the "ADD USER" Action button
 	Then form container is displayed to the user
 	When User selects the "Administrator" user for sharing

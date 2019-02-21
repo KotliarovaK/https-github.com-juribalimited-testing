@@ -127,8 +127,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWith
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
 	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
-	Then "Capacity Units" page should be displayed to the user
-	And "Create Evergreen Capacity Unit" page should be displayed to the user
+	Then "Create Evergreen Capacity Unit" page should be displayed to the user
 	When User type "SameNameCaseSensative" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "SameNameCaseSensative" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -477,7 +476,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	When User clicks newly created object link
 	When User type "Capacity Unit Settings upd" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "upd" Name in the "Description" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	Then "Capacity Unit Settings upd" text is displayed in the table content
@@ -486,7 +485,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
 	And User selects "Unit Settings" tab on the Capacity Units page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column

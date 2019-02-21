@@ -762,7 +762,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList  | Association    |
 	| ListName12349 | Used on device |
-	Then "Application (Saved List)" filter is added to the list
+	Then "Any Application" filter is added to the list
 	And "99" rows are displayed in the agGrid
 	And "Any Application in list ListName12349 used on device" is displayed in added filter info
 	And "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container

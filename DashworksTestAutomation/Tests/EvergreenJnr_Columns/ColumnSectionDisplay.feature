@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfter
 	When User add "Application Owner" filter where type is "Equals" with following Value and Association:
 	| Values | Association  |
 	| 123    | Used by user |
-	Then "Application" filter is added to the list
+	Then "Application Owner" filter is added to the list
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	Then Maximize button is displayed for "User" category
@@ -980,7 +980,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	| Project: Havoc(BigD | 1      |
 	| Project: ICSP       | 1      |
 	| Project: prK        | 1      |
-	| Project: TestProj16 | 1      |
+	| Project: TestProj23 | 1      |
 	| Project: Windows101 | 1      |
 	| Project: Windows102 | 1      |
 	| Project: Windows10T | 1      |

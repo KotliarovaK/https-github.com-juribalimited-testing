@@ -462,7 +462,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferent
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList569889 | Not used on device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	When User create dynamic list with "Applications List TestName" name on "Devices" page
 	Then "Applications List TestName" list is displayed to user
 	When User navigates to the "All Devices" list

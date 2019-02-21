@@ -2070,7 +2070,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Used on device"});
             testRunner.When("User add \"Application (Saved List)\" filter where type is \"In list\" with Selected " +
                     "Value and following Association:", ((string)(null)), table32, "When ");
-            testRunner.Then("\"Application (Saved List)\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Any Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"99\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"Any Application in list ListName12349 used on device\" is displayed in added filt" +
                     "er info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

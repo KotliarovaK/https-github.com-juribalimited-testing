@@ -1000,7 +1000,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Used by user"});
             testRunner.When("User add \"Application Owner\" filter where type is \"Equals\" with following Value a" +
                     "nd Association:", ((string)(null)), table29, "When ");
-            testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Application Owner\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Maximize button is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3216,7 +3216,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Project: prK",
                         "1"});
             table95.AddRow(new string[] {
-                        "Project: TestProj16",
+                        "Project: TestProj23",
                         "1"});
             table95.AddRow(new string[] {
                         "Project: Windows101",

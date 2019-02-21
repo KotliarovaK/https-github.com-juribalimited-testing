@@ -376,9 +376,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='filter-label-name'][text()='{filterName}]"));
         }
 
-        public string GetFiltersNamesFromFilterPanel(string filterName)
+        public List<string> GetFiltersNamesFromFilterPanel(string filterName)
         {
-            return Driver.FindElement(By.XPath($".//div[@class='filter-label']//span[@class='filter-label-name']")).Text;
+            return Driver.FindElements(By.XPath($".//div[@class='filter-label']//span[@class='filter-label-name']"))
+                .Select(x => x.Text).ToList();
 
             //return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));//TODO: remove if fix above works for all
         }
