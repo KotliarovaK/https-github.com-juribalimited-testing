@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class PivotElementPage : SeleniumBasePage
     {
+        public const string AggregateOptionOnPivotPanel = "//option[@class='ng-star-inserted']";
+
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeader { get; set; }
 
@@ -55,6 +57,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@style, 'left: 0px')]//div[@ref='agContainer']//span[text()='Empty']")]
         public IWebElement FirstEmptyValueHeaders { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//select[contains(@class, 'pristine')]")]
+        public IWebElement AggregateFunction{ get; set; }
+
+        [FindsBy(How = How.XPath, Using = AggregateOptionOnPivotPanel)]
+        public IList<IWebElement> AggregateOptionsOnPivotPanel { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

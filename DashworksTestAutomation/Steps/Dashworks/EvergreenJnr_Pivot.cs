@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -258,6 +259,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<PivotElementPage>();
             page.ValueSectionSelectBox.Click();
             page.SelectAggregateFunctionByName(functionName).Click();
+        }
+
+        [Then(@"following aggregate function are available in dropdown:")]
+        public void ThenFollowingAggregateFunctionAreAvailableInDropdown(Table table)
+        {
+            var pivot = _driver.NowAt<PivotElementPage>();
+            pivot.AggregateFunction.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = pivot.AggregateOptionsOnPivotPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Aggregate function in drop-down are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
         }
 
         [When(@"User clicks Plus button for ""(.*)"" Pivot value")]

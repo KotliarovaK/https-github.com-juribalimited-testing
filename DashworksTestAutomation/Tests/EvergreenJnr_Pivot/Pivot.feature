@@ -1234,8 +1234,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	Then User sees Dashboards sub menu on Dashboards page
 	And User remove list with "PivotList_DAS13652" name on "Devices" page
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Delete_Newly_Created_List
-Scenario Outline: EvergreenJnr_DevicesList_CheckThatRemovingValueThroughTheChipsWorksCorrectly
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User clicks the Filters button
@@ -1276,6 +1276,39 @@ Examples:
 	| Users        | Compliance  | App Count (Entitled)              | Domain         | Dashworks First Seen | Users_List_11103        | Compliance             | Red             | User             |
 	| Mailboxes    | Alias       | Owner City                        | Created Date   | Alias                | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
 	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner    | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS13819 @DAS13818 @DAS13817 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Values on Pivot:
+	| Values     |
+	| HDD Count  |
+	Then following aggregate function are available in dropdown:
+	| Option |
+	| count  |
+	| sum    |
+	| min    |
+	| max    |
+	| avg    |
+	When User clicks close button for "HDD Count" chip
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Build Date |
+	Then following aggregate function are available in dropdown:
+	| Option |
+	| count  |
+	| first  |
+	| last   |
+	When User clicks close button for "Build Date" chip
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	Then following aggregate function are available in dropdown:
+	| Option |
+	| count  |
+	When User clicks close button for "Owner City" chip
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
@@ -1330,7 +1363,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuild
 	| RowGroups              |
 	| Application Compliance |
 	And User selects the following Columns on Pivot:
-	| Columns          |
+	| Columns               |
 	| Operating System      |
 	| Service Pack or Build |
 	And User selects the following Values on Pivot:
