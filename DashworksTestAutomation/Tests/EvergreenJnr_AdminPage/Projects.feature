@@ -1326,6 +1326,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Details" tab
+	#Then "Clone evergreen buckets to project buckets" content is displayed in "Buckets" dropdown
 	When User selects "Use project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User clicks "Scope" tab
@@ -3154,7 +3155,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProje
 	Then Admin page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
-	Then User sees folloing options in "Buckets" dropdown on Import Projects page:
+	Then User sees following options in "Buckets" dropdown on Import Projects page:
 	| OptionLabel                                |
 	| Use project buckets                        |
 	| Clone evergreen buckets to project buckets |
@@ -3165,7 +3166,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	Then Admin page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
-	Then User sees folloing options in "Select Existing Project" dropdown on Import Projects page:
+	Then User sees following options in "Select Existing Project" dropdown on Import Projects page:
 	| OptionLabel                                       |
 	| 1803 Rollout                                      |
 	| Babel (English, German and French)                |
