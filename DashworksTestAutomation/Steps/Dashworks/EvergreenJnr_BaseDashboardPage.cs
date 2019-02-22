@@ -448,6 +448,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains(url, _driver.Url, $"URL is not contains {url}");
         }
 
+        [Then(@"URL contains only ""(.*)"" filter")]
+        public void ThenURLContainsOnly(string urlFilterExpected)
+        {
+            string url = _driver.Url;
+            url=url.Substring(url.IndexOf("?") + 1);
+            string[] filterInUrl = url.Split('$');
+
+            foreach (var filter in filterInUrl)
+            {
+                if (!string.IsNullOrEmpty(filter))
+                {
+                    StringAssert.Contains(urlFilterExpected, filter, $"URL is not contains {filter}");
+                }
+            }
+        }
+
         [Then(@"""(.*)"" text is displayed in filter container")]
         public void ThenTextIsDisplayedInFilterContainer(string text)
         {

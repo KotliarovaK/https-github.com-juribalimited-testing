@@ -1761,7 +1761,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	| Project: Windows10U | 1      |
 	| Project: Windows7Mi | 1      |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Filters button
@@ -1776,7 +1776,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	| Project: UserSched2 | 1      |
 	| Project: UserSchedu | 1      |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Filters button
@@ -1788,7 +1788,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjec
 	| Project: EmailMigra | 1      |
 	| Project: MailboxEve | 1      |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -1796,3 +1796,22 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypePro
 	And User enters "ring" text in Search field at Filters Panel
 	Then Category with counter is displayed on Filter panel
 	| Category            | Number |
+
+@Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15246 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameters
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And user select "Windows7Mi: Send Applications List - User Object Task (Team)" filter
+	And User clicks in search field in the Filter block
+	And User enters "Unassigned" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	When User create dynamic list with "TestList15246" name on "Users" page
+	Then "TestList15246" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User navigates to the "TestList15246" list
+	Then "TestList15246" list is displayed to user
+	And URL contains "evergreen/#/users?$listid="
+	And URL contains only "listid" filter
