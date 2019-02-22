@@ -1088,7 +1088,7 @@ Examples:
 	| Users     | Username      |
 	| Mailboxes | Email Address |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @DAS14431
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
 	When User clicks "Applications" on the left-hand menu
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
@@ -1112,7 +1112,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy cell' option in context menu
 	Then Next data '<TargetCell>' is copied
-	
+
 Examples:
 	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn | TargetCell    |
 	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    | Access 95     |
@@ -1137,7 +1137,7 @@ Examples:
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi | !should be scpecified |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      | !should be scpecified |
 
-@Evergreen @UsersLists @EvergreenJnr_ItemDetails @DAS15522
+@Evergreen @UsersLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15522
 Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThroughTheProjectNameFromObjectDetails
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

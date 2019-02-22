@@ -3607,6 +3607,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS14431")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate()
         {
@@ -3641,6 +3642,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Evergreen",
                         "AllLists",
                         "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
                         "DAS14431"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3803,6 +3805,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("UsersLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15522")]
         public virtual void EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThroughTheProjectNameFromObjectDetails()
         {
@@ -3837,6 +3840,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "Evergreen",
                         "UsersLists",
                         "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
                         "DAS15522"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
