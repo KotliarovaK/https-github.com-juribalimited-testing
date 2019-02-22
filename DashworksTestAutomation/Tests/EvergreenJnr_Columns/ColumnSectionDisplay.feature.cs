@@ -1691,7 +1691,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13245")]
         [NUnit.Framework.CategoryAttribute("DAS15566")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch()
         {
             System.Exception lastException = null;
@@ -1727,8 +1726,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS13245",
-                        "DAS15566",
-                        "Not_Run"});
+                        "DAS15566"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
