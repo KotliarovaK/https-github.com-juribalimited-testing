@@ -7940,7 +7940,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Use project buckets"});
             table127.AddRow(new string[] {
                         "Clone evergreen buckets to project buckets"});
-            testRunner.Then("User sees folloing options in \"Buckets\" dropdown on Import Projects page:", ((string)(null)), table127, "Then ");
+            testRunner.Then("User sees following options in \"Buckets\" dropdown on Import Projects page:", ((string)(null)), table127, "Then ");
             this.ScenarioCleanup();
         }
 
@@ -8042,8 +8042,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Windows 10 Updates - New York"});
             table128.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)"});
-            testRunner.Then("User sees folloing options in \"Select Existing Project\" dropdown on Import Projec" +
-                    "ts page:", ((string)(null)), table128, "Then ");
+            testRunner.Then("User sees following options in \"Select Existing Project\" dropdown on Import Proje" +
+                    "cts page:", ((string)(null)), table128, "Then ");
             this.ScenarioCleanup();
         }
 

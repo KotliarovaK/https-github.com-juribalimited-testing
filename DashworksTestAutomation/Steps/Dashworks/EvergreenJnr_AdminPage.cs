@@ -903,7 +903,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Import Project button was clicked");
         }
 
-        [Then(@"User sees folloing options in ""(.*)"" dropdown on Import Projects page:")]
+        [Then(@"User sees following options in ""(.*)"" dropdown on Import Projects page:")]
         public void ThenUserSeesFollowingOptionsInDropdownOnImportProjectPage(string dropdownName, Table options)
         {
             var page = _driver.NowAt<ImportProjectPage>();
@@ -950,6 +950,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(page.GetTextInFieldByFieldName(fieldName).GetAttribute("value").Contains(text),
                 $"Text in {fieldName} field is different");
+        }
+
+        [Then(@"""(.*)"" content is displayed in ""(.*)"" dropdown")]
+        public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
+        {
         }
 
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
