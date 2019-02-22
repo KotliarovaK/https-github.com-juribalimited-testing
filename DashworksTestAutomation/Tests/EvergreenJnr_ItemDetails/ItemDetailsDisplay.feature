@@ -1136,3 +1136,14 @@ Examples:
 	| Users        | svc_dashworks                                           | Username      | Groups       | Group          | Domain Admins | !should be scpecified |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi | !should be scpecified |
 	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      | !should be scpecified |
+
+@Evergreen @UsersLists @EvergreenJnr_ItemDetails @DAS15522
+Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThroughTheProjectNameFromObjectDetails
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "TON2490708"
+	And User click content from "Username" column
+	And User navigates to the "Projects" tab
+	And User opens "Device Projects" section on the Details Page
+	When User clicks content from "Project" column
+	Then "Project Object" page is displayed to the user

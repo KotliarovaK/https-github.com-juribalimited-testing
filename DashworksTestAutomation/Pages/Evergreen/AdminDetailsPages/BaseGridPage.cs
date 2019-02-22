@@ -352,15 +352,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).Click();
         }
 
-        public void ClickContentByColumnName(string columnName)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
-            Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-        }
+        //public void ClickContentByColumnName(string columnName)
+        //{
+        //    var byControl =
+        //        By.XPath(
+        //            $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+        //    Driver.WaitForDataLoading();
+        //    Driver.WaitWhileControlIsNotDisplayed(byControl);
+        //    Driver.FindElement(byControl).Click();
+        //}
 
         public void OpenColumnSettingsByName(string columnName)
         {
