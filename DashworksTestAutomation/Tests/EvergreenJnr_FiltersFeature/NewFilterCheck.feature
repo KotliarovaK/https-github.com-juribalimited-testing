@@ -86,7 +86,7 @@ Examples:
 	| Windows7Mi: Target App Readiness | Equals, Does not equal | Red          | Windows7Mi: Target App Readiness is Red   | 28        |
 	| Babel(Engl: Target App Readiness | Equals, Does not equal | None         | Babel(Engl: Target App Readiness is None  | 302       |
 	| Barry'sUse: Target App Readiness | Equals, Does not equal | None         | Barry'sUse: Target App Readiness is None  | 1,045     |
-	| ComputerSc: Target App Readiness | Equals, Does not equal | Green        | ComputerSc: Target App Readiness is Green | 903       |
+	| ComputerSc: Target App Readiness | Equals, Does not equal | Green        | ComputerSc: Target App Readiness is Green | 913       |
 	| Havoc(BigD: Target App Readiness | Equals, Does not equal | None         | Havoc(BigD: Target App Readiness is None  | 1,067     |
 	| MigrationP: Target App Readiness | Equals, Does not equal | Blue         | MigrationP: Target App Readiness is Blue  | 189       |
 	| UserSchedu: Target App Readiness | Equals, Does not equal | Grey         | UserSchedu: Target App Readiness is Grey  | 981       |
@@ -186,7 +186,7 @@ Examples:
 	| Windows7Mi: Application Readiness | Equals, Does not equal | Red          | Windows7Mi: Application Readiness is Red   | 27        |
 	| Babel(Engl: Application Readiness | Equals, Does not equal | None         | Babel(Engl: Application Readiness is None  | 302       |
 	| Barry'sUse: Application Readiness | Equals, Does not equal | None         | Barry'sUse: Application Readiness is None  | 1,072     |
-	| ComputerSc: Application Readiness | Equals, Does not equal | Green        | ComputerSc: Application Readiness is Green | 901       |
+	| ComputerSc: Application Readiness | Equals, Does not equal | Green        | ComputerSc: Application Readiness is Green | 911       |
 	| Havoc(BigD: Application Readiness | Equals, Does not equal | None         | Havoc(BigD: Application Readiness is None  | 1,067     |
 	| MigrationP: Application Readiness | Equals, Does not equal | Blue         | MigrationP: Application Readiness is Blue  | 189       |
 	| UserSchedu: Application Readiness | Equals, Does not equal | None         | UserSchedu: Application Readiness is None  | 981       |
@@ -248,7 +248,7 @@ Examples:
 	| Windows7Mi: Core Application | Equals, Does not equal | TRUE         | Windows7Mi: Core Application is True    | 11        |
 	| Babel(Engl: Core Application | Equals, Does not equal | FALSE        | Babel(Engl: Core Application is False   | 302       |
 	| Barry'sUse: Core Application | Equals, Does not equal | UNKNOWN      | Barry'sUse: Core Application is Unknown | 1,146     |
-	| ComputerSc: Core Application | Equals, Does not equal | FALSE        | ComputerSc: Core Application is False   | 1,033     |
+	| ComputerSc: Core Application | Equals, Does not equal | FALSE        | ComputerSc: Core Application is False   | 1,043     |
 	| Havoc(BigD: Core Application | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Core Application is Unknown | 1,156     |
 	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is False   | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
@@ -279,7 +279,7 @@ Examples:
 	| Windows7Mi: Hide from End Users | Equals, Does not equal | FALSE        | Windows7Mi: Hide from End Users is False   | 1,067     |
 	| Babel(Engl: Hide from End Users | Equals, Does not equal | UNKNOWN      | Babel(Engl: Hide from End Users is Unknown | 1,921     |
 	| Barry'sUse: Hide from End Users | Equals, Does not equal | FALSE        | Barry'sUse: Hide from End Users is False   | 1,077     |
-	| ComputerSc: Hide from End Users | Equals, Does not equal | FALSE        | ComputerSc: Hide from End Users is False   | 1,033     |
+	| ComputerSc: Hide from End Users | Equals, Does not equal | FALSE        | ComputerSc: Hide from End Users is False   | 1,043     |
 	| Havoc(BigD: Hide from End Users | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Hide from End Users is Unknown | 1,156     |
 	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is False   | 220       |
 	| UserSchedu: Hide from End Users | Equals, Does not equal | UNKNOWN      | UserSchedu: Hide from End Users is Unknown | 1,242     |
