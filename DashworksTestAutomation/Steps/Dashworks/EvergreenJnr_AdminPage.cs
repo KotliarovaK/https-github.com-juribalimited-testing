@@ -1141,8 +1141,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks content from ""(.*)"" column")]
         public void WhenUserClicksContentFromColumn(string columnName)
         {
-            var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
-            tableElement.ClickContentByColumnNameNew(columnName);
+            //var tableElement = _driver.NowAtWithoutWait<BaseGridPage>();
+            //tableElement.ClickContentByColumnName(columnName);
+            //_driver.WaitForDataLoading(); //TODO: remove if below code works for all lists
+
+            var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
         }
 

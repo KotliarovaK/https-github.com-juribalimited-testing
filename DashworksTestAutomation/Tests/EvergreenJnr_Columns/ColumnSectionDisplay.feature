@@ -541,7 +541,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromASt
 	| Owner Display Name |
 	| Import             |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245 @DAS15566 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13245 @DAS15566
 Scenario: EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

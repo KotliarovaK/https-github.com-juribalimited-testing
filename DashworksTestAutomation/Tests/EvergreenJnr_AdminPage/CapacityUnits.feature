@@ -106,12 +106,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	Then "DefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Unit Settings" tab on the Capacity Units page
-	Then "Default unit" checkbox is checked and cannot be unchecked
+	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
+	Then "Default Unit" checkbox is checked and cannot be unchecked
 	When User click on Back button
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Unit Settings" tab on the Capacity Units page
+	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
 	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	And User select "Capacity Unit" rows in the grid
@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	Then "TRUE" value is displayed for Default column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Unit Settings" tab on the Capacity Units page
+	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
 	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
