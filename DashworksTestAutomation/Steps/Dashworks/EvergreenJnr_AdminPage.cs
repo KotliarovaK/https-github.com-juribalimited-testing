@@ -2430,6 +2430,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColumnContentIsDisplayedInTheFollowingOrder(Table table)
         {
             var action = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.TableContentList.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Column content is different");
