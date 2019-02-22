@@ -18,6 +18,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string TableTextContent = ".//div[@role='row']/div/span";
 
+        public const string GridCell = ".//div[@role='gridcell']";
+
         public const string FullTable = ".//div[contains(@class, 'ag-body-viewport')]/div";
 
         public const string OptionsDllOnActionsPanel = "//mat-option[@role='option']//span";
@@ -216,10 +218,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]")]
         public IWebElement TableBody { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-container']")]
         public IWebElement TableContent { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@role='row']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
@@ -282,7 +284,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span")]
         public IWebElement ActiveCustomList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> GridRows { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -554,7 +556,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         private string GetColIdByColumnName(string columnName)
         {
-            var by = By.XPath($".//span[text()='{columnName}']/ancestor::div[@col-id]");
+            var by = By.XPath($".//span[text()=\"{columnName}\"]/ancestor::div[@col-id]");
             return Driver.FindElement(by).GetAttribute("col-id");
         }
 
@@ -624,7 +626,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var byControl =
                 By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell/div/a");
+                    $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);

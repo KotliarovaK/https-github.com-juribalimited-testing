@@ -180,7 +180,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User clicks "Evergreen Bucket Settings" tab
 	And User enters "NewBucket5" in the "Bucket Name" field
 	And User selects "I-Team" team in the Team dropdown on the Buckets page
-	And User clicks the "UPDATE BUCKET" Action button
+	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The NewBucket5 bucket has been updated" text
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "FALSE" value is displayed for Default column
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	And User clicks content from "Bucket" column
 	And User clicks "Evergreen Bucket Settings" tab
 	And User enters "a1ba" in the "Bucket Name" field
-	And User clicks the "UPDATE BUCKET" Action button
+	And User clicks the "UPDATE" Action button
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser

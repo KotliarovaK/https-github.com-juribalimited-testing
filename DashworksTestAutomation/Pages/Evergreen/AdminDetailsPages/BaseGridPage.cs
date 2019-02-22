@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div//span[text()='Evergreen']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyViewport']//div//span[text()='Evergreen']")]
         public IWebElement EvergreenUnit { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
@@ -352,15 +352,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.FindElement(byControl).Click();
         }
 
-        public void ClickContentByColumnName(string columnName)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
-            Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-        }
+        //public void ClickContentByColumnName(string columnName)
+        //{
+        //    var byControl =
+        //        By.XPath(
+        //            $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
+        //    Driver.WaitForDataLoading();
+        //    Driver.WaitWhileControlIsNotDisplayed(byControl);
+        //    Driver.FindElement(byControl).Click();
+        //}
 
         public void OpenColumnSettingsByName(string columnName)
         {

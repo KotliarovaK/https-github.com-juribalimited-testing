@@ -133,6 +133,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
         }
 
+        public string GetSubcategoryByCategoryName(string categoryName)
+        {
+            var filterCategory = FilterCategory(categoryName);
+            Driver.MouseHover(filterCategory);
+            return filterCategory.FindElement(By.XPath("//div[contains(@class, 'sub-categories')]")).Text;
+        }
+
         public IWebElement MaximizeOrMinimizeButtonByCategory(string categoryName)
         {
             var filterCategory = FilterCategory(categoryName);

@@ -506,10 +506,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("user select \"Dashworks First Seen\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Equals, Equals (relative), Does not equal, Does not equal (relative), Before, Be" +
-                    "fore (relative), On or before, On or before (relative), After, After (relative)," +
-                    " On or after, On or after (relative), Empty, Not empty\" option is available for " +
-                    "this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then(@"""Equals, Equals (relative), Does not equal, Between, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty"" option is available for this filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User have created \"Empty\" Date filter with column and \"\" option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Dashworks First Seen is empty\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -700,12 +697,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
         [NUnit.Framework.CategoryAttribute("DAS10512")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", "Equals, Does not equal", "TRUE", "Windows7Mi: Core Application is true", "11", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Core Application", "Equals, Does not equal", "FALSE", "Babel(Engl: Core Application is false", "302", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Core Application", "Equals, Does not equal", "TRUE", "Windows7Mi: Core Application is True", "11", null)]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Core Application", "Equals, Does not equal", "FALSE", "Babel(Engl: Core Application is False", "302", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Core Application", "Equals, Does not equal", "UNKNOWN", "Barry\'sUse: Core Application is Unknown", "1,146", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Core Application", "Equals, Does not equal", "FALSE", "ComputerSc: Core Application is false", "1,033", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Core Application", "Equals, Does not equal", "FALSE", "ComputerSc: Core Application is False", "1,033", null)]
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Core Application", "Equals, Does not equal", "UNKNOWN", "Havoc(BigD: Core Application is Unknown", "1,156", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Core Application", "Equals, Does not equal", "FALSE", "MigrationP: Core Application is false", "220", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Core Application", "Equals, Does not equal", "FALSE", "MigrationP: Core Application is False", "220", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Core Application", "Equals, Does not equal", "UNKNOWN", "UserSchedu: Core Application is Unknown", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {
@@ -786,12 +783,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS11509")]
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS11509")]
-        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", "Equals, Does not equal", "FALSE", "Windows7Mi: Hide from End Users is false", "1,067", null)]
+        [NUnit.Framework.TestCaseAttribute("Windows7Mi: Hide from End Users", "Equals, Does not equal", "FALSE", "Windows7Mi: Hide from End Users is False", "1,067", null)]
         [NUnit.Framework.TestCaseAttribute("Babel(Engl: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "Babel(Engl: Hide from End Users is Unknown", "1,921", null)]
-        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide from End Users", "Equals, Does not equal", "FALSE", "Barry\'sUse: Hide from End Users is false", "1,077", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide from End Users", "Equals, Does not equal", "FALSE", "ComputerSc: Hide from End Users is false", "1,033", null)]
+        [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Hide from End Users", "Equals, Does not equal", "FALSE", "Barry\'sUse: Hide from End Users is False", "1,077", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Hide from End Users", "Equals, Does not equal", "FALSE", "ComputerSc: Hide from End Users is False", "1,033", null)]
         [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "Havoc(BigD: Hide from End Users is Unknown", "1,156", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Hide from End Users", "Equals, Does not equal", "FALSE", "MigrationP: Hide from End Users is false", "220", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Hide from End Users", "Equals, Does not equal", "FALSE", "MigrationP: Hide from End Users is False", "220", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Hide from End Users", "Equals, Does not equal", "UNKNOWN", "UserSchedu: Hide from End Users is Unknown", "1,242", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterIsAddedToTheList(string columnName, string operators, string filterOption, string text, string rowsCount, string[] exampleTags)
         {

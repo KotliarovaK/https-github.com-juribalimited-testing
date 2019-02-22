@@ -70,8 +70,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	When User enters "OneRing" text in the Search field for "Ring" column
 	Then Counter shows "1" found rows
 	And There are no errors in the browser console
+	When User select "Ring" rows in the grid
+	| SelectedRowsName |
+	| OneRing          |
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetailsExist
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -80,11 +87,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User clicks "Rings" tab
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
-	And User tries to open same page with another item id
+	Then "Default Ring" checkbox is checked and cannot be unchecked
+	When User tries to open same page with another item id
 	Then Page not found displayed for Ring details page
 	And There are only page not found errors in console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS14695 @DAS15415 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @Projects @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS14695 @DAS15415 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -106,9 +114,8 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then "UPDATE" Action button is disabled
 	When User changes Name to "NewDescription" in the "Description" field on the Project details page
 	Then "UPDATE" Action button is active
-	#Update after DAS-15415 fixed
-	#Then "Default Ring" checkbox is checked and cannot be unchecked
-	#Then "Maps to Evergreen Ring" dropdown is not displayed on the Admin Settings screen
+	Then "Default Ring" checkbox is checked and cannot be unchecked
+	Then "Maps to Evergreen Ring" dropdown is not displayed on the Admin Settings screen
 	When User clicks the "CANCEL" Action button
 	Then "TRUE" content is displayed in "Default" column
 	When User have opened Column Settings for "Ring" column in the Details Page table
@@ -137,8 +144,12 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	Then "Clone evergreen buckets to project buckets" text value is displayed in the "Buckets" dropdown
 	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
 	Then "New_Short" content is displayed in "Project Short Name" field
+	When User clicks "Projects" navigation link on the Admin page
+	When User enters "New_14690_Project" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @DAS15180 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page

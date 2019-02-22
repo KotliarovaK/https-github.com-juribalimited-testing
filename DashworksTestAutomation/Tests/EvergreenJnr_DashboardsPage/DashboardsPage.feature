@@ -426,7 +426,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @Dashboards @Widgets @DAS15365 @Delete_Newly_Created_List
+@Evergreen @Dashboards @Widgets @DAS15365 @DAS15352 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -442,6 +442,73 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	And User adds new Widget
 	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |
 	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count             | Model ASC (split by) |                  | 10        | true       |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Bar" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Column" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Line" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Donut" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Half donut" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Table" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15364 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| CPU Virtualisation Capable |
+	And User have opened column settings for "CPU Virtualisation Capable" column
+	And User have select "Pin Left" option from column settings
+	And User clicks Save button on the list panel
+	And User create dynamic list with "List15364" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Card" as Widget Type
+	And User enters "WidgetForDAS15364" as Widget Title
+	And User selects "List15364" as Widget List
+	And User selects "First Cell" as Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15356 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Secure Boot Enabled |
+	| Manufacturer        |
+	| Compliance          |
+	And User click on 'Manufacturer' column header
+	Then data in table is sorted by 'Manufacturer' column in ascending order
+	When User clicks Save button on the list panel
+	And User create dynamic list with "List15356" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                            | TableOrientation | MaxValues | ShowLegend |
+	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count             | Secure Boot Enabled ASC (split by) |                  | 10        | true       |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button

@@ -291,7 +291,7 @@ namespace DashworksTestAutomation.Helpers
             var addedOptionSelector =
                 ".//span[@class='chips-item-text ng-star-inserted']";
             var allAddedOptionsSelector =
-                ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
+                ".//div[@class='filterAddPanel ng-star-inserted']/div[contains(@class,'form-container')]//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-form-field-infix']//input");
             var addButtonSelector =

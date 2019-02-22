@@ -21,8 +21,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterIn
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	Then Values is displayed in added filter info
 	| Values  |
-	| true    |
-	| false   |
+	| True    |
+	| False   |
 	| Unknown |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10754 @DAS11142 @Delete_Newly_Created_List
@@ -417,7 +417,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	And "17,126" rows are displayed in the agGrid
 	And Options is displayed in added filter info
 	| Values  |
@@ -1432,7 +1432,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisp
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "User" filter
-	Then "FR\AAD1011948" value is displayed in the filter info
+	Then "FR\AAD1011948 (Pinabel Cinq-Mars)" value is displayed in the filter info
 	And There are no errors in the browser console
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

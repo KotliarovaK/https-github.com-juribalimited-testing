@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	| Vendor is adobe | Used on device      |
 	| Vendor is adobe | Entitled to device  |
 	| Vendor is adobe | Installed on device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	When User create dynamic list with "DevicesList1584" name on "Devices" page
 	Then "DevicesList1584" list is displayed to user
 	When User clicks Create Project from the main list
@@ -762,7 +762,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList  | Association    |
 	| ListName12349 | Used on device |
-	Then "Application (Saved List)" filter is added to the list
+	Then "Any Application" filter is added to the list
 	And "99" rows are displayed in the agGrid
 	And "Any Application in list ListName12349 used on device" is displayed in added filter info
 	And "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container
@@ -2742,7 +2742,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Delete_Newly_Created_Project @DAS11758 @DAS14190
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Delete_Newly_Created_Project @DAS11758 @DAS14190 @DAS15528 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

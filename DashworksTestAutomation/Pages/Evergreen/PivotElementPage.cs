@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 {
     internal class PivotElementPage : SeleniumBasePage
     {
+        public const string AggregateOptionOnPivotPanel = "//option[@class='ng-star-inserted']";
+
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeader { get; set; }
 
@@ -56,6 +58,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@style, 'left: 0px')]//div[@ref='agContainer']//span[text()='Empty']")]
         public IWebElement FirstEmptyValueHeaders { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//select[contains(@class, 'pristine')]")]
+        public IWebElement AggregateFunction{ get; set; }
+
+        [FindsBy(How = How.XPath, Using = AggregateOptionOnPivotPanel)]
+        public IList<IWebElement> AggregateOptionsOnPivotPanel { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -87,24 +95,37 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(selector).Click();
         }
 
-        public IWebElement GetCloseButtonForElementsByNameOnPivot(string button)
+        public IWebElement GetChipByNameOnPivot(string chipName)
         {
-            var selector = By.XPath($"//span[text()='{button}']/..//following-sibling::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            var selector = By.XPath($"//span[contains(@class, 'pivot-filter')][text()='{chipName}']");
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetChipByNameOnPivot(string button)
+        public bool GetChipNameOnPivot(string chipName)
         {
-            var selector = By.XPath($"//span[@class='pivot-filter-name'][text()='{button}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.IsElementDisplayed(By.XPath($".//span[contains(@class, 'pivot-filter')][text()='{chipName}']"));
+        }
+
+        public IWebElement GetChipValueByNameOnPivot(string chipValueName)
+        {
+            var selector = By.XPath($"//div[contains(@class, 'pivot-filter')][text()='{chipValueName}']");
+            return Driver.FindElement(selector);
+        }
+
+        public bool GetChipValueNameOnPivot(string chipValueName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[contains(@class, 'pivot-filter')][text()='{chipValueName}']"));
+        }
+
+        public IWebElement GetCloseButtonForElementsByNameOnPivot(string button)
+        {
+            var selector = By.XPath($"//span[text()='{button}']/..//following-sibling::button");
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetCloseButtonForValueElementsByNameOnPivot(string button)
         {
             var selector = By.XPath($"//div[text()='{button}']/..//following-sibling::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

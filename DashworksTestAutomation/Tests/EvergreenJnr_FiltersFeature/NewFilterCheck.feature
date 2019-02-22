@@ -148,7 +148,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDashworksFirstSeenFilterIsAdded
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Dashworks First Seen" filter
-	Then "Equals, Equals (relative), Does not equal, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
+	Then "Equals, Equals (relative), Does not equal, Between, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
 	When User have created "Empty" Date filter with column and "" option
 	Then "Dashworks First Seen is empty" is displayed in added filter info
 	Then "<RowsCount>" rows are displayed in the agGrid
@@ -245,12 +245,12 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatCoreApplicationFilterIs
 
 Examples: 
 	| ColumnName                   | Operators              | FilterOption | Text                                    | RowsCount |
-	| Windows7Mi: Core Application | Equals, Does not equal | TRUE         | Windows7Mi: Core Application is true    | 11        |
-	| Babel(Engl: Core Application | Equals, Does not equal | FALSE        | Babel(Engl: Core Application is false   | 302       |
+	| Windows7Mi: Core Application | Equals, Does not equal | TRUE         | Windows7Mi: Core Application is True    | 11        |
+	| Babel(Engl: Core Application | Equals, Does not equal | FALSE        | Babel(Engl: Core Application is False   | 302       |
 	| Barry'sUse: Core Application | Equals, Does not equal | UNKNOWN      | Barry'sUse: Core Application is Unknown | 1,146     |
-	| ComputerSc: Core Application | Equals, Does not equal | FALSE        | ComputerSc: Core Application is false   | 1,033     |
+	| ComputerSc: Core Application | Equals, Does not equal | FALSE        | ComputerSc: Core Application is False   | 1,033     |
 	| Havoc(BigD: Core Application | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Core Application is Unknown | 1,156     |
-	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is false   | 220       |
+	| MigrationP: Core Application | Equals, Does not equal | FALSE        | MigrationP: Core Application is False   | 220       |
 	| UserSchedu: Core Application | Equals, Does not equal | UNKNOWN      | UserSchedu: Core Application is Unknown | 1,242     |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS10512 @DAS11509 @DAS11507 @DAS11509
@@ -276,12 +276,12 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatHideFromEndUsersFilterI
 
 Examples: 
 	| ColumnName                      | Operators              | FilterOption | Text                                       | RowsCount |
-	| Windows7Mi: Hide from End Users | Equals, Does not equal | FALSE        | Windows7Mi: Hide from End Users is false   | 1,067     |
+	| Windows7Mi: Hide from End Users | Equals, Does not equal | FALSE        | Windows7Mi: Hide from End Users is False   | 1,067     |
 	| Babel(Engl: Hide from End Users | Equals, Does not equal | UNKNOWN      | Babel(Engl: Hide from End Users is Unknown | 1,921     |
-	| Barry'sUse: Hide from End Users | Equals, Does not equal | FALSE        | Barry'sUse: Hide from End Users is false   | 1,077     |
-	| ComputerSc: Hide from End Users | Equals, Does not equal | FALSE        | ComputerSc: Hide from End Users is false   | 1,033     |
+	| Barry'sUse: Hide from End Users | Equals, Does not equal | FALSE        | Barry'sUse: Hide from End Users is False   | 1,077     |
+	| ComputerSc: Hide from End Users | Equals, Does not equal | FALSE        | ComputerSc: Hide from End Users is False   | 1,033     |
 	| Havoc(BigD: Hide from End Users | Equals, Does not equal | UNKNOWN      | Havoc(BigD: Hide from End Users is Unknown | 1,156     |
-	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is false   | 220       |
+	| MigrationP: Hide from End Users | Equals, Does not equal | FALSE        | MigrationP: Hide from End Users is False   | 220       |
 	| UserSchedu: Hide from End Users | Equals, Does not equal | UNKNOWN      | UserSchedu: Hide from End Users is Unknown | 1,242     |
 
 @Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS12232 @DAS12351 @DAS12639 @DAS14288 @Not_Run

@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public IWebElement DeviceDetailsIcon { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'button-small mat-default reset')]")]
+            Using = ".//button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//body")]
@@ -103,7 +103,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-filter-body']//input")]
         public IWebElement FilterSearchTextBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div[@role='row']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-viewport']//div[@role='row']")]
         public IList<IWebElement> TableRows { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']//input[@aria-label='Date']")]
@@ -154,13 +154,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             }
 
             return Driver.IsElementDisplayed(By.XPath(selector));
-        }
-
-        public List<string> GetColumnContent(string columnName)
-        {
-            var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-viewport')]/div//div[contains(@class, 'ag-body-container')]/div/div[{GetColumnNumberByName(columnName)}]");
-            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public int GetColumnNumberByName(string columnName)
@@ -252,7 +245,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public List<string> GetColumnIdContent(string columnName)
         {
             var by = By.XPath(
-                $".//div[contains(@class, 'ag-body-container')]/div/div[@col-id='{GetColumnIdByColumnName(columnName)}']");
+                $".//div[contains(@class, 'ag-body-viewport')]//div[@col-id='{GetColumnIdByColumnName(columnName)}']");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 

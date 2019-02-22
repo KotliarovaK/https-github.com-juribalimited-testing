@@ -57,7 +57,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAddColumnCheckboxWorksCorrectly
 	Then "Windows7Mi: Category" filter is added to the list
 	Then table data is filtered correctly
 	When User clicks refresh button in the browser
-	Then full list content is displayed to the user
+	Then User sees "3" rows in grid
 
 @Evergreen @Applications @EvergreenJnr_FiltersFeature @FilterFunctionality @DAS11166 @DAS11665 @DAS13172 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain
@@ -758,7 +758,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatError500IsNotDisplayedAfterUsingS
 	When User add "Application Name" filter where type is "Equals" with following Value and Association:
 	| Values | Association            |
 	| __     | Entitled to device     |
-	Then "Application Name" filter is added to the list
+	Then "Application whose Name" filter is added to the list
 	When User clicks refresh button in the browser
 	Then "Devices" list should be displayed to the user
 	And "(Application Name = __ ASSOCIATION = (entitled to device))" text is displayed in filter container
@@ -1293,7 +1293,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADa
 	When User add "User Last Logon Date" filter where type is "Equals" with following Data and Association:
 	| Values      | Association  |
 	| 12 Sep 2018 | Has used app |
-	Then "User Last Logon Date" filter is added to the list
+	Then "User whose Last Logon Date" filter is added to the list
 	When User create dynamic list with "DAS13414" name on "Applications" page
 	Then "DAS13414" list is displayed to user
 	And URL contains "evergreen/#/applications?$listid="
@@ -1343,7 +1343,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatUsedByDevicesOwnerApplicationToDevi
 	When User add "Application Key" filter where type is "Equals" with following Number and Association:
 	| Number | Association            |
 	| 86     | Used by device's owner |
-	Then "Application Key" filter is added to the list
+	Then "Application whose Key" filter is added to the list
 	And "Application whose Key is 86 used by device's owner" is displayed in added filter info
 	And "154" rows are displayed in the agGrid
 
@@ -1397,7 +1397,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescri
 	| SelectedValues | Association     |
 	|                | Has used app    |
 	|                | Entitled to app |
-	Then "User Description" filter is added to the list
+	Then "User whose Description" filter is added to the list
 	And "User whose Description is empty has used app; or entitled to app" is displayed in added filter info
 	When User create custom list with "DAS13473" name
 	Then "DAS13473" list is displayed to user
@@ -1448,10 +1448,10 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatFilterInfoIsDisplayedCorrectly
 Examples: 
 	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
 	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
-	| Devices      | Hostname      | Babel(Engl: In Scope            | FALSE          | 00I0COBFWHOF27                             | Babel(Engl: In Scope is false              |
+	| Devices      | Hostname      | Babel(Engl: In Scope            | FALSE          | 00I0COBFWHOF27                             | Babel(Engl: In Scope is False              |
 	| Devices      | Hostname      | ComputerSc: Request Type        | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
 	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
-	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is false      |
+	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is False      |
 	| Mailboxes    | Email Address | EmailMigra: Device Type         | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Device Type is Not Identified  |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12214
@@ -1523,7 +1523,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatResultsAreDifferentWhenApplying
 	| Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et nomen transit. Multum gravum et pladior venit.  Tam quo, et bono quorum glavans e funem.  Quad rarendum habitatio quoque plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum. | Has used app |
 	| Longam, e gravis et quis gravis delerium.  Versus esset in volcans essit.  Pro linguens non apparens vantis. Sed quad ut novum eggredior.  Longam, e gravis delerium.  Versus esset in volcans essit.  Pro linguens non quo linguens imaginator pars fecit.  Et quad fecit, non apparens vantis. Sed                                                            | Has used app |
 	| Sed quad fecit, non quo linguens non trepicandor si quad fecit, non trepicandor si nomen transit. Id eudis quo plorum in dolorum cognitio, travissimantor quantare sed quartu manifestum egreddior estum.  Multum gravum et pladior venit.  Tam quo, et quis gravis et nomen transit. Sed quad ut novum eggredior.  Longam, e gravis et bono                    | Has used app |
-	Then "User Description" filter is added to the list
+	Then "User whose Description" filter is added to the list
 	And "100" rows are displayed in the agGrid
 	And There are no errors in the browser console
 	When User click Edit button for "User " filter
@@ -1735,7 +1735,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckRowsCountedForOwnerOrganizationalUn
 	|        | Owns a device which app was used on     |
 	|        | Owns a device which app is entitled to  |
 	|        | Owns a device which app is installed on |
-	Then "User Organizational Unit" filter is added to the list
+	Then "User whose Organizational Unit" filter is added to the list
 	And "215" rows are displayed in the agGrid
 
 @Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15140
@@ -1754,14 +1754,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	| Project: Havoc(BigD | 1      |
 	| Project: ICSP       | 1      |
 	| Project: prK        | 1      |
-	| Project: TestProj16 | 1      |
+	| Project: TestProj23 | 1      |
 	| Project: Windows101 | 1      |
 	| Project: Windows102 | 1      |
 	| Project: Windows10T | 1      |
 	| Project: Windows10U | 1      |
 	| Project: Windows7Mi | 1      |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Filters button
@@ -1776,7 +1776,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	| Project: UserSched2 | 1      |
 	| Project: UserSchedu | 1      |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Filters button
@@ -1788,7 +1788,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjec
 	| Project: EmailMigra | 1      |
 	| Project: MailboxEve | 1      |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS15140
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -1796,3 +1796,22 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypePro
 	And User enters "ring" text in Search field at Filters Panel
 	Then Category with counter is displayed on Filter panel
 	| Category            | Number |
+
+@Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15246 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameters
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And user select "Windows7Mi: Send Applications List - User Object Task (Team)" filter
+	And User clicks in search field in the Filter block
+	And User enters "Unassigned" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	When User create dynamic list with "TestList15246" name on "Users" page
+	Then "TestList15246" list is displayed to user
+	When User navigates to the "All Users" list
+	Then "Users" list should be displayed to the user
+	When User navigates to the "TestList15246" list
+	Then "TestList15246" list is displayed to user
+	And URL contains "evergreen/#/users?$listid="
+	And URL contains only "listid" filter
