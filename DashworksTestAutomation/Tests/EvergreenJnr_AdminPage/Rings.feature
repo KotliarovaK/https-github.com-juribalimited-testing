@@ -79,7 +79,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
-Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetailsExist
+Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetails
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User clicks content from "Ring" column
 	Then "Default Ring" checkbox is checked and cannot be unchecked
 	When User tries to open same page with another item id
-	Then Page not found displayed for Ring details page
+	Then Page not found displayed for the user
 	And There are only page not found errors in console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @Projects @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS14695 @DAS15415 @Delete_Newly_Created_Project

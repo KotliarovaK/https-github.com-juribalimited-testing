@@ -1983,7 +1983,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.Navigate().GoToUrl(current);
         }
 
-        [Then(@"Page not found displayed for Ring details page")]
+        [When(@"User tries to open not existing page")]
+        public void WhenUserOpensNotExistingPage()
+        {
+            string current = _driver.Url;
+            int index = current.LastIndexOf("/");
+
+            if (index > 0)
+                current = current.Substring(0, index) + "/project/52/scope";
+            _driver.Navigate().GoToUrl(current);
+        }
+
+        [Then(@"Page not found displayed for the user")]
         public void ThenPageNotFoundDisplayedForRingDetailsPage()
         {
             var page = _driver.NowAt<ProjectsPage>();
