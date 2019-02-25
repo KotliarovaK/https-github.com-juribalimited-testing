@@ -147,6 +147,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.SearchTextBoxResetButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User enters ""(.*)"" text in Search field at selected Lookup Filter")]

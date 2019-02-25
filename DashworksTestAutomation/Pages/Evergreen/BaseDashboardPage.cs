@@ -746,6 +746,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(selector);
         }
 
+        public IList<IWebElement> GetAllColumnHeadersWithSettingMenuColumn()
+        {
+            var selector = By.XPath("//div[@class='ag-header-row']/div[@class='ag-header-cell ag-header-cell-sortable']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(selector);
+        }
+
         public void ExpandColumnsSectionByName(string sectionsName)
         {
             if (Driver.IsElementExists(By.XPath(

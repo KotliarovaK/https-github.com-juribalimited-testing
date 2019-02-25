@@ -1339,7 +1339,7 @@ Examples:
 	| UsersProject5     | All Users     |
 	| MailboxesProject5 | All Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS12903 @DAS12485 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEvergreenBuckets
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -2362,6 +2362,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Action        |
 	| Bucket        |
 	| Capacity Unit |
+	| Ring          |
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then Counter shows "1" found rows
 	When User selects "History" tab on the Project details page
@@ -2378,6 +2379,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Action        |
 	| Bucket        |
 	| Capacity Unit |
+	| Ring          |
 	| Status        |
 	When User enters "Units" text in the Search field for "Capacity Unit" column
 	Then Counter shows "0" found rows
@@ -2924,7 +2926,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeleting
 	Then Warning message is not displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11977 @DAS11959 @DAS12553 @DAS11744 @DAS12742 @DAS12999 @DAS13199 @DAS13254 @DAS13323 @DAS13393 @DAS13803 @DAS13973 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
-Scenario:	EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
+Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
@@ -2945,7 +2947,7 @@ Scenario:	EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Dutch" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid
@@ -2994,6 +2996,7 @@ Scenario:	EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks "Details" tab
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
+#"UPDATE" Action button has been removed
 	#And User clicks the "UPDATE" Action button
 	#Then Success message is displayed and contains "The project details have been updated" text
 	When User click on Back button
@@ -3783,7 +3786,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	And User clicks the Use Dashworks Evergreen to configure capacity link
 	Then "Slots" tab in Project selected on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3800,11 +3803,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks "Capacity" tab
 	And User selects "Use project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
-	When User clicks "UPDATE" button in the warning message on Admin page
 	Then Success message with "The project capacity details have been updated" text is displayed on the Projects page
 	When User selects "Units" tab on the Project details page
 	Then Blue banner with "This project uses evergreen capacity units" text is displayed
-	Then "CREATE CAPACITY UNIT" button is not displayed
+	Then "CREATE PROJECT CAPACITY UNIT" button is not displayed
 	Then Actions menu is not displayed to the user
 	Then Cog menu is not displayed on the Admin page
 	When User clicks "Administration" navigation link on the Admin page

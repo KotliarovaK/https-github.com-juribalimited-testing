@@ -965,7 +965,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveLis
 	| Project Tasks: UserEvergr  |
 	| Project Stages: UserEvergr |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -980,14 +980,13 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	| Project: Havoc(BigD | 1      |
 	| Project: ICSP       | 1      |
 	| Project: prK        | 1      |
-	| Project: TestProj23 | 1      |
 	| Project: Windows101 | 1      |
 	| Project: Windows102 | 1      |
 	| Project: Windows10T | 1      |
 	| Project: Windows10U | 1      |
 	| Project: Windows7Mi | 1      |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Columns button
@@ -1001,7 +1000,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAre
 	| Project: UserSched2 | 1      |
 	| Project: UserSchedu | 1      |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Columns button
@@ -1012,7 +1011,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjec
 	| Project: EmailMigra | 1      |
 	| Project: MailboxEve | 1      |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15140 @Do_Not_Run_With_Projects
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Columns button

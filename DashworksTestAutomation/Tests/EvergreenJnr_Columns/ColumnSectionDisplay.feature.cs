@@ -3149,6 +3149,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3183,7 +3184,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Devices",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3218,9 +3220,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Project: prK",
                         "1"});
             table95.AddRow(new string[] {
-                        "Project: TestProj23",
-                        "1"});
-            table95.AddRow(new string[] {
                         "Project: Windows101",
                         "1"});
             table95.AddRow(new string[] {
@@ -3248,6 +3247,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3282,7 +3282,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Users",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3323,6 +3324,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3357,7 +3359,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Mailboxes",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3389,6 +3392,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3423,7 +3427,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Applications",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

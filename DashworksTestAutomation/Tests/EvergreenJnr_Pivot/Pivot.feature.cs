@@ -699,6 +699,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Values"});
             table25.AddRow(new string[] {
                         "All Users"});
+            table25.AddRow(new string[] {
+                        "Users with Device Count"});
             testRunner.Then("following Values are displayed in \"User Scope\" drop-down on the Project details p" +
                     "age:", ((string)(null)), table25, "Then ");
             testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
@@ -707,6 +709,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Values"});
             table26.AddRow(new string[] {
                         "All Applications"});
+            table26.AddRow(new string[] {
+                        "1803 Apps"});
+            table26.AddRow(new string[] {
+                        "Apps with a Vendor"});
             testRunner.Then("following Values are displayed in \"Application Scope\" drop-down on the Project de" +
                     "tails page:", ((string)(null)), table26, "Then ");
             testRunner.And("User remove list with \"Pivot_DAS_14224\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3498,11 +3504,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table141 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "SelectedCheckboxes"});
             table141.AddRow(new string[] {
                         "Red"});
             testRunner.When("User add \"Application Compliance\" filter where type is \"Equals\" with added column" +
-                    " and following value:", ((string)(null)), table141, "When ");
+                    " and following checkboxes:", ((string)(null)), table141, "When ");
             testRunner.Then("\"Application Compliance\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User create dynamic list with \"TestListForDAS15139\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"TestListForDAS15139\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3908,7 +3914,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then("Dashboards sub menu is hidden on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"PivotList_DAS13652\" list name is displayed correctly on top tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"RUN PIVOT\" Action button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"EXPORT\" Action button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Export button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User open sub menu for \"PivotList_DAS13652\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User sees Dashboards sub menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User remove list with \"PivotList_DAS13652\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -164,10 +164,8 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	Then Project "14695_Project" is displayed to user
 	When User clicks "Rings" tab
 	Then "" content is displayed in "Devices" column
-	Then Columns on Admin page is displayed in following order:
+	Then table with Setting menu column on Admin page is displayed in following order:
 	| ColumnName |
-	|            |
-	|            |
 	| Ring       |
 	|            |
 	| Default    |

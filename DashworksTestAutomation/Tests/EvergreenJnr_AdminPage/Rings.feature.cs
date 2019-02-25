@@ -556,10 +556,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table4.AddRow(new string[] {
-                        ""});
-            table4.AddRow(new string[] {
-                        ""});
-            table4.AddRow(new string[] {
                         "Ring"});
             table4.AddRow(new string[] {
                         ""});
@@ -567,7 +563,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Default"});
             table4.AddRow(new string[] {
                         "Devices"});
-            testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table4, "Then ");
+            testRunner.Then("table with Setting menu column on Admin page is displayed in following order:", ((string)(null)), table4, "Then ");
             testRunner.When("User clicks Cog-menu on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
