@@ -1151,6 +1151,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //_driver.WaitForDataLoading(); //TODO: remove if below code works for all lists
 
             var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
         }
@@ -1944,6 +1945,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<CreateRingPage>();
             _driver.WaitWhileControlIsNotDisplayed<CreateRingPage>(() => page.CreateRingButton);
             page.CreateRingButton.Click();
+            Thread.Sleep(2000);
             _driver.WaitForDataLoading();
             Logger.Write("Create Ring button was clicked");
         }
@@ -2113,6 +2115,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.ProjectName.Clear();
             projectElement.ProjectName.SendKeys(projectName);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User selects ""(.*)"" language on the Project details page")]
@@ -2747,6 +2750,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnNames = page.GetAllColumnHeaders().Select(column => column.Text).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+        }
+
+        [Then(@"table with Setting menu column on Admin page is displayed in following order:")]
+        public void ThenTableWithSettingMenuColumnOnAdminPageIsDisplayedInFollowingOrder(Table table)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+
+            var columnNames = page.GetAllColumnHeadersWithSettingMenuColumn().Select(column => column.Text).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page with Setting menu column is incorrect");
         }
 
         [When(@"User creates following buckets in Administration:")]

@@ -247,7 +247,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($".//div[@class='widget drag-n-drop']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='inner-widget disable-actions']");
+                By.XPath($"//div[@class='widget']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }

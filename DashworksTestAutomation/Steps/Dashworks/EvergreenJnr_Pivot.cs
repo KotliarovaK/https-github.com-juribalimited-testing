@@ -506,5 +506,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         #endregion
+
+        [Then(@"Export button is displayed")]
+        public void ThenExportButtonIsDisplayed()
+        {
+            var pivot = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivot.ExportButton.Displayed(), "Export button is not displayed");
+        }
     }
 }

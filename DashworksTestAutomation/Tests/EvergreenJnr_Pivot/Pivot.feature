@@ -228,12 +228,15 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| 1803 Rollout |
 	When User navigates to the "User Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "User Scope" drop-down on the Project details page:
-	| Values    |
-	| All Users |
+	| Values                  |
+	| All Users               |
+	| Users with Device Count |
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Application Scope" drop-down on the Project details page:
-	| Values           |
-	| All Applications |
+	| Values             |
+	| All Applications   |
+	| 1803 Apps          |
+	| Apps with a Vendor |
 	And User remove list with "Pivot_DAS_14224" name on "Devices" page
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
@@ -1030,9 +1033,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application Compliance" filter where type is "Equals" with added column and following value:
-	| Values |
-	| Red    |
+	When User add "Application Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
 	Then "Application Compliance" filter is added to the list
 	When User create dynamic list with "TestListForDAS15139" name on "Devices" page
 	Then "TestListForDAS15139" list is displayed to user
@@ -1211,7 +1214,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	Then Dashboards sub menu is hidden on Dashboards page
 	And "PivotList_DAS13652" list name is displayed correctly on top tools panel
 	And "RUN PIVOT" Action button is displayed
-	Then "EXPORT" Action button is displayed
+	Then Export button is displayed
 	When User open sub menu for "PivotList_DAS13652" list
 	Then User sees Dashboards sub menu on Dashboards page
 	And User remove list with "PivotList_DAS13652" name on "Devices" page

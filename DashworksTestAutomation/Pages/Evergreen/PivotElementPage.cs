@@ -17,6 +17,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h1")]
         public IWebElement PageHeader { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//i[contains(@class, 'icon-export')]/ancestor::button")]
+        public IWebElement ExportButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[contains(@id, 'pivot')]")]
         public IWebElement PivotButton { get; set; }
 
