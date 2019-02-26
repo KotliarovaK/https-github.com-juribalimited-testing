@@ -27,7 +27,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	Then Success message is displayed and contains "The selected ring has been deleted" text
 	And There are no errors in the browser console
 
-@Evergreen @Admin @@EvergreenJnr_AdminPage @Rings @DAS14780 @DAS13530 @Buckets @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14780 @DAS13530 @Buckets @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -58,6 +58,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
 	Then "Unassigned" text is displayed in the table content
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14839 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRingWasChanged
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS14839" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User selects "Clone from Evergreen to Project" in the Mode Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Details" tab
+	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
+	When User clicks "Rings" tab
+	Then "TRUE" value is displayed for Default column
+	When User clicks "Details" tab
+	And User selects "Use project rings" in the "Rings" dropdown
+	And User clicks "Rings" tab
+	And User clicks content from "Ring" column
+	And User type "OneRing" Name in the "Ring name" field on the Project details page
+	And User type "TwoRing" Name in the "Description" field on the Project details page
+	And User clicks the "UPDATE" Action button
+	Then User sees "1" rows in grid
+	When User clicks content from "Ring" column
+	Then "OneRing" content is displayed in "Ring name" field
+	Then "TwoRing" content is displayed in "Description" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901
 Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton

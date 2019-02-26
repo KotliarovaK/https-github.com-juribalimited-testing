@@ -4014,7 +4014,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11893 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12389 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingProjectPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
