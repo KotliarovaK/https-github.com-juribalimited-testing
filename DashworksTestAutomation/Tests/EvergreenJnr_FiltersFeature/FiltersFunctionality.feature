@@ -1754,7 +1754,6 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectA
 	| Project: Havoc(BigD | 1      |
 	| Project: ICSP       | 1      |
 	| Project: prK        | 1      |
-	| Project: TestProj23 | 1      |
 	| Project: Windows101 | 1      |
 	| Project: Windows102 | 1      |
 	| Project: Windows10T | 1      |
