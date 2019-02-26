@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Buckets @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Buckets @Projects
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -140,10 +140,6 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	And User selects "Scope Changes" tab on the Project details page
-	Then Bucket dropdown is not displayed on the Project details page
-	When User click on Back button
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
@@ -168,14 +164,6 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then following Items are displayed in the Queue table
 	| Items          |
 	| 0TTSZRQ1ZTIXWM |
-	When User have opened Column Settings for "Action" column
-	And User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Bucket" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then following columns added to the table:
-	| ColumnName |
-	| Bucket     |
 	Then "Unassigned" text is displayed in the table content
 	When User click on Back button
 	When User clicks "Buckets" link on the Admin page
@@ -183,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "[Unassigned]" bucket details is displayed to the user
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
