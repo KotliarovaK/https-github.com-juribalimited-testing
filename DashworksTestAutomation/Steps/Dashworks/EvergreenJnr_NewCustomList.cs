@@ -254,6 +254,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserClicksDeleteButtonOnTheWarningMessageInTheListsPanel()
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listDetailsElement.DeleteWarning);
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listDetailsElement.DeleteButtonInWarningMessage);
             listDetailsElement.DeleteButtonInWarningMessage.Click();

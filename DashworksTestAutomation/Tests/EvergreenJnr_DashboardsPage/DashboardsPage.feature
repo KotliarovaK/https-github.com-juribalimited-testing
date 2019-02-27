@@ -514,3 +514,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15432 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWithStaticList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "Static_List_15432" name
+	And User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15432" name
+	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
+	And User creates new Widget
+	| WidgetType | Title               | List              | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS15432 | Static_List_15432 | 500     | 10         |
+	Then "Widget_For_DAS15432" Widget is displayed to the user
+	And There are no errors in the browser console
+	When User clicks Settings button for "Dashboard for DAS15432" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel

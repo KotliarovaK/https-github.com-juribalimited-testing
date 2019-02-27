@@ -247,8 +247,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($"//div[@class='widget']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@dir='ltr']");
-                //By.XPath($"//div[@class='widget']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']"); old locator
+                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@class='chartContainer ng-star-inserted']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }
