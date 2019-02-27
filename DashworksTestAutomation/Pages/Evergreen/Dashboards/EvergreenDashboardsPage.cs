@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']//div[@dir='ltr']")] //div[@class='widget-preview'] old locator
         public IWebElement WidgetPreview { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -247,7 +247,8 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($"//div[@class='widget']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
+                By.XPath($"//div[@class='widget']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@dir='ltr']");
+                //By.XPath($"//div[@class='widget']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']"); old locator
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }
