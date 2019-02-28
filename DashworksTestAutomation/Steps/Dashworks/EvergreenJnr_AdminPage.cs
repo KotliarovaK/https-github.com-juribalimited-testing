@@ -2221,6 +2221,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.BodyContainer.Click();
         }
 
+        [When(@"User removes ""(.*)"" on the Project details page")]
+        public void WhenUserRemovesTaskFromCapacityEditPage(string taskName)
+        {
+            var slot = _driver.NowAt<Capacity_SlotsPage>();
+            slot.RemoveTaskIcon(taskName).Click();
+        }
+
+        [Then(@"CapacityEnabled flag is equal to ""(.*)""")]
+        public void ThenCapacityEnabledFlagIsEqualTo(string flagState)
+        {
+            var slot = _driver.NowAt<Capacity_SlotsPage>();
+
+            Assert.That(GetTaskCapacityEnabledFlag(slot.Storage.SessionStorage.GetItem("task_id")), 
+                Is.EqualTo(flagState), $"Flag state is in different state");
+        }
+
         [When(@"User changes Project Short Name to ""(.*)""")]
         public void WhenUserChangesProjectShortNameTo(string shortProjectName)
         {
@@ -2814,7 +2830,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User deletes ""(.*)"" Bucket in the Administration")]
         public void ThenDeleteBucketInTheAdministration(string bucketName)
         {
-            //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
+            //var projectId = DatabaseHelper.ExecuteReader(
+            //[ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
         }
 
@@ -2935,6 +2952,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"SELECT [ProjectID] FROM [PM].[dbo].[Projects] where [ProjectName] = '{projectName}' AND [IsDeleted] = 0",
                     0).LastOrDefault();
             return projectId;
+        }
+
+        private string GetTaskCapacityEnabledFlag(string taskId)
+        {
+            var flagState =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [CapacityEnabled] FROM [PM].[dbo].[ProjectTasks] where [TaskID] = '{taskId}'",0).LastOrDefault();
+            return flagState;
         }
     }
 }

@@ -502,6 +502,21 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.GetTaskByName(taskName).Click();
         }
 
+        [When(@"Task Id is stored in memory")]
+        public void WhenUserStoresTaskId()
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+            string taskId = _driver.Url;
+
+            int found = taskId.IndexOf("&");
+            taskId = taskId.Substring(found + 1);
+            found = taskId.IndexOf("&");
+            taskId = taskId.Substring(0, found);
+            taskId = taskId.Replace("TaskId=", "");
+
+            page.Storage.SessionStorage.SetItem("task_id", taskId);
+        }
+
         [When(@"User publishes the task")]
         public void WhenUserPublishesTheTask()
         {

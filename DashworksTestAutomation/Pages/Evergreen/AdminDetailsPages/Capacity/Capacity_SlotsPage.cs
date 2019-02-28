@@ -48,6 +48,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             };
         }
 
+
+        public IWebElement RemoveTaskIcon(string taskName)
+        {
+            return Driver.FindElement(By.XPath($".//span[text()='{taskName}']/parent:: mat-chip/button"));
+        }
+
         public void EnterValueByColumnName(string value, string columnName)
         {
             var byControl =By.XPath($"//thead//td[text()='{columnName}']//ancestor::table//input");

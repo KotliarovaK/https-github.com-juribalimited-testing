@@ -1921,6 +1921,42 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User navigate to "Group Computer Rag Radio Date Owner" Task
 	And User publishes the task
 
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13502 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior
+Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAddingRemovingTaskFromCapacitySlot
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name      | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
+	| Task13502 | 13502 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    | 
+	Then Success message is displayed with "Task successfully created" text
+	When Task Id is stored in memory
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User open "Capacity" sub menu on Admin page
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "SlotTask13502" Name in the "Slot Name" field on the Project details page
+	And User type "Slot Task13502" Name in the "Display Name" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ Task13502" checkbox in the "Tasks" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks newly created object link
+	Then CapacityEnabled flag is equal to "True"
+	When User removes "Computer Information ---- Text fill; Text fill; \ Task13502" on the Project details page
+	And User clicks the "UPDATE" Action button
+	Then CapacityEnabled flag is equal to "False"
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedToACapacitySlot
 	When User clicks "Projects" on the left-hand menu

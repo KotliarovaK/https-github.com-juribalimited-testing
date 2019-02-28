@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']//div[@dir='ltr']")] //div[@class='widget-preview'] old locator
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
         public IWebElement WidgetPreview { get; set; }
 
         [FindsBy(How = How.XPath,
