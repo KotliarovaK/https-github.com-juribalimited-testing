@@ -515,7 +515,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @Dashboards @Widgets @DAS15432 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15432 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWithStaticList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

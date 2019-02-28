@@ -2166,6 +2166,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWith" +
             "StaticList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15432")]
@@ -2201,6 +2203,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWith" +
                     "StaticList", null, new string[] {
                         "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DashboardsPage",
                         "Dashboards",
                         "Widgets",
                         "DAS15432",
