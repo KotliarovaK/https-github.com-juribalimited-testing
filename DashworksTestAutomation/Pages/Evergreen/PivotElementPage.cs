@@ -61,6 +61,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[contains(@style, 'left: 0px')]//div[@ref='agContainer']//span[text()='Empty']")]
         public IWebElement FirstEmptyValueHeaders { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-pinned-left-cols-container']//span[text()='Empty']")]
+        public IWebElement FirstEmptyValueLeftPinned { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//select[contains(@class, 'pristine')]")]
         public IWebElement AggregateFunction{ get; set; }
 

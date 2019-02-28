@@ -1313,7 +1313,7 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsD
 	Then Pivot run was completed
 	And data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
 
-Examples: 
+Examples:
 	| RowGroups              | Columns               |
 	| Operating System       | Owner Compliance      |
 	| Service Pack or Build  | Owner Compliance      |
@@ -1375,3 +1375,103 @@ Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And numeric data in table is sorted by "Compliance" column in descending order for the Pivot
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
+Scenario Outline: EvergreenJnr_AllList_CheckSortedOrderForPivotProjectStatusAsRowGroup
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| Country |
+	And User selects the following Values on Pivot:
+	| Values |
+	| City   |
+	And User clicks the "RUN PIVOT" Action button
+	Then data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
+	And Empty value is displayed on the first place for the Pivot
+
+Examples:
+	| ListName  | RowGroups          |
+	| Devices   | ComputerSc: Status |
+	| Users     | MigrationP: Status |
+	| Mailboxes | EmailMigra: Status |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns            |
+	| ComputerSc: Status |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	Then Empty value is displayed on the first place for the Pivot column header
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Complete   |
+	| Forecast   |
+	| Migrated   |
+	| Onboarded  |
+	| Scheduled  |
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns            |
+	| UserEvergr: Status |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	Then Empty value is displayed on the first place for the Pivot column header
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Complete   |
+	| Forecast   |
+	| Migrated   |
+	| Onboarded  |
+	| Scheduled  |
+	| Targeted   |
+
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns            |
+	| EmailMigra: Status |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	Then Empty value is displayed on the first place for the Pivot column header
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Forecast   |
+	| Migrated   |
+	| Onboarded  |
+	| Scheduled  |
+	| Targeted   |
