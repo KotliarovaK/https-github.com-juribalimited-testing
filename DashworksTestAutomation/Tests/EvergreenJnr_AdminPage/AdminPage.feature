@@ -81,7 +81,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
 	And User performs right-click on "<CellText>" cell in the grid
 	Then User sees context menu placed near "<CellText>" cell in the grid
 
-Examples: 
+Examples:
 	| PageName       | CellText   |
 	| Projects       | EmailMigra |
 	| Teams          | IB Team    |

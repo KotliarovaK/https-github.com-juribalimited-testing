@@ -664,6 +664,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [Then(@"""(.*)"" checkbox is checked on the Admin page")]
+        public void ThenCheckboxIsCheckedOnTheAdminPage(string checkbox)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetCheckedCheckboxByName(checkbox).Displayed(), "checkbox is unchecked");
+        }
+
+        [Then(@"""(.*)"" checkbox is unchecked on the Admin page")]
+        public void ThenCheckboxIsUncheckedOnTheAdminPage(string checkbox)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetUnCheckedCheckboxByName(checkbox).Displayed(), "checkbox is checked");
+        }
+
+        [Then(@"""(.*)"" checkbox is greyed out on the Admin page")]
+        public void ThenCheckboxIsGreyedOutOnTheAdminPage(string checkbox)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.GetGreyedOutCheckboxByName(checkbox).Displayed(), "checkbox is available");
+        }
+
         [Then(@"""(.*)"" is displayed in the dropdown filter for ""(.*)"" column")]
         public void ThenIsDisplayedInTheDropdownFilterForColumn(string text, string columnName)
         {

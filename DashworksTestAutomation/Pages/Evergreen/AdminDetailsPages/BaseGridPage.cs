@@ -342,26 +342,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public void ClickContentByColumnNameNew(string columnName) //2.12.19 - Kotliarova K.
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[@class='ag-center-cols-clipper']//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
-            Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-        }
-
-        //public void ClickContentByColumnName(string columnName)
-        //{
-        //    var byControl =
-        //        By.XPath(
-        //            $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
-        //    Driver.WaitForDataLoading();
-        //    Driver.WaitWhileControlIsNotDisplayed(byControl);
-        //    Driver.FindElement(byControl).Click();
-        //}
-
         public void OpenColumnSettingsByName(string columnName)
         {
             var columnSettingsSelector =
@@ -491,6 +471,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetCheckedFilterByCheckboxName(string filterName)
         {
             var selector = By.XPath($"//mat-option[contains(@class, 'mat-active')]//div/span[text()='{filterName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetCheckedCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]//span[text()='{checkboxName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetUnCheckedCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($".//mat-checkbox[@class='mat-checkbox mat-accent _mat-animation-noopable ng-valid ng-dirty ng-touched']//span[text()='{checkboxName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetGreyedOutCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]//span[text()='{checkboxName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

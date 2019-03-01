@@ -213,9 +213,15 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElements(by).Select(x => x.GetCssValue("background-color")).ToList();
         }
 
-        public List<string> GetPivotHeadersContent()
+        public List<string> GetPivotHeadersContentToList()
         {
             var by = By.XPath($".//div[@class='ag-header-row']//div[contains(@class, 'ag-header-group-cell ag-header-group-cell-with-group')]");
+            return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
+        }
+
+        public List<string> GetLeftPinnedColumnContentToList()
+        {
+            var by = By.XPath($".//div[contains(@class, 'ag-pinned-left-cols-container')]//span[@class='ag-group-value']");
             return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
         }
 

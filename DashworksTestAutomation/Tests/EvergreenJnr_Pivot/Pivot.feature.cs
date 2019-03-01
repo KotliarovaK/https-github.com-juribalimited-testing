@@ -4443,24 +4443,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllList_CheckSortedOrderForPivotProjectStatusAsRowGroup")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13863")]
         [NUnit.Framework.CategoryAttribute("DAS14374")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Status", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "MigrationP: Status", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Status", null)]
-        public virtual void EvergreenJnr_AllList_CheckSortedOrderForPivotProjectStatusAsRowGroup(string listName, string rowGroups, string[] exampleTags)
+        public virtual void EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AllList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal(listName,rowGroups,exampleTags);
+                    this.EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -4479,30 +4476,25 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             }
         }
 
-        private void EvergreenJnr_AllList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal(string listName, string rowGroups, string[] exampleTags)
+        private void EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal()
         {
-            string[] @__tags = new string[] {
-                    "Evergreen",
-                    "AllLists",
-                    "EvergreenJnr_Pivot",
-                    "Pivot",
-                    "DAS13863",
-                    "DAS14374"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllList_CheckSortedOrderForPivotProjectStatusAsRowGroup", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS13863",
+                        "DAS14374"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table185 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
             table185.AddRow(new string[] {
-                        string.Format("{0}", rowGroups)});
+                        "EmailMigra: Status"});
             testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table185, "And ");
             TechTalk.SpecFlow.Table table186 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
@@ -4515,9 +4507,182 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "City"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table187, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then(string.Format("data in the table is sorted by \"{0}\" column in ascending order by default for the" +
-                        " Pivot", rowGroups), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table188 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table188.AddRow(new string[] {
+                        "Onboarded"});
+            table188.AddRow(new string[] {
+                        "Forecast"});
+            table188.AddRow(new string[] {
+                        "Targeted"});
+            table188.AddRow(new string[] {
+                        "Migrated"});
+            testRunner.And("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table188, "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS13863")]
+        [NUnit.Framework.CategoryAttribute("DAS14374")]
+        public virtual void EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS13863",
+                        "DAS14374"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table189 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table189.AddRow(new string[] {
+                        "MigrationP: Status"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table189, "And ");
+            TechTalk.SpecFlow.Table table190 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table190.AddRow(new string[] {
+                        "Country"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table190, "And ");
+            TechTalk.SpecFlow.Table table191 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table191.AddRow(new string[] {
+                        "City"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table191, "And ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table192 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table192.AddRow(new string[] {
+                        "Onboarded"});
+            table192.AddRow(new string[] {
+                        "Forecast"});
+            table192.AddRow(new string[] {
+                        "Scheduled"});
+            table192.AddRow(new string[] {
+                        "Migrated"});
+            table192.AddRow(new string[] {
+                        "Complete"});
+            testRunner.And("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table192, "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS13863")]
+        [NUnit.Framework.CategoryAttribute("DAS14374")]
+        public virtual void EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroupInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS13863",
+                        "DAS14374"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table193 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table193.AddRow(new string[] {
+                        "ComputerSc: Status"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table193, "And ");
+            TechTalk.SpecFlow.Table table194 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table194.AddRow(new string[] {
+                        "Country"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table194, "And ");
+            TechTalk.SpecFlow.Table table195 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table195.AddRow(new string[] {
+                        "City"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table195, "And ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table196 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table196.AddRow(new string[] {
+                        "Onboarded"});
+            table196.AddRow(new string[] {
+                        "Forecast"});
+            table196.AddRow(new string[] {
+                        "Scheduled"});
+            table196.AddRow(new string[] {
+                        "Complete"});
+            testRunner.And("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table196, "And ");
             this.ScenarioCleanup();
         }
 
@@ -4571,37 +4736,37 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table188 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table197 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
-            table188.AddRow(new string[] {
+            table197.AddRow(new string[] {
                         "Building"});
-            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table188, "And ");
-            TechTalk.SpecFlow.Table table189 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table197, "And ");
+            TechTalk.SpecFlow.Table table198 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
-            table189.AddRow(new string[] {
+            table198.AddRow(new string[] {
                         "ComputerSc: Status"});
-            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table189, "And ");
-            TechTalk.SpecFlow.Table table190 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table198, "And ");
+            TechTalk.SpecFlow.Table table199 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table190.AddRow(new string[] {
+            table199.AddRow(new string[] {
                         "Region"});
-            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table190, "And ");
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table199, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Empty value is displayed on the first place for the Pivot column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table191 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table200 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table191.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "Complete"});
-            table191.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "Forecast"});
-            table191.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "Migrated"});
-            table191.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "Onboarded"});
-            table191.AddRow(new string[] {
+            table200.AddRow(new string[] {
                         "Scheduled"});
-            testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table191, "Then ");
+            testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table200, "Then ");
             this.ScenarioCleanup();
         }
 
@@ -4655,39 +4820,39 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table192 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table201 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
-            table192.AddRow(new string[] {
+            table201.AddRow(new string[] {
                         "Building"});
-            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table192, "And ");
-            TechTalk.SpecFlow.Table table193 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table201, "And ");
+            TechTalk.SpecFlow.Table table202 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
-            table193.AddRow(new string[] {
+            table202.AddRow(new string[] {
                         "UserEvergr: Status"});
-            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table193, "And ");
-            TechTalk.SpecFlow.Table table194 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table202, "And ");
+            TechTalk.SpecFlow.Table table203 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table194.AddRow(new string[] {
+            table203.AddRow(new string[] {
                         "Region"});
-            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table194, "And ");
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table203, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Empty value is displayed on the first place for the Pivot column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table195 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table204 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table195.AddRow(new string[] {
+            table204.AddRow(new string[] {
                         "Complete"});
-            table195.AddRow(new string[] {
+            table204.AddRow(new string[] {
                         "Forecast"});
-            table195.AddRow(new string[] {
+            table204.AddRow(new string[] {
                         "Migrated"});
-            table195.AddRow(new string[] {
+            table204.AddRow(new string[] {
                         "Onboarded"});
-            table195.AddRow(new string[] {
+            table204.AddRow(new string[] {
                         "Scheduled"});
-            table195.AddRow(new string[] {
+            table204.AddRow(new string[] {
                         "Targeted"});
-            testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table195, "Then ");
+            testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table204, "Then ");
             this.ScenarioCleanup();
         }
 
@@ -4741,37 +4906,37 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table196 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table205 = new TechTalk.SpecFlow.Table(new string[] {
                         "RowGroups"});
-            table196.AddRow(new string[] {
+            table205.AddRow(new string[] {
                         "Building"});
-            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table196, "And ");
-            TechTalk.SpecFlow.Table table197 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table205, "And ");
+            TechTalk.SpecFlow.Table table206 = new TechTalk.SpecFlow.Table(new string[] {
                         "Columns"});
-            table197.AddRow(new string[] {
+            table206.AddRow(new string[] {
                         "EmailMigra: Status"});
-            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table197, "And ");
-            TechTalk.SpecFlow.Table table198 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table206, "And ");
+            TechTalk.SpecFlow.Table table207 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table198.AddRow(new string[] {
+            table207.AddRow(new string[] {
                         "Region"});
-            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table198, "And ");
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table207, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("Empty value is displayed on the first place for the Pivot column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table199 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("Empty value is displayed on the first place for the Pivot column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table208 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table199.AddRow(new string[] {
+            table208.AddRow(new string[] {
                         "Forecast"});
-            table199.AddRow(new string[] {
+            table208.AddRow(new string[] {
                         "Migrated"});
-            table199.AddRow(new string[] {
+            table208.AddRow(new string[] {
                         "Onboarded"});
-            table199.AddRow(new string[] {
+            table208.AddRow(new string[] {
                         "Scheduled"});
-            table199.AddRow(new string[] {
+            table208.AddRow(new string[] {
                         "Targeted"});
-            testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table199, "Then ");
+            testRunner.And("Pivot column headers is displayed in following order:", ((string)(null)), table208, "And ");
             this.ScenarioCleanup();
         }
 

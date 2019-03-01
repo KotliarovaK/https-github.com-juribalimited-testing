@@ -597,7 +597,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(byControl).Click();
         }
 
-
         /// <summary>
         /// Get just data from first row
         /// </summary>

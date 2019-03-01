@@ -14,30 +14,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public const string FilterTypeOnTheColumnPanel = "//div//select[@id='filterType']//option";
 
-        public const string Checkboxes = ".//mat-pseudo-checkbox";
-
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//span[text()='Application Summary']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement ApplicationSummarySection { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//span[text()='Application Detail']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement ApplicationDetailSection { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using =
-                ".//span[text()='Advertisements']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement AdvertisementsSection { get; set; }
-
-        [FindsBy(How = How.XPath,
-            Using = ".//span[text()='Collections']/ancestor::div[@class='field-category no-side-padding collapsed']")]
-        public IWebElement CollectionsSection { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-arrow']")]
-        public IWebElement StringFilter { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/span")]
         public IWebElement CheckboxesStringFilter { get; set; }
 
