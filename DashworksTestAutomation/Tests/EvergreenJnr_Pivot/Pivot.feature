@@ -415,15 +415,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	Then date in the column headers is sorted in correct order for the Pivot
 	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
 	#DAS-15376
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
-	| StartDateInclusive | EndDateInclusive |
-	| 25 Apr 2018        | 02 May 2018      |
-	When User add "Owner Last Logon Date" filter where type is "Between" with added column and Date options
-	| StartDateInclusive | EndDateInclusive |
-	| 25 Apr 2018        | 02 May 2018      |
-	Then "(Owner Last Logon Date  between (2018-04-25, 2018-05-02))" text is displayed in filter container
+	#When User clicks the Filters button
+	#Then Filters panel is displayed to the user
+	#When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
+	#| StartDateInclusive | EndDateInclusive |
+	#| 25 Apr 2018        | 02 May 2018      |
+	#Then "(Owner Last Logon Date  between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376 @Not_Run
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
@@ -453,10 +450,10 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	#DAS-15376
 	#When User clicks the Filters button
 	#Then Filters panel is displayed to the user
-	#When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
-	#| StartDateInclusive | EndDateInclusive | Association                             |
-	#| 25 Apr 2018        | 02 May 2018      | Has used app                            |
-	#Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
+	#When User add "Last Logon Date" filter where type is "Between" without added column and Date options
+	#| StartDateInclusive | EndDateInclusive |
+	#| 25 Apr 2018        | 02 May 2018      |
+	#Then "(Last Logon Date  between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS13786 @DAS13771 @DAS15376
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
@@ -1423,7 +1420,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 	| Targeted   |
 	| Migrated   |
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @DAS15376 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1446,13 +1443,12 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	| Scheduled  |
 	| Migrated   |
 	| Complete   |
-	#DAS-15376
-	#When User clicks the Filters button
-	#Then Filters panel is displayed to the user
-	#When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
-	#| StartDateInclusive | EndDateInclusive | Association                             |
-	#| 25 Apr 2018        | 02 May 2018      | Has used app                            |
-	#Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Last Logon Date" filter where type is "Between" without added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
