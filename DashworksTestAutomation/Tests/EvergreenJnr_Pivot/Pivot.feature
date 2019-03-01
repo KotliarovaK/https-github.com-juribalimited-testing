@@ -1547,3 +1547,43 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 	| Onboarded  |
 	| Scheduled  |
 	| Targeted   |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15328 @ @Not_Run
+Scenario Outline: EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames
+  When User clicks "<List>" on the left-hand menu
+  Then "<List>" list should be displayed to the user
+  When User navigates to Pivot
+  And User selects the following Values on Pivot:
+  | Values  |
+  | <Item1> |
+  Then following aggregate function are available in dropdown:
+  | Option |
+  | Count  |
+  | Sum    |
+  | Min    |
+  | Max    |
+  | Avg    |
+  When User clicks close button for "<Item1>" chip
+  And User selects the following Values on Pivot:
+  | Values  |
+  | <Item2> |
+  Then following aggregate function are available in dropdown:
+  | Option |
+  | Count  |
+  | First  |
+  | Last   |
+  When User clicks close button for "<Item2>" chip
+  And User selects the following Values on Pivot:
+  | Values     |
+  | <Item3> |
+  Then following aggregate function are available in dropdown:
+  | Option |
+  | Count  |
+  When User clicks close button for "<Item3>" chip
+
+  Examples:
+  | List         | Item1                    | Item2                              | Item3       |
+  | Devices      | HDD Count                | Build Date                         | Owner City  |
+  | Users        | Device Count             | Last Logon Date                    | Building    |
+  | Applications | 1803: Current User Count | Windows7Mi: Technical Task3 (Date) | Application |
+  | Mailboxes    | Associated Item Count    | Created Date                       | Building    |

@@ -4970,6 +4970,115 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS15328")]
+        [NUnit.Framework.CategoryAttribute("")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "HDD Count", "Build Date", "Owner City", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Device Count", "Last Logon Date", "Building", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "1803: Current User Count", "Windows7Mi: Technical Task3 (Date)", "Application", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Associated Item Count", "Created Date", "Building", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames(string list, string item1, string item2, string item3, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNamesInternal(list,item1,item2,item3,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNamesInternal(string list, string item1, string item2, string item3, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_Pivot",
+                    "Pivot",
+                    "DAS15328",
+                    "",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames", null, @__tags);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table210 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table210.AddRow(new string[] {
+                        string.Format("{0}", item1)});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table210, "And ");
+            TechTalk.SpecFlow.Table table211 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Option"});
+            table211.AddRow(new string[] {
+                        "Count"});
+            table211.AddRow(new string[] {
+                        "Sum"});
+            table211.AddRow(new string[] {
+                        "Min"});
+            table211.AddRow(new string[] {
+                        "Max"});
+            table211.AddRow(new string[] {
+                        "Avg"});
+            testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table211, "Then ");
+            testRunner.When(string.Format("User clicks close button for \"{0}\" chip", item1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table212 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table212.AddRow(new string[] {
+                        string.Format("{0}", item2)});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table212, "And ");
+            TechTalk.SpecFlow.Table table213 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Option"});
+            table213.AddRow(new string[] {
+                        "Count"});
+            table213.AddRow(new string[] {
+                        "First"});
+            table213.AddRow(new string[] {
+                        "Last"});
+            testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table213, "Then ");
+            testRunner.When(string.Format("User clicks close button for \"{0}\" chip", item2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table214 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table214.AddRow(new string[] {
+                        string.Format("{0}", item3)});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table214, "And ");
+            TechTalk.SpecFlow.Table table215 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Option"});
+            table215.AddRow(new string[] {
+                        "Count"});
+            testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table215, "Then ");
+            testRunner.When(string.Format("User clicks close button for \"{0}\" chip", item3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
