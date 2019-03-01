@@ -59,6 +59,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter ng-star-inserted']/span")]
         public IWebElement RowsCounter { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount ng-star-inserted']")]
+        public IWebElement ListRowsCounter { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]
         public IWebElement ContinueButton { get; set; }
 
