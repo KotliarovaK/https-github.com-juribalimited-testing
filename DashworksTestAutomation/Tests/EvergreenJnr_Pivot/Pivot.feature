@@ -396,7 +396,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInT
 	#Remove # after DAS-15230 fixed
 	#Then color data in the left-pinned column is sorted in descending order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864 @DAS13786 @DAS13867
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864 @DAS13786 @DAS13867 @DAS15376
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -414,8 +414,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	Then Pivot run was completed
 	Then date in the column headers is sorted in correct order for the Pivot
 	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
+	#DAS-15376
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	When User add "Owner Last Logon Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "(Owner Last Logon Date  between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376 @Not_Run
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -440,8 +450,15 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	| OUT OF SCOPE | OUT OF SCOPE |
 	| PURPLE       | PURPLE       |
 	| NONE         | NONE         |
+	#DAS-15376
+	#When User clicks the Filters button
+	#Then Filters panel is displayed to the user
+	#When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
+	#| StartDateInclusive | EndDateInclusive | Association                             |
+	#| 25 Apr 2018        | 02 May 2018      | Has used app                            |
+	#Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
 
-@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS13786 @DAS13771
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS13786 @DAS13771 @DAS15376
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -473,6 +490,13 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) | GREEN      |
 	| 0036 - Microsoft Access 97 SR-2 English                    | LIGHT BLUE |
 	| 0047 - Microsoft Access 97 SR-2 Francais                   | GREEN      |
+	#DAS-15376
+	#When User clicks the Filters button
+	#Then Filters panel is displayed to the user
+	#When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
+	#| StartDateInclusive | EndDateInclusive | Association                             |
+	#| 25 Apr 2018        | 02 May 2018      | Has used app                            |
+	#Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
 Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForUsers
@@ -1376,7 +1400,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	Then Pivot run was completed
 	And numeric data in table is sorted by "Compliance" column in descending order for the Pivot
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1399,7 +1423,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 	| Targeted   |
 	| Migrated   |
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1422,8 +1446,15 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	| Scheduled  |
 	| Migrated   |
 	| Complete   |
+	#DAS-15376
+	#When User clicks the Filters button
+	#Then Filters panel is displayed to the user
+	#When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
+	#| StartDateInclusive | EndDateInclusive | Association                             |
+	#| 25 Apr 2018        | 02 May 2018      | Has used app                            |
+	#Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1446,7 +1477,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGro
 	| Scheduled  |
 	| Complete   |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1465,13 +1496,12 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	Then Empty value is displayed on the first place for the Pivot column header
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
-	| Complete   |
-	| Forecast   |
-	| Migrated   |
 	| Onboarded  |
+	| Forecast   |
 	| Scheduled  |
+	| Complete   |
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1490,14 +1520,14 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	Then Empty value is displayed on the first place for the Pivot column header
 	Then Pivot column headers is displayed in following order:
 	| ColumnName |
-	| Complete   |
-	| Forecast   |
-	| Migrated   |
 	| Onboarded  |
-	| Scheduled  |
+	| Forecast   |
 	| Targeted   |
+	| Scheduled  |
+	| Migrated   |
+	| Complete   |
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

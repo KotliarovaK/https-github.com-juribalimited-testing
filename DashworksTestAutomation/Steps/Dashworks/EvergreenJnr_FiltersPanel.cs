@@ -528,7 +528,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddAndFilter(filterName);
-            var filter = new BetweenOperatorFilter(_driver, operatorValue, table);
+            var filter = new BetweenOperatorFilter(_driver, operatorValue, true, table);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and Date options")]
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new BetweenOperatorFilter(_driver, operatorValue, false, table);
             filter.Do();
         }
 

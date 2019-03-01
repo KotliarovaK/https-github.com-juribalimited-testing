@@ -1542,7 +1542,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator
 	When user select "Build Date" filter
 	Then "Equals, Equals (relative), Does not equal, Between, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS13831
+@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS13831 @DAS15376
 Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1554,6 +1554,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	Then "22" rows are displayed in the agGrid
 	Then "17 Feb 2017" content is displayed in the "Build Date" column
 	Then "8 Aug 2017" content is displayed in the "Build Date" column
+	Then "(Build Date  between (2017-02-17, 2017-08-08))" text is displayed in filter container
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
@@ -1564,6 +1565,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	Then "22" rows are displayed in the agGrid
 	Then "25 Apr 2018" content is displayed in the "Last Logon Date" column
 	Then "2 May 2018" content is displayed in the "Last Logon Date" column
+	Then "(Build Date  between 17 Feb 2017 and 08 Aug 2017)" text is displayed in filter container
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User clicks the Filters button
@@ -1574,6 +1576,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	Then "7" rows are displayed in the agGrid
 	Then "14 Sep 2016" content is displayed in the "Created Date" column
 	Then "22 Jun 2017" content is displayed in the "Created Date" column
+	Then "(Build Date  between 17 Feb 2017 and 08 Aug 2017)" text is displayed in filter container
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User clicks the Filters button
@@ -1584,6 +1587,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	Then "19" rows are displayed in the agGrid
 	Then "12 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
 	Then "22 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
+	When User opens filter container
+	Then "(Build Date  between 17 Feb 2017 and 08 Aug 2017)" text is displayed in filter container
 
 @Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS13831
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter

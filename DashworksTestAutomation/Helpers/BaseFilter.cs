@@ -615,8 +615,8 @@ namespace DashworksTestAutomation.Helpers
 
     public class BetweenOperatorFilter : BaseFilter
     {
-        public BetweenOperatorFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
-            driver, operatorValue, true)
+        public BetweenOperatorFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
+            driver, operatorValue, acceptCheckbox)
         {
             Table = table;
         }
