@@ -2234,7 +2234,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	| Values |
 	| is     |
 
-	Examples:
+Examples:
 	| ListName     |
 	| Devices      |
 	| Users        |
@@ -2263,7 +2263,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDevice
 	| Values |
 	| is     |
 
-	Examples:
+Examples:
 	| ListName     |
 	| Devices      |
 	| Users        |
@@ -2292,7 +2292,47 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	| Values |
 	| is     |
 
-	Examples:
+Examples:
 	| ListName  |
 	| Users     |
 	| Mailboxes |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15266 @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnTheCapacityDetailsScreen
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "15266_TestProject" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "15266_TestProject" is displayed to user
+	When User clicks "Capacity" tab
+	Then "Enable Capacity" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
+	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	Then "Enable Capacity" checkbox is checked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on project object page" checkbox is unchecked on the Admin page
+	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
+	Then "Enforce capacity on self service pages" checkbox is checked on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	Then "Enable Capacity" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
+	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	When User clicks "Enforce capacity on project object page" checkbox on the Project details page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	Then "Enable Capacity" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
+	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	When User clicks "Enforce capacity on project object page" checkbox on the Project details page
+	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text
