@@ -2210,3 +2210,89 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	| SelectedRowsName |
 	| 1Test            |
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserProjectLeadToCorrectFilteredLists
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
+	And User remembers value in "<ListName>" column
+	And User clicks content from "<ListName>" column
+	Then "<ListName>" list should be displayed to the user
+	And Rows counter number equals to remembered value
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "UserEvergr: Capacity Unit" filter is added to the list
+	And Values is displayed in added filter info
+	| Values     |
+	| Evergreen Capacity Unit 3 |
+	And Options is displayed in added filter info
+	| Values |
+	| is     |
+
+	Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	And User remembers value in "<ListName>" column
+	And User clicks content from "<ListName>" column
+	Then "<ListName>" list should be displayed to the user
+	And Rows counter number equals to remembered value
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Windows7Mi: Capacity Unit" filter is added to the list
+	And Values is displayed in added filter info
+	| Values     |
+	| Unassigned |
+	And Options is displayed in added filter info
+	| Values |
+	| is     |
+
+	Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Mailbox Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	And User remembers value in "<ListName>" column
+	And User clicks content from "<ListName>" column
+	Then "<ListName>" list should be displayed to the user
+	And Rows counter number equals to remembered value
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "MailboxEve: Capacity Unit" filter is added to the list
+	And Values is displayed in added filter info
+	| Values     |
+	| Unassigned |
+	And Options is displayed in added filter info
+	| Values |
+	| is     |
+
+	Examples:
+	| ListName  |
+	| Users     |
+	| Mailboxes |

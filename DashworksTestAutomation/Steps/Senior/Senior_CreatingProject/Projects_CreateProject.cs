@@ -506,13 +506,13 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void WhenUserStoresTaskId()
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
-            string taskId = _driver.Url;
 
-            int found = taskId.IndexOf("&");
-            taskId = taskId.Substring(found + 1);
-            found = taskId.IndexOf("&");
-            taskId = taskId.Substring(0, found);
-            taskId = taskId.Replace("TaskId=", "");
+            string taskId = _driver.Url;
+            taskId = taskId
+                .Substring(taskId.IndexOf("&") + 1);
+            taskId = taskId
+                .Substring(0, taskId.IndexOf("&"))
+                .Replace("TaskId=", "");
 
             page.Storage.SessionStorage.SetItem("task_id", taskId);
         }

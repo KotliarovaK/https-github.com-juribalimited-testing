@@ -9,6 +9,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -567,6 +568,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseDashboardPage>();
             button.ClosePanelButton.Click();
+        }
+
+
+        [When(@"User remembers value in ""(.*)"" column")]
+        public void WhenUserRemembersValueInSpecificColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            page.Storage.SessionStorage.SetItem("column_value", page.GetRowContentByColumnName(columnName));
+        }
+
+        [Then(@"Rows counter number equals to remembered value")]
+        public void ThenUserRememberedValueEqualsToGridCounter()
+        {
+            var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.ListRowsCounter);
+
+            string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
+
+            StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
+                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
         }
     }
 }
