@@ -547,5 +547,5 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
-	Then "WidgetForDAS15207" Widget is displayed to the user
+	Then Card "WidgetForDAS15207" Widget is displayed to the user
 	And There are no errors in the browser console

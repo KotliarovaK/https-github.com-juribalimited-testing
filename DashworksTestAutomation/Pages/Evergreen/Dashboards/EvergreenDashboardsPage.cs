@@ -252,6 +252,14 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(dashboardWidget);
         }
 
+        public IWebElement GetCardWidgetByName(string widgetName)
+        {
+            var dashboardWidget =
+                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(dashboardWidget);
+        }
+
         public IWebElement GetCountForTableWidget(string boolean, string number)
         {
             var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//td[text()='{number}']");

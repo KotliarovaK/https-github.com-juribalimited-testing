@@ -656,6 +656,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
+        [Then(@"Card ""(.*)"" Widget is displayed to the user")]
+        public void ThenCardWidgetIsDisplayedToTheUser(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+        }
+
         [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]
         public void ThenCountIsDisplayedForInTheTableWidget(string boolean, string count)
         {
