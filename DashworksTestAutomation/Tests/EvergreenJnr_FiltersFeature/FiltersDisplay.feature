@@ -1608,7 +1608,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInThe
 	|                    |                  | Owns a device which app is installed on |
 	Then "979" rows are displayed in the agGrid
 	#DAS-15376
-	#Then "(User Last Logon Date between (2012-11-11, 2019-11-22) ASSOCIATION =  (has used app, entitled to app, owns a device which app was used on, owns a device which app is entitled to, owns a device which app is installed on))" text is displayed in filter container
+	#Then "(User Last Logon Date between (2012-11-11, 2019-11-22) ASSOCIATION = (has used app, entitled to app, owns a device which app was used on, owns a device which app is entitled to, owns a device which app is installed on))" text is displayed in filter container
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS15376 @DAS15331 @Not_Run
 Scenario Outline: EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator

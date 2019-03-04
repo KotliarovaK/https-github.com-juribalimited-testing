@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	#When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
 	#| StartDateInclusive | EndDateInclusive |
 	#| 25 Apr 2018        | 02 May 2018      |
-	#Then "(Owner Last Logon Date  between (2018-04-25, 2018-05-02))" text is displayed in filter container
+	#Then "(Owner Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376 @Not_Run
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
@@ -441,7 +441,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "TRUE" left-pinned value on Pivot
-	Then following values are displayed for "Empty" column on Pivot
+	Then following values are displayed for "London" column on Pivot
 	| Value1       | Value2       |
 	| TRUE         | OUT OF SCOPE |
 	| OUT OF SCOPE | OUT OF SCOPE |
@@ -453,7 +453,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	#When User add "Last Logon Date" filter where type is "Between" without added column and Date options
 	#| StartDateInclusive | EndDateInclusive |
 	#| 25 Apr 2018        | 02 May 2018      |
-	#Then "(Last Logon Date  between (2018-04-25, 2018-05-02))" text is displayed in filter container
+	#Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS13786 @DAS13771 @DAS15376
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
@@ -477,7 +477,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User enters "Microsoft" text in Search field at selected Filter
 	When User clicks Save filter button
 	When User clicks the Pivot button
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "Microsoft" left-pinned value on Pivot
@@ -493,7 +493,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	#When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
 	#| StartDateInclusive | EndDateInclusive | Association                             |
 	#| 25 Apr 2018        | 02 May 2018      | Has used app                            |
-	#Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
+	#Then "(Vendor = Microsoft AND User Last Logon Date between (2018-04-25, 2018-05-02) ASSOCIATION = (has used app))" text is displayed in filter container
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
 Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForUsers
@@ -1418,6 +1418,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 	| Onboarded  |
 	| Forecast   |
 	| Targeted   |
+	| Scheduled  |
 	| Migrated   |
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @DAS15376 @Not_Run
@@ -1448,7 +1449,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User add "Last Logon Date" filter where type is "Between" without added column and Date options
 	| StartDateInclusive | EndDateInclusive |
 	| 25 Apr 2018        | 02 May 2018      |
-	Then "(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used app))" text is displayed in filter container
+	Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
@@ -1471,6 +1472,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGro
 	| Onboarded  |
 	| Forecast   |
 	| Scheduled  |
+	| Migrated   |
 	| Complete   |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
@@ -1495,6 +1497,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	| Onboarded  |
 	| Forecast   |
 	| Scheduled  |
+	| Migrated   |
 	| Complete   |
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run

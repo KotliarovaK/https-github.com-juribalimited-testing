@@ -1381,7 +1381,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table51.AddRow(new string[] {
                         "NONE",
                         "NONE"});
-            testRunner.Then("following values are displayed for \"Empty\" column on Pivot", ((string)(null)), table51, "Then ");
+            testRunner.Then("following values are displayed for \"London\" column on Pivot", ((string)(null)), table51, "Then ");
             this.ScenarioCleanup();
         }
 
@@ -1467,7 +1467,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User enters \"Microsoft\" text in Search field at selected Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"Microsoft\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4525,6 +4525,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table188.AddRow(new string[] {
                         "Targeted"});
             table188.AddRow(new string[] {
+                        "Scheduled"});
+            table188.AddRow(new string[] {
                         "Migrated"});
             testRunner.And("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table188, "And ");
             this.ScenarioCleanup();
@@ -4624,8 +4626,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "02 May 2018"});
             testRunner.When("User add \"Last Logon Date\" filter where type is \"Between\" without added column an" +
                     "d Date options", ((string)(null)), table193, "When ");
-            testRunner.Then("\"(User Last Logon Date  between (2018-04-25, 2018-05-02) ASSOCIATION =  (has used" +
-                    " app))\" text is displayed in filter container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"(Last Logon Date between (2018-04-25, 2018-05-02))\" text is displayed in filter " +
+                    "container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
@@ -4706,6 +4708,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Forecast"});
             table197.AddRow(new string[] {
                         "Scheduled"});
+            table197.AddRow(new string[] {
+                        "Migrated"});
             table197.AddRow(new string[] {
                         "Complete"});
             testRunner.And("Pivot left-pinned column content is displayed in following order:", ((string)(null)), table197, "And ");
@@ -4790,6 +4794,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Forecast"});
             table201.AddRow(new string[] {
                         "Scheduled"});
+            table201.AddRow(new string[] {
+                        "Migrated"});
             table201.AddRow(new string[] {
                         "Complete"});
             testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table201, "Then ");
