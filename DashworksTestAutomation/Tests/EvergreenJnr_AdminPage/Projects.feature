@@ -2097,6 +2097,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12777" is displayed to user
+	When User clicks "Details" tab
+	Then "Clone evergreen buckets to project buckets" content is displayed in "Buckets" dropdown
+	When User clicks "Capacity" tab
+	Then "Clone evergreen capacity units to project capacity units" content is displayed in "Capacity Units" dropdown
+	When User clicks "Scope" tab
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
 	And User selects following Objects
@@ -3894,7 +3899,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	When User navigate to "Stages" tab
 	Then "Stage13499" displayed in the table on Senior
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @DAS13973 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConvertingProjectToEvergreen
 	When User clicks "Projects" on the left-hand menu
 	When User clicks create Project button

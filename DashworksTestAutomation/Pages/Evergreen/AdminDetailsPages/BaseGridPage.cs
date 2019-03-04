@@ -556,7 +556,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByName(string dropdownName)
         {
-            var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']");
+            var selector = By.XPath($"//mat-select[@aria-label='{dropdownName}']//span//span");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
