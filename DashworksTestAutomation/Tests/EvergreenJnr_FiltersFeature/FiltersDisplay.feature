@@ -1542,7 +1542,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator
 	When user select "Build Date" filter
 	Then "Equals, Equals (relative), Does not equal, Between, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @NewFilterCheck @DAS13831 @DAS15376
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13831 @DAS15376
 Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1593,7 +1593,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilt
 	#DAS-15376
 	#Then "(Build Date  between 17 Feb 2017 and 08 Aug 2017)" text is displayed in filter container
 
-@Evergreen @Applications @Evergreen_FiltersFeature @NewFilterCheck @DAS13831 @DAS15376
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13831 @DAS15376
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

@@ -1362,7 +1362,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table50.AddRow(new string[] {
                         "MailboxEve: Readiness"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table50, "And ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"TRUE\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -4957,15 +4957,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table209 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table209.AddRow(new string[] {
+                        "Onboarded"});
+            table209.AddRow(new string[] {
                         "Forecast"});
             table209.AddRow(new string[] {
-                        "Migrated"});
-            table209.AddRow(new string[] {
-                        "Onboarded"});
+                        "Targeted"});
             table209.AddRow(new string[] {
                         "Scheduled"});
             table209.AddRow(new string[] {
-                        "Targeted"});
+                        "Migrated"});
             testRunner.And("Pivot column headers is displayed in following order:", ((string)(null)), table209, "And ");
             this.ScenarioCleanup();
         }

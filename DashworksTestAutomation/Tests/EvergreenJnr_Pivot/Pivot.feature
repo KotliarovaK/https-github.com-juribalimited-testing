@@ -437,7 +437,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	And User selects the following Values on Pivot:
 	| Values                |
 	| MailboxEve: Readiness |
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "TRUE" left-pinned value on Pivot
@@ -1542,11 +1542,11 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 	And Empty value is displayed on the first place for the Pivot column header
 	And Pivot column headers is displayed in following order:
 	| ColumnName |
-	| Forecast   |
-	| Migrated   |
 	| Onboarded  |
-	| Scheduled  |
+	| Forecast   |
 	| Targeted   |
+	| Scheduled  |
+	| Migrated   |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15328 @ @Not_Run
 Scenario Outline: EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames

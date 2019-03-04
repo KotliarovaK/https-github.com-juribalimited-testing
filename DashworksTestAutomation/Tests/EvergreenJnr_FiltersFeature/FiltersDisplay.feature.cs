@@ -5610,7 +5610,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13831")]
         [NUnit.Framework.CategoryAttribute("DAS15376")]
         public virtual void EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters()
@@ -5645,7 +5645,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen",
                         "AllLists",
                         "Evergreen_FiltersFeature",
-                        "NewFilterCheck",
+                        "FiltersDisplay",
                         "DAS13831",
                         "DAS15376"});
             this.ScenarioInitialize(scenarioInfo);
@@ -5723,7 +5723,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
-        [NUnit.Framework.CategoryAttribute("NewFilterCheck")]
+        [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13831")]
         [NUnit.Framework.CategoryAttribute("DAS15376")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter()
@@ -5759,7 +5759,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Evergreen",
                         "Applications",
                         "Evergreen_FiltersFeature",
-                        "NewFilterCheck",
+                        "FiltersDisplay",
                         "DAS13831",
                         "DAS15376"});
             this.ScenarioInitialize(scenarioInfo);
