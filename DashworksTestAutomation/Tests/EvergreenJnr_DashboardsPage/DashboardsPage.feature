@@ -419,8 +419,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy                         | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count             | CPU Architecture ASC (split by) |                  | 10        | false      |
+	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy                         | TableOrientation | MaxValues | ShowLegend | Type |
+	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count             | CPU Architecture ASC (split by) |                  | 10        | false      |      |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -441,8 +441,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count             | Model ASC (split by) |                  | 10        | true       |
+	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |Type |
+	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count             | Model ASC (split by) |                  | 10        | true       |     |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User selects "Bar" as Widget Type
@@ -508,8 +508,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                            | TableOrientation | MaxValues | ShowLegend |
-	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count             | Secure Boot Enabled ASC (split by) |                  | 10        | true       |
+	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                            | TableOrientation | MaxValues | ShowLegend |Type |
+	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count             | Secure Boot Enabled ASC (split by) |                  | 10        | true       |     |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -536,3 +536,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	When User clicks Settings button for "Dashboard for DAS15432" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Widgets @DAS15207
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation |
+	| Card       | WidgetForDAS15207 | All Devices | Aggregate | Hostname    | Count distinct    |         |         |           |            |                  |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then "WidgetForDAS15207" Widget is displayed to the user
+	And There are no errors in the browser console

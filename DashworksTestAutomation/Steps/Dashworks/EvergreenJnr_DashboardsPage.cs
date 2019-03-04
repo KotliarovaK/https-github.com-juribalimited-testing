@@ -505,6 +505,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
+                if (!string.IsNullOrEmpty(row["Type"]))
+                {
+                    createWidgetElement.Type.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["Type"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
                 if (!string.IsNullOrEmpty(row["SplitBy"]))
                 {
                     createWidgetElement.SplitBy.Click();

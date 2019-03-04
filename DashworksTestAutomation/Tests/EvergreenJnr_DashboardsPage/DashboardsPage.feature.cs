@@ -1861,7 +1861,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "OrderBy",
                         "TableOrientation",
                         "MaxValues",
-                        "ShowLegend"});
+                        "ShowLegend",
+                        "Type"});
             table37.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15372",
@@ -1872,7 +1873,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "CPU Architecture ASC (split by)",
                         "",
                         "10",
-                        "false"});
+                        "false",
+                        ""});
             testRunner.And("User adds new Widget", ((string)(null)), table37, "And ");
             testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1954,7 +1956,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "OrderBy",
                         "TableOrientation",
                         "MaxValues",
-                        "ShowLegend"});
+                        "ShowLegend",
+                        "Type"});
             table39.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15365",
@@ -1965,7 +1968,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Model ASC (split by)",
                         "",
                         "10",
-                        "true"});
+                        "true",
+                        ""});
             testRunner.And("User adds new Widget", ((string)(null)), table39, "And ");
             testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2141,7 +2145,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "OrderBy",
                         "TableOrientation",
                         "MaxValues",
-                        "ShowLegend"});
+                        "ShowLegend",
+                        "Type"});
             table42.AddRow(new string[] {
                         "Bar",
                         "WidgetForDAS15356",
@@ -2152,7 +2157,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Secure Boot Enabled ASC (split by)",
                         "",
                         "10",
-                        "true"});
+                        "true",
+                        ""});
             testRunner.And("User adds new Widget", ((string)(null)), table42, "And ");
             testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2244,7 +2250,86 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS15207")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS15207"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "SplitBy",
+                        "OrderBy",
+                        "MaxValues",
+                        "ShowLegend",
+                        "TableOrientation"});
+            table44.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS15207",
+                        "All Devices",
+                        "Aggregate",
+                        "Hostname",
+                        "Count distinct",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""});
+            testRunner.And("User adds new Widget", ((string)(null)), table44, "And ");
+            testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"WidgetForDAS15207\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
 #endregion
+
