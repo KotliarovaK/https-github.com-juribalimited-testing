@@ -5867,8 +5867,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "02 May 2018"});
             testRunner.When("User add \"Last Logon Date\" filter where type is \"Between\" with added column and D" +
                     "ate options", ((string)(null)), table114, "When ");
-            testRunner.Then("\"  (Last Logon Date  between (2018-04-25, 2018-05-02))\" text is displayed in filt" +
-                    "er container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"(Last Logon Date between (2018-04-25, 2018-05-02))\" text is displayed in filter " +
+                    "container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
