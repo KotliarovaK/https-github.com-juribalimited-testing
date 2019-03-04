@@ -976,6 +976,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" content is displayed in ""(.*)"" dropdown")]
         public void ThenContentIsDisplayedInDropdown(string text, string dropdown)
         {
+            var page = _driver.NowAt<BaseGridPage>();
+            var dropdownContent = page.GetDropdownByName(dropdown).Text;
+            Assert.AreEqual(dropdownContent, text, $"Text in '{dropdown}' drop-down is different");
+        }
+
+        [Then(@"""(.*)"" text value is displayed in the ""(.*)"" dropdown")]
+        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
+        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
+        public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            if (page.ExpandItemsButton.Displayed())
+            {
+                page.ExpandItemsButton.Click();
+                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+            }
+            else
+                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
@@ -2514,27 +2538,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dropdown = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(dropdown.GetDropdownByName(dropdownName).Displayed(), $"{dropdownName} is not displayed");
-        }
-
-        [Then(@"""(.*)"" text value is displayed in the ""(.*)"" dropdown")]
-        public void ThenTextValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(dropdown.GetDropdownByTextValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-        }
-
-        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown")]
-        public void ThenValueIsDisplayedInTheDropdown(string value, string dropdownName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            var dropdown = _driver.NowAt<BaseGridPage>();
-            if (page.ExpandItemsButton.Displayed())
-            {
-                page.ExpandItemsButton.Click();
-                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
-            }
-            else
-                Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
         }
 
         [Then(@"Next values are selected for the ""(.*)"" field:")]
