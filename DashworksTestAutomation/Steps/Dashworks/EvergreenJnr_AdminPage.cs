@@ -668,14 +668,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsCheckedOnTheAdminPage(string checkbox)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.GetCheckedCheckboxByName(checkbox).Displayed(), "checkbox is unchecked");
+            Assert.IsTrue(page.GetCheckedCheckboxByName(checkbox), "checkbox is unchecked");
         }
 
         [Then(@"""(.*)"" checkbox is unchecked on the Admin page")]
         public void ThenCheckboxIsUncheckedOnTheAdminPage(string checkbox)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.GetUnCheckedCheckboxByName(checkbox).Displayed(), "checkbox is checked");
+            Assert.IsFalse(page.GetCheckedCheckboxByName(checkbox), "checkbox is checked");
         }
 
         [Then(@"""(.*)"" checkbox is greyed out on the Admin page")]

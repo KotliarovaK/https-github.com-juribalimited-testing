@@ -478,16 +478,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetCheckedCheckboxByName(string checkboxName)
+        public bool GetCheckedCheckboxByName(string checkboxName)
         {
             var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]//span[text()='{checkboxName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            return Driver.IsElementExists(selector);
         }
 
         public IWebElement GetUnCheckedCheckboxByName(string checkboxName)
         {
-            var selector = By.XPath($".//mat-checkbox[@class='mat-checkbox mat-accent _mat-animation-noopable ng-valid ng-dirty ng-touched']//span[text()='{checkboxName}']");
+            var selector = By.XPath($".//mat-checkbox[contains(@class, 'ng-untouched ng-pristine ng-valid')]//span[text()='{checkboxName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
