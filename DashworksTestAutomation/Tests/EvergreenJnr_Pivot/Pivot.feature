@@ -414,13 +414,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	Then Pivot run was completed
 	Then date in the column headers is sorted in correct order for the Pivot
 	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
-	#DAS-15376
-	#When User clicks the Filters button
-	#Then Filters panel is displayed to the user
-	#When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
-	#| StartDateInclusive | EndDateInclusive |
-	#| 25 Apr 2018        | 02 May 2018      |
-	#Then "(Owner Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "(Owner Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376 @Not_Run
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
@@ -447,13 +446,12 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	| OUT OF SCOPE | OUT OF SCOPE |
 	| PURPLE       | PURPLE       |
 	| NONE         | NONE         |
-	#DAS-15376
-	#When User clicks the Filters button
-	#Then Filters panel is displayed to the user
-	#When User add "Last Logon Date" filter where type is "Between" without added column and Date options
-	#| StartDateInclusive | EndDateInclusive |
-	#| 25 Apr 2018        | 02 May 2018      |
-	#Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Last Logon Date" filter where type is "Between" without added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS13786 @DAS13771 @DAS15376
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
@@ -487,13 +485,12 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) | GREEN      |
 	| 0036 - Microsoft Access 97 SR-2 English                    | LIGHT BLUE |
 	| 0047 - Microsoft Access 97 SR-2 Francais                   | GREEN      |
-	#DAS-15376
-	#When User clicks the Filters button
-	#Then Filters panel is displayed to the user
-	#When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
-	#| StartDateInclusive | EndDateInclusive | Association                             |
-	#| 25 Apr 2018        | 02 May 2018      | Has used app                            |
-	#Then "(Vendor = Microsoft AND User Last Logon Date between (2018-04-25, 2018-05-02) ASSOCIATION = (has used app))" text is displayed in filter container
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
+	| StartDateInclusive | EndDateInclusive | Association                             |
+	| 25 Apr 2018        | 02 May 2018      | Has used app                            |
+	Then "(Vendor = Microsoft AND User Last Logon Date between (2018-04-25, 2018-05-02) ASSOCIATION = (has used app))" text is displayed in filter container
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
 Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForUsers
