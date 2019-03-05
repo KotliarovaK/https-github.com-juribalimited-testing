@@ -447,7 +447,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName(buttonName).Click();
-            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" Action button is displayed")]

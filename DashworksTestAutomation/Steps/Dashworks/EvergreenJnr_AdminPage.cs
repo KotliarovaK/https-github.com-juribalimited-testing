@@ -632,7 +632,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filter = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
-            filter.ResetFiltersButton.Click();
+            //filter.ResetFiltersButton.Click();
             foreach (var row in table.Rows)
             {
                 filter.DateFilterValue.SendKeys(row["FilterData"]);
@@ -1315,7 +1315,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
-            StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed correctly");
+            StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
         [Then(@"Warning message with ""(.*)"" text is displayed on the Admin page")]

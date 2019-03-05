@@ -42,14 +42,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetLinkByName(linkName).Click();
+            if (!detailsPage.GetLinkByName(linkName).Displayed)
+                try
+                {
+                    Thread.Sleep(30000);
+                    _driver.Navigate().Refresh();
+                    detailsPage.GetLinkByName(linkName).Click();
+                }
+                catch (Exception)
+                {
+                    Thread.Sleep(50000);
+                    _driver.Navigate().Refresh();
+                    detailsPage.GetLinkByName(linkName).Click();
+                }
+            else
+                detailsPage.GetLinkByName(linkName).Click();
         }
 
         [Then(@"""(.*)"" section is expanded on the Details Page")]
         public void ThenSectionIsExpandedOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section {sectionName} is not displayed");
+            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section '{sectionName}' is not displayed");
         }
 
         [Then(@"section is loaded correctly")]
