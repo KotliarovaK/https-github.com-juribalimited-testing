@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
@@ -557,6 +558,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
 
             Assert.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
+        }
+
+        [When(@"User clicks content of Evergreen Ring in Project Summary section on the Details Page")]
+        public void WhenUserClicksEvergreenRingInProjectSummarySectionOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.ProjectSummaryRingValue);
+            detailsPage.ProjectSummaryRingValue.Click();
+        }
+
+        [When(@"User clicks New Ring ddl in popup of Project Summary section on the Details Page")]
+        public void WhenUserClicksNewRingDdlOfInProjectSummarySectionOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.ProjectSummaryRingPopupDDL);
+            detailsPage.ProjectSummaryRingPopupDDL.Click();
+        }
+
+        [Then(@"Rings ddl contains data on Project Summary section of the Details Page")]
+        public void ThenRingDdlContainsOptionsInProjectSummarySectionOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x=>x.Contains("Ring") || x.Contains("[Unassigned]")), 
+                "Some options are not available for selected filter");
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]

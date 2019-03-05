@@ -47,10 +47,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using = ".//div[@id='aggridHeaderCounter']//span[@class='ng-star-inserted' and count(*)=0]")]
+
         [FindsBy(How = How.XPath,
             Using =
                 ".//table[@class='table projectDetails']/*//span[text()='Evergreen Bucket']/ancestor::tr/td[@class='fld-value']")]
         public IWebElement ProjectSummaryBucketValue { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//table[@class='table projectDetails']/*//span[text()='Evergreen Ring']/ancestor::tr/td[@class='fld-value']//div[@class='editText']")]
+        public IWebElement ProjectSummaryRingValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using =".//input[@placeholder='New Ring']")]
+        public IWebElement ProjectSummaryRingPopupDDL { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
+        public IList<IWebElement> OperatorOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-tab-body[contains(@class, 'mat-tab-body')]")]
         public IWebElement PopupChangesPanel { get; set; }

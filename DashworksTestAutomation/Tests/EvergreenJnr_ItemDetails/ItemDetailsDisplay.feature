@@ -446,6 +446,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThePossibilityToRecheckingTheWorkflowCol
 	And User clicks String Filter button for "Workflow" column
 	Then "(Blanks)" checkbox is checked on the Details Page
 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14941
+Scenario: EvergreenJnr_DevicesList_CheckTheEvergreenRingProjectSetting
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	And User clicks content of Evergreen Ring in Project Summary section on the Details Page
+	And User clicks New Ring ddl in popup of Project Summary section on the Details Page
+	Then Rings ddl contains data on Project Summary section of the Details Page
+
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12283
 Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupDetailsAndFilterWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
