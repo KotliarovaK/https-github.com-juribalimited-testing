@@ -427,7 +427,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -665,12 +665,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetLinkOnTheDetailsPageByName(link).Click();
         }
 
-        [When(@"User clicks on Unassigned link for ""(.*)"" field")]
-        public void WhenUserClicksOnUnassignedLinkForField(string fieldName)
+        [When(@"User clicks on ""(.*)"" link for Evergreen Bucket field")]
+        public void WhenUserClicksOnLinkForEvergreenBucketField(string linkName)
         {
             var page = _driver.NowAt<DetailsPage>();
             _driver.WaitForDataLoading();
-            page.GetUnassignedLinkByFieldName(fieldName).Click();
+            page.GetEvergreenBucketLinkByFieldName(linkName).Click();
+        }
+
+        [When(@"User clicks on ""(.*)"" link for Evergreen Ring field")]
+        public void WhenUserClicksOnLinkForEvergreenRingField(string linkName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetEvergreenRingLinkByFieldName(linkName).Click();
+        }
+
+        [When(@"User clicks on ""(.*)"" link for Evergreen Capacity Unit field")]
+        public void WhenUserClicksOnLinkForEvergreenCapacityUnitField(string linkName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetEvergreenCapacityUnitLinkByFieldName(linkName).Click();
         }
 
         [Then(@"""(.*)"" link is displayed on the Details Page")]
