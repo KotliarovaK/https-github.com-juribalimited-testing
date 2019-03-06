@@ -100,6 +100,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "List is not displayed in the bottom section");
         }
 
+        [Then(@"""(.*)"" list is not displayed in the bottom section of the List Panel")]
+        public void ThenListIsNotDisplayedInTheBottomSectionOfTheListPanel(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(listElement.ListInBottomSection(listName).Displayed(), "List is not displayed in the bottom section");
+        }
+
         [When(@"User create custom list with ""(.*)"" name")]
         public void WhenUserCreateCustomListWithName(string listName)
         {

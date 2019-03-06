@@ -153,6 +153,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Reset button is displayed");
         }
 
+        [When(@"User apply ""(.*)"" filter to lists panel")]
+        public void WhenUserApplyFilterToListsPanel(string filterListName)
+        {
+            var listsFilter = _driver.NowAt<ListDetailsElement>();
+            listsFilter.GetFilterForListsByName(filterListName).Click();
+        }
+
         private void PerformSearch(string searchTerm)
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();

@@ -1144,17 +1144,19 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDro
 	When User clicks All lists dropdown on Lists panel
 	Then appropriate icon is displayed for All lists
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13638 @DAS13639 @DAS13640 @DAS13643 @DAS13649 @Delete_Newly_Created_List @Not_Run
-Scenario: EvergreenJnr_DevicesList_CheckThatListFilterIsWorkedCorrectly
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13639 @DAS13643 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User create static list with "StaticListDAS13637" name on "Devices" page with following items
+	When User create static list with "StaticFilterList_1" name on "Devices" page with following items
 	| ItemName       |
 	| 001BAQXT6JWFPI |
 	| 001PSUMZYOW581 |
-	Then "<ListName>" list should be displayed to the user
+	Then "StaticFilterList_1" list should be displayed to the user
+	When User navigates to the "All Devices" list
 	When User click on 'Hostname' column header
-	When User create dynamic list with "DynamicListDAS13637" name on "Devices" page
+	When User create dynamic list with "DynamicFilterList_1" name on "Devices" page
+	Then "DynamicFilterList_1" list is displayed to user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups              |
@@ -1167,8 +1169,42 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListFilterIsWorkedCorrectly
 	| App Count (Entitled) |
 	When User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
-	When User creates Pivot list with "PivotListDAS13637" name
-	Then "PivotListDAS13637" list is displayed to user
+	When User creates Pivot list with "PivotDynamicFilterList_1" name
+	Then "PivotDynamicFilterList_1" list is displayed to user
+	When User navigates to the "All Devices" list
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Build Date |
+	And User selects the following Columns on Pivot:
+	| Columns                |
+	| Application Compliance | 
+	And User selects the following Values on Pivot:
+	| Values                            |
+	| Owner General information field 1 |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotFilterList_1" name
+	Then "PivotFilterList_1" list is displayed to user
 	When User navigates to the "All Devices" list
 	Then "All Devices" list is displayed to user
-	When User apply "x" filter to lists panel
+	When User apply "Dynamic" filter to lists panel
+	Then "DynamicFilterList_1" list is displayed in the bottom section of the List Panel
+	And "PivotDynamicFilterList_1" list is displayed in the bottom section of the List Panel
+	And "PivotFilterList_1" list is displayed in the bottom section of the List Panel
+	And "StaticFilterList_1" list is not displayed in the bottom section of the List Panel
+	When User enters "List_1" text in Search field at List Panel
+	Then "DynamicFilterList_1" list is displayed in the bottom section of the List Panel
+	And "PivotDynamicFilterList_1" list is displayed in the bottom section of the List Panel
+	And "PivotFilterList_1" list is displayed in the bottom section of the List Panel
+	And "StaticFilterList_1" list is not displayed in the bottom section of the List Panel
+	When User apply "Static" filter to lists panel
+	Then "DynamicFilterList_1" list is not displayed in the bottom section of the List Panel
+	And "PivotDynamicFilterList_1" list is not displayed in the bottom section of the List Panel
+	And "PivotFilterList_1" list is not displayed in the bottom section of the List Panel
+	And "StaticFilterList_1" list is displayed in the bottom section of the List Panel
+	When User enters "List_1" text in Search field at List Panel
+	Then "DynamicFilterList_1" list is not displayed in the bottom section of the List Panel
+	And "PivotDynamicFilterList_1" list is not displayed in the bottom section of the List Panel
+	And "PivotFilterList_1" list is not displayed in the bottom section of the List Panel
+	And "StaticFilterList_1" list is displayed in the bottom section of the List Panel
