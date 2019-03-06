@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeC
 	| Vendor is adobe | Used on device      |
 	| Vendor is adobe | Entitled to device  |
 	| Vendor is adobe | Installed on device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	When User create dynamic list with "DevicesList1584" name on "Devices" page
 	Then "DevicesList1584" list is displayed to user
 	When User clicks Create Project from the main list
@@ -394,7 +394,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13949 @DAS14180 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13949 @DAS14180 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -485,7 +485,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then Counter shows "1" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Object Type" column on the Admin page
-	When User clicks "User" checkbox from boolean filter on the Admin page
+	And User selects "User" checkbox from String Filter on the Admin page
 	Then Counter shows "4" found rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
@@ -554,9 +554,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
 	When User navigates to the "Projects" tab
 	And User opens "Device Projects" section on the Details Page
-	#Remove hash after fix
-	#And User clicks "TestProject12490" link on the Details Page
-	#Then "Project Object" page is displayed to the user
+	And User clicks "TestProject12490" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	#Remove hash on 'kepler'
 	#Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11700 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
@@ -762,7 +762,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList  | Association    |
 	| ListName12349 | Used on device |
-	Then "Application (Saved List)" filter is added to the list
+	Then "Any Application" filter is added to the list
 	And "99" rows are displayed in the agGrid
 	And "Any Application in list ListName12349 used on device" is displayed in added filter info
 	And "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container
@@ -1326,6 +1326,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChangingBucketFromCloneEvergreenBuckets
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Details" tab
+	#Then "Clone evergreen buckets to project buckets" content is displayed in "Buckets" dropdown
 	When User selects "Use project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User clicks "Scope" tab
@@ -1363,10 +1364,8 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	When User selects "Scope Details" tab on the Project details page
 	And User selects "All Devices" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	Then Bucket dropdown is not displayed on the Project details page
 	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then Bucket dropdown is not displayed on the Project details page
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then Bucket dropdown is not displayed on the Project details page
 	And There are no errors in the browser console
@@ -2098,6 +2097,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterCl
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "TestProject12777" is displayed to user
+	When User clicks "Details" tab
+	Then "Clone evergreen buckets to project buckets" content is displayed in "Buckets" dropdown
+	When User clicks "Capacity" tab
+	Then "Clone evergreen capacity units to project capacity units" content is displayed in "Capacity Units" dropdown
+	When User clicks "Scope" tab
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add 
 	And User selects following Objects
@@ -2361,6 +2365,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Action        |
 	| Bucket        |
 	| Capacity Unit |
+	| Ring          |
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then Counter shows "1" found rows
 	When User selects "History" tab on the Project details page
@@ -2377,6 +2382,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Action        |
 	| Bucket        |
 	| Capacity Unit |
+	| Ring          |
 	| Status        |
 	When User enters "Units" text in the Search field for "Capacity Unit" column
 	Then Counter shows "0" found rows
@@ -2742,7 +2748,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Delete_Newly_Created_Project @DAS11758 @DAS14190
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Delete_Newly_Created_Project @DAS11758 @DAS14190 @DAS15528 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2944,7 +2950,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	And User selects "Dutch" language on the Project details page
 	And User opens menu for selected language
 	Then User selects "Set as default" option for selected language
-	When User selects "Use evergreen buckets" in the Buckets Project dropdown
+	When User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
 	Then There are no errors in the browser console
 	When User click on Back button
 	And User selects all rows on the grid
@@ -2993,6 +2999,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersL
 	When User clicks "Details" tab
 	And User changes Project Name to "NewProjectName"
 	And User changes Project Short Name to "NewShort4875"
+#"UPDATE" Action button has been removed
 	#And User clicks the "UPDATE" Action button
 	#Then Success message is displayed and contains "The project details have been updated" text
 	When User click on Back button
@@ -3154,7 +3161,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProje
 	Then Admin page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
-	Then User sees folloing options in "Buckets" dropdown on Import Projects page:
+	Then User sees following options in "Buckets" dropdown on Import Projects page:
 	| OptionLabel                                |
 	| Use project buckets                        |
 	| Clone evergreen buckets to project buckets |
@@ -3165,7 +3172,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValue
 	Then Admin page should be displayed to the user
 	When User clicks the "IMPORT PROJECT" Action button
 	And User selects "Import to existing project" option in the "Import" dropdown on the Import Project Page
-	Then User sees folloing options in "Select Existing Project" dropdown on Import Projects page:
+	Then User sees following options in "Select Existing Project" dropdown on Import Projects page:
 	| OptionLabel                                       |
 	| 1803 Rollout                                      |
 	| Babel (English, German and French)                |
@@ -3782,7 +3789,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	And User clicks the Use Dashworks Evergreen to configure capacity link
 	Then "Slots" tab in Project selected on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3799,11 +3806,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks "Capacity" tab
 	And User selects "Use project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
-	When User clicks "UPDATE" button in the warning message on Admin page
 	Then Success message with "The project capacity details have been updated" text is displayed on the Projects page
 	When User selects "Units" tab on the Project details page
 	Then Blue banner with "This project uses evergreen capacity units" text is displayed
-	Then "CREATE CAPACITY UNIT" button is not displayed
+	Then "CREATE PROJECT CAPACITY UNIT" button is not displayed
 	Then Actions menu is not displayed to the user
 	Then Cog menu is not displayed on the Admin page
 	When User clicks "Administration" navigation link on the Admin page
@@ -3893,7 +3899,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	When User navigate to "Stages" tab
 	Then "Stage13499" displayed in the table on Senior
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @DAS13973 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConvertingProjectToEvergreen
 	When User clicks "Projects" on the left-hand menu
 	When User clicks create Project button
@@ -3904,7 +3910,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
-	When User enters "DAS15262Project" text in the Search field for "Project" column
+	And User enters "DAS15262Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then "Use project buckets" text value is displayed in the "Buckets" dropdown
 	And "Use project rings" text value is displayed in the "Rings" dropdown
@@ -4010,3 +4016,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12389 @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingProjectPage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User tries to open not existing page
+	Then Page not found displayed for the user
+	And There are only page not found errors in console

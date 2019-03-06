@@ -1000,7 +1000,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Used by user"});
             testRunner.When("User add \"Application Owner\" filter where type is \"Equals\" with following Value a" +
                     "nd Association:", ((string)(null)), table29, "When ");
-            testRunner.Then("\"Application\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"Application Owner\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("Maximize button is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1690,6 +1690,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13245")]
+        [NUnit.Framework.CategoryAttribute("DAS15566")]
         public virtual void EvergreenJnr_DevicesList_TheSelectedColumnsCategoryIsDisplayedAfterUsingTheFilterSearch()
         {
             System.Exception lastException = null;
@@ -1724,7 +1725,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Devices",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS13245"});
+                        "DAS13245",
+                        "DAS15566"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -2387,7 +2389,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"User\" with \"29\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"User\" with \"30\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Location\" with \"8\" category is displayed on Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -3147,6 +3149,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3181,7 +3184,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Devices",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3216,9 +3220,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Project: prK",
                         "1"});
             table95.AddRow(new string[] {
-                        "Project: TestProj16",
-                        "1"});
-            table95.AddRow(new string[] {
                         "Project: Windows101",
                         "1"});
             table95.AddRow(new string[] {
@@ -3246,6 +3247,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3280,7 +3282,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Users",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3321,6 +3324,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3355,7 +3359,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Mailboxes",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3387,6 +3392,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15140")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Projects")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypeProjectAreAvailableInPanel()
         {
             System.Exception lastException = null;
@@ -3421,7 +3427,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Applications",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS15140"});
+                        "DAS15140",
+                        "Do_Not_Run_With_Projects"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

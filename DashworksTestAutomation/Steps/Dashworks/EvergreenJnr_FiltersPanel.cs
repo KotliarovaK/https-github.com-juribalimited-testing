@@ -147,6 +147,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.SearchTextBoxResetButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User enters ""(.*)"" text in Search field at selected Lookup Filter")]
@@ -522,6 +523,33 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filter.Do();
         }
 
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and Date options")]
+        public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new BetweenOperatorFilter(_driver, operatorValue, true, table);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and Date options")]
+        public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndDateOptions(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new BetweenOperatorFilter(_driver, operatorValue, false, table);
+            filter.Do();
+        }
+
+        [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Date options and Associations:")]
+        public void WhenUserAddFilterWhereTypeIsWithFollowingDateOptionsAndAssociations(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var filter = new BetweenDataAssociationFilter(_driver, operatorValue, table);
+            filter.Do();
+        }
+
         [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with following Number and Association:")]
         public void WhenUserAddAndFilterWhereTypeIsWithFollowingNumberAndAssociation(string filterName,
             string operatorValue, Table table)
@@ -634,7 +662,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterIsAddedToTheList(string filterName)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.GetFiltersNamesFromFilterPanel(filterName);
+            Assert.That(filterElement.GetFiltersNamesFromFilterPanel(filterName), Does.Contain(filterName));
         }
 
         [Then(@"table data is filtered correctly")]

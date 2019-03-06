@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ResultsOnPageCount { get; set; }
 
         [FindsBy(How = How.XPath,
-            Using = ".//button[contains(@class, 'filter-select addNewContainer ng-star-inserted')]")]
+            Using = ".//button[contains(@class, 'addNewContainer')]")]
         public IWebElement AddAndFilterButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = SearchTextBoxSelector)]
@@ -376,9 +376,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.IsElementDisplayed(By.XPath($".//span[@class='filter-label-name'][text()='{filterName}]"));
         }
 
-        public bool GetFiltersNamesFromFilterPanel(string filterName)
+        public List<string> GetFiltersNamesFromFilterPanel(string filterName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));
+            return Driver.FindElements(By.XPath($".//div[@class='filter-label']//span[@class='filter-label-name']"))
+                .Select(x => x.Text).ToList();
+
+            //return Driver.IsElementDisplayed(By.XPath($".//div[@class='filter-label']//span[text()='{filterName}']"));//TODO: remove if fix above works for all
         }
 
         public IWebElement CloseFiltersLookupValue(string filterValue)
@@ -396,8 +399,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetFilterValue(string value)
         {
-            var editFilterSelector =
-                $".//li//span[text()='{value}']";
+            var editFilterSelector = $".//li//span[text()='{value}']";
             return Driver.FindElement(By.XPath(editFilterSelector));
         }
 

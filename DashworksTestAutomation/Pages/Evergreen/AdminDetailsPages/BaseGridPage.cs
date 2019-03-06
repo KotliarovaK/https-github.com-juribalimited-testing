@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
 
-        public const string FirstColumnTableContent = "//div[@role='gridcell']//a[@href]";
+        public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement PageTitle { get; set; }
@@ -59,6 +59,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='box-counter ng-star-inserted']/span")]
         public IWebElement RowsCounter { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[@class='rowCount ng-star-inserted']")]
+        public IWebElement ListRowsCounter { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='CONTINUE']")]
         public IWebElement ContinueButton { get; set; }
 
@@ -71,10 +74,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//span[@class='inline-link ng-star-inserted']/a")]
         public IWebElement NewProjectLink { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div//span[text()='Evergreen']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyViewport']//div//span[text()='Evergreen']")]
         public IWebElement EvergreenUnit { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button//span[contains(text(), 'RESET FILTERS')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
@@ -139,7 +142,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'checkbox-partial')]")]
         public IWebElement CheckedSomeItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]/div")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div[@ref='eCenterColsClipper']")]
         public IWebElement TableContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
@@ -342,16 +345,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public void ClickContentByColumnName(string columnName)
-        {
-            var byControl =
-                By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]//a");
-            Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
-            Driver.FindElement(byControl).Click();
-        }
-
         public void OpenColumnSettingsByName(string columnName)
         {
             var columnSettingsSelector =
@@ -419,7 +412,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetTableStringRowNumber(string itemName)
         {
-            return Driver.FindElement(By.XPath($".//div[@ref='eBodyContainer']//div//div[@title='{itemName}']//parent::div")).GetAttribute("row-index");
+            return Driver.FindElement(By.XPath($".//div[@ref='eBodyViewport']//div//div[@title='{itemName}']//parent::div")).GetAttribute("row-index");
         }
 
         public bool OnboardedObjectNumber(string objectsNumber)
@@ -485,6 +478,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public bool GetCheckedCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]//span[text()='{checkboxName}']");
+            return Driver.IsElementExists(selector);
+        }
+
+        public IWebElement GetUnCheckedCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($".//mat-checkbox[contains(@class, 'ng-untouched ng-pristine ng-valid')]//span[text()='{checkboxName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetGreyedOutCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($".//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]//span[text()='{checkboxName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public bool GetCreatedProjectName(string projectName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
@@ -543,7 +556,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByName(string dropdownName)
         {
-            var selector = By.XPath($".//mat-select[@aria-label='{dropdownName}']");
+            var selector = By.XPath($"//mat-select[@aria-label='{dropdownName}']//span//span");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -558,6 +571,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool GetMissingDropdownByName(string dropdownName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//mat-select[@aria-label='{dropdownName}']"));
+        }
+
+        public bool GetMissingDropdownOnSettingsScreenByName(string dropdownName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//div[@class='mat-form-field-infix']//label[text()='{dropdownName}']"));
         }
 
         public IWebElement GetDropdownByTextValueByName(string value, string dropdownName)

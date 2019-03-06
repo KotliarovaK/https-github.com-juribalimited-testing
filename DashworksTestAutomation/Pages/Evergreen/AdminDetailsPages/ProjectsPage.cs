@@ -198,7 +198,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetAssociatedCheckboxByName(string associatedCheckbox)
         {
-            var button = By.XPath($"//span[text()='{associatedCheckbox}']/../div/input[@type='checkbox']");
+            var button = By.XPath($".//span[text()='{associatedCheckbox}']/../div/input[@type='checkbox']");
             Driver.WaitWhileControlIsNotDisplayed(button);
             return Driver.FindElement(button);
         }
@@ -206,7 +206,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void RemovePermissionsByName(string permissions)
         {
             var tab = Driver.FindElement(
-                By.XPath($"//li//span[text()='{permissions}']//following-sibling::button"));
+                By.XPath($".//li//span[text()='{permissions}']//following-sibling::button"));
             tab.Click();
             Driver.WaitForDataLoading();
         }
@@ -337,7 +337,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetFieldByName(string name)
         {
-            var selector = By.XPath($"//input[@placeholder='{name}']");
+            var selector = By.XPath($".//input[@placeholder='{name}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -345,6 +345,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetDropDownByName(string name)
         {
             var selector = By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownContentByName(string name)
+        {
+            var selector = By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select//span/span");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
@@ -41,14 +42,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksLinkOnTheDetailsPage(string linkName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetLinkByName(linkName).Click();
+            if (!detailsPage.GetLinkByName(linkName).Displayed)
+                try
+                {
+                    Thread.Sleep(30000);
+                    _driver.Navigate().Refresh();
+                    detailsPage.GetLinkByName(linkName).Click();
+                }
+                catch (Exception)
+                {
+                    Thread.Sleep(50000);
+                    _driver.Navigate().Refresh();
+                    detailsPage.GetLinkByName(linkName).Click();
+                }
+            else
+                detailsPage.GetLinkByName(linkName).Click();
         }
 
         [Then(@"""(.*)"" section is expanded on the Details Page")]
         public void ThenSectionIsExpandedOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section {sectionName} is not displayed");
+            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section '{sectionName}' is not displayed");
         }
 
         [Then(@"section is loaded correctly")]
@@ -412,7 +427,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -493,7 +508,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Content is present in the column of the Details Page table")]
         public void ThenContentIsPresentInTheColumnOfTheDetailsPageTable(Table table)
         {
-            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            var page = _driver.NowAt<BaseDashboardPage>();
 
             foreach (var row in table.Rows)
             {
@@ -557,6 +572,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var detailsPage = _driver.NowAt<DetailsPage>();
 
             Assert.That(detailsPage.ProjectSummaryBucketValue.Text, Is.EqualTo(bucketName));
+        }
+
+        [When(@"User clicks content of Evergreen Ring in Project Summary section on the Details Page")]
+        public void WhenUserClicksEvergreenRingInProjectSummarySectionOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.ProjectSummaryRingValue);
+            detailsPage.ProjectSummaryRingValue.Click();
+        }
+
+        [When(@"User clicks New Ring ddl in popup of Project Summary section on the Details Page")]
+        public void WhenUserClicksNewRingDdlOfInProjectSummarySectionOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.ProjectSummaryRingPopupDDL);
+            detailsPage.ProjectSummaryRingPopupDDL.Click();
+        }
+
+        [Then(@"Rings ddl contains data on Project Summary section of the Details Page")]
+        public void ThenRingDdlContainsOptionsInProjectSummarySectionOnTheDetailsPage()
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x=>x.Contains("Ring") || x.Contains("[Unassigned]")), 
+                "Some options are not available for selected filter");
         }
 
         [Then(@"""(.*)"" field display state is ""(.*)"" on Details tab")]
@@ -626,12 +665,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetLinkOnTheDetailsPageByName(link).Click();
         }
 
-        [When(@"User clicks on Unassigned link for ""(.*)"" field")]
-        public void WhenUserClicksOnUnassignedLinkForField(string fieldName)
+        [When(@"User clicks on ""(.*)"" link for Evergreen Bucket field")]
+        public void WhenUserClicksOnLinkForEvergreenBucketField(string linkName)
         {
             var page = _driver.NowAt<DetailsPage>();
             _driver.WaitForDataLoading();
-            page.GetUnassignedLinkByFieldName(fieldName).Click();
+            page.GetEvergreenBucketLinkByFieldName(linkName).Click();
+        }
+
+        [When(@"User clicks on ""(.*)"" link for Evergreen Ring field")]
+        public void WhenUserClicksOnLinkForEvergreenRingField(string linkName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetEvergreenRingLinkByFieldName(linkName).Click();
+        }
+
+        [When(@"User clicks on ""(.*)"" link for Evergreen Capacity Unit field")]
+        public void WhenUserClicksOnLinkForEvergreenCapacityUnitField(string linkName)
+        {
+            var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            page.GetEvergreenCapacityUnitLinkByFieldName(linkName).Click();
         }
 
         [Then(@"""(.*)"" link is displayed on the Details Page")]

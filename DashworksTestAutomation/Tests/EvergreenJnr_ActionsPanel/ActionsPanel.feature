@@ -1653,7 +1653,7 @@ Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForE
 	| None             |
 	| Owners only      |
 	| All linked users |
-	When User selects "Owners only" option in "Also Move Users" field on Action panel
+	When User selects "Owners only" option in "Also Move Users" drop-down on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 

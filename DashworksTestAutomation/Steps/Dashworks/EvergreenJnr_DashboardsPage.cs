@@ -403,61 +403,74 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (string.IsNullOrEmpty(row["Title"])) createWidgetElement.Title.SendKeys(" ");
 
-                if (!string.IsNullOrEmpty(row["Title"]))
+                if (createWidgetElement.Title.Displayed() & !string.IsNullOrEmpty(row["Title"]))
+
                 {
                     createWidgetElement.Title.Clear();
                     createWidgetElement.Title.SendKeys(row["Title"]);
                 }
 
-                if (!string.IsNullOrEmpty(row["List"]))
+                if (createWidgetElement.List.Displayed() && !string.IsNullOrEmpty(row["List"]))
                 {
                     createWidgetElement.List.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["SplitBy"]))
+                if (createWidgetElement.SplitBy.Displayed())
                 {
                     createWidgetElement.SplitBy.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["AggregateBy"]))
+                if (createWidgetElement.AggregateBy.Displayed())
                 {
                     createWidgetElement.AggregateBy.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["AggregateFunction"]))
+                if (createWidgetElement.AggregateFunction.Displayed())
                 {
                     createWidgetElement.AggregateFunction.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["OrderBy"]))
+                if (createWidgetElement.OrderBy.Displayed())
                 {
                     createWidgetElement.OrderBy.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["MaxValues"]))
+                if (createWidgetElement.MaxValues.Displayed())
                 {
                     createWidgetElement.MaxValues.Clear();
                     createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
                 }
 
-                if (!string.IsNullOrEmpty(row["TableOrientation"]))
+                if (createWidgetElement.TableOrientation.Displayed())
                 {
                     createWidgetElement.TableOrientation.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["TableOrientation"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["ShowLegend"]) && row["ShowLegend"].Equals("true"))
+                if (createWidgetElement.MaxRows.Displayed())
+                {
+                    createWidgetElement.MaxRows.Clear();
+                    createWidgetElement.MaxRows.SendKeys(row["MaxRows"]);
+                }
+
+                if (createWidgetElement.MaxColumns.Displayed())
+                {
+                    createWidgetElement.MaxColumns.Clear();
+                    createWidgetElement.MaxColumns.SendKeys(row["MaxColumns"]);
+                }
+
+                if (createWidgetElement.ShowLegend.Displayed())
                 {
                     createWidgetElement.ShowLegend.Click();
                 }
@@ -489,6 +502,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     createWidgetElement.List.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["Type"]))
+                {
+                    createWidgetElement.Type.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["Type"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
@@ -568,6 +588,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingOnProjects();
         }
 
+        [When(@"User selects ""(.*)"" as Type")]
+        public void WhenUserSetsTypesOnWidget(string type)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+
+            createWidgetElement.Type.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(type);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
         [When(@"User selects ""(.*)"" as Widget SplitBy")]
         public void WhenUserSetsWidgetSplitBy(string splitBy)
         {
@@ -624,6 +654,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+        }
+
+        [Then(@"Card ""(.*)"" Widget is displayed to the user")]
+        public void ThenCardWidgetIsDisplayedToTheUser(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
         [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]

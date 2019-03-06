@@ -53,8 +53,8 @@ namespace DashworksTestAutomation.Helpers
                 _driver.FindElement(By.XPath(
                         ".//div[@class='filterAddPanel ng-star-inserted']//div[contains(@class, 'add-column-checkbox')]//div[@class='mat-checkbox-inner-container']"))
                     .Click();
-            _driver.MouseHover(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button"));
-            _driver.FindElement(By.XPath("//div[@class='form-container']//span[text()='SAVE']/ancestor::button")).Click();
+            _driver.MouseHover(By.XPath("//div[contains(@class, 'actions')]//span[text()='SAVE']/ancestor::button"));
+            _driver.FindElement(By.XPath("//div[contains(@class, 'actions')]//span[text()='SAVE']/ancestor::button")).Click();
         }
     }
 
@@ -291,7 +291,7 @@ namespace DashworksTestAutomation.Helpers
             var addedOptionSelector =
                 ".//span[@class='chips-item-text ng-star-inserted']";
             var allAddedOptionsSelector =
-                ".//div[@class='filterAddPanel ng-star-inserted']/div[@class='form-container']//div[@class='form-group ng-star-inserted']//li/span";
+                ".//div[@class='filterAddPanel ng-star-inserted']/div[contains(@class,'form-container')]//div[@class='form-group ng-star-inserted']//li/span";
             var filterValueSelector = By.XPath(
                 ".//div[@class='filterAddPanel ng-star-inserted']//div[@class='mat-form-field-infix']//input");
             var addButtonSelector =
@@ -601,6 +601,90 @@ namespace DashworksTestAutomation.Helpers
                         ".//div[@class='mat-form-field-wrapper']//input[@aria-label='Date']"))
                     .SendKeys(row["Values"]);
             }
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(".//div[@id='context']//input[@placeholder='Search']")).Click();
+                if (!_driver.IsElementDisplayed(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]"))) continue;
+                _driver.FindElement(By.XPath($".//li//span[contains(text(), '{row["Association"]}')]")).Click();
+            }
+
+            SaveFilter();
+        }
+    }
+
+    public class BetweenOperatorFilter : BaseFilter
+    {
+        public BetweenOperatorFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table table) : base(
+            driver, operatorValue, acceptCheckbox)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
+                    .SendKeys(row["StartDateInclusive"]);
+            }
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
+                    .SendKeys(row["EndDateInclusive"]);
+            }
+            _driver.FindElement(By.XPath(".//body")).Click();
+            SaveFilter();
+        }
+    }
+
+    public class BetweenDataAssociationFilter : BaseFilter
+    {
+        public BetweenDataAssociationFilter(RemoteWebDriver driver, string operatorValue, Table table) : base(
+            driver, operatorValue, false)
+        {
+            Table = table;
+        }
+
+        private Table Table { get; }
+
+        public override void Do()
+        {
+            SelectOperator();
+            _driver.WaitForDataLoading();
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='Start Date (Inclusive)']"))
+                    .SendKeys(row["StartDateInclusive"]);
+            }
+
+            foreach (var row in Table.Rows)
+            {
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
+                    .Click();
+                _driver.FindElement(By.XPath(
+                        ".//div[@class='mat-form-field-wrapper']//input[@placeholder='End Date (Inclusive)']"))
+                    .SendKeys(row["EndDateInclusive"]);
+            }
+            _driver.FindElement(By.XPath(".//body")).Click();
 
             foreach (var row in Table.Rows)
             {

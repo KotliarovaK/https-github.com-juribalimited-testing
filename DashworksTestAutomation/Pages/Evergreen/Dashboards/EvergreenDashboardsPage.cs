@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
         public IWebElement WidgetPreview { get; set; }
 
         [FindsBy(How = How.XPath,
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Pages
         {
             try
             {
-                return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::div/i"));
+                return Driver.FindElement(By.XPath($".//h5[contains(text(),'{widgetName}')]/following-sibling::button//i"));
             }
             catch
             {
@@ -247,7 +247,15 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($".//div[@class='widget drag-n-drop']/div//h5[text()='{widgetName}']//ancestor::div/div[@class='inner-widget disable-actions']");
+                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@class='chartContainer ng-star-inserted']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(dashboardWidget);
+        }
+
+        public IWebElement GetCardWidgetByName(string widgetName)
+        {
+            var dashboardWidget =
+                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }

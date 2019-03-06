@@ -21,6 +21,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='SplitBy']")]
         public IWebElement SplitBy { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Type']")]
+        public IWebElement Type { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='AggregateBy']")]
         public IWebElement AggregateBy { get; set; }
 
@@ -32,6 +35,12 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='TableOrientation']")]
         public IWebElement TableOrientation { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Rows']")]
+        public IWebElement MaxRows { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Columns']")]
+        public IWebElement MaxColumns { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Values']")]
         public IWebElement MaxValues { get; set; }

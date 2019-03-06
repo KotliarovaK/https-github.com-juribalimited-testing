@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -260,6 +261,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectAggregateFunctionByName(functionName).Click();
         }
 
+        [Then(@"following aggregate function are available in dropdown:")]
+        public void ThenFollowingAggregateFunctionAreAvailableInDropdown(Table table)
+        {
+            var pivot = _driver.NowAt<PivotElementPage>();
+            pivot.AggregateFunction.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = pivot.AggregateOptionsOnPivotPanel.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Aggregate function in drop-down are different");
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
+        [When(@"User clicks Plus button for ""(.*)"" Pivot value")]
+        public void WhenUserClicksPlusButtonForPivotValue(string buttonName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            page.GetPlusButtonOnPivotByName(buttonName).Click();
+        }
+
         #region Tooltip on Pivot
 
         [Then(@"""(.*)"" plus button have tooltip with ""(.*)"" text")]
@@ -303,6 +323,50 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         #endregion
 
+        #region Chips
+
+        [Then(@"""(.*)"" chip for Row Groups is not displayed")]
+        [Then(@"""(.*)"" chip for Columns is not displayed")]
+        public void ThenChipIsNotDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Value is not displayed")]
+        public void ThenChipForValueIsNotDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Row Groups is displayed")]
+        [Then(@"""(.*)"" chip for Columns is displayed")]
+        public void ThenChipIsDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.GetChipNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
+        }
+
+        [Then(@"""(.*)"" chip for Value is displayed")]
+        public void ThenChipForValueIsDisplayed(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(page.GetChipValueNameOnPivot(chipName), $"'{chipName}' chip is not displayed");
+        }
+
+        [When(@"User clicks close button for ""(.*)"" chip")]
+        public void WhenUserClicksCloseButtonForChip(string chipName)
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            if (page.GetCloseButtonForValueElementsByNameOnPivot(chipName).Displayed())
+                page.GetCloseButtonForValueElementsByNameOnPivot(chipName).Click();
+            else
+                page.GetCloseButtonForElementsByNameOnPivot(chipName).Click();
+        }
+
+        #endregion
+
         [When(@"""(.*)"" value is entered into the search box and the selection is clicked on Pivot")]
         public void WhenValueIsEnteredIntoTheSearchBoxAndTheSelectionIsClickedOnPivot(string value)
         {
@@ -316,7 +380,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyValueIsDisplayedOnTheFirstPlaceForThePivot()
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
-            Assert.IsTrue(columnElement.FirstEmptyValueHeaders.Displayed(), "Empty value is not displayed on the first place");
+            Assert.IsTrue(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is not displayed on the first place");
+        }
+
+        [Then(@"Empty value is displayed on the first place for the Pivot column header")]
+        public void ThenEmptyValueIsDisplayedOnTheFirstPlaceForThePivotColumnHeader()
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(columnElement.FirstEmptyValueHeaders.Displayed(), "Empty value is not displayed on the first place for column header");
         }
 
         [Then(@"Pivot column headers is displayed in following order:")]
@@ -324,7 +395,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
 
-            var columnNames = columnElement.GetPivotHeadersContent();
+            var columnNames = columnElement.GetPivotHeadersContentToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+        }
+
+        [Then(@"Pivot left-pinned column content is displayed in following order:")]
+        public void ThenPivotLeft_PinnedColumnContentIsDisplayedInFollowingOrder(Table table)
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+
+            var columnNames = columnElement.GetLeftPinnedColumnContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
         }
@@ -429,7 +510,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDataInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetPivotHeadersContentToList().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSorted(expectedList);
         }
 
@@ -437,10 +518,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDateInTheColumnHeadersIsSortedInCorrectOrderForThePivot()
         {
             var pivot = _driver.NowAt<PivotElementPage>();
-            var expectedList = pivot.GetPivotHeadersContent().Where(x => !x.Equals("")).ToList();
+            var expectedList = pivot.GetPivotHeadersContentToList().Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(expectedList, false);
         }
 
         #endregion
+
+        [Then(@"Export button is displayed")]
+        public void ThenExportButtonIsDisplayed()
+        {
+            var pivot = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivot.ExportButton.Displayed(), "Export button is not displayed");
+        }
     }
 }

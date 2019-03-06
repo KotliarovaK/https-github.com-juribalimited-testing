@@ -21,8 +21,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTrueFalseOptionsAndImagesInFilterIn
 	Then "Windows7Mi: Hide from End Users" filter is added to the list
 	Then Values is displayed in added filter info
 	| Values  |
-	| true    |
-	| false   |
+	| True    |
+	| False   |
 	| Unknown |
 
 @Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS10754 @DAS11142 @Delete_Newly_Created_List
@@ -417,7 +417,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationSavedListFilterIsWor
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList   | Association        |
 	| TestList2854B3 | Not used on device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	And "17,126" rows are displayed in the agGrid
 	And Options is displayed in added filter info
 	| Values  |
@@ -1205,7 +1205,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
-	And User clicks the "CREATE BUCKET" Action button
+	And User clicks the "CREATE EVERGREEN BUCKET" Action button
 	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -1236,7 +1236,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
-	And User clicks the "CREATE UNIT" Action button
+	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity_Unit_DAS13201_to_be_deleted" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -1432,7 +1432,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTheValueInTheFiltersPanelIsDisp
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User click Edit button for "User" filter
-	Then "FR\AAD1011948" value is displayed in the filter info
+	Then "FR\AAD1011948 (Pinabel Cinq-Mars)" value is displayed in the filter info
 	And There are no errors in the browser console
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1533,12 +1533,95 @@ Examples:
 	| Empty         | 28,067    |
 	| Not empty     | 13,272    |
 
-@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS13831 @Not_Run
-#remove 'not_run' when the 'Between' operator will be aviable.
-Scenario: EvergreenJnr_AllLists_CheckThatDateFilterContainsBetweenOperator
+@Evergreen @Devices @Evergreen_FiltersFeature @NewFilterCheck @DAS13831
+Scenario: EvergreenJnr_DevicesList_CheckThatDateFilterContainsBetweenOperator
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When user select "Build Date" filter
-	Then "Equals, Equals (relative), Does not equal, Does not equal (relative), Between, Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
+	Then "Equals, Equals (relative), Does not equal, Between, Does not equal (relative), Before, Before (relative), On or before, On or before (relative), After, After (relative), On or after, On or after (relative), Empty, Not empty" option is available for this filter
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13831 @DAS15376
+Scenario: EvergreenJnr_AllLists_CheckThatBetweenOperatorIsDisplayedInTheDateFilters
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Build Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 17 Feb 2017        | 08 Aug 2017      |
+	Then "22" rows are displayed in the agGrid
+	Then "17 Feb 2017" content is displayed in the "Build Date" column
+	Then "8 Aug 2017" content is displayed in the "Build Date" column
+	#DAS-15376
+	#Then "(Build Date between (2017-02-17, 2017-08-08))" text is displayed in filter container
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Last Logon Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "22" rows are displayed in the agGrid
+	Then "25 Apr 2018" content is displayed in the "Last Logon Date" column
+	Then "2 May 2018" content is displayed in the "Last Logon Date" column
+	#DAS-15376
+	#Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Created Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 14 Sep 2016        | 22 Jun 2017      |
+	Then "7" rows are displayed in the agGrid
+	Then "14 Sep 2016" content is displayed in the "Created Date" column
+	Then "22 Jun 2017" content is displayed in the "Created Date" column
+	#DAS-15376
+	#Then "(Created Date between (2016-09-14, 2017-06-22))" text is displayed in filter container
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "MigrationP: Date Task for Package Stage" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 11 Nov 2012        | 22 Nov 2019      |
+	Then "19" rows are displayed in the agGrid
+	Then "12 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
+	Then "22 Nov 2012" content is displayed in the "MigrationP: Date Task for Package Stage" column
+	#DAS-15376
+	#Then "(MigrationP: Date Task for Package Stage between (2012-11-11, 2019-11-22))" text is displayed in filter container
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS13831 @DAS15376
+Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInTheUserLastLogonDateFilter
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
+	| StartDateInclusive | EndDateInclusive | Association                             |
+	| 11 Nov 2012        | 22 Nov 2019      | Has used app                            |
+	|                    |                  | Entitled to app                         |
+	|                    |                  | Owns a device which app was used on     |
+	|                    |                  | Owns a device which app is entitled to  |
+	|                    |                  | Owns a device which app is installed on |
+	Then "979" rows are displayed in the agGrid
+	#DAS-15376
+	#Then "(User Last Logon Date between (2012-11-11, 2019-11-22) ASSOCIATION = (has used app, entitled to app, owns a device which app was used on, owns a device which app is entitled to, owns a device which app is installed on))" text is displayed in filter container
+
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS15376 @DAS15331 @Not_Run
+Scenario Outline: EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Last Logon Date" filter where type is "Between" with added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
+
+Examples:
+	| ListName  |
+	| Mailboxes |
+	| Users     |

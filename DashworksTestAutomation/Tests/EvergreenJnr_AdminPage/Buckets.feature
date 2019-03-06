@@ -121,8 +121,8 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User selects all rows on the grid
 	When User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket4" in the "Bucket Name" field
 	And User selects "Team 1045" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -146,14 +146,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "11770" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created, Click here to view the 11770 bucket" text
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "11770" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -168,8 +168,8 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "TRUE" value is displayed for Default column
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket5" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User updates the "Default Bucket" checkbox state
@@ -177,15 +177,15 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks newly created object link
 	Then "TestBucket5" bucket details is displayed to the user
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	And User enters "NewBucket5" in the "Bucket Name" field
 	And User selects "I-Team" team in the Team dropdown on the Buckets page
-	And User clicks the "UPDATE BUCKET" Action button
+	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The NewBucket5 bucket has been updated" text
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "FALSE" value is displayed for Default column
 	When User clicks content from "Bucket" column
-	And User clicks "Bucket Settings" tab
+	And User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
@@ -206,9 +206,9 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	And User clicks "Bucket Settings" tab
+	And User clicks "Evergreen Bucket Settings" tab
 	And User enters "a1ba" in the "Bucket Name" field
-	And User clicks the "UPDATE BUCKET" Action button
+	And User clicks the "UPDATE" Action button
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser
@@ -227,8 +227,8 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket6" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -287,8 +287,8 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket7" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -348,8 +348,8 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket8" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -449,8 +449,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket2" in the "Bucket Name" field
 	And User selects "Team 1045" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -458,19 +458,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "TestBucket2" bucket details is displayed to the user
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "TestBucket2" bucket has been updated is displayed on the Buckets page
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	Then Default Bucket checkbox is selected
 	When User click on Back button
 	And User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "FALSE" value is displayed for Default column
 	When User clicks content from "Bucket" column
-	And User clicks "Bucket Settings" tab
+	And User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	Then Default Bucket checkbox is selected
 	When User click on Back button
 	When User clicks Reset Filters button on the Admin page
@@ -550,20 +550,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then Search fields for "Devices" column contain correctly value
 	Then Search fields for "Users" column contain correctly value
 	Then Search fields for "Mailboxes" column contain correctly value
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters " " in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	Then Create Bucket button is disabled
 	When User clicks "Buckets" link on the Admin page
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket1" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket1" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -577,14 +577,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "1Bucket12905" in the "Bucket Name" field
 	And User selects "K-Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "2Bucket12905" in the "Bucket Name" field
 	And User selects "K-Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -714,14 +714,14 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "1Bucket12331" in the "Bucket Name" field
 	And User selects "K-Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "2Bucket12331" in the "Bucket Name" field
 	And User selects "K-Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -767,8 +767,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTheDefaultSortOrderIsCorrectWhenYouAddDevi
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "BucketForDAS13808" in the "Bucket Name" field
 	And User selects "K-Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button

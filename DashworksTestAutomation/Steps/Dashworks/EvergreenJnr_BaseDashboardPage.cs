@@ -9,6 +9,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity;
 using DashworksTestAutomation.Providers;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -301,6 +302,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SortingHelper.IsListSorted(originalList);
         }
 
+        [Then(@"""(.*)"" content is displayed in the ""(.*)"" column")]
+        public void ThenContentIsDisplayedInTheColumn(string textContent, string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            var contentId = page.GetListContentByColumnName(columnName).ToList();
+            var contentList = contentId.Select(x => x.Text).ToList();
+            Assert.Contains(textContent, contentList, $"{textContent} is not displayed");
+        }
+
         [Then(@"""(.*)"" content is displayed in ""(.*)"" column")]
         public void ThenContentIsDisplayedInColumn(string textContent, string columnName)
         {
@@ -350,6 +361,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
+        [Then(@"User sees ""(.*)"" rows in grid")]
+        public void ThenUserSeesRowsInGrid(int rowsCount)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
+            Assert.That(page.TableRows.Count, Is.EqualTo(rowsCount));
+        }
+
         [Then(@"Content is present in the newly added column")]
         public void ThenContentIsPresentInTheNewlyAddedColumn(Table table)
         {
@@ -391,12 +410,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"table content is present")]
         public void ThenTableContentIsPresent()
         {
-            var content = _driver.FindElements(By.XPath(BaseDashboardPage.FullTable));
+            var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            foreach (var element in content)
+            var rows = page.TableRows;
+            foreach (var row in rows)
             {
-                var tableText = element.FindElement(By.XPath(BaseDashboardPage.TableTextContent));
-                Assert.IsTrue(_driver.IsElementExists(tableText), "Table is empty");
+                Assert.That(row.FindElement(By.XPath(BaseDashboardPage.GridCell)).Displayed, Is.True);
             }
         }
 
@@ -428,6 +447,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenURLContains(string url)
         {
             StringAssert.Contains(url, _driver.Url, $"URL is not contains {url}");
+        }
+
+        [Then(@"URL contains only ""(.*)"" filter")]
+        public void ThenURLContainsOnly(string urlFilterExpected)
+        {
+            string url = _driver.Url;
+            url=url.Substring(url.IndexOf("?") + 1);
+            string[] filterInUrl = url.Split('$');
+
+            foreach (var filter in filterInUrl)
+            {
+                if (!string.IsNullOrEmpty(filter))
+                {
+                    StringAssert.Contains(urlFilterExpected, filter, $"URL is not contains {filter}");
+                }
+            }
         }
 
         [Then(@"""(.*)"" text is displayed in filter container")]
@@ -533,6 +568,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseDashboardPage>();
             button.ClosePanelButton.Click();
+        }
+
+
+        [When(@"User remembers value in ""(.*)"" column")]
+        public void WhenUserRemembersValueInSpecificColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            page.Storage.SessionStorage.SetItem("column_value", page.GetRowContentByColumnName(columnName));
+        }
+
+        [Then(@"Rows counter number equals to remembered value")]
+        public void ThenUserRememberedValueEqualsToGridCounter()
+        {
+            var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.ListRowsCounter);
+
+            string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
+
+            StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
+                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
         }
     }
 }

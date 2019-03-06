@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='true']")]
         public IWebElement SelectedDefaultBucketCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE BUCKET']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='UPDATE']")]
         public IWebElement UpdateBucketButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ng-star-inserted']")]

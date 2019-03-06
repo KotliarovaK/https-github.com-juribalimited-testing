@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
     internal class CreateCapacityUnitPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]//h2[text()='Create Capacity Unit']")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class,'action-container')]//h2")]
         public IWebElement CreateCapacityUnitTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit Name']")]

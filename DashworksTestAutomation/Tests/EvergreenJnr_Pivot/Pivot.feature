@@ -228,12 +228,15 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| 1803 Rollout |
 	When User navigates to the "User Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "User Scope" drop-down on the Project details page:
-	| Values    |
-	| All Users |
+	| Values                  |
+	| All Users               |
+	| Users with Device Count |
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Application Scope" drop-down on the Project details page:
-	| Values           |
-	| All Applications |
+	| Values             |
+	| All Applications   |
+	| 1803 Apps          |
+	| Apps with a Vendor |
 	And User remove list with "Pivot_DAS_14224" name on "Devices" page
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13765 @DAS13833 @DAS13855
@@ -257,7 +260,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	Then Save button is inactive for Pivot list
 	And No pivot generated message is displayed
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS14206 @DAS14413 @DAS14748 @DAS13786 @DAS13869
 Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -271,6 +274,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnSelectedPa
 	| Building |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
+	Then data in the table is sorted by "Common Name" column in ascending order by default for the Pivot
 	When User creates Pivot list with "Pivot_DAS_14206" name
 	Then "Pivot_DAS_14206" list is displayed to user
 	When User navigates to the "All Users" list
@@ -392,7 +396,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsRowGroupsAreDisplayedInT
 	#Remove # after DAS-15230 fixed
 	#Then color data in the left-pinned column is sorted in descending order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14378 @DAS13864 @DAS13786 @DAS13867 @DAS15376
 Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayedInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -410,8 +414,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	Then Pivot run was completed
 	Then date in the column headers is sorted in correct order for the Pivot
 	Then data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Owner Last Logon Date" filter where type is "Between" without added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	#DAS-15376
+	#Then "(Owner Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376 @Not_Run
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -426,16 +437,24 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	And User selects the following Values on Pivot:
 	| Values                |
 	| MailboxEve: Readiness |
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "TRUE" left-pinned value on Pivot
 	Then following values are displayed for "London" column on Pivot
-	| Value1 | Value2 |
-	| TRUE   | NONE   |
-	| NONE   | NONE   |
+	| Value1       | Value2       |
+	| TRUE         | OUT OF SCOPE |
+	| OUT OF SCOPE | OUT OF SCOPE |
+	| PURPLE       | PURPLE       |
+	| NONE         | NONE         |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Last Logon Date" filter where type is "Between" without added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
-@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS13786 @DAS13771 @DAS15376
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForApplications
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -457,7 +476,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User enters "Microsoft" text in Search field at selected Filter
 	When User clicks Save filter button
 	When User clicks the Pivot button
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "Microsoft" left-pinned value on Pivot
@@ -467,6 +486,13 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) | GREEN      |
 	| 0036 - Microsoft Access 97 SR-2 English                    | LIGHT BLUE |
 	| 0047 - Microsoft Access 97 SR-2 Francais                   | GREEN      |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "User Last Logon Date" filter where type is "Between" with following Date options and Associations:
+	| StartDateInclusive | EndDateInclusive | Association                             |
+	| 25 Apr 2018        | 02 May 2018      | Has used app                            |
+	#DAS-15376
+	#Then "(Vendor = Microsoft AND User Last Logon Date between (2018-04-25, 2018-05-02) ASSOCIATION = (has used app))" text is displayed in filter container
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555
 Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForUsers
@@ -526,30 +552,128 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableF
 	| Los Angeles | GREEN  |
 	| San Diego   | RED    |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556 @Not_Run
-Scenario Outline: EvergreenJnr_AllLists_CheckThatSeverityAggregateFunctionAvailableForComplianceField
-	When User clicks "<ListName>" on the left-hand menu
-	Then "<ListName>" list should be displayed to the user
+@Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
+Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForApplications
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
 	| RowGroups   |
-	| <RowGroups> |
+	| Vendor      |
+	| Application |
 	And User selects the following Columns on Pivot:
-	| Columns   |
-	| <Columns> |
+	| Columns        |
+	| Inventory Site |
 	And User selects the following Values on Pivot:
-	| Values   |
-	| <Values> |
+	| Values     |
+	| Compliance |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Vendor" filter
+	When User select "Equals" Operator value
+	When User enters "Altera" text in Search field at selected Filter
+	When User clicks Save filter button
+	When User clicks the Pivot button
 	When User selects aggregate function "severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
+	When User expanded "Altera" left-pinned value on Pivot
+	Then following values are displayed for "SMS_GEN" column on Pivot
+	| Value1                          | Value2 |
+	| Altera                          | AMBER  |
+	| Quartus II 2.0 Web Edition Full | GREEN  |
+	| Quartus II 5.0                  | GREEN  |
+	| Quartus II 5.0 SP2              | AMBER  |
+	| Quartus II Programmer 4.0       | AMBER  |
 
-Examples:
-	| ListName     | RowGroups | Columns          | Values                      |
-	| Devices      | Hostname  | Compliance       | 1803: Application Readiness |
-	| Users        | Domain    | Compliance       | 1803: Application Readiness |
-	| Mailboxes    | Alias     | Owner Compliance | MailboxEve: Readiness       |
-	| Applications | Import    | Compliance       | 1803: Application Readiness |
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
+Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForMailboxes
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| Import      |
+	| Email Count |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| City    |
+	And User selects the following Values on Pivot:
+	| Values           |
+	| Owner Compliance |
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User expanded "BCLABS-2007" left-pinned value on Pivot
+	Then following values are displayed for "Empty" column on Pivot
+	| Value1      | Value2         |
+	| BCLABS-2007 | GREEN          |
+	| 87          | GREEN          |
+	| 86          | GREEN          |
+	| 20          | GREEN          |
+	| 9           | NOT APPLICABLE |
+	| 3           | GREEN          |
+	| 2           | GREEN          |
+	| 0           | GREEN          |
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
+Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForUsers
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	| Floor     |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| Country |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Compliance |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Country" filter
+	When User select "Equals" Operator value
+	#Change Sctoland to Scotland
+	When User enters "Sctoland" text in Search field at selected Lookup Filter
+	When User clicks checkbox at selected Lookup Filter
+	When User clicks Save filter button
+	When User clicks the Pivot button
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User expanded "Exchange Tower" left-pinned value on Pivot
+	Then following values are displayed for "Sctoland" column on Pivot
+	| Value1         | Value2  |
+	| Exchange Tower | UNKNOWN |
+	| 2              | RED     |
+	| 3              | RED     |
+	| 4              | UNKNOWN |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14556
+Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableForComplianceFieldForDevices
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Country   |
+	| Import    |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| Import  |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Compliance |
+	When User selects aggregate function "severity" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User expanded "Empty" left-pinned value on Pivot
+	Then following values are displayed for "A01 SMS (Spoof)" column on Pivot
+	| Value1          | Value2 |
+	| Empty           | AMBER  |
+	| A01 SMS (Spoof) | AMBER  |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForApplications
@@ -569,11 +693,10 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	Then Pivot run was completed
 	And data in the table is sorted by "Vendor" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| Not Applicable |
-	#| Started        |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| Not Applicable |
+	| Started        |
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForMailboxes
@@ -593,11 +716,9 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDispla
 	Then Pivot run was completed
 	And data in the table is sorted by "Evergreen Bucket" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName               |
-	#| Infrastructure Not Ready |
-	#| Infrastructure Ready     |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName               |
+	| Infrastructure Ready     |
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForUsers
@@ -617,10 +738,9 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInC
 	Then Pivot run was completed
 	And data in the table is sorted by "City" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| Not Applicable |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| Not Applicable |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForDevices
@@ -640,14 +760,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| Not Applicable |
-	#| Not Started    |
-	#| Started        |
-	#| Failed         |
-	#| Complete       |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| Not Applicable |
+	| Started        |
+	| Failed         |
+	| Complete       |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForUsers
@@ -667,8 +785,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	Then Pivot run was completed
 	And data in the table is sorted by "Organizational Unit" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14423 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColumnsDisplayInTheCorrectOrderForDevices
@@ -688,10 +805,9 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	Then color data in the column headers is sorted in correct order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252 @DAS13786 @DAS13823
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -709,11 +825,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
 	Then Empty value is displayed on the first place for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| Not Applicable |
-	#| Audit Failed   |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| Not Applicable |
+	| Audit Failed   |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForApplications
@@ -732,8 +847,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectStageColumnsDisplayInTh
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	Then data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForMailboxes
@@ -752,8 +866,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectStageColumnsDisplayInTheCo
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	Then data in the table is sorted by "Language" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForUsers
@@ -772,8 +885,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectStageColumnsDisplayInTheCorrec
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForDevices
@@ -792,8 +904,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectStageColumnsDisplayInTheCorr
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	Then data in the table is sorted by "Region" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14427
 Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessColumnsDisplayInTheCorrectOrder
@@ -812,8 +923,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatApplicationTargetAppReadinessCo
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	Then data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then color data in the column headers is sorted in correct order for the Pivot
+	Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS14428 @DAS13865
 Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDisplayInTheCorrectOrder
@@ -832,12 +942,11 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxOwnerComplianceColumnsDispl
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "City" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| GREEN          |
-	#| UNKNOWN        |
-	#| NOT APPLICABLE |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| GREEN          |
+	| UNKNOWN        |
+	| NOT APPLICABLE |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForApplications
@@ -856,14 +965,13 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatComplianceColumnsDisplayInTheC
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "<SortedColumn>" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| GREEN          |
-	#| AMBER          |
-	#| RED            |
-	#| UNKNOWN        |
-	#| NOT APPLICABLE |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| GREEN          |
+	| AMBER          |
+	| RED            |
+	| UNKNOWN        |
+	| NOT APPLICABLE |
 
 @Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForUsers
@@ -882,14 +990,13 @@ Scenario: EvergreenJnr_UsersLists_CheckThatComplianceColumnsDisplayInTheCorrectO
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Domain" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| GREEN          |
-	#| AMBER          |
-	#| RED            |
-	#| UNKNOWN        |
-	#| NOT APPLICABLE |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| GREEN          |
+	| AMBER          |
+	| RED            |
+	| UNKNOWN        |
+	| NOT APPLICABLE |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14429
 Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrectOrderForDevices
@@ -908,13 +1015,12 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatComplianceColumnsDisplayInTheCorrec
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Inventory Site" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName |
-	#| GREEN      |
-	#| AMBER      |
-	#| RED        |
-	#| UNKNOWN    |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| GREEN      |
+	| AMBER      |
+	| RED        |
+	| UNKNOWN    |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14430
 Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayInTheCorrectOrder
@@ -933,14 +1039,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayI
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Hostname" column in ascending order by default for the Pivot
-	#Remove # after DAS-15230 fixed
-	#Then Pivot column headers is displayed in following order:
-	#| ColumnName     |
-	#| GREEN          |
-	#| AMBER          |
-	#| RED            |
-	#| UNKNOWN        |
-	#| NOT APPLICABLE |
+	Then Pivot column headers is displayed in following order:
+	| ColumnName     |
+	| GREEN          |
+	| AMBER          |
+	| RED            |
+	| UNKNOWN        |
+	| NOT APPLICABLE |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139 @DAS13833 @DAS13843 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfThatWereAppliedToTheCustomList
@@ -948,9 +1053,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfT
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Application Compliance" filter where type is "Equals" with added column and following value:
-	| Values |
-	| Red    |
+	When User add "Application Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
 	Then "Application Compliance" filter is added to the list
 	When User create dynamic list with "TestListForDAS15139" name on "Devices" page
 	Then "TestListForDAS15139" list is displayed to user
@@ -1129,7 +1234,358 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	Then Dashboards sub menu is hidden on Dashboards page
 	And "PivotList_DAS13652" list name is displayed correctly on top tools panel
 	And "RUN PIVOT" Action button is displayed
-	Then "EXPORT" Action button is displayed
+	Then Export button is displayed
 	When User open sub menu for "PivotList_DAS13652" list
 	Then User sees Dashboards sub menu on Dashboards page
 	And User remove list with "PivotList_DAS13652" name on "Devices" page
+
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Delete_Newly_Created_List
+Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| <ValuesForFilter>  |
+	Then "<FilterName>" filter is added to the list
+	When User create dynamic list with "<ListName>" name on "<PageName>" page
+	Then "<ListName>" list is displayed to user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| <RowGroup> |
+	And User selects the following Columns on Pivot:
+	| Columns  |
+	| <Column> |
+	And User selects the following Values on Pivot:
+	| Values  |
+	| <Value> |
+	When User clicks the "RUN PIVOT" Action button
+	And User adds the following "Values" on Pivot: 
+	| Value             |
+	| <AdditionalValue> |
+	Then "<Value>" chip for Value is displayed
+	Then "<AdditionalValue>" chip for Value is displayed
+	When User clicks close button for "<AdditionalValue>" chip
+	Then "<AdditionalValue>" chip for Value is not displayed
+	When User clicks Plus button for "Values" Pivot value
+	When User enters "<AdditionalValue>" text in Search field at Columns Panel
+	When User closed "Selected Columns" columns category
+	When User closed "Selected Filters" columns category
+	Then "<AdditionalValue>" subcategory is displayed for "<CategoryName>" category
+
+Examples:
+	| PageName     | RowGroup    | Column                            | Value          | AdditionalValue      | ListName                | FilterName             | ValuesForFilter | CategoryName     |
+	| Devices      | Compliance  | Babel(Engl: Application Readiness | Last Seen Date | OS Branch            | Devices_List_11103      | Application Compliance | Red             | Operating System |
+	| Users        | Compliance  | App Count (Entitled)              | Domain         | Dashworks First Seen | Users_List_11103        | Compliance             | Red             | User             |
+	| Mailboxes    | Alias       | Owner City                        | Created Date   | Alias                | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
+	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner    | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS13819 @DAS13818 @DAS13817 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Values on Pivot:
+	| Values     |
+	| HDD Count  |
+	Then following aggregate function are available in dropdown:
+	| Option |
+	| count  |
+	| sum    |
+	| min    |
+	| max    |
+	| avg    |
+	When User clicks close button for "HDD Count" chip
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Build Date |
+	Then following aggregate function are available in dropdown:
+	| Option |
+	| count  |
+	| first  |
+	| last   |
+	When User clicks close button for "Build Date" chip
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	Then following aggregate function are available in dropdown:
+	| Option |
+	| count  |
+	When User clicks close button for "Owner City" chip
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatingSystemPivotValueIsDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups   |
+	| <RowGroups> |
+	And User selects the following Columns on Pivot:
+	| Columns   |
+	| <Columns> |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And data in the table is sorted by "<RowGroups>" column in ascending order by default for the Pivot
+
+Examples:
+	| RowGroups              | Columns               |
+	| Operating System       | Owner Compliance      |
+	| Service Pack or Build  | Owner Compliance      |
+	| Application Compliance | Operating System      |
+	| Application Compliance | Service Pack or Build |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372
+Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildRowGroupDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups             |
+	| Operating System      |
+	| Service Pack or Build |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Owner Compliance |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And data in the table is sorted by "Operating System" column in ascending order by default for the Pivot
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14373
+Scenario: EvergreenJnr_DevicesList_CheckThatOperatingSystemAndServicePackOrBuildColumnDisplayInTheCorrectOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns               |
+	| Operating System      |
+	| Service Pack or Build |
+	And User selects the following Values on Pivot:
+	| Values     |
+	| Owner City |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And data in the table is sorted by "Application Compliance" column in ascending order by default for the Pivot
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13786 @DAS13868
+Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns     |
+	| Group Count |
+	And User selects the following Values on Pivot:
+	| Values       |
+	| Device Count |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	And numeric data in table is sorted by "Compliance" column in descending order for the Pivot
+
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
+Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups          |
+	| EmailMigra: Status |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| Country |
+	And User selects the following Values on Pivot:
+	| Values |
+	| City   |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	And Pivot left-pinned column content is displayed in following order:
+	| ColumnName |
+	| Onboarded  |
+	| Forecast   |
+	| Targeted   |
+	| Scheduled  |
+	| Migrated   |
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @DAS15376 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups          |
+	| MigrationP: Status |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| Country |
+	And User selects the following Values on Pivot:
+	| Values |
+	| City   |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	And Pivot left-pinned column content is displayed in following order:
+	| ColumnName |
+	| Onboarded  |
+	| Forecast   |
+	| Scheduled  |
+	| Migrated   |
+	| Complete   |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Last Logon Date" filter where type is "Between" without added column and Date options
+	| StartDateInclusive | EndDateInclusive |
+	| 25 Apr 2018        | 02 May 2018      |
+	Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups          |
+	| ComputerSc: Status |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| Country |
+	And User selects the following Values on Pivot:
+	| Values |
+	| City   |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	And Pivot left-pinned column content is displayed in following order:
+	| ColumnName |
+	| Onboarded  |
+	| Forecast   |
+	| Scheduled  |
+	| Migrated   |
+	| Complete   |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns            |
+	| ComputerSc: Status |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	Then Empty value is displayed on the first place for the Pivot column header
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Onboarded  |
+	| Forecast   |
+	| Scheduled  |
+	| Migrated   |
+	| Complete   |
+
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
+Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns            |
+	| UserEvergr: Status |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	Then Empty value is displayed on the first place for the Pivot column header
+	Then Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Onboarded  |
+	| Forecast   |
+	| Targeted   |
+	| Scheduled  |
+	| Migrated   |
+	| Complete   |
+
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
+Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups |
+	| Building  |
+	And User selects the following Columns on Pivot:
+	| Columns            |
+	| EmailMigra: Status |
+	And User selects the following Values on Pivot:
+	| Values |
+	| Region |
+	And User clicks the "RUN PIVOT" Action button
+	Then Empty value is displayed on the first place for the Pivot
+	And Empty value is displayed on the first place for the Pivot column header
+	And Pivot column headers is displayed in following order:
+	| ColumnName |
+	| Onboarded  |
+	| Forecast   |
+	| Targeted   |
+	| Scheduled  |
+	| Migrated   |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15328 @ @Not_Run
+Scenario Outline: EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames
+  When User clicks "<List>" on the left-hand menu
+  Then "<List>" list should be displayed to the user
+  When User navigates to Pivot
+  And User selects the following Values on Pivot:
+  | Values  |
+  | <Item1> |
+  Then following aggregate function are available in dropdown:
+  | Option |
+  | Count  |
+  | Sum    |
+  | Min    |
+  | Max    |
+  | Avg    |
+  When User clicks close button for "<Item1>" chip
+  And User selects the following Values on Pivot:
+  | Values  |
+  | <Item2> |
+  Then following aggregate function are available in dropdown:
+  | Option |
+  | Count  |
+  | First  |
+  | Last   |
+  When User clicks close button for "<Item2>" chip
+  And User selects the following Values on Pivot:
+  | Values     |
+  | <Item3> |
+  Then following aggregate function are available in dropdown:
+  | Option |
+  | Count  |
+  When User clicks close button for "<Item3>" chip
+
+  Examples:
+  | List         | Item1                    | Item2                              | Item3       |
+  | Devices      | HDD Count                | Build Date                         | Owner City  |
+  | Users        | Device Count             | Last Logon Date                    | Building    |
+  | Applications | 1803: Current User Count | Windows7Mi: Technical Task3 (Date) | Application |
+  | Mailboxes    | Associated Item Count    | Created Date                       | Building    |

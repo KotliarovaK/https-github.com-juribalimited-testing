@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Counter shows "2" found rows
 	When User resets Search fields for columns
 	And User enters "=2" text in the Search field for "Users" column
-	Then Counter shows "3" found rows
+	Then Counter shows "2" found rows
 	When User resets Search fields for columns
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -81,7 +81,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
 	And User performs right-click on "<CellText>" cell in the grid
 	Then User sees context menu placed near "<CellText>" cell in the grid
 
-Examples: 
+Examples:
 	| PageName       | CellText   |
 	| Projects       | EmailMigra |
 	| Teams          | IB Team    |
@@ -140,14 +140,10 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	And User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	And User selects "Scope Changes" tab on the Project details page
-	Then Bucket dropdown is not displayed on the Project details page
-	When User click on Back button
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "Bucket12948" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	And User updates the "Default Bucket" checkbox state
@@ -168,14 +164,6 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then following Items are displayed in the Queue table
 	| Items          |
 	| 0TTSZRQ1ZTIXWM |
-	When User have opened Column Settings for "Action" column
-	And User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Bucket" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then following columns added to the table:
-	| ColumnName |
-	| Bucket     |
 	Then "Unassigned" text is displayed in the table content
 	When User click on Back button
 	When User clicks "Buckets" link on the Admin page
@@ -183,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "[Unassigned]" bucket details is displayed to the user
-	When User clicks "Bucket Settings" tab
+	When User clicks "Evergreen Bucket Settings" tab
 	And User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
@@ -205,8 +193,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then Admin page should be displayed to the user
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "1Bucket12763" in the "Bucket Name" field
 	And User selects "Team 1045" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
@@ -221,8 +209,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	| 4AII611FFHAZXWG |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	When User click on Back button
-	When User clicks the "CREATE BUCKET" Action button
-	Then "Create Bucket" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "2Bucket12763" in the "Bucket Name" field
 	And User selects "Team 1045" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button

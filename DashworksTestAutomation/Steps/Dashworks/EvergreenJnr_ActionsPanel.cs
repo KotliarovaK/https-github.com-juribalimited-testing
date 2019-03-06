@@ -447,7 +447,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName(buttonName).Click();
-            _driver.WaitForDataLoading();
         }
 
         [Then(@"""(.*)"" Action button is displayed")]
@@ -504,6 +503,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(action.ActionsButton.Displayed(), "Actions menu is displayed");
+        }
+
+        [When(@"User clicks Cog-menu on the Admin page")]
+        public void WhenUserClicksCog_MenuOnTheAdminPage()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.CogMenu.Click();
         }
 
         [Then(@"Cog menu is not displayed on the Admin page")]

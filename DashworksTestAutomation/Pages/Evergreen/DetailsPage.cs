@@ -47,10 +47,22 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath,
             Using = ".//div[@id='aggridHeaderCounter']//span[@class='ng-star-inserted' and count(*)=0]")]
+
         [FindsBy(How = How.XPath,
             Using =
                 ".//table[@class='table projectDetails']/*//span[text()='Evergreen Bucket']/ancestor::tr/td[@class='fld-value']")]
         public IWebElement ProjectSummaryBucketValue { get; set; }
+
+        [FindsBy(How = How.XPath,
+            Using =
+                ".//table[@class='table projectDetails']/*//span[text()='Evergreen Ring']/ancestor::tr/td[@class='fld-value']//div[@class='editText']")]
+        public IWebElement ProjectSummaryRingValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using =".//input[@placeholder='New Ring']")]
+        public IWebElement ProjectSummaryRingPopupDDL { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
+        public IList<IWebElement> OperatorOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-tab-body[contains(@class, 'mat-tab-body')]")]
         public IWebElement PopupChangesPanel { get; set; }
@@ -216,12 +228,18 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var byControl =
                 By.XPath(
-                    $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]/child-cell//a");
+                    $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
 
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
             var attribute = Driver.FindElement(byControl).GetAttribute("href");
             return attribute;
+        }
+
+        private string GetColIdByColumnName(string columnName)
+        {
+            var by = By.XPath($".//span[text()=\"{columnName}\"]/ancestor::div[@col-id]");
+            return Driver.FindElement(by).GetAttribute("col-id");
         }
 
         public bool IsFieldPresent(string fieldName)
@@ -244,9 +262,23 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetUnassignedLinkByFieldName(string fieldName)
+        public IWebElement GetEvergreenBucketLinkByFieldName(string linkName)
         {
-            var selector = By.XPath($"//span[text()='{fieldName}']//ancestor::tr//span[text()='Unassigned']");
+            var selector = By.XPath($"//span[text()='Evergreen Bucket']//ancestor::tr//span[text()='{linkName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetEvergreenCapacityUnitLinkByFieldName(string linkName)
+        {
+            var selector = By.XPath($"//span[text()='Evergreen Capacity Unit']//ancestor::tr//span[text()='{linkName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetEvergreenRingLinkByFieldName(string linkName)
+        {
+            var selector = By.XPath($"//span[text()='Evergreen Ring']//ancestor::tr//span[text()='{linkName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -260,7 +292,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetChangeValueInPopUpByName(string value)
         {
-            var selector = By.XPath($"//span[text()='{value}']/ancestor::mat-select");
+            var selector = By.XPath($".//label[text()='{value}']/ancestor::mat-form-field");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

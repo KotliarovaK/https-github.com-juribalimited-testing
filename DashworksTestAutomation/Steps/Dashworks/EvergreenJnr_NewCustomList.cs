@@ -246,7 +246,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listDetailsElement.CancelButtonInWarningMessage.Displayed, "Cancel button is not displayed");
-            Assert.IsTrue(listDetailsElement.DeleteButtonInWarningMessage.Displayed, "Delete button is not displayed");
+            Assert.IsTrue(listDetailsElement.DeleteButtonInWarning.Displayed, "Delete button is not displayed");
         }
 
         [When(@"User clicks Delete button on the warning message in the lists panel")]
@@ -254,6 +254,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserClicksDeleteButtonOnTheWarningMessageInTheListsPanel()
         {
             var listDetailsElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listDetailsElement.DeleteWarning);
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listDetailsElement.DeleteButtonInWarningMessage);
             listDetailsElement.DeleteButtonInWarningMessage.Click();

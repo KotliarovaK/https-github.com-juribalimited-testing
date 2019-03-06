@@ -212,7 +212,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Project "ProjectForCapacity13790" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13720" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -222,21 +222,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Counter shows "1" found rows
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
-	When User updates the "Default unit" checkbox state
+	When User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity unit details have been updated" text
 	#Remove # after DAS-14037 fixed
 	#Then Success message is displayed correctly
 	When User enters "13720" text in the Search field for "Description" column
 	And User click content from "Capacity Unit" column
-	Then "Default unit" checkbox is checked and cannot be unchecked
+	Then "Default Unit" checkbox is checked and cannot be unchecked
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " CapacityUnit13790 " Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Error message with "A capacity unit already exists with this name" text is displayed
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit2" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -274,16 +274,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	Then Warning message with "You cannot delete the default unit" text is displayed on the Admin page
 	When User close message on the Admin page
 	Then "Unassigned" text is displayed in the table content
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit12672" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "12672" Name in the "Description" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit12672 capacity unit" link
 	When User clicks newly created object link
 	Then URL contains "capacity/units/unit/"
-	And "Default unit" checkbox is checked and cannot be unchecked
+	And "Default Unit" checkbox is checked and cannot be unchecked
 	# commented until DAS-13151
 	# And "UPDATE" Action button is disabled 
 	# And "CANCEL" Action button is disabled
@@ -293,7 +293,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "FALSE" content is displayed in "Default" column
 	When User clicks content from "Capacity Unit" column
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	And User selects "Units" tab on the Project details page
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
@@ -310,7 +310,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit14240" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "14240" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -407,7 +407,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	Then Error message is not displayed on the Capacity Slots page
 	And Success message is displayed and contains "The capacity slot details have been updated" text
 	When User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "capacityunitDAS13789" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13789" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -428,10 +428,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " " Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
 	Then Create Capacity Unit button is disabled
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13166 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlreadyUsedInDifferentProject
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS13945" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	#next capacity name used in "1803 Rollout" project
+	And User type "Manchester" Name in the "Capacity Unit Name" field on the Project details page 
+	And User type "Manchester Operations" Name in the "Description" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The capacity unit has been created" text
+	And Counter shows "2" found rows
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace
@@ -444,7 +463,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -454,7 +473,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| Unassigned |
 	| test1      |
 	When User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " test1" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13945_2" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -503,16 +522,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	And User type "DAS13441" Name in the "Display Name" field on the Project details page
 	And User selects "Device" in the "Object Type" dropdown
 	And User selects next items in the "Tasks" dropdown:
-	| Items                            |
-	| DDL Task for a Computer          |
-	| Date Task for a Computer Italian |
+	| Items                                      |
+	| Stage 1 \ DDL Task for a Computer          |
+	| Stage 1 \ Date Task for a Computer Italian |
 	And User clicks on "Request Types" dropdown on the Capacity Slots page
 	And User clicks the "CREATE" Action button
 	And User clicks newly created object link
 	Then User sees following tiles selected in the "Tasks" field:
-	| Items                            |
-	| DDL Task for a Computer          |
-	| Date Task for a Computer Italian |
+	| Items                                      |
+	| Stage 1 \ DDL Task for a Computer          |
+	| Stage 1 \ Date Task for a Computer Italian |
 	When User selects "User" in the "Object Type" dropdown
 	Then User sees following tiles selected in the "Tasks" field:
 	| Items                            |
@@ -579,11 +598,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User selects "Units" tab on the Project details page
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "Capacity Unit 1" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "Capacity Unit 2" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -768,12 +787,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThat0ValuesAreCorrectlyShownOnTheCapacityS
 	Then Project "User Scheduled Test (Jo)" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	Then "40" content is displayed in "MO" column
+	Then "40" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "0" for "Monday" column
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
-	And "0" content is displayed in "MO" column
+	And "0" content is displayed in "Monday" column
 	When User clicks content from "Capacity Slot" column
 	And User changes value to "40" for "Monday" column
 	And User clicks the "UPDATE" Action button
@@ -790,7 +809,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
-	Then "Scheduled date" value is displayed in the "Tasks" dropdown
+	Then "Pre-Migration \ Scheduled date" value is displayed in the "Tasks" dropdown
 	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
@@ -820,7 +839,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
-	Then "Scheduled Date" value is displayed in the "Tasks" dropdown
+	Then "Pre-Migration \ Scheduled Date" value is displayed in the "Tasks" dropdown
 	When User clicks on "Request Types" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                                            |
@@ -863,19 +882,19 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	Then Project "13159ProjectForCapacity" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "NewUnit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "13159" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE CAPACITY UNIT" Action button
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -1076,7 +1095,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User click on Back button
 	And User clicks "Capacity Units" link on the Admin page
 	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE UNIT" Action button
+	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity Unit For DAS14103" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
@@ -1244,13 +1263,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue   | duplicateCount |
-	| MO             | 0                 | 2              |
-	| TU             | 1                 | 2              |
-	| WE             | 2                 | 2              |
-	| TH             | 3                 | 2              |
-	| FR             | 4                 | 2              |
-	| SA             | 5                 | 2              |
-	| SU             | 6                 | 2              |
+	| Monday         | 0                 | 2              |
+	| Tuesday        | 1                 | 2              |
+	| Wednesday      | 2                 | 2              |
+	| Thursday       | 3                 | 2              |
+	| Friday         | 4                 | 2              |
+	| Saturday       | 5                 | 2              |
+	| Sunday         | 6                 | 2              |
 	| Request Types  | All Request Types | 2              |
 	| Teams          | All Teams         | 2              |
 	| Capacity Units |                   | 2              |
@@ -1259,13 +1278,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot" text
 	And User sees following duplicates counts for columns:
 	| column         | duplicatedValue   | duplicateCount |
-	| MO             | 0                 | 3              |
-	| TU             | 1                 | 3              |
-	| WE             | 2                 | 3              |
-	| TH             | 3                 | 3              |
-	| FR             | 4                 | 3              |
-	| SA             | 5                 | 3              |
-	| SU             | 6                 | 3              |
+	| Monday         | 0                 | 3              |
+	| Tuesday        | 1                 | 3              |
+	| Wednesday      | 2                 | 3              |
+	| Thursday       | 3                 | 3              |
+	| Friday         | 4                 | 3              |
+	| Saturday       | 5                 | 3              |
+	| Sunday         | 6                 | 3              |
 	| Request Types  | All Request Types | 3              |
 	| Teams          | All Teams         | 3              |
 	| Capacity Units |                   | 3              |
@@ -1283,8 +1302,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected slots have been deleted" text
-	When User refreshes agGrid
+	When User clicks refresh button in the browser
 	Then Counter shows "1" found rows
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS14478 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User clicks the "CREATE PROJECT" Action button
+	And User enters "ProjectForDAS14478" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	And User clicks newly created object link
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "Slot 14478" Name in the "Slot Name" field on the Project details page
+	And User type "14478" Name in the "Display Name" field on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	When User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User opens settings for "Slot 14478" row
+	And User selects "Duplicate" option from settings menu
+	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 14478 (copy) slot" text
+	When User clicks newly created object link
+	Then "Slot 14478 (copy)" content is displayed in "Slot Name" field
+	And "14478" content is displayed in "Display Name" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981
 Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhenInvalidValueEnteredInSlotMoveToPositionDialog
@@ -1425,9 +1468,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 	When User open "Capacity" sub menu on Admin page
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13961" Name in the "Capacity Unit Name" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
 	And User open "Scope" sub menu on Admin page
 	And User selects "History" tab on the Project details page
@@ -1486,7 +1529,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Unit Settings" tab on the Capacity Units page
+	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
 	And User type "New Name" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 	And User clicks "Projects" link on the Admin page
@@ -1509,7 +1552,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "New Name" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Unit Settings" tab on the Capacity Units page
+	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
 	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "UPDATE" Action button
 
@@ -1609,9 +1652,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "1Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "2Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "3Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 1Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 2Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 3Task13812" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1631,13 +1674,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then "UPDATE" Action button is disabled
-	And "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (1Task13812)" text
+	And "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (Stage13812 \ 1Task13812)" text
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	And User selects "2Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "3Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 2Task13812" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13812 \ 3Task13812" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1825,9 +1868,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "Scheduled Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Forecast Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
+	And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1850,19 +1893,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	Then Next values are selected for the "Tasks" field:
-	| Value                               |
-	| Forecast Date                       |
-	| Group Computer Rag Radio Date Owner |
-	| Scheduled Date                      |
+	| Value                                                                                 |
+	| Pre-Migration \ Forecast Date                                                         |
+	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
+	| Pre-Migration \ Scheduled Date                                                        |
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
-	| Value                               |
-	| Forecast Date                       |
-	| Group Computer Rag Radio Date Owner |
-	And "Scheduled Date" checkbox in the "Tasks" field are available to select
+	| Value                                                                                 |
+	| Pre-Migration \ Forecast Date                                                         |
+	| Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
+	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
 	When User clicks the "CANCEL" Action button
 	And User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
@@ -1877,6 +1920,42 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User navigate to "Tasks" tab
 	And User navigate to "Group Computer Rag Radio Date Owner" Task
 	And User publishes the task
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13502 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior
+Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAddingRemovingTaskFromCapacitySlot
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name      | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
+	| Task13502 | 13502 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    | 
+	Then Success message is displayed with "Task successfully created" text
+	When Task Id is stored in memory
+	When User publishes the task
+	Then selected task was published
+	When User navigate to Evergreen link
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User open "Capacity" sub menu on Admin page
+	And User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE NEW SLOT" Action button
+	And User type "SlotTask13502" Name in the "Slot Name" field on the Project details page
+	And User type "Slot Task13502" Name in the "Display Name" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ Task13502" checkbox in the "Tasks" field on the Project details page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "Your capacity slot has been created" text
+	When User clicks newly created object link
+	Then CapacityEnabled flag is equal to "True"
+	When User removes "Computer Information ---- Text fill; Text fill; \ Task13502" on the Project details page
+	And User clicks the "UPDATE" Action button
+	Then CapacityEnabled flag is equal to "False"
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13500 @Do_Not_Run_With_Capacity @Do_Not_Run_With_Slots @Do_Not_Run_With_Senior
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedToACapacitySlot
@@ -1912,9 +1991,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "1Task13500" checkbox in the "Tasks" field on the Project details page
-	And User selects "2Task13500" checkbox in the "Tasks" field on the Project details page
-	And User selects "Scheduled Date" checkbox in the "Tasks" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ 1Task13500" checkbox in the "Tasks" field on the Project details page
+	And User selects "Computer Information ---- Text fill; Text fill; \ 2Task13500" checkbox in the "Tasks" field on the Project details page
+	And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1935,17 +2014,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	Then Next values are selected for the "Tasks" field:
-	| Value          |
-	| Scheduled Date |
+	| Value                          |
+	| Pre-Migration \ Scheduled Date |
 	When User clicks the "CANCEL" Action button
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
-	| Value          |
-	| 1Task13500     |
-	| 2Task13500     |
-	And "Scheduled Date" checkbox in the "Tasks" field are available to select
+	| Value                                                        |
+	| Computer Information ---- Text fill; Text fill; \ 1Task13500 |
+	| Computer Information ---- Text fill; Text fill; \ 2Task13500 |
+	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType
@@ -1985,12 +2064,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User clicks the "CREATE NEW SLOT" Action button
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
 	And User type "13152" Name in the "Display Name" field on the Project details page
-	And User selects "Task13152" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks content from "Capacity Slot" column
-	Then "Task13152" value is displayed in the "Tasks" dropdown
+	Then "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
 	And "Unassigned" value is displayed in the "Capacity Units" dropdown
 	And "Device" text value is displayed in the "Object Type" dropdown
 	When User selects "Application" in the "Object Type" dropdown
@@ -2045,7 +2124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User type "Slot131522" Name in the "Slot Name" field on the Project details page
 	And User type "131522" Name in the "Display Name" field on the Project details page
 	And User selects "Teams and Request Types" in the "Capacity Type" dropdown
-	And User selects "Task131522" checkbox in the "Tasks" field on the Project details page
+	And User selects "Stage131522 \ Task131522" checkbox in the "Tasks" field on the Project details page
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "[Default (Computer)]" checkbox in the "Request Types" field on the Project details page
 	When User selects "Device" in the "Object Type" dropdown
@@ -2054,7 +2133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
 	Then "Teams and Request Types" value is displayed in the "Capacity Type" dropdown
-	And "Task131522" value is displayed in the "Tasks" dropdown
+	And "Stage131522 \ Task131522" value is displayed in the "Tasks" dropdown
 	And "Device" text value is displayed in the "Object Type" dropdown
 	And "[Default (Computer)]" value is displayed in the "Request Types" dropdown
 	And "Admin IT" value is displayed in the "Teams" dropdown
@@ -2092,10 +2171,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	Then Project "Email Migration" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE CAPACITY UNIT" Action button
+	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type " 1Test" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "DAS13156" Name in the "Description" field on the Project details page
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	When User clicks "Applications" on the left-hand menu
@@ -2124,10 +2203,136 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	Then "2" content is displayed in "Applications" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User click content from "Capacity Unit" column
-	And User updates the "Default unit" checkbox state
+	And User updates the "Default Unit" checkbox state
 	And User clicks the "UPDATE" Action button
 	When User clicks Reset Filters button on the Admin page
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName |
 	| 1Test            |
 	And User removes selected item
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserProjectLeadToCorrectFilteredLists
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
+	And User remembers value in "<ListName>" column
+	And User clicks content from "<ListName>" column
+	Then "<ListName>" list should be displayed to the user
+	And Rows counter number equals to remembered value
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "UserEvergr: Capacity Unit" filter is added to the list
+	And Values is displayed in added filter info
+	| Values     |
+	| Evergreen Capacity Unit 3 |
+	And Options is displayed in added filter info
+	| Values |
+	| is     |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	And User remembers value in "<ListName>" column
+	And User clicks content from "<ListName>" column
+	Then "<ListName>" list should be displayed to the user
+	And Rows counter number equals to remembered value
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "Windows7Mi: Capacity Unit" filter is added to the list
+	And Values is displayed in added filter info
+	| Values     |
+	| Unassigned |
+	And Options is displayed in added filter info
+	| Values |
+	| is     |
+
+Examples:
+	| ListName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Mailbox Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	And User remembers value in "<ListName>" column
+	And User clicks content from "<ListName>" column
+	Then "<ListName>" list should be displayed to the user
+	And Rows counter number equals to remembered value
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	And "MailboxEve: Capacity Unit" filter is added to the list
+	And Values is displayed in added filter info
+	| Values     |
+	| Unassigned |
+	And Options is displayed in added filter info
+	| Values |
+	| is     |
+
+Examples:
+	| ListName  |
+	| Users     |
+	| Mailboxes |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15266 @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnTheCapacityDetailsScreen
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "15266_TestProject" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks newly created object link
+	Then Project "15266_TestProject" is displayed to user
+	When User clicks "Capacity" tab
+	Then "Enable Capacity" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
+	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	Then "Enable Capacity" checkbox is checked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on project object page" checkbox is unchecked on the Admin page
+	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
+	Then "Enforce capacity on self service pages" checkbox is checked on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	Then "Enable Capacity" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
+	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	When User clicks "Enforce capacity on project object page" checkbox on the Project details page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	Then "Enable Capacity" checkbox is unchecked on the Admin page
+	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
+	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page
+	When User clicks "Enable Capacity" checkbox on the Project details page
+	When User clicks "Enforce capacity on project object page" checkbox on the Project details page
+	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
+	When User clicks the "UPDATE" Action button
+	Then Success message is displayed and contains "The project capacity details have been updated" text

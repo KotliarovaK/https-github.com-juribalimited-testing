@@ -21,7 +21,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = "//button[contains(@class, 'mat-raised-button')]")]
         public IWebElement UpdateButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//li/span[text()='Preferences']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-sidenav//a//div[text()='Preferences']")]
         public IWebElement PreferencesLink { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-option/span[text()='Normal']")]

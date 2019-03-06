@@ -404,3 +404,148 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	When User clicks Settings button for "Dashboard for DAS14920" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Widgets @DAS15372 @DAS15317 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| CPU Architecture |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "List15372" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy                         | TableOrientation | MaxValues | ShowLegend | Type |
+	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count             | CPU Architecture ASC (split by) |                  | 10        | false      |      |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then "WidgetForDAS15372" Widget is displayed to the user
+	And There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15365 @DAS15352 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Model      |
+	And User clicks Save button on the list panel
+	And User create dynamic list with "List15365" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |Type |
+	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count             | Model ASC (split by) |                  | 10        | true       |     |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Bar" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Column" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Line" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Donut" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Half donut" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User selects "Table" as Widget Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15364 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| CPU Virtualisation Capable |
+	And User have opened column settings for "CPU Virtualisation Capable" column
+	And User have select "Pin Left" option from column settings
+	And User clicks Save button on the list panel
+	And User create dynamic list with "List15364" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Card" as Widget Type
+	And User enters "WidgetForDAS15364" as Widget Title
+	And User selects "List15364" as Widget List
+	And User selects "First Cell" as Type
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15356 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Secure Boot Enabled |
+	| Manufacturer        |
+	| Compliance          |
+	And User click on 'Manufacturer' column header
+	Then data in table is sorted by 'Manufacturer' column in ascending order
+	When User clicks Save button on the list panel
+	And User create dynamic list with "List15356" name on "Devices" page
+	And User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                            | TableOrientation | MaxValues | ShowLegend |Type |
+	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count             | Secure Boot Enabled ASC (split by) |                  | 10        | true       |     |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15432 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWithStaticList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select all rows
+	And User selects "Create static list" in the Actions dropdown
+	And User create static list with "Static_List_15432" name
+	And User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15432" name
+	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
+	And User creates new Widget
+	| WidgetType | Title               | List              | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS15432 | Static_List_15432 | 500     | 10         |
+	Then "Widget_For_DAS15432" Widget is displayed to the user
+	And There are no errors in the browser console
+	When User clicks Settings button for "Dashboard for DAS15432" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Widgets @DAS15207
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation |
+	| Card       | WidgetForDAS15207 | All Devices | Aggregate | Hostname    | Count distinct    |         |         |           |            |                  |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS15207" Widget is displayed to the user
+	And There are no errors in the browser console
