@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
@@ -258,6 +259,28 @@ namespace DashworksTestAutomation.Pages
                 By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
+        }
+
+        public string GetRowContentByColumnName(string columnName)
+        {
+            var by = By.XPath(
+                $".//td[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
+            return Driver.FindElement(by).Text;
+        }
+
+        public int GetColumnNumberByName(string columnName)
+        {
+            var allHeadersSelector = By.XPath(".//tr[@class='mat-header-row ng-star-inserted']//th[@role]");
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            var allHeaders = Driver.FindElements(allHeadersSelector);
+            if (!allHeaders.Any())
+                throw new Exception("Table does not contains any columns");
+            var columnNumber =
+                allHeaders.IndexOf(allHeaders.First(x =>
+                    x.FindElement(By.XPath(".//th[@role]")).Text.Equals(columnName))) + 1;
+
+            return columnNumber;
         }
 
         public IWebElement GetCountForTableWidget(string boolean, string number)

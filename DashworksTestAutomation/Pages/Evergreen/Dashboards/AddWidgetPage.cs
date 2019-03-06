@@ -65,9 +65,6 @@ namespace DashworksTestAutomation.Pages
             };
         }
 
-
-
-
         public void SelectObjectForWidgetCreation(string objectName)
         {
             var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
