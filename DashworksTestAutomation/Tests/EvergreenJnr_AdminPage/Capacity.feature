@@ -2228,7 +2228,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	Then Filters panel is displayed to the user
 	And "UserEvergr: Capacity Unit" filter is added to the list
 	And Values is displayed in added filter info
-	| Values     |
+	| Values                    |
 	| Evergreen Capacity Unit 3 |
 	And Options is displayed in added filter info
 	| Values |

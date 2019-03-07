@@ -72,5 +72,11 @@ namespace DashworksTestAutomation.Pages
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
+        public void SelectListForWidgetCreation(string listName)
+        {
+            var listNameSelector = $".//span[@class='mat-option-text']//span[contains(text(), '{listName}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
     }
 }

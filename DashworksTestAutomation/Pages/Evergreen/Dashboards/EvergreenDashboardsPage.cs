@@ -277,8 +277,7 @@ namespace DashworksTestAutomation.Pages
             if (!allHeaders.Any())
                 throw new Exception("Table does not contains any columns");
             var columnNumber =
-                allHeaders.IndexOf(allHeaders.First(x =>
-                    x.FindElement(By.XPath(".//th[@role]")).Text.Equals(columnName))) + 1;
+                allHeaders.IndexOf(allHeaders.First(x => x.Text.Equals(columnName))) + 1;
 
             return columnNumber;
         }

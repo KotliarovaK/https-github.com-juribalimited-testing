@@ -524,10 +524,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	When User select all rows
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static_List_15432" name
-	And User clicks "Dashboards" on the left-hand menu
+	When User clicks "Dashboards" on the left-hand menu
 	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15432" name
-	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
+	And User creates new Dashboard with "Dashboard_DAS15432" name
+	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15432 | Static_List_15432 | 500     | 10         |
@@ -572,13 +572,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	When User clicks "Dashboards" on the left-hand menu
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS15413" name
-	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15413 | TestList_DAS15413 | 500     | 10         |
 	Then "Widget_For_DAS15413" Widget is displayed to the user
 	Then following content is displayed in the "Vendor" column
-	| Content   |
+	| Values    |
 	| Microsoft |
 	When User clicks Settings button for "Dashboard for DAS15413" dashboard
 	And User clicks Delete button for custom list

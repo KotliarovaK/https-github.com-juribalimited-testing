@@ -413,7 +413,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (createWidgetElement.List.Displayed() && !string.IsNullOrEmpty(row["List"]))
                 {
                     createWidgetElement.List.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
+                    createWidgetElement.SelectListForWidgetCreation(row["List"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
@@ -661,10 +661,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             var originalList = page.GetRowContentByColumnName(columnName);
-            var tableContent = table.Rows.SelectMany(row => row.Values);
+            var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
-                
                 Assert.AreEqual(originalList, tableContent);
             }
         }
