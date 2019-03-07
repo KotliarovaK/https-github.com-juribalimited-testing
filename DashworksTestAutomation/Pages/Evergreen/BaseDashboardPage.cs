@@ -209,7 +209,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='checkbox-styled selectBox']/input")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
         public IWebElement SelectAllCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
