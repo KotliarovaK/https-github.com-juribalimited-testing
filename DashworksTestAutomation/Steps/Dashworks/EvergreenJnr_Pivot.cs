@@ -217,8 +217,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Pivot run was completed")]
         public void ThenPivotRunWasCompleted()
         {
-            _driver.WaitForDataLoading();
             var page = _driver.NowAt<PivotElementPage>();
+            //Small wait for Pivot loaded
+            Thread.Sleep(500);
+            _driver.WaitForDataLoading();
             Assert.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
         }
 
