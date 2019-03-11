@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to Pivot
@@ -120,6 +120,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningP
 	| <Value> |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
+	Then Plus button is not displayed in the left-pinned column
 	When User clicks "<Link>" link in Lists panel
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked

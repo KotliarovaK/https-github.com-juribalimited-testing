@@ -64,8 +64,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='ag-pinned-left-cols-container']//span[text()='Empty']")]
         public IWebElement FirstEmptyValueLeftPinned { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//select[contains(@class, 'pristine')]")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@class, 'pristine')]")]
         public IWebElement AggregateFunction{ get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'ag-row-group-leaf-indent')]//span[@class='ag-icon ag-icon-expanded']")]
+        public IWebElement PlusButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = AggregateOptionOnPivotPanel)]
         public IList<IWebElement> AggregateOptionsOnPivotPanel { get; set; }

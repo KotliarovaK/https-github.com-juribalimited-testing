@@ -224,6 +224,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
         }
 
+        [Then(@"Plus button is not displayed in the left-pinned column")]
+        public void ThenPlusButtonIsNotDisplayedInTheLeft_PinnedColumn()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.PlusButton.Displayed(), "Plus button is not displayed in the left-pinned column");
+        }
+
         [Then(@"No pivot generated message is displayed")]
         public void ThenNoPivotGeneratedMessageIsDisplayed()
         {
