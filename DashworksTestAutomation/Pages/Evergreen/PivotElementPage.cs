@@ -55,8 +55,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[@class='ng-untouched ng-pristine ng-valid']")]
-        public IWebElement ValueSectionSelectBox { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div/select[contains(@class, 'ng-valid')]")]
+        public IWebElement AggregateFunctionsSelectBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@style, 'left: 0px')]//div[@ref='agContainer']//span[text()='Empty']")]
         public IWebElement FirstEmptyValueHeaders { get; set; }
@@ -92,6 +92,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetLeftPinnedExpandButtonByName(string text)
         {
             var selector = By.XPath($"//div[@role='gridcell']//span[text()='{text}']//ancestor::div[@col-id='ag-Grid-AutoColumn']//span[@class='ag-icon ag-icon-expanded']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetColumnsDisplayedForAggregateFunctions(string text)
+        {
+            var selector = By.XPath($".//div[@ref='eLabel']/span[@role='columnheader'][text()='{text}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

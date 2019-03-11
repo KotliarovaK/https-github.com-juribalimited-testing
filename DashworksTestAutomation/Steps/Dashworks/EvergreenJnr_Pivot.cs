@@ -266,7 +266,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAggregateFunctionOnPivot(string functionName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            page.ValueSectionSelectBox.Click();
+            page.AggregateFunctionsSelectBox.Click();
             page.SelectAggregateFunctionByName(functionName).Click();
         }
 
@@ -280,6 +280,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, actualList, "Aggregate function in drop-down are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
+        }
+
+        [Then(@"""(.*)"" is displayed in the columns for aggregate functions")]
+        public void ThenIsDisplayedInTheColumnsForAggregateFunctions(string text)
+        {
+            _driver.WaitForDataLoading();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivot.GetColumnsDisplayedForAggregateFunctions(text).Displayed(), $"{text} is not displayed in the columns for aggregate functions");
         }
 
         [When(@"User clicks Plus button for ""(.*)"" Pivot value")]

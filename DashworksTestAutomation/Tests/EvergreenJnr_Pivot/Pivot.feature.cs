@@ -5015,26 +5015,27 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
+            "s")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.CategoryAttribute("")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "HDD Count", "Build Date", "Owner City", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "Device Count", "Last Logon Date", "Building", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "1803: Current User Count", "Windows7Mi: Technical Task3 (Date)", "Application", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Associated Item Count", "Created Date", "Building", null)]
-        public virtual void EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames(string list, string item1, string item2, string item3, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner City", "Сount(Owner City)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Building", "Count(Building)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Count(Application)", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Building", "Count(Building)", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues(string list, string addValues, string countAggregateFunctions, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNamesInternal(list,item1,item2,item3,exampleTags);
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(list,addValues,countAggregateFunctions,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -5053,21 +5054,22 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             }
         }
 
-        private void EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNamesInternal(string list, string item1, string item2, string item3, string[] exampleTags)
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValuesInternal(string list, string addValues, string countAggregateFunctions, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
                     "Devices",
                     "EvergreenJnr_Pivot",
                     "Pivot",
+                    "DAS15758",
                     "DAS15328",
-                    "",
                     "Not_Run"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValue" +
+                    "s", null, @__tags);
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -5075,50 +5077,209 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table213 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "RowGroups"});
             table213.AddRow(new string[] {
-                        string.Format("{0}", item1)});
-            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table213, "And ");
+                        "Evergreen Capacity Unit"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table213, "And ");
             TechTalk.SpecFlow.Table table214 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Option"});
+                        "Columns"});
             table214.AddRow(new string[] {
-                        "Count"});
-            table214.AddRow(new string[] {
-                        "Sum"});
-            table214.AddRow(new string[] {
-                        "Min"});
-            table214.AddRow(new string[] {
-                        "Max"});
-            table214.AddRow(new string[] {
-                        "Avg"});
-            testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table214, "Then ");
-            testRunner.When(string.Format("User clicks close button for \"{0}\" chip", item1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "General information field 1"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table214, "And ");
             TechTalk.SpecFlow.Table table215 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table215.AddRow(new string[] {
-                        string.Format("{0}", item2)});
-            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table215, "And ");
+                        string.Format("{0}", addValues)});
+            testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table215, "When ");
+            testRunner.When("User selects aggregate function \"Count\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", countAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS15758")]
+        [NUnit.Framework.CategoryAttribute("DAS15328")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Build Date", "Count(Build Date)", "First(Build Date)", "Last(Build Date)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Last Logon Date", "Count(Last Logon Date)", "First(Last Logon Date)", "Last(Last Logon Date)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Windows7Mi: Technical Task3 (Date)", "Count(Windows7Mi: Technical Task3 (Date))", "First(Windows7Mi: Technical Task3 (Date))", "Last(Windows7Mi: Technical Task3 (Date))", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Created Date", "Count(Created Date)", "First(Created Date)", "Last(Created Date)", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues(string list, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(list,addValues,countAggregateFunctions,firstAggregateFunctions,lastAggregateFunctions,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValuesInternal(string list, string addValues, string countAggregateFunctions, string firstAggregateFunctions, string lastAggregateFunctions, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_Pivot",
+                    "Pivot",
+                    "DAS15758",
+                    "DAS15328",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues" +
+                    "", null, @__tags);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table216 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Option"});
+                        "RowGroups"});
             table216.AddRow(new string[] {
-                        "Count"});
-            table216.AddRow(new string[] {
-                        "First"});
-            table216.AddRow(new string[] {
-                        "Last"});
-            testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table216, "Then ");
-            testRunner.When(string.Format("User clicks close button for \"{0}\" chip", item2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "Evergreen Capacity Unit"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table216, "And ");
             TechTalk.SpecFlow.Table table217 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
+                        "Columns"});
             table217.AddRow(new string[] {
-                        string.Format("{0}", item3)});
-            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table217, "And ");
+                        "General information field 1"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table217, "And ");
             TechTalk.SpecFlow.Table table218 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Option"});
+                        "Values"});
             table218.AddRow(new string[] {
-                        "Count"});
-            testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table218, "Then ");
-            testRunner.When(string.Format("User clicks close button for \"{0}\" chip", item3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        string.Format("{0}", addValues)});
+            testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table218, "When ");
+            testRunner.When("User selects aggregate function \"Count\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", countAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects aggregate function \"First\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", firstAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects aggregate function \"Last\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", lastAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
+            "ues")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS15758")]
+        [NUnit.Framework.CategoryAttribute("DAS15328")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.TestCaseAttribute("Devices", "HDD Count", "Count(HDD Count)", "Sum(HDD Count)", "Min(HDD Count)", "Max(HDD Count)", "Avg(HDD Count)", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "Device Count", "Count(Device Count)", "Sum(Device Count)", "Min(Device Count)", "Max(Device Count)", "Avg(Device Count)", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "1803: Current User Count", "Count(1803: Current User Count)", "Sum(1803: Current User Count)", "Min(1803: Current User Count)", "Max(1803: Current User Count)", "Avg(1803: Current User Count)", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Associated Item Count", "Count(Associated Item Count)", "Sum(Associated Item Count)", "Min(Associated Item Count)", "Max(Associated Item Count)", "Avg(Associated Item Count)", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues(string list, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(list,addValues,countAggregateFunctions,sumAggregateFunctions,minAggregateFunctions,maxAggregateFunctions,avgAggregateFunctions,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValuesInternal(string list, string addValues, string countAggregateFunctions, string sumAggregateFunctions, string minAggregateFunctions, string maxAggregateFunctions, string avgAggregateFunctions, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Devices",
+                    "EvergreenJnr_Pivot",
+                    "Pivot",
+                    "DAS15758",
+                    "DAS15328",
+                    "Not_Run"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericVal" +
+                    "ues", null, @__tags);
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", list), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table219 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table219.AddRow(new string[] {
+                        "Evergreen Capacity Unit"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table219, "And ");
+            TechTalk.SpecFlow.Table table220 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table220.AddRow(new string[] {
+                        "General information field 1"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table220, "And ");
+            TechTalk.SpecFlow.Table table221 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table221.AddRow(new string[] {
+                        string.Format("{0}", addValues)});
+            testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table221, "When ");
+            testRunner.When("User selects aggregate function \"Count\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", countAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects aggregate function \"Sum\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", sumAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects aggregate function \"Min\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", minAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects aggregate function \"Max\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", maxAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User selects aggregate function \"Avg\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", avgAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
