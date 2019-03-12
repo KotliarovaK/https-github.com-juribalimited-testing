@@ -1159,3 +1159,19 @@ Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThro
 	And User opens "Device Projects" section on the Details Page
 	When User clicks content from "Project" column
 	Then "Project Object" page is displayed to the user
+
+@Evergreen @DevicesLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14973
+Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Details" tab
+	Then "Key" title matches the "9141" value
+	Then following content is displayed on the Details Page
+	| Title                     | Value           |
+	| Hostname                  | 001BAQXT6JWFPI  |
+	| Source                    | A01 SMS (Spoof) |
+	| Source Type               | SMS/SCCM 2007   |
+	| Inventory Site            | A01             |
+	| Dashworks First Seen Date |                 |
+	| Dashworks Last Seen Date  |                 |
