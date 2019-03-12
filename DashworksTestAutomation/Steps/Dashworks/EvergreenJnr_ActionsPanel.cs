@@ -109,6 +109,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Bulk Update Type dropdown is not displayed on Action panel");
         }
 
+        [When(@"User selects ""(.*)"" Project or Evergreen on Action panel")]
+        public void WhenUserSelectsProjectOrEvergreenOnActionPanel(string projectName)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.ProjectOrEvergreenField.Click();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
+            action.ActionsProjectOrEvergreenOptions.Where(x => x.Text.Equals(projectName)).FirstOrDefault().Click();
+        }
+
         [When(@"User selects ""(.*)"" Project on Action panel")]
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {

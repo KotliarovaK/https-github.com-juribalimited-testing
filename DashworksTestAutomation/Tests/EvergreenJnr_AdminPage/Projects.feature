@@ -3965,7 +3965,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 	And User removes selected item
 
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15260 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15260 @DAS15794 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridForDeviceScopedProject
 	When User clicks "Projects" on the left-hand menu
 	And User clicks create Project button

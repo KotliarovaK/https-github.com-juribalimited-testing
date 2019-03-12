@@ -69,6 +69,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project']")]
         public IWebElement ProjectField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Project or Evergreen']")]
+        public IWebElement ProjectOrEvergreenField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
+        public IList<IWebElement> ActionsProjectOrEvergreenOptions { get; set; }
+        
         [FindsBy(How = How.XPath, Using = "//mat-option[@role='option']")]
         public IWebElement ProjectSection { get; set; }
 
