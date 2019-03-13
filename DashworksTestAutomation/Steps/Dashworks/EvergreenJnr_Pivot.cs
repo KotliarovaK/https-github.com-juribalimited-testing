@@ -290,6 +290,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(pivot.GetColumnsDisplayedForAggregateFunctions(text).Displayed(), $"{text} is not displayed in the columns for aggregate functions");
         }
 
+        [Then(@"""(.*)"" is displayed at the top left corner on Pivot")]
+        public void ThenIsDisplayedAtTheTopLeftCornerOnPivot(string text)
+        {
+            _driver.WaitForDataLoading();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivot.GetTopLeftCornerText(text).Displayed(), $"{text} is not displayed at the top left corner");
+        }
+
         [When(@"User clicks Plus button for ""(.*)"" Pivot value")]
         public void WhenUserClicksPlusButtonForPivotValue(string buttonName)
         {

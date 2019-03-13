@@ -5023,6 +5023,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
+        [NUnit.Framework.CategoryAttribute("DAS14246")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner City", "Count(Owner City)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Building", "Count(Building)", null)]
@@ -5063,6 +5064,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "Pivot",
                     "DAS15758",
                     "DAS15328",
+                    "DAS14246",
                     "Not_Run"};
             if ((exampleTags != null))
             {
@@ -5093,6 +5095,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User selects the following Values on Pivot:", ((string)(null)), table215, "When ");
             testRunner.When("User selects aggregate function \"Count\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("\"Evergreen Capacity Unit\" is displayed in the columns for aggregate functions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then(string.Format("\"{0}\" is displayed in the columns for aggregate functions", countAggregateFunctions), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }

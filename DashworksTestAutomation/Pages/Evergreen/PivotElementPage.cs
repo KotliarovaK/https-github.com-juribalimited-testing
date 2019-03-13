@@ -103,6 +103,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetTopLeftCornerText(string text)
+        {
+            var selector = By.XPath($".//div[@ref='agContainer']/span[text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public void GetSubCategoryOnPivotByName(string name)
         {
             var selector = By.XPath($"//*[text()='{name}']/ancestor::div[contains(@class, 'sub-categories-item')]");

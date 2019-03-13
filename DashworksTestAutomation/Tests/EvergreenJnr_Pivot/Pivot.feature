@@ -1551,7 +1551,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 	| Scheduled  |
 	| Migrated   |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246 @Not_Run
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues
 	When User clicks "<List>" on the left-hand menu
 	Then "<List>" list should be displayed to the user
@@ -1567,7 +1567,10 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	| <AddValues> |
 	When User selects aggregate function "Count" on Pivot
 	And User clicks the "RUN PIVOT" Action button
+	Then "Evergreen Capacity Unit" is displayed in the columns for aggregate functions
 	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
+	#Added value for DAS-14246
+	#Then "" is displayed at the top left corner on Pivot
 
 Examples:
 	| List         | AddValues   | CountAggregateFunctions |
