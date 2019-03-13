@@ -84,7 +84,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS13431")]
         [NUnit.Framework.CategoryAttribute("DAS13162")]
         [NUnit.Framework.CategoryAttribute("DAS14037")]
+        [NUnit.Framework.CategoryAttribute("DAS15823")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassignedWithoutErrors()
         {
             System.Exception lastException = null;
@@ -124,7 +126,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13431",
                         "DAS13162",
                         "DAS14037",
-                        "Delete_Newly_Created_Project"});
+                        "DAS15823",
+                        "Delete_Newly_Created_Project",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

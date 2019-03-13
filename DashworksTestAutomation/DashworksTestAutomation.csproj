@@ -175,6 +175,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
+    <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\EvergreenDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ActionsElement.cs" />
@@ -270,6 +271,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />

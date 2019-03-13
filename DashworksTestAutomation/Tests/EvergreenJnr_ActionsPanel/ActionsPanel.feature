@@ -1635,7 +1635,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsFo
 	| Owned mailboxes only |
 	| All linked mailboxes |
 	
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14140
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14140 @DAS15814 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForEvergreenProjectAreDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1721,6 +1721,7 @@ Scenario: EvergreenJnr_UsersList_CheckBucketBulkUpdateOptionsOnUsersListForMailb
 	| 00C8BC63E7424A6E862 |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Project" Project or Evergreen on Action panel
 	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
 	And User selects "Unassigned" option in "Bucket" field on Action panel
 	Then following values are displayed in "Also Move Mailboxes" drop-down on Action panel:
@@ -1743,6 +1744,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckBucketBulkUpdateOptionsOnMailboxesList
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Project" Project or Evergreen on Action panel
 	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
 	And User selects "Unassigned" option in "Bucket" field on Action panel
 	Then following values are displayed in "Also Move Users" drop-down on Action panel:
@@ -1765,9 +1767,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdate
 	| 016E1B57C2DD4FCC986@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Project" Project or Evergreen on Action panel
 	Then following values are displayed in "Project" drop-down with searchfield on Action panel:
 	| Options                            |
-	| Evergreen                          |
 	| Email Migration                    |
 	| Mailbox Evergreen Capacity Project |
 

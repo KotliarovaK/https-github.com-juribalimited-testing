@@ -644,7 +644,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectAllSelectboxIsChecked()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, true);
+            //_driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, true);
             Assert.IsTrue(dashboardPage.SelectAllCheckboxState, "Select All checkbox is unchecked");
         }
 

@@ -101,7 +101,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "birmingham" text in the Search field for "Bucket" column
-	Then Counter shows "3" found rows
+	Then Rows counter shows "3" of "594" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
@@ -323,16 +323,16 @@ Scenario: EvergreenJnr_AdminPage_AddingUsersFromBuckets
 	#When User click on "Distinguished Name" column header on the Admin page
 	#Then data in table is sorted by "Distinguished Name" column in descending order on the Admin page
 	When User enters "ZygmontKi" text in the Search field for "Username" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "41050" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "UK" text in the Search field for "Domain" column
-	Then Counter shows "4,635" found rows
+	Then Rows counter shows "4635" of "41050" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Anitra" text in the Search field for "Display Name" column
-	Then Counter shows "18" found rows
+	Then Rows counter shows "18" of "41050" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Paula" text in the Search field for "Distinguished Name" column
-	Then Counter shows "37" found rows
+	Then Rows counter shows "37" of "41050" rows
 	When User clicks Reset Filters button on the Admin page
 	And User selects all rows on the grid
 	And User clicks on Actions button
@@ -556,6 +556,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	Then Create Bucket button is disabled
 	When User clicks "Buckets" link on the Admin page
+	And User clicks Yes button in Leave Page Warning
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "TestBucket1" in the "Bucket Name" field
