@@ -1173,5 +1173,5 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	| Source                    | A01 SMS (Spoof) |
 	| Source Type               | SMS/SCCM 2007   |
 	| Inventory Site            | A01             |
-	| Dashworks First Seen Date |                 |
-	| Dashworks Last Seen Date  |                 |
+	| Dashworks First Seen Date | 5 Apr 2009      |
+	| Dashworks Last Seen Date  | 23 Jul 2010     |
