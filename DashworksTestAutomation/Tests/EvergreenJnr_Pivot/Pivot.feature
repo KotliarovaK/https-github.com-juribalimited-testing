@@ -1571,7 +1571,7 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 
 Examples:
 	| List         | AddValues   | CountAggregateFunctions |
-	| Devices      | Owner City  | Сount(Owner City)       |
+	| Devices      | Owner City  | Count(Owner City)       |
 	| Users        | Building    | Count(Building)         |
 	| Applications | Application | Count(Application)      |
 	| Mailboxes    | Building    | Count(Building)         |

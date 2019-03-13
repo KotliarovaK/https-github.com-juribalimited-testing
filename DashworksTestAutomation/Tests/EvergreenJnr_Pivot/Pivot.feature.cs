@@ -5024,7 +5024,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Owner City", "Сount(Owner City)", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Owner City", "Count(Owner City)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Building", "Count(Building)", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Count(Application)", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Building", "Count(Building)", null)]
