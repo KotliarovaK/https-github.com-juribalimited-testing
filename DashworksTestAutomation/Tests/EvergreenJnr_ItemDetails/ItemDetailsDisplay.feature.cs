@@ -3987,10 +3987,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
                         "A01"});
             table25.AddRow(new string[] {
                         "Dashworks First Seen Date",
-                        ""});
+                        "5 Apr 2009"});
             table25.AddRow(new string[] {
                         "Dashworks Last Seen Date",
-                        ""});
+                        "23 Jul 2010"});
             testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table25, "Then ");
             this.ScenarioCleanup();
         }
