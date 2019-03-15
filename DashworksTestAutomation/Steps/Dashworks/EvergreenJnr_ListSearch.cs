@@ -123,6 +123,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickContentFromColumn(string columnName)
         {
             var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
         }

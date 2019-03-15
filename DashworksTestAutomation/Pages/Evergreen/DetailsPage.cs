@@ -310,5 +310,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public string GetFildWithEmptyValueByName(string title)
+        {
+            var selector = By.XPath($".//span[text()='Dashworks First Seen Date']//ancestor::tr/td[contains(@class, 'column-value')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector).Text;
+        }
     }
 }
