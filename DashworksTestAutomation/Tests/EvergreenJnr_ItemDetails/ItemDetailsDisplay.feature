@@ -1173,4 +1173,4 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	| Source                    | A01 SMS (Spoof) |
 	| Source Type               | SMS/SCCM 2007   |
 	| Inventory Site            | A01             |
-	| Dashworks First Seen Date |                 |
+	Then empty value is displayed for "Dashworks First Seen Date" field on the Details Page
