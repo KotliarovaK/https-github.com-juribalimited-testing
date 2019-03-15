@@ -1568,8 +1568,7 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	When User selects aggregate function "Count" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
-	#Added value for DAS-14246
-	#Then "General information field 1" is displayed at the top left corner on Pivot
+	Then "General information field 1" is displayed at the top left corner on Pivot
 
 Examples:
 	| List         | AddValues   | CountAggregateFunctions |

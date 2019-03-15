@@ -3985,10 +3985,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             table25.AddRow(new string[] {
                         "Inventory Site",
                         "A01"});
-            table25.AddRow(new string[] {
-                        "Dashworks First Seen Date",
-                        ""});
             testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table25, "Then ");
+            testRunner.Then("empty value is displayed for \"Dashworks First Seen Date\" field on the Details Pag" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 

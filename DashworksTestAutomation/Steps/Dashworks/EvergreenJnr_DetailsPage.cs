@@ -104,6 +104,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"empty value is displayed for ""(.*)"" field on the Details Page")]
+        public void ThenEmptyValueIsDisplayedForFieldOnTheDetailsPage(string text)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.AreEqual(detailsPage.GetFildWithEmptyValueByName(text), "");
+
+        }
+
         [Then(@"Highcharts graphic is displayed on the Details Page")]
         public void ThenHighchartsGraphicIsDisplayedOnTheDetailsPage()
         {
