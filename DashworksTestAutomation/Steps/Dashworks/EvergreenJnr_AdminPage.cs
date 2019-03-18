@@ -2740,6 +2740,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
         }
 
+        [Then(@"Rows counter shows ""(.*)"" of ""(.*)"" rows")]
+        public void ThenRowsCounterShowsOfRows(int selectedRows, int ofRows)
+        {
+            var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
+            StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} rows",
+                foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
+        }
+
         [Then(@"User sees ""(.*)"" of ""(.*)"" rows selected label")]
         public void ThenUserSeesRowsSelectedLabel(int selectedRows, int ofRows)
         {

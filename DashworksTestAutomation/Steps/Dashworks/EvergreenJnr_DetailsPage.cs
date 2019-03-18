@@ -84,6 +84,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.GetTextInExpandedSection(text).Displayed(), $"{text} is not displayed in the expanded section");
         }
 
+        [Then(@"""(.*)"" title matches the ""(.*)"" value")]
+        public void ThenTitleMatchesTheValue(string title, string value)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetCompareTitleWithValueOnTheDetailsPage(title, value).Displayed(),
+                $"{title} does not match the {value}");
+        }
+
+        [Then(@"following content is displayed on the Details Page")]
+        public void ThenFollowingContentIsDisplayedOnTheDetailsPage(Table table)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(detailsPage.GetCompareContentOnTheDetailsPage(row["Title"], row["Value"]).Displayed(),
+                    $"{row["Title"]} does not match the {row["Value"]}");
+            }
+        }
+
+        [Then(@"empty value is displayed for ""(.*)"" field on the Details Page")]
+        public void ThenEmptyValueIsDisplayedForFieldOnTheDetailsPage(string text)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.AreEqual(detailsPage.GetFildWithEmptyValueByName(text), "");
+
+        }
+
         [Then(@"Highcharts graphic is displayed on the Details Page")]
         public void ThenHighchartsGraphicIsDisplayedOnTheDetailsPage()
         {

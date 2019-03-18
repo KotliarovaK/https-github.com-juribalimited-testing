@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to Pivot
@@ -120,6 +120,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningP
 	| <Value> |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
+	Then Plus button is not displayed in the left-pinned column
 	When User clicks "<Link>" link in Lists panel
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
@@ -1550,42 +1551,96 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 	| Scheduled  |
 	| Migrated   |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15328 @ @Not_Run
-Scenario Outline: EvergreenJnr_Lists_CheckThatValuesContainsCorrectItemNames
-  When User clicks "<List>" on the left-hand menu
-  Then "<List>" list should be displayed to the user
-  When User navigates to Pivot
-  And User selects the following Values on Pivot:
-  | Values  |
-  | <Item1> |
-  Then following aggregate function are available in dropdown:
-  | Option |
-  | Count  |
-  | Sum    |
-  | Min    |
-  | Max    |
-  | Avg    |
-  When User clicks close button for "<Item1>" chip
-  And User selects the following Values on Pivot:
-  | Values  |
-  | <Item2> |
-  Then following aggregate function are available in dropdown:
-  | Option |
-  | Count  |
-  | First  |
-  | Last   |
-  When User clicks close button for "<Item2>" chip
-  And User selects the following Values on Pivot:
-  | Values     |
-  | <Item3> |
-  Then following aggregate function are available in dropdown:
-  | Option |
-  | Count  |
-  When User clicks close button for "<Item3>" chip
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246 @Not_Run
+Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues
+	When User clicks "<List>" on the left-hand menu
+	Then "<List>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups               |
+	| Evergreen Capacity Unit |
+	And User selects the following Columns on Pivot:
+	| Columns                     |
+	| General information field 1 |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| <AddValues> |
+	When User selects aggregate function "Count" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
+	Then "General information field 1" is displayed at the top left corner on Pivot
 
-  Examples:
-  | List         | Item1                    | Item2                              | Item3       |
-  | Devices      | HDD Count                | Build Date                         | Owner City  |
-  | Users        | Device Count             | Last Logon Date                    | Building    |
-  | Applications | 1803: Current User Count | Windows7Mi: Technical Task3 (Date) | Application |
-  | Mailboxes    | Associated Item Count    | Created Date                       | Building    |
+Examples:
+	| List         | AddValues   | CountAggregateFunctions |
+	| Devices      | Owner City  | Count(Owner City)       |
+	| Users        | Building    | Count(Building)         |
+	| Applications | Application | Count(Application)      |
+	| Mailboxes    | Building    | Count(Building)         |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @Not_Run
+Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues
+	When User clicks "<List>" on the left-hand menu
+	Then "<List>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups               |
+	| Evergreen Capacity Unit |
+	And User selects the following Columns on Pivot:
+	| Columns                     |
+	| General information field 1 |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| <AddValues> |
+	When User selects aggregate function "Count" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "First" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<FirstAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Last" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<LastAggregateFunctions>" is displayed in the columns for aggregate functions
+
+Examples:
+	| List         | AddValues                          | CountAggregateFunctions                   | FirstAggregateFunctions                   | LastAggregateFunctions                   |
+	| Devices      | Build Date                         | Count(Build Date)                         | First(Build Date)                         | Last(Build Date)                         |
+	| Users        | Last Logon Date                    | Count(Last Logon Date)                    | First(Last Logon Date)                    | Last(Last Logon Date)                    |
+	| Applications | Windows7Mi: Technical Task3 (Date) | Count(Windows7Mi: Technical Task3 (Date)) | First(Windows7Mi: Technical Task3 (Date)) | Last(Windows7Mi: Technical Task3 (Date)) |
+	| Mailboxes    | Created Date                       | Count(Created Date)                       | First(Created Date)                       | Last(Created Date)                       |
+
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @Not_Run
+Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues
+	When User clicks "<List>" on the left-hand menu
+	Then "<List>" list should be displayed to the user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups               |
+	| Evergreen Capacity Unit |
+	And User selects the following Columns on Pivot:
+	| Columns                     |
+	| General information field 1 |
+	When User selects the following Values on Pivot:
+	| Values      |
+	| <AddValues> |
+	When User selects aggregate function "Count" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<CountAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Sum" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<SumAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Min" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<MinAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Max" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<MaxAggregateFunctions>" is displayed in the columns for aggregate functions
+	When User selects aggregate function "Avg" on Pivot
+	And User clicks the "RUN PIVOT" Action button
+	Then "<AvgAggregateFunctions>" is displayed in the columns for aggregate functions
+
+Examples:
+	| List         | AddValues                | CountAggregateFunctions         | SumAggregateFunctions         | MinAggregateFunctions         | MaxAggregateFunctions         | AvgAggregateFunctions         |
+	| Devices      | HDD Count                | Count(HDD Count)                | Sum(HDD Count)                | Min(HDD Count)                | Max(HDD Count)                | Avg(HDD Count)                |
+	| Users        | Device Count             | Count(Device Count)             | Sum(Device Count)             | Min(Device Count)             | Max(Device Count)             | Avg(Device Count)             |
+	| Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
+	| Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |

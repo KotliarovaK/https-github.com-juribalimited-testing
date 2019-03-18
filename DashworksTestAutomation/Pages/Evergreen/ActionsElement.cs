@@ -96,7 +96,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetSearchDropDownOnActionPanelByName(string name)
         {
-            var selector = By.XPath($"//*[contains(text(), '{name}')]/ancestor::div[@class='mat-form-field-infix']");
+            var selector = By.XPath($"//*[contains(text(), '{name}')]/ancestor::div[@class='mat-form-field-infix']/textarea");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

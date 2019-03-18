@@ -296,5 +296,26 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetCompareTitleWithValueOnTheDetailsPage(string title, string value)
+        {
+            var selector = By.XPath($".//td//span[text()='{title}']//ancestor::tr/td/div[text()='{value}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetCompareContentOnTheDetailsPage(string title, string value)
+        {
+            var selector = By.XPath($".//td//span[text()='{title}']//ancestor::tr/td//span[text()='{value}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public string GetFildWithEmptyValueByName(string title)
+        {
+            var selector = By.XPath($".//span[text()='Dashworks First Seen Date']//ancestor::tr/td[contains(@class, 'column-value')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector).Text;
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User perform search by ""(.*)""")]
         public void WhenUserPerformSearchBy(string searchTerm)
         {
+            _driver.WaitForDataLoading();
             PerformSearch(searchTerm);
             _driver.WaitForDataLoading();
         }
@@ -122,6 +123,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickContentFromColumn(string columnName)
         {
             var tableElement = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             tableElement.ClickContentByColumnName(columnName);
             _driver.WaitForDataLoading();
         }

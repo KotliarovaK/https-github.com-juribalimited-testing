@@ -80,7 +80,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='ag-header-cell']/span[contains(@class,'select-all')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']//span[@class='ag-checkbox-checked']")]

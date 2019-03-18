@@ -217,9 +217,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Pivot run was completed")]
         public void ThenPivotRunWasCompleted()
         {
-            _driver.WaitForDataLoading();
             var page = _driver.NowAt<PivotElementPage>();
+            //Small wait for Pivot loaded
+            Thread.Sleep(500);
+            _driver.WaitForDataLoading();
             Assert.IsFalse(page.NoPivotTableMessage.Displayed(), "Pivot run was failed");
+        }
+
+        [Then(@"Plus button is not displayed in the left-pinned column")]
+        public void ThenPlusButtonIsNotDisplayedInTheLeft_PinnedColumn()
+        {
+            var page = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(page.PlusButton.Displayed(), "Plus button is not displayed in the left-pinned column");
         }
 
         [Then(@"No pivot generated message is displayed")]
@@ -257,7 +266,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAggregateFunctionOnPivot(string functionName)
         {
             var page = _driver.NowAt<PivotElementPage>();
-            page.ValueSectionSelectBox.Click();
+            page.AggregateFunctionsSelectBox.Click();
             page.SelectAggregateFunctionByName(functionName).Click();
         }
 
@@ -271,6 +280,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, actualList, "Aggregate function in drop-down are different");
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
+        }
+
+        [Then(@"""(.*)"" is displayed in the columns for aggregate functions")]
+        public void ThenIsDisplayedInTheColumnsForAggregateFunctions(string text)
+        {
+            _driver.WaitForDataLoading();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivot.GetColumnsDisplayedForAggregateFunctions(text).Displayed(), $"{text} is not displayed in the columns for aggregate functions");
+        }
+
+        [Then(@"""(.*)"" is displayed at the top left corner on Pivot")]
+        public void ThenIsDisplayedAtTheTopLeftCornerOnPivot(string text)
+        {
+            _driver.WaitForDataLoading();
+            var pivot = _driver.NowAt<PivotElementPage>();
+            Assert.IsTrue(pivot.GetTopLeftCornerText(text).Displayed(), $"{text} is not displayed at the top left corner");
         }
 
         [When(@"User clicks Plus button for ""(.*)"" Pivot value")]

@@ -12,52 +12,52 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
 	When User enters "Migration phase 3 team" text in the Search field for "Team" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "2794" rows
 	When User resets Search fields for columns
 	And User enters "=8" text in the Search field for "Project Buckets" column
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "2794" rows
 	When User resets Search fields for columns
 	And User enters "Administrative Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	When User enters "readonly" text in the Search field for "Username" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "6" rows
 	When User clicks "Buckets" tab
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "20" rows
 	When User resets Search fields for columns
 	When User enters "=35" text in the Search field for "Devices" column
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "20" rows
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
 	When User clicks Reset Filters button on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
-	Then Counter shows "2" found rows
+	Then Rows counter shows "2" of "2794" rows
 	When User resets Search fields for columns
 	And User enters "=2" text in the Search field for "Users" column
-	Then Counter shows "2" found rows
+	Then Rows counter shows "2" of "2794" rows
 	When User resets Search fields for columns
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User enters "M1D" text in the Search field for "Hostname" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "2794" rows
 	When User resets Search fields for columns
 	And User enters "Windows XP" text in the Search field for "Operating System" column
-	Then Counter shows "2" found rows
+	Then Rows counter shows "2" of "2794" rows
 	When User clicks "Users" tab
 	When User enters "Danielle A. Tate" text in the Search field for "Display Name" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "2794" rows
 	When User resets Search fields for columns
 	And User enters "TZV202" text in the Search field for "Username" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "2794" rows
 	When User click on Back button
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	When User clicks "Mailboxes" tab
 	And User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "2794" rows
 	When User resets Search fields for columns
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
-	Then Counter shows "6" found rows
+	Then Rows counter shows "6" of "2794" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @DAS12369 @DAS14212
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
