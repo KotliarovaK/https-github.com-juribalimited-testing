@@ -194,24 +194,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User creates Pivot list with ""(.*)"" name")]
         public void WhenUserCreatesPivotListWithName(string listName)
         {
-            var listElement = _driver.NowAt<CustomListElement>();
-
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SavePivotButton);
-            listElement.SavePivotButton.Click();
-
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
-            Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is not displayed");
-            listElement.CreateNewListButton.Click();
-
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
-            Assert.IsTrue(listElement.SaveButton.Displayed(), "'Save' button is not displayed");
             var page = _driver.NowAt<PivotElementPage>();
+
+            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => page.SaveButton);
+            page.SaveButton.Click();
+
+            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => page.SaveNewListButton);
+            Assert.IsTrue(page.SaveNewListButton.Displayed(), "'Save' button is not displayed");
+            page.SaveNewListButton.Click();
+
+            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => page.SaveButton);
+            Assert.IsTrue(page.SaveButton.Displayed(), "'Save' button is not displayed");
+            
             page.PivotNameTextBox.SendKeys(listName);
-            listElement.SaveButton.Click();
+            page.SaveButton.Click();
 
             //Small wait for message display
-            Thread.Sleep(300);
-            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            //Thread.Sleep(300);
+            //var listElement = _driver.NowAt<CustomListElement>();
+            //_driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            //Assert.IsTrue(listElement.SuccessCreateMessage.Displayed(), "Success message is not displayed");
         }
 
         [Then(@"Pivot run was completed")]

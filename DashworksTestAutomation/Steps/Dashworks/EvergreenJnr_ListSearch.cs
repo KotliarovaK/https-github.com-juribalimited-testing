@@ -158,7 +158,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User apply ""(.*)"" filter to lists panel")]
         public void WhenUserApplyFilterToListsPanel(string filterListName)
         {
-            var listsFilter = _driver.NowAt<ListDetailsElement>();
+            var listsFilter = _driver.NowAt<CustomListElement>();
+            listsFilter.DropdownFilterList.Click();
             listsFilter.GetFilterForListsByName(filterListName).Click();
         }
 

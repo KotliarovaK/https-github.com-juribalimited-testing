@@ -3556,7 +3556,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "001PSUMZYOW581"});
             testRunner.When("User create static list with \"StaticFilterList_1\" name on \"Devices\" page with fol" +
                     "lowing items", ((string)(null)), table71, "When ");
-            testRunner.Then("\"StaticFilterList_1\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"StaticFilterList_1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User create dynamic list with \"DynamicFilterList_1\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -3603,7 +3603,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.When("User creates Pivot list with \"PivotFilterList_1\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"PivotFilterList_1\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"All Devices\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User apply \"Dynamic\" filter to lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"DynamicFilterList_1\" list is displayed in the bottom section of the List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"PivotDynamicFilterList_1\" list is displayed in the bottom section of the List Pa" +
@@ -3634,6 +3633,123 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
             testRunner.And("\"PivotFilterList_1\" list is not displayed in the bottom section of the List Panel" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("\"StaticFilterList_1\" list is displayed in the bottom section of the List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatLayoutFilterIsWorkedCorrectly")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
+        [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS13637")]
+        [NUnit.Framework.CategoryAttribute("DAS13640")]
+        [NUnit.Framework.CategoryAttribute("DAS13643")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatLayoutFilterIsWorkedCorrectly()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatLayoutFilterIsWorkedCorrectlyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatLayoutFilterIsWorkedCorrectlyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatLayoutFilterIsWorkedCorrectly", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ListPanel",
+                        "CustomListDisplay",
+                        "DAS13637",
+                        "DAS13640",
+                        "DAS13643",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemName"});
+            table78.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+            table78.AddRow(new string[] {
+                        "001PSUMZYOW581"});
+            testRunner.When("User create static list with \"StaticFilterList_2\" name on \"Devices\" page with fol" +
+                    "lowing items", ((string)(null)), table78, "When ");
+            testRunner.Then("\"StaticFilterList_2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User click on \'Hostname\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User create dynamic list with \"DynamicFilterList_2\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"DynamicFilterList_2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table79.AddRow(new string[] {
+                        "Application Compliance"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table79, "And ");
+            TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table80.AddRow(new string[] {
+                        "Operating System"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table80, "And ");
+            TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table81.AddRow(new string[] {
+                        "App Count (Entitled)"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table81, "And ");
+            testRunner.When("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User creates Pivot list with \"PivotDynamicFilterList_2\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"PivotDynamicFilterList_2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table82.AddRow(new string[] {
+                        "Build Date"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table82, "And ");
+            TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table83.AddRow(new string[] {
+                        "Application Compliance"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table83, "And ");
+            TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table84.AddRow(new string[] {
+                        "Owner General information field 1"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table84, "And ");
+            testRunner.When("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User creates Pivot list with \"PivotFilterList_2\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"PivotFilterList_2\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User apply \"Standard\" filter to lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"List_2\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User apply \"Pivot\" filter to lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"List_2\" text in Search field at List Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
 

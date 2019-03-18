@@ -55,6 +55,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='inline-success ng-star-inserted']")]
         public IWebElement SuccessCreateMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'SelectDropdownActions')]//mat-select")]
+        public IWebElement DropdownFilterList { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//ul//span[@class='submenu-actions-list-name']")]
         public IList<IWebElement> ListsNames { get; set; }
 
@@ -137,6 +140,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var allListName = $".//*[text()='{listName}']/ancestor::div[@class='top-tools']//div[@aria-controls='submenu']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
             return Driver.FindElement(By.XPath(allListName));
+        }
+
+        public IWebElement GetFilterForListsByName(string filterListName)
+        {
+            var selector = By.XPath($"//div[contains(@class, 'transformPanel ')]//mat-option//span[text()='{filterListName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
 
         #region ListSettings

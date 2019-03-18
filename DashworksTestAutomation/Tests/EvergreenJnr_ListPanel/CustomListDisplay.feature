@@ -1152,7 +1152,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterIsWorkedCorrectly
 	| ItemName       |
 	| 001BAQXT6JWFPI |
 	| 001PSUMZYOW581 |
-	Then "StaticFilterList_1" list should be displayed to the user
+	Then "StaticFilterList_1" list is displayed to user
 	When User navigates to the "All Devices" list
 	When User click on 'Hostname' column header
 	When User create dynamic list with "DynamicFilterList_1" name on "Devices" page
@@ -1187,7 +1187,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterIsWorkedCorrectly
 	When User creates Pivot list with "PivotFilterList_1" name
 	Then "PivotFilterList_1" list is displayed to user
 	When User navigates to the "All Devices" list
-	Then "All Devices" list is displayed to user
 	When User apply "Dynamic" filter to lists panel
 	Then "DynamicFilterList_1" list is displayed in the bottom section of the List Panel
 	And "PivotDynamicFilterList_1" list is displayed in the bottom section of the List Panel
@@ -1208,3 +1207,55 @@ Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterIsWorkedCorrectly
 	And "PivotDynamicFilterList_1" list is not displayed in the bottom section of the List Panel
 	And "PivotFilterList_1" list is not displayed in the bottom section of the List Panel
 	And "StaticFilterList_1" list is displayed in the bottom section of the List Panel
+
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13640 @DAS13643 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatLayoutFilterIsWorkedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User create static list with "StaticFilterList_2" name on "Devices" page with following items
+	| ItemName       |
+	| 001BAQXT6JWFPI |
+	| 001PSUMZYOW581 |
+	Then "StaticFilterList_2" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User click on 'Hostname' column header
+	When User create dynamic list with "DynamicFilterList_2" name on "Devices" page
+	Then "DynamicFilterList_2" list is displayed to user
+	When User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups              |
+	| Application Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns          |
+	| Operating System |  
+	And User selects the following Values on Pivot:
+	| Values               |
+	| App Count (Entitled) |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotDynamicFilterList_2" name
+	Then "PivotDynamicFilterList_2" list is displayed to user
+	When User navigates to the "All Devices" list
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Build Date |
+	And User selects the following Columns on Pivot:
+	| Columns                |
+	| Application Compliance | 
+	And User selects the following Values on Pivot:
+	| Values                            |
+	| Owner General information field 1 |
+	When User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "PivotFilterList_2" name
+	Then "PivotFilterList_2" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User apply "Standard" filter to lists panel
+	#TODO
+	When User enters "List_2" text in Search field at List Panel
+	#TODO
+	When User apply "Pivot" filter to lists panel
+	#TODO
+	When User enters "List_2" text in Search field at List Panel
+	#TODO

@@ -150,12 +150,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
-
-        public IWebElement GetFilterForListsByName(string filterListName)
-        {
-            var selector = By.XPath($"//div[contains(@class, 'transformPanel ')]//mat-option//span[text()='{filterListName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
     }
 }

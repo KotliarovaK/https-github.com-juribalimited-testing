@@ -32,6 +32,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//span[text()='SAVE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@role, 'menuitem')][text()='SAVE AS NEW PIVOT']")]
+        public IWebElement SaveNewListButton { get; set; }
+
         [FindsBy(How = How.XPath,
             Using =
                 ".//div[@class='columns-panel']//div[contains(@class,'filter-category-label') and contains(@class,'bold')]")]
