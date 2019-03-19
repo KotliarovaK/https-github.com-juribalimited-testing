@@ -2336,3 +2336,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	When User clicks "Enforce capacity on self service pages" checkbox on the Project details page
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @Not_Run
+Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
+	Then column content is displayed in the following order:
+	| Items                        |
+	| Birmingham Morning           |
+	| Birmingham Afternoon         |
+	| Manchester Morning           |
+	| Manchester Afternoon         |
+	| London - City Morning        |
+	| London - City Afternoon      |
+	| London - Southbank Morning   |
+	| London - Southbank Afternoon |
+	| London Depot 09:00 - 11:00   |
+	| London Depot 15:00 - 13:00   |
+	| London Depot 15:00 - 15:00   |
+	| London Depot 15:00 - 17:00   |
+	When User moves "Birmingham Morning" slot to "Birmingham Afternoon" slot

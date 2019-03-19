@@ -2470,6 +2470,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetMoveToPositionDialogButtonByText(buttonName).Click();
         }
 
+        [When(@"User moves ""(.*)"" slot to ""(.*)"" slot")]
+        public void WhenUserMovesSlotToSlot(string slot, string moveToSlot)
+        {
+            var page = _driver.NowAt<Capacity_SlotsPage>();
+            var slotFrom = page.GetMoveButtonBySlotName(slot);
+            var slotTo = page.GetMoveButtonBySlotName(moveToSlot);
+            _driver.DragAndDrop(slotFrom, slotTo);
+        }
+
         [Then(@"Alert message is displayed and contains ""(.*)"" text")]
         public void ThenAlertMessageIsDisplayedAndContainsText(string text)
         {
