@@ -3892,6 +3892,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13119")]
         [NUnit.Framework.CategoryAttribute("DAS13652")]
+        [NUnit.Framework.CategoryAttribute("DAS13637")]
+        [NUnit.Framework.CategoryAttribute("DAS13649")]
         public virtual void EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel()
         {
             System.Exception lastException = null;
@@ -3927,7 +3929,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS13119",
-                        "DAS13652"});
+                        "DAS13652",
+                        "DAS13637",
+                        "DAS13649"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

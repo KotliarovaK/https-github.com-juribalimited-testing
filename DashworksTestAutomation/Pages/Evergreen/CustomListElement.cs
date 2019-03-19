@@ -135,6 +135,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(listSelector);
         }
 
+        public bool DisplayStatusForListByName(string listName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//span[@class='submenu-actions-list-name'][text()='{listName}']"));
+        }
+
         public IWebElement GetListNameOnTopToolsPanel(string listName)
         {
             var allListName = $".//*[text()='{listName}']/ancestor::div[@class='top-tools']//div[@aria-controls='submenu']";
