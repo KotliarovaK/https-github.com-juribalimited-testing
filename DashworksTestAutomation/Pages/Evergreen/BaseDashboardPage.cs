@@ -215,8 +215,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
         public IWebElement ResultsOnPageCount { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
         public IWebElement SelectAllCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox//input")]
+        public IWebElement SelectAllCheckboxState { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']")]
         public IWebElement Checkbox { get; set; }
@@ -340,9 +343,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> LastLogonColumnData { get; set; }
 
         #endregion TableColumns
-
-        public bool SelectAllCheckboxState => SelectAllCheckbox.Selected;
-
+        
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

@@ -31,10 +31,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User clicks "Buckets" link on the Admin page
 	When User clicks Reset Filters button on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
-	Then Rows counter shows "2" of "2794" rows
+	Then Rows counter shows "2" of "593" rows
 	When User resets Search fields for columns
 	And User enters "=2" text in the Search field for "Users" column
-	Then Rows counter shows "2" of "2794" rows
+	Then Rows counter shows "2" of "593" rows
 	When User resets Search fields for columns
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column

@@ -645,7 +645,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             //_driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, true);
-            Assert.IsTrue(dashboardPage.SelectAllCheckboxState, "Select All checkbox is unchecked");
+            Assert.IsTrue(dashboardPage.SelectAllCheckboxState.GetAttribute("aria-checked").Equals("true"), "Select All checkbox is unchecked");
         }
 
         [Then(@"Select All selectbox is unchecked")]
@@ -653,7 +653,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, false);
-            Assert.IsFalse(dashboardPage.SelectAllCheckboxState, "Select All checkbox is checked");
+            Assert.IsTrue(dashboardPage.SelectAllCheckboxState.GetAttribute("aria-checked").Equals("false"), "Select All checkbox is checked");
         }
 
         [Then(@"""(.*)"" selected rows are displayed in the Actions panel")]
