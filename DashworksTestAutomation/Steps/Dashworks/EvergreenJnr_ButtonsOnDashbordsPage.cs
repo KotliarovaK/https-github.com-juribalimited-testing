@@ -24,6 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheActionsButton()
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.TableBody);
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ActionsButton);
             menu.ActionsButton.Click();
             Logger.Write("Actions button was clicked");

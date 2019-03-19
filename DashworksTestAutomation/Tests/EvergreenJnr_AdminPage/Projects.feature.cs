@@ -9939,7 +9939,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS15260")]
         [NUnit.Framework.CategoryAttribute("DAS15794")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridForDeviceScopedProject()
         {
             System.Exception lastException = null;
@@ -9977,8 +9976,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Senior_Projects",
                         "DAS15260",
                         "DAS15794",
-                        "Delete_Newly_Created_Project",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Project"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

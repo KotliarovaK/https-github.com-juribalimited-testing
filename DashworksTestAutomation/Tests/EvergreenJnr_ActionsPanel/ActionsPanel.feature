@@ -741,13 +741,13 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	And User is expand "Project Stages: Windows7Mi" columns category
 	And the following Column subcategories are displayed for open category:
 	| Subcategories                                               |
-	| Windows7Mi: Command & Control                               |
-	| Windows7Mi: Communication                                   |
 	| Windows7Mi: Computer Information ---- Text fill; Text fill; |
-	| Windows7Mi: Migration                                       |
-	| Windows7Mi: Portal Self Service                             |
-	| Windows7Mi: Post Migration                                  |
 	| Windows7Mi: Pre-Migration                                   |
+	| Windows7Mi: Post Migration                                  |
+	| Windows7Mi: Migration                                       |
+	| Windows7Mi: Communication                                   |
+	| Windows7Mi: Command & Control                               |
+	| Windows7Mi: Portal Self Service                             |
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnDevicesPage
@@ -1635,7 +1635,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOperationHasCorrectOptionsFo
 	| Owned mailboxes only |
 	| All linked mailboxes |
 	
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14140 @DAS15814 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14140 @DAS15814
 Scenario: EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForEvergreenProjectAreDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1784,7 +1784,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| %SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI             |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	And User selects "Bulk update" in the Actions dropdown
-	Then following values are displayed in "Bulk Update Type" drop-down with searchfield on Action panel:
+	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
 	| Options              |
 	| Update capacity unit |
 	| Update request type  |

@@ -1829,19 +1829,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
             table51.AddRow(new string[] {
-                        "Windows7Mi: Command & Control"});
-            table51.AddRow(new string[] {
-                        "Windows7Mi: Communication"});
-            table51.AddRow(new string[] {
                         "Windows7Mi: Computer Information ---- Text fill; Text fill;"});
             table51.AddRow(new string[] {
-                        "Windows7Mi: Migration"});
-            table51.AddRow(new string[] {
-                        "Windows7Mi: Portal Self Service"});
+                        "Windows7Mi: Pre-Migration"});
             table51.AddRow(new string[] {
                         "Windows7Mi: Post Migration"});
             table51.AddRow(new string[] {
-                        "Windows7Mi: Pre-Migration"});
+                        "Windows7Mi: Migration"});
+            table51.AddRow(new string[] {
+                        "Windows7Mi: Communication"});
+            table51.AddRow(new string[] {
+                        "Windows7Mi: Command & Control"});
+            table51.AddRow(new string[] {
+                        "Windows7Mi: Portal Self Service"});
             testRunner.And("the following Column subcategories are displayed for open category:", ((string)(null)), table51, "And ");
             this.ScenarioCleanup();
         }
@@ -3936,7 +3936,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13960")]
         [NUnit.Framework.CategoryAttribute("DAS14140")]
         [NUnit.Framework.CategoryAttribute("DAS15814")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckBucketBulkUpdateOptionsOnDevicesListForEvergreenProjectAreDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -3974,8 +3973,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS14563",
                         "DAS13960",
                         "DAS14140",
-                        "DAS15814",
-                        "Not_Run"});
+                        "DAS15814"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4496,8 +4494,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Update request type"});
             table121.AddRow(new string[] {
                         "Update task value"});
-            testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down with searchfield o" +
-                    "n Action panel:", ((string)(null)), table121, "Then ");
+            testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down on Action panel:", ((string)(null)), table121, "Then ");
             this.ScenarioCleanup();
         }
 
