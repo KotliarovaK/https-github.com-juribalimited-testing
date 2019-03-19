@@ -104,6 +104,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"following fields are displayed in the open section:")]
+        public void ThenFollowingFieldsAreDisplayedInTheOpenSection(Table table)
+        {
+            var fields = _driver.NowAt<DetailsPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = fields.FieldListOnDetailsPage.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Fields in the open section are different");
+        }
+
         [Then(@"empty value is displayed for ""(.*)"" field on the Details Page")]
         public void ThenEmptyValueIsDisplayedForFieldOnTheDetailsPage(string text)
         {

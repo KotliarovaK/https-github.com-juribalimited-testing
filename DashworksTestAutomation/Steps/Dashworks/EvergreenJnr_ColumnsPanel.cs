@@ -318,7 +318,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
             Assert.IsFalse(columnElement.CategoryIsDisplayed(categoryName),
-                $"{categoryName} category stil displayed in Column Panel");
+                $"{categoryName} category still displayed in Column Panel");
         }
 
         [Then(@"""(.*)"" section is displayed in the Columns panel")]

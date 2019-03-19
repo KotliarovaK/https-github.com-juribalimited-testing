@@ -15,6 +15,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ColumnWithImageAndLinkSelector = ".//div[@col-id='userName'][@role='gridcell']";
 
+        public const string FieldOnDetailsPageSelector = ".//td[contains(@class, 'mat-column-key')]";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
@@ -69,6 +71,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']")]
         public IWebElement SelectAllCheckBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = FieldOnDetailsPageSelector)]
+        public IList<IWebElement> FieldListOnDetailsPage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

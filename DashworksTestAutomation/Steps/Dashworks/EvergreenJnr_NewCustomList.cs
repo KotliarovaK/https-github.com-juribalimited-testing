@@ -97,14 +97,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             Assert.IsTrue(listElement.ListInBottomSection(listName).Displayed(),
-                "List is not displayed in the bottom section");
+                $"'{listName}' is not displayed in the bottom section");
         }
 
         [Then(@"""(.*)"" list is not displayed in the bottom section of the List Panel")]
         public void ThenListIsNotDisplayedInTheBottomSectionOfTheListPanel(string listName)
         {
             var listElement = _driver.NowAt<CustomListElement>();
-            Assert.IsFalse(listElement.ListInBottomSection(listName).Displayed(), "List is not displayed in the bottom section");
+            Assert.IsFalse(listElement.DisplayStatusForListByName(listName), $"'{listName}' is displayed in the bottom section");
         }
 
         [When(@"User create custom list with ""(.*)"" name")]

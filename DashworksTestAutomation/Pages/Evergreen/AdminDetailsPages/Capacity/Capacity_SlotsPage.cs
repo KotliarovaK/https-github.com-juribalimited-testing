@@ -116,6 +116,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetMoveButtonBySlotName(string slot)
+        {
+            var indexRow = GetSlotContent().IndexOf(slot);
+            var selector = By.XPath($".//div[@row-index='{indexRow}']/div[@col-id='dragColumn']");
+            return Driver.FindElement(selector);
+        }
+
+        public IList<string> GetSlotContent()
+        {
+            var by = By.XPath(".//div[@col-id='slotName' and @role='gridcell']");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
         public IWebElement GetMoveToPositionDialogButtonByText(string buttonText)
         {
             var selector = By.XPath($"//div[@class='dialog-small mat-dialog-content']/following-sibling :: div//button/span[contains(text(), '{buttonText.ToUpper()}')]/parent :: button");

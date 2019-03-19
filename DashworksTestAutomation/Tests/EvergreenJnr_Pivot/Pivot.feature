@@ -1213,7 +1213,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 	Then "Selected Filters" section is not displayed in the Columns panel
 	And "Device Key" subcategory is selected in Column panel
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13119 @DAS13652
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13119 @DAS13652 @DAS13637 @DAS13649
 Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfterClosingListsPanel
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

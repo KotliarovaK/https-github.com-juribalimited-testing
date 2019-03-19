@@ -775,7 +775,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User perform search by "AAG081456"
 	And User click content from "Username" column
 	And User navigates to the "Projects" tab
-	And User clicks on Evergreen Bucket link for "Evergreen Bucket" field
+	When User clicks on "Unassigned" link for Evergreen Bucket field
 	And User clicks on "New Bucket" dropdown
 	And User select "AutoTestBucket_DAS_13335" value on the Details Page
 	And User opens "Related Devices" section on the Details Page
@@ -1174,3 +1174,21 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	| Source Type               | SMS/SCCM 2007   |
 	| Inventory Site            | A01             |
 	Then empty value is displayed for "Dashworks First Seen Date" field on the Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObjectSection
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00OMQQXWA1DRI6"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" tab
+	When User closes "Device" section on the Details Page
+	And User opens "Computer AD Object" section on the Details Page
+	Then following fields are displayed in the open section:
+	| Fields                          |
+	| Directory Type                  |
+	| Domain                          |
+	| Fully Distinguished Object Name |
+	| Common Name                     |
+	| Display Name                    |
+	| Description                     |
