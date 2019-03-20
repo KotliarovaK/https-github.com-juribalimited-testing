@@ -102,8 +102,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	And User creates new Dashboard with "Dashboard for DAS14668" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title                  | List              | SplitBy          | AggregateBy      | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-Schedule | ICSP: i-Schedule | Count             | ICSP: i-Schedule ASC |                  | 5         |            |
+	| WidgetType | Title                  | List              | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-Schedule |             | Count             | ICSP: i-Schedule ASC |                  | 5         |            |
 	Then User sees widget with the next name "Test_Widget_DAS14668_1" on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 @Evergreen @Dashboards @Widgets @DAS14586
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists
 	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14586" name
+	And User creates new Dashboard with "<DashboardName>" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | TableOrientation | MaxValues | ShowLegend   |
@@ -128,16 +128,16 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidget
 	Then User sees number of Sections increased by "0" on Dashboards page
 	And User sees number of Widgets increased by "1" on Dashboards page
 	And User sees Widget with "<TitleCloned>" name on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14586" dashboard
+	When User clicks Settings button for "<DashboardName>" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
 Examples:
-	| Type   | Title                                 | List             | SplitBy       | AggregateBy  | AggregateFunctio | OrderBy         | TitleCloned                                    | ShowLegend |
-	| Line   | All Devices Widget For DAS_14586      | All Devices      | Hostname      | Device Type  | Count            | Hostname DESC   | Cloned - All Devices Widget For DAS_14586      | false      |
-	| Pie    | All Users Widget For DAS_14586        | All Users        | Username      | Display Name | Count distinct   | Username ASC    | Cloned - All Users Widget For DAS_14586        | false      |
-	| Bar    | All Applications Widget For DAS_14586 | All Applications | Application   | Vendor       | Count            | Vendor DESC     | Cloned - All Applications Widget For DAS_14586 | true       |
-	| Column | All Mailboxes Widget For DAS_14586    | All Mailboxes    | Email Address | Mail Server  | Count distinct   | Mail Server ASC | Cloned - All Mailboxes Widget For DAS_14586    | true       |
+	| DashboardName                       | Type   | Title                                 | List             | SplitBy       | AggregateBy  | AggregateFunctio | OrderBy                        | TitleCloned                            | ShowLegend |
+	| Dashboard for DAS14586_devices      | Line   | All Devices Widget For DAS_14586      | All Devices      | Hostname      |              | Count            | Hostname DESC                  | All Devices Widget For DAS_145862      | false      |
+	| Dashboard for DAS14586_users        | Pie    | All Users Widget For DAS_14586        | All Users        | Username      | Display Name | Count distinct   | Username ASC                   | All Users Widget For DAS_145862        | false      |
+	| Dashboard for DAS14586_applications | Bar    | All Applications Widget For DAS_14586 | All Applications | Application   |              | Count            | Application DESC               | All Applications Widget For DAS_145862 | true       |
+	| Dashboard for DAS14586_mailboxes    | Column | All Mailboxes Widget For DAS_14586    | All Mailboxes    | Email Address | Mail Server  | Count distinct   | Mail Server Count distinct ASC | All Mailboxes Widget For DAS_145862    | true       |
 
 @Evergreen @Dashboards @DAS14587 @Widgets
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
@@ -147,7 +147,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Pie        |       | All Devices | Device Type | Hostname    | Count             | Device Type ASC |                  | 10        |            |
+	| Pie        |       | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC |                  | 10        |            |
 	Then Error message with "Widget Title should not be empty" text is displayed on Widget page
 	And There are no errors in the browser console
 	When User creates new Widget
@@ -165,7 +165,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14728 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	| Pie        | WidgetForDAS14728 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
 	And User remembers number of Widgets with Legend on Dashboards page
 	And User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS12978 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	| Pie        | WidgetForDAS12978 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
 	And User clicks refresh button in the browser
 	And User clicks Show Dashboards panel icon on Dashboards page
 	And User navigates to the "Dashboard for DAS12978" list
@@ -197,7 +197,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Bar        | WidgetForDAS12978_2 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	| Bar        | WidgetForDAS12978_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
     And User clicks Ellipsis menu for "WidgetForDAS12978_2" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	And User updates Widget with following info:
@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS12977 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	| Pie        | WidgetForDAS12977 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
 	And User clicks refresh button in the browser
 	Then Dashboards sub menu is hidden on Dashboards page
 	When User clicks Show Dashboards panel icon on Dashboards page
@@ -250,15 +250,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14583_1 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	| Pie        | WidgetForDAS14583_1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Bar        | WidgetForDAS14583_2 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	| Bar        | WidgetForDAS14583_2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | false      |
+	| Pie        | WidgetForDAS14583_3 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | false      |
 	And User clicks Ellipsis menu for "WidgetForDAS14583_3" Widget on Dashboards page
 	And User clicks "Move to start" item from Ellipsis menu on Dashboards page
 	And User clicks Ellipsis menu for "WidgetForDAS14583_3" Widget on Dashboards page
@@ -283,7 +283,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count             | Application ASC |                  | 10        |            |
+	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct            | Application ASC |                  | 10        |            |
 	Then There are no errors in the browser console
 	Then User sees widget with the next name "WidgetForDAS14685" on Dashboards page
 	When User clicks Settings button for "Dashboard for DAS14685" dashboard
@@ -296,8 +296,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	And User creates new Dashboard with "Dashboard for DAS14855" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Version     | Count             | Vendor ASC |                  | 10        | true       |
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             |             | Vendor ASC |                  | 10        | true       |
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
@@ -419,8 +419,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy                         | TableOrientation | MaxValues | ShowLegend | Type |
-	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count             | CPU Architecture ASC (split by) |                  | 10        | false      |      |
+	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend | Type |
+	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count distinct    | CPU Architecture ASC |                  | 10        | false      |      |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -441,8 +441,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend |Type |
-	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count             | Model ASC (split by) |                  | 10        | true       |     |
+	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type |
+	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC |                  | 10        | true       |      |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User selects "Bar" as Widget Type
@@ -508,8 +508,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                            | TableOrientation | MaxValues | ShowLegend |Type |
-	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count             | Secure Boot Enabled ASC (split by) |                  | 10        | true       |     |
+	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | TableOrientation | MaxValues | ShowLegend | Type |
+	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC |                  | 10        | true       |      |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -526,7 +526,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	And User create static list with "Static_List_15432" name
 	When User clicks "Dashboards" on the left-hand menu
 	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard_DAS15432" name
+	And User creates new Dashboard with "Dashboard for DAS15432" name
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |

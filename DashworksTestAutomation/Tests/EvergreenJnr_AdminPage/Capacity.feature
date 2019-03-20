@@ -58,7 +58,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 	When User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
-	|               |
 	| Capacity Unit |
 	|               |
 	| Description   |
@@ -86,7 +85,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	When User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
-	|               |
 	| Capacity Unit |
 	|               |
 	| Description   |

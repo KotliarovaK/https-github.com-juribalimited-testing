@@ -544,7 +544,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Test_Widget_DAS14668_1",
                         "TestList_DAS14668",
                         "ICSP: i-Schedule",
-                        "ICSP: i-Schedule",
+                        "",
                         "Count",
                         "ICSP: i-Schedule ASC",
                         "",
@@ -591,18 +591,18 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14586")]
-        [NUnit.Framework.TestCaseAttribute("Line", "All Devices Widget For DAS_14586", "All Devices", "Hostname", "Device Type", "Count", "Hostname DESC", "Cloned - All Devices Widget For DAS_14586", "false", null)]
-        [NUnit.Framework.TestCaseAttribute("Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count distinct", "Username ASC", "Cloned - All Users Widget For DAS_14586", "false", null)]
-        [NUnit.Framework.TestCaseAttribute("Bar", "All Applications Widget For DAS_14586", "All Applications", "Application", "Vendor", "Count", "Vendor DESC", "Cloned - All Applications Widget For DAS_14586", "true", null)]
-        [NUnit.Framework.TestCaseAttribute("Column", "All Mailboxes Widget For DAS_14586", "All Mailboxes", "Email Address", "Mail Server", "Count distinct", "Mail Server ASC", "Cloned - All Mailboxes Widget For DAS_14586", "true", null)]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists(string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Dashboard for DAS14586_devices", "Line", "All Devices Widget For DAS_14586", "All Devices", "Hostname", "", "Count", "Hostname DESC", "All Devices Widget For DAS_145862", "false", null)]
+        [NUnit.Framework.TestCaseAttribute("Dashboard for DAS14586_users", "Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count distinct", "Username ASC", "All Users Widget For DAS_145862", "false", null)]
+        [NUnit.Framework.TestCaseAttribute("Dashboard for DAS14586_applications", "Bar", "All Applications Widget For DAS_14586", "All Applications", "Application", "", "Count", "Application DESC", "All Applications Widget For DAS_145862", "true", null)]
+        [NUnit.Framework.TestCaseAttribute("Dashboard for DAS14586_mailboxes", "Column", "All Mailboxes Widget For DAS_14586", "All Mailboxes", "Email Address", "Mail Server", "Count distinct", "Mail Server Count distinct ASC", "All Mailboxes Widget For DAS_145862", "true", null)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists(string dashboardName, string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllListsInternal(type,title,list,splitBy,aggregateBy,aggregateFunctio,orderBy,titleCloned,showLegend,exampleTags);
+                    this.EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllListsInternal(dashboardName,type,title,list,splitBy,aggregateBy,aggregateFunctio,orderBy,titleCloned,showLegend,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -621,7 +621,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllListsInternal(string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
+        private void EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllListsInternal(string dashboardName, string type, string title, string list, string splitBy, string aggregateBy, string aggregateFunctio, string orderBy, string titleCloned, string showLegend, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -638,7 +638,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             this.ScenarioStart();
             this.FeatureBackground();
             testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User creates new Dashboard with \"Dashboard for DAS14586\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And(string.Format("User creates new Dashboard with \"{0}\" name", dashboardName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -669,7 +669,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.Then("User sees number of Sections increased by \"0\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User sees number of Widgets increased by \"1\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User sees Widget with \"{0}\" name on Dashboards page", titleCloned), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Settings button for \"Dashboard for DAS14586\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When(string.Format("User clicks Settings button for \"{0}\" dashboard", dashboardName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -741,7 +741,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Devices",
                         "Device Type",
                         "Hostname",
-                        "Count",
+                        "Count distinct",
                         "Device Type ASC",
                         "",
                         "10",
@@ -845,7 +845,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Vendor",
                         "Version",
-                        "Count",
+                        "Count distinct",
                         "Vendor ASC",
                         "",
                         "10",
@@ -927,7 +927,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Vendor",
                         "Version",
-                        "Count",
+                        "Count distinct",
                         "Vendor ASC",
                         "",
                         "10",
@@ -966,7 +966,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Vendor",
                         "Version",
-                        "Count",
+                        "Count distinct",
                         "Vendor ASC",
                         "",
                         "10",
@@ -1081,7 +1081,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Vendor",
                         "Version",
-                        "Count",
+                        "Count distinct",
                         "Vendor ASC",
                         "",
                         "10",
@@ -1177,7 +1177,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Vendor",
                         "Version",
-                        "Count",
+                        "Count distinct",
                         "Vendor ASC",
                         "",
                         "10",
@@ -1201,7 +1201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Vendor",
                         "Version",
-                        "Count",
+                        "Count distinct",
                         "Vendor ASC",
                         "",
                         "10",
@@ -1225,7 +1225,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Vendor",
                         "Version",
-                        "Count",
+                        "Count distinct",
                         "Vendor ASC",
                         "",
                         "10",
@@ -1339,7 +1339,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "All Applications",
                         "Application",
                         "Application",
-                        "Count",
+                        "Count distinct",
                         "Application ASC",
                         "",
                         "10",
@@ -1404,8 +1404,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Title",
                         "List",
                         "SplitBy",
-                        "AggregateBy",
                         "AggregateFunction",
+                        "AggregateBy",
                         "OrderBy",
                         "TableOrientation",
                         "MaxValues",
@@ -1415,8 +1415,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "WidgetForDAS14855",
                         "All Applications",
                         "Vendor",
-                        "Version",
                         "Count",
+                        "",
                         "Vendor ASC",
                         "",
                         "10",
@@ -1869,8 +1869,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "List15372",
                         "CPU Architecture",
                         "Hostname",
-                        "Count",
-                        "CPU Architecture ASC (split by)",
+                        "Count distinct",
+                        "CPU Architecture ASC",
                         "",
                         "10",
                         "false",
@@ -1964,8 +1964,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "List15365",
                         "Model",
                         "Model",
-                        "Count",
-                        "Model ASC (split by)",
+                        "Count distinct",
+                        "Model ASC",
                         "",
                         "10",
                         "true",
@@ -2153,8 +2153,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "List15356",
                         "Secure Boot Enabled",
                         "Device Type",
-                        "Count",
-                        "Secure Boot Enabled ASC (split by)",
+                        "Count distinct",
+                        "Secure Boot Enabled ASC",
                         "",
                         "10",
                         "true",
@@ -2227,7 +2227,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User create static list with \"Static_List_15432\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User creates new Dashboard with \"Dashboard_DAS15432\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User creates new Dashboard with \"Dashboard for DAS15432\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",

@@ -417,35 +417,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.SplitBy.Displayed())
+                if (createWidgetElement.SplitBy.Displayed() && !string.IsNullOrEmpty(row["SplitBy"]))
                 {
                     createWidgetElement.SplitBy.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.AggregateBy.Displayed())
-                {
-                    createWidgetElement.AggregateBy.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
-                if (createWidgetElement.AggregateFunction.Displayed())
+                if (createWidgetElement.AggregateFunction.Displayed() && !string.IsNullOrEmpty(row["AggregateFunction"]))
                 {
                     createWidgetElement.AggregateFunction.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.OrderBy.Displayed())
+                if (createWidgetElement.AggregateBy.Displayed() && row.ContainsKey("AggregateBy") && !string.IsNullOrEmpty(row["AggregateBy"]))
+                {
+                    createWidgetElement.AggregateBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (createWidgetElement.OrderBy.Displayed() && !string.IsNullOrEmpty(row["OrderBy"]))
                 {
                     createWidgetElement.OrderBy.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["OrderBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (createWidgetElement.MaxValues.Displayed())
+                if (createWidgetElement.MaxValues.Displayed() && !string.IsNullOrEmpty(row["MaxValues"]))
                 {
                     createWidgetElement.MaxValues.Clear();
                     createWidgetElement.MaxValues.SendKeys(row["MaxValues"]);
@@ -470,7 +470,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     createWidgetElement.MaxColumns.SendKeys(row["MaxColumns"]);
                 }
 
-                if (createWidgetElement.ShowLegend.Displayed())
+                if (createWidgetElement.ShowLegend.Displayed() && !string.IsNullOrEmpty(row["ShowLegend"]))
                 {
                     createWidgetElement.ShowLegend.Click();
                 }
@@ -501,7 +501,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (!string.IsNullOrEmpty(row["List"]))
                 {
                     createWidgetElement.List.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["List"]);
+                    createWidgetElement.SelectListForWidgetCreation(row["List"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
@@ -519,17 +519,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["AggregateBy"]))
-                {
-                    createWidgetElement.AggregateBy.Click();
-                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
-                    _driver.WaitForDataLoadingOnProjects();
-                }
-
                 if (!string.IsNullOrEmpty(row["AggregateFunction"]))
                 {
                     createWidgetElement.AggregateFunction.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["AggregateFunction"]);
+                    _driver.WaitForDataLoadingOnProjects();
+                }
+
+                if (!string.IsNullOrEmpty(row["AggregateBy"]))
+                {
+                    createWidgetElement.AggregateBy.Click();
+                    createWidgetElement.SelectObjectForWidgetCreation(row["AggregateBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
 

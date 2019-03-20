@@ -245,8 +245,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table2.AddRow(new string[] {
-                        ""});
-            table2.AddRow(new string[] {
                         "Capacity Unit"});
             table2.AddRow(new string[] {
                         ""});
@@ -331,8 +329,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table3.AddRow(new string[] {
-                        ""});
             table3.AddRow(new string[] {
                         "Capacity Unit"});
             table3.AddRow(new string[] {
