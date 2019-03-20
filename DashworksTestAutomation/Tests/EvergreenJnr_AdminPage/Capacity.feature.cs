@@ -6070,8 +6070,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table95.AddRow(new string[] {
-                        "Birmingham Morning"});
-            table95.AddRow(new string[] {
                         "Birmingham Afternoon"});
             table95.AddRow(new string[] {
                         "Manchester Morning"});
@@ -6088,13 +6086,42 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table95.AddRow(new string[] {
                         "London Depot 09:00 - 11:00"});
             table95.AddRow(new string[] {
-                        "London Depot 15:00 - 13:00"});
+                        "London Depot 11:00 - 13:00"});
             table95.AddRow(new string[] {
-                        "London Depot 15:00 - 15:00"});
+                        "London Depot 13:00 - 15:00"});
+            table95.AddRow(new string[] {
+                        "Birmingham Morning"});
             table95.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
             testRunner.Then("column content is displayed in the following order:", ((string)(null)), table95, "Then ");
             testRunner.When("User moves \"Birmingham Morning\" slot to \"Birmingham Afternoon\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table96.AddRow(new string[] {
+                        "Birmingham Afternoon"});
+            table96.AddRow(new string[] {
+                        "Birmingham Morning"});
+            table96.AddRow(new string[] {
+                        "Manchester Morning"});
+            table96.AddRow(new string[] {
+                        "Manchester Afternoon"});
+            table96.AddRow(new string[] {
+                        "London - City Morning"});
+            table96.AddRow(new string[] {
+                        "London - City Afternoon"});
+            table96.AddRow(new string[] {
+                        "London - Southbank Morning"});
+            table96.AddRow(new string[] {
+                        "London - Southbank Afternoon"});
+            table96.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table96.AddRow(new string[] {
+                        "London Depot 11:00 - 13:00"});
+            table96.AddRow(new string[] {
+                        "London Depot 13:00 - 15:00"});
+            table96.AddRow(new string[] {
+                        "London Depot 15:00 - 17:00"});
+            testRunner.Then("column content is displayed in the following order:", ((string)(null)), table96, "Then ");
             this.ScenarioCleanup();
         }
 

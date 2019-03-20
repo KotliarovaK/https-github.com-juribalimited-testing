@@ -2348,7 +2348,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
 	Then column content is displayed in the following order:
 	| Items                        |
-	| Birmingham Morning           |
 	| Birmingham Afternoon         |
 	| Manchester Morning           |
 	| Manchester Afternoon         |
@@ -2357,7 +2356,22 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London - Southbank Morning   |
 	| London - Southbank Afternoon |
 	| London Depot 09:00 - 11:00   |
-	| London Depot 15:00 - 13:00   |
-	| London Depot 15:00 - 15:00   |
+	| London Depot 11:00 - 13:00   |
+	| London Depot 13:00 - 15:00   |
+	| Birmingham Morning           |
 	| London Depot 15:00 - 17:00   |
 	When User moves "Birmingham Morning" slot to "Birmingham Afternoon" slot
+	Then column content is displayed in the following order:
+	| Items                        |
+	| Birmingham Afternoon         |
+	| Birmingham Morning           |
+	| Manchester Morning           |
+	| Manchester Afternoon         |
+	| London - City Morning        |
+	| London - City Afternoon      |
+	| London - Southbank Morning   |
+	| London - Southbank Afternoon |
+	| London Depot 09:00 - 11:00   |
+	| London Depot 11:00 - 13:00   |
+	| London Depot 13:00 - 15:00   |
+	| London Depot 15:00 - 17:00   |
