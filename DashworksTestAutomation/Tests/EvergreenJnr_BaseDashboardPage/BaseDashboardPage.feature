@@ -250,3 +250,32 @@ Examples:
 	| Users        | Username      |
 	| Applications | Application   |
 	| Mailboxes    | Email Address |
+
+@Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @Widgets @DAS15444 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	When User create dynamic list with "DynamicList15444" name on "Devices" page
+	Then "DynamicList15444" list is displayed to user
+	When User clicks Create Project from the main list
+	When User enters "Project_DAS15444" in the "Project Name" field
+	When User selects "Standalone Project" in the Mode Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click Delete button for custom list with "DynamicList15444" name
+	Then ""DynamicList15444" list is used by 1 project, do you wish to proceed?" message is displayed in the lists panel
+	When User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15444" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title                | List             | MaxRows | MaxColumns |
+	| List       | Widget_For_ DAS15444 | DynamicList15444 | 10      | 10         |
+	Then "Widget_For_ DAS15444" Widget is displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click Delete button for custom list with "DynamicList15444" name
+	Then ""DynamicList15444" list is used by 1 project and 1 dashboard, do you wish to proceed?" message is displayed in the lists panel
