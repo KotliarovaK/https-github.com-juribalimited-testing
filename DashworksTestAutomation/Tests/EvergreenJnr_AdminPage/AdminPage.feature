@@ -39,25 +39,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	And User enters "M1D" text in the Search field for "Hostname" column
-	Then Rows counter shows "1" of "2794" rows
+	Then Rows counter shows "1" of "2" rows
 	When User resets Search fields for columns
 	And User enters "Windows XP" text in the Search field for "Operating System" column
-	Then Rows counter shows "2" of "2794" rows
+	Then Rows counter shows "2" of "2" rows
 	When User clicks "Users" tab
 	When User enters "Danielle A. Tate" text in the Search field for "Display Name" column
-	Then Rows counter shows "1" of "2794" rows
+	Then "1" rows found label displays on Details Page
 	When User resets Search fields for columns
 	And User enters "TZV202" text in the Search field for "Username" column
-	Then Rows counter shows "1" of "2794" rows
+	Then "1" rows found label displays on Details Page
 	When User click on Back button
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	When User clicks "Mailboxes" tab
 	And User enters "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@juriba1.onmicrosoft.com" text in the Search field for "Email Address (Primary)" column
-	Then Rows counter shows "1" of "2794" rows
+	Then Rows counter shows "1" of "14538" rows
 	When User resets Search fields for columns
 	And User enters "RD-EXCH2K3" text in the Search field for "Server Name" column
-	Then Rows counter shows "6" of "2794" rows
+	Then Rows counter shows "6" of "14538" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12370 @DAS12369 @DAS14212
 Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfterWarningOnImportProjectPage
