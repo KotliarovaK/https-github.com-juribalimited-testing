@@ -4062,6 +4062,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails
             table26.AddRow(new string[] {
                         "Description"});
             testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table26, "Then ");
+            testRunner.Then("\"00OMQQXWA1DRI6\" content is displayed in \"Common Name\" field on Item Details page" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
