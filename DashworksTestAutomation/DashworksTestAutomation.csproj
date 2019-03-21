@@ -326,6 +326,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Readiness.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Readiness.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Rings.feature.cs">
       <DependentUpon>Rings.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -536,6 +541,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Readiness.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Readiness.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Rings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

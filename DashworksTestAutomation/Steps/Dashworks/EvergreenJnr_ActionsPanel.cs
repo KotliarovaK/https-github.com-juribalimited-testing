@@ -521,6 +521,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.CogMenu.Click();
         }
 
+        [When(@"User clicks Cog-menu for ""(.*)"" item on Admin page")]
+        public void WhenUserClicksCog_MenuForItemOnAdminPage(string itemName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetCogMenuByItem(itemName).Click();
+        }
+
         [Then(@"Cog menu is not displayed on the Admin page")]
         public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
         {

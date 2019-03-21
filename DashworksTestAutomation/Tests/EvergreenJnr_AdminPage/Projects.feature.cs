@@ -9047,7 +9047,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13606")]
         [NUnit.Framework.CategoryAttribute("DAS13162")]
         public virtual void EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage()
@@ -9082,7 +9082,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "DAS13606",
                         "DAS13162"});
             this.ScenarioInitialize(scenarioInfo);
@@ -9143,7 +9143,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13498")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -9180,7 +9180,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "Senior_Projects",
                         "DAS13498",
                         "Delete_Newly_Created_Project"});
@@ -9242,7 +9242,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("UpdatingName")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13501")]
@@ -9281,7 +9281,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "UpdatingName",
                         "Senior_Projects",
                         "DAS13501",
@@ -9326,7 +9326,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13424")]
         public virtual void EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectScreen()
         {
@@ -9360,7 +9360,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "DAS13424"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -9383,7 +9383,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13510")]
         [NUnit.Framework.CategoryAttribute("DAS13511")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
@@ -9423,7 +9423,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "DAS13510",
                         "DAS13511",
                         "Project_Creation_and_Scope",
@@ -9470,7 +9470,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12768")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
@@ -9510,7 +9510,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "Evergreen",
                     "Admin",
                     "EvergreenJnr_AdminPage",
-                    "AdminPage",
+                    "Projects",
                     "DAS12768",
                     "Delete_Newly_Created_Project",
                     "Project_Creation_and_Scope",
@@ -9548,7 +9548,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("UpdatingName")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13499")]
@@ -9587,7 +9587,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "UpdatingName",
                         "Senior_Projects",
                         "DAS13499",
@@ -9696,7 +9696,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS15262")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
@@ -9734,7 +9734,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "Senior_Projects",
                         "DAS15262",
                         "DAS13973",
@@ -9787,7 +9787,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS15262")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -9824,7 +9824,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "Senior_Projects",
                         "DAS15262",
                         "Delete_Newly_Created_Project"});
@@ -9850,7 +9850,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14819")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -9886,7 +9886,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "Senior_Projects",
                         "DAS14819",
                         "Delete_Newly_Created_Project"});
@@ -9934,7 +9934,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS15260")]
         [NUnit.Framework.CategoryAttribute("DAS15794")]
@@ -9972,7 +9972,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "Senior_Projects",
                         "DAS15260",
                         "DAS15794",
@@ -10056,7 +10056,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12389")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingProjectPage()
@@ -10092,7 +10092,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Projects",
                         "DAS12389",
                         "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);

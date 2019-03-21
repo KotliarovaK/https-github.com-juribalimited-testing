@@ -3677,7 +3677,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWork
 	And "Other mailbox permissions" associated checkbox is checked
 	And "Mailbox folder permissions" associated checkbox is checked
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13606 @DAS13162
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13606 @DAS13162
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3717,7 +3717,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "" content is displayed in "Project Description" field
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS13498 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS13498 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -3757,7 +3757,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @Senior_Projects @DAS13501 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13501 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -3779,7 +3779,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasU
 	And User enters "ProjectDAS13501 upd" text in the Search field for "Project" column
 	Then "ProjectDAS13501 upd" content is displayed for "Project" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13424
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13424
 Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectScreen
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -3789,7 +3789,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	And User clicks the Use Dashworks Evergreen to configure capacity link
 	Then "Slots" tab in Project selected on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3818,7 +3818,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks String Filter button for "Project" column
 	Then "13510TestProject" is not displayed in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12768 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS12768 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplayedInTheBucketDropdown
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3841,7 +3841,7 @@ Examples:
 	| All Users     |
 	| All Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @Senior_Projects @DAS13499 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13499 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -3899,7 +3899,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	When User navigate to "Stages" tab
 	Then "Stage13499" displayed in the table on Senior
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @DAS13973 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @DAS13973 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConvertingProjectToEvergreen
 	When User clicks "Projects" on the left-hand menu
 	When User clicks create Project button
@@ -3927,7 +3927,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15262 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
@@ -3940,7 +3940,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplaye
 	And User clicks "Details" tab
 	Then Convert to Evergreen button is not displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS14819 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS14819 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectConverting
 	When User clicks "Projects" on the left-hand menu
 	When User clicks create Project button
@@ -3965,7 +3965,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 	And User removes selected item
 
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Senior_Projects @DAS15260 @DAS15794 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15260 @DAS15794 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridForDeviceScopedProject
 	When User clicks "Projects" on the left-hand menu
 	And User clicks create Project button
@@ -4017,7 +4017,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12389 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS12389 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingProjectPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
