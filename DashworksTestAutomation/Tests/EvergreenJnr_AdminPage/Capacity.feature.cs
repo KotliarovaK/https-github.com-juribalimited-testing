@@ -5656,6 +5656,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14967")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
@@ -5694,7 +5695,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "Capacity",
                     "Units",
                     "Projects",
-                    "DAS14967"};
+                    "DAS14967",
+                    "DAS15291"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -5710,7 +5712,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "ct\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Slots\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table89.AddRow(new string[] {
+                        "User Slot 1"});
+            table89.AddRow(new string[] {
+                        "User Slot 2"});
+            table89.AddRow(new string[] {
+                        "Device Slot 1"});
+            table89.AddRow(new string[] {
+                        "Device Slot 2"});
+            table89.AddRow(new string[] {
+                        "Application Slot 1"});
+            table89.AddRow(new string[] {
+                        "Application Slot 2"});
+            testRunner.Then("column content is displayed in the following order:", ((string)(null)), table89, "Then ");
+            testRunner.When("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User enters \"Evergreen Capacity Unit 3\" text in the Search field for \"Capacity Un" +
                     "it\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User remembers value in \"{0}\" column", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -5720,16 +5738,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"UserEvergr: Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table89.AddRow(new string[] {
-                        "Evergreen Capacity Unit 3"});
-            testRunner.And("Values is displayed in added filter info", ((string)(null)), table89, "And ");
             TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table90.AddRow(new string[] {
+                        "Evergreen Capacity Unit 3"});
+            testRunner.And("Values is displayed in added filter info", ((string)(null)), table90, "And ");
+            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table91.AddRow(new string[] {
                         "is"});
-            testRunner.And("Options is displayed in added filter info", ((string)(null)), table90, "And ");
+            testRunner.And("Options is displayed in added filter info", ((string)(null)), table91, "And ");
             this.ScenarioCleanup();
         }
 
@@ -5807,16 +5825,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Windows7Mi: Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Values"});
-            table91.AddRow(new string[] {
-                        "Unassigned"});
-            testRunner.And("Values is displayed in added filter info", ((string)(null)), table91, "And ");
             TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table92.AddRow(new string[] {
+                        "Unassigned"});
+            testRunner.And("Values is displayed in added filter info", ((string)(null)), table92, "And ");
+            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table93.AddRow(new string[] {
                         "is"});
-            testRunner.And("Options is displayed in added filter info", ((string)(null)), table92, "And ");
+            testRunner.And("Options is displayed in added filter info", ((string)(null)), table93, "And ");
             this.ScenarioCleanup();
         }
 
@@ -5831,6 +5849,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14967")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists(string listName, string[] exampleTags)
@@ -5868,7 +5887,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "Capacity",
                     "Units",
                     "Projects",
-                    "DAS14967"};
+                    "DAS14967",
+                    "DAS15291"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -5884,7 +5904,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                     "oject\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Slots\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table94.AddRow(new string[] {
+                        "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
+            table94.AddRow(new string[] {
+                        "CA -Mailbox-Nov 11, 2018-Nov 30, 2018"});
+            table94.AddRow(new string[] {
+                        "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
+            table94.AddRow(new string[] {
+                        "TRT-Dec 1, 2018-Dec 31, 2018 - Unlimited"});
+            table94.AddRow(new string[] {
+                        "CA-Mailbox-Jan 1, 2018-Oct 31, 2018"});
+            testRunner.Then("column content is displayed in the following order:", ((string)(null)), table94, "Then ");
+            testRunner.When("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User enters \"Unassigned\" text in the Search field for \"Capacity Unit\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User remembers value in \"{0}\" column", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User clicks content from \"{0}\" column", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -5893,16 +5927,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"MailboxEve: Capacity Unit\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table93.AddRow(new string[] {
+            table95.AddRow(new string[] {
                         "Unassigned"});
-            testRunner.And("Values is displayed in added filter info", ((string)(null)), table93, "And ");
-            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("Values is displayed in added filter info", ((string)(null)), table95, "And ");
+            TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table94.AddRow(new string[] {
+            table96.AddRow(new string[] {
                         "is"});
-            testRunner.And("Options is displayed in added filter info", ((string)(null)), table94, "And ");
+            testRunner.And("Options is displayed in added filter info", ((string)(null)), table96, "And ");
             this.ScenarioCleanup();
         }
 
@@ -6016,6 +6050,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS15878")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot()
         {
@@ -6052,6 +6087,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Capacity",
                         "Slots",
                         "DAS15878",
+                        "DAS15291",
                         "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6063,61 +6099,61 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User moves \"Birmingham Morning\" slot to \"London Depot 15:00 - 17:00\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "Birmingham Afternoon"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "Manchester Morning"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "Manchester Afternoon"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London - City Morning"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London - City Afternoon"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London - Southbank Morning"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London - Southbank Afternoon"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London Depot 09:00 - 11:00"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London Depot 11:00 - 13:00"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London Depot 13:00 - 15:00"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "Birmingham Morning"});
-            table95.AddRow(new string[] {
+            table97.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
-            testRunner.Then("column content is displayed in the following order:", ((string)(null)), table95, "Then ");
+            testRunner.Then("column content is displayed in the following order:", ((string)(null)), table97, "Then ");
             testRunner.When("User moves \"Birmingham Morning\" slot to \"Birmingham Afternoon\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "Birmingham Afternoon"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "Birmingham Morning"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "Manchester Morning"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "Manchester Afternoon"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London - City Morning"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London - City Afternoon"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London - Southbank Morning"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London - Southbank Afternoon"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London Depot 09:00 - 11:00"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London Depot 11:00 - 13:00"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London Depot 13:00 - 15:00"});
-            table96.AddRow(new string[] {
+            table98.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
-            testRunner.Then("column content is displayed in the following order:", ((string)(null)), table96, "Then ");
+            testRunner.Then("column content is displayed in the following order:", ((string)(null)), table98, "Then ");
             this.ScenarioCleanup();
         }
 

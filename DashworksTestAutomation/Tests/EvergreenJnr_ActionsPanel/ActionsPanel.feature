@@ -1789,3 +1789,32 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update capacity unit |
 	| Update request type  |
 	| Update task value    |
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @Not_Run
+Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update task value" Bulk Update Type on Action panel
+	And User selects "1803 Rollout" Project on Action panel
+	And User selects "Pre-Migration" Stage on Action panel
+	And User selects "Scheduled Date" Task on Action panel
+	And User selects "Update" Update Date on Action panel
+	And User selects "23 Nov 2018" Date on Action panel
+	#Update Capacity Slot sort order
+	Then following values are displayed in "Capacity Slot" drop-down on Action panel:
+	| Options                      |
+	| None                         |
+	| Manchester Morning           |
+	| Manchester Afternoon         |
+	| London - Southbank Morning   |
+	| London - City Afternoon      |
+	| London - City Morning        |
+	| London - Southbank Afternoon |
+	| Birmingham Morning           |
+	| Birmingham Afternoon         |

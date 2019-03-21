@@ -4498,6 +4498,93 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
+        [NUnit.Framework.CategoryAttribute("BulkUpdate")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlotInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlotInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ActionsPanel",
+                        "BulkUpdate",
+                        "DAS15291",
+                        "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table122.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table122, "When ");
+            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"1803 Rollout\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Scheduled Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"23 Nov 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Options"});
+            table123.AddRow(new string[] {
+                        "None"});
+            table123.AddRow(new string[] {
+                        "Manchester Morning"});
+            table123.AddRow(new string[] {
+                        "Manchester Afternoon"});
+            table123.AddRow(new string[] {
+                        "London - Southbank Morning"});
+            table123.AddRow(new string[] {
+                        "London - City Afternoon"});
+            table123.AddRow(new string[] {
+                        "London - City Morning"});
+            table123.AddRow(new string[] {
+                        "London - Southbank Afternoon"});
+            table123.AddRow(new string[] {
+                        "Birmingham Morning"});
+            table123.AddRow(new string[] {
+                        "Birmingham Afternoon"});
+            testRunner.Then("following values are displayed in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table123, "Then ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

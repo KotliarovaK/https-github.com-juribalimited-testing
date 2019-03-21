@@ -2209,14 +2209,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	| 1Test            |
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967 @DAS15291
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserProjectLeadToCorrectFilteredLists
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
-	And User selects "Units" tab on the Project details page
+	And User clicks "Slots" tab
+	Then column content is displayed in the following order:
+	| Items              |
+	| User Slot 1        |
+	| User Slot 2        |
+	| Device Slot 1      |
+	| Device Slot 2      |
+	| Application Slot 1 |
+	| Application Slot 2 |
+	When User selects "Units" tab on the Project details page
 	And User enters "Evergreen Capacity Unit 3" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
@@ -2267,14 +2276,22 @@ Examples:
 	| Users        |
 	| Applications |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS14967 @DAS15291
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailProjectLeadToCorrectFilteredLists
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Mailbox Evergreen Capacity Project" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
-	And User selects "Units" tab on the Project details page
+	And User clicks "Slots" tab
+	Then column content is displayed in the following order:
+	| Items                                              |
+	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
+	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
+	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
+	| TRT-Dec 1, 2018-Dec 31, 2018 - Unlimited           |
+	| CA-Mailbox-Jan 1, 2018-Oct 31, 2018                |
+	When User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User remembers value in "<ListName>" column
 	And User clicks content from "<ListName>" column
@@ -2335,7 +2352,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @DAS15291 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
