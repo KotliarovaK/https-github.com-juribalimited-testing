@@ -309,6 +309,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IWebElement FieldContentByName(string fieldName, string text)
+        {
+            var selector = By.XPath($".//td//span[text()='{fieldName}']//ancestor::div//span[text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetCompareContentOnTheDetailsPage(string title, string value)
         {
             var selector = By.XPath($".//td//span[text()='{title}']//ancestor::tr/td//span[text()='{value}']");

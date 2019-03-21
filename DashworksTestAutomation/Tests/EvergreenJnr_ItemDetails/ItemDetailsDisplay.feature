@@ -1192,3 +1192,4 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Common Name                     |
 	| Display Name                    |
 	| Description                     |
+	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
