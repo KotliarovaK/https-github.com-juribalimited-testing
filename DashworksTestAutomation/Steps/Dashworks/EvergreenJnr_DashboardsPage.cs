@@ -659,8 +659,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"following content is displayed in the ""(.*)"" column")]
         public void ThenFollowingContentIsDisplayedInTheColumn(string columnName, Table table)
         {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+            var tableContent = table.Rows.SelectMany(row => row.Values);
+            Assert.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
+        }
+
+        [Then(@"following content is displayed in the ""(.*)"" column for Widget")]
+        public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
+        {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var originalList = page.GetRowContentByColumnName(columnName);
+            var originalList = page.GetWidgwtRowContentByColumnName(columnName);
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
