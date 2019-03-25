@@ -6453,8 +6453,401 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
+        public virtual void EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "Evergreen_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS15291"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table142 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table142.AddRow(new string[] {
+                        "Empty"});
+            testRunner.When("User add \"UserEvergr: Dropdown Non RAG Date (User) (Slot)\" filter where type is \"" +
+                    "Does not equal\" with added column and following checkboxes:", ((string)(null)), table142, "When ");
+            TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table143.AddRow(new string[] {
+                        "BCLABS"});
+            testRunner.When("User Add And \"Domain\" filter where type is \"Equals\" with added column and Lookup " +
+                    "option", ((string)(null)), table143, "When ");
+            testRunner.When("User click on \'UserEvergr: Dropdown Non RAG Date (User) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table144.AddRow(new string[] {
+                        "User Slot 1"});
+            table144.AddRow(new string[] {
+                        "User Slot 1"});
+            table144.AddRow(new string[] {
+                        "User Slot 1"});
+            table144.AddRow(new string[] {
+                        "User Slot 1"});
+            table144.AddRow(new string[] {
+                        "User Slot 1"});
+            table144.AddRow(new string[] {
+                        "User Slot 2"});
+            table144.AddRow(new string[] {
+                        "User Slot 2"});
+            testRunner.Then("following content is displayed in the \"UserEvergr: Dropdown Non RAG Date (User) (" +
+                    "Slot)\" column", ((string)(null)), table144, "Then ");
+            testRunner.When("User click on \'UserEvergr: Dropdown Non RAG Date (User) (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table145.AddRow(new string[] {
+                        "User Slot 2"});
+            table145.AddRow(new string[] {
+                        "User Slot 2"});
+            table145.AddRow(new string[] {
+                        "User Slot 1"});
+            table145.AddRow(new string[] {
+                        "User Slot 1"});
+            table145.AddRow(new string[] {
+                        "User Slot 1"});
+            table145.AddRow(new string[] {
+                        "User Slot 1"});
+            table145.AddRow(new string[] {
+                        "User Slot 1"});
+            testRunner.Then("following content is displayed in the \"UserEvergr: Dropdown Non RAG Date (User) (" +
+                    "Slot)\" column", ((string)(null)), table145, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
+        public virtual void EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "Evergreen_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS15291"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table146 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table146.AddRow(new string[] {
+                        "Empty"});
+            testRunner.When("User add \"1803: Scheduled Date (Slot)\" filter where type is \"Does not equal\" with" +
+                    " added column and Lookup option", ((string)(null)), table146, "When ");
+            TechTalk.SpecFlow.Table table147 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table147.AddRow(new string[] {
+                        "Laptop"});
+            testRunner.When("User Add And \"Device Type\" filter where type is \"Equals\" with added column and Lo" +
+                    "okup option", ((string)(null)), table147, "When ");
+            testRunner.When("User click on \'1803: Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table148 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table148.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table148.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table148.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table148.AddRow(new string[] {
+                        "Birmingham Morning"});
+            table148.AddRow(new string[] {
+                        "Manchester Morning"});
+            table148.AddRow(new string[] {
+                        "Manchester Morning"});
+            table148.AddRow(new string[] {
+                        "Manchester Morning"});
+            table148.AddRow(new string[] {
+                        "Manchester Morning"});
+            table148.AddRow(new string[] {
+                        "London - City Morning"});
+            table148.AddRow(new string[] {
+                        "London - Southbank Morning"});
+            testRunner.Then("following content is displayed in the \"1803: Scheduled Date (Slot)\" column", ((string)(null)), table148, "Then ");
+            testRunner.When("User click on \'1803: Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table149 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table149.AddRow(new string[] {
+                        "London - Southbank Morning"});
+            table149.AddRow(new string[] {
+                        "London - City Morning"});
+            table149.AddRow(new string[] {
+                        "Manchester Morning"});
+            table149.AddRow(new string[] {
+                        "Manchester Morning"});
+            table149.AddRow(new string[] {
+                        "Manchester Morning"});
+            table149.AddRow(new string[] {
+                        "Manchester Morning"});
+            table149.AddRow(new string[] {
+                        "Birmingham Morning"});
+            table149.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table149.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table149.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            testRunner.Then("following content is displayed in the \"1803: Scheduled Date (Slot)\" column", ((string)(null)), table149, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "Evergreen_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS15291"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table150 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table150.AddRow(new string[] {
+                        "Empty"});
+            testRunner.When("User add \"UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)\" filt" +
+                    "er where type is \"Does not equal\" with added column and following checkboxes:", ((string)(null)), table150, "When ");
+            testRunner.When("User click on \'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)\'" +
+                    " column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table151.AddRow(new string[] {
+                        "Application Slot 1"});
+            table151.AddRow(new string[] {
+                        "Application Slot 1"});
+            table151.AddRow(new string[] {
+                        "Application Slot 1"});
+            table151.AddRow(new string[] {
+                        "Application Slot 1"});
+            table151.AddRow(new string[] {
+                        "Application Slot 2"});
+            testRunner.Then("following content is displayed in the \"UserEvergr: Radiobutton Readiness Date Own" +
+                    "er (Application) (Slot)\" column", ((string)(null)), table151, "Then ");
+            testRunner.When("User click on \'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)\'" +
+                    " column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table152 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table152.AddRow(new string[] {
+                        "Application Slot 2"});
+            table152.AddRow(new string[] {
+                        "Application Slot 1"});
+            table152.AddRow(new string[] {
+                        "Application Slot 1"});
+            table152.AddRow(new string[] {
+                        "Application Slot 1"});
+            table152.AddRow(new string[] {
+                        "Application Slot 1"});
+            testRunner.Then("following content is displayed in the \"UserEvergr: Radiobutton Readiness Date Own" +
+                    "er (Application) (Slot)\" column", ((string)(null)), table152, "Then ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS15291")]
+        public virtual void EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "Evergreen_FiltersFeature",
+                        "FilterFunctionality",
+                        "DAS15291"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table153 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedValues"});
+            table153.AddRow(new string[] {
+                        "Empty"});
+            testRunner.When("User add \"MailboxEve: Scheduled - mailbox (Slot)\" filter where type is \"Does not " +
+                    "equal\" with added column and Lookup option", ((string)(null)), table153, "When ");
+            TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table154.AddRow(new string[] {
+                        "Spruill, Shea"});
+            table154.AddRow(new string[] {
+                        "Bandyopadhyay, Sudipta"});
+            table154.AddRow(new string[] {
+                        "Balanceactiv, Info"});
+            testRunner.When("User Add And \"Owner Display Name\" filter where type is \"Equals\" with added column" +
+                    " and following value:", ((string)(null)), table154, "When ");
+            testRunner.When("User click on \'MailboxEve: Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table155 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table155.AddRow(new string[] {
+                        "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
+            table155.AddRow(new string[] {
+                        "CA -Mailbox-Nov 11, 2018-Nov 30, 2018"});
+            table155.AddRow(new string[] {
+                        "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
+            testRunner.Then("following content is displayed in the \"MailboxEve: Scheduled - mailbox (Slot)\" co" +
+                    "lumn", ((string)(null)), table155, "Then ");
+            testRunner.When("User click on \'MailboxEve: Scheduled - mailbox (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table156 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table156.AddRow(new string[] {
+                        "TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\\RT=A\\T=Admin"});
+            table156.AddRow(new string[] {
+                        "CA -Mailbox-Nov 11, 2018-Nov 30, 2018"});
+            table156.AddRow(new string[] {
+                        "CA -Mailbox-Nov 1, 2018-Nov 10, 2018"});
+            testRunner.Then("following content is displayed in the \"MailboxEve: Scheduled - mailbox (Slot)\" co" +
+                    "lumn", ((string)(null)), table156, "Then ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
 #endregion
-

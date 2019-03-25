@@ -2425,7 +2425,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Values"});
             table49.AddRow(new string[] {
                         "Microsoft"});
-            testRunner.Then("following content is displayed in the \"Vendor\" column", ((string)(null)), table49, "Then ");
+            testRunner.Then("following content is displayed in the \"Vendor\" column for Widget", ((string)(null)), table49, "Then ");
             testRunner.When("User clicks Settings button for \"Dashboard for DAS15413\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

@@ -261,14 +261,14 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(dashboardWidget);
         }
 
-        public string GetRowContentByColumnName(string columnName)
+        public string GetWidgwtRowContentByColumnName(string columnName)
         {
             var by = By.XPath(
-                $".//td[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
+                $".//td[@role='gridcell'][{GetWidgetColumnNumberByName(columnName)}]");
             return Driver.FindElement(by).Text;
         }
 
-        public int GetColumnNumberByName(string columnName)
+        public int GetWidgetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//tr[@class='mat-header-row ng-star-inserted']//th[@role]");
             Driver.WaitForDataLoading();
