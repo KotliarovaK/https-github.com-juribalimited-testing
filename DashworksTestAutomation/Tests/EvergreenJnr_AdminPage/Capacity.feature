@@ -151,24 +151,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then Project "ProjectForCapacity13171" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User clicks on the Unlimited field on the Capacity Slots page
 	Then Unlimited text disappears from column
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
 	When User selects "Capacity Units" in the "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	Then "All Capacity Units" content is displayed in "Capacity Units" column
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
 	And User selects "Capacity Units" in the "Capacity Type" dropdown
 	And User clicks the "CREATE" Action button
 	Then Error message with "A capacity slot already exists with this name" text is displayed
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "UniqueNameSlot" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User click on 'Capacity Slot' column header
 	Then data in table is sorted by "Capacity Slot" column in descending order on the Admin page
 	And There are no errors in the browser console
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "CapacitySlot2" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
 	When User selects "Teams and Request Types" in the "Capacity Type" dropdown
@@ -347,13 +347,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "SlotDAS13780_1" Name in the "Slot Name" field on the Project details page
 	And User type "13780_1" Name in the "Display Name" field on the Project details page
 	And User enters "17 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
 	And User enters "18 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
 	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "SlotDAS13780_2" Name in the "Slot Name" field on the Project details page
 	And User type "13780_2" Name in the "Display Name" field on the Project details page
 	And User enters "17 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
@@ -481,7 +481,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| Unassigned |
 	| test1      |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13824 @DAS14250 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13824 @DAS14250 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -492,7 +492,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCan
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "CapacitySlotDAS13824" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13824" Name in the "Display Name" field on the Project details page
 	And User selects "Capacity Units" in the "Capacity Type" dropdown
@@ -542,7 +542,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "CapacitySlot13866" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13866" Name in the "Display Name" field on the Project details page
 	When User clicks the "CREATE" Action button
@@ -745,7 +745,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	Then Project "ProjectDAS13442" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot13442" Name in the "Slot Name" field on the Project details page
 	And User type "13442" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
