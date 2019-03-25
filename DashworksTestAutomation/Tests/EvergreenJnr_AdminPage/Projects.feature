@@ -662,7 +662,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11729 @DAS13199 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -2265,7 +2265,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrec
 	Then "Project Object" page is displayed to the user
 	And Colour of onboarded app is "Red"
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12496 @DAS12485 @DAS12108 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12496 @DAS12485 @DAS12108 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2300,17 +2300,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	And User navigates to the "Application Scope" tab in the Scope section on the Project details page
 	When User selects "Do not include applications" checkbox on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
-	And User clicks "Devices" tab in the Project Scope Changes section
-	When User adds following Objects to the Project
+	When User adds following Objects to the Project on "Devices" tab
 	| Objects         |
 	| 01HMZTRG6OQAOF  |
 	| 02C80G8RFTPA9E  |
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message with "0 objects queued for onboarding, 2 objects offboarded" text is displayed on the Projects page
-	When User selects "Queue" tab on the Project details page
+	When User selects "History" tab on the Project details page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "2" found rows
+	Then Counter shows "2 of 6 rows" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
