@@ -577,7 +577,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15413 | TestList_DAS15413 | 500     | 10         |
 	Then "Widget_For_DAS15413" Widget is displayed to the user
-	Then following content is displayed in the "Vendor" column
+	Then following content is displayed in the "Vendor" column for Widget
 	| Values    |
 	| Microsoft |
 	When User clicks Settings button for "Dashboard for DAS15413" dashboard

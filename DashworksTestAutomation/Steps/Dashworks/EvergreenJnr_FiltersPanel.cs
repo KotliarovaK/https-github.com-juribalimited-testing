@@ -349,6 +349,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             type.Do();
         }
 
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with added column and following value:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithAddedColumnAndFollowingValue(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
+            var type = new ValueFilter(_driver, operatorValue, true, table);
+            type.Do();
+        }
+
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" without added column and following value:")]
         public void WhenUserAddFilterWhereTypeIsWithoutAddedColumnAndFollowingValue(string filterName,
             string operatorValue, Table table)

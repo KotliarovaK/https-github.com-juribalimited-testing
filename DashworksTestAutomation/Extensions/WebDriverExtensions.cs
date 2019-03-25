@@ -82,32 +82,29 @@ namespace DashworksTestAutomation.Extensions
 
             try
             {
-                Logger.Write("Trying to delete cookie");
                 driver.Manage().Cookies.DeleteAllCookies();
             }
             catch (Exception e)
             {
-                Logger.Write(e);
+                Logger.Write($"Error during cookie deleting: {e}");
             }
 
             try
             {
-                Logger.Write("Trying to close browser");
                 driver.Close();
             }
             catch (Exception e)
             {
-                Logger.Write(e);
+                Logger.Write($"Error during driver closing: {e}");
             }
 
             try
             {
-                Logger.Write("Trying to quite chromedriver");
                 driver.Quit();
             }
             catch (Exception e)
             {
-                Logger.Write(e);
+                Logger.Write($"Error on driver quite: {e}");
                 try
                 {
                     Thread.Sleep(3000);
@@ -116,18 +113,17 @@ namespace DashworksTestAutomation.Extensions
                 }
                 catch (Exception ex)
                 {
-                    Logger.Write(ex);
+                    Logger.Write($"Driver was not quite on retry: {ex}");
                 }
             }
 
             try
             {
-                Logger.Write("Trying to Dispose webdriver");
                 driver.Dispose();
             }
             catch (Exception e)
             {
-                Logger.Write(e);
+                Logger.Write($"Error disposing webdriver: {e}");
             }
         }
 
@@ -433,7 +429,7 @@ namespace DashworksTestAutomation.Extensions
             //".//div[contains(@class,'mat-autocomplete-panel mat-autocomplete-visible ng-star-inserted')]/mat-option"));
             var options = driver.FindElements(By.XPath(
                 "//div[contains(@class,'mat-select-panel mat-primary')]/mat-option"));
-                
+
             if (!options.Any())
             {
                 options = driver.FindElements(By.XPath(
