@@ -92,12 +92,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool ListNameWarningMessage(string listName)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='inline-box-text']//span[text()='\"{listName}\" ']"));
+                By.XPath($".//div[@class='inline-box-text']//span[contains(text(), '{listName}')]"));
         }
 
         public bool RemovingDependencyListMessage(string warningText)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div//span[text()='{warningText}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{warningText}')]"));
         }
 
         public bool CheckThatListIsRemoved(string listName)

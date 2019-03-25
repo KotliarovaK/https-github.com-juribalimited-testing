@@ -1803,6 +1803,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.UpdateButton.Click();
         }
 
+        [When(@"User adds following Objects to the Project on ""(.*)"" tab")]
+        public void WhenUserAddsFollowingObjectsToTheProjectOnTab(string tabName, Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            try
+            {
+                var projectTabs = _driver.NowAt<ProjectsPage>();
+                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+                projectElement.PlusButton.Click();
+                foreach (var row in table.Rows)
+                {
+                    projectElement.AddItem(row["Objects"]);
+                    projectElement.SearchTextBox.ClearWithHomeButton(_driver);
+                }
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(60000);
+                _driver.Navigate().Refresh();
+                _driver.WaitForDataLoading();
+                var projectTabs = _driver.NowAt<ProjectsPage>();
+                projectTabs.ClickToTabByNameProjectScopeChanges(tabName);
+                _driver.WaitForDataLoading();
+                projectElement.PlusButton.Click();
+                foreach (var row in table.Rows)
+                {
+                    projectElement.AddItem(row["Objects"]);
+                    projectElement.SearchTextBox.ClearWithHomeButton(_driver);
+                }
+            }
+
+            projectElement.UpdateButton.Click();
+        }
+
         [When(@"User selects following Objects to the Project")]
         public void WhenUserSelectsFollowingObjectsToTheProject(Table table)
         {
@@ -2054,7 +2088,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetCreatedProjectName(projectName), "Created Project is not found");
+            Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
         }
 
         [Then(@"Import Project button is not displayed")]

@@ -500,7 +500,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool GetCreatedProjectName(string projectName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[@col-id='projectName']//a[text()='{projectName}']"));
         }
 
         public bool GetButtonByName(string buttonName)
