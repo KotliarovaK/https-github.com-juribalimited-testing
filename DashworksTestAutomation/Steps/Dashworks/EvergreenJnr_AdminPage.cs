@@ -833,18 +833,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectAllCheckBox.Click();
         }
 
-        [Then(@"Select All selectbox is checked on the Admin page")]
-        public void ThenSelectAllSelectBoxIsCheckedOnTheAdminPage()
+        [Then(@"'Select All' checkbox have full checked state on the Admin page")]
+        public void ThenSelectAllCheckboxHaveFullCheckedStateOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is unchecked");
+            Assert.IsTrue(page.SelectAllCheckboxWithFullCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
         }
 
-        [Then(@"Select All selectbox is unchecked on the Admin page")]
-        public void ThenSelectAllSelectBoxIsUncheckedOnTheAdminPage()
+        [Then(@"'Select All' checkbox have indeterminate checked state on the Admin page")]
+        public void ThenSelectAllCheckboxHaveIndeterminateCheckedStateOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is checked");
+            Assert.IsTrue(page.SelectAllCheckboxWithIndeterminateCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
         }
 
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
@@ -1314,7 +1314,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBlueBannerWithTextIsDisplayed(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
+            //_driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
             StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
@@ -2088,7 +2088,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+            try
+            {
+                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(30000);
+                _driver.Navigate().Refresh();
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+            }
         }
 
         [Then(@"Import Project button is not displayed")]

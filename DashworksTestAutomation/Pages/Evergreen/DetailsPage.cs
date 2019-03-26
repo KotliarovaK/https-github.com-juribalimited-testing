@@ -17,6 +17,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FieldOnDetailsPageSelector = ".//td[contains(@class, 'mat-column-key')]";
 
+        public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
@@ -74,6 +76,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = FieldOnDetailsPageSelector)]
         public IList<IWebElement> FieldListOnDetailsPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ColumnHeader)]
+        public IList<IWebElement> ColumnHeadersList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

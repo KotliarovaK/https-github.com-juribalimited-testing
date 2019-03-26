@@ -204,6 +204,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{columnName} column still displayed");
         }
 
+        [Then(@"following columns are displayed on the Item details page:")]
+        public void ThenFollowingColumnsAreDisplayedOnTheItemDetailsPage(Table table)
+        {
+            var column = _driver.NowAt<DetailsPage>();
+
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var columnNames = column.ColumnHeadersList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Item details page is incorrect");
+        }
+
         [When(@"User clicks String Filter button for ""(.*)"" column")]
         public void WhenUserClicksStringFilterButtonForColumn(string columnName)
         {
