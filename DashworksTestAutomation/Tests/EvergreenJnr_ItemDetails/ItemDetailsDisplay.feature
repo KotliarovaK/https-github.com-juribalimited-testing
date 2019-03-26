@@ -1193,3 +1193,19 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Display Name                    |
 	| Description                     |
 	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009
+Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then following columns are displayed on the Item details page:
+	| ColumnName   |
+	| Application  |
+	| Manufacturer |
+	| Version      |
+	| Compliance   |
+	| Installed    |
+	| Used         |
+	| Entitled     |

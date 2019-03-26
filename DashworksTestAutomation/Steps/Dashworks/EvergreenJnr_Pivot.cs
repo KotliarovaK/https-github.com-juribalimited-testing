@@ -424,7 +424,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var columnNames = columnElement.GetPivotHeadersContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
         }
 
         [Then(@"Pivot left-pinned column content is displayed in following order:")]
@@ -434,7 +434,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var columnNames = columnElement.GetLeftPinnedColumnContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
         }
 
         [When(@"User expanded ""(.*)"" left-pinned value on Pivot")]
