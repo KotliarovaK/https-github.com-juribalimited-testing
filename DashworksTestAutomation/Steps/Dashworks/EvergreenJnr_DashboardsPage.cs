@@ -4,6 +4,7 @@ using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -560,14 +561,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User selects ""(.*)"" as Widget Type")]
-        public void WhenUserSetsWidgetType(string widgetType)
+        [When(@"User selects ""(.*)"" in the ""(.*)"" Widget dropdown")]
+        public void WhenUserSelectsInTheWidgetDropdown(string objectName, string dropdownName)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.WidgetType.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(widgetType);
-            _driver.WaitForDataLoadingOnProjects();
+            _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
+            createWidgetElement.SelectObjectForWidgetCreation(objectName);
         }
 
         [When(@"User enters ""(.*)"" as Widget Title")]
@@ -584,27 +583,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
 
             createWidgetElement.List.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(widgetList);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User selects ""(.*)"" as Type")]
-        public void WhenUserSetsTypesOnWidget(string type)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.Type.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(type);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User selects ""(.*)"" as Widget SplitBy")]
-        public void WhenUserSetsWidgetSplitBy(string splitBy)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.SplitBy.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(splitBy);
+            createWidgetElement.SelectListForWidgetCreation(widgetList);
             _driver.WaitForDataLoadingOnProjects();
         }
 
@@ -626,6 +605,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.AggregateFunction.Click();
             createWidgetElement.SelectObjectForWidgetCreation(aggregateFunc);
             _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [When(@"User clicks on the Colour Scheme dropdown")]
+        public void WhenUserClicksOnTheColourSchemeDropdown()
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            createWidgetElement.ColorScheme.Click();
+        }
+
+        [Then(@"Colour Scheme dropdown is displayed to the user")]
+        public void ThenColourSchemeDropdownIsDisplayedToTheUser()
+        {
+            var dropdownContainer = _driver.FindElements(By.XPath(AddWidgetPage.ColorSchemeDropdownContainer));
+            foreach (var element in dropdownContainer)
+            {
+                var innerColour = element.FindElement(By.XPath(AddWidgetPage.ColorSchemeDropdownContent));
+                Assert.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
+            }
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
         }
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]

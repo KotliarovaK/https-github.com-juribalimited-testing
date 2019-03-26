@@ -1863,9 +1863,6 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	When User click on '1803: Scheduled Date (Slot)' column header
 	Then following content is displayed in the "1803: Scheduled Date (Slot)" column
 	| Values                     |
-	| London Depot 09:00 - 11:00 |
-	| London Depot 09:00 - 11:00 |
-	| London Depot 09:00 - 11:00 |
 	| Birmingham Morning         |
 	| Manchester Morning         |
 	| Manchester Morning         |
@@ -1873,9 +1870,15 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| Manchester Morning         |
 	| London - City Morning      |
 	| London - Southbank Morning |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
 	When User click on '1803: Scheduled Date (Slot)' column header
 	Then following content is displayed in the "1803: Scheduled Date (Slot)" column
 	| Values                     |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
 	| London - Southbank Morning |
 	| London - City Morning      |
 	| Manchester Morning         |
@@ -1883,9 +1886,6 @@ Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
 	| Manchester Morning         |
 	| Manchester Morning         |
 	| Birmingham Morning         |
-	| London Depot 09:00 - 11:00 |
-	| London Depot 09:00 - 11:00 |
-	| London Depot 09:00 - 11:00 |
 
 @Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
 Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
