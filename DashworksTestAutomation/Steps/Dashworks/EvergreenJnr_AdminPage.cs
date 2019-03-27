@@ -2361,7 +2361,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnBackButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(10000);
+            Thread.Sleep(20000);
             button.BackToTableButton.Click();
         }
 
@@ -2726,6 +2726,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(1000);
             _driver.WaitForDataLoading();
             button.ResetFiltersButton.Click();
+        }
+
+        [When(@"User clicks Refresh button on the Admin page")]
+        public void WhenUserClicksRefreshButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(10000);
+            _driver.WaitForDataLoading();
+            button.RefreshButton.Click();
         }
 
         [Then(@"""(.*)"" Onboarded objects are displayed")]
