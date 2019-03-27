@@ -161,6 +161,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed());
         }
 
+        [Then(@"Details page for ""(.*)"" item is displayed correctly")]
+        public void ThenDetailsPageForItemIsDisplayedCorrectly(string itemName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetItemDetailsPageByName(itemName).Displayed(), $"Details page for {itemName} item is not loaded");
+        }
+
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {

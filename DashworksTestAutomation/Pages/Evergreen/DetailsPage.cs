@@ -334,5 +334,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector).Text;
         }
+
+        public IWebElement GetItemDetailsPageByName (string itemName)
+        {
+            var selector = By.XPath($"//div[@id='pagetitle-text']//h1[text()='{itemName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
