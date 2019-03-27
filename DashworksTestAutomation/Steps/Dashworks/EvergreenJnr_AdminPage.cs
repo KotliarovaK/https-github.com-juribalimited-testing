@@ -103,6 +103,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
+                case "Automations":
+                    var automationsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(automationsPage.Automations.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
                 case "Capacity Units":
                     var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
                     StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
