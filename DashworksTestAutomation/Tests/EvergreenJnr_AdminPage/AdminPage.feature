@@ -277,3 +277,19 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "3Project12763" is not displayed in the filter dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	And "Projects" page should be displayed to the user
+	When User clicks the "IMPORT PROJECT" Action button
+	Then "Import Project" page should be displayed to the user
+	When User selects "1803_Rollout.xml" file to upload on Import Project page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User enters "DAS15989_TestProject" in the Project Name field on Import Project page
+	When User clicks Import Project button on the Import Project page
+	When User clicks newly created object link
+	Then Project "DAS15989_TestProject" is displayed to user
+	When User clicks "Readiness" tab
+	Then "UNKNOWN" content is not displayed in the grid on the Project details page

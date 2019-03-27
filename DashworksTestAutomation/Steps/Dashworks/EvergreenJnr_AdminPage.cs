@@ -296,6 +296,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
         }
 
+        [Then(@"""(.*)"" content is not displayed in the grid on the Project details page")]
+        public void ThenContentIsNotDisplayedInTheGridOnTheProjectDetailsPage(string text)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectTabs.CheckContentDisplay(text));
+        }
+
         [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
         public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
         {
