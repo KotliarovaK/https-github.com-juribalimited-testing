@@ -144,9 +144,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOptionInContextMenu(string option)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-           // _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading();
 
-            page.AgMenuOptions.FirstOrDefault(x => x.Text.Equals(option)).Click();
+            page.AgMenuOptions.FirstOrDefault(x => x.Text.Equals(option))?.Click();
         }
 
         [Then(@"Next data '(.*)' is copied")]

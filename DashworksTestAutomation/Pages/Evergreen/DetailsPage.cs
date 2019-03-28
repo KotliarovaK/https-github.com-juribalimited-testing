@@ -71,8 +71,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-tab-body[contains(@class, 'mat-tab-body')]")]
         public IWebElement PopupChangesPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']")]
+        [FindsBy(How = How.XPath, Using = "//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//div[@class='field-category collapsed']")]
+        public IWebElement OpenedPanelForUpdatingItems { get; set; }
 
         [FindsBy(How = How.XPath, Using = FieldOnDetailsPageSelector)]
         public IList<IWebElement> FieldListOnDetailsPage { get; set; }
@@ -317,6 +320,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement FieldContentByName(string fieldName, string text)
         {
             var selector = By.XPath($".//td//span[text()='{fieldName}']//ancestor::div//span[text()='{text}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetFieldToOpenTheTableByName (string fieldName)
+        {
+            var selector = By.XPath($"//div[@class='application-category-title']//span[contains(text(), '{fieldName}')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

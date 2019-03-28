@@ -150,7 +150,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //menu.Admin.Click();
             //Admin tab on the left-hand menu is temporarily unavailable
             _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
-            Logger.Write("Admin page was clicked");
         }
 
         [Then(@"Admin page should be displayed to the user")]
@@ -166,6 +165,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver.NavigateToUrl($"{UrlProvider.Url}PMObject.aspx?ObjectId={objectId}");
             Logger.Write("PMObject page was loaded");
+        }
+
+        [When(@"User closes Toggle Menu")]
+        [When(@"User closes left-hand menu")]
+        [When(@"User opens Toggle Menu")]
+        [When(@"User opens left-hand menu")]
+        public void WhenUserClosesLeft_HandMenu()
+        {
+            var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            menu.ToggleMenu.Click();
+            Logger.Write("Toggle Menu button was clicked");
         }
     }
 }
