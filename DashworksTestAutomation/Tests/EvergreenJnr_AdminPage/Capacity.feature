@@ -129,7 +129,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	When User clicks content from "Start Date" column
 	And User enters "3 Oct 2018" date in the "Override End Date" field
 	Then "UPDATE" Action button is disabled
-	Then "UPDATE" Action button have tooltip with "Some settings are not valid" text
+	Then "UPDATE" Action button have tooltip with "No changes made" text
 	When User enters "" date in the "Override Start Date" field
 	And User enters "" date in the "Override End Date" field
 	Then Filling field error with "An override start date must be entered" text is displayed
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	And Success message is displayed and contains "Click here to view the CapacityUnit13790 capacity unit" link
 	When User enters "13720" text in the Search field for "Description" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "2" rows
 	When User clicks newly created object link
 	Then URL contains "evergreen/#/admin/project/"
 	When User updates the "Default Unit" checkbox state
@@ -286,6 +286,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	# And "UPDATE" Action button is disabled 
 	# And "CANCEL" Action button is disabled
 	When User selects "Units" tab on the Project details page
+	And User clicks Yes button in Leave Page Warning
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -392,7 +393,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "capacityslotDAS13789" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13779slot" Name in the "Display Name" field on the Project details page
 	And User enters "28 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
@@ -481,7 +482,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 	| Unassigned |
 	| test1      |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13824 @DAS14250 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13824 @DAS14250 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -515,7 +516,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "CapacitySlotDAS13441" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13441" Name in the "Display Name" field on the Project details page
 	And User selects "Device" in the "Object Type" dropdown
@@ -523,7 +524,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	| Items                                      |
 	| Stage 1 \ DDL Task for a Computer          |
 	| Stage 1 \ Date Task for a Computer Italian |
-	And User clicks on "Request Types" dropdown on the Capacity Slots page
+	And User clicks on "Capacity Units" dropdown on the Capacity Slots page
 	And User clicks the "CREATE" Action button
 	And User clicks newly created object link
 	Then User sees following tiles selected in the "Tasks" field:
@@ -699,7 +700,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "SlotDAS13779" Name in the "Slot Name" field on the Project details page
 	And User type "13779" Name in the "Display Name" field on the Project details page
 	And User enters "29 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
@@ -920,19 +921,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	Then Project "13382ProjectForCapacity" is displayed to user
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Name1" Name in the "Slot Name" field on the Project details page
 	And User type "Name1" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And There are no errors in the browser console
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "NewName" Name in the "Slot Name" field on the Project details page
 	And User type "Name1" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And There are no errors in the browser console
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
 	And User type "Name13147" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -988,7 +989,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User selects "Dutch" language on the Project details page
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "ChecksLanguage" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13955" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -1022,7 +1023,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	When User clicks "REMOVE" button in the warning message on Admin page
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "ChecksLanguage 2" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13955" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -1197,7 +1198,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
 	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
@@ -1216,13 +1217,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
 	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "capacity type = Capacity Units" Name in the "Slot Name" field on the Project details page
 	And User type "capacity type = Capacity Units" Name in the "Display Name" field on the Project details page
 	Then User selects "Capacity Units" option in "Capacity Type" dropdown
@@ -1230,7 +1231,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	And User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "2" rows
 	And "" content is displayed in "Capacity Units" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project @Not_Run
@@ -1314,7 +1315,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 14478" Name in the "Slot Name" field on the Project details page
 	And User type "14478" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
@@ -1355,17 +1356,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 10001" Name in the "Slot Name" field on the Project details page
 	And User type "10001" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 10002" Name in the "Slot Name" field on the Project details page
 	And User type "10002" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 10003" Name in the "Slot Name" field on the Project details page
 	And User type "10003" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
@@ -1397,19 +1398,19 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot 3" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 3" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -1483,7 +1484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "DAS_13811_1" Name in the "Slot Name" field on the Project details page
 	And User type "13811_1" Name in the "Display Name" field on the Project details page
 	And User selects following items in "Request Types" dropdown:
@@ -1495,7 +1496,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	| Administrative Team |
 	| Admin IT            |
 	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "DAS_13811_2" Name in the "Slot Name" field on the Project details page
 	And User type "13811_2" Name in the "Display Name" field on the Project details page
 	And User selects "Capacity Units" in the "Capacity Type" dropdown
@@ -1572,7 +1573,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	And User type "Unit 2" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
 	When User clicks the "CREATE" Action button
@@ -1584,7 +1585,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 	When User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
@@ -1801,7 +1802,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User clicks content from "Project" column
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User selects "Device" in the "Object Type" dropdown
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
@@ -1943,7 +1944,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	And User clicks content from "Project" column
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "SlotTask13502" Name in the "Slot Name" field on the Project details page
 	And User type "Slot Task13502" Name in the "Display Name" field on the Project details page
 	And User selects "Computer Information ---- Text fill; Text fill; \ Task13502" checkbox in the "Tasks" field on the Project details page
@@ -2118,7 +2119,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot131522" Name in the "Slot Name" field on the Project details page
 	And User type "131522" Name in the "Display Name" field on the Project details page
 	And User selects "Teams and Request Types" in the "Capacity Type" dropdown
