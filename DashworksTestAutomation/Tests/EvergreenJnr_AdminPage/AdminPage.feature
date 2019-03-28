@@ -308,3 +308,16 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCrea
 	Then Project "DAS15989_TestProject" is displayed to user
 	When User clicks "Readiness" tab
 	Then "UNKNOWN" content is not displayed in the grid on the Project details page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness 
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	And "Projects" page should be displayed to the user
+	When User clicks the "IMPORT PROJECT" Action button
+	Then "Import Project" page should be displayed to the user
+	When User selects "Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml" file to upload on Import Project page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User enters "DAS16089_TestProject" in the Project Name field on Import Project page
+	When User clicks Import Project button on the Import Project page
+	Then Error message with "Your file doesn't contain Readiness values" text is displayed
