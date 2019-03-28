@@ -335,6 +335,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
         }
 
+        public bool CheckContentDisplay(string text)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{text}']"));
+        }
+
         public IWebElement GetFieldByName(string name)
         {
             var selector = By.XPath($".//input[@placeholder='{name}']");

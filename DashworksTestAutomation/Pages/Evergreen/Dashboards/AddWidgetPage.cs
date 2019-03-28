@@ -9,6 +9,10 @@ namespace DashworksTestAutomation.Pages
 {
     internal class AddWidgetPage : SeleniumBasePage
     {
+        public const string ColorSchemeDropdownContent = ".//div/mat-option[contains(@class, 'colour-scheme')]//div[contains(@class, 'inner-colour')]";
+
+        public const string ColorSchemeDropdownContainer = ".//div[@class='cdk-overlay-pane']";
+
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='WidgetType']")]
         public IWebElement WidgetType { get; set; }
 
@@ -63,6 +67,12 @@ namespace DashworksTestAutomation.Pages
             {
                 SelectorFor(this, p => p.WidgetType),
             };
+        }
+
+        public IWebElement GetDropdownForWidgetByName(string dropdownName)
+        {
+            var dropdownSelector = By.XPath($".//div[contains(@class, 'mat-form')]/span/label[text()='{dropdownName}']");
+            return Driver.FindElement(dropdownSelector);
         }
 
         public void SelectObjectForWidgetCreation(string objectName)

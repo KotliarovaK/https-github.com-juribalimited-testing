@@ -103,6 +103,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         "Incorrect page is displayed to user");
                     break;
 
+                case "Automations":
+                    var automationsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(automationsPage.Automations.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
                 case "Capacity Units":
                     var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
                     StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
@@ -294,6 +300,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
+        }
+
+        [Then(@"""(.*)"" content is not displayed in the grid on the Project details page")]
+        public void ThenContentIsNotDisplayedInTheGridOnTheProjectDetailsPage(string text)
+        {
+            var projectTabs = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(projectTabs.CheckContentDisplay(text));
         }
 
         [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
@@ -833,18 +846,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             checkbox.SelectAllCheckBox.Click();
         }
 
-        [Then(@"Select All selectbox is checked on the Admin page")]
-        public void ThenSelectAllSelectBoxIsCheckedOnTheAdminPage()
+        [Then(@"'Select All' checkbox have full checked state on the Admin page")]
+        public void ThenSelectAllCheckboxHaveFullCheckedStateOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is unchecked");
+            Assert.IsTrue(page.SelectAllCheckboxWithFullCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
         }
 
-        [Then(@"Select All selectbox is unchecked on the Admin page")]
-        public void ThenSelectAllSelectBoxIsUncheckedOnTheAdminPage()
+        [Then(@"'Select All' checkbox have indeterminate checked state on the Admin page")]
+        public void ThenSelectAllCheckboxHaveIndeterminateCheckedStateOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(page.SelectAllCheckboxChecked.Displayed(), "Select All checkbox is checked");
+            Assert.IsTrue(page.SelectAllCheckboxWithIndeterminateCheckedState.Displayed(), "State for 'Select All' checkbox is displayed incorrectly");
         }
 
         [When(@"User selects ""(.*)"" checkbox on the Project details page")]
@@ -1314,7 +1327,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBlueBannerWithTextIsDisplayed(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
+            //_driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
             StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
@@ -2088,7 +2101,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+            try
+            {
+                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(30000);
+                _driver.Navigate().Refresh();
+                _driver.WaitForDataLoading();
+                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+            }
         }
 
         [Then(@"Import Project button is not displayed")]
@@ -2344,7 +2367,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOnBackButton()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            Thread.Sleep(10000);
+            Thread.Sleep(20000);
             button.BackToTableButton.Click();
         }
 
@@ -2709,6 +2732,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Thread.Sleep(1000);
             _driver.WaitForDataLoading();
             button.ResetFiltersButton.Click();
+        }
+
+        [When(@"User clicks Refresh button on the Admin page")]
+        public void WhenUserClicksRefreshButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            Thread.Sleep(10000);
+            _driver.WaitForDataLoading();
+            button.RefreshButton.Click();
         }
 
         [Then(@"""(.*)"" Onboarded objects are displayed")]

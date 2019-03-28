@@ -1997,7 +1997,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Delete_Newly_Created_Project @Projects @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2009,6 +2009,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
+	And created Project with "Project13096" name is displayed correctly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Project13096" Project
@@ -2747,7 +2748,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectSco
 	When User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Delete_Newly_Created_Project @DAS11758 @DAS14190 @DAS15528 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @Delete_Newly_Created_Project @DAS11758 @DAS14190 @DAS15528
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2772,11 +2773,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	And User clicks Create button on the Create Project page
 	Then created Project with "3Checkbox11758" name is displayed correctly
 	When User selects all rows on the grid
-	Then Select All selectbox is checked on the Admin page
+	Then 'Select All' checkbox have full checked state on the Admin page
 	When User select "Project" rows in the grid
 	| SelectedRowsName |
 	| 1Checkbox11758   |
-	Then Select All selectbox is unchecked on the Admin page
+	Then 'Select All' checkbox have indeterminate checked state on the Admin page
 	When User selects all rows on the grid
 	When User deselect all rows on the grid
 	And User enters "Checkbox11758" text in the Search field for "Project" column
@@ -3563,6 +3564,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	#Then data in table is sorted by "Item" column in ascending order by default on the Admin page
 	#Then data in table is sorted by "Date" column in descending order by default on the Admin page
 
+#That test have 'not run' tag, because blue banner closes too fast.
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13347 @DAS11978 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText
 	When User clicks Admin on the left-hand menu

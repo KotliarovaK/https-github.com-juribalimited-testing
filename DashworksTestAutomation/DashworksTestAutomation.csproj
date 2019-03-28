@@ -356,6 +356,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Projects.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Automations.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Teams.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -566,6 +571,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Projects.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Automations.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Teams.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Teams.feature.cs</LastGenOutput>
@@ -699,9 +708,11 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\1803_Rollout.xml" />
     <Content Include="Resources\CorrectFile_DAS12370.xml" />
     <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
     <Content Include="Resources\DAS_13733_Valid_file.xml" />
+    <Content Include="Resources\Windows_7_Migration_%28Computer_Scheduled_Project%29 %28jet 5.3.3%29.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">

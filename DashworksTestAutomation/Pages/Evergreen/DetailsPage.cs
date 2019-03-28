@@ -17,6 +17,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FieldOnDetailsPageSelector = ".//td[contains(@class, 'mat-column-key')]";
 
+        public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
@@ -74,6 +76,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = FieldOnDetailsPageSelector)]
         public IList<IWebElement> FieldListOnDetailsPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ColumnHeader)]
+        public IList<IWebElement> ColumnHeadersList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -328,6 +333,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($".//span[text()='Dashworks First Seen Date']//ancestor::tr/td[contains(@class, 'column-value')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector).Text;
+        }
+
+        public IWebElement GetItemDetailsPageByName (string itemName)
+        {
+            var selector = By.XPath($"//div[@id='pagetitle-text']//h1[text()='{itemName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

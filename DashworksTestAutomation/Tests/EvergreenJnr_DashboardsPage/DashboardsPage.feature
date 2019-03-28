@@ -445,22 +445,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC |                  | 10        | true       |      |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Bar" as Widget Type
+	When User selects "Bar" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Column" as Widget Type
+	When User selects "Column" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Line" as Widget Type
+	When User selects "Line" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Donut" as Widget Type
+	When User selects "Donut" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Half donut" as Widget Type
+	When User selects "Half donut" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
-	When User selects "Table" as Widget Type
+	When User selects "Table" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -481,10 +481,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 	And User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
-	And User selects "Card" as Widget Type
+	When User selects "Card" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS15364" as Widget Title
 	And User selects "List15364" as Widget List
-	And User selects "First Cell" as Type
+	When User selects "First Cell" in the "Widget Type" Widget dropdown
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -581,5 +581,36 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	| Values    |
 	| Microsoft |
 	When User clicks Settings button for "Dashboard for DAS15413" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15737 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                 |
+	| prK: Application Readiness |
+	Then ColumnName is added to the list
+	| ColumnName                 |
+	| prK: Application Readiness |
+	When User create dynamic list with "TestList_DAS15737" name on "Users" page
+	Then "TestList_DAS15737" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15737" name
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "Line" in the "Widget Type" Widget dropdown
+	And User enters "DAS15737" as Widget Title
+	And User selects "TestList_DAS15737" as Widget List
+	When User selects "prK: Application Readiness" in the "Split By" Widget dropdown
+	When User selects "Count" in the "Aggregate Function" Widget dropdown
+	When User selects "prK: Application Readiness ASC" in the "Order By" Widget dropdown
+	And User clicks on the Colour Scheme dropdown
+	Then Colour Scheme dropdown is displayed to the user
+	When User clicks the "CREATE" Action button
+	When User clicks Settings button for "Dashboard for DAS15737" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel

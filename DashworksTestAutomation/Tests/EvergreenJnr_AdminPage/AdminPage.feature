@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportProjectButtonEnabledAfte
 	When User selects "CorrectFile_DAS12370.xml" file to upload on Import Project page
 	Then Import Project button is enabled
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
 Scenario Outline: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGrid
 	When User clicks Admin on the left-hand menu
 	And User clicks "<PageName>" link on the Admin page
@@ -187,7 +187,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User selects "Scope Changes" tab on the Project details page
 	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12763 @DAS12767 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12763 @DAS12767 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	| 4AII611FFHAZXWG |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	When User click on Back button
-	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	And User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters "2Bucket12763" in the "Bucket Name" field
 	And User selects "Team 1045" team in the Team dropdown on the Buckets page
@@ -217,7 +217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User enters "2Bucket12763" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
-	When User clicks the "ADD DEVICE" Action button
+	And User clicks the "ADD DEVICE" Action button
 	And User adds following Objects from list
 	| Objects         |
 	| 1ONC8ASZBNVUHC  |
@@ -225,7 +225,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	| 4U31ASACVADPDIF |
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 	When User click on Back button
-	When User clicks "Projects" link on the Admin page
+	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -236,10 +236,10 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	When User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "1Project12763" checkbox from String Filter with item list on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "Select All" checkbox from String Filter with item list on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "1Project12763" checkbox from String Filter with item list on the Admin page
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
@@ -250,30 +250,74 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Buckets" link on the Admin page
+	When User clicks newly created object link
+	When User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add
+	And User selects following Objects
+	| Objects         |
+	| 0405FHJHVG45U71 |
+	| 2A6FHO2JSIMNAQ  |
+	| 4AII611FFHAZXWG |
+	| 1ONC8ASZBNVUHC  |
+	| 329YFQ9EYZASK5  |
+	| 4U31ASACVADPDIF |
+	And User clicks the "UPDATE ALL CHANGES" Action button
+	And User clicks the "UPDATE PROJECT" Action button
+	Then Success message is displayed and contains "6 objects queued for onboarding, 0 objects offboarded" text
+	When User click on Back button
+	And User clicks "Buckets" link on the Admin page
 	Then "Buckets" page should be displayed to the user
-	When User clicks Reset Filters button on the Admin page
+	When User clicks Refresh button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "2Project12763" checkbox from String Filter with item list on the Admin page
-	#Then Counter shows "3" found rows
+	And User selects "Evergreen" checkbox from String Filter with item list on the Admin page
+	And User clicks String Filter button for "Project" column on the Admin page
+	And User selects "2Project12763" checkbox from String Filter with item list on the Admin page
 	Then "Unassigned" text is displayed in the table content
-	Then "1Bucket12763" text is displayed in the table content
-	Then "2Bucket12763" text is displayed in the table content
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "3Project12763" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	When User selects "Evergreen" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Buckets" link on the Admin page
-	Then "Buckets" page should be displayed to the user
-	When User clicks Reset Filters button on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	When User clicks String Filter button for "Project" column on the Admin page
-	Then "3Project12763" is not displayed in the filter dropdown
+	And "1Bucket12763" text is displayed in the table content
+	And "2Bucket12763" text is displayed in the table content
+#The steps below are commented out because the "Evergreen" Project Mode is disabled
+	#When User clicks "Projects" link on the Admin page
+	#Then "Projects" page should be displayed to the user
+	#When User clicks the "CREATE PROJECT" Action button
+	#Then "Create Project" page should be displayed to the user
+	#When User enters "3Project12763" in the "Project Name" field
+	#And User selects "All Devices" in the Scope Project dropdown
+	#When User selects "Evergreen" in the Mode Project dropdown
+	#And User clicks Create button on the Create Project page
+	#Then Success message is displayed and contains "The project has been created" text
+	#When User clicks "Buckets" link on the Admin page
+	#Then "Buckets" page should be displayed to the user
+	#When User clicks Reset Filters button on the Admin page
+	#And User clicks String Filter button for "Project" column on the Admin page
+	#And User selects "Select All" checkbox from String Filter with item list on the Admin page
+	#And User clicks String Filter button for "Project" column on the Admin page
+	#Then "3Project12763" is not displayed in the filter dropdown
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15989 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	And "Projects" page should be displayed to the user
+	When User clicks the "IMPORT PROJECT" Action button
+	Then "Import Project" page should be displayed to the user
+	When User selects "1803_Rollout.xml" file to upload on Import Project page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User enters "DAS15989_TestProject" in the Project Name field on Import Project page
+	When User clicks Import Project button on the Import Project page
+	When User clicks newly created object link
+	Then Project "DAS15989_TestProject" is displayed to user
+	When User clicks "Readiness" tab
+	Then "UNKNOWN" content is not displayed in the grid on the Project details page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16089 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness 
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	And "Projects" page should be displayed to the user
+	When User clicks the "IMPORT PROJECT" Action button
+	Then "Import Project" page should be displayed to the user
+	When User selects "Windows_7_Migration_(Computer_Scheduled_Project) (jet 5.3.3).xml" file to upload on Import Project page
+	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
+	And User enters "DAS16089_TestProject" in the Project Name field on Import Project page
+	When User clicks Import Project button on the Import Project page
+	Then Error message with "Your file doesn't contain Readiness values" text is displayed

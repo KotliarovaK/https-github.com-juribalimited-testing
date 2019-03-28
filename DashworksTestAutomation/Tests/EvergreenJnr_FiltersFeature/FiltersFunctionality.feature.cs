@@ -6620,12 +6620,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
             TechTalk.SpecFlow.Table table148 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table148.AddRow(new string[] {
-                        "London Depot 09:00 - 11:00"});
-            table148.AddRow(new string[] {
-                        "London Depot 09:00 - 11:00"});
-            table148.AddRow(new string[] {
-                        "London Depot 09:00 - 11:00"});
-            table148.AddRow(new string[] {
                         "Birmingham Morning"});
             table148.AddRow(new string[] {
                         "Manchester Morning"});
@@ -6639,11 +6633,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "London - City Morning"});
             table148.AddRow(new string[] {
                         "London - Southbank Morning"});
+            table148.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table148.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table148.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
             testRunner.Then("following content is displayed in the \"1803: Scheduled Date (Slot)\" column", ((string)(null)), table148, "Then ");
             testRunner.When("User click on \'1803: Scheduled Date (Slot)\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table149 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
             table149.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table149.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table149.AddRow(new string[] {
+                        "London Depot 09:00 - 11:00"});
+            table149.AddRow(new string[] {
                         "London - Southbank Morning"});
             table149.AddRow(new string[] {
                         "London - City Morning"});
@@ -6657,12 +6663,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "Manchester Morning"});
             table149.AddRow(new string[] {
                         "Birmingham Morning"});
-            table149.AddRow(new string[] {
-                        "London Depot 09:00 - 11:00"});
-            table149.AddRow(new string[] {
-                        "London Depot 09:00 - 11:00"});
-            table149.AddRow(new string[] {
-                        "London Depot 09:00 - 11:00"});
             testRunner.Then("following content is displayed in the \"1803: Scheduled Date (Slot)\" column", ((string)(null)), table149, "Then ");
             this.ScenarioCleanup();
         }

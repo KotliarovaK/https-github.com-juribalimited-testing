@@ -88,10 +88,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromConditionPanel']//input[@aria-label='Date']")]
         public IWebElement DateRegularValueSecond { get; set; }
         
-        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']/input")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']//input")]
         public IWebElement DateFromValue { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateToPanel']/input")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateToPanel']//input")]
         public IWebElement DateToValue { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'ag-menu')]")]
