@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User doubleclicks Create button on Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User enters "OneRing" text in the Search field for "Ring" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "32" rows
 	And There are no errors in the browser console
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |

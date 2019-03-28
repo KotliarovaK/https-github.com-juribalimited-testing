@@ -145,7 +145,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]")]
         public IWebElement CheckedAllItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'checkbox-partial')]")]
+        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[contains(@class, 'checkbox-checked')]")]
         public IWebElement CheckedSomeItemCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div[@ref='eCenterColsClipper']")]

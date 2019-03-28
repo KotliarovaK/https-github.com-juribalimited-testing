@@ -206,10 +206,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(text(),'Edited')]")]
         public IWebElement EditedList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class, 'saveAs')]//span[text()='UPDATE LIST']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='UPDATE LIST']")]
         public IWebElement UpdateCurrentListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class, 'saveAs')]//span[text()='SAVE AS NEW LIST']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS NEW LIST']")]
         public IWebElement SaveAsNewListButton { get; set; }
 
         #endregion UpdateList

@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 	Then Objects are displayed in alphabetical order on the Admin page
 	When User selects following Objects
 	| Objects        |
-	| 02UXAL8OAR3K1O |
+	| 00HA7MKAVVFDAV |
 	Then Update Project button is active
 	And "Devices to add (1 of 17225 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
@@ -1252,7 +1252,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "595" rows
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	When User enters "1MailboxesProject" text in the Search field for "Project" column
@@ -1272,7 +1272,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "595" rows
 	Then "Unassigned" text is displayed in the table content
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13530 @Projects @Delete_Newly_Created_Project
@@ -2224,7 +2224,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingO
 	When User clicks String Filter button for "Project" column on the Admin page
 	Then "1DevicesProject" is not displayed in the filter dropdown
 
-@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12965 @DAS12485 @DAS12825 @Delete_Newly_Created_Project
+@Evergreen @PMObject @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12965 @DAS12485 @DAS12825 @DASDAS14617 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2312,7 +2312,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Counter shows "2 of 6 rows" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3145,6 +3145,9 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	And User selects "DAS_13733_Duplicates_in_project_tasks.xml" file to upload on Import Project page
 	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
 	And User enters "TestProjectDAS13733" in the Project Name field on Import Project page
+	And User clicks following checkboxes on the Project details page:
+	| CheckboxesToBeClicked |
+	| Import Readiness      |
 	And User clicks Import Project button on the Import Project page
 	Then Error message with "This XML file contains duplicates in project tasks" text is displayed
 	When User selects "DAS_13733_Valid_file.xml" file to upload on Import Project page
