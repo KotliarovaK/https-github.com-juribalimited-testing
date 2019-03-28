@@ -849,21 +849,24 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
+	When User perform search by "09LHWA3U1XA52AR"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
 	When User clicks refresh button in the browser
 	When User navigates to the "Projects" tab
-	When User clicks on "Evergreen Bucket 6" link for Evergreen Bucket field
+	When User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
+	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
+	Then There are no errors in the browser console
+	When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" tab
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -871,12 +874,15 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
+	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
-	When User select "Evergreen Bucket 6" value on the Details Page
+	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then "Evergreen Bucket 2" link is displayed on the Details Page
+	Then There are no errors in the browser console
+	When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" tab
+	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
@@ -890,22 +896,27 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Mailboxes" section on the Details Page
 	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
+	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
+	When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" tab
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
+	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Evergreen Bucket 2" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
+	Then There are no errors in the browser console
+	When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" tab
 	Then "Evergreen Bucket 2" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#go to Mailboxes page
@@ -920,11 +931,13 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
+	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
+	When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" tab
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -932,11 +945,14 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
 	Then section is loaded correctly
-	When User selects all rows on the grid on the Details Page
+	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
-	When User select "Unassigned" value on the Details Page
+	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
+	Then There are no errors in the browser console
+	When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" tab
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 	Then Delete "Bucket12883" Bucket in the Administration
@@ -1210,7 +1226,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Used         |
 	| Entitled     |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15951
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15951 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsDetailSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1218,6 +1234,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	And User navigates to the "Applications" tab
 	When User closes "Application Summary" section on the Details Page
 	And User opens "Application Detail" section on the Details Page
+	When User closes left-hand menu
 	Then following columns are displayed on the Item details page:
 	| ColumnName           |
 	| Application          |

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -27,6 +28,13 @@ namespace DashworksTestAutomation.Steps.Base
         [When(@"User clicks refresh button in the browser")]
         public void WhenUserClicksRefreshButtonInTheBrowser()
         {
+            _driver.Navigate().Refresh();
+        }
+
+        [When(@"User clicks refresh button in the browser after waiting")]
+        public void WhenUserClicksRefreshButtonInTheBrowserAfterWaiting()
+        {
+            Thread.Sleep(60000);
             _driver.Navigate().Refresh();
         }
 

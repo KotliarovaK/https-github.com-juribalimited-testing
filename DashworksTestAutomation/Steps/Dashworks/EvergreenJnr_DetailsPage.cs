@@ -778,13 +778,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectValueOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
             detailsPage.GetValueByName(bucketName).Click();
         }
 
-        [When(@"User selects all rows on the grid on the Details Page")]
-        public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPage()
+        [When(@"User selects all rows on the grid on the Details Page for ""(.*)""")]
+        public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPageFor(string fieldName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            detailsPage.GetFieldToOpenTheTableByName(fieldName).Click();
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
             detailsPage.SelectAllCheckBox.Click();
         }
