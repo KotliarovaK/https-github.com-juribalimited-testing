@@ -15,15 +15,7 @@ namespace DashworksTestAutomation.Providers
 
         public static string Password = ConfigurationManager.AppSettings["user.password"];
 
-        private static readonly List<UserDto> _accounts = new List<UserDto>
-        {
-            new UserDto
-            {
-                UserName = ConfigurationManager.AppSettings["user.login"],
-                Password = Password,
-                Language = ConfigurationManager.AppSettings["user.language"]
-            }
-        };
+        private static readonly List<UserDto> _accounts = new List<UserDto> { };
 
         static UserProvider()
         {
