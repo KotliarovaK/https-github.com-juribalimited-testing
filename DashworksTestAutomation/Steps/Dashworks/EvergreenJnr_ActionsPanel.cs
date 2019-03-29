@@ -612,6 +612,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectRowsInTheGrid(string columnName, Table table)
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             var columnContent = dashboardPage.GetColumnContent(columnName);
             foreach (var row in table.Rows)
             {

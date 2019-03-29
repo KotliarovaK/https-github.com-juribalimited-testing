@@ -116,6 +116,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is displayed");
             listElement.CreateNewListButton.Click();
 
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsNewListButton);
+            listElement.SaveAsNewListButton.Click();
+
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.ListNameTextBox.SendKeys(listName);
