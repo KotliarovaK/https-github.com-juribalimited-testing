@@ -969,6 +969,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"SAVE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \'Save as new pilot\' option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot Name field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User remove list with \"Dynamic_List_DAS14206\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User remove list with \"PivotList_DAS_14206\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1789,7 +1790,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User enters \"Altera\" text in Search field at selected Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"Altera\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1884,7 +1885,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table73.AddRow(new string[] {
                         "Owner Compliance"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table73, "And ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"BCLABS-2007\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2348,7 +2349,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table94.AddRow(new string[] {
-                        "Not Applicable"});
+                        "NOT APPLICABLE"});
             testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table94, "Then ");
             this.ScenarioCleanup();
         }

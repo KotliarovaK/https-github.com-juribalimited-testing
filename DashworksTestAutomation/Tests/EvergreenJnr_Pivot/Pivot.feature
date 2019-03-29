@@ -320,6 +320,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatUserCanCreateOneMorePivotOnCreatedLis
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User clicks the "SAVE" Action button
+	And User selects 'Save as new pilot' option
 	Then Pivot Name field is empty
 	And User remove list with "Dynamic_List_DAS14206" name on "Users" page
 	And User remove list with "PivotList_DAS_14206" name on "Users" page
@@ -575,7 +576,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatSeverityAggregateFunctionAvail
 	When User enters "Altera" text in Search field at selected Filter
 	When User clicks Save filter button
 	When User clicks the Pivot button
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "Altera" left-pinned value on Pivot
@@ -602,7 +603,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailabl
 	And User selects the following Values on Pivot:
 	| Values           |
 	| Owner Compliance |
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "BCLABS-2007" left-pinned value on Pivot
@@ -741,7 +742,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatProjectReadinessTaskColumnsDisplayInC
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
-	| Not Applicable |
+	| NOT APPLICABLE |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForDevices

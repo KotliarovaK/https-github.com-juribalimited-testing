@@ -458,6 +458,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetActionsButtonByName(buttonName).Click();
         }
 
+        [When(@"User selects 'Save as new pilot' option")]
+        public void WhenUserSelectsSaveAsNewPilotOption()
+        {
+            var action = _driver.NowAt<PivotElementPage>();
+            action.SaveNewListButton.Click();
+        }
+
         [Then(@"""(.*)"" Action button is displayed")]
         public void ThenActionButtonIsDisplayed(string buttonName)
         {
