@@ -253,6 +253,13 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(dashboardWidget);
         }
 
+        public IWebElement GetDisabledEllipsisItemByName(string itemName)
+        {
+            var ellipsisItem = By.XPath($".//button[@aria-disabled='true'][text()='{itemName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(ellipsisItem);
+        }
+
         public IWebElement GetCardWidgetByName(string widgetName)
         {
             var dashboardWidget =
