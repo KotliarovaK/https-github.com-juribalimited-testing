@@ -614,3 +614,84 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	When User clicks Settings button for "Dashboard for DAS15737" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15721 @DAS15937 @Not_Run
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15721" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
+	| List       | 1_Widget | All Users | 10      | 10         |
+	Then "1_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
+	| List       | 2_Widget | All Users | 10      | 10         |
+	Then "2_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
+	| List       | 3_Widget | All Users | 10      | 10         |
+	Then "3_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 4_Widget | All Users | 10      | 10         |
+	Then "4_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 5_Widget | All Users | 10      | 10         |
+	Then "5_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 6_Widget | All Users | 10      | 10         |
+	Then "6_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 7_Widget | All Users | 10      | 10         |
+	Then "7_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 8_Widget | All Users | 10      | 10         |
+	Then "8_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 9_Widget | All Users | 10      | 10         |
+	Then "9_Widget" Widget is displayed to the user
+	#==========================================================#
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 10_Widget | All Users | 10      | 10         |
+	Then "10_Widget" Widget is displayed to the user
+	#==========================================================#
+	Then "ADD WIDGET" Action button is disabled
+	Then "ADD SECTION" Action button is disabled
+	Then "ADD WIDGET" Action button have tooltip with "Maximum number of widgets has been reached for this dashboard" text
+	When User clicks Ellipsis menu for "10_Widget" Widget on Dashboards page
+	Then User sees following Ellipsis menu items on Dashboards page:
+	| items            |
+	| Edit             |
+	| Duplicate        |
+	| Move to start    |
+	| Move to end      |
+	| Move to position |
+	| Delete           |
+	Then "Duplicate" Ellipsis menu item is disabled on Dashboards page
+	When User clicks Settings button for "Dashboard for DAS15721" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
