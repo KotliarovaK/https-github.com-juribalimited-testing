@@ -2529,6 +2529,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15721")]
         [NUnit.Framework.CategoryAttribute("DAS15937")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating()
         {
             System.Exception lastException = null;
@@ -2565,7 +2566,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Dashboards",
                         "Widgets",
                         "DAS15721",
-                        "DAS15937"});
+                        "DAS15937",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -2581,7 +2583,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table52.AddRow(new string[] {
                         "List",
                         "1_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table52, "And ");
@@ -2596,7 +2598,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table53.AddRow(new string[] {
                         "List",
                         "2_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table53, "And ");
@@ -2611,7 +2613,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table54.AddRow(new string[] {
                         "List",
                         "3_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table54, "And ");
@@ -2626,7 +2628,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table55.AddRow(new string[] {
                         "List",
                         "4_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table55, "And ");
@@ -2641,7 +2643,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table56.AddRow(new string[] {
                         "List",
                         "5_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table56, "And ");
@@ -2656,7 +2658,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table57.AddRow(new string[] {
                         "List",
                         "6_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table57, "And ");
@@ -2671,7 +2673,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table58.AddRow(new string[] {
                         "List",
                         "7_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table58, "And ");
@@ -2686,7 +2688,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table59.AddRow(new string[] {
                         "List",
                         "8_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table59, "And ");
@@ -2701,11 +2703,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             table60.AddRow(new string[] {
                         "List",
                         "9_Widget",
-                        "All Devices",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table60, "And ");
-            testRunner.Then("\"1_Widget\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"9_Widget\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
@@ -2715,12 +2717,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "MaxColumns"});
             table61.AddRow(new string[] {
                         "List",
-                        "9_Widget",
-                        "All Devices",
+                        "10_Widget",
+                        "All Users",
                         "10",
                         "10"});
             testRunner.And("User creates new Widget", ((string)(null)), table61, "And ");
-            testRunner.Then("\"1_Widget\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"10_Widget\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"ADD WIDGET\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"ADD SECTION\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"ADD WIDGET\" Action button have tooltip with \"Maximum number of widgets has been " +
+                    "reached for this dashboard\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Ellipsis menu for \"10_Widget\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                        "items"});
+            table62.AddRow(new string[] {
+                        "Edit"});
+            table62.AddRow(new string[] {
+                        "Duplicate"});
+            table62.AddRow(new string[] {
+                        "Move to start"});
+            table62.AddRow(new string[] {
+                        "Move to end"});
+            table62.AddRow(new string[] {
+                        "Move to position"});
+            table62.AddRow(new string[] {
+                        "Delete"});
+            testRunner.Then("User sees following Ellipsis menu items on Dashboards page:", ((string)(null)), table62, "Then ");
+            testRunner.Then("\"Duplicate\" Ellipsis menu item is disabled on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Settings button for \"Dashboard for DAS15721\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

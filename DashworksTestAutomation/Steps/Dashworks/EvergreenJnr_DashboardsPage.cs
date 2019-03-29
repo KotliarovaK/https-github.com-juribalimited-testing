@@ -187,6 +187,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Items are not the same");
         }
 
+        [Then(@"""(.*)"" Ellipsis menu item is disabled on Dashboards page")]
+        public void ThenEllipsisMenuItemIsDisabledOnDashboardsPage(string itemName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetDisabledEllipsisItemByName(itemName).Displayed(), "Ellipsis menu item is enabled");
+            var body = _driver.NowAt<BaseGridPage>();
+            body.BodyContainer.Click();
+        }
+
         [When(@"User clicks ""(.*)"" item from Ellipsis menu on Dashboards page")]
         public void WhenUserClicksitemFromEllipsisMenuOnDashboardsPage(string itemName)
         {
