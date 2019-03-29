@@ -1769,18 +1769,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"User closes Tools panel")]
+        public void WhenUserClosesToolsPanel()
+        {
+            var listPageElement = _driver.NowAt<BaseDashboardPage>();
+            listPageElement.CloseToolsPanelButton.Click();
+        }
+
+        [When(@"User clicks Search button and opens Search panel for agGrid")]
+        public void WhenUserClicksSearchButtonAndOpensSearchPanelForAgGrid()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.MouseHover(dashboardPage.TableSearchButton);
+            dashboardPage.TableSearchButton.Click();
+        }
+
         [When(@"User searches and selects following rows in the grid on Details page:")]
         public void WhenUserSearchesAndSelectsFollowingRowsInTheGridOnDetails(Table table)
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchButton);
+            dashboardPage.TableSearchButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextBox);
             foreach (var row in table.Rows)
             {
-                dashboardPage.TableSearchTextBox.Clear();
                 dashboardPage.TableSearchTextBox.SendKeys(row["SelectedRowsName"]);
                 Thread.Sleep(5000);
                 _driver.WaitForDataLoading();
                 dashboardPage.SelectOneRowsCheckboxes.Click();
+                dashboardPage.TableSearchTextBox.Clear();
             }
         }
 

@@ -407,6 +407,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             page.RefreshTableButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User add all Columns from specific category")]
