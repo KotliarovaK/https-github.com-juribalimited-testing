@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkU
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithoutRoles" User
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261
 Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	Then "Computer: Laptop Replacement" text is displayed in the table content
 	When User clicks the Logout button
@@ -183,7 +183,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPA" User
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @DAS12864 @DAS13258 @DAS13259 @DAS13260 @DAS13263 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @DAS12864 @DAS13258 @DAS13259 @DAS13260 @DAS13263 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsPanelWhenAStaticListDoesNotExist
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -216,11 +216,11 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNo
 	Then There are no errors in the browser console
 
 Examples: 
-	| PageName     | ColumnHeader  | RowName                          | ProjectName                  | StageName      | TaskName                | Value                    |
-	| Devices      | Hostname      | 001PSUMZYOW581                   | User Scheduled Test (Jo)     | Two            | Radio Non Rag only Comp | Not Applicable           |
-	| Users        | Username      | 003F5D8E1A844B1FAA5              | Computer Scheduled Test (Jo) | Two            | Radio Non Rag User      | Not Applicable           |
-	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo) | Two            | Radio Non Rag App       | Not Applicable           |
-	| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration              | Mobile Devices | Mobile Device Status    | Identified & In Progress |
+	| PageName     | ColumnHeader  | RowName                          | ProjectName              | StageName      | TaskName                | Value                    |
+	| Devices      | Hostname      | 001PSUMZYOW581                   | User Scheduled Test (Jo) | Two            | Radio Non Rag only Comp | Not Applicable           |
+	| Users        | Username      | 003F5D8E1A844B1FAA5              | User Scheduled Test (Jo) | Two            | Radio Non Rag only User | Not Applicable           |
+	| Applications | Application   | 7zip                             | User Scheduled Test (Jo) | Two            | Radio Non Rag only App  | Not Applicable           |
+	#| Mailboxes    | Email Address | 00BDBAEA57334C7C8F4@bclabs.local | Email Migration          | Mobile Devices | Mobile Device Status    | Identified & In Progress |
 
 @Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @DAS12864 @DAS13258 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelWhenOnlOneStaticListExists
@@ -253,7 +253,7 @@ Examples:
 	| Applications | Application   | 20040610sqlserverck              |
 	| Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12946 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterOriginallyLoadsAnyDataOnceTheStaticListHasBeenCreated  
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -283,7 +283,7 @@ Examples:
 	| Applications | Compliance       | Red        | 181               |
 	| Mailboxes    | Owner Compliance | Green      | 14701             |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266 @DAS13284 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -336,7 +336,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -350,7 +350,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User clicks Close panel button
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -364,7 +364,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersPage
@@ -398,8 +398,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 3 of 3 objects were in the selected project." text is displayed on Action panel
+	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
+	When User clicks Search button and opens Search panel for agGrid
 	And User perform search by "FMN5805290"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 	When User perform search by "AKX995383"
@@ -407,12 +408,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User perform search by "AAD1011948"
 	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
 	When User closes Tools panel
-	And User clicks Close panel button
-	#returns default object state
-	And User perform search by "FMN5805290"
+	When User clicks Close panel button
+#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
+	When User searches and selects following rows in the grid on Details page:
 	| SelectedRowsName |
 	| FMN5805290       |
 	And User selects "Bulk update" in the Actions dropdown
@@ -422,12 +422,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
-	When User clicks Close panel button
-	And User perform search by "AKX995383"
-	And User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User closes Tools panel
+	When User searches and selects following rows in the grid on Details page:
 	| SelectedRowsName |
 	| AKX995383        |
 	And User selects "Bulk update" in the Actions dropdown
@@ -437,12 +434,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
-	When User clicks Close panel button
-	And User perform search by "AAD1011948"
-	And User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select "Username" rows in the grid
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	When User closes Tools panel
+	When User searches and selects following rows in the grid on Details page:
 	| SelectedRowsName |
 	| AAD1011948       |
 	And User selects "Bulk update" in the Actions dropdown
@@ -452,7 +446,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
-	And Success message with "Your changes have successfully been queued, 1 of 1 object was in the selected project." text is displayed on Action panel
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
 @Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage

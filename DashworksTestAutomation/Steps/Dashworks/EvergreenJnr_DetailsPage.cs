@@ -786,9 +786,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPageFor(string fieldName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.GetFieldToOpenTheTableByName(fieldName).Click();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
-            detailsPage.SelectAllCheckBox.Click();
+            if (!detailsPage.OpenedPanelForUpdatingItems.Displayed())
+            {
+                var button = detailsPage.GetFieldToOpenTheTableByName(fieldName);
+                _driver.MouseHover(button);
+                button.Click();
+                _driver.WaitForDataLoading();
+                _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
+                detailsPage.SelectAllCheckBox.Click();
+            }
+            else
+                detailsPage.SelectAllCheckBox.Click();
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)
