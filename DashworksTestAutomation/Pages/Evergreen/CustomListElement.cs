@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var dashboardSettingsSelector =
                 By.XPath(
-                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i");
+                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
             Driver.MouseHover(dashboardSettingsSelector);
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
