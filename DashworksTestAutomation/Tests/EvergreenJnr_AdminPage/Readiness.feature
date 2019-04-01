@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| Make default for applications |
 	| Delete                        |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
@@ -56,6 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks the "DELETE" Action button
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
+	Then Success message is displayed and contains "The selected readiness has been deleted" text
 	Then There are no errors in the browser console
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
