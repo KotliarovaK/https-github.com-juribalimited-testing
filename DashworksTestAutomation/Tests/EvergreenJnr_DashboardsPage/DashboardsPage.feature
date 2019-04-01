@@ -639,43 +639,43 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
 	| List       | 4_Widget | All Users | 10      | 10         |
 	Then "4_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
 	| List       | 5_Widget | All Users | 10      | 10         |
 	Then "5_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
 	| List       | 6_Widget | All Users | 10      | 10         |
 	Then "6_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
 	| List       | 7_Widget | All Users | 10      | 10         |
 	Then "7_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
 	| List       | 8_Widget | All Users | 10      | 10         |
 	Then "8_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| WidgetType | Title    | List      | MaxRows | MaxColumns |
 	| List       | 9_Widget | All Users | 10      | 10         |
 	Then "9_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| WidgetType | Title     | List      | MaxRows | MaxColumns |
 	| List       | 10_Widget | All Users | 10      | 10         |
 	Then "10_Widget" Widget is displayed to the user
 	#==========================================================#
