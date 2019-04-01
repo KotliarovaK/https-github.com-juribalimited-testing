@@ -695,3 +695,21 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	When User clicks Settings button for "Dashboard for DAS15721" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16073
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS16073" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS16073 | All Devices | Hostname | Count             | Count DESC | Vertical         | 10        |
+	Then There are no errors in the browser console
+	And "WidgetForDAS16073" Widget is displayed to the user
+	Then link is not displayed for the "CAS" value in the Widget
+	Then link is not displayed for the "WIN-43TMG2KMRBI" value in the Widget
+	Then link is not displayed for the "WIN81PRO" value in the Widget
+	When User clicks Settings button for "Dashboard for DAS16073" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel

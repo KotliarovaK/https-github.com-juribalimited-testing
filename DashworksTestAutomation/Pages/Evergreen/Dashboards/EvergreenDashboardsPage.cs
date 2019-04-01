@@ -144,6 +144,12 @@ namespace DashworksTestAutomation.Pages
                 $".//h5[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
         }
 
+        public IWebElement GetTableWidgetContentWithoutLink(string content)
+        {
+            var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
+            return Driver.FindElement(columnContent);
+        }
+
         public string GetEditModeSlideBarColor()
         {
             return EditModeSlideBar.GetCssValue("background-color");
@@ -248,7 +254,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@class='chartContainer ng-star-inserted']");
+                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@class='inner-widget']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }

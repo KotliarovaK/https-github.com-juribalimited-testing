@@ -665,6 +665,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
+        [Then(@"link is not displayed for the ""(.*)"" value in the Widget")]
+        public void ThenLinkIsNotDisplayedForTheValueInTheWidget(string content)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetTableWidgetContentWithoutLink(content).Displayed(), $"link is displayed for the {content} value");
+            Assert.AreEqual("rgba(0, 0, 0, 0.87)", page.GetTableWidgetContentWithoutLink(content).GetCssValue("color"));
+        }
+
         [Then(@"following content is displayed in the ""(.*)"" column")]
         public void ThenFollowingContentIsDisplayedInTheColumn(string columnName, Table table)
         {
