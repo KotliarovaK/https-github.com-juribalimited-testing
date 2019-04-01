@@ -2967,6 +2967,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     $"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
         }
 
+        [Then(@"Readiness Dialog Container is displayed to the User")]
+        public void ThenReadinessDialogContainerIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
+        }
+
+        [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
+        public void WhenUserClicksButtonInTheReadinessDialogScreen(string buttonName)
+        {
+            var button = _driver.NowAt<ReadinessPage>();
+            button.GetReadinessDialogContainerButtonByName(buttonName).Click();
+        }
+
         [AfterScenario("Delete_Newly_Created_Team")]
         public void DeleteAllTeamsAfterScenarioRun()
         {
