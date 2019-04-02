@@ -478,22 +478,22 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects following date filter on the Projects page
 	| FilterData  |
 	| 30 Jul 2017 |
-	Then Counter shows "0" found rows
+	Then Counter shows "6" found rows
 	When User clicks Reset Filters button on the Admin page
 	Then field for Date column is empty
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Object Type" column on the Admin page
 	And User selects "User" checkbox from String Filter on the Admin page
-	Then Counter shows "4" found rows
+	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
-	Then Counter shows "4" found rows
+	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "4" found rows
+	Then Rows counter shows "4" of "6" rows
 	When User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
@@ -531,25 +531,25 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects following date filter on the Projects page
 	| FilterData  |
 	| 30 Jul 2017 |
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	Then field for Date column is empty
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Object Type" column on the Admin page
 	When User selects "Device" checkbox from String Filter on the Admin page
-	Then Counter shows "4" found rows
+	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Unassigned" text in the Search field for "Bucket" column
-	Then Counter shows "4" found rows
+	Then Rows counter shows "4" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "4" found rows
+	Then Rows counter shows "4" of "6" rows
 	When User clicks String Filter button for "Status" column on the Admin page
 	When User selects "Succeeded" checkbox from String Filter on the Admin page
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "6" rows
 	When User type "0IJB93JZPG72PX" in Global Search Field
 	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
 	When User navigates to the "Projects" tab
@@ -1292,7 +1292,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "13530Project" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "1" found rows
+	Then Rows counter contains "1" found row of all rows
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	When User enters "13530Project" text in the Search field for "Project" column
@@ -1308,7 +1308,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhe
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "13530Project" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "1" found rows
+	Then Rows counter contains "1" found row of all rows
 	Then "Unassigned" text is displayed in the table content
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS13471 @DAS13803 @DAS13803 @DAS13930 @DAS13973 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
@@ -2312,7 +2312,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Counter shows "2 of 6 rows" found rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2367,7 +2367,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Capacity Unit |
 	| Ring          |
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "1" rows
 	When User selects "History" tab on the Project details page
 	Then following Items are displayed in the History table
 	| Items               |
@@ -2385,7 +2385,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboarded
 	| Ring          |
 	| Status        |
 	When User enters "Units" text in the Search field for "Capacity Unit" column
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "1" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12157 @Delete_Newly_Created_Project @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectScopeChangesIsLoadedSuccessfullyAfterChangingProjectScopeToACustomList

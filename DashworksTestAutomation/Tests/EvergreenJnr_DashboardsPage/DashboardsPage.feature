@@ -382,25 +382,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
 	When User adds new Widget
-	| WidgetType | Title       | List       | SplitBy             | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled | Device Type | Count             | Device Type ASC |                  | 10        |            |
+	| WidgetType | Title       | List       | SplitBy             | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend |
+	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled |             | Count             | Count ASC |                  | 10        |            |
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	And "DAS-14920_1" Widget is displayed to the user
-	And "2190" count is displayed for "False" in the table Widget
-	And "2192" count is displayed for "True" in the table Widget
-	And "12843" count is displayed for "Unknown" in the table Widget
+	And "2,190" count is displayed for "False" in the table Widget
+	And "2,192" count is displayed for "True" in the table Widget
+	And "12,843" count is displayed for "Unknown" in the table Widget
 	#Second Widget creation
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title       | List       | SplitBy              | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope | Device Type | Count             | Device Type ASC |                  | 10        |            |
+	| WidgetType | Title       | List       | SplitBy              | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend |
+	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope |             | Count             | Count ASC |                  | 10        |            |
 	Then There are no errors in the browser console
 	And "DAS-14920_2" Widget is displayed to the user
-	Then "12064" count is displayed for "False" in the table Widget
-	And "5161" count is displayed for "True" in the table Widget
+	Then "12,064" count is displayed for "False" in the table Widget
+	And "5,161" count is displayed for "True" in the table Widget
 	When User clicks Settings button for "Dashboard for DAS14920" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel

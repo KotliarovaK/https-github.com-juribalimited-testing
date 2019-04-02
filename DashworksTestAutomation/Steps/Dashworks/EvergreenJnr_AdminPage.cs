@@ -2837,8 +2837,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
-            StringAssert.AreEqualIgnoringCase($"{selectedRows} of {ofRows} rows",
+            StringAssert.AreEqualIgnoringCase(
+                ofRows == 1 ? $"{selectedRows} of {ofRows} row" : $"{selectedRows} of {ofRows} rows",
                 foundRowsCounter.RowsCounter.Text, "Incorrect rows count");
+        }
+
+        [Then(@"Rows counter contains ""(.*)"" found row of all rows")]
+        [Then(@"Rows counter contains ""(.*)"" found rows of all rows")]
+        public void ThenRowsCounterContainsFoundRowsOfAllRows(int foundRows)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.RowsCounter);
+            Assert.That(page.RowsCounter.Text, Does.Contain(foundRows + " of "),
+                $"Found rows counter doesn't contain {foundRows} found rows");
         }
 
         [Then(@"User sees ""(.*)"" of ""(.*)"" rows selected label")]

@@ -516,7 +516,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["Type"]))
+                if (row.ContainsKey("Type") && !string.IsNullOrEmpty(row["Type"]))
                 {
                     createWidgetElement.Type.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["Type"]);
