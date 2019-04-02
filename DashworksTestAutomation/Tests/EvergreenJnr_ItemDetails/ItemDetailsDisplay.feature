@@ -778,8 +778,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	And User clicks on "New Bucket" dropdown
 	And User select "AutoTestBucket_DAS_13335" value on the Details Page
-	And User opens "Related Devices" section on the Details Page
-	And User selects all rows on the grid on the Details Page
+	When User selects all rows on the grid on the Details Page for "Related Devices"
 	And User opens "Related Mailboxes" section on the Details Page
 	And User clicks the "UPDATE" Action button
 	And User clicks "Devices" on the left-hand menu
@@ -1267,7 +1266,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Used         |
 	| Entitled     |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15951 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15951 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsDetailSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1291,7 +1290,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Used Date            |
 	| Used Duration (mins) |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

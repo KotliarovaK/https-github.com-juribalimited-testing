@@ -162,6 +162,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
+        [NUnit.Framework.CategoryAttribute("DAS14263")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList()
         {
@@ -200,6 +201,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "DAS11553",
                         "DAS10880",
                         "DAS11951",
+                        "DAS14263",
                         "Delete_Newly_Created_List"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -290,3 +292,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
 }
 #pragma warning restore
 #endregion
+

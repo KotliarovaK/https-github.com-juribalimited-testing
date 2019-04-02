@@ -531,7 +531,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Cog-menu for ""(.*)"" item on Admin page")]
         public void WhenUserClicksCog_MenuForItemOnAdminPage(string itemName)
         {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.MouseHover(page.GetCogMenuByItem(itemName));
             page.GetCogMenuByItem(itemName).Click();
         }
 

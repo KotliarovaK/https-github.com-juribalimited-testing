@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @DAS14263 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -35,6 +35,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	When User create dynamic list with "TestList9507DA" name on "Users" page
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
+	#Uncomment after DAS14263 implemented
+	#When User select "Specific users / teams" sharing option
+	#When User clicks the "ADD TEAMS" Action button
+	#When User selects "Team 1054" in the Team dropdown
+	#And User select "Admin" in Select Access dropdown
+	#When User clicks the "CANCEL" Action button
 	When User select "Specific users" sharing option
 	And User click Add User button
 	And User select current user in Select User dropdown

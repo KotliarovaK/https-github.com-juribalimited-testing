@@ -257,6 +257,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotTableDisplayedCorrectlyAfterRe
 	| Owner Cost Centre |
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
+	When User clicks the List Details button
 	When User removes "Description" Column for Pivot
 	Then Save button is inactive for Pivot list
 	And No pivot generated message is displayed
@@ -1645,3 +1646,30 @@ Examples:
 	| Users        | Device Count             | Count(Device Count)             | Sum(Device Count)             | Min(Device Count)             | Max(Device Count)             | Avg(Device Count)             |
 	| Applications | 1803: Current User Count | Count(1803: Current User Count) | Sum(1803: Current User Count) | Min(1803: Current User Count) | Max(1803: Current User Count) | Avg(1803: Current User Count) |
 	| Mailboxes    | Associated Item Count    | Count(Associated Item Count)    | Sum(Associated Item Count)    | Min(Associated Item Count)    | Max(Associated Item Count)    | Avg(Associated Item Count)    |
+
+@Evergreen @DevicesLists @EvergreenJnr_Pivot @Pivot @DAS14263 @Not_Ready
+Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
+	When User clicks "Devices" on the left-hand menu
+	And User navigates to Pivot
+	And User selects the following Row Groups on Pivot:
+	| RowGroups  |
+	| Compliance |
+	And User selects the following Columns on Pivot:
+	| Columns |
+	| City    |
+	And User selects the following Values on Pivot:
+	| Values      |
+	| Cost Centre |
+	And User clicks the "RUN PIVOT" Action button
+	Then Pivot run was completed
+	When User creates Pivot list with "DAS14263_Pivot" name
+	Then "DAS14263_Pivot" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Specific users / teams" sharing option
+	When User clicks the "ADD TEAMS" Action button
+	When User selects "Team 1062" in the Team dropdown
+	And User select "Admin" in Select Access dropdown
+	When User clicks the "CANCEL" Action button
+	When User navigates to the "<PivotName>" list
+	Then User remove list with "DAS14263_Pivot" name on "Devices" page

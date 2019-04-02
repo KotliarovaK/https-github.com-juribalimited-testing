@@ -144,6 +144,12 @@ namespace DashworksTestAutomation.Pages
                 $".//h5[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
         }
 
+        public IWebElement GetTableWidgetContentWithoutLink(string content)
+        {
+            var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
+            return Driver.FindElement(columnContent);
+        }
+
         public string GetEditModeSlideBarColor()
         {
             return EditModeSlideBar.GetCssValue("background-color");
