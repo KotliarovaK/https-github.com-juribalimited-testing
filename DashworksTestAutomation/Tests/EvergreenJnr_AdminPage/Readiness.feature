@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15665 @DAS15789 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15665 @DAS14994 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorrect
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 	| Make default for applications |
 	| Delete                        |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @DAS15789 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
