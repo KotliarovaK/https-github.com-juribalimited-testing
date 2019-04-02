@@ -788,6 +788,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("Sections")]
         [NUnit.Framework.CategoryAttribute("DAS14728")]
+        [NUnit.Framework.CategoryAttribute("DAS14263")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection()
         {
             System.Exception lastException = null;
@@ -821,7 +822,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Dashboards",
                         "Widgets",
                         "Sections",
-                        "DAS14728"});
+                        "DAS14728",
+                        "DAS14263"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();

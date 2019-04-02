@@ -158,7 +158,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @Sections @DAS14728
+@Evergreen @Dashboards @Widgets @Sections @DAS14728 @DAS14263
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14728" name
@@ -170,6 +170,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	And User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
 	Then User sees number of Widgets with Legend increased by "1" on Dashboards page
+	#Uncomment after DAS14263 implemented
+	#When User clicks Settings button for "Dashboard for DAS14728" dashboard
+	#When User clicks Manage in the list panel
+	#Then Permission panel is displayed to the user
+	#When User changes sharing type from "Private" to "Specific users / teams"
+	#When User clicks the "ADD TEAMS" Action button
+	#When User selects "Team 1061" in the Team dropdown
+	#And User select "Admin" in Select Access dropdown
+	#When User clicks the "CANCEL" Action button
 	When User clicks Settings button for "Dashboard for DAS14728" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
