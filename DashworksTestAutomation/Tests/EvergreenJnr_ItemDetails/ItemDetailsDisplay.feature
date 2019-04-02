@@ -1302,3 +1302,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	Then table content is present
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16117 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAreDisplayedCorrectly 
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	And User navigates to the "Projects" tab
+	When User closes "Evergreen" section on the Details Page
+	And User opens "Device Projects" section on the Details Page
+	Then section is loaded correctly
+	When User have opened Column Settings for "Readiness" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Project Type" checkbox on the Column Settings panel
+	And User select "Request Type" checkbox on the Column Settings panel
+	And User clicks Filter button on the Column Settings panel
+	Then following filters in Column Settings panel are displayed on the Details Page:
+	| FilterCheckboxes |
+	|                  |
