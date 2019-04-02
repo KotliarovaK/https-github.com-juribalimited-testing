@@ -41,3 +41,27 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Project       |
 	| Action Task or Field |
 	| Action Value         |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15735 @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName  |
+	|             |
+	|             |
+	| Automation  |
+	|             |
+	| Active      |
+	| Run Status  |
+	| Scope       |
+	| Run         |
+	| Action      |
+	| Description |
+	Then "FALSE" content is displayed in "Run Status" column
+	When User enters "AM Auto 1" text in the Search field for "Automation" column
+	And User clicks on Actions button
+	And User selects "Run Now" in the Actions
+	Then "TRUE" content is displayed in "Run Status" column
