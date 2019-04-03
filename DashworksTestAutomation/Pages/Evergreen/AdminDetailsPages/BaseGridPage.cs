@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ObjectsBucketsToAdd)]
         public IList<IWebElement> ObjectsBucketsList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']/ancestor::mat-select")]
         public IWebElement ActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]

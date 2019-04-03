@@ -2781,6 +2781,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
         }
 
+        [Then(@"Actions button on the Projects page is active")]
+        public void ThenActionsButtonOnTheProjectsPageIsActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains("false", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+        }
+
+        [Then(@"Actions button on the Projects page is not active")]
+        public void ThenActionsButtonOnTheProjectsPageIsNotActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains("true", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+        }
+
         [When(@"User clicks Delete Project button")]
         public void WhenUserClicksDeleteProjectButton()
         {
