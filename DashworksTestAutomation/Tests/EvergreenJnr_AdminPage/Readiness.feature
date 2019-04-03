@@ -91,7 +91,6 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName                  |
 	|                             |
-	|                             |
 	| Readiness                   |
 	|                             |
 	| Tooltip                     |
@@ -114,3 +113,12 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| GREEN            |
+	When User clicks the "DELETE" Action button
+	Then Readiness Dialog Container is displayed to the User
+	Then "Delete Readinesses" title is displayed in the Readiness Dialog Container
+	Then "Please choose replacement readiness" text is displayed in the Readiness Dialog Container
+	When User clicks "DELETE" button in the Readiness dialog screen
+	When User clicks Admin on the left-hand menu
+	And User enters "DAS16131_Project" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
