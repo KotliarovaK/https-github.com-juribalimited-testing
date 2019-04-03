@@ -1786,6 +1786,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
             testRunner.And("User updates the Thank You page on Self Service tab", ((string)(null)), table95, "And ");
             testRunner.Then("Success message is displayed with \"Self Service Screen successfully updated\" text" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User removes the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
         }
 
@@ -1793,3 +1794,4 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
 }
 #pragma warning restore
 #endregion
+

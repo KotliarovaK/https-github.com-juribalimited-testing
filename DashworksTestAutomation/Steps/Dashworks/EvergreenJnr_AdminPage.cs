@@ -177,6 +177,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             link.GetNavigationLinkByName(linkName).Click();
         }
 
+        [Then(@"User clicks ""(.*)"" button in warning container on the Admin page")]
+        public void ThenUserClicksButtonInWarningContainerOnTheAdminPage(string buttonName)
+        {
+            var link = _driver.NowAt<ProjectsPage>();
+            link.GetButtonOnWarningContainerByName(buttonName).Click();
+        }
+
         #region Check button state
 
         [Then(@"Update Project buttons is disabled")]

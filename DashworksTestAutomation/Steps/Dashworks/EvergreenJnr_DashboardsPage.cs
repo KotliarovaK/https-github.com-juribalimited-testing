@@ -813,5 +813,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetSettingsOption(option).Click();
         }
+
+        [When(@"User clicks data in card ""(.*)"" widget")]
+        public void WhenUserClicksDataInCardWidget(string widgetTitle)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetCardWidgetContent(widgetTitle).Click();
+        }
+        
     }
 }

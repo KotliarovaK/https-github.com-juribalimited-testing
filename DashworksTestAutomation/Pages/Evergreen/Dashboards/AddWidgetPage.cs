@@ -40,6 +40,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='TableOrientation']")]
         public IWebElement TableOrientation { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Drilldown']")]
+        public IWebElement Drilldown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Rows']")]
         public IWebElement MaxRows { get; set; }
 
