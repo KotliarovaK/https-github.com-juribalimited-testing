@@ -48,6 +48,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Readiness" tab
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName |
+	| 
 	When User select "Readiness" rows in the grid
 	| SelectedRowsName |
 	| RED              |
