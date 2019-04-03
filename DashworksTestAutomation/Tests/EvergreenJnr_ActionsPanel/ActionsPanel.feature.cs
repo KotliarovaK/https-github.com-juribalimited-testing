@@ -2332,7 +2332,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13273")]
         [NUnit.Framework.CategoryAttribute("DAS13276")]
         [NUnit.Framework.CategoryAttribute("DAS13275")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner()
         {
             System.Exception lastException = null;
@@ -2373,8 +2372,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS13272",
                         "DAS13273",
                         "DAS13276",
-                        "DAS13275",
-                        "Not_Run"});
+                        "DAS13275"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -2448,6 +2446,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Options"});
             table66.AddRow(new string[] {
                         "Update"});
+            table66.AddRow(new string[] {
+                        "Remove Owner"});
             table66.AddRow(new string[] {
                         "Remove owner and team"});
             table66.AddRow(new string[] {
@@ -3382,7 +3382,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Failed\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Dec 30, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Nov 23, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3514,7 +3514,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Dec 30, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Nov 21, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Remove owner and team\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -3564,7 +3564,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13293")]
         [NUnit.Framework.CategoryAttribute("DAS13359")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuccessfulBannerMessage()
         {
             System.Exception lastException = null;
@@ -3601,8 +3600,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13293",
-                        "DAS13359",
-                        "Not_Run"});
+                        "DAS13359"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3639,7 +3637,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("Success message with \"7578 of 7578 objects were in the selected project and have " +
                     "been queued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Started\" content is displayed for \"Havoc(BigD: Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"STARTED\" content is displayed for \"Havoc(BigD: Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
@@ -4494,7 +4492,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot()
         {
             System.Exception lastException = null;
@@ -4528,8 +4525,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Devices",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
-                        "DAS15291",
-                        "Not_Run"});
+                        "DAS15291"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4554,21 +4550,21 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             table123.AddRow(new string[] {
                         "None"});
             table123.AddRow(new string[] {
+                        "Birmingham Morning"});
+            table123.AddRow(new string[] {
+                        "Birmingham Afternoon"});
+            table123.AddRow(new string[] {
                         "Manchester Morning"});
             table123.AddRow(new string[] {
                         "Manchester Afternoon"});
             table123.AddRow(new string[] {
-                        "London - Southbank Morning"});
+                        "London - City Morning"});
             table123.AddRow(new string[] {
                         "London - City Afternoon"});
             table123.AddRow(new string[] {
-                        "London - City Morning"});
+                        "London - Southbank Morning"});
             table123.AddRow(new string[] {
                         "London - Southbank Afternoon"});
-            table123.AddRow(new string[] {
-                        "Birmingham Morning"});
-            table123.AddRow(new string[] {
-                        "Birmingham Afternoon"});
             testRunner.Then("following values are displayed in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table123, "Then ");
             this.ScenarioCleanup();
         }

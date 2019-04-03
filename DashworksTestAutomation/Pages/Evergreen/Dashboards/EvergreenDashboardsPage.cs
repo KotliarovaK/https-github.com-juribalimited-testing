@@ -254,7 +254,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@class='inner-widget']");
+                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }
@@ -297,9 +297,16 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetCountForTableWidget(string boolean, string number)
         {
-            var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//td[text()='{number}']");
+            var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//span[text()='{number}']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
+        }
+
+        public IWebElement GetCardWidgetContent(string widgetTitle)
+        {
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/parent :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(cardWidget);
         }
     }
 }

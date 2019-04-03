@@ -903,7 +903,7 @@ Examples:
 	| DAS13264_Applications | Applications | Application   | 0047 - Microsoft Access 97 SR-2 Francais | Barry's User Project               | Audit & Configuration | Package Delivery Date    | Remove     |
 	| DAS13264_Mailboxes    | Mailboxes    | Email Address | 00C8BC63E7424A6E862@bclabs.local         | Email Migration                    | Pre-Migration         | Out Of Office Start Date | Remove     |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13268 @DAS13269 @DAS13272 @DAS13273 @DAS13276 @DAS13275
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -949,8 +949,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| No change |
 	When User selects "No change" Update Date on Action panel
 	Then the Update Owner options are displayed in following order:
-	| Options               |
-	| Update                |
+	| Options      |
+	| Update       |
+	| Remove Owner |
 	| Remove owner and team |
 	| No change             |
 	When User selects "Update" Update Owner on Action panel
@@ -1425,7 +1426,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User selects "Update" Update Value on Action panel
 	And User selects "Failed" Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "Dec 30, 2018" Date on Action panel
+	And User selects "Nov 23, 2018" Date on Action panel
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User navigate to the bottom of the Action panel
 	And User selects "No change" Update Owner on Action panel
@@ -1485,7 +1486,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User selects "Perform User Acceptance Test" Task on Action panel
 	And User selects "No change" Update Value on Action panel
 	And User selects "Update" Update Date on Action panel
-	And User selects "Dec 30, 2018" Date on Action panel
+	And User selects "Nov 21, 2018" Date on Action panel
 	And User selects "User Slot" value for "Capacity Slot" dropdown on Action panel
 	And User selects "Remove owner and team" Update Owner on Action panel
 	And User clicks the "UPDATE" Action button
@@ -1524,7 +1525,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13291" User
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13293 @DAS13359 @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13293 @DAS13359
 Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuccessfulBannerMessage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1553,7 +1554,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	And User clicks "UPDATE" button on message box
 	And Success message with "7578 of 7578 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Started" content is displayed for "Havoc(BigD: Task 0" column
+	Then "STARTED" content is displayed for "Havoc(BigD: Task 0" column
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks
@@ -1792,7 +1793,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update request type  |
 	| Update task value    |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1812,11 +1813,12 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	Then following values are displayed in "Capacity Slot" drop-down on Action panel:
 	| Options                      |
 	| None                         |
-	| Manchester Morning           |
-	| Manchester Afternoon         |
-	| London - Southbank Morning   |
-	| London - City Afternoon      |
-	| London - City Morning        |
-	| London - Southbank Afternoon |
 	| Birmingham Morning           |
 	| Birmingham Afternoon         |
+	| Manchester Morning           |
+	| Manchester Afternoon         |
+	| London - City Morning        |
+	| London - City Afternoon      |
+	| London - Southbank Morning   |
+	| London - Southbank Afternoon |
+	

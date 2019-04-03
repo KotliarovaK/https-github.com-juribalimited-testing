@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then Success message is displayed and contains "Your override date has been created" text
 	And "Unlimited" content is displayed in "Capacity" column
 	When User enters ">1" text in the Search field for "Capacity" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "1" rows
 	When User clicks content from "Start Date" column
 	And User enters "3 Oct 2018" date in the "Override End Date" field
 	Then "UPDATE" Action button is disabled
@@ -1598,7 +1598,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1648,7 +1648,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks content from "Project" column
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
 	And User selects "Stage13812 \ 1Task13812" checkbox in the "Tasks" field on the Project details page
@@ -1675,7 +1675,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then "UPDATE" Action button is disabled
 	And "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (Stage13812 \ 1Task13812)" text
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	And User selects "Stage13812 \ 2Task13812" checkbox in the "Tasks" field on the Project details page
@@ -1987,7 +1987,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User clicks content from "Project" column
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
 	And User selects "Computer Information ---- Text fill; Text fill; \ 1Task13500" checkbox in the "Tasks" field on the Project details page
@@ -2016,7 +2016,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	| Value                          |
 	| Pre-Migration \ Scheduled Date |
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	Then Next checkboxes in the "Tasks" dropdown are not available to select:
@@ -2186,6 +2186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Project" Project or Evergreen on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "1Test" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
