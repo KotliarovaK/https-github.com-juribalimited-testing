@@ -248,18 +248,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	When User click on Back button
 	Then data in table is sorted by "Project" column in ascending order by default on the Admin page
 	When User enters "NewProject15" text in the Search field for "Project" column
-	Then Counter shows "1" found rows
+	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Active" column on the Admin page
 	When User clicks "True" checkbox from boolean filter on the Admin page
-	Then Counter shows "0" found rows
+	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Device scoped" checkbox from String Filter on the Admin page
-	Then Counter shows "8" found rows
+	Then Rows counter contains "8" found row of all rows
 	When User clicks Reset Filters button on the Admin page 
 	When User enters "DDPP" text in the Search field for "Short Name" column
-	Then Counter shows "1" found rows
+	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page 
 	When User have opened Column Settings for "Project" column
 	And User clicks Column button on the Column Settings panel
@@ -273,7 +273,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| ColumnName |
 	| Project ID |
 	When User enters "0" text in the Search field for "Project ID" column
-	Then Counter shows "0" found rows
+	Then Rows counter contains "0" found row of all rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12332 @DAS13199 @DAS12485 @DAS12645 @DAS11877 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject
@@ -1252,7 +1252,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "1" of "595" rows
+	Then Rows counter contains "1" found row of all rows
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	When User enters "1MailboxesProject" text in the Search field for "Project" column
@@ -1272,7 +1272,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEve
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "1MailboxesProject" checkbox from String Filter with item list on the Admin page
-	Then Rows counter shows "1" of "595" rows
+	Then Rows counter contains "1" found row of all rows
 	Then "Unassigned" text is displayed in the table content
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13530 @Projects @Delete_Newly_Created_Project
@@ -2310,7 +2310,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "History" tab on the Project details page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "2 of 6 rows" found rows
+	Then Rows counter shows "2" of "6" rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
@@ -2779,7 +2779,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectAllCheckboxIsWorkingCorrectlyOnA
 	| 1Checkbox11758   |
 	Then 'Select All' checkbox have indeterminate checked state on the Admin page
 	When User selects all rows on the grid
-	When User deselect all rows on the grid
 	And User enters "Checkbox11758" text in the Search field for "Project" column
 	When User selects all rows on the grid
 	And User removes selected item
@@ -3017,7 +3016,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnProjectsGrid
 	And User clicks the "CREATE PROJECT" Action button
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
-	Then User sees "1" of "1" rows selected label
+	Then Rows counter contains "1" found row of all rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11931 @DAS12742 @DAS11769 @DAS12999 @DAS13973 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Delete_Newly_Created_List @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatProjectsAreDeletedSuccessfullyAndThereAreNoConsoleErrors

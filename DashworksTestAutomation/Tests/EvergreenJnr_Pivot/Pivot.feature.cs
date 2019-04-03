@@ -1606,7 +1606,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks checkbox at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"101 Hudson Street\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1695,7 +1695,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table65.AddRow(new string[] {
                         "1803: Readiness"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table65, "And ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"USA\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1998,7 +1998,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks checkbox at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"Exchange Tower\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2090,7 +2090,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table81.AddRow(new string[] {
                         "Compliance"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table81, "And ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"Empty\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2184,9 +2184,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table86.AddRow(new string[] {
-                        "Not Applicable"});
+                        "NOT APPLICABLE"});
             table86.AddRow(new string[] {
-                        "Started"});
+                        "STARTED"});
             testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table86, "Then ");
             this.ScenarioCleanup();
         }
@@ -4141,15 +4141,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table171 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option"});
             table171.AddRow(new string[] {
-                        "count"});
+                        "Count"});
             table171.AddRow(new string[] {
-                        "sum"});
+                        "Sum"});
             table171.AddRow(new string[] {
-                        "min"});
+                        "Min"});
             table171.AddRow(new string[] {
-                        "max"});
+                        "Max"});
             table171.AddRow(new string[] {
-                        "avg"});
+                        "Avg"});
             testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table171, "Then ");
             testRunner.When("User clicks close button for \"HDD Count\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table172 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4160,11 +4160,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table173 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option"});
             table173.AddRow(new string[] {
-                        "count"});
+                        "Count"});
             table173.AddRow(new string[] {
-                        "first"});
+                        "First"});
             table173.AddRow(new string[] {
-                        "last"});
+                        "Last"});
             testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table173, "Then ");
             testRunner.When("User clicks close button for \"Build Date\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table174 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4175,7 +4175,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table175 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option"});
             table175.AddRow(new string[] {
-                        "count"});
+                        "Count"});
             testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table175, "Then ");
             testRunner.When("User clicks close button for \"Owner City\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();

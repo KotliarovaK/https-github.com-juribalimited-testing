@@ -40,6 +40,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='DELETE']")]
         public IWebElement DeleteButtonInAlert { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='CANCEL']")]
+        public IWebElement CancelButtonInAlert { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
         public IWebElement TextInDeleteAlert { get; set; }
 

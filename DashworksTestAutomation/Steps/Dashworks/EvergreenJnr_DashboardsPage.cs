@@ -388,6 +388,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.DeleteButtonInAlert.Click();
         }
 
+        [When(@"User clicks Cancel button in Delete Widget warning on Dashboards page")]
+        public void WhenUserClicksCancelButtonInDeleteWidgetWarningOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.CancelButtonInAlert);
+            page.CancelButtonInAlert.Click();
+        }
+
         [When(@"User creates new Dashboard with ""(.*)"" name")]
         public void WhenUserCreatesNewDashboardWithName(string dashboardName)
         {

@@ -839,6 +839,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         [When(@"User deselect all rows on the grid")]
         [When(@"User selects all rows on the grid")]
+        [When(@"User clicks Select All checkbox on the grid")]
         public void WhenUserSelectsAllRowsOnTheGrid()
         {
             var checkbox = _driver.NowAt<BaseGridPage>();
@@ -1761,11 +1762,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSearchesByColumnAndSelectsFollowingRowsInTheGrid(string columnName, Table table)
         {
             var dashboardPage = _driver.NowAt<BaseGridPage>();
+            int iteration = 0;
             foreach (var row in table.Rows)
             {
                 dashboardPage.GetSearchFieldByColumnName(columnName, row.Values.FirstOrDefault());
                 _driver.WaitForDataLoading();
                 dashboardPage.SelectAllCheckBox.Click();
+                if (iteration != 0)
+                {
+                    dashboardPage.SelectAllCheckBox.Click();
+                }
+                iteration++;
             }
         }
 
@@ -2836,6 +2843,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsCounterShowsOfRows(int selectedRows, int ofRows)
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.RowsCounter);
             StringAssert.AreEqualIgnoringCase(
                 ofRows == 1 ? $"{selectedRows} of {ofRows} row" : $"{selectedRows} of {ofRows} rows",
@@ -2847,6 +2855,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRowsCounterContainsFoundRowsOfAllRows(int foundRows)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.RowsCounter);
             Assert.That(page.RowsCounter.Text, Does.Contain(foundRows + " of "),
                 $"Found rows counter doesn't contain {foundRows} found rows");

@@ -310,7 +310,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14855" dashboard
+	When User clicks Cancel button in Delete Widget warning on Dashboards page
+	And User clicks Settings button for "Dashboard for DAS14855" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
