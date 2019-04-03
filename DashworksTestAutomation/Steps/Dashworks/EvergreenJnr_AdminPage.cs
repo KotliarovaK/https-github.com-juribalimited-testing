@@ -2985,6 +2985,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
         }
 
+        [Then(@"""(.*)"" title is displayed in the Readiness Dialog Container")]
+        public void ThenTitleIsDisplayedInTheReadinessDialogContainer(string text)
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.GetReadinessDialogContainerTitle(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the Readiness Dialog Container")]
+        public void ThenTextIsDisplayedInTheReadinessDialogContainer(string text)
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
         public void WhenUserClicksButtonInTheReadinessDialogScreen(string buttonName)
         {
