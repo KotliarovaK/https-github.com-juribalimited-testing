@@ -1025,6 +1025,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Number of rows is not {showedResultsCount}");
         }
 
+        [Then(@"""(.*)"" of all shown label displays in the Filter panel")]
+        public void ThenOfAllShownLabelDisplaysInTheFilterPanel(int showedResultsCount)
+        {
+            var filtersPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
+            Assert.That(filtersPanel.GetShowedResultsCount(), Does.Contain($"{showedResultsCount.ToString()} of "),
+                $"Shown label doesn't contain {showedResultsCount} found rows");
+        }
+
         #region Filter URL
 
         [When(@"User is remove filter by URL")]

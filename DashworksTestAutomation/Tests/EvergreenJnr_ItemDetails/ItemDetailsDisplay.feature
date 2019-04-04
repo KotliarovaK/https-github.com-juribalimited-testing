@@ -474,14 +474,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOneUnknownFilterValueIsShownInGroupD
 	Then Content is present in the table on the Details Page
 	When User clicks Reset Filters button on the Details Page
 	And User enters "wheelern" text in the Search field for "Username" column on the Details Page
-	Then "1" rows found label displays on Details Page
+	Then Rows counter shows "1" of "7" rows
 	When User clicks Reset Filters button on the Details Page
 	And User enters "Administrator" text in the Search field for "Display Name" column on the Details Page
-	Then "1" rows found label displays on Details Page
+	Then Rows counter shows "1" of "7" rows
 	When User clicks Reset Filters button on the Details Page
 	And User clicks String Filter button for "Domain" column
 	When User selects "DWLABS" checkbox from String Filter on the Details Page
-	Then "0" rows found label displays on Details Page
+	Then Rows counter shows "0" of "7" rows
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12245 @DAS12321
 Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErrorIsNotDisplayed
@@ -1231,7 +1231,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	| Inventory Site            | A01             |
 	Then empty value is displayed for "Dashworks First Seen Date" field on the Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObjectSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1250,7 +1250,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Description                     |
 	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

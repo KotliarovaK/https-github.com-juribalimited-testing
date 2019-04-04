@@ -5151,6 +5151,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS15994")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab()
         {
             System.Exception lastException = null;
@@ -5188,7 +5189,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS13096",
                         "DAS15994",
                         "Delete_Newly_Created_Project",
-                        "Projects"});
+                        "Projects",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -8058,8 +8060,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Windows 10 Updates - New York"});
             table129.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)"});
-            testRunner.Then("User sees following options in \"Select Existing Project\" dropdown on Import Proje" +
-                    "cts page:", ((string)(null)), table129, "Then ");
+            testRunner.Then("User sees that \"Select Existing Project\" dropdown contains following options on I" +
+                    "mport Projects page:", ((string)(null)), table129, "Then ");
             this.ScenarioCleanup();
         }
 

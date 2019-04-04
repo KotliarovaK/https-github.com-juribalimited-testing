@@ -399,7 +399,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitForDataLoading();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
-            }
+                }
         }
 
         [When(@"User selects following Mailbox folder permissions")]
@@ -421,6 +421,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<ProjectsPage>(() => projectsPage.AddMailboxPermissionsButton);
             foreach (var row in table.Rows) projectsPage.RemovePermissionsByName(row["Permissions"]);
         }
 
@@ -955,6 +956,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Assert.That(actualBucketsOptions[i], Is.EqualTo(options.Rows[i].Values.FirstOrDefault()), "Options do not match!");
             }
+        }
+
+        [Then(@"User sees that ""(.*)"" dropdown contains following options on Import Projects page:")]
+        public void ThenUserSeesThatDropdownContainsFollowingOptionsOnImportProjectPage(string dropdownName,
+            Table options)
+        {
+            var page = _driver.NowAt<ImportProjectPage>();
+            List<string> actualBucketsOptions = page.GetDropdownOptions(dropdownName);
+
+            Assert.That(actualBucketsOptions,
+                Is.SupersetOf(options.Rows.Select(x => x.Values).Select(x => x.FirstOrDefault())),
+                "Some options are missing!");
         }
 
         [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown on the Import Project Page")]

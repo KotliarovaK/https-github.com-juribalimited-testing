@@ -939,7 +939,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatResultCounterDoesNotDisappearAfter
 	| 55     |
 	Then "50 of 55 shown" results are displayed in the Filter panel
 	When User deletes one character from the Search field
-	Then "50 of 773 shown" results are displayed in the Filter panel
+	Then "50" of all shown label displays in the Filter panel
 
 @Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS12100
 Scenario: EvergreenJnr_DevicesList_CheckThatMailboxOwnerFilterCategoryIsNotDisplayedOnDeviceList

@@ -524,7 +524,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacitySlotClearedWhenObjectTypeIsCha
 	| Items                                      |
 	| Stage 1 \ DDL Task for a Computer          |
 	| Stage 1 \ Date Task for a Computer Italian |
-	And User clicks on "Capacity Units" dropdown on the Capacity Slots page
+	And User clicks on "Teams" dropdown on the Capacity Slots page
 	And User clicks the "CREATE" Action button
 	And User clicks newly created object link
 	Then User sees following tiles selected in the "Tasks" field:

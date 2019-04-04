@@ -215,13 +215,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 	When User clicks the Actions button
 	Then Save to New Custom List element is displayed
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
 	| Compliance          |
-	Then Save to New Custom List element is displayed
-	And User type "Test" into Custom list name field
+	Then Save to New Custom List element is displayed	
+	When User clicks Save button on the list panel
+	Then User type "Test" into Custom list name field
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
@@ -234,6 +235,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	And User selects "Create static list" in the Actions dropdown
 	Then User type "Test" into Static list name field
 	When User clicks the Actions button
+	And User clicks Save button on the list panel
+	And User selects Save as new list option
 	Then Save button is inactive for Custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @DAS12152 @DAS12595 @Delete_Newly_Created_List
@@ -959,6 +962,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User clicks Save button on the list panel
+	And User selects Save as new list option
 	Then Save and Cancel buttons are displayed on the list panel
 	When User clicks Cancel button on the list panel
 	Then Save and Cancel buttons are not displayed on the list panel

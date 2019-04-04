@@ -23,10 +23,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Rows counter shows "1" of "6" rows
 	When User clicks "Buckets" tab
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
-	Then Rows counter shows "1" of "20" rows
+	Then Rows counter contains "1" found row of all rows
 	When User resets Search fields for columns
 	When User enters "=35" text in the Search field for "Devices" column
-	Then Rows counter shows "0" of "20" rows
+	Then Rows counter contains "0" found row of all rows
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
 	When User clicks Reset Filters button on the Admin page

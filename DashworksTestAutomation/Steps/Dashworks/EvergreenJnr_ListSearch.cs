@@ -159,7 +159,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void PerformSearch(string searchTerm)
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
-
+            
             if (listPageElement.TableSearchTextBox.Displayed())
             {
                 listPageElement.TableSearchTextBox.Clear();
@@ -171,6 +171,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.TableSearchButton);
                 listPageElement.TableSearchButton.Click();
                 listPageElement.TableSearchTextBox.Clear();
                 Thread.Sleep(3000);

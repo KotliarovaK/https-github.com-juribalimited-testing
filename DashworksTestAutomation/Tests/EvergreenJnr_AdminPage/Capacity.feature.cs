@@ -1517,7 +1517,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table11.AddRow(new string[] {
                         "Stage 1 \\ Date Task for a Computer Italian"});
             testRunner.And("User selects next items in the \"Tasks\" dropdown:", ((string)(null)), table11, "And ");
-            testRunner.And("User clicks on \"Capacity Units\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks on \"Teams\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {

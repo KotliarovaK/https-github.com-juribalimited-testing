@@ -3405,7 +3405,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                     "d following value:", ((string)(null)), table81, "When ");
             testRunner.Then("\"50 of 55 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User deletes one character from the Search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"50 of 773 shown\" results are displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"50\" of all shown label displays in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
 
@@ -5876,3 +5876,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
 }
 #pragma warning restore
 #endregion
+
