@@ -494,7 +494,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User removes selected item
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @DAS16130 @Delete_Newly_Created_Team @Teams @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @DAS16130 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
