@@ -591,5 +591,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
         }
+
+        [Then(@"Error is displayed to the User")]
+        public void ThenErrorIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.ErrorBox.Displayed(), "Error is displayed");
+        }
     }
 }
