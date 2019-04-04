@@ -388,6 +388,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.DeleteButtonInAlert.Click();
         }
 
+        [When(@"User clicks Cancel button in Delete Widget warning on Dashboards page")]
+        public void WhenUserClicksCancelButtonInDeleteWidgetWarningOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.CancelButtonInAlert);
+            page.CancelButtonInAlert.Click();
+        }
+
         [When(@"User creates new Dashboard with ""(.*)"" name")]
         public void WhenUserCreatesNewDashboardWithName(string dashboardName)
         {
@@ -811,6 +820,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetCardWidgetContent(widgetTitle).Click();
         }
-        
+
+        [When(@"User clicks first Dashboard in dashboards list")]
+        public void WhenUserClickFirstDashboardInDashboardsList()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetFirstDashboardFromList().Click();
+        }
+
+        [Then(@"Unsaved Changes alert not displayed to the user")]
+        public void ThenNoUnsavedChangesAlertDisplayedOnEditWidgetPage()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitWhileControlIsDisplayed<AddWidgetPage>(() => page.UnsavedChangesAlert);
+            Assert.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert));
+        }
+
+        [Then(@"User sees ""(.*)"" text in alert on Edit Widget page")]
+        public void ThenUserSeesTextInAlertOnEditWidgetPage(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => page.UnsavedChangesAlert);
+            Assert.AreEqual(text, page.GetUnsavedChangesAlertText().Text);
+        }
+
+        [When(@"User clicks ""(.*)"" button in Unsaved Changes alert")]
+        public void WhenUserClickButtonInUnsavedChangesAlert(string buttonTitle)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.UnsavedChangesAlertButton(buttonTitle).Click();
+        }
+
     }
+   
 }

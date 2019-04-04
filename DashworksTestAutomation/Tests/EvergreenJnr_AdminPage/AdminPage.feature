@@ -12,10 +12,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
 	When User enters "Migration phase 3 team" text in the Search field for "Team" column
-	Then Rows counter shows "1" of "2794" rows
+	Then Rows counter contains "1" found row of all rows
 	When User resets Search fields for columns
 	And User enters "=8" text in the Search field for "Project Buckets" column
-	Then Rows counter shows "0" of "2794" rows
+	Then Rows counter contains "0" found row of all rows
 	When User resets Search fields for columns
 	And User enters "Administrative Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
@@ -31,10 +31,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User clicks "Buckets" link on the Admin page
 	When User clicks Reset Filters button on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
-	Then Rows counter shows "2" of "593" rows
+	Then Rows counter contains "2" found row of all rows
 	When User resets Search fields for columns
 	And User enters "=2" text in the Search field for "Users" column
-	Then Rows counter shows "2" of "593" rows
+	Then Rows counter contains "2" found row of all rows
 	When User resets Search fields for columns
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -45,10 +45,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	Then Rows counter shows "2" of "2" rows
 	When User clicks "Users" tab
 	When User enters "Danielle A. Tate" text in the Search field for "Display Name" column
-	Then "1" rows found label displays on Details Page
+	Then Rows counter shows "1" of "1" rows
 	When User resets Search fields for columns
 	And User enters "TZV202" text in the Search field for "Username" column
-	Then "1" rows found label displays on Details Page
+	Then Rows counter shows "1" of "1" rows
 	When User click on Back button
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column

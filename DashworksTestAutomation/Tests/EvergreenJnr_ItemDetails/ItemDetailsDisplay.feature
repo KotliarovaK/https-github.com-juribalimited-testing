@@ -1118,13 +1118,13 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
-	Then "98" rows found label displays on Details Page
+	Then Rows counter shows "98" of "194" rows
 	When User closes "Users" section on the Details Page
 	And User opens "Devices" section on the Details Page
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
-	Then "99" rows found label displays on Details Page
+	Then Rows counter shows "99" of "173" rows
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13892
 Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccessfullyLoaded

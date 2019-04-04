@@ -593,6 +593,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	And User clicks "Capacity" tab
 	#prepare data
 	And User selects "Details" tab on the Project details page
+	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
+	When User clicks the "UPDATE" Action button
 	Then User selects "Capacity Units" option in "Capacity Mode" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
@@ -606,24 +608,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
 	When User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot1" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 1" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
 	And User selects "Capacity Unit 1" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot3" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 3" Name in the "Display Name" field on the Project details page
 	And User selects "Capacity Unit 2" checkbox in the "Capacity Units" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE NEW SLOT" Action button
+	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot4" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 4" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
@@ -635,7 +637,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	Then "1" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
 	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
-	And "1" rows are displayed in the agGrid on Capacity Slots page
+	And Rows counter shows "1" of "4" rows
 	And User sees next Slots on the Capacity Slots page:
 	| slots |
 	| Slot1 |
@@ -645,7 +647,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	Then "2" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
 	Then "Capacity Unit 1,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
-	And "2" rows are displayed in the agGrid on Capacity Slots page
+	And Rows counter shows "2" of "4" rows
 	And User sees next Slots on the Capacity Slots page:
 	| slots |
 	| Slot1 |
@@ -656,7 +658,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	Then "2" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
 	Then "Capacity Unit 2,All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
-	And "2" rows are displayed in the agGrid on Capacity Slots page
+	And Rows counter shows "2" of "4" rows
 	And User sees next Slots on the Capacity Slots page:
 	| slots |
 	| Slot1 |
@@ -832,6 +834,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Public Folder          |
 	| Sharepoint Application |
 	When User clicks "Projects" navigation link on the Admin page
+	And User clicks Yes button in Leave Page Warning
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "Windows 7 Migration (Computer Scheduled Project)" is displayed to user
@@ -975,7 +978,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	| Project14029 Snr |
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -1699,6 +1702,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then "UPDATE" Action button is active
+	When User clicks the "UPDATE" Action button
 	When User clicks "Administration" navigation link on the Admin page
 	Then User clicks "YES" button in warning container on the Admin page
 	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
@@ -2061,7 +2065,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
 	And User type "13152" Name in the "Display Name" field on the Project details page
 	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
