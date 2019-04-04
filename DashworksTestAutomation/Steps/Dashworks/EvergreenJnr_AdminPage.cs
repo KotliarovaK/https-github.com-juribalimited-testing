@@ -2924,6 +2924,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Items are not the same");
         }
 
+        [When(@"User clicks ""(.*)"" option in Cog-menu for ""(.*)"" item on Admin page")]
+        public void WhenUserClicksOptionInCog_MenuForItemOnAdminPage(string option, string itemName)
+        {
+            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            body.BodyContainer.Click();
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.MouseHover(page.GetCogMenuByItem(itemName));
+            page.GetCogMenuByItem(itemName).Click();
+            page.GetCogmenuOptionByName(option).Click();
+        }
+
         [Then(@"Columns on Admin page is displayed in following order:")]
         public void ThenColumnsOnAdminPageIsDisplayedInFollowingOrder(Table table)
         {
