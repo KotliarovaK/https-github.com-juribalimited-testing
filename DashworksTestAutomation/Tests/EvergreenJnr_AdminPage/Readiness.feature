@@ -67,3 +67,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148
+Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptions
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User clicks "Readiness" tab
+	When User have opened column settings for "Readiness" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Ready" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	When User enters "red" text in the Search field for "Readiness" column
+	Then "FALSE" content is displayed for "Ready" column
+	Then "1" content is displayed for "Task Values Count" column
+	When User clicks "Change to ready" option in Cog-menu for "Red" item on Admin page
+	Then "TRUE" content is displayed for "Ready" column
+	Then "1" content is displayed for "Task Values Count" column
+	When User clicks "Change to not ready" option in Cog-menu for "Red" item on Admin page
+	Then "FALSE" content is displayed for "Ready" column
+	Then "1" content is displayed for "Task Values Count" column
