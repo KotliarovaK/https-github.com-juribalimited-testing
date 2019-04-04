@@ -1702,6 +1702,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then "UPDATE" Action button is active
+	When User clicks the "UPDATE" Action button
 	When User clicks "Administration" navigation link on the Admin page
 	Then User clicks "YES" button in warning container on the Admin page
 	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
