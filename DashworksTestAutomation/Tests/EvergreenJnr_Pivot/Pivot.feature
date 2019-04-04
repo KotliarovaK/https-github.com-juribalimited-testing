@@ -520,7 +520,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	When User clicks checkbox at selected Lookup Filter
 	When User clicks Save filter button
 	When User clicks the Pivot button
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "101 Hudson Street" left-pinned value on Pivot
@@ -545,7 +545,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableF
 	And User selects the following Values on Pivot:
 	| Values          |
 	| 1803: Readiness |
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "USA" left-pinned value on Pivot
@@ -643,7 +643,7 @@ Scenario: EvergreenJnr_UsersLists_CheckThatSeverityAggregateFunctionAvailableFor
 	When User clicks checkbox at selected Lookup Filter
 	When User clicks Save filter button
 	When User clicks the Pivot button
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "Exchange Tower" left-pinned value on Pivot
@@ -669,7 +669,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatSeverityAggregateFunctionAvailableF
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Compliance |
-	When User selects aggregate function "severity" on Pivot
+	When User selects aggregate function "Severity" on Pivot
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	When User expanded "Empty" left-pinned value on Pivot
@@ -698,8 +698,8 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectReadinessTaskColumnsDis
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
-	| Not Applicable |
-	| Started        |
+	| NOT APPLICABLE |
+	| STARTED        |
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14422 @DAS15252
 Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDisplayInCorrectOrderForMailboxes
@@ -1295,27 +1295,27 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValu
 	| HDD Count  |
 	Then following aggregate function are available in dropdown:
 	| Option |
-	| count  |
-	| sum    |
-	| min    |
-	| max    |
-	| avg    |
+	| Count  |
+	| Sum    |
+	| Min    |
+	| Max    |
+	| Avg    |
 	When User clicks close button for "HDD Count" chip
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Build Date |
 	Then following aggregate function are available in dropdown:
 	| Option |
-	| count  |
-	| first  |
-	| last   |
+	| Count  |
+	| First  |
+	| Last   |
 	When User clicks close button for "Build Date" chip
 	And User selects the following Values on Pivot:
 	| Values     |
 	| Owner City |
 	Then following aggregate function are available in dropdown:
 	| Option |
-	| count  |
+	| Count  |
 	When User clicks close button for "Owner City" chip
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13862 @DAS14372 @DAS14373

@@ -3,6 +3,7 @@ using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages
@@ -40,6 +41,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='TableOrientation']")]
         public IWebElement TableOrientation { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Drilldown']")]
+        public IWebElement Drilldown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Max Rows']")]
         public IWebElement MaxRows { get; set; }
 
@@ -61,6 +65,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//deactivate-guard-dialog/parent::mat-dialog-container")]
+        public IWebElement UnsavedChangesAlert { get; set; }
+        
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
@@ -87,6 +94,21 @@ namespace DashworksTestAutomation.Pages
             var listNameSelector = $".//span[@class='mat-option-text']//span[contains(text(), '{listName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
+
+        public IWebElement GetUnsavedChangesAlertText()
+        {
+            var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//p";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
+        }
+
+        public IWebElement UnsavedChangesAlertButton(string buttonTitle)
+        {
+            var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//span[text()='{buttonTitle}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
         }
     }
 }

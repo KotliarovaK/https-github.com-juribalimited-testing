@@ -310,7 +310,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14855" dashboard
+	When User clicks Cancel button in Delete Widget warning on Dashboards page
+	And User clicks Settings button for "Dashboard for DAS14855" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
@@ -391,8 +392,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
 	When User adds new Widget
-	| WidgetType | Title       | List       | SplitBy             | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled |             | Count             | Count ASC |                  | 10        |            |
+	| WidgetType | Title       | List       | SplitBy             | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Drilldown |
+	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled |             | Count             | Count ASC |                  | 10        |            |           |
 	Then Widget Preview is displayed to the user
 	Then There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -428,8 +429,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend | Type |
-	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count distinct    | CPU Architecture ASC |                  | 10        | false      |      |
+	| WidgetType | Title             | List      | SplitBy          | AggregateBy | AggregateFunction | OrderBy              | TableOrientation | MaxValues | ShowLegend | Type | Drilldown |
+	| Pie        | WidgetForDAS15372 | List15372 | CPU Architecture | Hostname    | Count distinct    | CPU Architecture ASC |                  | 10        | false      |      |           |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -450,8 +451,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type |
-	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC |                  | 10        | true       |      |
+	| WidgetType | Title             | List      | SplitBy | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown |
+	| Pie        | WidgetForDAS15365 | List15365 | Model   | Model       | Count distinct    | Model ASC |                  | 10        | true       |      |           |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User selects "Bar" in the "Widget Type" Widget dropdown
@@ -517,8 +518,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | TableOrientation | MaxValues | ShowLegend | Type |
-	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC |                  | 10        | true       |      |
+	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | TableOrientation | MaxValues | ShowLegend | Type | Drilldown |
+	| Bar        | WidgetForDAS15356 | List15356 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC |                  | 10        | true       |      |           |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -551,8 +552,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation |
-	| Card       | WidgetForDAS15207 | All Devices | Aggregate | Hostname    | Count distinct    |         |         |           |            |                  |
+	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS15207 | All Devices | Aggregate | Hostname    | Count distinct    |         |         |           |            |                  |           |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
@@ -722,3 +723,44 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	When User clicks Settings button for "Dashboard for DAS16073" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Dashboards @Widgets @DAS16138
+Scenario: EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List         | Type      | AggregateBy          | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Scheduled Date | First             |         |         |           |            |                  | Yes       |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS16138" Widget is displayed to the user
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks data in card "WidgetForDAS16138" widget
+	Then Save as a new list option is available
+	And "8" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then "1803: Scheduled Date is 05 Nov 2018" is displayed in added filter info
+	And "Any Device in list 1803 Rollout" is displayed in added filter info
+
+@Evergreen @Dashboards @Widgets @DAS15900
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15900" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
+	And User clicks Ellipsis menu for "WidgetForDAS15900" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	And User adds new Widget
+	| WidgetType | Title                    | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown |
+	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname |             | Count             | Count ASC |                  | 11        | true       |      |           | 
+	When User clicks first Dashboard in dashboards list
+	Then User sees "You have unsaved changes. Are you sure you want to leave the page?" text in alert on Edit Widget page
+	When User clicks "NO" button in Unsaved Changes alert
+	Then Unsaved Changes alert not displayed to the user
+	#delete test dashboard
+	When User clicks Settings button for "Dashboard for DAS15900" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+	And User clicks "YES" button in Unsaved Changes alert

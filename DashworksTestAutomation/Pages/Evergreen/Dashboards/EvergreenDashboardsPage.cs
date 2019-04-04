@@ -40,6 +40,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='DELETE']")]
         public IWebElement DeleteButtonInAlert { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='CANCEL']")]
+        public IWebElement CancelButtonInAlert { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
         public IWebElement TextInDeleteAlert { get; set; }
 
@@ -300,6 +303,20 @@ namespace DashworksTestAutomation.Pages
             var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//span[text()='{number}']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
+        }
+
+        public IWebElement GetCardWidgetContent(string widgetTitle)
+        {
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/parent :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(cardWidget);
+        }
+
+        public IWebElement GetFirstDashboardFromList()
+        {
+            var cardWidget = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(cardWidget).First();
         }
     }
 }

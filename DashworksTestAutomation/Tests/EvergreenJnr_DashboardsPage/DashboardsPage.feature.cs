@@ -1432,7 +1432,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.And("User clicks \"Delete\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("User sees \"\"WidgetForDAS14855\" will be permanently deleted\" text in warning messa" +
                     "ge on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks Settings button for \"Dashboard for DAS14855\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks Cancel button in Delete Widget warning on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Settings button for \"Dashboard for DAS14855\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
@@ -1740,7 +1741,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "OrderBy",
                         "TableOrientation",
                         "MaxValues",
-                        "ShowLegend"});
+                        "ShowLegend",
+                        "Drilldown"});
             table34.AddRow(new string[] {
                         "Table",
                         "DAS-14920_1",
@@ -1751,6 +1753,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Count ASC",
                         "",
                         "10",
+                        "",
                         ""});
             testRunner.When("User adds new Widget", ((string)(null)), table34, "When ");
             testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1868,7 +1871,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "TableOrientation",
                         "MaxValues",
                         "ShowLegend",
-                        "Type"});
+                        "Type",
+                        "Drilldown"});
             table37.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15372",
@@ -1880,6 +1884,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "",
                         "10",
                         "false",
+                        "",
                         ""});
             testRunner.And("User adds new Widget", ((string)(null)), table37, "And ");
             testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1963,7 +1968,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "TableOrientation",
                         "MaxValues",
                         "ShowLegend",
-                        "Type"});
+                        "Type",
+                        "Drilldown"});
             table39.AddRow(new string[] {
                         "Pie",
                         "WidgetForDAS15365",
@@ -1975,6 +1981,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "",
                         "10",
                         "true",
+                        "",
                         ""});
             testRunner.And("User adds new Widget", ((string)(null)), table39, "And ");
             testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2152,7 +2159,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "TableOrientation",
                         "MaxValues",
                         "ShowLegend",
-                        "Type"});
+                        "Type",
+                        "Drilldown"});
             table42.AddRow(new string[] {
                         "Bar",
                         "WidgetForDAS15356",
@@ -2164,6 +2172,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "",
                         "10",
                         "true",
+                        "",
                         ""});
             testRunner.And("User adds new Widget", ((string)(null)), table42, "And ");
             testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -2312,7 +2321,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "OrderBy",
                         "MaxValues",
                         "ShowLegend",
-                        "TableOrientation"});
+                        "TableOrientation",
+                        "Drilldown"});
             table44.AddRow(new string[] {
                         "Card",
                         "WidgetForDAS15207",
@@ -2320,6 +2330,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "Aggregate",
                         "Hostname",
                         "Count distinct",
+                        "",
                         "",
                         "",
                         "",
@@ -2834,6 +2845,203 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             testRunner.When("User clicks Settings button for \"Dashboard for DAS16073\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS16138")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS16138"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "SplitBy",
+                        "OrderBy",
+                        "MaxValues",
+                        "ShowLegend",
+                        "TableOrientation",
+                        "Drilldown"});
+            table64.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS16138",
+                        "1803 Rollout",
+                        "Aggregate",
+                        "1803: Scheduled Date",
+                        "First",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Yes"});
+            testRunner.And("User adds new Widget", ((string)(null)), table64, "And ");
+            testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Card \"WidgetForDAS16138\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks data in card \"WidgetForDAS16138\" widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Save as a new list option is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"8\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"1803: Scheduled Date is 05 Nov 2018\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("\"Any Device in list 1803 Rollout\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDash" +
+            "boardWithoutSavingWidgetChanges")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS15900")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChangesInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChangesInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDash" +
+                    "boardWithoutSavingWidgetChanges", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS15900"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User creates new Dashboard with \"Dashboard for DAS15900\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateFunction",
+                        "AggregateBy",
+                        "OrderBy",
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend"});
+            table65.AddRow(new string[] {
+                        "Pie",
+                        "WidgetForDAS15900",
+                        "All Applications",
+                        "Vendor",
+                        "Count",
+                        "",
+                        "Count ASC",
+                        "",
+                        "10",
+                        "true"});
+            testRunner.And("User creates new Widget", ((string)(null)), table65, "And ");
+            testRunner.And("User clicks Ellipsis menu for \"WidgetForDAS15900\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend",
+                        "Type",
+                        "Drilldown"});
+            table66.AddRow(new string[] {
+                        "Pie",
+                        "WidgetForDAS15900_Edited",
+                        "All Devices",
+                        "Hostname",
+                        "",
+                        "Count",
+                        "Count ASC",
+                        "",
+                        "11",
+                        "true",
+                        "",
+                        ""});
+            testRunner.And("User adds new Widget", ((string)(null)), table66, "And ");
+            testRunner.When("User clicks first Dashboard in dashboards list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User sees \"You have unsaved changes. Are you sure you want to leave the page?\" te" +
+                    "xt in alert on Edit Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks \"NO\" button in Unsaved Changes alert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Unsaved Changes alert not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks Settings button for \"Dashboard for DAS15900\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks \"YES\" button in Unsaved Changes alert", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
 

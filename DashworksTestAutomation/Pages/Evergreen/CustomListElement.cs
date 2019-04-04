@@ -168,8 +168,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span/div[contains(@class,'inline-tip')]")]
         public IWebElement DeleteWarning { get; set; }
         
-        [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'Delete')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']//li[contains(text(), 'Delete')]")]
         public IWebElement DeleteButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']/ul[@class='menu-settings']")]
+        public IWebElement MenuItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//button[contains(@class, 'btn mat-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }

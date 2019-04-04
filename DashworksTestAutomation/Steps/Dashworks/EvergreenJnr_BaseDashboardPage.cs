@@ -365,6 +365,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesRowsInGrid(int rowsCount)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
             Assert.That(page.TableRows.Count, Is.EqualTo(rowsCount));
         }

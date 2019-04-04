@@ -81,8 +81,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonForCustomList()
         {
             var button = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => button.MenuItem);
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => button.DeleteButton);
+            Thread.Sleep(1000);
             button.DeleteButton.Click();
+            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => button.MenuItem);
         }
 
         [Then(@"Settings panel is displayed to the user")]
