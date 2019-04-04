@@ -311,5 +311,12 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForDataLoading();
             return Driver.FindElement(cardWidget);
         }
+
+        public IWebElement GetFirstDashboardFromList()
+        {
+            var cardWidget = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(cardWidget).First();
+        }
     }
 }

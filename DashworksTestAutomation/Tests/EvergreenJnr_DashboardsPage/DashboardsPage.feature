@@ -741,3 +741,26 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage
 	When User clicks the Filters button
 	Then "1803: Scheduled Date is 05 Nov 2018" is displayed in added filter info
 	And "Any Device in list 1803 Rollout" is displayed in added filter info
+
+@Evergreen @Dashboards @Widgets @DAS15900
+Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15900" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS15900 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
+	And User clicks Ellipsis menu for "WidgetForDAS15900" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	And User adds new Widget
+	| WidgetType | Title                    | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown |
+	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname |             | Count             | Count ASC |                  | 11        | true       |      |           | 
+	When User clicks first Dashboard in dashboards list
+	Then User sees "You have unsaved changes. Are you sure you want to leave the page?" text in alert on Edit Widget page
+	When User clicks "NO" button in Unsaved Changes alert
+	Then Unsaved Changes alert not displayed to the user
+	#delete test dashboard
+	When User clicks Settings button for "Dashboard for DAS15900" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+	And User clicks "YES" button in Unsaved Changes alert
