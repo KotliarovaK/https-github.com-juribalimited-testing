@@ -1478,7 +1478,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12863")]
         [NUnit.Framework.CategoryAttribute("DAS13266")]
         [NUnit.Framework.CategoryAttribute("DAS13284")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject()
         {
             System.Exception lastException = null;
@@ -1516,8 +1515,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS12863",
                         "DAS13266",
-                        "DAS13284",
-                        "Not_Run"});
+                        "DAS13284"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -2769,7 +2767,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1321", "CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", null)]
         [NUnit.Framework.TestCaseAttribute("DAS1322", "BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", null)]
         [NUnit.Framework.TestCaseAttribute("DAS1323", "DLL972653", "Complete", "Admin IT", "Not Started", "K-Team", null)]
@@ -2812,8 +2809,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS13288",
                     "DAS13289",
                     "DAS13287",
-                    "DAS14127",
-                    "Not_Run"};
+                    "DAS14127"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -2934,7 +2930,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1330", "CQV0623434", "Admin IT", "Administrative Team", "Complete", null)]
         [NUnit.Framework.TestCaseAttribute("DAS1331", "BBZ877343", "Admin IT", "Retail Team", "Failed", null)]
         [NUnit.Framework.TestCaseAttribute("DAS1332", "DLL972653", "Admin IT", "K-Team", "Complete", null)]
@@ -2977,8 +2972,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS13288",
                     "DAS13289",
                     "DAS13287",
-                    "DAS14127",
-                    "Not_Run"};
+                    "DAS14127"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -3098,7 +3092,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS13280", "CQV0623434", "Complete", "Started", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13281", "BBZ877343", "Failed", "Not Applicable", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13282", "DLL972653", "Complete", "Not Started", null)]
@@ -3140,8 +3133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "DAS12864",
                     "DAS13288",
                     "DAS13289",
-                    "DAS13287",
-                    "Not_Run"};
+                    "DAS13287"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -3263,7 +3255,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13290")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -3299,8 +3290,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13290",
-                        "DAS14127",
-                        "Not_Run"});
+                        "DAS14127"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3416,7 +3406,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13291")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -3452,8 +3441,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13291",
-                        "DAS14127",
-                        "Not_Run"});
+                        "DAS14127"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3524,6 +3512,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
@@ -3541,6 +3531,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Failed\" content is displayed for \"Windows7Mi: Perform User Acceptance Test\" colu" +
+                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

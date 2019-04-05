@@ -291,6 +291,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsTaskOnActionPanel(string taskNAme)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Click();
             action.TaskField.Clear();
             action.TaskField.SendKeys(taskNAme);
             action.GetOptionByName(taskNAme).Click();

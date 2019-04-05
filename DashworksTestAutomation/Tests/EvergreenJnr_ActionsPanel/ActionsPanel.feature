@@ -604,7 +604,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13266 @DAS13284 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13266 @DAS13284
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereSomeObjectsAreValidAndSomeAreInvalidForTheSelectedProject
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1102,7 +1102,7 @@ Examples:
 	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
 	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1189,7 +1189,7 @@ Examples:
 	| DAS1324 | LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
 	| DAS1325 | ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1277,7 +1277,7 @@ Examples:
 	| DAS1333 | LZI970280  | Admin IT | IB Team             | Not Applicable |
 	| DAS1334 | ZQX656408  | Admin IT | Migration Phase 2   | Not Applicable |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1367,7 +1367,7 @@ Examples:
 	| DAS13283 | LZI970280  | Not Applicable | Failed         |
 	| DAS13284 | ZQX656408  | Not Applicable | Complete       |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1446,7 +1446,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User select "Manage Users" option in Management Console
 	And User removes "DAS13290" User
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127 @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1495,9 +1495,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
-	#Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	#remove '#' after bug fix that update the value of the items
-	#returns default object state
+	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
@@ -1513,8 +1512,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	#Then "Failed" content is displayed for "Windows7Mi: Perform User Acceptance Test" column
-	#remove '#' after bug fix that update the value of the items
+	Then "Failed" content is displayed for "Windows7Mi: Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
