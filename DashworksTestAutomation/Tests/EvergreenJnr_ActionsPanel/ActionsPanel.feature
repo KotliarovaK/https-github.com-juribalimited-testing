@@ -1820,3 +1820,28 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	| London - Southbank Morning   |
 	| London - Southbank Afternoon |
 	
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16059
+Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMailboxRings
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| MailboxEve: Ring |
+	And User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Email Address" rows in the grid
+	| SelectedRowsName                 |
+	| 003F5D8E1A844B1FAA5@bclabs.local |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update ring" Bulk Update Type on Action panel
+	And User selects "Project" Project or Evergreen on Action panel
+	And User selects "Mailbox Evergreen Capacity Project" Project on Action panel
+	And User selects "Unassigned" Ring on Action panel
+	And User clicks the "UPDATE" Action button
+	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
+	And User clicks "UPDATE" button on message box
+	And There are no errors in the browser console
+	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+	

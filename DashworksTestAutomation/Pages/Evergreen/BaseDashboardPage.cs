@@ -87,6 +87,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit']")]
         public IWebElement CapacityUnitField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Ring']")]
+        public IWebElement RingField { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//*[contains(text(),'Also Move Mailboxes')]/parent::span//preceding-sibling::mat-select")]
         public IWebElement AlsoMoveMailboxesField { get; set; }
 

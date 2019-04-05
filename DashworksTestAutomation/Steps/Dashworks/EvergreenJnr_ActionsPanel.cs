@@ -193,6 +193,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User selects ""(.*)"" Ring on Action panel")]
+        public void WhenUserSelectsRingOnActionPanel(string ringValue)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.RingField);
+            action.RingField.Clear();
+            action.RingField.SendKeys(ringValue);
+            action.GetOptionByName(ringValue).Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User selects ""(.*)"" option in ""(.*)"" field on Action panel")]
         public void WhenUserSelectsOptionInFieldOnActionPanel(string option, string fieldName)
         {
