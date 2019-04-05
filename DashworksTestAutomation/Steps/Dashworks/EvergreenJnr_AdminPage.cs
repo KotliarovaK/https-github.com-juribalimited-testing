@@ -2519,6 +2519,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypesInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
+            page.GetDisplayNameFieldByLanguage(language).Clear();
             page.GetDisplayNameFieldByLanguage(language).SendKeys(text);
         }
 

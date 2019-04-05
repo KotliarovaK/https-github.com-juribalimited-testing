@@ -978,7 +978,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	| Project14029 Snr |
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
