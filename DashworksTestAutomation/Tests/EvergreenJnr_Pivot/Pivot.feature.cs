@@ -2612,6 +2612,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS15252")]
         [NUnit.Framework.CategoryAttribute("DAS13786")]
         [NUnit.Framework.CategoryAttribute("DAS13823")]
+        [NUnit.Framework.CategoryAttribute("DAS16244")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder()
         {
             System.Exception lastException = null;
@@ -2650,7 +2652,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "DAS13865",
                         "DAS15252",
                         "DAS13786",
-                        "DAS13823"});
+                        "DAS13823",
+                        "DAS16244",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
