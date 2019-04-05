@@ -73,6 +73,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.Rings.Click();
                     break;
 
+                case "Automations":
+                    menu.Automations.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }
