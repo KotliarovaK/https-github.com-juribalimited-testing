@@ -1815,17 +1815,30 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSearchesAndSelectsFollowingRowsInTheGridOnDetails(Table table)
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchButton);
-            dashboardPage.TableSearchButton.Click();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextBox);
-            foreach (var row in table.Rows)
+            if (dashboardPage.TableSearchTextBox.Displayed())
             {
-                dashboardPage.TableSearchTextBox.SendKeys(row["SelectedRowsName"]);
-                Thread.Sleep(5000);
-                _driver.WaitForDataLoading();
-                dashboardPage.SelectOneRowsCheckboxes.Click();
-                dashboardPage.TableSearchTextBox.Clear();
+                foreach (var row in table.Rows)
+                {
+                    dashboardPage.TableSearchTextBox.SendKeys(row["SelectedRowsName"]);
+                    Thread.Sleep(5000);
+                    _driver.WaitForDataLoading();
+                    dashboardPage.SelectOneRowsCheckboxes.Click();
+                    dashboardPage.TableSearchTextBox.Clear();
+                }
             }
+            else
+            {
+                dashboardPage.TableSearchButton.Click();
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.TableSearchTextBox);
+                foreach (var row in table.Rows)
+                {
+                    dashboardPage.TableSearchTextBox.SendKeys(row["SelectedRowsName"]);
+                    Thread.Sleep(5000);
+                    _driver.WaitForDataLoading();
+                    dashboardPage.SelectOneRowsCheckboxes.Click();
+                    dashboardPage.TableSearchTextBox.Clear();
+                }
+            } 
         }
 
         [Then(@"Objects are displayed in alphabetical order on the Admin page")]
