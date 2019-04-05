@@ -110,5 +110,10 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
+
+        public IList<IWebElement> GetDropdownOptions()
+        {
+            return Driver.FindElements(By.XPath(".//mat-option"));
+        }
     }
 }

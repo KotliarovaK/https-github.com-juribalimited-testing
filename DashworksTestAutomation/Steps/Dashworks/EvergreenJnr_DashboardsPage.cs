@@ -851,6 +851,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.UnsavedChangesAlertButton(buttonTitle).Click();
         }
 
+        
+        [Then(@"User sees following options for Order By selector on Create Widget page:")]
+        public void WhenUserSeesFollowingOptionsForOrderBySelectorOnCreateWidgetPage(Table items)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.OrderBy.Click();
+
+            Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+                page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+        }
     }
    
 }
