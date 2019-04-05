@@ -208,6 +208,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 	| Red                |
 	Then "Compliance" filter is added to the list
 	Then Save to New Custom List element is displayed
+	When User clicks Save button on the list panel
 	Then User type "Test" into Custom list name field
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -215,7 +216,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 	When User clicks the Actions button
 	Then Save to New Custom List element is displayed
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018 @Not_Run
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018 @DAS16242 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
@@ -670,6 +671,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameN
 	Then Filters panel is displayed to the user
 	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
 	Then "City" filter is added to the list
+	When User clicks Save button on the list panel
 	Then User type "TestList993785" into Custom list name field
 	Then Save button is inactive for Custom list
 

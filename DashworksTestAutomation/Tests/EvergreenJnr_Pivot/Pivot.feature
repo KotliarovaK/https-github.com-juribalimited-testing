@@ -810,7 +810,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	Then Empty value is displayed on the first place for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252 @DAS13786 @DAS13823
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252 @DAS13786 @DAS13823 @DAS16244 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

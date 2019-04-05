@@ -1340,7 +1340,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table23.AddRow(new string[] {
                         "30 Jul 2017"});
             testRunner.When("User selects following date filter on the Projects page", ((string)(null)), table23, "When ");
-            testRunner.Then("Counter shows \"6\" found rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Rows counter shows \"0\" of \"6\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("field for Date column is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User enters \"0IJB93JZPG72PX\" text in the Search field for \"Item\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");

@@ -478,7 +478,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects following date filter on the Projects page
 	| FilterData  |
 	| 30 Jul 2017 |
-	Then Counter shows "6" found rows
+	Then Rows counter shows "0" of "6" rows
 	When User clicks Reset Filters button on the Admin page
 	Then field for Date column is empty
 	When User enters "0IJB93JZPG72PX" text in the Search field for "Item" column
