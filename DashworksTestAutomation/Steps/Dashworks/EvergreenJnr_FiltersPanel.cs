@@ -36,6 +36,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions Panel panel is visible");
         }
 
+        [Then(@"Filters panel is not displayed to the user")]
+        public void ThenFiltersPanelIsNotDisplayedToTheUser()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.FiltersPanel.Displayed(), "Actions panel was displayed");
+            Logger.Write("Actions Panel panel is hidden");
+        }
+
         [When(@"User clicks Add New button on the Filter panel")]
         public void WhenUserClicksAddNewButtonOnTheFilterPanel()
         {

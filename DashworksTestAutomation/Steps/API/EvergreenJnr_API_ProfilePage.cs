@@ -70,6 +70,7 @@ namespace DashworksTestAutomation.Steps.API
         [Then(@"page Size is ""(.*)"" on ""(.*)"" page")]
         public void ThenPageSizeIsOnPage(int pageSize, string pageName)
         {
+            _driver.WaitForDataLoading();
             var lastNetworkRequest = JsonConvert.DeserializeObject<JArray>(_driver.GetNetworkLogByJavascript()).Last;
             Assert.That(lastNetworkRequest["name"].ToString(), Does.Contain($"?$top={pageSize}"), $"Page Size is not {pageSize}");
         }

@@ -169,6 +169,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPageElementsAreTranslatedIntoFrench()
         {
             var page = _driver.NowAt<PreferencesPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.LeftHandMenuOnFrench.Displayed(), "Left Hand Menu is not translated into French");
             Assert.IsTrue(page.UpdateButtonOnFrench.Displayed(), "Update Button is not translated into French");
             Assert.IsTrue(page.CaptionOnFrench.Displayed(), "Caption is not translated into French");
@@ -178,8 +179,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDisplayModeIsChangedToHighContrast()
         {
             var page = _driver.NowAt<PreferencesPage>();
+            _driver.WaitForDataLoading();
             Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetUpdateButtonColor());
-            //Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor());
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetLinkMenuColor());
         }
 
         [When(@"User changes Full Name to ""(.*)""")]

@@ -1103,7 +1103,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRena
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Application_Filter_DAS_12917"
 	And User clicks the Filters button
-	And User click Edit button for "Compliance" filter
+	Then Filters panel is displayed to the user
+	When User click Edit button for "Compliance" filter
 	And User change selected checkboxes:
 	| Option | State |
 	| Amber  | false |
@@ -1120,7 +1121,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameW
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Mailbox_Filter_DAS_12917"
 	And User clicks the Filters button
-	And User click Edit button for "Created Date" filter
+	Then Filters panel is displayed to the user
+	When User click Edit button for "Created Date" filter
 	And User changes filter date to "13 Dec 2017"
 	Then "EDITED_Mailbox_Filter_DAS_12917" edited list is displayed to user
 

@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	And User clicks the "UPDATE" Action button
 	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS11646 @DAS12947 @DAS13026 @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS11646 @DAS12947 @DAS13026 @DAS16248 @Remove_Profile_Changes @Not_Run
 Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
