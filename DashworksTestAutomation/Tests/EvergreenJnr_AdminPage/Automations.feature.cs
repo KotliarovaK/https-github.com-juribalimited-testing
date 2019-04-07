@@ -140,7 +140,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table1.AddRow(new string[] {
                         "User"});
             table1.AddRow(new string[] {
-                        "Duration"});
+                        "Duration (hh:mm)"});
             table1.AddRow(new string[] {
                         "Outcome"});
             testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table1, "Then ");

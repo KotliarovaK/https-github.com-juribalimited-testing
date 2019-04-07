@@ -765,16 +765,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	And User clicks Delete button on the warning message in the lists panel
 	And User clicks "YES" button in Unsaved Changes alert
 
-@Evergreen @Dashboards @Widgets @DAS15918
-Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut
+@Evergreen @Dashboards @Widgets @DAS15355 @Delete_Newly_Created_List @Not_Run
+Scenario: EvergreenJnr_DashboardsPage_CheckIconsForTheCardWidget
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List         | Type | AggregateBy | AggregateFunction | SplitBy                | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
-	| Half donut | WidgetForDAS15918 | 1803 Rollout |      |             | Count             | 1803: Ready to Migrate |         |           |            |                  |           |
-	Then User sees following options for Order By selector on Create Widget page:
-	| items                       |
-	| 1803: Ready to Migrate ASC  |
-	| 1803: Ready to Migrate DESC |
-	| Count ASC                   |
-	| Count DESC                  |
+	| WidgetType | Title             | List        | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS15355 | All Devices | Aggregate | Hostname    | Count distinct    |         |         |           |            |                  |           |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS15355" Widget is displayed to the user
+	And There are no errors in the browser console
+	When User clicks Settings button for "Dashboard for DAS16073" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel

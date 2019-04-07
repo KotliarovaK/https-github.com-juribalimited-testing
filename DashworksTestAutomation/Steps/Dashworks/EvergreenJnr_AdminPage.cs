@@ -73,6 +73,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     menu.Rings.Click();
                     break;
 
+                case "Automations":
+                    menu.Automations.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }
@@ -2815,6 +2819,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
         }
 
+        [Then(@"Actions button on the Projects page is active")]
+        public void ThenActionsButtonOnTheProjectsPageIsActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains("false", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+        }
+
+        [Then(@"Actions button on the Projects page is not active")]
+        public void ThenActionsButtonOnTheProjectsPageIsNotActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains("true", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+        }
+
         [When(@"User clicks Delete Project button")]
         public void WhenUserClicksDeleteProjectButton()
         {
@@ -2937,6 +2955,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Items are not the same");
         }
 
+        [When(@"User clicks ""(.*)"" option in Cog-menu for ""(.*)"" item on Admin page")]
+        public void WhenUserClicksOptionInCog_MenuForItemOnAdminPage(string option, string itemName)
+        {
+            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            body.BodyContainer.Click();
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.MouseHover(page.GetCogMenuByItem(itemName));
+            page.GetCogMenuByItem(itemName).Click();
+            page.GetCogmenuOptionByName(option).Click();
+        }
+
         [Then(@"Columns on Admin page is displayed in following order:")]
         public void ThenColumnsOnAdminPageIsDisplayedInFollowingOrder(Table table)
         {
@@ -3026,6 +3055,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ReadinessPage>();
             Assert.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
+        }
+
+        [Then(@"""(.*)"" title is displayed in the Readiness Dialog Container")]
+        public void ThenTitleIsDisplayedInTheReadinessDialogContainer(string text)
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.GetReadinessDialogContainerTitle(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the Readiness Dialog Container")]
+        public void ThenTextIsDisplayedInTheReadinessDialogContainer(string text)
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
         }
 
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]

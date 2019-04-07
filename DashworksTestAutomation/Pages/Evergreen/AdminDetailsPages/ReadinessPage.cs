@@ -8,7 +8,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ReadinessPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']/change-readiness-dialog")]
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']//label[text()='Replacement Readiness']")]
         public IWebElement ReadinessDialogContainer { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -24,6 +24,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector = By.XPath(
                 $".//div[@class='mat-dialog-actions']/button/span[text()='{button}']");
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetReadinessDialogContainerTitle(string text)
+        {
+            var selector = By.XPath(
+                $".//mat-dialog-container[@role='dialog']//h1[text()='{text}']");
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetReadinessDialogContainerText(string text)
+        {
+            var selector = By.XPath(
+                $".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
             return Driver.FindElement(selector);
         }
     }

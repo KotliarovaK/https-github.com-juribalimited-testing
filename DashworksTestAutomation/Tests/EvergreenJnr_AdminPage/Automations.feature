@@ -13,16 +13,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	Then "Automations" page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
-	| ColumnName |
-	| Date       |
-	| Type       |
-	| Automation |
-	| Action     |
-	| Run        |
-	| Objects    |
-	| User       |
-	| Duration   |
-	| Outcome    |
+	| ColumnName       |
+	| Date             |
+	| Type             |
+	| Automation       |
+	| Action           |
+	| Run              |
+	| Objects          |
+	| User             |
+	| Duration (hh:mm) |
+	| Outcome          |
 	When User have opened column settings for "Date" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened

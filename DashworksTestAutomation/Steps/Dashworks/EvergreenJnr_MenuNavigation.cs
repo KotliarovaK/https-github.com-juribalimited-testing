@@ -160,6 +160,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Admin page is visible");
         }
 
+        [Then(@"Admin menu item is hidden")]
+        public void ThenAdminMenuItemIsHidden()
+        {
+            var menu = _driver.NowAtWithoutWait<LeftHandMenuElement>();
+            Assert.IsFalse(menu.Admin.Displayed(), "Admin menu item is displayed");
+        }
+
         [When(@"User navigates to ""(.*)"" Object on PMObject page")]
         public void WhenUserNavigatesToObjectOnPMObjectPage(int objectId)
         {

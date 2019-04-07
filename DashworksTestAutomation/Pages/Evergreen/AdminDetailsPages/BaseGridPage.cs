@@ -44,6 +44,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
+        public IWebElement ErrorBox  { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div[@row-index]")]
         public IWebElement TableString { get; set; }
 
@@ -117,7 +120,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ObjectsBucketsToAdd)]
         public IList<IWebElement> ObjectsBucketsList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']/ancestor::mat-select")]
         public IWebElement ActionsButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]
@@ -616,6 +619,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector = By.XPath($"//div[@title='{item}']/./following-sibling::div//div[@class='cell-menu-settings']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetCogmenuOptionByName(string option)
+        {
+            var selector = By.XPath($"//*[contains(text(), '{option}')]/ancestor::li[@class='ng-star-inserted']");
             return Driver.FindElement(selector);
         }
     }
