@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15903 @DAS13467 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15903 @DAS13467
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -41,6 +41,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Project       |
 	| Action Task or Field |
 	| Action Value         |
+	#When User clicks String Filter button for "Scope" column
+	When User clicks String Filter button for "Scope" column on the Admin page
+	When User selects "" checkbox from String Filter on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15735 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
