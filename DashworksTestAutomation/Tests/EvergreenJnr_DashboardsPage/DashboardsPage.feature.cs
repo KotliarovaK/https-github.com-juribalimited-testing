@@ -3047,6 +3047,93 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
 
         
         [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckIconsForTheCardWidget")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS15355")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckIconsForTheCardWidget()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckIconsForTheCardWidgetInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckIconsForTheCardWidgetInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckIconsForTheCardWidget", null, new string[] {
+                        "Evergreen",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS15355",
+                        "Delete_Newly_Created_List",
+                        "Not_Run"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "SplitBy",
+                        "OrderBy",
+                        "MaxValues",
+                        "ShowLegend",
+                        "TableOrientation",
+                        "Drilldown"});
+            table67.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS15355",
+                        "All Devices",
+                        "Aggregate",
+                        "Hostname",
+                        "Count distinct",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""});
+            testRunner.And("User adds new Widget", ((string)(null)), table67, "And ");
+            testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Card \"WidgetForDAS15355\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks Settings button for \"Dashboard for DAS16073\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
@@ -3090,7 +3177,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
             this.FeatureBackground();
             testRunner.When("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
@@ -3103,7 +3190,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "ShowLegend",
                         "TableOrientation",
                         "Drilldown"});
-            table67.AddRow(new string[] {
+            table68.AddRow(new string[] {
                         "Half donut",
                         "WidgetForDAS15918",
                         "1803 Rollout",
@@ -3116,21 +3203,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DashboardsPage
                         "",
                         "",
                         ""});
-            testRunner.And("User adds new Widget", ((string)(null)), table67, "And ");
-            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+            testRunner.And("User adds new Widget", ((string)(null)), table68, "And ");
+            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table68.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "1803: Ready to Migrate ASC"});
-            table68.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "1803: Ready to Migrate DESC"});
-            table68.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "Count ASC"});
-            table68.AddRow(new string[] {
+            table69.AddRow(new string[] {
                         "Count DESC"});
-            testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table68, "Then ");
+            testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table69, "Then ");
             this.ScenarioCleanup();
         }
-
 
     }
 }
