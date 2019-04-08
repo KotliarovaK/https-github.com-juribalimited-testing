@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         [FindsBy(How = How.XPath, Using = ".//input[contains(@id, 'ProjectEndDate')]")]
         public IWebElement EndDate { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'PermissionCategoryExists')]")]
+        [FindsBy(How = How.XPath, Using = ".//select[contains(@id, 'PermissionsExistForCategoryOnly')]")]
         public IWebElement PermissionCategoryExists { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

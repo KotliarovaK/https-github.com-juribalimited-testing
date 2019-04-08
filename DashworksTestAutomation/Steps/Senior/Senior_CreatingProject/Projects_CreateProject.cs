@@ -2,6 +2,7 @@
 using System.Linq;
 using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Projects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
@@ -213,7 +214,10 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             page.CcEmail.SendKeys(_detailsDto.TaskEmailCcEmailAddress);
             page.BccEmail.SendKeys(_detailsDto.TaskEmailBccEmailAddress);
             page.StartDate.SendKeys(_detailsDto.StartDate);
+            var body = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            body.BodyContainer.Click();
             page.EndDate.SendKeys(_detailsDto.EndDate);
+            body.BodyContainer.Click();
             if (_projectDto.ProjectType.Equals(ProjectTypeEnum.MailboxScheduledProject))
                 page.PermissionCategoryExists.SelectboxSelect(_detailsDto.OnboardMailboxUsersWithPermissions
                     .GetValue());
