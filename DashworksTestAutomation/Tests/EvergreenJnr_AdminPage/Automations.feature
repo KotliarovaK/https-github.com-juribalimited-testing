@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15903 @DAS13467 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS15903 @DAS13467 @DAS16239
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -23,6 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| User       |
 	| Duration   |
 	| Outcome    |
+	Then Export button is displayed
 	When User have opened column settings for "Date" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
