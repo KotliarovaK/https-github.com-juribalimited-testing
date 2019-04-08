@@ -224,9 +224,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "Scope" drop-down on the Project details page:
-	| Values       |
-	| All Devices  |
-	| 1803 Rollout |
+	| Values                  |
+	| All Devices             |
+	| 1803 Rollout            |
+	| Depot Capacity          |
+	| Migration Type Capacity |
+	| New York - Devices     |
 	When User navigates to the "User Scope" tab in the Scope section on the Project details page
 	Then following Values are displayed in "User Scope" drop-down on the Project details page:
 	| Values                  |
@@ -718,7 +721,7 @@ Scenario: EvergreenJnr_MailboxesLists_CheckThatProjectReadinessTaskColumnsDispla
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Evergreen Bucket" column in ascending order by default for the Pivot
-	Then Empty value is displayed on the first place for the Pivot
+	#Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName               |
 	| Infrastructure Ready     |
@@ -762,7 +765,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectReadinessTaskColumnsDisplayI
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	Then Empty value is displayed on the first place for the Pivot
+	#Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
 	| Not Applicable |
@@ -807,7 +810,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	And User clicks the "RUN PIVOT" Action button
 	Then Pivot run was completed
 	And data in the table is sorted by "Import" column in ascending order by default for the Pivot
-	Then Empty value is displayed on the first place for the Pivot
+	#Then Empty value is displayed on the first place for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252 @DAS13786 @DAS13823 @DAS16244 @Not_Run

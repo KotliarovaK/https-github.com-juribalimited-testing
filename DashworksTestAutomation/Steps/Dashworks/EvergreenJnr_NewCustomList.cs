@@ -495,6 +495,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSaveAsANewListOptionIsAvailable()
         {
             var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
             if (!listElement.SaveAsNewListButton.Displayed()) listElement.SaveAsDropdown.Click();
 

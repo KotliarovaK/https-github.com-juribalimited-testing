@@ -637,7 +637,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	Then "1" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
 	Then "All Capacity Units" is displayed in the dropdown filter for "Capacity Units" column
-	And Rows counter shows "1" of "4" rows
+	And Rows counter contains "1" found row of all rows
 	And User sees next Slots on the Capacity Slots page:
 	| slots |
 	| Slot1 |

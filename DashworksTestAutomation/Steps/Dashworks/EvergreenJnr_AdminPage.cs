@@ -2895,6 +2895,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Found rows counter doesn't contain {foundRows} found rows");
         }
 
+        [Then(@"Rows counter shows more than ""(.*)"" found rows of all rows")]
+        public void ThenRowsCounterShowsMoreThanFoundRowsOfAllRows(int foundRows)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.RowsCounter);
+            var foundRowsOfAllRowsLabel = page.RowsCounter.Text;
+            var foundRowsInt = Int32.Parse(foundRowsOfAllRowsLabel.Substring(0, foundRowsOfAllRowsLabel.IndexOf("of")));
+            Assert.That(foundRowsInt, Is.GreaterThanOrEqualTo(foundRows),
+                $"Found rows counter {foundRowsInt} is not greater or equal to expected {foundRows}");
+        }
+
         [Then(@"User sees ""(.*)"" of ""(.*)"" rows selected label")]
         public void ThenUserSeesRowsSelectedLabel(int selectedRows, int ofRows)
         {

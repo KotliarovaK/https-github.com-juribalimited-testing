@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User clicks Admin on the left-hand menu
 	And User clicks "Teams" link on the Admin page
 	And User selects all rows on the grid
-	Then Rows counter contains "2794" found row of all rows
+	Then Rows counter shows more than "2794" found rows of all rows
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User selects all rows on the grid
@@ -258,23 +258,23 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "False" checkbox from boolean filter on the Admin page
-	Then User sees "0" of "4" rows selected label
+	Then Rows counter shows "1" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Email Migration" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "2" found rows
+	Then Rows counter shows "2" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Glasgow" text in the Search field for "Bucket" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "20" text in the Search field for "Devices" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters ">20" text in the Search field for "Users" column
-	Then Counter shows "2" found rows
+	Then Rows counter shows "2" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "100" text in the Search field for "Mailboxes" column
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	Then There are no errors in the browser console
 	When User enters "Nottingham" text in the Search field for "Bucket" column
@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User click on Back button
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "True" checkbox from boolean filter on the Admin page
-	Then Rows counter contains "2793" found row of all rows
+	Then Rows counter shows more than "2793" found rows of all rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page

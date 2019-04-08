@@ -584,6 +584,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserRememberedValueEqualsToGridCounter()
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.ListRowsCounter);
 
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");

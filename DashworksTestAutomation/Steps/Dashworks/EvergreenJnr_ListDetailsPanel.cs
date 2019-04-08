@@ -35,6 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             listDetailsElement.ListNameField.Clear();
             listDetailsElement.ListNameField.SendkeysWithDelay(listName);
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User is closed List Details panel")]
