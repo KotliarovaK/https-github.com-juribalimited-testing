@@ -724,24 +724,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @DAS16138
-Scenario: EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage
-	When User clicks Edit mode trigger on Dashboards page
-	And User clicks the "ADD WIDGET" Action button
-	And User adds new Widget
-	| WidgetType | Title             | List         | Type      | AggregateBy          | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
-	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Scheduled Date | First             |         |         |           |            |                  | Yes       |
-	Then Widget Preview is displayed to the user
-	When User clicks the "CREATE" Action button
-	Then Card "WidgetForDAS16138" Widget is displayed to the user
-	When User clicks Edit mode trigger on Dashboards page
-	And User clicks data in card "WidgetForDAS16138" widget
-	Then Save as a new list option is available
-	And "8" rows are displayed in the agGrid
-	When User clicks the Filters button
-	Then "1803: Scheduled Date is 05 Nov 2018" is displayed in added filter info
-	And "Any Device in list 1803 Rollout" is displayed in added filter info
-
 @Evergreen @Dashboards @Widgets @DAS15900
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
 	When User clicks the "CREATE DASHBOARD" Action button
@@ -778,3 +760,115 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalf
 	| 1803: Ready to Migrate DESC |
 	| Count ASC                   |
 	| Count DESC                  |
+
+@Evergreen @Dashboards @Widgets @DAS16138
+Scenario: EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List         | Type      | AggregateBy          | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Scheduled Date | First             |         |         |           |            |                  | Yes       |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS16138" Widget is displayed to the user
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks data in card "WidgetForDAS16138" widget
+	Then Save as a new list option is available
+	And "8" rows are displayed in the agGrid
+	When User clicks the Filters button
+	Then "1803: Scheduled Date is 05 Nov 2018" is displayed in added filter info
+	And "Any Device in list 1803 Rollout" is displayed in added filter info
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
+Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetLeadsToCorrectPage
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And user select "Device Type" filter
+	And User clicks in search field in the Filter block
+	And User enters "Desktop" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| 1803: Scheduled Date |
+	And User create dynamic list with "1803 ScheduleDAS16069" name on "Devices" page
+	Then "1803 ScheduleDAS16069" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "1803 ProjectDAS16069" name
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title                    | List                  | Type | AggregateBy | AggregateFunction | SplitBy              | OrderBy                  | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 |      | Hostname    | Count distinct    | 1803: Scheduled Date | 1803: Scheduled Date ASC |           |            |                  | Yes       |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "Project ScheduleDAS16069" Widget is displayed to the user
+	When User clicks Edit mode trigger on Dashboards page
+	Then Tooltip is displayed for the point of Line widget
+	| WidgetName               | NumberOfPoint | Tooltip      |
+	| Project ScheduleDAS16069 | 1             | 5 Nov 2018 4 |
+	When User clicks point of Line widget
+	| WidgetName               | NumberOfPoint | 
+	| Project ScheduleDAS16069 | 1             | 
+	Then Save as a new list option is available
+	And "4" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName           |
+	| Hostname             |
+	| Device Type          |
+	| Operating System     |
+	| Owner Display Name   |
+	| 1803: Scheduled Date |	
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValueLeadsToCorrectPage
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS16069_1" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title               | List             | SplitBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS16069_1 | All Applications | Vendor  | Count             | Count DESC |                  | 500       |
+	Then "WidgetForDAS16069_1" Widget is displayed to the user
+	And "918" count is displayed for "Microsoft Corporation" in the table Widget
+	When User clicks "918" value for "Microsoft Corporation" column
+	Then "918" rows are displayed in the agGrid
+	And Column is displayed in following order:
+	| ColumnName  |
+	| Application |
+	| Vendor      |
+	| Version     |
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @Not_Run
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Filters button
+	When User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               | 
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                |
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	And User create dynamic list with "1803 App Compliance" name on "Applications" page
+	Then "1803 App Compliance" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS16069_2" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title               | List                | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS16069_2 | 1803 App Compliance | Aggregate |             | Count             |         |         |           |            |                  | Yes       |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS16069_2" Widget is displayed to the user
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks data in card "WidgetForDAS16069_2" widget
+	Then Save as a new list option is available
+	And "424" rows are displayed in the agGrid

@@ -717,6 +717,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetCountForTableWidget(count, boolean).Displayed(), $"{count} is not display for {boolean}");
         }
 
+        [When(@"User clicks ""(.*)"" value for ""(.*)"" column")]
+        public void WhenUserClicksValueFromColumn(string value, string column)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetCountForTableWidget(column,value).Click();
+        }
+
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
         public void WhenUserSetsWidgetOrderBy(string orderBy)
         {
@@ -860,6 +867,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+        }
+
+        [Then(@"Tooltip is displayed for the point of Line widget")]
+        public void ThenTooltipIsDisplayedForThePoint(Table items)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            foreach (var row in items.Rows)
+            {
+                _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
+                _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
+
+                Assert.That(page.GetFocusedPointHover(row["WidgetName"]), Is.EqualTo(row["Tooltip"]));
+            }
+        }
+
+        [When(@"User clicks point of Line widget")]
+        public void WhenUserClicksPointInLineWidget(Table items)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            foreach (var row in items.Rows)
+            {
+                page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]).Click();
+            }
         }
     }
    
