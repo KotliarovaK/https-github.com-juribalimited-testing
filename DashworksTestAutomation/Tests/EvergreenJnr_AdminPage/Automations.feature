@@ -23,6 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| User             |
 	| Duration (hh:mm) |
 	| Outcome          |
+	Then Export button is displayed
 	When User have opened column settings for "Date" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened

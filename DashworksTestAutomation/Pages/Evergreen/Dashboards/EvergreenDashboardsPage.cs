@@ -318,5 +318,23 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitForDataLoading();
             return Driver.FindElements(cardWidget).First();
         }
+
+        public IWebElement GetPointOfLineWidgetByName(string widgetName, string pointNumber)
+        {
+            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty']['{pointNumber}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(cardWidget).First();
+        }
+
+        public string GetFocusedPointHover(string widgetName)
+        {
+            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-point highcharts-point-hover']");
+            Driver.WaitForDataLoading();
+
+            return string.Format("{0} {1}", Driver.FindElements(cardWidget).First().GetAttribute("widget-name"),
+                Driver.FindElements(cardWidget).First().GetAttribute("widget-value"));
+        }
+
+        
     }
 }
