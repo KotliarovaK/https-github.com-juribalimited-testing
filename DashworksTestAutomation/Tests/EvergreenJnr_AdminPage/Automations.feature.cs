@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15903")]
         [NUnit.Framework.CategoryAttribute("DAS13467")]
         [NUnit.Framework.CategoryAttribute("DAS16239")]
@@ -113,9 +113,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Automations",
                         "DAS15903",
-                        "DAS13467"});
+                        "DAS13467",
                         "DAS16239"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -183,7 +183,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15735")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations()
@@ -218,7 +218,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
-                        "AdminPage",
+                        "Automations",
                         "DAS15735",
                         "Not_Ready"});
             this.ScenarioInitialize(scenarioInfo);
