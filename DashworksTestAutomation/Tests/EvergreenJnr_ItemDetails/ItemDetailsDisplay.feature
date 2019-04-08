@@ -265,13 +265,21 @@ Examples:
 	| Devices  | 001BAQXT6JWFPI | Hostname   |
 	| Users    | ZZZ588323      | Username   |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Compliance" tab
+	When User opens "Software Compliance" section on the Details Page
+	Then Name of colors are displayed in following order on the Details Page:
+	| ColumnHeader |
+	| RED          |
+	| AMBER        |
+	| GREEN        |
+	| UNKNOWN      |
+	| N/A          |
 	When User opens "Software Compliance Issues" section on the Details Page
 	Then "<CountRows>" rows found label displays on Details Page
 	And "Manufacturer" column is not displayed to the user

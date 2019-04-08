@@ -706,6 +706,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Incorrect rows count");
         }
 
+        [Then(@"Name of colors are displayed in following order on the Details Page:")]
+        public void ThenNameOfColorsAreDisplayedInFollowingOrderOnTheDetailsPage(Table table)
+        {
+            var columnElement = _driver.NowAt<DetailsPage>();
+            var columnHeaders = columnElement.GetDetailsColorHeadersContentToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(expectedList, columnHeaders, "Column headers names are incorrect");
+        }
+
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Slots page")]
         [Then(@"""(.*)"" rows label displays in Action panel")]
