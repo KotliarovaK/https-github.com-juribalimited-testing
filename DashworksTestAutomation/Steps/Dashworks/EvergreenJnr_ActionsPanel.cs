@@ -691,6 +691,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var actionsPanel = _driver.NowAt<ActionsElement>();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             //Delete 'if' after the row selection will be faster
             if (actionsPanel.ActionsSpinner.Displayed())
             {
@@ -700,6 +701,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
+                Thread.Sleep(5000);//wait after deselecting All check-box. Currently uncheck runs immediately and no loading indicators appear
                 Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
                     $"Number of rows is not {selectedRowsCount}");
             }
@@ -709,6 +711,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheNumberOfRowsSelectedMatchesTheNumberOfRowsOfTheMainObjectList()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))

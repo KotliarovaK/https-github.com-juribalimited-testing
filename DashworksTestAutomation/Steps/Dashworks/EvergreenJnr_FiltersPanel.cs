@@ -1322,6 +1322,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.InputDate.Clear();
             page.InputDate.SendKeys(date);
             page.SaveButton.Click();
+            _driver.WaitForDataLoadingInActionsPanel();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Save button is not available on the Filter panel")]

@@ -1619,10 +1619,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("data in the table is sorted by \"Evergreen Bucket\" column in ascending order by de" +
                     "fault for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Empty value is not displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table90.AddRow(new string[] {
-                        "Infrastructure Ready"});
+                        "INFRASTRUCTURE READY"});
             testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table90, "Then ");
             this.ScenarioCleanup();
         }
@@ -1728,6 +1729,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("data in the table is sorted by \"Import\" column in ascending order by default for " +
                     "the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Empty value is not displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table98.AddRow(new string[] {
@@ -1839,6 +1841,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("data in the table is sorted by \"Import\" column in ascending order by default for " +
                     "the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Empty value is not displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("color data in the column headers is sorted in correct order for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
