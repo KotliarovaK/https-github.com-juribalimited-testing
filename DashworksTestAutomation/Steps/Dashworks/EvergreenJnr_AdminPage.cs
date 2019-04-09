@@ -1385,16 +1385,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"{text} is not displayed on the Admin page");
         }
 
-        [Then(@"Warning message with ""(.*)"" text is displayed on the Automations page")]
-        public void ThenWarningMessageWithTextIsDisplayedOnTheAutomationsPage(string text)
-        {
-            //var message = _driver.NowAt<>();
-            //_driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
-            //Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor()); //Amber color
-            //Assert.IsTrue(message.TextMessage(text),
-            //    $"{text} is not displayed on the Admin page");
-        }
-
         [Then(@"Warning message is not displayed on the Admin page")]
         public void ThenWarningMessageIsNotDisplayedOnTheAdminPage()
         {
@@ -2609,6 +2599,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.DragAndDrop(slotFrom, slotTo);
         }
 
+        [When(@"User moves ""(.*)"" automation to ""(.*)"" automation")]
+        public void WhenUserMovesAutomationToAutomation(string automation, string moveToautomation)
+        {
+            var page = _driver.NowAt<AutomationsPage>();
+            var slotFrom = page.GetMoveButtonBySlotName(automation);
+            var slotTo = page.GetMoveButtonBySlotName(moveToautomation);
+            _driver.DragAndDrop(slotFrom, slotTo);
+        }
+
         [Then(@"Alert message is displayed and contains ""(.*)"" text")]
         public void ThenAlertMessageIsDisplayedAndContainsText(string text)
         {
@@ -3080,6 +3079,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ReadinessPage>();
             Assert.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
+        [Then(@"User sees following Processing order on the Automation page")]
+        public void ThenUserSeesFollowingProcessingOrderOnTheAutomationPage()
+        {
+            var page = _driver.NowAt<ReadinessPage>();
         }
 
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
