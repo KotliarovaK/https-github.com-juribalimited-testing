@@ -1508,7 +1508,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilt
 	| 49    |
 	| 51    |
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS14629 @DAS14664 @DAS14665 @DAS14667 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS14629 @DAS14664 @DAS14665 @DAS14667
 Scenario Outline: EvergreenJnr_UsersList_CheckThatPrimaryDeviceOperatorsShowTextBoxCorrectly
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1610,7 +1610,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBetweenOperatorIsDisplayedInThe
 	#DAS-15376
 	#Then "(User Last Logon Date between (2012-11-11, 2019-11-22) ASSOCIATION = (has used app, entitled to app, owns a device which app was used on, owns a device which app is entitled to, owns a device which app is installed on))" text is displayed in filter container
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS15376 @DAS15331 @Not_Run
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS15376 @DAS15331
 Scenario Outline: EvergreenJnr_AllList_CheckFilterTextInThePopOutPanelForBetweenOperator
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,141" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -278,14 +278,15 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPa
 Examples:
 	| FilterName                 |
 	| Application                |
-	| Application Compliance     |
-	| Application (Saved List)   |
 	| Application Import         |
-	| Application Import Type    |
 	| Application Inventory Site |
-	| Application Name           |
 	| Application Vendor         |
 	| Application Version        |
+	#| Application Compliance     |
+	#| Application (Saved List)   |
+	#| Application Import Type    |
+	#| Application Name           |
+	
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelectedNumericFilter 
@@ -1062,7 +1063,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	And User clicks Save filter button
 	Then "2,222" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1086,7 +1087,7 @@ Examples:
 	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
 	| UserSchedu: Request Type                  | Request Type A       | 60     |
 	
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351 @Not_Run
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1104,9 +1105,9 @@ Examples:
 	| Windows7Mi: Category                        | Terminated         | 1      |
 	| Windows7Mi: Read Only on Bulk Update Page   | Not Applicable     | 4,642  |
 	| Barry'sUse: Category                        | None               | 41,339 |
-	| ComputerSc: Group User Default Request Type | Not Applicable     | 1,789  |
 	| Havoc(BigD: Request Type                    | [Default (User)]   | 7,578  |
 	| UserSchedu: Group User Default Request Type | Not Applicable     | 679    |
+	#| ComputerSc: Group User Default Request Type | Not Applicable     | 1,789  |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
@@ -1558,7 +1559,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
 	| Owner lastlogon  |
 	| Owner admincount |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14629 @DAS14664 @DAS14669 @Not_Run
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14629 @DAS14664 @DAS14669
 Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

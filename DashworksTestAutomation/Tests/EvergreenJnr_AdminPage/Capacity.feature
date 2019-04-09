@@ -2319,7 +2319,7 @@ Examples:
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15266 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15266
 Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnTheCapacityDetailsScreen
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2359,7 +2359,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @DAS15291 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS15878 @DAS15291
 Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page

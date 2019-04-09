@@ -1554,7 +1554,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User refreshes agGrid
 	Then "STARTED" content is displayed for "Havoc(BigD: Task 0" column
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

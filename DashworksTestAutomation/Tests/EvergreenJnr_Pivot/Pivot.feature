@@ -105,7 +105,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatGroupsColumnsAndValuesContainE
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS14188 @DAS14748 @DAS15682
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatColumnsCanBeAddedAfterRunningPivot
 	When User clicks "<ListName>" on the left-hand menu
 	And User navigates to Pivot
@@ -428,7 +428,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	#DAS-15376
 	#Then "(Owner Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13860 @DAS14555 @DAS15376
 Scenario: EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1402,7 +1402,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNumericValueHasTheCorrectOrder
 	Then Pivot run was completed
 	And numeric data in table is sorted by "Compliance" column in descending order for the Pivot
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1426,7 +1426,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowG
 	| Scheduled  |
 	| Migrated   |
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @DAS15376 @Not_Run
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @DAS15376
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1456,7 +1456,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	| 25 Apr 2018        | 02 May 2018      |
 	Then "(Last Logon Date between (2018-04-25, 2018-05-02))" text is displayed in filter container
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14374
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1480,7 +1480,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGro
 	| Migrated   |
 	| Complete   |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1531,7 +1531,7 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	| Migrated   |
 	| Complete   |
 
-@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1556,7 +1556,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 	| Scheduled  |
 	| Migrated   |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues
 	When User clicks "<List>" on the left-hand menu
 	Then "<List>" list should be displayed to the user
@@ -1582,7 +1582,7 @@ Examples:
 	| Applications | Application | Count(Application)      |
 	| Mailboxes    | Building    | Count(Building)         |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_DateValues
 	When User clicks "<List>" on the left-hand menu
 	Then "<List>" list should be displayed to the user
@@ -1613,7 +1613,7 @@ Examples:
 	| Applications | Windows7Mi: Technical Task3 (Date) | Count(Windows7Mi: Technical Task3 (Date)) | First(Windows7Mi: Technical Task3 (Date)) | Last(Windows7Mi: Technical Task3 (Date)) |
 	| Mailboxes    | Created Date                       | Count(Created Date)                       | First(Created Date)                       | Last(Created Date)                       |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues
 	When User clicks "<List>" on the left-hand menu
 	Then "<List>" list should be displayed to the user
