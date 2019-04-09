@@ -19,6 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.Tests.EvergreenJnr_AdminPage;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -1381,7 +1382,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Waiting for message text change
             Thread.Sleep(1000);
             Assert.IsTrue(message.TextMessage(text),
-                $"{text} is not displayed on the Project page");
+                $"{text} is not displayed on the Admin page");
+        }
+
+        [Then(@"Warning message with ""(.*)"" text is displayed on the Automations page")]
+        public void ThenWarningMessageWithTextIsDisplayedOnTheAutomationsPage(string text)
+        {
+            //var message = _driver.NowAt<>();
+            //_driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
+            //Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor()); //Amber color
+            //Assert.IsTrue(message.TextMessage(text),
+            //    $"{text} is not displayed on the Admin page");
         }
 
         [Then(@"Warning message is not displayed on the Admin page")]
