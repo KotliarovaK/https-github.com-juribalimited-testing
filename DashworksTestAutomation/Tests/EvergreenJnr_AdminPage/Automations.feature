@@ -42,9 +42,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Project       |
 	| Action Task or Field |
 	| Action Value         |
-	#When User clicks String Filter button for "Scope" column
 	When User clicks String Filter button for "Scope" column on the Admin page
-	When User selects "" checkbox from String Filter on the Admin page
+	When User selects "1803 Rollout" checkbox from String Filter on the Admin page
+	Then Counter shows "8 of 10" found rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
