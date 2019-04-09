@@ -876,6 +876,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in items.Rows)
             {
+                //action has to be performed twice, I don't know why
                 _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
                 _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
 
@@ -892,6 +893,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]).Click();
             }
+        }
+
+        [Then(@"Line chart displayed in ""(.*)"" widget")]
+        public void LineChartDisplayedInWidget(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
         }
     }
    

@@ -724,7 +724,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @DAS15900
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15900
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS15900" name
@@ -747,7 +747,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	And User clicks Delete button on the warning message in the lists panel
 	And User clicks "YES" button in Unsaved Changes alert
 
-@Evergreen @Dashboards @Widgets @DAS15918
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15918
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
@@ -761,8 +761,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalf
 	| Count ASC                   |
 	| Count DESC                  |
 
-@Evergreen @Dashboards @Widgets @DAS16138
-Scenario: EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16138
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -780,7 +780,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListCardWidgetLeadsToCorrectPage
 	And "Any Device in list 1803 Rollout" is displayed in added filter info
 
 @Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
-Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetLeadsToCorrectPage
+Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceListFilteredPage
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
 	And User clicks Add New button on the Filter panel
@@ -798,7 +798,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetLeadsToCorrectPage
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "1803 ProjectDAS16069" name
-	And User clicks the "ADD WIDGET" Action button
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title                    | List                  | Type | AggregateBy | AggregateFunction | SplitBy              | OrderBy                  | MaxValues | ShowLegend | TableOrientation | Drilldown |
 	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 |      | Hostname    | Count distinct    | 1803: Scheduled Date | 1803: Scheduled Date ASC |           |            |                  | Yes       |
@@ -823,7 +824,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetLeadsToCorrectPage
 	| 1803: Scheduled Date |	
 
 @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
-Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValueLeadsToCorrectPage
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS16069_1" name
 	Then "New dashboard created" message is displayed
@@ -841,8 +842,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValueLeadsToCorrectPag
 	| Vendor      |
 	| Version     |
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @Not_Run
-Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
 	When User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
@@ -872,3 +873,26 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
 	And User clicks data in card "WidgetForDAS16069_2" widget
 	Then Save as a new list option is available
 	And "424" rows are displayed in the agGrid
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15920
+Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                    |
+	| Device Application Compliance |
+	| Compliance                    |
+	And User create dynamic list with "ListForDas15920" name on "Users" page
+	Then "ListForDas15920" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "DashboardForDas15920" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title                 | List            | Type | AggregateBy | AggregateFunction | SplitBy                       | OrderBy                           | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Line       | LineWidgetForDas15920 | ListForDas15920 |      |             | Count             | Device Application Compliance | Device Application Compliance ASC |           |            |                  | Yes       |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "LineWidgetForDas15920" Widget is displayed to the user
+	And Line chart displayed in "LineWidgetForDas15920" widget

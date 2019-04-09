@@ -335,6 +335,15 @@ namespace DashworksTestAutomation.Pages
                 Driver.FindElements(cardWidget).First().GetAttribute("widget-value"));
         }
 
-        
+        public bool IsLineWidgetPointsAreDisplayed(string widgetName)
+        {
+            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty']");
+            Driver.WaitForDataLoading();
+
+            //greater than 1 because line must have at least two points
+            return Driver.FindElements(cardWidget).Count>1;
+        }
+
+
     }
 }
