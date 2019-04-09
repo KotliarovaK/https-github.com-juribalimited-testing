@@ -1311,7 +1311,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16117 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16117 @DAS16222 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAreDisplayedCorrectly 
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1320,11 +1320,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	When User closes "Evergreen" section on the Details Page
 	And User opens "Device Projects" section on the Details Page
 	Then section is loaded correctly
-	When User have opened Column Settings for "Readiness" column in the Details Page table
+	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
 	And User select "Request Type" checkbox on the Column Settings panel
-	And User clicks Filter button on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	When User click on 'Readiness' column header
+	Then color data is sorted by 'Readiness' column in descending order
+	When User click on 'Readiness' column header
+	Then color data is sorted by 'Readiness' column in ascending order
+	When User clicks Filter button on the Column Settings panel
 	#Then following filters in Column Settings panel are displayed on the Details Page:
 	#| FilterCheckboxes |
 	#|                  |
