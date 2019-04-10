@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 case "Admin":
                     //Check Admin heading is visible
-                    var adminPage = _driver.NowAt<AdminPage>();
+                    var adminPage = _driver.NowAt<Pages.Evergreen.AdminPage>();
                     StringAssert.Contains(adminPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;
