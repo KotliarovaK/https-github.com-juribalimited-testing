@@ -603,7 +603,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees next Slots on the Capacity Slots page:")]
-        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
+        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots) 
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForDataLoading();
@@ -3082,9 +3082,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees following Processing order on the Automation page")]
-        public void ThenUserSeesFollowingProcessingOrderOnTheAutomationPage()
+        public void ThenUserSeesFollowingProcessingOrderOnTheAutomationPage(Table processingOrder)
         {
-            var page = _driver.NowAt<ReadinessPage>();
+            var page = _driver.NowAt<AutomationsPage>();
+            _driver.WaitForDataLoading();
+
+            for (var i = 0; i < processingOrder.RowCount; i++)
+                Assert.That(page.ProcessingOrderValues[i].Text, Is.EqualTo(processingOrder.Rows[i].Values.FirstOrDefault()),
+                    "Processing order values are not the same");
         }
 
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
