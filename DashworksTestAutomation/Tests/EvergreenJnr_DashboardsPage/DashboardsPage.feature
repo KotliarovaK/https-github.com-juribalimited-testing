@@ -896,3 +896,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	When User clicks the "CREATE" Action button
 	Then Card "LineWidgetForDas15920" Widget is displayed to the user
 	And Line chart displayed in "LineWidgetForDas15920" widget
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15722
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Build Date |
+	And User have opened column settings for "Build Date" column
+	And User have select "Pin Left" option from column settings
+	And User click on 'Build Date' column header
+	And User create dynamic list with "ListForDas15722" name on "Devices" page
+	Then "ListForDas15722" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "DashboardForDas15722" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS15722 | ListForDas15722 | Aggregate | Build Date  | First             |         |         |           |            |                  | Yes       |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS15722" Widget is displayed to the user
+	And There are no errors in the browser console
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks data in card "WidgetForDAS15722" widget
+	Then "1" rows are displayed in the agGrid
