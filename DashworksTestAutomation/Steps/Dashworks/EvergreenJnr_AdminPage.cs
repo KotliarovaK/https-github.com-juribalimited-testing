@@ -19,6 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.Tests.EvergreenJnr_AdminPage;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -602,7 +603,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees next Slots on the Capacity Slots page:")]
-        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
+        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots) 
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForDataLoading();
@@ -1381,7 +1382,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Waiting for message text change
             Thread.Sleep(1000);
             Assert.IsTrue(message.TextMessage(text),
-                $"{text} is not displayed on the Project page");
+                $"{text} is not displayed on the Admin page");
         }
 
         [Then(@"Warning message is not displayed on the Admin page")]
@@ -2598,6 +2599,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.DragAndDrop(slotFrom, slotTo);
         }
 
+        [When(@"User moves ""(.*)"" automation to ""(.*)"" automation")]
+        public void WhenUserMovesAutomationToAutomation(string automation, string moveToautomation)
+        {
+            var page = _driver.NowAt<AutomationsPage>();
+            var slotFrom = page.GetMoveButtonBySlotName(automation);
+            var slotTo = page.GetMoveButtonBySlotName(moveToautomation);
+            _driver.DragAndDrop(slotFrom, slotTo);
+        }
+
         [Then(@"Alert message is displayed and contains ""(.*)"" text")]
         public void ThenAlertMessageIsDisplayedAndContainsText(string text)
         {
@@ -3069,6 +3079,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ReadinessPage>();
             Assert.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
+        [Then(@"User sees following Processing order on the Automation page")]
+        public void ThenUserSeesFollowingProcessingOrderOnTheAutomationPage(Table processingOrder)
+        {
+            var page = _driver.NowAt<AutomationsPage>();
+            _driver.WaitForDataLoading();
+
+            for (var i = 0; i < processingOrder.RowCount; i++)
+                Assert.That(page.ProcessingOrderValues[i].Text, Is.EqualTo(processingOrder.Rows[i].Values.FirstOrDefault()),
+                    "Processing order values are not the same");
         }
 
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]

@@ -186,7 +186,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15735")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.CategoryAttribute("DAS15805")]
         public virtual void EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations()
         {
             System.Exception lastException = null;
@@ -221,7 +221,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS15735",
-                        "Not_Ready"});
+                        "DAS15805"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -231,8 +231,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table3.AddRow(new string[] {
-                        ""});
             table3.AddRow(new string[] {
                         ""});
             table3.AddRow(new string[] {
@@ -248,15 +246,46 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
             table3.AddRow(new string[] {
                         "Run"});
             table3.AddRow(new string[] {
-                        "Action"});
+                        "Actions"});
             table3.AddRow(new string[] {
                         "Description"});
             testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table3, "Then ");
             testRunner.Then("\"FALSE\" content is displayed in \"Run Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User enters \"AM Auto 1\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User enters \"New automation - Alex\" text in the Search field for \"Automation\" col" +
+                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Run Now\" in the Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("User selects \"Run now\" in the Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the \"RUN\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Success message is displayed and contains \"1 automation started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("\"TRUE\" content is displayed in \"Run Status\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User moves \"AM 0904 1\" automation to \"New automation - Alex\" automation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User have opened column settings for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table4.AddRow(new string[] {
+                        "1"});
+            table4.AddRow(new string[] {
+                        "2"});
+            table4.AddRow(new string[] {
+                        "3"});
+            table4.AddRow(new string[] {
+                        "4"});
+            table4.AddRow(new string[] {
+                        "5"});
+            table4.AddRow(new string[] {
+                        "6"});
+            table4.AddRow(new string[] {
+                        "7"});
+            table4.AddRow(new string[] {
+                        "8"});
+            table4.AddRow(new string[] {
+                        "9"});
+            testRunner.Then("User sees following Processing order on the Automation page", ((string)(null)), table4, "Then ");
             this.ScenarioCleanup();
         }
 

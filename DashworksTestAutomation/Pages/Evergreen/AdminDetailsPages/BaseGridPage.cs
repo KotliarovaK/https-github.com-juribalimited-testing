@@ -436,7 +436,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
 
-
         public bool GetTabHeaderInTheScopeChangesSection(string text)
         {
             return Driver.IsElementDisplayed(
