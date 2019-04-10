@@ -841,7 +841,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValueLeadsToCorrectPag
 	| Vendor      |
 	| Version     |
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -872,3 +872,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
 	And User clicks data in card "WidgetForDAS16069_2" widget
 	Then Save as a new list option is available
 	And "424" rows are displayed in the agGrid
+
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15134
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15134" name
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15134" as Widget Title
+	And User selects "All Devices" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User selects "Pink" in the Colour Scheme
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS15134" Widget is displayed to the user
+	Then "Pink" color is displayed for widget
+	When User clicks Ellipsis menu for "WidgetForDAS15134" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Amber" in the Colour Scheme
+	When User clicks the "UPDATE" Action button
+	Then "Amber" color is displayed for widget
+	When User clicks Settings button for "Dashboard for DAS15134" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel

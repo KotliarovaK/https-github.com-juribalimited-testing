@@ -168,6 +168,7 @@
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\BaseFilter.cs" />
     <Compile Include="Helpers\ColorsConvertor.cs" />
+    <Compile Include="Helpers\ColorWidgetConvertor.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />

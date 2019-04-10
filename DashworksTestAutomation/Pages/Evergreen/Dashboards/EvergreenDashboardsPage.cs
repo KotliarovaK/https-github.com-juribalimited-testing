@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'card-widget-value')]/div")]
+        public IWebElement ColorWidgetItem { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 

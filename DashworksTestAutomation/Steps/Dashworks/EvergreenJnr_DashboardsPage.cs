@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -42,7 +43,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksEditModeTriggerOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             page.EditModeOnOffTrigger.Click();
         }
 
@@ -633,6 +633,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.ColorScheme.Click();
         }
 
+        [When(@"User selects ""(.*)"" in the Colour Scheme")]
+        public void WhenUserSelectsInTheColourScheme(string colorTitle)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            createWidgetElement.ColorScheme.Click();
+            createWidgetElement.GetColorFromColorScheme(colorTitle).Click();
+        }
+
         [Then(@"Colour Scheme dropdown is displayed to the user")]
         public void ThenColourSchemeDropdownIsDisplayedToTheUser()
         {
@@ -708,6 +717,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+        }
+
+        [Then(@"""(.*)"" color is displayed for widget")]
+        public void ThenColorIsDisplayedForWidget(string color)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var getColor = page.ColorWidgetItem.GetAttribute("style").Split(';')
+                .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
+            Assert.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
         }
 
         [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]

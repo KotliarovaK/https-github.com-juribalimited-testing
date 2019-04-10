@@ -111,6 +111,13 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(By.XPath(selector));
         }
 
+        public IWebElement GetColorFromColorScheme(string colorTitle)
+        {
+            var selector = $".//div[@class='inner-colour'][text()='{colorTitle}']";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            return Driver.FindElement(By.XPath(selector));
+        }
+
         public IList<IWebElement> GetDropdownOptions()
         {
             return Driver.FindElements(By.XPath(".//mat-option"));
