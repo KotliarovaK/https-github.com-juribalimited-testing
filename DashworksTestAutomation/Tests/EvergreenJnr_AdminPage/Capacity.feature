@@ -1704,8 +1704,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then "UPDATE" Action button is active
 	When User clicks the "UPDATE" Action button
 	When User clicks "Administration" navigation link on the Admin page
-	Then User clicks "YES" button in warning container on the Admin page
-	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
+	And User enters "ProjectForDAS13812" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 

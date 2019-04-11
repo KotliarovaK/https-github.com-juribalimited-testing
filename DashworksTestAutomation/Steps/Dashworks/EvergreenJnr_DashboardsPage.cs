@@ -440,6 +440,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.SplitBy);
                     createWidgetElement.SplitBy.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
@@ -689,6 +690,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
             var tableContent = table.Rows.SelectMany(row => row.Values);
             Assert.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
+        }
+
+        [Then(@"Column ""(.*)"" with no data displayed")]
+        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+
+            foreach (var item in originalList)
+            {
+                Assert.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
+            }
         }
 
         [Then(@"following content is displayed in the ""(.*)"" column for Widget")]
