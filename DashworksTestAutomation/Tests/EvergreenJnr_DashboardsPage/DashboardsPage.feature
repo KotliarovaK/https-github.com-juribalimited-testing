@@ -841,7 +841,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValueLeadsToCorrectPag
 	| Vendor      |
 	| Version     |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @DAS15134 @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -855,12 +855,24 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
 	| Compliance |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	When User removes "Vendor" column by Column panel
+	When User removes "Version" column by Column panel
 	And User create dynamic list with "1803 App Compliance" name on "Applications" page
 	Then "1803 App Compliance" list is displayed to user
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS16069_2" name
 	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS16069" as Widget Title
+	And User selects "1803 App Compliance" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	Then Colour Scheme dropdown is not displayed to the user
+	When User clicks the "CANCEL" Action button
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title               | List                | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
@@ -871,8 +883,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetLeadsToCorrectPage
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card "WidgetForDAS16069_2" widget
 	Then Save as a new list option is available
-	And "424" rows are displayed in the agGrid
-
+	And "286" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15134
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours

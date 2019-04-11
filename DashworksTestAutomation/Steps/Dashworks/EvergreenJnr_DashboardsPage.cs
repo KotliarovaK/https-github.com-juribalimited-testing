@@ -655,6 +655,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [Then(@"Colour Scheme dropdown is not displayed to the user")]
+        public void ThenColourSchemeDropdownIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
+        }
+
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
