@@ -1317,10 +1317,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	And User navigates to the "Projects" tab
-	When User closes "Evergreen" section on the Details Page
-	And User opens "Device Projects" section on the Details Page
-	Then section is loaded correctly
+	When User navigates to the "Projects" tab-menu on the Details page
+	When User navigates to the "Projects Summary" sub-menu on the Details page
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
