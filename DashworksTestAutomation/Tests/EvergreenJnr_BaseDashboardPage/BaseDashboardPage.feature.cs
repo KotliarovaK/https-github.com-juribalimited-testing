@@ -540,6 +540,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS12174")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
+        [NUnit.Framework.CategoryAttribute("DAS16300")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters()
         {
             System.Exception lastException = null;
@@ -574,7 +576,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                         "EvergreenJnr_BaseDashboardPage",
                         "BaseDashboardPage",
                         "DAS12174",
-                        "DAS13001"});
+                        "DAS13001",
+                        "DAS16300",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1114,3 +1118,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
 }
 #pragma warning restore
 #endregion
+

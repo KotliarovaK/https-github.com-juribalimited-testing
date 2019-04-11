@@ -407,7 +407,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyValueIsDisplayedOnTheFirstPlaceForThePivot()
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => columnElement.FirstEmptyValueLeftPinned);
             Assert.IsTrue(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is not displayed on the first place");
+        }
+
+        [Then(@"Empty value is not displayed on the first place for the Pivot")]
+        public void ThenEmptyValueIsNotDisplayedOnTheFirstPlaceForThePivot()
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is displayed on the first place");
         }
 
         [Then(@"Empty value is displayed on the first place for the Pivot column header")]

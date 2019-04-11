@@ -835,7 +835,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS14237")]
         [NUnit.Framework.CategoryAttribute("DAS14757")]
         [NUnit.Framework.CategoryAttribute("DAS16124")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly()
         {
             System.Exception lastException = null;
@@ -875,8 +874,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "DAS14236",
                         "DAS14237",
                         "DAS14757",
-                        "DAS16124",
-                        "Not_Run"});
+                        "DAS16124"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1456,3 +1454,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
 }
 #pragma warning restore
 #endregion
+

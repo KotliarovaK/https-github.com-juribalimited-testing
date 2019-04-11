@@ -1554,7 +1554,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatBulkUpdateOfThousandsOfRowsUpdateToSuc
 	When User refreshes agGrid
 	Then "STARTED" content is displayed for "Havoc(BigD: Task 0" column
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13386
 Scenario: EvergreenJnr_DevicesList_CheckThatBulkUpdateOfTasksDoesNotIncludeUnpublishedTasks
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1791,7 +1791,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update request type  |
 	| Update task value    |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291
+	#set not_ready on 10 apr because it's working on light year and fails on automation/kepler
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

@@ -26,6 +26,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='SplitBy']")]
         public IWebElement SplitBy { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='cdk-overlay-pane']")]
+        public IWebElement DropdownMenu { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='Type']")]
         public IWebElement Type { get; set; }
 

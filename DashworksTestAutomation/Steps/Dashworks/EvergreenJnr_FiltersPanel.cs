@@ -1311,6 +1311,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filter = new ChangeCheckboxesFilter(_driver, table);
             filter.Do();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [When(@"User changes filter date to ""(.*)""")]
@@ -1322,6 +1324,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.InputDate.Clear();
             page.InputDate.SendKeys(date);
             page.SaveButton.Click();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [Then(@"Save button is not available on the Filter panel")]

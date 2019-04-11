@@ -122,7 +122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClearInput(action.ProjectField);
+            action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
             action.ProjectSection.Click();
@@ -219,7 +219,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
         {
             var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName);
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetOptionByName(option).Click();
             _driver.WaitForDataLoading();
@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingValuesAreDisplayedInDrop_DownOnActionPanel(string fieldName, Table table)
         {
             var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName);
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
@@ -691,6 +691,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var actionsPanel = _driver.NowAt<ActionsElement>();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             //Delete 'if' after the row selection will be faster
             if (actionsPanel.ActionsSpinner.Displayed())
             {
@@ -700,6 +701,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
+                Thread.Sleep(5000);//wait after deselecting All check-box. Currently uncheck runs immediately and no loading indicators appear
                 Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
                     $"Number of rows is not {selectedRowsCount}");
             }
@@ -709,6 +711,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheNumberOfRowsSelectedMatchesTheNumberOfRowsOfTheMainObjectList()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))

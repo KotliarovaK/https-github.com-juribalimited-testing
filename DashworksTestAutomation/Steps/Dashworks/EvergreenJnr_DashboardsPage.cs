@@ -440,6 +440,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.SplitBy);
                     createWidgetElement.SplitBy.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
@@ -707,6 +708,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
         }
 
+        [Then(@"Column ""(.*)"" with no data displayed")]
+        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+
+            foreach (var item in originalList)
+            {
+                Assert.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
+            }
+        }
+
         [Then(@"following content is displayed in the ""(.*)"" column for Widget")]
         public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
         {
@@ -901,6 +914,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in items.Rows)
             {
+                //action has to be performed twice, I don't know why
                 _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
                 _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
 
@@ -917,6 +931,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]).Click();
             }
+        }
+
+        [Then(@"Line chart displayed in ""(.*)"" widget")]
+        public void LineChartDisplayedInWidget(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
         }
     }
    

@@ -880,7 +880,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedT
 	| prK: Email to be sent - All Placeholders (Slot) |
 	| prK: user-group-radb-k                          |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @DAS15167 @Not_Run
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @DAS15167
 Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user

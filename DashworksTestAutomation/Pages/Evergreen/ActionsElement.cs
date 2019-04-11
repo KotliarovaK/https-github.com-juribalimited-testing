@@ -80,11 +80,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(By.XPath(RowsSelectedCountSelector)).Text.Split(' ').First();
         }
 
-        public void GetDropdownOnActionPanelByName(string name)
+        public IWebElement GetDropdownOnActionPanelByName(string name)
         {
-            var listNameSelector = $"//*[contains(text(),'{name}')]/parent::span//preceding-sibling::mat-select";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
+            var dropDown = By.XPath($"//*[contains(text(),'{name}')]/parent::span//preceding-sibling::mat-select");
+            Driver.WaitWhileControlIsNotDisplayed(dropDown);
+            return Driver.FindElement(dropDown);
         }
 
         public IWebElement GetFieldOnActionPanelByName(string name)
