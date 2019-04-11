@@ -2318,7 +2318,7 @@ Examples:
 	| Users     |
 	| Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15266
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15266 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnTheCapacityDetailsScreen
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

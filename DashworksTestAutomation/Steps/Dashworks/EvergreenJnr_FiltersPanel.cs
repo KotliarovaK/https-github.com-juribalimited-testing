@@ -1311,6 +1311,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filter = new ChangeCheckboxesFilter(_driver, table);
             filter.Do();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [When(@"User changes filter date to ""(.*)""")]

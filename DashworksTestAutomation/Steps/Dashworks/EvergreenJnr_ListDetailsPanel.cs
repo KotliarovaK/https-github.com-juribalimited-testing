@@ -107,6 +107,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStarIconIsActiveInListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ActiveFavoriteButton); 
             Assert.IsTrue(listDetailsElement.ActiveFavoriteButton.Displayed(),
                 "Star icon is not active");
         }

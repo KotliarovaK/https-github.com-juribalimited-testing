@@ -774,7 +774,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card "WidgetForDAS16138" widget
 	Then Save as a new list option is available
-	And "8" rows are displayed in the agGrid
+	When User selects Save as new list option
+	Then "8" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then "1803: Scheduled Date is 05 Nov 2018" is displayed in added filter info
 	And "Any Device in list 1803 Rollout" is displayed in added filter info

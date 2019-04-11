@@ -934,6 +934,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ImportProjectPage>();
             page.ProjectNameField.SendKeys(projectName);
+            _projects.Value.Add(projectName);
         }
 
         [When(@"User clicks Import Project button on the Import Project page")]
