@@ -692,6 +692,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
         }
 
+        [Then(@"Column ""(.*)"" with no data displayed")]
+        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+
+            foreach (var item in originalList)
+            {
+                Assert.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
+            }
+        }
+
         [Then(@"following content is displayed in the ""(.*)"" column for Widget")]
         public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
         {

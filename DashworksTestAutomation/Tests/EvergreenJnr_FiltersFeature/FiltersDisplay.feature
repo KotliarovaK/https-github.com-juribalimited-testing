@@ -1621,3 +1621,20 @@ Examples:
 	| ListName  |
 	| Mailboxes |
 	| Users     |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15625
+Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                  |
+	| 1803: Scheduled Date (Slot) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "1803: Scheduled Date (Slot)" filter
+	And User select "Equals" Operator value
+	And User enters "Empty" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
+	Then Column "1803: Scheduled Date (Slot)" with no data displayed
