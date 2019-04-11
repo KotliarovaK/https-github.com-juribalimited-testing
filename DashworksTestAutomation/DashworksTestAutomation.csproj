@@ -272,9 +272,13 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AdminPageNavigation.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage_AfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
@@ -720,6 +724,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

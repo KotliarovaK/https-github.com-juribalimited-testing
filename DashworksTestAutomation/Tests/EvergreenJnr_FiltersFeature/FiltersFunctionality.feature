@@ -386,7 +386,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| 1      |
 	Then Save button is not available on the Filter panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
@@ -403,7 +403,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00KLL9S8NRF0X6   |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00DBB114BE1B41B0A38 |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
@@ -446,7 +446,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 01C4FB7C6D2C4F979BD@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
@@ -467,7 +467,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box

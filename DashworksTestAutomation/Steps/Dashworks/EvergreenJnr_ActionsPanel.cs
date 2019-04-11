@@ -122,7 +122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClearInput(action.ProjectField);
+            action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
             action.ProjectSection.Click();
@@ -219,7 +219,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
         {
             var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName);
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetOptionByName(option).Click();
             _driver.WaitForDataLoading();
@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingValuesAreDisplayedInDrop_DownOnActionPanel(string fieldName, Table table)
         {
             var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName);
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
