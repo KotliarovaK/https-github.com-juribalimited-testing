@@ -47,10 +47,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _addedObjects = addedObjects;
         }
 
-                case "Automations":
-                    menu.Automations.Click();
-                    break;
-
         #region Check button state
 
         [Then(@"Update Project buttons is disabled")]
