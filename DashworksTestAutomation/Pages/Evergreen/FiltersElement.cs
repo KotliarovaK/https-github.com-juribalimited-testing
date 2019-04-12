@@ -57,6 +57,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
         public IWebElement LookupFilterSearchTextBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Value']")]
+        public IWebElement DayHourFilterInput { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='day-hour ng-star-inserted']//mat-hint[@class='mat-hint']/span")]
+        public IWebElement DayHourFilterInstruction { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//div[@id='context']//input[@id='chipInput']")]
         public IWebElement FilterSearchTextBox { get; set; }
