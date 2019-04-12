@@ -89,7 +89,7 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	And User clicks the "UPDATE" Action button
 	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
 
-@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS11646 @DAS12947 @DAS13026 @DAS16248 @Remove_Profile_Changes @Not_Run
+@Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS11646 @DAS12947 @DAS13026 @DAS16248 @DAS16232 @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -105,6 +105,14 @@ Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5S
 	When User changes Display Mode to "High Contrast"
 	And User clicks Update button on Preferences page
 	Then Display Mode is changed to High Contrast
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User clicks "Readiness" tab
+	Then Cog-menu DDL is displayed in High Contrast mode
+	When User clicks Profile in Account Dropdown
+	When User navigates to the "Preferences" page on Account details
 	When User changes Display Mode to "Normal"
 	And User clicks Update button on Preferences page
 

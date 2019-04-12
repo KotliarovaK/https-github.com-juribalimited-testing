@@ -130,6 +130,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User clicks "Readiness" tab
+	Then Cog-menu DDL is displayed in High Contrast mode
 	When User have opened column settings for "Readiness" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel
