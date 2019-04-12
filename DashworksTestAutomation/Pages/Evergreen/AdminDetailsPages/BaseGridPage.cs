@@ -178,6 +178,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
         public IList<IWebElement> TeamListInFilterDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
+        public IWebElement CogMenuDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div/ul[@class='menu-settings']//a")]
+        public IWebElement CogMenuDropdownLabel { get; set; }
+
         [FindsBy(How = How.XPath, Using = Row)]
         public IList<IWebElement> RowsList { get; set; }
 
@@ -625,6 +631,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             var selector = By.XPath($"//*[contains(text(), '{option}')]/ancestor::li[@class='ng-star-inserted']");
             return Driver.FindElement(selector);
+        }
+
+        public string GetCogMenuDropdownColor()
+        {
+            return CogMenuDropdown.GetCssValue("background-color");
+        }
+
+        public string GetCogMenuDropdownLabelColor()
+        {
+            return CogMenuDropdownLabel.GetCssValue("background-color");
         }
     }
 }

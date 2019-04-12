@@ -19,6 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
 using DashworksTestAutomation.Tests.EvergreenJnr_AdminPage;
 using TechTalk.SpecFlow;
 
@@ -2467,6 +2468,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(page.GetCogMenuByItem(itemName));
             page.GetCogMenuByItem(itemName).Click();
             page.GetCogmenuOptionByName(option).Click();
+        }
+
+        [Then(@"Cog-menu DDL is displayed in High Contrast mode")]
+        public void ThenCog_MenuDDLIsDisplayedInHighContrastMode()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+
+            _driver.WaitForDataLoading();
+            page.CogMenu.Click();
+            Assert.AreEqual("rgba(21, 40, 69, 1)", page.GetCogMenuDropdownColor());
+            Assert.AreEqual("rgba(0, 0, 0, 0)", page.GetCogMenuDropdownLabelColor());
         }
 
         [Then(@"Columns on Admin page is displayed in following order:")]
