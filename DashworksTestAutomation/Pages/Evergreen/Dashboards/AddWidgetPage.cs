@@ -118,5 +118,10 @@ namespace DashworksTestAutomation.Pages
         {
             return Driver.FindElements(By.XPath(".//mat-option"));
         }
+
+        public IWebElement GetPreviewFirstCellValue()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']"));
+        }
     }
 }

@@ -668,6 +668,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
 
+        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
+        public void ThenWidgetPreviewShowsFirstCellValue(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
+        }
+
         [Then(@"""(.*)"" Widget is displayed to the user")]
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
