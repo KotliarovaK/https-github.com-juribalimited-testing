@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@id='mat-input-6']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='title-beetwen-blocks']/following-sibling::div//input[contains(@id,'mat-input')]")]
         public IWebElement FilterSearchField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-name']")]
