@@ -346,13 +346,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
         }
 
-        [Then(@"empty rows is displayed in ""(.*)"" column")]
-        public void ThenEmptyRowsIsDisplayedInColumn(string p0)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-        }
-
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
         {
