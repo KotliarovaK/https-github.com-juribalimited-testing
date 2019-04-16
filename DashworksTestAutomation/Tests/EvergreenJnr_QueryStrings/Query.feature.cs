@@ -408,7 +408,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
                         "QueryStringURL"});
             table5.AddRow(new string[] {
                         "Devices",
-                        @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,bootupDate,biosVersion,oSArchitecture,ownerDomain,entitledApplications,costCentre,locationName,description,lDAP_41,customField_33,project_46_subCategory,project_46_ragStatus,project_46_requestType"});
+                        @"evergreen/#/devices?$select=hostname,chassisCategory,oSCategory,ownerDisplayName,bootupDate,biosVersion,oSArchitecture,ownerDomain,entitledApplications,costCentre,locationName,description,userLDAPField_236,project_46_subCategory,project_46_ragStatus,project_46_requestType"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table5, "When ");
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
@@ -465,8 +465,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_QueryStrings
             table6.AddRow(new string[] {
                         "Devices",
                         "evergreen/#/users?$select=username,directoryName,displayName,fullyDistinguishedOb" +
-                            "jectName,description,usedApplications,departmentCode,buildingName,lDAP_46,custom" +
-                            "Field_1,project_46_subCategory,project_46_ragStatus,project_46_requestType"});
+                            "jectName,description,usedApplications,departmentCode,buildingName,lDAP_261,proje" +
+                            "ct_46_subCategory,project_46_ragStatus,project_46_requestType"});
             testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table6, "When ");
             testRunner.Then("agGrid Main Object List is returned with data", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();

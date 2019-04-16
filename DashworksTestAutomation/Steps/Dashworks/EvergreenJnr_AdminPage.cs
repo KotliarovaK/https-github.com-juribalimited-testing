@@ -1643,17 +1643,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            try
-            {
-                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
-            }
-            catch (Exception)
-            {
-                Thread.Sleep(30000);
+
+            var project = page.GetCreatedProjectName(projectName);
+
+            if (project == false) { 
+                Thread.Sleep(45000);
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
-                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+                project = page.GetCreatedProjectName(projectName);
             }
+
+            Assert.IsTrue(project, $"The {projectName} Project is not found");
         }
 
         [Then(@"Import Project button is not displayed")]
