@@ -67,3 +67,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	Then Readiness Dialog Container is displayed to the User
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then There are no errors in the browser console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
+Scenario: EvergreenJnr_AdminPage_ChecksThatProjectContainsWarningIsNotDisplayedOnReadinessPage
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Details" tab
+	Then Warning message with "created objects which are not displayed in Evergreen" text is displayed on the Project Details Page
+	When User clicks "Readiness" tab
+	Then No warning message displayed on the Project Details Page
