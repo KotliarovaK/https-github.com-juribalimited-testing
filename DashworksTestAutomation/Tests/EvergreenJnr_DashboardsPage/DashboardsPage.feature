@@ -955,4 +955,38 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |             |                   |         |         |           |            |                  |           |
 	Then Widget Preview is displayed to the user
 	And Widget Preview shows "READY" as First Cell value
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15544
+Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Service Pack or Build |
+	And User create dynamic list with "ListForDas15544" name on "Devices" page
+	Then "ListForDas15544" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "1803 ProjectDAS15544" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title                     | List            | Type | AggregateBy | AggregateFunction | SplitBy               | OrderBy                   | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Line       | SortOrderCheckForDas15544 | ListForDas15544 |      |             | Count             | Service Pack or Build | Service Pack or Build ASC |           |            |                  | Yes       |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "SortOrderCheckForDas15544" Widget is displayed to the user
+	And Line X labels of "SortOrderCheckForDas15544" widget is displayed in following order:
+	| ColumnName             |
+	| Empty                  |
+	| No Service Pack        |
+	| Service Pack 1         |
+	| Service Pack 2         |
+	| Service Pack 3         |
+	| Service Pack 3, v.6055 |
+	| Windows 8.0            |
+	| Windows 8.1            |
+	| 1507                   |
+	| 1607                   |
+
 	
