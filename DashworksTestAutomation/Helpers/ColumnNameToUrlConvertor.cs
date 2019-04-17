@@ -107,9 +107,6 @@ namespace DashworksTestAutomation.Helpers
                 case "UserSchedu: Readiness":
                     return "project_41_ragStatus";
 
-                case "User Application Compliance":
-                    return "userApplicationCompliance";
-
                 case "Windows7Mi: Application Rationalisation":
                     return "project_1_applicationRationalisation";
 

@@ -39,7 +39,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
             menu.ListDetailsButton.Click();
             _driver.WaitForDataLoading();
-            _driver.WaitForDataLoadingInActionsPanel();
             Logger.Write("List Details button was clicked");
         }
 

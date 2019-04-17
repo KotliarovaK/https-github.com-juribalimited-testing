@@ -34,7 +34,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesListNameTo(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListNameField);
             listDetailsElement.ListNameField.Clear();
             listDetailsElement.ListNameField.SendkeysWithDelay(listName);
             Thread.Sleep(3000);//Wait for autosave action, no indicators available
