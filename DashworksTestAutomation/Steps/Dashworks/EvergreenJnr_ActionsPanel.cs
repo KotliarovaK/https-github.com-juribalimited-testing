@@ -122,7 +122,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsProjectOnActionPanel(string projectName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            action.ClearInput(action.ProjectField);
+            action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
             action.ProjectSection.Click();
@@ -193,6 +193,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User selects ""(.*)"" Ring on Action panel")]
+        public void WhenUserSelectsRingOnActionPanel(string ringValue)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.RingField);
+            action.RingField.Clear();
+            action.RingField.SendKeys(ringValue);
+            action.GetOptionByName(ringValue).Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User selects ""(.*)"" option in ""(.*)"" field on Action panel")]
         public void WhenUserSelectsOptionInFieldOnActionPanel(string option, string fieldName)
         {
@@ -208,7 +219,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsOptionInDrop_DownOnActionPanel(string option, string fieldName)
         {
             var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName);
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetOptionByName(option).Click();
             _driver.WaitForDataLoading();
@@ -254,7 +265,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingValuesAreDisplayedInDrop_DownOnActionPanel(string fieldName, Table table)
         {
             var field = _driver.NowAt<ActionsElement>();
-            field.GetDropdownOnActionPanelByName(fieldName);
+            field.GetDropdownOnActionPanelByName(fieldName).Click();
             var action = _driver.NowAt<BaseDashboardPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
@@ -291,6 +302,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsTaskOnActionPanel(string taskNAme)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
+            action.TaskField.Click();
             action.TaskField.Clear();
             action.TaskField.SendKeys(taskNAme);
             action.GetOptionByName(taskNAme).Click();
@@ -458,6 +470,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             action.GetActionsButtonByName(buttonName).Click();
         }
 
+        [When(@"User selects 'Save as new pilot' option")]
+        public void WhenUserSelectsSaveAsNewPilotOption()
+        {
+            var action = _driver.NowAt<PivotElementPage>();
+            action.SaveNewListButton.Click();
+        }
+
         [Then(@"""(.*)"" Action button is displayed")]
         public void ThenActionButtonIsDisplayed(string buttonName)
         {
@@ -524,7 +543,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Cog-menu for ""(.*)"" item on Admin page")]
         public void WhenUserClicksCog_MenuForItemOnAdminPage(string itemName)
         {
+            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            filterElement.BodyContainer.Click();
             var page = _driver.NowAt<BaseGridPage>();
+            _driver.MouseHover(page.GetCogMenuByItem(itemName));
             page.GetCogMenuByItem(itemName).Click();
         }
 
@@ -612,6 +634,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectRowsInTheGrid(string columnName, Table table)
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             var columnContent = dashboardPage.GetColumnContent(columnName);
             foreach (var row in table.Rows)
             {
@@ -668,6 +691,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var actionsPanel = _driver.NowAt<ActionsElement>();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             //Delete 'if' after the row selection will be faster
             if (actionsPanel.ActionsSpinner.Displayed())
             {
@@ -677,6 +701,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
+                Thread.Sleep(5000);//wait after deselecting All check-box. Currently uncheck runs immediately and no loading indicators appear
                 Assert.AreEqual(selectedRowsCount, actionsPanel.GetSelectedRowsCount(),
                     $"Number of rows is not {selectedRowsCount}");
             }
@@ -686,6 +711,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTheNumberOfRowsSelectedMatchesTheNumberOfRowsOfTheMainObjectList()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))

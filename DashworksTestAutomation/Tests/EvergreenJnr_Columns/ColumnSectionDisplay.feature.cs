@@ -2738,7 +2738,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("DAS14660")]
         [NUnit.Framework.CategoryAttribute("DAS15167")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList()
         {
             System.Exception lastException = null;
@@ -2775,8 +2774,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "ColumnSectionDisplay",
                         "DAS14629",
                         "DAS14660",
-                        "DAS15167",
-                        "Not_Run"});
+                        "DAS15167"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -3446,3 +3444,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
 }
 #pragma warning restore
 #endregion
+

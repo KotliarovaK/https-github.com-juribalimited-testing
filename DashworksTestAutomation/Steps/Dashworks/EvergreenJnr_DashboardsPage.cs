@@ -4,6 +4,7 @@ using System.Linq;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -184,6 +185,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < items.RowCount; i++)
                 Assert.That(page.EllipsisMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
                     "Items are not the same");
+        }
+
+        [Then(@"""(.*)"" Ellipsis menu item is disabled on Dashboards page")]
+        public void ThenEllipsisMenuItemIsDisabledOnDashboardsPage(string itemName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetDisabledEllipsisItemByName(itemName).Displayed(), "Ellipsis menu item is enabled");
+            var body = _driver.NowAt<BaseGridPage>();
+            body.BodyContainer.Click();
         }
 
         [When(@"User clicks ""(.*)"" item from Ellipsis menu on Dashboards page")]
@@ -378,6 +388,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.DeleteButtonInAlert.Click();
         }
 
+        [When(@"User clicks Cancel button in Delete Widget warning on Dashboards page")]
+        public void WhenUserClicksCancelButtonInDeleteWidgetWarningOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.CancelButtonInAlert);
+            page.CancelButtonInAlert.Click();
+        }
+
         [When(@"User creates new Dashboard with ""(.*)"" name")]
         public void WhenUserCreatesNewDashboardWithName(string dashboardName)
         {
@@ -419,7 +438,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (createWidgetElement.SplitBy.Displayed() && !string.IsNullOrEmpty(row["SplitBy"]))
                 {
+                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.SplitBy);
                     createWidgetElement.SplitBy.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
@@ -505,7 +526,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     _driver.WaitForDataLoadingOnProjects();
                 }
 
-                if (!string.IsNullOrEmpty(row["Type"]))
+                if (row.ContainsKey("Type") && !string.IsNullOrEmpty(row["Type"]))
                 {
                     createWidgetElement.Type.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["Type"]);
@@ -560,14 +581,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [When(@"User selects ""(.*)"" as Widget Type")]
-        public void WhenUserSetsWidgetType(string widgetType)
+        [When(@"User selects ""(.*)"" in the ""(.*)"" Widget dropdown")]
+        public void WhenUserSelectsInTheWidgetDropdown(string objectName, string dropdownName)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.WidgetType.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(widgetType);
-            _driver.WaitForDataLoadingOnProjects();
+            _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
+            createWidgetElement.SelectObjectForWidgetCreation(objectName);
         }
 
         [When(@"User enters ""(.*)"" as Widget Title")]
@@ -584,27 +603,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
 
             createWidgetElement.List.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(widgetList);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User selects ""(.*)"" as Type")]
-        public void WhenUserSetsTypesOnWidget(string type)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.Type.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(type);
-            _driver.WaitForDataLoadingOnProjects();
-        }
-
-        [When(@"User selects ""(.*)"" as Widget SplitBy")]
-        public void WhenUserSetsWidgetSplitBy(string splitBy)
-        {
-            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
-
-            createWidgetElement.SplitBy.Click();
-            createWidgetElement.SelectObjectForWidgetCreation(splitBy);
+            createWidgetElement.SelectListForWidgetCreation(widgetList);
             _driver.WaitForDataLoadingOnProjects();
         }
 
@@ -628,6 +627,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingOnProjects();
         }
 
+        [When(@"User clicks on the Colour Scheme dropdown")]
+        public void WhenUserClicksOnTheColourSchemeDropdown()
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            createWidgetElement.ColorScheme.Click();
+        }
+
+        [Then(@"Colour Scheme dropdown is displayed to the user")]
+        public void ThenColourSchemeDropdownIsDisplayedToTheUser()
+        {
+            var dropdownContainer = _driver.FindElements(By.XPath(AddWidgetPage.ColorSchemeDropdownContainer));
+            foreach (var element in dropdownContainer)
+            {
+                var innerColour = element.FindElement(By.XPath(AddWidgetPage.ColorSchemeDropdownContent));
+                Assert.IsTrue(_driver.IsElementExists(innerColour), "Colour item is not found");
+            }
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
+        }
+
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
@@ -649,6 +668,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
 
+        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
+        public void ThenWidgetPreviewShowsFirstCellValue(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
+        }
+
         [Then(@"""(.*)"" Widget is displayed to the user")]
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
@@ -656,11 +682,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
+        [Then(@"link is not displayed for the ""(.*)"" value in the Widget")]
+        public void ThenLinkIsNotDisplayedForTheValueInTheWidget(string content)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.GetTableWidgetContentWithoutLink(content).Displayed(), $"link is displayed for the {content} value");
+            Assert.AreEqual("rgba(0, 0, 0, 0.87)", page.GetTableWidgetContentWithoutLink(content).GetCssValue("color"));
+        }
+
         [Then(@"following content is displayed in the ""(.*)"" column")]
         public void ThenFollowingContentIsDisplayedInTheColumn(string columnName, Table table)
         {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+            var tableContent = table.Rows.SelectMany(row => row.Values);
+            Assert.AreEqual(originalList, tableContent, $"Incorrect content is displayed in the {columnName}");
+        }
+
+        [Then(@"Column ""(.*)"" with no data displayed")]
+        public void ThenFollowingColumnDisplayedWithoutNoData(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            var originalList = page.GetListContentByColumnName(columnName).Select(column => column.Text).ToList();
+
+            foreach (var item in originalList)
+            {
+                Assert.That(item, Is.EqualTo(""), $"Incorrect content is displayed in the {columnName}");
+            }
+        }
+
+        [Then(@"following content is displayed in the ""(.*)"" column for Widget")]
+        public void ThenFollowingContentIsDisplayedInTheColumnForWidget(string columnName, Table table)
+        {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var originalList = page.GetRowContentByColumnName(columnName);
+            var originalList = page.GetWidgwtRowContentByColumnName(columnName);
             var tableContent = table.Rows.SelectMany(row => row.Values).First();
             foreach (var content in originalList)
             {
@@ -680,6 +735,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.IsTrue(page.GetCountForTableWidget(count, boolean).Displayed(), $"{count} is not display for {boolean}");
+        }
+
+        [When(@"User clicks ""(.*)"" value for ""(.*)"" column")]
+        public void WhenUserClicksValueFromColumn(string value, string column)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetCountForTableWidget(column,value).Click();
         }
 
         [When(@"User selects ""(.*)"" as Widget OrderBy")]
@@ -778,5 +840,98 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.GetSettingsOption(option).Click();
         }
+
+        [When(@"User clicks data in card ""(.*)"" widget")]
+        public void WhenUserClicksDataInCardWidget(string widgetTitle)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetCardWidgetContent(widgetTitle).Click();
+        }
+
+        [When(@"User clicks first Dashboard in dashboards list")]
+        public void WhenUserClickFirstDashboardInDashboardsList()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetFirstDashboardFromList().Click();
+        }
+
+        [Then(@"Unsaved Changes alert not displayed to the user")]
+        public void ThenNoUnsavedChangesAlertDisplayedOnEditWidgetPage()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitWhileControlIsDisplayed<AddWidgetPage>(() => page.UnsavedChangesAlert);
+            Assert.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert));
+        }
+
+        [Then(@"User sees ""(.*)"" text in alert on Edit Widget page")]
+        public void ThenUserSeesTextInAlertOnEditWidgetPage(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => page.UnsavedChangesAlert);
+            Assert.AreEqual(text, page.GetUnsavedChangesAlertText().Text);
+        }
+
+        [When(@"User clicks ""(.*)"" button in Unsaved Changes alert")]
+        public void WhenUserClickButtonInUnsavedChangesAlert(string buttonTitle)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.UnsavedChangesAlertButton(buttonTitle).Click();
+        }
+
+        
+        [Then(@"User sees following options for Order By selector on Create Widget page:")]
+        public void WhenUserSeesFollowingOptionsForOrderBySelectorOnCreateWidgetPage(Table items)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.OrderBy.Click();
+
+            Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+                page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+        }
+
+        [Then(@"Tooltip is displayed for the point of Line widget")]
+        public void ThenTooltipIsDisplayedForThePoint(Table items)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            foreach (var row in items.Rows)
+            {
+                //action has to be performed twice, I don't know why
+                _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
+                _driver.MouseHover(page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]));
+
+                Assert.That(page.GetFocusedPointHover(row["WidgetName"]), Is.EqualTo(row["Tooltip"]));
+            }
+        }
+
+        [When(@"User clicks point of Line widget")]
+        public void WhenUserClicksPointInLineWidget(Table items)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            foreach (var row in items.Rows)
+            {
+                page.GetPointOfLineWidgetByName(row["WidgetName"], row["NumberOfPoint"]).Click();
+            }
+        }
+
+        [Then(@"Line chart displayed in ""(.*)"" widget")]
+        public void LineChartDisplayedInWidget(string widgetName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
+        }
+
+        [Then(@"Line X labels of ""(.*)"" widget is displayed in following order:")]
+        public void ThenLineLabelsIsDisplayedInFollowingOrder(string widgetName,  Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            List<string> labelList = page.GetPointOfLineWidgetByName(widgetName);
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+
+            Assert.AreEqual(expectedList, labelList, "Label order is incorrect");
+        }
     }
+   
 }

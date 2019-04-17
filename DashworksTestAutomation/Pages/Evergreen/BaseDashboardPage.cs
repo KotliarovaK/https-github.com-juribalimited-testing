@@ -43,6 +43,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement Heading { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]
+        public IWebElement ToggleMenu { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//button[@id='_listDtlBtn'][@disabled]")]
         public IWebElement DisabledListDetailsButton { get; set; }
 
@@ -83,6 +86,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Capacity Unit']")]
         public IWebElement CapacityUnitField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Ring']")]
+        public IWebElement RingField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//*[contains(text(),'Also Move Mailboxes')]/parent::span//preceding-sibling::mat-select")]
         public IWebElement AlsoMoveMailboxesField { get; set; }
@@ -817,14 +823,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetDropdownByFieldName(string name)
         {
-            var selector = By.XPath($"//textarea[@placeholder='{name}']");
+            var selector = By.XPath($"//span[contains(@class, 'placeholder')][text()='{name}']/ancestor::mat-select");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IList<IWebElement> GetListContentByColumnName(string columnName)
         {
-            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]");
+            var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]/span");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
         }

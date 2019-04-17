@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIs
 	And User save changes in list with "UnbelievableTestList" name
 	And "UnbelievableTestList" list is displayed to user
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @DAS13838 @Delete_Newly_Created_List @Not_Run
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11005 @DAS11489 @DAS12152 @DAS12194 @DAS12199 @DAS12220 @DAS12351 @DAS12602 @DAS12966 @DAS13838 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -208,6 +208,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 	| Red                |
 	Then "Compliance" filter is added to the list
 	Then Save to New Custom List element is displayed
+	When User clicks Save button on the list panel
 	Then User type "Test" into Custom list name field
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -215,13 +216,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 	When User clicks the Actions button
 	Then Save to New Custom List element is displayed
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018 @DAS16242 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
 	| Compliance          |
-	Then Save to New Custom List element is displayed
-	And User type "Test" into Custom list name field
+	Then Save to New Custom List element is displayed	
+	When User clicks Save button on the list panel
+	Then User type "Test" into Custom list name field
 	When User clicks the Actions button
 	Then Actions panel is displayed to the user
 	Then Save to New Custom List element is NOT displayed
@@ -234,6 +236,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreati
 	And User selects "Create static list" in the Actions dropdown
 	Then User type "Test" into Static list name field
 	When User clicks the Actions button
+	And User clicks Save button on the list panel
+	And User selects Save as new list option
 	Then Save button is inactive for Custom list
 
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS11394 @DAS11951 @DAS12152 @DAS12595 @Delete_Newly_Created_List
@@ -667,6 +671,7 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameN
 	Then Filters panel is displayed to the user
 	When User add "City" filter where type is "Equals" with added column and "London" Lookup option
 	Then "City" filter is added to the list
+	When User clicks Save button on the list panel
 	Then User type "TestList993785" into Custom list name field
 	Then Save button is inactive for Custom list
 
@@ -959,6 +964,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSaveAndCancelButtonAreHiddenAft
 	When User click on '<ColumnName>' column header
 	Then data in table is sorted by '<ColumnName>' column in ascending order
 	When User clicks Save button on the list panel
+	And User selects Save as new list option
 	Then Save and Cancel buttons are displayed on the list panel
 	When User clicks Cancel button on the list panel
 	Then Save and Cancel buttons are not displayed on the list panel
@@ -1097,7 +1103,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatFilterNameIsNotChangedAfterRena
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Application_Filter_DAS_12917"
 	And User clicks the Filters button
-	And User click Edit button for "Compliance" filter
+	Then Filters panel is displayed to the user
+	When User click Edit button for "Compliance" filter
 	And User change selected checkboxes:
 	| Option | State |
 	| Amber  | false |
@@ -1114,7 +1121,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameW
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Mailbox_Filter_DAS_12917"
 	And User clicks the Filters button
-	And User click Edit button for "Created Date" filter
+	Then Filters panel is displayed to the user
+	When User click Edit button for "Created Date" filter
 	And User changes filter date to "13 Dec 2017"
 	Then "EDITED_Mailbox_Filter_DAS_12917" edited list is displayed to user
 

@@ -40,6 +40,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='DELETE']")]
         public IWebElement DeleteButtonInAlert { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='CANCEL']")]
+        public IWebElement CancelButtonInAlert { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
         public IWebElement TextInDeleteAlert { get; set; }
 
@@ -142,6 +145,12 @@ namespace DashworksTestAutomation.Pages
         {
             return Driver.FindElements(By.XPath(
                 $".//h5[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//i[contains(@class,'arrow')]"));
+        }
+
+        public IWebElement GetTableWidgetContentWithoutLink(string content)
+        {
+            var columnContent = By.XPath($".//td[not(contains(@class, 'link'))]/span[text()='{content}']");
+            return Driver.FindElement(columnContent);
         }
 
         public string GetEditModeSlideBarColor()
@@ -248,9 +257,16 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']//div[@class='chartContainer ng-star-inserted']");
+                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
+        }
+
+        public IWebElement GetDisabledEllipsisItemByName(string itemName)
+        {
+            var ellipsisItem = By.XPath($".//button[@aria-disabled='true'][text()='{itemName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(ellipsisItem);
         }
 
         public IWebElement GetCardWidgetByName(string widgetName)
@@ -261,14 +277,14 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(dashboardWidget);
         }
 
-        public string GetRowContentByColumnName(string columnName)
+        public string GetWidgwtRowContentByColumnName(string columnName)
         {
             var by = By.XPath(
-                $".//td[@role='gridcell'][{GetColumnNumberByName(columnName)}]");
+                $".//td[@role='gridcell'][{GetWidgetColumnNumberByName(columnName)}]");
             return Driver.FindElement(by).Text;
         }
 
-        public int GetColumnNumberByName(string columnName)
+        public int GetWidgetColumnNumberByName(string columnName)
         {
             var allHeadersSelector = By.XPath(".//tr[@class='mat-header-row ng-star-inserted']//th[@role]");
             Driver.WaitForDataLoading();
@@ -284,9 +300,77 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetCountForTableWidget(string boolean, string number)
         {
-            var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//td[text()='{number}']");
+            var dashboardWidget = By.XPath($".//table//th[text()='{boolean}']//ancestor::table//span[text()='{number}']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }
+
+        public IWebElement GetCardWidgetContent(string widgetTitle)
+        {
+            var cardWidget = By.XPath($".//*[text()='{widgetTitle}']/parent :: div[@class='widget-top']/following-sibling::div//div[@class='card-widget-value value-link ng-star-inserted']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(cardWidget);
+        }
+
+        public IWebElement GetFirstDashboardFromList()
+        {
+            var cardWidget = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(cardWidget).First();
+        }
+
+        public IWebElement GetPointOfLineWidgetByName(string widgetName, string pointNumber)
+        {
+            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty']['{pointNumber}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElements(cardWidget).First();
+        }
+
+        public List<string> GetPointOfLineWidgetByName(string widgetName)
+        {
+            var totalLabelsCount = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end']");
+
+            Driver.WaitForDataLoading();
+
+            List<string> webLabels = new List<string>();
+
+            for (int i = 1; i <= Driver.FindElements(totalLabelsCount).Count; i++)
+            {
+                if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]"))
+                    .Text))
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]/*")).Text);
+                }
+                else
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]")).Text);
+                }
+            }
+
+            return webLabels;
+        }
+
+        public string GetFocusedPointHover(string widgetName)
+        {
+            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-point highcharts-point-hover']");
+            Driver.WaitForDataLoading();
+
+            return string.Format("{0} {1}", Driver.FindElements(cardWidget).First().GetAttribute("widget-name"),
+                Driver.FindElements(cardWidget).First().GetAttribute("widget-value"));
+        }
+
+        public bool IsLineWidgetPointsAreDisplayed(string widgetName)
+        {
+            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty']");
+            Driver.WaitForDataLoading();
+
+            //greater than 1 because line must have at least two points
+            return Driver.FindElements(cardWidget).Count>1;
+        }
+
+
     }
 }

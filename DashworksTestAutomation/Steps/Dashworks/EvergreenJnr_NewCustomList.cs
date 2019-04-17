@@ -81,8 +81,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDeleteButtonForCustomList()
         {
             var button = _driver.NowAt<CustomListElement>();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => button.MenuItem);
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => button.DeleteButton);
+            Thread.Sleep(1000);
             button.DeleteButton.Click();
+            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => button.MenuItem);
         }
 
         [Then(@"Settings panel is displayed to the user")]
@@ -115,6 +118,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
             Assert.IsTrue(listElement.CreateNewListButton.Displayed(), "'Save' button is displayed");
             listElement.CreateNewListButton.Click();
+
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsNewListButton);
+            listElement.SaveAsNewListButton.Click();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
@@ -168,8 +174,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.CreateNewListButton);
-            listElement.CreateNewListButton.Click();
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsNewListButton);
+            listElement.SaveAsNewListButton.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
             listElement.ListNameTextBox.SendKeys(listName);
         }
@@ -200,6 +206,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ActiveCustomListEdited);
             Assert.AreEqual(listName, page.ActiveCustomListEdited.Text);
         }
@@ -489,6 +496,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSaveAsANewListOptionIsAvailable()
         {
             var listElement = _driver.NowAt<CustomListElement>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
             if (!listElement.SaveAsNewListButton.Displayed()) listElement.SaveAsDropdown.Click();
 

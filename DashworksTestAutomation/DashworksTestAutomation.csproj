@@ -174,6 +174,8 @@
     <Compile Include="Helpers\FilterOperatorsConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\ReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
@@ -271,9 +273,13 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AdminPageNavigation.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_AdminPage_AfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
@@ -355,6 +361,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Projects.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Automations.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Teams.feature.cs">
       <AutoGen>True</AutoGen>
@@ -566,6 +577,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Projects.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Automations.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Teams.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Teams.feature.cs</LastGenOutput>
@@ -699,15 +714,18 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\1803_Rollout.xml" />
     <Content Include="Resources\CorrectFile_DAS12370.xml" />
     <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
     <Content Include="Resources\DAS_13733_Valid_file.xml" />
+    <Content Include="Resources\Windows_7_Migration_%28Computer_Scheduled_Project%29 %28jet 5.3.3%29.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

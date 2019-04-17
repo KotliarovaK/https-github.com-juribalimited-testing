@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
@@ -33,8 +34,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesListNameTo(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListNameField);
             listDetailsElement.ListNameField.Clear();
             listDetailsElement.ListNameField.SendkeysWithDelay(listName);
+            Thread.Sleep(3000);//Wait for autosave action, no indicators available
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User is closed List Details panel")]
@@ -104,6 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStarIconIsActiveInListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ActiveFavoriteButton); 
             Assert.IsTrue(listDetailsElement.ActiveFavoriteButton.Displayed(),
                 "Star icon is not active");
         }

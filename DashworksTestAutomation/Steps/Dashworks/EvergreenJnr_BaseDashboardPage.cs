@@ -144,9 +144,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickOptionInContextMenu(string option)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-           // _driver.WaitForDataLoading();
+            _driver.WaitForDataLoading();
 
-            page.AgMenuOptions.FirstOrDefault(x => x.Text.Equals(option)).Click();
+            page.AgMenuOptions.FirstOrDefault(x => x.Text.Equals(option))?.Click();
         }
 
         [Then(@"Next data '(.*)' is copied")]
@@ -365,6 +365,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesRowsInGrid(int rowsCount)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
             Assert.That(page.TableRows.Count, Is.EqualTo(rowsCount));
         }
@@ -583,6 +584,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserRememberedValueEqualsToGridCounter()
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.ListRowsCounter);
 
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");

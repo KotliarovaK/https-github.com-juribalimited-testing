@@ -872,7 +872,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("DAS12639")]
         [NUnit.Framework.CategoryAttribute("DAS14288")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnDevicesPage()
         {
             System.Exception lastException = null;
@@ -910,8 +909,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "DAS12232",
                         "DAS12351",
                         "DAS12639",
-                        "DAS14288",
-                        "Not_Run"});
+                        "DAS14288"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1003,7 +1001,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS12232")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.CategoryAttribute("DAS14288")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatMultiSelectProjectTaskFiltersAreDisplayedCorrectlyOnUsersPage()
         {
             System.Exception lastException = null;
@@ -1040,8 +1037,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "NewFilterCheck",
                         "DAS12232",
                         "DAS12351",
-                        "DAS14288",
-                        "Not_Run"});
+                        "DAS14288"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1197,7 +1193,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
         [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("DAS14663")]
         [NUnit.Framework.CategoryAttribute("DAS14629")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatPrimaryDeviceFilterOptionsForUsersList()
         {
             System.Exception lastException = null;
@@ -1234,8 +1229,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
                         "API",
                         "DAS14629",
                         "DAS14663",
-                        "DAS14629",
-                        "Not_Run"});
+                        "DAS14629"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1270,3 +1264,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_FiltersFeature
 }
 #pragma warning restore
 #endregion
+

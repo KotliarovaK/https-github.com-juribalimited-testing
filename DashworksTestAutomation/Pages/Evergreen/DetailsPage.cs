@@ -17,6 +17,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string FieldOnDetailsPageSelector = ".//td[contains(@class, 'mat-column-key')]";
 
+        public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
         public IWebElement TabContainer { get; set; }
 
@@ -69,11 +71,17 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-tab-body[contains(@class, 'mat-tab-body')]")]
         public IWebElement PopupChangesPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[@class='ag-header-select-all']")]
+        [FindsBy(How = How.XPath, Using = "//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container//div[@class='field-category collapsed']")]
+        public IWebElement OpenedPanelForUpdatingItems { get; set; }
 
         [FindsBy(How = How.XPath, Using = FieldOnDetailsPageSelector)]
         public IList<IWebElement> FieldListOnDetailsPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ColumnHeader)]
+        public IList<IWebElement> ColumnHeadersList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -316,6 +324,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetFieldToOpenTheTableByName (string fieldName)
+        {
+            var selector = By.XPath($"//div[@class='application-category-title']//span[contains(text(), '{fieldName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetCompareContentOnTheDetailsPage(string title, string value)
         {
             var selector = By.XPath($".//td//span[text()='{title}']//ancestor::tr/td//span[text()='{value}']");
@@ -328,6 +343,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($".//span[text()='Dashworks First Seen Date']//ancestor::tr/td[contains(@class, 'column-value')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector).Text;
+        }
+
+        public IWebElement GetItemDetailsPageByName (string itemName)
+        {
+            var selector = By.XPath($"//div[@id='pagetitle-text']//h1[text()='{itemName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

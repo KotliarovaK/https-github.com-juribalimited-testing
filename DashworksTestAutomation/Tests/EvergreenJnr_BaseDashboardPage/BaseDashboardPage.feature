@@ -11,7 +11,7 @@ Scenario Outline: EvergreenJnr_AllList_CheckThatColumnHeaderFontWidthConformsToD
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
 	And Appropriate header font weight is displayed
-	Then "v5.3.3.0" Application version is displayed
+	Then "v5.3.4.0" Application version is displayed
 
 Examples:
 	| ListName     |
@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	When User navigates to the "All Devices" list
 	Then default URL is displayed on "Devices" page
 
-@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001
+@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001 @DAS16300
 Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -141,7 +141,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	Then default URL is displayed on "Users" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "MigrationP: Readiness" filter where type is "Equals" with added column and "Blue" Lookup option
+	When User add "User Application Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Amber              |
 	Then Appropriate filter is added to URL
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641

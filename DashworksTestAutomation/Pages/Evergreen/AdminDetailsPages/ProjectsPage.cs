@@ -196,6 +196,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(button);
         }
 
+        public IWebElement GetButtonOnWarningContainerByName(string linkName)
+        {
+            var button = By.XPath($"//div[@class='mat-dialog-actions']//span[text()='{linkName}']/ancestor::button");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            return Driver.FindElement(button);
+        }
+
         public IWebElement GetAssociatedCheckboxByName(string associatedCheckbox)
         {
             var button = By.XPath($".//span[text()='{associatedCheckbox}']/../div/input[@type='checkbox']");
@@ -333,6 +340,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public bool SelectedTabInProjectScopeChangesSection(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{tabName} ')]"));
+        }
+
+        public bool CheckContentDisplay(string text)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{text}']"));
         }
 
         public IWebElement GetFieldByName(string name)

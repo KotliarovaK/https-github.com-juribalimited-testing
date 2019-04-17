@@ -39,6 +39,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ListDetailsButton);
             menu.ListDetailsButton.Click();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             Logger.Write("List Details button was clicked");
         }
 
@@ -47,6 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.ColumnButton);
             menu.ColumnButton.Click();
             _driver.WaitForDataLoading();
@@ -58,6 +60,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => menu.FilterButton);
             menu.FilterButton.Click();
             _driver.WaitForDataLoading();

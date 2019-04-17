@@ -36,6 +36,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Actions Panel panel is visible");
         }
 
+        [Then(@"Filters panel is not displayed to the user")]
+        public void ThenFiltersPanelIsNotDisplayedToTheUser()
+        {
+            var filterElement = _driver.NowAt<FiltersElement>();
+            Assert.IsFalse(filterElement.FiltersPanel.Displayed(), "Actions panel was displayed");
+            Logger.Write("Actions Panel panel is hidden");
+        }
+
         [When(@"User clicks Add New button on the Filter panel")]
         public void WhenUserClicksAddNewButtonOnTheFilterPanel()
         {
@@ -345,6 +353,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
+            var type = new ValueFilter(_driver, operatorValue, true, table);
+            type.Do();
+        }
+
+        [When(@"User Add And ""(.*)"" filter where type is ""(.*)"" with added column and following value:")]
+        public void WhenUserAddAndFilterWhereTypeIsWithAddedColumnAndFollowingValue(string filterName, string operatorValue, Table table)
+        {
+            var filtersNames = _driver.NowAt<FiltersElement>();
+            filtersNames.AddAndFilter(filterName);
             var type = new ValueFilter(_driver, operatorValue, true, table);
             type.Do();
         }
@@ -1016,6 +1033,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Number of rows is not {showedResultsCount}");
         }
 
+        [Then(@"""(.*)"" of all shown label displays in the Filter panel")]
+        public void ThenOfAllShownLabelDisplaysInTheFilterPanel(int showedResultsCount)
+        {
+            var filtersPanel = _driver.NowAt<FiltersElement>();
+            _driver.WaitForDataLoading();
+            Assert.That(filtersPanel.GetShowedResultsCount(), Does.Contain($"{showedResultsCount.ToString()} of "),
+                $"Shown label doesn't contain {showedResultsCount} found rows");
+        }
+
         #region Filter URL
 
         [When(@"User is remove filter by URL")]
@@ -1285,6 +1311,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filter = new ChangeCheckboxesFilter(_driver, table);
             filter.Do();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [When(@"User changes filter date to ""(.*)""")]
@@ -1296,6 +1324,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.InputDate.Clear();
             page.InputDate.SendKeys(date);
             page.SaveButton.Click();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
         }
 
         [Then(@"Save button is not available on the Filter panel")]
@@ -1366,6 +1396,37 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
                 Assert.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
             }
+        }
+
+        [Then(@"DayHour filter has ""(.*)"" instruction")]
+        public void ThenDayHourFilterHasInstruction(string instruction)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.DayHourFilterInput);
+
+            Assert.That(page.DayHourFilterInstruction.Text, Is.EqualTo(instruction), "Instruction is different");
+            Logger.Write("Instruction is displayed correctly");
+        }
+
+        [When(@"User enter value ""(.*)"" in DayHour filter")]
+        public void WhenUserEntersValueInDayHourFilter(string date)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.DayHourFilterInput);
+
+            page.DayHourFilterInput.Clear();
+            page.DayHourFilterInput.SendKeys(date);
+            page.DayHourFilterInstruction.Click();
+        }
+
+        [Then(@"DayHour filter has entered value ""(.*)""")]
+        public void ThenDayHourFilterHasEnteredValue(string expectedValue)
+        {
+            var page = _driver.NowAt<FiltersElement>();
+            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.DayHourFilterInput);
+
+            Assert.That(page.DayHourFilterInput.GetAttribute("value"), Is.EqualTo(expectedValue), "Value is different");
+            Logger.Write("Value is displayed correctly");
         }
     }
 }

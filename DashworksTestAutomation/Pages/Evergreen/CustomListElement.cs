@@ -92,12 +92,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public bool ListNameWarningMessage(string listName)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($".//div[@class='inline-box-text']//span[text()='\"{listName}\" ']"));
+                By.XPath($".//div[@class='inline-box-text']//span[contains(text(), '{listName}')]"));
         }
 
         public bool RemovingDependencyListMessage(string warningText)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div//span[text()='{warningText}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div//span[contains(text(),'{warningText}')]"));
         }
 
         public bool CheckThatListIsRemoved(string listName)
@@ -121,7 +121,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var dashboardSettingsSelector =
                 By.XPath(
-                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i");
+                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
             Driver.MouseHover(dashboardSettingsSelector);
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
@@ -168,8 +168,11 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span/div[contains(@class,'inline-tip')]")]
         public IWebElement DeleteWarning { get; set; }
         
-        [FindsBy(How = How.XPath, Using = ".//li[contains(text(), 'Delete')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']//li[contains(text(), 'Delete')]")]
         public IWebElement DeleteButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']/ul[@class='menu-settings']")]
+        public IWebElement MenuItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//button[contains(@class, 'btn mat-button')]/span[text()='DELETE']")]
         public IWebElement DeleteButtonInWarningMessage { get; set; }
@@ -206,10 +209,10 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[contains(text(),'Edited')]")]
         public IWebElement EditedList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class, 'saveAs')]//span[text()='UPDATE LIST']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='UPDATE LIST']")]
         public IWebElement UpdateCurrentListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[contains(@class, 'saveAs')]//span[text()='SAVE AS NEW LIST']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'saveAs')]//button[text()='SAVE AS NEW LIST']")]
         public IWebElement SaveAsNewListButton { get; set; }
 
         #endregion UpdateList

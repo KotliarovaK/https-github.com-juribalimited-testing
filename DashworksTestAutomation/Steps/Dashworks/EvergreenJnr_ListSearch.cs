@@ -26,13 +26,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [When(@"User closes Tools panel")]
-        public void WhenUserClosesToolsPanel()
-        {
-            var listPageElement = _driver.NowAt<BaseDashboardPage>();
-            listPageElement.CloseToolsPanelButton.Click();
-        }
-
         [Then(@"User enters SearchCriteria into the agGrid Search Box and the correct NumberOfRows are returned")]
         public void ThenUserEntersSearchCriteriaIntoTheAgGridSearchBoxAndTheCorrectNumberOfRowsAreReturned(Table table)
         {
@@ -166,7 +159,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void PerformSearch(string searchTerm)
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
-
+            
             if (listPageElement.TableSearchTextBox.Displayed())
             {
                 listPageElement.TableSearchTextBox.Clear();
@@ -178,6 +171,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
+                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.TableSearchButton);
                 listPageElement.TableSearchButton.Click();
                 listPageElement.TableSearchTextBox.Clear();
                 Thread.Sleep(3000);

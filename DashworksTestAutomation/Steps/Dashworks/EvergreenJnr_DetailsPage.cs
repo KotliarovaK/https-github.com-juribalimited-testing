@@ -161,6 +161,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.ItemDetailsContainer.Displayed());
         }
 
+        [Then(@"Details page for ""(.*)"" item is displayed correctly")]
+        public void ThenDetailsPageForItemIsDisplayedCorrectly(string itemName)
+        {
+            var detailsPage = _driver.NowAt<DetailsPage>();
+            Assert.IsTrue(detailsPage.GetItemDetailsPageByName(itemName).Displayed(), $"Details page for {itemName} item is not loaded");
+        }
+
         [Then(@"Image item from ""(.*)"" column is displayed to the user")]
         public void ThenImageItemFromColumnIsDisplayedToTheUser(string columnName)
         {
@@ -202,6 +209,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnHeader = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             Assert.IsFalse(columnHeader.ColumnIsDisplayed(columnName),
                 $"{columnName} column still displayed");
+        }
+
+        [Then(@"following columns are displayed on the Item details page:")]
+        public void ThenFollowingColumnsAreDisplayedOnTheItemDetailsPage(Table table)
+        {
+            var column = _driver.NowAt<DetailsPage>();
+
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var columnNames = column.ColumnHeadersList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Item details page is incorrect");
         }
 
         [When(@"User clicks String Filter button for ""(.*)"" column")]
@@ -472,7 +489,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -761,15 +778,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectValueOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoading();
             detailsPage.GetValueByName(bucketName).Click();
         }
 
-        [When(@"User selects all rows on the grid on the Details Page")]
-        public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPage()
+        [When(@"User selects all rows on the grid on the Details Page for ""(.*)""")]
+        public void WhenUserSelectsAllRowsOnTheGridOnTheDetailsPageFor(string fieldName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
-            detailsPage.SelectAllCheckBox.Click();
+            if (!detailsPage.OpenedPanelForUpdatingItems.Displayed())
+            {
+                var button = detailsPage.GetFieldToOpenTheTableByName(fieldName);
+                _driver.MouseHover(button);
+                button.Click();
+                _driver.WaitForDataLoading();
+                _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
+                detailsPage.SelectAllCheckBox.Click();
+            }
+            else
+                detailsPage.SelectAllCheckBox.Click();
         }
 
         private void CheckColumnDisplayedState(Table table, bool displayedState)

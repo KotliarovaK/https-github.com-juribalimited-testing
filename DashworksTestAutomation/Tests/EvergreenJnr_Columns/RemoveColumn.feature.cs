@@ -1100,7 +1100,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS11515")]
         [NUnit.Framework.CategoryAttribute("DAS11506")]
         [NUnit.Framework.CategoryAttribute("DAS14288")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatColumnIsDisplayedInColumnsPanelAfterRemovingAllColumnsFromTheURL()
         {
             System.Exception lastException = null;
@@ -1137,8 +1136,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "RemoveColumn",
                         "DAS11515",
                         "DAS11506",
-                        "DAS14288",
-                        "Not_Run"});
+                        "DAS14288"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1148,9 +1146,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Last Logon Date"});
             table50.AddRow(new string[] {
                         "Enabled"});
+            table50.AddRow(new string[] {
+                        "Windows7Mi: Read Only on Project Object Page"});
             testRunner.When("User add following columns using URL to the \"Users\" page:", ((string)(null)), table50, "When ");
             testRunner.Then("\"Last Logon Date\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Enabled\" column is added to URL on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"Windows7Mi: Read Only on Project Object Page\" column is added to URL on \"Users\" " +
+                    "page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User removes all columns by URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1160,8 +1162,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "Last Logon Date"});
             table51.AddRow(new string[] {
                         "Enabled"});
+            table51.AddRow(new string[] {
+                        "Windows7Mi: Read Only on Project Object Page"});
             testRunner.And("ColumnName is removed from the list", ((string)(null)), table51, "And ");
-            testRunner.And("\"23\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"25\" subcategories is displayed for \"User\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"70\" subcategories is displayed for \"Project Tasks: Windows7Mi\" category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             this.ScenarioCleanup();
         }
 
@@ -1231,17 +1236,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table53.AddRow(new string[] {
+                        "Not Started"});
+            table53.AddRow(new string[] {
                         "Started"});
             testRunner.When("User add \"Windows7Mi: Technical Test\" filter where type is \"Equals\" with added co" +
                     "lumn and following checkboxes:", ((string)(null)), table53, "When ");
             testRunner.Then("\"Windows7Mi: Technical Test\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.And("\"6\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table54.AddRow(new string[] {
                         "Windows7Mi: Technical Test"});
             testRunner.When("User remove column on \"Applications\" page by URL", ((string)(null)), table54, "When ");
-            testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("\"6\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1467,3 +1474,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
 }
 #pragma warning restore
 #endregion
+

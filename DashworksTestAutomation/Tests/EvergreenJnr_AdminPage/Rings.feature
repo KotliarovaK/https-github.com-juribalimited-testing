@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417 @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -17,6 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	When User type "TestRing" Name in the "Ring name" field on the Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
+	And User sees "2" rows in grid
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| TestRing         |
@@ -51,6 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User sets "None" value in Maps to evergreen ring field
 	Then Ring settings Maps to evergreen ring is displayed as "None"
 	When User clicks "Administration" navigation link on the Admin page
+	And User clicks Yes button in Leave Page Warning
 	When User clicks "Buckets" link on the Admin page
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -94,7 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User doubleclicks Create button on Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
 	When User enters "OneRing" text in the Search field for "Ring" column
-	Then Counter shows "1" found rows
+	Then Rows counter contains "1" found row of all rows
 	And There are no errors in the browser console
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
@@ -277,7 +279,6 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	Then "729" content is displayed in "Mailboxes" column
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName |
-	|            |
 	|            |
 	| Ring       |
 	|            |

@@ -176,6 +176,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"default URL is displayed on ""(.*)"" page")]
         public void ThenDefaultURLIsDisplayedOnPage(string pageName)
         {
+            _driver.WaitForDataLoading();
             var currentUrl = _driver.Url;
             const string pattern = @"evergreen\/#\/(.*)";
             var currentPageName = Regex.Match(currentUrl, pattern).Groups[1].Value;
@@ -407,6 +408,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             page.RefreshTableButton.Click();
+            _driver.WaitForDataLoading();
         }
 
         [When(@"User add all Columns from specific category")]

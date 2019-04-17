@@ -206,7 +206,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
                         "Test@test.com",
                         "Test@test.com",
                         "8 May 2012",
-                        "10 Apr 2018"});
+                        "20 May 2018"});
             testRunner.When("User updates the Details page", ((string)(null)), table5, "When ");
             testRunner.Then("Success message is displayed with \"Project was successfully updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User navigate to \"Request Types\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -819,3 +819,4 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
 }
 #pragma warning restore
 #endregion
+

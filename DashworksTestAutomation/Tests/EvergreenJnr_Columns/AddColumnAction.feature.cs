@@ -272,8 +272,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11689")]
         [NUnit.Framework.CategoryAttribute("DAS12780")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
-        [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
         {
@@ -309,8 +307,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
                     "DAS11689",
-                    "DAS12780",
-                    "Not_Run"};
+                    "DAS12780"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -416,7 +413,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS11871")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
@@ -453,8 +449,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "AllLists",
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
-                    "DAS11871",
-                    "Not_Run"};
+                    "DAS11871"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -723,7 +718,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("AddColumnAction")]
         [NUnit.Framework.CategoryAttribute("DAS12500")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "User Key", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", null)]
@@ -762,8 +756,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                     "EvergreenJnr_Columns",
                     "AddColumnAction",
                     "DAS12500",
-                    "DAS14923",
-                    "Not_Run"};
+                    "DAS14923"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1245,3 +1238,4 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
 }
 #pragma warning restore
 #endregion
+

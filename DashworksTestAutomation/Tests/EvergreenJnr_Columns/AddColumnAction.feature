@@ -43,7 +43,7 @@ Examples:
 	| Max Receive Size (MB) |
 	| Max Send Size (MB)    |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11689 @DAS12780
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName                        |
@@ -58,8 +58,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTh
 
 Examples: 
 	| ListName     |
-	| Devices      |
 	| Applications |
+	#| Devices      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997 @DAS12026 @DAS12156 @DAS12780
 Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages
@@ -75,7 +75,7 @@ Examples:
 	| Windows7Mi: Core Application            |
 	| Windows7Mi: Hide from End Users         |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS11871
 Scenario Outline: EvergreenJnr_AllLists_CheckThatConsoleErrorsAreNotDisplayedAfterSortingUserScheduReadinessIDColumn
 	When User add following columns using URL to the "<ListName>" page:
 	| ColumnName               |
@@ -162,7 +162,7 @@ Examples:
 	| Applications | Compliance       | Compliance       |
 	| Mailboxes    | Owner Compliance | Owner Compliance |
 
-@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500 @DAS14923 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_Columns @AddColumnAction @DAS12500 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatObjectKeyColumnsContainCorrectLinks
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user

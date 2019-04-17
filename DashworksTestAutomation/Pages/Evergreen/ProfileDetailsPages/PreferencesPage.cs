@@ -65,12 +65,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         public string GetUpdateButtonColor()
         {
-            return UpdateButton.GetCssValue("background-color");
+            return UpdateButton.GetCssValue("background");
         }
 
         public string GetLinkMenuColor()
         {
-            return PreferencesLink.GetCssValue("background-color");
+            return PreferencesLink.GetCssValue("background");
         }
     }
 }

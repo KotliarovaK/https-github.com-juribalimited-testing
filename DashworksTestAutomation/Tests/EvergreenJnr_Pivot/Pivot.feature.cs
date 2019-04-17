@@ -350,7 +350,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS14188")]
         [NUnit.Framework.CategoryAttribute("DAS14748")]
         [NUnit.Framework.CategoryAttribute("DAS15682")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Babel(Engl: Application Readiness", "Last Seen Date", "All Devices", "Build Date", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "App Count (Entitled)", "Domain", "All Users", "Common Name", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "All Mailboxes", "Alias", null)]
@@ -390,8 +389,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "Pivot",
                     "DAS14188",
                     "DAS14748",
-                    "DAS15682",
-                    "Not_Run"};
+                    "DAS15682"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -695,6 +693,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "All Devices"});
             table24.AddRow(new string[] {
                         "1803 Rollout"});
+            table24.AddRow(new string[] {
+                        "Depot Capacity"});
+            table24.AddRow(new string[] {
+                        "Migration Type Capacity"});
+            table24.AddRow(new string[] {
+                        "New York - Devices"});
             testRunner.Then("following Values are displayed in \"Scope\" drop-down on the Project details page:", ((string)(null)), table24, "Then ");
             testRunner.When("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -795,6 +799,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table29, "And ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User removes \"Description\" Column for Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Save button is inactive for Pivot list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("No pivot generated message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -969,6 +974,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the \"SAVE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User selects \'Save as new pilot\' option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot Name field is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("User remove list with \"Dynamic_List_DAS14206\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User remove list with \"PivotList_DAS_14206\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1313,7 +1319,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS13860")]
         [NUnit.Framework.CategoryAttribute("DAS14555")]
         [NUnit.Framework.CategoryAttribute("DAS15376")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_MailboxesLists_CheckThatSeverityAggregateFunctionAvailableForReadinessFieldForMailboxes()
         {
             System.Exception lastException = null;
@@ -1350,8 +1355,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Pivot",
                         "DAS13860",
                         "DAS14555",
-                        "DAS15376",
-                        "Not_Run"});
+                        "DAS15376"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -1604,7 +1608,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks checkbox at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"101 Hudson Street\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1693,7 +1697,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table65.AddRow(new string[] {
                         "1803: Readiness"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table65, "And ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"USA\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1789,7 +1793,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User enters \"Altera\" text in Search field at selected Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"Altera\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1884,7 +1888,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table73.AddRow(new string[] {
                         "Owner Compliance"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table73, "And ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"BCLABS-2007\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -1996,7 +2000,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.When("User clicks checkbox at selected Lookup Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks Save filter button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.When("User clicks the Pivot button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"Exchange Tower\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2088,7 +2092,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             table81.AddRow(new string[] {
                         "Compliance"});
             testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table81, "And ");
-            testRunner.When("User selects aggregate function \"severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects aggregate function \"Severity\" on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User expanded \"Empty\" left-pinned value on Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -2182,9 +2186,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table86.AddRow(new string[] {
-                        "Not Applicable"});
+                        "NOT APPLICABLE"});
             table86.AddRow(new string[] {
-                        "Started"});
+                        "STARTED"});
             testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table86, "Then ");
             this.ScenarioCleanup();
         }
@@ -2262,11 +2266,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("data in the table is sorted by \"Evergreen Bucket\" column in ascending order by de" +
                     "fault for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Empty value is not displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table90.AddRow(new string[] {
-                        "Infrastructure Ready"});
+                        "INFRASTRUCTURE READY"});
             testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table90, "Then ");
             this.ScenarioCleanup();
         }
@@ -2348,7 +2352,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table94.AddRow(new string[] {
-                        "Not Applicable"});
+                        "NOT APPLICABLE"});
             testRunner.Then("Pivot column headers is displayed in following order:", ((string)(null)), table94, "Then ");
             this.ScenarioCleanup();
         }
@@ -2426,7 +2430,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("data in the table is sorted by \"Import\" column in ascending order by default for " +
                     "the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Empty value is not displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table98.AddRow(new string[] {
@@ -2592,7 +2596,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.And("data in the table is sorted by \"Import\" column in ascending order by default for " +
                     "the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Empty value is displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("Empty value is not displayed on the first place for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.Then("color data in the column headers is sorted in correct order for the Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -2610,6 +2614,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS15252")]
         [NUnit.Framework.CategoryAttribute("DAS13786")]
         [NUnit.Framework.CategoryAttribute("DAS13823")]
+        [NUnit.Framework.CategoryAttribute("DAS16244")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder()
         {
             System.Exception lastException = null;
@@ -2648,7 +2654,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "DAS13865",
                         "DAS15252",
                         "DAS13786",
-                        "DAS13823"});
+                        "DAS13823",
+                        "DAS16244",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4139,15 +4147,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table171 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option"});
             table171.AddRow(new string[] {
-                        "count"});
+                        "Count"});
             table171.AddRow(new string[] {
-                        "sum"});
+                        "Sum"});
             table171.AddRow(new string[] {
-                        "min"});
+                        "Min"});
             table171.AddRow(new string[] {
-                        "max"});
+                        "Max"});
             table171.AddRow(new string[] {
-                        "avg"});
+                        "Avg"});
             testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table171, "Then ");
             testRunner.When("User clicks close button for \"HDD Count\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table172 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4158,11 +4166,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table173 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option"});
             table173.AddRow(new string[] {
-                        "count"});
+                        "Count"});
             table173.AddRow(new string[] {
-                        "first"});
+                        "First"});
             table173.AddRow(new string[] {
-                        "last"});
+                        "Last"});
             testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table173, "Then ");
             testRunner.When("User clicks close button for \"Build Date\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             TechTalk.SpecFlow.Table table174 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4173,7 +4181,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             TechTalk.SpecFlow.Table table175 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option"});
             table175.AddRow(new string[] {
-                        "count"});
+                        "Count"});
             testRunner.Then("following aggregate function are available in dropdown:", ((string)(null)), table175, "Then ");
             testRunner.When("User clicks close button for \"Owner City\" chip", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             this.ScenarioCleanup();
@@ -4497,7 +4505,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13863")]
         [NUnit.Framework.CategoryAttribute("DAS14374")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsRowGroup()
         {
             System.Exception lastException = null;
@@ -4532,8 +4539,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS13863",
-                        "DAS14374",
-                        "Not_Run"});
+                        "DAS14374"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4583,7 +4589,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS13863")]
         [NUnit.Framework.CategoryAttribute("DAS14374")]
         [NUnit.Framework.CategoryAttribute("DAS15376")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup()
         {
             System.Exception lastException = null;
@@ -4619,8 +4624,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "Pivot",
                         "DAS13863",
                         "DAS14374",
-                        "DAS15376",
-                        "Not_Run"});
+                        "DAS15376"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4681,7 +4685,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13863")]
         [NUnit.Framework.CategoryAttribute("DAS14374")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsRowGroup()
         {
             System.Exception lastException = null;
@@ -4716,8 +4719,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS13863",
-                        "DAS14374",
-                        "Not_Run"});
+                        "DAS14374"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4766,7 +4768,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13863")]
         [NUnit.Framework.CategoryAttribute("DAS14375")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn()
         {
             System.Exception lastException = null;
@@ -4801,8 +4802,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS13863",
-                        "DAS14375",
-                        "Not_Run"});
+                        "DAS14375"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -4940,7 +4940,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS13863")]
         [NUnit.Framework.CategoryAttribute("DAS14375")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn()
         {
             System.Exception lastException = null;
@@ -4975,8 +4974,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS13863",
-                        "DAS14375",
-                        "Not_Run"});
+                        "DAS14375"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -5028,7 +5026,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
         [NUnit.Framework.CategoryAttribute("DAS14246")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner City", "Count(Owner City)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Building", "Count(Building)", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Count(Application)", null)]
@@ -5068,8 +5065,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "Pivot",
                     "DAS15758",
                     "DAS15328",
-                    "DAS14246",
-                    "Not_Run"};
+                    "DAS14246"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -5114,7 +5110,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Build Date", "Count(Build Date)", "First(Build Date)", "Last(Build Date)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Last Logon Date", "Count(Last Logon Date)", "First(Last Logon Date)", "Last(Last Logon Date)", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Windows7Mi: Technical Task3 (Date)", "Count(Windows7Mi: Technical Task3 (Date))", "First(Windows7Mi: Technical Task3 (Date))", "Last(Windows7Mi: Technical Task3 (Date))", null)]
@@ -5153,8 +5148,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "EvergreenJnr_Pivot",
                     "Pivot",
                     "DAS15758",
-                    "DAS15328",
-                    "Not_Run"};
+                    "DAS15328"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -5204,7 +5198,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS15758")]
         [NUnit.Framework.CategoryAttribute("DAS15328")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("Devices", "HDD Count", "Count(HDD Count)", "Sum(HDD Count)", "Min(HDD Count)", "Max(HDD Count)", "Avg(HDD Count)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Device Count", "Count(Device Count)", "Sum(Device Count)", "Min(Device Count)", "Max(Device Count)", "Avg(Device Count)", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "1803: Current User Count", "Count(1803: Current User Count)", "Sum(1803: Current User Count)", "Min(1803: Current User Count)", "Max(1803: Current User Count)", "Avg(1803: Current User Count)", null)]
@@ -5243,8 +5236,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
                     "EvergreenJnr_Pivot",
                     "Pivot",
                     "DAS15758",
-                    "DAS15328",
-                    "Not_Run"};
+                    "DAS15328"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -5290,7 +5282,88 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Pivot
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("DevicesLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
+        [NUnit.Framework.CategoryAttribute("Pivot")]
+        [NUnit.Framework.CategoryAttribute("DAS14263")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanelInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanelInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel", null, new string[] {
+                        "Evergreen",
+                        "DevicesLists",
+                        "EvergreenJnr_Pivot",
+                        "Pivot",
+                        "DAS14263",
+                        "Not_Ready"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User navigates to Pivot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table222 = new TechTalk.SpecFlow.Table(new string[] {
+                        "RowGroups"});
+            table222.AddRow(new string[] {
+                        "Compliance"});
+            testRunner.And("User selects the following Row Groups on Pivot:", ((string)(null)), table222, "And ");
+            TechTalk.SpecFlow.Table table223 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Columns"});
+            table223.AddRow(new string[] {
+                        "City"});
+            testRunner.And("User selects the following Columns on Pivot:", ((string)(null)), table223, "And ");
+            TechTalk.SpecFlow.Table table224 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table224.AddRow(new string[] {
+                        "Cost Centre"});
+            testRunner.And("User selects the following Values on Pivot:", ((string)(null)), table224, "And ");
+            testRunner.And("User clicks the \"RUN PIVOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.Then("Pivot run was completed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User creates Pivot list with \"DAS14263_Pivot\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"DAS14263_Pivot\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User clicks the List Details button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("List details panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User clicks the \"ADD TEAMS\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User selects \"Team 1062\" in the Team dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("User navigates to the \"<PivotName>\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("User remove list with \"DAS14263_Pivot\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
 #endregion
+

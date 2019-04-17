@@ -22,7 +22,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	When User clicks Admin on the left-hand menu
 	And User clicks "Teams" link on the Admin page
 	And User enters "K-Team" text in the Search field for "Team" column
-	Then Counter shows "2" found rows
+	Then Rows counter contains "2" found row of all rows
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Teams @Delete_Newly_Created_Team @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
@@ -167,9 +167,9 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	When User click on "Full Name" column header on the Admin page
 	Then data in table is sorted by "Full Name" column in descending order on the Admin page
 	When User enters "Admin" text in the Search field for "Full Name" column
-	Then Counter shows "3" found rows
+	Then Rows counter shows "3" of "4" rows
 	When User enters "automation_admin1" text in the Search field for "Username" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "4" rows
 	When User selects all rows on the grid
 	Then Actions dropdown is displayed correctly
 	When User removes selected members
@@ -192,7 +192,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User clicks Admin on the left-hand menu
 	And User clicks "Teams" link on the Admin page
 	And User selects all rows on the grid
-	Then User sees "2794" of "2794" rows selected label
+	Then Rows counter shows more than "2794" found rows of all rows
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User selects all rows on the grid
@@ -258,23 +258,23 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then numeric data in table is sorted by "Mailboxes" column in ascending order on the Admin page
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "False" checkbox from boolean filter on the Admin page
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Email Migration" checkbox from String Filter with item list on the Admin page
-	Then Counter shows "2" found rows
+	Then Rows counter shows "2" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Glasgow" text in the Search field for "Bucket" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "20" text in the Search field for "Devices" column
-	Then Counter shows "1" found rows
+	Then Rows counter shows "1" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters ">20" text in the Search field for "Users" column
-	Then Counter shows "2" found rows
+	Then Rows counter shows "2" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "100" text in the Search field for "Mailboxes" column
-	Then Counter shows "0" found rows
+	Then Rows counter shows "0" of "4" rows
 	When User clicks Reset Filters button on the Admin page
 	Then There are no errors in the browser console
 	When User enters "Nottingham" text in the Search field for "Bucket" column
@@ -374,7 +374,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	And User clears Filter field
 	Then There are no errors in the browser console
 	When User enters "Administrative Team" text in the Search field for "Team" column
-	Then Counter shows "1" found rows
+	Then Rows counter contains "1" found row of all rows
 	When User clicks content from "Team" column
 	Then "Administrative Team" team details is displayed to the user
 	When User have opened Column Settings for "Username" column
@@ -385,21 +385,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User click on Back button
 	When User clicks String Filter button for "Default" column on the Admin page
 	When User clicks "True" checkbox from boolean filter on the Admin page
-	Then Counter shows "2,793" found rows
+	Then Rows counter shows more than "2793" found rows of all rows
 	Then There are no errors in the browser console
 	When User clicks Reset Filters button on the Admin page
 	Then Content is present in the table on the Admin page
 	When User enters "Team 10" text in the Search field for "Description" column
-	Then Counter shows "111" found rows
+	Then Rows counter contains "111" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "0" text in the Search field for "Evergreen Buckets" column
-	Then Counter shows "0" found rows
+	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "5" text in the Search field for "Project Buckets" column
-	Then Counter shows "2" found rows
+	Then Rows counter contains "2" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
-	Then Counter shows "5" found rows
+	Then Rows counter contains "5" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User click on "Team" column header on the Admin page
 	#Remove hash after fix sort order
@@ -494,7 +494,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage
 	And User removes selected item
 	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12326 @DAS16130 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

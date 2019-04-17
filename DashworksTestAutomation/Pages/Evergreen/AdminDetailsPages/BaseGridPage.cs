@@ -80,11 +80,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='reload']")]
+        public IWebElement RefreshButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'checkbox-styled')]//mat-checkbox")]
         public IWebElement SelectAllCheckBox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-select-all']//span[@class='ag-checkbox-checked']")]
-        public IWebElement SelectAllCheckboxChecked { get; set; }
+        [FindsBy(How = How.XPath, Using = "//input[@type='checkbox']/ancestor::mat-checkbox[contains(@class, 'checkbox-checked')]")]
+        public IWebElement SelectAllCheckboxWithFullCheckedState { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//input[@type='checkbox']/ancestor::mat-checkbox[contains(@class, 'checkbox-indeterminate')]")]
+        public IWebElement SelectAllCheckboxWithIndeterminateCheckedState { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='ag-header-icon ag-sort-descending-icon']")]
         public IWebElement DescendingSortingIcon { get; set; }
@@ -139,7 +145,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'mat-checkbox-checked')]")]
         public IWebElement CheckedAllItemCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'checkbox-partial')]")]
+        [FindsBy(How = How.XPath, Using = ".//mat-pseudo-checkbox[contains(@class, 'checkbox-checked')]")]
         public IWebElement CheckedSomeItemCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]/div[@ref='eCenterColsClipper']")]
@@ -500,7 +506,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool GetCreatedProjectName(string projectName)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{projectName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//div[@col-id='projectName']//a[text()='{projectName}']"));
         }
 
         public bool GetButtonByName(string buttonName)
@@ -556,7 +562,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByName(string dropdownName)
         {
-            var selector = By.XPath($"//mat-select[@aria-label='{dropdownName}']//span//span");
+            var selector = By.XPath($"//mat-select[@aria-label='{dropdownName}']//span");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

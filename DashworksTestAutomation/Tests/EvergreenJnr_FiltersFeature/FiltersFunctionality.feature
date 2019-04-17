@@ -265,7 +265,7 @@ Scenario: EvergreenJnr_DevicesList_CheckNumericFilter
 	Then "App Count (Installed) is less than 1" is displayed in added filter info
 	Then "5,141" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11469
 Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPanelIsWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -278,14 +278,15 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatAssociationSearchInFiltersPa
 Examples:
 	| FilterName                 |
 	| Application                |
-	| Application Compliance     |
-	| Application (Saved List)   |
 	| Application Import         |
-	| Application Import Type    |
 	| Application Inventory Site |
-	| Application Name           |
 	| Application Vendor         |
 	| Application Version        |
+	#| Application Compliance     |
+	#| Application (Saved List)   |
+	#| Application Import Type    |
+	#| Application Name           |
+	
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11560
 Scenario: EvergreenJnr_ApplicationsList_CheckThat500ErrorInNotDisplayedWhenUserApplyASelectedNumericFilter 
@@ -385,7 +386,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 	| 1      |
 	Then Save button is not available on the Filter panel
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
 	And User clicks "Capacity Units" link on the Admin page
@@ -402,7 +403,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00KLL9S8NRF0X6   |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
@@ -423,7 +424,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 00DBB114BE1B41B0A38 |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
@@ -445,7 +446,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 01C4FB7C6D2C4F979BD@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
@@ -466,7 +467,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| 7-Zip 9.20 (x64 edition) |
 	And User selects "Bulk update" in the Actions dropdown
 	And User selects "Update capacity unit" Bulk Update Type on Action panel
-	And User selects "Evergreen" Project on Action panel
+	And User selects "Evergreen" option in "Project or Evergreen" drop-down on Action panel
 	And User selects "CapacityUnit13201" value for "Capacity Unit" dropdown with search on Action panel
 	And User clicks the "UPDATE" Action button
 	Then User clicks "UPDATE" button on message box
@@ -1062,7 +1063,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatAdvancedUserFilterReturnsCorrec
 	And User clicks Save filter button
 	Then "2,222" rows are displayed in the agGrid
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1086,7 +1087,7 @@ Examples:
 	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
 	| UserSchedu: Request Type                  | Request Type A       | 60     |
 	
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351 @Not_Run
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1104,9 +1105,9 @@ Examples:
 	| Windows7Mi: Category                        | Terminated         | 1      |
 	| Windows7Mi: Read Only on Bulk Update Page   | Not Applicable     | 4,642  |
 	| Barry'sUse: Category                        | None               | 41,339 |
-	| ComputerSc: Group User Default Request Type | Not Applicable     | 1,789  |
 	| Havoc(BigD: Request Type                    | [Default (User)]   | 7,578  |
 	| UserSchedu: Group User Default Request Type | Not Applicable     | 679    |
+	#| ComputerSc: Group User Default Request Type | Not Applicable     | 1,789  |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
@@ -1558,7 +1559,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceOwnerLDAPColumnsAndFilters
 	| Owner lastlogon  |
 	| Owner admincount |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14629 @DAS14664 @DAS14669 @Not_Run
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14629 @DAS14664 @DAS14669
 Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1814,3 +1815,128 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameter
 	Then "TestList15246" list is displayed to user
 	And URL contains "evergreen/#/users?$listid="
 	And URL contains only "listid" filter
+
+@Evergreen @Users @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
+Scenario: EvergreenJnr_UsersList_CheckSlotsSortOrderForUsersList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	When User add "UserEvergr: Dropdown Non RAG Date (User) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Empty              |
+	When User Add And "Domain" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| BCLABS         |
+	When User click on 'UserEvergr: Dropdown Non RAG Date (User) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Dropdown Non RAG Date (User) (Slot)" column
+	| Values      |
+	| User Slot 1 |
+	| User Slot 1 |
+	| User Slot 1 |
+	| User Slot 1 |
+	| User Slot 1 |
+	| User Slot 2 |
+	| User Slot 2 |
+	When User click on 'UserEvergr: Dropdown Non RAG Date (User) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Dropdown Non RAG Date (User) (Slot)" column
+	| Values      |
+	| User Slot 2 |
+	| User Slot 2 |
+	| User Slot 1 |
+	| User Slot 1 |
+	| User Slot 1 |
+	| User Slot 1 |
+	| User Slot 1 |
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
+Scenario: EvergreenJnr_DevicesList_CheckSlotsSortOrderForDevicesList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	When User add "1803: Scheduled Date (Slot)" filter where type is "Does not equal" with added column and Lookup option
+	| SelectedValues |
+	| Empty          |
+	When User Add And "Device Type" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues |
+	| Laptop         |
+	When User click on '1803: Scheduled Date (Slot)' column header
+	Then following content is displayed in the "1803: Scheduled Date (Slot)" column
+	| Values                     |
+	| Birmingham Morning         |
+	| Manchester Morning         |
+	| Manchester Morning         |
+	| Manchester Morning         |
+	| Manchester Morning         |
+	| London - City Morning      |
+	| London - Southbank Morning |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
+	When User click on '1803: Scheduled Date (Slot)' column header
+	Then following content is displayed in the "1803: Scheduled Date (Slot)" column
+	| Values                     |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
+	| London Depot 09:00 - 11:00 |
+	| London - Southbank Morning |
+	| London - City Morning      |
+	| Manchester Morning         |
+	| Manchester Morning         |
+	| Manchester Morning         |
+	| Manchester Morning         |
+	| Birmingham Morning         |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
+Scenario: EvergreenJnr_ApplicationsList_CheckSlotsSortOrderForApplicationsList
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	When User add "UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)" filter where type is "Does not equal" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Empty              |
+	When User click on 'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)" column
+	| Values             |
+	| Application Slot 1 |
+	| Application Slot 1 |
+	| Application Slot 1 |
+	| Application Slot 1 |
+	| Application Slot 2 |
+	When User click on 'UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)' column header
+	Then following content is displayed in the "UserEvergr: Radiobutton Readiness Date Owner (Application) (Slot)" column
+	| Values             |
+	| Application Slot 2 |
+	| Application Slot 1 |
+	| Application Slot 1 |
+	| Application Slot 1 |
+	| Application Slot 1 |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FilterFunctionality @DAS15291
+Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	When User add "MailboxEve: Scheduled - mailbox (Slot)" filter where type is "Does not equal" with added column and Lookup option
+	| SelectedValues |
+	| Empty          |
+	When User Add And "Owner Display Name" filter where type is "Equals" with added column and following value:
+	| Values                    |
+	| Spruill, Shea             |
+	| Bandyopadhyay, Sudipta    |
+	| Balanceactiv, Info        |
+	When User click on 'MailboxEve: Scheduled - mailbox (Slot)' column header
+	Then following content is displayed in the "MailboxEve: Scheduled - mailbox (Slot)" column
+	| Values                                             |
+	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
+	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
+	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
+	When User click on 'MailboxEve: Scheduled - mailbox (Slot)' column header
+	Then following content is displayed in the "MailboxEve: Scheduled - mailbox (Slot)" column
+	| Values                                             |
+	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
+	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
+	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |

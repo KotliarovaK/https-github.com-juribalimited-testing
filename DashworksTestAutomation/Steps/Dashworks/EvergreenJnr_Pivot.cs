@@ -407,7 +407,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyValueIsDisplayedOnTheFirstPlaceForThePivot()
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => columnElement.FirstEmptyValueLeftPinned);
             Assert.IsTrue(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is not displayed on the first place");
+        }
+
+        [Then(@"Empty value is not displayed on the first place for the Pivot")]
+        public void ThenEmptyValueIsNotDisplayedOnTheFirstPlaceForThePivot()
+        {
+            var columnElement = _driver.NowAt<PivotElementPage>();
+            Assert.IsFalse(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is displayed on the first place");
         }
 
         [Then(@"Empty value is displayed on the first place for the Pivot column header")]
@@ -424,7 +433,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var columnNames = columnElement.GetPivotHeadersContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
         }
 
         [Then(@"Pivot left-pinned column content is displayed in following order:")]
@@ -434,7 +443,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             var columnNames = columnElement.GetLeftPinnedColumnContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page is incorrect");
+            Assert.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");
         }
 
         [When(@"User expanded ""(.*)"" left-pinned value on Pivot")]
