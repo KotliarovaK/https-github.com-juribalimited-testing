@@ -448,6 +448,78 @@ namespace DashworksTestAutomation.Tests.Senior
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatNoErrorDisplayedAfterCreatingTaskForProject")]
+        [NUnit.Framework.CategoryAttribute("Senior")]
+        [NUnit.Framework.CategoryAttribute("Projects_Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
+        [NUnit.Framework.CategoryAttribute("DAS15668")]
+        public virtual void EvergreenJnr_AdminPage_ChecksThatNoErrorDisplayedAfterCreatingTaskForProject()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_ChecksThatNoErrorDisplayedAfterCreatingTaskForProjectInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_ChecksThatNoErrorDisplayedAfterCreatingTaskForProjectInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatNoErrorDisplayedAfterCreatingTaskForProject", null, new string[] {
+                        "Senior",
+                        "Projects_Dashboards",
+                        "Senior_Tasks",
+                        "DAS15668"});
+            this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+            this.FeatureBackground();
+            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
+                    " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Help",
+                        "StagesName",
+                        "TaskType",
+                        "ValueType",
+                        "ObjectType",
+                        "TaskValuesTemplate"});
+            table7.AddRow(new string[] {
+                        "Task15668",
+                        "13502",
+                        "Computer Information ---- Text fill; Text fill;",
+                        "Normal",
+                        "Date",
+                        "Computer",
+                        ""});
+            testRunner.And("User creates new Task on Senior", ((string)(null)), table7, "And ");
+            testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

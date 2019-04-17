@@ -92,6 +92,7 @@ namespace DashworksTestAutomation.Helpers
         {
             SelectOperator();
             _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.FindElement(
                     By.XPath(".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']"))
                 .SendKeys(_value);

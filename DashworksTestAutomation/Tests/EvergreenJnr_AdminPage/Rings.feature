@@ -17,6 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	When User type "TestRing" Name in the "Ring name" field on the Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
+	And User sees "2" rows in grid
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| TestRing         |

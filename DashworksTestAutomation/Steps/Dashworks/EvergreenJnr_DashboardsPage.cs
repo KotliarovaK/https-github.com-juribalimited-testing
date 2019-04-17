@@ -706,6 +706,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
 
+        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
+        public void ThenWidgetPreviewShowsFirstCellValue(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
+        }
+
         [Then(@"""(.*)"" Widget is displayed to the user")]
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
@@ -969,6 +976,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             Assert.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
+        }
+
+        [Then(@"Line X labels of ""(.*)"" widget is displayed in following order:")]
+        public void ThenLineLabelsIsDisplayedInFollowingOrder(string widgetName,  Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            List<string> labelList = page.GetPointOfLineWidgetByName(widgetName);
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+
+            Assert.AreEqual(expectedList, labelList, "Label order is incorrect");
         }
     }
    

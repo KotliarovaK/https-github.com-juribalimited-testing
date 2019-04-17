@@ -77,80 +77,68 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @Delete_Newly_Created_Project
-Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
+Scenario: EvergreenJnr_AdminPage_ChecksThatProjectContainsWarningIsNotDisplayedOnReadinessPage
 	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DAS16131_Project" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	And User clicks "Readiness" tab
-	Then Columns on Admin page is displayed in following order:
-	| ColumnName |
-	| Readiness  |
-	|            |
-	| Tooltip    |
-	| Ready      |
-	| Default for Applications    |
-	| Task Values Count           |
-	| Applications Count          |
-	| Object App Override Count   |
-	| Stage Overrides Count       |
-	| Task Values Templates Count |
-	When User select "Readiness" rows in the grid
-	| SelectedRowsName |
-	| RED              |
-	When User clicks on Actions button
-	And User clicks Delete button in Actions
-	And User clicks the "DELETE" Action button
-	Then Readiness Dialog Container is displayed to the User
-	And "Delete Readiness" title is displayed in the Readiness Dialog Container
-	When User clicks "CANCEL" button in the Readiness dialog screen
-	And User select "Readiness" rows in the grid
-	| SelectedRowsName |
-	| GREEN            |
-	And User clicks the "DELETE" Action button
-	Then Readiness Dialog Container is displayed to the User
-	Then "Delete Readinesses" title is displayed in the Readiness Dialog Container
-	Then Cancel button in the pop up is colored gray
-	Then Delete button in the pop up is colored amber
-	When User clicks "DELETE" button in the Readiness dialog screen
-	When User clicks Admin on the left-hand menu
-	And User enters "DAS16131_Project" text in the Search field for "Project" column
-	And User selects all rows on the grid
-	And User removes selected item
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148 @DAS16226
-Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptions
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User enters "1803 Rollout" text in the Search field for "Project" column
-	When User clicks content from "Project" column
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Details" tab
+	Then Warning message with "created objects which are not displayed in Evergreen" text is displayed on the Project Details Page
 	When User clicks "Readiness" tab
-	When User enters "red" text in the Search field for "Readiness" column
-	Then "FALSE" content is displayed for "Ready" column
-	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to ready" option in Cog-menu for "Red" item on Admin page
-	Then "TRUE" content is displayed for "Ready" column
-	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to not ready" option in Cog-menu for "Red" item on Admin page
-	Then "FALSE" content is displayed for "Ready" column
-	Then "1" content is displayed for "Task Values Count" column
-	When User have opened column settings for "Readiness" column
-	And User clicks Column button on the Column Settings panel
-	And User select "Ready" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then Columns on Admin page is displayed in following order:
-	| ColumnName                  |
-	| Readiness                   |
-	|                             |
-	| Tooltip                     |
-	| Default for Applications    |
-	| Task Values Count           |
-	| Applications Count          |
-	| Object App Override Count   |
-	| Stage Overrides Count       |
-	| Task Values Templates Count |
+	Then No warning message displayed on the Project Details Page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultReadinessCheckboxWorks
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	When User enters "BLUE" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	And User sets Default For Applications checkbox in "TRUE" state
+	And User clicks the "UPDATE" Action button
+	And User clicks the "CREATE READINESS" Action button
+	And User updates readiness properties
+	| Readiness | Tooltip            | Ready | DefaultForApplications | ColourTemplate |
+	| DAS14937  | tooltipForDas14937 | TRUE  | TRUE                   | RED            |
+	And User clicks the "CREATE" Action button
+	And User enters "BLUE" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	Then User sees Default For Applications checkbox in "FALSE" state
+	When User clicks the "CANCEL" Action button
+	And User enters "DAS14937" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	Then User sees Default For Applications checkbox in "TRUE" state
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	And User clicks the "CREATE READINESS" Action button
+	And User updates readiness properties
+	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate |
+	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            |
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The readiness has been created" text 
+	And Readiness "DAS14937_1" displayed before None
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	And User clicks the "CREATE READINESS" Action button
+	And User enters "testreadinesname_testreadinesname_testreadinesname_t" in Readiness field
+	Then User sees "testreadinesname_testreadinesname_testreadinesname" in Readiness field
+	And User sees "testreadinesname_testreadinesname_testreadinesname" in Tooltip field
+	When User enters "testtooltipname_testtooltipname_testtooltipname_test" in Tooltip field
+	Then User sees "testtooltipname_testtooltipname_testtooltipname_te" in Tooltip field
+	When User click Colour Template field
+	Then List of available colours displayed to user

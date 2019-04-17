@@ -27,6 +27,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+
+        public List<string> GetListOfReadinessLabel()
+        {
+            List<string> labels = new List<string>();
+            IList<IWebElement> webLabels = Driver.FindElements(By.XPath(".//div[@role='gridcell']//a"));
+
+            foreach (var webEl in webLabels)
+            {
+                labels.Add(webEl.Text);
+            }
+
+            return labels;
+        }
+
         public IWebElement GetReadinessDialogContainerTitle(string text)
         {
             var selector = By.XPath(

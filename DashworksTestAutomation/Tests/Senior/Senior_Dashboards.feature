@@ -113,3 +113,17 @@ Scenario: Senior_TasksPage_ChecksThatTasksObjectTypeDropBoxValuesNotDuplicatedAf
 	| User        |
 	| Computer    |
 	| Application |
+
+@Senior @Projects_Dashboards @Senior_Tasks @DAS15668
+Scenario: EvergreenJnr_AdminPage_ChecksThatNoErrorDisplayedAfterCreatingTaskForProject
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project
+	Then Project with "Windows 7 Migration (Computer Scheduled Project)" name is displayed correctly
+	When User navigate to "Tasks" tab
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name      | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
+	| Task15668 | 13502 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    | 
+	Then Success message is displayed with "Task successfully created" text
+	And There are no errors in the browser console
