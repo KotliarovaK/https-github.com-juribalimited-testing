@@ -585,6 +585,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsInTheWidgetDropdown(string objectName, string dropdownName)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
             createWidgetElement.SelectObjectForWidgetCreation(objectName);
         }
@@ -661,6 +662,27 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             Assert.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
+        }
+
+        [Then(@"Text Only is displayed for Card widget")]
+        public void ThenTextOnlyIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
+        }
+
+        [Then(@"Icon and Text is displayed for Card widget")]
+        public void ThenIconAndTextIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
+        }
+
+        [Then(@"Icon Only is displayed for Card widget")]
+        public void ThenIconOnlyIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
@@ -746,6 +768,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var getColor = page.ColorWidgetItem.GetAttribute("style").Split(';')
                 .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
             Assert.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
+        }
+
+        [Then(@"""(.*)"" color is displayed for Card Widget")]
+        public void ThenColorIsDisplayedForCardWidget(string color)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var getColor = page.ColorWidgetItem.GetCssValue("color");
+            Assert.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
         [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]

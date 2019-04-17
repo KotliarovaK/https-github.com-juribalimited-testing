@@ -18,5 +18,22 @@ namespace DashworksTestAutomation.Helpers
                     throw new Exception($"{colorName} color not found in convertor");
             }
         }
+
+        public static string ConvertComplianceColorWidget(string colorName)
+        {
+            switch (colorName)
+            {
+                case "Pink":
+                    return "rgb(226, 116, 171)";
+                case "Amber":
+                    return "rgba(235, 175, 37, 1)";
+                case "Grey":
+                    return "rgba(128, 139, 153, 1)";
+                case "Green":
+                    return "rgba(126, 189, 56, 1)";
+                default:
+                    throw new Exception($"{colorName} color not found in convertor");
+            }
+        }
     }
 }

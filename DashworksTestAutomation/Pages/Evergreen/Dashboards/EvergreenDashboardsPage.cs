@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'card-widget-value')]/div")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-data']//span")]
         public IWebElement ColorWidgetItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
@@ -87,6 +87,15 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
         public IWebElement WidgetPreview { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
+        public IWebElement IconOnlyCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'icon-and-text')]")]
+        public IWebElement IconAndTextCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-text')]")]
+        public IWebElement TextOnlyCardWidget { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]

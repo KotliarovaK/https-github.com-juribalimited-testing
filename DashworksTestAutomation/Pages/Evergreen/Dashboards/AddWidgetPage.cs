@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//deactivate-guard-dialog/parent::mat-dialog-container")]
         public IWebElement UnsavedChangesAlert { get; set; }
-        
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

@@ -843,7 +843,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	| Vendor      |
 	| Version     |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @DAS15134 @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @DAS15134 @DAS15355
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -865,7 +865,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And User create dynamic list with "1803 App Compliance" name on "Applications" page
 	Then "1803 App Compliance" list is displayed to user
 	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS16069_2" name
 	Then "New dashboard created" message is displayed
 	When User clicks the "ADD WIDGET" Action button
@@ -874,7 +874,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	And User selects "1803 App Compliance" as Widget List
 	When User selects "First Cell" in the "Type" Widget dropdown
 	Then Colour Scheme dropdown is not displayed to the user
-	When User clicks the "CANCEL" Action button
+	When User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks the "CREATE" Action button
+	Then Text Only is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Green" color is displayed for Card Widget
+	Then Icon and Text is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Green" color is displayed for Card Widget
+	Then Icon Only is displayed for Card widget
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title               | List                | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
@@ -961,3 +982,149 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card "WidgetForDAS15722" widget
 	Then "1" rows are displayed in the agGrid
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355
+Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	When User removes "Vendor" column by Column panel
+	When User removes "Version" column by Column panel
+	And User create dynamic list with "DAS15355_Applications_List" name on "Applications" page
+	Then "DAS15355_Applications_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS15355" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15355" as Widget Title
+	And User selects "DAS15355_Applications_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "CREATE" Action button
+	Then Text Only is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then Icon and Text is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then Icon Only is displayed for Card widget
+	When User clicks Settings button for "Dashboard_DAS15355" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355
+Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| 1803: Readiness |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Hostname" column by Column panel
+	When User removes "Device Type" column by Column panel
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	And User create dynamic list with "DAS15355_List" name on "Devices" page
+	Then "DAS15355_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS15355_1" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15355_1" as Widget Title
+	And User selects "DAS15355_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "CREATE" Action button
+	Then Text Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Grey" color is displayed for Card Widget
+	Then Icon and Text is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Grey" color is displayed for Card Widget
+	Then Icon Only is displayed for Card widget
+	When User clicks Settings button for "Dashboard_DAS15355_1" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355
+Scenario: EvergreenJnr_DashboardsPage_CheckBooleanFirstCellIconsForCardWidget
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| 1803: Readiness |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Hostname" column by Column panel
+	When User removes "Device Type" column by Column panel
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	And User create dynamic list with "DAS15355_List" name on "Users" page
+	Then "DAS15355_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS15355_1" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15355_1" as Widget Title
+	And User selects "DAS15355_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "CREATE" Action button
+	Then Text Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Grey" color is displayed for Card Widget
+	Then Icon and Text is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Grey" color is displayed for Card Widget
+	Then Icon Only is displayed for Card widget
+	When User clicks Settings button for "Dashboard_DAS15355_1" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
