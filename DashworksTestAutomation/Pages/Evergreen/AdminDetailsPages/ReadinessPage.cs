@@ -11,12 +11,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']/change-readiness-dialog")]
         public IWebElement ReadinessDialogContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE READINESS']/ancestor::button")]
+        public IWebElement CreateNewReadinessBtn { get; set; }
+
+
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.ReadinessDialogContainer)
+                SelectorFor(this, p => p.CreateNewReadinessBtn)
             };
         }
 
@@ -25,6 +30,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath(
                 $".//div[@class='mat-dialog-actions']/button/span[text()='{button}']");
             return Driver.FindElement(selector);
+        }
+
+
+        public List<string> GetListOfReadinessLabel()
+        {
+            List<string> labels = new List<string>();
+            IList<IWebElement> webLabels = Driver.FindElements(By.XPath(".//div[@role='gridcell']//a"));
+
+            foreach (var webEl in webLabels)
+            {
+                labels.Add(webEl.Text);
+            }
+
+            return labels;
         }
     }
 }

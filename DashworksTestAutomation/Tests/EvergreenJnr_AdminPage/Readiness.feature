@@ -78,3 +78,58 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectContainsWarningIsNotDisplayedO
 	Then Warning message with "created objects which are not displayed in Evergreen" text is displayed on the Project Details Page
 	When User clicks "Readiness" tab
 	Then No warning message displayed on the Project Details Page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultReadinessCheckboxWorks
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	When User enters "BLUE" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	And User sets Default For Applications checkbox in "TRUE" state
+	And User clicks the "UPDATE" Action button
+	And User clicks the "CREATE READINESS" Action button
+	And User updates readiness properties
+	| Readiness | Tooltip            | Ready | DefaultForApplications | ColourTemplate |
+	| DAS14937  | tooltipForDas14937 | TRUE  | TRUE                   | RED            |
+	And User clicks the "CREATE" Action button
+	And User enters "BLUE" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	Then User sees Default For Applications checkbox in "FALSE" state
+	When User clicks the "CANCEL" Action button
+	And User enters "DAS14937" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	Then User sees Default For Applications checkbox in "TRUE" state
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	And User clicks the "CREATE READINESS" Action button
+	And User updates readiness properties
+	| Readiness  | Tooltip              | Ready | DefaultForApplications | ColourTemplate |
+	| DAS14937_1 | tooltipForDas14937_1 | TRUE  | TRUE                   | RED            |
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The readiness has been created" text 
+	And Readiness "DAS14937_1" displayed before None
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+Scenario: EvergreenJnr_AdminPage_ChecksCreateReadinessElements
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	And User clicks the "CREATE READINESS" Action button
+	And User enters "testreadinesname_testreadinesname_testreadinesname_t" in Readiness field
+	Then User sees "testreadinesname_testreadinesname_testreadinesname" in Readiness field
+	And User sees "testreadinesname_testreadinesname_testreadinesname" in Tooltip field
+	When User enters "testtooltipname_testtooltipname_testtooltipname_test" in Tooltip field
+	Then User sees "testtooltipname_testtooltipname_testtooltipname_te" in Tooltip field
+	When User click Colour Template field
+	Then List of available colours displayed to user
