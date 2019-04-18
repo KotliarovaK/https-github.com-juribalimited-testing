@@ -118,27 +118,51 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	Then Cancel button in the pop up is colored gray
 	Then Delete button in the pop up is colored amber
 	When User clicks "DELETE" button in the Readiness dialog screen
+	Then Success message is displayed and contains "The selected readinesses have been deleted, changes might not take effect immediately" text
 	When User clicks Admin on the left-hand menu
 	And User enters "DAS16131_Project" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148 @DAS16226
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16148 @DAS16226 @DAS16163
 Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	When User clicks content from "Project" column
 	When User clicks "Readiness" tab
-	When User enters "red" text in the Search field for "Readiness" column
+	When User enters "Grey" text in the Search field for "Readiness" column
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to ready" option in Cog-menu for "Red" item on Admin page
+	When User clicks "Change to ready" option in Cog-menu for "Grey" item on Admin page
+	Then Success message is displayed and contains "The readiness has been updated" text
+	Then Success message is displayed and contains "click here to view the Grey readiness" link
+	Then Green banner contains following text "changes might not take effect immediately"
+	When User clicks newly created object link
 	Then "TRUE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
-	When User clicks "Change to not ready" option in Cog-menu for "Red" item on Admin page
+	When User clicks newly created object link
+	Then Update Readiness is displayed to the User
+	When User clicks the "CANCEL" Action button
+	When User clicks "Change to not ready" option in Cog-menu for "Grey" item on Admin page
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
+	When User clicks "Change to not ready" option in Cog-menu for "Green" item on Admin page
+	Then Success message is displayed and contains "The readiness has been updated" text
+	Then Success message is displayed and contains "click here to view the Green readiness" link
+	Then Green banner contains following text "changes might not take effect immediately"
+	When User clicks newly created object link
+	Then Update Readiness is displayed to the User
+	When User clicks the "CANCEL" Action button
+	When User clicks "Change to ready" option in Cog-menu for "Green" item on Admin page
+	When User clicks "Make default for applications" option in Cog-menu for "Light blue" item on Admin page
+	Then Success message is displayed and contains "The readiness has been updated" text
+	Then Success message is displayed and contains "click here to view the Light Blue readiness" link
+	Then Green banner contains following text "changes might not take effect immediately"
+	When User clicks newly created object link
+	Then Update Readiness is displayed to the User
+	When User clicks the "CANCEL" Action button
+	When User clicks "Make default for applications" option in Cog-menu for "Red" item on Admin page
 	When User have opened column settings for "Readiness" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Ready" checkbox on the Column Settings panel

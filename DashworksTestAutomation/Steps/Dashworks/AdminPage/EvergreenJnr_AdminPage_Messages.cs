@@ -123,6 +123,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"Green banner contains following text ""(.*)""")]
+        public void ThenGreenBannerContainsFollowingText(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            StringAssert.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
+        }
+
         [Then(@"Error message with ""(.*)"" text is displayed")]
         public void ThenErrorMessageWithTextIsDisplayedOnTheBucketsPage(string text)
         {
