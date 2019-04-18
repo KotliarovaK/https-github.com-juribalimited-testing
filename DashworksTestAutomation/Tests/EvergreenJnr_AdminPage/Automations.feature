@@ -130,12 +130,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	| Delete           |
 	When User enters "AM 150419 III" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed for "Active" column
-	When User clicks "Make inactive " option in Cog-menu for "AM 150419 III" item on Admin page
+	When User clicks "Make inactive" option in Cog-menu for "AM 150419 III" item on Admin page
 	Then "FALSE" content is displayed for "Active" column
 	When User clicks "Make active" option in Cog-menu for "AM 150419 III" item on Admin page
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Edit" option in Cog-menu for "AM 150419 III" item on Admin page
-	Then "Update Automation" page is displayed to the user
+	Then "Update Automation" page is displayed to the user on Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15741 @DAS15742
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly
@@ -147,9 +147,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	Then table with Setting menu column on Admin page is displayed in following order:
+	Then Columns on Admin page is displayed in following order:
     | ColumnName       |
+    |                  |
     | Automation       |
+    |                  |
     | Processing order |
     | Active           |
     | Run Status       |

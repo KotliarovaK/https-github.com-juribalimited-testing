@@ -645,5 +645,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return CogMenuDropdownLabel.GetCssValue("background-color");
         }
+
+        public IWebElement GetOpenedPageByName(string pageName)
+        {
+            var selector = By.XPath($"//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
+            return Driver.FindElement(selector);
+        }
     }
 }
