@@ -77,7 +77,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 	When User clicks "DELETE" button in the Readiness dialog screen
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When User clicks Admin on the left-hand menu
 	When User clicks the "CREATE PROJECT" Action button
@@ -139,14 +139,15 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Success message is displayed and contains "click here to view the Grey readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
 	When User clicks newly created object link
-	Then "TRUE" content is displayed for "Ready" column
-	Then "1" content is displayed for "Task Values Count" column
-	When User clicks newly created object link
 	Then Update Readiness is displayed to the User
 	When User clicks the "CANCEL" Action button
+	When User enters "Grey" text in the Search field for "Readiness" column
+	Then "TRUE" content is displayed for "Ready" column
+	Then "1" content is displayed for "Task Values Count" column
 	When User clicks "Change to not ready" option in Cog-menu for "Grey" item on Admin page
 	Then "FALSE" content is displayed for "Ready" column
 	Then "1" content is displayed for "Task Values Count" column
+	When User clicks Reset Filters button on the Admin page
 	When User clicks "Change to not ready" option in Cog-menu for "Green" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
 	Then Success message is displayed and contains "click here to view the Green readiness" link
@@ -155,7 +156,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	Then Update Readiness is displayed to the User
 	When User clicks the "CANCEL" Action button
 	When User clicks "Change to ready" option in Cog-menu for "Green" item on Admin page
-	When User clicks "Make default for applications" option in Cog-menu for "Light blue" item on Admin page
+	When User clicks "Make default for applications" option in Cog-menu for "Apps In Initiation" item on Admin page
 	Then Success message is displayed and contains "The readiness has been updated" text
 	Then Success message is displayed and contains "click here to view the Light Blue readiness" link
 	Then Green banner contains following text "changes might not take effect immediately"
