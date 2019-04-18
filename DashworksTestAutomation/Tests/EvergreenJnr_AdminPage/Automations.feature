@@ -90,3 +90,88 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| 7      |
 	| 8      |
 	| 9      |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740
+Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	#When User clicks Cog-menu for "AM 150419 I" item on Admin page
+	#Then User sees following cog-menu items on Admin page:
+	#| items            |
+	#| Edit             |
+	#| Duplicate        |
+	#| Move to top      |
+	#| Move to bottom   |
+	#| Move to position |
+	#| Make active      |
+	#| Delete           |
+	#When User clicks Cog-menu for "AM 150419 II" item on Admin page
+	#Then User sees following cog-menu items on Admin page:
+	#| items                         |
+	#| Edit             |
+	#| Duplicate        |
+	#| Move to top      |
+	#| Move to bottom   |
+	#| Move to position |
+	#| Make active      |
+	#| Delete           |
+	When User clicks Cog-menu for "AM 150419 III" item on Admin page
+	Then User sees following cog-menu items on Admin page:
+	| items            |
+	| Edit             |
+	| Run now          |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	| Make inactive    |
+	| Delete           |
+	When User enters "AM 150419 III" text in the Search field for "Automation" column
+	Then "TRUE" content is displayed for "Active" column
+	When User clicks "Make inactive " option in Cog-menu for "AM 150419 III" item on Admin page
+	Then "FALSE" content is displayed for "Active" column
+	When User clicks "Make active" option in Cog-menu for "AM 150419 III" item on Admin page
+	Then "TRUE" content is displayed for "Active" column
+	When User clicks "Edit" option in Cog-menu for "AM 150419 III" item on Admin page
+	Then "Update Automation" page is displayed to the user
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15741 @DAS15742
+Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then table with Setting menu column on Admin page is displayed in following order:
+    | ColumnName       |
+    | Automation       |
+    | Processing order |
+    | Active           |
+    | Run Status       |
+    | Scope            |
+    | Run              |
+    | Actions          |
+    | Description      |
+	Then numeric data in table is sorted by "Processing order" column in ascending order on the Admin page
+	#When User clicks Cog-menu for "AM 150419 I" item on Admin page
+	#Then User sees following cog-menu items on Admin page:
+	#| items            |
+	#| Edit             |
+	#| Run now          |
+	#| Duplicate        |
+	#| Move to bottom   |
+	#| Move to position |
+	#| Make active      |
+	#| Delete           |
+	When User clicks "Move to top" option in Cog-menu for "AM 150419 III" item on Admin page
+	Then column content is displayed in the following order:
+	| Items         |
+	| AM 150419 III |
+	| AM 150419 I   |
+	| AM 150419  II |
+	| AM Test 1     |
