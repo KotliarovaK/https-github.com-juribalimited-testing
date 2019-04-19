@@ -62,9 +62,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         public int GetColourStatusTextNumber()
         {
             var statusTextSelector = $"//mat-option[@role='option']//span[@class='status-text']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(statusTextSelector));
+            //Driver.WaitWhileControlIsNotDisplayed(By.XPath(statusTextSelector));
             return Driver.FindElements(By.XPath(statusTextSelector)).Count;
         }
-
     }
 }
