@@ -970,6 +970,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Assert.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
         }
+
+        [When(@"User selects ""(.*)"" checkbox on the Create Widget page")]
+        public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.GetDashboardCheckboxByName(checkboxName).Click();
+        }
+
+        [Then(@"""(.*)"" checkbox is not displayed on the Create Widget page")]
+        public void ThenCheckboxIsNotDisplayedOnTheCreateWidgetPage(string checkboxName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsTrue(page.GetDashboardCheckboxByName(checkboxName).Displayed(), $"{checkboxName} checkbox is displayed");
+        }
     }
-   
 }

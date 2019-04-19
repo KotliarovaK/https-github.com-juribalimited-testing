@@ -1078,3 +1078,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks Settings button for "Dashboard_DAS15355_1" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15662
+Scenario Outline: EvergreenJnr_DashboardsPage_Check
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "DAS15662_Dashboard" name
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "<WidgetType>" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15662" as Widget Title
+	And User selects "All Devices" as Widget List
+	When User selects "Count" in the "Aggregate Function" Widget dropdown
+	When User selects "Hostname" in the "Split By" Widget dropdown
+	When User selects "Count ASC" in the "Order By" Widget dropdown
+	When User selects "Data Label" checkbox on the Create Widget page
+	#Then "" checkbox is not displayed on the Create Widget page
+
+	Examples:
+	| WidgetType |
+	| Pie        |
+	| Half donut |
+	| Donut      |
