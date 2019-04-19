@@ -2468,7 +2468,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.MouseHover(page.GetCogMenuByItem(itemName));
             page.GetCogMenuByItem(itemName).Click();
             page.GetCogmenuOptionByName(option).Click();
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
         }
 
         [Then(@"Cog-menu DDL is displayed in High Contrast mode")]

@@ -91,12 +91,14 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| 8      |
 	| 9      |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740
+#May need to add creation three 'Automations' for this test later??
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
+#Remove hash after fix issue with 'Run Status' state
 	#When User clicks Cog-menu for "AM 150419 I" item on Admin page
 	#Then User sees following cog-menu items on Admin page:
 	#| items            |
@@ -132,12 +134,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Make inactive" option in Cog-menu for "AM 150419 III" item on Admin page
 	Then "FALSE" content is displayed for "Active" column
+	When User clicks Cog-menu for "AM 150419 III" item on Admin page
+	Then User sees following cog-menu items on Admin page:
+	| items            |
+	| Edit             |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	| Make active      |
+	| Delete           |
 	When User clicks "Make active" option in Cog-menu for "AM 150419 III" item on Admin page
 	Then "TRUE" content is displayed for "Active" column
 	When User clicks "Edit" option in Cog-menu for "AM 150419 III" item on Admin page
 	Then "Update Automation" page is displayed to the user on Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15741 @DAS15742
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15742
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -159,7 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
     | Run              |
     | Actions          |
     | Description      |
-	Then numeric data in table is sorted by "Processing order" column in ascending order on the Admin page
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	#When User clicks Cog-menu for "AM 150419 I" item on Admin page
 	#Then User sees following cog-menu items on Admin page:
 	#| items            |
@@ -168,12 +180,124 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	#| Duplicate        |
 	#| Move to bottom   |
 	#| Move to position |
-	#| Make active      |
+	#| Make inactive    |
 	#| Delete           |
-	When User clicks "Move to top" option in Cog-menu for "AM 150419 III" item on Admin page
+	When User clicks Cog-menu for "AM 150419 II" item on Admin page
+	Then User sees following cog-menu items on Admin page:
+	| items            |
+	| Edit             |
+	| Run now          |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	| Make inactive    |
+	| Delete           |
+	When User clicks "Move to top" option in Cog-menu for "AM 150419 II" item on Admin page
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	Then column content is displayed in the following order:
 	| Items         |
-	| AM 150419 III |
+	| AM 150419 II  |
 	| AM 150419 I   |
-	| AM 150419  II |
+	| AM 150419 III |
 	| AM Test 1     |
+	When User clicks "Administration" navigation link on the Admin page
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
+	| Items         |
+	| AM 150419 II  |
+	| AM 150419 I   |
+	| AM 150419 III |
+	| AM Test 1     |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15743
+Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWorksCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then Columns on Admin page is displayed in following order:
+    | ColumnName       |
+    |                  |
+    | Automation       |
+    |                  |
+    | Processing order |
+    | Active           |
+    | Run Status       |
+    | Scope            |
+    | Run              |
+    | Actions          |
+    | Description      |
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	#When User clicks Cog-menu for "AM Test 1" item on Admin page
+	#Then User sees following cog-menu items on Admin page:
+	#| items            |
+	#| Edit             |
+	#| Run now          |
+	#| Duplicate        |
+	#| Move to top      |
+	#| Move to position |
+	#| Make inactive    |
+	#| Delete           |
+	When User clicks Cog-menu for "AM 150419 II" item on Admin page
+	Then User sees following cog-menu items on Admin page:
+	| items            |
+	| Edit             |
+	| Run now          |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	| Make inactive    |
+	| Delete           |
+	When User clicks "Move to bottom" option in Cog-menu for "AM 150419 II" item on Admin page
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
+	| Items         |
+	| AM 150419 I   |
+	| AM 150419 III |
+	| AM Test 1     |
+	| AM 150419 II  |
+	When User clicks "Administration" navigation link on the Admin page
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
+	| Items         |
+	| AM 150419 I   |
+	| AM 150419 III |
+	| AM Test 1     |
+	| AM 150419 II  |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15744
+Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	When User move "AM 150419 II" item to "2" position on Admin page
