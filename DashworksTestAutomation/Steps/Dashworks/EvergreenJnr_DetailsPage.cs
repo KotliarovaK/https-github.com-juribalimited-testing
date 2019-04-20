@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -372,6 +373,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 menu.DateFromValue.SendKeys(row["DateFrom"]);
                 menu.DateToValue.SendKeys(row["DateTo"]);
             }
+            var body = _driver.NowAt<BaseGridPage>();
+            body.BodyContainer.Click();
         }
 
         [When(@"User select criteria with following date:")]

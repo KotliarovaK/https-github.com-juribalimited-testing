@@ -749,7 +749,7 @@ Examples:
 	| Users     | ZZZ588323                        | Username      | Device Projects       |
 	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox User Projects |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292
 Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -760,10 +760,11 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	And User have opened Column Settings for "Date" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
 	And User select In Range value with following date:
-	| DateFrom | DateTo  |
-	| 5222014  | 5202018 |
-	Then "2" rows found label displays on Details Page
+	| DateFrom    | DateTo      |
+	| 22 May 2014 | 22 May 2018 |
+	Then Rows counter shows "2" of "9" rows
 
+#'not_run' because of errors in the browser console
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Delete_Newly_Created_Bucket @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
 	When User clicks Admin on the left-hand menu
