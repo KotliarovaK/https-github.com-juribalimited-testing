@@ -111,7 +111,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	#| Delete           |
 	#When User clicks Cog-menu for "AM 150419 II" item on Admin page
 	#Then User sees following cog-menu items on Admin page:
-	#| items                         |
+	#| items            |
 	#| Edit             |
 	#| Duplicate        |
 	#| Move to top      |
@@ -315,7 +315,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	| AM 150419 III |
 	| AM Test 1     |
 	When User move "AM 150419 I" item to "100" position on Admin page
-	hen User have opened column settings for "Automation" column
+	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
