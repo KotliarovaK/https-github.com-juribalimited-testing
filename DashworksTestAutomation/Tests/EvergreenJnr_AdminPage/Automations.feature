@@ -300,4 +300,51 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	When User move "AM 150419 II" item to "2" position on Admin page
+	When User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
+	| Items         |
+	| AM 150419 I   |
+	| AM 150419 II  |
+	| AM 150419 III |
+	| AM Test 1     |
+	When User move "AM 150419 I" item to "100" position on Admin page
+	hen User have opened column settings for "Automation" column
+	And User clicks Column button on the Column Settings panel
+	And User select "Processing order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
+	| Items         |
+	| AM 150419 II  |
+	| AM 150419 III |
+	| AM Test 1     |
+	| AM 150419 I   |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15749 @DAS15750
+Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorksCorrectlyForDifferentRunningState
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+#change item name when state status will be fixed
+	When User clicks "Remove" option in Cog-menu for "AM 150419 III" item on Admin page
+	Then "AM 150419 III" item is not displayed in the grid on Admin page
+	When User clicks "Remove" option in Cog-menu for "AM 150419 II" item on Admin page
+	Then Error message with "This automation is currently running" text is displayed
+	When User clicks Cog-menu for "AM 150419 II" item on Admin page
+	Then User sees following cog-menu items on Admin page:
+	| items            |
+	| Edit             |
+	| Duplicate        |
+	| Move to top      |
+	| Move to bottom   |
+	| Move to position |
+	| Make active      |
+	| Delete           |
