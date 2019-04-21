@@ -594,7 +594,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15737 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15737 @DAS15662 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -620,6 +620,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	When User selects "prK: Application Readiness ASC" in the "Order By" Widget dropdown
 	And User clicks on the Colour Scheme dropdown
 	Then Colour Scheme dropdown is displayed to the user
+	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 	When User clicks Settings button for "Dashboard for DAS15737" dashboard
 	And User clicks Delete button for custom list
@@ -931,7 +932,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 	
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15920
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15920 @DAS15662
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Columns button
@@ -950,6 +951,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	| WidgetType | Title                 | List            | Type | AggregateBy | AggregateFunction | SplitBy                       | OrderBy                           | MaxValues | ShowLegend | TableOrientation | Drilldown |
 	| Line       | LineWidgetForDas15920 | ListForDas15920 |      |             | Count             | Device Application Compliance | Device Application Compliance ASC |           |            |                  | Yes       |
 	Then Widget Preview is displayed to the user
+	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 	Then Card "LineWidgetForDas15920" Widget is displayed to the user
 	And Line chart displayed in "LineWidgetForDas15920" widget
@@ -1029,7 +1031,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355 @DAS15662
 Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1056,6 +1058,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User selects "Text Only" in the "Layout" Widget dropdown
 	Then Text Only is displayed for Card widget
 	Then "Grey" color is displayed for Card Widget
+	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 	Then Text Only is displayed for Card widget
 	Then "Grey" color is displayed for Card Widget
@@ -1080,7 +1083,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	And User clicks Delete button on the warning message in the lists panel
 
 @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15662
-Scenario Outline: EvergreenJnr_DashboardsPage_Check
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "DAS15662_Dashboard" name
 	And User clicks the "ADD WIDGET" Action button
@@ -1091,9 +1094,19 @@ Scenario Outline: EvergreenJnr_DashboardsPage_Check
 	When User selects "Hostname" in the "Split By" Widget dropdown
 	When User selects "Count ASC" in the "Order By" Widget dropdown
 	When User selects "Data Label" checkbox on the Create Widget page
-	#Then "" checkbox is not displayed on the Create Widget page
+	Then Data Labels are displayed on the Create Widget page
+	Then "00OMQQXWA1DRI6" data label is displayed on the Create Widget page
+	When User clicks the "CREATE" Action button
+	Then Data Labels are displayed on the Create Widget page
+	Then "00OMQQXWA1DRI6" data label is displayed on the Create Widget page
+	When User clicks Ellipsis menu for Section having "WidgetForDAS15662" Widget on Dashboards page
+	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
+	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	Then "Data Label" checkbox is checked on the Create Widget page
+	Then Data Labels are displayed on the Create Widget page
 
-	Examples:
+Examples:
 	| WidgetType |
 	| Pie        |
 	| Half donut |

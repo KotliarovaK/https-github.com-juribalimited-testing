@@ -978,6 +978,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetDashboardCheckboxByName(checkboxName).Click();
         }
 
+        [Then(@"Data Labels are displayed on the Create Widget page")]
+        public void ThenDataLabelsAreDisplayedOnTheCreateWidgetPage()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
+            
+        }
+
+        [Then(@"""(.*)"" data label is displayed on the Create Widget page")]
+        public void ThenDataLabelIsDisplayedOnTheCreateWidgetPage(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
+        }
+
+        [Then(@"""(.*)"" checkbox is checked on the Create Widget page")]
+        public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"));
+        }
+
         [Then(@"""(.*)"" checkbox is not displayed on the Create Widget page")]
         public void ThenCheckboxIsNotDisplayedOnTheCreateWidgetPage(string checkboxName)
         {
