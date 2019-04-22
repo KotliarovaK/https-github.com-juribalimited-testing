@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-drawer-inner-container']")]
         public IWebElement TabContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]

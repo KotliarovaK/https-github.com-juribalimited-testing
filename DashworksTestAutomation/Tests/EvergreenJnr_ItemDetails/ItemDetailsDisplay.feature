@@ -1259,12 +1259,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	| Description                     |
 	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16009
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsSummarySection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	And User navigates to the "Applications" tab
+	When User navigates to the "Applications" tab-menu on the Details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Application  |
@@ -1280,10 +1280,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	And User navigates to the "Applications" tab
-	When User closes "Application Summary" section on the Details Page
-	And User opens "Application Detail" section on the Details Page
-	When User closes left-hand menu
+	When User navigates to the "Applications" tab-menu on the Details page
+	When User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName           |
 	| Application          |
@@ -1299,15 +1297,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Used Date            |
 	| Used Duration (mins) |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	And User navigates to the "Applications" tab
-	When User closes "Application Summary" section on the Details Page
-	And User opens "Advertisements" section on the Details Page
-	Then section is loaded correctly
+	When User navigates to the "Applications" tab-menu on the Details page
+	When User navigates to the "Advertisements" sub-menu on the Details page
 	Then table content is present
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
