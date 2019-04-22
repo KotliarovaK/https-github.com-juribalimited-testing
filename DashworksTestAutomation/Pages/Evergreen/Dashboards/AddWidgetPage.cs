@@ -126,6 +126,11 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(By.XPath(".//mat-option"));
         }
 
+        public bool GetCheckboxByName(string checkboxName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox"));
+        }
+
         public IWebElement GetDashboardCheckboxByName(string checkboxName)
         {
             var selector = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox");

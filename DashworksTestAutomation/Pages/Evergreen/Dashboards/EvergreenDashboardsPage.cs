@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Pages
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "g[class~=highcharts-data-label]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

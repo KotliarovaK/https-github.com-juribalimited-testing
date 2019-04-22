@@ -1006,7 +1006,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsNotDisplayedOnTheCreateWidgetPage(string checkboxName)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            Assert.IsTrue(page.GetDashboardCheckboxByName(checkboxName).Displayed(), $"{checkboxName} checkbox is displayed");
+            Assert.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
         }
     }
 }
