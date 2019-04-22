@@ -989,4 +989,34 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| 1507                   |
 	| 1607                   |
 
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16127
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And user select "1803: Readiness" filter
+	And User clicks in search field in the Filter block
+	And User enters "Red" text in Search field at selected Lookup Filter
+	And User clicks checkbox at selected Lookup Filter
+	And User clicks Save filter button
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| 1803: Readiness |
+	And User move '1803: Readiness' column to 'Hostname' column
+	And User move 'Hostname' column to 'Operating System' column
+	And User create dynamic list with "DeviceListFor16127" name on "Devices" page
+	Then "DeviceListFor16127" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS16127" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS16127 | DeviceListFor16127 | First Cell |             |                   |         |         |           |            |                  |           |
+	Then Widget Preview is displayed to the user
+	And Widget Preview shows "RED" as First Cell value
+	And There are no errors in the browser console
+
 	
