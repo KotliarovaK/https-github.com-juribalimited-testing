@@ -97,6 +97,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-text')]")]
         public IWebElement TextOnlyCardWidget { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-data']")]
+        public IWebElement CardWidgetValue { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }

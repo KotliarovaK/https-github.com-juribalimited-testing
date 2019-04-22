@@ -1115,3 +1115,29 @@ Examples:
 	| Pie        | 00RUUMAH9OZN9A |
 	| Half donut | 00RUUMAH9OZN9A |
 	| Donut      | 00RUUMAH9OZN9A |
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16266
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
+	When User clicks "Devices" on the left-hand menu
+	When User click on 'Owner Display Name' column header
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Hostname" column by Column panel
+	When User removes "Device Type" column by Column panel
+	When User removes "Operating System" column by Column panel
+	And User create dynamic list with "DAS16266_List" name on "Devices" page
+	Then "DAS16266_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "DAS16266_Dashboard" name
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS16266" as Widget Title
+	And User selects "DAS16266_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User clicks the "CREATE" Action button
+	Then Card Widget is blank
+	When User clicks Settings button for "DAS16266_Dashboard" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+	Then Search field in selected Filter is empty

@@ -994,6 +994,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
         }
 
+        [Then(@"Card Widget is blank")]
+        public void ThenCardWidgetIsBlank()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsEmpty(page.CardWidgetValue.Text);
+        }
+
         [Then(@"""(.*)"" checkbox is checked on the Create Widget page")]
         public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
         {
