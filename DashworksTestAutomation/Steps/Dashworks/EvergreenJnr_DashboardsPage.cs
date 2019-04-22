@@ -978,18 +978,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetDashboardCheckboxByName(checkboxName).Click();
         }
 
-        [Then(@"Data Labels are displayed on the Create Widget page")]
-        public void ThenDataLabelsAreDisplayedOnTheCreateWidgetPage()
+        [Then(@"Data Labels are displayed on the Dashboards page")]
+        public void ThenDataLabelsAreDisplayedOnTheDashboardsPage()
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
-            
         }
 
-        [Then(@"""(.*)"" data label is displayed on the Create Widget page")]
-        public void ThenDataLabelIsDisplayedOnTheCreateWidgetPage(string text)
+        [Then(@"""(.*)"" data label is displayed on the Dashboards page")]
+        public void ThenDataLabelIsDisplayedOnTheDashboardsPage(string text)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
         }
 
@@ -997,6 +998,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
         {
             var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"));
         }
 

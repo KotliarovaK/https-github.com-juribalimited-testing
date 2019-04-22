@@ -1090,24 +1090,28 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	When User selects "<WidgetType>" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS15662" as Widget Title
 	And User selects "All Devices" as Widget List
-	When User selects "Count" in the "Aggregate Function" Widget dropdown
 	When User selects "Hostname" in the "Split By" Widget dropdown
+	When User selects "Count" in the "Aggregate Function" Widget dropdown
 	When User selects "Count ASC" in the "Order By" Widget dropdown
 	When User selects "Data Label" checkbox on the Create Widget page
-	Then Data Labels are displayed on the Create Widget page
-	Then "00OMQQXWA1DRI6" data label is displayed on the Create Widget page
+	Then Data Labels are displayed on the Dashboards page
+	#Then "<DataLabel>" data label is displayed on the Dashboards page
 	When User clicks the "CREATE" Action button
-	Then Data Labels are displayed on the Create Widget page
-	Then "00OMQQXWA1DRI6" data label is displayed on the Create Widget page
-	When User clicks Ellipsis menu for Section having "WidgetForDAS15662" Widget on Dashboards page
+	Then Data Labels are displayed on the Dashboards page
+	#Then "<DataLabel>" data label is displayed on the Dashboards page
+	When User clicks Ellipsis menu for "WidgetForDAS15662" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
 	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	Then "Data Label" checkbox is checked on the Create Widget page
-	Then Data Labels are displayed on the Create Widget page
+	Then Data Labels are displayed on the Dashboards page
+	#Then "<DataLabel>" data label is displayed on the Dashboards page
+	When User clicks Settings button for "DAS15662_Dashboard" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
 
 Examples:
-	| WidgetType |
-	| Pie        |
-	| Half donut |
-	| Donut      |
+	| WidgetType | DataLabel      |
+	| Pie        | 00RUUMAH9OZN9A |
+	| Half donut | 00RUUMAH9OZN9A |
+	| Donut      | 00RUUMAH9OZN9A |

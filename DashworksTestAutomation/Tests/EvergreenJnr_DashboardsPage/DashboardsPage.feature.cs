@@ -4950,17 +4950,17 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15662")]
-        [NUnit.Framework.TestCaseAttribute("Pie", null)]
-        [NUnit.Framework.TestCaseAttribute("Half donut", null)]
-        [NUnit.Framework.TestCaseAttribute("Donut", null)]
-        public virtual void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget(string widgetType, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Pie", "00RUUMAH9OZN9A", null)]
+        [NUnit.Framework.TestCaseAttribute("Half donut", "00RUUMAH9OZN9A", null)]
+        [NUnit.Framework.TestCaseAttribute("Donut", "00RUUMAH9OZN9A", null)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget(string widgetType, string dataLabel, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidgetInternal(widgetType,exampleTags);
+                    this.EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidgetInternal(widgetType,dataLabel,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -4979,7 +4979,7 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidgetInternal(string widgetType, string[] exampleTags)
+        private void EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidgetInternal(string widgetType, string dataLabel, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
@@ -5011,26 +5011,21 @@ this.FeatureBackground();
 #line 1092
  testRunner.And("User selects \"All Devices\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1093
- testRunner.When("User selects \"Count\" in the \"Aggregate Function\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1094
  testRunner.When("User selects \"Hostname\" in the \"Split By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1094
+ testRunner.When("User selects \"Count\" in the \"Aggregate Function\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1095
  testRunner.When("User selects \"Count ASC\" in the \"Order By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1096
  testRunner.When("User selects \"Data Label\" checkbox on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1097
- testRunner.Then("Data Labels are displayed on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1098
- testRunner.Then("\"00OMQQXWA1DRI6\" data label is displayed on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1099
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1100
- testRunner.Then("Data Labels are displayed on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1101
- testRunner.Then("\"00OMQQXWA1DRI6\" data label is displayed on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1102
- testRunner.When("User clicks Ellipsis menu for Section having \"WidgetForDAS15662\" Widget on Dashbo" +
-                    "ards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS15662\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1103
  testRunner.And("User clicks \"Duplicate\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1104
@@ -5040,7 +5035,13 @@ this.FeatureBackground();
 #line 1106
  testRunner.Then("\"Data Label\" checkbox is checked on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1107
- testRunner.Then("Data Labels are displayed on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1109
+ testRunner.When("User clicks Settings button for \"DAS15662_Dashboard\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1110
+ testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1111
+ testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
