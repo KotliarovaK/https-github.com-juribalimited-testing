@@ -176,6 +176,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AutomationsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\UpdateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
@@ -277,6 +278,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AdminPageNavigation.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_CogMenuActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />

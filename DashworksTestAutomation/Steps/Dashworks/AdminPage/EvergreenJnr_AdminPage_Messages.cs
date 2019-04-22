@@ -10,7 +10,6 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 {
     [Binding]
-
     internal class EvergreenJnr_AdminPage_Messages : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;

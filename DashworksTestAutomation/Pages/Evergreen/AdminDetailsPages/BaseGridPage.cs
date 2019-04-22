@@ -123,9 +123,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']/ancestor::mat-select")]
         public IWebElement ActionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]
-        public IWebElement CogMenu { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]")]
         public IWebElement DeleteButtonInActions { get; set; }
 
@@ -177,12 +174,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
         public IList<IWebElement> TeamListInFilterDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='menu']")]
-        public IWebElement CogMenuDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div/ul[@class='menu-settings']//a")]
-        public IWebElement CogMenuDropdownLabel { get; set; }
 
         [FindsBy(How = How.XPath, Using = Row)]
         public IList<IWebElement> RowsList { get; set; }
@@ -621,29 +612,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($"//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetCogMenuByItem(string item)
-        {
-            var selector = By.XPath($"//div[@title='{item}']/./following-sibling::div//div[@class='cell-menu-settings']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
-        public IWebElement GetCogmenuOptionByName(string option)
-        {
-            var selector = By.XPath($"//*[contains(text(), '{option}')]/ancestor::li[@class='ng-star-inserted']");
-            return Driver.FindElement(selector);
-        }
-
-        public string GetCogMenuDropdownColor()
-        {
-            return CogMenuDropdown.GetCssValue("background-color");
-        }
-
-        public string GetCogMenuDropdownLabelColor()
-        {
-            return CogMenuDropdownLabel.GetCssValue("background-color");
         }
 
         public IWebElement GetOpenedPageByName(string pageName)
