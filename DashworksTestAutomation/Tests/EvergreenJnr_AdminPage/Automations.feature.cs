@@ -358,6 +358,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15739")]
         [NUnit.Framework.CategoryAttribute("DAS15740")]
         [NUnit.Framework.CategoryAttribute("DAS15741")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly()
         {
             System.Exception lastException = null;
@@ -394,7 +395,8 @@ this.FeatureBackground();
                         "DAS15431",
                         "DAS15739",
                         "DAS15740",
-                        "DAS15741"});
+                        "DAS15741",
+                        "Not_Ready"});
 #line 96
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -483,6 +485,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15742")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -517,7 +520,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS15431",
-                        "DAS15742"});
+                        "DAS15742",
+                        "Not_Ready"});
 #line 153
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -661,6 +665,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15743")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -696,7 +701,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS15431",
-                        "DAS15743"});
+                        "DAS15743",
+                        "Not_Ready"});
 #line 224
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -840,6 +846,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15744")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -875,7 +882,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS15431",
-                        "DAS15744"});
+                        "DAS15744",
+                        "Not_Ready"});
 #line 295
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -967,6 +975,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15749")]
         [NUnit.Framework.CategoryAttribute("DAS15750")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorksCorrectlyForDifferentRunningState()
         {
             System.Exception lastException = null;
@@ -1003,7 +1012,8 @@ this.FeatureBackground();
                         "Automations",
                         "DAS15431",
                         "DAS15749",
-                        "DAS15750"});
+                        "DAS15750",
+                        "Not_Ready"});
 #line 331
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
