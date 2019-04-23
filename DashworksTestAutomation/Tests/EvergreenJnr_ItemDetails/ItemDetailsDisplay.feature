@@ -1220,8 +1220,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThro
 	Then "Users" list should be displayed to the user
 	When User perform search by "TON2490708"
 	And User click content from "Username" column
-	And User navigates to the "Projects" tab
-	And User opens "Device Projects" section on the Details Page
+	Then Details page for "TON2490708" item is displayed to the user
+	When User navigates to the "Projects" tab-menu on the Details page
+	When User navigates to the "Device Project Summary" sub-menu on the Details page
 	When User clicks content from "Project" column
 	Then "Project Object" page is displayed to the user
 
@@ -1230,7 +1231,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	And User navigates to the "Details" tab
+	When User navigates to the "Details" tab-menu on the Details page
 	Then "Key" title matches the "9141" value
 	Then following content is displayed on the Details Page
 	| Title                     | Value           |
@@ -1240,15 +1241,14 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	| Inventory Site            | A01             |
 	Then empty value is displayed for "Dashworks First Seen Date" field on the Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889 @DAS16378
 Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObjectSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "00OMQQXWA1DRI6"
 	And User click content from "Hostname" column
-	And User navigates to the "Details" tab
-	When User closes "Device" section on the Details Page
-	And User opens "Computer AD Object" section on the Details Page
+	Then Details page for "00OMQQXWA1DRI6" item is displayed to the user
+	When User navigates to the "Active Directory" tab-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields                          |
 	| Directory Type                  |
@@ -1328,3 +1328,84 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	#Then following filters in Column Settings panel are displayed on the Details Page:
 	#| FilterCheckboxes |
 	#|                  |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16366 @DAS16246
+Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMenuSubItems
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then "Details" tab-menu on the Details page is expanded
+	Then "Projects" tab-menu on the Details page is not expanded
+	Then "Specification" tab-menu on the Details page is not expanded
+	Then "Active Directory" tab-menu on the Details page is not expanded
+	Then "Applications" tab-menu on the Details page is not expanded
+	Then "Compliance" tab-menu on the Details page is not expanded
+	When User navigates to the "Projects" tab-menu on the Details page
+	When User navigates to the "Projects Summary" sub-menu on the Details page
+	Then "Projects" tab-menu on the Details page is expanded
+	Then "Details" tab-menu on the Details page is not expanded
+	Then "Specification" tab-menu on the Details page is not expanded
+	Then "Active Directory" tab-menu on the Details page is not expanded
+	Then "Applications" tab-menu on the Details page is not expanded
+	Then "Compliance" tab-menu on the Details page is not expanded
+	When User navigates to the "Active Directory" tab-menu on the Details page
+	When User navigates to the "Active Directory" sub-menu on the Details page
+	Then "Active Directory" tab-menu on the Details page is expanded
+	Then "Details" tab-menu on the Details page is not expanded
+	Then "Projects" tab-menu on the Details page is not expanded
+	Then "Specification" tab-menu on the Details page is not expanded
+	Then "Applications" tab-menu on the Details page is not expanded
+	Then "Compliance" tab-menu on the Details page is not expanded
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378
+Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then User sees following tabs on left menu on the Details page:
+	| TabName          |
+	| Details          |
+	| Projects         |
+	| Specification    |
+	| Active Directory |
+	| Applications     |
+	| Compliance       |
+	Then "Details" tab-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| Device                  |
+	| Device Owner            |
+	| Department and Location |
+	| Custom Fields           |
+	Then "Projects" tab-menu on the Details page contains following sub-menu:
+	| SubTabName             |
+	| Evergreen Details      |
+	| Projects Summary       |
+	| Owner Projects Summary |
+	Then "Specification" tab-menu on the Details page contains following sub-menu:
+	| SubTabName    |
+	| Specification |
+	| Network Cards |
+	| CPUs          |
+	| Video Cards   |
+	| Monitors      |
+	| Sound Cards   |
+	Then "Active Directory" tab-menu on the Details page contains following sub-menu:
+	| SubTabName       |
+	| Active Directory |
+	| Groups           |
+	| LDAP             |
+	Then "Applications" tab-menu on the Details page contains following sub-menu:
+	| SubTabName        |
+	| Evergreen Summary |
+	| Evergreen Detail  |
+	| Advertisements    |
+	| Collections       |
+	Then "Compliance" tab-menu on the Details page contains following sub-menu:
+	| SubTabName          |
+	| Overview            |
+	| Hardware Summary    |
+	| Hardware Rules      |
+	| Application Summary |
+	| Application Issues  |

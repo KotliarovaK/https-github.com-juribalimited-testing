@@ -92,7 +92,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| 9      |
 
 #May need to add creation three 'Automations' for this test later??
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15739 @DAS15740 @DAS15741 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly
 	When User clicks "Edit" option in Cog-menu for "AM 150419 III" item on Admin page
 	Then "Update Automation" page is displayed to the user on Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15742
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15742 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -220,7 +220,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	| AM 150419 III |
 	| AM Test 1     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15743
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15743 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -291,7 +291,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| AM Test 1     |
 	| AM 150419 II  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15744
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15744 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -327,7 +327,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	| AM Test 1     |
 	| AM 150419 I   |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15749 @DAS15750
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15749 @DAS15750 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorksCorrectlyForDifferentRunningState
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
