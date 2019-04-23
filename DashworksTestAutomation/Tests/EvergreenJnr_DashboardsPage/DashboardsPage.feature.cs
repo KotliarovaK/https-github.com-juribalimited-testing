@@ -5153,6 +5153,84 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS15200")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DashboardsPage",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS15200"});
+#line 1146
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1147
+ testRunner.When("User clicks \"print\"  button on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1148
+ testRunner.Then("Print Preview is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1149
+ testRunner.When("User selects \"A4\" option in the \"Paper size\" dropdown for Print Preview Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1150
+ testRunner.Then("Print Preview is displayed in A4 format view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1151
+ testRunner.When("User selects \"Letter\" option in the \"Paper size\" dropdown for Print Preview Setti" +
+                    "ngs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1152
+ testRunner.Then("Print Preview is displayed in Letter format view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1153
+ testRunner.When("User selects \"Portrait\" option in the \"Paper layout\" dropdown for Print Preview S" +
+                    "ettings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1154
+ testRunner.Then("Print Preview is displayed in Portrait orientation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1155
+ testRunner.When("User selects \"Landscape\" option in the \"Paper layout\" dropdown for Print Preview " +
+                    "Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1156
+ testRunner.Then("Print Preview is displayed in Landscape orientation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1157
+ testRunner.When("User clicks Cancel button on the Print Preview Settings pop-up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

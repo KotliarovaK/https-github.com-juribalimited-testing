@@ -1141,3 +1141,17 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 	Then Search field in selected Filter is empty
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15200
+Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
+	When User clicks "print"  button on the Dashboards page
+	Then Print Preview is displayed to the User
+	When User selects "A4" option in the "Paper size" dropdown for Print Preview Settings
+	Then Print Preview is displayed in A4 format view
+	When User selects "Letter" option in the "Paper size" dropdown for Print Preview Settings
+	Then Print Preview is displayed in Letter format view
+	When User selects "Portrait" option in the "Paper layout" dropdown for Print Preview Settings
+	Then Print Preview is displayed in Portrait orientation
+	When User selects "Landscape" option in the "Paper layout" dropdown for Print Preview Settings
+	Then Print Preview is displayed in Landscape orientation
+	When User clicks Cancel button on the Print Preview Settings pop-up

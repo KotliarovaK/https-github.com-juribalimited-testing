@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Dashboards;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -976,6 +978,74 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             page.GetDashboardCheckboxByName(checkboxName).Click();
+        }
+
+        [When(@"User clicks ""(.*)""  button on the Dashboards page")]
+        public void WhenUserClicksButtonOnTheDashboardsPage(string buttonName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetTopBarActionButton(buttonName).Click();
+        }
+
+        [Then(@"Print Preview is displayed to the User")]
+        public void ThenPrintPreviewIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            Assert.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
+            Assert.IsTrue(page.DashWorksPrintLogo.Displayed());
+            Assert.IsTrue(page.PrintPreviewWidgets.Displayed);
+        }
+
+        [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown for Print Preview Settings")]
+        public void WhenUserSelectsOptionInTheDropdownForPrintPreviewSettings(string option, string dropdown)
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            _driver.ClickByJavascript(page.GetPrintPreviewDropdownByName(dropdown));
+            page.SelectPrintPreviewSettings(option);
+        }
+
+        [Then(@"Print Preview is displayed in A4 format view")]
+        public void ThenPrintPreviewIsDisplayedInA4FormatView()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            _driver.WaitForDataLoading();
+            //Wait for style changing
+            Thread.Sleep(1000);
+            Assert.IsTrue(page.A4PrintPreviewView.Displayed, "Print Preview is not displayed in A4 format view");
+        }
+
+        [Then(@"Print Preview is displayed in Letter format view")]
+        public void ThenPrintPreviewIsDisplayedInLetterFormatView()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            //Wait for style changing
+            Thread.Sleep(500);
+            Assert.IsTrue(page.LetterPrintPreviewView.Displayed, "Print Preview is not displayed in Letter format view");
+        }
+
+        [Then(@"Print Preview is displayed in Portrait orientation")]
+        public void ThenPrintPreviewIsDisplayedInPortraitOrientation()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            //Wait for style changing
+            Thread.Sleep(500);
+            Assert.IsTrue(page.PortraitPrintPreviewOrientation.Displayed, "Print Preview is not displayed in Portrait orientation");
+        }
+
+        [Then(@"Print Preview is displayed in Landscape orientation")]
+        public void ThenPrintPreviewIsDisplayedInLandscapeOrientation()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            //Wait for style changing
+            Thread.Sleep(500);
+            Assert.IsTrue(page.LandscapePrintPreviewOrientation.Displayed, "Print Preview is not displayed in Landscape orientation");
+        }
+
+        [When(@"User clicks Cancel button on the Print Preview Settings pop-up")]
+        public void WhenUserClicksCancelButtonOnThePrintPreviewSettingsPop_Up()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            page.CancelButton.Click();
         }
 
         [Then(@"Data Labels are displayed on the Dashboards page")]
