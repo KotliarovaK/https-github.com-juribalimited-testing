@@ -330,6 +330,13 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(cardWidget);
         }
 
+        public IWebElement GetTopBarActionButton(string buttonName)
+        {
+            var cardWidget = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(cardWidget);
+        }
+
         public IWebElement GetFirstDashboardFromList()
         {
             var cardWidget = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
@@ -361,7 +368,6 @@ namespace DashworksTestAutomation.Pages
             //greater than 1 because line must have at least two points
             return Driver.FindElements(cardWidget).Count>1;
         }
-
 
     }
 }
