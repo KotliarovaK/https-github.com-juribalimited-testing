@@ -222,3 +222,23 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCancelReadinessAffectsNothingOnEditRea
 	And User clicks String Filter button for "Default for Applications" column on the Admin page
 	And User clicks "False" checkbox from boolean filter on the Admin page
 	Then Filtered readiness item equals to stored one
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720
+Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	When User have opened Column Settings for "Readiness" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Priority" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Priority   |
+	When User click on 'Readiness' column header
+	Then numeric data in table is sorted by 'Priority' column in descending order
+	When User click on 'Readiness' column header
+	Then numeric data in table is sorted by 'Priority' column in ascending order
