@@ -900,7 +900,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	And column content is displayed in the following order:
+	When User have opened Column Settings for "Capacity Slot" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Display Order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
 	| Items             |
 	| Unassigned        |
 	| 13159             |
@@ -908,7 +914,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	| CapacityUnit13790 |
 	| NewUnit           |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13382 @DAS13149 @DAS13147 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13382 @DAS13149 @DAS13147 @DAS15827 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExistingDisplayName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -925,8 +931,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks the "CREATE SLOT" Action button
-	And User type "Name1" Name in the "Slot Name" field on the Project details page
-	And User type "Name1" Name in the "Display Name" field on the Project details page
+	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
+	And User type "Name13147" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And There are no errors in the browser console
@@ -937,9 +943,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And There are no errors in the browser console
 	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
-	And User type "Name13147" Name in the "Display Name" field on the Project details page
+	And User type "Name1" Name in the "Slot Name" field on the Project details page
+	And User type "Name1" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
+	When User have opened Column Settings for "Capacity Slot" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Display Order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
+	| Items     |
+	| Slot13147 |
+	| NewName   |
+	| Name1     |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS14029
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits

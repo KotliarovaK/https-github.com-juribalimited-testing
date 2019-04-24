@@ -359,6 +359,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             var columnHeaderSelector = $".//span[@class='ag-header-cell-text'][text()='{columnName}']";
+            Driver.WaitForDataLoading();
             Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
