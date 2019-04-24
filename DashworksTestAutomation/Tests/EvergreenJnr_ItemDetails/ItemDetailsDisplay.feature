@@ -1170,7 +1170,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	When User clicks "Applications" on the left-hand menu
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	And User click content from "Application" column
-	And User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Projects" sub-menu on the Details page
 	And User have opened Column Settings for "Delivery Date" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
 	And User remembers the date input position
@@ -1185,17 +1186,18 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	And User navigates to the "<TabName>" tab
+	When User navigates to the "<TabName>" main-menu on the Details page
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy cell' option in context menu
 	Then Next data '<TargetCell>' is copied
 
 Examples:
-	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn | TargetCell    |
-	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    | Access 95     |
-	| Users        | svc_dashworks                                           | Username      | Groups       | Group          | Domain Admins |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      |
+	| PageName     | SearchTerm                                              | ColumnName    | MainTabName      | SubTabName             | SelectedColumn | TargetCell    |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications     | Device Project Summary | Application    | Access 95     |
+	| Users        | svc_dashworks                                           | Username      | Active Directory | Groups                 | Group          | Domain Admins |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI              | MSIFiles               | File Name      | setup_x86.msi |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users            |                        | Username       | floresau      |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
