@@ -242,3 +242,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	Then numeric data in table is sorted by 'Priority' column in descending order
 	When User click on 'Readiness' column header
 	Then numeric data in table is sorted by 'Priority' column in ascending order
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
+Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "Havoc (Big Data)" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	And User performs right-click on "Red" cell in the grid
+	And User selects 'Copy row' option in context menu
+	Then There are no errors in the browser console
+	And Next data '\t\tRed\t\tRed\tFalse\t50\t0\t0\t0\t4' is copied
+	When User clicks refresh button in the browser
+	And User performs right-click on "Amber" cell in the grid
+	And User selects 'Copy cell' option in context menu
+	Then There are no errors in the browser console
+	And Next data 'Amber' is copied
