@@ -1019,4 +1019,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "RED" as First Cell value
 	And There are no errors in the browser console
 
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15765
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User add "Hostname" filter where type is "Equals" with added column and following value:
+	| Values         |
+	| 001BAQXT6JWFPI |
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| 1803: Scheduled Date |
+	And User move '1803: Scheduled Date' column to 'Hostname' column
+	And User move 'Hostname' column to 'Operating System' column
+	And User create dynamic list with "DeviceListFor15765" name on "Devices" page
+	Then "DeviceListFor15765" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15765" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS15765 | DeviceListFor15765 | First Cell |             |                   |         |         |           |            |                  |           |
+	Then Widget Preview is displayed to the user
+	And Widget Preview shows "Empty" as First Cell value
+	And There are no errors in the browser console
 	

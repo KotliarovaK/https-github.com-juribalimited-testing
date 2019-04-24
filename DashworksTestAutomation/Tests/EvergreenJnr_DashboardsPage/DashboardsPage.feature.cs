@@ -4884,6 +4884,139 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellI" +
+            "sEmpty")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Dashboards")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS15765")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmptyInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmptyInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellI" +
+                    "sEmpty", null, new string[] {
+                        "Evergreen",
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DashboardsPage",
+                        "Dashboards",
+                        "Widgets",
+                        "DAS15765"});
+#line 1023
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1024
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1025
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1026
+ testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table93.AddRow(new string[] {
+                        "001BAQXT6JWFPI"});
+#line 1027
+ testRunner.And("User add \"Hostname\" filter where type is \"Equals\" with added column and following" +
+                    " value:", ((string)(null)), table93, "And ");
+#line 1030
+ testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table94.AddRow(new string[] {
+                        "1803: Scheduled Date"});
+#line 1031
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table94, "And ");
+#line 1034
+ testRunner.And("User move \'1803: Scheduled Date\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1035
+ testRunner.And("User move \'Hostname\' column to \'Operating System\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1036
+ testRunner.And("User create dynamic list with \"DeviceListFor15765\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1037
+ testRunner.Then("\"DeviceListFor15765\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1038
+ testRunner.When("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1039
+ testRunner.And("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1040
+ testRunner.And("User creates new Dashboard with \"Dashboard for DAS15765\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1041
+ testRunner.Then("\"New dashboard created\" message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1042
+ testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "SplitBy",
+                        "OrderBy",
+                        "MaxValues",
+                        "ShowLegend",
+                        "TableOrientation",
+                        "Drilldown"});
+            table95.AddRow(new string[] {
+                        "Card",
+                        "WidgetForDAS15765",
+                        "DeviceListFor15765",
+                        "First Cell",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""});
+#line 1043
+ testRunner.And("User adds new Widget", ((string)(null)), table95, "And ");
+#line 1046
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1047
+ testRunner.And("Widget Preview shows \"Empty\" as First Cell value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1048
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

@@ -121,7 +121,17 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetPreviewFirstCellValue()
         {
-            return Driver.FindElement(By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']"));
+            if (Driver.FindElements(
+                        By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']"))
+                    .Count > 0)
+            {
+                return Driver.FindElement(By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']"));
+            }
+            else
+            {
+                return Driver.FindElement(By.XPath(".//div[@class='card-widget-value ng-star-inserted']/div"));
+            }
+            
         }
     }
 }
