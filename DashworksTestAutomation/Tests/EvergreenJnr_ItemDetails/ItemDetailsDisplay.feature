@@ -1221,7 +1221,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatNoErrorsAreDisplayedAfterClickingThro
 	When User perform search by "TON2490708"
 	And User click content from "Username" column
 	Then Details page for "TON2490708" item is displayed to the user
-	When User navigates to the "Projects" tab-menu on the Details page
+	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Device Project Summary" sub-menu on the Details page
 	When User clicks content from "Project" column
 	Then "Project Object" page is displayed to the user
@@ -1231,7 +1231,7 @@ Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Details" tab-menu on the Details page
+	When User navigates to the "Details" main-menu on the Details page
 	Then "Key" title matches the "9141" value
 	Then following content is displayed on the Details Page
 	| Title                     | Value           |
@@ -1248,7 +1248,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheCompu
 	When User perform search by "00OMQQXWA1DRI6"
 	And User click content from "Hostname" column
 	Then Details page for "00OMQQXWA1DRI6" item is displayed to the user
-	When User navigates to the "Active Directory" tab-menu on the Details page
+	When User navigates to the "Active Directory" main-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields                          |
 	| Directory Type                  |
@@ -1264,7 +1264,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Applications" tab-menu on the Details page
+	When User navigates to the "Applications" main-menu on the Details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName   |
 	| Application  |
@@ -1280,7 +1280,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Applications" tab-menu on the Details page
+	When User navigates to the "Applications" main-menu on the Details page
 	When User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName           |
@@ -1302,7 +1302,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Applications" tab-menu on the Details page
+	When User navigates to the "Applications" main-menu on the Details page
 	When User navigates to the "Advertisements" sub-menu on the Details page
 	Then table content is present
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
@@ -1313,7 +1313,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
-	When User navigates to the "Projects" tab-menu on the Details page
+	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Projects Summary" sub-menu on the Details page
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
@@ -1341,7 +1341,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Active Directory" tab-menu on the Details page is not expanded
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
-	When User navigates to the "Projects" tab-menu on the Details page
+	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Projects Summary" sub-menu on the Details page
 	Then "Projects" tab-menu on the Details page is expanded
 	Then "Details" tab-menu on the Details page is not expanded
@@ -1349,7 +1349,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Active Directory" tab-menu on the Details page is not expanded
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
-	When User navigates to the "Active Directory" tab-menu on the Details page
+	When User navigates to the "Active Directory" main-menu on the Details page
 	When User navigates to the "Active Directory" sub-menu on the Details page
 	Then "Active Directory" tab-menu on the Details page is expanded
 	Then "Details" tab-menu on the Details page is not expanded
@@ -1358,13 +1358,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378
-Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectly
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379
+Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	Then User sees following tabs on left menu on the Details page:
+	Then User sees following main-tabs on left menu on the Details page:
 	| TabName          |
 	| Details          |
 	| Projects         |
@@ -1372,40 +1373,174 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Active Directory |
 	| Applications     |
 	| Compliance       |
-	Then "Details" tab-menu on the Details page contains following sub-menu:
+	Then "Users" tab is not displayed on left menu on the Details page
+	Then "Related" tab is not displayed on left menu on the Details page
+	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Device                  |
 	| Device Owner            |
 	| Department and Location |
 	| Custom Fields           |
-	Then "Projects" tab-menu on the Details page contains following sub-menu:
+	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Evergreen Details      |
 	| Projects Summary       |
 	| Owner Projects Summary |
-	Then "Specification" tab-menu on the Details page contains following sub-menu:
-	| SubTabName    |
-	| Specification |
-	| Network Cards |
-	| CPUs          |
-	| Video Cards   |
-	| Monitors      |
-	| Sound Cards   |
-	Then "Active Directory" tab-menu on the Details page contains following sub-menu:
+	Then "Specification" main-menu on the Details page contains following sub-menu:
+	| SubTabName         |
+	| Specification      |
+	| Network Cards  (1) |
+	| CPUS  (1)          |
+	| Video Cards  (1)   |
+	| Monitors  (1)      |
+	| Sound Cards  (1)   |
+	Then "Active Directory" main-menu on the Details page contains following sub-menu:
 	| SubTabName       |
 	| Active Directory |
 	| Groups           |
 	| LDAP             |
-	Then "Applications" tab-menu on the Details page contains following sub-menu:
+	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
 	| Advertisements    |
 	| Collections       |
-	Then "Compliance" tab-menu on the Details page contains following sub-menu:
+	Then "Compliance" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Overview            |
 	| Hardware Summary    |
 	| Hardware Rules      |
 	| Application Summary |
 	| Application Issues  |
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418
+Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	Then User sees following main-tabs on left menu on the Details page:
+	| TabName          |
+	| Details          |
+	| Projects         |
+	| Active Directory |
+	| Applications     |
+	| Mailboxes        |
+	| Compliance       |
+	Then "Devices" tab is displayed on left menu on the Details page
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| User                    |
+	| Department and Location |
+	| Custom Fields           |
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| Evergreen Details       |
+	| User Projects           |
+	| Device Project Summary  |
+	| Mailbox Project Summary |
+	Then "Active Directory" main-menu on the Details page contains following sub-menu:
+	| SubTabName |
+	| Groups     |
+	| LDAP       |
+	Then "Applications" main-menu on the Details page contains following sub-menu:
+	| SubTabName        |
+	| Evergreen Summary |
+	| Evergreen Detail  |
+	| Advertisements    |
+	| Collections       |
+	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
+	| SubTabName          |
+	| Mailboxes           |
+	| Mailbox Permissions |
+	Then following columns are displayed on the Item details page:
+	| ColumnName        |
+	| Mailbox Platform  |
+	| Server            |
+	| Email Address     |
+	| Display Name      |
+	| Owner             |
+	| Email Count       |
+	| Mailbox Size (MB) |
+	Then "Compliance" main-menu on the Details page contains following sub-menu:
+	| SubTabName          |
+	| Overview            |
+	| Hardware Summary    |
+	| Hardware Rules      |
+	| Application Summary |
+	| Application Issues  |
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPage
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
+	When User click content from "Application" column
+	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	Then User sees following main-tabs on left menu on the Details page:
+	| TabName      |
+	| Details      |
+	| MSI          |
+	| Distribution |
+	| Projects     |
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName     |
+	| Application    |
+	| Advertisements |
+	| Programs       |
+	| Custom Fields  |
+	Then "MSI" main-menu on the Details page contains following sub-menu:
+	| SubTabName |
+	| MSIFiles   |
+	| AOK        |
+	Then "Distribution" main-menu on the Details page contains following sub-menu:
+	| SubTabName |
+	| Users      |
+	| Devices    |
+	| Groups     |
+	| AD         |
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName        |
+	| Evergreen Details |
+	| Projects          |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378
+Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	Then User sees following main-tabs on left menu on the Details page:
+	| TabName  |
+	| Details  |
+	| Projects |
+	| Users    |
+	| Trend    |
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| Mailbox                 |
+	| Mailbox Owner           |
+	| Email Addresses         |
+	| Department and Location |
+	| Custom Fields           |
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName            |
+	| Evergreen Details     |
+	| Mailbox Projects      |
+	| Mailbox User Projects |
+	Then "Users" main-menu on the Details page contains following sub-menu:
+	| SubTabName          |
+	| Users               |
+	| Groups              |
+	| Unresolved Users    |
+	| Mailbox Permissions |
+	| Folder Permissions  |
+	Then "Trend" main-menu on the Details page contains following sub-menu:
+	| SubTabName             |
+	| Email Count            |
+	| Mailbox Size (MB)      |
+	| Associated Item Count  |
+	| Deleted Item Count     |
+	| Deleted Item Size (MB) |
