@@ -30,8 +30,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.IsTrue(page.GetItemDetailsPageByName(pageName).Displayed(), $"{pageName} page is not loaded!");
         }
 
-        [When(@"User navigates to the ""(.*)"" tab-menu on the Details page")]
-        public void WhenUserNavigatesToTheTab_MenuOnTheDetailsPage(string tabMenuName)
+        [When(@"User navigates to the ""(.*)"" main-menu on the Details page")]
+        public void WhenUserNavigatesToTheMain_MenuOnTheDetailsPage(string tabMenuName)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
             detailsPage.GetTabMenuByName(tabMenuName).Click();
@@ -58,8 +58,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.IsFalse(detailsPage.GetExpandedTabByName(tabMenuName), $"{tabMenuName} tab-menu is expanded!");
         }
 
-        [Then(@"User sees following tabs on left menu on the Details page:")]
-        public void ThenUserSeesFollowingTabsOnLeftMenuOnTheDetailsPage(Table table)
+        [Then(@"""(.*)"" tab is displayed on left menu on the Details page")]
+        public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPage(string tabName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsTrue(detailsPage.GetTabByName(tabName), $"{tabName} tab is not displayed!");
+        }
+
+        [Then(@"""(.*)"" tab is not displayed on left menu on the Details page")]
+        public void ThenTabIsNotDisplayedOnLeftMenuOnTheDetailsPage(string tabName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsFalse(detailsPage.GetTabByName(tabName), $"{tabName} tab is displayed!");
+        }
+
+        [Then(@"User sees following main-tabs on left menu on the Details page:")]
+        public void ThenUserSeesFollowingMain_TabsOnLeftMenuOnTheDetailsPage(Table table)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
 
@@ -68,8 +82,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
         }
 
-        [Then(@"""(.*)"" tab-menu on the Details page contains following sub-menu:")]
-        public void ThenTab_MenuOnTheDetailsPageContainsFollowingSub_Menu(string tabMenuName, Table table)
+        [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu:")]
+        public void ThenMain_MenuOnTheDetailsPageContainsFollowingSub_Menu(string tabMenuName, Table table)
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
 

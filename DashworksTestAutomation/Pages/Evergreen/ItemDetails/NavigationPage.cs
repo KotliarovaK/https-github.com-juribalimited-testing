@@ -12,9 +12,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     internal class NavigationPage : SeleniumBasePage
     {
-        public const string MainTabsOnDetailsPage = "//div[contains(@class, 'das-mat-tree-node')]";
+        public const string MainTabsOnDetailsPage = "//div[contains(@class, 'das-mat-tree-node')]/a";
 
-        public const string SubTabsOnDetailsPage = "//ul[@class='das-mat-tree-submenu']//li[contains(@class,'das-mat-tree-node')]";
+        public const string SubTabsOnDetailsPage = "//ul[@class='das-mat-tree-submenu']//li[contains(@class,'das-mat-tree-node')]/a";
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-drawer-inner-container']")]
         public IWebElement PageIdentitySelectors { get; set; }
@@ -59,6 +59,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public bool GetExpandedTabByName(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//li[@class='das-mat-tree-parent']/div[contains(@class, 'collapsed')]/a[text()='{tabName}']"));
+        }
+        public bool GetTabByName(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//*[text()='{tabName}']//ancestor::li[contains(@class, 'das-mat-tree')]"));
         }
     }
 }
