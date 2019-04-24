@@ -489,6 +489,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Readiness")]
         [NUnit.Framework.CategoryAttribute("DAS14937")]
+        [NUnit.Framework.CategoryAttribute("DAS15669")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone()
         {
             System.Exception lastException = null;
@@ -522,7 +523,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Readiness",
-                        "DAS14937"});
+                        "DAS14937",
+                        "DAS15669"});
 #line 107
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

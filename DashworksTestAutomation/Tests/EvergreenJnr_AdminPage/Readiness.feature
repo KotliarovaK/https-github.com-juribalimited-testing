@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User click content from "Readiness" column
 	Then User sees Default for Applications checkbox in "TRUE" state on Edit Readiness
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS15669
 Scenario: EvergreenJnr_AdminPage_ChecksThatNewReadinessAddedBeforeNone
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
