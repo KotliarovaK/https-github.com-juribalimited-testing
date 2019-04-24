@@ -136,5 +136,10 @@ namespace DashworksTestAutomation.Pages
             var selector = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox");
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetPreviewFirstCellValue()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']"));
+        }
     }
 }

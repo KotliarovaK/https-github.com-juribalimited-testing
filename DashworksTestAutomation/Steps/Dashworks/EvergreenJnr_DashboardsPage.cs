@@ -1085,5 +1085,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             Assert.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
         }
+
+        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
+        public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
+        }
     }
 }

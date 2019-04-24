@@ -1183,4 +1183,4 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
 	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |             |                   |         |         |           |            |                  |           |
 	Then Widget Preview is displayed to the user
-	And Widget Preview shows "READY" as First Cell value
+	Then Widget Preview shows "READY" as First Cell value
