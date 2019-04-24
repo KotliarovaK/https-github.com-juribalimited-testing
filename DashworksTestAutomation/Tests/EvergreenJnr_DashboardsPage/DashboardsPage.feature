@@ -1155,3 +1155,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	When User selects "Landscape" option in the "Paper layout" dropdown for Print Preview Settings
 	Then Print Preview is displayed in Landscape orientation
 	When User clicks Cancel button on the Print Preview Settings pop-up
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15914
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	And User Add And "1803: Ready to Migrate" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Ready              |
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName             |
+	| 1803: Ready to Migrate |
+	And User move '1803: Ready to Migrate' column to 'Hostname' column
+	And User move 'Hostname' column to 'Device Type' column
+	And User create dynamic list with "DeviceListFor15914" name on "Devices" page
+	Then "DeviceListFor15914" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15914" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |             |                   |         |         |           |            |                  |           |
+	Then Widget Preview is displayed to the user
+	And Widget Preview shows "READY" as First Cell value

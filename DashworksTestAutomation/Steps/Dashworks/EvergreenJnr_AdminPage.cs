@@ -2566,6 +2566,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Processing order values are not the same");
         }
 
+        [Then(@"User sees following Display order on the Automation page")]
+        public void ThenUserSeesFollowingDisplayOrderOnTheAutomationPage(Table displaygOrder)
+        {
+            var page = _driver.NowAt<RingsPage>();
+            _driver.WaitForDataLoading();
+            for (var i = 0; i < displaygOrder.RowCount; i++)
+                Assert.That(page.DisplayOrderValues[i].Text, Is.EqualTo(displaygOrder.Rows[i].Values.FirstOrDefault()),
+                    "Display order values are displayed in the wrong order");
+        }
+
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
         public void WhenUserClicksButtonInTheReadinessDialogScreen(string buttonName)
         {

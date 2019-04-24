@@ -24,6 +24,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Move to position']")]
         public IWebElement MoveToPositionField { get; set; }
+
+        public override List<By> GetPageIdentitySelectors()
+        {
+            Driver.WaitForDataLoading();
+
+            return new List<By>
+            {
+                SelectorFor(this, p => p.CogMenu)
+            };
+        }
+
         public string GetCogMenuDropdownColor()
         {
             return CogMenuDropdown.GetCssValue("background-color");
@@ -40,11 +51,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
         public IWebElement GetCogmenuOptionByName(string option)
         {
             var selector = By.XPath($"//*[contains(text(), '{option}')]/ancestor::li[@class='ng-star-inserted']");
             return Driver.FindElement(selector);
         }
+
         public bool CheckItemDisplay(string name)
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[@role='gridcell']//a[text()='{name}']"));
