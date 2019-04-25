@@ -1967,6 +1967,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Tasks are displayed in the following order on Action panel:")]
+        public void ThenTasksAreDisplayedInTheFollowingOrderOnActionPanel(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.DropdownTaskItemsList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Tasks are different");
+        }
+
         [When(@"User selects next items in the ""(.*)"" dropdown:")]
         public void WhenUserSelectsNextItemsInTheDropdown(string dropdownName, Table items)
         {

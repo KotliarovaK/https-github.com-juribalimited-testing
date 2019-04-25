@@ -8331,6 +8331,132 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Capacity")]
+        [NUnit.Framework.CategoryAttribute("Slots")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("DAS13671")]
+        public virtual void EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreenInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreenInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "Capacity",
+                        "Slots",
+                        "Projects",
+                        "DAS13671"});
+#line 2418
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 2419
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2420
+ testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2421
+ testRunner.And("User enters \"I-Computer Scheduled Project\" text in the Search field for \"Project\"" +
+                    " column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2422
+ testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2423
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2424
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2425
+ testRunner.And("User enters \"Slot 2018-10-01 - 2018-10-31[Team: 2832; RequestType: 471]\" text in " +
+                    "the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2426
+ testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 2427
+ testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-comp-radb"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-Schedule"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-Targeted"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-Forecast"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-Completed"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-Migrated"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-comp-grp-radb"});
+#line 2428
+ testRunner.Then("Tasks are displayed in the following order on Action panel:", ((string)(null)), table100, "Then ");
+#line 2437
+ testRunner.When("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 2438
+ testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+                        "items"});
+            table101.AddRow(new string[] {
+                        "req type comp"});
+#line 2439
+ testRunner.And("User selects following items in \"Request Types\" dropdown:", ((string)(null)), table101, "And ");
+#line 2442
+ testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-comp-radb"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-Schedule"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-Targeted"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-Forecast"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-Completed"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-Migrated"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-comp-grp-radb"});
+#line 2443
+ testRunner.Then("Tasks are displayed in the following order on Action panel:", ((string)(null)), table102, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
