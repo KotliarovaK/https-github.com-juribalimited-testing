@@ -33,14 +33,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             {
                 SelectorFor(this, p => p.PageIdentitySelectors)
             };
-        }
-
-        public IWebElement GetItemDetailsPageByName(string name)
-        {
-            var selector = By.XPath($".//div[@id='pagetitle-text']//h1[contains(text(), '{name}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
+        }  
 
         public IWebElement GetTabMenuByName(string name)
         {

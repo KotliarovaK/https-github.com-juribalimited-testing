@@ -18,18 +18,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
-        [Then(@"Details page for ""(.*)"" item is displayed to the user")]
-        public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
-        {
-            _driver.WaitForDataLoading();
-
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(detailsPage.GroupIcon.Displayed());
-
-            var page = _driver.NowAt<NavigationPage>();
-            Assert.IsTrue(page.GetItemDetailsPageByName(pageName).Displayed(), $"{pageName} page is not loaded!");
-        }
-
         [When(@"User navigates to the ""(.*)"" main-menu on the Details page")]
         public void WhenUserNavigatesToTheMain_MenuOnTheDetailsPage(string tabMenuName)
         {

@@ -724,8 +724,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "Joel T. Hartman"
 	And User click content from "Email Address" column
-	And User closes "Mailbox" section on the Details Page
-	And User opens "Mailbox Owner" section on the Details Page
+	When User navigates to the "Details" main-menu on the Details page
+	When User navigates to the "Mailbox Owner" sub-menu on the Details page
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
@@ -734,9 +734,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoDuplicatedRowsDisplayInDeviceProje
 	When User clicks "Devices" on the left-hand menu
 	And User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
-	And User navigates to the "Projects" tab
-	And User closes "Evergreen" section on the Details Page
-	And User opens "Device Projects" section on the Details Page
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Projects Summary" sub-menu on the Details page
 	Then All data is unique in the 'Project' column
 
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12765 @DAS12860
@@ -744,18 +743,17 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketColumnIsDisplayedOnDetail
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
-	And User navigates to the "Projects" tab
-	And User closes "Evergreen" section on the Details Page
-	And User opens "<SectionOpen>" section on the Details Page
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	Then "Bucket" column is displayed to the user
 
 Examples:
-	| PageName  | SearchTerm                       | Column        | SectionOpen           |
-	| Devices   | 001BAQXT6JWFPI                   | Hostname      | Device Owner Projects |
-	| Users     | hurstbl                          | Username      | User Projects         |
-	| Users     | hurstbl                          | Username      | Mailbox Projects      |
-	| Users     | ZZZ588323                        | Username      | Device Projects       |
-	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox User Projects |
+	| PageName  | SearchTerm                       | Column        | SubTabName              |
+	| Devices   | 001BAQXT6JWFPI                   | Hostname      | Owner Projects Summary  |
+	| Users     | hurstbl                          | Username      | User Projects           |
+	| Users     | hurstbl                          | Username      | Mailbox Project Summary |
+	| Users     | ZZZ588323                        | Username      | Device Project Summary  |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address | Mailbox User Projects   |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12292 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
@@ -763,8 +761,8 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	Then "Devices" list should be displayed to the user
 	When User type "001PSUMZYOW581" in Global Search Field
 	Then User clicks on "001PSUMZYOW581" search result
-	When User navigates to the "Projects" tab
-	And User opens "Device Projects" section on the Details Page
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Projects Summary" sub-menu on the Details page
 	And User have opened Column Settings for "Date" column in the Details Page table
 	And User clicks Filter button on the Column Settings panel
 	And User select In Range value with following date:
@@ -772,7 +770,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	| 5222014  | 5202018 |
 	Then "2" rows found label displays on Details Page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Delete_Newly_Created_Bucket @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
@@ -783,7 +781,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User clicks "Users" on the left-hand menu
 	And User perform search by "AAG081456"
 	And User click content from "Username" column
-	And User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	And User clicks on "New Bucket" dropdown
 	And User select "AutoTestBucket_DAS_13335" value on the Details Page
@@ -793,7 +791,7 @@ Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjec
 	And User clicks "Devices" on the left-hand menu
 	And User perform search by "I55HL8MSBYK0VG"
 	And User click content from "Hostname" column
-	And User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then User sees "AutoTestBucket_DAS_13335" Evergreen Bucket in Project Summary section on the Details Page
 	And There are no errors in the browser console
 
@@ -805,16 +803,17 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	Then Content is present in the newly added column
 	| ColumnName |
 	| <Column>   |
+	When User perform search by "<ItemName>"
 	When User click content from "<Column>" column
-	Then Details object page is displayed to the user
+	Then Details page for "<ItemName>" item is displayed to the user
 	And URL is "<URLpart>"
 
 Examples:
-	| PageName     | Column          | URLpart                      |
-	| Devices      | Device Key      | evergreen/#/device/9141      |
-	| Users        | User Key        | evergreen/#/user/71622       |
-	| Applications | Application Key | evergreen/#/application/4249 |
-	| Mailboxes    | Mailbox Key     | evergreen/#/mailbox/49258    |
+	| PageName     | Column          | ItemName                         | URLpart                     |
+	| Devices      | Device Key      | 00KLL9S8NRF0X6                   | evergreen/#/device/8892     |
+	| Users        | User Key        | 0072B088173449E3A93              | evergreen/#/user/85167      |
+	| Applications | Application Key | ACDSee for Windows 95            | evergreen/#/application/312 |
+	| Mailboxes    | Mailbox Key     | 01BC4B0500344065B61@bclabs.local | evergreen/#/mailbox/45374   |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
@@ -822,7 +821,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then "Applications" list should be displayed to the user
 	When User perform search by "Microsoft DirectX 5 DDK"
 	And User click content from "Application" column
-	And User navigates to the "Distribution" tab
+	When User navigates to the "Distribution" main-menu on the Details page
+	When User navigates to the "Users" sub-menu on the Details page
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
@@ -831,8 +831,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	And User have select "Sort descending" option from column settings on the Details Page
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
-	When User closes "Users" section on the Details Page
-	And User opens "Devices" section on the Details Page
+	When User navigates to the "Devices" sub-menu on the Details page
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
@@ -1122,14 +1121,14 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	Then "99" content is displayed in "Device Count (Used)" column
 	And "98" content is displayed in "User Count (Used)" column
 	When User click content from "Application" column
-	And User navigates to the "Distribution" tab
+	When User navigates to the "Distribution" main-menu on the Details page
+	When User navigates to the "Users" sub-menu on the Details page
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
 	Then Rows counter shows "98" of "194" rows
-	When User closes "Users" section on the Details Page
-	And User opens "Devices" section on the Details Page
+	When User navigates to the "Devices" sub-menu on the Details page
 	And User clicks String Filter button for "Used" column
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
@@ -1140,7 +1139,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccess
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks content from "Hostname" column
-	And User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Evergreen Details" sub-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
@@ -1151,25 +1151,30 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatChangeCapacityUnitScreenSuccess
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
+	When User perform search by "<SearchText>"
 	When User clicks content from "<ColumnName>" column
-	And User navigates to the "Projects" tab
-	Then "Evergreen" section is expanded on the Details Page
-	And "Project Count" text is displayed in the expanded section on the Details Page
-	And "Evergreen Bucket" text is displayed in the expanded section on the Details Page
-	And "Evergreen Capacity Unit" text is displayed in the expanded section on the Details Page
+	Then Details page for "<PegeItemName>" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Evergreen Details" sub-menu on the Details page
+	Then field with "Project Count" text is displayed in expanded tab on the Details Page
+	Then field with "Evergreen Bucket" text is displayed in expanded tab on the Details Page
+	Then field with "Evergreen Capacity Unit" text is displayed in expanded tab on the Details Page
+	Then field with "Evergreen Ring" text is displayed in expanded tab on the Details Page
 	And There are no errors in the browser console
 
 Examples:
-	| ListName  | ColumnName    |
-	| Devices   | Hostname      |
-	| Users     | Username      |
-	| Mailboxes | Email Address |
+	| ListName  | SearchText                       | ColumnName    | PegeItemName                     |
+	| Devices   | 00HA7MKAVVFDAV                   | Hostname      | 00HA7MKAVVFDAV                   |
+	| Users     | 0072B088173449E3A93              | Username      | 0072B088173449E3A93              |
+	| Mailboxes | 00C8BC63E7424A6E862@bclabs.local | Email Address | 00C8BC63E7424A6E862@bclabs.local |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
 	When User clicks "Applications" on the left-hand menu
-	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	Then "Applications" list should be displayed to the user
+	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	And User click content from "Application" column
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Projects" sub-menu on the Details page
 	And User have opened Column Settings for "Delivery Date" column in the Details Page table
