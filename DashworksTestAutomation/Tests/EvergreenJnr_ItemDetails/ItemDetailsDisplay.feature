@@ -1304,3 +1304,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	Then table content is present
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133
+Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00BDM1JUR8IF419"
+	And User click content from "Hostname" column
+	#When User click content from "Hostname" column
+	And User navigates to the "Applications" tab
+	Then section is loaded correctly
+	When User performs right-click on "Advantage Data Architect" cell in the grid
+	And User selects 'Copy row' option in context menu
+	Then Next data 'Advantage Data Architect\tUnknown\tExtended Systems\tGreen\tSMS_GEN\tUnknown\tTrue\tFalse\t\t\t5200\t75518\t10 Jan 2018' is copied
+	
+	
