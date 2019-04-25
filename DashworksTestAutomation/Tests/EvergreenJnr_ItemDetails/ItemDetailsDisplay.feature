@@ -1311,7 +1311,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	Then "Devices" list should be displayed to the user
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
-	#When User click content from "Hostname" column
 	And User navigates to the "Applications" tab
 	Then section is loaded correctly
 	When User performs right-click on "Advantage Data Architect" cell in the grid

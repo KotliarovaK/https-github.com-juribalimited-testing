@@ -324,3 +324,27 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	And User clicks Delete button
 	Then Warning message with "These rings will be permanently deleted and any objects within them reassigned to the default ring" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397
+Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsСonsistently
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Rings" tab
+	And User clicks the "CREATE PROJECT RING" Action button
+	Then "Create Project Ring" page should be displayed to the user
+	When User type "TestRing15397_1" Name in the "Ring name" field on the Project details page
+	And User clicks Create button on the Create Ring page
+	Then Success message is displayed and contains "The ring has been created" text
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Rings" tab
+	And User clicks the "CREATE PROJECT RING" Action button
+	Then "Create Project Ring" page should be displayed to the user
+	When User type "TestRing15397_2" Name in the "Ring name" field on the Project details page
+	And User clicks Create button on the Create Ring page
+	Then There are no errors in the browser console
+	And Success message is displayed and contains "The ring has been created" text
