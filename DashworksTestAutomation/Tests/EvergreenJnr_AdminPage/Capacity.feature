@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240 @DAS16372
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdatingOrCreation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -309,7 +309,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	And User clicks content from "Capacity Unit" column
+	When User clicks "Projects" navigation link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Email Migration" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User clicks content from "Capacity Unit" column
+	When User clicks "Administration" navigation link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Email Migration" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit14240" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "14240" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
