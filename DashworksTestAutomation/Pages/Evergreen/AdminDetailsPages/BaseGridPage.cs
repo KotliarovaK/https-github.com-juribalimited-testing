@@ -38,6 +38,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = FirstColumnTableContent)]
         public IList<IWebElement> TableContentList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//li//label//span[@class='mat-checkbox-label']")]
+        public IList<IWebElement> DropdownTaskItemsList { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectBox { get; set; }
 

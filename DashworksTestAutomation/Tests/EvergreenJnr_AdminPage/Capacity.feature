@@ -2413,3 +2413,39 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 11:00 - 13:00   |
 	| London Depot 13:00 - 15:00   |
 	| London Depot 15:00 - 17:00   |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13671
+Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "I-Computer Scheduled Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User enters "Slot 2018-10-01 - 2018-10-31[Team: 2832; RequestType: 471]" text in the Search field for "Capacity Slot" column
+	And User clicks content from "Capacity Slot" column
+	And User clicks on "Tasks" dropdown on the Capacity Slots page
+	Then Tasks are displayed in the following order on Action panel:
+	| Items                       |
+	| i-stage A \ i-comp-radb     |
+	| i-stage A \ i-Schedule      |
+	| i-stage A \ i-Targeted      |
+	| i-stage A \ i-Forecast      |
+	| i-stage A \ i-Completed     |
+	| i-stage A \ i-Migrated      |
+	| i-stage A \ i-comp-grp-radb |
+	When User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE SLOT" Action button
+	And User selects following items in "Request Types" dropdown:
+	| items                             |
+	| req type comp              |
+	And User clicks on "Tasks" dropdown on the Capacity Slots page
+	Then Tasks are displayed in the following order on Action panel:
+	| Items                       |
+	| i-stage A \ i-comp-radb     |
+	| i-stage A \ i-Schedule      |
+	| i-stage A \ i-Targeted      |
+	| i-stage A \ i-Forecast      |
+	| i-stage A \ i-Completed     |
+	| i-stage A \ i-Migrated      |
+	| i-stage A \ i-comp-grp-radb |
