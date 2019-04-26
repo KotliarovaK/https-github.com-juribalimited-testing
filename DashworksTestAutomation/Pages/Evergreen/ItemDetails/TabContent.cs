@@ -37,5 +37,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.IsElementDisplayed(By.XPath($"//div[contains(@class, 'details-bordered-box')]//span[text()='{name}']"));
         }
+
+        public bool CheckThatSelectedTabHasOpened(string name)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//*[text()='{name}']//ancestor::mat-sidenav-content"));
+        }
     }
 }

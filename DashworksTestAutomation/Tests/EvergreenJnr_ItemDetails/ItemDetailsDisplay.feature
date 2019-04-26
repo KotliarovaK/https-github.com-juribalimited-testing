@@ -512,8 +512,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErr
 Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilters
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
-	And User navigates to the "Applications" tab
+	When User navigates to the "Applications" main-menu on the Details page
 	Then All text is displayed for "Compliance" column in the String Filter
 	When User clicks String Filter button for "Compliance" column
 	And User clicks "Red" checkbox from String Filter on the Details Page
@@ -526,19 +527,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User enters "33" text in the Search field for "Version" column on the Details Page
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Details Page
-	When User enters "Adobe" text in the Search field for "Vendor" column on the Details Page
-	Then Rows counter contains "1" found row of all rows
-	When User clicks Reset Filters button on the Details Page
-	When User enters "12" text in the Search field for "Used By Count" column on the Details Page
-	Then Rows counter contains "0" found row of all rows
-	When User clicks Reset Filters button on the Details Page
-	When User enters "5" text in the Search field for "Launch Count" column on the Details Page
-	Then Rows counter contains "0" found row of all rows
-	When User clicks Reset Filters button on the Details Page
-	And User clicks String Filter button for "Installed" column
-	When User clicks "False" checkbox from String Filter on the Details Page
-	Then Rows counter contains "7" found row of all rows
-	When User clicks Reset Filters button on the Details Page
+#Are these columns removed?
+	#When User enters "Adobe" text in the Search field for "Vendor" column on the Details Page
+	#Then Rows counter contains "1" found row of all rows
+	#When User clicks Reset Filters button on the Details Page
+	#When User enters "12" text in the Search field for "Used By Count" column on the Details Page
+	#Then Rows counter contains "0" found row of all rows
+	#When User clicks Reset Filters button on the Details Page
+	#When User enters "5" text in the Search field for "Launch Count" column on the Details Page
+	#Then Rows counter contains "0" found row of all rows
+	#When User clicks Reset Filters button on the Details Page
+	#And User clicks String Filter button for "Installed" column
+	#When User clicks "False" checkbox from String Filter on the Details Page
+	#Then Rows counter contains "7" found row of all rows
+	#When User clicks Reset Filters button on the Details Page
 	And User clicks String Filter button for "Used" column
 	When User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then Rows counter contains "0" found row of all rows
@@ -547,10 +549,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User clicks "True" checkbox from String Filter on the Details Page
 	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Details Page
-	And User clicks String Filter button for "Site" column
-	When User selects "TierA Site01" checkbox from String Filter on the Details Page
-	Then Rows counter contains "0" found row of all rows
-	When User clicks Reset Filters button on the Details Page
+#Are these columns removed?
+	#And User clicks String Filter button for "Site" column
+	#When User selects "TierA Site01" checkbox from String Filter on the Details Page
+	#Then Rows counter contains "0" found row of all rows
+	#When User clicks Reset Filters button on the Details Page
 	#When User selects following date filter on the Details Page
 	#| FilterData |
 	#| 7302017    |
@@ -562,13 +565,11 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermiss
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "abraham.f.wong@dwlabs.local"
 	And User click content from "Email Address" column
-	And User navigates to the "Users" tab
-	When User closes "Users" section on the Details Page
-	And User opens "Mailbox Permissions" section on the Details Page
+	When User navigates to the "Users" main-menu on the Details page
+	When User navigates to the "Mailbox Permissions" sub-menu on the Details page
 	Then Content is present in the table on the Details Page
 	And "68" rows found label displays on Details Page
-	When User closes "Mailbox Permissions" section on the Details Page
-	And User opens "Folder Permissions" section on the Details Page
+	When User navigates to the "Folder Permissions" sub-menu on the Details page
 	Then Content is present in the table on the Details Page
 	And "14" rows found label displays on Details Page 
 
@@ -578,8 +579,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	And User navigates to the "<TabName>" tab
-	And User opens "<SectionName>" section on the Details Page
+	When User navigates to the "<MainTabName>" main-menu on the Details page
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	Then "<CountRows>" rows found label displays on Details Page
 	When User clicks String Filter button for "Project" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -587,21 +588,26 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Status" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Readiness" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Project Type" checkbox on the Column Settings panel
+	And User select "Request Type" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	When User clicks String Filter button for "Readiness" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 Examples:
-	| PageName | SearchTerm                                      | ColumnName | TabName  | SectionName           | CountRows |
-	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | Mailbox Projects      | 1         |
-	#| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Projects       | 5         |
-	#| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects | Device Owner Projects | 5         |
-	#| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects | User Projects         | 1         |
+	| PageName | SearchTerm                                      | ColumnName | MainTabName | SubTabName              | CountRows |
+	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 1         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 7         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 6         |
+	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 2         |
 	
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS13409
@@ -610,7 +616,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	And User navigates to the "<TabName>" tab
+	When User navigates to the "<MainTabName>" main-menu on the Details page
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Request Type" column
@@ -619,9 +626,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 Examples:
-	| PageName     | SearchTerm                                                 | ColumnName    | TabName  |
-	| Applications | "WPF/E" (codename) Community Technology Preview (Feb 2007) | Application   | Projects |
-	| Mailboxes    | 040698EE82354C17B60@bclabs.local                           | Email Address | Projects |
+	| PageName     | SearchTerm                              | ColumnName    | MainTabName | SubTabName       |
+	| Applications | 0036 - Microsoft Access 97 SR-2 English | Application   | Projects    | Projects         |
+	| Mailboxes    | 040698EE82354C17B60@bclabs.local        | Email Address | Projects    | Mailbox Projects |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12210 @DAS12738 @DAS12371 @DAS12765 @DAS12321 @DAS13409
 Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectly
@@ -629,10 +636,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "040698EE82354C17B60@bclabs.local"
 	And User click content from "Email Address" column
-	And User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Mailbox Projects" sub-menu on the Details page
 	Then "Bucket" column is displayed to the user
-	When User closes "Mailbox Projects" section on the Details Page
-	And User opens "Mailbox User Projects" section on the Details Page
+	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
 	Then "Bucket" column is displayed to the user
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -647,15 +654,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDev
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ACT Data Collection Packages"
 	And User click content from "Application" column
-	And User navigates to the "Distribution" tab
-	And User closes "Users" section on the Details Page
-	And User opens "Devices" section on the Details Page
+	When User navigates to the "Distribution" main-menu on the Details page
+	When User navigates to the "Devices" sub-menu on the Details page
 	Then "No devices found for this application" message is displayed on the Details Page
 
 @Evergreen @ALlLists @Devices @Users @Applications @DAS12491
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar
 	When User clicks "<PageName>" on the left-hand menu
-	And User perform search by "<SearchTerm>"
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	Then "1" rows are displayed in the agGrid
 
 Examples:
@@ -668,15 +675,17 @@ Examples:
 @Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
 	When User clicks "<PageName>" on the left-hand menu
-	And User perform search by "<SearchTerm>"
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
-	And User navigates to the "<Tab>" tab
+	When User navigates to the "<MainTab>" main-menu on the Details page
+	When User navigates to the "<SubTab>" sub-menu on the Details page
 	Then "1" rows found label displays on Details Page
 
 Examples:
-	| PageName     | SearchTerm          | Column      | Tab       |
-	| Applications | IEWatch 2.1         | Application | MSI       |
-	| Users        | 01A921EFD05545818AA | Username    | Mailboxes |
+	| PageName     | SearchTerm          | Column      | MainTab   | SubTab    |
+	| Applications | IEWatch 2.1         | Application | MSI       | MSIFiles  |
+	| Users        | 01A921EFD05545818AA | Username    | Mailboxes | Mailboxes |
 	
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12690 @DAS14923
 Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToTheRelevantUserDetailsPage
@@ -684,30 +693,31 @@ Scenario: EvergreenJnr_DevicesList_CheckThatLinksInDeviceDetailsAreRedirectedToT
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001PSUMZYOW581"
 	And User click content from "Hostname" column
-	And User navigates to the "Details" tab
-	And User closes "Device" section on the Details Page
-	And User opens "Device Owner" section on the Details Page
+	When User navigates to the "Details" main-menu on the Details page
+	When User navigates to the "Device Owner" sub-menu on the Details page
 	And User clicks "Tricia G. Huang" link on the Details Page
-	Then Details object page is displayed to the user
+	Then Details page for "LFA418191 (Tricia G. Huang)" item is displayed to the user
 
 @Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
-	And User perform search by "<SearchTerm>"
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	And User navigates to the "<TabName>" tab
+	When User navigates to the "<MainTabName>" main-menu on the Details page
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User selects "<KeyToBeSelected>" text from key value grid on the Details Page
 	Then "<KeyToBeSelected>" text selected from key value grid on the Details Page
 	When User selects "<ValueToBeSelected>" text from key value grid on the Details Page
 	Then "<ValueToBeSelected>" text selected from key value grid on the Details Page
 
 Examples:
-	| PageName     | SearchTerm                       | ColumnName    | TabName       | KeyToBeSelected | ValueToBeSelected   |
-	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Manufacturer    | FES0798481167       |
-	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Hostname        | 05PFM2OWVCSCZ1      |
-	| Users        | 03714167684E45F7A8F              | Username      | Details       | Username        | 03714167684E45F7A8F |
-	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Vendor          | Adobe               |
-	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Alias           | 06D7AE4F161F4A3AA7F |
+	| PageName     | SearchTerm                       | ColumnName    | MainTabName   | SubTabName    | KeyToBeSelected | ValueToBeSelected   |
+	| Devices      | 02C80G8RFTPA9E                   | Hostname      | Specification | Specification | Manufacturer    | FES0798481167       |
+	| Devices      | 05PFM2OWVCSCZ1                   | Hostname      | Details       | Device        | Hostname        | 05PFM2OWVCSCZ1      |
+	| Users        | 03714167684E45F7A8F              | Username      | Details       | User          | Username        | 03714167684E45F7A8F |
+	| Applications | Adobe Acrobat Reader 5.0         | Application   | Details       | Application   | Vendor          | Adobe               |
+	| Mailboxes    | 06D7AE4F161F4A3AA7F@bclabs.local | Email Address | Details       | Mailbox       | Alias           | 06D7AE4F161F4A3AA7F |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13341 @archived
 Scenario: EvergreenJnr_AllLists_CheckThatTextInKeyValueGridsIsSelectableOnGroupDetailsPage
@@ -1401,6 +1411,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Video Cards  (1)   |
 	| Monitors  (1)      |
 	| Sound Cards  (1)   |
+	Then User sees loaded tab "Specification" on the Details page
 	Then "Active Directory" main-menu on the Details page contains following sub-menu:
 	| SubTabName       |
 	| Active Directory |
@@ -1441,6 +1452,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| User                    |
 	| Department and Location |
 	| Custom Fields           |
+	When User navigates to the "User" sub-menu on the Details page
+	Then User sees loaded tab "User" on the Details page
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Evergreen Details       |
@@ -1457,6 +1470,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Evergreen Detail  |
 	| Advertisements    |
 	| Collections       |
+	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	Then User sees loaded tab "Evergreen Detail" on the Details page
 	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Mailboxes           |

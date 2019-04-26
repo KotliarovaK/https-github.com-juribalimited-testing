@@ -22,6 +22,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
+        [Then(@"User sees loaded tab ""(.*)"" on the Details page")]
+        public void ThenUserSeesLoadedTabOnTheDetailsPage(string tabName)
+        {
+            _driver.WaitForDataLoading();
+
+            var page = _driver.NowAt<TabContent>();
+            Assert.IsTrue(page.CheckThatSelectedTabHasOpened(tabName), $"{tabName} tab is not loaded!");
+        }
+
         [Then(@"Details page for ""(.*)"" item is displayed to the user")]
         public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
         {
