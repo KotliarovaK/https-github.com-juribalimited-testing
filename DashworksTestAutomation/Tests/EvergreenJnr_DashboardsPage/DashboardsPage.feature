@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRe
 	Then "Devices" list should be displayed to the user
 	And "16" rows are displayed in the agGrid
 
-@Evergreen @Dashboards @Widgets @DAS14358
+@Evergreen @Dashboards @Widgets @DAS14358 @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks Ellipsis menu for "Top 10 App Vendors" Widget on Dashboards page
@@ -22,6 +22,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	| Move to start    |
 	| Move to end      |
 	| Move to position |
+	| Move to section  |
 	| Delete           |
 
 @Evergreen @Dashboards @Sections @DAS14358
@@ -1184,3 +1185,24 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |             |                   |         |         |           |            |                  |           |
 	Then Widget Preview is displayed to the user
 	Then Widget Preview shows "READY" as First Cell value
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS14618
+Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
+	Then Move to Section pop up is displayed to the User
+	When User clicks "CANCEL" button on the Move to Section Pop up
+	Then Move to Section pop up is not displayed to the User
+	When User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
+	When User selects "2" section on the Move to Section pop up
+	When User clicks "MOVE" button on the Move to Section Pop up
+	When User expands all sections on Dashboards page
+	Then "Device Profile" Widget is displayed to the user
+	When User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
+	When User selects "1" section on the Move to Section pop up
+	When User clicks "MOVE" button on the Move to Section Pop up
+	When User clicks "Dashboards" navigation link on the Admin page
+	Then "Device Profile" Widget is displayed to the user
