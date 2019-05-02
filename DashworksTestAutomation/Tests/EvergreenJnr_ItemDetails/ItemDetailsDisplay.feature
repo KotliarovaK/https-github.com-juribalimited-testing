@@ -12,9 +12,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThat404ErrorIsNotDisplayedOccurringWhe
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "alex.cristea@juriba.com"
 	And User click content from "Email Address" column
-	Then User sees loaded tab "Evergreen Detail" on the Details page
+	Then User sees loaded tab "Mailbox" on the Details page
 	When User navigates to the "Mailbox Owner" sub-menu on the Details page
-	Then "No mailbox owner found for this mailbox" text is displayed for "Mailbox Owner" section
+	Then "No mailbox owner found for this mailbox" text is displayed for opened tab
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11478 @DAS11477 @DAS11476 @DAS11510 @API
 Scenario Outline: EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI

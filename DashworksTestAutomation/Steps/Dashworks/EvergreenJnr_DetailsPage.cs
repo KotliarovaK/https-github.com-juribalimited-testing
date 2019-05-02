@@ -615,11 +615,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.GroupIcon.Displayed());
         }
 
-        [Then(@"""(.*)"" text is displayed for ""(.*)"" section")]
-        public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
+        [Then(@"""(.*)"" text is displayed for opened tab")]
+        public void ThenTextIsDisplayedForOpenedTab(string textMessage)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
                 $"{textMessage} is not displayed");
