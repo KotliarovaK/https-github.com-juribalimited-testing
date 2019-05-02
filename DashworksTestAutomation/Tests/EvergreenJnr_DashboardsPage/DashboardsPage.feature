@@ -1206,3 +1206,57 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks "MOVE" button on the Move to Section Pop up
 	When User clicks "Dashboards" navigation link on the Admin page
 	Then "Device Profile" Widget is displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16336 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                        |
+	| MigrationP: Application Readiness |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	And User removes "Vendor" column by Column panel
+	And User removes "Version" column by Column panel
+	And User click on 'MigrationP: Application Readiness' column header
+	And User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
+	Then "DAS16336_Applications_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS16336" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS16336" as Widget Title
+	And User selects "DAS16336_Applications_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	And User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	And "Amber" color is displayed for Card Widget
+	When User clicks the "CREATE" Action button
+	Then There are no errors in the browser console
+	Then Text Only is displayed for Card widget
+	And "Amber" color is displayed for Card Widget
+	When User clicks Ellipsis menu for "WidgetForDAS16336" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then There are no errors in the browser console
+	Then Icon Only is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks Ellipsis menu for "WidgetForDAS16336" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then There are no errors in the browser console
+	Then "Amber" color is displayed for Card Widget
+	Then Icon and Text is displayed for Card widget
+	When User clicks Settings button for "Dashboard_DAS16336" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
