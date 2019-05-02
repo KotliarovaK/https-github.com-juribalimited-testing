@@ -133,5 +133,15 @@ namespace DashworksTestAutomation.Pages
             }
             
         }
+
+        public IWebElement GetCardWidgetPreview()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']"));
+        }
+
+        public IWebElement GetTableWidgetPreview()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='table-responsive']"));
+        }
     }
 }

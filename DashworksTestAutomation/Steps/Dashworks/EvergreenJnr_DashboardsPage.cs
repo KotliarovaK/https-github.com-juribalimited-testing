@@ -667,6 +667,35 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.IsTrue(page.WidgetPreview.Displayed(), "Widget Preview is not displayed");
         }
+        
+        [Then(@"Card widget displayed inside preview pane")]
+        public void ThenCardWidgetDisplayedInsidePreviewPane()
+        {
+            var preview = _driver.NowAt<EvergreenDashboardsPage>();
+            int prevWidth = preview.WidgetPreview.Size.Width;
+            int prevX = preview.WidgetPreview.Location.X;
+            int prevY = preview.WidgetPreview.Location.Y;
+
+            var widget = _driver.NowAt<AddWidgetPage>();
+            int widgetWidth = widget.GetCardWidgetPreview().Size.Width;
+            int widgetX = widget.GetCardWidgetPreview().Location.X;
+            int widgetY = widget.GetCardWidgetPreview().Location.Y;
+
+            Assert.That(prevX < widgetX && prevY < widgetY, Is.True, "Widget XY coordinate displayed outside preview box");
+            Assert.That(prevWidth > widgetWidth, Is.True, "Widget width displayed outside preview box");
+        }
+
+        [Then(@"Table widget displayed inside preview pane correctly")]
+        public void ThenTableWidgetDisplayedInsidePreviewPane()
+        {
+            var preview = _driver.NowAt<EvergreenDashboardsPage>();
+            int prevWidth = preview.WidgetPreview.Size.Width;
+
+            var widget = _driver.NowAt<AddWidgetPage>();
+            int widgetWidth = widget.GetTableWidgetPreview().Size.Width;
+
+            Assert.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
+        }
 
         [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
         public void ThenWidgetPreviewShowsFirstCellValue(string option)

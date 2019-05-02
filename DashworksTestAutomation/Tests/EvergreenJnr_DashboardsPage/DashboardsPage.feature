@@ -292,7 +292,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
-	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct            | Application ASC |                  | 10        |            |
+	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct    | Application ASC |                  | 10        |            |
 	Then There are no errors in the browser console
 	Then User sees widget with the next name "WidgetForDAS14685" on Dashboards page
 	When User clicks Settings button for "Dashboard for DAS14685" dashboard
@@ -476,7 +476,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @Dashboards @Widgets @DAS15364 @Delete_Newly_Created_List
+@Evergreen @Dashboards @Widgets @DAS15364 @DAS15316 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -496,6 +496,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 	And User selects "List15364" as Widget List
 	When User selects "First Cell" in the "Type" Widget dropdown
 	Then Widget Preview is displayed to the user
+	And Card widget displayed inside preview pane
 	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
@@ -1046,4 +1047,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then Widget Preview is displayed to the user
 	And Widget Preview shows "Empty" as First Cell value
 	And There are no errors in the browser console
+
+@Evergreen @Dashboards @Widgets @DAS15208
+Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPreviewPane
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title     | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend | Drilldown |
+	| Table      | DAS-15208 | All Devices | Device Type | Device Type | Count distinct    | Device Type ASC | Horizontal       |           |            |           |
+	Then Widget Preview is displayed to the user
+	And Table widget displayed inside preview pane correctly
+	And There are no errors in the browser console
+	
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15462
+Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCount
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title                      | List        | Type | AggregateBy | AggregateFunction | SplitBy          | OrderBy              | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Line       | Project AllDevicesDAS15462 | All Devices |      | Hostname    | Count distinct    | Operating System | Operating System ASC |           |            |                  |           |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "Project AllDevicesDAS15462" Widget is displayed to the user
+	When User clicks Edit mode trigger on Dashboards page
+	Then Tooltip is displayed for the point of Line widget
+	| WidgetName                 | NumberOfPoint | Tooltip     |
+	| Project AllDevicesDAS15462 | 2             | OS X 10.5 1 |
 	

@@ -321,7 +321,7 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetPointOfLineWidgetByName(string widgetName, string pointNumber)
         {
-            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty']['{pointNumber}']");
+            var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty'][{pointNumber}]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(cardWidget).First();
         }
