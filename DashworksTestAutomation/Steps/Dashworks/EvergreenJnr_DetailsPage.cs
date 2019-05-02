@@ -343,6 +343,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksFilterButtonOnTheColumnSettingsPanel()
         {
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.MouseHover(menu.FilterButton);
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.FilterButton);
             menu.FilterButton.Click();
         }
@@ -471,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("123.525px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
