@@ -6536,7 +6536,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14263")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.CategoryAttribute("DAS16403")]
         public virtual void EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel()
         {
             System.Exception lastException = null;
@@ -6571,7 +6571,7 @@ this.FeatureBackground();
                         "EvergreenJnr_Pivot",
                         "Pivot",
                         "DAS14263",
-                        "Not_Ready"});
+                        "DAS16403"});
 #line 1654
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6617,16 +6617,18 @@ this.FeatureBackground();
 #line 1672
  testRunner.When("User select \"Specific users / teams\" sharing option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1673
- testRunner.When("User clicks the \"ADD TEAMS\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the \"ADD TEAM\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1674
- testRunner.When("User selects \"Team 1062\" in the Team dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects the \"Team 1062\" team for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1675
- testRunner.And("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("\"ADD TEAM\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1676
- testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1677
- testRunner.When("User navigates to the \"<PivotName>\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1678
+ testRunner.When("User navigates to the \"DAS14263_Pivot\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1679
  testRunner.Then("User remove list with \"DAS14263_Pivot\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

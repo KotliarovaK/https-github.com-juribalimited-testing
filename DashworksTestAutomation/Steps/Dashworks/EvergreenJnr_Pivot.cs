@@ -33,6 +33,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.CreateActionButton);
+            _driver.WaitForDataLoading();
             page.CreateActionButton.Click();
             page.GetCreateButtonByName("Pivot").Click();
         }
