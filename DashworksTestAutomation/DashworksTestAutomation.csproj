@@ -176,6 +176,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\AutomationsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\UpdateReadinessPage.cs" />

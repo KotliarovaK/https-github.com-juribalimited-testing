@@ -1,5 +1,4 @@
-﻿using DashworksTestAutomation.DTO;
-using DashworksTestAutomation.DTO.RuntimeVariables;
+﻿using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
@@ -19,8 +18,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
-using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
-using DashworksTestAutomation.Tests.EvergreenJnr_AdminPage;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -2797,15 +2794,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Assert.That(labels.FindIndex(x => x.Equals(title))+1, Is.EqualTo(labels.FindIndex(x => x.Equals("NONE"))));
         }
-
-        [Then(@"Readiness Dialog Container is displayed to the User")]
-        public void ThenReadinessDialogContainerIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ReadinessPage>();
-            Assert.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
-        }
-
-
 
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
         public void WhenUserClicksButtonInTheReadinessDialogScreen(string buttonName)

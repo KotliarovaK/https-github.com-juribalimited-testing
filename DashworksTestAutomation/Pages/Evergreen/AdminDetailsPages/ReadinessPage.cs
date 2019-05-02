@@ -40,5 +40,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 $".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
             return Driver.FindElement(selector);
         }
+
+        public List<string> GetListOfReadinessLabel()
+        {
+            List<string> labels = new List<string>();
+            IList<IWebElement> webLabels = Driver.FindElements(By.XPath(".//div[@role='gridcell']//a"));
+
+            foreach (var webEl in webLabels)
+            {
+                labels.Add(webEl.Text);
+            }
+
+            return labels;
+        }
     }
 }
