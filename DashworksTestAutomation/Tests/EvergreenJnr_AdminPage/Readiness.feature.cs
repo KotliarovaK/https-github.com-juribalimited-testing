@@ -202,6 +202,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Readiness")]
         [NUnit.Framework.CategoryAttribute("DAS15884")]
         [NUnit.Framework.CategoryAttribute("DAS15789")]
+        [NUnit.Framework.CategoryAttribute("DAS16131")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness()
         {
@@ -238,6 +239,7 @@ this.FeatureBackground();
                         "Readiness",
                         "DAS15884",
                         "DAS15789",
+                        "DAS16131",
                         "Delete_Newly_Created_Project"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
@@ -264,44 +266,63 @@ this.FeatureBackground();
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedRowsName"});
+                        "ColumnName"});
             table3.AddRow(new string[] {
-                        "RED"});
+                        "Readiness"});
+            table3.AddRow(new string[] {
+                        "Tooltip"});
+            table3.AddRow(new string[] {
+                        "Default for Applications"});
+            table3.AddRow(new string[] {
+                        "Task Values Count"});
+            table3.AddRow(new string[] {
+                        "Object App Override Count"});
+            table3.AddRow(new string[] {
+                        "Stage Overrides Count"});
+            table3.AddRow(new string[] {
+                        "Task Values Templates Count"});
 #line 51
- testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table3, "When ");
-#line 54
- testRunner.When("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
- testRunner.When("User clicks Delete button in Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 56
- testRunner.When("User clicks the \"DELETE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 57
- testRunner.Then("Readiness Dialog Container is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 58
- testRunner.When("User clicks \"DELETE\" button in the Readiness dialog screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 59
- testRunner.Then("Success message is displayed and contains \"The selected readiness has been delete" +
-                    "d\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 60
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table4.AddRow(new string[] {
-                        "AMBER"});
-#line 61
+                        "RED"});
+#line 60
  testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table4, "When ");
-#line 64
+#line 63
  testRunner.When("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 65
+#line 64
  testRunner.When("User clicks Delete button in Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
+#line 65
  testRunner.When("User clicks the \"DELETE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 67
+#line 66
  testRunner.Then("Readiness Dialog Container is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 68
+#line 67
  testRunner.When("User clicks \"DELETE\" button in the Readiness dialog screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
+ testRunner.Then("Success message is displayed and contains \"The selected readiness has been delete" +
+                    "d\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 69
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table5.AddRow(new string[] {
+                        "AMBER"});
+#line 70
+ testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table5, "When ");
+#line 73
+ testRunner.When("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+ testRunner.When("User clicks Delete button in Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 75
+ testRunner.When("User clicks the \"DELETE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 76
+ testRunner.Then("Readiness Dialog Container is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 77
+ testRunner.When("User clicks \"DELETE\" button in the Readiness dialog screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 78
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -309,20 +330,23 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Readiness")]
-        [NUnit.Framework.CategoryAttribute("DAS15769")]
-        public virtual void EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage()
+        [NUnit.Framework.CategoryAttribute("DAS16131")]
+        [NUnit.Framework.CategoryAttribute("DAS16226")]
+        [NUnit.Framework.CategoryAttribute("DAS16163")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        public virtual void EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPageInternal();
+                    this.EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplayInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -341,37 +365,114 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPageInternal()
+        private void EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplayInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Readiness",
-                        "DAS15769"});
-#line 72
+                        "DAS16131",
+                        "DAS16226",
+                        "DAS16163",
+                        "Delete_Newly_Created_Project"});
+#line 81
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 73
+#line 82
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 74
- testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 75
- testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
-                    " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.Then("Warning message with \"created objects which are not displayed in Evergreen\" text " +
-                    "is displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 79
- testRunner.When("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
- testRunner.Then("No warning message displayed on the Project Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 83
+ testRunner.When("User clicks the \"CREATE PROJECT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
+ testRunner.Then("\"Create Project\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 85
+ testRunner.When("User enters \"DAS16131_Project\" in the \"Project Name\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+ testRunner.And("User selects \"All Devices\" in the Scope Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("User clicks Create button on the Create Project page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.Then("Success message is displayed and contains \"The project has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 89
+ testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 90
+ testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table6.AddRow(new string[] {
+                        "Readiness"});
+            table6.AddRow(new string[] {
+                        ""});
+            table6.AddRow(new string[] {
+                        "Tooltip"});
+            table6.AddRow(new string[] {
+                        "Ready"});
+            table6.AddRow(new string[] {
+                        "Default for Applications"});
+            table6.AddRow(new string[] {
+                        "Task Values Count"});
+            table6.AddRow(new string[] {
+                        "Applications Count"});
+            table6.AddRow(new string[] {
+                        "Object App Override Count"});
+            table6.AddRow(new string[] {
+                        "Stage Overrides Count"});
+            table6.AddRow(new string[] {
+                        "Task Values Templates Count"});
+#line 91
+ testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table6, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table7.AddRow(new string[] {
+                        "RED"});
+#line 103
+ testRunner.When("User select \"Readiness\" rows in the grid", ((string)(null)), table7, "When ");
+#line 106
+ testRunner.When("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
+ testRunner.And("User clicks Delete button in Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("User clicks the \"DELETE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.Then("Readiness Dialog Container is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 110
+ testRunner.And("\"Delete Readiness\" title is displayed in the Readiness Dialog Container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 111
+ testRunner.When("User clicks \"CANCEL\" button in the Readiness dialog screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedRowsName"});
+            table8.AddRow(new string[] {
+                        "GREEN"});
+#line 112
+ testRunner.And("User select \"Readiness\" rows in the grid", ((string)(null)), table8, "And ");
+#line 115
+ testRunner.And("User clicks the \"DELETE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.Then("Readiness Dialog Container is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 117
+ testRunner.Then("\"Delete Readinesses\" title is displayed in the Readiness Dialog Container", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 118
+ testRunner.Then("Cancel button in the pop up is colored gray", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 119
+ testRunner.Then("Delete button in the pop up is colored amber", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 120
+ testRunner.When("User clicks \"DELETE\" button in the Readiness dialog screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 121
+ testRunner.Then("Success message is displayed and contains \"The selected readinesses have been del" +
+                    "eted, changes might not take effect immediately\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 122
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 123
+ testRunner.And("User enters \"DAS16131_Project\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+ testRunner.And("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.And("User removes selected item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -420,62 +521,62 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Readiness",
                         "DAS14937"});
-#line 83
+#line 128
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 84
+#line 129
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 85
+#line 130
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 86
+#line 131
  testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
                     " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 132
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 133
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
+#line 134
  testRunner.When("User enters \"BLUE\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 135
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 136
  testRunner.And("User sets Default for Applications checkbox in \"TRUE\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 137
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 138
  testRunner.And("User clicks the \"CREATE READINESS\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Readiness",
                         "Tooltip",
                         "Ready",
                         "DefaultForApplications",
                         "ColourTemplate"});
-            table5.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "DAS14937",
                         "tooltipForDas14937",
                         "TRUE",
                         "TRUE",
                         "RED"});
-#line 94
- testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table5, "And ");
-#line 97
+#line 139
+ testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table9, "And ");
+#line 142
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
+#line 143
  testRunner.And("User enters \"BLUE\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
+#line 144
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
+#line 145
  testRunner.When("User sets Default for Applications checkbox in \"FALSE\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 146
  testRunner.And("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 147
  testRunner.And("User enters \"DAS14937\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
+#line 148
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
+#line 149
  testRunner.Then("User sees Default for Applications checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -523,46 +624,45 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Readiness",
-                        "DAS14937",
-                        "DAS15669"});
-#line 107
+                        "DAS14937"});
+#line 152
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 108
+#line 153
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
+#line 154
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 110
+#line 155
  testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
                     " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
+#line 156
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 112
+#line 157
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 113
+#line 158
  testRunner.And("User clicks the \"CREATE READINESS\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Readiness",
                         "Tooltip",
                         "Ready",
                         "DefaultForApplications",
                         "ColourTemplate"});
-            table6.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "DAS14937_1",
                         "tooltipForDas14937_1",
                         "TRUE",
                         "TRUE",
                         "RED"});
-#line 114
- testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table6, "And ");
-#line 117
+#line 159
+ testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table10, "And ");
+#line 162
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
+#line 163
  testRunner.Then("Success message is displayed and contains \"The readiness has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 119
+#line 164
  testRunner.And("Readiness \"DAS14937_1\" displayed before None", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -610,42 +710,42 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Readiness",
                         "DAS14937"});
-#line 122
+#line 167
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 123
+#line 168
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 124
+#line 169
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 125
+#line 170
  testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
                     " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 126
+#line 171
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 127
+#line 172
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 128
+#line 173
  testRunner.And("User clicks the \"CREATE READINESS\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 129
+#line 174
  testRunner.And("User enters \"testreadinesname_testreadinesname_testreadinesname_t\" in Readiness i" +
                     "nput on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 130
+#line 175
  testRunner.Then("User sees \"testreadinesname_testreadinesname_testreadinesname\" in Readiness input" +
                     " on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 131
+#line 176
  testRunner.And("User sees \"testreadinesname_testreadinesname_testreadinesname\" in Tooltip input o" +
                     "n Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 177
  testRunner.When("User enters \"testtooltipname_testtooltipname_testtooltipname_test\" in Tooltip inp" +
                     "ut on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 133
+#line 178
  testRunner.Then("User sees \"testtooltipname_testtooltipname_testtooltipname_te\" in Tooltip input o" +
                     "n Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 134
+#line 179
  testRunner.When("User clicks Colour Template field on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 180
  testRunner.Then("List of available colours displayed to user on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -693,84 +793,84 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Readiness",
                         "DAS14938"});
-#line 138
+#line 183
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 139
+#line 184
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 140
+#line 185
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 141
+#line 186
  testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
                     " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
+#line 187
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 188
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 189
  testRunner.When("User clicks String Filter button for \"Default for Applications\" column on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 145
+#line 190
  testRunner.And("User clicks \"False\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 146
+#line 191
  testRunner.Then("\"TRUE\" content is displayed in \"Default for Applications\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 147
+#line 192
  testRunner.When("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 148
+#line 193
  testRunner.And("User remembers opened Readiness data on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 149
+#line 194
  testRunner.Then("User sees Default for Applications checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 150
+#line 195
  testRunner.When("User clicks Default for Applications checkbox on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 151
+#line 196
  testRunner.Then("User sees Default for Applications checkbox disabled on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 152
+#line 197
  testRunner.And("User sees Default for Applications checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 153
+#line 198
  testRunner.When("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 154
+#line 199
  testRunner.And("User clicks the \"CREATE READINESS\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Readiness",
                         "Tooltip",
                         "Ready",
                         "DefaultForApplications",
                         "ColourTemplate"});
-            table7.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "DAS14938_1",
                         "tooltipForDas14938_1",
                         "TRUE",
                         "TRUE",
                         "RED"});
-#line 155
- testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table7, "And ");
-#line 158
+#line 200
+ testRunner.And("User updates readiness properties on Edit Readiness", ((string)(null)), table11, "And ");
+#line 203
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 159
+#line 204
  testRunner.Then("Success message is displayed and contains \"The readiness has been created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 160
+#line 205
  testRunner.When("User enters stored readiness name in Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 161
+#line 206
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 162
+#line 207
  testRunner.Then("User checks that opened readiness name is the same as stored one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 163
+#line 208
  testRunner.And("User sees Default for Applications checkbox in \"FALSE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
+#line 209
  testRunner.When("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 165
+#line 210
  testRunner.And("User clicks String Filter button for \"Default for Applications\" column on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 166
+#line 211
  testRunner.And("User clicks \"False\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 167
+#line 212
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 168
+#line 213
  testRunner.Then("User sees Default for Applications checkbox disabled on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 169
+#line 214
  testRunner.And("User sees Default for Applications checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -818,51 +918,51 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Readiness",
                         "DAS14938"});
-#line 172
+#line 217
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 173
+#line 218
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 174
+#line 219
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
+#line 220
  testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
                     " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
+#line 221
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
+#line 222
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 178
+#line 223
  testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 179
+#line 224
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 180
+#line 225
  testRunner.Then("Readiness input displayed disabled on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 181
+#line 226
  testRunner.When("User enters \"tooltip14938_1\" in Tooltip input on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 182
+#line 227
  testRunner.And("User sets Ready checkbox in \"TRUE\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 183
+#line 228
  testRunner.And("User sets Default for Applications checkbox in \"TRUE\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 184
+#line 229
  testRunner.And("User clicks Colour Template field on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 185
+#line 230
  testRunner.Then("List of available colours is not displayed to user on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 186
+#line 231
  testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 187
+#line 232
  testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line 233
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 234
  testRunner.Then("User sees \"None\" in Readiness input on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 190
+#line 235
  testRunner.And("User sees \"tooltip14938_1\" in Tooltip input on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 191
+#line 236
  testRunner.And("User sees Ready checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 192
+#line 237
  testRunner.And("User sees Default for Applications checkbox in \"TRUE\" state on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -912,37 +1012,37 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Readiness",
                         "DAS14938"});
-#line 195
+#line 240
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 196
+#line 241
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 197
+#line 242
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 198
+#line 243
  testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
                     " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 199
+#line 244
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 200
+#line 245
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 201
+#line 246
  testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 202
+#line 247
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 203
+#line 248
  testRunner.And("User enters \"tooltip14938_2\" in Tooltip input on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 204
+#line 249
  testRunner.And("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 205
+#line 250
  testRunner.And("User enters \"None\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 206
+#line 251
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 207
+#line 252
  testRunner.Then("User sees \"None\" in Readiness input on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 208
+#line 253
  testRunner.And("User sees Tooltip field not equal to \"tooltip14938_2\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -990,39 +1090,39 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Readiness",
                         "DAS14938"});
-#line 211
+#line 256
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 212
+#line 257
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 213
+#line 258
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 214
+#line 259
  testRunner.And("User enters \"Windows 7 Migration (Computer Scheduled Project)\" text in the Search" +
                     " field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 215
+#line 260
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 216
+#line 261
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 217
+#line 262
  testRunner.When("User clicks String Filter button for \"Default for Applications\" column on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 218
+#line 263
  testRunner.And("User clicks \"False\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 219
+#line 264
  testRunner.When("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 220
+#line 265
  testRunner.And("User remembers opened Readiness data on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 221
+#line 266
  testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 222
+#line 267
  testRunner.And("User clicks String Filter button for \"Default for Applications\" column on the Adm" +
                     "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 223
+#line 268
  testRunner.And("User clicks \"False\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 224
+#line 269
  testRunner.Then("Filtered readiness item equals to stored one", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -1030,20 +1130,23 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterU" +
+            "singCogMenuOptions")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Readiness")]
-        [NUnit.Framework.CategoryAttribute("DAS15720")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader()
+        [NUnit.Framework.CategoryAttribute("DAS16148")]
+        [NUnit.Framework.CategoryAttribute("DAS16226")]
+        [NUnit.Framework.CategoryAttribute("DAS16163")]
+        public virtual void EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptions()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeaderInternal();
+                    this.EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptionsInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1062,133 +1165,136 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeaderInternal()
+        private void EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterUsingCogMenuOptionsInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedProperlyAfterU" +
+                    "singCogMenuOptions", null, new string[] {
                         "Evergreen",
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Readiness",
-                        "DAS15720"});
-#line 227
+                        "DAS16148",
+                        "DAS16226",
+                        "DAS16163"});
+#line 272
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 228
+#line 273
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 229
- testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 230
- testRunner.And("User enters \"Havoc (Big Data)\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 231
- testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
- testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
- testRunner.When("User have opened Column Settings for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 234
+#line 274
+ testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 275
+ testRunner.When("User enters \"1803 Rollout\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 276
+ testRunner.When("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 277
+ testRunner.When("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 278
+ testRunner.When("User enters \"Grey\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 279
+ testRunner.Then("\"FALSE\" content is displayed for \"Ready\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 280
+ testRunner.Then("\"1\" content is displayed for \"Task Values Count\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 281
+ testRunner.When("User clicks \"Change to ready\" option in Cog-menu for \"Grey\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 282
+ testRunner.Then("Success message is displayed and contains \"The readiness has been updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 283
+ testRunner.Then("Success message is displayed and contains \"click here to view the Grey readiness\"" +
+                    " link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 284
+ testRunner.Then("Green banner contains following text \"changes might not take effect immediately\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 285
+ testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 286
+ testRunner.Then("Update Readiness is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 287
+ testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 288
+ testRunner.When("User enters \"Grey\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 289
+ testRunner.Then("\"TRUE\" content is displayed for \"Ready\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 290
+ testRunner.Then("\"1\" content is displayed for \"Task Values Count\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 291
+ testRunner.When("User clicks \"Change to not ready\" option in Cog-menu for \"Grey\" item on Admin pag" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 292
+ testRunner.Then("\"FALSE\" content is displayed for \"Ready\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 293
+ testRunner.Then("\"1\" content is displayed for \"Task Values Count\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 294
+ testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 295
+ testRunner.When("User clicks \"Change to not ready\" option in Cog-menu for \"Green\" item on Admin pa" +
+                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 296
+ testRunner.Then("Success message is displayed and contains \"The readiness has been updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 297
+ testRunner.Then("Success message is displayed and contains \"click here to view the Green readiness" +
+                    "\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 298
+ testRunner.Then("Green banner contains following text \"changes might not take effect immediately\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 299
+ testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 300
+ testRunner.Then("Update Readiness is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 301
+ testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 302
+ testRunner.When("User clicks \"Change to ready\" option in Cog-menu for \"Green\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 303
+ testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"Apps In Initi" +
+                    "ation\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 304
+ testRunner.Then("Success message is displayed and contains \"The readiness has been updated\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 305
+ testRunner.Then("Success message is displayed and contains \"click here to view the Light Blue read" +
+                    "iness\" link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 306
+ testRunner.Then("Green banner contains following text \"changes might not take effect immediately\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 307
+ testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 308
+ testRunner.Then("Update Readiness is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 309
+ testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 310
+ testRunner.When("User clicks \"Make default for applications\" option in Cog-menu for \"Red\" item on " +
+                    "Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 311
+ testRunner.When("User have opened column settings for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 312
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
- testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 236
- testRunner.When("User select \"Priority\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 237
+#line 313
+ testRunner.And("User select \"Ready\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 314
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table8.AddRow(new string[] {
-                        "Priority"});
-#line 238
- testRunner.Then("following columns added to the table:", ((string)(null)), table8, "Then ");
-#line 241
- testRunner.When("User click on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 242
- testRunner.Then("numeric data in table is sorted by \'Priority\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 243
- testRunner.When("User click on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 244
- testRunner.Then("numeric data in table is sorted by \'Priority\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Admin")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
-        [NUnit.Framework.CategoryAttribute("Readiness")]
-        [NUnit.Framework.CategoryAttribute("DAS15673")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorksInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorksInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks", null, new string[] {
-                        "Evergreen",
-                        "Admin",
-                        "EvergreenJnr_AdminPage",
-                        "Readiness",
-                        "DAS15673"});
-#line 247
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 248
- testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 249
- testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 250
- testRunner.And("User enters \"Havoc (Big Data)\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
- testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 252
- testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 253
- testRunner.And("User performs right-click on \"Red\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 254
- testRunner.And("User selects \'Copy row\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 255
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 256
- testRunner.And("Next data \'\\t\\tRed\\t\\tRed\\tFalse\\t50\\t0\\t0\\t0\\t4\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 257
- testRunner.When("User clicks refresh button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 258
- testRunner.And("User performs right-click on \"Amber\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 259
- testRunner.And("User selects \'Copy cell\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 260
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 261
- testRunner.And("Next data \'Amber\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            table12.AddRow(new string[] {
+                        "Readiness"});
+            table12.AddRow(new string[] {
+                        ""});
+            table12.AddRow(new string[] {
+                        "Tooltip"});
+            table12.AddRow(new string[] {
+                        "Default for Applications"});
+            table12.AddRow(new string[] {
+                        "Task Values Count"});
+            table12.AddRow(new string[] {
+                        "Applications Count"});
+            table12.AddRow(new string[] {
+                        "Object App Override Count"});
+            table12.AddRow(new string[] {
+                        "Stage Overrides Count"});
+            table12.AddRow(new string[] {
+                        "Task Values Templates Count"});
+#line 315
+ testRunner.Then("Columns on Admin page is displayed in following order:", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

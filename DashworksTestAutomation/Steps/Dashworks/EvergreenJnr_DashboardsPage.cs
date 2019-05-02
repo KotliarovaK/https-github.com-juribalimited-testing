@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
+using DashworksTestAutomation.Pages.Evergreen.Dashboards;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -42,7 +45,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksEditModeTriggerOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             page.EditModeOnOffTrigger.Click();
         }
 
@@ -171,6 +173,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var arrow in page.AllCollapseExpandSectionsArrows)
             {
                 if (arrow.GetAttribute("class").Contains("arrow_up"))
+                {
+                    arrow.Click();
+                }
+            }
+        }
+
+        [When(@"User expands all sections on Dashboards page")]
+        public void WhenUserExpandsAllSectionsOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            foreach (var arrow in page.AllCollapseExpandSectionsArrows)
+            {
+                if (arrow.GetAttribute("class").Contains("arrow_down"))
                 {
                     arrow.Click();
                 }
@@ -585,6 +601,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsInTheWidgetDropdown(string objectName, string dropdownName)
         {
             var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName(dropdownName));
             createWidgetElement.SelectObjectForWidgetCreation(objectName);
         }
@@ -634,6 +651,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createWidgetElement.ColorScheme.Click();
         }
 
+        [When(@"User selects ""(.*)"" in the Colour Scheme")]
+        public void WhenUserSelectsInTheColourScheme(string colorTitle)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            createWidgetElement.ColorScheme.Click();
+            createWidgetElement.GetColorFromColorScheme(colorTitle).Click();
+        }
+
         [Then(@"Colour Scheme dropdown is displayed to the user")]
         public void ThenColourSchemeDropdownIsDisplayedToTheUser()
         {
@@ -645,6 +671,34 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             var page = _driver.NowAt<BaseGridPage>();
             page.BodyContainer.Click();
+        }
+
+        [Then(@"Colour Scheme dropdown is not displayed to the user")]
+        public void ThenColourSchemeDropdownIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
+        }
+
+        [Then(@"Text Only is displayed for Card widget")]
+        public void ThenTextOnlyIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
+        }
+
+        [Then(@"Icon and Text is displayed for Card widget")]
+        public void ThenIconAndTextIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
+        }
+
+        [Then(@"Icon Only is displayed for Card widget")]
+        public void ThenIconOnlyIsDisplayedForCardWidget()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards page")]
@@ -695,13 +749,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int widgetWidth = widget.GetTableWidgetPreview().Size.Width;
 
             Assert.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
-        }
-
-        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
-        public void ThenWidgetPreviewShowsFirstCellValue(string option)
-        {
-            var page = _driver.NowAt<AddWidgetPage>();
-            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
         [Then(@"""(.*)"" Widget is displayed to the user")]
@@ -757,6 +804,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
+        }
+
+        [Then(@"""(.*)"" color is displayed for widget")]
+        public void ThenColorIsDisplayedForWidget(string color)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var getColor = page.ColorWidgetItem.GetAttribute("style").Split(';')
+                .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
+            Assert.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
+        }
+
+        [Then(@"""(.*)"" color is displayed for Card Widget")]
+        public void ThenColorIsDisplayedForCardWidget(string color)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var getColor = page.ColorWidgetItem.GetCssValue("color");
+            Assert.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
         [Then(@"""(.*)"" count is displayed for ""(.*)"" in the table Widget")]
@@ -952,15 +1016,152 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
         }
 
-        [Then(@"Line X labels of ""(.*)"" widget is displayed in following order:")]
-        public void ThenLineLabelsIsDisplayedInFollowingOrder(string widgetName,  Table table)
+        [When(@"User selects ""(.*)"" checkbox on the Create Widget page")]
+        public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.GetDashboardCheckboxByName(checkboxName).Click();
+        }
+
+        [When(@"User clicks ""(.*)""  button on the Dashboards page")]
+        public void WhenUserClicksButtonOnTheDashboardsPage(string buttonName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            List<string> labelList = page.GetPointOfLineWidgetByName(widgetName);
-            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+            page.GetTopBarActionButton(buttonName).Click();
+        }
 
-            Assert.AreEqual(expectedList, labelList, "Label order is incorrect");
+        [Then(@"Print Preview is displayed to the User")]
+        public void ThenPrintPreviewIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            Assert.IsTrue(page.PrintPreviewSettingsPopUp.Displayed(), "Print Preview is not Displayed");
+            Assert.IsTrue(page.DashWorksPrintLogo.Displayed());
+            Assert.IsTrue(page.PrintPreviewWidgets.Displayed);
+        }
+
+        [When(@"User selects ""(.*)"" option in the ""(.*)"" dropdown for Print Preview Settings")]
+        public void WhenUserSelectsOptionInTheDropdownForPrintPreviewSettings(string option, string dropdown)
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            _driver.ClickByJavascript(page.GetPrintPreviewDropdownByName(dropdown));
+            page.SelectPrintPreviewSettings(option);
+        }
+
+        [Then(@"Print Preview is displayed in A4 format view")]
+        public void ThenPrintPreviewIsDisplayedInA4FormatView()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            _driver.WaitForDataLoading();
+            //Wait for style changing
+            Thread.Sleep(1000);
+            Assert.IsTrue(page.A4PrintPreviewView.Displayed, "Print Preview is not displayed in A4 format view");
+        }
+
+        [Then(@"Print Preview is displayed in Letter format view")]
+        public void ThenPrintPreviewIsDisplayedInLetterFormatView()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            //Wait for style changing
+            Thread.Sleep(500);
+            Assert.IsTrue(page.LetterPrintPreviewView.Displayed, "Print Preview is not displayed in Letter format view");
+        }
+
+        [Then(@"Print Preview is displayed in Portrait orientation")]
+        public void ThenPrintPreviewIsDisplayedInPortraitOrientation()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            //Wait for style changing
+            Thread.Sleep(500);
+            Assert.IsTrue(page.PortraitPrintPreviewOrientation.Displayed, "Print Preview is not displayed in Portrait orientation");
+        }
+
+        [Then(@"Print Preview is displayed in Landscape orientation")]
+        public void ThenPrintPreviewIsDisplayedInLandscapeOrientation()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            //Wait for style changing
+            Thread.Sleep(500);
+            Assert.IsTrue(page.LandscapePrintPreviewOrientation.Displayed, "Print Preview is not displayed in Landscape orientation");
+        }
+
+        [When(@"User clicks Cancel button on the Print Preview Settings pop-up")]
+        public void WhenUserClicksCancelButtonOnThePrintPreviewSettingsPop_Up()
+        {
+            var page = _driver.NowAt<PrintDashboardsPage>();
+            page.CancelButton.Click();
+        }
+
+        [Then(@"Data Labels are displayed on the Dashboards page")]
+        public void ThenDataLabelsAreDisplayedOnTheDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.DataLabels.Displayed(), "Data Labels are not displayed");
+        }
+
+        [Then(@"""(.*)"" data label is displayed on the Dashboards page")]
+        public void ThenDataLabelIsDisplayedOnTheDashboardsPage(string text)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            Assert.That(page.DataLabels.Text, Is.EqualTo(text), $"{text} data label is not displayed");
+        }
+
+        [Then(@"Card Widget is blank")]
+        public void ThenCardWidgetIsBlank()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsEmpty(page.CardWidgetValue.Text);
+        }
+
+        [Then(@"""(.*)"" checkbox is checked on the Create Widget page")]
+        public void ThenCheckboxIsCheckedOnTheCreateWidgetPage(string checkboxName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.GetDashboardCheckboxByName(checkboxName).GetAttribute("class").Contains("checked"));
+        }
+
+        [Then(@"""(.*)"" checkbox is not displayed on the Create Widget page")]
+        public void ThenCheckboxIsNotDisplayedOnTheCreateWidgetPage(string checkboxName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsFalse(page.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is displayed");
+        }
+
+        [Then(@"Move to Section pop up is displayed to the User")]
+        public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsTrue(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is not displayed");
+        }
+
+        [Then(@"Move to Section pop up is not displayed to the User")]
+        public void ThenMoveToSectionPopUpIsNotDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.IsFalse(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is displayed");
+        }
+
+        [When(@"User selects ""(.*)"" section on the Move to Section pop up")]
+        public void WhenUserSelectsSectionOnTheMoveToSectionPopUp(string sectionName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.SelectSectionToMove(sectionName);
+        }
+
+        [When(@"User clicks ""(.*)"" button on the Move to Section Pop up")]
+        public void WhenUserClicksButtonOnTheMoveToSectionPopUp(string buttonName)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.ClickMoveToSectionPopUpButton(buttonName);
+        }
+
+        [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
+        public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
     }
-   
 }

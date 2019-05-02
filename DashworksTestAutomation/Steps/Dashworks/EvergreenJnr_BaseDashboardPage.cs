@@ -346,13 +346,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetItalicContentByColumnName(textContent).Displayed, "Content is not styled in italic or not displayed");
         }
 
-        [Then(@"empty rows is displayed in ""(.*)"" column")]
-        public void ThenEmptyRowsIsDisplayedInColumn(string p0)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-        }
-
         [Then(@"full list content is displayed to the user")]
         public void ThenFullListContentIsDisplayedToTheUser()
         {
@@ -591,6 +584,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
+        }
+
+        [Then(@"Error is displayed to the User")]
+        public void ThenErrorIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.ErrorBox.Displayed(), "Error is displayed");
         }
     }
 }

@@ -123,7 +123,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatURLsAreUpdatedAfterAddingSortingAndC
 	When User navigates to the "All Devices" list
 	Then default URL is displayed on "Devices" page
 
-@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001 @DAS16300
+@Evergreen @Users @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS12174 @DAS13001 @DAS16300 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -141,9 +141,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	Then default URL is displayed on "Users" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "User Application Compliance" filter where type is "Equals" with added column and following checkboxes:
-	| SelectedCheckboxes |
-	| Amber              |
+	When User add "MigrationP: Readiness" filter where type is "Equals" with added column and "Blue" Lookup option
 	Then Appropriate filter is added to URL
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641

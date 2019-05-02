@@ -35,11 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gherkin, Version=6.0.0.0, Culture=neutral, PublicKeyToken=86496cfa5b4a5851, processorArchitecture=MSIL">
-      <HintPath>..\packages\Gherkin.6.0.0\lib\net45\Gherkin.dll</HintPath>
-    </Reference>
-    <Reference Include="HtmlAgilityPack, Version=1.11.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-      <HintPath>..\packages\HtmlAgilityPack.1.11.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.6.11\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\VS.QualityTools.UnitTestFramework.15.0.27323.2\lib\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
@@ -53,8 +51,8 @@
     <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=106.6.9.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.6.9\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="RestSharp, Version=106.6.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.6.7\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
@@ -70,13 +68,8 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
@@ -90,24 +83,19 @@
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.2.4.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <HintPath>..\packages\SpecFlow.2.4.1\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
-    <Reference Include="Utf8Json, Version=1.3.7.0, Culture=neutral, PublicKeyToken=8a73d3ba7e392e27, processorArchitecture=MSIL">
-      <HintPath>..\packages\Utf8Json.1.3.7\lib\net47\Utf8Json.dll</HintPath>
-    </Reference>
-    <Reference Include="WebDriver, Version=3.12.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.WebDriver.3.12.1\lib\net45\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=3.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.12.0\lib\net45\WebDriver.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="WebDriver.Support">
       <HintPath>..\packages\Selenium.Support.3.10.0\lib\net45\WebDriver.Support.dll</HintPath>
@@ -180,15 +168,22 @@
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\BaseFilter.cs" />
     <Compile Include="Helpers\ColorsConvertor.cs" />
+    <Compile Include="Helpers\ColorWidgetConvertor.cs" />
     <Compile Include="Helpers\ColumnNameToUrlConvertor.cs" />
     <Compile Include="Helpers\DatabaseHelper.cs" />
     <Compile Include="Helpers\DetailsSectionToUrlConvertor.cs" />
     <Compile Include="Helpers\FilterOperatorsConvertor.cs" />
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
-    <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\AutomationsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\CogMenuElements.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\UpdateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\ReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
+    <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\NavigationPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\AddWidgetPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\EvergreenDashboardsPage.cs" />
@@ -286,14 +281,18 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AdminPageNavigation.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_CogMenuActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Pivot.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
@@ -743,12 +742,12 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.1\build\SpecFlow.targets'))" />
     <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.41.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.41.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
-    <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
   </Target>
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.38.0.1\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\SpecFlow.2.4.1\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" />
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.41.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.41.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
-  <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
 </Project>

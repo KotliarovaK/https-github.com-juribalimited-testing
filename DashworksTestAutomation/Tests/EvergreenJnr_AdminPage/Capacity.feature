@@ -300,7 +300,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14240 @DAS16372
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdatingOrCreation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -309,7 +309,21 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
+	And User clicks content from "Capacity Unit" column
+	When User clicks "Projects" navigation link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Email Migration" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	And User clicks content from "Capacity Unit" column
+	When User clicks "Administration" navigation link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "Email Migration" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
+	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit14240" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "14240" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
@@ -900,7 +914,13 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	And column content is displayed in the following order:
+	When User have opened Column Settings for "Capacity Slot" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Display Order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
 	| Items             |
 	| Unassigned        |
 	| 13159             |
@@ -908,7 +928,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	| CapacityUnit13790 |
 	| NewUnit           |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13382 @DAS13149 @DAS13147 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13382 @DAS13149 @DAS13147 @DAS15827 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExistingDisplayName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -925,8 +945,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	When User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks the "CREATE SLOT" Action button
-	And User type "Name1" Name in the "Slot Name" field on the Project details page
-	And User type "Name1" Name in the "Display Name" field on the Project details page
+	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
+	And User type "Name13147" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And There are no errors in the browser console
@@ -937,9 +957,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And There are no errors in the browser console
 	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
-	And User type "Name13147" Name in the "Display Name" field on the Project details page
+	And User type "Name1" Name in the "Slot Name" field on the Project details page
+	And User type "Name1" Name in the "Display Name" field on the Project details page
 	And User clicks the "CREATE" Action button
+	When User have opened Column Settings for "Capacity Slot" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Display Order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
+	Then column content is displayed in the following order:
+	| Items     |
+	| Slot13147 |
+	| NewName   |
+	| Name1     |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS14029
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
@@ -2396,3 +2427,39 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 11:00 - 13:00   |
 	| London Depot 13:00 - 15:00   |
 	| London Depot 15:00 - 17:00   |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13671
+Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "I-Computer Scheduled Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
+	And User enters "Slot 2018-10-01 - 2018-10-31[Team: 2832; RequestType: 471]" text in the Search field for "Capacity Slot" column
+	And User clicks content from "Capacity Slot" column
+	And User clicks on "Tasks" dropdown on the Capacity Slots page
+	Then Tasks are displayed in the following order on Action panel:
+	| Items                       |
+	| i-stage A \ i-comp-radb     |
+	| i-stage A \ i-Schedule      |
+	| i-stage A \ i-Targeted      |
+	| i-stage A \ i-Forecast      |
+	| i-stage A \ i-Completed     |
+	| i-stage A \ i-Migrated      |
+	| i-stage A \ i-comp-grp-radb |
+	When User selects "Slots" tab on the Project details page
+	And User clicks the "CREATE SLOT" Action button
+	And User selects following items in "Request Types" dropdown:
+	| items                             |
+	| req type comp              |
+	And User clicks on "Tasks" dropdown on the Capacity Slots page
+	Then Tasks are displayed in the following order on Action panel:
+	| Items                       |
+	| i-stage A \ i-comp-radb     |
+	| i-stage A \ i-Schedule      |
+	| i-stage A \ i-Targeted      |
+	| i-stage A \ i-Forecast      |
+	| i-stage A \ i-Completed     |
+	| i-stage A \ i-Migrated      |
+	| i-stage A \ i-comp-grp-radb |

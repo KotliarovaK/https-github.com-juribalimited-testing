@@ -10,7 +10,6 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
 {
     [Binding]
-
     internal class EvergreenJnr_AdminPage_Messages : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
@@ -121,6 +120,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
+        }
+
+        [Then(@"Green banner contains following text ""(.*)""")]
+        public void ThenGreenBannerContainsFollowingText(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            StringAssert.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
         }
 
         [Then(@"Error message with ""(.*)"" text is displayed")]

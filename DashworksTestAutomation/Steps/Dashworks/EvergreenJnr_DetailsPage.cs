@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            //_driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
             detailsPage.NavigateToSectionByName(sectionName).Click();
         }
 
@@ -492,7 +492,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -707,6 +707,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                 detailsPage.RowsLabel.Text,
                 "Incorrect rows count");
+        }
+
+        [Then(@"Name of colors are displayed in following order on the Details Page:")]
+        public void ThenNameOfColorsAreDisplayedInFollowingOrderOnTheDetailsPage(Table table)
+        {
+            var columnElement = _driver.NowAt<DetailsPage>();
+            var columnHeaders = columnElement.GetDetailsColorHeadersContentToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(expectedList, columnHeaders, "Column headers names are incorrect");
         }
 
         [Then(@"""(.*)"" rows are displayed in the agGrid on Capacity Units page")]

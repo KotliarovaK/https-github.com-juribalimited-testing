@@ -787,3 +787,20 @@ Scenario: EvergreenJnr_AdminPage_CheckTheDefaultSortOrderIsCorrectWhenYouAddDevi
 	When User clicks "Mailboxes" tab
 	And User clicks the "ADD MAILBOX" Action button
 	Then Objects for Buckets are displayed in alphabetical order on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @DAS16152
+Scenario: EvergreenJnr_AdminPage_ChecksThatUsingSelectAllCheckboxOnTheBucketDetailsPageIsWorkingCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	And User clicks content from "Bucket" column
+	Then "[Unassigned]" bucket details is displayed to the user
+	When User selects all rows on the grid
+	Then Select All selectbox is checked
+	Then Actions button on the Projects page is active
+	When User deselect all rows on the grid
+	Then Select All selectbox is unchecked
+	Then Actions button on the Projects page is not active
+	When User clicks Actions button on the Projects page

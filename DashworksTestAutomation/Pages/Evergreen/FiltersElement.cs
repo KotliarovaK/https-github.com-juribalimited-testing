@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']")]
         public IWebElement FiltersPanel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='title-beetwen-blocks']/following-sibling::div//input[contains(@id,'mat-input')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[@id='mat-input-6']")]
         public IWebElement FilterSearchField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='filter-label-name']")]
@@ -56,12 +56,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath,
             Using = ".//div[@class='filterAddPanel ng-star-inserted']//input[@placeholder='Search']")]
         public IWebElement LookupFilterSearchTextBox { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Value']")]
-        public IWebElement DayHourFilterInput { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='day-hour ng-star-inserted']//mat-hint[@class='mat-hint']/span")]
-        public IWebElement DayHourFilterInstruction { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = ".//div[@id='context']//input[@id='chipInput']")]

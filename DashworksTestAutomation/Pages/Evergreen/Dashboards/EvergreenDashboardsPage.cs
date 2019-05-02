@@ -16,6 +16,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-color']")]
+        public IWebElement ColorWidgetItem { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
 
@@ -85,10 +88,25 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='widget-preview']")]  ////div[@class='widget-preview']//div[@dir='ltr'] old locator
         public IWebElement WidgetPreview { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-icon')]")]
+        public IWebElement IconOnlyCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'icon-and-text')]")]
+        public IWebElement IconAndTextCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-text')]")]
+        public IWebElement TextOnlyCardWidget { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-data']")]
+        public IWebElement CardWidgetValue { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
+        public IWebElement DataLabels { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -312,6 +330,13 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(cardWidget);
         }
 
+        public IWebElement GetTopBarActionButton(string buttonName)
+        {
+            var cardWidget = By.XPath($".//div[@class='action-container']/button//i[text()='{buttonName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(cardWidget);
+        }
+
         public IWebElement GetFirstDashboardFromList()
         {
             var cardWidget = By.XPath($".//ul[@class='submenu-actions-dashboards']/li[@mattooltipposition]");
@@ -324,33 +349,6 @@ namespace DashworksTestAutomation.Pages
             var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[contains(@class,'highcharts-point') and @widget-name!='Empty'][{pointNumber}]");
             Driver.WaitForDataLoading();
             return Driver.FindElements(cardWidget).First();
-        }
-
-        public List<string> GetPointOfLineWidgetByName(string widgetName)
-        {
-            var totalLabelsCount = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end']");
-
-            Driver.WaitForDataLoading();
-
-            List<string> webLabels = new List<string>();
-
-            for (int i = 1; i <= Driver.FindElements(totalLabelsCount).Count; i++)
-            {
-                if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
-                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]"))
-                    .Text))
-                {
-                    webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]/*")).Text);
-                }
-                else
-                {
-                    webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]")).Text);
-                }
-            }
-
-            return webLabels;
         }
 
         public string GetFocusedPointHover(string widgetName)
@@ -370,7 +368,6 @@ namespace DashworksTestAutomation.Pages
             //greater than 1 because line must have at least two points
             return Driver.FindElements(cardWidget).Count>1;
         }
-
 
     }
 }

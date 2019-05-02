@@ -1397,36 +1397,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different");
             }
         }
-
-        [Then(@"DayHour filter has ""(.*)"" instruction")]
-        public void ThenDayHourFilterHasInstruction(string instruction)
-        {
-            var page = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.DayHourFilterInput);
-
-            Assert.That(page.DayHourFilterInstruction.Text, Is.EqualTo(instruction), "Instruction is different");
-            Logger.Write("Instruction is displayed correctly");
-        }
-
-        [When(@"User enter value ""(.*)"" in DayHour filter")]
-        public void WhenUserEntersValueInDayHourFilter(string date)
-        {
-            var page = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.DayHourFilterInput);
-
-            page.DayHourFilterInput.Clear();
-            page.DayHourFilterInput.SendKeys(date);
-            page.DayHourFilterInstruction.Click();
-        }
-
-        [Then(@"DayHour filter has entered value ""(.*)""")]
-        public void ThenDayHourFilterHasEnteredValue(string expectedValue)
-        {
-            var page = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.DayHourFilterInput);
-
-            Assert.That(page.DayHourFilterInput.GetAttribute("value"), Is.EqualTo(expectedValue), "Value is different");
-            Logger.Write("Value is displayed correctly");
-        }
     }
 }

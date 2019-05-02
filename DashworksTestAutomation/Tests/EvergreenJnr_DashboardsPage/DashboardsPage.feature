@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWindows10BranchChartUnknownLinkRe
 	Then "Devices" list should be displayed to the user
 	And "16" rows are displayed in the agGrid
 
-@Evergreen @Dashboards @Widgets @DAS14358
+@Evergreen @Dashboards @Widgets @DAS14358 @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks Ellipsis menu for "Top 10 App Vendors" Widget on Dashboards page
@@ -22,6 +22,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	| Move to start    |
 	| Move to end      |
 	| Move to position |
+	| Move to section  |
 	| Delete           |
 
 @Evergreen @Dashboards @Sections @DAS14358
@@ -595,7 +596,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15737 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15737 @DAS15662 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -621,6 +622,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	When User selects "prK: Application Readiness ASC" in the "Order By" Widget dropdown
 	And User clicks on the Colour Scheme dropdown
 	Then Colour Scheme dropdown is displayed to the user
+	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 	When User clicks Settings button for "Dashboard for DAS15737" dashboard
 	And User clicks Delete button for custom list
@@ -844,26 +846,59 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	| Vendor      |
 	| Version     |
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @DAS15134 @DAS15355
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
 	When User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               | 
-	And User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName |
 	| Compliance |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	When User removes "Vendor" column by Column panel
+	When User removes "Version" column by Column panel
 	And User create dynamic list with "1803 App Compliance" name on "Applications" page
 	Then "1803 App Compliance" list is displayed to user
 	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
+	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS16069_2" name
 	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS16069" as Widget Title
+	And User selects "1803 App Compliance" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	Then Colour Scheme dropdown is not displayed to the user
+	When User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks the "CREATE" Action button
+	Then Text Only is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Green" color is displayed for Card Widget
+	Then Icon and Text is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Green" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Green" color is displayed for Card Widget
+	Then Icon Only is displayed for Card widget
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title               | List                | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
@@ -874,9 +909,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card "WidgetForDAS16069_2" widget
 	Then Save as a new list option is available
-	And "43" rows are displayed in the agGrid
+	And "286" rows are displayed in the agGrid
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15920
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15134 @DAS16263
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS15134" name
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15134" as Widget Title
+	And User selects "All Devices" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User selects "Pink" in the Colour Scheme
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "WidgetForDAS15134" Widget is displayed to the user
+	Then "Pink" color is displayed for widget
+	When User clicks Ellipsis menu for "WidgetForDAS15134" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Amber" in the Colour Scheme
+	When User clicks the "UPDATE" Action button
+	Then "Amber" color is displayed for widget
+	When User clicks Settings button for "Dashboard for DAS15134" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+	
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15920 @DAS15662
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Columns button
@@ -895,6 +953,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	| WidgetType | Title                 | List            | Type | AggregateBy | AggregateFunction | SplitBy                       | OrderBy                           | MaxValues | ShowLegend | TableOrientation | Drilldown |
 	| Line       | LineWidgetForDas15920 | ListForDas15920 |      |             | Count             | Device Application Compliance | Device Application Compliance ASC |           |            |                  | Yes       |
 	Then Widget Preview is displayed to the user
+	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 	Then Card "LineWidgetForDas15920" Widget is displayed to the user
 	And Line chart displayed in "LineWidgetForDas15920" widget
@@ -928,17 +987,188 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	And User clicks data in card "WidgetForDAS15722" widget
 	Then "1" rows are displayed in the agGrid
 
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355
+Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
+	When User clicks "Applications" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Compliance |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Application" column by Column panel
+	When User removes "Vendor" column by Column panel
+	When User removes "Version" column by Column panel
+	And User create dynamic list with "DAS15355_Applications_List" name on "Applications" page
+	Then "DAS15355_Applications_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS15355" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15355" as Widget Title
+	And User selects "DAS15355_Applications_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "CREATE" Action button
+	Then Text Only is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then Icon and Text is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Amber" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then Icon Only is displayed for Card widget
+	When User clicks Settings button for "Dashboard_DAS15355" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355 @DAS15662
+Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| 1803: Readiness |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Hostname" column by Column panel
+	When User removes "Device Type" column by Column panel
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	And User create dynamic list with "DAS15355_List" name on "Devices" page
+	Then "DAS15355_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS15355_1" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15355_1" as Widget Title
+	And User selects "DAS15355_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User selects "Text Only" in the "Layout" Widget dropdown
+	Then Text Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	Then "Data Label" checkbox is not displayed on the Create Widget page
+	When User clicks the "CREATE" Action button
+	Then Text Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	Then Icon and Text is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Grey" color is displayed for Card Widget
+	Then Icon and Text is displayed for Card widget
+	When User clicks Ellipsis menu for "WidgetForDAS15355_1" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Icon Only" in the "Layout" Widget dropdown
+	Then Icon Only is displayed for Card widget
+	Then "Grey" color is displayed for Card Widget
+	When User clicks the "UPDATE" Action button
+	Then "Grey" color is displayed for Card Widget
+	Then Icon Only is displayed for Card widget
+	When User clicks Settings button for "Dashboard_DAS15355_1" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15662
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "DAS15662_Dashboard" name
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "<WidgetType>" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS15662" as Widget Title
+	And User selects "All Devices" as Widget List
+	When User selects "Hostname" in the "Split By" Widget dropdown
+	When User selects "Count" in the "Aggregate Function" Widget dropdown
+	When User selects "Count ASC" in the "Order By" Widget dropdown
+	When User selects "Data Label" checkbox on the Create Widget page
+	Then Data Labels are displayed on the Dashboards page
+	Then "<DataLabel>" data label is displayed on the Dashboards page
+	When User clicks the "CREATE" Action button
+	Then Data Labels are displayed on the Dashboards page
+	Then "<DataLabel>" data label is displayed on the Dashboards page
+	When User clicks Ellipsis menu for "WidgetForDAS15662" Widget on Dashboards page
+	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
+	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	Then "Data Label" checkbox is checked on the Create Widget page
+	Then Data Labels are displayed on the Dashboards page
+	Then "<DataLabel>" data label is displayed on the Dashboards page
+	When User clicks Settings button for "DAS15662_Dashboard" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+Examples:
+	| WidgetType | DataLabel      |
+	| Pie        | 00RUUMAH9OZN9A |
+	| Half donut | 00RUUMAH9OZN9A |
+	| Donut      | 00RUUMAH9OZN9A |
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16266
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
+	When User clicks "Devices" on the left-hand menu
+	When User click on 'Owner Display Name' column header
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Hostname" column by Column panel
+	When User removes "Device Type" column by Column panel
+	When User removes "Operating System" column by Column panel
+	And User create dynamic list with "DAS16266_List" name on "Devices" page
+	Then "DAS16266_List" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "DAS16266_Dashboard" name
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "WidgetForDAS16266" as Widget Title
+	And User selects "DAS16266_List" as Widget List
+	When User selects "First Cell" in the "Type" Widget dropdown
+	When User clicks the "CREATE" Action button
+	Then Card Widget is blank
+	When User clicks Settings button for "DAS16266_Dashboard" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+	Then Search field in selected Filter is empty
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15200
+Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
+	When User clicks "print"  button on the Dashboards page
+	Then Print Preview is displayed to the User
+	When User selects "A4" option in the "Paper size" dropdown for Print Preview Settings
+	Then Print Preview is displayed in A4 format view
+	When User selects "Letter" option in the "Paper size" dropdown for Print Preview Settings
+	Then Print Preview is displayed in Letter format view
+	When User selects "Portrait" option in the "Paper layout" dropdown for Print Preview Settings
+	Then Print Preview is displayed in Portrait orientation
+	When User selects "Landscape" option in the "Paper layout" dropdown for Print Preview Settings
+	Then Print Preview is displayed in Landscape orientation
+	When User clicks Cancel button on the Print Preview Settings pop-up
+
 @Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15914
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
 	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| TRUE               | 
+	| TRUE               |
 	And User Add And "1803: Ready to Migrate" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Ready              |
-   	And User clicks the Columns button
+	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName             |
 	| 1803: Ready to Migrate |
@@ -955,7 +1185,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
 	| Card       | WidgetForDAS15914 | DeviceListFor15914 | First Cell |             |                   |         |         |           |            |                  |           |
 	Then Widget Preview is displayed to the user
-	And Widget Preview shows "READY" as First Cell value
+	Then Widget Preview shows "READY" as First Cell value
 
 @Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15544
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
@@ -1076,3 +1306,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	| WidgetName                 | NumberOfPoint | Tooltip     |
 	| Project AllDevicesDAS15462 | 2             | OS X 10.5 1 |
 	
+	@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS14618
+Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
+	Then Move to Section pop up is displayed to the User
+	When User clicks "CANCEL" button on the Move to Section Pop up
+	Then Move to Section pop up is not displayed to the User
+	When User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
+	When User selects "2" section on the Move to Section pop up
+	When User clicks "MOVE" button on the Move to Section Pop up
+	When User expands all sections on Dashboards page
+	Then "Device Profile" Widget is displayed to the user
+	When User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
+	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
+	When User selects "1" section on the Move to Section pop up
+	When User clicks "MOVE" button on the Move to Section Pop up
+	When User clicks "Dashboards" navigation link on the Admin page
+	Then "Device Profile" Widget is displayed to the user

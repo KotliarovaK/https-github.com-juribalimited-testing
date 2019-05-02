@@ -38,11 +38,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = FirstColumnTableContent)]
         public IList<IWebElement> TableContentList { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//li//label//span[@class='mat-checkbox-label']")]
+        public IList<IWebElement> DropdownTaskItemsList { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@id='actions']")]
         public IWebElement ActionsSelectBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
+        public IWebElement ErrorBox  { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div[@row-index]")]
         public IWebElement TableString { get; set; }
@@ -117,11 +123,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ObjectsBucketsToAdd)]
         public IList<IWebElement> ObjectsBucketsList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='mat-select-value']/span[text()='Actions']/ancestor::mat-select")]
         public IWebElement ActionsButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]
-        public IWebElement CogMenu { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']/span[contains(text(), 'Delete')]")]
         public IWebElement DeleteButtonInActions { get; set; }
@@ -193,6 +196,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]")]
         public IWebElement SuccessMessage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-success')]//span[@class='ng-star-inserted']")]
+        public IWebElement SuccessMessageThirdPart { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-info')]")]
         public IWebElement BlueBanner { get; set; }
@@ -356,6 +362,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             var columnHeaderSelector = $".//span[@class='ag-header-cell-text'][text()='{columnName}']";
+            Driver.WaitForDataLoading();
             Driver.MouseHover(By.XPath(columnHeaderSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
@@ -432,7 +439,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
         }
-
 
         public bool GetTabHeaderInTheScopeChangesSection(string text)
         {
@@ -612,10 +618,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetCogMenuByItem(string item)
+        public IWebElement GetOpenedPageByName(string pageName)
         {
-            var selector = By.XPath($"//div[@title='{item}']/./following-sibling::div//div[@class='cell-menu-settings']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            var selector = By.XPath($"//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
             return Driver.FindElement(selector);
         }
     }

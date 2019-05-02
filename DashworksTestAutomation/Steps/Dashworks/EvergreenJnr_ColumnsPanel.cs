@@ -176,7 +176,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"default URL is displayed on ""(.*)"" page")]
         public void ThenDefaultURLIsDisplayedOnPage(string pageName)
         {
-            _driver.WaitForDataLoading();
             var currentUrl = _driver.Url;
             const string pattern = @"evergreen\/#\/(.*)";
             var currentPageName = Regex.Match(currentUrl, pattern).Groups[1].Value;

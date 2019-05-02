@@ -19,7 +19,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
-using DashworksTestAutomation.Pages;
+using DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages;
+using DashworksTestAutomation.Tests.EvergreenJnr_AdminPage;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -335,7 +336,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees next Slots on the Capacity Slots page:")]
-        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
+        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots) 
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForDataLoading();
@@ -1644,17 +1645,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-
-            var project = page.GetCreatedProjectName(projectName);
-
-            if (project == false) { 
-                Thread.Sleep(45000);
+            try
+            {
+                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
+            }
+            catch (Exception)
+            {
+                Thread.Sleep(30000);
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
-                project = page.GetCreatedProjectName(projectName);
+                Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
             }
-
-            Assert.IsTrue(project, $"The {projectName} Project is not found");
         }
 
         [Then(@"Import Project button is not displayed")]
@@ -1786,13 +1787,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var message = _driver.NowAt<BaseGridPage>();
             StringAssert.Contains(text, message.WarningMessage.Text, $"{text} is not displayed in Warning message");
-        }
-
-        [Then(@"No warning message displayed on the Project Details Page")]
-        public void ThenNoWarningMessageIsDisplayedOnTheProjectDetailsPage()
-        {
-            var message = _driver.NowAt<BaseGridPage>();
-            Assert.That(_driver.IsElementDisplayed(message.WarningMessage), Is.False,  $"Warning message is displayed");
         }
 
         [Then(@"User selects ""(.*)"" option for selected language")]
@@ -1973,6 +1967,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"Tasks are displayed in the following order on Action panel:")]
+        public void ThenTasksAreDisplayedInTheFollowingOrderOnActionPanel(Table table)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = page.DropdownTaskItemsList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Tasks are different");
+        }
+
         [When(@"User selects next items in the ""(.*)"" dropdown:")]
         public void WhenUserSelectsNextItemsInTheDropdown(string dropdownName, Table items)
         {
@@ -2084,6 +2087,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<Capacity_SlotsPage>();
             var slotFrom = page.GetMoveButtonBySlotName(slot);
             var slotTo = page.GetMoveButtonBySlotName(moveToSlot);
+            _driver.DragAndDrop(slotFrom, slotTo);
+        }
+
+        [When(@"User moves ""(.*)"" automation to ""(.*)"" automation")]
+        public void WhenUserMovesAutomationToAutomation(string automation, string moveToautomation)
+        {
+            var page = _driver.NowAt<AutomationsPage>();
+            var slotFrom = page.GetMoveButtonBySlotName(automation);
+            var slotTo = page.GetMoveButtonBySlotName(moveToautomation);
             _driver.DragAndDrop(slotFrom, slotTo);
         }
 
@@ -2308,6 +2320,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectElement.ActionsButton.Click();
         }
 
+        [Then(@"Actions button on the Projects page is active")]
+        public void ThenActionsButtonOnTheProjectsPageIsActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains("false", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+        }
+
+        [Then(@"Actions button on the Projects page is not active")]
+        public void ThenActionsButtonOnTheProjectsPageIsNotActive()
+        {
+            var projectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains("true", projectElement.ActionsButton.GetAttribute("aria-disabled"), "Actions button is inactive");
+        }
+
         [When(@"User clicks Delete Project button")]
         public void WhenUserClicksDeleteProjectButton()
         {
@@ -2431,15 +2457,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < buckets.RowCount; i++)
                 Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
                     "Buckets are not the same");
-        }
-
-        [Then(@"User sees following cog-menu items on Admin page:")]
-        public void ThenUserSeesFollowingCog_MenuItemsOnAdminPage(Table items)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            for (var i = 0; i < items.RowCount; i++)
-                Assert.That(page.CogMenuItems[i].Text, Is.EqualTo(items.Rows[i].Values.FirstOrDefault()),
-                    "Items are not the same");
         }
 
         [Then(@"Columns on Admin page is displayed in following order:")]
@@ -2795,6 +2812,48 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<ReadinessPage>();
             button.GetReadinessDialogContainerButtonByName(buttonName).Click();
+        }
+
+        [Then(@"""(.*)"" text is displayed in the Readiness Dialog Container")]
+        public void ThenTextIsDisplayedInTheReadinessDialogContainer(string text)
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
+        [Then(@"""(.*)"" title is displayed in the Readiness Dialog Container")]
+        public void ThenTitleIsDisplayedInTheReadinessDialogContainer(string text)
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.GetReadinessDialogContainerTitle(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
+        [Then(@"Readiness Dialog Container is displayed to the User")]
+        public void ThenReadinessDialogContainerIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ReadinessPage>();
+            Assert.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
+        }
+
+        [Then(@"User sees following Processing order on the Automation page")]
+        public void ThenUserSeesFollowingProcessingOrderOnTheAutomationPage(Table processingOrder)
+        {
+            var page = _driver.NowAt<AutomationsPage>();
+            _driver.WaitForDataLoading();
+
+            for (var i = 0; i < processingOrder.RowCount; i++)
+                Assert.That(page.ProcessingOrderValues[i].Text, Is.EqualTo(processingOrder.Rows[i].Values.FirstOrDefault()),
+                    "Processing order values are not the same");
+        }
+
+        [Then(@"User sees following Display order on the Automation page")]
+        public void ThenUserSeesFollowingDisplayOrderOnTheAutomationPage(Table displaygOrder)
+        {
+            var page = _driver.NowAt<RingsPage>();
+            _driver.WaitForDataLoading();
+            for (var i = 0; i < displaygOrder.RowCount; i++)
+                Assert.That(page.DisplayOrderValues[i].Text, Is.EqualTo(displaygOrder.Rows[i].Values.FirstOrDefault()),
+                    "Display order values are displayed in the wrong order");
         }
 
         [AfterScenario("Delete_Newly_Created_Team")]

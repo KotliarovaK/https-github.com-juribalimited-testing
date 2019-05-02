@@ -17,7 +17,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	When User type "TestRing" Name in the "Ring name" field on the Project details page
 	And User clicks Create button on the Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
-	And User sees "2" rows in grid
 	When User select "Ring" rows in the grid
 	| SelectedRowsName |
 	| TestRing         |
@@ -177,7 +176,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @DAS15180 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @DAS15180 @DAS15826 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -216,6 +215,16 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User type "Ring_Test" Name in the "Ring name" field on the Project details page
 	When User clicks Default Ring checkbox
 	And User clicks Create button on the Create Ring page
+	When User have opened Column Settings for "Ring" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Display Order" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then User sees following Display order on the Automation page
+	| Values |
+	| 1      |
+	| 2      |
+	| 3      |
 	Then column content is displayed in the following order:
     | Items      |
     | Unassigned |
@@ -243,6 +252,10 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	And User clicks Delete button
 	Then Warning message with "This ring will be permanently deleted and any objects within it reassigned to the default ring" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
+	When User clicks "Projects" navigation link on the Admin page
+	When User enters "14695_Project" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14698 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsList

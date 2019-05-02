@@ -533,30 +533,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsFalse(action.ActionsButton.Displayed(), "Actions menu is displayed");
         }
 
-        [When(@"User clicks Cog-menu on the Admin page")]
-        public void WhenUserClicksCog_MenuOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.CogMenu.Click();
-        }
-
-        [When(@"User clicks Cog-menu for ""(.*)"" item on Admin page")]
-        public void WhenUserClicksCog_MenuForItemOnAdminPage(string itemName)
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            filterElement.BodyContainer.Click();
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.MouseHover(page.GetCogMenuByItem(itemName));
-            page.GetCogMenuByItem(itemName).Click();
-        }
-
-        [Then(@"Cog menu is not displayed on the Admin page")]
-        public void ThenCogMenuIsNotDisplayedOnTheAdminPage()
-        {
-            var action = _driver.NowAt<BaseGridPage>();
-            Assert.IsFalse(action.CogMenu.Displayed(), "Cog menu is displayed");
-        }
-
         [Then(@"Objects to add panel is disabled")]
         public void ThenObjectsToAddPanelIsDisabled()
         {

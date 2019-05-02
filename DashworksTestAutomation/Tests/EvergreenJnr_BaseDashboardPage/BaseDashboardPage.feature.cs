@@ -541,6 +541,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
         [NUnit.Framework.CategoryAttribute("DAS12174")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.CategoryAttribute("DAS16300")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters()
         {
             System.Exception lastException = null;
@@ -576,7 +577,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
                         "BaseDashboardPage",
                         "DAS12174",
                         "DAS13001",
-                        "DAS16300"});
+                        "DAS16300",
+                        "Not_Run"});
             this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
             this.FeatureBackground();
@@ -602,12 +604,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.Then("default URL is displayed on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SelectedCheckboxes"});
-            table5.AddRow(new string[] {
-                        "Amber"});
-            testRunner.When("User add \"User Application Compliance\" filter where type is \"Equals\" with added c" +
-                    "olumn and following checkboxes:", ((string)(null)), table5, "When ");
+            testRunner.When("User add \"MigrationP: Readiness\" filter where type is \"Equals\" with added column " +
+                    "and \"Blue\" Lookup option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("Appropriate filter is added to URL", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             this.ScenarioCleanup();
         }
@@ -729,11 +727,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table6.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         string.Format("{0}", addColumn)});
-            testRunner.And("User adds columns to the list", ((string)(null)), table6, "And ");
+            testRunner.And("User adds columns to the list", ((string)(null)), table5, "And ");
             testRunner.And(string.Format("User create dynamic list with \"DynamicList1\" name on \"{0}\" page", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And(string.Format("User click on \'{0}\' column header", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.Then(string.Format("data in table is sorted by \'{0}\' column in ascending order", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -1094,19 +1092,19 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_BaseDashboardPage
             testRunner.When("User clicks the \"CREATE DASHBOARD\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.And("User creates new Dashboard with \"Dashboard for DAS15444\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
             testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
                         "MaxRows",
                         "MaxColumns"});
-            table7.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "List",
                         "Widget_For_ DAS15444",
                         "DynamicList15444",
                         "10",
                         "10"});
-            testRunner.And("User creates new Widget", ((string)(null)), table7, "And ");
+            testRunner.And("User creates new Widget", ((string)(null)), table6, "And ");
             testRunner.Then("\"Widget_For_ DAS15444\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
             testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
             testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

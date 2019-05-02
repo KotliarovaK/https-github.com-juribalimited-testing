@@ -1638,15 +1638,3 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
 	Then Column "1803: Scheduled Date (Slot)" with no data displayed
-
-@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS14943
-Scenario: EvergreenJnr_DevicesList_CheckThatDeviceFilterValueHasInputLimitation
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Filters button
-	Then Filters panel is displayed to the user
-	When user select "Windows7Mi: Date & Time Task" filter
-	And User select "Equals (relative)" Operator value
-	Then DayHour filter has "Enter a value between 1 and 100000" instruction
-	When User enter value "9999999999999" in DayHour filter
-	Then DayHour filter has entered value "100000"

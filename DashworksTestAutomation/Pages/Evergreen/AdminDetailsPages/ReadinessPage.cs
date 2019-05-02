@@ -8,20 +8,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ReadinessPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']/change-readiness-dialog")]
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container[@role='dialog']//label[text()='Replacement Readiness']")]
         public IWebElement ReadinessDialogContainer { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CREATE READINESS']/ancestor::button")]
-        public IWebElement CreateNewReadinessBtn { get; set; }
-
-
 
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.CreateNewReadinessBtn)
+                SelectorFor(this, p => p.ReadinessDialogContainer)
             };
         }
 
@@ -32,18 +27,18 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-
-        public List<string> GetListOfReadinessLabel()
+        public IWebElement GetReadinessDialogContainerTitle(string text)
         {
-            List<string> labels = new List<string>();
-            IList<IWebElement> webLabels = Driver.FindElements(By.XPath(".//div[@role='gridcell']//a"));
+            var selector = By.XPath(
+                $".//mat-dialog-container[@role='dialog']//h1[text()='{text}']");
+            return Driver.FindElement(selector);
+        }
 
-            foreach (var webEl in webLabels)
-            {
-                labels.Add(webEl.Text);
-            }
-
-            return labels;
+        public IWebElement GetReadinessDialogContainerText(string text)
+        {
+            var selector = By.XPath(
+                $".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
+            return Driver.FindElement(selector);
         }
     }
 }

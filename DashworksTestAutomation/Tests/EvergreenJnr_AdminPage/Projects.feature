@@ -1997,7 +1997,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScope
 	Then "Devices to add (0 of 222 selected)" is displayed to the user in the Project Scope Changes section
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @UpdatingName @DAS13096 @DAS15994 @Delete_Newly_Created_Project @Projects @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -4027,3 +4027,30 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User tries to open not existing page
 	Then Page not found displayed for the user
 	And There are only page not found errors in console
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS16137
+Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithoutPermissionsNavigatesToAdminPages
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username      | FullName  | Password | ConfirmPassword | Roles                     |
+	| DAS16137_user | Test_User | 1234qwer | 1234qwer        | Dashworks Evergreen Users |
+	|               |           |          |                 | Analysis Editor           |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username      | Password |
+	| DAS16137_user | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType | QueryStringURL                            |
+	| Devices   | evergreen/#/admin/project/63/scopeChanges |
+	Then Admin menu item is hidden
+	Then Error is displayed to the User

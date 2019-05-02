@@ -24,6 +24,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
+#line 1 "ActionsPanel.feature"
+#line hidden
+        
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
@@ -68,8 +71,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
         
         public virtual void FeatureBackground()
         {
-            testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+#line 5
+ testRunner.Given("User is logged in to the Evergreen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
@@ -119,21 +126,36 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12602",
                         "DAS14603",
                         "archived"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 9
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User click on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User click on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.Then("Actions message container is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 10
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 12
+ testRunner.When("User click on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.When("User click on \'Username\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 16
+ testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.When("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.Then("User click back button in the browser", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+ testRunner.And("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 21
+ testRunner.Then("Actions message container is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -179,15 +201,24 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Users",
                         "EvergreenJnr_ActionsPanel",
                         "DAS10860"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions button is not active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 25
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 28
+ testRunner.Then("Actions button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 29
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.Then("Actions button is not active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -237,13 +268,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS12932",
                         "DAS13262"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 33
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 34
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -256,57 +294,91 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         ""});
-            testRunner.And("User create new User", ((string)(null)), table1, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 38
+ testRunner.And("User create new User", ((string)(null)), table1, "And ");
+#line 41
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 42
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 44
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 45
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table2.AddRow(new string[] {
                         "000WithoutRoles",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table2, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 46
+ testRunner.When("User login with following credentials:", ((string)(null)), table2, "When ");
+#line 49
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 50
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 51
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 52
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 54
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 55
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table3.AddRow(new string[] {
                         "002B5DC7D4D34D5C895"});
             table3.AddRow(new string[] {
                         "0088FC8A50DD4344B92"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table3, "When ");
-            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table3, "When ");
+#line 60
+ testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table4.AddRow(new string[] {
                         "Create static list"});
-            testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table4, "Then ");
-            testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table4, "Then ");
+#line 64
+ testRunner.When("User clicks Profile in Account Dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 65
+ testRunner.Then("Profile page is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Roles"});
             table5.AddRow(new string[] {
                         "Dashworks Users"});
             table5.AddRow(new string[] {
                         "Dashworks Evergreen Users"});
-            testRunner.And("following Roles are available for User:", ((string)(null)), table5, "And ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"000WithoutRoles\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 66
+ testRunner.And("following Roles are available for User:", ((string)(null)), table5, "And ");
+#line 70
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 72
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 74
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 75
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 76
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 77
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("User removes \"000WithoutRoles\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -358,13 +430,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS12932",
                         "DAS13261"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 81
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 82
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 83
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 84
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 85
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -377,61 +456,103 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table6, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 86
+ testRunner.And("User create new User", ((string)(null)), table6, "And ");
+#line 89
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 90
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 91
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 92
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 93
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table7.AddRow(new string[] {
                         "000WithPBU",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table7, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 94
+ testRunner.When("User login with following credentials:", ((string)(null)), table7, "When ");
+#line 97
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 98
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 99
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 100
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 101
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 102
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table8.AddRow(new string[] {
                         "Windows7Mi: Request Type"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
-            testRunner.And("User perform search by \"0DTXL41673EW7O\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 104
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
+#line 107
+ testRunner.And("User perform search by \"0DTXL41673EW7O\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table9.AddRow(new string[] {
                         "0DTXL41673EW7O"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table9, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 110
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table9, "When ");
+#line 113
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 114
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer: Laptop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 116
+ testRunner.And("User selects \"Computer: Laptop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 119
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 120
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer: Laptop Replacement\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"000WithPBU\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 122
+ testRunner.Then("\"Computer: Laptop Replacement\" text is displayed in the table content", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 123
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 124
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 125
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 126
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 127
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 128
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 129
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 130
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("User removes \"000WithPBU\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -483,13 +604,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS12932",
                         "DAS13261"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 134
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 135
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 136
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 137
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 138
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -502,61 +630,103 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Administrator"});
-            testRunner.And("User create new User", ((string)(null)), table10, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 139
+ testRunner.And("User create new User", ((string)(null)), table10, "And ");
+#line 142
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 143
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 144
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 145
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 146
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table11.AddRow(new string[] {
                         "000WithPA",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table11, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 147
+ testRunner.When("User login with following credentials:", ((string)(null)), table11, "When ");
+#line 150
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 151
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 152
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 153
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 154
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 155
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 156
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table12.AddRow(new string[] {
                         "EmailMigra: Request Type"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "When ");
-            testRunner.And("User perform search by \"0047 - Microsoft Access 97 SR-2 Francais\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 157
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "When ");
+#line 160
+ testRunner.And("User perform search by \"0047 - Microsoft Access 97 SR-2 Francais\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 161
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 162
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table13.AddRow(new string[] {
                         "0047 - Microsoft Access 97 SR-2 Francais"});
-            testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table13, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Sharepoint Application\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 163
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table13, "When ");
+#line 166
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 167
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 168
+ testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 169
+ testRunner.And("User selects \"Sharepoint Application\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 170
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 171
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 172
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 173
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Sharepoint Application\" content is displayed for \"EmailMigra: Request Type\" colu" +
+#line 174
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 175
+ testRunner.Then("\"Sharepoint Application\" content is displayed for \"EmailMigra: Request Type\" colu" +
                     "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"000WithPA\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 176
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 177
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 178
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 179
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 180
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 181
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 182
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 183
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 184
+ testRunner.And("User removes \"000WithPA\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -625,45 +795,74 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatRemoveFromStaticListOptionIsNotShownInTheActionsP" +
                     "anelWhenAStaticListDoesNotExist", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 187
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When(string.Format("User click on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When(string.Format("User create dynamic list with \"DynamicList12946\" name on \"{0}\" page", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"DynamicList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 188
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 189
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 190
+ testRunner.When(string.Format("User click on \'{0}\' column header", columnHeader), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 191
+ testRunner.When(string.Format("User create dynamic list with \"DynamicList12946\" name on \"{0}\" page", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 192
+ testRunner.Then("\"DynamicList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 193
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 194
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table14.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table14, "When ");
-            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 195
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table14, "When ");
+#line 198
+ testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table15.AddRow(new string[] {
                         "Create static list"});
             table15.AddRow(new string[] {
                         "Bulk update"});
-            testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table15, "Then ");
-            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Bulk Update Type dropdown is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When(string.Format("User selects \"{0}\" Project on Action panel", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And(string.Format("User selects \"{0}\" Stage on Action panel", stageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Task on Action panel", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 199
+ testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table15, "Then ");
+#line 203
+ testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 204
+ testRunner.Then("Bulk Update Type dropdown is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 205
+ testRunner.When("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 206
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 207
+ testRunner.And("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 208
+ testRunner.When(string.Format("User selects \"{0}\" Project on Action panel", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 209
+ testRunner.And(string.Format("User selects \"{0}\" Stage on Action panel", stageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 210
+ testRunner.And(string.Format("User selects \"{0}\" Task on Action panel", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 211
+ testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", value), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 213
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"0 of 1 object was in the selected project and has been queu" +
+#line 214
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.And("Success message with \"0 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 216
+ testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -726,29 +925,46 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatAddToStaticListOptionIsNotShownInTheActionsPanelW" +
                     "henOnlOneStaticListExists", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 226
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 227
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 228
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 229
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 230
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table16.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table16, "When ");
-            testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User create static list with \"StaticList12946\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"StaticList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 231
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table16, "When ");
+#line 234
+ testRunner.And("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 235
+ testRunner.And("User create static list with \"StaticList12946\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 236
+ testRunner.Then("\"StaticList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 237
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 238
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table17.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table17, "When ");
-            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 239
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnHeader), ((string)(null)), table17, "When ");
+#line 242
+ testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table18.AddRow(new string[] {
@@ -757,7 +973,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Remove from static list"});
             table18.AddRow(new string[] {
                         "Bulk update"});
-            testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table18, "Then ");
+#line 243
+ testRunner.Then("following Values are displayed in Action drop-down:", ((string)(null)), table18, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -816,31 +1034,52 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatStaticListsCreatedFromAFilterOriginallyLoadsAnyDa" +
                     "taOnceTheStaticListHasBeenCreated", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 257
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 258
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 259
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 260
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 261
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table19.AddRow(new string[] {
                         string.Format("{0}", checkboxes)});
-            testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
+#line 262
+ testRunner.When(string.Format("User add \"{0}\" filter where type is \"Equals\" without added column and following c" +
                         "heckboxes:", filterName), ((string)(null)), table19, "When ");
-            testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User create static list with \"StaticList12946\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"StaticList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 265
+ testRunner.Then(string.Format("\"{0}\" filter is added to the list", filterName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 266
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 267
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 268
+ testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 269
+ testRunner.When("User selects \"Create static list\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 270
+ testRunner.When("User create static list with \"StaticList12946\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 271
+ testRunner.Then("\"StaticList12946\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 272
+ testRunner.And("table content is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 273
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 274
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 275
+ testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 277
+ testRunner.When("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -888,29 +1127,45 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12863",
                         "DAS13266",
                         "DAS13284"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 287
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 288
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 289
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 290
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 291
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table20.AddRow(new string[] {
                         "TRUE"});
-            testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added column a" +
+#line 292
+ testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table20, "When ");
-            testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 295
+ testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 296
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 297
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table21.AddRow(new string[] {
                         "Windows7Mi: Request Type"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 298
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "When ");
+#line 301
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 302
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table22.AddRow(new string[] {
@@ -919,85 +1174,143 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "00BDM1JUR8IF419"});
             table22.AddRow(new string[] {
                         "00RUUMAH9OZN9A"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table22, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 303
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table22, "When ");
+#line 308
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 309
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 310
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Computer: PC Rebuild\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 311
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 312
+ testRunner.When("User selects \"Computer: PC Rebuild\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 313
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 314
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
+#line 315
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 316
+ testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
                     "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"00BDM1JUR8IF419\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 317
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 318
+ testRunner.And("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 319
+ testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 320
+ testRunner.When("User perform search by \"00BDM1JUR8IF419\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 321
+ testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 322
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 323
+ testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 324
+ testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 325
+ testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 327
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 328
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table23.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table23, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 329
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table23, "When ");
+#line 332
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 333
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 334
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer: Virtual Machine\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 335
+ testRunner.And("User selects \"Computer: Virtual Machine\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 336
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 337
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 338
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 339
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 340
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 341
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 342
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table24.AddRow(new string[] {
                         "00BDM1JUR8IF419"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table24, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 343
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table24, "When ");
+#line 346
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 347
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 348
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"[This is the Default Request Type for Computer)] \" Request Type on " +
+#line 349
+ testRunner.And("User selects \"[This is the Default Request Type for Computer)] \" Request Type on " +
                     "Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 350
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 351
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 352
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 353
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 354
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 355
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 356
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table25.AddRow(new string[] {
                         "00RUUMAH9OZN9A"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table25, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 357
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table25, "When ");
+#line 360
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 361
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 362
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer: Laptop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 363
+ testRunner.And("User selects \"Computer: Laptop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 364
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 365
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 366
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 367
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1047,31 +1360,49 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12863",
                         "DAS13266",
                         "DAS13284"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 370
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 371
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 372
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 373
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 374
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table26.AddRow(new string[] {
                         "TRUE"});
-            testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added column a" +
+#line 375
+ testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table26, "When ");
-            testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 378
+ testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 379
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 380
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table27.AddRow(new string[] {
                         "Windows7Mi: Request Type"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table27, "When ");
-            testRunner.And("User click on \'Windows7Mi: Request Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User click on \'Windows7Mi: Request Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 381
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table27, "When ");
+#line 384
+ testRunner.And("User click on \'Windows7Mi: Request Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 385
+ testRunner.And("User click on \'Windows7Mi: Request Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 386
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 387
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table28.AddRow(new string[] {
@@ -1080,86 +1411,146 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "AKX995383"});
             table28.AddRow(new string[] {
                         "AAD1011948"});
-            testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table28, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 388
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table28, "When ");
+#line 393
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 394
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 395
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"User; Maternity\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 396
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 397
+ testRunner.When("User selects \"User; Maternity\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 398
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 399
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
+#line 400
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 401
+ testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
                     "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks Search button and opens Search panel for agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User perform search by \"FMN5805290\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"AKX995383\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"AAD1011948\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 402
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 403
+ testRunner.When("User clicks Search button and opens Search panel for agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 404
+ testRunner.And("User perform search by \"FMN5805290\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 405
+ testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 406
+ testRunner.When("User perform search by \"AKX995383\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 407
+ testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 408
+ testRunner.When("User perform search by \"AAD1011948\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 409
+ testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 410
+ testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 411
+ testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 412
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 414
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 415
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table29.AddRow(new string[] {
                         "FMN5805290"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table29, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 416
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table29, "When ");
+#line 419
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 420
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 421
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User: VIP\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 422
+ testRunner.And("User selects \"User: VIP\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 423
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 424
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 425
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 426
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 427
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 428
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 429
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table30.AddRow(new string[] {
                         "AKX995383"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table30, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 430
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table30, "When ");
+#line 433
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 434
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 435
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User: No Agent\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 436
+ testRunner.And("User selects \"User: No Agent\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 437
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 438
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 439
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 440
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 441
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 442
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 443
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table31.AddRow(new string[] {
                         "AAD1011948"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table31, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 444
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table31, "When ");
+#line 447
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 448
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 449
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"[Default (User)]\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 450
+ testRunner.And("User selects \"[Default (User)]\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 451
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 452
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 453
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 454
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1211,96 +1602,156 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12863",
                         "DAS13266",
                         "DAS13284"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 457
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 458
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 459
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 460
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 461
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table32.AddRow(new string[] {
                         "TRUE"});
-            testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added column a" +
+#line 462
+ testRunner.When("User add \"Windows7Mi: In Scope\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table32, "When ");
-            testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 465
+ testRunner.Then("\"Windows7Mi: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 466
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 467
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table33.AddRow(new string[] {
                         "Windows7Mi: Request Type"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table33, "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 468
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table33, "When ");
+#line 471
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 472
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table34.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
             table34.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
-            testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table34, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 473
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table34, "When ");
+#line 477
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 478
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 479
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Application: Request Type B\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 480
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 481
+ testRunner.When("User selects \"Application: Request Type B\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 482
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 483
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"2 of 2 objects were in the selected project and have been q" +
+#line 484
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 485
+ testRunner.And("Success message with \"2 of 2 objects were in the selected project and have been q" +
                     "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User perform search by \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007" +
+#line 486
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 487
+ testRunner.And("User perform search by \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007" +
                     ")\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Request Type\" " +
+#line 488
+ testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Request Type\" " +
                     "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"0004 - Adobe Acrobat Reader 5.0.5 Francais\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Request Type\" " +
+#line 489
+ testRunner.When("User perform search by \"0004 - Adobe Acrobat Reader 5.0.5 Francais\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 490
+ testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Request Type\" " +
                     "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 491
+ testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 492
+ testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 493
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 495
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 496
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table35.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table35, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 497
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table35, "When ");
+#line 500
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 501
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 502
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"[Default (Application)]\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 503
+ testRunner.And("User selects \"[Default (Application)]\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 504
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 505
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 506
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 507
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 508
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 509
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 510
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table36.AddRow(new string[] {
                         "0004 - Adobe Acrobat Reader 5.0.5 Francais"});
-            testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table36, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 511
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table36, "When ");
+#line 514
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 515
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 516
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Application: Request Type A\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 517
+ testRunner.And("User selects \"Application: Request Type A\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 518
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 519
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 520
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 521
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1354,29 +1805,45 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS13266",
                         "DAS13284",
                         "DAS13708"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 524
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 525
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 526
+ testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 527
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 528
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table37.AddRow(new string[] {
                         "TRUE"});
-            testRunner.When("User add \"EmailMigra: In Scope\" filter where type is \"Equals\" with added column a" +
+#line 529
+ testRunner.When("User add \"EmailMigra: In Scope\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table37, "When ");
-            testRunner.Then("\"EmailMigra: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 532
+ testRunner.Then("\"EmailMigra: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 533
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 534
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table38.AddRow(new string[] {
                         "EmailMigra: Request Type"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table38, "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 535
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table38, "When ");
+#line 538
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 539
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table39.AddRow(new string[] {
@@ -1385,84 +1852,143 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "10A919CA1E7641E08E7@bclabs.local"});
             table39.AddRow(new string[] {
                         "229DCF8E575243E9928@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table39, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Personal Mailbox - VIP\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 540
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table39, "When ");
+#line 545
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 546
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 547
+ testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 548
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 549
+ testRunner.When("User selects \"Personal Mailbox - VIP\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 550
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 551
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
+#line 552
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 553
+ testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
                     "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User perform search by \"0F1ED67386AD4FA7BF4@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
+#line 554
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 555
+ testRunner.And("User perform search by \"0F1ED67386AD4FA7BF4@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 556
+ testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"10A919CA1E7641E08E7@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
+#line 557
+ testRunner.When("User perform search by \"10A919CA1E7641E08E7@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 558
+ testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"229DCF8E575243E9928@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
+#line 559
+ testRunner.When("User perform search by \"229DCF8E575243E9928@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 560
+ testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 561
+ testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 562
+ testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 563
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 565
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 566
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table40.AddRow(new string[] {
                         "0F1ED67386AD4FA7BF4@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table40, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Shared Mailbox\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 567
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table40, "When ");
+#line 570
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 571
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 572
+ testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 573
+ testRunner.And("User selects \"Shared Mailbox\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 574
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 575
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 576
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 577
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 578
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 579
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 580
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table41.AddRow(new string[] {
                         "10A919CA1E7641E08E7@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table41, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Personal Mailbox - EA\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 581
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table41, "When ");
+#line 584
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 585
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 586
+ testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 587
+ testRunner.And("User selects \"Personal Mailbox - EA\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 588
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 589
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 590
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 591
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 592
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 593
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 594
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table42.AddRow(new string[] {
                         "229DCF8E575243E9928@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table42, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Personal Mailbox\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 595
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table42, "When ");
+#line 598
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 599
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 600
+ testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 601
+ testRunner.And("User selects \"Personal Mailbox\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 602
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 603
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 604
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 605
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1516,20 +2042,31 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12863",
                         "DAS13266",
                         "DAS13284"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 608
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 609
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 610
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 611
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 612
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table43.AddRow(new string[] {
                         "Windows7Mi: Request Type"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table43, "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 613
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table43, "When ");
+#line 616
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 617
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table44.AddRow(new string[] {
@@ -1542,39 +2079,65 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1B1CJ31RV9ZPYD"});
             table44.AddRow(new string[] {
                         "018UQ6KL9TF4YF"});
-            testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table44, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 618
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table44, "When ");
+#line 625
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 626
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 627
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer: Workstation Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 628
+ testRunner.And("User selects \"Computer: Workstation Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 629
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 630
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"5 of 5 objects were in the selected project and have been q" +
+#line 631
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 632
+ testRunner.And("Success message with \"5 of 5 objects were in the selected project and have been q" +
                     "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
+#line 633
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 634
+ testRunner.And("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 635
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
                     " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
+#line 636
+ testRunner.When("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 637
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
                     " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
+#line 638
+ testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 639
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
                     " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"1B1CJ31RV9ZPYD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
+#line 640
+ testRunner.When("User perform search by \"1B1CJ31RV9ZPYD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 641
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
                     " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User perform search by \"018UQ6KL9TF4YF\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
+#line 642
+ testRunner.When("User perform search by \"018UQ6KL9TF4YF\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 643
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
                     " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 644
+ testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 645
+ testRunner.And("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 646
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 648
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 649
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table45.AddRow(new string[] {
@@ -1583,57 +2146,93 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "018UQ6KL9TF4YF"});
             table45.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table45, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 650
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table45, "When ");
+#line 655
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 656
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 657
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"[This is the Default Request Type for Computer)] \" Request Type on " +
+#line 658
+ testRunner.And("User selects \"[This is the Default Request Type for Computer)] \" Request Type on " +
                     "Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 659
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 660
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
+#line 661
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 662
+ testRunner.And("Success message with \"3 of 3 objects were in the selected project and have been q" +
                     "ueued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 663
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 664
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 665
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table46.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table46, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 666
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table46, "When ");
+#line 669
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 670
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 671
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer: Virtual Machine\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 672
+ testRunner.And("User selects \"Computer: Virtual Machine\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 673
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 674
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 675
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 676
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 677
+ testRunner.When("User clicks Close panel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 678
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 679
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table47.AddRow(new string[] {
                         "00RUUMAH9OZN9A"});
-            testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table47, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 680
+ testRunner.When("User searches and selects following rows in the grid on Details page:", ((string)(null)), table47, "When ");
+#line 683
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 684
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 685
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer: Laptop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 686
+ testRunner.And("User selects \"Computer: Laptop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 687
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 688
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 689
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 690
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1685,13 +2284,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS12863",
                         "DAS13277"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 693
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 694
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 695
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 696
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 697
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table48.AddRow(new string[] {
@@ -1700,14 +2306,23 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "00RUUMAH9OZN9A"});
             table48.AddRow(new string[] {
                         "00SH8162NAS524"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table48, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Babel (English, German and French)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Machines\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Checkboxes are not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 698
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table48, "When ");
+#line 703
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 704
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 705
+ testRunner.And("User selects \"Babel (English, German and French)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 706
+ testRunner.And("User selects \"Machines\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 707
+ testRunner.And("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 708
+ testRunner.Then("Actions panel is not displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 709
+ testRunner.And("Checkboxes are not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1759,20 +2374,31 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS13074",
                         "Do_Not_Run_With_AdminPage",
                         "Do_Not_Run_With_Projects"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 712
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 713
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 714
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 715
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 716
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table49.AddRow(new string[] {
                         "00OMQQXWA1DRI6"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table49, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 717
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table49, "When ");
+#line 720
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 721
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
                         "Projects"});
             table50.AddRow(new string[] {
@@ -1807,11 +2433,17 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Windows 10 Updates - New York"});
             table50.AddRow(new string[] {
                         "Windows 7 Migration (Computer Scheduled Project)"});
-            testRunner.Then("the following Projects are displayed in opened DLL on Action panel:", ((string)(null)), table50, "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User is expand \"Project Stages: Windows7Mi\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 722
+ testRunner.Then("the following Projects are displayed in opened DLL on Action panel:", ((string)(null)), table50, "Then ");
+#line 740
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 741
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 742
+ testRunner.And("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 743
+ testRunner.And("User is expand \"Project Stages: Windows7Mi\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
             table51.AddRow(new string[] {
@@ -1828,7 +2460,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Windows7Mi: Command & Control"});
             table51.AddRow(new string[] {
                         "Windows7Mi: Portal Self Service"});
-            testRunner.And("the following Column subcategories are displayed for open category:", ((string)(null)), table51, "And ");
+#line 744
+ testRunner.And("the following Column subcategories are displayed for open category:", ((string)(null)), table51, "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1876,25 +2510,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS13142"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 755
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 756
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 757
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 758
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 759
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table52.AddRow(new string[] {
                         "00KLL9S8NRF0X6"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table52, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Barry\'s User Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Desktop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Barry\'s User Project\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 760
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table52, "When ");
+#line 763
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 764
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 765
+ testRunner.And("User selects \"Barry\'s User Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 766
+ testRunner.And("User selects \"Desktop Replacement\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 767
+ testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 768
+ testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 769
+ testRunner.Then("\"Barry\'s User Project\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -1942,25 +2592,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS13142"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 772
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 773
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 774
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 775
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 776
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table53.AddRow(new string[] {
                         "002B5DC7D4D34D5C895"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table53, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Havoc (Big Data)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Request Type 2\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Havoc (Big Data)\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 777
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table53, "When ");
+#line 780
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 781
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 782
+ testRunner.And("User selects \"Havoc (Big Data)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 783
+ testRunner.And("User selects \"User Request Type 2\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 784
+ testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 785
+ testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 786
+ testRunner.Then("\"Havoc (Big Data)\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2012,26 +2678,43 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS13142",
                         "DAS12864",
                         "DAS13270"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 789
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 790
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 791
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 792
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 793
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table54.AddRow(new string[] {
                         "0047 - Microsoft Access 97 SR-2 Francais"});
-            testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table54, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Projects are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Request Type A\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"User Scheduled Test (Jo)\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 794
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table54, "When ");
+#line 797
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 798
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 799
+ testRunner.Then("Projects are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 800
+ testRunner.When("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 801
+ testRunner.And("User selects \"Request Type A\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 802
+ testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 803
+ testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 804
+ testRunner.Then("\"User Scheduled Test (Jo)\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2079,25 +2762,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS13142"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 807
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 808
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 809
+ testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 810
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 811
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table55.AddRow(new string[] {
                         "00A5B910A1004CF5AC4@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table55, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Personal Mailbox - VIP\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"Email Migration\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 812
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table55, "When ");
+#line 815
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 816
+ testRunner.And("User selects \"Update request type\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 817
+ testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 818
+ testRunner.And("User selects \"Personal Mailbox - VIP\" Request Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 819
+ testRunner.When("User clears Project field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 820
+ testRunner.And("User clicks on Action drop-down", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 821
+ testRunner.Then("\"Email Migration\" Project is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2157,30 +2856,46 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_ChecksThatTextValueHaveOptionToRemoveExistingTextValue", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 824
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 825
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 826
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 827
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 828
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table56.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table56, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Task on Action panel", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 829
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table56, "When ");
+#line 832
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 833
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 834
+ testRunner.And("User selects \"Computer Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 835
+ testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 836
+ testRunner.And(string.Format("User selects \"{0}\" Task on Action panel", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table57.AddRow(new string[] {
                         "Update"});
             table57.AddRow(new string[] {
                         "Remove"});
-            testRunner.Then("the following Update Value are displayed in opened DLL on Action panel:", ((string)(null)), table57, "Then ");
+#line 837
+ testRunner.Then("the following Update Value are displayed in opened DLL on Action panel:", ((string)(null)), table57, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2245,13 +2960,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWith" +
                     "ProjectBulkUpdaterRole", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 849
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 850
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 851
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 852
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 853
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -2264,54 +2986,95 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table58, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 854
+ testRunner.And("User create new User", ((string)(null)), table58, "And ");
+#line 857
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 858
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 859
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 860
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 861
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table59.AddRow(new string[] {
                         string.Format("{0}", userName),
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table59, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 862
+ testRunner.When("User login with following credentials:", ((string)(null)), table59, "When ");
+#line 865
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 866
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 867
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 868
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 869
+ testRunner.Then(string.Format("\"{0}\" list should be displayed to the user", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 870
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 871
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table60.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table60, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Project on Action panel", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Stage on Action panel", stageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Task on Action panel", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Update Date on Action panel", updateDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"CANCEL\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("the amber message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User removes \"{0}\" User", userName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 872
+ testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnName), ((string)(null)), table60, "When ");
+#line 875
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 876
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 877
+ testRunner.And(string.Format("User selects \"{0}\" Project on Action panel", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 878
+ testRunner.And(string.Format("User selects \"{0}\" Stage on Action panel", stageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 879
+ testRunner.And(string.Format("User selects \"{0}\" Task on Action panel", taskName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 880
+ testRunner.And(string.Format("User selects \"{0}\" Update Date on Action panel", updateDate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 881
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 882
+ testRunner.And("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 883
+ testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 884
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 885
+ testRunner.And("User clicks \"CANCEL\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 886
+ testRunner.And("the amber message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 887
+ testRunner.And("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 888
+ testRunner.And("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 889
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 890
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 891
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 892
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 893
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 894
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 895
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 896
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 897
+ testRunner.And(string.Format("User removes \"{0}\" User", userName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2371,13 +3134,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS13273",
                         "DAS13276",
                         "DAS13275"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 907
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 908
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 909
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 910
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 911
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -2390,46 +3160,74 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table61, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 912
+ testRunner.And("User create new User", ((string)(null)), table61, "And ");
+#line 915
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 916
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 917
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 918
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 919
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table62.AddRow(new string[] {
                         "DAS13268",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table62, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 920
+ testRunner.When("User login with following credentials:", ((string)(null)), table62, "When ");
+#line 923
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 924
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 925
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 926
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 927
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 928
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 929
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table63.AddRow(new string[] {
                         "018UQ6KL9TF4YF"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table63, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Barry\'s User Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Stages are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Audit & Configuration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Tasks are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Validate User Device Ownership\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 930
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table63, "When ");
+#line 933
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 934
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 935
+ testRunner.And("User selects \"Barry\'s User Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 936
+ testRunner.Then("Stages are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 937
+ testRunner.When("User selects \"Audit & Configuration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 938
+ testRunner.Then("Tasks are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 939
+ testRunner.When("User selects \"Validate User Device Ownership\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table64.AddRow(new string[] {
                         "Update"});
             table64.AddRow(new string[] {
                         "No change"});
-            testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table64, "Then ");
-            testRunner.When("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 940
+ testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table64, "Then ");
+#line 944
+ testRunner.When("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table65.AddRow(new string[] {
@@ -2438,8 +3236,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Remove"});
             table65.AddRow(new string[] {
                         "No change"});
-            testRunner.Then("the Update Date options are displayed in following order:", ((string)(null)), table65, "Then ");
-            testRunner.When("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 945
+ testRunner.Then("the Update Date options are displayed in following order:", ((string)(null)), table65, "Then ");
+#line 950
+ testRunner.When("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table66.AddRow(new string[] {
@@ -2450,23 +3251,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Remove owner and team"});
             table66.AddRow(new string[] {
                         "No change"});
-            testRunner.Then("the Update Owner options are displayed in following order:", ((string)(null)), table66, "Then ");
-            testRunner.When("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Teams are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Admin IT\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Owner field is not displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"IB Team\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Owner field is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"IB User\" Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13268\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 951
+ testRunner.Then("the Update Owner options are displayed in following order:", ((string)(null)), table66, "Then ");
+#line 957
+ testRunner.When("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 958
+ testRunner.Then("Teams are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 959
+ testRunner.When("User selects \"Admin IT\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 960
+ testRunner.Then("Owner field is not displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 961
+ testRunner.When("User selects \"IB Team\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 962
+ testRunner.Then("Owner field is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 963
+ testRunner.When("User selects \"IB User\" Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 964
+ testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 965
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 966
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 967
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 968
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 969
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 970
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 971
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 972
+ testRunner.And("User removes \"DAS13268\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2514,13 +3333,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13280"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 975
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 976
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 977
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 978
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 979
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -2533,48 +3359,83 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table67, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 980
+ testRunner.And("User create new User", ((string)(null)), table67, "And ");
+#line 983
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 984
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 985
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 986
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 987
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table68.AddRow(new string[] {
                         "DAS13280",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table68, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 988
+ testRunner.When("User login with following credentials:", ((string)(null)), table68, "When ");
+#line 991
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 992
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 993
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 994
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 995
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 996
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 997
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table69.AddRow(new string[] {
                         "018UQ6KL9TF4YF"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table69, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Radio Rag Only Comp\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Value field is not displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13280\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 998
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table69, "When ");
+#line 1001
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1002
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1003
+ testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1004
+ testRunner.And("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1005
+ testRunner.And("User selects \"Radio Rag Only Comp\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1006
+ testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1007
+ testRunner.And("User selects \"Computer Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1008
+ testRunner.Then("Value field is not displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1009
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1010
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1011
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1012
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1013
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1014
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1015
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1016
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1017
+ testRunner.And("User removes \"DAS13280\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2635,13 +3496,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 1020
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 1021
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1022
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1023
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1024
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -2654,45 +3522,70 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table70, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1025
+ testRunner.And("User create new User", ((string)(null)), table70, "And ");
+#line 1028
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1029
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1030
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1031
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1032
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table71.AddRow(new string[] {
                         "DAS13281",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table71, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1033
+ testRunner.When("User login with following credentials:", ((string)(null)), table71, "When ");
+#line 1036
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1037
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1038
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1039
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1040
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1041
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1042
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table72.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table72, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1043
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table72, "When ");
+#line 1046
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1047
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1048
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer Information ---- Text fill; Text fill;\" Stage on Action pa" +
+#line 1049
+ testRunner.And("User selects \"Computer Information ---- Text fill; Text fill;\" Stage on Action pa" +
                     "nel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Computer Read Only Task in Self Service\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1050
+ testRunner.And("User selects \"Computer Read Only Task in Self Service\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table73 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table73.AddRow(new string[] {
                         "Update"});
             table73.AddRow(new string[] {
                         "No change"});
-            testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table73, "Then ");
+#line 1051
+ testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table73, "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table74 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table74.AddRow(new string[] {
@@ -2701,7 +3594,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Remove"});
             table74.AddRow(new string[] {
                         "No change"});
-            testRunner.And("the Update Date options are displayed in following order:", ((string)(null)), table74, "And ");
+#line 1055
+ testRunner.And("the Update Date options are displayed in following order:", ((string)(null)), table74, "And ");
+#line hidden
             TechTalk.SpecFlow.Table table75 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table75.AddRow(new string[] {
@@ -2712,46 +3607,77 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Remove owner and team"});
             table75.AddRow(new string[] {
                         "No change"});
-            testRunner.And("the Update Owner options are displayed in following order:", ((string)(null)), table75, "And ");
-            testRunner.When("User selects \"Workstation Text Task\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1060
+ testRunner.And("the Update Owner options are displayed in following order:", ((string)(null)), table75, "And ");
+#line 1066
+ testRunner.When("User selects \"Workstation Text Task\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table76 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table76.AddRow(new string[] {
                         "Update"});
             table76.AddRow(new string[] {
                         "Remove"});
-            testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table76, "Then ");
-            testRunner.When("User selects \"Computer Read Only Task in Self Service\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1067
+ testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table76, "Then ");
+#line 1071
+ testRunner.When("User selects \"Computer Read Only Task in Self Service\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table77 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table77.AddRow(new string[] {
                         "Update"});
             table77.AddRow(new string[] {
                         "No change"});
-            testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table77, "Then ");
-            testRunner.When("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"CANCEL\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("Success message with \"{0}\" text is displayed on Action panel", messageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13281\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1072
+ testRunner.Then("the Update Value options are displayed in following order:", ((string)(null)), table77, "Then ");
+#line 1076
+ testRunner.When("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1077
+ testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1078
+ testRunner.And("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1079
+ testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1080
+ testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1081
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1082
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1083
+ testRunner.And("User clicks \"CANCEL\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1084
+ testRunner.Then("the amber message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1085
+ testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1086
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1087
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1088
+ testRunner.And(string.Format("Success message with \"{0}\" text is displayed on Action panel", messageText), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1089
+ testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1090
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1091
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1092
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1093
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1094
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1095
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1096
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1097
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1098
+ testRunner.And("User removes \"DAS13281\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2815,13 +3741,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 1106
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 1107
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1108
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1109
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1110
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -2834,87 +3767,154 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table78, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1111
+ testRunner.And("User create new User", ((string)(null)), table78, "And ");
+#line 1114
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1115
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1116
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1117
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1118
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table79.AddRow(new string[] {
                         string.Format("{0}", name),
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table79, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1119
+ testRunner.When("User login with following credentials:", ((string)(null)), table79, "When ");
+#line 1122
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1123
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1124
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1125
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1126
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1127
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1128
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table80 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table80.AddRow(new string[] {
                         "Windows7Mi: Perform User Acceptance Test"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table80, "When ");
-            testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1129
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table80, "When ");
+#line 1132
+ testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1133
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1134
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table81 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table81.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table81, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1135
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table81, "When ");
+#line 1138
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1139
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1140
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1141
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1142
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1143
+ testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1144
+ testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1145
+ testRunner.And("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1146
+ testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1147
+ testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1148
+ testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1149
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1150
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1151
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1152
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1153
+ testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1154
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1155
+ testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1157
+ testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1158
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1159
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the top of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1160
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1161
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1162
+ testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1163
+ testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1164
+ testRunner.And("User selects \"No change\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1165
+ testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1166
+ testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1167
+ testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1168
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1169
+ testRunner.And("User navigate to the top of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1170
+ testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1171
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1172
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1173
+ testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1174
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1175
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1176
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1177
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1178
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1179
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1180
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1181
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1182
+ testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -2978,13 +3978,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 1193
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 1194
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1195
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1196
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1197
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table82 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -2997,87 +4004,154 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table82, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1198
+ testRunner.And("User create new User", ((string)(null)), table82, "And ");
+#line 1201
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1202
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1203
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1204
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1205
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table83 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table83.AddRow(new string[] {
                         string.Format("{0}", name),
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table83, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1206
+ testRunner.When("User login with following credentials:", ((string)(null)), table83, "When ");
+#line 1209
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1210
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1211
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1212
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1213
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1214
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1215
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table84 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table84.AddRow(new string[] {
                         "Windows7Mi: Perform User Acceptance Test"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table84, "When ");
-            testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1216
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table84, "When ");
+#line 1219
+ testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1220
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1221
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table85 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table85.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table85, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1222
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table85, "When ");
+#line 1225
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1226
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1227
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Nov 29, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1228
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1229
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1230
+ testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1231
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1232
+ testRunner.And("User selects \"Nov 29, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1233
+ testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1234
+ testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1235
+ testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", newTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1236
+ testRunner.When("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1237
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1238
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1239
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1240
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1241
+ testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1242
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1245
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1246
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1247
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Jan 5, 2019\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the top of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1248
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1249
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1250
+ testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1251
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1252
+ testRunner.And("User selects \"Jan 5, 2019\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1253
+ testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1254
+ testRunner.And("User selects \"Update\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1255
+ testRunner.And(string.Format("User selects \"{0}\" Team on Action panel", defaultTeam), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1256
+ testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1257
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1258
+ testRunner.And("User navigate to the top of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1259
+ testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1260
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1261
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1262
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1263
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1264
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1265
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1266
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1267
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1268
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1269
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1270
+ testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3139,13 +4213,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField", null, @__tags);
-            this.ScenarioInitialize(scenarioInfo);
+#line 1281
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 1282
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1283
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1284
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1285
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -3158,90 +4239,160 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table86, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1286
+ testRunner.And("User create new User", ((string)(null)), table86, "And ");
+#line 1289
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1290
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1291
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1292
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1293
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table87.AddRow(new string[] {
                         string.Format("{0}", name),
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table87, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1294
+ testRunner.When("User login with following credentials:", ((string)(null)), table87, "When ");
+#line 1297
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1298
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1299
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1300
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1301
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1302
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1303
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table88.AddRow(new string[] {
                         "Windows7Mi: Perform User Acceptance Test"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table88, "When ");
-            testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1304
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table88, "When ");
+#line 1307
+ testRunner.And(string.Format("User perform search by \"{0}\"", rowName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1308
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1309
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table89.AddRow(new string[] {
                         string.Format("{0}", rowName)});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table89, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1310
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table89, "When ");
+#line 1313
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1314
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1315
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Nov 28, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1316
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1317
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1318
+ testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1319
+ testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1320
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1321
+ testRunner.And("User selects \"Nov 28, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1322
+ testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1323
+ testRunner.When("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1324
+ testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1325
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1326
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1327
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1328
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1329
+ testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1330
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1331
+ testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", newValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1333
+ testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1334
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1335
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Jan 9, 2019\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the top of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1336
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1337
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1338
+ testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1339
+ testRunner.And(string.Format("User selects \"{0}\" Value on Action panel", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1340
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1341
+ testRunner.And("User selects \"Jan 9, 2019\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1342
+ testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1343
+ testRunner.When("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1344
+ testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1345
+ testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1346
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1347
+ testRunner.And("User navigate to the top of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1348
+ testRunner.Then("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1349
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1350
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1351
+ testRunner.Then(string.Format("\"{0}\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" column", defaultValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1352
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1353
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1354
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1355
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1356
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1357
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1358
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1359
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1360
+ testRunner.And(string.Format("User removes \"{0}\" User", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3291,13 +4442,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS13290",
                         "DAS14127"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1371
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 1372
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1373
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1374
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1375
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -3310,89 +4468,156 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table90, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1376
+ testRunner.And("User create new User", ((string)(null)), table90, "And ");
+#line 1379
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1380
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1381
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1382
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1383
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table91.AddRow(new string[] {
                         "DAS13290",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table91, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1384
+ testRunner.When("User login with following credentials:", ((string)(null)), table91, "When ");
+#line 1387
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1388
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1389
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1390
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1391
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1392
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1393
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table92.AddRow(new string[] {
                         "Windows7Mi: Perform User Acceptance Test"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table92, "When ");
-            testRunner.And("User perform search by \"LZI970280\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1394
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table92, "When ");
+#line 1397
+ testRunner.And("User perform search by \"LZI970280\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1398
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1399
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table93.AddRow(new string[] {
                         "LZI970280"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table93, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1400
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table93, "When ");
+#line 1403
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1404
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1405
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Complete\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Remove\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1406
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1407
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1408
+ testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1409
+ testRunner.And("User selects \"Complete\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1410
+ testRunner.And("User selects \"Remove\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1411
+ testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1412
+ testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1413
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1414
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1415
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1416
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Complete\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" col" +
+#line 1417
+ testRunner.Then("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1418
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1419
+ testRunner.Then("\"Complete\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1421
+ testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1422
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1423
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Failed\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Nov 23, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1424
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1425
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1426
+ testRunner.And("User selects \"Update\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1427
+ testRunner.And("User selects \"Failed\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1428
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1429
+ testRunner.And("User selects \"Nov 23, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1430
+ testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1431
+ testRunner.And("User navigate to the bottom of the Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1432
+ testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1433
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1434
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1435
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1436
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" colum" +
+#line 1437
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1438
+ testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13290\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1439
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1440
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1441
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1442
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1443
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1444
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1445
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1446
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1447
+ testRunner.And("User removes \"DAS13290\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3442,13 +4667,20 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS13291",
                         "DAS14127"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1450
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 4
+this.FeatureBackground();
+#line 1451
+ testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1452
+ testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1453
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1454
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "FullName",
@@ -3461,87 +4693,152 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "1234qwer",
                         "1234qwer",
                         "Project Bulk Updater"});
-            testRunner.And("User create new User", ((string)(null)), table94, "And ");
-            testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1455
+ testRunner.And("User create new User", ((string)(null)), table94, "And ");
+#line 1458
+ testRunner.Then("Success message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1459
+ testRunner.When("User cliks Logout link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1460
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1461
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1462
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
                         "Password"});
             table95.AddRow(new string[] {
                         "DAS13291",
                         "1234qwer"});
-            testRunner.When("User login with following credentials:", ((string)(null)), table95, "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1463
+ testRunner.When("User login with following credentials:", ((string)(null)), table95, "When ");
+#line 1466
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1467
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1468
+ testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1469
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1470
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1471
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1472
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table96.AddRow(new string[] {
                         "Windows7Mi: Perform User Acceptance Test"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table96, "When ");
-            testRunner.And("User perform search by \"LZI970280\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1473
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table96, "When ");
+#line 1476
+ testRunner.And("User perform search by \"LZI970280\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1477
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1478
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table97.AddRow(new string[] {
                         "LZI970280"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table97, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1479
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table97, "When ");
+#line 1482
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1483
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1484
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Nov 21, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Remove owner and team\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1485
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1486
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1487
+ testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1488
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1489
+ testRunner.And("User selects \"Nov 21, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1490
+ testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1491
+ testRunner.And("User selects \"Remove owner and team\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1492
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1493
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1494
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1495
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" colum" +
+#line 1496
+ testRunner.And("Success message is hidden after five seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1497
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1498
+ testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" colum" +
                     "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1500
+ testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1501
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1502
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Dec 27, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1503
+ testRunner.And("User selects \"User Acceptance Test\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1504
+ testRunner.And("User selects \"Perform User Acceptance Test\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1505
+ testRunner.And("User selects \"No change\" Update Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1506
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1507
+ testRunner.And("User selects \"Dec 27, 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1508
+ testRunner.And("User selects \"User Slot\" value for \"Capacity Slot\" dropdown on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1509
+ testRunner.And("User selects \"No change\" Update Owner on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1510
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1511
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1512
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1513
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Failed\" content is displayed for \"Windows7Mi: Perform User Acceptance Test\" colu" +
+#line 1514
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1515
+ testRunner.Then("\"Failed\" content is displayed for \"Windows7Mi: Perform User Acceptance Test\" colu" +
                     "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User removes \"DAS13291\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1516
+ testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1517
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1518
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1519
+ testRunner.Then("Login Page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1520
+ testRunner.When("User provides the Login and Password and clicks on the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1521
+ testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1522
+ testRunner.When("User navigate to Manage link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1523
+ testRunner.And("User select \"Manage Users\" option in Management Console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1524
+ testRunner.And("User removes \"DAS13291\" User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3593,43 +4890,72 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS12864",
                         "DAS13293",
                         "DAS13359"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1527
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1528
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1529
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1530
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1531
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table98.AddRow(new string[] {
                         "Havoc(BigD: Task 0"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table98, "When ");
-            testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1532
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table98, "When ");
+#line 1535
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1536
+ testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedCheckboxes"});
             table99.AddRow(new string[] {
                         "TRUE"});
-            testRunner.When("User add \"Havoc(BigD: In Scope\" filter where type is \"Equals\" with added column a" +
+#line 1537
+ testRunner.When("User add \"Havoc(BigD: In Scope\" filter where type is \"Equals\" with added column a" +
                     "nd following checkboxes:", ((string)(null)), table99, "When ");
-            testRunner.Then("\"Havoc(BigD: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Havoc (Big Data)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Stage 0\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Task 0\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"7578 of 7578 objects were in the selected project and have " +
+#line 1540
+ testRunner.Then("\"Havoc(BigD: In Scope\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1541
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1542
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1543
+ testRunner.When("User select all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1544
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1545
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1546
+ testRunner.And("User selects \"Havoc (Big Data)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1547
+ testRunner.And("User selects \"Stage 0\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1548
+ testRunner.And("User selects \"Task 0\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1549
+ testRunner.And("User selects \"Started\" Value on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1550
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1551
+ testRunner.Then("the amber message is displayed correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1552
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1553
+ testRunner.And("Success message with \"7578 of 7578 objects were in the selected project and have " +
                     "been queued\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"STARTED\" content is displayed for \"Havoc(BigD: Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1554
+ testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1555
+ testRunner.Then("\"STARTED\" content is displayed for \"Havoc(BigD: Task 0\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3677,25 +5003,38 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS13386"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1558
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1559
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1560
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1561
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1562
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table100.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
             table100.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table100, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
+#line 1563
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table100, "When ");
+#line 1567
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1568
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1569
+ testRunner.And("User selects \"Windows 7 Migration (Computer Scheduled Project)\" Project on Action" +
                     " panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1570
+ testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table101.AddRow(new string[] {
@@ -3724,7 +5063,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Targeting Information"});
             table101.AddRow(new string[] {
                         "Laptop & Workstation 2"});
-            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table101, "Then ");
+#line 1571
+ testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table101, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3772,23 +5113,35 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS13386",
                         "DAS13477"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1588
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1589
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1590
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1591
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1592
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table102.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5"});
             table102.AddRow(new string[] {
                         "00A5B910A1004CF5AC4"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table102, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1593
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table102, "When ");
+#line 1597
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1598
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1599
+ testRunner.And("User selects \"User Scheduled Test (Jo)\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table103 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table103.AddRow(new string[] {
@@ -3797,8 +5150,11 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Two"});
             table103.AddRow(new string[] {
                         "Three"});
-            testRunner.Then("following Stage are displayed in drop-down:", ((string)(null)), table103, "Then ");
-            testRunner.When("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1600
+ testRunner.Then("following Stage are displayed in drop-down:", ((string)(null)), table103, "Then ");
+#line 1605
+ testRunner.When("User selects \"One\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table104 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table104.AddRow(new string[] {
@@ -3825,7 +5181,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Radio Rag Date Owner Req B"});
             table104.AddRow(new string[] {
                         "SS Department and Location Enabled"});
-            testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table104, "Then ");
+#line 1606
+ testRunner.Then("following Tasks are displayed in drop-down:", ((string)(null)), table104, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3873,21 +5231,33 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS14421"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1622
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 4
+this.FeatureBackground();
+#line 1623
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1624
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table105 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table105.AddRow(new string[] {
                         "00A5B910A1004CF5AC4"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table105, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Unassigned\" Capacity Unit on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1625
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table105, "When ");
+#line 1628
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1629
+ testRunner.And("User selects \"Update capacity unit\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1630
+ testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1631
+ testRunner.And("User selects \"Email Migration\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1632
+ testRunner.And("User selects \"Unassigned\" Capacity Unit on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table106 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table106.AddRow(new string[] {
@@ -3896,7 +5266,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Owned mailboxes only"});
             table106.AddRow(new string[] {
                         "All linked mailboxes"});
-            testRunner.Then("following Move Mailboxes are displayed in drop-down:", ((string)(null)), table106, "Then ");
+#line 1633
+ testRunner.Then("following Move Mailboxes are displayed in drop-down:", ((string)(null)), table106, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -3950,24 +5322,37 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS13960",
                         "DAS14140",
                         "DAS15814"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1640
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1641
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1642
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1643
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1644
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table107 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table107.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
             table107.AddRow(new string[] {
                         "001PSUMZYOW581"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table107, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Evergreen\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1645
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table107, "When ");
+#line 1649
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1650
+ testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1651
+ testRunner.And("User selects \"Evergreen\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1652
+ testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table108 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table108.AddRow(new string[] {
@@ -3976,11 +5361,16 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Owners only"});
             table108.AddRow(new string[] {
                         "All linked users"});
-            testRunner.Then("following values are displayed in \"Also Move Users\" drop-down on Action panel:", ((string)(null)), table108, "Then ");
-            testRunner.When("User selects \"Owners only\" option in \"Also Move Users\" drop-down on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 1653
+ testRunner.Then("following values are displayed in \"Also Move Users\" drop-down on Action panel:", ((string)(null)), table108, "Then ");
+#line 1658
+ testRunner.When("User selects \"Owners only\" option in \"Also Move Users\" drop-down on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1659
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1660
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4032,24 +5422,37 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS14563",
                         "DAS13960",
                         "DAS14142"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1663
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1664
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1665
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1666
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1667
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table109 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table109.AddRow(new string[] {
                         "0072B088173449E3A93"});
             table109.AddRow(new string[] {
                         "00C8BC63E7424A6E862"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table109, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Evergreen\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1668
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table109, "When ");
+#line 1672
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1673
+ testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1674
+ testRunner.And("User selects \"Evergreen\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1675
+ testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table110 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table110.AddRow(new string[] {
@@ -4058,9 +5461,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Owned devices only"});
             table110.AddRow(new string[] {
                         "All linked devices"});
-            testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table110, "Then ");
-            testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
+#line 1676
+ testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table110, "Then ");
+#line 1681
+ testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
                     "on panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
             TechTalk.SpecFlow.Table table111 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table111.AddRow(new string[] {
@@ -4069,11 +5475,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Owned mailboxes only"});
             table111.AddRow(new string[] {
                         "All linked mailboxes"});
-            testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
+#line 1682
+ testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
                     ":", ((string)(null)), table111, "Then ");
-            testRunner.When("User selects \"Owned mailboxes only\" option in \"Also Move Mailboxes\" drop-down on " +
+#line 1687
+ testRunner.When("User selects \"Owned mailboxes only\" option in \"Also Move Mailboxes\" drop-down on " +
                     "Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1688
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4125,25 +5535,39 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS14563",
                         "DAS13960",
                         "DAS14143"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1691
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1692
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1693
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1694
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1695
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table112 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table112.AddRow(new string[] {
                         "0072B088173449E3A93"});
             table112.AddRow(new string[] {
                         "00C8BC63E7424A6E862"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table112, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"User Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1696
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table112, "When ");
+#line 1700
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1701
+ testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1702
+ testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1703
+ testRunner.And("User selects \"User Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1704
+ testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table113 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table113.AddRow(new string[] {
@@ -4152,10 +5576,14 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Owned devices only"});
             table113.AddRow(new string[] {
                         "All linked devices"});
-            testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table113, "Then ");
-            testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
+#line 1705
+ testRunner.Then("following values are displayed in \"Also Move Devices\" drop-down on Action panel:", ((string)(null)), table113, "Then ");
+#line 1710
+ testRunner.When("User selects \"Owned devices only\" option in \"Also Move Devices\" drop-down on Acti" +
                     "on panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1711
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4207,25 +5635,39 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS14563",
                         "DAS13960",
                         "DAS14160"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1714
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1715
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1716
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1717
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1718
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table114 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table114.AddRow(new string[] {
                         "0072B088173449E3A93"});
             table114.AddRow(new string[] {
                         "00C8BC63E7424A6E862"});
-            testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table114, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1719
+ testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table114, "When ");
+#line 1723
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1724
+ testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1725
+ testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1726
+ testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1727
+ testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table115 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table115.AddRow(new string[] {
@@ -4234,11 +5676,15 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Owners only"});
             table115.AddRow(new string[] {
                         "All linked users"});
-            testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
+#line 1728
+ testRunner.Then("following values are displayed in \"Also Move Mailboxes\" drop-down on Action panel" +
                     ":", ((string)(null)), table115, "Then ");
-            testRunner.When("User selects \"Owners only\" option in \"Also Move Mailboxes\" drop-down on Action pa" +
+#line 1733
+ testRunner.When("User selects \"Owners only\" option in \"Also Move Mailboxes\" drop-down on Action pa" +
                     "nel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1734
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4290,25 +5736,39 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS14563",
                         "DAS13960",
                         "DAS14161"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1737
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1738
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1739
+ testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1740
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1741
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table116 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table116.AddRow(new string[] {
                         "00BDBAEA57334C7C8F4@bclabs.local"});
             table116.AddRow(new string[] {
                         "016E1B57C2DD4FCC986@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table116, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1742
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table116, "When ");
+#line 1746
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1747
+ testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1748
+ testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1749
+ testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1750
+ testRunner.And("User selects \"Unassigned\" option in \"Bucket\" field on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table117 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table117.AddRow(new string[] {
@@ -4317,9 +5777,13 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Owners only"});
             table117.AddRow(new string[] {
                         "All linked users"});
-            testRunner.Then("following values are displayed in \"Also Move Users\" drop-down on Action panel:", ((string)(null)), table117, "Then ");
-            testRunner.When("User selects \"Owners only\" option in \"Also Move Users\" drop-down on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1751
+ testRunner.Then("following values are displayed in \"Also Move Users\" drop-down on Action panel:", ((string)(null)), table117, "Then ");
+#line 1756
+ testRunner.When("User selects \"Owners only\" option in \"Also Move Users\" drop-down on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1757
+ testRunner.Then("\"UPDATE\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4371,31 +5835,45 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS14563",
                         "DAS13960",
                         "DAS14162"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1760
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1761
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1762
+ testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1763
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1764
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table118.AddRow(new string[] {
                         "00BDBAEA57334C7C8F4@bclabs.local"});
             table118.AddRow(new string[] {
                         "016E1B57C2DD4FCC986@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table118, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1765
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table118, "When ");
+#line 1769
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1770
+ testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1771
+ testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table119.AddRow(new string[] {
                         "Email Migration"});
             table119.AddRow(new string[] {
                         "Mailbox Evergreen Capacity Project"});
-            testRunner.Then("following values are displayed in \"Project\" drop-down with searchfield on Action " +
+#line 1772
+ testRunner.Then("following values are displayed in \"Project\" drop-down with searchfield on Action " +
                     "panel:", ((string)(null)), table119, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4447,21 +5925,31 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "DAS14563",
                         "DAS13960",
                         "DAS14164"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1778
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1779
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1780
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1781
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1782
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table120.AddRow(new string[] {
                         "%SQL_PRODUCT_SHORT_NAME% SSIS 64Bit For SSDTBI"});
             table120.AddRow(new string[] {
                         "\"WPF/E\" (codename) Community Technology Preview (Feb 2007)"});
-            testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table120, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1783
+ testRunner.When("User select \"Application\" rows in the grid", ((string)(null)), table120, "When ");
+#line 1787
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table121.AddRow(new string[] {
@@ -4470,7 +5958,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "Update request type"});
             table121.AddRow(new string[] {
                         "Update task value"});
-            testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down on Action panel:", ((string)(null)), table121, "Then ");
+#line 1788
+ testRunner.Then("following values are displayed in \"Bulk Update Type\" drop-down on Action panel:", ((string)(null)), table121, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4518,25 +6008,41 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "BulkUpdate",
                         "DAS15291",
                         "Not_Ready"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1796
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1797
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1798
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1799
+ testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1800
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table122.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-            testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table122, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"1803 Rollout\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Scheduled Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"23 Nov 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1801
+ testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table122, "When ");
+#line 1804
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1805
+ testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1806
+ testRunner.And("User selects \"1803 Rollout\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1807
+ testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1808
+ testRunner.And("User selects \"Scheduled Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1809
+ testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1810
+ testRunner.And("User selects \"23 Nov 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table123.AddRow(new string[] {
@@ -4557,7 +6063,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "London - Southbank Morning"});
             table123.AddRow(new string[] {
                         "London - Southbank Afternoon"});
-            testRunner.Then("following values are displayed in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table123, "Then ");
+#line 1812
+ testRunner.Then("following values are displayed in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table123, "Then ");
+#line hidden
             this.ScenarioCleanup();
         }
 
@@ -4603,37 +6111,60 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS16059"});
-            this.ScenarioInitialize(scenarioInfo);
+#line 1825
+this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-            this.FeatureBackground();
-            testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-            testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 4
+this.FeatureBackground();
+#line 1826
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1827
+ testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1828
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1829
+ testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table124.AddRow(new string[] {
                         "MailboxEve: Ring"});
-            testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table124, "When ");
-            testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1830
+ testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table124, "When ");
+#line 1833
+ testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1834
+ testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table125.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local"});
-            testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table125, "When ");
-            testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Update ring\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User selects \"Unassigned\" Ring on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
+#line 1835
+ testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table125, "When ");
+#line 1838
+ testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1839
+ testRunner.And("User selects \"Update ring\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1840
+ testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1841
+ testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1842
+ testRunner.And("User selects \"Unassigned\" Ring on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1843
+ testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1844
+ testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-            testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-            testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
+#line 1845
+ testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1846
+ testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1847
+ testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             this.ScenarioCleanup();
         }
 

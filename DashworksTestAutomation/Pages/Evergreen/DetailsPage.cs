@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ColumnHeader = "//div[@class='ag-header-cell-label']";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='tabContainer ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-drawer-inner-container']")]
         public IWebElement TabContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='object-icon']//i")]
@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//td[@class='fld-value']//span[@class='ng-star-inserted']")]
         public IList<IWebElement> TableRowDetails { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-tab-body//div[contains(@class, 'collapsed')]")]
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'field-category collapsed')]")]
         public IWebElement OpenedSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']")]
@@ -68,7 +68,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
         public IList<IWebElement> OperatorOptions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-tab-body[contains(@class, 'mat-tab-body')]")]
+        [FindsBy(How = How.XPath, Using = "//mat-dialog-container[contains(@class, 'dialogContainer ')]")]
         public IWebElement PopupChangesPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[@class='mat-checkbox-label']/ancestor::mat-checkbox")]
@@ -343,6 +343,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($".//span[text()='Dashworks First Seen Date']//ancestor::tr/td[contains(@class, 'column-value')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector).Text;
+        }
+
+        public List<string> GetDetailsColorHeadersContentToList()
+        {
+            var by = By.XPath(".//th[@role='columnheader']//span[contains(@class, 'status-text')]");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public IWebElement GetItemDetailsPageByName (string itemName)
