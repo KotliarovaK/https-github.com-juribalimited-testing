@@ -22,8 +22,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         [Then(@"User clicks ""(.*)"" button in warning container on the Admin page")]
         public void ThenUserClicksButtonInWarningContainerOnTheAdminPage(string buttonName)
         {
-            var link = _driver.NowAt<ProjectsPage>();
-            link.GetButtonOnWarningContainerByName(buttonName).Click();
+            var page = _driver.NowAt<ProjectsPage>();
+            page.GetButtonOnWarningContainerByName(buttonName).Click();
+        }
+
+        [Then(@"Warning Pop-up is not displayed")]
+        public void ThenWarningPop_UpIsNotDisplayed()
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsFalse(page.WarningPopUp.Displayed(), "Warning Pop-up is displayed");
         }
 
         [Then(@"Blue banner with ""(.*)"" text is displayed")]

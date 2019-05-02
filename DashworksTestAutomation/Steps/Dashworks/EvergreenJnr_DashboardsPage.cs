@@ -684,6 +684,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextOnlyIsDisplayedForCardWidget()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
         }
 
@@ -691,6 +692,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIconAndTextIsDisplayedForCardWidget()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
         }
 
@@ -698,6 +700,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIconOnlyIsDisplayedForCardWidget()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
@@ -819,7 +822,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForCardWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.ColorWidgetItem.GetCssValue("color");
+            var getColor = page.ColorWidgetItem.GetCssValue("background-color");
             Assert.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
