@@ -754,6 +754,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
         }
 
+        [Then(@"content in the Widget is displayed in following order:")]
+        public void ThenContentInTheWidgetIsDisplayedInFollowingOrder(Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var contentList = page.TableWidgetContent.Select(x => x.Text).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(contentList, expectedList, "content in the Widget is displayed in the incorrect order");
+        }
+
         [Then(@"""(.*)"" Widget is displayed to the user")]
         public void ThenWidgetIsDisplayedToTheUser(string widgetName)
         {
