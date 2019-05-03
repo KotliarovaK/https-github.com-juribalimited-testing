@@ -95,7 +95,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//div[@role='listbox']")]
         public IWebElement SharingUserList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'action-panel-inner-wrapper')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'action-panel-inner-wrapper')]")]
         public IWebElement SharingFormContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = Owner)]
