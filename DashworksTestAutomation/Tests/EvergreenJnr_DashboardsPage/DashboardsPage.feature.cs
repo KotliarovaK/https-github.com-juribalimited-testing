@@ -6238,6 +6238,8 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Dashboards")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
@@ -6272,6 +6274,8 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards", null, new string[] {
                         "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DashboardsPage",
                         "Dashboards",
                         "Widgets",
                         "Delete_Newly_Created_List",
