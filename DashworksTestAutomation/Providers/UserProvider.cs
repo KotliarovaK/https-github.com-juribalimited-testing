@@ -28,6 +28,16 @@ namespace DashworksTestAutomation.Providers
                 });
         }
 
+        public static UserDto GetSupperAdmin()
+        {
+            return new UserDto()
+            {
+                UserName = $"admin",
+                Password = Password,
+                Language = ConfigurationManager.AppSettings["user.language"]
+            };
+        }
+
         public static UserDto GetFreeUserAccount()
         {
             _mut.WaitOne(1000);
