@@ -1381,7 +1381,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @Delete_Newly_Created_List @DAS16275
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS16275
 Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
