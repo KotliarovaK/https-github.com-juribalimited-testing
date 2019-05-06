@@ -65,3 +65,32 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditM
 	When User navigates to the "All Users" list
 	When User navigates to the "DAS12941" list
 	Then Edit List menu is not displayed
+
+@Evergreen @Devices @EvergreenJnr_DynamicLists @DAS16228 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserShareItForTheTeamToWhichHeAlsoBelongs
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username          | Password  |
+	| automation_admin1 | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	When User create custom list with "List_DAS16228" name
+	Then "List_DAS16228" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	When User select "Specific users / teams" sharing option
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "Team 1" team for sharing
+	And User select "Admin" in Permission dropdown
+	When User clicks the "CANCEL" Action button
+	When User navigates to the "All Devices" list
+	Then All lists are unique on the Lists panel

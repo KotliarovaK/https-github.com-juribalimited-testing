@@ -361,6 +361,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User select ""(.*)"" in Permission dropdown")]
+        public void WhenUserSelectInPermissionDropdown(string option)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectPermissionDropdown);
+            _driver.SelectCustomSelectbox(listDetailsElement.SelectPermissionDropdown, option);
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"Warning message with ""(.*)"" is displayed")]
         public void ThenWarningMessageWithIsDisplayed(string message)
         {

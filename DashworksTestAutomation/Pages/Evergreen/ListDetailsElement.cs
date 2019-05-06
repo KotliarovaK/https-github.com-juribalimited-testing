@@ -80,6 +80,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[text()='Permission']/ancestor::div[@class='mat-select-trigger']")]
         public IWebElement SelectAccessDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//label[text()='Permission']/ancestor::div[@class='mat-form-field-infix']")]
+        public IWebElement SelectPermissionDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='ADD USER']/ancestor::button")]
         public IWebElement AddUserButton { get; set; }
 
