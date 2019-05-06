@@ -45,6 +45,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksEditModeTriggerOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             page.EditModeOnOffTrigger.Click();
         }
 
@@ -86,7 +87,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesDashboardsContextMenuOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
             Assert.That(page.DashboardsContextMenu.Displayed(), Is.True);
         }
 
@@ -1175,5 +1175,40 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<AddWidgetPage>();
             Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
+
+        [Then(@"User sees ""(.*)"" warning text below Lists field")]
+        public void ThenUserSeesWarningTextBelowListsField(string text)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            Assert.AreEqual(text, page.WarningTextUnderField.Text);
+        }
+
+        #region Dashboards details
+
+        [When(@"User select ""(.*)"" sharing option on the Dashboards page")]
+        public void WhenUserSelectSharingOptionOnTheDashboardsPage(string option)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            _driver.SelectCustomSelectbox(page.SharingDropdown, option);
+        }
+
+        [Then(@"Review Widget List Permissions is displayed to the User")]
+        public void ThenReviewWidgetListPermissionsIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsTrue(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is not displayed");
+        }
+
+        [When(@"User selects ""(.*)"" permission on the Review Widget List Permissions Pop-up")]
+        public void WhenUserSelectsPermissionOnTheReviewWidgetListPermissionsPop_Up(string option)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            _driver.SelectCustomSelectbox(page.NewPermissionsDropdown, option);
+            _driver.WaitForDataLoading();
+        }
+
+        #endregion
     }
 }

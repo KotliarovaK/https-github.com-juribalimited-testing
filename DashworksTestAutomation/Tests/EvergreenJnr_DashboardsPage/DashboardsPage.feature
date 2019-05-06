@@ -1418,3 +1418,39 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	When User clicks Settings button for "DAS16275_Dashboard" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS16380
+Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName |
+	| Build Date |
+	And User create dynamic list with "First_List_DAS16380" name on "Devices" page
+	Then "First_List_DAS16380" list is displayed to user
+	When User navigates to the "All Devices" list
+	When User click on 'Hostname' column header
+	And User create dynamic list with "Second_List_DAS16380" name on "Devices" page
+	Then "Second_List_DAS16380" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS16380" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title               | List                | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS16380 | First_List_DAS16380 | 10      | 10         |
+	Then "Widget_For_DAS16380" Widget is displayed to the user
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User select "Everyone can see" sharing option on the Dashboards page
+	Then Review Widget List Permissions is displayed to the User
+	When User selects "Everyone can see" permission on the Review Widget List Permissions Pop-up
+	And User clicks the "UPDATE & SHARE" Action button
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "List" in the "Widget Type" Widget dropdown
+	And User enters "Widget_For_DAS16380_1" as Widget Title
+	And User selects "Second_List_DAS16380" as Widget List
+	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
+	When User clicks Settings button for "Dashboard for DAS16380" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
