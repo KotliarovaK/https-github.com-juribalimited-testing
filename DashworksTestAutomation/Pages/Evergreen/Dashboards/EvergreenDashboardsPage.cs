@@ -107,6 +107,15 @@ namespace DashworksTestAutomation.Pages
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
+        public IWebElement SharingDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='New Permissions']")]
+        public IWebElement NewPermissionsDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container/permission-popup//h1[text()='Review Widget List Permissions']")]
+        public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
