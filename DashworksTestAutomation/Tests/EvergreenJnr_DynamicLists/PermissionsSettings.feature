@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	When User select "Specific users / teams" sharing option
 	When User clicks the "ADD TEAM" Action button
 	When User selects the "Team 1" team for sharing
-	And User select "Admin" in Select Access dropdown
+	And User select "Admin" in Permission dropdown
 	When User clicks the "CANCEL" Action button
 	When User navigates to the "All Devices" list
 	Then All lists are unique on the Lists panel

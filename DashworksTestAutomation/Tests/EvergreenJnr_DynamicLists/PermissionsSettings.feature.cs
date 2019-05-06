@@ -445,7 +445,7 @@ this.FeatureBackground();
 #line 92
  testRunner.When("User selects the \"Team 1\" team for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 93
- testRunner.And("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User select \"Admin\" in Permission dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
  testRunner.When("User clicks the \"CANCEL\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
