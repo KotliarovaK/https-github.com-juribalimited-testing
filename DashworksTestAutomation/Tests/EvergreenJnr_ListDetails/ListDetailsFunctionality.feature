@@ -780,7 +780,7 @@ Scenario: EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDispla
 	When User clicks the List Details button
 	Then current user is selected as a owner of a list
 
-@Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS13066 @DAS15561 @DAS15569 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS13066 @DAS15561 @DAS15569 @DAS16403 @DAS16407 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAfterSwitchingBetweenTabsWhileAddUserFormIsOpen
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -789,12 +789,22 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	Then "DynamicList13066" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
-	When User select "Specific users" sharing option
-	Then "Specific users" sharing option is selected
+	When User select "Specific users / teams" sharing option
+	Then "Specific users / teams" sharing option is selected
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "1803 Team" team for sharing
+	Then "ADD TEAM" Action button is disabled
+	When User clicks the "CANCEL" Action button
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "1803 Team" team for sharing
+	When User clicks the "CANCEL" Action button
 	When User clicks the "ADD USER" Action button
 	Then form container is displayed to the user
 	When User selects the "Administrator" user for sharing
-	And User select "Edit" in Select Access dropdown
+	When User clicks the "CANCEL" Action button
+	And User clicks the "ADD USER" Action button
+	When User selects the "Administrator" user for sharing
+	When User select "Edit" in Select Access dropdown
 	And User clicks the "ADD USER" Action button
 	And User clicks the "ADD USER" Action button
 	And User clicks the Columns button
@@ -802,7 +812,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAf
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	And There are no errors in the browser console
-	And "Administrator" Sharing user is displayed correctly
+	And "Admin" Sharing user is displayed correctly
 	And form container is not displayed to the user
 	When User clicks the "ADD USER" Action button
 	And User clicks the "CANCEL" Action button

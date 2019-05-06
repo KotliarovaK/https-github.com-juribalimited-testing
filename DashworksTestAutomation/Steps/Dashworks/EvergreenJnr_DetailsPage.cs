@@ -343,6 +343,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksFilterButtonOnTheColumnSettingsPanel()
         {
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            _driver.MouseHover(menu.FilterButton);
             _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.FilterButton);
             menu.FilterButton.Click();
         }
@@ -471,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("123.525px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
@@ -614,11 +615,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(detailsPage.GroupIcon.Displayed());
         }
 
-        [Then(@"""(.*)"" text is displayed for ""(.*)"" section")]
-        public void ThenTextIsDisplayedForSection(string textMessage, string sectionName)
+        [Then(@"""(.*)"" text is displayed for opened tab")]
+        public void ThenTextIsDisplayedForOpenedTab(string textMessage)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            detailsPage.NavigateToSectionByName(sectionName);
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
                 $"{textMessage} is not displayed");

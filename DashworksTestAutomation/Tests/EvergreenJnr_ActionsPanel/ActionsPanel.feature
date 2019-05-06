@@ -1845,4 +1845,23 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatNoErrorDisplayedWhenBulkUpdateMai
 	And User clicks "UPDATE" button on message box
 	And There are no errors in the browser console
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
+
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16356
+Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsOnlyDisplayedUserScopedProjects 
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Username" rows in the grid
+	| SelectedRowsName     |
+	| $231000-3AC04R8AR431 |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update ring" Bulk Update Type on Action panel
+	And User selects "Project" Project or Evergreen on Action panel
+	Then following values are displayed in "Project" drop-down with searchfield on Action panel:
+	| Options                                  |
+	| Barry's User Project                     |
+	| Migration Project Phase 2 (User Project) |
+	| User Evergreen Capacity Project          |
+	| User Scheduled Test (Jo)                 |
 	

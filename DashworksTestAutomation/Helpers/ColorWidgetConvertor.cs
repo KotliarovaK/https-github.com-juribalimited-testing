@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Pink":
                     return "rgb(226, 116, 171)";
                 case "Amber":
-                    return "rgba(235, 175, 37, 1)";
+                    return "rgba(226, 123, 54, 0.5)";
                 case "Grey":
                     return "rgba(128, 139, 153, 1)";
                 case "Green":

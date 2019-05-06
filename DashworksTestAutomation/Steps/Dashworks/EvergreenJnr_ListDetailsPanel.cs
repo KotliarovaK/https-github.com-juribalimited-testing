@@ -236,6 +236,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForDataLoading();
             _driver.SelectCustomSelectbox(listDetailsElement.SharingDropdown, sharingOption);
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"form container is displayed to the user")]
@@ -258,6 +259,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<ListDetailsElement>();
             page.SharingUserField.SendKeys(userName);
             page.GetSharingUserInDllByName(userName).Click();
+        }
+
+        [When(@"User selects the ""(.*)"" team for sharing")]
+        public void WhenUserSelectsTheTeamForSharing(string teamName)
+        {
+            var page = _driver.NowAt<ListDetailsElement>();
+            page.SharingTeamField.SendKeys(teamName);
+            page.GetSharingUserInDllByName(teamName).Click();
         }
 
         [Then(@"User list for sharing is not displayed")]

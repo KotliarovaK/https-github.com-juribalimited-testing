@@ -39,6 +39,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return user;
         }
 
+        private UserDto GetSupperAdminAndAddToUsedUsersList()
+        {
+            var user = UserProvider.GetSupperAdmin();
+            _usedUsers.Value.Add(user);
+
+            //Add user credentials to context
+            user.CopyPropertiesTo(_user);
+            return user;
+        }
+
         [Given(@"User is logged in to the Evergreen")]
         public void GivenUserIsLoggedInToTheEvergreen()
         {
@@ -183,7 +193,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
         private void LoginViaApiOnSenior()
         {
-            var user = GetFreeUserAndAddToUsedUsersList();
+            var user = GetSupperAdminAndAddToUsedUsersList();
 
             var restClient = new RestClient(UrlProvider.Url);
             //Get cookies

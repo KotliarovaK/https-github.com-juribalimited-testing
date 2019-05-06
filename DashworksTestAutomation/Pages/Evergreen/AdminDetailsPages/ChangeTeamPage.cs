@@ -8,10 +8,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ChangeTeamPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//h2[text()='Change Team']")]
+        [FindsBy(How = How.XPath, Using = ".//h2[text()='Change Team']")]
         public IWebElement PageTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@id='teams']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@id='teams']")]
         public IWebElement SelectTeamDropdown { get; set; }
 
         public override List<By> GetPageIdentitySelectors()

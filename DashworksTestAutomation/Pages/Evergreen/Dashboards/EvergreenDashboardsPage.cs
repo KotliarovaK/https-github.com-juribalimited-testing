@@ -16,7 +16,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-color']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-color']//div[contains(@style, 'color')]")]
         public IWebElement ColorWidgetItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
@@ -39,6 +39,9 @@ namespace DashworksTestAutomation.Pages
         
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//table//td[contains(@class, 'splitValue')]//span")]
+        public IList<IWebElement> TableWidgetContent { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//span[text()='DELETE']")]
         public IWebElement DeleteButtonInAlert { get; set; }

@@ -684,6 +684,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextOnlyIsDisplayedForCardWidget()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.TextOnlyCardWidget.Displayed(), "Text Only is not displayed for Card widget");
         }
 
@@ -691,6 +692,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIconAndTextIsDisplayedForCardWidget()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.IconAndTextCardWidget.Displayed(), "Icon and Text is not displayed for Card widget");
         }
 
@@ -698,6 +700,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenIconOnlyIsDisplayedForCardWidget()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.IconOnlyCardWidget.Displayed(), "Icon Only is not displayed for Card widget");
         }
 
@@ -749,6 +752,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int widgetWidth = widget.GetTableWidgetPreview().Size.Width;
 
             Assert.That(widgetWidth > prevWidth * 0.85 && widgetWidth < prevWidth, Is.True, "Widget preview less than 85 percent preview box");
+        }
+
+        [Then(@"content in the Widget is displayed in following order:")]
+        public void ThenContentInTheWidgetIsDisplayedInFollowingOrder(Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var contentList = page.TableWidgetContent.Select(x => x.Text).ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            Assert.AreEqual(contentList, expectedList, "content in the Widget is displayed in the incorrect order");
         }
 
         [Then(@"""(.*)"" Widget is displayed to the user")]
@@ -819,7 +831,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForCardWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.ColorWidgetItem.GetCssValue("color");
+            var getColor = page.ColorWidgetItem.GetCssValue("background-color");
             Assert.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
