@@ -1940,3 +1940,20 @@ Scenario: EvergreenJnr_MailboxesList_CheckSlotsSortOrderForMailboxes
 	| TRT-Mailbox-Nov 11, 2018-Nov 24, 2018\RT=A\T=Admin |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16394 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickingEditFilterForTheListBasedOnSavedListWithErrors
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Device (Saved List)" filter where type is "In list" with Selected Value and following Association:
+    | SelectedList                        | Association |
+    | Device List (Complex) - BROKEN LIST |             |
+	When User create custom list with "List_DAS16394" name
+	Then "List_DAS16394" list is displayed to user
+	Then Create button is disabled on the Base Dashboard Page
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User click Edit button for " Device" filter
+	Then Create button is disabled on the Base Dashboard Page
