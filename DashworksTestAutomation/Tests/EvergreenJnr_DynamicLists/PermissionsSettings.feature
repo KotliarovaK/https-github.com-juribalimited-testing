@@ -94,3 +94,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserSha
 	When User clicks the "CANCEL" Action button
 	When User navigates to the "All Devices" list
 	Then All lists are unique on the Lists panel
+
+@Evergreen @Devices @EvergreenJnr_DynamicLists @DAS16405 @DAS16555
+Scenario: EvergreenJnr_DevicesList_CheckThatExpandIconIsInactiveForOwnerDdlForNonOwnerUserInItemDetails
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "1803 Rollout" list
+	Then "1803 Rollout" list is displayed to user
+	When User clicks the List Details button
+	Then List details panel is displayed to the user
+	Then Owner Drop-down list is disabled on List details panel

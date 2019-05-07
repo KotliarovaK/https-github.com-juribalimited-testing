@@ -331,6 +331,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//ul[@class='menu-settings']/li[@class='ng-star-inserted']")]
         public IList<IWebElement> CogMenuItems { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Owner']")]
+        public IWebElement OwnerDropDown { get; set; }
+
         [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
         public IList<IWebElement> OptionsDll { get; set; }
 
