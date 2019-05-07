@@ -77,6 +77,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
         public IWebElement SelectSectionDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-error//span")]
+        public IWebElement WarningTextUnderField { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

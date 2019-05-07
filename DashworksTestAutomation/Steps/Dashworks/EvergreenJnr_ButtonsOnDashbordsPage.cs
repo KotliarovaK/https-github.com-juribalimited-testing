@@ -93,6 +93,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.DisabledCreateProjectButton.Displayed();
         }
 
+        [Then(@"Create button is disabled on the Base Dashboard Page")]
+        public void ThenCreateButtonIsDisabledOnTheBaseDashboardPage()
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => button.CreateActionButton);
+            Assert.IsTrue(Convert.ToBoolean(button.CreateActionButton.GetAttribute("aria-disabled")), "Filter Button is active!");
+        }
+
         [Then(@"Create button is not displayed")]
         public void ThenCreateButtonIsNotDisplayed()
         {

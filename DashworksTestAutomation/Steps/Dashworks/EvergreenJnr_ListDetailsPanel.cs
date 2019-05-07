@@ -361,6 +361,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User select ""(.*)"" in Permission dropdown")]
+        public void WhenUserSelectInPermissionDropdown(string option)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectPermissionDropdown);
+            _driver.SelectCustomSelectbox(listDetailsElement.SelectPermissionDropdown, option);
+            _driver.WaitForDataLoading();
+        }
+
         [Then(@"Warning message with ""(.*)"" is displayed")]
         public void ThenWarningMessageWithIsDisplayed(string message)
         {
@@ -456,6 +465,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.IsTrue(page.AllListsIcon.Displayed(), "Appropriate icon is not displayed");
+        }
+
+        [Then(@"Owner Drop-down list is disabled on List details panel")]
+        public void ThenOwnerDrop_DownListIsDisabledOnListDetailsPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(Convert.ToBoolean(page.OwnerDropDown.GetAttribute("disabled")), "Owner Drop-down list is available!");
         }
     }
 }
