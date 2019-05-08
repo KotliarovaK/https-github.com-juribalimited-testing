@@ -1357,7 +1357,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Active Directory |
 	| Applications     |
 	| Compliance       |
-	Then "Users  (2)" tab is displayed on left menu on the Details page
+	#Then "Users  (2)" tab is displayed on left menu on the Details page
 	Then "Related" tab is displayed on left menu on the Details page
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
