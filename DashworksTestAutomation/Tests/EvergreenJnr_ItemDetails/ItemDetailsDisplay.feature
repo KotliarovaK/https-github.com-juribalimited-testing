@@ -550,7 +550,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	Then "<CountRows>" rows found label displays on Details Page
 	When User clicks String Filter button for "Project" column
-	Then string filter
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Workflow" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page

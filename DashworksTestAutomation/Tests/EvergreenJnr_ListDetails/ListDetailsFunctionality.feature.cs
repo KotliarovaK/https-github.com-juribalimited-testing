@@ -3405,11 +3405,11 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 894
+#line 893
  testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 895
+#line 894
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 896
+#line 895
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3418,13 +3418,13 @@ this.FeatureBackground();
                         string.Format("{0}", selectedRow1)});
             table30.AddRow(new string[] {
                         string.Format("{0}", selectedRow2)});
-#line 897
+#line 896
  testRunner.When(string.Format("User select \"{0}\" rows in the grid", columnname), ((string)(null)), table30, "When ");
-#line 901
+#line 900
  testRunner.And(string.Format("User performs right-click on \"{0}\" cell in the grid", targetCell), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 902
+#line 901
  testRunner.And("User selects \'Copy selected rows\' option in context menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 903
+#line 902
  testRunner.Then(string.Format("Next data \'{0}\' is copied", expectedData), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
