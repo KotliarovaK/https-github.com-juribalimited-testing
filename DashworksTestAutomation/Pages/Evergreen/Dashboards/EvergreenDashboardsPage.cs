@@ -110,11 +110,33 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
         public IWebElement SharingDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']//span[not (contains(@class, 'mat-select'))]")]
+        public IWebElement SharingDropdownPermissionValue { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='New Permissions']")]
         public IWebElement NewPermissionsDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='New Permissions']//span[not (contains(@class, 'mat-select'))]")]
+        public IWebElement ReviewPermissionsNewPermissionsValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using = "//span[@class='mat-option-text']")]
+        public IList<IWebElement> ReviewPermissionsNewPermissionsDropdownOptions { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container/permission-popup//h1[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'listName')]")]
+        public IWebElement ReviewPermissionsListValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'widgetNames')]/span")]
+        public IWebElement ReviewPermissionsWidgetValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'ownerName')]")]
+        public IWebElement ReviewPermissionsOwnerValue { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'sharedAccessType')]")]
+        public IWebElement ReviewPermissionsCurrentPermissionValue { get; set; }
+
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
@@ -381,5 +403,20 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(cardWidget).Count>1;
         }
 
+        public IWebElement ReviewPermissionsPopupsButton(string buttonCaption)
+        {
+            return Driver.FindElement(By.XPath($".//mat-dialog-container/permission-popup//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
+        }
+
+        public string GetButtonStateOfReviewWidgetPermissionsPopup(string buttonCaption)
+        {
+            return ReviewPermissionsPopupsButton(buttonCaption).Enabled.ToString().ToUpper();
+        }
+
+        public void SelectDoNotChangeReviewPermission()
+        {
+            Driver.FindElement(By.XPath(".//span[@class='mat-option-text'][contains(text(), 'Do not change')]")).Click();
+        }
+        
     }
 }
