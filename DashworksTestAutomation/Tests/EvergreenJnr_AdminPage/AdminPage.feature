@@ -321,3 +321,23 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 	And User enters "DAS16089_TestProject" in the Project Name field on Import Project page
 	When User clicks Import Project button on the Import Project page
 	Then Error message with "Your file doesn't contain Readiness values" text is displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16417
+Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Buckets" link on the Admin page
+	And User enters "Unassigned" text in the Search field for "Bucket" column
+	Then "16,877" content is displayed in "Devices" column
+	Then "41,049" content is displayed in "Users" column
+	Then "14,538" content is displayed in "Mailboxes" column
+	When User clicks "Capacity Units" link on the Admin page
+	And User enters "Capacity Unit" text in the Search field for "Bucket" column
+	Then "9,365" content is displayed in "Devices" column
+	Then "27,140" content is displayed in "Users" column
+	Then "5,288" content is displayed in "Mailboxes" column
+	When User clicks "Capacity Units" link on the Admin page
+	And User enters "Capacity Unit" text in the Search field for "Bucket" column
+	Then "15,682" content is displayed in "Devices" column
+	Then "38,677" content is displayed in "Users" column
+	Then "13,752" content is displayed in "Mailboxes" column

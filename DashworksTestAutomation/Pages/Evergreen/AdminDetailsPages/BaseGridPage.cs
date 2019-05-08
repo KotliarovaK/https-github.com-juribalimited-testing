@@ -157,7 +157,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[@mattooltip='Back']")]
+        [FindsBy(How = How.XPath, Using = ".//a[@class='header-back-link']")]
         public IWebElement BackToTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
@@ -360,7 +360,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void OpenColumnSettingsByName(string columnName)
         {
             var columnSettingsSelector =
-                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
+                $".//div[@role='presentation']//span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             var columnHeaderSelector = $".//span[@class='ag-header-cell-text'][text()='{columnName}']";
             Driver.WaitForDataLoading();
             Driver.MouseHover(By.XPath(columnHeaderSelector));

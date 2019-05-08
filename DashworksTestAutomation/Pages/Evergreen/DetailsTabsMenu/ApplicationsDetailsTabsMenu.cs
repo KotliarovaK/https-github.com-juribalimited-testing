@@ -172,8 +172,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public bool GetStringFilterTextByColumnName(string columnName)
         {
-            return Driver.IsElementDisplayed(
-                By.XPath(
+            return Driver.IsElementDisplayed(By.XPath(
                     $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}]//mat-placeholder[@class='ng-star-inserted'][text()='All']"));
         }
 
