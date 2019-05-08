@@ -550,6 +550,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	Then "<CountRows>" rows found label displays on Details Page
 	When User clicks String Filter button for "Project" column
+	Then string filter
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Workflow" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -572,8 +573,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | MainTabName | SubTabName              | CountRows |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 1         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 7         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 6         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 8         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 7         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 2         |
 	
 
@@ -1292,8 +1293,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16117 @DAS16222 @Not_Ready
-Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAreDisplayedCorrectly 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16117 @DAS16222 @DAS16309 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAreDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
@@ -1308,10 +1309,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	Then color data is sorted by 'Readiness' column in descending order
 	When User click on 'Readiness' column header
 	Then color data is sorted by 'Readiness' column in ascending order
-	When User clicks Filter button on the Column Settings panel
-	#Then following filters in Column Settings panel are displayed on the Details Page:
-	#| FilterCheckboxes |
-	#|                  |
+	Then All text is not displayed for "Readiness" column in the String Filter
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16366 @DAS16246
 Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMenuSubItems
