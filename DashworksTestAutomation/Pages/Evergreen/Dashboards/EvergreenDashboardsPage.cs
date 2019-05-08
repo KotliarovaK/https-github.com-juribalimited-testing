@@ -113,31 +113,14 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']//span[not (contains(@class, 'mat-select'))]")]
         public IWebElement SharingDropdownPermissionValue { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='New Permissions']")]
-        public IWebElement NewPermissionsDropdown { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='New Permissions']//span[not (contains(@class, 'mat-select'))]")]
-        public IWebElement ReviewPermissionsNewPermissionsValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//span[@class='mat-option-text']")]
-        public IList<IWebElement> ReviewPermissionsNewPermissionsDropdownOptions { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container/permission-popup//h1[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'listName')]")]
-        public IWebElement ReviewPermissionsListValue { get; set; }
+        [FindsBy(How = How.XPath, Using = "//span[@class='mat-option-text']")]
+        public IList<IWebElement> ReviewWidgetListPermissionExpandedOptions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'widgetNames')]/span")]
-        public IWebElement ReviewPermissionsWidgetValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'ownerName')]")]
-        public IWebElement ReviewPermissionsOwnerValue { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//td[contains(@class, 'sharedAccessType')]")]
-        public IWebElement ReviewPermissionsCurrentPermissionValue { get; set; }
-
-
+        
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
@@ -417,6 +400,37 @@ namespace DashworksTestAutomation.Pages
         {
             Driver.FindElement(By.XPath(".//span[@class='mat-option-text'][contains(text(), 'Do not change')]")).Click();
         }
-        
+
+        public IWebElement NewPermissionsDropdownForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']"));
+        }
+
+        public IWebElement WidgetValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'widgetNames')]/span"));
+        }
+
+        public IWebElement OwnerValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'ownerName')]"));
+        }
+
+        public IWebElement CurrentPermissionValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'sharedAccessType')]"));
+        }
+
+        public IWebElement NewPermissionsValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']//span[not (contains(@class, 'mat-select'))]"));
+        }
+
+        public string GetDropdownStateOfReviewWidgetPermissionsPopup(string listName)
+        {
+            return NewPermissionsDropdownForList(listName).GetAttribute("aria-disabled").ToString().ToUpper();
+        }
+
+
     }
 }

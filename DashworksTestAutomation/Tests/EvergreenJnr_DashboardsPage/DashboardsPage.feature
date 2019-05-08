@@ -310,7 +310,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	| Pie        | WidgetForDAS14855 | All Applications | Vendor  | Count             |             | Count ASC |                  | 10        | true       |
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
-	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
+	Then User sees "WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
 	When User clicks Cancel button in Delete Widget warning on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS14855" dashboard
 	And User clicks Delete button for custom list
@@ -1444,7 +1444,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	Then User sees Dashboards context menu on Dashboards page
 	When User select "Everyone can see" sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-	When User selects "Everyone can see" permission on the Review Widget List Permissions Pop-up
+	When User selects "Everyone can see" permission for "First_List_DAS16380" list on Permissions Pop-up
 	And User clicks the "UPDATE & SHARE" Action button
 	And User clicks the "ADD WIDGET" Action button
 	When User selects "List" in the "Widget Type" Widget dropdown
@@ -1465,58 +1465,47 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841" name on "Devices" page
 	Then "DeviceListFor14841" list is displayed to user
-	
 	#create dashboard
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14841" name
-	Then "New dashboard created" message is displayed
-	
+	Then "New dashboard created" message is displayed	
 	#add widget
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List               | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841 | Hostname | Count             | Count DESC |                  |           |
-
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select "Everyone can see" sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-		
 	#check row data
-	And List "DeviceListFor14841" displayed in Review Widget List Permissions
-	And Widget "WidgetForDAS14841" displayed in Review Widget List Permissions
-	And Current user displayed in Review Widget List Permissions
-	And Current Permission "Private" displayed in Review Widget List Permissions
-	And New Permission "Do not change" displayed in Review Widget List Permissions
-	
+	And Widget "WidgetForDAS14841" displayed for "DeviceListFor14841" list on Permissions Pop-up
+	And Current user displayed for "DeviceListFor14841" list on Permissions Pop-up
+	And Current permission "Private" displayed for "DeviceListFor14841" list on Permissions Pop-up
+	And New Permission "Do not change" displayed for "DeviceListFor14841" list on Permissions Pop-up
 	#the new permissions options
-	Then User can see next options in New Permission field of Review Widget List Permissions
+	Then User sees next options of New Permission field for "DeviceListFor14841" list on Permissions Pop-up
 	| Options           |
 	| Do not change     |
 	| Everyone can see  |
 	| Everyone can edit |
-
 	#state
-	Then Button "UPDATE & SHARE" has enabled property "false" in Review Widget List Permissions
-	And Button "IGNORE & SHARE" has enabled property "true" in Review Widget List Permissions
-	And Button "CANCEL" has enabled property "true" in Review Widget List Permissions
-
+	Then Button "UPDATE & SHARE" has enabled property "false" on Permissions Pop-up
+	And Button "IGNORE & SHARE" has enabled property "true" on Permissions Pop-up
+	And Button "CANCEL" has enabled property "true" on Permissions Pop-up
 	#tooltips
-	And Button "UPDATE & SHARE" has "Amend widget permissions above" tooltip in Review Widget List Permissions
-	And Button "IGNORE & SHARE" has "Do not change widget list permissions and share dashboard" tooltip in Review Widget List Permissions
-	And Button "CANCEL" has "Do not change widget list permissions and do not share dashboard" tooltip in Review Widget List Permissions
-	
+	And Button "UPDATE & SHARE" has "Amend widget permissions above" tooltip on Permissions Pop-up
+	And Button "IGNORE & SHARE" has "Do not change widget list permissions and share dashboard" tooltip on Permissions Pop-up
+	And Button "CANCEL" has "Do not change widget list permissions and do not share dashboard" tooltip on Permissions Pop-up
 	#mix
-	When User selects "Everyone can see" permission on the Review Widget List Permissions Pop-up
-	Then Button "UPDATE & SHARE" has enabled property "true" in Review Widget List Permissions
-	And Button "UPDATE & SHARE" has "Change widget list permissions and share dashboard" tooltip in Review Widget List Permissions
-
-	When User clicks the "CANCEL" button in Review Widget List Permissions
+	When User selects "Everyone can see" permission for "DeviceListFor14841" list on Permissions Pop-up
+	Then Button "UPDATE & SHARE" has enabled property "true" on Permissions Pop-up
+	And Button "UPDATE & SHARE" has "Change widget list permissions and share dashboard" tooltip on Permissions Pop-up
+	When User clicks the "CANCEL" button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Private" displayed in Dashboard Details
-
 	#teardown
 	When User clicks Settings button for "Dashboard for DAS14841" dashboard
 	And User clicks Delete button for custom list
@@ -1532,30 +1521,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_1" name on "Devices" page
 	Then "DeviceListFor14841_1" list is displayed to user
-	
 	#create dashboard
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14841_1" name
 	Then "New dashboard created" message is displayed
-	
 	#add widget
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_1 | Hostname | Count             | Count DESC |                  |           |
-
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select "Everyone can see" sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-		
-	When User selects "Everyone can see" permission on the Review Widget List Permissions Pop-up
-	And User clicks the "IGNORE & SHARE" button in Review Widget List Permissions
+	#act	
+	When User selects "Everyone can see" permission for "DeviceListFor14841_1" list on Permissions Pop-up
+	And User clicks the "IGNORE & SHARE" button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
-
+	#teardown
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_1" list
@@ -1573,33 +1559,262 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_2" name on "Devices" page
 	Then "DeviceListFor14841_2" list is displayed to user
-	
 	#create dashboard
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14841_2" name
 	Then "New dashboard created" message is displayed
-	
 	#add widget
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
 	| Table      | WidgetForDAS14841 | DeviceListFor14841_2 | Hostname | Count             | Count DESC |                  |           |
-
 	#display permission modal
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select "Everyone can see" sharing option on the Dashboards page
 	Then Review Widget List Permissions is displayed to the User
-
-	When User selects "Everyone can see" permission on the Review Widget List Permissions Pop-up
-	And User clicks the "UPDATE & SHARE" button in Review Widget List Permissions
+	#act
+	When User selects "Everyone can see" permission for "DeviceListFor14841_2" list on Permissions Pop-up
+	And User clicks the "UPDATE & SHARE" button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Everyone can see" displayed in Dashboard Details
-
+	#teardown
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks Settings button for "DeviceListFor14841_2" list
+	And User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+	And "Everyone can see" sharing option is selected
+
+@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow
+	#create private list#1
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName            |
+	| Service Pack or Build |
+	And User create dynamic list with "DeviceListFor14841_3" name on "Devices" page
+	Then "DeviceListFor14841_3" list is displayed to user
+	#create private list#2
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| OS Architecture |
+	And User create dynamic list with "DeviceListFor14841_4" name on "Devices" page
+	Then "DeviceListFor14841_4" list is displayed to user
+	#create dashboard
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14841_3" name
+	Then "New dashboard created" message is displayed
+	#add widget#1
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS14841 | DeviceListFor14841_3 | Hostname | Count             | Count DESC |                  |           |
+	#add widget#2
+	When User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List                 | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS14841 | DeviceListFor14841_4 | Hostname | Count             | Count DESC |                  |           |
+	#display permission modal
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User select "Everyone can see" sharing option on the Dashboards page
+	Then Review Widget List Permissions is displayed to the User
+	#act
+	When User selects "Everyone can edit" permission for "DeviceListFor14841_3" list on Permissions Pop-up
+	Then Button "UPDATE & SHARE" has enabled property "true" on Permissions Pop-up
+	And Button "UPDATE & SHARE" has "Change widget list permissions and share dashboard" tooltip on Permissions Pop-up
+	When User clicks the "UPDATE & SHARE" button on Permissions Pop-up
+	Then Review Widget List Permissions is not displayed to the User
+	And Permission "Everyone can see" displayed in Dashboard Details
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks Settings button for "DeviceListFor14841_3" list
+	And User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+	And "Everyone can edit" sharing option is selected
+	When User clicks Settings button for "DeviceListFor14841_4" list
+	And User clicks Manage in the list panel
+	Then List details panel is displayed to the user
+	And "Private" sharing option is selected
+
+@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 @DAS14393
+Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
+	When User clicks the Logout button
+	And User clicks on the Login link
+	And User login with following credentials:
+	| Username          | Password  |
+	| automation_admin1 | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	And User create custom list with "DeviceListFor14841_Read" name
+	Then "DeviceListFor14841_Read" list is displayed to user
+	When User clicks the List Details button
+	And User select "Specific users / teams" sharing option
+	And User clicks the "ADD USER" Action button
+	And User selects the "Yurii Timchenko" user for sharing
+	And User select "Read" in Select Access dropdown
+	And User clicks the "ADD USER" Action button
+	And User clicks the "ADD USER" Action button
+	And User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	And User login with following credentials:
+	| Username | Password  |
+	| yurii    | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	#create dashboard
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14841_Read" name
+	Then "New dashboard created" message is displayed
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS14841_Read | DeviceListFor14841_Read | Hostname | Count             | Count DESC |                  |           |
+	#display permission modal
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User select "Everyone can edit" sharing option on the Dashboards page
+	Then Review Widget List Permissions is displayed to the User
+	And Widget "WidgetForDAS14841_Read" displayed for "DeviceListFor14841_Read" list on Permissions Pop-up
+	And User "Automation Admin 1" displayed for "DeviceListFor14841_Read" list on Permissions Pop-up
+	And Current permission "Specific users / teams" displayed for "DeviceListFor14841_Read" list on Permissions Pop-up
+	And New Permission "Do not change" displayed for "DeviceListFor14841_Read" list on Permissions Pop-up
+	And New Permission dropdown has disabled property "true" for "DeviceListFor14841_Read" list on Permissions Pop-up
+	And New Permission dropdown has "You cannot change the permission for this list" tooltip for "DeviceListFor14841_Read" list on Permissions Pop-up
+
+@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 @DAS14282
+Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList
+	When User clicks the Logout button
+	And User clicks on the Login link
+	And User login with following credentials:
+	| Username          | Password  |
+	| automation_admin1 | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	And User create custom list with "DeviceListFor14841_Edit" name
+	Then "DeviceListFor14841_Edit" list is displayed to user
+	When User clicks the List Details button
+	And User select "Specific users / teams" sharing option
+	And User clicks the "ADD USER" Action button
+	And User selects the "Yurii Timchenko" user for sharing
+	And User select "Edit" in Select Access dropdown
+	And User clicks the "ADD USER" Action button
+	And User clicks the "ADD USER" Action button
+	And User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	And User login with following credentials:
+	| Username | Password  |
+	| yurii    | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	#create dashboard
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14841_Edit" name
+	Then "New dashboard created" message is displayed
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS14841_Edit | DeviceListFor14841_Edit | Hostname | Count             | Count DESC |                  |           |
+	#display permission modal
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User select "Everyone can edit" sharing option on the Dashboards page
+	Then Review Widget List Permissions is displayed to the User
+	And Widget "WidgetForDAS14841_Edit" displayed for "DeviceListFor14841_Edit" list on Permissions Pop-up
+	And User "Automation Admin 1" displayed for "DeviceListFor14841_Edit" list on Permissions Pop-up
+	And Current permission "Specific users / teams" displayed for "DeviceListFor14841_Edit" list on Permissions Pop-up
+	And New Permission "Do not change" displayed for "DeviceListFor14841_Edit" list on Permissions Pop-up
+	And New Permission dropdown has disabled property "true" for "DeviceListFor14841_Edit" list on Permissions Pop-up
+	And New Permission dropdown has "You cannot change the permission for this list" tooltip for "DeviceListFor14841_Edit" list on Permissions Pop-up
+
+@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 @DAS11120
+Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
+	When User clicks the Logout button
+	And User clicks on the Login link
+	And User login with following credentials:
+	| Username          | Password  |
+	| automation_admin1 | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click on 'Hostname' column header
+	And User create custom list with "DeviceListFor14841_Admin" name
+	Then "DeviceListFor14841_Admin" list is displayed to user
+	When User clicks the List Details button
+	And User select "Specific users / teams" sharing option
+	And User clicks the "ADD USER" Action button
+	And User selects the "Yurii Timchenko" user for sharing
+	And User select "Admin" in Select Access dropdown
+	And User clicks the "ADD USER" Action button
+	And User clicks the "ADD USER" Action button
+	And User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	And User login with following credentials:
+	| Username | Password  |
+	| yurii    | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	#create dashboard
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS14841_Admin" name
+	Then "New dashboard created" message is displayed
+	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title                   | List                     | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
+	| Table      | WidgetForDAS14841_Admin | DeviceListFor14841_Admin | Hostname | Count             | Count DESC |                  |           |
+	#display permission modal
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User select "Everyone can see" sharing option on the Dashboards page
+	Then Review Widget List Permissions is displayed to the User
+	And Widget "WidgetForDAS14841_Admin" displayed for "DeviceListFor14841_Admin" list on Permissions Pop-up
+	And User "Automation Admin 1" displayed for "DeviceListFor14841_Admin" list on Permissions Pop-up
+	And Current permission "Specific users / teams" displayed for "DeviceListFor14841_Admin" list on Permissions Pop-up
+	And New Permission "Do not change" displayed for "DeviceListFor14841_Admin" list on Permissions Pop-up
+	When User selects "Everyone can see" permission for "DeviceListFor14841_Admin" list on Permissions Pop-up
+	And User clicks the "UPDATE & SHARE" button on Permissions Pop-up
+	Then Review Widget List Permissions is not displayed to the User
+	And Permission "Everyone can see" displayed in Dashboard Details
+	#login as user1 and check if list permission changed
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	And User login with following credentials:
+	| Username          | Password  |
+	| automation_admin1 | m!gration |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks Settings button for "DeviceListFor14841_Admin" list
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
