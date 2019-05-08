@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
@@ -20,6 +22,13 @@ namespace DashworksTestAutomation.Extensions
             Actions action = new Actions(driver);
             action.Click(textbox).SendKeys(Keys.End).KeyDown(Keys.Shift).SendKeys(Keys.Home).KeyUp(Keys.Shift)
                 .SendKeys(Keys.Backspace).Perform();
+        }
+
+        public static void OpenNewTab(this IWebElement textbox, RemoteWebDriver driver)
+        {
+            Actions action = new Actions(driver);
+            IWebElement tttt = driver.FindElement(By.XPath(".//body"));
+            tttt.SendKeys(Keys.Control + "t");
         }
 
         public static void SendkeysWithDelay(this IWebElement textbox, string input)

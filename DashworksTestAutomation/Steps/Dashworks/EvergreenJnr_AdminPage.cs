@@ -18,6 +18,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -2842,6 +2844,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < displaygOrder.RowCount; i++)
                 Assert.That(page.DisplayOrderValues[i].Text, Is.EqualTo(displaygOrder.Rows[i].Values.FirstOrDefault()),
                     "Display order values are displayed in the wrong order");
+        }
+
+        [When(@"User navigates to ""(.*)"" URL in a new tab")]
+        public void WhenUserNavigatesToURLInANewTab(string urlParameters)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.OpenNewTab(_driver);
+            _driver.Navigate().GoToUrl($"{UrlProvider.Url}{urlParameters}");
+            //_driver.SwitchTo().Window(_driver.WindowHandles.First());
+            //_driver.Navigate().GoToUrl($"{UrlProvider.Url}{urlParameters}");
         }
 
         [AfterScenario("Delete_Newly_Created_Team")]
