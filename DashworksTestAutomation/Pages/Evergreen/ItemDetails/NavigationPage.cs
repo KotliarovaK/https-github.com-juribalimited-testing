@@ -55,7 +55,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         }
         public bool GetTabByName(string tabName)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//*[text()='{tabName}']//ancestor::li[contains(@class, 'das-mat-tree')]"));
+            return Driver.IsElementDisplayed(By.XPath($"//a[@class='ng-star-inserted'][text()='{tabName}']"));
+        }
+
+        public bool GetDisplayStatusOfTabWithCountOfItemsByName(string name, string countOfItems)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']//span[contains(text(),'{countOfItems}')]"));
         }
     }
 }

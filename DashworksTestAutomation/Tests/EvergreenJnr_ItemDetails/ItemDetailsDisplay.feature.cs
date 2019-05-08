@@ -5573,6 +5573,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16378")]
         [NUnit.Framework.CategoryAttribute("DAS16379")]
         [NUnit.Framework.CategoryAttribute("DAS16415")]
+        [NUnit.Framework.CategoryAttribute("DAS16500")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPage()
         {
             System.Exception lastException = null;
@@ -5609,7 +5610,8 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS16378",
                         "DAS16379",
-                        "DAS16415"});
+                        "DAS16415",
+                        "DAS16500"});
 #line 1343
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5642,92 +5644,130 @@ this.FeatureBackground();
                         "Compliance"});
 #line 1349
  testRunner.Then("User sees following main-tabs on left menu on the Details page:", ((string)(null)), table31, "Then ");
-#line 1357
- testRunner.Then("\"Users  (2)\" tab is displayed on left menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1358
- testRunner.Then("\"Related\" tab is displayed on left menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SubTabName"});
+                        "SubTabName",
+                        "CountOfItems"});
             table32.AddRow(new string[] {
-                        "Device"});
+                        "Device",
+                        ""});
             table32.AddRow(new string[] {
-                        "Device Owner"});
+                        "Device Owner",
+                        ""});
             table32.AddRow(new string[] {
-                        "Department and Location"});
+                        "Department and Location",
+                        ""});
             table32.AddRow(new string[] {
-                        "Custom Fields  (1)"});
-#line 1359
- testRunner.Then("\"Details\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table32, "Then ");
+                        "Custom Fields",
+                        "1"});
+#line 1357
+ testRunner.Then("\"Details\" main-menu on the Details page contains following sub-menu with count of" +
+                    " items:", ((string)(null)), table32, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SubTabName"});
+                        "SubTabName",
+                        "CountOfItems"});
             table33.AddRow(new string[] {
-                        "Evergreen Details"});
+                        "Evergreen Details",
+                        ""});
             table33.AddRow(new string[] {
-                        "Projects Summary"});
+                        "Projects Summary",
+                        "7"});
             table33.AddRow(new string[] {
-                        "Owner Projects Summary"});
-#line 1365
- testRunner.Then("\"Projects\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table33, "Then ");
+                        "Owner Projects Summary",
+                        "7"});
+#line 1363
+ testRunner.Then("\"Projects\" main-menu on the Details page contains following sub-menu with count o" +
+                    "f items:", ((string)(null)), table33, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SubTabName"});
+                        "SubTabName",
+                        "CountOfItems"});
             table34.AddRow(new string[] {
-                        "Specification"});
+                        "Specification",
+                        ""});
             table34.AddRow(new string[] {
-                        "Network Cards  (1)"});
+                        "Network Cards",
+                        "1"});
             table34.AddRow(new string[] {
-                        "CPUS  (1)"});
+                        "CPUS",
+                        "1"});
             table34.AddRow(new string[] {
-                        "Video Cards  (1)"});
+                        "Video Cards",
+                        "1"});
             table34.AddRow(new string[] {
-                        "Monitors  (1)"});
+                        "Monitors",
+                        "1"});
             table34.AddRow(new string[] {
-                        "Sound Cards  (1)"});
-#line 1370
- testRunner.Then("\"Specification\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table34, "Then ");
-#line 1378
+                        "Sound Cards",
+                        "1"});
+#line 1368
+ testRunner.Then("\"Specification\" main-menu on the Details page contains following sub-menu with co" +
+                    "unt of items:", ((string)(null)), table34, "Then ");
+#line 1376
  testRunner.Then("User sees loaded tab \"Specification\" on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SubTabName"});
+                        "SubTabName",
+                        "CountOfItems"});
             table35.AddRow(new string[] {
-                        "Active Directory"});
+                        "Active Directory",
+                        ""});
             table35.AddRow(new string[] {
-                        "Groups"});
+                        "Groups",
+                        "6"});
             table35.AddRow(new string[] {
-                        "LDAP"});
-#line 1379
- testRunner.Then("\"Active Directory\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table35, "Then ");
+                        "LDAP",
+                        ""});
+#line 1377
+ testRunner.Then("\"Active Directory\" main-menu on the Details page contains following sub-menu with" +
+                    " count of items:", ((string)(null)), table35, "Then ");
+#line 1382
+ testRunner.Then("\"Users\" tab is displayed on left menu on the Details page with \"2\" count of items" +
+                    "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SubTabName"});
+                        "SubTabName",
+                        "CountOfItems"});
             table36.AddRow(new string[] {
-                        "Evergreen Summary"});
+                        "Evergreen Summary",
+                        "7"});
             table36.AddRow(new string[] {
-                        "Evergreen Detail"});
+                        "Evergreen Detail",
+                        "14"});
             table36.AddRow(new string[] {
-                        "Advertisements"});
+                        "Advertisements",
+                        "7"});
             table36.AddRow(new string[] {
-                        "Collections"});
-#line 1384
- testRunner.Then("\"Applications\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table36, "Then ");
+                        "Collections",
+                        "7"});
+#line 1383
+ testRunner.Then("\"Applications\" main-menu on the Details page contains following sub-menu with cou" +
+                    "nt of items:", ((string)(null)), table36, "Then ");
+#line 1389
+ testRunner.Then("\"Related\" tab is displayed on left menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SubTabName"});
+                        "SubTabName",
+                        "CountOfItems"});
             table37.AddRow(new string[] {
-                        "Overview"});
+                        "Overview",
+                        ""});
             table37.AddRow(new string[] {
-                        "Hardware Summary"});
+                        "Hardware Summary",
+                        ""});
             table37.AddRow(new string[] {
-                        "Hardware Rules"});
+                        "Hardware Rules",
+                        ""});
             table37.AddRow(new string[] {
-                        "Application Summary"});
+                        "Application Summary",
+                        ""});
             table37.AddRow(new string[] {
-                        "Application Issues"});
+                        "Application Issues",
+                        "2"});
 #line 1390
- testRunner.Then("\"Compliance\" main-menu on the Details page contains following sub-menu:", ((string)(null)), table37, "Then ");
+ testRunner.Then("\"Compliance\" main-menu on the Details page contains following sub-menu with count" +
+                    " of items:", ((string)(null)), table37, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -6235,6 +6275,79 @@ this.FeatureBackground();
 #line 1544
  testRunner.Then("Next data \'Advantage Data Architect\\tUnknown\\tExtended Systems\\tGreen\\tSMS_GEN\\tU" +
                     "nknown\\tTrue\\tFalse\\t\\t\\t5200\\t75518\\t10 Jan 2018\' is copied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS16322")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS16322"});
+#line 1547
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 1548
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1549
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1550
+ testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1551
+ testRunner.When("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1552
+ testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1553
+ testRunner.When("User navigates to the \"Users\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1554
+ testRunner.Then("\"ADD USERS\" Action button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1555
+ testRunner.Then("Actions drop-down is displayed on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1556
+ testRunner.When("User clicks Actions button on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1557
+ testRunner.When("User clicks \"Remove\" button in Actions drop-down on the Item Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1558
+ testRunner.Then("\"REMOVE\" Action button is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

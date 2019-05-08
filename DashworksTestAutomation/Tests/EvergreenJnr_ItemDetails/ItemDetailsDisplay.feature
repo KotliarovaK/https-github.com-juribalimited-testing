@@ -1339,7 +1339,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379 @DAS16415
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379 @DAS16415 @DAS16500
 Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1354,46 +1354,46 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Active Directory |
 	| Applications     |
 	| Compliance       |
-	Then "Users  (2)" tab is displayed on left menu on the Details page
-	Then "Related" tab is displayed on left menu on the Details page
-	Then "Details" main-menu on the Details page contains following sub-menu:
-	| SubTabName              |
-	| Device                  |
-	| Device Owner            |
-	| Department and Location |
-	| Custom Fields  (1)      |
-	Then "Projects" main-menu on the Details page contains following sub-menu:
-	| SubTabName             |
-	| Evergreen Details      |
-	| Projects Summary       |
-	| Owner Projects Summary |
-	Then "Specification" main-menu on the Details page contains following sub-menu:
-	| SubTabName         |
-	| Specification      |
-	| Network Cards  (1) |
-	| CPUS  (1)          |
-	| Video Cards  (1)   |
-	| Monitors  (1)      |
-	| Sound Cards  (1)   |
+	Then "Details" main-menu on the Details page contains following sub-menu with count of items:
+	| SubTabName              | CountOfItems |
+	| Device                  |              |
+	| Device Owner            |              |
+	| Department and Location |              |
+	| Custom Fields           | 1            |
+	Then "Projects" main-menu on the Details page contains following sub-menu with count of items:
+	| SubTabName             | CountOfItems |
+	| Evergreen Details      |              |
+	| Projects Summary       | 7            |
+	| Owner Projects Summary | 7            |
+	Then "Specification" main-menu on the Details page contains following sub-menu with count of items:
+	| SubTabName    | CountOfItems |
+	| Specification |              |
+	| Network Cards | 1            |
+	| CPUS          | 1            |
+	| Video Cards   | 1            |
+	| Monitors      | 1            |
+	| Sound Cards   | 1            |
 	Then User sees loaded tab "Specification" on the Details page
-	Then "Active Directory" main-menu on the Details page contains following sub-menu:
-	| SubTabName       |
-	| Active Directory |
-	| Groups           |
-	| LDAP             |
-	Then "Applications" main-menu on the Details page contains following sub-menu:
-	| SubTabName        |
-	| Evergreen Summary |
-	| Evergreen Detail  |
-	| Advertisements    |
-	| Collections       |
-	Then "Compliance" main-menu on the Details page contains following sub-menu:
-	| SubTabName          |
-	| Overview            |
-	| Hardware Summary    |
-	| Hardware Rules      |
-	| Application Summary |
-	| Application Issues  |
+	Then "Active Directory" main-menu on the Details page contains following sub-menu with count of items:
+	| SubTabName       | CountOfItems |
+	| Active Directory |              |
+	| Groups           | 6            |
+	| LDAP             |              |
+	Then "Users" tab is displayed on left menu on the Details page with "2" count of items
+	Then "Applications" main-menu on the Details page contains following sub-menu with count of items:
+	| SubTabName        | CountOfItems |
+	| Evergreen Summary | 7            |
+	| Evergreen Detail  | 14           |
+	| Advertisements    | 7            |
+	| Collections       | 7            |
+	Then "Related" tab is displayed on left menu on the Details page
+	Then "Compliance" main-menu on the Details page contains following sub-menu with count of items:
+	| SubTabName          | CountOfItems |
+	| Overview            |              |
+	| Hardware Summary    |              |
+	| Hardware Rules      |              |
+	| Application Summary |              |
+	| Application Issues  | 2            |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPage
@@ -1542,3 +1542,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User performs right-click on "Advantage Data Architect" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then Next data 'Advantage Data Architect\tUnknown\tExtended Systems\tGreen\tSMS_GEN\tUnknown\tTrue\tFalse\t\t\t5200\t75518\t10 Jan 2018' is copied
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16322
+Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	Then "ADD USERS" Action button is displayed
+	Then Actions drop-down is displayed on the Item Details page
+	When User clicks Actions button on the Item Details page
+	When User clicks "Remove" button in Actions drop-down on the Item Details page
+	Then "REMOVE" Action button is displayed 
