@@ -368,6 +368,33 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(cardWidget).First();
         }
 
+        public List<string> GetPointOfLineWidgetByName(string widgetName)
+        {
+            var totalLabelsCount = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end']");
+
+            Driver.WaitForDataLoading();
+
+            List<string> webLabels = new List<string>();
+
+            for (int i = 1; i <= Driver.FindElements(totalLabelsCount).Count; i++)
+            {
+                if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]"))
+                    .Text))
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]/*")).Text);
+                }
+                else
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]")).Text);
+                }
+            }
+
+            return webLabels;
+        }
+
         public string GetFocusedPointHover(string widgetName)
         {
             var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-point highcharts-point-hover']");
