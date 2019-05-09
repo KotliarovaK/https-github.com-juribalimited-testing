@@ -5673,7 +5673,7 @@ this.FeatureBackground();
 #line 1663
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1664
- testRunner.And("User selects the \"Yurii Timchenko\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects the \"Automation Admin 10\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1665
  testRunner.And("User select \"Read\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1666
@@ -5691,7 +5691,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table120.AddRow(new string[] {
-                        "yurii",
+                        "automation_admin10",
                         "m!gration"});
 #line 1671
  testRunner.And("User login with following credentials:", ((string)(null)), table120, "And ");
@@ -5824,7 +5824,7 @@ this.FeatureBackground();
 #line 1716
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1717
- testRunner.And("User selects the \"Yurii Timchenko\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects the \"Automation Admin 10\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1718
  testRunner.And("User select \"Edit\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1719
@@ -5842,7 +5842,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table123.AddRow(new string[] {
-                        "yurii",
+                        "automation_admin10",
                         "m!gration"});
 #line 1724
  testRunner.And("User login with following credentials:", ((string)(null)), table123, "And ");
@@ -5977,7 +5977,7 @@ this.FeatureBackground();
 #line 1769
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1770
- testRunner.And("User selects the \"Yurii Timchenko\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects the \"Automation Admin 10\" user for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1771
  testRunner.And("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1772
@@ -5995,7 +5995,7 @@ this.FeatureBackground();
                         "Username",
                         "Password"});
             table126.AddRow(new string[] {
-                        "yurii",
+                        "automation_admin10",
                         "m!gration"});
 #line 1777
  testRunner.And("User login with following credentials:", ((string)(null)), table126, "And ");

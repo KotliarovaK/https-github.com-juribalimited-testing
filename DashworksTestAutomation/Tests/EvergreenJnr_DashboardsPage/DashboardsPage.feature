@@ -1661,7 +1661,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
 	And User clicks the "ADD USER" Action button
-	And User selects the "Yurii Timchenko" user for sharing
+	And User selects the "Automation Admin 10" user for sharing
 	And User select "Read" in Select Access dropdown
 	And User clicks the "ADD USER" Action button
 	And User clicks the "ADD USER" Action button
@@ -1669,8 +1669,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	Then User is logged out
 	When User clicks on the Login link
 	And User login with following credentials:
-	| Username | Password  |
-	| yurii    | m!gration |
+	| Username           | Password  |
+	| automation_admin10 | m!gration |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1714,7 +1714,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
 	And User clicks the "ADD USER" Action button
-	And User selects the "Yurii Timchenko" user for sharing
+	And User selects the "Automation Admin 10" user for sharing
 	And User select "Edit" in Select Access dropdown
 	And User clicks the "ADD USER" Action button
 	And User clicks the "ADD USER" Action button
@@ -1722,8 +1722,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	Then User is logged out
 	When User clicks on the Login link
 	And User login with following credentials:
-	| Username | Password  |
-	| yurii    | m!gration |
+	| Username           | Password  |
+	| automation_admin10 | m!gration |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
@@ -1767,7 +1767,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
 	And User clicks the "ADD USER" Action button
-	And User selects the "Yurii Timchenko" user for sharing
+	And User selects the "Automation Admin 10" user for sharing
 	And User select "Admin" in Select Access dropdown
 	And User clicks the "ADD USER" Action button
 	And User clicks the "ADD USER" Action button
@@ -1775,8 +1775,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then User is logged out
 	When User clicks on the Login link
 	And User login with following credentials:
-	| Username | Password  |
-	| yurii    | m!gration |
+	| Username           | Password  |
+	| automation_admin10 | m!gration |
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
