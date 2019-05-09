@@ -890,14 +890,13 @@ Examples:
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12968
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOptionWorks
-
 	When User clicks "<PageName>" on the left-hand menu
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "<Columnname>" rows in the grid
 	| SelectedRowsName |
-	| <SelectedRow1>    |
-	| <SelectedRow2>    |
+	| <SelectedRow1>   |
+	| <SelectedRow2>   |
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy selected rows' option in context menu
 	Then Next data '<ExpectedData>' is copied

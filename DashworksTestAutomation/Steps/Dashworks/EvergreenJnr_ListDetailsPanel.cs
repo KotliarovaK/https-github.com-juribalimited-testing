@@ -466,5 +466,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             Assert.IsTrue(page.AllListsIcon.Displayed(), "Appropriate icon is not displayed");
         }
+
+        [Then(@"Owner Drop-down list is disabled on List details panel")]
+        public void ThenOwnerDrop_DownListIsDisabledOnListDetailsPanel()
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(Convert.ToBoolean(page.OwnerDropDown.GetAttribute("disabled")), "Owner Drop-down list is available!");
+        }
     }
 }

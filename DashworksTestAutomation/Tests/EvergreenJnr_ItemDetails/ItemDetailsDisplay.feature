@@ -1534,15 +1534,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Deleted Item Count     |
 	| Deleted Item Size (MB) |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133
+#TODO::check data copying 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
-	And User navigates to the "Applications" tab
-	Then section is loaded correctly
+	When User navigates to the "Applications" main-menu on the Details page
 	When User performs right-click on "Advantage Data Architect" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then Next data 'Advantage Data Architect\tUnknown\tExtended Systems\tGreen\tSMS_GEN\tUnknown\tTrue\tFalse\t\t\t5200\t75518\t10 Jan 2018' is copied
-	

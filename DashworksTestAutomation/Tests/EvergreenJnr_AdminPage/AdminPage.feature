@@ -171,8 +171,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then "[Unassigned]" bucket details is displayed to the user
-	When User clicks "Evergreen Bucket Settings" tab
-	And User updates the "Default Bucket" checkbox state
+	When User updates the "Default Bucket" checkbox state
 	And User clicks Update Bucket button on the Buckets page
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "Bucket12948" Bucket in the Administration

@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	When User enters "IB Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
 	And User selects all rows on the grid
-	Then User sees "2" of "2" rows selected label
+	Then User sees "8" of "8" rows selected label
 	When User clicks "Buckets" tab
 	And User selects all rows on the grid
 	Then User sees "6" of "6" rows selected label
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Rows counter contains "2" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
-	Then Rows counter contains "5" found row of all rows
+	Then Rows counter contains "3" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User click on "Team" column header on the Admin page
 	#Remove hash after fix sort order
