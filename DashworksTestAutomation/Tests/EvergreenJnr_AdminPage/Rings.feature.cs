@@ -181,7 +181,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS14780")]
         [NUnit.Framework.CategoryAttribute("DAS13530")]
-        [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged()
         {
@@ -218,7 +217,6 @@ this.FeatureBackground();
                         "Rings",
                         "DAS14780",
                         "DAS13530",
-                        "Buckets",
                         "Delete_Newly_Created_Project"});
 #line 31
 this.ScenarioInitialize(scenarioInfo);

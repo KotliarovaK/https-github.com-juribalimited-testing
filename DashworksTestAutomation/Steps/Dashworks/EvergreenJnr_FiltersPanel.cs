@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksSaveFilterButton()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.SaveButton.Click();
+            filterElement.UpdateButton.Click();
         }
 
         [When(@"User selects ""(.*)"" filter from ""(.*)"" category")]

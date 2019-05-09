@@ -60,7 +60,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
 
         public void NavigateToPage(string pageName)
         {
-            Driver.FindElement(By.XPath($".//mat-sidenav//a//div[text()='{pageName}']")).Click();
+            Driver.FindElement(By.XPath($".//mat-sidenav//a[text()='{pageName}']")).Click();
         }
     }
 }
