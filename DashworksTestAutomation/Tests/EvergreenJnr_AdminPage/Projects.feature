@@ -3826,6 +3826,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
+	When User navigates to "" URL in a new tab 
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
@@ -4054,3 +4055,44 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	| Devices   | evergreen/#/admin/project/63/scopeChanges |
 	Then Admin menu item is hidden
 	Then Error is displayed to the User
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
+Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnEvergreen
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE PROJECT" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "16145_EvergreenProject" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User navigates to "evergreen" URL in a new tab
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "16145_EvergreenProject" Project
+	When User removes the Project
+	When User switches to previous tab
+	And User enters "16145_EvergreenProject" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Error message with "This project does not exist. The project has not been updated" text is displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
+Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnSenoir
+	When User clicks "Projects" on the left-hand menu
+	And User clicks create Project button
+	And User creates new Project on Senior
+	| ProjectName         | ShortName | Description | Type |
+	| 16145_SenoirProject | 16145     |             |      |
+	When User navigates to "evergreen" URL in a new tab
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User enters "16145_SenoirProject" text in the Search field for "Project" column
+	And User selects all rows on the grid
+	And User removes selected item
+	Then Success message is displayed and contains "The selected project has been deleted" text
+	When User switches to previous tab
+	When User removes the Project
+	Then Error message is displayed with "This project does not exist. The project has not been updated" text

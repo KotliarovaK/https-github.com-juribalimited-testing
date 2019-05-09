@@ -1531,7 +1531,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Deleted Item Count     |
 	| Deleted Item Size (MB) |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133
+#TODO::check data copying 
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

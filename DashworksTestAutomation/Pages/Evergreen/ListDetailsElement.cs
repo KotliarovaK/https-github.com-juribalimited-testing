@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='dependants action-panel-ddl ng-star-inserted']")]
         public IWebElement DependantsSection { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form-item']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-group ng-star-inserted']//table")]
         public IWebElement ExpandedDependantsSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='User']")]

@@ -106,6 +106,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//span[text()='SAVE']/ancestor::button")]
         public IWebElement SaveButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-group actions']//button[contains(@class,'mat-primary')]")]
+        public IWebElement UpdateButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-filter-edit mat-18']")]
         public IWebElement EditFilterButton { get; set; }
 

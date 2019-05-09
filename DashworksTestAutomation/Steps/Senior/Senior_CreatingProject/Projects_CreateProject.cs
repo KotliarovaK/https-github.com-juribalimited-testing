@@ -118,6 +118,15 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
+        [Then(@"Error message is displayed with ""(.*)"" text")]
+        public void ThenErrorMessageIsDisplayedWithText(string text)
+        {
+            var page = _driver.NowAt<MainElementsOfProjectCreation>();
+
+            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.ErrorMessage);
+            StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
+        }
+
         [Then(@"""(.*)"" displayed in the table on Senior")]
         public void ThenDisplayedInTheTableOnSenior(string text)
         {
