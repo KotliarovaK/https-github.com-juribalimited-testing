@@ -32,6 +32,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
         public IWebElement PageTitle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//a[@href]/img")]
+        public IWebElement DashworksLogo { get; set; }
+
         [FindsBy(How = How.XPath, Using = OptionTabsOnAdminPage)]
         public IList<IWebElement> MenuTabOptionListOnAdminPage { get; set; }
 
@@ -226,7 +229,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.PageTitle)
+                //SelectorFor(this, p => p.PageTitle),
+                SelectorFor(this, p => p.DashworksLogo)
             };
         }
 

@@ -26,9 +26,7 @@ namespace DashworksTestAutomation.Extensions
 
         public static void OpenNewTab(this IWebElement textbox, RemoteWebDriver driver)
         {
-            Actions action = new Actions(driver);
-            IWebElement tttt = driver.FindElement(By.XPath(".//body"));
-            tttt.SendKeys(Keys.Control + "t");
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.open()");
         }
 
         public static void SendkeysWithDelay(this IWebElement textbox, string input)

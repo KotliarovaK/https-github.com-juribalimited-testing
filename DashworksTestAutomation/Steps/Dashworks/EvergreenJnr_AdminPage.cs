@@ -2846,16 +2846,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Display order values are displayed in the wrong order");
         }
 
-        [When(@"User navigates to ""(.*)"" URL in a new tab")]
-        public void WhenUserNavigatesToURLInANewTab(string urlParameters)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.OpenNewTab(_driver);
-            _driver.Navigate().GoToUrl($"{UrlProvider.Url}{urlParameters}");
-            //_driver.SwitchTo().Window(_driver.WindowHandles.First());
-            //_driver.Navigate().GoToUrl($"{UrlProvider.Url}{urlParameters}");
-        }
-
         [AfterScenario("Delete_Newly_Created_Team")]
         public void DeleteAllTeamsAfterScenarioRun()
         {
