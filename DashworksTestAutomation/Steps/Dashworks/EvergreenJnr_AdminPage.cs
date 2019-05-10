@@ -2811,6 +2811,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
         }
 
+        [Then(@"""(.*)"" button is displayed in the warning message")]
+        public void ThenButtonIsDisplayedInTheWarningMessageOnProjectPage(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.GetButtonOnWarningContainerByName(text).Displayed(), $"{text} button is not displayed in the Warning message");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the warning message")]
+        public void ThenTextIsDisplayedInTheWarningMessageOnProjectPage(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.WarningMessageText(text).Displayed(), $"{text} text is not displayed in the Warning message");
+        }
+
         [Then(@"""(.*)"" title is displayed in the Readiness Dialog Container")]
         public void ThenTitleIsDisplayedInTheReadinessDialogContainer(string text)
         {
