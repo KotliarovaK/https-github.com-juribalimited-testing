@@ -289,7 +289,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 selector = $".//div[contains(@class, 'filter-add')][text()='{filterName}']";
             }
 
-
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
 
