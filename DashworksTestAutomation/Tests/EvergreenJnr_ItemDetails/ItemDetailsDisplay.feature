@@ -1259,16 +1259,20 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Used         |
 	| Entitled     |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15951 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15951
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsDetailSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click content from "Hostname" column
 	When User navigates to the "Applications" main-menu on the Details page
 	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	Then "Application" column is displayed to the user
+	When User have opened Column Settings for "Manufacturer" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Application" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
 	Then following columns are displayed on the Item details page:
 	| ColumnName           |
-	| Application          |
 	| Manufacturer         |
 	| Version              |
 	| Compliance           |
@@ -1279,7 +1283,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	| Installed Date       |
 	| Used By              |
 	| Used Date            |
-	| Used Duration (mins) |
+	| Used Duration (Mins) |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication
