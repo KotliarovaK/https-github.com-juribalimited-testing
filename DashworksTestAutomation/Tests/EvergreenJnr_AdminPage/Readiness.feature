@@ -351,7 +351,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 	Then There are no errors in the browser console
 	And Next data 'Amber' is copied
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720 @DAS15720 @DAS16653
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
