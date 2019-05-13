@@ -2465,3 +2465,17 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| i-stage A \ i-Completed     |
 	| i-stage A \ i-Migrated      |
 	| i-stage A \ i-comp-grp-radb |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15585
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Details" tab on the Project details page
+	And User clicks "Enable Capacity" checkbox on the Project details page
+	And User selects "Units" tab on the Project details page
+	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
+	Then "YES" button is displayed in the warning message
+	Then "NO" button is displayed in the warning message

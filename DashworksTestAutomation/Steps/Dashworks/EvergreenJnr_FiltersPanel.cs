@@ -455,7 +455,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.AddFilter(filterName);
             var filter = new CheckboxesAssociationFilter(_driver, operatorValue, true, table);
             filter.Do();
-            filtersNames.SaveButton.Click();
+            filtersNames.UpdateButton.Click();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
@@ -808,7 +808,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.FilterTypeDropdown.Click();
             filterElement.SelectFilterType(filterType);
-            filterElement.SaveButton.Click();
+            filterElement.UpdateButton.Click();
         }
 
         [When(@"User selects ""(.*)"" list for Saved List")]

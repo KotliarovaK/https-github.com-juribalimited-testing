@@ -2110,6 +2110,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
         [NUnit.Framework.CategoryAttribute("DAS12940")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrectItems()
         {
             System.Exception lastException = null;
@@ -2145,7 +2146,8 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "Delete_Newly_Created_Bucket",
-                        "DAS12940"});
+                        "DAS12940",
+                        "archived"});
 #line 494
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2553,7 +2555,7 @@ this.FeatureBackground();
  testRunner.And("User select \"Not entitled to device\" Association for Application filter with Look" +
                     "up value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 611
- testRunner.When("User clicks the \"SAVE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 612
  testRunner.Then("\"Application whose Name is testText not entitled to device\" is displayed in added" +
                     " filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

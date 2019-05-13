@@ -253,7 +253,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @Sections @DAS14583
+@Evergreen @Dashboards @Widgets @Sections @DAS14583 @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14583" name

@@ -384,5 +384,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement WarningMessageText(string text)
+        {
+            var selector = By.XPath($".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
+            return Driver.FindElement(selector);
+        }
     }
 }

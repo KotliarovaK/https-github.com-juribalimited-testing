@@ -1330,6 +1330,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("Sections")]
         [NUnit.Framework.CategoryAttribute("DAS14583")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing()
         {
             System.Exception lastException = null;
@@ -1363,7 +1364,8 @@ this.FeatureBackground();
                         "Dashboards",
                         "Widgets",
                         "Sections",
-                        "DAS14583"});
+                        "DAS14583",
+                        "Not_Run"});
 #line 257
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -490,7 +490,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @Delete_Newly_Created_Bucket @DAS12940
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @Delete_Newly_Created_Bucket @DAS12940 @archived
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedBucketCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
 	And User clicks "Buckets" link on the Admin page
@@ -608,7 +608,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTh
 	When user select "Application Name" filter
 	And User enters "testText" text in Search field at selected Filter
 	And User select "Not entitled to device" Association for Application filter with Lookup value
-	When User clicks the "SAVE" Action button
+	When User clicks the "UPDATE" Action button
 	Then "Application whose Name is testText not entitled to device" is displayed in added filter info
 	When User create dynamic list with "TestListF58LY5" name on "Devices" page
 	Then Edit List menu is not displayed
