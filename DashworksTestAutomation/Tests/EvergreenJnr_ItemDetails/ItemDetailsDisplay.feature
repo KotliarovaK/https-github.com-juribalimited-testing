@@ -1354,46 +1354,46 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Active Directory |
 	| Applications     |
 	| Compliance       |
-	Then "Details" main-menu on the Details page contains following sub-menu with count of items:
-	| SubTabName              | CountOfItems |
-	| Device                  |              |
-	| Device Owner            |              |
-	| Department and Location |              |
-	| Custom Fields           | 1            |
-	Then "Projects" main-menu on the Details page contains following sub-menu with count of items:
-	| SubTabName             | CountOfItems |
-	| Evergreen Details      |              |
-	| Projects Summary       | 7            |
-	| Owner Projects Summary | 7            |
-	Then "Specification" main-menu on the Details page contains following sub-menu with count of items:
-	| SubTabName    | CountOfItems |
-	| Specification |              |
-	| Network Cards | 1            |
-	| CPUS          | 1            |
-	| Video Cards   | 1            |
-	| Monitors      | 1            |
-	| Sound Cards   | 1            |
-	Then User sees loaded tab "Specification" on the Details page
-	Then "Active Directory" main-menu on the Details page contains following sub-menu with count of items:
-	| SubTabName       | CountOfItems |
-	| Active Directory |              |
-	| Groups           | 6            |
-	| LDAP             |              |
-	Then "Users" tab is displayed on left menu on the Details page with "2" count of items
-	Then "Applications" main-menu on the Details page contains following sub-menu with count of items:
-	| SubTabName        | CountOfItems |
-	| Evergreen Summary | 7            |
-	| Evergreen Detail  | 14           |
-	| Advertisements    | 7            |
-	| Collections       | 7            |
-	Then "Related" tab is displayed on left menu on the Details page
-	Then "Compliance" main-menu on the Details page contains following sub-menu with count of items:
-	| SubTabName          | CountOfItems |
-	| Overview            |              |
-	| Hardware Summary    |              |
-	| Hardware Rules      |              |
-	| Application Summary |              |
-	| Application Issues  | 2            |
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| Device                  |
+	| Device Owner            |
+	| Department and Location |
+	| Custom Fields           |
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName             |
+	| Evergreen Details      |
+	| Projects Summary       |
+	| Owner Projects Summary |
+	Then "Specification" main-menu on the Details page contains following sub-menu:
+	| SubTabName    |
+	| Specification | 
+	| Network Cards | 
+	| CPUS          |
+	| Video Cards   |
+	| Monitors      |
+	| Sound Cards   | 
+	Then "Active Directory" main-menu on the Details page contains following sub-menu:
+	| SubTabName       | 
+	| Active Directory |  
+	| Groups           |
+	| LDAP             | 
+	Then "Users" tab is not displayed on left menu on the Details page
+	Then "Applications" main-menu on the Details page contains following sub-menu:
+	| SubTabName        |
+	| Evergreen Summary | 
+	| Evergreen Detail  |
+	| Advertisements    | 
+	| Collections       |
+	Then "Related" tab is not displayed on left menu on the Details page
+	Then "Compliance" main-menu on the Details page contains following sub-menu:
+	| SubTabName          | 
+	| Overview            |          
+	| Hardware Summary    |            
+	| Hardware Rules      |           
+	| Application Summary |            
+	| Application Issues  |
+	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPage
@@ -1416,8 +1416,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| User                    |
 	| Department and Location |
 	| Custom Fields           |
-	When User navigates to the "User" sub-menu on the Details page
-	Then User sees loaded tab "User" on the Details page
+	Then "Users" tab is not displayed on left menu on the Details page
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Evergreen Details       |
@@ -1434,8 +1433,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Evergreen Detail  |
 	| Advertisements    |
 	| Collections       |
-	When User navigates to the "Evergreen Detail" sub-menu on the Details page
-	Then User sees loaded tab "Evergreen Detail" on the Details page
 	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Mailboxes           |

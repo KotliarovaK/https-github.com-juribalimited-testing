@@ -457,7 +457,5 @@ namespace DashworksTestAutomation.Pages
         {
             return NewPermissionsDropdownForList(listName).GetAttribute("aria-disabled").ToString().ToUpper();
         }
-
-
     }
 }

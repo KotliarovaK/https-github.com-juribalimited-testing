@@ -74,6 +74,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
         }
 
+        [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains count of items")]
+        public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+        }
+
+        [Then(@"""(.*)"" tab is displayed on left menu on the Details page and NOT contains count of items")]
+        public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndNotContainsCountOfItems(string tabName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+        }
+
         [Then(@"User sees following main-tabs on left menu on the Details page:")]
         public void ThenUserSeesFollowingMain_TabsOnLeftMenuOnTheDetailsPage(Table table)
         {
@@ -89,10 +103,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
 
+            //opens main-menu 
             detailsPage.GetTabMenuByName(tabMenuName).Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = detailsPage.SubTabsOnDetailsPageList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
+
+            foreach (var row in table.Rows)
+                Assert.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"{row["SubTabName"]} tab is not displayed!");
         }
 
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu with count of items:")]
