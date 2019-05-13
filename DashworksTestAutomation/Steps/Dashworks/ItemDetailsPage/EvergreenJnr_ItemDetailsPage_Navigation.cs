@@ -18,6 +18,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
+        [When(@"User clicks on ""(.*)"" navigation link")]
+        public void WhenUserClicksOnNavigationLink(string linkName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            detailsPage.GetNavigationLinkByName(linkName).Click();
+        }
+
         [When(@"User navigates to the ""(.*)"" main-menu on the Details page")]
         public void WhenUserNavigatesToTheMain_MenuOnTheDetailsPage(string tabMenuName)
         {

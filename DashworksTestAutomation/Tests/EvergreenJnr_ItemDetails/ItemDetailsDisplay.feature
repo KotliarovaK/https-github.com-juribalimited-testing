@@ -1556,3 +1556,34 @@ Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetails
 	When User clicks Actions button on the Item Details page
 	When User clicks "Remove" button in Actions drop-down on the Item Details page
 	Then "REMOVE" Action button is displayed 
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16338
+Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePageIsDisplayed
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User clicks on "Devices" navigation link
+	Then "Devices" list should be displayed to the user
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User clicks on "Users" navigation link
+	Then "Users" list should be displayed to the user
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
+	When User click content from "Application" column
+	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	When User clicks on "Applications" navigation link
+	Then "Applications" list should be displayed to the user
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	When User clicks on "Mailboxes" navigation link
+	Then "Mailboxes" list should be displayed to the user
