@@ -225,35 +225,22 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Slot         |
 	| Readiness    |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564
-Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummarySectionOnTheDetailsPage
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564 @Not_Ready
+Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationTabOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SelectedName>"
 	And User click content from "<ColumnName>" column
 	And User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the "Evergreen Summary" sub-menu on the Details page
 	Then "Manufacturer" column is not displayed to the user
-	And following columns added to the table:
-	| ColumnName |
-	| Vendor     |
-
-Examples:
-	| PageName | SelectedName   | ColumnName |
-	| Devices  | 001BAQXT6JWFPI | Hostname   |
-	| Users    | ZZZ588323      | Username   |
-
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564
-Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSectionOnTheDetailsPage
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User perform search by "<SelectedName>"
-	And User click content from "<ColumnName>" column
-	And User navigates to the "Applications" main-menu on the Details page
-	And User navigates to the "Evergreen Detail" sub-menu on the Details page
+	Then "Vendor" column is displayed to the user
+	When User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then "Manufacturer" column is not displayed to the user
-	And following columns added to the table:
-	| ColumnName |
-	| Vendor     |
+	Then "Vendor" column is displayed to the user
+	When User navigates to the "Advertisements" sub-menu on the Details page
+	Then "Manufacturer" column is not displayed to the user
+	Then "Vendor" column is displayed to the user
 
 Examples:
 	| PageName | SelectedName   | ColumnName |
