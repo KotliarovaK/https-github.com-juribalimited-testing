@@ -883,7 +883,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Application: Request Type A |
 	| Application: Request Type B |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13159 @DAS13754 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13159 @DAS13754 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -2429,7 +2429,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 13:00 - 15:00   |
 	| London Depot 15:00 - 17:00   |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13671
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13671
 Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
