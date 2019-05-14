@@ -160,17 +160,20 @@ namespace DashworksTestAutomation.Pages
 
         public IWebElement GetPreviewFirstCellValue()
         {
-            if (Driver.FindElements(
-                        By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']"))
-                    .Count > 0)
-            {
-                return Driver.FindElement(By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']"));
-            }
+            var byFirstVer =By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']");
+            var bySecondVer = By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='text-value']");
+            var byOtherVer = By.XPath(".//div[@class='card-widget-value ng-star-inserted']/div");
+
+            if (Driver.FindElements(byFirstVer).Count > 0)
+                return Driver.FindElement(byFirstVer);
+
+            if (Driver.FindElements(bySecondVer).Count > 0)
+                return Driver.FindElement(bySecondVer);
+
             else
             {
-                return Driver.FindElement(By.XPath(".//div[@class='card-widget-value ng-star-inserted']/div"));
+                return Driver.FindElement(byOtherVer);
             }
-            
         }
 
         public IWebElement GetCardWidgetPreview()
