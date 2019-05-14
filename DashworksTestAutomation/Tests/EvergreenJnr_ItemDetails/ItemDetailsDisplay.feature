@@ -1588,3 +1588,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePag
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	When User clicks on "Mailboxes" navigation link
 	Then "Mailboxes" list should be displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16469
+Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabIsDisplayedForUser
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
