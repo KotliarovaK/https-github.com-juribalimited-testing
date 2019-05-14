@@ -2444,8 +2444,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
         [NUnit.Framework.TestCaseAttribute("Users", "Loya\\, Dan.Employees.Birmingham.UK.bclabs.local", "Username", "Projects", "Mailbox Project Summary", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Projects Summary", "7", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Owner Projects Summary", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Projects Summary", "8", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Owner Projects Summary", "7", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Loya\\, Dan.Employees.Birmingham.UK.bclabs.local", "Username", "Projects", "User Projects", "2", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections(string pageName, string searchTerm, string columnName, string mainTabName, string subTabName, string countRows, string[] exampleTags)
         {
@@ -3452,7 +3452,7 @@ this.FeatureBackground();
 #line 745
  testRunner.And("User select In Range value with following date:", ((string)(null)), table19, "And ");
 #line 748
- testRunner.Then("Rows counter shows \"2\" of \"9\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -572,8 +572,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | MainTabName | SubTabName              | CountRows |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 1         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 7         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 6         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 8         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 7         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 2         |
 	
 
@@ -745,7 +745,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	And User select In Range value with following date:
 	| DateFrom    | DateTo      |
 	| 22 May 2014 | 22 May 2018 |
-	Then Rows counter shows "2" of "9" rows
+	Then Rows counter contains "2" found row of all rows
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
