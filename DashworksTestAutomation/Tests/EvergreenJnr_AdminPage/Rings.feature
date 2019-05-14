@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417 @DAS16694 @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -265,10 +265,10 @@ Scenario: EvergreenJnr_AdminPage_CheckNavigationToDevicesListFromProjectsRingsLi
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks "Rings" tab
-	Then "60" content is displayed in "Devices" column
+	Then "1" content is displayed in "Devices" column
 	When User clicks content from "Devices" column
 	Then "Devices" list should be displayed to the user
-	Then "60" rows are displayed in the agGrid
+	Then "1" rows are displayed in the agGrid
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	Then "1803: Ring" filter is added to the list
