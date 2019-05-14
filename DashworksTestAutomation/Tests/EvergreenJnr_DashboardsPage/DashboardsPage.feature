@@ -1818,3 +1818,27 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	And User clicks Manage in the list panel
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16325
+Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName     |
+	| ICSP: In Scope |
+	And User move 'ICSP: In Scope' column to 'Hostname' column
+	And User move 'Hostname' column to 'Operating System' column
+	And User click on 'ICSP: In Scope' column header
+	And User create dynamic list with "DeviceListFor16325" name on "Devices" page
+	Then "DeviceListFor16325" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard for DAS16325" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown |
+	| Card       | WidgetForDAS16325 | DeviceListFor16325 | First Cell |             |                   |         |         |           |            |                  |           |
+	Then Widget Preview is displayed to the user
+	And Widget Preview shows "TRUE" as First Cell value
+	And There are no errors in the browser console
