@@ -2437,18 +2437,17 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User enters "Slot 2018-10-01 - 2018-10-31[Team: 2832; RequestType: 471]" text in the Search field for "Capacity Slot" column
+	And User enters "Scheduled/Targeted" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
 	Then Tasks are displayed in the following order on Action panel:
-	| Items                       |
-	| i-stage A \ i-comp-radb     |
-	| i-stage A \ i-Schedule      |
-	| i-stage A \ i-Targeted      |
-	| i-stage A \ i-Forecast      |
-	| i-stage A \ i-Completed     |
-	| i-stage A \ i-Migrated      |
-	| i-stage A \ i-comp-grp-radb |
+	| Items                   |
+	| i-stage A \ i-Completed |
+	| i-stage A \ i-comp-radb |
+	| i-stage A \ i-Forecast  |
+	| i-stage A \ i-Migrated  |
+	| i-stage A \ i-Schedule  |
+	| i-stage A \ i-Targeted  |
 	When User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User selects following items in "Request Types" dropdown:
@@ -2456,14 +2455,13 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| req type comp              |
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
 	Then Tasks are displayed in the following order on Action panel:
-	| Items                       |
-	| i-stage A \ i-comp-radb     |
-	| i-stage A \ i-Schedule      |
-	| i-stage A \ i-Targeted      |
-	| i-stage A \ i-Forecast      |
-	| i-stage A \ i-Completed     |
-	| i-stage A \ i-Migrated      |
-	| i-stage A \ i-comp-grp-radb |
+	| Items                   |
+	| i-stage A \ i-Completed |
+	| i-stage A \ i-comp-radb |
+	| i-stage A \ i-Forecast  |
+	| i-stage A \ i-Migrated  |
+	| i-stage A \ i-Schedule  |
+	| i-stage A \ i-Targeted  |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15585
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears

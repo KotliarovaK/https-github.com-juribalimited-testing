@@ -8428,8 +8428,8 @@ this.FeatureBackground();
 #line 2439
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2440
- testRunner.And("User enters \"Slot 2018-10-01 - 2018-10-31[Team: 2832; RequestType: 471]\" text in " +
-                    "the Search field for \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"Scheduled/Targeted\" text in the Search field for \"Capacity Slot\" col" +
+                    "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2441
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 2442
@@ -8438,52 +8438,48 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table100.AddRow(new string[] {
+                        "i-stage A \\ i-Completed"});
+            table100.AddRow(new string[] {
                         "i-stage A \\ i-comp-radb"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-Forecast"});
+            table100.AddRow(new string[] {
+                        "i-stage A \\ i-Migrated"});
             table100.AddRow(new string[] {
                         "i-stage A \\ i-Schedule"});
             table100.AddRow(new string[] {
                         "i-stage A \\ i-Targeted"});
-            table100.AddRow(new string[] {
-                        "i-stage A \\ i-Forecast"});
-            table100.AddRow(new string[] {
-                        "i-stage A \\ i-Completed"});
-            table100.AddRow(new string[] {
-                        "i-stage A \\ i-Migrated"});
-            table100.AddRow(new string[] {
-                        "i-stage A \\ i-comp-grp-radb"});
 #line 2443
  testRunner.Then("Tasks are displayed in the following order on Action panel:", ((string)(null)), table100, "Then ");
-#line 2452
+#line 2451
  testRunner.When("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2453
+#line 2452
  testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
             table101.AddRow(new string[] {
                         "req type comp"});
-#line 2454
+#line 2453
  testRunner.And("User selects following items in \"Request Types\" dropdown:", ((string)(null)), table101, "And ");
-#line 2457
+#line 2456
  testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
                         "Items"});
             table102.AddRow(new string[] {
+                        "i-stage A \\ i-Completed"});
+            table102.AddRow(new string[] {
                         "i-stage A \\ i-comp-radb"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-Forecast"});
+            table102.AddRow(new string[] {
+                        "i-stage A \\ i-Migrated"});
             table102.AddRow(new string[] {
                         "i-stage A \\ i-Schedule"});
             table102.AddRow(new string[] {
                         "i-stage A \\ i-Targeted"});
-            table102.AddRow(new string[] {
-                        "i-stage A \\ i-Forecast"});
-            table102.AddRow(new string[] {
-                        "i-stage A \\ i-Completed"});
-            table102.AddRow(new string[] {
-                        "i-stage A \\ i-Migrated"});
-            table102.AddRow(new string[] {
-                        "i-stage A \\ i-comp-grp-radb"});
-#line 2458
+#line 2457
  testRunner.Then("Tasks are displayed in the following order on Action panel:", ((string)(null)), table102, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -8531,33 +8527,33 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "DAS15585"});
-#line 2469
+#line 2467
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 2470
+#line 2468
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 2471
+#line 2469
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 2472
+#line 2470
  testRunner.And("User enters \"1803 Rollout\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 2473
+#line 2471
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 2474
+#line 2472
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 2475
+#line 2473
  testRunner.And("User selects \"Details\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 2476
+#line 2474
  testRunner.And("User clicks \"Enable Capacity\" checkbox on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 2477
+#line 2475
  testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 2478
+#line 2476
  testRunner.Then("\"You have unsaved changes. Are you sure you want to leave the page?\" text is disp" +
                     "layed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2479
+#line 2477
  testRunner.Then("\"YES\" button is displayed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 2480
+#line 2478
  testRunner.Then("\"NO\" button is displayed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

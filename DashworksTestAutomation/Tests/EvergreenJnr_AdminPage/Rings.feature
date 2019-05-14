@@ -339,7 +339,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	When User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397
-Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsСonsistently
+Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "1803 Rollout" text in the Search field for "Project" column
