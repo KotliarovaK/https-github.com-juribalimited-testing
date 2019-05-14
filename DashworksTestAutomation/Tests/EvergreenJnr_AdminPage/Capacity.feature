@@ -286,7 +286,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	# And "UPDATE" Action button is disabled 
 	# And "CANCEL" Action button is disabled
 	When User selects "Units" tab on the Project details page
-	And User clicks Yes button in Leave Page Warning
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column

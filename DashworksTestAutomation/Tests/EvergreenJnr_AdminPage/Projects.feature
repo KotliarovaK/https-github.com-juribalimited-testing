@@ -3157,17 +3157,6 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckThatImportIsSuccessAfterDuplicates
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13782 @Projects @archived
-Scenario: EvergreenJnr_ImportProjectPage_CheckBucketsDropdownValuesOnImportProjectPage
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks the "IMPORT PROJECT" Action button
-	And User selects "Import to new project" option in the "Import" dropdown on the Import Project Page
-	Then User sees following options in "Buckets" dropdown on Import Projects page:
-	| OptionLabel                                |
-	| Use project buckets                        |
-	| Clone evergreen buckets to project buckets |
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13783 @Projects @Do_Not_Run_With_Projects @Do_Not_Run_With_AdminPage
 Scenario: EvergreenJnr_ImportProjectPage_CheckSelectExistingProjectDropdownValuesOnImportProjectPage
 	When User clicks Admin on the left-hand menu

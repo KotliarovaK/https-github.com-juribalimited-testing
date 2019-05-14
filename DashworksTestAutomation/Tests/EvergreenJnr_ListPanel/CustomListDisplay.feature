@@ -1138,20 +1138,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectly
 	Then Cancel button is displayed with correctly color
 	Then User confirm removed list
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13300 @archived
-Scenario: EvergreenJnr_DevicesList_ChecksThatIconsAreDisplayedCorrectlyInListDropdown 
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks All lists dropdown on Lists panel
-	Then appropriate icon is displayed for Favourites
-	Then appropriate icon is displayed for My lists
-	Then appropriate icon is displayed for Shared with me
-	Then appropriate icon is displayed for Dynamic lists
-	Then appropriate icon is displayed for Static lists
-	When User selects "Favourites" option on the All lists dropdown
-	When User clicks All lists dropdown on Lists panel
-	Then appropriate icon is displayed for All lists
-
 @Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS13637 @DAS13639 @DAS13643 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorkedCorrectly
 	When User clicks "Devices" on the left-hand menu
