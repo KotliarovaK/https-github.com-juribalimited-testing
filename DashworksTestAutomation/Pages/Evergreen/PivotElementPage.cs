@@ -26,6 +26,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//*[text()='Pivot']/ancestor::div[@id='context-container']")]
         public IWebElement PivotPanel { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='device-context-panel']//button[2]")]
+        public IWebElement ClosePivotPanelButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Pivot Name']")]
         public IWebElement PivotNameTextBox { get; set; }
 

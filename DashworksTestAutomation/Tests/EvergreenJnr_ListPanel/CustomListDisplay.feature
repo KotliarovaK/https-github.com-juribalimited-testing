@@ -216,7 +216,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatCustomListCreationBlockIsNotDisplayedA
 	When User clicks the Actions button
 	Then Save to New Custom List element is displayed
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018 @DAS16242 @Not_Run
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS11018 @DAS16242
 Scenario: EvergreenJnr_UsersList_CheckThatSaveButtonIsInactiveInCustomListCreationBlock
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
@@ -1065,20 +1065,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatStaticListIsDisplayedInTheBottomOfTheL
 	And User clicks Delete button on the warning message in the lists panel
 	And "List deleted" message is displayed
 
-@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917 @Not_Run
+@Evergreen @Devices @CustomListDisplay @EvergreenJnr_ListPanel @DAS12917
 Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User selects "Application Compliance" filter from "Application" category
-	When User change selected checkboxes:
-	| Option | State |
-	| Red    | true  |
-	When User add "Application Compliance" filter where type is "Equals" with selected Checkboxes and following Association:
-	| SelectedCheckboxes | Association        |
-	| Red                | Used on device     |
-	| Green              | Entitled to device |
+	When User add "Application Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red                | 
+	| Green              | 
 	And User create custom list with "Test_Device_Filter_DAS_12917" name
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Device_Filter_DAS_12917"
