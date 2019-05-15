@@ -51,6 +51,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                     menu.Automations.Click();
                     break;
 
+                case "Evergreen":
+                    menu.EvergreenPage.Click();
+                    break;
+
                 default:
                     throw new Exception($"'{adminLinks}' link is not valid menu item and can not be opened");
             }

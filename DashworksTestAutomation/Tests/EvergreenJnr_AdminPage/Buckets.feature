@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12491 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbarforBucketsList
 	When User clicks Admin on the left-hand menu
-	And User clicks "Buckets" link on the Admin page
+	And User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "birmingham" text in the Search field for "Bucket" column
@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Amsterdam" text in the Search field for "Bucket" column
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsingTheSpaceAsAFirstSymbol
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -74,11 +74,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedBucketUsing
 	Then Error message with "A bucket already exists with this name" text is displayed
 	And Delete "11770" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13199 @DAS16636 @Buckets
 Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "TRUE" value is displayed for Default column
@@ -106,7 +106,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
 	When User clicks Admin on the left-hand menu
-	And User clicks "Buckets" link on the Admin page
+	And User clicks "Evergreen" link on the Admin page
 	And User creates following buckets in Administration:
 	| Buckets | Teams    |
 	| 1ba     | Admin IT |
@@ -136,7 +136,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -263,7 +263,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	When User clicks Admin on the left-hand menu
-	And User clicks "Buckets" link on the Admin page
+	And User clicks "Evergreen" link on the Admin page
 	And User selects all rows on the grid
 	And User clicks Reset Filters button on the Admin page
 	Then User sees "7" of "577" rows selected label
@@ -285,7 +285,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpdatingBucketToDefaultType
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -302,7 +302,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 	When User enters "TestBucket2" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then Default Bucket checkbox is selected
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "FALSE" value is displayed for Default column
@@ -315,13 +315,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNotificationMessageIsDisplayedAfterUpd
 Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAfterTryingToDeleteNonDefaultBucket
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	When User enters "Administration" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
 	Then Default Bucket checkbox is selected
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User enters "Chicago" text in the Search field for "Bucket" column
@@ -336,7 +336,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	#Then Counter shows "558" found rows
@@ -381,7 +381,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketName
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	Then Search fields for "Devices" column contain correctly value
 	Then Search fields for "Users" column contain correctly value
@@ -391,7 +391,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	When User enters " " in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
 	Then Create Bucket button is disabled
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	And User clicks Yes button in Leave Page Warning
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -412,7 +412,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory 
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -435,7 +435,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	When User selects "Evergreen" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User enters "1Bucket12905" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -501,7 +501,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "10 objects queued for onboarding, 0 objects offboarded" text
 	When User click on Back button
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -549,7 +549,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfterSwitchingFocusToAnotherBucket 
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -583,7 +583,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfter
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInBucketDeletionMessages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
 	Then "Buckets" page should be displayed to the user
 	When User select "Bucket" rows in the grid
 	| SelectedRowsName   |
