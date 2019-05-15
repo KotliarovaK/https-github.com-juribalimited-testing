@@ -8192,29 +8192,29 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS15807"});
-#line 1962
+#line 1892
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1963
+#line 1893
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1964
+#line 1894
  testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1965
+#line 1895
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1966
+#line 1896
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1967
+#line 1897
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table149 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedValues"});
-            table158.AddRow(new string[] {
+            table149.AddRow(new string[] {
                         "English"});
-#line 1968
+#line 1898
  testRunner.When("User add \"Windows7Mi: Language\" filter where type is \"Equals\" with added column a" +
-                    "nd Lookup option", ((string)(null)), table158, "When ");
+                    "nd Lookup option", ((string)(null)), table149, "When ");
 #line hidden
             this.ScenarioCleanup();
         }

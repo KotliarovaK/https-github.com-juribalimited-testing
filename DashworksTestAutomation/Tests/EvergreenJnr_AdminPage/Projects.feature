@@ -3929,13 +3929,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConverti
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15262 @DAS16361 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject
 	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
+	And User selects " Dependant List Filter - BROKEN LIST" in the Scope Project dropdown
+	Then Filling field error with "This list has errors" text is displayed
+	When User clicks the "CANCEL" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestNegativeProject15262" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
