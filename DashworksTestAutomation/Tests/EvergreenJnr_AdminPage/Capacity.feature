@@ -915,12 +915,6 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User have opened Column Settings for "Capacity Slot" column
-	And User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Display Order" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
 	Then column content is displayed in the following order:
 	| Items             |
 	| Unassigned        |
