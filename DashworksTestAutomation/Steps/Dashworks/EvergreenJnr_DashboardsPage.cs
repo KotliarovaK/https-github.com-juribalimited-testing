@@ -831,7 +831,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForCardWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.ColorWidgetItem.GetCssValue("background-color");
+            var getColor = page.ColorWidgetItem.GetCssValue("color");
             Assert.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 

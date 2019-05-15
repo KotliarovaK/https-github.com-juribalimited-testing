@@ -859,7 +859,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	When User removes "Application" column by Column panel
 	When User removes "Vendor" column by Column panel
 	When User removes "Version" column by Column panel
-	And User create dynamic list with "1803 App Compliance" name on "Applications" page
+	And User create custom list with "1803 App Compliance" name
 	Then "1803 App Compliance" list is displayed to user
 	When User clicks "Dashboards" on the left-hand menu
 	When User clicks the "CREATE DASHBOARD" Action button
@@ -1218,11 +1218,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
-	And User clicks Add New button on the Filter panel
 	And user select "1803: Readiness" filter
-	And User clicks in search field in the Filter block
-	And User enters "Red" text in Search field at selected Lookup Filter
-	And User clicks checkbox at selected Lookup Filter
+	And User Add And "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Red              |
 	And User clicks Save filter button
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
