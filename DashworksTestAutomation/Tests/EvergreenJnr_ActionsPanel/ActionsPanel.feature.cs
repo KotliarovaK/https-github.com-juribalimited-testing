@@ -3177,7 +3177,7 @@ this.FeatureBackground();
 #line 943
  testRunner.Then("Teams are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 944
- testRunner.When("User selects \"Admin IT\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Team 0\" Team on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 945
  testRunner.Then("Owner field is not displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 946
@@ -6164,6 +6164,8 @@ this.FeatureBackground();
                         "Barry\'s User Project"});
             table127.AddRow(new string[] {
                         "Migration Project Phase 2 (User Project)"});
+            table127.AddRow(new string[] {
+                        "Project with associated broken list"});
             table127.AddRow(new string[] {
                         "User Evergreen Capacity Project"});
             table127.AddRow(new string[] {

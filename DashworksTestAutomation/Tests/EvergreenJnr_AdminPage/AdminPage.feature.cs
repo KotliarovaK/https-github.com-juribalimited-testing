@@ -735,6 +735,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions()
         {
             System.Exception lastException = null;
@@ -774,7 +775,8 @@ this.FeatureBackground();
                         "DAS12767",
                         "DAS13973",
                         "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Bucket"});
+                        "Delete_Newly_Created_Bucket",
+                        "archived"});
 #line 190
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
