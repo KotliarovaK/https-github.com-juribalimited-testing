@@ -386,7 +386,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectTabByName(string tabName)
         {
-            var tabNameSelector = $".//li[@class='ng-star-inserted']//span[text()='{tabName}']";
+            var tabNameSelector = $".//li[@class='das-mat-tree-node']/a[text()='{tabName}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(tabNameSelector));
             Driver.FindElement(By.XPath(tabNameSelector)).Click();
         }

@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                     break;
 
                 case "Evergreen":
-                    menu.EvergreenPage.Click();
+                    menu.EvergreenSectionTab.Click();
                     break;
 
                 default:
@@ -94,6 +94,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 case "Capacity Units":
                     var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
                     StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Rings":
+                    var ringsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(ringsPage.RingsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 
