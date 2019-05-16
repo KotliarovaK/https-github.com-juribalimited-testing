@@ -56,6 +56,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write("Pivot panel is visible");
         }
 
+        [When(@"User closes the Pivot panel")]
+        public void WhenUserClosesThePivotPanel()
+        {
+            var pivotPage = _driver.NowAt<PivotElementPage>();
+            pivotPage.ClosePivotPanelButton.Click();
+        }
+
         [Then(@"""(.*)"" panel is displayed to the user")]
         public void ThenPanelIsDisplayedToTheUser(string panelName)
         {

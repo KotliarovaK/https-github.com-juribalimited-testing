@@ -940,8 +940,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
-        [NUnit.Framework.CategoryAttribute("Units")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12672")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated()
@@ -977,8 +975,6 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Capacity",
-                        "Units",
-                        "Projects",
                         "DAS12672",
                         "Delete_Newly_Created_Project"});
 #line 251

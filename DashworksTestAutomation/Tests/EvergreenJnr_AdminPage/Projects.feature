@@ -551,13 +551,12 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User selects "Succeeded" checkbox from String Filter on the Admin page
 	Then Rows counter shows "0" of "6" rows
 	When User type "0IJB93JZPG72PX" in Global Search Field
-	Then User clicks on "0IJB93JZPG72PX (Carmen H. Benson)" search result
-	When User navigates to the "Projects" tab
-	And User opens "Device Projects" section on the Details Page
+	Then User clicks on "0IJB93JZPG72PX" search result
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Projects Summary" sub-menu on the Details page
 	And User clicks "TestProject12490" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	#Remove hash on 'kepler'
-	#Then There are no errors in the browser console
+	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11700 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplayedCorrectlyToTheAdminProjectGrid
@@ -3815,7 +3814,6 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplaye
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
-	When User navigates to "" URL in a new tab 
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user

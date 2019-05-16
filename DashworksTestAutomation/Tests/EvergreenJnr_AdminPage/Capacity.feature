@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS12672 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page

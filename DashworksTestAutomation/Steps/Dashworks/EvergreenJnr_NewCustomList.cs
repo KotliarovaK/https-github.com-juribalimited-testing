@@ -391,6 +391,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(listName, page.ActiveCustomListName());
         }
 
+        [Then(@"list with ""(.*)"" name is not displayed")]
         [Then(@"list with ""(.*)"" name is removed")]
         public void ThenListWithNameIsRemoved(string listName)
         {
