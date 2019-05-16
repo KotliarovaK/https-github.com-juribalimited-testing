@@ -225,12 +225,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Slot         |
 	| Readiness    |
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564 @Not_Ready
-Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationTabOnTheDetailsPage
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User perform search by "<SelectedName>"
-	And User click content from "<ColumnName>" column
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564
+Scenario: EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
 	And User navigates to the "Applications" main-menu on the Details page
 	When User navigates to the "Evergreen Summary" sub-menu on the Details page
 	Then "Manufacturer" column is not displayed to the user
@@ -242,10 +242,19 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationTabOnThe
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
 
-Examples:
-	| PageName | SelectedName   | ColumnName |
-	| Devices  | 001BAQXT6JWFPI | Hostname   |
-	| Users    | ZZZ588323      | Username   |
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16564
+Scenario: EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetailsPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ZZZ588323"
+	And User click content from "Username" column
+	And User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the "Evergreen Summary" sub-menu on the Details page
+	Then "Manufacturer" column is not displayed to the user
+	Then "Vendor" column is displayed to the user
+	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	Then "Manufacturer" column is not displayed to the user
+	Then "Vendor" column is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
