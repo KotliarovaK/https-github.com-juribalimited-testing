@@ -177,20 +177,20 @@ Examples:
 	| Applications |
 	| Mailboxes    |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11493 @DAS11951 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11493 @DAS11951 @Delete_Newly_Created_List
 Scenario Outline: EvergreenJnr_AllLists_CheckThatActiveListIsRefreshedOnListDetailsPanel
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User click on '<Columnname>' column header
 	Then data in table is sorted by '<Columnname>' column in ascending order
-	When User create dynamic list with "TestListE3A207" name on "<PageName>" page
-	Then "TestListE3A207" list is displayed to user
+	When User create custom list with "TestListE11493" name
+	Then "TestListE11493" list is displayed to user
 	When User clicks the List Details button
 	Then List details panel is displayed to the user
 	When User select "Automation Admin 1" as a Owner of a list
 	And User click Accept button in List Details panel
 	Then List details button is disabled
-	And list with "TestListE3A207" name is removed
+	And list with "TestListE11493" name is not displayed
 	And "<PageName>" list should be displayed to the user
 
 Examples: 
