@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Helpers
                 case "Amber":
                     return "rgba(226, 123, 54, 0.5)";
                 case "Grey":
-                    return "rgba(128, 139, 153, 1)";
+                    return "rgba(128, 139, 153, 0.5)";
                 case "Green":
                     return "rgba(126, 189, 56, 1)";
                 default:

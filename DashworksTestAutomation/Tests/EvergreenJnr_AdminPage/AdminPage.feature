@@ -340,3 +340,116 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	Then "15,682" content is displayed in "Devices" column
 	Then "38,677" content is displayed in "Users" column
 	Then "13,752" content is displayed in "Mailboxes" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
+Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Birmingham" text in the Search field for "Bucket" column
+	When User clicks content from "Devices" column
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	When User enters "Manchester" text in the Search field for "Bucket" column
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	When User clicks content from "Mailboxes" column
+	Then "Mailboxes" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
+Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromCapacityUnits
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks content from "Devices" column
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	When User clicks content from "Mailboxes" column
+	Then "Mailboxes" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	When User clicks Admin on the left-hand menu
+	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User selects "Capacity" tab on the Project details page
+	When User selects "Units" tab on the Project details page
+	When User clicks content from "Applications" column
+	Then "Applications" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName          |
+	| 1803: Capacity Unit |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
+Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRings
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Rings" tab
+	Then "Rings" page should be displayed to the user
+	When User clicks content from "Devices" column
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Evergreen Ring |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Rings" tab
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Evergreen Ring |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Rings" tab
+	When User clicks content from "Mailboxes" column
+	Then "Mailboxes" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Evergreen Ring |
+	When User clicks Admin on the left-hand menu
+	When User enters "Barry's User Project" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User selects "Rings" tab on the Project details page
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Barry'sUse: Ring |
