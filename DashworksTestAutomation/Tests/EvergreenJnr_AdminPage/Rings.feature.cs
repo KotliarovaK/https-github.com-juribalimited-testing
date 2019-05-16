@@ -87,6 +87,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS14867")]
         [NUnit.Framework.CategoryAttribute("DAS15417")]
+        [NUnit.Framework.CategoryAttribute("DAS16694")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing()
         {
             System.Exception lastException = null;
@@ -121,7 +123,9 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "EvergreenJnr_AdminPage",
                         "Rings",
                         "DAS14867",
-                        "DAS15417"});
+                        "DAS15417",
+                        "DAS16694",
+                        "Not_Run"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -181,7 +185,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS14780")]
         [NUnit.Framework.CategoryAttribute("DAS13530")]
-        [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged()
         {
@@ -218,7 +221,6 @@ this.FeatureBackground();
                         "Rings",
                         "DAS14780",
                         "DAS13530",
-                        "Buckets",
                         "Delete_Newly_Created_Project"});
 #line 31
 this.ScenarioInitialize(scenarioInfo);
@@ -1025,13 +1027,13 @@ this.FeatureBackground();
 #line 267
  testRunner.And("User clicks \"Rings\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 268
- testRunner.Then("\"60\" content is displayed in \"Devices\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"1\" content is displayed in \"Devices\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 269
  testRunner.When("User clicks content from \"Devices\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 270
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 271
- testRunner.Then("\"60\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"1\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 272
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 273
@@ -1230,21 +1232,21 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsСonsisten" +
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsisten" +
             "tly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS15397")]
-        public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsСonsistently()
+        public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsСonsistentlyInternal();
+                    this.EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistentlyInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -1263,9 +1265,9 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsСonsistentlyInternal()
+        private void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistentlyInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsСonsisten" +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsisten" +
                     "tly", null, new string[] {
                         "Evergreen",
                         "Admin",

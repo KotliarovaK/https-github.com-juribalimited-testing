@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksSaveFilterButton()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            filterElement.SaveButton.Click();
+            filterElement.UpdateButton.Click();
         }
 
         [When(@"User selects ""(.*)"" filter from ""(.*)"" category")]
@@ -401,6 +401,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with added column and following checkboxes:")]
         public void WhenUserAddFilterWhereTypeIsWithAddedColumnAndFollowingCheckboxes(string filterName,
             string operatorValue, Table table)
+
+
         {
             var filtersNames = _driver.NowAt<FiltersElement>();
             filtersNames.AddFilter(filterName);
@@ -455,7 +457,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filtersNames.AddFilter(filterName);
             var filter = new CheckboxesAssociationFilter(_driver, operatorValue, true, table);
             filter.Do();
-            filtersNames.SaveButton.Click();
+            filtersNames.UpdateButton.Click();
         }
 
         [When(@"User add ""(.*)"" filter where type is ""(.*)"" with following Value and Association:")]
@@ -808,7 +810,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.FilterTypeDropdown.Click();
             filterElement.SelectFilterType(filterType);
-            filterElement.SaveButton.Click();
+            filterElement.UpdateButton.Click();
         }
 
         [When(@"User selects ""(.*)"" list for Saved List")]
@@ -1321,9 +1323,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<FiltersElement>();
             _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.InputDate);
 
-            page.InputDate.Clear();
+            //TODO: clear() method doesn't work for now. Remove code below and use clear() when it works again
+            page.InputDate.Click();
+            page.InputDate.SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            page.InputDate.SendKeys(OpenQA.Selenium.Keys.Delete);
+            //page.InputDate.Clear();
             page.InputDate.SendKeys(date);
-            page.SaveButton.Click();
+            page.UpdateButton.Click();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
         }

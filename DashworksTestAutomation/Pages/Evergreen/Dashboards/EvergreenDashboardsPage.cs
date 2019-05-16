@@ -110,12 +110,17 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']")]
         public IWebElement SharingDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='New Permissions']")]
-        public IWebElement NewPermissionsDropdown { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-labelledby='sharing-label']//span[not (contains(@class, 'mat-select'))]")]
+        public IWebElement SharingDropdownPermissionValue { get; set; }
+
 
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container/permission-popup//h1[text()='Review Widget List Permissions']")]
         public IWebElement ReviewWidgetListPermissionsPopUp { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//span[@class='mat-option-text']")]
+        public IList<IWebElement> ReviewWidgetListPermissionExpandedOptions { get; set; }
+
+        
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
@@ -363,6 +368,33 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(cardWidget).First();
         }
 
+        public List<string> GetPointOfLineWidgetByName(string widgetName)
+        {
+            var totalLabelsCount = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end']");
+
+            Driver.WaitForDataLoading();
+
+            List<string> webLabels = new List<string>();
+
+            for (int i = 1; i <= Driver.FindElements(totalLabelsCount).Count; i++)
+            {
+                if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]"))
+                    .Text))
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]/*")).Text);
+                }
+                else
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]")).Text);
+                }
+            }
+
+            return webLabels;
+        }
+
         public string GetFocusedPointHover(string widgetName)
         {
             var cardWidget = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-point highcharts-point-hover']");
@@ -380,6 +412,52 @@ namespace DashworksTestAutomation.Pages
             //greater than 1 because line must have at least two points
             return Driver.FindElements(cardWidget).Count>1;
         }
+
+        public IWebElement ReviewPermissionsPopupsButton(string buttonCaption)
+        {
+            return Driver.FindElement(By.XPath($".//mat-dialog-container/permission-popup//span[contains(text(),'{buttonCaption.ToUpper()}')]/parent::button"));
+        }
+
+        public string GetButtonStateOfReviewWidgetPermissionsPopup(string buttonCaption)
+        {
+            return ReviewPermissionsPopupsButton(buttonCaption).Enabled.ToString().ToUpper();
+        }
+
+        public void SelectDoNotChangeReviewPermission()
+        {
+            Driver.FindElement(By.XPath(".//span[@class='mat-option-text'][contains(text(), 'Do not change')]")).Click();
+        }
+
+        public IWebElement NewPermissionsDropdownForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']"));
+        }
+
+        public IWebElement WidgetValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'widgetNames')]/span"));
+        }
+
+        public IWebElement OwnerValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'ownerName')]"));
+        }
+
+        public IWebElement CurrentPermissionValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'sharedAccessType')]"));
+        }
+
+        public IWebElement NewPermissionsValueForList(string listName)
+        {
+            return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']//span[not (contains(@class, 'mat-select'))]"));
+        }
+
+        public string GetDropdownStateOfReviewWidgetPermissionsPopup(string listName)
+        {
+            return NewPermissionsDropdownForList(listName).GetAttribute("aria-disabled").ToString().ToUpper();
+        }
+
 
     }
 }

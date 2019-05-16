@@ -143,7 +143,7 @@ this.FeatureBackground();
 #line 13
  testRunner.And("Appropriate header font weight is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.Then("\"v5.3.4.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"v5.3.5.0\" Application version is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

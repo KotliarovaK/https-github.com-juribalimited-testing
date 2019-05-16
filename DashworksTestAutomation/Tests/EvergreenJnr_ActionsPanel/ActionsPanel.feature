@@ -5,21 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @DAS10859 @DAS12602 @DAS14603 @archived
-Scenario: EvergreenJnr_UsersList_CheckThatAfterInterruptingProcessSelectingAllRowsAtActionsPanelProgressIndicatorDoesNotContinueToRun
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User click on 'Username' column header
-	When User click on 'Username' column header
-	When User clicks the Actions button
-	Then Actions panel is displayed to the user
-	When User select all rows
-	When User click content from "Username" column
-	Then User click back button in the browser
-	And "Users" list should be displayed to the user
-	Then Actions panel is displayed to the user
-	Then Actions message container is displayed to the user
-
 @Evergreen @Users @EvergreenJnr_ActionsPanel @DAS10860
 Scenario: EvergreenJnr_UsersList_CheckThatAfterClosingActionsPanelTheActionsButtonIsNotShownInRed
 	When User clicks "Users" on the left-hand menu
@@ -956,7 +941,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| No change             |
 	When User selects "Update" Update Owner on Action panel
 	Then Teams are displayed in alphabetical order on Action panel
-	When User selects "Admin IT" Team on Action panel
+	When User selects "Team 0" Team on Action panel
 	Then Owner field is not displayed on Action panel
 	When User selects "IB Team" Team on Action panel
 	Then Owner field is displayed on Action panel
@@ -1862,6 +1847,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	| Options                                  |
 	| Barry's User Project                     |
 	| Migration Project Phase 2 (User Project) |
+	| Project with associated broken list      |
 	| User Evergreen Capacity Project          |
 	| User Scheduled Test (Jo)                 |
-	

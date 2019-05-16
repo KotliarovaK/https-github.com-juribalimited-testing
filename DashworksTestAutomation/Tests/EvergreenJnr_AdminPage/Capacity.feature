@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	Then There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS12672 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -286,7 +286,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	# And "UPDATE" Action button is disabled 
 	# And "CANCEL" Action button is disabled
 	When User selects "Units" tab on the Project details page
-	And User clicks Yes button in Leave Page Warning
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -884,7 +883,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Application: Request Type A |
 	| Application: Request Type B |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13159 @DAS13754 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13159 @DAS13754 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -916,12 +915,6 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User have opened Column Settings for "Capacity Slot" column
-	And User clicks Column button on the Column Settings panel
-	Then Column Settings was opened
-	When User select "Display Order" checkbox on the Column Settings panel
-	And User clicks Column button on the Column Settings panel
-	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
 	Then column content is displayed in the following order:
 	| Items             |
 	| Unassigned        |
@@ -2430,7 +2423,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| London Depot 13:00 - 15:00   |
 	| London Depot 15:00 - 17:00   |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13671
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13671
 Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScreen
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -2438,18 +2431,17 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User enters "Slot 2018-10-01 - 2018-10-31[Team: 2832; RequestType: 471]" text in the Search field for "Capacity Slot" column
+	And User enters "Scheduled/Targeted" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
 	Then Tasks are displayed in the following order on Action panel:
-	| Items                       |
-	| i-stage A \ i-comp-radb     |
-	| i-stage A \ i-Schedule      |
-	| i-stage A \ i-Targeted      |
-	| i-stage A \ i-Forecast      |
-	| i-stage A \ i-Completed     |
-	| i-stage A \ i-Migrated      |
-	| i-stage A \ i-comp-grp-radb |
+	| Items                   |
+	| i-stage A \ i-Completed |
+	| i-stage A \ i-comp-radb |
+	| i-stage A \ i-Forecast  |
+	| i-stage A \ i-Migrated  |
+	| i-stage A \ i-Schedule  |
+	| i-stage A \ i-Targeted  |
 	When User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User selects following items in "Request Types" dropdown:
@@ -2457,11 +2449,24 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| req type comp              |
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
 	Then Tasks are displayed in the following order on Action panel:
-	| Items                       |
-	| i-stage A \ i-comp-radb     |
-	| i-stage A \ i-Schedule      |
-	| i-stage A \ i-Targeted      |
-	| i-stage A \ i-Forecast      |
-	| i-stage A \ i-Completed     |
-	| i-stage A \ i-Migrated      |
-	| i-stage A \ i-comp-grp-radb |
+	| Items                   |
+	| i-stage A \ i-Completed |
+	| i-stage A \ i-comp-radb |
+	| i-stage A \ i-Forecast  |
+	| i-stage A \ i-Migrated  |
+	| i-stage A \ i-Schedule  |
+	| i-stage A \ i-Targeted  |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15585
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Capacity" tab
+	And User selects "Details" tab on the Project details page
+	And User clicks "Enable Capacity" checkbox on the Project details page
+	And User selects "Units" tab on the Project details page
+	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
+	Then "YES" button is displayed in the warning message
+	Then "NO" button is displayed in the warning message

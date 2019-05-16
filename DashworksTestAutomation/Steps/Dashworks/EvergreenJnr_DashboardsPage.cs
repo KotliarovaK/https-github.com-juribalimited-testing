@@ -1028,6 +1028,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.IsLineWidgetPointsAreDisplayed(widgetName), Is.True, "Points are not displayed");
         }
 
+        [Then(@"Line X labels of ""(.*)"" widget is displayed in following order:")]
+        public void ThenLineLabelsIsDisplayedInFollowingOrder(string widgetName, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            List<string> labelList = page.GetPointOfLineWidgetByName(widgetName);
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+
+            Assert.AreEqual(expectedList, labelList, "Label order is incorrect");
+        }
+
         [When(@"User selects ""(.*)"" checkbox on the Create Widget page")]
         public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
         {
@@ -1193,6 +1203,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SelectCustomSelectbox(page.SharingDropdown, option);
         }
 
+        [Then(@"Permission ""(.*)"" displayed in Dashboard Details")]
+        public void ThenDashboardShowsPermissionToTheUser(string permission)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.SharingDropdownPermissionValue.Text, Is.EqualTo(permission), $"Permission {permission} was not the same in Dashboard Details");
+        }
+
+
         [Then(@"Review Widget List Permissions is displayed to the User")]
         public void ThenReviewWidgetListPermissionsIsDisplayedToTheUser()
         {
@@ -1200,13 +1218,125 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is not displayed");
         }
 
-        [When(@"User selects ""(.*)"" permission on the Review Widget List Permissions Pop-up")]
-        public void WhenUserSelectsPermissionOnTheReviewWidgetListPermissionsPop_Up(string option)
+        [Then(@"Review Widget List Permissions is not displayed to the User")]
+        public void ThenReviewWidgetListPermissionsIsNotDisplayedToTheUser()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsFalse(page.ReviewWidgetListPermissionsPopUp.Displayed(), "Review Widget List Permissions is displayed");
+        }
+
+        
+        [Then(@"Widget ""(.*)"" displayed for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenListPermissionsPopupShowsWidgetNameToTheUser(string widget, string listName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.WidgetValueForList(listName).Text, Is.EqualTo(widget), $"Widget name {widget} was not found in Review Permissions popup");
+        }
+
+        [Then(@"Current user displayed for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenListPermissionsPopupShowsCurrentUserNameToTheUser(string listName)
+        {
+            var header = _driver.NowAt<HeaderElement>();
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.OwnerValueForList(listName).Text, 
+                Is.EqualTo(header.UserNameDropdown.Text), $"Owner name was not found in Review Permissions popup");
+        }
+
+        [Then(@"User ""(.*)"" displayed for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenListPermissionsPopupShowsUserNameToTheUser(string user, string listName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.OwnerValueForList(listName).Text,
+                Is.EqualTo(user), $"User name was not found in Review Permissions popup");
+        }
+
+        [Then(@"Current permission ""(.*)"" displayed for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenListPermissionsPopupShowsCurrentPermissionToTheUser(string permission, string listName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.CurrentPermissionValueForList(listName).Text, 
+                Is.EqualTo(permission), $"Current permission {permission} was not found in Review Permissions popup");
+        }
+
+        [Then(@"New Permission ""(.*)"" displayed for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenListPermissionsPopupShowsNewPermissionToTheUser(string permission, string listName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.NewPermissionsValueForList(listName).Text, Is.EqualTo(permission), $"New permission {permission} was not found in Review Permissions popup");
+        }
+
+        [Then(@"User sees next options of New Permission field for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenUserSeesNexPermissionOptionsInWidgetListPermissions(string listName, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.NewPermissionsDropdownForList(listName).Click();
+
+            List<string> options = page.ReviewWidgetListPermissionExpandedOptions.Select(x => x.Text).ToList();
+
+            foreach (var row in table.Rows)
+            {
+                Assert.That(options.FindAll(x => x.Equals(row["Options"])).Count == 1);
+            }
+            Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
+
+            //hide menu
+            page.SelectDoNotChangeReviewPermission();
+        }
+
+        [When(@"User selects ""(.*)"" permission for ""(.*)"" list on Permissions Pop-up")]
+        public void WhenUserSelectsPermissionOnTheListPermissionsPopup(string option, string list)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
             _driver.WaitForDataLoading();
-            _driver.SelectCustomSelectbox(page.NewPermissionsDropdown, option);
+            _driver.SelectCustomSelectbox(page.NewPermissionsDropdownForList(list), option);
             _driver.WaitForDataLoading();
+        }
+
+        [Then(@"New Permission dropdown has disabled property ""(.*)"" for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenUserSeesNewPermissionDropdownInNextStateForListOnListPermissionsPopup(string state, string listName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetDropdownStateOfReviewWidgetPermissionsPopup(listName),
+                Is.EqualTo(state.ToUpper()), $"New permission {state} states is different");
+        }
+
+        [Then(@"New Permission dropdown has ""(.*)"" tooltip for ""(.*)"" list on Permissions Pop-up")]
+        public void ThenTooltipIsDisplayedWithTextForPermissionDropdown(string tooltip, string listName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(page.NewPermissionsDropdownForList(listName));
+            var toolTipText = _driver.GetTooltipText();
+            Assert.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
+        }
+
+        [Then(@"Button ""(.*)"" has enabled property ""(.*)"" on Permissions Pop-up")]
+        public void ThenUserSeesButtonInTheNextStateForListOnListPermissionsPopup(string buttonCapture, string buttonState)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.GetButtonStateOfReviewWidgetPermissionsPopup(buttonCapture), 
+                Is.EqualTo(buttonState.ToUpper()), $"Button {buttonCapture} states is different");
+        }
+
+        [Then(@"Button ""(.*)"" has ""(.*)"" tooltip on Permissions Pop-up")]
+        public void ThenTooltipIsDisplayedWithTextForForButtonOnListPermissionsPopup(string buttonCapture, string tooltip)
+        {
+            var button = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.MouseHover(button.ReviewPermissionsPopupsButton(buttonCapture));
+            var toolTipText = _driver.GetTooltipText();
+            Assert.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
+        }
+
+        [When(@"User clicks the ""(.*)"" button on Permissions Pop-up")]
+        public void WhenUserClicksTheActionButtonOnListPermissionsPopup(string buttonName)
+        {
+            var action = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            action.ReviewPermissionsPopupsButton(buttonName).Click();
         }
 
         #endregion

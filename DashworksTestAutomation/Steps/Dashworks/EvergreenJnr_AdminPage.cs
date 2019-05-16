@@ -18,6 +18,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -1786,6 +1788,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             StringAssert.Contains(text, message.WarningMessage.Text, $"{text} is not displayed in Warning message");
         }
 
+        [Then(@"No warning message displayed on the Project Details Page")]
+        public void ThenNoWarningMessageIsDisplayedOnTheProjectDetailsPage()
+        {
+            var message = _driver.NowAt<BaseGridPage>();
+            Assert.That(_driver.IsElementDisplayed(message.WarningMessage), Is.False, $"Warning message is displayed");
+        }
+
+
         [Then(@"User selects ""(.*)"" option for selected language")]
         public void ThenUserSelectsOptionForSelectedLanguage(string optionName)
         {
@@ -2807,6 +2817,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ReadinessPage>();
             Assert.IsTrue(page.GetReadinessDialogContainerText(text).Displayed(), $"{text} title is not displayed in the Readiness Dialog Container");
+        }
+
+        [Then(@"""(.*)"" button is displayed in the warning message")]
+        public void ThenButtonIsDisplayedInTheWarningMessageOnProjectPage(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.GetButtonOnWarningContainerByName(text).Displayed(), $"{text} button is not displayed in the Warning message");
+        }
+
+        [Then(@"""(.*)"" text is displayed in the warning message")]
+        public void ThenTextIsDisplayedInTheWarningMessageOnProjectPage(string text)
+        {
+            var page = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(page.WarningMessageText(text).Displayed(), $"{text} text is not displayed in the Warning message");
         }
 
         [Then(@"""(.*)"" title is displayed in the Readiness Dialog Container")]

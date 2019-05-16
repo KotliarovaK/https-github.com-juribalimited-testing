@@ -2321,15 +2321,15 @@ this.FeatureBackground();
 #line 513
  testRunner.Then("All text is displayed for \"Compliance\" column in the String Filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 514
- testRunner.When("User enters \"Microsoft\" text in the Search field for \"Application\" column on the " +
-                    "Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"ea\" text in the Search field for \"Application\" column on the Details" +
+                    " Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 515
  testRunner.Then("Rows counter contains \"3\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 516
  testRunner.When("User clicks Reset Filters button on the Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 517
- testRunner.When("User enters \"33\" text in the Search field for \"Version\" column on the Details Pag" +
-                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"3.0.0\" text in the Search field for \"Version\" column on the Details " +
+                    "Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 518
  testRunner.Then("Rows counter contains \"1\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 519
@@ -2444,8 +2444,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12371")]
         [NUnit.Framework.CategoryAttribute("DAS13409")]
         [NUnit.Framework.TestCaseAttribute("Users", "Loya\\, Dan.Employees.Birmingham.UK.bclabs.local", "Username", "Projects", "Mailbox Project Summary", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Projects Summary", "7", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Owner Projects Summary", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Projects Summary", "8", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Hostname", "Projects", "Owner Projects Summary", "7", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Loya\\, Dan.Employees.Birmingham.UK.bclabs.local", "Username", "Projects", "User Projects", "2", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetailsFiltersAreDisplayedCorrectlyForCollapsedSections(string pageName, string searchTerm, string columnName, string mainTabName, string subTabName, string countRows, string[] exampleTags)
         {
@@ -3452,7 +3452,7 @@ this.FeatureBackground();
 #line 745
  testRunner.And("User select In Range value with following date:", ((string)(null)), table19, "And ");
 #line 748
- testRunner.Then("Rows counter shows \"2\" of \"9\" rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -3573,10 +3573,10 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12386")]
         [NUnit.Framework.CategoryAttribute("DAS14923")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", "00KLL9S8NRF0X6", "evergreen/#/device/8892", null)]
-        [NUnit.Framework.TestCaseAttribute("Users", "User Key", "0072B088173449E3A93", "evergreen/#/user/85167", null)]
-        [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", "ACDSee for Windows 95", "evergreen/#/application/312", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", "01BC4B0500344065B61@bclabs.local", "evergreen/#/mailbox/45374", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Device Key", "00KLL9S8NRF0X6", "evergreen/#/device/8892/details/device", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", "User Key", "0072B088173449E3A93", "evergreen/#/user/85167/details/user", null)]
+        [NUnit.Framework.TestCaseAttribute("Applications", "Application Key", "ACDSee for Windows 95", "evergreen/#/application/312/details/application", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "Mailbox Key", "01BC4B0500344065B61@bclabs.local", "evergreen/#/mailbox/45374/details/mailbox", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirectedToTheRelevantDetailsPage(string pageName, string column, string itemName, string uRLpart, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -4739,10 +4739,10 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Device Project Summary", "Application", "Access 95", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "30BGMTLBM9PTW5", "Hostname", "Applications", "Evergreen Summary", "Application", "Access 95", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "svc_dashworks", "Username", "Active Directory", "Groups", "Group", "Domain Admins", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Microsoft Office Visio 2000 Solutions - Custom Patterns", "Application", "MSI", "MSIFiles", "File Name", "setup_x86.msi", null)]
-        [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Users", "", "Username", "floresau", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", "aaron.u.flores@dwlabs.local", "Email Address", "Users", "Users", "Username", "floresau", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails(string pageName, string searchTerm, string columnName, string mainTabName, string subTabName, string selectedColumn, string targetCell, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -4794,7 +4794,7 @@ this.FeatureBackground();
 #line 1170
  testRunner.And(string.Format("User click content from \"{0}\" column", columnName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1171
- testRunner.When("User navigates to the \"<TabName>\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("User navigates to the \"{0}\" main-menu on the Details page", mainTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1172
  testRunner.When(string.Format("User navigates to the \"{0}\" sub-menu on the Details page", subTabName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1173
@@ -6175,6 +6175,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15133")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied()
         {
             System.Exception lastException = null;
@@ -6208,24 +6209,23 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS15133"});
-#line 1538
+                        "DAS15133",
+                        "Not_Run"});
+#line 1539
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1539
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1540
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1541
- testRunner.When("User perform search by \"00BDM1JUR8IF419\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1542
- testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User perform search by \"00BDM1JUR8IF419\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1543
- testRunner.And("User navigates to the \"Applications\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1544
- testRunner.Then("section is loaded correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to the \"Applications\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1545
  testRunner.When("User performs right-click on \"Advantage Data Architect\" cell in the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1546

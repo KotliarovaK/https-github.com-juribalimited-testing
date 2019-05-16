@@ -472,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("123.525px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
@@ -493,7 +493,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -563,6 +563,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             {
                 var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+                _driver.WaitForDataLoading();
 
                 var columnNames = page.GetAllColumnHeadersOnTheDetailsPage()
                     .Select(column => column.Text).ToList();
