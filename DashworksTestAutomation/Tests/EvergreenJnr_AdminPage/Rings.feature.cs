@@ -88,7 +88,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("DAS14867")]
         [NUnit.Framework.CategoryAttribute("DAS15417")]
         [NUnit.Framework.CategoryAttribute("DAS16694")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing()
         {
             System.Exception lastException = null;
@@ -124,8 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Rings",
                         "DAS14867",
                         "DAS15417",
-                        "DAS16694",
-                        "Not_Run"});
+                        "DAS16694"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
