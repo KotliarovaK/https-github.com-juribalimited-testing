@@ -1573,3 +1573,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePag
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	When User clicks on "Mailboxes" navigation link
 	Then "Mailboxes" list should be displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719
+Scenario: EvergreenJnr_DevicesList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "AAD1011948"
+	When User click content from "Username" column
+	Then Details page for "AAD1011948" item is displayed to the user
+	When User navigates to the "Compliance" main-menu on the Details page
+	When User navigates to the "Hardware Summary" sub-menu on the Details page
+	Then element table is displayed on the Details page
