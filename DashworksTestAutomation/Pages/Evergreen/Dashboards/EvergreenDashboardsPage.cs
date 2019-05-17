@@ -16,8 +16,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-color']//span[@class='text-value']")]
-        public IWebElement ColorWidgetItem { get; set; }
+
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -458,6 +457,14 @@ namespace DashworksTestAutomation.Pages
             return NewPermissionsDropdownForList(listName).GetAttribute("aria-disabled").ToString().ToUpper();
         }
 
+        public IWebElement GetCardWidgetPreviewText()
+        {
+            var nested = By.XPath(".//div[@class='card-widget-data']//*");
 
+            if (Driver.FindElements(nested).Count > 0)
+            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]")); }
+            else
+            { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
+        }
     }
 }

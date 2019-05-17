@@ -594,6 +594,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     createWidgetElement.ShowLegend.Click();
                 }
+
+                if (!string.IsNullOrEmpty(row["Layout"]))
+                {
+                    _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName("Layout"));
+                    createWidgetElement.SelectObjectForWidgetCreation(row["Layout"]);
+                }
             }
         }
 
@@ -733,10 +739,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int prevX = preview.WidgetPreview.Location.X;
             int prevY = preview.WidgetPreview.Location.Y;
 
-            var widget = _driver.NowAt<AddWidgetPage>();
-            int widgetWidth = widget.GetCardWidgetPreview().Size.Width;
-            int widgetX = widget.GetCardWidgetPreview().Location.X;
-            int widgetY = widget.GetCardWidgetPreview().Location.Y;
+            var widget = _driver.NowAt<EvergreenDashboardsPage>();
+            int widgetWidth = widget.GetCardWidgetPreviewText().Size.Width;
+            int widgetX = widget.GetCardWidgetPreviewText().Location.X;
+            int widgetY = widget.GetCardWidgetPreviewText().Location.Y;
 
             Assert.That(prevX < widgetX && prevY < widgetY, Is.True, "Widget XY coordinate displayed outside preview box");
             Assert.That(prevWidth > widgetWidth, Is.True, "Widget width displayed outside preview box");
@@ -822,8 +828,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.ColorWidgetItem.GetAttribute("style").Split(';')
-                .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
+            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
             Assert.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -831,7 +836,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForCardWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.ColorWidgetItem.GetCssValue("color");
+            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
             Assert.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -1182,8 +1187,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
         public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
-            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
         [Then(@"User sees ""(.*)"" warning text below Lists field")]
