@@ -279,3 +279,36 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDelet
 	Then "Devices" list should be displayed to the user
 	When User click Delete button for custom list with "DynamicList15444" name
 	Then ""DynamicList15444" list is used by 1 project and 1 dashboard, do you wish to proceed?" message is displayed in the lists panel
+
+@Evergreen @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS16558
+Scenario: EvergreenJnr_UsersList_CheckThatFullPpageWith403ErrorIsDisplayedCorrectly
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	When User creates new clear User
+	| Username | FullName      | Password | ConfirmPassword | Roles                 |
+	| DAS16558 | DAS16558_User | 1234qwer | 1234qwer        | Project Administrator |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username | Password |
+	| DAS16558 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Error page is displayed correctly
+	When User clicks "admin" hidden left-hand menu
+	Then Error page is displayed correctly
+	When User clicks "devices" hidden left-hand menu
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS16558" User

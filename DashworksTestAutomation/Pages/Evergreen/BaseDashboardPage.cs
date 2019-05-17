@@ -602,6 +602,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
+        public IWebElement SelectHiddenLeftHandMenu(string menuName)
+        {
+            var selector = By.XPath($".//div[@class='nav-toggled']//a[contains(@href, '{menuName}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public string ActiveCustomListName()
         {
             var by = By.XPath(
