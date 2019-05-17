@@ -1290,14 +1290,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAr
 	When User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed correctly
 
+#ready for 'nova'
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16117 @DAS16222 @DAS16309 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAreDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User click content from "Hostname" column
-	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Projects Summary" sub-menu on the Details page
-	When User have opened Column Settings for "Project" column in the Details Page table
+	When User perform search by "0G0WTR5KN85N2X"
+	And User click content from "Hostname" column
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Projects Summary" sub-menu on the Details page
+	And User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
 	And User select "Request Type" checkbox on the Column Settings panel

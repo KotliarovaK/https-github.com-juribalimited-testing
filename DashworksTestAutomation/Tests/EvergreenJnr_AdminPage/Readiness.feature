@@ -124,14 +124,19 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16617
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks "Readiness" tab
-	When User enters "BLUE" text in the Search field for "Readiness" column
+	#When User click on 'Readiness' column header
+	#Then color data is sorted by 'Readiness' column in descending order
+	#When User click on 'Readiness' column header
+	#Then color data is sorted by 'Readiness' column in ascending order
+	#When User enters "BLUE" text in the Search field for "Readiness" column
+	#When User click on 'Readiness' column header
 	And User click content from "Readiness" column
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks the "UPDATE" Action button
