@@ -120,6 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.CreateNewListButton.Click();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsNewListButton);
+            _driver.MouseHover(listElement.SaveAsNewListButton);
             listElement.SaveAsNewListButton.Click();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
