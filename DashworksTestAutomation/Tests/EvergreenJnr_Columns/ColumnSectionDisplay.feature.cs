@@ -4120,6 +4120,340 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
+                        "DAS15899"});
+#line 1022
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 1023
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1024
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1025
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1026
+ testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1027
+ testRunner.And("User is expand \"Project Tasks: DeviceSche\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Completed Date"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Completed Date (Slot)"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Forecast Date"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Forecast Date (Slot)"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Group Task"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Group Task (Date)"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Group Task (Slot)"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Migrated Date"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Migrated Date (Slot)"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Scheduled Date"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Scheduled Date (Slot)"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Target Date"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 1 \\ Target Date (Slot)"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ radiobutton task"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ radiobutton task w/date"});
+            table99.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ radiobutton task w/date (Date)"});
+#line 1028
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table99, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
+                        "DAS15899"});
+#line 1048
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 1049
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1050
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1051
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1052
+ testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1053
+ testRunner.And("User is expand \"Project Tasks: DeviceSche\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table100.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ user DDL task"});
+            table100.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ user radiobutton task"});
+            table100.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ user text task"});
+#line 1054
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table100, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Mailboxes")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists", null, new string[] {
+                        "Evergreen",
+                        "Mailboxes",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
+                        "DAS15899"});
+#line 1061
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 1062
+ testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1063
+ testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1064
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1065
+ testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1066
+ testRunner.And("User is expand \"Project Tasks: MailboxEve\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Completed"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Completed (Slot)"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Forecast"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Forecast (Slot)"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Migrated"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Migrated (Slot)"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Scheduled - mailbox"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Scheduled - mailbox (Slot)"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Target"});
+            table101.AddRow(new string[] {
+                        "MailboxEve: 1 \\ Target (Slot)"});
+#line 1067
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table101, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionOrder")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS15899")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsListsInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsListsInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionOrder",
+                        "ColumnSectionDisplay",
+                        "DAS15899"});
+#line 1081
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 1082
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1083
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1084
+ testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1085
+ testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1086
+ testRunner.And("User is expand \"Project Tasks: DeviceSche\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Subcategories"});
+            table102.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ app date task"});
+            table102.AddRow(new string[] {
+                        "DeviceSche: Stage 2 \\ app radiobutton task"});
+#line 1087
+ testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table102, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

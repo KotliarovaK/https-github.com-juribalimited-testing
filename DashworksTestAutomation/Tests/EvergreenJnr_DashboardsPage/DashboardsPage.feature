@@ -1841,3 +1841,20 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then Widget Preview is displayed to the user
 	And Widget Preview shows "TRUE" as First Cell value
 	And There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16326
+Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
+	When User clicks "Dashboards" on the left-hand menu
+	When User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS16326" name
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
+	| List       | Widget_For_DAS16326 | Device List (Complex) - BROKEN LIST | 10      | 10         |
+	Then "Widget_For_DAS16326" Widget is displayed to the user
+	Then User sees "This widget refers to list Users List (Complex) - BROKEN LIST, which has errors" text in warning message on Dashboards page
+	Then "Device List (Complex) - BROKEN LIST" link is displayed in warning message on Dashboards page
+	And There are no errors in the browser console
+	When User clicks Settings button for "Dashboard for DAS15432" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel

@@ -1638,3 +1638,79 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
 	Then Column "1803: Scheduled Date (Slot)" with no data displayed
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: DeviceSche" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                                        |
+	| DeviceSche: Stage 1 \ Completed Date                 |
+	| DeviceSche: Stage 1 \ Completed Date (Slot)          |
+	| DeviceSche: Stage 1 \ Forecast Date                  |
+	| DeviceSche: Stage 1 \ Forecast Date (Slot)           |
+	| DeviceSche: Stage 1 \ Group Task                     |
+	| DeviceSche: Stage 1 \ Group Task (Date)              |
+	| DeviceSche: Stage 1 \ Group Task (Slot)              |
+	| DeviceSche: Stage 1 \ Migrated Date                  |
+	| DeviceSche: Stage 1 \ Migrated Date (Slot)           |
+	| DeviceSche: Stage 1 \ Scheduled Date                 |
+	| DeviceSche: Stage 1 \ Scheduled Date (Slot)          |
+	| DeviceSche: Stage 1 \ Target Date                    |
+	| DeviceSche: Stage 1 \ Target Date (Slot)             |
+	| DeviceSche: Stage 2 \ radiobutton task               |
+	| DeviceSche: Stage 2 \ radiobutton task w/date        |
+	| DeviceSche: Stage 2 \ radiobutton task w/date (Date) |
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: DeviceSche" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                               |
+	| DeviceSche: Stage 1 \ user radiobutton task |
+	| DeviceSche: Stage 2 \ user DDL task         |
+	| DeviceSche: Stage 2 \ user radiobutton task |
+	| DeviceSche: Stage 2 \ user text task        |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: DeviceSche" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                              |
+	| DeviceSche: Stage 2 \ app date task        |
+	| DeviceSche: Stage 2 \ app radiobutton task |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: MailboxEve" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                              |
+	| MailboxEve: 1 \ Completed                  |
+	| MailboxEve: 1 \ Completed (Slot)           |
+	| MailboxEve: 1 \ Forecast                   |
+	| MailboxEve: 1 \ Forecast (Slot)            |
+	| MailboxEve: 1 \ Migrated                   |
+	| MailboxEve: 1 \ Migrated (Slot)            |
+	| MailboxEve: 1 \ Scheduled - mailbox        |
+	| MailboxEve: 1 \ Scheduled - mailbox (Slot) |
+	| MailboxEve: 1 \ Target                     |
+	| MailboxEve: 1 \ Target (Slot)              |

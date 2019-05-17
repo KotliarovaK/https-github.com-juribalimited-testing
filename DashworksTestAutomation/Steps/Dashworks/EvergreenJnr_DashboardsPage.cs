@@ -714,7 +714,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var t = page.TextInDeleteAlert.Text;
             Assert.AreEqual(text, page.TextInDeleteAlert.Text);
+        }
+
+        [Then(@"""(.*)"" link is displayed in warning message on Dashboards page")]
+        public void ThenLinkIsDisplayedInWarningMessageOnDashboardsPage(string text)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.AreEqual(text, page.LinkInWarningMessage.Text);
         }
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards submenu pane")]

@@ -10,7 +10,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRin
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	#And User clicks content from "Project" column
 	And User clicks "Rings" tab
 	And User clicks the "CREATE PROJECT RING" Action button
 	Then "Create Project Ring" page should be displayed to the user

@@ -16,7 +16,8 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
-
+        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-color']//div[contains(@style, 'color')]")]
+        public IWebElement ColorWidgetItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -50,6 +51,9 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
         public IWebElement TextInDeleteAlert { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert')]//a[@href]")]
+        public IWebElement LinkInWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
         public IWebElement SubmenuAlertMessage { get; set; }
@@ -456,11 +460,9 @@ namespace DashworksTestAutomation.Pages
         {
             return NewPermissionsDropdownForList(listName).GetAttribute("aria-disabled").ToString().ToUpper();
         }
-
         public IWebElement GetCardWidgetPreviewText()
         {
             var nested = By.XPath(".//div[@class='card-widget-data']//*");
-
             if (Driver.FindElements(nested).Count > 0)
             { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']//span[contains(@class, 'text')]")); }
             else

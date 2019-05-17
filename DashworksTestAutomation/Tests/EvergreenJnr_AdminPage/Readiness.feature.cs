@@ -1456,6 +1456,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Readiness")]
         [NUnit.Framework.CategoryAttribute("DAS15720")]
+        [NUnit.Framework.CategoryAttribute("DAS15720")]
+        [NUnit.Framework.CategoryAttribute("DAS16653")]
         public virtual void EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader()
         {
             System.Exception lastException = null;
@@ -1489,7 +1491,9 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Readiness",
-                        "DAS15720"});
+                        "DAS15720",
+                        "DAS15720",
+                        "DAS16653"});
 #line 355
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

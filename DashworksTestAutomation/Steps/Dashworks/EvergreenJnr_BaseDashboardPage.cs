@@ -607,5 +607,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
         }
+
+        [Then(@"Error page is displayed correctly")]
+        public void ThenErrorPageIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.Error403.Displayed());
+            Assert.IsFalse(page.PageTitle.Displayed(), "Error page is not displayed correctly");
+        }
     }
 }

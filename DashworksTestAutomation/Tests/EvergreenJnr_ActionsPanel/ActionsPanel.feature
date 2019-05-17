@@ -395,7 +395,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid
-#returns default object state
+		#returns default object state
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Username" rows in the grid

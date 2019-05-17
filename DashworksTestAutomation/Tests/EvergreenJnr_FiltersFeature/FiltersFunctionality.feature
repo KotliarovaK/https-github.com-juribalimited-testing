@@ -1878,8 +1878,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickin
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device (Saved List)" filter where type is "In list" with Selected Value and following Association:
-    | SelectedList                        | Association |
-    | Device List (Complex) - BROKEN LIST |             |
+	| SelectedList                        | Association |
+	| Device List (Complex) - BROKEN LIST |             |
 	When User create custom list with "List_DAS16394" name
 	Then "List_DAS16394" list is displayed to user
 	Then Create button is disabled on the Base Dashboard Page
@@ -1887,3 +1887,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickin
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Device" filter
 	Then Create button is disabled on the Base Dashboard Page
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15807
+Scenario: EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Language" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| English         |
