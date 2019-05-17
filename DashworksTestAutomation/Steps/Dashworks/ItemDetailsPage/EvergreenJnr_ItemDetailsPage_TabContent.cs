@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using NUnit.Framework;
@@ -55,6 +56,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var content = _driver.NowAt<TabContent>();
             Assert.IsTrue(content.ElementsTable.Displayed, "Element table is not displayed!");
+        }
+
+        [Then(@"appropriate colored filter icons are displayed for following colors:")]
+        public void ThenAppropriateColoredFilterIconsAreDisplayedForFollowingColors(Table table)
+        {
+            var page = _driver.NowAt<TabContent>();
+            foreach (var row in table.Rows)
+            {
+                var getColor = page.GetColorIconsForColorFilters(row["Color"]).GetAttribute("style").Split(';')
+                    .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
+                Assert.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different or not displayed!");
+            }
         }
     }
 }

@@ -1594,8 +1594,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabFor
 	When User navigates to the "Hardware Summary" sub-menu on the Details page
 	Then element table is displayed on the Details page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469
-Scenario: EvergreenJnr_DevicesList_Color
+#test for 'Nova'
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
@@ -1605,6 +1606,16 @@ Scenario: EvergreenJnr_DevicesList_Color
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
 	Then "31 May 2019" content is displayed in the "Date" column
 	When User clicks String Filter button for "Application Readiness" column
-	#Then appropriate colored filter icons are displayed for following colors:
-	#| Color |
-	#|       |
+	Then appropriate colored filter icons are displayed for following colors:
+	| Color                   |
+	| OUT OF SCOPE            |
+	| BLUE                    |
+	| LIGHT BLUE              |
+	| RED                     |
+	| BROWN                   |
+	| AMBER                   |
+	| REALLY EXTREMELY ORANGE |
+	| PURPLE                  |
+	| GREEN                   |
+	| GREY                    |
+	| NONE                    |

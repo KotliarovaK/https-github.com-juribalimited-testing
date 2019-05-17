@@ -6484,21 +6484,22 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_Color")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16472")]
         [NUnit.Framework.CategoryAttribute("DAS16469")]
-        public virtual void EvergreenJnr_DevicesList_Color()
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_ColorInternal();
+                    this.EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayedInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -6517,39 +6518,67 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_ColorInternal()
+        private void EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayedInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_Color", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed", null, new string[] {
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS16472",
-                        "DAS16469"});
-#line 1598
+                        "DAS16469",
+                        "Not_Ready"});
+#line 1599
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1599
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1600
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1601
- testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1602
- testRunner.When("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1603
- testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User click content from \"Hostname\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1604
- testRunner.When("User navigates to the \"Related\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Details page for \"001BAQXT6JWFPI\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1605
+ testRunner.When("User navigates to the \"Related\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1606
  testRunner.When("User enters \"03ME2G7TIR4GBN\" text in the Search field for \"Device\" column on the " +
                     "Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1606
- testRunner.Then("\"31 May 2019\" content is displayed in the \"Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1607
+ testRunner.Then("\"31 May 2019\" content is displayed in the \"Date\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1608
  testRunner.When("User clicks String Filter button for \"Application Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Color"});
+            table54.AddRow(new string[] {
+                        "OUT OF SCOPE"});
+            table54.AddRow(new string[] {
+                        "BLUE"});
+            table54.AddRow(new string[] {
+                        "LIGHT BLUE"});
+            table54.AddRow(new string[] {
+                        "RED"});
+            table54.AddRow(new string[] {
+                        "BROWN"});
+            table54.AddRow(new string[] {
+                        "AMBER"});
+            table54.AddRow(new string[] {
+                        "REALLY EXTREMELY ORANGE"});
+            table54.AddRow(new string[] {
+                        "PURPLE"});
+            table54.AddRow(new string[] {
+                        "GREEN"});
+            table54.AddRow(new string[] {
+                        "GREY"});
+            table54.AddRow(new string[] {
+                        "NONE"});
+#line 1609
+ testRunner.Then("appropriate colored filter icons are displayed for following colors:", ((string)(null)), table54, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
