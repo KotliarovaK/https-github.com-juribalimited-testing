@@ -1583,8 +1583,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePag
 	When User clicks on "Mailboxes" navigation link
 	Then "Mailboxes" list should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719
-Scenario: EvergreenJnr_DevicesList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719
+Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "AAD1011948"
@@ -1593,3 +1593,18 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDataIsDisplayedInHardwareSummaryTabF
 	When User navigates to the "Compliance" main-menu on the Details page
 	When User navigates to the "Hardware Summary" sub-menu on the Details page
 	Then element table is displayed on the Details page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469
+Scenario: EvergreenJnr_DevicesList_Color
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
+	Then "31 May 2019" content is displayed in the "Date" column
+	When User clicks String Filter button for "Application Readiness" column
+	#Then appropriate colored filter icons are displayed for following colors:
+	#| Color |
+	#|       |
