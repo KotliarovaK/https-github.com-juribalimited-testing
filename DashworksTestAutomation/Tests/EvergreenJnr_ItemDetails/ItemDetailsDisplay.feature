@@ -225,42 +225,36 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Slot         |
 	| Readiness    |
 
-#remove 'not_run' after fix DAS-16564
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564 @Not_Run
-Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationSummarySectionOnTheDetailsPage
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User perform search by "<SelectedName>"
-	And User click content from "<ColumnName>" column
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564
+Scenario: EvergreenJnr_DevicesList_CheckRenamedColumnForApplicationTabOnTheDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
 	And User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the "Evergreen Summary" sub-menu on the Details page
 	Then "Manufacturer" column is not displayed to the user
-	And following columns added to the table:
-	| ColumnName |
-	| Vendor     |
+	Then "Vendor" column is displayed to the user
+	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	Then "Manufacturer" column is not displayed to the user
+	Then "Vendor" column is displayed to the user
+	When User navigates to the "Advertisements" sub-menu on the Details page
+	Then "Manufacturer" column is not displayed to the user
+	Then "Vendor" column is displayed to the user
 
-Examples:
-	| PageName | SelectedName   | ColumnName |
-	| Devices  | 001BAQXT6JWFPI | Hostname   |
-	| Users    | ZZZ588323      | Username   |
-
-#remove 'not_run' after fix DAS-16564
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16564 @Not_Run
-Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnForApplicationDetailSectionOnTheDetailsPage
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User perform search by "<SelectedName>"
-	And User click content from "<ColumnName>" column
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16564
+Scenario: EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetailsPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ZZZ588323"
+	And User click content from "Username" column
 	And User navigates to the "Applications" main-menu on the Details page
-	And User navigates to the "Evergreen Detail" sub-menu on the Details page
+	When User navigates to the "Evergreen Summary" sub-menu on the Details page
 	Then "Manufacturer" column is not displayed to the user
-	And following columns added to the table:
-	| ColumnName |
-	| Vendor     |
-
-Examples:
-	| PageName | SelectedName   | ColumnName |
-	| Devices  | 001BAQXT6JWFPI | Hostname   |
-	| Users    | ZZZ588323      | Username   |
+	Then "Vendor" column is displayed to the user
+	When User navigates to the "Evergreen Detail" sub-menu on the Details page
+	Then "Manufacturer" column is not displayed to the user
+	Then "Vendor" column is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
@@ -1589,9 +1583,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCrumbTrailElementInTheHeaderOfThePag
 	When User clicks on "Mailboxes" navigation link
 	Then "Mailboxes" list should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16469
-Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabIsDisplayedForUser
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User click content from "Hostname" column
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16719
+Scenario: EvergreenJnr_DevicesList_CheckThatDataIsDisplayedInHardwareSummaryTabForUserObjectDetailsPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "AAD1011948"
+	When User click content from "Username" column
+	Then Details page for "AAD1011948" item is displayed to the user
+	When User navigates to the "Compliance" main-menu on the Details page
+	When User navigates to the "Hardware Summary" sub-menu on the Details page
+	Then element table is displayed on the Details page

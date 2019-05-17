@@ -26,6 +26,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[text()='Automations']")]
         public IWebElement Automations { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div/a[text()='Evergreen']")]
+        public IWebElement EvergreenSectionTab { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div/a[text()='Capacity']")]
+        public IWebElement CapacitySectionTab { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//span[text()='Capacity Units']")]
         public IWebElement CapacityUnits { get; set; }
 
@@ -43,6 +49,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//h1[text()='Capacity Units']")]
         public IWebElement CapacityUnitsPage { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//h1[text()='Rings']")]
+        public IWebElement RingsPage { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {

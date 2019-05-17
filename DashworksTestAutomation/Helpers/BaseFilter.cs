@@ -201,7 +201,7 @@ namespace DashworksTestAutomation.Helpers
             ".//div[@class='filterAddPanel ng-star-inserted']//span[text()='{0}']/ancestor::div/mat-checkbox";
 
         protected string CheckboxSelectorName =
-            ".//div[@class='filterAddPanel ng-star-inserted']//span[contains(text(),'{0}')]";
+            ".//div[@class='filterAddPanel ng-star-inserted']//span[starts-with(text(),'{0}')]";
 
         public CheckBoxesFilter(RemoteWebDriver driver, string operatorValue, bool acceptCheckbox, Table optionsTable) :
             base(driver, operatorValue, acceptCheckbox)

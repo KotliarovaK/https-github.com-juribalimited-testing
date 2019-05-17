@@ -1053,7 +1053,6 @@ Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
 	And User is expand "Project Tasks: DeviceSche" columns category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories                               |
-	| DeviceSche: Stage 1 \ user radiobutton task |
 	| DeviceSche: Stage 2 \ user DDL task         |
 	| DeviceSche: Stage 2 \ user radiobutton task |
 	| DeviceSche: Stage 2 \ user text task        |

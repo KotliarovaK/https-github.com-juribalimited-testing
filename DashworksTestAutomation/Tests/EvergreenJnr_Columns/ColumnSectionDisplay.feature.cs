@@ -4283,8 +4283,6 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
             table100.AddRow(new string[] {
-                        "DeviceSche: Stage 1 \\ user radiobutton task"});
-            table100.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user DDL task"});
             table100.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user radiobutton task"});
@@ -4340,20 +4338,20 @@ this.FeatureBackground();
                         "ColumnSectionOrder",
                         "ColumnSectionDisplay",
                         "DAS15899"});
-#line 1062
+#line 1061
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1063
+#line 1062
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1064
+#line 1063
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1065
+#line 1064
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1066
+#line 1065
  testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1067
+#line 1066
  testRunner.And("User is expand \"Project Tasks: MailboxEve\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4378,7 +4376,7 @@ this.FeatureBackground();
                         "MailboxEve: 1 \\ Target"});
             table101.AddRow(new string[] {
                         "MailboxEve: 1 \\ Target (Slot)"});
-#line 1068
+#line 1067
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table101, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -4428,20 +4426,20 @@ this.FeatureBackground();
                         "ColumnSectionOrder",
                         "ColumnSectionDisplay",
                         "DAS15899"});
-#line 1082
+#line 1081
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1083
+#line 1082
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1084
+#line 1083
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1085
+#line 1084
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1086
+#line 1085
  testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1087
+#line 1086
  testRunner.And("User is expand \"Project Tasks: DeviceSche\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4450,7 +4448,7 @@ this.FeatureBackground();
                         "DeviceSche: Stage 2 \\ app date task"});
             table102.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ app radiobutton task"});
-#line 1088
+#line 1087
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table102, "Then ");
 #line hidden
             this.ScenarioCleanup();

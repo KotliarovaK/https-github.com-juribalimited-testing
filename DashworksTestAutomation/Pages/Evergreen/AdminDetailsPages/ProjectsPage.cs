@@ -132,7 +132,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(
-                By.XPath($".//ul[contains(@class, 'subMenu-items')]//span[text()='{tabName}']"));
+                By.XPath($".//mat-tree//a[text()='{tabName}']"));
             tab.Click();
         }
 
