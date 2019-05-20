@@ -1888,29 +1888,31 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "DAS16278_Widget" Widget is displayed to the user
-	#Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
-	#| ColumnName |
-	#| Empty      |
-	#| Complete   |
-	#| Forecast   |
-	#| Migrated   |
-	#| Onboarded  |
-	#| Scheduled  |
-	#| Targeted   |
+	Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
+	| ColumnName   |
+	| NotOnboarded |
+	| Onboarded    |
+	| Forecast     |
+	| Targeted     |
+	| Scheduled    |
+	| Migrated     |
+	| Complete     |
+	| Offboarded   |
 	When User clicks Ellipsis menu for "DAS16278_Widget" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	When User selects "Windows7Mi: Status DESC" in the "Order By" Widget dropdown
 	When User clicks the "UPDATE" Action button
 	Then Card "DAS16278_Widget" Widget is displayed to the user
-	#Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
-	#| ColumnName |
-	#| Targeted   |
-	#| Scheduled  |
-	#| Onboarded  |
-	#| Migrated   |
-	#| Forecast   |
-	#| Complete   |
-	#| Empty      |
+	Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
+	| ColumnName   |
+	| Offboarded   |
+	| Complete     |
+	| Migrated     |
+	| Scheduled    |
+	| Targeted     |
+	| Forecast     |
+	| Onboarded    |
+	| NotOnboarded |
 	When User clicks Settings button for "DAS16278_Dashboard" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel

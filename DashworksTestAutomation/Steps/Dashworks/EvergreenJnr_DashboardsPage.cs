@@ -53,6 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksEllipsisMenuForWidgetOnDashboardsPage(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             var ellipsisMenu = page.GetEllipsisMenuForWidget(widgetName);
 
             if (ellipsisMenu != null)
@@ -1056,6 +1057,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLineXLabelsOfColumnWidgetIsDisplayedInFollowingOrder(string widgetName, Table table)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             List<string> labelList = page.GetPointOfColumnWidgetByName(widgetName);
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 

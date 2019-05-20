@@ -8047,21 +8047,65 @@ this.FeatureBackground();
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1890
  testRunner.Then("Card \"DAS16278_Widget\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1900
- testRunner.When("User clicks Ellipsis menu for \"DAS16278_Widget\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table137 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table137.AddRow(new string[] {
+                        "NotOnboarded"});
+            table137.AddRow(new string[] {
+                        "Onboarded"});
+            table137.AddRow(new string[] {
+                        "Forecast"});
+            table137.AddRow(new string[] {
+                        "Targeted"});
+            table137.AddRow(new string[] {
+                        "Scheduled"});
+            table137.AddRow(new string[] {
+                        "Migrated"});
+            table137.AddRow(new string[] {
+                        "Complete"});
+            table137.AddRow(new string[] {
+                        "Offboarded"});
+#line 1891
+ testRunner.Then("Line X labels of \"DAS16278_Widget\" column widget is displayed in following order:" +
+                    "", ((string)(null)), table137, "Then ");
 #line 1901
- testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks Ellipsis menu for \"DAS16278_Widget\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1902
- testRunner.When("User selects \"Windows7Mi: Status DESC\" in the \"Order By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1903
- testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Windows7Mi: Status DESC\" in the \"Order By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1904
+ testRunner.When("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1905
  testRunner.Then("Card \"DAS16278_Widget\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1914
- testRunner.When("User clicks Settings button for \"DAS16278_Dashboard\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1915
- testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table138 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table138.AddRow(new string[] {
+                        "Offboarded"});
+            table138.AddRow(new string[] {
+                        "Complete"});
+            table138.AddRow(new string[] {
+                        "Migrated"});
+            table138.AddRow(new string[] {
+                        "Scheduled"});
+            table138.AddRow(new string[] {
+                        "Targeted"});
+            table138.AddRow(new string[] {
+                        "Forecast"});
+            table138.AddRow(new string[] {
+                        "Onboarded"});
+            table138.AddRow(new string[] {
+                        "NotOnboarded"});
+#line 1906
+ testRunner.Then("Line X labels of \"DAS16278_Widget\" column widget is displayed in following order:" +
+                    "", ((string)(null)), table138, "Then ");
 #line 1916
+ testRunner.When("User clicks Settings button for \"DAS16278_Dashboard\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1917
+ testRunner.And("User clicks Delete button for custom list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1918
  testRunner.And("User clicks Delete button on the warning message in the lists panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

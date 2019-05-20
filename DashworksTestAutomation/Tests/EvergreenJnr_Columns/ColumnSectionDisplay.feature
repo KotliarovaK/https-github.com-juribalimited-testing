@@ -1018,6 +1018,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypePro
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
 	| Category            | Number |
+
 @Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionOrder @ColumnSectionDisplay @DAS15899
 Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
 	When User clicks "Devices" on the left-hand menu
