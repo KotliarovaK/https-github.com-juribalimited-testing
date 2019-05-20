@@ -346,6 +346,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature.cs">
+      <DependentUpon>CapacityUnitsGridFiltering.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\UpdateCapacityUnit.feature.cs">
       <DependentUpon>UpdateCapacityUnit.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -581,6 +586,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\AdminPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityUnitsGridFiltering.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\UpdateCapacityUnit.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
