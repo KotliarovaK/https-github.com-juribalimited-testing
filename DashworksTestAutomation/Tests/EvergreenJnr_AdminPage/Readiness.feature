@@ -368,7 +368,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	| Priority   |
 	When User click on 'Readiness' column header
 	Then numeric data in table is sorted by 'Priority' column in descending order
-#check color sorting
 	#Then color data is sorted by 'Readiness' column in descending order
 	When User click on 'Readiness' column header
 	Then numeric data in table is sorted by 'Priority' column in ascending order
