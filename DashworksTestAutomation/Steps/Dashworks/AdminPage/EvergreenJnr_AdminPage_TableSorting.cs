@@ -127,5 +127,29 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             SortingHelper.IsListSortedByDate(originalList, false);
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
+
+
+        [Then(@"Boolean data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenBooleanDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseDashboardPage>();
+
+            var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(adminTable.AscendingSortingIcon.Displayed);
+        }
+
+
+        [Then(@"Boolean data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
+        public void ThenBooleanDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseDashboardPage>();
+
+            var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList);
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
+        }
     }
 }

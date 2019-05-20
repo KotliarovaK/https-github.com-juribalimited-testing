@@ -1368,6 +1368,95 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Admin")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
+        [NUnit.Framework.CategoryAttribute("CapacityUnits")]
+        [NUnit.Framework.CategoryAttribute("DAS13017")]
+        public virtual void EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumnInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumnInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn", null, new string[] {
+                        "Evergreen",
+                        "Admin",
+                        "EvergreenJnr_AdminPage",
+                        "CapacityUnits",
+                        "DAS13017"});
+#line 367
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 368
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 369
+ testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 370
+ testRunner.When("User clicks \"Capacity Units\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 371
+ testRunner.Then("\"Capacity Units\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 372
+ testRunner.When("User clicks String Filter button for \"Default\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 373
+ testRunner.And("User clicks \"True\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 374
+ testRunner.Then("\"FALSE\" content is displayed in \"Default\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 375
+ testRunner.When("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 376
+ testRunner.Then("\"Capacity Units\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 377
+ testRunner.When("User clicks String Filter button for \"Default\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 378
+ testRunner.And("User clicks \"False\" checkbox from boolean filter on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 379
+ testRunner.Then("\"TRUE\" content is displayed in \"Default\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 380
+ testRunner.When("User clicks Refresh button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 381
+ testRunner.Then("\"Capacity Units\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 382
+ testRunner.When("User click on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 383
+ testRunner.Then("Boolean data in table is sorted by \"Default\" column in ascending order on the Adm" +
+                    "in page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 384
+ testRunner.When("User click on \'Default\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 385
+ testRunner.Then("Boolean data in table is sorted by \"Default\" column in descending order on the Ad" +
+                    "min page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
