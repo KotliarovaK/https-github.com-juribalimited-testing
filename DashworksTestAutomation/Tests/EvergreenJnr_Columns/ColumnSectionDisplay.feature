@@ -1018,4 +1018,3 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatOnlyRingsCategoryOfSameTypePro
 	And User enters "ring" text in Search field at Columns Panel
 	Then Category with counter is displayed on Columns panel
 	| Category            | Number |
-	

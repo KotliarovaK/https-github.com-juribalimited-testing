@@ -105,18 +105,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetExpandedSectionByName(string sectionName)
-        {
-            return Driver.FindElement(
-                By.XPath($"//mat-tab-body//div[contains(@class, 'collapsed')]//span[text()='{sectionName}']"));
-        }
-
-        public IWebElement GetTextInExpandedSection(string text)
-        {
-            return Driver.FindElement(
-                By.XPath($"//mat-tab-body//div[contains(@class, 'collapsed')]//tr//span[text()='{text}']"));
-        }
-
         public IWebElement GetCellByTextFromKeyValueGrid(string text)
         {
             return Driver.FindElement(By.XPath($".//tbody/*/td/*/span[text()='{text}']"));

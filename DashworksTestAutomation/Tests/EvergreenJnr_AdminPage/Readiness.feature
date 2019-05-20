@@ -124,7 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS14937 @DAS16649
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
