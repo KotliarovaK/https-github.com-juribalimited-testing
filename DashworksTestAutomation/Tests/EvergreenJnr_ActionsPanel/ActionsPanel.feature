@@ -941,7 +941,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenS
 	| No change             |
 	When User selects "Update" Update Owner on Action panel
 	Then Teams are displayed in alphabetical order on Action panel
-	When User selects "Admin IT" Team on Action panel
+	When User selects "Team 0" Team on Action panel
 	Then Owner field is not displayed on Action panel
 	When User selects "IB Team" Team on Action panel
 	Then Owner field is displayed on Action panel
@@ -1847,5 +1847,6 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	| Options                                  |
 	| Barry's User Project                     |
 	| Migration Project Phase 2 (User Project) |
+	| Project with associated broken list      |
 	| User Evergreen Capacity Project          |
 	| User Scheduled Test (Jo)                 |

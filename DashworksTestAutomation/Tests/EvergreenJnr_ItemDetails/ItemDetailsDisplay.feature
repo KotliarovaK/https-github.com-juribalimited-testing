@@ -505,10 +505,10 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	Then All text is not displayed for "Compliance" column in the String Filter
 	When User clicks Reset Filters button on the Details Page
 	Then All text is displayed for "Compliance" column in the String Filter
-	When User enters "Microsoft" text in the Search field for "Application" column on the Details Page
+	When User enters "ea" text in the Search field for "Application" column on the Details Page
 	Then Rows counter contains "3" found row of all rows
 	When User clicks Reset Filters button on the Details Page
-	When User enters "33" text in the Search field for "Version" column on the Details Page
+	When User enters "3.0.0" text in the Search field for "Version" column on the Details Page
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Details Page
 	And User clicks String Filter button for "Used" column
@@ -739,7 +739,7 @@ Scenario: EvergreenJnr_DevicesList_CheckingThatInRangeOperatorWorkingCorrectly
 	And User select In Range value with following date:
 	| DateFrom    | DateTo      |
 	| 22 May 2014 | 22 May 2018 |
-	Then Rows counter shows "2" of "9" rows
+	Then Rows counter contains "2" found row of all rows
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13335 @DAS14923 @DAS12963 @DAS16233 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded
@@ -780,11 +780,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatHyperlinkForKeyColumnsIsRedirec
 	And URL is "<URLpart>"
 
 Examples:
-	| PageName     | Column          | ItemName                         | URLpart                     |
-	| Devices      | Device Key      | 00KLL9S8NRF0X6                   | evergreen/#/device/8892     |
-	| Users        | User Key        | 0072B088173449E3A93              | evergreen/#/user/85167      |
-	| Applications | Application Key | ACDSee for Windows 95            | evergreen/#/application/312 |
-	| Mailboxes    | Mailbox Key     | 01BC4B0500344065B61@bclabs.local | evergreen/#/mailbox/45374   |
+	| PageName     | Column          | ItemName                         | URLpart                                         |
+	| Devices      | Device Key      | 00KLL9S8NRF0X6                   | evergreen/#/device/8892/details/device          |
+	| Users        | User Key        | 0072B088173449E3A93              | evergreen/#/user/85167/details/user             |
+	| Applications | Application Key | ACDSee for Windows 95            | evergreen/#/application/312/details/application |
+	| Mailboxes    | Mailbox Key     | 01BC4B0500344065B61@bclabs.local | evergreen/#/mailbox/45374/details/mailbox       |
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12805
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionListsDoNotIncludeUnknownValues
@@ -831,7 +831,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
 	When User clicks refresh button in the browser
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
@@ -844,7 +844,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User clicks the "UPDATE" Action button
 	Then There are no errors in the browser console
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -859,7 +859,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User clicks the "UPDATE" Action button
 	Then There are no errors in the browser console
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#go to Users page
@@ -868,7 +868,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User perform search by "00DBB114BE1B41B0A38"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
@@ -880,7 +880,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -894,7 +894,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User clicks the "UPDATE" Action button
 	Then There are no errors in the browser console
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#go to Mailboxes page
@@ -903,7 +903,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User perform search by "0845467C65E5438D83E@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
@@ -915,7 +915,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -930,7 +930,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User clicks the "UPDATE" Action button
 	Then There are no errors in the browser console
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 	When User clicks Admin on the left-hand menu
@@ -963,7 +963,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
 	When User clicks refresh button in the browser
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
@@ -975,7 +975,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -998,7 +998,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User perform search by "00DBB114BE1B41B0A38"
 	And User click content from "Username" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
@@ -1010,7 +1010,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -1033,7 +1033,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User perform search by "0845467C65E5438D83E@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details object page is displayed to the user
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
 	Then Bucket pop-up has standard size on the Details Page
@@ -1045,7 +1045,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
@@ -1059,7 +1059,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" tab
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 	When User clicks Admin on the left-hand menu
@@ -1162,25 +1162,25 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	When User navigates to the "<TabName>" main-menu on the Details page
+	When User navigates to the "<MainTabName>" main-menu on the Details page
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy cell' option in context menu
 	Then Next data '<TargetCell>' is copied
 
 Examples:
-	| PageName     | SearchTerm                                              | ColumnName    | MainTabName      | SubTabName             | SelectedColumn | TargetCell    |
-	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications     | Device Project Summary | Application    | Access 95     |
-	| Users        | svc_dashworks                                           | Username      | Active Directory | Groups                 | Group          | Domain Admins |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI              | MSIFiles               | File Name      | setup_x86.msi |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users            |                        | Username       | floresau      |
+	| PageName     | SearchTerm                                              | ColumnName    | MainTabName      | SubTabName        | SelectedColumn | TargetCell    |
+	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications     | Evergreen Summary | Application    | Access 95     |
+	| Users        | svc_dashworks                                           | Username      | Active Directory | Groups            | Group          | Domain Admins |
+	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI              | MSIFiles          | File Name      | setup_x86.msi |
+	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users            | Users             | Username       | floresau      |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	And User navigates to the "<TabName>" tab
+	When User navigates to the "<TabName>" main-menu on the Details page
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy cell' option in context menu
 	Then Next data '<ExpectedData>' is copied

@@ -59,7 +59,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='ColorScheme']")]
         public IWebElement ColorScheme { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='form-item ng-star-inserted']//div[@class='mat-checkbox-inner-container']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[@formcontrolname='showLegend']/label")]
         public IWebElement ShowLegend { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions']/button[contains(@class,'star')]")]
@@ -176,10 +176,7 @@ namespace DashworksTestAutomation.Pages
             }
         }
 
-        public IWebElement GetCardWidgetPreview()
-        {
-            return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']"));
-        }
+       
 
         public IWebElement GetTableWidgetPreview()
         {

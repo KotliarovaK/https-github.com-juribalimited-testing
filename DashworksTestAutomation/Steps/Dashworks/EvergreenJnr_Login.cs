@@ -209,7 +209,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.NavigateToUrl(UrlProvider.Url);
 
             //Set cookies to browser
-            foreach (var cookie in client.SeleniumCookiesJar) _driver.Manage().Cookies.AddCookie(cookie);
+            foreach (var cookie in client.SeleniumCookiesJar)
+            {
+                //TODO remove this workaround for Expiry until https://github.com/Codeception/Codeception/issues/5401 not fixed
+                OpenQA.Selenium.Cookie nc = new Cookie(cookie.Name, cookie.Value, cookie.Path, DateTime.Now.AddDays(1));
+                _driver.Manage().Cookies.AddCookie(nc);
+            }
 
             // Add cookies to the RestClient to authorize it
             _client.Value.AddCookies(client.CookiesJar);

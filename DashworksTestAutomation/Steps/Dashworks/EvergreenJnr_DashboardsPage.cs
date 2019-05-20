@@ -594,6 +594,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     createWidgetElement.ShowLegend.Click();
                 }
+
+                if (!string.IsNullOrEmpty(row["Layout"]))
+                {
+                    _driver.ClickByJavascript(createWidgetElement.GetDropdownForWidgetByName("Layout"));
+                    createWidgetElement.SelectObjectForWidgetCreation(row["Layout"]);
+                }
             }
         }
 
@@ -741,10 +747,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int prevX = preview.WidgetPreview.Location.X;
             int prevY = preview.WidgetPreview.Location.Y;
 
-            var widget = _driver.NowAt<AddWidgetPage>();
-            int widgetWidth = widget.GetCardWidgetPreview().Size.Width;
-            int widgetX = widget.GetCardWidgetPreview().Location.X;
-            int widgetY = widget.GetCardWidgetPreview().Location.Y;
+            var widget = _driver.NowAt<EvergreenDashboardsPage>();
+            int widgetWidth = widget.GetCardWidgetPreviewText().Size.Width;
+            int widgetX = widget.GetCardWidgetPreviewText().Location.X;
+            int widgetY = widget.GetCardWidgetPreviewText().Location.Y;
 
             Assert.That(prevX < widgetX && prevY < widgetY, Is.True, "Widget XY coordinate displayed outside preview box");
             Assert.That(prevWidth > widgetWidth, Is.True, "Widget width displayed outside preview box");
@@ -823,6 +829,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCardWidgetIsDisplayedToTheUser(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
@@ -830,8 +837,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.ColorWidgetItem.GetAttribute("style").Split(';')
-                .First().Split(':').Last().TrimStart(' ').TrimEnd(' ');
+            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
             Assert.AreEqual(ColorWidgetConvertor.Convert(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -839,7 +845,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColorIsDisplayedForCardWidget(string color)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var getColor = page.ColorWidgetItem.GetCssValue("background-color");
+            var getColor = page.GetCardWidgetPreviewText().GetCssValue("color");
             Assert.AreEqual(ColorWidgetConvertor.ConvertComplianceColorWidget(color), getColor, $"{color} color is displayed for widget");
         }
 
@@ -1046,6 +1052,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, labelList, "Label order is incorrect");
         }
 
+        [Then(@"Line X labels of ""(.*)"" column widget is displayed in following order:")]
+        public void ThenLineXLabelsOfColumnWidgetIsDisplayedInFollowingOrder(string widgetName, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            List<string> labelList = page.GetPointOfColumnWidgetByName(widgetName);
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+
+            Assert.AreEqual(expectedList, labelList, "Label order is incorrect");
+        }
+
         [When(@"User selects ""(.*)"" checkbox on the Create Widget page")]
         public void WhenUserSelectsCheckboxOnTheCreateWidgetPage(string checkboxName)
         {
@@ -1190,8 +1206,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Widget Preview shows ""(.*)"" as First Cell value")]
         public void ThenWidgetPreviewShowsAsFirstCellValue(string option)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
-            Assert.That(page.GetPreviewFirstCellValue().Text, Is.EqualTo(option), "Widget Preview shown different value");
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
         [Then(@"User sees ""(.*)"" warning text below Lists field")]

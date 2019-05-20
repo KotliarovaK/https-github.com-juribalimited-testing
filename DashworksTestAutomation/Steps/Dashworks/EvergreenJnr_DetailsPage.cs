@@ -23,13 +23,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User navigates to the ""(.*)"" tab")]
-        public void WhenUserNavigatesToTheTab(string tabName)
-        {
-            var tabs = _driver.NowAt<BaseDetailsTabsMenu>();
-            tabs.NavigateToTabByName(tabName);
-        }
-
         [When(@"User closes ""(.*)"" section on the Details Page")]
         [When(@"User opens ""(.*)"" section on the Details Page")]
         public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
@@ -60,13 +53,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 detailsPage.GetLinkByName(linkName).Click();
         }
 
-        [Then(@"""(.*)"" section is expanded on the Details Page")]
-        public void ThenSectionIsExpandedOnTheDetailsPage(string sectionName)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(detailsPage.GetExpandedSectionByName(sectionName).Displayed(), $"expanded section '{sectionName}' is not displayed");
-        }
-
         [Then(@"section is loaded correctly")]
         public void ThenSectionIsLoadedCorrectly()
         {
@@ -76,13 +62,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
             else
                 Assert.IsTrue(detailsPage.NoFoundContent.Displayed(), "Section is not loaded");
-        }
-
-        [Then(@"""(.*)"" text is displayed in the expanded section on the Details Page")]
-        public void ThenTextIsDisplayedInTheExpandedSectionOnTheDetailsPage(string text)
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.IsTrue(detailsPage.GetTextInExpandedSection(text).Displayed(), $"{text} is not displayed in the expanded section");
         }
 
         [Then(@"""(.*)"" title matches the ""(.*)"" value")]
@@ -472,7 +451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFilterPanelHasStandardSize()
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            Assert.AreEqual("123.525px", filterPanel.GetInstalledFilterPanelHeight());
+            Assert.AreEqual("124.734px", filterPanel.GetInstalledFilterPanelHeight());
             Assert.AreEqual("152px", filterPanel.GetInstalledFilterPanelWidth());
         }
 
@@ -493,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
@@ -563,6 +542,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             {
                 var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+                _driver.WaitForDataLoading();
 
                 var columnNames = page.GetAllColumnHeadersOnTheDetailsPage()
                     .Select(column => column.Text).ToList();

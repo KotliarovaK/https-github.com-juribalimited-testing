@@ -813,14 +813,14 @@ Scenario: EvergreenJnr_DevicesLists_CheckThatProjectApplicationReadinessTaskColu
 	Then Empty value is not displayed on the first place for the Pivot
 	Then color data in the column headers is sorted in correct order for the Pivot
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252 @DAS13786 @DAS13823 @DAS16244 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14424 @DAS13865 @DAS15252 @DAS13786 @DAS13823 @DAS16244
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColumnsDisplayInTheCorrectOrder
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to Pivot
 	And User selects the following Row Groups on Pivot:
-	| RowGroups |
-	| Import    |
+	| RowGroups                                  |
+	| Barry'sUse: Validate User Device Ownership |
 	And User selects the following Columns on Pivot:
 	| Columns                                    |
 	| Barry'sUse: Validate User Device Ownership |
@@ -833,8 +833,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDeviceOwnerReadinessTaskColum
 	Then Empty value is displayed on the first place for the Pivot
 	Then Pivot column headers is displayed in following order:
 	| ColumnName     |
-	| Not Applicable |
-	| Audit Failed   |
+	| NOT APPLICABLE |
+	| AUDIT FAILED   |
 
 @Evergreen @Applications @EvergreenJnr_Pivot @Pivot @DAS13865 @DAS14426
 Scenario: EvergreenJnr_ApplicationsLists_CheckThatProjectStageColumnsDisplayInTheCorrectOrderForApplications
@@ -1505,7 +1505,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortedOrderForPivotProjectStatusAsColumn
 	| Migrated   |
 	| Complete   |
 
-@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375 @Not_Run
+@Evergreen @Users @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1514,22 +1514,27 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsColumn
 	| RowGroups |
 	| Building  |
 	And User selects the following Columns on Pivot:
-	| Columns            |
-	| UserEvergr: Status |
+	| Columns |
+	| City    |
 	And User selects the following Values on Pivot:
 	| Values |
 	| Region |
 	And User clicks the "RUN PIVOT" Action button
+	When User closes the Pivot panel
 	Then Empty value is displayed on the first place for the Pivot
 	Then Empty value is displayed on the first place for the Pivot column header
 	Then Pivot column headers is displayed in following order:
-	| ColumnName |
-	| Onboarded  |
-	| Forecast   |
-	| Targeted   |
-	| Scheduled  |
-	| Migrated   |
-	| Complete   |
+	| ColumnName  |
+	| Belfast     |
+	| Calgary     |
+	| Cardiff     |
+	| Edinburgh   |
+	| Jersey City |
+	| London      |
+	| Los Angeles |
+	| Melbourne   |
+	| New York    |
+	| San Diego   |
 
 @Evergreen @Mailboxes @EvergreenJnr_Pivot @Pivot @DAS13863 @DAS14375
 Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColumn

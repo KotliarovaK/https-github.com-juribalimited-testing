@@ -328,7 +328,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	| Object App Override Count   |
 	| Stage Overrides Count       |
 	| Task Values Templates Count |
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -339,7 +340,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	When User clicks "Readiness" tab
 	Then No warning message displayed on the Project Details Page
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -375,3 +376,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	Then numeric data in table is sorted by 'Priority' column in descending order
 	When User click on 'Readiness' column header
 	Then numeric data in table is sorted by 'Priority' column in ascending order
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15898
+Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
+	When User clicks Admin on the left-hand menu
+	And User clicks "Projects" link on the Admin page
+	And User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	And User clicks "Readiness" tab
+	And User enters "RED" text in the Search field for "Readiness" column
+	And User click content from "Readiness" column
+	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
+	And User clicks "Capacity" tab
+	Then "You have unsaved changes. Are you sure you want to leave the page?" text is displayed in the warning message
+	Then "YES" button is displayed in the warning message
+	Then "NO" button is displayed in the warning message

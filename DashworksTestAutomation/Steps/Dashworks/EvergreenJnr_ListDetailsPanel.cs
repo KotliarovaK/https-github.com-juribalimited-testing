@@ -99,6 +99,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNameIsDisplayedInListDetailsPanel(string listName)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForDataLoadingInActionsPanel();
             Assert.AreEqual(listName, listDetailsElement.ListNameField.GetAttribute("value"),
                 $"{listName} is not displayed in Name Field");
         }
