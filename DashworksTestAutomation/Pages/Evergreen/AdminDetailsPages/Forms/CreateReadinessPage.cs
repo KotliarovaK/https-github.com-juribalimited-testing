@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']//input[@aria-label='Ready']")]
         public IWebElement ReadyCheckboxState { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']/span[text()='Default for applications	']")]
+        [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']/span[text()='Default for applications']")]
         public IWebElement DefaultForAppCheckBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//label[@class='mat-checkbox-layout']//input[@aria-label='Default']")]
