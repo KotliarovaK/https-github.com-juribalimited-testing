@@ -323,7 +323,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	| Object App Override Count   |
 	| Stage Overrides Count       |
 	| Task Values Templates Count |
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -334,7 +335,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	When User clicks "Readiness" tab
 	Then No warning message displayed on the Project Details Page
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
