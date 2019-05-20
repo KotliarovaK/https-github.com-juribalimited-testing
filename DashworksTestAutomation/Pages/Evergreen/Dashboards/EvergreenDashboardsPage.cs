@@ -310,7 +310,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetCardWidgetByName(string widgetName)
         {
             var dashboardWidget =
-                By.XPath($".//div[@class='widget']//h5[text()='{widgetName}']//ancestor::div/div[@class='widget']");
+                By.XPath($".//div[@class='widget']//h5/span[text()='{widgetName}']//ancestor::div/div[@class='widget']");
             Driver.WaitForDataLoading();
             return Driver.FindElement(dashboardWidget);
         }
@@ -382,19 +382,44 @@ namespace DashworksTestAutomation.Pages
             for (int i = 1; i <= Driver.FindElements(totalLabelsCount).Count; i++)
             {
                 if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
-                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]"))
+                        $".//div/h5/span[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]"))
                     .Text))
                 {
                     webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]/*")).Text);
+                        $".//div/h5/span[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]/*")).Text);
                 }
                 else
                 {
                     webLabels.Add(Driver.FindElement(By.XPath(
-                        $".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]")).Text);
+                        $".//div/h5/span[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='end'][{i}]")).Text);
                 }
             }
 
+            return webLabels;
+        }
+
+        public List<string> GetPointOfColumnWidgetByName(string widgetName)
+        {
+            var totalLabelsCount = By.XPath($".//div/h5[text()='{widgetName}']/parent ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']//*[@text-anchor]");
+
+            List<string> webLabels = new List<string>();
+
+            for (int i = 1; i <= Driver.FindElements(totalLabelsCount).Count; i++)
+            {
+                if (string.IsNullOrEmpty(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='middle'][{i}]"))
+                    .Text))
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='middle'][{i}]/*")).Text);
+                }
+                else
+                {
+                    webLabels.Add(Driver.FindElement(By.XPath(
+                        $".//div/h5[text()='{widgetName}']/ancestor ::div/following-sibling::div//*[@class='highcharts-axis-labels highcharts-xaxis-labels ']/*[@text-anchor='middle'][{i}]")).Text);
+                }
+            }
+                Driver.WaitForDataLoading();
             return webLabels;
         }
 

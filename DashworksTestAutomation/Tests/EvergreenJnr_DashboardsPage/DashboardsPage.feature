@@ -1221,6 +1221,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| Windows 8.1            |
 	| 1507                   |
 	| 1607                   |
+	When User clicks Settings button for "1803 ProjectDAS15544" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
 
 @Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16127
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
@@ -1856,5 +1859,58 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	Then "Device List (Complex) - BROKEN LIST" link is displayed in warning message on Dashboards page
 	And There are no errors in the browser console
 	When User clicks Settings button for "Dashboard for DAS15432" dashboard
+	And User clicks Delete button for custom list
+	And User clicks Delete button on the warning message in the lists panel
+
+@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS16278
+Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName          |
+	| Windows7Mi: Status  |
+	| HDD Total Size (GB) |
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User Add And "Windows7Mi: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	And User create dynamic list with "ListForDAS16278" name on "Devices" page
+	Then "ListForDAS16278" list is displayed to user
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "DAS16278_Dashboard" name
+	Then "New dashboard created" message is displayed
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title           | List            | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend | TableOrientation | Layout |
+	| Column     | DAS16278_Widget | ListForDAS16278 | Windows7Mi: Status | HDD Total Size (GB) | Sum               | Windows7Mi: Status ASC | 10        | true       |                  |        |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "DAS16278_Widget" Widget is displayed to the user
+	#Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
+	#| ColumnName |
+	#| Empty      |
+	#| Complete   |
+	#| Forecast   |
+	#| Migrated   |
+	#| Onboarded  |
+	#| Scheduled  |
+	#| Targeted   |
+	When User clicks Ellipsis menu for "DAS16278_Widget" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "Windows7Mi: Status DESC" in the "Order By" Widget dropdown
+	When User clicks the "UPDATE" Action button
+	Then Card "DAS16278_Widget" Widget is displayed to the user
+	#Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
+	#| ColumnName |
+	#| Targeted   |
+	#| Scheduled  |
+	#| Onboarded  |
+	#| Migrated   |
+	#| Forecast   |
+	#| Complete   |
+	#| Empty      |
+	When User clicks Settings button for "DAS16278_Dashboard" dashboard
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
