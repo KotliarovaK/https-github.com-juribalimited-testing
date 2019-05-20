@@ -1714,3 +1714,19 @@ Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
 	| MailboxEve: 1 \ Scheduled - mailbox (Slot) |
 	| MailboxEve: 1 \ Target                     |
 	| MailboxEve: 1 \ Target (Slot)              |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS16426
+Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFieldIsEmpty
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "User Dashworks First Seen" filter
+	And User select "Equals" Operator value
+	Then "UPDATE" Action button have tooltip with "You must enter a date" text
+	When User select "Between" Operator value
+	Then "UPDATE" Action button have tooltip with "You must enter a start date" text
+	When User select "Empty" Operator value
+	Then "UPDATE" Action button have tooltip with "Complete all fields before saving this filter" text
+	When User select "Not empty" Operator value
+	Then "UPDATE" Action button have tooltip with "Complete all fields before saving this filter" text
