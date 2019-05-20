@@ -102,6 +102,7 @@
     <Compile Include="Base\BeforeAfterActions.cs" />
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
+    <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\LastUsedBucket.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
@@ -276,6 +278,10 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\CreateCapacityUnitViaApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\UpdateCapacityUnitViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AdminPageNavigation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_CogMenuActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_GridActions.cs" />
@@ -340,6 +346,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdminPage.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\UpdateCapacityUnit.feature.cs">
+      <DependentUpon>UpdateCapacityUnit.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CreateCapacityUnit.feature.cs">
+      <DependentUpon>CreateCapacityUnit.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGrid.feature.cs">
+      <DependentUpon>CapacityUnitsGrid.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\AddObjectsToCapacityUnits.feature.cs">
+      <DependentUpon>AddObjectsToCapacityUnits.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Readiness.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -359,11 +385,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Capacity.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CapacityUnits.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Projects.feature.cs">
       <AutoGen>True</AutoGen>
@@ -561,6 +582,22 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AdminPage.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\UpdateCapacityUnit.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateCapacityUnit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CreateCapacityUnit.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateCapacityUnit.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityUnitsGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\AddObjectsToCapacityUnits.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddObjectsToCapacityUnits.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Readiness.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Readiness.feature.cs</LastGenOutput>
@@ -576,10 +613,6 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Capacity.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Capacity.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CapacityUnits.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Projects.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

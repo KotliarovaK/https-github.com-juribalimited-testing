@@ -18,6 +18,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using TechTalk.SpecFlow;
@@ -34,9 +35,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly RestWebClient _client;
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
+        private readonly CapacityUnit _capacityUnit;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, TeamName teamName, DTO.RuntimeVariables.Projects projects,
-            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects)
+            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnit capacityUnit)
         {
             _driver = driver;
             _teamName = teamName;
@@ -45,6 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _buckets = buckets;
             _lastUsedBucket = lastUsedBucket;
             _addedObjects = addedObjects;
+            _capacityUnit = capacityUnit;
         }
 
         #region Check button state
@@ -1861,6 +1864,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.GetFieldByName(fieldName).Clear();
             projectElement.GetFieldByName(fieldName).SendKeys(name);
+            _capacityUnit.Value.Add(new CapacityUnitDto() { Name = name });
         }
 
         [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]

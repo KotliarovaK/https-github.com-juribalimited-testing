@@ -78,5 +78,14 @@ namespace DashworksTestAutomation.Helpers
                     }
                 }
         }
+
+        #region CapacityUnits
+
+        public static string GetCapacityUnitId(string name)
+        {
+            return DatabaseHelper.ExecuteReader($"select UnitId from [PM].[dbo].[CapacityUnits] where UnitName='{name}'", 0).FirstOrDefault();
+        }
+
+        #endregion
     }
 }
