@@ -253,7 +253,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList));
+            SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
@@ -262,7 +262,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
+            SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList), false);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"boolean data is sorted by '(.*)' column in ascending order")]
+        public void ThenBooleanDataIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
+            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"boolean data is sorted by '(.*)' column in descending order")]
+        public void ThenBooleanDataIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 

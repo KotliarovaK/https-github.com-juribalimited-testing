@@ -92,24 +92,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
-        [Then(@"color data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
-        public void ThenColorDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
-        {
-            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList));
-            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
-        }
-
-        [Then(@"color data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
-        public void ThenColorDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
-        {
-            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
-            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
-        }
-
         [Then(@"date in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
         public void ThenDateInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
         {

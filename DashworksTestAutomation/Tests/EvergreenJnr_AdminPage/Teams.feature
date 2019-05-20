@@ -149,7 +149,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMembersToTheTeam
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
-	When User selects "Team Members" tab on the Team details page
+	When User clicks "Team Members" tab
 	When User clicks the "ADD MEMBERS" Action button
 	And User adds following Objects from list
 	| Objects           |
@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	And User selects all rows on the grid
 	Then User sees "6" of "6" rows selected label
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Delete_Newly_Created_Team @Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Delete_Newly_Created_Team @Teams @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -214,7 +214,7 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
-	When User selects "Buckets" tab on the Team details page
+	When User clicks "Buckets" tab
 	When User clicks the "ADD BUCKETS" Action button
 	Then Add Buckets page is displayed to the user
 	When User expands "Email Migration" project to add bucket
@@ -241,9 +241,9 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User click on "Project" column header on the Admin page
 	Then data in table is sorted by "Project" column in descending order on the Admin page
 	When User click on "Default" column header on the Admin page
-	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	Then boolean data is sorted by 'Default' column in ascending order
 	When User click on "Default" column header on the Admin page
-	Then color data in table is sorted by "Default" column in descending order on the Admin page
+	Then boolean data is sorted by 'Default' column in descending order
 	When User click on "Devices" column header on the Admin page
 	Then numeric data in table is sorted by "Devices" column in descending order on the Admin page
 	When User click on "Devices" column header on the Admin page
@@ -362,7 +362,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams @Do_Not_Run_With_Teams
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams @Do_Not_Run_With_Teams @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -415,9 +415,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User click on "Members" column header on the Admin page
 	Then numeric data in table is sorted by "Members" column in ascending order on the Admin page
 	When User click on "Default" column header on the Admin page
-	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	Then boolean data is sorted by 'Default' column in ascending order
 	When User click on "Default" column header on the Admin page
-	Then color data in table is sorted by "Default" column in descending order on the Admin page
+	Then boolean data is sorted by 'Default' column in descending order
 	When User click on "Evergreen Buckets" column header on the Admin page
 	Then numeric data in table is sorted by "Evergreen Buckets" column in descending order on the Admin page
 	When User click on "Evergreen Buckets" column header on the Admin page
@@ -507,7 +507,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorre
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The team has been created" text
 	When User clicks newly created object link
-	And User selects "Team Members" tab on the Team details page
+	And User clicks "Team Members" tab
 	And User clicks the "ADD MEMBERS" Action button
 	And User adds following Objects from list
 	| Objects           |

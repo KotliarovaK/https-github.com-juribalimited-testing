@@ -332,7 +332,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSpecificWarningMessageIsNotDisplayedAf
 	Then "You can not delete the default bucket" warning message is not displayed on the Buckets page
 	Then Warning message with "This bucket will be permanently deleted and any objects within it reassigned to the default bucket" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @Buckets @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -372,9 +372,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	When User click on "Users" column header on the Admin page
 	Then numeric data in table is sorted by "Users" column in ascending order on the Admin page
 	When User click on "Default" column header on the Admin page
-	Then color data in table is sorted by "Default" column in ascending order on the Admin page
+	Then boolean data is sorted by 'Default' column in ascending order
 	When User click on "Default" column header on the Admin page
-	Then color data in table is sorted by "Default" column in descending order on the Admin page
+	Then boolean data is sorted by 'Default' column in descending order
 	Then There are no errors in the browser console
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11726 @DAS11891 @DAS11747 @DAS13471 @Delete_Newly_Created_Bucket @Buckets
