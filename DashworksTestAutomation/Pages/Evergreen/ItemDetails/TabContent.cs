@@ -15,6 +15,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = "//mat-sidenav-content[@id='content']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//table[@aria-label='Elements']")]
+        public IWebElement ElementsTable { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -26,13 +28,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             };
         }
 
-        public IWebElement GetItemDetailsPageByName(string name)
-        {
-            var selector = By.XPath($".//div[@id='pagetitle-text']//h1[contains(text(), '{name}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public bool GetTheDisplayStateOfContentOnOpenTab(string name)
         {
             return Driver.IsElementDisplayed(By.XPath($"//div[contains(@class, 'details-bordered-box')]//span[text()='{name}']"));
@@ -41,6 +36,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public bool CheckThatSelectedTabHasOpened(string name)
         {
             return Driver.IsElementDisplayed(By.XPath($"//*[text()='{name}']//ancestor::mat-sidenav-content"));
+        }
+
+        public IWebElement GetItemDetailsPageByName(string name)
+        {
+            var selector = By.XPath($".//div[@id='pagetitle-text']//h1[contains(text(), '{name}')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetColorIconsForColorFilters(string color)
+        {
+            var selector = By.XPath($"//span[@class='status-text'][text()='{color}']/../div");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

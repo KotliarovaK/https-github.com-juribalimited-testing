@@ -53,6 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksEllipsisMenuForWidgetOnDashboardsPage(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             var ellipsisMenu = page.GetEllipsisMenuForWidget(widgetName);
 
             if (ellipsisMenu != null)
@@ -714,7 +715,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var t = page.TextInDeleteAlert.Text;
             Assert.AreEqual(text, page.TextInDeleteAlert.Text);
+        }
+
+        [Then(@"""(.*)"" link is displayed in warning message on Dashboards page")]
+        public void ThenLinkIsDisplayedInWarningMessageOnDashboardsPage(string text)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.AreEqual(text, page.LinkInWarningMessage.Text);
         }
 
         [Then(@"User sees ""(.*)"" text in warning message on Dashboards submenu pane")]
@@ -821,6 +830,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCardWidgetIsDisplayedToTheUser(string widgetName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetCardWidgetByName(widgetName).Displayed(), $"{widgetName} Widget is not displayed");
         }
 
@@ -1038,6 +1048,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             List<string> labelList = page.GetPointOfLineWidgetByName(widgetName);
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+
+            Assert.AreEqual(expectedList, labelList, "Label order is incorrect");
+        }
+
+        [Then(@"Line X labels of ""(.*)"" column widget is displayed in following order:")]
+        public void ThenLineXLabelsOfColumnWidgetIsDisplayedInFollowingOrder(string widgetName, Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+            List<string> labelList = page.GetPointOfColumnWidgetByName(widgetName);
             var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
 
             Assert.AreEqual(expectedList, labelList, "Label order is incorrect");

@@ -13,9 +13,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_ItemDetailsPage_Navigation (RemoteWebDriver driver)
+        public EvergreenJnr_ItemDetailsPage_Navigation(RemoteWebDriver driver)
         {
             _driver = driver;
+        }
+
+        [When(@"User clicks on ""(.*)"" navigation link")]
+        public void WhenUserClicksOnNavigationLink(string linkName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            detailsPage.GetNavigationLinkByName(linkName).Click();
         }
 
         [When(@"User navigates to the ""(.*)"" main-menu on the Details page")]
@@ -60,6 +67,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.IsFalse(detailsPage.GetTabByName(tabName), $"{tabName} tab is displayed!");
         }
 
+        [Then(@"""(.*)"" tab is displayed on left menu on the Details page with ""(.*)"" count of items")]
+        public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageWithCountOfItems(string tabName, string countOfItems)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(tabName, countOfItems), $"{tabName} tab is displayed incorrectly!");
+        }
+
+        [Then(@"""(.*)"" tab is displayed on left menu on the Details page and contains count of items")]
+        public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndContainsCountOfItems(string tabName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsTrue(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+        }
+
+        [Then(@"""(.*)"" tab is displayed on left menu on the Details page and NOT contains count of items")]
+        public void ThenTabIsDisplayedOnLeftMenuOnTheDetailsPageAndNotContainsCountOfItems(string tabName)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
+        }
+
         [Then(@"User sees following main-tabs on left menu on the Details page:")]
         public void ThenUserSeesFollowingMain_TabsOnLeftMenuOnTheDetailsPage(Table table)
         {
@@ -75,10 +103,26 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var detailsPage = _driver.NowAt<NavigationPage>();
 
+            //opens main-menu 
             detailsPage.GetTabMenuByName(tabMenuName).Click();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualList = detailsPage.SubTabsOnDetailsPageList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, "Tabs for the details page are incorrect");
+
+            foreach (var row in table.Rows)
+                Assert.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"{row["SubTabName"]} tab is not displayed!");
+        }
+
+        [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu with count of items:")]
+        public void ThenMain_MenuOnTheDetailsPageContainsFollowingSub_MenuWithCountOfItems(string tabMenuName, Table table)
+        {
+            var detailsPage = _driver.NowAt<NavigationPage>();
+
+            detailsPage.GetTabMenuByName(tabMenuName).Click();
+            foreach (var row in table.Rows)
+            {
+                if (!string.IsNullOrEmpty(row["CountOfItems"]))
+                    Assert.IsTrue(detailsPage.GetDisplayStatusOfTabWithCountOfItemsByName(row["SubTabName"], row["CountOfItems"]), "Some subcategory is not displayed correctly!");
+                else
+                    Assert.IsTrue(detailsPage.GetTabByName(row["SubTabName"]), "Subcategory is not displayed correctly!");
+            }
         }
     }
 }

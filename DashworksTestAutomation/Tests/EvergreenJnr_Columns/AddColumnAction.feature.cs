@@ -307,6 +307,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11689")]
         [NUnit.Framework.CategoryAttribute("DAS12780")]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTheColumns(string listName, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -1439,6 +1440,81 @@ this.FeatureBackground();
  testRunner.When("User click on \'Postal Code\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 308
  testRunner.Then("data in table is sorted by \'Postal Code\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
+        [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS15807")]
+        public virtual void EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Columns",
+                        "ColumnSectionDisplay",
+                        "DAS15807"});
+#line 317
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 318
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 319
+ testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table32.AddRow(new string[] {
+                        "Windows7Mi: Language"});
+#line 320
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table32, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table33.AddRow(new string[] {
+                        "Windows7Mi: Language"});
+#line 323
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table33, "Then ");
+#line 326
+ testRunner.When("User click on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 327
+ testRunner.When("User click on \'Windows7Mi: Language\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 328
+ testRunner.Then("\"English\" content is displayed in \"Windows7Mi: Language\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

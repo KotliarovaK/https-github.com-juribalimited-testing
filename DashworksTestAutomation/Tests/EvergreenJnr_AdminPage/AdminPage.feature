@@ -21,14 +21,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFiltersAreWorkingCorrectlyOnTheAdminPa
 	And User clicks content from "Team" column
 	When User enters "readonly" text in the Search field for "Username" column
 	Then Rows counter shows "1" of "6" rows
-	When User clicks "Buckets" tab
+	When User clicks "Evergreen" link on the Admin page
 	And User enters "Cardiff --- Test text fill; Test text fill; ------" text in the Search field for "Bucket" column
 	Then Rows counter contains "1" found row of all rows
 	When User resets Search fields for columns
 	When User enters "=35" text in the Search field for "Devices" column
 	Then Rows counter contains "0" found row of all rows
 	When User clicks Admin on the left-hand menu
-	And User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	When User clicks Reset Filters button on the Admin page
 	And User enters "barry's" text in the Search field for "Bucket" column
 	Then Rows counter contains "2" found row of all rows
@@ -85,8 +86,22 @@ Examples:
 	| PageName       | CellText   |
 	| Projects       | EmailMigra |
 	| Teams          | IB Team    |
-	| Buckets        | Evergreen  |
-	| Capacity Units | True       |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
+Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForBuckets
+	When User clicks Admin on the left-hand menu
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
+	And User performs right-click on "Evergreen" cell in the grid
+	Then User sees context menu placed near "Evergreen" cell in the grid
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13766 @DAS14153
+Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnits
+	When User clicks Admin on the left-hand menu
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
+	And User performs right-click on "True" cell in the grid
+	Then User sees context menu placed near "True" cell in the grid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @DAS13930 @DAS13973 @DAS12768 @Project_Creation_and_Scope @Projects @Teams @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
@@ -94,7 +109,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "TestProject20" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -122,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "Teams" page should be displayed to the user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	When User clicks "Buckets" tab
+	When User clicks "Evergreen" link on the Admin page
 	And User enters "Unassigned2" text in the Search field for "Bucket" column
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
@@ -133,14 +148,15 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12948" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User selects "Standalone Project" in the Mode Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -166,7 +182,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	| 0TTSZRQ1ZTIXWM |
 	Then "Unassigned" text is displayed in the table content
 	When User click on Back button
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	Then "Buckets" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column
@@ -190,7 +207,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	Then "Buckets" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN BUCKET" Action button
 	Then "Create Evergreen Bucket" page should be displayed to the user
@@ -226,13 +244,14 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	When User click on Back button
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "1Project12763" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	Then "Buckets" page should be displayed to the user
 	When User clicks Reset Filters button on the Admin page
 	And User clicks String Filter button for "Project" column on the Admin page
@@ -242,7 +261,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "2Project12763" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -264,7 +283,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	And User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "6 objects queued for onboarding, 0 objects offboarded" text
 	When User click on Back button
-	And User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	Then "Buckets" page should be displayed to the user
 	When User clicks Refresh button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
@@ -277,14 +297,15 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 #The steps below are commented out because the "Evergreen" Project Mode is disabled
 	#When User clicks "Projects" link on the Admin page
 	#Then "Projects" page should be displayed to the user
-	#When User clicks the "CREATE PROJECT" Action button
+	#When User clicks the "CREATE" Action button
 	#Then "Create Project" page should be displayed to the user
 	#When User enters "3Project12763" in the "Project Name" field
 	#And User selects "All Devices" in the Scope Project dropdown
 	#When User selects "Evergreen" in the Mode Project dropdown
 	#And User clicks Create button on the Create Project page
 	#Then Success message is displayed and contains "The project has been created" text
-	#When User clicks "Buckets" link on the Admin page
+	#When User clicks "Evergreen" link on the Admin page
+	#When User clicks "Buckets" tab
 	#Then "Buckets" page should be displayed to the user
 	#When User clicks Reset Filters button on the Admin page
 	#And User clicks String Filter button for "Project" column on the Admin page
@@ -325,18 +346,134 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWit
 Scenario: EvergreenJnr_ImportProjectPage_CheckFormattingForIntegerValues
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	And User enters "Unassigned" text in the Search field for "Bucket" column
 	Then "16,877" content is displayed in "Devices" column
 	Then "41,049" content is displayed in "Users" column
 	Then "14,538" content is displayed in "Mailboxes" column
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User enters "Capacity Unit" text in the Search field for "Bucket" column
 	Then "9,365" content is displayed in "Devices" column
 	Then "27,140" content is displayed in "Users" column
 	Then "5,288" content is displayed in "Mailboxes" column
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User enters "Capacity Unit" text in the Search field for "Bucket" column
 	Then "15,682" content is displayed in "Devices" column
 	Then "38,677" content is displayed in "Users" column
 	Then "13,752" content is displayed in "Mailboxes" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
+Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromBuckets
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	Then "Buckets" page should be displayed to the user
+	When User enters "Birmingham" text in the Search field for "Bucket" column
+	When User clicks content from "Devices" column
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	When User enters "Manchester" text in the Search field for "Bucket" column
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	When User enters "Unassigned" text in the Search field for "Bucket" column
+	When User clicks content from "Mailboxes" column
+	Then "Mailboxes" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Evergreen Bucket |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
+Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromCapacityUnits
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks content from "Devices" column
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	When User clicks content from "Mailboxes" column
+	Then "Mailboxes" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName              |
+	| Evergreen Capacity Unit |
+	When User clicks Admin on the left-hand menu
+	When User enters "1803 Rollout" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User selects "Capacity" tab on the Project details page
+	When User selects "Units" tab on the Project details page
+	When User clicks content from "Applications" column
+	Then "Applications" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName          |
+	| 1803: Capacity Unit |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16384
+Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromRings
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Rings" tab
+	Then "Rings" page should be displayed to the user
+	When User clicks content from "Devices" column
+	Then "Devices" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Evergreen Ring |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Rings" tab
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Evergreen Ring |
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Rings" tab
+	When User clicks content from "Mailboxes" column
+	Then "Mailboxes" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName     |
+	| Evergreen Ring |
+	When User clicks Admin on the left-hand menu
+	When User enters "Barry's User Project" text in the Search field for "Project" column
+	When User clicks content from "Project" column
+	When User selects "Rings" tab on the Project details page
+	When User clicks content from "Users" column
+	Then "Users" list should be displayed to the user
+	Then ColumnName is added to the list
+	| ColumnName       |
+	| Barry'sUse: Ring |

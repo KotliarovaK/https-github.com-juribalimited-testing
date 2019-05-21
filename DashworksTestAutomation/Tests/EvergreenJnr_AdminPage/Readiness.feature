@@ -8,7 +8,7 @@ Background: Pre-Conditions
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15665 @DAS14994 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorrect
 	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project for DAS15665" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -40,7 +40,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorr
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15884 @DAS15789 @DAS16131 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness
 	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS15884_Project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadine
 @Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS16131 @DAS16226 @DAS16163 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay
 	When User clicks Admin on the left-hand menu
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "DAS16131_Project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -131,7 +131,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOn
 	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User clicks "Readiness" tab
-	When User enters "BLUE" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks the "UPDATE" Action button
@@ -323,7 +322,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatValuesForReadinessGridAreDisplayedPro
 	| Object App Override Count   |
 	| Stage Overrides Count       |
 	| Task Values Templates Count |
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15769
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadinessPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -334,7 +334,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoWarningDisplayedWhenOpenningReadine
 	When User clicks "Readiness" tab
 	Then No warning message displayed on the Project Details Page
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15673
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWorks
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -351,7 +351,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessRightClickMenuCopyOptionsWork
 	Then There are no errors in the browser console
 	And Next data 'Amber' is copied
 
-	@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15720 @DAS15720 @DAS16653 @DAS16617
 Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHeader
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
@@ -368,9 +368,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	| Priority   |
 	When User click on 'Readiness' column header
 	Then numeric data in table is sorted by 'Priority' column in descending order
+	Then color data is sorted by 'Readiness' column in descending order
 	When User click on 'Readiness' column header
 	Then numeric data in table is sorted by 'Priority' column in ascending order
-
+	Then color data is sorted by 'Readiness' column in ascending order
+	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15898
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
 	When User clicks Admin on the left-hand menu

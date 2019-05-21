@@ -9,7 +9,8 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatListCanBeFilteredSortedByDefaultColumn
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks String Filter button for "Default" column on the Admin page
 	And User clicks "True" checkbox from boolean filter on the Admin page

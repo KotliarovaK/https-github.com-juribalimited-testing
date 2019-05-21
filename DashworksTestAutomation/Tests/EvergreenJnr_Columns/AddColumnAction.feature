@@ -56,10 +56,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatTableIsFullyLoadedAfterAddingTh
 	Then full list content is displayed to the user
 	Then There are no errors in the browser console
 
-Examples: 
+Examples:
 	| ListName     |
 	| Applications |
-	#| Devices      |
+	| Devices      |
 
 @Evergreen @Applications @EvergreenJnr_Columns @AddColumnAction @DAS10997 @DAS12026 @DAS12156 @DAS12780
 Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplayedForImages
@@ -68,7 +68,7 @@ Scenario Outline: EvergreenJnr_Applications_CheckThatConsoleErrorsAreNotDisplaye
 	| <ColumnName> |
 	Then There are no errors in the browser console
 
-Examples: 
+Examples:
 	| ColumnName                              |
 	| Windows7Mi: Application Rationalisation |
 	| Windows7Mi: Application Readiness       |
@@ -312,3 +312,17 @@ Examples:
 	| Devices      |
 	| Users        |
 	| Mailboxes    |
+
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS15807
+Scenario: EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Windows7Mi: Language |
+	Then ColumnName is added to the list
+	| ColumnName           |
+	| Windows7Mi: Language |
+	When User click on 'Windows7Mi: Language' column header
+	When User click on 'Windows7Mi: Language' column header
+	Then "English" content is displayed in "Windows7Mi: Language" column

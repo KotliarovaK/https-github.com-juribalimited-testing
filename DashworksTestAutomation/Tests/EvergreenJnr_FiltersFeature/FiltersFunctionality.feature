@@ -389,7 +389,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
@@ -481,7 +482,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| Evergreen Capacity Unit |
 	And "2" rows are displayed in the agGrid
 	When User clicks Admin on the left-hand menu
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName  |
 	| CapacityUnit13201 |
@@ -1878,8 +1880,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickin
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Device (Saved List)" filter where type is "In list" with Selected Value and following Association:
-    | SelectedList                        | Association |
-    | Device List (Complex) - BROKEN LIST |             |
+	| SelectedList                        | Association |
+	| Device List (Complex) - BROKEN LIST |             |
 	When User create custom list with "List_DAS16394" name
 	Then "List_DAS16394" list is displayed to user
 	Then Create button is disabled on the Base Dashboard Page
@@ -1887,3 +1889,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickin
 	Then Filters panel is displayed to the user
 	When User click Edit button for " Device" filter
 	Then Create button is disabled on the Base Dashboard Page
+
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS15807
+Scenario: EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	Then Filters panel is displayed to the user
+	When User add "Windows7Mi: Language" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues  |
+	| English         |

@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "ProjectForCapacity13720" in the "Project Name" field
 	And User selects "All Users" in the Scope Project dropdown
@@ -46,7 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13431DevicesProject" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -73,7 +73,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13431MailboxesProject" in the "Project Name" field
 	And User selects "All Mailboxes" in the Scope Project dropdown
@@ -100,7 +100,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "ProjectForCapacity13723" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -141,7 +141,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "ProjectForCapacity13171" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "ProjectForCapacity13790" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -251,7 +251,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForCapacity12672" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -356,7 +356,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectDAS13780" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -401,7 +401,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUsingTheSameNameWithDifferentCase
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectDAS13789" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -435,7 +435,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13945" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -451,7 +451,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlreadyUsedInDifferentProject
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13945" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -470,7 +470,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13945" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -501,7 +501,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForCapacityDAS13824" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -710,7 +710,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectDAS13779" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -753,7 +753,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "ProjectDAS13442" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -889,7 +889,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13159ProjectForCapacity" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -929,7 +929,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "13382ProjectForCapacity" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -972,7 +972,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "Create Project" page is displayed to the user
+	Then "CREATE" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName      | ShortName | Description | Type |
 	| Project14029 Snr | 13498     |             |      |
@@ -987,11 +987,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	And User selects "Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When User click on Back button
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project14029" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Capacity" tab
@@ -1008,7 +1008,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ChecksLanguage13955" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1063,7 +1063,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLanguageDoesNotHaveTranslations
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ChecksDefaultLanguage13928" in the "Project Name" field
 	And User selects "All Users" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1110,7 +1110,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS14103" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1121,7 +1121,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 	When User click on Back button
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity Unit For DAS14103" Name in the "Capacity Unit Name" field on the Project details page
@@ -1207,7 +1208,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And "1" content is displayed in "Users" column
 	And "1" content is displayed in "Applications" column
 	When User clicks "Administration" navigation link on the Admin page
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName           |
 	| Capacity Unit For DAS14103 |
@@ -1220,7 +1222,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS14103" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1239,7 +1241,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13417" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1267,7 +1269,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13979" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1337,7 +1339,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS14478" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1378,7 +1380,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEnteredInMoveToPositionIsGreaterThanTotalresocordsNumber
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13791" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1420,7 +1422,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13792" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1474,7 +1476,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13961" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1553,7 +1555,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
@@ -1562,7 +1565,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User clicks the "UPDATE" Action button
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13956" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1576,7 +1579,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And "Unassigned" content is displayed for "Capacity Unit" column
 	And "New Name" content is displayed for "Maps to Evergreen" column
 	When User clicks "Administration" navigation link on the Admin page
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "New Name" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
@@ -1588,7 +1592,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS13526" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1632,7 +1636,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "Create Project" page is displayed to the user
+	Then "CREATE" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName        | ShortName | Description | Type |
 	| ProjectForDAS13812 | 13812     |             |      |
@@ -1738,7 +1742,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectDAS13593 " in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -2060,7 +2064,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "Create Project" page is displayed to the user
+	Then "CREATE" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName        | ShortName | Description | Type |
 	| ProjectForDAS13152 | 13152     |             |      |
@@ -2119,7 +2123,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "Create Project" page is displayed to the user
+	Then "CREATE" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName         | ShortName | Description | Type |
 	| ProjectForDAS131522 | 131522    |             |      |
@@ -2224,7 +2228,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User clicks String Filter button for "Project" column
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
@@ -2350,7 +2355,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnThe
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "15266_TestProject" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown

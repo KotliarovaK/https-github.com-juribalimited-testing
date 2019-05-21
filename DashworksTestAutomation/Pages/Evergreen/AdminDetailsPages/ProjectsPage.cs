@@ -132,7 +132,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void NavigateToProjectTabByName(string tabName)
         {
             var tab = Driver.FindElement(
-                By.XPath($".//ul[contains(@class, 'subMenu-items')]//span[text()='{tabName}']"));
+                By.XPath($".//mat-tree//a[text()='{tabName}']"));
             tab.Click();
         }
 
@@ -388,6 +388,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement WarningMessageText(string text)
         {
             var selector = By.XPath($".//mat-dialog-container[@role='dialog']//p[text()='{text}']");
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetdisabledCheckboxByName(string checkboxName)
+        {
+            var selector = By.XPath($"//mat-checkbox[contains(@class, 'checkbox-disabled')]//span[text()='{checkboxName}']");
             return Driver.FindElement(selector);
         }
     }
