@@ -428,7 +428,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketA
 	Then Success message is displayed and contains "The bucket has been created" text
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12905" in the "Project Name" field
 	And User selects "All Users" in the Scope Project dropdown

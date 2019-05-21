@@ -35,18 +35,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                     menu.Teams.Click();
                     break;
 
-                case "Buckets":
-                    menu.Buckets.Click();
-                    break;
-
-                case "Capacity Units":
-                    menu.CapacityUnits.Click();
-                    break;
-
-                case "Rings":
-                    menu.Rings.Click();
-                    break;
-
                 case "Automations":
                     menu.Automations.Click();
                     break;

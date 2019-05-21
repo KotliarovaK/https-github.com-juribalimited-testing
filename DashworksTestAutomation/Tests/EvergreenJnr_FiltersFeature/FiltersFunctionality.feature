@@ -389,7 +389,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWhenEnter
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13201 @DAS14757
 Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWhichReturnsCorrectItems
 	When User clicks Admin on the left-hand menu
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "CapacityUnit13201" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
@@ -481,7 +482,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatCreatedCapacityUnitCanBeUsedAsAFilterWh
 	| Evergreen Capacity Unit |
 	And "2" rows are displayed in the agGrid
 	When User clicks Admin on the left-hand menu
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User select "Capacity Unit" rows in the grid
 	| SelectedRowsName  |
 	| CapacityUnit13201 |
