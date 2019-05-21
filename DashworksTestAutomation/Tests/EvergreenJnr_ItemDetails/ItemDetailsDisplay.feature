@@ -1343,7 +1343,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379 @DAS16415 @DAS16500
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379 @DAS16415 @DAS16500 @DAS16297
 Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1364,11 +1364,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Device Owner            |
 	| Department and Location |
 	| Custom Fields           |
+	Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	Then "Device" tab is displayed on left menu on the Details page and NOT contains count of items
+	#waiting 'nova'
+	#Then "Organization" tab is displayed on left menu on the Details page and NOT contains count of items
+	#Then "Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Evergreen Details      |
 	| Projects Summary       |
 	| Owner Projects Summary |
+	Then "Projects Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Owner Projects Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	#waiting 'nova'
+	#Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Specification" main-menu on the Details page contains following sub-menu:
 	| SubTabName    |
 	| Specification | 
@@ -1377,19 +1387,40 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Video Cards   |
 	| Monitors      |
 	| Sound Cards   | 
+	Then "Network Cards" tab is displayed on left menu on the Details page and contains count of items
+	Then "CPUS" tab is displayed on left menu on the Details page and contains count of items
+	Then "Video Cards" tab is displayed on left menu on the Details page and contains count of items
+	Then "Monitors" tab is displayed on left menu on the Details page and contains count of items
+	Then "Sound Cards" tab is displayed on left menu on the Details page and contains count of items
+	#waiting 'nova'
+	#Then "Hardware" tab is displayed on left menu on the Details page and NOT contains count of items
+	#Then "Operating System" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Active Directory" main-menu on the Details page contains following sub-menu:
 	| SubTabName       | 
 	| Active Directory |  
 	| Groups           |
 	| LDAP             | 
+	Then "Groups" tab is displayed on left menu on the Details page and contains count of items
+	Then "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Users" tab is not displayed on left menu on the Details page
+	#waiting status bar
+	#Then "Users" tab is displayed on left menu on the Details page and contains count of items
 	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Summary | 
 	| Evergreen Detail  |
 	| Advertisements    | 
 	| Collections       |
+	Then "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
+	Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	Then "Collections" tab is displayed on left menu on the Details page and contains count of items
+	#waiting 'nova'
+	#Then "Projects States" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Related" tab is not displayed on left menu on the Details page
+	#waiting 'nova'
+	#Then "Related" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Compliance" main-menu on the Details page contains following sub-menu:
 	| SubTabName          | 
 	| Overview            |          
@@ -1397,6 +1428,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Hardware Rules      |           
 	| Application Summary |            
 	| Application Issues  |
+	Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
+	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	#waiting status bar
+	#Then "Notes" tab is displayed on left menu on the Details page and contains count of items
 	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415
@@ -1538,8 +1576,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	Then "Devices" list should be displayed to the user
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
-	And User navigates to the "Applications" tab
-	Then section is loaded correctly
+	When User navigates to the "Applications" main-menu on the Details page
 	When User performs right-click on "Advantage Data Architect" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then Next data 'Advantage Data Architect\tUnknown\tExtended Systems\tGreen\tSMS_GEN\tUnknown\tTrue\tFalse\t\t\t5200\t75518\t10 Jan 2018' is copied
