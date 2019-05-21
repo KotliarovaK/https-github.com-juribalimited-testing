@@ -494,6 +494,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Logger.Write($"{checkboxName} checkbox is displayed");
         }
 
+        [Then(@"""(.*)"" checkbox is displayed on the Admin page")]
+        public void ThenCheckboxIsDisplayedOnTheAdminPage(string checkboxName)
+        {
+            var filterElement = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(filterElement.GetCheckboxByName(checkboxName), $"{checkboxName} checkbox is not displayed");
+        }
+
         [Then(@"Application Scope tab is hidden")]
         public void ThenApplicationScopeTabIsHidden()
         {
@@ -596,6 +603,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var checkbox = _driver.NowAt<ProjectsPage>();
             checkbox.SelectRadioButtonByName(radioButtonName).Click();
+        }
+
+        [Then(@"""(.*)"" checkbox is disabled on the Admin page")]
+        public void ThenCheckboxIsDisabledOnTheAdminPage(string checkboxName)
+        {
+            var checkbox = _driver.NowAt<ProjectsPage>();
+            Assert.IsTrue(checkbox.GetdisabledCheckboxByName(checkboxName).Displayed(), $"{checkboxName} is active");
         }
 
         [Then(@"""(.*)"" checkbox is checked and cannot be unchecked")]

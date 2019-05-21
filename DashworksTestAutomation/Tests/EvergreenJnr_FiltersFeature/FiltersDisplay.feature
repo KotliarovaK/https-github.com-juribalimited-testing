@@ -1161,7 +1161,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Delete_Newly_Created_Project @DAS13201 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks Admin on the left-hand menu
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "13201" in the "Project Name" field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	Then User selects "Evergreen" option in "Mode" dropdown
@@ -1205,7 +1205,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShow
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS12940
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenBucketFilter
 	When User clicks Admin on the left-hand menu
-	And User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	And User clicks the "CREATE EVERGREEN BUCKET" Action button
 	And User enters "Bucket_DAS12940_to_be_deleted" in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
@@ -1236,7 +1237,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatDeletedBucketIsNotAvailableInEvergreenB
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13201
 Scenario: EvergreenJnr_AllLists_CheckThatDeletedCapacityUnitIsNotAvailableInEvergreenCapacityUnitFilter
 	When User clicks Admin on the left-hand menu
-	And User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Capacity Units" tab
 	And User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
 	And User type "Capacity_Unit_DAS13201_to_be_deleted" Name in the "Capacity Unit Name" field on the Project details page
 	And User type "13201" Name in the "Description" field on the Project details page
@@ -1638,3 +1640,95 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskSlotHasEmptyAndNotEmptyOperators
 	And User clicks checkbox at selected Lookup Filter
 	And User clicks Save filter button
 	Then Column "1803: Scheduled Date (Slot)" with no data displayed
+
+@Evergreen @Devices @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_DevicesList_CheckStageNameInTheFiltestForDevicesLists
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: DeviceSche" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                                        |
+	| DeviceSche: Stage 1 \ Completed Date                 |
+	| DeviceSche: Stage 1 \ Completed Date (Slot)          |
+	| DeviceSche: Stage 1 \ Forecast Date                  |
+	| DeviceSche: Stage 1 \ Forecast Date (Slot)           |
+	| DeviceSche: Stage 1 \ Group Task                     |
+	| DeviceSche: Stage 1 \ Group Task (Date)              |
+	| DeviceSche: Stage 1 \ Group Task (Slot)              |
+	| DeviceSche: Stage 1 \ Migrated Date                  |
+	| DeviceSche: Stage 1 \ Migrated Date (Slot)           |
+	| DeviceSche: Stage 1 \ Scheduled Date                 |
+	| DeviceSche: Stage 1 \ Scheduled Date (Slot)          |
+	| DeviceSche: Stage 1 \ Target Date                    |
+	| DeviceSche: Stage 1 \ Target Date (Slot)             |
+	| DeviceSche: Stage 2 \ radiobutton task               |
+	| DeviceSche: Stage 2 \ radiobutton task w/date        |
+	| DeviceSche: Stage 2 \ radiobutton task w/date (Date) |
+
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: DeviceSche" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                               |
+	| DeviceSche: Stage 1 \ user radiobutton task |
+	| DeviceSche: Stage 2 \ user DDL task         |
+	| DeviceSche: Stage 2 \ user radiobutton task |
+	| DeviceSche: Stage 2 \ user text task        |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_ApplicationsList_CheckStageNameInTheFiltestForApplicationsLists
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: DeviceSche" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                              |
+	| DeviceSche: Stage 2 \ app date task        |
+	| DeviceSche: Stage 2 \ app radiobutton task |
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS15899
+Scenario: EvergreenJnr_MailboxesList_CheckStageNameInTheFiltestForMailboxesLists
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User closes "Suggested" filter category
+	And User expands "Project Tasks: MailboxEve" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories                              |
+	| MailboxEve: 1 \ Completed                  |
+	| MailboxEve: 1 \ Completed (Slot)           |
+	| MailboxEve: 1 \ Forecast                   |
+	| MailboxEve: 1 \ Forecast (Slot)            |
+	| MailboxEve: 1 \ Migrated                   |
+	| MailboxEve: 1 \ Migrated (Slot)            |
+	| MailboxEve: 1 \ Scheduled - mailbox        |
+	| MailboxEve: 1 \ Scheduled - mailbox (Slot) |
+	| MailboxEve: 1 \ Target                     |
+	| MailboxEve: 1 \ Target (Slot)              |
+
+@Evergreen @Applications @Evergreen_FiltersFeature @FiltersDisplay @DAS16426
+Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFieldIsEmpty
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "User Dashworks First Seen" filter
+	And User select "Equals" Operator value
+	Then "UPDATE" Action button have tooltip with "You must enter a date" text
+	When User select "Between" Operator value
+	Then "UPDATE" Action button have tooltip with "You must enter a start date" text
+	When User select "Empty" Operator value
+	Then "UPDATE" Action button have tooltip with "Complete all fields before saving this filter" text
+	When User select "Not empty" Operator value
+	Then "UPDATE" Action button have tooltip with "Complete all fields before saving this filter" text

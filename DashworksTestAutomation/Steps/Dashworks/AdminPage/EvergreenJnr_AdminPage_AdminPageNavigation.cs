@@ -35,20 +35,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                     menu.Teams.Click();
                     break;
 
-                case "Buckets":
-                    menu.Buckets.Click();
-                    break;
-
-                case "Capacity Units":
-                    menu.CapacityUnits.Click();
-                    break;
-
-                case "Rings":
-                    menu.Rings.Click();
-                    break;
-
                 case "Automations":
                     menu.Automations.Click();
+                    break;
+
+                case "Evergreen":
+                    menu.EvergreenSectionTab.Click();
                     break;
 
                 default:
@@ -90,6 +82,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 case "Capacity Units":
                     var capacityUnitsPage = _driver.NowAt<AdminLeftHandMenu>();
                     StringAssert.Contains(capacityUnitsPage.CapacityUnitsPage.Text.ToLower(), pageTitle.ToLower(),
+                        "Incorrect page is displayed to user");
+                    break;
+
+                case "Rings":
+                    var ringsPage = _driver.NowAt<AdminLeftHandMenu>();
+                    StringAssert.Contains(ringsPage.RingsPage.Text.ToLower(), pageTitle.ToLower(),
                         "Incorrect page is displayed to user");
                     break;
 

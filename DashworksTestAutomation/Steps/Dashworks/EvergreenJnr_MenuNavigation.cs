@@ -192,5 +192,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.ToggleMenu.Click();
             Logger.Write("Toggle Menu button was clicked");
         }
+
+        [When(@"User clicks ""(.*)"" hidden left-hand menu")]
+        public void WhenUserClicksHiddenLeft_HandMenu(string menuName)
+        {
+            var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            menu.SelectHiddenLeftHandMenu(menuName).Click();
+        }
+
     }
 }

@@ -14,15 +14,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
     {
         public const string MainTabsOnDetailsPage = "//div[contains(@class, 'das-mat-tree-node')]/a";
 
-        public const string SubTabsOnDetailsPage = "//ul[@class='das-mat-tree-submenu']//li[contains(@class,'das-mat-tree-node')]/a";
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-drawer-inner-container']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
         [FindsBy(How = How.XPath, Using = MainTabsOnDetailsPage)]
         public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = SubTabsOnDetailsPage)]
+        [FindsBy(How = How.XPath, Using = ".//ul[@class='das-mat-tree-submenu']//li[contains(@class, 'das-mat-tree-node')]/a/text()[1]")]
         public IList<IWebElement> SubTabsOnDetailsPageList { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -33,7 +31,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             {
                 SelectorFor(this, p => p.PageIdentitySelectors)
             };
-        }  
+        }
+
+        public IWebElement  GetNavigationLinkByName(string linkName)
+        {
+            var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
+            Driver.WaitWhileControlIsNotDisplayed(link);
+            return Driver.FindElement(link);
+        }
 
         public IWebElement GetTabMenuByName(string name)
         {
@@ -55,7 +60,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         }
         public bool GetTabByName(string tabName)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//*[text()='{tabName}']//ancestor::li[contains(@class, 'das-mat-tree')]"));
+            return Driver.IsElementDisplayed(By.XPath($"//a[@class='ng-star-inserted'][text()='{tabName}']"));
+        }
+
+        public bool GetDisplayStatusSubTabByName(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//ul[@class='das-mat-tree-submenu']//a[text()='{tabName}']"));
+        }
+
+        public bool GetDisplayStatusOfTabWithCountOfItemsByName(string name, string countOfItems)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']//span[contains(text(),'{countOfItems}')]"));
+        }
+
+        public bool GetCountOfItemsDisplayStatusByTabName(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($"//a[text()='{tabName}']//span[@class='ng-star-inserted']"));
         }
     }
 }

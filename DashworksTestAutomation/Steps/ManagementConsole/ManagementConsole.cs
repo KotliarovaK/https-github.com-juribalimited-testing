@@ -41,6 +41,24 @@ namespace DashworksTestAutomation.Steps.ManagementConsole
             page.GetLinkInManagementConsoleByName(optionName).Click();
         }
 
+        [When(@"User creates new clear User")]
+        public void WhenUserCreatesNewClearUser(Table table)
+        {
+            var page = _driver.NowAt<ManageUserPage>();
+            page.CreateNewUserButton.Click();
+            foreach (var row in table.Rows)
+            {
+                page.Username.SendKeys(row["Username"]);
+                page.FullName.SendKeys(row["FullName"]);
+                page.Password.SendKeys(row["Password"]);
+                page.ConfirmPassword.SendKeys(row["ConfirmPassword"]);
+                if (!string.IsNullOrEmpty(row["Roles"]))
+                    page.Roles.SelectboxSelect(row["Roles"]);
+            }
+            page.AddRoleButton.Click();
+            page.CreateUserButton.Click();
+        }
+
         [When(@"User create new User")]
         public void WhenUserCreateNewUser(Table table)
         {

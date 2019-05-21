@@ -253,7 +253,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList));
+            SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
@@ -262,7 +262,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Colors>(new List<string>(expectedList), false);
+            SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList), false);
+            Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"boolean data is sorted by '(.*)' column in ascending order")]
+        public void ThenBooleanDataIsSortedByColumnInAscendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList));
+            Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
+        }
+
+        [Then(@"boolean data is sorted by '(.*)' column in descending order")]
+        public void ThenBooleanDataIsSortedByColumnInDescendingOrder(string columnName)
+        {
+            var listPageMenu = _driver.NowAt<BaseDashboardPage>();
+            var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSortedByEnum<BooleanState>(new List<string>(expectedList), false);
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 
@@ -606,6 +624,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSwitchesToPreviousTab()
         {
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
+        }
+
+        [Then(@"Error page is displayed correctly")]
+        public void ThenErrorPageIsDisplayedCorrectly()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.Error403.Displayed());
+            Assert.IsFalse(page.PageTitle.Displayed(), "Error page is not displayed correctly");
         }
     }
 }

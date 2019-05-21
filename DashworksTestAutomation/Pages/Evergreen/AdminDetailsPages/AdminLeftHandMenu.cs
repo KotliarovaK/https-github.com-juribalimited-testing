@@ -11,20 +11,26 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[@class='title-container']")]
         public IWebElement AdminTitle { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='submenu ps']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-sidenav[@role='navigation']")]
         public IWebElement AdminSubMenu { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Projects']/ancestor::li[@class='ng-star-inserted']")]
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Projects']/ancestor::mat-tree-node")]
         public IWebElement Projects { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Teams']")]
+        [FindsBy(How = How.XPath, Using = ".//a[text()='Teams']")]
         public IWebElement Teams { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Buckets']")]
         public IWebElement Buckets { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[text()='Automations']")]
+        [FindsBy(How = How.XPath, Using = ".//div/a[text()='Automations']")]
         public IWebElement Automations { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div/a[text()='Evergreen']")]
+        public IWebElement EvergreenSectionTab { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div/a[text()='Capacity']")]
+        public IWebElement CapacitySectionTab { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Capacity Units']")]
         public IWebElement CapacityUnits { get; set; }
@@ -44,6 +50,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//h1[text()='Capacity Units']")]
         public IWebElement CapacityUnitsPage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//h1[text()='Rings']")]
+        public IWebElement RingsPage { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -52,7 +61,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                 SelectorFor(this, p => p.AdminTitle),
                 SelectorFor(this, p => p.Projects),
                 SelectorFor(this, p => p.Teams),
-                SelectorFor(this, p => p.Buckets)
             };
         }
     }

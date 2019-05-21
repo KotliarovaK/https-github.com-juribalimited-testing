@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "ProjectForDAS14780" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -52,7 +52,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	Then Ring settings Maps to evergreen ring is displayed as "None"
 	When User clicks "Administration" navigation link on the Admin page
 	And User clicks Yes button in Leave Page Warning
-	When User clicks "Buckets" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
 	When User clicks Reset Filters button on the Admin page
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
@@ -64,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRingWasChanged
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	And User enters "ProjectForDAS14839" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User selects "Clone from Evergreen to Project" in the Mode Project dropdown
@@ -89,7 +90,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901
 Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
 	When User clicks Admin on the left-hand menu
-	And User clicks "Rings" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Rings" tab
 	And User clicks the "CREATE EVERGREEN RING" Action button
 	And User type "OneRing" Name in the "Ring name" field on the Project details page
 	And User doubleclicks Create button on Create Ring page
@@ -124,7 +126,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "14690_Project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -181,7 +183,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "14695_Project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
