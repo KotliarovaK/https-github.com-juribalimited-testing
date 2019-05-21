@@ -9,13 +9,14 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefault
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
 	When User clicks Reset Filters button on the Admin page
 	Then data in the table is sorted by "Capacity Unit" column in ascending order by default
-	When User clicks "Buckets" link on the Admin page
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Buckets" tab
+	And User clicks "Capacity Units" tab
 	Then Evergreen Icon is displayed to the user
 	And "Unassigned" text is displayed in the table content
 	And Evergreen Unit is displayed to the user
@@ -26,7 +27,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyEvergreenUnitsAreDisplayedByDefaul
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDeletionMessages
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName          |

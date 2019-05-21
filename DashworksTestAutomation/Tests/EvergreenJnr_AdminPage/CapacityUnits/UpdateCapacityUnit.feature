@@ -12,7 +12,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorking
 	| Capacity Unit Settings |             |           |
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Capacity Units" link on the Admin page
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
 	Then "Capacity Units" page should be displayed to the user
 	When User enters "Capacity Unit Settings" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column

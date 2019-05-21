@@ -6163,6 +6163,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13391")]
+        [NUnit.Framework.CategoryAttribute("DAS15776")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
@@ -6200,7 +6201,8 @@ this.FeatureBackground();
                     "AllLists",
                     "Evergreen_FiltersFeature",
                     "FiltersDisplay",
-                    "DAS13391"};
+                    "DAS13391",
+                    "DAS15776"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -6219,7 +6221,7 @@ this.FeatureBackground();
 #line 1413
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1414
- testRunner.Then("User sees \"Selected Columns\" section expanded by default in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees \"Suggested\" section expanded by default in Filters panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
