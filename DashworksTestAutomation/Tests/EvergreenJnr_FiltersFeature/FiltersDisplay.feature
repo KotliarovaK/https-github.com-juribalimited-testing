@@ -1406,12 +1406,12 @@ Examples:
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13391
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13391 @DAS15776
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSelectedColumnsSectionIsExpandedByDefaultInFiltersPanel
 	When User clicks "<ListName>" on the left-hand menu
 	And User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	Then User sees "Selected Columns" section expanded by default in Filters panel
+	Then User sees "Suggested" section expanded by default in Filters panel
 
 Examples:
 	| ListName     |

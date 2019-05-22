@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
@@ -108,6 +109,40 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var originalList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
             SortingHelper.IsListSortedByDate(originalList, false);
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
+        }
+
+
+        [Then(@"Boolean data in table is sorted by ""(.*)"" column in ascending order on the Admin page")]
+        public void ThenBooleanDataInTableIsSortedByColumnInAscendingOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseDashboardPage>();
+
+            var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList, false);
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(adminTable.AscendingSortingIcon.Displayed);
+        }
+
+
+        [Then(@"Boolean data in table is sorted by ""(.*)"" column in descending order on the Admin page")]
+        public void ThenBooleanDataInTableIsSortedByColumnInDescendingOrderOnTheAdminPage(string columnName)
+        {
+            var adminTable = _driver.NowAt<BaseDashboardPage>();
+
+            var expectedList = adminTable.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
+            SortingHelper.IsListSorted(expectedList);
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"Data in table is sorted by ""(.*)"" column in the next way")]
+        public void ThenDataInTableIsSortedInTheNextWay(string columnName, Table table)
+        {
+            var adminTable = _driver.NowAt<BaseDashboardPage>();
+            var actualList = adminTable.GetColumnContent(columnName).Distinct().ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+
+            Assert.That(expectedList, Is.EqualTo(actualList));
         }
     }
 }

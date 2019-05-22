@@ -847,7 +847,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	When User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               | 
-	When User add "Compliance" filter where type is "Equals" with added column and following checkboxes:
+	And User Add And "Compliance" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Red                |
 	And User clicks the Columns button
@@ -859,6 +859,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	When User removes "Application" column by Column panel
 	When User removes "Vendor" column by Column panel
 	When User removes "Version" column by Column panel
+	When User removes "1803: In Scope" column by Column panel
+	And User click on 'Compliance' column header
 	And User create custom list with "1803 App Compliance" name
 	Then "1803 App Compliance" list is displayed to user
 	When User clicks "Dashboards" on the left-hand menu
@@ -873,25 +875,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	Then Colour Scheme dropdown is not displayed to the user
 	When User selects "Text Only" in the "Layout" Widget dropdown
 	Then Text Only is displayed for Card widget
-	Then "Green" color is displayed for Card Widget
+	Then "Red" color is displayed for Card Widget
 	When User clicks the "CREATE" Action button
 	Then Text Only is displayed for Card widget
-	Then "Green" color is displayed for Card Widget
+	Then "Red" color is displayed for Card Widget
 	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	When User selects "Icon and Text" in the "Layout" Widget dropdown
 	Then Icon and Text is displayed for Card widget
-	Then "Green" color is displayed for Card Widget
+	Then "Red" color is displayed for Card Widget
 	When User clicks the "UPDATE" Action button
-	Then "Green" color is displayed for Card Widget
+	Then "Red" color is displayed for Card Widget
 	Then Icon and Text is displayed for Card widget
 	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	When User selects "Icon Only" in the "Layout" Widget dropdown
 	Then Icon Only is displayed for Card widget
-	Then "Green" color is displayed for Card Widget
+	Then "Red" color is displayed for Card Widget
 	When User clicks the "UPDATE" Action button
-	Then "Green" color is displayed for Card Widget
+	Then "Red" color is displayed for Card Widget
 	Then Icon Only is displayed for Card widget
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -903,7 +905,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks data in card "WidgetForDAS16069_2" widget
 	Then Save as a new list option is available
-	And "286" rows are displayed in the agGrid
+	And "43" rows are displayed in the agGrid
 
 @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15134 @DAS16263
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours

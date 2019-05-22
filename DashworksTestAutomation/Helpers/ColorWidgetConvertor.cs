@@ -33,6 +33,8 @@ namespace DashworksTestAutomation.Helpers
                     return "rgba(128, 139, 153, 0.5)";
                 case "Green":
                     return "rgba(126, 189, 56, 1)";
+                case "Red":
+                    return "rgba(245, 96, 86, 1)";
                 default:
                     throw new Exception($"{colorName} color not found in convertor");
             }

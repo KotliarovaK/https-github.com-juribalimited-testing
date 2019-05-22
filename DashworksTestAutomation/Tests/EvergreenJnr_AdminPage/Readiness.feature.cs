@@ -486,6 +486,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Readiness")]
         [NUnit.Framework.CategoryAttribute("DAS14937")]
+        [NUnit.Framework.CategoryAttribute("DAS16649")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultForApplicationsCheckboxWorksOnEditReadinessPage()
         {
             System.Exception lastException = null;
@@ -520,7 +521,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Readiness",
-                        "DAS14937"});
+                        "DAS14937",
+                        "DAS16649"});
 #line 128
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
