@@ -100,7 +100,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement NavigateToSectionByName(string sectionName)
         {
-            var selector = By.XPath($"//div//span[contains(@class, 'filter-category')][text()='{sectionName}']");
+            var selector = By.XPath($"//*[text()='{sectionName}']/ancestor::div[@class='field-category']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetExpandedSectionByName(string tabName)
+        {
+            var selector = By.XPath($"//*[text()='{tabName}']/ancestor::div[@class='field-category collapsed']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

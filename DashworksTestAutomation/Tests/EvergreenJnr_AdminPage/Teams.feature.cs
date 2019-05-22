@@ -813,7 +813,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12788")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_AddingBucketsToTheTeam()
         {
             System.Exception lastException = null;
@@ -851,8 +850,7 @@ this.FeatureBackground();
                         "DAS13421",
                         "DAS12788",
                         "Delete_Newly_Created_Team",
-                        "Teams",
-                        "Not_Run"});
+                        "Teams"});
 #line 205
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1323,7 +1321,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13471")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams()
         {
             System.Exception lastException = null;
@@ -1363,8 +1360,7 @@ this.FeatureBackground();
                         "DAS12999",
                         "DAS13471",
                         "Teams",
-                        "Do_Not_Run_With_Teams",
-                        "Not_Run"});
+                        "Do_Not_Run_With_Teams"});
 #line 366
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1441,7 +1437,7 @@ this.FeatureBackground();
 #line 401
  testRunner.And("User enters \"2\" text in the Search field for \"Members\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 402
- testRunner.Then("Rows counter contains \"3\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Rows counter contains \"2\" found row of all rows", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 403
  testRunner.When("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 404
