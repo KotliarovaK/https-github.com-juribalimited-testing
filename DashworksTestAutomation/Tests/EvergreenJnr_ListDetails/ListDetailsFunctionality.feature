@@ -263,7 +263,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatNoAbilityToCreateTheSameNamedLi
 	| Applications | All Applications |
 	| Mailboxes    | All Mailboxes    |
 	
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @DAS12684 @Delete_Newly_Created_List @Not_Run
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12208 @DAS12684 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -298,7 +298,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPa
 	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
 	| SelectedList              | Association        |
 	| TestApplicationsList12208 | Entitled to device |
-	Then "Application" filter is added to the list
+	Then "Any Application" filter is added to the list
 	When User create dynamic list with "TestDevicesList12208" name on "Devices" page
 	Then "TestDevicesList12208" list is displayed to user
 	When User clicks the List Details button

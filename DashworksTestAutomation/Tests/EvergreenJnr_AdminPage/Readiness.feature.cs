@@ -1533,13 +1533,9 @@ this.FeatureBackground();
 #line 370
  testRunner.Then("numeric data in table is sorted by \'Priority\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 371
- testRunner.Then("color data is sorted by \'Readiness\' column in descending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 372
  testRunner.When("User click on \'Readiness\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 373
+#line 372
  testRunner.Then("numeric data in table is sorted by \'Priority\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 374
- testRunner.Then("color data is sorted by \'Readiness\' column in ascending order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1586,35 +1582,35 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "DAS15898"});
-#line 377
+#line 375
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 378
+#line 376
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 379
+#line 377
  testRunner.And("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 380
+#line 378
  testRunner.And("User enters \"1803 Rollout\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 381
+#line 379
  testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 382
+#line 380
  testRunner.And("User clicks \"Readiness\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 383
+#line 381
  testRunner.And("User enters \"RED\" text in the Search field for \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 384
+#line 382
  testRunner.And("User click content from \"Readiness\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 385
+#line 383
  testRunner.And("User sets Default for Applications checkbox in \"TRUE\" on Edit Readiness", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 386
+#line 384
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 387
+#line 385
  testRunner.Then("\"You have unsaved changes. Are you sure you want to leave the page?\" text is disp" +
                     "layed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 388
+#line 386
  testRunner.Then("\"YES\" button is displayed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 389
+#line 387
  testRunner.Then("\"NO\" button is displayed in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
