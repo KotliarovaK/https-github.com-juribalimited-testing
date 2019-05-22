@@ -4108,3 +4108,15 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOn
 	When User switches to previous tab
 	When User removes the Project
 	Then Error message is displayed with "This project does not exist. The project has not been updated" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16365
+Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterSelectingBrokenListToProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Dependant List Filter - BROKEN LIST" in the Scope Project details
+	Then Filling field error with "This list has errors" text is displayed
