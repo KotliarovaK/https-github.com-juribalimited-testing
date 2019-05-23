@@ -23,13 +23,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
-        [When(@"User closes ""(.*)"" section on the Details Page")]
         [When(@"User opens ""(.*)"" section on the Details Page")]
         public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            //_driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
-            detailsPage.NavigateToSectionByName(sectionName).Click();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            if (!detailsPage.GetExpandedSectionByName(sectionName).Displayed())
+            {
+                _driver.MouseHover(detailsPage.NavigateToSectionByName(sectionName));
+                detailsPage.NavigateToSectionByName(sectionName).Click();
+            }
         }
 
         [When(@"User clicks ""(.*)"" link on the Details Page")]
@@ -472,7 +475,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]
