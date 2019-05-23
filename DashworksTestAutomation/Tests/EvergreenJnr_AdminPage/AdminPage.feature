@@ -478,7 +478,7 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	| ColumnName       |
 	| Barry'sUse: Ring |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16675
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16676
 Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrailOnAdminPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
