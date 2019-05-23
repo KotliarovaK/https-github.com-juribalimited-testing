@@ -290,7 +290,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14610
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard
-	When User tries to open same page with another item id
+	When User tries to open same page with "9898998" item id
 	Then User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
 	And There are no errors in the browser console
 
@@ -1710,7 +1710,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16326 | Device List (Complex) - BROKEN LIST | 10      | 10         |
 	Then "Widget_For_DAS16326" Widget is displayed to the user
-	Then User sees "This widget refers to list Users List (Complex) - BROKEN LIST, which has errors" text in warning message on Dashboards page
+	Then User sees "This widget refers to list Device List (Complex) - BROKEN LIST which has errors" text in warning message on Dashboards page
 	Then "Device List (Complex) - BROKEN LIST" link is displayed in warning message on Dashboards page
 	And There are no errors in the browser console
 
@@ -1763,3 +1763,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Forecast     |
 	| Onboarded    |
 	| NotOnboarded |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
+Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenLists
+	When User tries to open same page with "625" item id
+	Then There are no errors in the browser console
+	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
+	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
+	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "3" warning messages on Dashboards page

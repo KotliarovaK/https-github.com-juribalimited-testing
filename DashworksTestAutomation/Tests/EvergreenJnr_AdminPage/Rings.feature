@@ -117,7 +117,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	And User enters "Unassigned" text in the Search field for "Ring" column
 	And User clicks content from "Ring" column
 	Then "Default Ring" checkbox is checked and cannot be unchecked
-	When User tries to open same page with another item id
+	When User tries to open same page with "88888888" item id
 	Then Page not found displayed for the user
 	And There are only page not found errors in console
 

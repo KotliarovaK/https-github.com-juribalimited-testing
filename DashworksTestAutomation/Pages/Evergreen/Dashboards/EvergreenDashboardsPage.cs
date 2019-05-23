@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement CancelButtonInAlert { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert') and not(@hidden)]//div[@class='inline-box-text']")]
-        public IWebElement TextInDeleteAlert { get; set; }
+        public IList<IWebElement> TextInDeleteAlert { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'delete-alert')]//a[@href]")]
         public IWebElement LinkInWarningMessage { get; set; }
