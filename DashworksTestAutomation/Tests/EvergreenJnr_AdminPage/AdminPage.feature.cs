@@ -1739,7 +1739,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
-        [NUnit.Framework.CategoryAttribute("DAS16676")]
+        [NUnit.Framework.CategoryAttribute("DAS16675")]
         [NUnit.Framework.CategoryAttribute("DAS16676")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrailOnAdminPage()
         {
@@ -1775,7 +1775,7 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
-                        "DAS16675"});
+                        "DAS16675",
                         "DAS16676"});
 #line 482
 this.ScenarioInitialize(scenarioInfo);
