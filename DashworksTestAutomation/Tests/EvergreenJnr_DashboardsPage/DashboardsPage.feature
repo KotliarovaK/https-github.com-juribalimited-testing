@@ -1204,6 +1204,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD SECTION" Action button
 	And User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	Then Move to Section pop up is displayed to the User
@@ -1219,7 +1220,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	When User selects "1" section on the Move to Section pop up
 	When User clicks "MOVE" button on the Move to Section Pop up
-	When User clicks "Dashboards" navigation link on the Admin page
 	Then "Device Profile" Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard

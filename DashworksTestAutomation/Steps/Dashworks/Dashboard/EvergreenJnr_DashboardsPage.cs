@@ -1181,28 +1181,28 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"Move to Section pop up is displayed to the User")]
         public void ThenMoveToSectionPopUpIsDisplayedToTheUser()
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.IsTrue(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is not displayed");
         }
 
         [Then(@"Move to Section pop up is not displayed to the User")]
         public void ThenMoveToSectionPopUpIsNotDisplayedToTheUser()
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
             Assert.IsFalse(page.MoveToSectionPopUp.Displayed(), "Move to Section pop up is displayed");
         }
 
         [When(@"User selects ""(.*)"" section on the Move to Section pop up")]
         public void WhenUserSelectsSectionOnTheMoveToSectionPopUp(string sectionName)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.SelectSectionToMove(sectionName);
         }
 
         [When(@"User clicks ""(.*)"" button on the Move to Section Pop up")]
         public void WhenUserClicksButtonOnTheMoveToSectionPopUp(string buttonName)
         {
-            var page = _driver.NowAt<AddWidgetPage>();
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.ClickMoveToSectionPopUpButton(buttonName);
         }
 
