@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksDashboardsDetailsIconOnDashboardsPage()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-
+            _driver.WaitForDataLoading();
             page.DashboardsDetailsIcon.Click();
             _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.DashboardsContextMenu);
         }
@@ -715,7 +715,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesTextInWarningMessageOnDashboardsPage(string text)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var t = page.TextInDeleteAlert.Text;
+            _driver.WaitForDataLoading();
             Assert.AreEqual(text, page.TextInDeleteAlert.Text);
         }
 
@@ -1354,6 +1354,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.MouseHover(button.ReviewPermissionsPopupsButton(buttonCapture));
+            _driver.WaitForDataLoading();
             var toolTipText = _driver.GetTooltipText();
             Assert.That(tooltip, Is.EqualTo(toolTipText), "Tooltip is different");
         }

@@ -60,9 +60,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksOnTheLoginLink()
         {
             var loginPage = _driver.NowAt<LoginPanelPage>();
-
+            _driver.WaitForDataLoading();
             //Only click the login link if the forced login splash page is NOT displayed
-            if (!loginPage.LoginSplashPanel.Displayed())
+             if (!loginPage.LoginSplashPanel.Displayed())
             {
                 loginPage.LoginLink.Click();
                 Logger.Write("Login link was clicked");

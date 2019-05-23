@@ -1515,11 +1515,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User clicks the Logout button
+	When User clicks the Switch to Evergreen link
 	And User clicks on the Login link
 	And User login with following credentials:
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
@@ -1536,13 +1536,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	And User clicks the "ADD USER" Action button
 	And User clicks the Logout button
 	Then User is logged out
+	When User clicks the Switch to Evergreen link
 	When User clicks on the Login link
 	And User login with following credentials:
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Read" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -1565,11 +1564,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14282 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList
 	When User clicks the Logout button
+	When User clicks the Switch to Evergreen link
 	And User clicks on the Login link
 	And User login with following credentials:
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
@@ -1586,11 +1585,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	And User clicks the "ADD USER" Action button
 	And User clicks the Logout button
 	Then User is logged out
+	When User clicks the Switch to Evergreen link
 	When User clicks on the Login link
 	And User login with following credentials:
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
@@ -1615,13 +1614,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
 	When User clicks the Logout button
-	And User clicks on the Login link
+	Then User is logged out
+	When User clicks the Switch to Evergreen link
+	When User clicks on the Login link
 	And User login with following credentials:
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
@@ -1636,13 +1635,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	And User clicks the "ADD USER" Action button
 	And User clicks the Logout button
 	Then User is logged out
+	When User clicks the Switch to Evergreen link
 	When User clicks on the Login link
 	And User login with following credentials:
 	| Username           | Password  |
 	| automation_admin10 | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
-	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_Admin" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -1666,11 +1664,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	#login as user1 and check if list permission changed
 	When User clicks the Logout button
 	Then User is logged out
+	When User clicks the Switch to Evergreen link
 	When User clicks on the Login link
 	And User login with following credentials:
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
-	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1709,8 +1707,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	And User creates new Widget
 	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16326 | Device List (Complex) - BROKEN LIST | 10      | 10         |
-	Then "Widget_For_DAS16326" Widget is displayed to the user
-	Then User sees "This widget refers to list Users List (Complex) - BROKEN LIST, which has errors" text in warning message on Dashboards page
+	Then User sees "This widget refers to list Device List (Complex) - BROKEN LIST which has errors" text in warning message on Dashboards page
 	Then "Device List (Complex) - BROKEN LIST" link is displayed in warning message on Dashboards page
 	And There are no errors in the browser console
 

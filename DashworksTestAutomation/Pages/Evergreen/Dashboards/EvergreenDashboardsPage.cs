@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenu']")]
         public IWebElement DashboardsSubmenu { get; set; }
         
-        [FindsBy(How = How.XPath, Using = "//div[@id='pagetitle-actions']/button")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-actions']/button")]
         public IWebElement DashboardsDetailsIcon { get; set; }
         
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//td[@class='permission']")]
