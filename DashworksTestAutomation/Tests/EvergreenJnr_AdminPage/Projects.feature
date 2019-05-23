@@ -4119,3 +4119,18 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterSelectingBrokenListToProj
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "Dependant List Filter - BROKEN LIST" in the Scope Project details
 	Then Filling field error with "This list has errors" text is displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Project_Creation_and_Scope @Projects @DAS16744 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectCanBeCreatedAfterUsingSavedDevicesList
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
+	And User create dynamic list with "Melbourne Devices" name on "Devices" page
+	And User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	Then Create Project button is disabled
+	When User enters "Melbourne Migration" in the "Project Name" field
+	Then Create Project button is enabled
+	When User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	
