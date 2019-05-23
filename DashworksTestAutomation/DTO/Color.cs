@@ -8,16 +8,18 @@ namespace DashworksTestAutomation.DTO
 {
     enum Color
     {
-        NONE = 10,
-        GREY = 9,
-        GREEN = 8,
-        PURPLE = 7,
-        REALLYEXTREMELYORANGE = 6,
-        AMBER = 5,
+        NONE = 11,
+        SILVER = 11,
+        GREY = 10,
+        GREEN = 9,
+        PURPLE = 8,
+        ORANGE = 7,
+        AMBER = 6,
+        PINK = 5,
         BROWN = 4,
         RED = 3,
-        LIGHTBLUE = 2,
+        TURQUOISE = 2,
         BLUE = 1,
-        OUTOFSCOPE = 0
+        BLACK = 0
     }
 }

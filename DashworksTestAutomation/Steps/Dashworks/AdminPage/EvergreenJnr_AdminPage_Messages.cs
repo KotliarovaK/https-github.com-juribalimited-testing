@@ -252,6 +252,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             Assert.IsTrue(page.GetFillingFieldErrorByText(text).Displayed(), $"Filling field error with {text} is not displayed");
+            Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetFillingFieldErrorByText(text).GetCssValue("color"));
+            Assert.AreEqual("rgba(242, 88, 49, 1)", page.UnderFieldWarningIcon.GetCssValue("color"));
         }
     }
 }
