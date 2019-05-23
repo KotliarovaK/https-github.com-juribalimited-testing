@@ -121,6 +121,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsNewListButton);
             _driver.MouseHover(listElement.SaveAsNewListButton);
+            _driver.WaitForDataLoading();
             listElement.SaveAsNewListButton.Click();
 
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);

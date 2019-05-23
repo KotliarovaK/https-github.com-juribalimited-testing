@@ -6881,6 +6881,8 @@ this.FeatureBackground();
 #line 1517
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1518
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1654
  testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table121 = new TechTalk.SpecFlow.Table(new string[] {
@@ -6892,7 +6894,6 @@ this.FeatureBackground();
 #line 1519
  testRunner.And("User login with following credentials:", ((string)(null)), table121, "And ");
 #line 1522
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1523
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1524
@@ -6926,6 +6927,8 @@ this.FeatureBackground();
 #line 1538
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1539
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1675
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
@@ -6937,11 +6940,9 @@ this.FeatureBackground();
 #line 1540
  testRunner.And("User login with following credentials:", ((string)(null)), table122, "And ");
 #line 1543
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1544
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1545
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1547
  testRunner.When("Dashboard with \"Dashboard for DAS14841_Read\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1548
@@ -7053,6 +7054,7 @@ this.FeatureBackground();
 #line 1567
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1568
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
  testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
@@ -7064,7 +7066,6 @@ this.FeatureBackground();
 #line 1569
  testRunner.And("User login with following credentials:", ((string)(null)), table124, "And ");
 #line 1572
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1573
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1574
@@ -7091,13 +7092,14 @@ this.FeatureBackground();
  testRunner.And("User select \"Edit\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1585
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1586
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1586
 #line 1587
  testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1588
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1589
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
@@ -7109,7 +7111,6 @@ this.FeatureBackground();
 #line 1590
  testRunner.And("User login with following credentials:", ((string)(null)), table125, "And ");
 #line 1593
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1594
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1595
@@ -7227,7 +7228,10 @@ this.FeatureBackground();
 #line 1617
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1618
- testRunner.And("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1760
+ testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
                         "Username",
@@ -7238,11 +7242,9 @@ this.FeatureBackground();
 #line 1619
  testRunner.And("User login with following credentials:", ((string)(null)), table127, "And ");
 #line 1622
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1623
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1624
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1625
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1626
@@ -7265,13 +7267,14 @@ this.FeatureBackground();
  testRunner.And("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1635
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1636
  testRunner.And("User clicks the \"ADD USER\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1636
 #line 1637
  testRunner.And("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1638
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1639
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
@@ -7283,11 +7286,9 @@ this.FeatureBackground();
 #line 1640
  testRunner.And("User login with following credentials:", ((string)(null)), table128, "And ");
 #line 1643
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1644
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1645
- testRunner.Then("Evergreen Dashboards page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1647
  testRunner.When("Dashboard with \"Dashboard for DAS14841_Admin\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1648
@@ -7349,6 +7350,8 @@ this.FeatureBackground();
 #line 1668
  testRunner.Then("User is logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1669
+ testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1812
  testRunner.When("User clicks on the Login link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table130 = new TechTalk.SpecFlow.Table(new string[] {
@@ -7360,7 +7363,6 @@ this.FeatureBackground();
 #line 1670
  testRunner.And("User login with following credentials:", ((string)(null)), table130, "And ");
 #line 1673
- testRunner.Then("Dashworks homepage is displayed to the user in a logged in state", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1674
  testRunner.When("User clicks the Switch to Evergreen link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1675
@@ -7567,9 +7569,8 @@ this.FeatureBackground();
 #line 1709
  testRunner.And("User creates new Widget", ((string)(null)), table133, "And ");
 #line 1712
- testRunner.Then("\"Widget_For_DAS16326\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1713
  testRunner.Then("User sees \"This widget refers to list Device List (Complex) - BROKEN LIST which h" +
+#line 1713
                     "as errors\" text in warning message on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1714
  testRunner.Then("\"Device List (Complex) - BROKEN LIST\" link is displayed in warning message on Das" +
@@ -7754,71 +7755,6 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
-
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayed" +
-            "ForWidgetHavingBrokenLists")]
-        [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
-        [NUnit.Framework.CategoryAttribute("Widgets")]
-        [NUnit.Framework.CategoryAttribute("DAS16623")]
-        public virtual void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenLists()
-        {
-            System.Exception lastException = null;
-            for (int i = 0; (i <= 1); i = (i + 1))
-            {
-                try
-                {
-                    this.EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenListsInternal();
-                    return;
-                }
-                catch (System.Exception exc)
-                {
-                    lastException = exc;
-                }
-                if (((i + 1)
-                     <= 1))
-                {
-                    testRunner.OnScenarioEnd();
-                }
-            }
-            if ((lastException != null))
-            {
-                throw lastException;
-            }
-        }
-
-        private void EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenListsInternal()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayed" +
-                    "ForWidgetHavingBrokenLists", null, new string[] {
-                        "Evergreen",
-                        "EvergreenJnr_DashboardsPage",
-                        "Widgets",
-                        "DAS16623"});
-#line 1768
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 4
-this.FeatureBackground();
-#line 1769
- testRunner.When("User tries to open same page with \"625\" item id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1770
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1771
- testRunner.And("User sees \"This widget refers to list Users List (Complex) - BROKEN LIST which ha" +
-                    "s errors\" text in \"1\" warning messages on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1772
- testRunner.And("User sees \"This widget refers to list Users List (Complex) - BROKEN LIST which ha" +
-                    "s errors\" text in \"2\" warning messages on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1773
- testRunner.And("User sees \"This widget refers to list Application List (Complex) - BROKEN LIST wh" +
-                    "ich has errors\" text in \"3\" warning messages on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-
     }
 }
 #pragma warning restore
