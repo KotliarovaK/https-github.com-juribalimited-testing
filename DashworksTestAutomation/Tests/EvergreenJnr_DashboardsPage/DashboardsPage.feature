@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Dashboards @Widgets @DAS14358 @DAS14618
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks Ellipsis menu for "Top 10 App Vendors" Widget on Dashboards page
@@ -19,7 +19,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	| Move to section  |
 	| Delete           |
 
-@Evergreen @Dashboards @Sections @DAS14358
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks Ellipsis menu for Section having "Operating System" Widget on Dashboards page
@@ -34,10 +34,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	| Move to position |
 	| Delete           |
 
-@Evergreen @Dashboards @Widgets @DAS14358 @DAS12989
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14358 @DAS12989 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIntoSameSection
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS12989" name
+	When Dashboard with "Dashboard for DAS12989" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD SECTION" Action button
 	And User clicks "ADD WIDGET" button for "1" Section on Dashboards page
 	And User creates new Widget
@@ -63,11 +63,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	| Section2_WidgetForDAS12989_1 |
 	| Section2_WidgetForDAS12989_2 |
 	And User sees number of Widgets increased by "1" on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS12989" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Sections @DAS14358
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated
 	When User clicks Edit mode trigger on Dashboards page
 	And User remembers number of Sections and Widgets on Dashboards page
@@ -77,13 +74,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 	And User sees number of Widgets increased by "4" on Dashboards page
 	When User deletes duplicated Section having "Domain Profile" Widget on Dashboards page
 
-@Evergreen @Dashboards @Widgets @Delete_Newly_Created_List @DAS14668
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName       |
-	| ICSP: i-Schedule |
+	| ColumnName                   |
+	| ICSP: i-stage A \ i-Schedule |
 	And User clicks the Actions button
 	And User select "Hostname" rows in the grid
 	| SelectedRowsName |
@@ -92,27 +89,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	| 00SH8162NAS524   |
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "TestList_DAS14668" name
-	And User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14668" name
+	And Dashboard with "Dashboard for DAS14668" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title                  | List              | SplitBy          | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-Schedule |             | Count             | Count ASC |                  | 5         |            |
+	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | Test_Widget_DAS14668_1 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule |             | Count             | Count ASC |                  | 5         |            |
 	Then User sees widget with the next name "Test_Widget_DAS14668_1" on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title                  | List              | SplitBy          | AggregateBy      | AggregateFunction | OrderBy               | TableOrientation | MaxValues | ShowLegend |
-	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-Schedule | ICSP: i-Schedule | Count distinct    | ICSP: i-Schedule DESC |                  | 20        |            |
+	| WidgetType | Title                  | List              | SplitBy                      | AggregateBy                  | AggregateFunction | OrderBy                           | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | ICSP: i-stage A \ i-Schedule | Count distinct    | ICSP: i-stage A \ i-Schedule DESC |                  | 20        |            |
 	Then User sees widget with the next name "Test_Widget_DAS14668_2" on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14668" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @DAS14586
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14586 @Delete_Newly_Created_Dashboard
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "<DashboardName>" name
+	When Dashboard with "<DashboardName>" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title   | List   | SplitBy   | AggregateBy   | AggregateFunction  | OrderBy   | TableOrientation | MaxValues | ShowLegend   |
@@ -123,10 +116,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidget
 	Then User sees number of Sections increased by "0" on Dashboards page
 	And User sees number of Widgets increased by "1" on Dashboards page
 	And User sees Widget with "<TitleCloned>" name on Dashboards page
-	When User clicks Settings button for "<DashboardName>" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
-
+	
 Examples:
 	| DashboardName                       | Type   | Title                                 | List             | SplitBy       | AggregateBy  | AggregateFunctio | OrderBy                        | TitleCloned                            | ShowLegend |
 	| Dashboard for DAS14586_devices      | Line   | All Devices Widget For DAS_14586      | All Devices      | Hostname      |              | Count            | Count DESC                     | All Devices Widget For DAS_145862      | false      |
@@ -134,12 +124,11 @@ Examples:
 	| Dashboard for DAS14586_applications | Bar    | All Applications Widget For DAS_14586 | All Applications | Application   |              | Count            | Count DESC                     | All Applications Widget For DAS_145862 | true       |
 	| Dashboard for DAS14586_mailboxes    | Column | All Mailboxes Widget For DAS_14586    | All Mailboxes    | Email Address | Mail Server  | Count distinct   | Mail Server Count distinct ASC | All Mailboxes Widget For DAS_145862    | true       |
 
-@Evergreen @Dashboards @DAS14587 @Widgets
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14587 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14587" name
-	Then "New dashboard created" message is displayed
-	When User clicks the "ADD WIDGET" Action button
+	When Dashboard with "Dashboard for DAS14587" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title | List        | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
 	| Pie        |       | All Devices | Device Type | Hostname    | Count distinct    | Device Type ASC |                  | 10        |            |
@@ -149,14 +138,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	| WidgetType | Title                  | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
 	|            | Dashboard for DAS14587 |      |         |             |                   |         |                  |           |            |
 	Then User sees widget with the next name "Dashboard for DAS14587" on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14587" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Sections @DAS14728 @DAS14263
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14728 @DAS14263 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14728" name
+	When Dashboard with "Dashboard for DAS14728" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
@@ -174,14 +160,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	#When User selects "Team 1061" in the Team dropdown
 	#And User select "Admin" in Select Access dropdown
 	#When User clicks the "CANCEL" Action button
-	When User clicks Settings button for "Dashboard for DAS14728" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @Sections @DAS12978
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12978 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS12978" name
+	When Dashboard with "Dashboard for DAS12978" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
@@ -215,14 +198,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	Then User sees following Widgets on Dashboards page:
 	| WidgetTitles               |
 	| WidgetForDAS12978_2_Edited |
-	When User clicks Settings button for "Dashboard for DAS12978" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @Sections @DAS12977
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12977 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS12977" name
+	When Dashboard with "Dashboard for DAS12977" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
@@ -243,14 +223,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	And Dashboards context menu is hidden on Dashboards page
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS12977" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @Sections @DAS14583 @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Delete_Newly_Created_Dashboard @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14583" name
+	When Dashboard with "Dashboard for DAS14583" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
@@ -275,29 +252,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 	| WidgetForDAS14583_3 |
 	| WidgetForDAS14583_1 |
 	| WidgetForDAS14583_2 |
-	When User clicks Settings button for "Dashboard for DAS14583" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @DAS14685 @Widgets
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14685 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14685" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS14685" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
 	| Table      | WidgetForDAS14685 | All Applications | Application | Application | Count distinct    | Application ASC |                  | 10        |            |
 	Then There are no errors in the browser console
-	Then User sees widget with the next name "WidgetForDAS14685" on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14685" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
+	And User sees widget with the next name "WidgetForDAS14685" on Dashboards page
 
-@Evergreen @Dashboards @Widgets @DAS14855
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14855 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingWidget
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14855" name
+	When Dashboard with "Dashboard for DAS14855" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
@@ -306,32 +276,25 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
 	When User clicks Cancel button in Delete Widget warning on Dashboards page
-	And User clicks Settings button for "Dashboard for DAS14855" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
-
-@Evergreen @Dashboards @DAS14578 @DAS14584 @Widgets
+	
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14578" name
-	Then "New dashboard created" message is displayed
-	When User clicks the "ADD WIDGET" Action button
+	When Dashboard with "Dashboard for DAS14578" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title                                                                                                       | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
 	| Table      | Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred and seven | All Applications | Application | Application | Count distinct    | Application ASC | Horizontal       | 10        |            |
 	Then User sees widget with the next name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" on Dashboards page
 	And Widget name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" has word break style on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS14578" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Sections @DAS14610
+@Evergreen @EvergreenJnr_DashboardsPage @DAS14610
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard
 	When User tries to open same page with another item id
 	Then User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
 	And There are no errors in the browser console
 
-@Evergreen @Dashboards @DAS14911 
+@Evergreen @EvergreenJnr_DashboardsPage @DAS14911 
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWithDifferentPermissions
 	When User clicks the "CREATE DASHBOARD" Action button
 	And User creates new Dashboard with "Dashboard for DAS14911" name
@@ -371,7 +334,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	And User clicks Delete button for custom list
 	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @DAS14920 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -381,16 +344,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	| Secure Boot Enabled  |
 	| Windows7Mi: In Scope |
 	When User create dynamic list with "14920_List" name on "Devices" page
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14920" name
-	Then "New dashboard created" message is displayed
-	When User clicks the "ADD WIDGET" Action button
-	When User adds new Widget
+	And Dashboard with "Dashboard for DAS14920" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
 	| WidgetType | Title       | List       | SplitBy             | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Drilldown | Layout |
 	| Table      | DAS-14920_1 | 14920_List | Secure Boot Enabled |             | Count             | Count ASC |                  | 10        |            |           |        |
 	Then Widget Preview is displayed to the user
-	Then There are no errors in the browser console
+	And There are no errors in the browser console
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	And "DAS-14920_1" Widget is displayed to the user
@@ -406,11 +367,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	And "DAS-14920_2" Widget is displayed to the user
 	Then "12,064" count is displayed for "False" in the table Widget
 	And "5,161" count is displayed for "True" in the table Widget
-	When User clicks Settings button for "Dashboard for DAS14920" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @DAS15372 @DAS15317 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Delete_Newly_Created_List @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -432,7 +390,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	Then "WidgetForDAS15372" Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @Dashboards @Widgets @DAS15365 @DAS15352 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Delete_Newly_Created_List @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -471,7 +429,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @Dashboards @Widgets @DAS15364 @DAS15316 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15364 @DAS15316 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -496,7 +454,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCar
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @Dashboards @Widgets @DAS15356 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15356 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -521,7 +479,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15432 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15432 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateListWidgetWithStaticList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -530,20 +488,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsAreDisplayedWhenCreateLis
 	When User select all rows
 	And User selects "Create static list" in the Actions dropdown
 	And User create static list with "Static_List_15432" name
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15432" name
+	And Dashboard with "Dashboard for DAS15432" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS15432 | Static_List_15432 | 500     | 10         |
 	Then "Widget_For_DAS15432" Widget is displayed to the user
 	And There are no errors in the browser console
-	When User clicks Settings button for "Dashboard for DAS15432" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @Widgets @DAS15207
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15207
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnObjectList
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
@@ -556,7 +510,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsCreatedWhenListIsAnOb
 	Then Card "WidgetForDAS15207" Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15413 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15413 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOriginalDynamicLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -575,9 +529,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	| Microsoft |
 	When User create dynamic list with "TestList_DAS15413" name on "Applications" page
 	Then "TestList_DAS15413" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15413" name
+	When Dashboard with "Dashboard for DAS15413" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List              | MaxRows | MaxColumns |
@@ -586,11 +539,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDataFromTheWidgetMatchesTheOrigin
 	Then following content is displayed in the "Vendor" column for Widget
 	| Values                |
 	| Microsoft Corporation |
-	When User clicks Settings button for "Dashboard for DAS15413" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15737 @DAS15662 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15737 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -604,9 +554,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	| prK: Application Readiness |
 	When User create dynamic list with "TestList_DAS15737" name on "Users" page
 	Then "TestList_DAS15737" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15737" name
+	When Dashboard with "Dashboard for DAS15737" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	When User selects "Line" in the "Widget Type" Widget dropdown
 	And User enters "DAS15737" as Widget Title
@@ -618,14 +567,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	Then Colour Scheme dropdown is displayed to the user
 	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
-	When User clicks Settings button for "Dashboard for DAS15737" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15721 @DAS15937 @Not_Ready
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @Delete_Newly_Created_Dashboard @Not_Ready
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15721" name
+	When Dashboard with "Dashboard for DAS15721" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title    | List      | MaxRows | MaxColumns |
@@ -699,15 +645,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	| Move to position |
 	| Delete           |
 	Then "Duplicate" Ellipsis menu item is disabled on Dashboards page
-	When User clicks Settings button for "Dashboard for DAS15721" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16073
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16073 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS16073" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS16073" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
@@ -717,14 +659,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	Then link is not displayed for the "CAS" value in the Widget
 	Then link is not displayed for the "WIN-43TMG2KMRBI" value in the Widget
 	Then link is not displayed for the "WIN81PRO" value in the Widget
-	When User clicks Settings button for "Dashboard for DAS16073" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15900
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15900" name
+	When Dashboard with "Dashboard for DAS15900" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title             | List             | SplitBy | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
@@ -738,13 +677,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	Then User sees "You have unsaved changes. Are you sure you want to leave the page?" text in alert on Edit Widget page
 	When User clicks "NO" button in Unsaved Changes alert
 	Then Unsaved Changes alert not displayed to the user
-	#delete test dashboard
-	When User clicks Settings button for "Dashboard for DAS15900" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
-	And User clicks "YES" button in Unsaved Changes alert
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15918
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15918
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalfDonut
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
@@ -758,7 +692,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalf
 	| Count ASC                   |
 	| Count DESC                  |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16138
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
@@ -777,7 +711,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	Then "1803: Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	And "Any Device in list 1803 Rollout" is displayed in added filter info
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceListFilteredPage
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -793,10 +727,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| 1803: Scheduled Date |
 	And User create dynamic list with "1803 ScheduleDAS16069" name on "Devices" page
 	Then "1803 ScheduleDAS16069" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "1803 ProjectDAS16069" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "1803 ProjectDAS16069" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title                    | List                  | Type | AggregateBy | AggregateFunction | SplitBy              | OrderBy                  | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -821,12 +753,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| Owner Display Name   |
 	| 1803: Scheduled Date |	
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicationsListFilteredPage
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS16069_1" name
-	Then "New dashboard created" message is displayed
-	When User clicks the "ADD WIDGET" Action button
+	When Dashboard with "Dashboard for DAS16069_1" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List             | SplitBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
 	| Table      | WidgetForDAS16069_1 | All Applications | Vendor  | Count             | Count DESC |                  | 500       |
@@ -840,7 +771,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicati
 	| Vendor      |
 	| Version     |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16069 @DAS15134 @DAS15355
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @DAS15134 @DAS15355 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicationsListFilteredPage
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -857,44 +788,42 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When User removes "Application" column by Column panel
-	When User removes "Vendor" column by Column panel
-	When User removes "Version" column by Column panel
-	When User removes "1803: In Scope" column by Column panel
+	And User removes "Vendor" column by Column panel
+	And User removes "Version" column by Column panel
+	And User removes "1803: In Scope" column by Column panel
 	And User click on 'Compliance' column header
 	And User create custom list with "1803 App Compliance" name
 	Then "1803 App Compliance" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS16069_2" name
-	Then "New dashboard created" message is displayed
-	When User clicks the "ADD WIDGET" Action button
-	When User selects "Card" in the "Widget Type" Widget dropdown
+	When Dashboard with "Dashboard for DAS16069_2" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Card" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS16069" as Widget Title
 	And User selects "1803 App Compliance" as Widget List
 	When User selects "First Cell" in the "Type" Widget dropdown
 	Then Colour Scheme dropdown is not displayed to the user
 	When User selects "Text Only" in the "Layout" Widget dropdown
 	Then Text Only is displayed for Card widget
-	Then "Red" color is displayed for Card Widget
+	And "Red" color is displayed for Card Widget
 	When User clicks the "CREATE" Action button
 	Then Text Only is displayed for Card widget
-	Then "Red" color is displayed for Card Widget
+	And "Red" color is displayed for Card Widget
 	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	When User selects "Icon and Text" in the "Layout" Widget dropdown
+	And User selects "Icon and Text" in the "Layout" Widget dropdown
 	Then Icon and Text is displayed for Card widget
-	Then "Red" color is displayed for Card Widget
+	And "Red" color is displayed for Card Widget
 	When User clicks the "UPDATE" Action button
 	Then "Red" color is displayed for Card Widget
-	Then Icon and Text is displayed for Card widget
+	And Icon and Text is displayed for Card widget
 	When User clicks Ellipsis menu for "WidgetForDAS16069" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	When User selects "Icon Only" in the "Layout" Widget dropdown
+	And User selects "Icon Only" in the "Layout" Widget dropdown
 	Then Icon Only is displayed for Card widget
-	Then "Red" color is displayed for Card Widget
+	And "Red" color is displayed for Card Widget
 	When User clicks the "UPDATE" Action button
 	Then "Red" color is displayed for Card Widget
-	Then Icon Only is displayed for Card widget
+	And Icon Only is displayed for Card widget
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title               | List                | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -907,10 +836,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValuesLeadsToApplicatio
 	Then Save as a new list option is available
 	And "43" rows are displayed in the agGrid
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15134 @DAS16263
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15134 @DAS16263 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEvergreenColours
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15134" name
+	When Dashboard with "Dashboard for DAS15134" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	When User selects "Card" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS15134" as Widget Title
@@ -926,11 +855,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 	When User selects "Amber" in the Colour Scheme
 	When User clicks the "UPDATE" Action button
 	Then "Amber" color is displayed for widget
-	When User clicks Settings button for "Dashboard for DAS15134" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 	
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15920 @DAS15662
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Columns button
@@ -940,11 +866,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	| Compliance                    |
 	And User create dynamic list with "ListForDas15920" name on "Users" page
 	Then "ListForDas15920" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "DashboardForDas15920" name
-	Then "New dashboard created" message is displayed
-	When User clicks the "ADD WIDGET" Action button
+	When Dashboard with "DashboardForDas15920" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title                 | List            | Type | AggregateBy | AggregateFunction | SplitBy                       | OrderBy                           | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
 	| Line       | LineWidgetForDas15920 | ListForDas15920 |      |             | Count             | Device Application Compliance | Device Application Compliance ASC |           |            |                  | Yes       |        |
@@ -954,7 +878,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	Then Card "LineWidgetForDas15920" Widget is displayed to the user
 	And Line chart displayed in "LineWidgetForDas15920" widget
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15722
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -966,10 +890,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	And User click on 'Build Date' column header
 	And User create dynamic list with "ListForDas15722" name on "Devices" page
 	Then "ListForDas15722" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "DashboardForDas15722" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "DashboardForDas15722" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -983,7 +905,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDispla
 	And User clicks data in card "WidgetForDAS15722" widget
 	Then "1" rows are displayed in the agGrid
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS15355 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Columns button
@@ -1000,44 +922,33 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	Then "Applications" list should be displayed to the user
 	When User create dynamic list with "DAS15355_Applications_List" name on "Applications" page
 	Then "DAS15355_Applications_List" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard_DAS15355" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard_DAS15355" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List                       | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout    |
 	| Card       | WidgetForDAS15355 | DAS15355_Applications_List | First Cell |             |                   |         |         |           |            |                  |           | Text Only |
 	Then Widget Preview is displayed to the user
 	And Text Only is displayed for Card widget
-	
 	And "Amber" color is displayed for Card Widget
-	
 	When User clicks the "CREATE" Action button
 	Then Text Only is displayed for Card widget
 	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	When User selects "Icon and Text" in the "Layout" Widget dropdown
 	Then Icon and Text is displayed for Card widget
-	
 	Then "Amber" color is displayed for Card Widget
-	
 	When User clicks the "UPDATE" Action button
 	Then Icon and Text is displayed for Card widget
 	When User clicks Ellipsis menu for "WidgetForDAS15355" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	When User selects "Icon Only" in the "Layout" Widget dropdown
 	Then Icon Only is displayed for Card widget
-	
 	Then "Amber" color is displayed for Card Widget
-	
 	When User clicks the "UPDATE" Action button
 	Then Icon Only is displayed for Card widget
-	When User clicks Settings button for "Dashboard_DAS15355" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
-
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS15355 @DAS15662
+	
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1052,10 +963,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User removes "Owner Display Name" column by Column panel
 	And User create dynamic list with "DAS15355_List" name on "Devices" page
 	Then "DAS15355_List" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard_DAS15355_1" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard_DAS15355_1" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	When User selects "Card" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS15355_1" as Widget Title
@@ -1084,14 +993,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks the "UPDATE" Action button
 	Then "Grey" color is displayed for Card Widget
 	Then Icon Only is displayed for Card widget
-	When User clicks Settings button for "Dashboard_DAS15355_1" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15662
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15662 @Delete_Newly_Created_Dashboard
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "DAS15662_Dashboard" name
+	When Dashboard with "DAS15662_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	When User selects "<WidgetType>" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS15662" as Widget Title
@@ -1112,9 +1018,6 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	Then "Data Label" checkbox is checked on the Create Widget page
 	Then Data Labels are displayed on the Dashboards page
 	Then "<DataLabel>" data label is displayed on the Dashboards page
-	When User clicks Settings button for "DAS15662_Dashboard" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
 Examples:
 	| WidgetType | DataLabel      |
@@ -1122,7 +1025,7 @@ Examples:
 	| Half donut | 00RUUMAH9OZN9A |
 	| Donut      | 00RUUMAH9OZN9A |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16266
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks "Devices" on the left-hand menu
 	When User click on 'Owner Display Name' column header
@@ -1133,9 +1036,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	When User removes "Operating System" column by Column panel
 	And User create dynamic list with "DAS16266_List" name on "Devices" page
 	Then "DAS16266_List" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "DAS16266_Dashboard" name
+	When Dashboard with "DAS16266_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	When User selects "Card" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS16266" as Widget Title
@@ -1148,7 +1050,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	And User clicks Delete button on the warning message in the lists panel
 	Then Search field in selected Filter is empty
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15200
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	When User clicks "print"  button on the Dashboards page
 	Then Print Preview is displayed to the User
@@ -1162,7 +1064,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	Then Print Preview is displayed in Landscape orientation
 	When User clicks Cancel button on the Print Preview Settings pop-up
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15914
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15914 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellSelected
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1180,10 +1082,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User move 'Hostname' column to 'Device Type' column
 	And User create dynamic list with "DeviceListFor15914" name on "Devices" page
 	Then "DeviceListFor15914" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15914" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS15914" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -1191,7 +1091,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	Then Widget Preview is displayed to the user
 	Then Widget Preview shows "READY" as First Cell value
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15544
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1200,10 +1100,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| Service Pack or Build |
 	And User create dynamic list with "ListForDas15544" name on "Devices" page
 	Then "ListForDas15544" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "1803 ProjectDAS15544" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "1803 ProjectDAS15544" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title                     | List            | Type | AggregateBy | AggregateFunction | SplitBy               | OrderBy                   | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -1223,11 +1121,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronological
 	| Windows 8.1            |
 	| 1507                   |
 	| 1607                   |
-	When User clicks Settings button for "1803 ProjectDAS15544" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16127
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16127 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenListHasReadinessColumnFirst
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1242,10 +1137,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User move 'Hostname' column to 'Operating System' column
 	And User create dynamic list with "DeviceListFor16127" name on "Devices" page
 	Then "DeviceListFor16127" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS16127" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS16127" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -1254,7 +1147,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "RED" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15765
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15765 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsEmpty
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1270,10 +1163,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User move 'Hostname' column to 'Operating System' column
 	And User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS15765" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS15765" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -1282,7 +1173,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "Empty" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen @Dashboards @Widgets @DAS15208
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15208
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPreviewPane
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
@@ -1294,7 +1185,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPrevie
 	And Table widget displayed inside preview pane correctly
 	And There are no errors in the browser console
 	
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS15462
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15462
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCount
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
@@ -1310,7 +1201,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 	| WidgetName                 | NumberOfPoint | Tooltip     |
 	| Project AllDevicesDAS15462 | 2             | OS X 10.5 1 |
 	
-	@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS14618
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
@@ -1331,7 +1222,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks "Dashboards" navigation link on the Admin page
 	Then "Device Profile" Widget is displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16336 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingApplicationReadinessFirstCellWidget
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1347,10 +1238,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	And User click on 'MigrationP: Application Readiness' column header
 	And User create dynamic list with "DAS16336_Applications_List" name on "Applications" page
 	Then "DAS16336_Applications_List" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard_DAS16336" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard_DAS16336" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	When User selects "Card" in the "Widget Type" Widget dropdown
 	And User enters "WidgetForDAS16336" as Widget Title
@@ -1381,27 +1270,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then There are no errors in the browser console
 	Then "Really Extremely Orange" color is displayed for Card Widget
 	Then Icon and Text is displayed for Card widget
-	When User clicks Settings button for "Dashboard_DAS16336" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS16275
+@Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                        |
-	| Windows7Mi: Scheduled Date (Slot) |
+	| ColumnName                                        |
+	| Windows7Mi: Pre-Migration \ Scheduled Date (Slot) |
 	And User create dynamic list with "Devices_List_DAS16275" name on "Devices" page
 	Then "Devices_List_DAS16275" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "DAS16275_Dashboard" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "DAS16275_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title           | List                  | SplitBy                           | AggregateFunction | AggregateBy | OrderBy   | MaxValues | TableOrientation | ShowLegend | Layout |
-	| Table      | DAS16275_Widget | Devices_List_DAS16275 | Windows7Mi: Scheduled Date (Slot) | Count             |             | Count ASC |           | Vertical         |            |        |
+	| WidgetType | Title           | List                  | SplitBy                                           | AggregateFunction | AggregateBy | OrderBy   | MaxValues | TableOrientation | ShowLegend | Layout |
+	| Table      | DAS16275_Widget | Devices_List_DAS16275 | Windows7Mi: Pre-Migration \ Scheduled Date (Slot) | Count             |             | Count ASC |           | Vertical         |            |        |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then "DAS16275_Widget" Widget is displayed to the user
@@ -1419,11 +1303,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	| Empty                         |
 	| Slot 2018-11-01 - 2020-12-26  |
 	| Slot 2018-10-01 to 2018-12-31 |
-	When User clicks Settings button for "DAS16275_Dashboard" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS16380
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16380 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1436,9 +1317,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	When User click on 'Hostname' column header
 	And User create dynamic list with "Second_List_DAS16380" name on "Devices" page
 	Then "Second_List_DAS16380" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS16380" name
+	When Dashboard with "Dashboard for DAS16380" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List                | MaxRows | MaxColumns |
@@ -1455,11 +1335,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	And User enters "Widget_For_DAS16380_1" as Widget Title
 	And User selects "Second_List_DAS16380" as Widget List
 	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
-	When User clicks Settings button for "Dashboard for DAS16380" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPermisson
 	#create private list
 	When User clicks "Devices" on the left-hand menu
@@ -1470,10 +1347,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	And User create dynamic list with "DeviceListFor14841" name on "Devices" page
 	Then "DeviceListFor14841" list is displayed to user
 	#create dashboard
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14841" name
-	Then "New dashboard created" message is displayed	
+	When Dashboard with "Dashboard for DAS14841" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	#add widget
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -1510,12 +1385,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	When User clicks the "CANCEL" button on Permissions Pop-up
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Private" displayed in Dashboard Details
-	#teardown
-	When User clicks Settings button for "Dashboard for DAS14841" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
-
-@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 
+	
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissionPoup
 	#create private list
 	When User clicks "Devices" on the left-hand menu
@@ -1526,10 +1397,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	And User create dynamic list with "DeviceListFor14841_1" name on "Devices" page
 	Then "DeviceListFor14841_1" list is displayed to user
 	#create dashboard
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14841_1" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS14841_1" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	#add widget
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -1553,7 +1422,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	Then List details panel is displayed to the user
 	And "Private" sharing option is selected
 
-@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPoup
 	#create private list
 	When User clicks "Devices" on the left-hand menu
@@ -1564,10 +1433,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	And User create dynamic list with "DeviceListFor14841_2" name on "Devices" page
 	Then "DeviceListFor14841_2" list is displayed to user
 	#create dashboard
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14841_2" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS14841_2" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	#add widget
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -1591,7 +1458,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
 
-@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow
 	#create private list#1
 	When User clicks "Devices" on the left-hand menu
@@ -1610,10 +1477,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	And User create dynamic list with "DeviceListFor14841_4" name on "Devices" page
 	Then "DeviceListFor14841_4" list is displayed to user
 	#create dashboard
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14841_3" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS14841_3" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	#add widget#1
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -1647,7 +1512,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then List details panel is displayed to the user
 	And "Private" sharing option is selected
 
-@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 @DAS14393
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User clicks the Logout button
 	And User clicks on the Login link
@@ -1679,11 +1544,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14841_Read" name
-	Then "New dashboard created" message is displayed
-	When User clicks Edit mode trigger on Dashboards page
+	When Dashboard with "Dashboard for DAS14841_Read" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
@@ -1700,7 +1562,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	And New Permission dropdown has disabled property "true" for "DeviceListFor14841_Read" list on Permissions Pop-up
 	And New Permission dropdown has "You cannot change the permission for this list" tooltip for "DeviceListFor14841_Read" list on Permissions Pop-up
 
-@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 @DAS14282
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14282 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList
 	When User clicks the Logout button
 	And User clicks on the Login link
@@ -1732,11 +1594,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14841_Edit" name
-	Then "New dashboard created" message is displayed
-	When User clicks Edit mode trigger on Dashboards page
+	When Dashboard with "Dashboard for DAS14841_Edit" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title                  | List                    | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
@@ -1753,7 +1612,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	And New Permission dropdown has disabled property "true" for "DeviceListFor14841_Edit" list on Permissions Pop-up
 	And New Permission dropdown has "You cannot change the permission for this list" tooltip for "DeviceListFor14841_Edit" list on Permissions Pop-up
 
-@Evergreen @Dashboards @DashboardsPage @Widgets @Delete_Newly_Created_List @DAS14841 @DAS11120
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
 	When User clicks the Logout button
 	And User clicks on the Login link
@@ -1785,11 +1644,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
 	#create dashboard
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14841_Admin" name
-	Then "New dashboard created" message is displayed
-	When User clicks Edit mode trigger on Dashboards page
+	When Dashboard with "Dashboard for DAS14841_Admin" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title                   | List                     | SplitBy  | AggregateFunction | OrderBy    | TableOrientation | MaxValues |
@@ -1823,7 +1679,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16325
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1835,10 +1691,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User click on 'ICSP: In Scope' column header
 	And User create dynamic list with "DeviceListFor16325" name on "Devices" page
 	Then "DeviceListFor16325" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS16325" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "Dashboard for DAS16325" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
@@ -1847,11 +1701,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "TRUE" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @DAS16326
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
-	When User clicks "Dashboards" on the left-hand menu
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard_DAS16326" name
+	When Dashboard with "Dashboard_DAS16326" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title               | List                                | MaxRows | MaxColumns |
@@ -1860,11 +1713,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	Then User sees "This widget refers to list Users List (Complex) - BROKEN LIST, which has errors" text in warning message on Dashboards page
 	Then "Device List (Complex) - BROKEN LIST" link is displayed in warning message on Dashboards page
 	And There are no errors in the browser console
-	When User clicks Settings button for "Dashboard for DAS15432" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
-@Evergreen @Evergreen @EvergreenJnr_DashboardsPage @DashboardsPage @Dashboards @Widgets @Delete_Newly_Created_List @DAS16278
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16278 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1879,10 +1729,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| TRUE               |
 	And User create dynamic list with "ListForDAS16278" name on "Devices" page
 	Then "ListForDAS16278" list is displayed to user
-	When User clicks "Dashboards" on the left-hand menu
-	And User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "DAS16278_Dashboard" name
-	Then "New dashboard created" message is displayed
+	When Dashboard with "DAS16278_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title           | List            | SplitBy            | AggregateBy         | AggregateFunction | OrderBy                | MaxValues | ShowLegend | TableOrientation | Layout |
@@ -1915,6 +1763,3 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Forecast     |
 	| Onboarded    |
 	| NotOnboarded |
-	When User clicks Settings button for "DAS16278_Dashboard" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
