@@ -72,6 +72,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create Project button is active");
         }
 
+        [Then(@"Create Project button is enabled")]
+        public void ThenCreateProjectButtonIsEnabled()
+        {
+            var button = _driver.NowAt<CreateProjectPage>();
+            _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => button.CreateProjectButton);
+            Assert.IsFalse(Convert.ToBoolean(button.CreateProjectButton.GetAttribute("disabled")),
+                "Create Project button is active");
+        }
+
         [Then(@"Update Project button is active")]
         public void ThenUpdateProjectButtonIsActive()
         {
