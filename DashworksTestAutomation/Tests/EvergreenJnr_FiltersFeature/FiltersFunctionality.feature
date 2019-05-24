@@ -160,7 +160,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsUncheckedAfterSav
 	Then "Add column" checkbox is unchecked
 	And "Add column" checkbox is not disabled
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507 @DAS12221 @DAS12351 @Not_Run
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS10977 @DAS11507 @DAS12221 @DAS12351 @archived
 Scenario Outline: EvergreenJnr_AllLists_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowserBackButtonForCheckboxesFilters
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
@@ -1555,7 +1555,7 @@ Scenario: EvergreenJnr_UsersList_PrimaryDeviceChipsCanBeRemoved
 	When User closes "Text" Chip item in the Filter panel
 	Then Chip box is not displayed in the Filter panel
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -1576,7 +1576,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListed
 	| Project Tasks: EmailMigra  |
 	| Project Stages: EmailMigra |
 
-@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
+@Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Filters button
@@ -1593,7 +1593,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCa
 	| Project Tasks: EmailMigra  | 9      |
 	| Project Stages: EmailMigra | 3      |
 
-@Evergreen @Applicatios @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
+@Evergreen @Applicatios @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Filters button
@@ -1615,7 +1615,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveL
 	| Project Tasks: EmailMigra  | 5      |
 	| Project Stages: EmailMigra | 1      |
 
-@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_FilterFeature @FilterFunctionality @DAS14969 @archived
 Scenario: EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Filters button

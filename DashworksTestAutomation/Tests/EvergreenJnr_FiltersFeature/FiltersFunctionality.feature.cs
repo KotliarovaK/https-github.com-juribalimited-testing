@@ -806,7 +806,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11507")]
         [NUnit.Framework.CategoryAttribute("DAS12221")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Babel(Engl: Category", "None", "17,225", "Hostname", "01COJATLYVAR7A6", "Babel(Engl: Category is None", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Barry\'sUse: In Scope", "FALSE", "15,896", "Hostname", "00BDM1JUR8IF419", "Barry\'sUse: In Scope is false", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", null)]
@@ -850,7 +850,7 @@ this.FeatureBackground();
                     "DAS11507",
                     "DAS12221",
                     "DAS12351",
-                    "Not_Run"};
+                    "archived"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -6640,7 +6640,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
         {
             System.Exception lastException = null;
@@ -6675,7 +6675,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS14969",
-                        "Not_Run"});
+                        "archived"});
 #line 1559
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6740,7 +6740,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_UsersList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
         {
             System.Exception lastException = null;
@@ -6775,7 +6775,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS14969",
-                        "Not_Run"});
+                        "archived"});
 #line 1580
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6833,7 +6833,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
         {
             System.Exception lastException = null;
@@ -6869,7 +6869,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS14969",
-                        "Not_Run"});
+                        "archived"});
 #line 1597
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6927,7 +6927,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS14969")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatFilterPanelDoesHaveAndNotHaveListedCategories()
         {
             System.Exception lastException = null;
@@ -6963,7 +6963,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS14969",
-                        "Not_Run"});
+                        "archived"});
 #line 1619
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

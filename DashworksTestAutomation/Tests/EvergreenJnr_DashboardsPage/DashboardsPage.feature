@@ -223,7 +223,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When Dashboard with "Dashboard for DAS14583" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
