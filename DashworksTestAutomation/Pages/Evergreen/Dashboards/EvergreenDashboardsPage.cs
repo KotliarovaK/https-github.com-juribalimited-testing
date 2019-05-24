@@ -46,6 +46,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
         public IWebElement SelectSectionDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-container']/form")]
+        public IWebElement UserTeamSectionOnDashboardDetails { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//table//td[contains(@class, 'splitValue')]//span")]
         public IList<IWebElement> TableWidgetContent { get; set; }
 
@@ -178,6 +181,12 @@ namespace DashworksTestAutomation.Pages
                 $".//span[text()='{buttonLabel}']/ancestor::button");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElements(selector);
+        }
+
+        public IWebElement GetDashboardDetailsButtonsByName(string buttonLabel)
+        {
+            var selector = By.XPath($".//div[@class='context-container']//span[text()='{buttonLabel}']/ancestor::button");
+            return Driver.FindElement(selector);
         }
 
         public IWebElement GetEllipsisMenuForWidget(string widgetName)
