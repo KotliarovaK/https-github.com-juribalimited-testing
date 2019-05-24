@@ -94,9 +94,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-bar']")]
         public IWebElement EditModeSlideBar { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
-        public IWebElement SelectSectionDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div[@class='mat-slide-toggle-thumb']")]
         public IWebElement EditModeSlideToggle { get; set; }
 
@@ -135,10 +132,6 @@ namespace DashworksTestAutomation.Pages
         
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
-
-
-        [FindsBy(How = How.XPath, Using = ".//app-dialog/h1[text()='Move to Section']")]
-        public IWebElement MoveToSectionPopUp { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -494,13 +487,6 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'widgetNames')]/span"));
         }
 
-        public void SelectSectionToMove(string sectionName)
-        {
-            SelectSectionDropdown.Click();
-            var selector = $".//mat-option//span[text()='{sectionName}']";
-            Driver.FindElement(By.XPath(selector)).Click();
-        }
-
         public IWebElement OwnerValueForList(string listName)
         {
             return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//td[contains(@class, 'ownerName')]"));
@@ -514,12 +500,6 @@ namespace DashworksTestAutomation.Pages
         public IWebElement NewPermissionsValueForList(string listName)
         {
             return Driver.FindElement(By.XPath($".//td[contains(text(), '{listName}')]/parent::tr//mat-select[@aria-label='New Permissions']//span[not (contains(@class, 'mat-select'))]"));
-        }
-
-        public void ClickMoveToSectionPopUpButton(string buttonName)
-        {
-            var listNameSelector = $".//div[@class='mat-dialog-actions']/button/span[text()='{buttonName}']";
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public string GetDropdownStateOfReviewWidgetPermissionsPopup(string listName)
