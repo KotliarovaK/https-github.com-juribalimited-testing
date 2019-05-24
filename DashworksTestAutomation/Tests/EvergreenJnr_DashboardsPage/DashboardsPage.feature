@@ -151,15 +151,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	And User clicks Ellipsis menu for Section having "WidgetForDAS14728" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
 	Then User sees number of Widgets with Legend increased by "1" on Dashboards page
-	#Uncomment after DAS14263 implemented
-	#When User clicks Settings button for "Dashboard for DAS14728" dashboard
-	#When User clicks Manage in the list panel
-	#Then Permission panel is displayed to the user
-	#When User changes sharing type from "Private" to "Specific users / teams"
-	#When User clicks the "ADD TEAMS" Action button
-	#When User selects "Team 1061" in the Team dropdown
-	#And User select "Admin" in Select Access dropdown
-	#When User clicks the "CANCEL" Action button
+	When User clicks Dashboards Details icon on Dashboards page
+	Then Permission panel is displayed to the user
+	When User changes sharing type from "Private" to "Specific users / teams"
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "Team 1061" team for sharing
+	And User select "Admin" in Select Access dropdown
+	When User clicks the "CANCEL" button on Dashboard Details
+	Then Team/User section in not displayed on Dashboard Details
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12978 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
@@ -224,7 +223,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When Dashboard with "Dashboard for DAS14583" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -1777,14 +1776,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks the "UPDATE" Action button
 	Then Card "DAS16278_Widget" Widget is displayed to the user
 	Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
-	| ColumnName   |
-	| Offboarded   |
-	| Complete     |
-	| Migrated     |
-	| Scheduled    |
-	| Targeted     |
-	| Forecast     |
-	| Onboarded    |
+	| ColumnName    |
+	| Offboarded    |
+	| Complete      |
+	| Migrated      |
+	| Scheduled     |
+	| Targeted      |
+	| Forecast      |
+	| Onboarded     |
 	| Not Onboarded |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
@@ -1794,3 +1793,41 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTe
 	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
 	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
 	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "3" warning messages on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                   |
+	| UserEvergr: Ring (All Users) |
+	And User create dynamic list with "DeviceListForDAS15826" name on "Devices" page
+	Then "DeviceListForDAS15826" list is displayed to user
+	When Dashboard with "DAS15826_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation | MaxValues |
+	| Table      | DAS15826_Widget | DeviceListForDAS15826 | UserEvergr: Ring (All Users) | Count             | UserEvergr: Ring (All Users) ASC | Vertical         |           |
+	Then Card "DAS15826_Widget" Widget is displayed to the user
+	Then content in the Widget is displayed in following order:
+	| TableValue       |
+	| Empty            |
+	| Unassigned       |
+	| Unassigned2      |
+	| Evergreen Ring 1 |
+	| Evergreen Ring 2 |
+	| Evergreen Ring 3 |
+	When User clicks Ellipsis menu for "DAS15826_Widget" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "UserEvergr: Ring (All Users) DESC" in the "Order By" Widget dropdown
+	When User clicks the "UPDATE" Action button
+	Then Card "DAS15826_Widget" Widget is displayed to the user
+	Then content in the Widget is displayed in following order:
+	| TableValue       |
+	| Evergreen Ring 3 |
+	| Evergreen Ring 2 |
+	| Evergreen Ring 1 |
+	| Unassigned2      |
+	| Unassigned       |
+	| Empty            |

@@ -313,6 +313,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetButtonsByName(buttonLabel).ElementAt(section - 1).Click();
         }
 
+        [When(@"User clicks the ""(.*)"" button on Dashboard Details")]
+        public void WhenUserClicksTheButtonOnDashboardDetails(string buttonName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.GetDashboardDetailsButtonsByName(buttonName).Click();
+        }
+
+        [Then(@"Team/User section in not displayed on Dashboard Details")]
+        public void ThenTeamUserSectionInNotDisplayedOnDashboardDetails()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.IsFalse(page.UserTeamSectionOnDashboardDetails.Displayed(), "Team/User section in not displayed");
+        }
+
         [Then(@"User sees widget with the next name ""(.*)"" on Dashboards page")]
         public void ThenUserSeesWidgetWithTheNextNameOnDashboardsPage(string widgetName)
         {

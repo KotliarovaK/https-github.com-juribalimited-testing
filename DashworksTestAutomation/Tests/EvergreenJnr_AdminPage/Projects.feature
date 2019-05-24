@@ -3809,7 +3809,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	Then "Create Project" page should be displayed to the user
 	When User enters "13510TestProject" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks Create button on the Create Project page
+	When User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "13510TestProject" is displayed to user
@@ -4134,6 +4134,10 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterSelectingBrokenListToProj
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "Users List (Complex) - BROKEN LIST" in the Scope Project details
 	Then Filling field error with "This list has errors" text is displayed
+	When User selects "Automated Onboarding" tab on the Project details page
+	When User selects "Scope Details" tab on the Project details page
+	Then "All Users" content is displayed in "Scope" dropdown
+	Then Filling field error is not displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Project_Creation_and_Scope @Projects @DAS16744 @Delete_Newly_Created_List @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectCanBeCreatedAfterUsingSavedDevicesList
