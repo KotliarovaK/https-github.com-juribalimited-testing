@@ -643,6 +643,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	| Move to start    |
 	| Move to end      |
 	| Move to position |
+	| Move to section  |
 	| Delete           |
 	Then "Duplicate" Ellipsis menu item is disabled on Dashboards page
 
@@ -683,22 +684,22 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByShowsCorrectOptionsForHalf
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List         | Type | AggregateBy | AggregateFunction | SplitBy                | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Half donut | WidgetForDAS15918 | 1803 Rollout |      |             | Count             | 1803: Ready to Migrate |         |           |            |                  |           |        |
+	| WidgetType | Title             | List         | Type | AggregateBy | AggregateFunction | SplitBy                                | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
+	| Half donut | WidgetForDAS15918 | 1803 Rollout |      |             | Count             | 1803: Pre-Migration \ Ready to Migrate |         |           |            |                  |           |        |
 	Then User sees following options for Order By selector on Create Widget page:
-	| items                       |
-	| 1803: Ready to Migrate ASC  |
-	| 1803: Ready to Migrate DESC |
-	| Count ASC                   |
-	| Count DESC                  |
+	| items                                       |
+	| 1803: Pre-Migration \ Ready to Migrate ASC  |
+	| 1803: Pre-Migration \ Ready to Migrate DESC |
+	| Count ASC                                   |
+	| Count DESC                                  |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16138
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilteredPage
 	When User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title             | List         | Type      | AggregateBy          | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Scheduled Date | First             |         |         |           |            |                  | Yes       |        |
+	| WidgetType | Title             | List         | Type      | AggregateBy                          | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
+	| Card       | WidgetForDAS16138 | 1803 Rollout | Aggregate | 1803: Pre-Migration \ Scheduled Date | First             |         |         |           |            |                  | Yes       |        |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "WidgetForDAS16138" Widget is displayed to the user
@@ -708,7 +709,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetValueLeadsToCorrectFilt
 	When User selects Save as new list option
 	Then "8" rows are displayed in the agGrid
 	When User clicks the Filters button
-	Then "1803: Scheduled Date is 5 Nov 2018" is displayed in added filter info
+	Then "1803: Pre-Migration \ Scheduled Date is 5 Nov 2018" is displayed in added filter info
 	And "Any Device in list 1803 Rollout" is displayed in added filter info
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
@@ -723,16 +724,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	And User clicks Save filter button
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
-	| 1803: Scheduled Date |
+	| ColumnName                           |
+	| 1803: Pre-Migration \ Scheduled Date |
 	And User create dynamic list with "1803 ScheduleDAS16069" name on "Devices" page
 	Then "1803 ScheduleDAS16069" list is displayed to user
 	When Dashboard with "1803 ProjectDAS16069" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	When User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
-	| WidgetType | Title                    | List                  | Type | AggregateBy | AggregateFunction | SplitBy              | OrderBy                  | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
-	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 |      | Hostname    | Count distinct    | 1803: Scheduled Date | 1803: Scheduled Date ASC |           |            |                  | Yes       |        |
+	| WidgetType | Title                    | List                  | Type | AggregateBy | AggregateFunction | SplitBy                              | OrderBy                                  | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
+	| Line       | Project ScheduleDAS16069 | 1803 ScheduleDAS16069 |      | Hostname    | Count distinct    | 1803: Pre-Migration \ Scheduled Date | 1803: Pre-Migration \ Scheduled Date ASC |           |            |                  | Yes       |        |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then Card "Project ScheduleDAS16069" Widget is displayed to the user
@@ -746,12 +747,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	Then Save as a new list option is available
 	And "4" rows are displayed in the agGrid
 	And Column is displayed in following order:
-	| ColumnName           |
-	| Hostname             |
-	| Device Type          |
-	| Operating System     |
-	| Owner Display Name   |
-	| 1803: Scheduled Date |	
+	| ColumnName                           |
+	| Hostname                             |
+	| Device Type                          |
+	| Operating System                     |
+	| Owner Display Name                   |
+	| 1803: Pre-Migration \ Scheduled Date |	
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicationsListFilteredPage
