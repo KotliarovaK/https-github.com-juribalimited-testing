@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.Extensions;
@@ -132,6 +133,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             SortingHelper.IsListSorted(expectedList);
             _driver.WaitForDataLoading();
             Assert.IsTrue(adminTable.DescendingSortingIcon.Displayed);
+        }
+
+        [Then(@"Data in table is sorted by ""(.*)"" column in the next way")]
+        public void ThenDataInTableIsSortedInTheNextWay(string columnName, Table table)
+        {
+            var adminTable = _driver.NowAt<BaseDashboardPage>();
+            var actualList = adminTable.GetColumnContent(columnName).Distinct().ToList();
+            var expectedList = table.Rows.SelectMany(row => row.Values).Where(x => !x.Equals(String.Empty)).ToList();
+
+            Assert.That(expectedList, Is.EqualTo(actualList));
         }
     }
 }

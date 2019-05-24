@@ -1294,7 +1294,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11762")]
         [NUnit.Framework.CategoryAttribute("DAS12009")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForBuckets()
         {
             System.Exception lastException = null;
@@ -1331,8 +1330,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS11762",
                         "DAS12009",
-                        "Buckets",
-                        "Not_Run"});
+                        "Buckets"});
 #line 336
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

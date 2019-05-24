@@ -839,7 +839,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetDropdownByFieldName(string name)
         {
-            var selector = By.XPath($"//span[contains(@class, 'placeholder')][text()='{name}']/ancestor::mat-select");
+            var selector = By.XPath($"//*[text()='{name}']/ancestor::div[@class='mat-form-field-infix']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

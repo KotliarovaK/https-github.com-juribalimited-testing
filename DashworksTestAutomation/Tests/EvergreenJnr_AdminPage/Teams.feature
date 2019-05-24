@@ -201,7 +201,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	And User selects all rows on the grid
 	Then User sees "6" of "6" rows selected label
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Delete_Newly_Created_Team @Teams @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Delete_Newly_Created_Team @Teams
 Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -362,7 +362,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeletin
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams @Do_Not_Run_With_Teams @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11762 @DAS12009 @DAS12999 @DAS13471 @Teams @Do_Not_Run_With_Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteDataFromFilterTextFieldForTeams
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Rows counter contains "2" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "2" text in the Search field for "Members" column
-	Then Rows counter contains "3" found row of all rows
+	Then Rows counter contains "2" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User click on "Team" column header on the Admin page
 	#Remove hash after fix sort order

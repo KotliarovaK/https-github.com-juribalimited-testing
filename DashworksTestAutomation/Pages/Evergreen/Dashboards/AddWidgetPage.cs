@@ -71,12 +71,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//deactivate-guard-dialog/parent::mat-dialog-container")]
         public IWebElement UnsavedChangesAlert { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//app-dialog/h1[text()='Move to Section']")]
-        public IWebElement MoveToSectionPopUp { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
-        public IWebElement SelectSectionDropdown { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//mat-error//span")]
         public IWebElement WarningTextUnderField { get; set; }
 
@@ -107,13 +101,7 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
-
-        public void ClickMoveToSectionPopUpButton(string buttonName)
-        {
-            var listNameSelector = $".//div[@class='mat-dialog-actions']/button/span[text()='{buttonName}']";
-            Driver.FindElement(By.XPath(listNameSelector)).Click();
-        }
-
+        
         public IWebElement GetUnsavedChangesAlertText()
         {
             var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//p";
@@ -151,13 +139,7 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(selector);
         }
 
-        public void SelectSectionToMove(string sectionName)
-        {
-            SelectSectionDropdown.Click();
-            var selector = $".//mat-option//span[text()='{sectionName}']";
-            Driver.FindElement(By.XPath(selector)).Click();
-        }
-
+        
         public IWebElement GetPreviewFirstCellValue()
         {
             var byFirstVer =By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']");

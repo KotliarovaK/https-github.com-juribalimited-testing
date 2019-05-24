@@ -2133,6 +2133,166 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfR" +
+            "ing")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS16375")]
+        public virtual void EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfR" +
+                    "ing", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_Search",
+                        "Search",
+                        "DAS16375"});
+#line 385
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 386
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 387
+ testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table38.AddRow(new string[] {
+                        "Windows7Mi: Ring (All Used Devices)"});
+#line 388
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table38, "And ");
+#line 391
+ testRunner.And("User perform search by \"MOW231210\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 392
+ testRunner.Then("\"Ring 2, Ring 1, Unassigned\" content is displayed for \"Windows7Mi: Ring (All Used" +
+                    " Devices)\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderO" +
+            "fRing")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_Search")]
+        [NUnit.Framework.CategoryAttribute("Search")]
+        [NUnit.Framework.CategoryAttribute("DAS16375")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderO" +
+                    "fRing", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_Search",
+                        "Search",
+                        "DAS16375"});
+#line 395
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 396
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 397
+ testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table39.AddRow(new string[] {
+                        "Windows7Mi: Ring"});
+#line 398
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table39, "And ");
+#line 401
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table40.AddRow(new string[] {
+                        "Ring 2"});
+            table40.AddRow(new string[] {
+                        "Unassigned"});
+            table40.AddRow(new string[] {
+                        "Ring 1"});
+#line 402
+ testRunner.And("User add \"Windows7Mi: Ring\" filter where type is \"Equals\" with added column and f" +
+                    "ollowing checkboxes:", ((string)(null)), table40, "And ");
+#line 407
+ testRunner.And("User click on \'Windows7Mi: Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                        "values"});
+            table41.AddRow(new string[] {
+                        "Ring 2"});
+            table41.AddRow(new string[] {
+                        "Ring 1"});
+            table41.AddRow(new string[] {
+                        "Unassigned"});
+#line 408
+ testRunner.Then("Data in table is sorted by \"Windows7Mi: Ring\" column in the next way", ((string)(null)), table41, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

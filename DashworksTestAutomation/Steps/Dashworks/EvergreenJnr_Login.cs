@@ -151,6 +151,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             _driver.WaitWhileControlIsNotClickable<DashworksHeaderMenuElement>(() => headerMenu.EvergreenLink);
             headerMenu.EvergreenLink.Click();
+            _driver.WaitForDataLoading();
         }
 
         [Then(@"Evergreen Dashboards page should be displayed to the user")]

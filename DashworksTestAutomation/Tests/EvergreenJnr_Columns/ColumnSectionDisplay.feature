@@ -893,7 +893,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheCol
 	When  User click content from "Primary Device" column
 	Then Details object page is displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -913,7 +913,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListe
 	| Project Tasks: EmailMigra  |
 	| Project Stages: EmailMigra |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Users" on the left-hand menu
 	And User clicks the Columns button
@@ -929,7 +929,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedC
 	| Project Tasks: EmailMigra  | 9      |
 	| Project Stages: EmailMigra | 3      |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Applications" on the left-hand menu
 	And User clicks the Columns button
@@ -945,7 +945,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatColumnsPanelDoesHaveAndNotHave
 	| Project Tasks: EmailMigra  | 5      |
 	| Project Stages: EmailMigra | 1      |
 	
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @Not_Run
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14969 @archived
 Scenario: EvergreenJnr_MailboxesList_ChecksThatColumnsPanelDoesHaveAndNotHaveListedCategories
 	When User clicks "Mailboxes" on the left-hand menu
 	And User clicks the Columns button

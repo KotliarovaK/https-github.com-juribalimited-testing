@@ -380,3 +380,34 @@ Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerfor
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	And There are no errors in the browser console
+
+@Evergreen @Users @EvergreenJnr_Search @Search @DAS16375
+Scenario: EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                          |
+	| Windows7Mi: Ring (All Used Devices) |
+	And User perform search by "MOW231210"
+	Then "Ring 2, Ring 1, Unassigned" content is displayed for "Windows7Mi: Ring (All Used Devices)" column
+
+@Evergreen @Devices @EvergreenJnr_Search @Search @DAS16375
+Scenario: EvergreenJnr_DevicesList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName       |
+	| Windows7Mi: Ring |
+	And User clicks the Filters button
+	And User add "Windows7Mi: Ring" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Ring 2             |
+	| Unassigned         |
+	| Ring 1             |
+	And User click on 'Windows7Mi: Ring' column header
+	Then Data in table is sorted by "Windows7Mi: Ring" column in the next way
+	| values     |
+	| Ring 2     |
+	| Ring 1     |
+	| Unassigned |
+	

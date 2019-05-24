@@ -3809,7 +3809,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	Then "Create Project" page should be displayed to the user
 	When User enters "13510TestProject" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks Create button on the Create Project page
+	When User clicks the "CREATE PROJECT" Action button
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	Then Project "13510TestProject" is displayed to user
@@ -4107,3 +4107,49 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOn
 	When User switches to previous tab
 	When User removes the Project
 	Then Error message is displayed with "This project does not exist. The project has not been updated" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16365
+Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterSelectingBrokenListToProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	#For Device scoped project
+	When User enters "1803 Rollout" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Dependant List Filter - BROKEN LIST" in the Scope Project details
+	Then Filling field error with "This list has errors" text is displayed
+	#For Mailboxes scoped project
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "Mailbox Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Mailbox List (Complex) - BROKEN LIST" in the Scope Project details
+	Then Filling field error with "This list has errors" text is displayed
+	#For Users scoped project
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Users List (Complex) - BROKEN LIST" in the Scope Project details
+	Then Filling field error with "This list has errors" text is displayed
+	When User selects "Automated Onboarding" tab on the Project details page
+	When User selects "Scope Details" tab on the Project details page
+	Then "All Users" content is displayed in "Scope" dropdown
+	Then Filling field error is not displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Project_Creation_and_Scope @Projects @DAS16744 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatProjectCanBeCreatedAfterUsingSavedDevicesList
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "City" filter where type is "Equals" with added column and "Melbourne" Lookup option
+	And User create dynamic list with "Melbourne Devices" name on "Devices" page
+	And User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	Then Create Project button is disabled
+	When User enters "Melbourne Migration" in the "Project Name" field
+	Then Create Project button is enabled
+	When User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	

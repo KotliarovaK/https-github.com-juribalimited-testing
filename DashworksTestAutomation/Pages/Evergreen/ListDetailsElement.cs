@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         public const string Owner = ".//mat-option[@role='option']";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='listPanel']")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'context-container')]//div[contains(@class, 'header')]/span[contains(text(), 'Details')]")]
         public IWebElement ListDetailsPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='List Name']")]
@@ -31,8 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='favourite']")]
         public IWebElement ActiveFavoriteButton { get; set; }
 
-        [FindsBy(How = How.XPath,
-            Using = ".//button[@class='btn btn-default btn-remove mat-icon-button _mat-animation-noopable']")]
+        [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'remove mat-icon-button')]")]
         public IWebElement RemoveListButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button _mat-animation-noopable']")]
@@ -58,9 +57,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='ACCEPT']/ancestor::button")]
         public IWebElement AcceptButton { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']/ancestor::button")]
-        public IWebElement CancelButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//i[@class='material-icons mat-item_add ng-star-inserted']")]
         public IWebElement OpenDependantsButton { get; set; }

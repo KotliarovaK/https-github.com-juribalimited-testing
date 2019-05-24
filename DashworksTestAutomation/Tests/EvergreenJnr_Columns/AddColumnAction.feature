@@ -326,3 +326,20 @@ Scenario: EvergreenJnr_UsersList_CheckThatLanguageColumnIsDisplayedOnTheUserList
 	When User click on 'Windows7Mi: Language' column header
 	When User click on 'Windows7Mi: Language' column header
 	Then "English" content is displayed in "Windows7Mi: Language" column
+
+@Evergreen @Mailboxes @Users @EvergreenJnr_Columns @AddColumnAction @DAS16716
+Scenario Outline: EvergreenJnr_AllList_CheckThatSortingByEvergreenRingColumnWorks
+	When User clicks "<ListName>" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName     |
+	| Evergreen Ring |
+	And User click on 'Evergreen Ring' column header
+	Then data in table is sorted by 'Evergreen Ring' column in ascending order
+	When User click on 'Evergreen Ring' column header
+	Then data in table is sorted by 'Evergreen Ring' column in descending order
+
+	Examples:
+	| ListName     |
+	| Users        |
+	| Mailboxes    |

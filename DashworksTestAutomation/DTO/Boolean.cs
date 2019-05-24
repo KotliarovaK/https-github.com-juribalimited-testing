@@ -8,9 +8,7 @@ namespace DashworksTestAutomation.DTO
 {
     enum BooleanState
     {
-        UNKNOWN = 1,
-        NOTAPPLICABLE = 2,
-        TRUE = 3,
-        FALSE = 4
+        TRUE = 1,
+        FALSE = 2
     }
 }

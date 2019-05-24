@@ -216,9 +216,19 @@ namespace DashworksTestAutomation.Helpers
             SelectOperator();
             _driver.WaitForDataLoading();
             foreach (var row in _optionsTable.Rows)
-                _driver.FindElement(
-                    By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
 
+                if (_driver.FindElements(By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"])))
+                        .Count > 1)
+                {
+                    _driver.FindElement(
+                        By.XPath(string.Format(".//div[@class='filterAddPanel ng-star-inserted']//span[(text()='{0}')]", row["SelectedCheckboxes"]))).Click();
+                }
+                else
+                {
+                    _driver.FindElement(
+                        By.XPath(string.Format(CheckboxSelectorName, row["SelectedCheckboxes"]))).Click();
+                }
+                
             SaveFilter();
         }
 
