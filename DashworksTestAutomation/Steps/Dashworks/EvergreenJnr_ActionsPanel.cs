@@ -427,6 +427,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
+        [Then(@"options for ""(.*)"" field are displayed in alphabetical order on Action panel")]
+        public void ThenOptionsForFieldAreDisplayedInAlphabeticalOrderOnActionPanel(string field)
+        {
+            var action = _driver.NowAt<BaseDashboardPage>();
+            if (field.Equals("Bucket"))
+            {
+                action.GetDropdownByFieldName(field).Click();
+                var listWithoutUnassigned = action.OptionListOnActionsPanel.Select(x => x.Text).Where(x => !x.Contains("Unassigned")).ToList();
+                Assert.AreEqual(listWithoutUnassigned.OrderBy(s => s), listWithoutUnassigned, $"{field} are not in alphabetical order");
+            }
+            else
+            {
+                action.GetDropdownByFieldName(field).Click();
+                var list = action.OptionListOnActionsPanel.Select(x => x.Text).ToList();
+                Assert.AreEqual(list.OrderBy(s => s), list, $"{field} are not in alphabetical order");
+            }
+            var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+            page.BodyContainer.Click();
+        }
+
         [When(@"User selects ""(.*)"" Owner on Action panel")]
         public void WhenUserSelectsOwnerOnActionPanel(string owner)
         {

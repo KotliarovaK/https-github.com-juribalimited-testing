@@ -35,12 +35,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	When User create dynamic list with "TestList9507DA" name on "Users" page
 	And User clicks the List Details button
 	Then List details panel is displayed to the user
-	#Uncomment after DAS14263 implemented
-	#When User select "Specific users / teams" sharing option
-	#When User clicks the "ADD TEAMS" Action button
-	#When User selects "Team 1054" in the Team dropdown
-	#And User select "Admin" in Select Access dropdown
-	#When User clicks the "CANCEL" Action button
+	When User select "Specific users / teams" sharing option
+	When User clicks the "ADD TEAM" Action button
+	Then form container is displayed to the user
+	When User selects the "Team 1054" team for sharing
+	And User select "Admin" in Select Access dropdown
+	When User clicks the "CANCEL" Action button
 	When User select "Specific users" sharing option
 	And User click Add User button
 	And User select current user in Select User dropdown
