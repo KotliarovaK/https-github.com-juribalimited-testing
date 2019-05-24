@@ -4114,10 +4114,25 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterSelectingBrokenListToProj
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
+	#For Device scoped project
 	When User enters "1803 Rollout" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	When User selects "Scope Details" tab on the Project details page
 	When User selects "Dependant List Filter - BROKEN LIST" in the Scope Project details
+	Then Filling field error with "This list has errors" text is displayed
+	#For Mailboxes scoped project
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "Mailbox Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Mailbox List (Complex) - BROKEN LIST" in the Scope Project details
+	Then Filling field error with "This list has errors" text is displayed
+	#For Users scoped project
+	When User clicks "Administration" navigation link on the Admin page
+	When User enters "User Evergreen Capacity Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	When User selects "Scope Details" tab on the Project details page
+	When User selects "Users List (Complex) - BROKEN LIST" in the Scope Project details
 	Then Filling field error with "This list has errors" text is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Project_Creation_and_Scope @Projects @DAS16744 @Delete_Newly_Created_List @Delete_Newly_Created_Project
