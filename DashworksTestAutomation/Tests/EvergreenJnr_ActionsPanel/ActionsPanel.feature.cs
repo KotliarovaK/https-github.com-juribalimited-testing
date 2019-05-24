@@ -6186,7 +6186,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS16640")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUpdateIsCorrect()
         {
             System.Exception lastException = null;
@@ -6221,8 +6220,7 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
-                        "DAS16640",
-                        "Not_Ready"});
+                        "DAS16640"});
 #line 1855
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

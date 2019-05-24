@@ -1851,7 +1851,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	| User Evergreen Capacity Project          |
 	| User Scheduled Test (Jo)                 |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16640 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16640
 Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUpdateIsCorrect
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
