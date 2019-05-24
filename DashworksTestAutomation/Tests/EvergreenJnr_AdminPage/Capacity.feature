@@ -1564,9 +1564,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User enters "ProjectForDAS13956" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
-	And User open "Capacity" sub menu on Admin page
-	And User selects ""(.*)"" tab on the Project details page
+	And User clicks newly created object link	
+	And User selects "Capacity" tab on the Project details page
+	And User navigates to the "Units" sub-menu on the Details page
 	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text

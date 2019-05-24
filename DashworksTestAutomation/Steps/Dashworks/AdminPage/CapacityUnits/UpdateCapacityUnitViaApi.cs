@@ -23,25 +23,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
             _client = client;
         }
 
-        //| Name | NewName | Description | IsDefault |
-        //| OldName    | Name     | Description | IsDefault |
+        //| OldName | Name | Description | IsDefault |
         [When(@"User updates Capacity Units via api")]
         public void WhenUserUpdatesCapacityUnitsViaApi(Table table)
         {
             var oldNames = table.GetDataByKey("OldName");
             List<CapacityUnitDto> capacityUnits = table.CreateSet<CapacityUnitDto>().ToList();
-
-            //for (int i = 0; i < table.Rows.Count; i++)
-            //{
-            //    var previousData = DatabaseHelper.GetCapacityUnit(capacityUnits[i].Name);
-
-            //    capacityUnits.Add(new CapacityUnitDto()
-            //    {
-            //        Name = string.IsNullOrEmpty(table.GetDataByKey("NewName")[i]) ? previousData.Name : table.GetDataByKey("NewName")[i],
-            //        Description = string.IsNullOrEmpty(table.GetDataByKey("Description")[i]) ? previousData.Description : table.GetDataByKey("Description")[i],
-            //        IsDefault = string.IsNullOrEmpty(table.GetDataByKey("IsDefault")[i]) ? previousData.IsDefault : bool.Parse(table.GetDataByKey("IsDefault")[i])
-            //    });
-            //}
 
             for (int i = 0; i < oldNames.Count; i++)
             {

@@ -4470,9 +4470,9 @@ this.FeatureBackground();
 #line 1567
  testRunner.And("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1568
- testRunner.And("User open \"Capacity\" sub menu on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects \"Capacity\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1569
- testRunner.And("User selects \"\"(.*)\"\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to the \"Units\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1570
  testRunner.Then("User selects \"Clone evergreen capacity units to project capacity units\" option in" +
                     " \"Capacity Units\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
