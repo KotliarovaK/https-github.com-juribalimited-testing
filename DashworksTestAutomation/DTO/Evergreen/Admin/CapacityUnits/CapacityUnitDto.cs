@@ -10,11 +10,18 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits
         public string Description { get; set; }
         public bool IsDefault { get; set; }
 
+        public CapacityUnitDto(string id)
+        {
+            Id = id;
+        }
+
+        public CapacityUnitDto() { }
+
         public string GetId()
         {
             if (string.IsNullOrEmpty(Id))
             {
-                Id = DatabaseHelper.GetCapacityUnitId(this.Name);
+                Id = DatabaseHelper.GetCapacityUnit(this.Name).Id;
             }
             return Id;
         }

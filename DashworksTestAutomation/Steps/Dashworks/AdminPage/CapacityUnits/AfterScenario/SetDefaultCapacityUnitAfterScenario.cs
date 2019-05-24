@@ -1,4 +1,5 @@
-﻿using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+﻿using System;
+using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Providers;
 using RestSharp;
@@ -10,20 +11,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
     public class SetDefaultCapacityUnitAfterScenario : SpecFlowContext
     {
         private readonly RestWebClient _client;
+        private readonly CapacityUnitUnassignedId _capacityUnitUnassignedId;
 
-        private SetDefaultCapacityUnitAfterScenario(RestWebClient client)
+        private SetDefaultCapacityUnitAfterScenario(RestWebClient client, CapacityUnitUnassignedId capacityUnitUnassignedId)
         {
             _client = client;
+            _capacityUnitUnassignedId = capacityUnitUnassignedId;
         }
 
-        [AfterScenario("Set_Default_Capacity_Unit")]
+        [AfterScenario("Set_Default_Capacity_Unit", Order = 0)]
         public void SetDefaultCapacityUnit()
         {
+            if (string.IsNullOrEmpty(_capacityUnitUnassignedId.Value))
+                throw new Exception("Unassigned Capacity Unit ID was not saved. Please use @Save_Default_Capacity_Unit tag in you test to do this");
+
             try
             {
                 var capacityUnit = new CapacityUnitDto() { Name = "Unassigned", Description = "Unassigned", IsDefault = true };
 
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/capacityUnits/{capacityUnit.GetId()}/updateCapacityUnit";
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/capacityUnits/{_capacityUnitUnassignedId.Value}/updateCapacityUnit";
 
                 var request = new RestRequest(requestUri);
 

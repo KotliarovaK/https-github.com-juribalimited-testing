@@ -1551,18 +1551,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @Projects @DAS13956 @DAS14068 @DAS14218 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Projects @DAS13956 @DAS14068 @DAS14218 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit @Save_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	Then "Capacity Units" page should be displayed to the user
-	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	And User clicks content from "Capacity Unit" column
-	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
-	And User type "New Name" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "UPDATE" Action button
+	When User updates Capacity Units via api
+	| OldName    | Name     | Description | IsDefault |
+	| Unassigned | New Name |             |           |
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
 	When User clicks the "CREATE" Action button
@@ -1571,6 +1566,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User clicks Create button on the Create Project page
 	And User clicks newly created object link
 	And User open "Capacity" sub menu on Admin page
+	And User selects ""(.*)"" tab on the Project details page
 	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
@@ -1578,15 +1574,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	Then Counter shows "1" found rows
 	And "Unassigned" content is displayed for "Capacity Unit" column
 	And "New Name" content is displayed for "Maps to Evergreen" column
-	When User clicks "Administration" navigation link on the Admin page
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	Then "Capacity Units" page should be displayed to the user
-	When User enters "New Name" text in the Search field for "Capacity Unit" column
-	And User clicks content from "Capacity Unit" column
-	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
-	And User type "Unassigned" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "UPDATE" Action button
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13526 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed

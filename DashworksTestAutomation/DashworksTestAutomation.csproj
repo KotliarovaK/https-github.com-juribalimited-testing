@@ -136,6 +136,7 @@
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityUnitUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\LastUsedBucket.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Extensions\ReflectionExtensions.cs" />
     <Compile Include="Extensions\RestClientExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TableExtensions.cs" />
     <Compile Include="Extensions\WebDriverExtensions.cs" />
     <Compile Include="Extensions\WebElementExtensions.cs" />
     <Compile Include="Helpers\BaseFilter.cs" />
@@ -281,6 +283,7 @@
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\BeforeScenario\SaveDefaultCapacityUnitBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\CreateCapacityUnitViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\UpdateCapacityUnitViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AdminPageNavigation.cs" />

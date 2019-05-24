@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.Providers;
 
 namespace DashworksTestAutomation.Helpers
@@ -64,6 +65,27 @@ namespace DashworksTestAutomation.Helpers
             return dt.AsEnumerable().ToList().Select(row => row[columnIndex].ToString()).ToList();
         }
 
+        public static DataTable ExecuteReaderWithoutZeroResultCheck(string query)
+        {
+            SqlConnection sqlConnection1 = new SqlConnection(_connectionString);
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            cmd.CommandText = query;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+
+            reader = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(reader);
+
+            sqlConnection1.Close();
+
+            return dt;
+        }
+
         public static void RemoveLists(List<string> listsIds)
         {
             foreach (string id in listsIds)
@@ -81,9 +103,22 @@ namespace DashworksTestAutomation.Helpers
 
         #region CapacityUnits
 
-        public static string GetCapacityUnitId(string name)
+        public static CapacityUnitDto GetCapacityUnit(string name)
         {
-            return DatabaseHelper.ExecuteReader($"select UnitId from [PM].[dbo].[CapacityUnits] where UnitName='{name}'", 0).FirstOrDefault();
+            var dataTable = DatabaseHelper
+                .ExecuteReaderWithoutZeroResultCheck(
+                    $"select [UnitId], [UnitName], [UnitDescription], [IsDefault] from [PM].[dbo].[CapacityUnits] where UnitName='{name}'");
+
+            if (dataTable.Rows.Count < 1)
+                throw new Exception($"Unable to find Capacity Unit with name {name}");
+
+            var cu = new CapacityUnitDto(dataTable.Rows[0][0].ToString())
+            {
+                Name = dataTable.Rows[0][1].ToString(),
+                Description = dataTable.Rows[0][2].ToString(),
+                IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
+            };
+            return cu;
         }
 
         #endregion

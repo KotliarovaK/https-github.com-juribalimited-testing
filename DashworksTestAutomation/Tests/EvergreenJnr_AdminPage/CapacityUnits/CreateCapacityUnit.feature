@@ -22,10 +22,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	And "NotDefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "NotDefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	Then "FALSE" value is displayed for Default column
-	And "" content is displayed in "Devices" column
-	And "" content is displayed in "Users" column
-	And "" content is displayed in "Mailboxes" column
-	And "" content is displayed in "Applications" column
+	And "0" content is displayed in "Devices" column
+	And "0" content is displayed in "Users" column
+	And "0" content is displayed in "Mailboxes" column
+	And "0" content is displayed in "Applications" column
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName            |
 	| NotDefaultCapacityUnit13720 |
@@ -37,7 +37,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected unit has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @Delete_Newly_Created_Capacity_Unit @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12632 @Delete_Newly_Created_Capacity_Unit @Do_Not_Run_With_CapacityUnits @Save_Default_Capacity_Unit @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -49,10 +49,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	Then "DefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	Then "TRUE" value is displayed for Default column
-	And "" content is displayed in "Devices" column
-	And "" content is displayed in "Users" column
-	And "" content is displayed in "Mailboxes" column
-	And "" content is displayed in "Applications" column
+	And "0" content is displayed in "Devices" column
+	And "0" content is displayed in "Users" column
+	And "0" content is displayed in "Mailboxes" column
+	And "0" content is displayed in "Applications" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "FALSE" value is displayed for Default column
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
