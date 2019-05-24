@@ -101,7 +101,7 @@ namespace DashworksTestAutomation.Pages
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
-
+        
         public IWebElement GetUnsavedChangesAlertText()
         {
             var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//p";
@@ -139,6 +139,7 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(selector);
         }
 
+        
         public IWebElement GetPreviewFirstCellValue()
         {
             var byFirstVer =By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']");

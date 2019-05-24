@@ -57,23 +57,24 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
         [AfterScenario("Delete_Newly_Created_Dashboard")]
         public void DeleteNewlyCreatedDashboard()
         {
-            if (string.IsNullOrEmpty(_dashboard.Value.dashboardId))
+            try
             {
-                throw new Exception(
-                    $"Dashboard Id required to perform delete operation.");
+                var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{_dashboard.Value.dashboardId}";
+
+                var request = new RestRequest(requestUri);
+                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                var response = _client.Value.Delete(request);
+
+                if (response.StatusCode != HttpStatusCode.OK)
+                    throw new Exception(
+                        $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
+            }
+            catch
+            {
             }
 
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}dashboard/{_dashboard.Value.dashboardId}";
-
-            var request = new RestRequest(requestUri);
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-            var response = _client.Value.Delete(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception(
-                        $"Unable to execute request. Status Code: {response.StatusCode}, URI: {requestUri}");
         }
     }
 }
