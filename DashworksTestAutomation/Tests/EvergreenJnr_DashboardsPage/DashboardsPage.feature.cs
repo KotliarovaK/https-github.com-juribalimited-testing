@@ -916,22 +916,6 @@ this.FeatureBackground();
  testRunner.And("User clicks \"Duplicate\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 153
  testRunner.Then("User sees number of Widgets with Legend increased by \"1\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 154
- testRunner.When("User clicks Dashboards Details icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 155
- testRunner.Then("Permission panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 156
- testRunner.When("User changes sharing type from \"Private\" to \"Specific users / teams\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 157
- testRunner.When("User clicks the \"ADD TEAM\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 158
- testRunner.When("User selects the \"Team 1061\" team for sharing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 159
- testRunner.And("User select \"Admin\" in Select Access dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 160
- testRunner.When("User clicks the \"CANCEL\" button on Dashboard Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 161
- testRunner.Then("Team/User section in not displayed on Dashboard Details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -5020,21 +5004,21 @@ this.FeatureBackground();
 #line 1055
  testRunner.Then("Print Preview is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1056
- testRunner.When("User selects \"A4\" option in the \"Paper size\" dropdown for Print Preview Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"A4\" option in the \"Paper Size\" dropdown for Print Preview Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1057
  testRunner.Then("Print Preview is displayed in A4 format view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1058
- testRunner.When("User selects \"Letter\" option in the \"Paper size\" dropdown for Print Preview Setti" +
+ testRunner.When("User selects \"Letter\" option in the \"Paper Size\" dropdown for Print Preview Setti" +
                     "ngs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1059
  testRunner.Then("Print Preview is displayed in Letter format view", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1060
- testRunner.When("User selects \"Portrait\" option in the \"Paper layout\" dropdown for Print Preview S" +
+ testRunner.When("User selects \"Portrait\" option in the \"Paper Layout\" dropdown for Print Preview S" +
                     "ettings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1061
  testRunner.Then("Print Preview is displayed in Portrait orientation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1062
- testRunner.When("User selects \"Landscape\" option in the \"Paper layout\" dropdown for Print Preview " +
+ testRunner.When("User selects \"Landscape\" option in the \"Paper Layout\" dropdown for Print Preview " +
                     "Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1063
  testRunner.Then("Print Preview is displayed in Landscape orientation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -5113,19 +5097,19 @@ this.FeatureBackground();
             table88.AddRow(new string[] {
                         "Ready"});
 #line 1073
- testRunner.And("User Add And \"1803: Ready to Migrate\" filter where type is \"Equals\" with added co" +
-                    "lumn and following checkboxes:", ((string)(null)), table88, "And ");
+ testRunner.And("User Add And \"1803: Pre-Migration \\ Ready to Migrate\" filter where type is \"Equal" +
+                    "s\" with added column and following checkboxes:", ((string)(null)), table88, "And ");
 #line 1076
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table89.AddRow(new string[] {
-                        "1803: Ready to Migrate"});
+                        "1803: Pre-Migration \\ Ready to Migrate"});
 #line 1077
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table89, "And ");
 #line 1080
- testRunner.And("User move \'1803: Ready to Migrate\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User move \'1803: Pre-Migration \\ Ready to Migrate\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1081
  testRunner.And("User move \'Hostname\' column to \'Device Type\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1082
@@ -5510,11 +5494,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table98.AddRow(new string[] {
-                        "1803: Scheduled Date"});
+                        "1803: Pre-Migration \\ Scheduled Date"});
 #line 1158
  testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table98, "And ");
 #line 1161
- testRunner.And("User move \'1803: Scheduled Date\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User move \'1803: Pre-Migration \\ Scheduled Date\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1162
  testRunner.And("User move \'Hostname\' column to \'Operating System\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1163
@@ -7757,7 +7741,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table137 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table137.AddRow(new string[] {
-                        "NotOnboarded"});
+                        "Not Onboarded"});
             table137.AddRow(new string[] {
                         "Onboarded"});
             table137.AddRow(new string[] {
@@ -7803,7 +7787,7 @@ this.FeatureBackground();
             table138.AddRow(new string[] {
                         "Onboarded"});
             table138.AddRow(new string[] {
-                        "NotOnboarded"});
+                        "Not Onboarded"});
 #line 1777
  testRunner.Then("Line X labels of \"DAS16278_Widget\" column widget is displayed in following order:" +
                     "", ((string)(null)), table138, "Then ");
