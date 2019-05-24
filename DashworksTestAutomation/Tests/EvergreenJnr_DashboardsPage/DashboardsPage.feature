@@ -1204,6 +1204,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetTooltipsShowsNameAndCou
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD SECTION" Action button
 	And User clicks Ellipsis menu for "Device Profile" Widget on Dashboards page
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	Then Move to Section pop up is displayed to the User
@@ -1219,7 +1220,6 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	And User clicks "Move to section" item from Ellipsis menu on Dashboards page
 	When User selects "1" section on the Move to Section pop up
 	When User clicks "MOVE" button on the Move to Section Pop up
-	When User clicks "Dashboards" navigation link on the Admin page
 	Then "Device Profile" Widget is displayed to the user
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16336 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
@@ -1324,6 +1324,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	| WidgetType | Title               | List                | MaxRows | MaxColumns |
 	| List       | Widget_For_DAS16380 | First_List_DAS16380 | 10      | 10         |
 	Then "Widget_For_DAS16380" Widget is displayed to the user
+	#change permission to Everyone can see
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 	When User select "Everyone can see" sharing option on the Dashboards page
@@ -1333,6 +1334,30 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	And User clicks the "ADD WIDGET" Action button
 	When User selects "List" in the "Widget Type" Widget dropdown
 	And User enters "Widget_For_DAS16380_1" as Widget Title
+	And User selects "Second_List_DAS16380" as Widget List
+	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
+	#change permission to Everyone can edit
+	When User clicks the "CREATE" Action button
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User select "Everyone can edit" sharing option on the Dashboards page
+	Then Review Widget List Permissions is displayed to the User
+	When User clicks the "IGNORE & SHARE" Action button
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "List" in the "Widget Type" Widget dropdown
+	And User enters "Widget_For_DAS16380_2" as Widget Title
+	And User selects "Second_List_DAS16380" as Widget List
+	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
+	#change permission to Everyone can edit
+	When User clicks the "CREATE" Action button
+	When User clicks Dashboards Details icon on Dashboards page
+	Then User sees Dashboards context menu on Dashboards page
+	When User select "Specific users / teams" sharing option on the Dashboards page
+	Then Review Widget List Permissions is displayed to the User
+	When User clicks the "IGNORE & SHARE" Action button
+	And User clicks the "ADD WIDGET" Action button
+	When User selects "List" in the "Widget Type" Widget dropdown
+	And User enters "Widget_For_DAS16380_3" as Widget Title
 	And User selects "Second_List_DAS16380" as Widget List
 	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
 

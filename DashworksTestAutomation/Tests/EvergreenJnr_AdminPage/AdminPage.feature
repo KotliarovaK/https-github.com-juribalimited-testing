@@ -477,3 +477,32 @@ Scenario: EvergreenJnr_ImportProjectPage_CheckAdditionalColumnClickthroughsFromR
 	Then ColumnName is added to the list
 	| ColumnName       |
 	| Barry'sUse: Ring |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS16675 @DAS16676
+Scenario: EvergreenJnr_AdminPage_CheckThatAppropriatePageIsDisplayedAfterClickingCrumbTrailOnAdminPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	When User selects "Buckets" tab on the Project details page
+	Then "Buckets" page should be displayed to the user
+	When User clicks content from "Bucket" column
+	When User clicks on "Buckets" navigation link
+	Then "Buckets" page should be displayed to the user
+	When User selects "Capacity Units" tab on the Project details page
+	Then "Capacity Units" page should be displayed to the user
+	When User clicks content from "Capacity Unit" column
+	When User clicks on "Capacity Units" navigation link
+	Then "Capacity Units" page should be displayed to the user
+	When User selects "Rings" tab on the Project details page
+	Then "Rings" page should be displayed to the user
+	When User clicks content from "Ring" column
+	When User clicks on "Rings" navigation link
+	Then "Rings" page should be displayed to the user
+	#ready on 'Nova'
+	#When User clicks "Automations" link on the Admin page
+	#When User selects "Automations" tab on the Project details page
+	#Then "Automations" page should be displayed to the user
+	#When User clicks content from "Automation" column
+	#When User clicks on "Automations" navigation link
+	#Then "Automations" page should be displayed to the user
+	#Then "Automations" tab-menu on the Admin page is expanded
