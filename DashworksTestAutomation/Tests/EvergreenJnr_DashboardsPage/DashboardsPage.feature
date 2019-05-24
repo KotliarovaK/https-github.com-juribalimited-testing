@@ -1054,13 +1054,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 	When User clicks "print"  button on the Dashboards page
 	Then Print Preview is displayed to the User
-	When User selects "A4" option in the "Paper size" dropdown for Print Preview Settings
+	When User selects "A4" option in the "Paper Size" dropdown for Print Preview Settings
 	Then Print Preview is displayed in A4 format view
-	When User selects "Letter" option in the "Paper size" dropdown for Print Preview Settings
+	When User selects "Letter" option in the "Paper Size" dropdown for Print Preview Settings
 	Then Print Preview is displayed in Letter format view
-	When User selects "Portrait" option in the "Paper layout" dropdown for Print Preview Settings
+	When User selects "Portrait" option in the "Paper Layout" dropdown for Print Preview Settings
 	Then Print Preview is displayed in Portrait orientation
-	When User selects "Landscape" option in the "Paper layout" dropdown for Print Preview Settings
+	When User selects "Landscape" option in the "Paper Layout" dropdown for Print Preview Settings
 	Then Print Preview is displayed in Landscape orientation
 	When User clicks Cancel button on the Print Preview Settings pop-up
 
@@ -1071,14 +1071,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| TRUE               |
-	And User Add And "1803: Ready to Migrate" filter where type is "Equals" with added column and following checkboxes:
+	And User Add And "1803: Pre-Migration \ Ready to Migrate" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Ready              |
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName             |
-	| 1803: Ready to Migrate |
-	And User move '1803: Ready to Migrate' column to 'Hostname' column
+	| ColumnName                             |
+	| 1803: Pre-Migration \ Ready to Migrate |
+	And User move '1803: Pre-Migration \ Ready to Migrate' column to 'Hostname' column
 	And User move 'Hostname' column to 'Device Type' column
 	And User create dynamic list with "DeviceListFor15914" name on "Devices" page
 	Then "DeviceListFor15914" list is displayed to user
@@ -1157,9 +1157,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| 001BAQXT6JWFPI |
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
-	| 1803: Scheduled Date |
-	And User move '1803: Scheduled Date' column to 'Hostname' column
+	| ColumnName                           |
+	| 1803: Pre-Migration \ Scheduled Date |
+	And User move '1803: Pre-Migration \ Scheduled Date' column to 'Hostname' column
 	And User move 'Hostname' column to 'Operating System' column
 	And User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
@@ -1761,15 +1761,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks the "CREATE" Action button
 	Then Card "DAS16278_Widget" Widget is displayed to the user
 	Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
-	| ColumnName   |
-	| NotOnboarded |
-	| Onboarded    |
-	| Forecast     |
-	| Targeted     |
-	| Scheduled    |
-	| Migrated     |
-	| Complete     |
-	| Offboarded   |
+	| ColumnName    |
+	| Not Onboarded |
+	| Onboarded     |
+	| Forecast      |
+	| Targeted      |
+	| Scheduled     |
+	| Migrated      |
+	| Complete      |
+	| Offboarded    |
 	When User clicks Ellipsis menu for "DAS16278_Widget" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
 	When User selects "Windows7Mi: Status DESC" in the "Order By" Widget dropdown
@@ -1784,7 +1784,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Targeted     |
 	| Forecast     |
 	| Onboarded    |
-	| NotOnboarded |
+	| Not Onboarded |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTextDisplayedForWidgetHavingBrokenLists
