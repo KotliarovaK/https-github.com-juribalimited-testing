@@ -1565,12 +1565,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
 	And User clicks newly created object link	
-	And User selects "Capacity" tab on the Project details page
-	And User navigates to the "Units" sub-menu on the Details page
+	And User selects "Capacity" tab on the Project details page	
 	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
-	When User selects "Units" tab on the Project details page
+	When User navigates to the "Units" sub-menu on the Details page
 	Then Counter shows "1" found rows
 	And "Unassigned" content is displayed for "Capacity Unit" column
 	And "New Name" content is displayed for "Maps to Evergreen" column
