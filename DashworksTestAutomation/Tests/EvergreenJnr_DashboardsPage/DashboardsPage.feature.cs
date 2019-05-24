@@ -1228,7 +1228,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14583")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing()
         {
             System.Exception lastException = null;
@@ -1262,8 +1261,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14583",
-                        "Delete_Newly_Created_Dashboard",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Dashboard"});
 #line 228
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
