@@ -40,6 +40,12 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'section-edit-block')]")]
         public IList<IWebElement> AllSections { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//app-dialog/h1[text()='Move to Section']")]
+        public IWebElement MoveToSectionPopUp { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Select Section']")]
+        public IWebElement SelectSectionDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//table//td[contains(@class, 'splitValue')]//span")]
         public IList<IWebElement> TableWidgetContent { get; set; }
 
@@ -136,6 +142,19 @@ namespace DashworksTestAutomation.Pages
             };
         }
 
+        public void SelectSectionToMove(string sectionName)
+        {
+            SelectSectionDropdown.Click();
+            var selector = $".//mat-option//span[text()='{sectionName}']";
+            Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public void ClickMoveToSectionPopUpButton(string buttonName)
+        {
+            var listNameSelector = $".//div[@class='mat-dialog-actions']/button/span[text()='{buttonName}']";
+            Driver.FindElement(By.XPath(listNameSelector)).Click();
+        }
+
         public bool IsWidgetExists(string widgetName)
         {
             return Driver.FindElements(By.XPath($".//div[@class='widgets']//h5[contains(text(),'{widgetName}')]")).Count > 0;
@@ -176,7 +195,7 @@ namespace DashworksTestAutomation.Pages
         public IList<IWebElement> GetEllipsisIconsForSectionsHavingWidget(string widgetName)
         {
             return Driver.FindElements(By.XPath(
-                $".//h5[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//button//i[contains(@class,'more')]"));
+                $".//span[contains(text(),'{widgetName}')]/ancestor::div[contains(@class,'section')]//button//i[contains(@class,'more')]"));
         }
 
         public IList<IWebElement> GetExpandCollapseIconsForSectionsHavingWidget(string widgetName)
