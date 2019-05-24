@@ -218,21 +218,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public List<string> GetPivotColumnContent()
         {
             var by = By.XPath(
-                $".//div[@class='ag-pinned-left-cols-viewport-wrapper']//div[@role='row']//span[@ref='eValue']");
+                ".//div[@class='ag-pinned-left-cols-viewport-wrapper']//div[@role='row']//span[@ref='eValue']");
             return Driver.FindElements(by).Select(x => x.Text).Where(x => !x.Contains("Empty")).ToList();
         }
 
         public List<string> GetLeftPinnedPivotColorColumnContent()
         {
             var by = By.XPath(
-                $".//div[@class='ag-pinned-left-cols-container']//span[@class='ag-group-value']//div[@class='status']");
+                ".//div[@class='ag-pinned-left-cols-container']//span[@class='ag-group-value']//div[@class='status']");
             return Driver.FindElements(by).Select(x => x.GetCssValue("background-color")).ToList();
         }
 
         public List<string> GetHeadersPivotBackgroundColor()
         {
             var by = By.XPath(
-                $".//div[@class='ag-header-group-cell-label']//div[@class='status']");
+                ".//div[@class='ag-header-group-cell-label']//div[@class='status']");
             return Driver.FindElements(by).Select(x => x.GetCssValue("background-color")).ToList();
         }
 

@@ -1850,3 +1850,17 @@ Scenario: EvergreenJnr_UsersList_CheckThatOnUserboxListForRingBulkUpdateOptionsO
 	| Project with associated broken list      |
 	| User Evergreen Capacity Project          |
 	| User Scheduled Test (Jo)                 |
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16640
+Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUpdateIsCorrect
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update bucket" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project or Evergreen on Action panel
+	Then options for "Bucket" field are displayed in alphabetical order on Action panel
