@@ -1775,14 +1775,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks the "UPDATE" Action button
 	Then Card "DAS16278_Widget" Widget is displayed to the user
 	Then Line X labels of "DAS16278_Widget" column widget is displayed in following order:
-	| ColumnName   |
-	| Offboarded   |
-	| Complete     |
-	| Migrated     |
-	| Scheduled    |
-	| Targeted     |
-	| Forecast     |
-	| Onboarded    |
+	| ColumnName    |
+	| Offboarded    |
+	| Complete      |
+	| Migrated      |
+	| Scheduled     |
+	| Targeted      |
+	| Forecast      |
+	| Onboarded     |
 	| Not Onboarded |
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16623
@@ -1792,3 +1792,41 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTe
 	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
 	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
 	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "3" warning messages on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                   |
+	| UserEvergr: Ring (All Users) |
+	And User create dynamic list with "DeviceListForDAS15826" name on "Devices" page
+	Then "DeviceListForDAS15826" list is displayed to user
+	When Dashboard with "DAS15826_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation | MaxValues |
+	| Table      | DAS15826_Widget | DeviceListForDAS15826 | UserEvergr: Ring (All Users) | Count             | UserEvergr: Ring (All Users) ASC | Vertical         |           |
+	Then Card "DAS15826_Widget" Widget is displayed to the user
+	Then content in the Widget is displayed in following order:
+	| TableValue       |
+	| Empty            |
+	| Unassigned       |
+	| Unassigned2      |
+	| Evergreen Ring 1 |
+	| Evergreen Ring 2 |
+	| Evergreen Ring 3 |
+	When User clicks Ellipsis menu for "DAS15826_Widget" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	When User selects "UserEvergr: Ring (All Users) DESC" in the "Order By" Widget dropdown
+	When User clicks the "UPDATE" Action button
+	Then Card "DAS15826_Widget" Widget is displayed to the user
+	Then content in the Widget is displayed in following order:
+	| TableValue       |
+	| Evergreen Ring 3 |
+	| Evergreen Ring 2 |
+	| Evergreen Ring 1 |
+	| Unassigned2      |
+	| Unassigned       |
+	| Empty            |
