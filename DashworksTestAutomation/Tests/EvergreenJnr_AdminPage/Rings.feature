@@ -193,7 +193,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks newly created object link
 	Then Project "14695_Project" is displayed to user
 	When User clicks "Rings" tab
-	Then "" content is displayed in "Devices" column
+	Then "0" content is displayed in "Devices" column
 	Then table with Setting menu column on Admin page is displayed in following order:
 	| ColumnName |
 	| Ring       |
@@ -228,7 +228,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	| 1      |
 	| 2      |
 	| 3      |
-	Then column content is displayed in the following order:
+	Then "Ring" column content is displayed in the following order:
     | Items      |
     | Unassigned |
     | 14695_Ring |

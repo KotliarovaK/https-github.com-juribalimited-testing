@@ -199,7 +199,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	Then column content is displayed in the following order:
+	Then "Automation" column content is displayed in the following order:
 	| Items         |
 	| AM 150419 II  |
 	| AM 150419 I   |
@@ -213,7 +213,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	Then column content is displayed in the following order:
+	Then "Automation" column content is displayed in the following order:
 	| Items         |
 	| AM 150419 II  |
 	| AM 150419 I   |
@@ -270,7 +270,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	Then column content is displayed in the following order:
+	Then "Automation" column content is displayed in the following order:
 	| Items         |
 	| AM 150419 I   |
 	| AM 150419 III |
@@ -284,7 +284,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	Then column content is displayed in the following order:
+	Then "Automation" column content is displayed in the following order:
 	| Items         |
 	| AM 150419 I   |
 	| AM 150419 III |
@@ -308,7 +308,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	Then column content is displayed in the following order:
+	Then "Automation" column content is displayed in the following order:
 	| Items         |
 	| AM 150419 I   |
 	| AM 150419 II  |
@@ -320,7 +320,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionW
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	Then column content is displayed in the following order:
+	Then "Automation" column content is displayed in the following order:
 	| Items         |
 	| AM 150419 II  |
 	| AM 150419 III |

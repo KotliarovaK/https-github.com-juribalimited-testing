@@ -827,7 +827,7 @@ this.FeatureBackground();
 #line 195
  testRunner.When("User clicks \"Rings\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 196
- testRunner.Then("\"\" content is displayed in \"Devices\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"0\" content is displayed in \"Devices\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
@@ -909,7 +909,7 @@ this.FeatureBackground();
             table7.AddRow(new string[] {
                         "Ring_Test"});
 #line 231
- testRunner.Then("column content is displayed in the following order:", ((string)(null)), table7, "Then ");
+ testRunner.Then("\"Ring\" column content is displayed in the following order:", ((string)(null)), table7, "Then ");
 #line 236
  testRunner.When("User click on \'Ring\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 237

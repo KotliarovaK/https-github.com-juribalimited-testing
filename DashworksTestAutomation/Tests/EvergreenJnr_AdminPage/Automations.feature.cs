@@ -620,7 +620,7 @@ this.FeatureBackground();
             table9.AddRow(new string[] {
                         "AM Test 1"});
 #line 202
- testRunner.Then("column content is displayed in the following order:", ((string)(null)), table9, "Then ");
+ testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table9, "Then ");
 #line 208
  testRunner.When("User clicks \"Administration\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 209
@@ -650,7 +650,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "AM Test 1"});
 #line 216
- testRunner.Then("column content is displayed in the following order:", ((string)(null)), table10, "Then ");
+ testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -801,7 +801,7 @@ this.FeatureBackground();
             table13.AddRow(new string[] {
                         "AM 150419 II"});
 #line 273
- testRunner.Then("column content is displayed in the following order:", ((string)(null)), table13, "Then ");
+ testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table13, "Then ");
 #line 279
  testRunner.When("User clicks \"Administration\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 280
@@ -831,7 +831,7 @@ this.FeatureBackground();
             table14.AddRow(new string[] {
                         "AM 150419 II"});
 #line 287
- testRunner.Then("column content is displayed in the following order:", ((string)(null)), table14, "Then ");
+ testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -933,7 +933,7 @@ this.FeatureBackground();
             table15.AddRow(new string[] {
                         "AM Test 1"});
 #line 311
- testRunner.Then("column content is displayed in the following order:", ((string)(null)), table15, "Then ");
+ testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table15, "Then ");
 #line 317
  testRunner.When("User move \"AM 150419 I\" item to \"100\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 318
@@ -959,7 +959,7 @@ this.FeatureBackground();
             table16.AddRow(new string[] {
                         "AM 150419 I"});
 #line 323
- testRunner.Then("column content is displayed in the following order:", ((string)(null)), table16, "Then ");
+ testRunner.Then("\"Automation\" column content is displayed in the following order:", ((string)(null)), table16, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
