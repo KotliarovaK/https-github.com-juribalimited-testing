@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'remove mat-icon-button')]")]
         public IWebElement RemoveListButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button _mat-animation-noopable']")]
+        [FindsBy(How = How.XPath, Using = ".//button[@class='btn mat-button']")]
         public IWebElement DeleteButtonInTheWarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions action-panel-ddl']")]
