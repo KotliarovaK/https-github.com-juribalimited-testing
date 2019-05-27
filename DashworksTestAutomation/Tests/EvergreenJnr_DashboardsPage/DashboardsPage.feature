@@ -1128,7 +1128,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And User clicks the Filters button
 	And User add "1803: Readiness" filter where type is "Equals" with added column and following checkboxes:
 	| SelectedCheckboxes |
-	| Red                |
+	| Green              |
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
 	| ColumnName      |
@@ -1144,7 +1144,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| WidgetType | Title             | List               | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
 	| Card       | WidgetForDAS16127 | DeviceListFor16127 | First Cell |             |                   |         |         |           |            |                  |           |        |
 	Then Widget Preview is displayed to the user
-	And Widget Preview shows "RED" as First Cell value
+	And Widget Preview shows "GREEN" as First Cell value
 	And There are no errors in the browser console
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15765 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
