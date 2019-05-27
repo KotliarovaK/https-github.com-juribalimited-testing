@@ -4152,6 +4152,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectCanBeCreatedAfterUsingSavedDevi
 	Then Create Project button is enabled
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
+	
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16816 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
+	When User clicks "Users" on the left-hand menu
+	When Evergreen QueryStringURL is entered for Simple QueryType
+	| QueryType | QueryStringURL                                                                                                                                  |
+	| Username  | evergreen/#/users?$filter=(username%20EQUALS%20('AOG7951336'%2C'AOJ5740774'%2C'AOO9780350'%2C'AOS4843193'%2C'APA3392254%20%20'%2C'APB5713645')) |
+	And User create dynamic list with "DAS16816_List" name on "Users" page
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "DAS16816_Project" in the "Project Name" field
+	And User selects "DAS16816_List" in the Scope Project dropdown
+	Then Filling field error is not displayed
+	When User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS15666 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenProject
