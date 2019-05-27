@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS14172 @DAS14236 @DAS13002 @Delete_Newly_Created_Capacity_Unit @Do_Not_Run_With_CapacityUnits @Save_Default_Capacity_Unit @Set_Default_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS12141 @DAS14172 @DAS14236 @DAS13002 @DAS16803 @Delete_Newly_Created_Capacity_Unit @Do_Not_Run_With_CapacityUnits @Save_Default_Capacity_Unit @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorkingCorrectly
 	When User creates new Capacity Unit via api
 	| Name                   | Description | IsDefault |
