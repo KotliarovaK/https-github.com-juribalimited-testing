@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChang
 	Then "Teams" page should be displayed to the user
 	When User enters "My Team" text in the Search field for "Team" column
 	And User clicks content from "Team" column
-	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Buckets" tab
 	And User enters "Unassigned2" text in the Search field for "Bucket" column
 	Then "2" Onboarded objects are displayed
 	When User clicks Admin on the left-hand menu
