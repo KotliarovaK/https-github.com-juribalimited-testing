@@ -4152,4 +4152,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectCanBeCreatedAfterUsingSavedDevi
 	Then Create Project button is enabled
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS15666 @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenProject
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Projects" link on the Admin page
+	Then "Projects" page should be displayed to the user
+	When User clicks the "CREATE" Action button
+	Then "Create Project" page should be displayed to the user
+	When User enters "15666Project" in the "Project Name" field
+	And User selects "All Devices" in the Scope Project dropdown
+	When User selects "Clone from Evergreen to Project" in the Mode Project dropdown
+	And User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User enters "15666Project" text in the Search field for "Project" column
+	Then "TRUE" content is displayed in "Evergreen" column 
 	
