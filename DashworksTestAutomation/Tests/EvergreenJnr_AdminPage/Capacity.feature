@@ -2433,6 +2433,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	| i-stage A \ i-Migrated  |
 	| i-stage A \ i-Schedule  |
 	| i-stage A \ i-Targeted  |
+	When User clicks "Capacity" tab
 	When User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User selects following items in "Request Types" dropdown:
