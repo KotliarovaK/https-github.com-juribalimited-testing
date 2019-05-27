@@ -67,7 +67,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly
 	Then "DefaultCapacityUnit13720" text is displayed in the table content
 	When User enters "DefaultCapacityUnit13720" text in the Search field for "Capacity Unit" column
 	And User clicks content from "Capacity Unit" column
-	And User selects "Evergreen Capacity Unit Settings" tab on the Capacity Units page
 	Then "Default Unit" checkbox is checked and cannot be unchecked
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS13013 @DAS12926 @Delete_Newly_Created_Capacity_Unit
