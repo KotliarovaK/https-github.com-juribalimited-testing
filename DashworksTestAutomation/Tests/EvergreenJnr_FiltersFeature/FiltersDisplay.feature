@@ -1732,3 +1732,16 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTooltipsForUpdateButtonWhenDateFiel
 	Then "UPDATE" Action button have tooltip with "Complete all fields before saving this filter" text
 	When User select "Not empty" Operator value
 	Then "UPDATE" Action button have tooltip with "Complete all fields before saving this filter" text
+
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS16845
+Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsMissingForProjectOfMailboxesLists
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User clicks the Filters button
+	And User clicks Add New button on the Filter panel
+	And User enters "readiness" text in Search field at Filters Panel 
+	And User closes "Project Tasks: EmailMigra" filter category
+	And User closes "Project: MailboxEve" filter category
+	Then the following Filters subcategories are displayed for open category:
+	| Subcategories         |
+	| EmailMigra: Readiness |

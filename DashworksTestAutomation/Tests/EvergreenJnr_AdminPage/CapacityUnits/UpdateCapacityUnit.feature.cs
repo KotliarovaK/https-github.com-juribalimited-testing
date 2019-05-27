@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
         [NUnit.Framework.CategoryAttribute("DAS14172")]
         [NUnit.Framework.CategoryAttribute("DAS14236")]
         [NUnit.Framework.CategoryAttribute("DAS13002")]
+        [NUnit.Framework.CategoryAttribute("DAS16803")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("Save_Default_Capacity_Unit")]
@@ -130,6 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
                         "DAS14172",
                         "DAS14236",
                         "DAS13002",
+                        "DAS16803",
                         "Delete_Newly_Created_Capacity_Unit",
                         "Do_Not_Run_With_CapacityUnits",
                         "Save_Default_Capacity_Unit",

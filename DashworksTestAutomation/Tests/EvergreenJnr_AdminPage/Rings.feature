@@ -87,7 +87,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	Then "OneRing" content is displayed in "Ring name" field
 	Then "TwoRing" content is displayed in "Description" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901 @DAS16803
 Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
@@ -96,6 +96,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User type "OneRing" Name in the "Ring name" field on the Project details page
 	And User doubleclicks Create button on Create Ring page
 	Then Success message is displayed and contains "The ring has been created" text
+	And  "OneRing" text is displayed in the table content
 	When User enters "OneRing" text in the Search field for "Ring" column
 	Then Rows counter contains "1" found row of all rows
 	And There are no errors in the browser console
