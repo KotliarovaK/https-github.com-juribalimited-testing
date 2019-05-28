@@ -171,6 +171,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(content.GetHrefByColumnName(columnName) != null);
         }
 
+        [Then(@"Links from ""(.*)"" column is NOT displayed to the user on the Details Page")]
+        public void ThenLinksFromColumnIsNOTDisplayedToTheUserOnTheDetailsPage(string columnName)
+        {
+            var content = _driver.NowAt<DetailsPage>();
+            content.GetHrefByColumnName(columnName);
+            Assert.IsFalse(content.GetHrefByColumnName(columnName) != null);
+        }
+
         [Then(@"expanded section is displayed to the User")]
         public void ThenExpandedSectionIsDisplayedToTheUser()
         {

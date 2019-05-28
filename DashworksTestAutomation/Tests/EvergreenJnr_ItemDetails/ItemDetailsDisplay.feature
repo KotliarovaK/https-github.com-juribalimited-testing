@@ -1662,3 +1662,59 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	| GREEN                   |
 	| GREY                    |
 	| NONE                    |
+
+#not fully ready on 'Nova'
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
+	| Devices               |
+	| Owner                 |
+	| Owner Display         |
+	| Linked By             |
+	| Path                  |
+	| Category              |
+	| Status                |
+	| Date                  |
+	| Application Readiness |
+	| Pre Migration         |
+	| Post Migration        |
+	| Migration             |
+	| Email Controls        |
+	| Communications        |
+	And Links from "Device" column is displayed to the user on the Details Page
+	And Links from "Owner" column is displayed to the user on the Details Page
+	And Links from "Owner Display Name" column is displayed to the user on the Details Page
+	And Links from "Linked By" column is displayed to the user on the Details Page
+	And Links from "Path" column is NOT displayed to the user on the Details Page
+	And Links from "Category" column is NOT displayed to the user on the Details Page
+	And Links from "Status" column is NOT displayed to the user on the Details Page
+	And Links from "Date" column is NOT displayed to the user on the Details Page
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
+	And User clicks "03ME2G7TIR4GBN" link on the Details Page
+	Then Details page for "03ME2G7TIR4GBN" item is displayed correctly
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	And User enters "ACG370114" text in the Search field for "Owner" column on the Details Page
+	And User clicks "ACG370114" link on the Details Page
+	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	And User enters "James N. Snow" text in the Search field for "Owner Display Name" column on the Details Page
+	And User clicks "James N. Snow" link on the Details Page
+	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	#Not ready for 'nova'
+	#When User enters "ACG370114" text in the Search field for "Linked By" column on the Details Page
+	#When User clicks "ACG370114" link on the Details Page
+	#Then Details page for "ACG370114" item is displayed correctly
