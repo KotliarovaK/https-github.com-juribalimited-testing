@@ -5,7 +5,7 @@ using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
-namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
+namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 {
     internal class AutomationsPage : SeleniumBasePage
     {

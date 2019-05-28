@@ -19,6 +19,7 @@ using System.Linq;
 using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using TechTalk.SpecFlow;
