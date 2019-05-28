@@ -8018,6 +8018,139 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DAS15780")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrderingInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrderingInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DAS15780",
+                        "Delete_Newly_Created_List",
+                        "Delete_Newly_Created_Dashboard"});
+#line 1836
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1837
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1838
+ testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table143 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table143.AddRow(new string[] {
+                        "Babel(Engl: Readiness"});
+#line 1839
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table143, "And ");
+#line 1842
+ testRunner.And("User move \'Babel(Engl: Readiness\' column to \'Hostname\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1843
+ testRunner.And("User move \'Hostname\' column to \'Device Type\' column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1844
+ testRunner.And("User create dynamic list with \"ListForDas15780\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1845
+ testRunner.Then("\"ListForDas15780\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1846
+ testRunner.When("Dashboard with \"1803 ProjectDAS15780\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1847
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1848
+ testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table144 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "Type",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "SplitBy",
+                        "OrderBy",
+                        "MaxValues",
+                        "ShowLegend",
+                        "TableOrientation",
+                        "Drilldown",
+                        "Layout"});
+            table144.AddRow(new string[] {
+                        "Column",
+                        "SortOrderCheckForDas15780",
+                        "ListForDas15780",
+                        "",
+                        "",
+                        "Count",
+                        "Babel(Engl: Readiness",
+                        "Babel(Engl: Readiness ASC",
+                        "",
+                        "",
+                        "",
+                        "Yes",
+                        ""});
+#line 1849
+ testRunner.And("User adds new Widget", ((string)(null)), table144, "And ");
+#line 1852
+ testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1853
+ testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1854
+ testRunner.Then("Card \"SortOrderCheckForDas15780\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table145 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table145.AddRow(new string[] {
+                        "Empty"});
+            table145.AddRow(new string[] {
+                        "Out Of Scope"});
+            table145.AddRow(new string[] {
+                        "Blue"});
+            table145.AddRow(new string[] {
+                        "Red"});
+            table145.AddRow(new string[] {
+                        "Amber"});
+            table145.AddRow(new string[] {
+                        "Green"});
+            table145.AddRow(new string[] {
+                        "Grey"});
+#line 1855
+ testRunner.And("Line X labels of \"SortOrderCheckForDas15780\" column widget is displayed in follow" +
+                    "ing order:", ((string)(null)), table145, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

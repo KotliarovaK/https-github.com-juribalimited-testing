@@ -1831,3 +1831,33 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Unassigned2      |
 	| Unassigned       |
 	| Empty            |
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15780 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName           |
+	| Babel(Engl: Readiness |
+	And User move 'Babel(Engl: Readiness' column to 'Hostname' column
+	And User move 'Hostname' column to 'Device Type' column
+	And User create dynamic list with "ListForDas15780" name on "Devices" page
+	Then "ListForDas15780" list is displayed to user
+	When Dashboard with "1803 ProjectDAS15780" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	When User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title                     | List            | Type | AggregateBy | AggregateFunction | SplitBy               | OrderBy                   | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
+	| Column     | SortOrderCheckForDas15780 | ListForDas15780 |      |             | Count             | Babel(Engl: Readiness | Babel(Engl: Readiness ASC |           |            |                  | Yes       |        |
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "SortOrderCheckForDas15780" Widget is displayed to the user
+	And Line X labels of "SortOrderCheckForDas15780" column widget is displayed in following order:
+	| ColumnName   |
+	| Empty        |
+	| Out Of Scope |
+	| Blue         |
+	| Red          |
+	| Amber        |
+	| Green        |
+	| Grey         |
