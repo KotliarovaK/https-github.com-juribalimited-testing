@@ -1684,10 +1684,16 @@ Scenario: EvergreenJnr_DevicesLists_CheckAddTeamsPermissionsOnDetailsPanel
 	When User clicks the "ADD TEAM" Action button
 	When User selects the "Team 1062" team for sharing
 	Then "ADD TEAM" Action button is disabled
+	When User select "Edit" in Select Access dropdown
+	Then "ADD TEAM" Action button is active
 	When User clicks the "CANCEL" Action button
 	When User clicks the "ADD TEAM" Action button
 	When User selects the "Team 1062" team for sharing
 	When User select "Admin" in Select Access dropdown
+	When User clicks the "CANCEL" Action button
+	When User clicks the "ADD TEAM" Action button
+	When User selects the "Team 1062" team for sharing
+	When User select "Read" in Select Access dropdown
 	When User clicks the "CANCEL" Action button
 	When User navigates to the "DAS14263_Pivot" list
 	Then User remove list with "DAS14263_Pivot" name on "Devices" page
