@@ -13,6 +13,7 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement DashboardsPanelIcon { get; set; }
 
+
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
 
@@ -286,6 +287,9 @@ namespace DashworksTestAutomation.Pages
             var to = $".//span[@class='mat-option-text'][contains(text(), '{newValue}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(to));
             Driver.FindElement(By.XPath(to)).Click();
+
+            var newVal = $" .//div[@class='permissions-container']//span[contains(text(), '{newValue}')]";
+            Driver.WaitWhileControlIsNotDisplayed(By.XPath(newVal));
         }
 
         public void SelectOptionFromList(string option)

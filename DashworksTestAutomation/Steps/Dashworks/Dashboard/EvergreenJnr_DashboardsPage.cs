@@ -954,6 +954,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
 
                 page.PermissionAddUserButton.Click();
+                Thread.Sleep(2000);
             }
         }
 
@@ -1185,6 +1186,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCardWidgetIsBlank()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
             Assert.IsEmpty(page.CardWidgetValue.Text);
         }
 

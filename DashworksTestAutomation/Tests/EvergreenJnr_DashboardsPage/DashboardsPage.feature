@@ -293,10 +293,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenning
 	Then User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS14911 
+@Evergreen @EvergreenJnr_DashboardsPage @DAS14911 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWithDifferentPermissions
-	When User clicks the "CREATE DASHBOARD" Action button
-	And User creates new Dashboard with "Dashboard for DAS14911" name
+	When Dashboard with "Dashboard for DAS14911" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks Show Dashboards panel icon on Dashboards page
 	And User clicks Settings button for "Dashboard for DAS14911" dashboard
 	And User clicks Manage in the list panel
 	Then Permission panel is displayed to the user
@@ -304,34 +305,30 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	And User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Admin      |
-	Then User "Administrator" was added to shared list with "Admin" permission
+	Then User "Admin" was added to shared list with "Admin" permission
 	And There are no errors in the browser console
-	When User clicks Settings button for "Administrator" shared user
+	When User clicks Settings button for "Admin" shared user
 	And User selects "Remove" option from Settings
 	Then There is no user in shared list
 	And There are no errors in the browser console
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Edit       |
-	Then User "Administrator" was added to shared list with "Edit" permission
+	Then User "Admin" was added to shared list with "Edit" permission
 	And There are no errors in the browser console
-	When User clicks Settings button for "Administrator" shared user
+	When User clicks Settings button for "Admin" shared user
 	And User selects "Remove" option from Settings
 	Then There is no user in shared list
 	And There are no errors in the browser console
 	When User adds user to list of shared person
 	| User          | Permission |
 	| Administrator | Read       |
-	Then User "Administrator" was added to shared list with "Read Only" permission
+	Then User "Admin" was added to shared list with "Read Only" permission
 	And There are no errors in the browser console
-	When User clicks Settings button for "Administrator" shared user
+	When User clicks Settings button for "Admin" shared user
 	And User selects "Remove" option from Settings
 	Then There is no user in shared list
 	And There are no errors in the browser console
-	#teardown
-	When User clicks Settings button for "Dashboard for DAS14911" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
@@ -364,8 +361,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope |             | Count             | Count ASC |                  | 10        |            |
 	Then There are no errors in the browser console
 	And "DAS-14920_2" Widget is displayed to the user
-	Then "12,064" count is displayed for "False" in the table Widget
-	And "5,161" count is displayed for "True" in the table Widget
+	Then "12,044" count is displayed for "False" in the table Widget
+	And "5,181" count is displayed for "True" in the table Widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Delete_Newly_Created_List @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
@@ -673,7 +670,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	And User adds new Widget
 	| WidgetType | Title                    | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
 	| Pie        | WidgetForDAS15900_Edited | All Devices | Hostname |             | Count             | Count ASC |                  | 11        | true       |      |           |        | 
-	When User clicks first Dashboard in dashboards list
+	When User clicks Show Dashboards panel icon on Dashboards page
+	And User clicks first Dashboard in dashboards list
 	Then User sees "You have unsaved changes. Are you sure you want to leave the page?" text in alert on Edit Widget page
 	When User clicks "NO" button in Unsaved Changes alert
 	Then Unsaved Changes alert not displayed to the user
@@ -1025,7 +1023,7 @@ Examples:
 	| Half donut | 00RUUMAH9OZN9A |
 	| Donut      | 00RUUMAH9OZN9A |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks "Devices" on the left-hand menu
 	When User click on 'Owner Display Name' column header
