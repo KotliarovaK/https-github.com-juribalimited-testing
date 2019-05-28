@@ -526,7 +526,7 @@ namespace DashworksTestAutomation.Helpers
                         .SendKeys(row["Values"]);
                     _driver.FindElement(
                             By.XPath(
-                                ".//button[@class='button-small mat-primary mat-raised-button _mat-animation-noopable']"))
+                                ".//button[@class='button-small mat-primary mat-raised-button']"))
                         .Click();
                 }
             }

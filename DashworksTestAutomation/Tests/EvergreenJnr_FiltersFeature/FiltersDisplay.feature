@@ -365,10 +365,10 @@ Scenario Outline: EvergreenJnr_DevicesList_CheckThatFilterOperatorsIsCorrectInFi
 	Then "Devices" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Windows7Mi: Date & Time Task" filter where type is "<operatorValue>" with added column and following value:
+	When User add "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task" filter where type is "<operatorValue>" with added column and following value:
 	| Values         |
 	| <filterOption> |
-	Then "Windows7Mi: Date & Time Task" filter is added to the list
+	Then "Windows7Mi: Computer Information ---- Text fill; Text fill; \ Date & Time Task" filter is added to the list
 	And "<rowsCount>" rows are displayed in the agGrid
 	And Options is displayed in added filter info
 	| Values                |
@@ -1130,7 +1130,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatBucketAndCapacityUnitSubcategor
 	Then Filters panel is displayed to the user
 	When User clicks Add New button on the Filter panel
 	Then "Evergreen" section is displayed in the Filter panel
-	When User closes "Selected Columns" filter category
+	When User closes "Suggested" filter category
 	And User expands "Evergreen" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories           |
@@ -1678,7 +1678,6 @@ Scenario: EvergreenJnr_UsersList_CheckStageNameInTheFiltestForUsersLists
 	And User expands "Project Tasks: DeviceSche" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories                               |
-	| DeviceSche: Stage 1 \ user radiobutton task |
 	| DeviceSche: Stage 2 \ user DDL task         |
 	| DeviceSche: Stage 2 \ user radiobutton task |
 	| DeviceSche: Stage 2 \ user text task        |
