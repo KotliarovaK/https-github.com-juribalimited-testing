@@ -1776,8 +1776,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update request type  |
 	| Update task value    |
 
-	#set not_ready on 10 apr because it's working on light year and fails on automation/kepler
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
