@@ -1601,10 +1601,11 @@ this.FeatureBackground();
             table36.AddRow(new string[] {
                         string.Format("{0}", filterOption)});
 #line 368
- testRunner.When(string.Format("User add \"Windows7Mi: Date & Time Task\" filter where type is \"{0}\" with added col" +
-                        "umn and following value:", operatorValue), ((string)(null)), table36, "When ");
+ testRunner.When(string.Format("User add \"Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Ti" +
+                        "me Task\" filter where type is \"{0}\" with added column and following value:", operatorValue), ((string)(null)), table36, "When ");
 #line 371
- testRunner.Then("\"Windows7Mi: Date & Time Task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Windows7Mi: Computer Information ---- Text fill; Text fill; \\ Date & Time Task\" " +
+                    "filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 372
  testRunner.And(string.Format("\"{0}\" rows are displayed in the agGrid", rowsCount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -5052,7 +5053,7 @@ this.FeatureBackground();
 #line 1132
  testRunner.Then("\"Evergreen\" section is displayed in the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1133
- testRunner.When("User closes \"Selected Columns\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1134
  testRunner.And("User expands \"Evergreen\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -7358,8 +7359,6 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table117 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
             table117.AddRow(new string[] {
-                        "DeviceSche: Stage 1 \\ user radiobutton task"});
-            table117.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user DDL task"});
             table117.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user radiobutton task"});
@@ -7413,22 +7412,22 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS15899"});
-#line 1687
+#line 1686
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1688
+#line 1687
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1689
+#line 1688
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1690
+#line 1689
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1691
+#line 1690
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1692
+#line 1691
  testRunner.And("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1693
+#line 1692
  testRunner.And("User expands \"Project Tasks: DeviceSche\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table118 = new TechTalk.SpecFlow.Table(new string[] {
@@ -7437,7 +7436,7 @@ this.FeatureBackground();
                         "DeviceSche: Stage 2 \\ app date task"});
             table118.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ app radiobutton task"});
-#line 1694
+#line 1693
  testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table118, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -7485,22 +7484,22 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS15899"});
-#line 1700
+#line 1699
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1701
+#line 1700
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1702
+#line 1701
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1703
+#line 1702
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1704
+#line 1703
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1705
+#line 1704
  testRunner.And("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1706
+#line 1705
  testRunner.And("User expands \"Project Tasks: MailboxEve\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table119 = new TechTalk.SpecFlow.Table(new string[] {
@@ -7525,7 +7524,7 @@ this.FeatureBackground();
                         "MailboxEve: 1 \\ Target"});
             table119.AddRow(new string[] {
                         "MailboxEve: 1 \\ Target (Slot)"});
-#line 1707
+#line 1706
  testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table119, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -7573,37 +7572,37 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS16426"});
-#line 1721
+#line 1720
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1722
+#line 1721
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1723
+#line 1722
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1724
+#line 1723
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1725
+#line 1724
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1726
+#line 1725
  testRunner.When("user select \"User Dashworks First Seen\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1727
+#line 1726
  testRunner.And("User select \"Equals\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1728
+#line 1727
  testRunner.Then("\"UPDATE\" Action button have tooltip with \"You must enter a date\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1729
+#line 1728
  testRunner.When("User select \"Between\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1730
+#line 1729
  testRunner.Then("\"UPDATE\" Action button have tooltip with \"You must enter a start date\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1731
+#line 1730
  testRunner.When("User select \"Empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1732
+#line 1731
  testRunner.Then("\"UPDATE\" Action button have tooltip with \"Complete all fields before saving this " +
                     "filter\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1733
+#line 1732
  testRunner.When("User select \"Not empty\" Operator value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1734
+#line 1733
  testRunner.Then("\"UPDATE\" Action button have tooltip with \"Complete all fields before saving this " +
                     "filter\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -7654,31 +7653,31 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
                         "DAS16845"});
-#line 1737
+#line 1736
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1738
+#line 1737
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1739
+#line 1738
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1740
+#line 1739
  testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1741
+#line 1740
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1742
+#line 1741
  testRunner.And("User enters \"readiness\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1743
+#line 1742
  testRunner.And("User closes \"Project Tasks: EmailMigra\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1744
+#line 1743
  testRunner.And("User closes \"Project: MailboxEve\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table120 = new TechTalk.SpecFlow.Table(new string[] {
                         "Subcategories"});
             table120.AddRow(new string[] {
                         "EmailMigra: Readiness"});
-#line 1745
+#line 1744
  testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table120, "Then ");
 #line hidden
             this.ScenarioCleanup();
