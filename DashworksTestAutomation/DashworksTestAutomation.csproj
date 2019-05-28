@@ -284,6 +284,8 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\BeforeScenario\SaveDefaultCapacityUnitBeforeScenario.cs" />
