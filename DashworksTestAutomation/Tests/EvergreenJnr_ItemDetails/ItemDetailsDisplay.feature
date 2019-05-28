@@ -413,7 +413,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatOpenedSectionIsDisplayedCorrectlyOnT
 	Then User sees loaded tab "Evergreen Detail" on the Details page
 	When User navigates to the "Advertisements" sub-menu on the Details page
 	Then "Advert - A0121431" content is displayed in "Advertisement" column
-	And "Hewlett-Packard" content is displayed in "Manufacturer" column
+	And "Hewlett-Packard" content is displayed in "Vendor" column
 	And "7" rows found label displays on Details Page
 	And table content is present
 	Then User sees loaded tab "Advertisements" on the Details page
@@ -1249,14 +1249,14 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	When User click content from "Hostname" column
 	When User navigates to the "Applications" main-menu on the Details page
 	Then following columns are displayed on the Item details page:
-	| ColumnName   |
-	| Application  |
-	| Manufacturer |
-	| Version      |
-	| Compliance   |
-	| Installed    |
-	| Used         |
-	| Entitled     |
+	| ColumnName  |
+	| Application |
+	| Vendor      |
+	| Version     |
+	| Compliance  |
+	| Installed   |
+	| Used        |
+	| Entitled    |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15951
 Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplicationsDetailSection
@@ -1266,13 +1266,13 @@ Scenario: EvergreenJnr_DevicesList_CheckThatColumnsAreDisplayedCorrectlyInApplic
 	When User navigates to the "Applications" main-menu on the Details page
 	When User navigates to the "Evergreen Detail" sub-menu on the Details page
 	Then "Application" column is displayed to the user
-	When User have opened Column Settings for "Manufacturer" column in the Details Page table
+	When User have opened Column Settings for "Vendor" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Application" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns are displayed on the Item details page:
 	| ColumnName           |
-	| Manufacturer         |
+	| Vendor               |
 	| Version              |
 	| Compliance           |
 	| Association          |
@@ -1581,7 +1581,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	And User selects 'Copy row' option in context menu
 	Then Next data 'Advantage Data Architect\tUnknown\tExtended Systems\tGreen\tSMS_GEN\tUnknown\tTrue\tFalse\t\t\t5200\t75518\t10 Jan 2018' is copied
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16322
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16322 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

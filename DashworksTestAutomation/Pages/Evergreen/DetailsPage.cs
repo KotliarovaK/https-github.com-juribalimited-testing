@@ -107,7 +107,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement GetExpandedSectionByName(string tabName)
         {
-            var selector = By.XPath($"//*[text()='{tabName}']/ancestor::div[@class='field-category collapsed']");
+            var selector = By.XPath($"//*[text()='{tabName}']/ancestor::div[@class='field-category']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

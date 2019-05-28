@@ -1882,7 +1882,7 @@ this.FeatureBackground();
 #line 415
  testRunner.Then("\"Advert - A0121431\" content is displayed in \"Advertisement\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 416
- testRunner.And("\"Hewlett-Packard\" content is displayed in \"Manufacturer\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Hewlett-Packard\" content is displayed in \"Vendor\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 417
  testRunner.And("\"7\" rows found label displays on Details Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 418
@@ -5180,7 +5180,7 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "Application"});
             table27.AddRow(new string[] {
-                        "Manufacturer"});
+                        "Vendor"});
             table27.AddRow(new string[] {
                         "Version"});
             table27.AddRow(new string[] {
@@ -5259,8 +5259,7 @@ this.FeatureBackground();
 #line 1268
  testRunner.Then("\"Application\" column is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1269
- testRunner.When("User have opened Column Settings for \"Manufacturer\" column in the Details Page ta" +
-                    "ble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User have opened Column Settings for \"Vendor\" column in the Details Page table", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1270
  testRunner.And("User clicks Column button on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1271
@@ -5271,7 +5270,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table28.AddRow(new string[] {
-                        "Manufacturer"});
+                        "Vendor"});
             table28.AddRow(new string[] {
                         "Version"});
             table28.AddRow(new string[] {
@@ -6313,6 +6312,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16322")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DevicesList_CheckThatActionPanelImplementedForItemDetailsPage()
         {
             System.Exception lastException = null;
@@ -6346,7 +6346,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS16322"});
+                        "DAS16322",
+                        "Not_Ready"});
 #line 1585
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
