@@ -187,7 +187,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement SelectRadioButtonByName(string radioButtonName)
         {
-            var button = By.XPath($"//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
+            var button = By.XPath($".//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
             Driver.WaitWhileControlIsNotDisplayed(button);
             return Driver.FindElement(button);
         }

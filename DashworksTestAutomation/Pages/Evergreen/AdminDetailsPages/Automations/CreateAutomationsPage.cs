@@ -12,6 +12,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
         [FindsBy(How = How.XPath, Using = ".//h2[contains(text(), 'Create Automation')]")]
         public IWebElement CreateAutomationsTitle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Automation Name']")]
+        public IWebElement AutomationNameField { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Description']")]
+        public IWebElement DescriptionField { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
