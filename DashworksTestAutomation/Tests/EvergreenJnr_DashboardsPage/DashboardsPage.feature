@@ -564,7 +564,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	Then "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @Delete_Newly_Created_Dashboard @Not_Ready
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with "Dashboard for DAS15721" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

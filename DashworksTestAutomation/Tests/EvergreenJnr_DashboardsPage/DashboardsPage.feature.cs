@@ -2957,7 +2957,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15721")]
         [NUnit.Framework.CategoryAttribute("DAS15937")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating()
         {
             System.Exception lastException = null;
@@ -2993,8 +2992,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15721",
                         "DAS15937",
-                        "Delete_Newly_Created_Dashboard",
-                        "Not_Ready"});
+                        "Delete_Newly_Created_Dashboard"});
 #line 568
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
