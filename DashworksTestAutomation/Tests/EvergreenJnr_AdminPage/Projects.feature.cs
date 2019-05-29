@@ -10329,7 +10329,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplaye" +
@@ -10343,7 +10343,7 @@ this.FeatureBackground();
                         "Project_Creation_and_Scope",
                         "Projects",
                         "Delete_Newly_Created_Project",
-                        "Not_Run"});
+                        "archived"});
 #line 3803
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

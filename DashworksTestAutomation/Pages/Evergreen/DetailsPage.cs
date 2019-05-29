@@ -105,13 +105,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetExpandedSectionByName(string tabName)
-        {
-            var selector = By.XPath($"//*[text()='{tabName}']/ancestor::div[@class='field-category']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
-        }
-
         public IWebElement GetCellByTextFromKeyValueGrid(string text)
         {
             return Driver.FindElement(By.XPath($".//tbody/*/td/*/span[text()='{text}']"));
