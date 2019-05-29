@@ -28,5 +28,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
             Assert.IsTrue(page.GetOpenedPageByName(pageName).Displayed(), $"{pageName} page is not loaded");
         }
+
+        [Then(@"""(.*)"" sub-menu section is expanded")]
+        public void ThenSub_MenuSectionIsExpanded(string section)
+        {
+            var page = _driver.NowAtWithoutWait<BaseGridPage>();
+            Assert.IsTrue(page.GetExpandedSubMenuSection(section).Displayed(), $"{section} section is collapsed");
+        }
     }
 }
