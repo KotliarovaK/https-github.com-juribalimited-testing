@@ -87,6 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15309")]
         [NUnit.Framework.CategoryAttribute("DAS15626")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckActionGridInAutomations()
         {
             System.Exception lastException = null;
@@ -121,7 +122,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS15309",
-                        "DAS15626"});
+                        "DAS15626",
+                        "Not_Ready"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

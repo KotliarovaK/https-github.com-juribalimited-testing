@@ -5891,7 +5891,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS15291")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot()
         {
             System.Exception lastException = null;
@@ -5925,41 +5924,40 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
-                        "DAS15291",
-                        "Not_Ready"});
-#line 1781
+                        "DAS15291"});
+#line 1780
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1782
+#line 1781
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1783
+#line 1782
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1784
+#line 1783
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1785
+#line 1784
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table122 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table122.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-#line 1786
+#line 1785
  testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table122, "When ");
-#line 1789
+#line 1788
  testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1790
+#line 1789
  testRunner.And("User selects \"Update task value\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1791
+#line 1790
  testRunner.And("User selects \"1803 Rollout\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1792
+#line 1791
  testRunner.And("User selects \"Pre-Migration\" Stage on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1793
+#line 1792
  testRunner.And("User selects \"Scheduled Date\" Task on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1794
+#line 1793
  testRunner.And("User selects \"Update\" Update Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1795
+#line 1794
  testRunner.And("User selects \"23 Nov 2018\" Date on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table123 = new TechTalk.SpecFlow.Table(new string[] {
@@ -5982,7 +5980,7 @@ this.FeatureBackground();
                         "London - Southbank Morning"});
             table123.AddRow(new string[] {
                         "London - Southbank Afternoon"});
-#line 1797
+#line 1796
  testRunner.Then("following values are displayed in \"Capacity Slot\" drop-down on Action panel:", ((string)(null)), table123, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -6030,57 +6028,57 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS16059"});
-#line 1810
+#line 1809
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1811
+#line 1810
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1812
+#line 1811
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1813
+#line 1812
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1814
+#line 1813
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table124 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table124.AddRow(new string[] {
                         "MailboxEve: Ring"});
-#line 1815
+#line 1814
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table124, "When ");
-#line 1818
+#line 1817
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1819
+#line 1818
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table125 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table125.AddRow(new string[] {
                         "003F5D8E1A844B1FAA5@bclabs.local"});
-#line 1820
+#line 1819
  testRunner.When("User select \"Email Address\" rows in the grid", ((string)(null)), table125, "When ");
-#line 1823
+#line 1822
  testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1824
+#line 1823
  testRunner.And("User selects \"Update ring\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1825
+#line 1824
  testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1826
+#line 1825
  testRunner.And("User selects \"Mailbox Evergreen Capacity Project\" Project on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1827
+#line 1826
  testRunner.And("User selects \"Unassigned\" Ring on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1828
+#line 1827
  testRunner.And("User clicks the \"UPDATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1829
+#line 1828
  testRunner.Then("Warning message with \"Are you sure you want to proceed, this operation cannot be " +
                     "undone.\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1830
+#line 1829
  testRunner.And("User clicks \"UPDATE\" button on message box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1831
+#line 1830
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1832
+#line 1831
  testRunner.And("Success message with \"1 of 1 object was in the selected project and has been queu" +
                     "ed\" text is displayed on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -6131,31 +6129,31 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS16356"});
-#line 1835
+#line 1834
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1836
+#line 1835
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1837
+#line 1836
  testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1838
+#line 1837
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1839
+#line 1838
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table126 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table126.AddRow(new string[] {
                         "$231000-3AC04R8AR431"});
-#line 1840
+#line 1839
  testRunner.When("User select \"Username\" rows in the grid", ((string)(null)), table126, "When ");
-#line 1843
+#line 1842
  testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1844
+#line 1843
  testRunner.And("User selects \"Update ring\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1845
+#line 1844
  testRunner.And("User selects \"Project\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table127 = new TechTalk.SpecFlow.Table(new string[] {
@@ -6170,7 +6168,7 @@ this.FeatureBackground();
                         "User Evergreen Capacity Project"});
             table127.AddRow(new string[] {
                         "User Scheduled Test (Jo)"});
-#line 1846
+#line 1845
  testRunner.Then("following values are displayed in \"Project\" drop-down with searchfield on Action " +
                     "panel:", ((string)(null)), table127, "Then ");
 #line hidden
@@ -6221,33 +6219,33 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS16640"});
-#line 1855
+#line 1854
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1856
+#line 1855
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1857
+#line 1856
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1858
+#line 1857
  testRunner.When("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1859
+#line 1858
  testRunner.Then("Actions panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table128 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});
             table128.AddRow(new string[] {
                         "001BAQXT6JWFPI"});
-#line 1860
+#line 1859
  testRunner.When("User select \"Hostname\" rows in the grid", ((string)(null)), table128, "When ");
-#line 1863
+#line 1862
  testRunner.And("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1864
+#line 1863
  testRunner.And("User selects \"Update bucket\" Bulk Update Type on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1865
+#line 1864
  testRunner.And("User selects \"Evergreen\" Project or Evergreen on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1866
+#line 1865
  testRunner.Then("options for \"Bucket\" field are displayed in alphabetical order on Action panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

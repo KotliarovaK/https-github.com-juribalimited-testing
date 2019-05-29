@@ -5,13 +5,14 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15903 @DAS13467 @DAS16239
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15903 @DAS13467 @DAS16239 @DAS16510 @DAS
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 	When User selects "Automation Log" tab on the Project details page
+	Then "Automations" sub-menu section is expanded
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName       |
 	| Date             |
