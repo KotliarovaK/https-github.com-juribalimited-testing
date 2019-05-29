@@ -17,6 +17,19 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User type "15309" Name in the "Description" field on the Automation details page
 	When User selects "All Devices" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
-	And User clicks the "CREATE" Action button
-	When User selects "Do not include users" checkbox on the Project details page
 	When User selects "Active" checkbox on the Automation Page
+	And User clicks the "CREATE" Action button
+	When User clicks "Actions" tab
+	Then message 'No users found' is displayed to the user
+	Then "No Actions Found" message is displayed on the Admin Page
+	Then "CREATE ACTION" Action button is active
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName    |
+	|               |
+	| Action        |
+	|               |
+	| Type          |
+	| Project       |
+	| Task or Field |
+	| Value         |
+	|               |

@@ -11,21 +11,20 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
 {
     [Binding]
-    internal class CreateAutomation : SpecFlowContext
+    internal class UpdateAutomation : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public CreateAutomation(RemoteWebDriver driver)
+        public UpdateAutomation(RemoteWebDriver driver)
         {
             _driver = driver;
         }
 
-        [Then(@"Create Automation page is displayed to the User")]
-        public void ThenCreateAutomationPageIsDisplayedToTheUser()
+        [Then(@"Update Automation page is displayed to the User")]
+        public void ThenUpdateAutomationPageIsDisplayedToTheUser()
         {
-            var page = _driver.NowAt<CreateAutomationsPage>();
-            Assert.IsTrue(page.CreateAutomationsTitle.Displayed());
-            Assert.IsTrue(page.AutomationNameField.Displayed(), "Create Automation page is not displayed");
+            var page = _driver.NowAt<UpdateAutomationPage>();
+            Assert.IsTrue(page.UpdateAutomationTitle.Displayed(), "Update Automation page is not displayed");
         }
     }
 }
