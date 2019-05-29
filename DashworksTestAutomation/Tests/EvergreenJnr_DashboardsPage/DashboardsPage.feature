@@ -64,15 +64,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	| Section2_WidgetForDAS12989_2 |
 	And User sees number of Widgets increased by "1" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated
-	When User clicks Edit mode trigger on Dashboards page
+	When Dashboard with "Dashboard for DAS14358" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14358 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
 	And User remembers number of Sections and Widgets on Dashboards page
-	And User clicks Ellipsis menu for Section having "Domain Profile" Widget on Dashboards page
+	And User clicks Ellipsis menu for Section having "WidgetForDAS14358" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
 	Then User sees number of Sections increased by "1" on Dashboards page
-	And User sees number of Widgets increased by "4" on Dashboards page
-	When User deletes duplicated Section having "Domain Profile" Widget on Dashboards page
+	And User sees number of Widgets increased by "1" on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn
