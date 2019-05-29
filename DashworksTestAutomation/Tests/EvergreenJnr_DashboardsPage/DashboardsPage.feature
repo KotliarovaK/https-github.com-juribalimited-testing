@@ -1027,7 +1027,7 @@ Examples:
 	| Half donut | 00RUUMAH9OZN9A |
 	| Donut      | 00RUUMAH9OZN9A |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks "Devices" on the left-hand menu
 	When User click on 'Owner Display Name' column header
@@ -1046,11 +1046,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	And User selects "DAS16266_List" as Widget List
 	When User selects "First Cell" in the "Type" Widget dropdown
 	When User clicks the "CREATE" Action button
-	Then Card Widget is blank
-	When User clicks Settings button for "DAS16266_Dashboard" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
-	Then Search field in selected Filter is empty
+	Then Widget Preview shows "Empty" as First Cell value
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
