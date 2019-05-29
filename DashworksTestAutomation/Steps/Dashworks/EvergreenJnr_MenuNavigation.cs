@@ -200,5 +200,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             menu.SelectHiddenLeftHandMenu(menuName).Click();
         }
 
+        [Then(@"""(.*)"" left-hand menu is highlighted")]
+        public void ThenLeft_HandMenuIsHighlighted(string menuName)
+        {
+            var menu = _driver.NowAtWithoutWait<BaseDashboardPage>();
+            Assert.AreEqual(menu.GetHighlightedLeftMenuByName(menuName).GetCssValue("color"), "rgba(242, 88, 49, 1)");
+            Assert.IsTrue(menu.GetHighlightedLeftMenuByName(menuName).Displayed(), $"");
+        }
     }
 }

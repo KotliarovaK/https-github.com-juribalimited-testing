@@ -35,5 +35,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
             Assert.IsTrue(page.GetExpandedSubMenuSection(section).Displayed(), $"{section} section is collapsed");
         }
+
+        [Then(@"""(.*)"" field is empty on the Admin page")]
+        public void ThenFieldIsEmptyOnTheAdminPage(string fieldName)
+        {
+            var page = _driver.NowAtWithoutWait<BaseGridPage>();
+            Assert.IsTrue(page.GetEmptyFieldByName(fieldName).Displayed(), $"{fieldName} field is populated");
+        }
     }
 }

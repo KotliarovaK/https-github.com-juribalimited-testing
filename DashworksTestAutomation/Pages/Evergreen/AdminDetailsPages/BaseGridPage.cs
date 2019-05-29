@@ -643,5 +643,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($"//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetEmptyFieldByName(string fieldName)
+        {
+            var selector = By.XPath($".//mat-form-field[contains(@class, 'invalid')]//label[text()='{fieldName}']");
+            return Driver.FindElement(selector);
+        }
     }
 }
