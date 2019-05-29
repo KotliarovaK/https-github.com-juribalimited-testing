@@ -1863,3 +1863,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	| Amber        |
 	| Green        |
 	| Grey         |
+
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS16347 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                             |
+	| Barry'sUse: Ring (Primary Device Only) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	And User click on 'Barry'sUse: Ring (Primary Device Only)' column header
+	And User click on 'Barry'sUse: Ring (Primary Device Only)' column header
+	Then data in table is sorted by 'Barry'sUse: Ring (Primary Device Only)' column in descending order
+	When User clicks Save button on the list panel
+	And User create dynamic list with "List16347" name on "Devices" page
+	And Dashboard with "Dashboard_DAS16347" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
+	| Card       | WidgetForDAS16347 | List16347 | First Cell |             |                   |         |         |           |            |                  |           |        |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console
