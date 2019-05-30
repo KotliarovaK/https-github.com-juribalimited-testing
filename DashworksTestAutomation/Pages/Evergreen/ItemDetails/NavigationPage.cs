@@ -20,9 +20,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = MainTabsOnDetailsPage)]
         public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='das-mat-tree-submenu']//li[contains(@class, 'das-mat-tree-node')]/a/text()[1]")]
-        public IList<IWebElement> SubTabsOnDetailsPageList { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
