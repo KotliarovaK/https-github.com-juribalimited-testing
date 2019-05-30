@@ -32,7 +32,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "ProjectForDAS14780" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -65,7 +65,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRingWasChanged
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE" Action button
+	And User clicks the "CREATE PROJECT" Action button
 	And User enters "ProjectForDAS14839" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User selects "Clone from Evergreen to Project" in the Mode Project dropdown
@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "14690_Project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -184,7 +184,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "14695_Project" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown

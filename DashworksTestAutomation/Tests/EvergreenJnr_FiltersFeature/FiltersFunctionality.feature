@@ -1896,7 +1896,24 @@ Scenario: EvergreenJnr_UsersList_CheckThatLanguageFilterIsDisplayedOnTheUserList
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	Then Filters panel is displayed to the user
 	When User add "Windows7Mi: Language" filter where type is "Equals" with added column and Lookup option
 	| SelectedValues  |
 	| English         |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16071
+Scenario Outline: EvergreenJnr_DevicesList_CheckThatNotAndOffBoarderValuesIncludedToStatusFilter
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "<FilterName>" filter where type is "Equals" with added column and Lookup option
+	| SelectedValues       |
+	| <SelectedCheckboxes> |
+	Then "<FilterName>" filter is added to the list
+	Then table data is filtered correctly
+	Then "<Rows>" rows are displayed in the agGrid
+
+Examples: 
+	| FilterName         | SelectedCheckboxes | Rows   |
+	| Windows7Mi: Status | Not Onboarded      | 12,044 |
+	| Windows7Mi: Status | Offboarded         | 20     |

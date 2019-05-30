@@ -3799,7 +3799,8 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	And User clicks the Use Dashworks Evergreen to configure capacity link
 	Then "Slots" tab in Project selected on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project @Not_Run
+	#required functionality (Project Mode) was temporarily hidden, 05/29/19
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project @archived
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -4091,16 +4092,16 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOn
 	Then Error message with "This project does not exist. The project has not been updated" text is displayed
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
-Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnSenoir
+Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnSenior
 	When User clicks "Projects" on the left-hand menu
 	And User clicks create Project button
 	And User creates new Project on Senior
 	| ProjectName         | ShortName | Description | Type |
-	| 16145_SenoirProject | 16145     |             |      |
+	| 16145_SeniorProject | 16145     |             |      |
 	When User navigates to "evergreen" URL in a new tab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User enters "16145_SenoirProject" text in the Search field for "Project" column
+	When User enters "16145_SeniorProject" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 	Then Success message is displayed and contains "The selected project has been deleted" text

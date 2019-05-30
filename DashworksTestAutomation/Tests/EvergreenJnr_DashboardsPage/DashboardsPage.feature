@@ -64,15 +64,19 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	| Section2_WidgetForDAS12989_2 |
 	And User sees number of Widgets increased by "1" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated
-	When User clicks Edit mode trigger on Dashboards page
+	When Dashboard with "Dashboard for DAS14358" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS14358 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
 	And User remembers number of Sections and Widgets on Dashboards page
-	And User clicks Ellipsis menu for Section having "Domain Profile" Widget on Dashboards page
+	And User clicks Ellipsis menu for Section having "WidgetForDAS14358" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
 	Then User sees number of Sections increased by "1" on Dashboards page
-	And User sees number of Widgets increased by "4" on Dashboards page
-	When User deletes duplicated Section having "Domain Profile" Widget on Dashboards page
+	And User sees number of Widgets increased by "1" on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn
@@ -1023,7 +1027,7 @@ Examples:
 	| Half donut | 00RUUMAH9OZN9A |
 	| Donut      | 00RUUMAH9OZN9A |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16266 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWithBlankFirstCell
 	When User clicks "Devices" on the left-hand menu
 	When User click on 'Owner Display Name' column header
@@ -1042,11 +1046,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIsDisplayedCorrectlyWit
 	And User selects "DAS16266_List" as Widget List
 	When User selects "First Cell" in the "Type" Widget dropdown
 	When User clicks the "CREATE" Action button
-	Then Card Widget is blank
-	When User clicks Settings button for "DAS16266_Dashboard" dashboard
-	And User clicks Delete button for custom list
-	And User clicks Delete button on the warning message in the lists panel
-	Then Search field in selected Filter is empty
+	Then Widget Preview shows "Empty" as First Cell value
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15200
 Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
@@ -1859,3 +1859,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	| Amber        |
 	| Green        |
 	| Grey         |
+
+@Evergreen@EvergreenJnr_DashboardsPage @Widgets @DAS16347 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRingColumn
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                             |
+	| Barry'sUse: Ring (Primary Device Only) |
+	When User clicks the Columns button
+	Then Columns panel is displayed to the user
+	When User removes "Operating System" column by Column panel
+	When User removes "Owner Display Name" column by Column panel
+	And User click on 'Barry'sUse: Ring (Primary Device Only)' column header
+	And User click on 'Barry'sUse: Ring (Primary Device Only)' column header
+	Then data in table is sorted by 'Barry'sUse: Ring (Primary Device Only)' column in descending order
+	When User clicks Save button on the list panel
+	And User create dynamic list with "List16347" name on "Devices" page
+	And Dashboard with "Dashboard_DAS16347" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | Type       | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
+	| Card       | WidgetForDAS16347 | List16347 | First Cell |             |                   |         |         |           |            |                  |           |        |
+	Then Widget Preview is displayed to the user
+	And There are no errors in the browser console

@@ -1744,3 +1744,22 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatApplicationReadinessSubCategoryIsM
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories         |
 	| EmailMigra: Readiness |
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16071
+Scenario: EvergreenJnr_DevicesList_CheckThatStatusFilterAvailableOptionsList
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When user select "Windows7Mi: Status" filter
+	And User clicks in search field in the Filter block
+	Then Following checkboxes are available for current opened filter:
+	| checkboxes    |
+	| Not Onboarded |
+	| Onboarded     |
+	| Forecast      |
+	| Targeted      |
+	| Scheduled     |
+	| Migrated      |
+	| Complete      |
+	| Offboarded    |

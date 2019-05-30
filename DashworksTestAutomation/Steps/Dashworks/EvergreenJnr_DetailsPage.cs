@@ -28,11 +28,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
             _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
-            if (!detailsPage.GetExpandedSectionByName(sectionName).Displayed())
+            if (!detailsPage.OpenedSection.Displayed())
             {
                 _driver.MouseHover(detailsPage.NavigateToSectionByName(sectionName));
                 detailsPage.NavigateToSectionByName(sectionName).Click();
             }
+            else
+                Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
         }
 
         [When(@"User clicks ""(.*)"" link on the Details Page")]
@@ -54,17 +56,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 }
             else
                 detailsPage.GetLinkByName(linkName).Click();
-        }
-
-        [Then(@"section is loaded correctly")]
-        public void ThenSectionIsLoadedCorrectly()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitForDataLoading();
-            if (detailsPage.PopupChangesPanel.Displayed())
-                Assert.IsTrue(detailsPage.OpenedSection.Displayed(), "Section content is not loaded");
-            else
-                Assert.IsTrue(detailsPage.NoFoundContent.Displayed(), "Section is not loaded");
         }
 
         [Then(@"""(.*)"" title matches the ""(.*)"" value")]
@@ -474,16 +465,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
             }
             else
-            {
                 Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidth());
-            }
         }
 
         [Then(@"Bucket pop-up has standard size on the Details Page")]
         public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
+            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         }
 
         [When(@"User enters ""(.*)"" text in the Filter field")]

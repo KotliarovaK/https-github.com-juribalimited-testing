@@ -961,7 +961,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	When User select "Display Order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Display Order" column is sorted in ascending order by default on the Admin page
-	Then "Capacity Unit" column content is displayed in the following order:
+	Then "Capacity Slot" column content is displayed in the following order:
 	| Items     |
 	| Slot13147 |
 	| NewName   |
@@ -2240,7 +2240,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User clicks "Slots" tab
-	Then "Capacity Unit" column content is displayed in the following order:
+	Then "Capacity Slot" column content is displayed in the following order:
 	| Items              |
 	| User Slot 1        |
 	| User Slot 2        |
@@ -2307,7 +2307,7 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User clicks "Slots" tab
-	Then "Capacity Unit" column content is displayed in the following order:
+	Then "Capacity Slot" column content is displayed in the following order:
 	| Items                                              |
 	| CA -Mailbox-Nov 1, 2018-Nov 10, 2018               |
 	| CA -Mailbox-Nov 11, 2018-Nov 30, 2018              |
@@ -2384,7 +2384,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User moves "Birmingham Morning" slot to "London Depot 15:00 - 17:00" slot
-	Then "Capacity Unit" column content is displayed in the following order:
+	Then "Capacity Slot" column content is displayed in the following order:
 	| Items                        |
 	| Birmingham Afternoon         |
 	| Manchester Morning           |
@@ -2399,7 +2399,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDragAndDropFunctionalityForSlot
 	| Birmingham Morning           |
 	| London Depot 15:00 - 17:00   |
 	When User moves "Birmingham Morning" slot to "Birmingham Afternoon" slot
-	Then "Capacity Unit" column content is displayed in the following order:
+	Then "Capacity Slot" column content is displayed in the following order:
 	| Items                        |
 	| Birmingham Afternoon         |
 	| Birmingham Morning           |
