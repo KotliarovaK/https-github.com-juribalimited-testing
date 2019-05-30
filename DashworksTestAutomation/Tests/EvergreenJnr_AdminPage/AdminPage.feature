@@ -103,45 +103,6 @@ Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnit
 	And User performs right-click on "True" cell in the grid
 	Then User sees context menu placed near "True" cell in the grid
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12806 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13803 @DAS13930 @DAS13973 @DAS12768 @Project_Creation_and_Scope @Projects @Teams @Delete_Newly_Created_Project
-Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedObjectsAreDisplayedAfterChangingProjectBucketsSetting
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject20" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "TestProject20" is displayed to user
-	When User clicks "Details" tab
-	And User selects "Clone evergreen buckets to project buckets" in the Buckets Project dropdown
-	When User clicks "Scope" tab
-	And User selects "Scope Changes" tab on the Project details page
-	Then "Match to Evergreen Bucket" is displayed in the Bucket dropdown
-	When User expands the object to add
-	And User selects following Objects
-	| Objects         |
-	| 0281Z793OLLLDU6 |
-	| 03U75EKEMUQMUS  |
-	Then "Devices 2/0" is displayed in the tab header on the Admin page
-	When User clicks the "UPDATE ALL CHANGES" Action button
-	And User clicks the "UPDATE PROJECT" Action button
-	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	Then "Devices 0/0" is displayed in the tab header on the Admin page
-	When User click on Back button
-	And User clicks "Teams" link on the Admin page
-	Then "Teams" page should be displayed to the user
-	When User enters "My Team" text in the Search field for "Team" column
-	And User clicks content from "Team" column
-	And User clicks "Buckets" tab
-	And User enters "Unassigned2" text in the Search field for "Bucket" column
-	Then "2" Onboarded objects are displayed
-	When User clicks Admin on the left-hand menu
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Buckets @Projects
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
