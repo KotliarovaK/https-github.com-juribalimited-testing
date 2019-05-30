@@ -166,9 +166,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IList<IWebElement> GroupTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-container')]")]
-        public IWebElement AssociationCheckbox1 { get; set; }
-
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'list-container')]")]
         public IList<IWebElement> AssociationCheckbox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
