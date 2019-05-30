@@ -3391,7 +3391,7 @@ this.FeatureBackground();
             table30.AddRow(new string[] {
                         "Name1"});
 #line 964
- testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table30, "Then ");
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table30, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -7791,7 +7791,7 @@ this.FeatureBackground();
             table91.AddRow(new string[] {
                         "Application Slot 2"});
 #line 2243
- testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table91, "Then ");
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table91, "Then ");
 #line 2251
  testRunner.When("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2252
@@ -8026,7 +8026,7 @@ this.FeatureBackground();
             table96.AddRow(new string[] {
                         "CA-Mailbox-Jan 1, 2018-Oct 31, 2018"});
 #line 2310
- testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table96, "Then ");
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table96, "Then ");
 #line 2317
  testRunner.When("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 2318
@@ -8297,7 +8297,7 @@ this.FeatureBackground();
             table99.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 2387
- testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table99, "Then ");
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table99, "Then ");
 #line 2401
  testRunner.When("User moves \"Birmingham Morning\" slot to \"Birmingham Afternoon\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -8328,7 +8328,7 @@ this.FeatureBackground();
             table100.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
 #line 2402
- testRunner.Then("\"Capacity Unit\" column content is displayed in the following order:", ((string)(null)), table100, "Then ");
+ testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table100, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
