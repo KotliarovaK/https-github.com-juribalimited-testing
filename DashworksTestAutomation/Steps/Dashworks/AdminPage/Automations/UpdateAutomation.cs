@@ -20,11 +20,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             _driver = driver;
         }
 
-        [Then(@"Update Automation page is displayed to the User")]
-        public void ThenUpdateAutomationPageIsDisplayedToTheUser()
+        [Then(@"Edit Automation page is displayed to the User")]
+        public void ThenEditAutomationPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<UpdateAutomationPage>();
-            Assert.IsTrue(page.UpdateAutomationTitle.Displayed(), "Update Automation page is not displayed");
+            Assert.IsTrue(page.EditAutomationTitle.Displayed(), "Edit Automation page is not displayed");
         }
     }
 }

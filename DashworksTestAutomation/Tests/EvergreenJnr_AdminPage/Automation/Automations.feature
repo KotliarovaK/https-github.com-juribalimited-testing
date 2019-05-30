@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	#Update rows count
 	#Then Counter shows "8 of 10" found rows
 	When User clicks content from "Automation" column
-	Then Update Automation page is displayed to the User
+	Then Edit Automation page is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
