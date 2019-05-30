@@ -1668,3 +1668,44 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#When User enters "ACG370114" text in the Search field for "Linked By" column on the Details Page
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552
+Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems        |
+	| Overall Compliance      |
+	| Application Compliance |
+	| Hardware Compliance    |
+	#=====================================================================================#
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems               |
+	| Overall Compliance             |
+	| User Application Compliance   |
+	| Hardware Compliance           |
+	| Device Application Compliance |
+	#=====================================================================================#
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
+	When User click content from "Application" column
+	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems               |
+	| Overall Compliance             |
+	#=====================================================================================#
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	Then No one Compliance items are displayed for the User in Top bar on the Item details page
