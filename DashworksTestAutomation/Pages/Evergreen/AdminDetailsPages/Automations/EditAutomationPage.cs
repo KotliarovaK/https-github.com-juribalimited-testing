@@ -7,7 +7,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 {
-    internal class UpdateAutomationPage : SeleniumBasePage
+    internal class EditAutomationPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//h2[contains(text(), 'Edit Automation')]")]
         public IWebElement EditAutomationTitle { get; set; }

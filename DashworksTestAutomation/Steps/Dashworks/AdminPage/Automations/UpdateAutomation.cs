@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         [Then(@"Edit Automation page is displayed to the User")]
         public void ThenEditAutomationPageIsDisplayedToTheUser()
         {
-            var page = _driver.NowAt<UpdateAutomationPage>();
+            var page = _driver.NowAt<EditAutomationPage>();
             Assert.IsTrue(page.EditAutomationTitle.Displayed(), "Edit Automation page is not displayed");
         }
     }
