@@ -813,7 +813,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @Delete_Newly_Created_Bucket
+	#remove the hash when 'Nova' will be in the master brunch
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -826,6 +827,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And User selects "My Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
+	#============================================================================#
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -842,11 +844,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User opens "Related Users" section on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then popup changes window opened
@@ -856,11 +855,9 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
+	#============================================================================#
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -877,10 +874,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
@@ -889,11 +884,9 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
+	#============================================================================#
 		#go to Mailboxes page
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -910,10 +903,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User select "Bucket12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then popup changes window opened
@@ -923,24 +914,16 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Delete_Newly_Created_Capacity_Unit
+	#remove the hash when 'Nova' will be in the master brunch
+@Evergreen @AllLists @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Delete_Newly_Created_Capacity_Unit
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
-	Then "Create Evergreen Capacity Unit" page should be displayed to the user
-	When User type "CapacityUnit12883" Name in the "Capacity Unit Name" field on the Project details page
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User creates new Capacity Unit via api
+	| Name              | Description | IsDefault |
+	| CapacityUnit12883 | Devices     | false     |
+	#============================================================================#
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -958,10 +941,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User select "CapacityUnit12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
 	Then popup changes window opened
@@ -971,10 +952,9 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
 	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
+	#============================================================================#
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -991,10 +971,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User select "CapacityUnit12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
 	Then popup changes window opened
@@ -1004,10 +982,9 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
 	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
+	#============================================================================#
 		#go to Mailboxes page
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1024,10 +1001,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User select "CapacityUnit12883" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
 	Then popup changes window opened
@@ -1037,10 +1012,8 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User select "[Unassigned]" value on the Details Page
 	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 
 @Evergreen @Applications @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13180
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchEachOtherOnApplicationTabAndApplicationDistributionTab
