@@ -187,6 +187,7 @@
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateRingPage.cs" />
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_TopBarPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\NavigationPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
@@ -309,6 +310,7 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_ActionsPanel.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
