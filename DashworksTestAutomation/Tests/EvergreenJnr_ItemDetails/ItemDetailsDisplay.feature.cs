@@ -6820,20 +6820,20 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15552")]
-        public virtual void EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly()
+        public virtual void EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyInternal();
+                    this.EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyInternal();
                     return;
                 }
                 catch (System.Exception exc)
@@ -6852,11 +6852,11 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyInternal()
+        private void EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectlyInternal()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly", null, new string[] {
                         "Evergreen",
-                        "Devices",
+                        "AllLists",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS15552"});
