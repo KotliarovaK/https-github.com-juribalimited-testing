@@ -487,10 +487,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetHalfDonut.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DashboardsPage.feature</DependentUpon>
+      <DependentUpon>WidgetHalfDonut.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature.cs">
       <AutoGen>True</AutoGen>
@@ -757,9 +757,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WidgetCard.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature">
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetHalfDonut.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DashboardsPage.feature.cs</LastGenOutput>
+      <LastGenOutput>WidgetHalfDonut.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_DynamicLists\PermissionsSettings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
