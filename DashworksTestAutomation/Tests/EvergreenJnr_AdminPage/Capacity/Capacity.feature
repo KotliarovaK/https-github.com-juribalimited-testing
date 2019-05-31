@@ -7,20 +7,10 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13720 @DAS13431 @DAS13162 @DAS14037 @DAS15823 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassignedWithoutErrors
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "ProjectForCapacity13720" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "ProjectForCapacity13720" is displayed to user
-	
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName             | Scope     | ProjectTemplate | Mode               |
+	| ProjectForCapacity13720 | All Users | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	Then "Capacity Units" text value is displayed in the "Capacity Mode" dropdown
 	When User selects "Units" tab on the Project details page
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -43,20 +33,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassigned
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUnits
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "13431DevicesProject" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "13431DevicesProject" is displayed to user
-	When User clicks "Capacity" tab
-	When User selects "Units" tab on the Project details page
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| 13431DevicesProject | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
 	| Capacity Unit |
@@ -70,20 +51,11 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUni
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13431 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityUnits
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "13431MailboxesProject" in the "Project Name" field
-	And User selects "All Mailboxes" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "13431MailboxesProject" is displayed to user
-	When User clicks "Capacity" tab
-	When User selects "Units" tab on the Project details page
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| 13431MailboxesProject | All Mailboxes | None            | Standalone Project |
+	And User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
 	| Capacity Unit |
@@ -97,19 +69,10 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13723 @DAS13370 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "ProjectForCapacity13723" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "ProjectForCapacity13723" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
 	When User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "5 Jan 2019" date in the "Override Start Date" field
@@ -138,19 +101,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13171 @DAS13432 @DAS13430 @DAS13412 @DAS13493 @DAS13375 @DAS13711 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "ProjectForCapacity13171" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "ProjectForCapacity13171" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectForCapacity13171 | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User clicks on the Unlimited field on the Capacity Slots page
@@ -197,19 +151,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13790 @DAS13528 @DAS13165 @DAS13164 @DAS13154 @DAS14037 @DAS14236 @DAS13157 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "ProjectForCapacity13790" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "ProjectForCapacity13790" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectForCapacity13790 | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
@@ -250,15 +195,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForCapacity12672" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
-	Then Project "ProjectForCapacity12672" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectForCapacity12672 | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	Then User sees next Units on the Capacity Units page:
 	| units             |
@@ -351,13 +291,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdat
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13780 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectDAS13780" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| ProjectDAS13780 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -396,13 +332,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrid
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Units @Projects @DAS13789 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUsingTheSameNameWithDifferentCase
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectDAS13789" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| ProjectDAS13789 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -430,13 +362,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUs
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13945 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13945" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
@@ -446,13 +374,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyNam
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13166 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlreadyUsedInDifferentProject
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13945" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope         | ProjectTemplate | Mode               |
+	| ProjectForDAS13945 | All Mailboxes | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
@@ -465,13 +389,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13945" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
@@ -496,13 +416,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13824 @DAS14250 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForCapacityDAS13824" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName                | Scope       | ProjectTemplate | Mode               |
+	| ProjectForCapacityDAS13824 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -693,13 +609,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @Projects @DAS13779 @DAS14176 @DAS14177 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectDAS13779" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| ProjectDAS13779 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -734,19 +646,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Override_Dates @Projects @DAS13442 @DAS13440 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "ProjectDAS13442" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "ProjectDAS13442" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| ProjectDAS13442 | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot13442" Name in the "Slot Name" field on the Project details page
@@ -856,19 +759,10 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13159 @DAS13754 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "13159ProjectForCapacity" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "13159ProjectForCapacity" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| 13159ProjectForCapacity | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
@@ -896,19 +790,10 @@ Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13382 @DAS13149 @DAS13147 @DAS15827 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExistingDisplayName
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "13382ProjectForCapacity" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "13382ProjectForCapacity" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName             | Scope       | ProjectTemplate | Mode               |
+	| 13382ProjectForCapacity | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot13147" Name in the "Slot Name" field on the Project details page
@@ -972,13 +857,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13955 @DAS13681 @DAS14208 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ChecksLanguage13955" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| ChecksLanguage13955 | All Devices | None            | Standalone Project |
 	And User clicks "Details" tab
 	And User clicks the "ADD LANGUAGE" Action button
 	And User selects "Dutch" language on the Project details page
@@ -1027,13 +908,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13928 @DAS14614 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLanguageDoesNotHaveTranslations
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ChecksDefaultLanguage13928" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName                | Scope     | ProjectTemplate | Mode               |
+	| ChecksDefaultLanguage13928 | All Users | None            | Standalone Project |
 	And User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	And User selects following Objects
@@ -1068,13 +945,9 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS14103 @DAS14172 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS14103" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope      | ProjectTemplate | Mode               |
+	| ProjectForDAS14103 | All Device | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
 	And User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
@@ -1180,13 +1053,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13661 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS14103" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS14103 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -1199,13 +1068,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13417 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13417" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13417 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -1227,13 +1092,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13979" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13979 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -1297,13 +1158,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS14478 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS14478" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS14478 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -1335,13 +1192,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13791 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEnteredInMoveToPositionIsGreaterThanTotalresocordsNumber
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13791" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13791 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -1377,13 +1230,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13792 @DAS13788 @DAS14241 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13792" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13792 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
@@ -1431,13 +1280,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @Projects @DAS13961 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13961" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13961 | All Devices | None            | Standalone Project |
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
@@ -1530,13 +1375,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Projects @DAS13526 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13526" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13526 | All Devices | None            | Standalone Project |
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
@@ -2219,19 +2060,10 @@ Examples:
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15266 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatEnableCapacityCheckboxIsDisplayedOnTheCapacityDetailsScreen
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "15266_TestProject" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "15266_TestProject" is displayed to user
-	When User clicks "Capacity" tab
+	When Project created via API and opened
+	| ProjectName       | Scope       | ProjectTemplate | Mode               |
+	| 15266_TestProject | All Devices | None            | Standalone Project |
+	And User clicks "Capacity" tab
 	Then "Enable Capacity" checkbox is unchecked on the Admin page
 	Then "Enforce capacity on self service pages" checkbox is greyed out on the Admin page
 	Then "Enforce capacity on project object page" checkbox is greyed out on the Admin page

@@ -193,16 +193,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
         }
 
-
-        [When(@"User navigates to ""(.*)"" project details")]
-        public void WhenUserNavigatesToProjectDetails(string projectName)
-        {
-            var projectId = DatabaseHelper.GetProjectIdByName(projectName);
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/admin/project/{projectId}/details");
-
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
-        }
     }
 }
