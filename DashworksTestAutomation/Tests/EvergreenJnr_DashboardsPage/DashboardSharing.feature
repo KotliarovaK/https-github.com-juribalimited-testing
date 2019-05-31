@@ -186,7 +186,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	And "Private" sharing option is selected
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
-Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPoup
+Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPopup
 	#create private list
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button

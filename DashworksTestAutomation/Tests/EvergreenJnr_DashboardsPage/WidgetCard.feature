@@ -299,8 +299,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| ColumnName                             |
 	| 1803: Pre-Migration \ Ready to Migrate |
 	And User move '1803: Pre-Migration \ Ready to Migrate' column to 'Hostname' column
-	And User move 'Hostname' column to 'Device Type' column
-	And User create dynamic list with "DeviceListFor15914" name on "Devices" page
+	Then "Devices" list should be displayed to the user
+	When User move 'Hostname' column to 'Device Type' column
+	Then "Devices" list should be displayed to the user
+	When User create dynamic list with "DeviceListFor15914" name on "Devices" page
 	Then "DeviceListFor15914" list is displayed to user
 	When Dashboard with "Dashboard for DAS15914" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -349,8 +351,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	| ColumnName                           |
 	| 1803: Pre-Migration \ Scheduled Date |
 	And User move '1803: Pre-Migration \ Scheduled Date' column to 'Hostname' column
-	And User move 'Hostname' column to 'Operating System' column
-	And User create dynamic list with "DeviceListFor15765" name on "Devices" page
+	Then "Devices" list should be displayed to the user
+	When User move 'Hostname' column to 'Operating System' column
+	Then "Devices" list should be displayed to the user
+	When User create dynamic list with "DeviceListFor15765" name on "Devices" page
 	Then "DeviceListFor15765" list is displayed to user
 	When Dashboard with "Dashboard for DAS15765" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
