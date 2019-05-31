@@ -710,7 +710,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE" Action button
+	And User clicks the "CREATE PROJECT" Action button
 	And User enters "ProjectDAS13779" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
 	And User clicks Create button on the Create Project page
@@ -1276,7 +1276,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
+	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 13979" Name in the "Slot Name" field on the Project details page
 	And User type "13979" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
