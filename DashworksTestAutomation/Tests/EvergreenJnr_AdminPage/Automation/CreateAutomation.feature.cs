@@ -195,7 +195,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
-        [NUnit.Framework.CategoryAttribute("DAS16805")]
+        [NUnit.Framework.CategoryAttribute("DAS16801")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation()
         {
             System.Exception lastException = null;
@@ -230,7 +230,7 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Automations",
-                        "DAS16805"});
+                        "DAS16801"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -249,10 +249,10 @@ this.FeatureBackground();
 #line 44
  testRunner.Then("Create Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.When("User type \"DAS16805_Automation\" Name in the \"Automation Name\" field on the Automa" +
+ testRunner.When("User type \"DAS16801_Automation\" Name in the \"Automation Name\" field on the Automa" +
                     "tion details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 46
- testRunner.When("User type \"DAS16805\" Name in the \"Description\" field on the Automation details pa" +
+ testRunner.When("User type \"DAS16801\" Name in the \"Description\" field on the Automation details pa" +
                     "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
  testRunner.When("User selects \"1803 Rollout\" in the Scope Automation dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -286,6 +286,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS16801")]
+        [NUnit.Framework.CategoryAttribute("DAS16805")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation()
         {
             System.Exception lastException = null;
@@ -319,7 +320,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Automations",
-                        "DAS16801"});
+                        "DAS16801",
+                        "DAS16805"});
 #line 59
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -336,7 +338,7 @@ this.FeatureBackground();
 #line 64
  testRunner.When("User clicks content from \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
- testRunner.Then("Update Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Edit Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 66
  testRunner.Then("\"Admin\" left-hand menu is highlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

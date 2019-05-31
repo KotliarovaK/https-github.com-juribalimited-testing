@@ -3574,7 +3574,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab
 	#Then data in table is sorted by "Date" column in descending order by default on the Admin page
 
 #That test have 'not run' tag, because blue banner closes too fast.
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13347 @DAS11978 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13347 @DAS11978 @DAS16887 @Delete_Newly_Created_Project @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
