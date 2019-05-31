@@ -161,13 +161,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(expectedList, actualList, "Project lists are different");
         }
 
-        [When(@"User selects ""(.*)"" Request Type on Action panel")]
-        public void WhenUserSelectsRequestTypeOnActionPanel(string requestType)
+        [When(@"User selects ""(.*)"" Path on Action panel")]
+        public void WhenUserSelectsPathOnActionPanel(string requestType)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.RequestTypeField);
-            action.RequestTypeField.Clear();
-            action.RequestTypeField.SendKeys(requestType);
+            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.PathDropdown);
+            action.PathDropdown.Clear();
+            action.PathDropdown.SendKeys(requestType);
             action.GetOptionByName(requestType).Click();
         }
 

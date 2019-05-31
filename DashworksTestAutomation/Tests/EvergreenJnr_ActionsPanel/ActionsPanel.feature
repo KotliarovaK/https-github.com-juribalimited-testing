@@ -96,9 +96,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	| SelectedRowsName |
 	| 0DTXL41673EW7O   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer: Laptop Replacement" Request Type on Action panel
+	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -149,9 +149,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
-	And User selects "Sharepoint Application" Request Type on Action panel
+	And User selects "Sharepoint Application" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -291,10 +291,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	| 00BDM1JUR8IF419  |
 	| 00RUUMAH9OZN9A   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
-	When User selects "Computer: PC Rebuild" Request Type on Action panel
+	When User selects "Computer: PC Rebuild" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -315,9 +315,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	| SelectedRowsName |
 	| 001PSUMZYOW581   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer: Virtual Machine" Request Type on Action panel
+	And User selects "Computer: Virtual Machine" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -329,9 +329,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	| SelectedRowsName |
 	| 00BDM1JUR8IF419  |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "[This is the Default Request Type for Computer)] " Request Type on Action panel
+	And User selects "[This is the Default Request Type for Computer)] " Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -343,9 +343,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	| SelectedRowsName |
 	| 00RUUMAH9OZN9A   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer: Laptop Replacement" Request Type on Action panel
+	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -376,10 +376,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| AKX995383        |
 	| AAD1011948       |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
-	When User selects "User; Maternity" Request Type on Action panel
+	When User selects "User; Maternity" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -402,9 +402,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| SelectedRowsName |
 	| FMN5805290       |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User: VIP" Request Type on Action panel
+	And User selects "User: VIP" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -416,9 +416,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| SelectedRowsName |
 	| AKX995383        |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "User: No Agent" Request Type on Action panel
+	And User selects "User: No Agent" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -430,9 +430,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	| SelectedRowsName |
 	| AAD1011948       |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "[Default (User)]" Request Type on Action panel
+	And User selects "[Default (User)]" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -460,10 +460,10 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais                 |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	Then "UPDATE" Action button is disabled
-	When User selects "Application: Request Type B" Request Type on Action panel
+	When User selects "Application: Request Type B" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -483,9 +483,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	| SelectedRowsName                                           |
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "[Default (Application)]" Request Type on Action panel
+	And User selects "[Default (Application)]" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -497,9 +497,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	| SelectedRowsName                           |
 	| 0004 - Adobe Acrobat Reader 5.0.5 Francais |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Application: Request Type A" Request Type on Action panel
+	And User selects "Application: Request Type A" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -528,10 +528,10 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	| 10A919CA1E7641E08E7@bclabs.local |
 	| 229DCF8E575243E9928@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	Then "UPDATE" Action button is disabled
-	When User selects "Personal Mailbox - VIP" Request Type on Action panel
+	When User selects "Personal Mailbox - VIP" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -553,9 +553,9 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	| SelectedRowsName                 |
 	| 0F1ED67386AD4FA7BF4@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
-	And User selects "Shared Mailbox" Request Type on Action panel
+	And User selects "Shared Mailbox" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -567,9 +567,9 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	| SelectedRowsName                 |
 	| 10A919CA1E7641E08E7@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
-	And User selects "Personal Mailbox - EA" Request Type on Action panel
+	And User selects "Personal Mailbox - EA" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -581,9 +581,9 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	| SelectedRowsName                 |
 	| 229DCF8E575243E9928@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
-	And User selects "Personal Mailbox" Request Type on Action panel
+	And User selects "Personal Mailbox" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -608,9 +608,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	| 1B1CJ31RV9ZPYD   |
 	| 018UQ6KL9TF4YF   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer: Workstation Replacement" Request Type on Action panel
+	And User selects "Computer: Workstation Replacement" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -638,9 +638,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	| 018UQ6KL9TF4YF   |
 	| 001BAQXT6JWFPI   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "[This is the Default Request Type for Computer)] " Request Type on Action panel
+	And User selects "[This is the Default Request Type for Computer)] " Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -652,9 +652,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	| SelectedRowsName |
 	| 001PSUMZYOW581   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer: Virtual Machine" Request Type on Action panel
+	And User selects "Computer: Virtual Machine" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -666,9 +666,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	| SelectedRowsName |
 	| 00RUUMAH9OZN9A   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
-	And User selects "Computer: Laptop Replacement" Request Type on Action panel
+	And User selects "Computer: Laptop Replacement" Path on Action panel
 	And User clicks the "UPDATE" Action button
 	Then Warning message with "Are you sure you want to proceed, this operation cannot be undone." text is displayed on Action panel
 	And User clicks "UPDATE" button on message box
@@ -686,9 +686,9 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| 00RUUMAH9OZN9A   |
 	| 00SH8162NAS524   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Babel (English, German and French)" Project on Action panel
-	And User selects "Machines" Request Type on Action panel
+	And User selects "Machines" Path on Action panel
 	And User clicks the "CANCEL" Action button
 	Then Actions panel is not displayed to the user
 	And Checkboxes are not displayed
@@ -703,7 +703,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| SelectedRowsName |
 	| 00OMQQXWA1DRI6   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	Then the following Projects are displayed in opened DLL on Action panel:
 	| Projects                                         |
 	| 1803 Rollout                                     |
@@ -746,9 +746,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	| SelectedRowsName |
 	| 00KLL9S8NRF0X6   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Barry's User Project" Project on Action panel
-	And User selects "Desktop Replacement" Request Type on Action panel
+	And User selects "Desktop Replacement" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down
 	Then "Barry's User Project" Project is displayed on Action panel
@@ -763,9 +763,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Havoc (Big Data)" Project on Action panel
-	And User selects "User Request Type 2" Request Type on Action panel
+	And User selects "User Request Type 2" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down
 	Then "Havoc (Big Data)" Project is displayed on Action panel
@@ -780,10 +780,10 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	| SelectedRowsName                         |
 	| 0047 - Microsoft Access 97 SR-2 Francais |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	Then Projects are displayed in alphabetical order on Action panel
 	When User selects "User Scheduled Test (Jo)" Project on Action panel
-	And User selects "Request Type A" Request Type on Action panel
+	And User selects "Request Type A" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down
 	Then "User Scheduled Test (Jo)" Project is displayed on Action panel
@@ -798,9 +798,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update request type" Bulk Update Type on Action panel
+	And User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
-	And User selects "Personal Mailbox - VIP" Request Type on Action panel
+	And User selects "Personal Mailbox - VIP" Path on Action panel
 	When User clears Project field
 	And User clicks on Action drop-down
 	Then "Email Migration" Project is displayed on Action panel
@@ -1759,7 +1759,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatOnMailboxesListForBucketBulkUpdate
 	| Email Migration                    |
 	| Mailbox Evergreen Capacity Project |
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14164
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS14563 @DAS13960 @DAS14164 @DAS16826
 Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvailableOnApplicationsList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1773,7 +1773,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
 	| Options              |
 	| Update capacity unit |
-	| Update request type  |
+	| Update path          |
 	| Update task value    |
 
 @Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291

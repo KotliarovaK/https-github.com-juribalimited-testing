@@ -286,6 +286,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS16801")]
+        [NUnit.Framework.CategoryAttribute("DAS16805")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation()
         {
             System.Exception lastException = null;
@@ -319,7 +320,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Automations",
-                        "DAS16801"});
+                        "DAS16801",
+                        "DAS16805"});
 #line 59
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
