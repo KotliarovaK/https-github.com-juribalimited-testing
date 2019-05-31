@@ -468,13 +468,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidth());
         }
 
-        [Then(@"Bucket pop-up has standard size on the Details Page")]
-        public void ThenBucketPop_UpHasStandardSizeOnTheDetailsPage()
-        {
-            var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.AreEqual("1638", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
-        }
-
         [When(@"User enters ""(.*)"" text in the Filter field")]
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {
