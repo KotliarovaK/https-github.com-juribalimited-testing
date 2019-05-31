@@ -109,7 +109,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project12948" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	When User click on Back button
 	And User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "1Project12763" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -222,7 +222,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 	Then "Unassigned" text is displayed in the table content
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE PROJECT" Action button
 	Then "Create Project" page should be displayed to the user
 	When User enters "2Project12763" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWith
 #The steps below are commented out because the "Evergreen" Project Mode is disabled
 	#When User clicks "Projects" link on the Admin page
 	#Then "Projects" page should be displayed to the user
-	#When User clicks the "CREATE" Action button
+	#When User clicks the "CREATE PROJECT" Action button
 	#Then "Create Project" page should be displayed to the user
 	#When User enters "3Project12763" in the "Project Name" field
 	#And User selects "All Devices" in the Scope Project dropdown

@@ -1722,7 +1722,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhe
 	And Widget Preview shows "TRUE" as First Cell value
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Delete_Newly_Created_Dashboard @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
