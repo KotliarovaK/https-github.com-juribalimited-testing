@@ -437,6 +437,56 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature.cs">
+      <DependentUpon>WidgetBar.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement.feature.cs">
+      <DependentUpon>ItemsManagement.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\DashboardSharing.feature.cs">
+      <DependentUpon>DashboardSharing.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\AddWidget.feature.cs">
+      <DependentUpon>AddWidget.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetColumn.feature.cs">
+      <DependentUpon>WidgetColumn.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetList.feature.cs">
+      <DependentUpon>WidgetList.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetPie.feature.cs">
+      <DependentUpon>WidgetPie.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetTable.feature.cs">
+      <DependentUpon>WidgetTable.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetLine.feature.cs">
+      <DependentUpon>WidgetLine.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetCard.feature.cs">
+      <DependentUpon>WidgetCard.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -666,6 +716,46 @@
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WidgetBar.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\ItemsManagement.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemsManagement.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardSharing.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DashboardSharing.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\AddWidget.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddWidget.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetColumn.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WidgetColumn.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetList.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WidgetList.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetPie.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WidgetPie.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetTable.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WidgetTable.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetLine.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WidgetLine.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetCard.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>WidgetCard.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\DashboardsPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
