@@ -7583,6 +7583,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16326")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage()
         {
             System.Exception lastException = null;
@@ -7616,7 +7617,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16326",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Delete_Newly_Created_Dashboard",
+                        "Not_Run"});
 #line 1726
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
