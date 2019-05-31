@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	| Value         |
 	|               |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16805
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -42,8 +42,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
-	When User type "DAS16805_Automation" Name in the "Automation Name" field on the Automation details page
-	When User type "DAS16805" Name in the "Description" field on the Automation details page
+	When User type "DAS16801_Automation" Name in the "Automation Name" field on the Automation details page
+	When User type "DAS16801" Name in the "Description" field on the Automation details page
 	When User selects "1803 Rollout" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page

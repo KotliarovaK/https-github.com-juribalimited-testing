@@ -40,6 +40,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenFieldIsEmptyOnTheAdminPage(string fieldName)
         {
             var page = _driver.NowAtWithoutWait<BaseGridPage>();
+            _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetEmptyFieldByName(fieldName).Displayed(), $"{fieldName} field is populated");
         }
     }
