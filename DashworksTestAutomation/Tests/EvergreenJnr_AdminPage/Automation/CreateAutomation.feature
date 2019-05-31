@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then "Scope" field is empty on the Admin page
 	Then "Active" checkbox is unchecked on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805
 Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
