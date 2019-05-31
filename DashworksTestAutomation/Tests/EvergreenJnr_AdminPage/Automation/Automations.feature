@@ -224,7 +224,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
 	| AM 150419 III |
 	| AM Test 1     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15743 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15743
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -352,3 +352,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	| Move to position |
 	| Make active      |
 	| Delete           |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15634
+#Change value after gold data complete added
+Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutomation
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "AM 270519 Devices (2)" text in the Search field for "Automation" column
+	Then "6" content is displayed in the "Actions" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	Then Counter shows "6" found rows
