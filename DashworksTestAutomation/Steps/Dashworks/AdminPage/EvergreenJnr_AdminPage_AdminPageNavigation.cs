@@ -1,8 +1,10 @@
 ﻿using System;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms;
+using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -189,6 +191,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
+        }
+
+
+        [When(@"User navigates to ""(.*)"" project details")]
+        public void WhenUserNavigatesToProjectDetails(string projectName)
+        {
+            var projectId = DatabaseHelper.GetProjectIdByName(projectName);
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}/#/admin/project/{projectId}/details");
+
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
     }
 }

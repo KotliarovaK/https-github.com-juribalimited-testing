@@ -403,7 +403,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Buckets.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Capacity.feature</DependentUpon>
@@ -690,7 +690,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Buckets.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Capacity.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Capacity.feature.cs</LastGenOutput>
     </None>
@@ -886,7 +886,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Steps\Dashworks\AdminPage\Capacity\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

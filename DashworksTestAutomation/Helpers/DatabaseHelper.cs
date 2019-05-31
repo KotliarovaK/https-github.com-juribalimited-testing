@@ -122,5 +122,21 @@ namespace DashworksTestAutomation.Helpers
         }
 
         #endregion
+
+
+        /// <summary>
+        ///     Get project ID by its name
+        /// </summary>
+        /// <param name="name">Project name on website</param>
+        /// <returns></returns>
+        public static string GetProjectIdByName(string name)
+        {
+            var projectId =
+                DatabaseHelper.ExecuteReader(
+                    $"select ProjectID FROM [PM].[dbo].[Projects] where ProjectName = '{name}'",
+                    0)[0];
+            return projectId;
+        }
+
     }
 }

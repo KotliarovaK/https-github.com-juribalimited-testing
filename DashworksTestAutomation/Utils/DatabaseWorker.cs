@@ -43,5 +43,6 @@ namespace DashworksTestAutomation.Utils
                     0)[0];
             return userId;
         }
+
     }
 }
