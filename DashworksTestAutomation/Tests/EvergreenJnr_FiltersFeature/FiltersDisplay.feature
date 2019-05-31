@@ -1161,7 +1161,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Delete_Newly_Created_Project @DAS13201 @Not_Run
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks Admin on the left-hand menu
-	And User clicks the "CREATE" Action button
+	And User clicks the "CREATE PROJECT" Action button
 	And User enters "13201" in the "Project Name" field
 	And User selects "All Mailboxes" in the Scope Project dropdown
 	Then User selects "Evergreen" option in "Mode" dropdown
