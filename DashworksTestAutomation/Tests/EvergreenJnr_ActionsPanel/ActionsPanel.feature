@@ -115,7 +115,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	And User select "Manage Users" option in Management Console
 	And User removes "000WithPBU" User
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12932 @DAS13261 @DAS16826
 Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -268,7 +268,7 @@ Examples:
 	| Applications | Compliance       | Red        | 181               |
 	| Mailboxes    | Owner Compliance | Green      | 14701             |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @DAS12863 @DAS13266 @DAS13284 @DAS16826
 Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -438,7 +438,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
-@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284
+@Evergreen @Applications @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12863 @DAS13266 @DAS13284 @DAS16826
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -674,7 +674,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13277
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS12863 @DAS13277 @DAS16826
 Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCickOnCancelButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -686,7 +686,14 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatActionsPanelWorkedCorrectlyAfterCic
 	| 00RUUMAH9OZN9A   |
 	| 00SH8162NAS524   |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
+	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	| Options              |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
+	When User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Babel (English, German and French)" Project on Action panel
 	And User selects "Machines" Path on Action panel
 	And User clicks the "CANCEL" Action button
@@ -753,7 +760,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectFieldIsDisplayedCorrectlyAfte
 	And User clicks on Action drop-down
 	Then "Barry's User Project" Project is displayed on Action panel
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
 Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -763,7 +770,14 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectFieldIsDisplayedCorrectlyAfterC
 	| SelectedRowsName    |
 	| 002B5DC7D4D34D5C895 |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
+	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	| Options              |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
+	When User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Havoc (Big Data)" Project on Action panel
 	And User selects "User Request Type 2" Path on Action panel
 	When User clears Project field
@@ -788,7 +802,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectFieldIsDisplayedCorrectl
 	And User clicks on Action drop-down
 	Then "User Scheduled Test (Jo)" Project is displayed on Action panel
 
-@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142
+@Evergreen @Mailboxes @EvergreenJnr_ActionsPanel @BulkUpdate @DAS13142 @DAS16826
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAfterClearingOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -798,7 +812,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectFieldIsDisplayedCorrectlyAf
 	| SelectedRowsName                 |
 	| 00A5B910A1004CF5AC4@bclabs.local |
 	And User selects "Bulk update" in the Actions dropdown
-	And User selects "Update path" Bulk Update Type on Action panel
+	Then following values are displayed in "Bulk Update Type" drop-down on Action panel:
+	| Options              |
+	| Update bucket        |
+	| Update capacity unit |
+	| Update path          |
+	| Update ring          |
+	| Update task value    |
+	When User selects "Update path" Bulk Update Type on Action panel
 	And User selects "Email Migration" Project on Action panel
 	And User selects "Personal Mailbox - VIP" Path on Action panel
 	When User clears Project field
