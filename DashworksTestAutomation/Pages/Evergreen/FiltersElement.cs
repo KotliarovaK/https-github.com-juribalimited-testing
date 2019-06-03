@@ -573,6 +573,5 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.MouseHover(filterCategory);
             return Convert.ToInt32(filterCategory.FindElement(By.XPath(".//strong")).Text);
         }
-
     }
 }

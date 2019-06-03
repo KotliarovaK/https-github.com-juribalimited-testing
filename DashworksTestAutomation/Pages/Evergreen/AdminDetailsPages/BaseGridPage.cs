@@ -636,5 +636,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($"//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
             return Driver.FindElement(selector);
         }
+
+        public List<string> GetSumOfObjectsContent(string columnName)
+        {
+            var by = By.XPath(
+                $"//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
     }
 }
