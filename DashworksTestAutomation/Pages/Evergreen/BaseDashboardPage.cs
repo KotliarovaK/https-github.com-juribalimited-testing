@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]
         public IWebElement RequestTypeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
         public IWebElement ProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Project or Evergreen']")]

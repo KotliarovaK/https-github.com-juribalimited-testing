@@ -809,6 +809,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dropdown.GetDropdownValueByName(value).Click();
         }
 
+        //Update step after changing Project dropdown selector
+        [When(@"User selects ""(.*)"" in the Project dropdown")]
+        public void WhenUserSelectsInTheProjectDropdown(string value)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.ProjectDropdown.Click();
+            dropdown.GetDropdownValueByName(value).Click();
+        }
+
+        //Update step after changing Project dropdown selector
+        [When(@"User selects ""(.*)"" in the Path dropdown")]
+        public void WhenUserSelectsInThePathDropdown(string value)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.PathtDropdown.Click();
+            dropdown.GetDropdownValueByName(value).Click();
+        }
+
         [When(@"User clicks Update Team button")]
         public void WhenUserClicksUpdateTeamButton()
         {

@@ -181,6 +181,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
         public IList<IWebElement> TeamListInFilterDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
+        public IWebElement ProjectDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Path']")]
+        public IWebElement PathtDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = Row)]
         public IList<IWebElement> RowsList { get; set; }
 

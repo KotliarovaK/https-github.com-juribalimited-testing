@@ -353,15 +353,57 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	| Make active      |
 	| Delete           |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15634
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15634 @DAS15756 @DAS15754
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 270519 Devices (2)" text in the Search field for "Automation" column
-	Then "6" content is displayed in the "Actions" column
+	When User enters "AM 030619 Devices 1" text in the Search field for "Automation" column
+	Then "2" content is displayed in "Actions" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
-	Then Counter shows "6" found rows
+	Then Counter shows "2" found rows
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName    |
+	|               |
+	| Action        |
+	|               |
+	| Type          |
+	| Project       |
+	| Task or Field |
+	| Value         |
+	When User have opened column settings for "Action" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "ActionId" checkbox on the Column Settings panel
+	When User select "Processing order" checkbox on the Column Settings panel
+	When User select "ActionTypeId" checkbox on the Column Settings panel
+	When User select "Project ID" checkbox on the Column Settings panel
+	Then Columns on Admin page is displayed in following order:
+	| ColumnName       |
+	|                  |
+	| ActionId         |
+	| Action           |
+	|                  |
+	| Processing order |
+	| ActionTypeId     |
+	| Type             |
+	| Project ID       |
+	| Project          |
+	| Task or Field    |
+	| Value            |
+	#Check that grid has at least three actions
+	When User clicks the "CREATE ACTION" Action button
+	Then Create Action page is displayed to the User
+	When User type "15309_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	And User clicks the "CREATE" Action button
+	When User have opened column settings for "Action" column
+	And User clicks Column button on the Column Settings panel
+	Then Column Settings was opened
+	When User select "Processing order" checkbox on the Column Settings panel
+	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page

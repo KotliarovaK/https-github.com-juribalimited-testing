@@ -32,7 +32,6 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	| Project       |
 	| Task or Field |
 	| Value         |
-	|               |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation
