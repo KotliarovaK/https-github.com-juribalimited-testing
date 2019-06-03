@@ -718,10 +718,10 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Started"});
 #line 134
- testRunner.When("User add \"Babel(Engl: Another task\" filter where type is \"Equals\" without added c" +
-                    "olumn and following checkboxes:", ((string)(null)), table10, "When ");
+ testRunner.When("User add \"Babel(Engl: Initiation \\ Another task\" filter where type is \"Equals\" wi" +
+                    "thout added column and following checkboxes:", ((string)(null)), table10, "When ");
 #line 137
- testRunner.Then("\"Babel(Engl: Another task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Babel(Engl: Initiation \\ Another task\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 138
  testRunner.When("User create dynamic list with \"A TestList Custom List\" name on \"Users\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 139
@@ -4129,7 +4129,7 @@ this.FeatureBackground();
 #line 1081
  testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1082
- testRunner.And("User click Edit button for \"Application \" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click Edit button for \"Application Compliance\" filter", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
                         "Option",

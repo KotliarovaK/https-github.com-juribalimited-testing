@@ -131,10 +131,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "Babel(Engl: Another task" filter where type is "Equals" without added column and following checkboxes:
+	When User add "Babel(Engl: Initiation \ Another task" filter where type is "Equals" without added column and following checkboxes:
 	| SelectedCheckboxes |
 	| Started            |
-	Then "Babel(Engl: Another task" filter is added to the list
+	Then "Babel(Engl: Initiation \ Another task" filter is added to the list
 	When User create dynamic list with "A TestList Custom List" name on "Users" page
 	Then "A TestList Custom List" list is displayed to user
 	When User navigates to the "All Users" list
@@ -1079,7 +1079,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatFilterNameIsNotChangedAfterRenameWhi
 	And User clicks the List Details button
 	And User changes list name to "EDITED_Device_Filter_DAS_12917"
 	And User clicks the Filters button
-	And User click Edit button for "Application " filter
+	And User click Edit button for "Application Compliance" filter
 	And User change selected checkboxes:
 	| Option | State |
 	| Red    | false |

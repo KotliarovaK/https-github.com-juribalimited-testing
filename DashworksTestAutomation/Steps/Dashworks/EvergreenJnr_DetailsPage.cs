@@ -468,6 +468,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidth());
         }
 
+            Assert.AreEqual("1536px", detailsPage.GetInstalledBucketWindowWidth().Split('.').First());
         [When(@"User enters ""(.*)"" text in the Filter field")]
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {

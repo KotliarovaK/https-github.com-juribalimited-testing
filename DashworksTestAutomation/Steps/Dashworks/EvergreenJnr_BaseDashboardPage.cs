@@ -135,7 +135,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             foreach (var row in table.Rows)
             {
-                Assert.That(options.FindAll(x=>x.Equals(row["OptionsName"])).Count==1);
+                Assert.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1);
             }
             Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
@@ -157,11 +157,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             new Actions(_driver)
                 .Click(searchElement.SearchEverythingField)
-                .SendKeys(OpenQA.Selenium.Keys.LeftControl+"v")
+                .SendKeys(OpenQA.Selenium.Keys.LeftControl + "v")
                 .KeyUp(OpenQA.Selenium.Keys.LeftControl)
                 .Perform();
 
-            Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "), 
+            Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
@@ -253,7 +253,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
+            if (columnName.Equals("Compliance"))
+            {
+                SortingHelper.IsListSortedByEnum<ColorCompliance>(new List<string>(expectedList));
+            }
+            else
+            {
+                SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList));
+            }
             Assert.IsTrue(listPageMenu.AscendingSortingIcon.Displayed);
         }
 
@@ -465,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenURLContainsOnly(string urlFilterExpected)
         {
             string url = _driver.Url;
-            url=url.Substring(url.IndexOf("?") + 1);
+            url = url.Substring(url.IndexOf("?") + 1);
             string[] filterInUrl = url.Split('$');
 
             foreach (var filter in filterInUrl)
@@ -525,7 +532,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Get all elements that has more than one occurence in the list
             var duplicates = columnData.GroupBy(x => x)
-                .Select(g => new {Value = g.Key, Count = g.Count()})
+                .Select(g => new { Value = g.Key, Count = g.Count() })
                 .Where(x => x.Count > 1).ToList();
             if (duplicates.Any())
                 throw new Exception($"Some duplicates are spotted in the '{columnName}' column");
@@ -541,7 +548,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 //Get all elements that has more than one occurence in the list
                 var duplicates = columnData.GroupBy(x => x)
-                    .Select(g => new {Value = g.Key, Count = g.Count()})
+                    .Select(g => new { Value = g.Key, Count = g.Count() })
                     .Where(x => x.Count > 1).ToList();
 
                 Assert.That(
@@ -601,7 +608,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
-                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
+                foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
         }
 
         [Then(@"Error is displayed to the User")]

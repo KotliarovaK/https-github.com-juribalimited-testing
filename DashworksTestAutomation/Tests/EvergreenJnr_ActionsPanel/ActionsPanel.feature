@@ -1884,3 +1884,17 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenBucketsInBulkUp
 	And User selects "Update bucket" Bulk Update Type on Action panel
 	And User selects "Evergreen" Project or Evergreen on Action panel
 	Then options for "Bucket" field are displayed in alphabetical order on Action panel
+
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS16822
+Scenario: EvergreenJnr_DevicesList_CheckThatSortOrderForEvergreenCapacityUnitsInBulkUpdateIsCorrect
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User clicks the Actions button
+	Then Actions panel is displayed to the user
+	When User select "Hostname" rows in the grid
+	| SelectedRowsName |
+	| 001BAQXT6JWFPI   |
+	And User selects "Bulk update" in the Actions dropdown
+	And User selects "Update capacity unit" Bulk Update Type on Action panel
+	And User selects "Evergreen" Project or Evergreen on Action panel
+	Then options for "Capacity Unit" field are displayed in alphabetical order on Action panel

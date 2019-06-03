@@ -431,7 +431,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenOptionsForFieldAreDisplayedInAlphabeticalOrderOnActionPanel(string field)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            if (field.Equals("Bucket"))
+            if (field.Equals("Bucket") || field.Equals("Capacity Unit") || field.Equals("Ring"))
             {
                 action.GetDropdownByFieldName(field).Click();
                 var listWithoutUnassigned = action.OptionListOnActionsPanel.Select(x => x.Text).Where(x => !x.Contains("Unassigned")).ToList();

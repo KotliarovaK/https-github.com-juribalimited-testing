@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.DTO;
 using NUnit.Framework;
+using RestSharp.Extensions;
 
 namespace DashworksTestAutomation.Helpers
 {
@@ -34,7 +35,7 @@ namespace DashworksTestAutomation.Helpers
         {
             originalList = originalList.Where(x => !x.Equals("")).ToList();
             var originalColorsList = originalList.Select(x => Enum.Parse(typeof(T), x.Replace(" ", String.Empty))).ToList();
-            var originalColorsListSorted = originalColorsList.OrderBy(s => s).ToList();
+            var originalColorsListSorted = originalColorsList.OrderBy(s => Enum.Parse(typeof(T), s.ToString().Replace("_", " "))).ToList();
 
             //Return if nothing to sort
             if (!originalList.Any())

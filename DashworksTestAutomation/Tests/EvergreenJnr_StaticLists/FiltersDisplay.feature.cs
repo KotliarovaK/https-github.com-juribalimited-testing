@@ -268,10 +268,11 @@ this.FeatureBackground();
             table3.AddRow(new string[] {
                         "No"});
 #line 43
- testRunner.When("User add \"Windows7Mi: SS Application List Completed\" filter where type is \"Equals" +
-                    "\" with added column and following checkboxes:", ((string)(null)), table3, "When ");
+ testRunner.When("User add \"Windows7Mi: Portal Self Service \\ SS Application List Completed\" filter" +
+                    " where type is \"Equals\" with added column and following checkboxes:", ((string)(null)), table3, "When ");
 #line 47
- testRunner.Then("\"Windows7Mi: SS Application List Completed\" filter is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Windows7Mi: Portal Self Service \\ SS Application List Completed\" filter is added" +
+                    " to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48
  testRunner.When("User create dynamic list with \"TestList886350\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49
@@ -293,8 +294,8 @@ this.FeatureBackground();
 #line 57
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 58
- testRunner.And("\"Windows7Mi: SS Application List Completed is Not Applicable or No\" is displayed " +
-                    "in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Windows7Mi: Portal Self Service \\ SS Application List Completed is Not Applicabl" +
+                    "e or No\" is displayed in added filter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
