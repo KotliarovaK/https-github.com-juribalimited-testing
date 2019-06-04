@@ -64,7 +64,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         //        request.AddParameter("description", automation.Description);
         //        request.AddParameter("stopOnFailedAction", automation.StopOnFailedAction);
         //        request.AddParameter("active", automation.Active);
-        //        request.AddParameter("automationScheduleTypeId", ScheduleTypeId(automation.Run));
+        //        request.AddParameter("automationScheduleTypeId", GetRunType(automation.Run));
+        //        request.AddParameter("listId", );
 
         //        var response = _client.Value.Post(request);
 

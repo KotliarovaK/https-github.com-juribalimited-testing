@@ -11,11 +11,11 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
 {
     [Binding]
-    internal class UpdateAutomation : SpecFlowContext
+    internal class EditAutomation : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public UpdateAutomation(RemoteWebDriver driver)
+        public EditAutomation(RemoteWebDriver driver)
         {
             _driver = driver;
         }
