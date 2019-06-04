@@ -829,7 +829,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	| NewName   |
 	| Name1     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS14029
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS14029 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -842,7 +842,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Project14029 Snr" project details
 	And User clicks "Capacity" tab
-	And User selects "Details" tab on the Project details page
+	And User selects "Capacity Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When User click on Back button
 	And User clicks the "CREATE PROJECT" Action button
@@ -853,7 +853,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Capacity" tab
-	And User selects "Details" tab on the Project details page
+	And User selects "Capacity Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When User click on Back button
 	And User select "Project" rows in the grid
