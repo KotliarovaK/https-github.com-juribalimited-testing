@@ -253,7 +253,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            if (columnName.Equals("Compliance"))
+            if (columnName.Equals("Compliance") || columnName.Equals("Owner Compliance"))
             {
                 SortingHelper.IsListSortedByEnum<ColorCompliance>(new List<string>(expectedList));
             }
@@ -269,7 +269,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageMenu = _driver.NowAt<BaseDashboardPage>();
             var expectedList = listPageMenu.GetColumnContent(columnName).Where(x => !x.Equals("")).ToList();
-            SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList), false);
+            if (columnName.Equals("Compliance") || columnName.Equals("Owner Compliance"))
+            {
+                SortingHelper.IsListSortedByEnum<ColorCompliance>(new List<string>(expectedList), false);
+            }
+            else
+            {
+                SortingHelper.IsListSortedByEnum<Color>(new List<string>(expectedList), false);
+            }
             Assert.IsTrue(listPageMenu.DescendingSortingIcon.Displayed);
         }
 

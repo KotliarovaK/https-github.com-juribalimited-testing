@@ -187,7 +187,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDe
 Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInTheTableOnTheDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User click content from "Hostname" column
+	When User perform search by "01WNOSNMP5QLXC"
+	And User click content from "Hostname" column
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Projects Summary" sub-menu on the Details page
 	And User have opened Column Settings for "Project" column in the Details Page table
@@ -210,6 +211,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Status       |
 	| Date         |
 	| Slot         |
+	| Readiness    |
 	And Checkboxes are checked on the Column Settings panel for "Key" Column Settings panel:
 	| Checkbox     |
 	| Key          |
