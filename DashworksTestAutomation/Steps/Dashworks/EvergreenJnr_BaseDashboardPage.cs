@@ -615,7 +615,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
-                foundRowsCounter.ListRowsCounter.Text.Replace(",", ""), "Incorrect rows count");
+                foundRowsCounter.ListRowsCounter.Text, "Incorrect rows count");
         }
 
         [Then(@"Error is displayed to the User")]

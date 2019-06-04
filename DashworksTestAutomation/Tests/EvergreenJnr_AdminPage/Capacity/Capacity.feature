@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then Filling field error with "An override start date must be entered" text is displayed
 	When User enters "4 Oct 2018" date in the "Override Start Date" field
 	And User enters "7 Oct 2018" date in the "Override End Date" field
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	And "Unlimited" content is displayed in "Capacity" column
 	When User enters ">1" text in the Search field for "Capacity" column
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
 	When User selects "Capacity Units" in the "Capacity Type" dropdown
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	Then "All Capacity Units" content is displayed in "Capacity Units" column
 	When User clicks the "CREATE SLOT" Action button
@@ -823,19 +823,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExist
 	| NewName   |
 	| Name1     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS14029
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Capacity @Slots @Senior_Projects @Projects @DAS14029 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqualsCapacityUnits
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "CREATE" page is displayed to the user
+	Then "Create Project" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName      | ShortName | Description | Type |
 	| Project14029 Snr | 13498     |             |      |
 	And User navigate to Evergreen link
 	And User navigates to "Project14029 Snr" project details
 	And User clicks "Capacity" tab
-	And User selects "Details" tab on the Project details page
+	And User selects "Capacity Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When User click on Back button
 	And User clicks the "CREATE PROJECT" Action button
@@ -846,7 +846,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User clicks "Capacity" tab
-	And User selects "Details" tab on the Project details page
+	And User selects "Capacity Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
 	When User click on Back button
 	And User select "Project" rows in the grid
