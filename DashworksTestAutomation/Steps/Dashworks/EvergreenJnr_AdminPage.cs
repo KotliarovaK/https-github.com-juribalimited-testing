@@ -354,8 +354,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseGridPage>();
             var numbers = page.GetSumOfObjectsContent(columnName);
-            var total = numbers.Select(x => x.Length).Sum();
-            Assert.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is not correctly!");
+            var total = numbers.Sum(x => Convert.ToInt32(x));
+            Assert.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
         [Then(@"User sees next Slots on the Capacity Slots page:")]
