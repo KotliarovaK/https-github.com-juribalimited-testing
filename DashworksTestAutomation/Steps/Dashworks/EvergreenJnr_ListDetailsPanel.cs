@@ -326,6 +326,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.AcceptButton);
             listDetailsElement.AcceptButton.Click();
+            _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForDataLoading();
         }
 
