@@ -20,6 +20,8 @@ using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using TechTalk.SpecFlow;
@@ -2898,6 +2900,74 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     "Display order values are displayed in the wrong order");
         }
 
+        [When(@"User navigates to ""(.*)"" project details")]
+        public void WhenUserNavigatesToProjectDetails(string projectName)
+        {
+            var projectId = GetProjectId(projectName);
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
+
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
+        }
+
+        [When(@"Project created via API and opened")]
+        public void WhenUserCreateNewDashboardViaApi(Table table)
+        {
+            string pName="";
+            string pScope = "";
+            string pTemplate = "";
+            int pMode=0;
+
+            foreach (var row in table.Rows)
+            {
+                if (!string.IsNullOrEmpty(row["ProjectName"]))
+                    pName = row["ProjectName"];
+
+                if (!string.IsNullOrEmpty(row["Scope"]))
+                    pScope = row["Scope"];
+
+                if (row["ProjectTemplate"].Equals("None"))
+                    pTemplate = "-1";
+
+                pMode = row["Mode"].Equals("Standalone Project") ? 1 : 3;
+
+            }
+
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/createProject";
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+            request.AddParameter("Accept", "application/json");
+            request.AddParameter("Content-Type", "application/json");
+
+            request.AddParameter("modeId", pMode);
+            request.AddParameter("objectType", GetObjectType(pScope));
+            //request.AddParameter("listId", pScope);
+            request.AddParameter("projectName", pName);
+            request.AddParameter("template", pTemplate);
+
+            var response = _client.Value.Post(request);
+
+            if (response.StatusCode != HttpStatusCode.OK)
+                throw new Exception(
+                    $"Unable to execute request. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["message"]}");
+
+            var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
+            string projectId = responseContent["id"].ToString();
+
+            _projects.Value.Add(pName);
+
+            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
+
+            var page = _driver.NowAt<ProjectsPage>();
+            _driver.WaitForDataLoading();
+            Assert.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
+        }
+
+
         [AfterScenario("Delete_Newly_Created_Team")]
         public void DeleteAllTeamsAfterScenarioRun()
         {
@@ -3015,6 +3085,39 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 DatabaseHelper.ExecuteReader(
                     $"SELECT [CapacityEnabled] FROM [PM].[dbo].[ProjectTasks] where [TaskID] = '{taskId}'",0).LastOrDefault();
             return flagState;
+        }
+
+
+        private string GetObjectType(string scope)
+        {
+            string[] subMenus = {"All Devices", "All Users", "All Mailboxes"};
+
+            if (subMenus.Contains(scope))
+            {
+                return GetSubMenuObjectVersion(scope);
+            }
+            else
+            {
+                return GetListIdByName(scope);
+            }
+        }
+
+        private string GetSubMenuObjectVersion(string scope)
+        {
+            if (scope.Equals("All Devices"))
+                return "Devices";
+            if (scope.Equals("All Users"))
+                return "Users";
+            if (scope.Equals("All Mailboxes"))
+                return "Mailboxes";
+            return "NOT FOUND";
+        }
+
+        private string GetListIdByName(string scope)
+        {
+            //get id from DB by list name
+            //change parameter ObjectType to listId
+            throw new NotImplementedException();
         }
     }
 }
