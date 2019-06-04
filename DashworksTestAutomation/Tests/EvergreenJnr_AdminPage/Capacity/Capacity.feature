@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityCo
 	Then Filling field error with "An override start date must be entered" text is displayed
 	When User enters "4 Oct 2018" date in the "Override Start Date" field
 	And User enters "7 Oct 2018" date in the "Override End Date" field
-	And User clicks the "CREATE PROJECT" Action button
+	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your override date has been created" text
 	And "Unlimited" content is displayed in "Capacity" column
 	When User enters ">1" text in the Search field for "Capacity" column
@@ -114,7 +114,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	And User type "CapacitySlot1" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
 	When User selects "Capacity Units" in the "Capacity Type" dropdown
-	When User clicks the "CREATE PROJECT" Action button
+	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	Then "All Capacity Units" content is displayed in "Capacity Units" column
 	When User clicks the "CREATE SLOT" Action button
@@ -185,7 +185,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBanner
 	And User type "DAS13528" Name in the "Description" field on the Project details page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User selects "Details" tab on the Project details page
+	When User selects "Capacity Details" tab on the Project details page
 	And User selects "Clone evergreen capacity units to project capacity units" in the "Capacity Units" dropdown
 	And User clicks the "UPDATE" Action button
 	#Remove # after DAS-14037 fixed
@@ -226,7 +226,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated
 	# commented until DAS-13151
 	# And "UPDATE" Action button is disabled 
 	# And "CANCEL" Action button is disabled
-	When User selects "Units" tab on the Project details page
+	When User clicks "Capacity" tab
+	And User selects "Units" tab on the Project details page
 	And User enters "CapacityUnit12672" text in the Search field for "Capacity Unit" column
 	Then "TRUE" content is displayed in "Default" column
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
@@ -508,7 +509,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User navigates to "User Scheduled Project in Italian & Japanese (Jo)" project details
 	And User clicks "Capacity" tab
 	#prepare data
-	And User selects "Details" tab on the Project details page
+	And User selects "Capacity Details" tab on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
 	When User clicks the "UPDATE" Action button
 	Then User selects "Capacity Units" option in "Capacity Mode" dropdown
@@ -548,6 +549,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#act1
+	When User clicks "Capacity" tab
 	When User clicks "Units" tab
 	And User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
@@ -558,7 +560,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| slots |
 	| Slot1 |
 	#act2
-	When User clicks "Units" tab
+	When User clicks "Capacity" tab
+	And User clicks "Units" tab
 	And User enters "Capacity Unit 1" text in the Search field for "Capacity Unit" column
 	Then "2" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
@@ -569,7 +572,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| Slot1 |
 	| Slot2 |
 	#act3
-	When User clicks "Units" tab
+	When User clicks "Capacity" tab
+	And User clicks "Units" tab
 	And User enters "Capacity Unit 2" text in the Search field for "Capacity Unit" column
 	Then "2" content is displayed in "Slots" column
 	When User clicks content from "Slots" column
@@ -580,7 +584,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	| Slot1 |
 	| Slot3 |
 	#remove tests data
-	When User selects "Slots" tab on the Project details page
+	When User clicks "Capacity" tab
+	And User selects "Slots" tab on the Project details page
 	And User select "Capacity Slot" rows in the grid
 	| SelectedRowsName |
 	| Slot1           |
@@ -602,7 +607,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected units have been deleted" text
-	When User selects "Details" tab on the Project details page
+	When User selects "Capacity Details" tab on the Project details page
 	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
@@ -657,7 +662,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks newly created object link
-	When User selects "Override Dates" tab on the Project details page
+	And User clicks "Capacity" tab
+	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	And User enters "1 Sep 2018" date in the "Override Start Date" field
 	And User enters "7 Sep 2018" date in the "Override End Date" field
@@ -828,11 +834,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "CREATE" page is displayed to the user
+	Then "Create Project" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName      | ShortName | Description | Type |
 	| Project14029 Snr | 13498     |             |      |
 	And User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Project14029 Snr" project details
 	And User clicks "Capacity" tab
 	And User selects "Details" tab on the Project details page
@@ -1417,7 +1424,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "CREATE" page is displayed to the user
+	Then "Create Project" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName        | ShortName | Description | Type |
 	| ProjectForDAS13812 | 13812     |             |      |
@@ -1454,8 +1461,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User publishes the task
 	Then selected task was published
 	When User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	When User navigates to "ProjectForDAS13812" project details
-	And User open "Capacity" sub menu on Admin page
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
@@ -1471,6 +1479,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User navigate to "1Task13812" Task
 	And User unpublishes the task
 	And User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectForDAS13812" project details
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
@@ -1599,8 +1608,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	When User publishes the task
 	Then selected task was published
 	When User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectDAS13593" project details
-	And User open "Capacity" sub menu on Admin page
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User selects "Device" in the "Object Type" dropdown
@@ -1669,6 +1679,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User navigate to "Group Computer Rag Radio Date Owner" Task
 	And User unpublishes the task
 	And User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
@@ -1719,8 +1730,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	When User publishes the task
 	Then selected task was published
 	When User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User open "Capacity" sub menu on Admin page
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User type "SlotTask13502" Name in the "Slot Name" field on the Project details page
@@ -1757,6 +1769,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	When User publishes the task
 	Then selected task was published
 	When User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
@@ -1775,6 +1788,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User removes "1Task13500" Task
 	And User removes "2Task13500" Task
 	And User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User open "Capacity" sub menu on Admin page
 	And User selects "Slots" tab on the Project details page
@@ -1798,7 +1812,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "CREATE" page is displayed to the user
+	Then "Create Project" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName        | ShortName | Description | Type |
 	| ProjectForDAS13152 | 13152     |             |      |
@@ -1820,6 +1834,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
@@ -1852,7 +1867,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User clicks create Project button
-	Then "CREATE" page is displayed to the user
+	Then "Create Project" page is displayed to the user
 	When User creates new Project on Senior
 	| ProjectName         | ShortName | Description | Type |
 	| ProjectForDAS131522 | 131522    |             |      |
@@ -1874,6 +1889,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectForDAS13152" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page

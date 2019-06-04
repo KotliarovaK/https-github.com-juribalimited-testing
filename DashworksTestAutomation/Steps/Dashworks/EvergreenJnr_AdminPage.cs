@@ -18,6 +18,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using Newtonsoft.Json;
@@ -39,9 +40,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
         private readonly CapacityUnit _capacityUnit;
+        private readonly UserDto _user;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, TeamName teamName, DTO.RuntimeVariables.Projects projects,
-            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnit capacityUnit)
+            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnit capacityUnit, UserDto user)
         {
             _driver = driver;
             _teamName = teamName;
@@ -51,6 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _lastUsedBucket = lastUsedBucket;
             _addedObjects = addedObjects;
             _capacityUnit = capacityUnit;
+            _user = user;
         }
 
         #region Check button state
@@ -2944,8 +2947,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             request.AddParameter("Content-Type", "application/json");
 
             request.AddParameter("modeId", pMode);
-            request.AddParameter("objectType", GetObjectType(pScope));
-            //request.AddParameter("listId", pScope);
+            request.AddParameter(GetCreateProjectRequestScopeProperty(pScope), GetObjectType(pScope));
+
             request.AddParameter("projectName", pName);
             request.AddParameter("template", pTemplate);
 
@@ -3088,21 +3091,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
 
-        private string GetObjectType(string scope)
+        private string GetCreateProjectRequestScopeProperty(string scope)
         {
-            string[] subMenus = {"All Devices", "All Users", "All Mailboxes"};
-
-            if (subMenus.Contains(scope))
-            {
-                return GetSubMenuObjectVersion(scope);
-            }
-            else
-            {
-                return GetListIdByName(scope);
-            }
+            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? "objectType" : "listId";
         }
 
-        private string GetSubMenuObjectVersion(string scope)
+        private string GetObjectType(string scope)
+        {
+            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? GetProjectObjectTypeScope(scope) : GetProjectListIdScope(scope);
+        }
+
+        private string GetProjectObjectTypeScope(string scope)
         {
             if (scope.Equals("All Devices"))
                 return "Devices";
@@ -3113,11 +3112,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return "NOT FOUND";
         }
 
-        private string GetListIdByName(string scope)
+        private string GetProjectListIdScope(string listName)
         {
-            //get id from DB by list name
-            //change parameter ObjectType to listId
-            throw new NotImplementedException();
+            //string userId =
+            //    DatabaseHelper.ExecuteReader(
+            //        $"SELECT [aspnetdb].[dbo].[aspnet_Users].[UserId] FROM[aspnetdb].[dbo].[aspnet_Users] where UserName = '{_user.UserName}'", 0).LastOrDefault();
+
+            return DatabaseHelper.ExecuteReader(
+                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
         }
+
     }
 }
