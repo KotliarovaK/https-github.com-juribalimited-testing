@@ -242,7 +242,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitForDataLoading();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
-                }
+            }
         }
 
         [When(@"User selects following Mailbox folder permissions")]
@@ -350,6 +350,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < slots.RowCount; i++)
                 Assert.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
                     "Units are not the same");
+        }
+
+        [Then(@"sum of objects in ""(.*)"" list is ""(.*)"" on the Admin page")]
+        public void ThenSumOfObjectsInListIsOnTheAdminPage(string columnName, int sumOfObjects)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var numbers = page.GetSumOfObjectsContent(columnName);
+            var total = numbers.Sum(x => Convert.ToInt32(x));
+            Assert.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
         [Then(@"User sees next Slots on the Capacity Slots page:")]
@@ -2828,8 +2837,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.Storage.SessionStorage.GetItem("readinessToolTip"), Is.EqualTo(tooltip), "Tooltip is different from stored one");
             Assert.That(page.Storage.SessionStorage.GetItem("readinessDefault"), Is.EqualTo(defaultFor.ToLower()), "Default For state different from stored one");
         }
-
-        
 
         [Then(@"Readiness ""(.*)"" displayed before None")]
         public void ThenUserSeesJustCreatedReadinessBeforeNoneItem(string title)

@@ -42,3 +42,12 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacityUnitsDelet
 	| Evergreen Capacity Unit 2 |
 	And User clicks Delete button
 	Then Warning message with "These units will be permanently deleted and any objects within them reassigned to the default unit" text is displayed on the Admin page
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @CapacityUnits @DAS14070
+Scenario: EvergreenJnr_AdminPage_ChecksThatSumOfObjectsInApplicationsListIsCorrect
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Capacity Units" tab
+	Then "Capacity Units" page should be displayed to the user
+	Then sum of objects in "Applications" list is "2223" on the Admin page
