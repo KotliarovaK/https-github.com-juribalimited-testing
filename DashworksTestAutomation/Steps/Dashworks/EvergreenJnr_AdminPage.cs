@@ -2348,6 +2348,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ResetFiltersButton.Click();
         }
 
+        [When(@"User clicks Group By button on the Admin page")]
+        public void WhenUserClicksGroupByButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.GroupByButton.Click();
+        }
+
+        [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
+        public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GroupByButton.Click();
+            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPAge(value));
+            page.GetValueInGroupByFilterOnAdminPAge(value).Click();
+            page.BodyContainer.Click();
+        }
+
         [When(@"User clicks Refresh button on the Admin page")]
         public void WhenUserClicksRefreshButtonOnTheAdminPage()
         {

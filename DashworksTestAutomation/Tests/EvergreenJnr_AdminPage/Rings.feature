@@ -364,3 +364,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRin
 	And User clicks Create button on the Create Ring page
 	Then There are no errors in the browser console
 	And Success message is displayed and contains "The ring has been created" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15906
+Scenario: EvergreenJnr_AdminPage_CheckThatCogIconIsNotDisplayedOnLevelOfGroupedRows
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	And User clicks "Rings" tab
+	Then "Rings" page should be displayed to the user
+	When User clicks Group By button on the Admin page and selects "Ring" value
+	Then Cog menu is not displayed on the Admin page
