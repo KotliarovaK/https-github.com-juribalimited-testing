@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
-        public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
+        public const string OptionTabsOnAdminPage = ".//mat-nested-tree-node[@aria-expanded='true']//li[contains(@class,'tree-node')]/a";
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
@@ -623,7 +623,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDisabledTabByName(string tabName)
         {
-            var selector = By.XPath($"//li[contains(@class, 'disabled')]//span[text()='{tabName}']");
+            var selector = By.XPath($"//li[contains(@class, 'disabled')]//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

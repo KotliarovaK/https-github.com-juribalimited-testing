@@ -3708,11 +3708,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectDetailsIsPopulatedOnTheAdminPag
 	Then "Capacity Units" dropdown is displayed
 	Then "90" content is displayed in "Percentage capacity to reach before showing amber" field
 	Then Menu options are displayed in the following order on the Admin page:
-	| Options        |
-	| Details        |
-	| Units          |
-	| Slots          |
-	| Override Dates |
+	| Options          |
+	| Capacity Details |
+	| Units            |
+	| Slots            |
+	| Override Dates   |
 	When User clicks "Administration" navigation link on the Admin page
 	When User enters "Barry's User Project" text in the Search field for "Project" column
 	When User clicks content from "Project" column
@@ -3767,7 +3767,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13501 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13501 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -3830,7 +3830,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIs
 	When User clicks String Filter button for "Project" column
 	Then "13510TestProject" is not displayed in the filter dropdown
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS12768 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS12768 @Delete_Newly_Created_Project @Project_Creation_and_Scope
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatMatchToEvergreenBucketDisplayedInTheBucketDropdown
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -3853,7 +3853,7 @@ Examples:
 	| All Users     |
 	| All Mailboxes |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13499 @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13499 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -4026,8 +4026,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridFor
 	And User clicks String Filter button for "Project" column on the Admin page
 	And User selects "DAS15260Project" checkbox from String Filter with item list on the Admin page
 	Then "1" content is displayed in "Devices" column
-	And "" content is displayed in "Users" column
-	And "" content is displayed in "Mailboxes" column
+	And "0" content is displayed in "Users" column
+	And "0" content is displayed in "Mailboxes" column
 	When User clicks Admin on the left-hand menu
 	And User enters "DAS15260Project" text in the Search field for "Project" column
 	And User selects all rows on the grid

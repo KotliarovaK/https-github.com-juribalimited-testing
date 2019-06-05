@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks;
@@ -59,6 +60,8 @@ namespace DashworksTestAutomation.Steps.Projects
             }
             var tab = _driver.NowAt<MainElementsOfProjectCreation>();
             tab.CreatedProjectButton.Click();
+            //[YT] added thread sleep since we have max 30 sec delay between senior and evergreen
+            Thread.Sleep(10000);
         }
 
         [When(@"User updates Project Name to ""(.*)"" on Senior")]

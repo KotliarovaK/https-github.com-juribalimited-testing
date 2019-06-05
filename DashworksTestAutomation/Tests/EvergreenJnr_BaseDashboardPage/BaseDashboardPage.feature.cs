@@ -938,7 +938,9 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12867")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS14189")]
+        [NUnit.Framework.CategoryAttribute("DAS16961")]
         [NUnit.Framework.CategoryAttribute("Projects")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatToolTipIsDisplayedWithCreateProjectButtonFromAnUnsavedList()
         {
             System.Exception lastException = null;
@@ -977,7 +979,9 @@ this.FeatureBackground();
                         "DAS12867",
                         "DAS12999",
                         "DAS14189",
-                        "Projects"});
+                        "DAS16961",
+                        "Projects",
+                        "Not_Run"});
 #line 210
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

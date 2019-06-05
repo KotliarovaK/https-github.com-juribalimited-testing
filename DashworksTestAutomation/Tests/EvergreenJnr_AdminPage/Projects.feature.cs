@@ -12208,7 +12208,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table163 = new TechTalk.SpecFlow.Table(new string[] {
                         "Options"});
             table163.AddRow(new string[] {
-                        "Details"});
+                        "Capacity Details"});
             table163.AddRow(new string[] {
                         "Units"});
             table163.AddRow(new string[] {
@@ -12397,7 +12397,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13501")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage()
         {
             System.Exception lastException = null;
@@ -12435,8 +12434,7 @@ this.FeatureBackground();
                         "UpdatingName",
                         "Senior_Projects",
                         "DAS13501",
-                        "Delete_Newly_Created_Project",
-                        "Projects"});
+                        "Delete_Newly_Created_Project"});
 #line 3771
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -12686,7 +12684,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12768")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("All Users", null)]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", null)]
@@ -12725,8 +12722,7 @@ this.FeatureBackground();
                     "Projects",
                     "DAS12768",
                     "Delete_Newly_Created_Project",
-                    "Project_Creation_and_Scope",
-                    "Projects"};
+                    "Project_Creation_and_Scope"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -12782,7 +12778,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13499")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName()
         {
             System.Exception lastException = null;
@@ -12820,8 +12815,7 @@ this.FeatureBackground();
                         "UpdatingName",
                         "Senior_Projects",
                         "DAS13499",
-                        "Delete_Newly_Created_Project",
-                        "Projects"});
+                        "Delete_Newly_Created_Project"});
 #line 3857
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -13439,9 +13433,9 @@ this.FeatureBackground();
 #line 4028
  testRunner.Then("\"1\" content is displayed in \"Devices\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 4029
- testRunner.And("\"\" content is displayed in \"Users\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"0\" content is displayed in \"Users\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 4030
- testRunner.And("\"\" content is displayed in \"Mailboxes\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"0\" content is displayed in \"Mailboxes\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 4031
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 4032

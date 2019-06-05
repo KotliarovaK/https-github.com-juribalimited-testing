@@ -744,7 +744,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Pivot")]
         [NUnit.Framework.CategoryAttribute("Pivot")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14224")]
         [NUnit.Framework.CategoryAttribute("DAS14413")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
@@ -782,7 +781,6 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_Pivot",
                         "Pivot",
-                        "Projects",
                         "DAS14224",
                         "DAS14413",
                         "Delete_Newly_Created_Project"});
