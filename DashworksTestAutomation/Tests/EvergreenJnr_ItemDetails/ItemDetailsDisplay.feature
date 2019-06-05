@@ -1614,3 +1614,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	| GREEN                   |
 	| GREY                    |
 	| NONE                    |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15913
+Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelOfGroupedRows
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Applications" main-menu on the Details page
+	When User navigates to the "Evergreen Summary" sub-menu on the Details page
+	When User clicks Group By button on the Details page and selects "Vendor" value
+	Then "UNKNOWN" content is not displayed in the grid on the Item details page

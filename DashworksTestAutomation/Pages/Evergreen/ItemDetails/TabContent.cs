@@ -51,5 +51,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public bool GetContentDisplayState(string text)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{text}']"));
+        }
     }
 }
