@@ -180,6 +180,7 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\ActionsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditActionPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditAutomationPage.cs" />
@@ -292,6 +293,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditAutomation.cs" />
