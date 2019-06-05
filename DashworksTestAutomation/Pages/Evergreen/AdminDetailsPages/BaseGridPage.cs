@@ -89,6 +89,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='GroupBy']")]
+        public IWebElement GroupByButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='reload']")]
         public IWebElement RefreshButton { get; set; }
 
@@ -646,6 +649,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var by = By.XPath(
                 $"//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+        public IWebElement GetValueInGroupByFilterOnAdminPAge(string value)
+        {
+            var selector = By.XPath($"//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }
