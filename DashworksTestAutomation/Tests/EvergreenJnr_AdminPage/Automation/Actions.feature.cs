@@ -224,6 +224,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15835")]
         [NUnit.Framework.CategoryAttribute("DAS15836")]
         [NUnit.Framework.CategoryAttribute("DAS15837")]
+        [NUnit.Framework.CategoryAttribute("DAS15838")]
         public virtual void EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -261,7 +262,8 @@ this.FeatureBackground();
                         "DAS15427",
                         "DAS15835",
                         "DAS15836",
-                        "DAS15837"});
+                        "DAS15837",
+                        "DAS15838"});
 #line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -336,7 +338,7 @@ this.FeatureBackground();
  testRunner.When("User clicks \"Move to position\" option in Cog-menu for \"15309_Action\" item on Admi" +
                     "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 87
- testRunner.And("User enters \"2\" value in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters \"4\" value in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
  testRunner.And("User clicks \"Move\" bth in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -345,13 +347,67 @@ this.FeatureBackground();
             table6.AddRow(new string[] {
                         "AM 030619 Action 1"});
             table6.AddRow(new string[] {
-                        "15309_Action"});
-            table6.AddRow(new string[] {
                         "AM 030619 Action 2"});
             table6.AddRow(new string[] {
                         "DAS15427_Action"});
+            table6.AddRow(new string[] {
+                        "15309_Action"});
 #line 89
  testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table6, "Then ");
+#line 95
+ testRunner.When("User clicks \"Move to position\" option in Cog-menu for \"15309_Action\" item on Admi" +
+                    "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 96
+ testRunner.And("User enters \"1\" value in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+ testRunner.And("User clicks \"Move\" bth in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table7.AddRow(new string[] {
+                        "15309_Action"});
+            table7.AddRow(new string[] {
+                        "AM 030619 Action 1"});
+            table7.AddRow(new string[] {
+                        "AM 030619 Action 2"});
+            table7.AddRow(new string[] {
+                        "DAS15427_Action"});
+#line 98
+ testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table7, "Then ");
+#line 104
+ testRunner.When("User clicks \"Move to position\" option in Cog-menu for \"15309_Action\" item on Admi" +
+                    "n page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 105
+ testRunner.And("User enters \"20\" value in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("User clicks \"Move\" bth in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Items"});
+            table8.AddRow(new string[] {
+                        "AM 030619 Action 1"});
+            table8.AddRow(new string[] {
+                        "AM 030619 Action 2"});
+            table8.AddRow(new string[] {
+                        "DAS15427_Action"});
+            table8.AddRow(new string[] {
+                        "15309_Action"});
+#line 107
+ testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table8, "Then ");
+#line 113
+ testRunner.When("User clicks \"Delete\" option in Cog-menu for \"DAS15427_Action\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 114
+ testRunner.Then("Warning message with \"Are you sure you wish to delete 1 action?\" text is displaye" +
+                    "d on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 115
+ testRunner.When("User clicks Cancel button in the warning message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 116
+ testRunner.When("User clicks \"Delete\" option in Cog-menu for \"DAS15427_Action\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 117
+ testRunner.When("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 118
+ testRunner.Then("Success message is displayed and contains \"The selected action has been deleted\" " +
+                    "text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

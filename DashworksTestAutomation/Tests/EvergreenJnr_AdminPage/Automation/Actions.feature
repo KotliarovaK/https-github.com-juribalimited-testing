@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then "UPDATE" Action button is displayed
 	Then "CANCEL" Action button is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15835 @DAS15836 @DAS15837
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15835 @DAS15836 @DAS15837 @DAS15838
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
@@ -84,11 +84,35 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	| DAS15427_Action    |
 	| 15309_Action       |
 	When User clicks "Move to position" option in Cog-menu for "15309_Action" item on Admin page
-	And User enters "2" value in Move to position dialog
+	And User enters "4" value in Move to position dialog
 	And User clicks "Move" bth in Move to position dialog
 	Then "Action" column content is displayed in the following order:
     | Items              |
     | AM 030619 Action 1 |
-	| 15309_Action       |
     | AM 030619 Action 2 |
 	| DAS15427_Action    |
+	| 15309_Action       |
+	When User clicks "Move to position" option in Cog-menu for "15309_Action" item on Admin page
+	And User enters "1" value in Move to position dialog
+	And User clicks "Move" bth in Move to position dialog
+	Then "Action" column content is displayed in the following order:
+    | Items              |
+	| 15309_Action       |
+    | AM 030619 Action 1 |
+    | AM 030619 Action 2 |
+	| DAS15427_Action    |
+	When User clicks "Move to position" option in Cog-menu for "15309_Action" item on Admin page
+	And User enters "20" value in Move to position dialog
+	And User clicks "Move" bth in Move to position dialog
+	Then "Action" column content is displayed in the following order:
+    | Items              |
+    | AM 030619 Action 1 |
+    | AM 030619 Action 2 |
+	| DAS15427_Action    |
+	| 15309_Action       |
+	When User clicks "Delete" option in Cog-menu for "DAS15427_Action" item on Admin page
+	Then Warning message with "Are you sure you wish to delete 1 action?" text is displayed on the Admin page
+	When User clicks Cancel button in the warning message on the Admin page
+	When User clicks "Delete" option in Cog-menu for "DAS15427_Action" item on Admin page
+	When User clicks Delete button in the warning message
+	Then Success message is displayed and contains "The selected action has been deleted" text

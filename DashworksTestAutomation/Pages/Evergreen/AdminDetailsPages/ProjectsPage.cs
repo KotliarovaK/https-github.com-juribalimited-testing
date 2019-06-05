@@ -396,5 +396,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($"//mat-checkbox[contains(@class, 'checkbox-disabled')]//span[text()='{checkboxName}']");
             return Driver.FindElement(selector);
         }
+
+        public IWebElement CorrectMainListsScopeDropdown(string checkboxName)
+        {
+            var devices = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            var users = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            var mailboxes = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            var applications = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            return Driver.FindElement(devices);
+        }
     }
+
 }

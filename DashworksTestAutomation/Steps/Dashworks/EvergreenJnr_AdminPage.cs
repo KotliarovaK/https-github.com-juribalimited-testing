@@ -1720,6 +1720,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [Then(@"Main lists are displayed correctly in the Scope dropdown")]
+        public void ThenMainListsAreDisplayedCorrectlyInTheScopeDropdown()
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ScopeProjectField.Click();
+            createProjectElement.ScopeProjectField.SendKeys("All");
+
+        }
+
         [When(@"User selects ""(.*)"" in the Scope Project details")]
         public void WhenUserSelectsInTheScopeProjectDetails(string listName)
         {
