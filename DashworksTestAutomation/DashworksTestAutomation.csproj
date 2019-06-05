@@ -103,6 +103,7 @@
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\ColorCompliance.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Automations\AutomationsDTO.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
+    <Compile Include="DTO\RuntimeVariables\Automation.cs" />
     <Compile Include="DTO\RuntimeVariables\Dashboard.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnitUnassignedId.cs" />
@@ -290,8 +292,9 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\EditActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Automations\UpdateAutomation.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\EditAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />

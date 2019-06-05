@@ -215,7 +215,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'btn-close-wrap')]//button")]
@@ -456,7 +456,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool TextMessage(string textMessage)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//*[text()='{textMessage}']"));
         }
 
         public bool GetTabHeaderInTheScopeChangesSection(string text)

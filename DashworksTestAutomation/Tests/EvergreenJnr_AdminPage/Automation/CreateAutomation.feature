@@ -55,3 +55,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAu
 	When User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
 	Then "Admin" left-hand menu is highlighted
+	When User creates new Capacity Unit via api
+	| Name                     | Description | IsDefault |
+	| DefaultCapacityUnit13720 | 13720       | true      |
+	#When User creates new Automation Unit via API
+	#| Name | Description | Scope |Run|Active|StopOnFailedAction|
