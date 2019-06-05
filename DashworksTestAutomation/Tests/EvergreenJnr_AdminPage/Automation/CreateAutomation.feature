@@ -22,18 +22,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User selects "Manual" in the "Run" dropdown
 	And User clicks the "CREATE" Action button
 	When User clicks "Actions" tab
-	Then message 'No users found' is displayed to the user
 	Then "No Actions Found" message is displayed on the Admin Page
 	Then "CREATE ACTION" Action button is active
-	Then Columns on Admin page is displayed in following order:
-	| ColumnName    |
-	|               |
-	| Action        |
-	|               |
-	| Type          |
-	| Project       |
-	| Task or Field |
-	| Value         |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation
