@@ -2516,17 +2516,10 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13390 @DAS12582 @DAS11978 @DAS12825 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project13390" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project13390 | All Devices | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
@@ -2682,13 +2675,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	| "WPF/E" (codename) Community Technology Preview (Feb 2007) (0.8.5.0) |
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project13391" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks the "CREATE PROJECT" Action button
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName  | Scope       | ProjectTemplate | Mode               |
+	| Project13391 | All Devices | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
@@ -4062,24 +4052,19 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	Then Dashworks homepage is displayed to the user in a logged in state
 	When User clicks the Switch to Evergreen link
 	Then Evergreen Dashboards page should be displayed to the user
-	When Evergreen QueryStringURL is entered for Simple QueryType
+	When Evergreen QueryStringURL is entered for Simple QueryType with expecting error
 	| QueryType | QueryStringURL                            |
-	| Devices   | evergreen/#/admin/project/63/scopeChanges |
+	| Devices   | evergreen/#/admin/project/63/scope/scopeChanges |
 	Then Admin menu item is hidden
 	Then Error is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnEvergreen
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "16145_EvergreenProject" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
+	When Project created via API and opened
+	| ProjectName            | Scope       | ProjectTemplate | Mode               |
+	| 16145_EvergreenProject | All Devices | None            | Standalone Project |
+	And User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user	
 	When User navigates to "evergreen" URL in a new tab
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

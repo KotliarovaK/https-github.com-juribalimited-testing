@@ -2938,6 +2938,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
+        // table example
+        // | ProjectName | Scope | ProjectTemplate | Mode |
         [When(@"Project created via API and opened")]
         public void WhenUserCreateNewDashboardViaApi(Table table)
         {
