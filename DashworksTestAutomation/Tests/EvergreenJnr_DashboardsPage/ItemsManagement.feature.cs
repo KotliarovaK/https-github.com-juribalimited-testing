@@ -1471,9 +1471,9 @@ this.FeatureBackground();
             table23.AddRow(new string[] {
                         "List",
                         "1_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 254
  testRunner.And("User creates new Widget", ((string)(null)), table23, "And ");
 #line 257
@@ -1490,9 +1490,9 @@ this.FeatureBackground();
             table24.AddRow(new string[] {
                         "List",
                         "2_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 260
  testRunner.And("User creates new Widget", ((string)(null)), table24, "And ");
 #line 263
@@ -1509,9 +1509,9 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "List",
                         "3_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 266
  testRunner.And("User creates new Widget", ((string)(null)), table25, "And ");
 #line 269
@@ -1528,9 +1528,9 @@ this.FeatureBackground();
             table26.AddRow(new string[] {
                         "List",
                         "4_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 272
  testRunner.And("User creates new Widget", ((string)(null)), table26, "And ");
 #line 275
@@ -1547,9 +1547,9 @@ this.FeatureBackground();
             table27.AddRow(new string[] {
                         "List",
                         "5_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 278
  testRunner.And("User creates new Widget", ((string)(null)), table27, "And ");
 #line 281
@@ -1566,9 +1566,9 @@ this.FeatureBackground();
             table28.AddRow(new string[] {
                         "List",
                         "6_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 284
  testRunner.And("User creates new Widget", ((string)(null)), table28, "And ");
 #line 287
@@ -1585,9 +1585,9 @@ this.FeatureBackground();
             table29.AddRow(new string[] {
                         "List",
                         "7_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 290
  testRunner.And("User creates new Widget", ((string)(null)), table29, "And ");
 #line 293
@@ -1604,9 +1604,9 @@ this.FeatureBackground();
             table30.AddRow(new string[] {
                         "List",
                         "8_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 296
  testRunner.And("User creates new Widget", ((string)(null)), table30, "And ");
 #line 299
@@ -1623,9 +1623,9 @@ this.FeatureBackground();
             table31.AddRow(new string[] {
                         "List",
                         "9_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 302
  testRunner.And("User creates new Widget", ((string)(null)), table31, "And ");
 #line 305
@@ -1642,9 +1642,9 @@ this.FeatureBackground();
             table32.AddRow(new string[] {
                         "List",
                         "10_Widget",
-                        "All Users",
-                        "10",
-                        "10"});
+                        "All Devices",
+                        "5",
+                        "5"});
 #line 308
  testRunner.And("User creates new Widget", ((string)(null)), table32, "And ");
 #line 311

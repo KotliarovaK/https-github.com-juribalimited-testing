@@ -252,62 +252,62 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 1_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 1_Widget | All Devices | 5       | 5          |
 	Then "1_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 2_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 2_Widget | All Devices | 5       | 5          |
 	Then "2_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 3_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 3_Widget | All Devices | 5       | 5          |
 	Then "3_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 4_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 4_Widget | All Devices | 5       | 5          |
 	Then "4_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 5_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 5_Widget | All Devices | 5       | 5          |
 	Then "5_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 6_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 6_Widget | All Devices | 5       | 5          |
 	Then "6_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 7_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 7_Widget | All Devices | 5       | 5          |
 	Then "7_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 8_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 8_Widget | All Devices | 5       | 5          |
 	Then "8_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title    | List      | MaxRows | MaxColumns |
-	| List       | 9_Widget | All Users | 10      | 10         |
+	| WidgetType | Title    | List        | MaxRows | MaxColumns |
+	| List       | 9_Widget | All Devices | 5       | 5          |
 	Then "9_Widget" Widget is displayed to the user
 	#==========================================================#
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
-	| WidgetType | Title     | List      | MaxRows | MaxColumns |
-	| List       | 10_Widget | All Users | 10      | 10         |
+	| WidgetType | Title     | List        | MaxRows | MaxColumns |
+	| List       | 10_Widget | All Devices | 5       | 5          |
 	Then "10_Widget" Widget is displayed to the user
 	#==========================================================#
 	Then "ADD WIDGET" Action button is disabled
