@@ -5158,7 +5158,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("DAS13201")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems()
         {
             System.Exception lastException = null;
@@ -5196,7 +5196,7 @@ this.FeatureBackground();
                         "Projects",
                         "Delete_Newly_Created_Project",
                         "DAS13201",
-                        "Not_Run"});
+                        "archived"});
 #line 1162
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5958,7 +5958,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14629")]
         [NUnit.Framework.CategoryAttribute("DAS14659")]
         [NUnit.Framework.CategoryAttribute("DAS14629")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage()
         {
             System.Exception lastException = null;
@@ -5997,8 +5996,7 @@ this.FeatureBackground();
                         "DAS13296",
                         "DAS14629",
                         "DAS14659",
-                        "DAS14629",
-                        "Not_Run"});
+                        "DAS14629"});
 #line 1355
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6013,7 +6011,7 @@ this.FeatureBackground();
 #line 1359
  testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1360
- testRunner.And("User closes \"Selected Columns\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User closes \"Suggested\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1361
  testRunner.And("User expands \"User\" filter category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -6040,11 +6038,11 @@ this.FeatureBackground();
             table102.AddRow(new string[] {
                         "Enabled"});
             table102.AddRow(new string[] {
+                        "GUID"});
+            table102.AddRow(new string[] {
                         "Given Name"});
             table102.AddRow(new string[] {
                         "Group Count"});
-            table102.AddRow(new string[] {
-                        "GUID"});
             table102.AddRow(new string[] {
                         "Home Directory"});
             table102.AddRow(new string[] {
@@ -6517,6 +6515,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
+        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("DAS12547")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock()
         {
@@ -6551,6 +6550,7 @@ this.FeatureBackground();
                         "Mailboxes",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
+                        "API",
                         "DAS12547"});
 #line 1486
 this.ScenarioInitialize(scenarioInfo);

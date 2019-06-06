@@ -3077,8 +3077,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("DAS13419")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks()
         {
             System.Exception lastException = null;
@@ -3112,134 +3112,25 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
-                        "DAS13419",
-                        "Not_Run"});
+                        "API",
+                        "DAS13419"});
 #line 803
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 804
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 805
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table87 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table87.AddRow(new string[] {
-                        "Windows7Mi: A new group task thats long long long long long long long long long l" +
-                            "ong long long long long long!!!"});
+                        "Adhoc Information"});
             table87.AddRow(new string[] {
-                        "Windows7Mi: Additional Information"});
+                        "Targeting Date"});
             table87.AddRow(new string[] {
-                        "Windows7Mi: Applications List"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: C&C Computer Test Task 1"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Completed Date"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Computer Off/On"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Computer Read Only Task for Project Object"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Computer Read Only Task in Bulk Update"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Computer Read Only Task in Self Service"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Computer Read Only Task in Self Service (Slot)"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Date & Time Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Date Workstation Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: DateTime"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Forecast Code"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Forecast Date"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Forecast Date (Slot)"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Further Information"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Group Computer Non Rag Date Owner"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Group Computer Rag Radio Date Owner"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Group Computer Rag Radio Date Owner (Slot)"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Group Date Computer Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: h1"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: IP Address"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Laptop & Physical Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Laptop & Workstation 2"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Laptop Only Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Laptop Replacement Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Mail 1"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Migrated Date"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Physical Only Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Radiobutton Task for Workstation"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Scheduled Code"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Scheduled Date"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Scheduled Date (Slot)"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Self Service Enabled"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Send Applications List - Computer Object Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Application List Completed"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Application List Enabled (Computer Mode)"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Computer Ownership Completed"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Computer Ownership Enabled"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Dept & Location Completed"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Dept & Location Enabled"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Other Options 1 Enabled"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Other Options 2 Completed"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Other Options 2 Enabled"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Other Options Completed"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SS Project Date Enabled"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: SSP Project Date Completed"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Target Code"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Target Date"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Targeting Information"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Values but no RAG"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: VDI Only Task"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Workflow for Devices"});
-            table87.AddRow(new string[] {
-                        "Windows7Mi: Workstation Text Task"});
-#line 806
- testRunner.And("the following subcategories are displayed for \"Project Tasks: Windows7Mi\" Columns" +
-                    " category:", ((string)(null)), table87, "And ");
+                        "Migration Updates"});
+#line 804
+ testRunner.Then("the following subcategories are NOT displayed for \"Project Tasks: Windows7Mi\" Col" +
+                    "umns category:", ((string)(null)), table87, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -3251,9 +3142,9 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
+        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("DAS13419")]
         [NUnit.Framework.CategoryAttribute("DAS14288")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks()
         {
             System.Exception lastException = null;
@@ -3287,45 +3178,24 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
+                        "API",
                         "DAS13419",
-                        "DAS14288",
-                        "Not_Run"});
-#line 866
+                        "DAS14288"});
+#line 811
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 867
- testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 868
- testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 869
- testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 870
- testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 871
- testRunner.When("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 872
- testRunner.Then("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 873
- testRunner.And("User is expand \"Project Tasks: prK\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table88 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Subcategories"});
+                        "Value"});
             table88.AddRow(new string[] {
-                        "prK: Email Address CC"});
+                        "user-norm-radb-k"});
             table88.AddRow(new string[] {
-                        "prK: Email Notifications Allowed?"});
-            table88.AddRow(new string[] {
-                        "prK: Email Override Address"});
-            table88.AddRow(new string[] {
-                        "prK: Email to be sent - All Placeholders"});
-            table88.AddRow(new string[] {
-                        "prK: Email to be sent - All Placeholders (Slot)"});
-            table88.AddRow(new string[] {
-                        "prK: user-group-radb-k"});
-#line 874
- testRunner.Then("the following Filters subcategories are displayed for open category:", ((string)(null)), table88, "Then ");
+                        "Email Notifications Allowed?Email Notifications Allowed?"});
+#line 812
+ testRunner.Then("the following subcategories are NOT displayed for \"Project Tasks: prK\" Columns ca" +
+                    "tegory:", ((string)(null)), table88, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -3378,30 +3248,30 @@ this.FeatureBackground();
                         "DAS14629",
                         "DAS14660",
                         "DAS15167"});
-#line 884
+#line 818
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 885
+#line 819
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 886
+#line 820
  testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 887
+#line 821
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 888
+#line 822
  testRunner.Then("Columns panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 889
+#line 823
  testRunner.When("User is expand \"User\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 890
+#line 824
  testRunner.When("User add \"Primary Device\" Column from expanded category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 891
+#line 825
  testRunner.When("User click on \'Primary Device\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 892
+#line 826
  testRunner.When("User click on \'Primary Device\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 893
+#line 827
  testRunner.When("User click content from \"Primary Device\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 894
+#line 828
  testRunner.Then("Details object page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -3453,14 +3323,14 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS14969",
                         "archived"});
-#line 897
+#line 831
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 898
+#line 832
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 899
+#line 833
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3490,7 +3360,7 @@ this.FeatureBackground();
             table89.AddRow(new string[] {
                         "Project Stages: UserEvergr",
                         "1"});
-#line 900
+#line 834
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table89, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table90 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3501,7 +3371,7 @@ this.FeatureBackground();
                         "Project Tasks: EmailMigra"});
             table90.AddRow(new string[] {
                         "Project Stages: EmailMigra"});
-#line 910
+#line 844
  testRunner.And("Category is not displayed in the Columns panel", ((string)(null)), table90, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -3551,14 +3421,14 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS14969",
                         "archived"});
-#line 917
+#line 851
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 918
+#line 852
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 919
+#line 853
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table91 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3591,7 +3461,7 @@ this.FeatureBackground();
             table91.AddRow(new string[] {
                         "Project Stages: EmailMigra",
                         "3"});
-#line 920
+#line 854
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table91, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -3643,14 +3513,14 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS14969",
                         "archived"});
-#line 933
+#line 867
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 934
+#line 868
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 935
+#line 869
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table92 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3683,7 +3553,7 @@ this.FeatureBackground();
             table92.AddRow(new string[] {
                         "Project Stages: EmailMigra",
                         "1"});
-#line 936
+#line 870
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table92, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -3735,14 +3605,14 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS14969",
                         "archived"});
-#line 949
+#line 883
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 950
+#line 884
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 951
+#line 885
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table93 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3763,7 +3633,7 @@ this.FeatureBackground();
             table93.AddRow(new string[] {
                         "Project Tasks: MailboxEve",
                         "15"});
-#line 952
+#line 886
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table93, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table94 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3780,7 +3650,7 @@ this.FeatureBackground();
                         "Project Tasks: UserEvergr"});
             table94.AddRow(new string[] {
                         "Project Stages: UserEvergr"});
-#line 959
+#line 893
  testRunner.And("Category is not displayed in the Columns panel", ((string)(null)), table94, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -3832,16 +3702,16 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS15140",
                         "Do_Not_Run_With_Projects"});
-#line 969
+#line 903
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 970
+#line 904
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 971
+#line 905
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 972
+#line 906
  testRunner.And("User enters \"ring\" text in Search field at Columns Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table95 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3886,7 +3756,7 @@ this.FeatureBackground();
             table95.AddRow(new string[] {
                         "Project: Windows7Mi",
                         "1"});
-#line 973
+#line 907
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table95, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -3938,16 +3808,16 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS15140",
                         "Do_Not_Run_With_Projects"});
-#line 990
+#line 924
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 991
+#line 925
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 992
+#line 926
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 993
+#line 927
  testRunner.And("User enters \"ring\" text in Search field at Columns Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table96 = new TechTalk.SpecFlow.Table(new string[] {
@@ -3971,7 +3841,7 @@ this.FeatureBackground();
             table96.AddRow(new string[] {
                         "Project: UserSchedu",
                         "1"});
-#line 994
+#line 928
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table96, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -4023,16 +3893,16 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS15140",
                         "Do_Not_Run_With_Projects"});
-#line 1004
+#line 938
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1005
+#line 939
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1006
+#line 940
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1007
+#line 941
  testRunner.And("User enters \"ring\" text in Search field at Columns Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table97 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4047,7 +3917,7 @@ this.FeatureBackground();
             table97.AddRow(new string[] {
                         "Project: MailboxEve",
                         "1"});
-#line 1008
+#line 942
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table97, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -4099,22 +3969,22 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS15140",
                         "Do_Not_Run_With_Projects"});
-#line 1015
+#line 949
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1016
+#line 950
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1017
+#line 951
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1018
+#line 952
  testRunner.And("User enters \"ring\" text in Search field at Columns Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table98 = new TechTalk.SpecFlow.Table(new string[] {
                         "Category",
                         "Number"});
-#line 1019
+#line 953
  testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table98, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -4164,20 +4034,20 @@ this.FeatureBackground();
                         "ColumnSectionOrder",
                         "ColumnSectionDisplay",
                         "DAS15899"});
-#line 1023
+#line 957
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1024
+#line 958
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1025
+#line 959
  testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1026
+#line 960
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1027
+#line 961
  testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1028
+#line 962
  testRunner.And("User is expand \"Project Tasks: DeviceSche\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4214,7 +4084,7 @@ this.FeatureBackground();
                         "DeviceSche: Stage 2 \\ radiobutton task w/date"});
             table99.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ radiobutton task w/date (Date)"});
-#line 1029
+#line 963
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table99, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -4264,20 +4134,20 @@ this.FeatureBackground();
                         "ColumnSectionOrder",
                         "ColumnSectionDisplay",
                         "DAS15899"});
-#line 1049
+#line 983
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1050
+#line 984
  testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1051
+#line 985
  testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1052
+#line 986
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1053
+#line 987
  testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1054
+#line 988
  testRunner.And("User is expand \"Project Tasks: DeviceSche\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table100 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4288,7 +4158,7 @@ this.FeatureBackground();
                         "DeviceSche: Stage 2 \\ user radiobutton task"});
             table100.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ user text task"});
-#line 1055
+#line 989
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table100, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -4338,20 +4208,20 @@ this.FeatureBackground();
                         "ColumnSectionOrder",
                         "ColumnSectionDisplay",
                         "DAS15899"});
-#line 1062
+#line 996
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1063
+#line 997
  testRunner.When("User clicks \"Mailboxes\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1064
+#line 998
  testRunner.Then("\"Mailboxes\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1065
+#line 999
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1066
+#line 1000
  testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1067
+#line 1001
  testRunner.And("User is expand \"Project Tasks: MailboxEve\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table101 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4376,7 +4246,7 @@ this.FeatureBackground();
                         "MailboxEve: 1 \\ Target"});
             table101.AddRow(new string[] {
                         "MailboxEve: 1 \\ Target (Slot)"});
-#line 1068
+#line 1002
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table101, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -4426,20 +4296,20 @@ this.FeatureBackground();
                         "ColumnSectionOrder",
                         "ColumnSectionDisplay",
                         "DAS15899"});
-#line 1082
+#line 1016
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 5
 this.FeatureBackground();
-#line 1083
+#line 1017
  testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1084
+#line 1018
  testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 1085
+#line 1019
  testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1086
+#line 1020
  testRunner.When("User closed \"Selected Columns\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1087
+#line 1021
  testRunner.And("User is expand \"Project Tasks: DeviceSche\" columns category", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table102 = new TechTalk.SpecFlow.Table(new string[] {
@@ -4448,7 +4318,7 @@ this.FeatureBackground();
                         "DeviceSche: Stage 2 \\ app date task"});
             table102.AddRow(new string[] {
                         "DeviceSche: Stage 2 \\ app radiobutton task"});
-#line 1088
+#line 1022
  testRunner.Then("the following Column subcategories are displayed for open category:", ((string)(null)), table102, "Then ");
 #line hidden
             this.ScenarioCleanup();
