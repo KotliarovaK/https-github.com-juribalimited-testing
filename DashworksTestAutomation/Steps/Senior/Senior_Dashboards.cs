@@ -14,10 +14,12 @@ namespace DashworksTestAutomation.Steps.Projects
     internal class Projects_Dashboards : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly DTO.RuntimeVariables.Projects _projects;
 
-        public Projects_Dashboards(RemoteWebDriver driver)
+        public Projects_Dashboards(RemoteWebDriver driver, DTO.RuntimeVariables.Projects projects)
         {
             _driver = driver;
+            _projects = projects;
         }
 
         [When(@"User select ""(.*)"" Project on toolbar")]
@@ -57,6 +59,8 @@ namespace DashworksTestAutomation.Steps.Projects
                     page.ProjectDescription.SendKeys(row["Description"]);
                 if (!string.IsNullOrEmpty(row["Type"]))
                     page.ProjectType.SelectboxSelect(row["Type"]);
+
+                _projects.Value.Add(row["ProjectName"]);
             }
             var tab = _driver.NowAt<MainElementsOfProjectCreation>();
             tab.CreatedProjectButton.Click();
