@@ -1721,12 +1721,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Main lists are displayed correctly in the Scope dropdown")]
-        public void ThenMainListsAreDisplayedCorrectlyInTheScopeDropdown()
+        public void ThenMainListsAreDisplayedCorrectlyInTheScopeDropdown(Table table)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.ScopeProjectField.SendKeys("All");
-
+            var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
+            var listName = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
+            foreach (var row in table.Rows)
+            {
+                for (var i = 0; i < createProjectElement.ScopeDropdownSection.Count; i++)
+                    if (sectionName[i].Equals(row["Section"]))
+                    {
+                        Assert.AreEqual(listName[i], row["ListName"]);
+                    }
+            }
         }
 
         [When(@"User selects ""(.*)"" in the Scope Project details")]
