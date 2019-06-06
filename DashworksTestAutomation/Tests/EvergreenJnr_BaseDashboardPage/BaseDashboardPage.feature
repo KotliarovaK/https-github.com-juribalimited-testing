@@ -141,7 +141,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatURLsAreUpdatedAfterAddingFilters
 	Then default URL is displayed on "Users" page
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
-	When User add "MigrationP: Readiness" filter where type is "Equals" with added column and "Blue" Lookup option
+	When User add "User Application Compliance" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| Amber              |
 	Then Appropriate filter is added to URL
 
 @Evergreen @Devices @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS11641
