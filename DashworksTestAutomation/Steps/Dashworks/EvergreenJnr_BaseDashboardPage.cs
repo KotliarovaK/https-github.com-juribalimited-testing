@@ -612,7 +612,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.ListRowsCounter);
 
-            string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value").Replace(",","");
+            string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
                 foundRowsCounter.ListRowsCounter.Text, "Incorrect rows count");

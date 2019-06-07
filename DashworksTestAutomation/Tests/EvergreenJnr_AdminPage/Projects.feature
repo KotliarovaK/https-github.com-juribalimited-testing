@@ -209,19 +209,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchi
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12387 @DAS12757 @DAS12999 @DAS13199 @Delete_Newly_Created_Project @Project_Creation_and_Scope @Projects
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "DDPPProject14" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "DDPPProject14" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
+	When Project created via API and opened
+	| ProjectName   | Scope       | ProjectTemplate | Mode               |
+	| DDPPProject14 | All Devices | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
 	When User adds following Objects to the Project
 	| Objects        |
 	| 0317IPQGQBVAQV |
@@ -767,23 +759,15 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	And "(Application (Saved List) = ListName12349 ASSOCIATION = ("used on device"))" text is displayed in filter container
 	When User create dynamic list with "SavedList12349" name on "Devices" page
 	Then "SavedList12349" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12349" in the "Project Name" field
-	And User selects "SavedList12349" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then created Project with "TestProject12349" name is displayed correctly
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName      | Scope          | ProjectTemplate | Mode               |
+	| TestProject12349 | SavedList12349 | None            | Standalone Project |	
 	Then Project "TestProject12349" is displayed to user
 	And There are no errors in the browser console
 	Then Error message is not displayed
-	When User selects "Scope Changes" tab on the Project details page
-	When User expands the object to add 
+	When User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	And User expands the object to add 
 	And User selects following Objects
 	| Objects         |
 	| 0QLZFK7RHMWJLQM |
