@@ -227,14 +227,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| AAH0343264 (Luc Gauthier)     |
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
-	When User click on Back button
-	And User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "NewProject15" in the "Project Name" field
-	And User selects "All Users" in the Scope Project dropdown
-	When User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When User click on Back button	
+	And Project created via API and opened
+	| ProjectName  | Scope     | ProjectTemplate | Mode               |
+	| NewProject15 | All Users | None            | Standalone Project |
 	Then Project "NewProject15" is displayed to user
 	And Success message is not displayed on the Projects page
 	When User click on Back button
@@ -388,20 +384,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithClon
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12490 @DAS13007 @DAS12999 @DAS13199 @DAS12680 @DAS12485 @DAS13949 @DAS14180 @Project_Creation_and_Scope @Delete_Newly_Created_Project @Projects
 Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "TestProject12490" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
-	Then Project "TestProject12490" is displayed to user
-	When User selects "Scope Changes" tab on the Project details page
-	When User clicks "Devices" tab in the Project Scope Changes section
+	When Project created via API and opened
+	| ProjectName      | Scope       | ProjectTemplate | Mode               |
+	| TestProject12490 | All Devices | None            | Standalone Project |
+	And User selects "Scope" tab on the Project details page
+	And User selects "Scope Changes" tab on the Project details page
+	And User clicks "Devices" tab in the Project Scope Changes section
 	Then "[Default (Computer)]" Request Type is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
@@ -761,7 +749,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat500ISEInvalidColumnNameIsNotDisplayedW
 	Then "SavedList12349" list is displayed to user
 	When Project created via API and opened
 	| ProjectName      | Scope          | ProjectTemplate | Mode               |
-	| TestProject12349 | SavedList12349 | None            | Standalone Project |	
+	| TestProject12349 | SavedList12349 | None            | Standalone Project |
 	Then Project "TestProject12349" is displayed to user
 	And There are no errors in the browser console
 	Then Error message is not displayed
@@ -3317,18 +3305,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 001PSUMZYOW581  |
 	| 00BDM1JUR8IF419 |
 	Then "Static13110" list is displayed to user
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "Project13110Static1" in the "Project Name" field
-	And User selects "Static13110" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName         | Scope       | ProjectTemplate | Mode               |
+	| Project13110Static1 | Static13110 | None            | Standalone Project |
 	Then Project "Project13110Static1" is displayed to user
+	When User selects "Scope" tab on the Project details page
 	When User selects "Scope Changes" tab on the Project details page
 	And User expands the object to add
 	Then Objects are displayed in alphabetical order on the Admin page
