@@ -361,6 +361,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Project ""(.*)"" is displayed to user")]
+        [Then(@"Automation ""(.*)"" is displayed to user")]
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
@@ -2147,13 +2148,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<Capacity_SlotsPage>();
             var actionBtn = page.GetMoveToPositionDialogButtonByText(buttonName);
             Assert.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
-        }
-
-        [When(@"User clicks ""(.*)"" bth in Move to position dialog")]
-        public void WhenUserClicksButtonInMoveToPositionDialog(string buttonName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.GetMoveToPositionDialogButtonByText(buttonName).Click();
         }
 
         [When(@"User moves ""(.*)"" slot to ""(.*)"" slot")]

@@ -1217,10 +1217,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	| Slot 10001 |
 	| Slot 10002 |
 	| Slot 10003 |
-	When User opens settings for "Slot 10001" row
-	And User selects "Move to position" option from settings menu
-	And User enters "32767" value in Move to position dialog
-	And User clicks "Move" bth in Move to position dialog
+	When User move "Slot 10001" item to "32767" position on Admin page
 	Then User sees next Slots on the Capacity Slots page:
 	| slots      |
 	| Slot 10002 |

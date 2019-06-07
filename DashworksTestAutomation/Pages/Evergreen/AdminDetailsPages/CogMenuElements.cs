@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div/ul[@class='menu-settings']//a")]
         public IWebElement CogMenuDropdownLabel { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Move to position']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Move to position']")]
         public IWebElement MoveToPositionField { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetCogMenuByItem(string item)
         {
-            var selector = By.XPath($"//div[@title='{item}']/./following-sibling::div//div[@class='cell-menu-settings']");
+            var selector = By.XPath($".//div[@title='{item}']/./following-sibling::div//div[@class='cell-menu-settings']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

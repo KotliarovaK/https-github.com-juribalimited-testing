@@ -88,27 +88,21 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User clicks "Move to position" option in Cog-menu for "15309_Action" item on Admin page
-	And User enters "4" value in Move to position dialog
-	And User clicks "Move" bth in Move to position dialog
+	When User move "15309_Action" item to "4" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
     | AM 030619 Action 1 |
     | AM 030619 Action 2 |
 	| DAS15427_Action    |
 	| 15309_Action       |
-	When User clicks "Move to position" option in Cog-menu for "15309_Action" item on Admin page
-	And User enters "1" value in Move to position dialog
-	And User clicks "Move" bth in Move to position dialog
+	When User move "15309_Action" item to "1" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
 	| 15309_Action       |
     | AM 030619 Action 1 |
     | AM 030619 Action 2 |
 	| DAS15427_Action    |
-	When User clicks "Move to position" option in Cog-menu for "15309_Action" item on Admin page
-	And User enters "20" value in Move to position dialog
-	And User clicks "Move" bth in Move to position dialog
+	When User move "15309_Action" item to "20" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
     | AM 030619 Action 1 |
