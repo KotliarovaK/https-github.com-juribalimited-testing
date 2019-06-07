@@ -1280,6 +1280,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13961 | All Devices | None            | Standalone Project |
+	And User clicks "Scope" tab
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
 	Then open tab in the Project Scope Changes section is active
@@ -1295,13 +1296,13 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	| 001BAQXT6JWFPI |
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
-	When User open "Capacity" sub menu on Admin page
+	When User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
 	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
 	And User type "CapacityUnit13961" Name in the "Capacity Unit Name" field on the Project details page
 	And User updates the "Default Unit" checkbox state
 	And User clicks the "CREATE" Action button
-	And User open "Scope" sub menu on Admin page
+	And User clicks "Scope" tab
 	And User selects "History" tab on the Project details page
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
@@ -1471,7 +1472,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "ProjectForDAS13812" project details
-	And User open "Capacity" sub menu on Admin page
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
@@ -1505,14 +1506,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13593 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectDAS13593 " in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Projects" on the left-hand menu
+	When Project created via API and opened
+	| ProjectName     | Scope       | ProjectTemplate | Mode               |
+	| ProjectDAS13593 | All Devices | None            | Standalone Project |
+	And User clicks "Projects" on the left-hand menu
 	And User navigate to "ProjectDAS13593" Project
 	And User navigate to "Stages" tab
 	And User clicks "Create Stage" button
@@ -1756,7 +1753,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	When User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User open "Capacity" sub menu on Admin page
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
@@ -1775,7 +1772,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	And User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	And User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
-	And User open "Capacity" sub menu on Admin page
+	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User enters "Slot 1" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
@@ -1993,7 +1990,7 @@ Examples:
 	| Users        |
 	| Applications |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS14967 @Not_Run
 Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfDeviceProjectLeadToCorrectFilteredLists
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User clicks "Capacity" tab
