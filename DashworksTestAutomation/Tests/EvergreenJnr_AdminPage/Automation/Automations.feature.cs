@@ -882,7 +882,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15744")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        [NUnit.Framework.CategoryAttribute("DAS16764")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -919,7 +919,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS15431",
                         "DAS15744",
-                        "Not_Ready"});
+                        "DAS16764"});
 #line 275
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -271,7 +271,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWor
 	| AM Test 1     |
 	| AM 150419 II  |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15744 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15431 @DAS15744 @DAS16764
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
