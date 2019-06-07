@@ -1157,8 +1157,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatCapacityUnitSubcategoryPlacedIn
 	| Subcategories           |
 	| Evergreen Capacity Unit |
 
-#'not_run' tag was added, because "Evergreen" option in "Mode" dropdown is not available now.
-@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Delete_Newly_Created_Project @DAS13201 @Not_Run
+#'archived' tag was added, because "Evergreen" option in "Mode" dropdown is not available now.
+@Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @Projects @Delete_Newly_Created_Project @DAS13201 @archived
 Scenario: EvergreenJnr_AllLists_CheckThatParticularProjectCapacityUnitFilterShowsProperItems
 	When User clicks Admin on the left-hand menu
 	And User clicks the "CREATE PROJECT" Action button
@@ -1351,13 +1351,13 @@ Scenario: EvergreenJnr_UsersList_CheckThatApplicationManufacturerFilterChangedTo
 	Then "Application Manufacturer" filter is not presented in the filters list
 	And "Application Vendor" filter is presented in the filters list
 
-@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659 @DAS14629 @Not_Run
+@Evergreen @Users @Evergreen_FiltersFeature @FiltersDisplay @DAS9820 @DAS13296 @DAS14629 @DAS14659 @DAS14629
 Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvailableUnderUserCategoryInFiltersPanelOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User clicks the Filters button
 	And User clicks Add New button on the Filter panel
-	And User closes "Selected Columns" filter category
+	And User closes "Suggested" filter category
 	And User expands "User" filter category
 	Then the following Filters subcategories are displayed for open category:
 	| Subcategories                 |
@@ -1371,9 +1371,9 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDeviceAndGroupAndMailboxFiltersAvaila
 	| Directory Type                |
 	| Email Address                 |
 	| Enabled                       |
+	| GUID                          |
 	| Given Name                    |
 	| Group Count                   |
-	| GUID                          |
 	| Home Directory                |
 	| Home Drive                    |
 	| Last Logon Date               |
@@ -1482,7 +1482,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayed
 	| Red   |
 	| Amber |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS12547
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @API @DAS12547
 Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

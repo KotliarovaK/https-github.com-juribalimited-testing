@@ -158,7 +158,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetsSelectedTabInProjectByName(string tabName)
         {
-            var button = By.XPath($"//li[contains(@class, 'item-selected')]//span[text()='{tabName}']");
+            var button = By.XPath($".//li[contains(@class, 'node active')]//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(button);
             return Driver.FindElement(button);
         }

@@ -89,6 +89,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='GroupBy']")]
+        public IWebElement GroupByButton { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='reload']")]
         public IWebElement RefreshButton { get; set; }
 
@@ -343,8 +346,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     $"//input[@aria-label='Date'][@placeholder='{fieldName}']");
             Driver.WaitForDataLoading();
             Driver.WaitWhileControlIsNotDisplayed(byControl);
+
+            //TODO: clear() method doesn't work for now. Remove code below and use clear() when it works again
             Driver.FindElement(byControl).Click();
-            Driver.FindElement(byControl).Clear();
+            Driver.FindElement(byControl).SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            Driver.FindElement(byControl).SendKeys(OpenQA.Selenium.Keys.Delete);
+            //Driver.FindElement(byControl).Clear();
             Driver.FindElement(byControl).SendKeys(date);
         }
 
@@ -625,7 +632,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDisabledTabByName(string tabName)
         {
-            var selector = By.XPath($"//li[contains(@class, 'disabled')]//span[text()='{tabName}']");
+            var selector = By.XPath($"//li[contains(@class, 'disabled')]//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -653,6 +660,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetEmptyFieldByName(string fieldName)
         {
             var selector = By.XPath($".//mat-form-field[contains(@class, 'invalid')]//label[text()='{fieldName}']");
+            return Driver.FindElement(selector);
+        }
+        
+        public List<string> GetSumOfObjectsContent(string columnName)
+        {
+            var by = By.XPath(
+                $"//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
+            return Driver.FindElements(by).Select(x => x.Text).ToList();
+        }
+
+        public IWebElement GetValueInGroupByFilterOnAdminPAge(string value)
+        {
+            var selector = By.XPath($"//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

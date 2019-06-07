@@ -97,9 +97,7 @@ namespace DashworksTestAutomation.Steps.API
             var filterValueList = responseContent.Select(x => x["text"].ToString()).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             foreach (var value in expectedList)
-            {
                 Assert.AreEqual(filterValueList, expectedList, "Values are not displayed in the correct order");
-            }
         }
 
         [Then(@"""(.*)"" is displayed after ""(.*)"" in Application list filter")]
@@ -125,8 +123,8 @@ namespace DashworksTestAutomation.Steps.API
             Assert.AreEqual(item1, filterValueList[itemByIndex2 + 1]);
         }
 
-        [Then(@"the following subcategories are displayed for ""(.*)"" Columns category:")]
-        public void ThenTheFollowingSubcategoriesAreDisplayedForColumnsCategory(string categoryName, Table table)
+        [Then(@"the following subcategories are NOT displayed for ""(.*)"" Columns category:")]
+        public void ThenTheFollowingSubcategoriesAreNotDisplayedForColumnsCategory(string categoryName, Table table)
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}devices/fields?$lang=en-US";
             var request = new RestRequest(requestUri);
@@ -146,7 +144,10 @@ namespace DashworksTestAutomation.Steps.API
             var subcategory = responseContent.FindAll(x => x["translatedCategory"].ToString().Equals(categoryName)).ToList();
             var subcategoryList = subcategory.Select(x => x["translatedColumnName"].ToString()).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            Assert.AreEqual(subcategoryList, expectedList, "Subcategory lists are not equal");
+            foreach (var value in expectedList)
+            {
+                Assert.IsFalse(subcategoryList.Contains(value), "Selected values are not displayed in that filter");
+            }
         }
     }
 }

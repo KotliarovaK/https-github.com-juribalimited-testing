@@ -69,5 +69,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
                 Assert.AreEqual(ColorsConvertor.Convert(row["Color"]), getColor, "Colors are different or not displayed!");
             }
         }
+
+        [Then(@"""(.*)"" content is not displayed in the grid on the Item details page")]
+        public void ThenContentIsNotDisplayedInTheGridOnTheItemDetailsPage(string textContent)
+        {
+            var projectTabs = _driver.NowAt<TabContent>();
+            Assert.IsFalse(projectTabs.GetContentDisplayState(textContent));
+        }
     }
 }

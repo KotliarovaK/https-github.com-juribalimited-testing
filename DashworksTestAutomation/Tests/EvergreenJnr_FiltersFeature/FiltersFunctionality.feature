@@ -1297,7 +1297,7 @@ Examples:
 	| Mailbox Count (Access) | 3      | 6                |
 	#| Mailbox Count (Owned)  | 4      | to_be_determined |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @API @DAS13145
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

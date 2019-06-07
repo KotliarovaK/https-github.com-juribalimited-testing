@@ -104,6 +104,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [When(@"Evergreen QueryStringURL is entered for Simple QueryType with expecting error")]
+        public void WhenEvergreenQueryStringURLIsEnteredForSimpleQueryTypeWithExpectingError(Table table)
+        {
+            foreach (var row in table.Rows)
+            {
+                _url.Value = UrlProvider.Url;
+                var combinedURL = _url.Value + row["QueryStringURL"];
+                _driver.NavigateToUrl(combinedURL);
+
+                var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+                Logger.Write($"Evergreen agGrid Main Object List is returned with data for: {row["QueryType"]} query");
+            }
+        }
+
         [Then(@"agGrid Main Object List is returned with data")]
         public void ThenAgGridMainObjectListIsReturnedWithData()
         {

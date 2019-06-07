@@ -18,6 +18,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using Newtonsoft.Json;
@@ -39,9 +40,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
         private readonly CapacityUnit _capacityUnit;
+        private readonly UserDto _user;
 
         public EvergreenJnr_AdminPage(RemoteWebDriver driver, TeamName teamName, DTO.RuntimeVariables.Projects projects,
-            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnit capacityUnit)
+            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnit capacityUnit, UserDto user)
         {
             _driver = driver;
             _teamName = teamName;
@@ -51,6 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _lastUsedBucket = lastUsedBucket;
             _addedObjects = addedObjects;
             _capacityUnit = capacityUnit;
+            _user = user;
         }
 
         #region Check button state
@@ -239,7 +242,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.WaitForDataLoading();
                 projectsPage.SelectPermissionsByName(row["Permissions"]);
                 projectsPage.AddPermissionsButtonInTab.Click();
-                }
+            }
         }
 
         [When(@"User selects following Mailbox folder permissions")]
@@ -347,6 +350,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < slots.RowCount; i++)
                 Assert.That(page.GridUnitsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
                     "Units are not the same");
+        }
+
+        [Then(@"sum of objects in ""(.*)"" list is ""(.*)"" on the Admin page")]
+        public void ThenSumOfObjectsInListIsOnTheAdminPage(string columnName, int sumOfObjects)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            var numbers = page.GetSumOfObjectsContent(columnName);
+            var total = numbers.Sum(x => Convert.ToInt32(x));
+            Assert.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
         [Then(@"User sees next Slots on the Capacity Slots page:")]
@@ -2366,6 +2378,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ResetFiltersButton.Click();
         }
 
+        [When(@"User clicks Group By button on the Admin page")]
+        public void WhenUserClicksGroupByButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.GroupByButton.Click();
+        }
+
+        [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
+        public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GroupByButton.Click();
+            _driver.MouseHover(page.GetValueInGroupByFilterOnAdminPAge(value));
+            page.GetValueInGroupByFilterOnAdminPAge(value).Click();
+            page.BodyContainer.Click();
+        }
+
         [When(@"User clicks Refresh button on the Admin page")]
         public void WhenUserClicksRefreshButtonOnTheAdminPage()
         {
@@ -2856,8 +2885,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.Storage.SessionStorage.GetItem("readinessDefault"), Is.EqualTo(defaultFor.ToLower()), "Default For state different from stored one");
         }
 
-        
-
         [Then(@"Readiness ""(.*)"" displayed before None")]
         public void ThenUserSeesJustCreatedReadinessBeforeNoneItem(string title)
         {
@@ -2941,6 +2968,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
+        // table example
+        // | ProjectName | Scope | ProjectTemplate | Mode |
         [When(@"Project created via API and opened")]
         public void WhenUserCreateNewDashboardViaApi(Table table)
         {
@@ -2974,8 +3003,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             request.AddParameter("Content-Type", "application/json");
 
             request.AddParameter("modeId", pMode);
-            request.AddParameter("objectType", GetObjectType(pScope));
-            //request.AddParameter("listId", pScope);
+            request.AddParameter(GetCreateProjectRequestScopeProperty(pScope), GetObjectType(pScope));
+
             request.AddParameter("projectName", pName);
             request.AddParameter("template", pTemplate);
 
@@ -3118,21 +3147,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
 
-        private string GetObjectType(string scope)
+        private string GetCreateProjectRequestScopeProperty(string scope)
         {
-            string[] subMenus = {"All Devices", "All Users", "All Mailboxes"};
-
-            if (subMenus.Contains(scope))
-            {
-                return GetSubMenuObjectVersion(scope);
-            }
-            else
-            {
-                return GetListIdByName(scope);
-            }
+            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? "objectType" : "listId";
         }
 
-        private string GetSubMenuObjectVersion(string scope)
+        private string GetObjectType(string scope)
+        {
+            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? GetProjectObjectTypeScope(scope) : GetProjectListIdScope(scope);
+        }
+
+        private string GetProjectObjectTypeScope(string scope)
         {
             if (scope.Equals("All Devices"))
                 return "Devices";
@@ -3143,11 +3168,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return "NOT FOUND";
         }
 
-        private string GetListIdByName(string scope)
+        private string GetProjectListIdScope(string listName)
         {
-            //get id from DB by list name
-            //change parameter ObjectType to listId
-            throw new NotImplementedException();
+            //string userId =
+            //    DatabaseHelper.ExecuteReader(
+            //        $"SELECT [aspnetdb].[dbo].[aspnet_Users].[UserId] FROM[aspnetdb].[dbo].[aspnet_Users] where UserName = '{_user.UserName}'", 0).LastOrDefault();
+
+            return DatabaseHelper.ExecuteReader(
+                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
         }
+
     }
 }

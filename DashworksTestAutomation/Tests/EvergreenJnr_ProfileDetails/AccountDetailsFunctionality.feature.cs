@@ -361,6 +361,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("UserProfile")]
         [NUnit.Framework.CategoryAttribute("DAS11723")]
+        [NUnit.Framework.CategoryAttribute("DAS16979")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API()
@@ -397,6 +398,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "UserProfile",
                         "DAS11723",
+                        "DAS16979",
                         "API",
                         "Not_Run"});
 #line 71

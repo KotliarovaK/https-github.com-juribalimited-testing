@@ -12,6 +12,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class CogMenuElements : SeleniumBasePage
     {
+        [FindsBy(How = How.XPath, Using = ".//div/h1")]
+        public IWebElement PageTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='cell-menu-settings']")]
         public IWebElement CogMenu { get; set; }
@@ -31,7 +33,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
             return new List<By>
             {
-                SelectorFor(this, p => p.CogMenu)
+                SelectorFor(this, p => p.PageTitle),
+                //SelectorFor(this, p => p.CogMenu)
             };
         }
 

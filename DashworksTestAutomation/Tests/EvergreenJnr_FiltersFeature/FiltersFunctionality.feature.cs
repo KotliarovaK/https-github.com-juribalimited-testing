@@ -5678,6 +5678,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("DAS13145")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         public virtual void EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices(string pageName, string[] exampleTags)
@@ -5713,6 +5714,7 @@ this.FeatureBackground();
                     "AllLists",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
+                    "API",
                     "DAS13145"};
             if ((exampleTags != null))
             {
