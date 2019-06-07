@@ -371,14 +371,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatReadinessCanBeSortedByClickingColumnHe
 	When User click on 'Readiness' column header
 	Then numeric data in table is sorted by 'Priority' column in ascending order
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS15898
+@Evergreen @Admin @EvergreenJnr_AdminPage @Readiness @DAS15898
 Scenario: EvergreenJnr_AdminPage_CheckThatWarningMessageAboutUnconfirmedChangesAppears
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User enters "1803 Rollout" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When User navigates to "1803 Rollout" project details
 	And User clicks "Readiness" tab
-	And User enters "RED" text in the Search field for "Readiness" column
+	And User enters "GREY" text in the Search field for "Readiness" column
 	And User click content from "Readiness" column
 	And User sets Default for Applications checkbox in "TRUE" on Edit Readiness
 	And User clicks "Capacity" tab
