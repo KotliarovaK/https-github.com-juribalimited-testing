@@ -2012,15 +2012,18 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	Then "Create Project" page should be displayed to the user
 	When User enters "Project13096" in the "Project Name" field
 	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
+	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The project has been created" text
-	And created Project with "Project13096" name is displayed correctly
+	When User clicks newly created object link
+	Then Project "Project13096" is displayed to user
+	When User click on Back button
+	Then created Project with "Project13096" name is displayed correctly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Project13096" Project
 	Then Project with "Project13096" name is displayed correctly
 	And "Manage Project Details" page is displayed to the user
-	When User updates Project Name to "Project13096 upd" on Senior
+	When User updates Project Name to "Project13096 upd on Senior" on Senior
 	When User clicks "Update" button
 	Then Success message is displayed with "Project was successfully updated" text
 	When User navigate to Evergreen link
@@ -2028,8 +2031,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInA
 	Then Admin page should be displayed to the user
 	When User clicks "Projects" link on the Admin page
 	Then "Projects" page should be displayed to the user
-	And created Project with "Project13096 upd" name is displayed correctly
-	When User enters "Project13096 upd" text in the Search field for "Project" column
+	And created Project with "Project13096 upd on Senior" name is displayed correctly
+	When User enters "Project13096 upd on Senior" text in the Search field for "Project" column
 	And User selects all rows on the grid
 	And User removes selected item
 
