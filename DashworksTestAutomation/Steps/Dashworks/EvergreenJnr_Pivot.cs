@@ -448,7 +448,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPivotLeft_PinnedColumnContentIsDisplayedInFollowingOrder(Table table)
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
-
+            _driver.WaitForDataLoading();
             var columnNames = columnElement.GetLeftPinnedColumnContentToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order on Pivot page is incorrect");

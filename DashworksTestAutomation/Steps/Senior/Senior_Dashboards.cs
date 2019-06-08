@@ -72,6 +72,7 @@ namespace DashworksTestAutomation.Steps.Projects
         public void WhenUserUpdatesProjectNameToOnSenior(string projectName)
         {
             var page = _driver.NowAt<DetailsPage>();
+            _driver.WaitForDataLoadingOnProjects();
             page.ProjectName.Clear();
             page.ProjectName.SendKeys(projectName);
         }

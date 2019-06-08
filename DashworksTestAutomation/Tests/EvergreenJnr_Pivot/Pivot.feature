@@ -44,6 +44,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	And User clicks "ADD ROW GROUP" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
 	When User closed "Selected Columns" columns category
+	And User closed "Suggested" columns category
 	And User is expand "Evergreen" columns category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
@@ -54,6 +55,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	And User clicks "ADD COLUMN" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
 	When User closed "Selected Columns" columns category
+	And User closed "Suggested" columns category
 	And User is expand "Evergreen" columns category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
@@ -64,6 +66,7 @@ Scenario Outline: EvergreenJnr_AllLists_ChecksThatGroupsColumnsAndValuesContainE
 	And User clicks "ADD VALUE" button in Pivot panel
 	Then User sees "Evergreen" category in Pivot panel
 	When User closed "Selected Columns" columns category
+	And User closed "Suggested" columns category
 	And User is expand "Evergreen" columns category
 	Then the following Column subcategories are displayed for open category:
 	| Subcategories           |
@@ -411,8 +414,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTaskValuesAsPivotColumnsAreDisplayed
 	| RowGroups |
 	| Hostname  |
 	And User selects the following Columns on Pivot:
-	| Columns                 |
-	| Windows7Mi: Target Date |
+	| Columns                                 |
+	| Windows7Mi: Pre-Migration \ Target Date |
 	And User selects the following Values on Pivot:
 	| Values            |
 	| Owner Cost Centre |
@@ -1200,7 +1203,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotPanelIsDisplayedCorrectlyAfterC
 	Then "Dynamic Pivot Details" panel is displayed to the user
 	And User remove list with "PivotList_DAS13842" name on "Devices" page
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13846
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS13833 @DAS13846 @DAS16994
 Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyForFilteredList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1212,7 +1215,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAddingColumnOnPivotIsWorksCorrectlyF
 	Then "Device Key" filter is added to the list
 	When User navigates to Pivot
 	And User clicks the "ADD COLUMN" Action button
-	Then "1" subcategories is displayed for "Selected Filters" category
+	Then "5" subcategories is displayed for "Suggested" category
 	And "Device Key" subcategory is selected in Column panel
 	When User adds the "Device Key" category on Pivot
 	Then "Selected Filters" section is not displayed in the Columns panel
@@ -1278,7 +1281,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWor
 	When User clicks Plus button for "Values" Pivot value
 	When User enters "<AdditionalValue>" text in Search field at Columns Panel
 	When User closed "Selected Columns" columns category
-	When User closed "Selected Filters" columns category
+	When User closed "Suggested" columns category
 	Then "<AdditionalValue>" subcategory is displayed for "<CategoryName>" category
 
 Examples:
@@ -1441,14 +1444,15 @@ Scenario: EvergreenJnr_UsersList_CheckSortedOrderForPivotProjectStatusAsRowGroup
 	| Values |
 	| City   |
 	And User clicks the "RUN PIVOT" Action button
-	Then Empty value is displayed on the first place for the Pivot
-	And Pivot left-pinned column content is displayed in following order:
-	| ColumnName |
-	| Onboarded  |
-	| Forecast   |
-	| Scheduled  |
-	| Migrated   |
-	| Complete   |
+	Then Pivot left-pinned column content is displayed in following order:
+	| ColumnName    |
+	| Not Onboarded |
+	| Onboarded     |
+	| Forecast      |
+	| Scheduled     |
+	| Migrated      |
+	| Complete      |
+	| Offboarded    |
 	When User clicks the Filters button
 	Then Filters panel is displayed to the user
 	When User add "Last Logon Date" filter where type is "Between" without added column and Date options
@@ -1552,14 +1556,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckSortedOrderForPivotProjectStatusAsColu
 	| Region |
 	And User clicks the "RUN PIVOT" Action button
 	Then Empty value is displayed on the first place for the Pivot
-	And Empty value is displayed on the first place for the Pivot column header
 	And Pivot column headers is displayed in following order:
-	| ColumnName |
-	| Onboarded  |
-	| Forecast   |
-	| Targeted   |
-	| Scheduled  |
-	| Migrated   |
+	| ColumnName    |
+	| Not Onboarded |
+	| Onboarded     |
+	| Forecast      |
+	| Targeted      |
+	| Scheduled     |
+	| Migrated      |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328 @DAS14246
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_StingValues
@@ -1612,11 +1616,11 @@ Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCap
 	Then "<LastAggregateFunctions>" is displayed in the columns for aggregate functions
 
 Examples:
-	| List         | AddValues                          | CountAggregateFunctions                   | FirstAggregateFunctions                   | LastAggregateFunctions                   |
-	| Devices      | Build Date                         | Count(Build Date)                         | First(Build Date)                         | Last(Build Date)                         |
-	| Users        | Last Logon Date                    | Count(Last Logon Date)                    | First(Last Logon Date)                    | Last(Last Logon Date)                    |
-	| Applications | Windows7Mi: Technical Task3 (Date) | Count(Windows7Mi: Technical Task3 (Date)) | First(Windows7Mi: Technical Task3 (Date)) | Last(Windows7Mi: Technical Task3 (Date)) |
-	| Mailboxes    | Created Date                       | Count(Created Date)                       | First(Created Date)                       | Last(Created Date)                       |
+	| List         | AddValues                                                    | CountAggregateFunctions                                             | FirstAggregateFunctions                                             | LastAggregateFunctions                                             |
+	| Devices      | Build Date                                                   | Count(Build Date)                                                   | First(Build Date)                                                   | Last(Build Date)                                                   |
+	| Users        | Last Logon Date                                              | Count(Last Logon Date)                                              | First(Last Logon Date)                                              | Last(Last Logon Date)                                              |
+	| Applications | Windows7Mi: Application Information \ Technical Task3 (Date) | Count(Windows7Mi: Application Information \ Technical Task3 (Date)) | First(Windows7Mi: Application Information \ Technical Task3 (Date)) | Last(Windows7Mi: Application Information \ Technical Task3 (Date)) |
+	| Mailboxes    | Created Date                                                 | Count(Created Date)                                                 | First(Created Date)                                                 | Last(Created Date)                                                 |
 
 @Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15758 @DAS15328
 Scenario Outline: EvergreenJnr_Lists_CheckThatColumnsForAggregateFunctionsAreCapitalised_NumericValues

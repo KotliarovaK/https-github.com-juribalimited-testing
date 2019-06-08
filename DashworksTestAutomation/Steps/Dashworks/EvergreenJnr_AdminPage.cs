@@ -1703,14 +1703,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenCreatedProjectWithNameIsDisplayedCorrectly(string projectName)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
             try
             {
+                _driver.WaitForDataLoading();
                 Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
             }
             catch (Exception)
             {
-                Thread.Sleep(30000);
+                Thread.Sleep(60000);
                 _driver.Navigate().Refresh();
                 _driver.WaitForDataLoading();
                 Assert.IsTrue(page.GetCreatedProjectName(projectName), $"The {projectName} Project is not found");
