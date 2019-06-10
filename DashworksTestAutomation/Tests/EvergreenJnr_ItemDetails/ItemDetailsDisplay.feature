@@ -1691,7 +1691,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems        |
-	| Overall Compliance      |
+	| Overall Compliance     |
 	| Application Compliance |
 	| Hardware Compliance    |
 	#=====================================================================================#
@@ -1702,7 +1702,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems               |
-	| Overall Compliance             |
+	| Overall Compliance            |
 	| User Application Compliance   |
 	| Hardware Compliance           |
 	| Device Application Compliance |
@@ -1713,8 +1713,8 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	When User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
 	Then following Compliance items are displayed in Top bar on the Item details page:
-	| ComplianceItems               |
-	| Overall Compliance             |
+	| ComplianceItems    |
+	| Overall Compliance |
 	#=====================================================================================#
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
