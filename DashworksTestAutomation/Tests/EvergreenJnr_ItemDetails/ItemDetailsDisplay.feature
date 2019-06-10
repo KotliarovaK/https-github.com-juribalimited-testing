@@ -1682,7 +1682,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921
 Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1690,10 +1690,10 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	Then following Compliance items are displayed in Top bar on the Item details page:
-	| ComplianceItems        |
-	| Overall Compliance     |
-	| Application Compliance |
-	| Hardware Compliance    |
+	| ComplianceItems     |
+	| Overall Compliance  |
+	| App Compliance      |
+	| Hardware Compliance |
 	#=====================================================================================#
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1701,11 +1701,11 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	When User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	Then following Compliance items are displayed in Top bar on the Item details page:
-	| ComplianceItems               |
-	| Overall Compliance            |
-	| User Application Compliance   |
-	| Hardware Compliance           |
-	| Device Application Compliance |
+	| ComplianceItems       |
+	| Overall Compliance    |
+	| User App Compliance   |
+	| Hardware Compliance   |
+	| Device App Compliance |
 	#=====================================================================================#
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

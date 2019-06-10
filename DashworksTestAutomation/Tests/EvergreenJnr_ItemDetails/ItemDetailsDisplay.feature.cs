@@ -6672,6 +6672,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS15552")]
+        [NUnit.Framework.CategoryAttribute("DAS16921")]
         public virtual void EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -6705,7 +6706,8 @@ this.FeatureBackground();
                         "AllLists",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS15552"});
+                        "DAS15552",
+                        "DAS16921"});
 #line 1686
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6727,7 +6729,7 @@ this.FeatureBackground();
             table55.AddRow(new string[] {
                         "Overall Compliance"});
             table55.AddRow(new string[] {
-                        "Application Compliance"});
+                        "App Compliance"});
             table55.AddRow(new string[] {
                         "Hardware Compliance"});
 #line 1692
@@ -6748,11 +6750,11 @@ this.FeatureBackground();
             table56.AddRow(new string[] {
                         "Overall Compliance"});
             table56.AddRow(new string[] {
-                        "User Application Compliance"});
+                        "User App Compliance"});
             table56.AddRow(new string[] {
                         "Hardware Compliance"});
             table56.AddRow(new string[] {
-                        "Device Application Compliance"});
+                        "Device App Compliance"});
 #line 1703
  testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table56, "Then ");
 #line 1710
