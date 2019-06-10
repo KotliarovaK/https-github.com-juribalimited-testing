@@ -70,13 +70,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.OpenSettingsByListName(listName).Click();
         }
 
-        [When(@"User clicks Settings button for ""(.*)"" dashboard")]
-        public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
-        {
-            var page = _driver.NowAt<CustomListElement>();
-            page.OpenSettingsByDashboardName(dashboardName).Click();
-        }
-
         [When(@"User clicks Delete button for custom list")]
         public void WhenUserClicksDeleteButtonForCustomList()
         {

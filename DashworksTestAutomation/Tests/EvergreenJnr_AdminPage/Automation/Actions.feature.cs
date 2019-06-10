@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS15427")]
         [NUnit.Framework.CategoryAttribute("DAS15832")]
         [NUnit.Framework.CategoryAttribute("DAS15833")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions()
         {
             System.Exception lastException = null;
@@ -125,7 +126,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "Actions",
                         "DAS15427",
                         "DAS15832",
-                        "DAS15833"});
+                        "DAS15833",
+                        "Not_Ready"});
 #line 12
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -222,6 +224,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15427")]
         [NUnit.Framework.CategoryAttribute("DAS15428")]
         [NUnit.Framework.CategoryAttribute("DAS16728")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -257,7 +260,8 @@ this.FeatureBackground();
                         "Actions",
                         "DAS15427",
                         "DAS15428",
-                        "DAS16728"});
+                        "DAS16728",
+                        "Not_Ready"});
 #line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -423,6 +427,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS15428")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality()
         {
             System.Exception lastException = null;
@@ -456,7 +461,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Actions",
-                        "DAS15428"});
+                        "DAS15428",
+                        "Not_Ready"});
 #line 128
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

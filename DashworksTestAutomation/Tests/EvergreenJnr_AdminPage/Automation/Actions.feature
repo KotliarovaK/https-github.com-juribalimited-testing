@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #Use different Automation for tests
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then "UPDATE" Action button is displayed
 	Then "CANCEL" Action button is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected action has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality

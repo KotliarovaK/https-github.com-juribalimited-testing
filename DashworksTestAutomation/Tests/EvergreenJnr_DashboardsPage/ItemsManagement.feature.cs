@@ -1914,6 +1914,76 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("DAS15877")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboardInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboardInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "DAS15877",
+                        "Delete_Newly_Created_Dashboard"});
+#line 370
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 371
+ testRunner.When("Dashboard with \"Dashboard_DAS15877\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 372
+ testRunner.And("User clicks Show Dashboards panel icon on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 373
+ testRunner.And("User clicks Settings button for \"Dashboard_DAS15877\" dashboard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "OptionsName"});
+            table35.AddRow(new string[] {
+                        "Manage"});
+            table35.AddRow(new string[] {
+                        "Make favourite"});
+            table35.AddRow(new string[] {
+                        "Duplicate"});
+            table35.AddRow(new string[] {
+                        "Set default"});
+            table35.AddRow(new string[] {
+                        "Delete"});
+#line 374
+ testRunner.Then("User sees dashboard menu with next options", ((string)(null)), table35, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

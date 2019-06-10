@@ -91,6 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS16510")]
         [NUnit.Framework.CategoryAttribute("DAS16511")]
         [NUnit.Framework.CategoryAttribute("DAS16754")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads()
         {
             System.Exception lastException = null;
@@ -129,7 +130,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "DAS16239",
                         "DAS16510",
                         "DAS16511",
-                        "DAS16754"});
+                        "DAS16754",
+                        "Not_Ready"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -232,6 +234,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15805")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
         [NUnit.Framework.CategoryAttribute("DAS16728")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations()
         {
             System.Exception lastException = null;
@@ -268,7 +271,8 @@ this.FeatureBackground();
                         "DAS15735",
                         "DAS15805",
                         "DAS16764",
-                        "DAS16728"});
+                        "DAS16728",
+                        "Not_Ready"});
 #line 55
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -404,6 +408,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15740")]
         [NUnit.Framework.CategoryAttribute("DAS15741")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly()
         {
             System.Exception lastException = null;
@@ -441,7 +446,8 @@ this.FeatureBackground();
                         "DAS15739",
                         "DAS15740",
                         "DAS15741",
-                        "DAS16764"});
+                        "DAS16764",
+                        "Not_Ready"});
 #line 113
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -577,6 +583,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15742")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -612,7 +619,8 @@ this.FeatureBackground();
                         "Automations",
                         "DAS15431",
                         "DAS15742",
-                        "DAS16764"});
+                        "DAS16764",
+                        "Not_Ready"});
 #line 174
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -724,6 +732,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15743")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToBottomOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -759,7 +768,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Automations",
                         "DAS15431",
-                        "DAS15743"});
+                        "DAS15743",
+                        "Not_Ready"});
 #line 222
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -900,6 +910,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15431")]
         [NUnit.Framework.CategoryAttribute("DAS15744")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToPositionOptionWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -936,7 +947,8 @@ this.FeatureBackground();
                         "Automations",
                         "DAS15431",
                         "DAS15744",
-                        "DAS16764"});
+                        "DAS16764",
+                        "Not_Ready"});
 #line 282
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1150,6 +1162,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15634")]
         [NUnit.Framework.CategoryAttribute("DAS15756")]
         [NUnit.Framework.CategoryAttribute("DAS15754")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutomation()
         {
             System.Exception lastException = null;
@@ -1186,7 +1199,8 @@ this.FeatureBackground();
                         "DAS15309",
                         "DAS15634",
                         "DAS15756",
-                        "DAS15754"});
+                        "DAS15754",
+                        "Not_Ready"});
 #line 353
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1309,6 +1323,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality()
         {
             System.Exception lastException = null;
@@ -1342,7 +1357,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Automations",
-                        "DAS16764"});
+                        "DAS16764",
+                        "Not_Ready"});
 #line 407
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
