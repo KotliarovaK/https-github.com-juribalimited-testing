@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15626 @DAS16880 @DAS16931
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15626 @DAS16880 @DAS16931 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	Then "No Actions Found" message is displayed on the Admin Page
 	Then "CREATE ACTION" Action button is active
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then "Scope" field is empty on the Admin page
 	Then "Active" checkbox is unchecked on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS16805 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
