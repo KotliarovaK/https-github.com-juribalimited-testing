@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks content from "Automation" column
 	Then Edit Automation page is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15735 @DAS15805 @DAS16764 @DAS16728
 Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -63,23 +63,30 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Automation  |
 	|             |
 	| Active      |
-	| Run Status  |
+	| Running     |
 	| Scope       |
 	| Run         |
 	| Actions     |
 	| Description |
-	Then "FALSE" content is displayed in "Run Status" column
-	When User enters "New automation - Alex" text in the Search field for "Automation" column
-	And User selects all rows on the grid
-	And User clicks on Actions button
+	Then "FALSE" content is displayed in "Running" column
+	When User enters "QA Automation Users" text in the Search field for "Automation" column
+	Then "FALSE" content is displayed in "Active" column
+	When User selects all rows on the grid
+	Then following items are displayed in the Actions dropdown:
+	| Items         |
+	| Run now       |
+	| Make active   |
+	| Make inactive |
+	| Delete        |
+	When User clicks on Actions button
 	And User selects "Run now" in the Actions
 	When User clicks the "RUN" Action button
-	Then Warning message with "Are you sure you wish to run 1 automation ?" text is displayed on the Admin page
+	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
-	When User enters "New automation - Alex" text in the Search field for "Automation" column
+	When User enters "QA Automation Users" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed in "Run Status" column
-	When User clicks Cog-menu for "New automation - Alex" item on Admin page
+	When User clicks Cog-menu for "QA Automation Users" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
