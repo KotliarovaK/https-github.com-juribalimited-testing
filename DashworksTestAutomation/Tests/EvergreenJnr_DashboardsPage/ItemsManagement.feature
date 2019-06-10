@@ -365,3 +365,16 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTe
 	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "1" warning messages on Dashboards page
 	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
 	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "3" warning messages on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
+	When Dashboard with "Dashboard_DAS15877" name created via API and opened
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User clicks Settings button for "Dashboard_DAS15877" dashboard
+	Then User sees dashboard menu with next options
+	| OptionsName    |
+	| Manage         |
+	| Make favourite |
+	| Duplicate      |
+	| Set default    |
+	| Delete         | 

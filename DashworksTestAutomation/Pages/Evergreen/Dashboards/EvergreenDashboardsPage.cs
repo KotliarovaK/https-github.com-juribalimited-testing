@@ -137,6 +137,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
+        public IList<IWebElement> DashboardMenuOptions { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -297,6 +300,17 @@ namespace DashworksTestAutomation.Pages
             var selector = $".//span[@class='mat-option-text'][contains(text(), '{option}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
+        }
+
+        public IWebElement OpenSettingsByDashboardName(string dashboardName)
+        {
+            var dashboardSettingsSelector =
+                By.XPath(
+                    $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
+            Driver.MouseHover(dashboardSettingsSelector);
+            Driver.WaitForDataLoading();
+            Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
+            return Driver.FindElement(dashboardSettingsSelector);
         }
 
         public IWebElement GetSettingsMenuOfSharedUser(string username)

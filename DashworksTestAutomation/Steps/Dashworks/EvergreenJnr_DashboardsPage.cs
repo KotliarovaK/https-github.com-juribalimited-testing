@@ -25,6 +25,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver = driver;
         }
 
+        [When(@"User clicks Settings button for ""(.*)"" dashboard")]
+        public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.OpenSettingsByDashboardName(dashboardName).Click();
+        }
+
         [When(@"User clicks ""(.*)"" section from ""(.*)"" circle chart on Dashboards page")]
         public void WhenUserClicksSectionFromChartOnDashboardsPage(string sectionName, string chartName)
         {
@@ -1384,6 +1391,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
             action.ReviewPermissionsPopupsButton(buttonName).Click();
+        }
+
+        [Then(@"User sees dashboard menu with next options")]
+        public void ThenUserSeesContextMenuPlacedNearCellInTheGrid(Table table)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForDataLoading();
+
+            List<string> options = page.DashboardMenuOptions.Select(x => x.Text).ToList();
+
+            foreach (var row in table.Rows)
+            {
+                Assert.That(options.FindAll(x => x.Equals(row["OptionsName"])).Count == 1);
+            }
+            Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
 
         #endregion
