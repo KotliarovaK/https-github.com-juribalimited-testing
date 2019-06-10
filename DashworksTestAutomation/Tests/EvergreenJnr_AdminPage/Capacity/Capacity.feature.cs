@@ -5354,7 +5354,7 @@ this.FeatureBackground();
 #line 1376
  testRunner.When("Project created via API and opened", ((string)(null)), table84, "When ");
 #line 1379
- testRunner.And("User open \"Capacity\" sub menu on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1380
  testRunner.And("User selects \"Units\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1381
@@ -5439,6 +5439,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13812")]
         [NUnit.Framework.CategoryAttribute("DAS13676")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged()
         {
             System.Exception lastException = null;
@@ -5477,7 +5478,8 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS13812",
                         "DAS13676",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Not_Run"});
 #line 1414
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5734,6 +5736,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13593")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage()
         {
             System.Exception lastException = null;
@@ -5771,7 +5774,8 @@ this.FeatureBackground();
                         "Slots",
                         "Senior_Projects",
                         "DAS13593",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Not_Run"});
 #line 1508
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6770,6 +6774,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType()
         {
             System.Exception lastException = null;
@@ -6807,7 +6812,8 @@ this.FeatureBackground();
                         "Slots",
                         "Senior_Projects",
                         "DAS13152",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Not_Run"});
 #line 1793
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
