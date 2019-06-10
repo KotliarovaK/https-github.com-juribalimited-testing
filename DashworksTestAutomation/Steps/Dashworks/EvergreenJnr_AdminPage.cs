@@ -1143,6 +1143,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(button.ActionsButton.Displayed(), "Actions dropdown is not displayed correctly");
         }
 
+        [Then(@"Actions dropdown is disabled")]
+        public void ThenActionsDropdownIsDisabled()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(button.ActionsSelectBox.GetAttribute("class").Contains("disabled"), "Actions dropdown is active");
+        }
+
         [When(@"User clicks on Actions button")]
         public void ThenUserClicksOnActionsButton()
         {
@@ -1150,6 +1157,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.ActionsButton);
             button.ActionsButton.Click();
             Logger.Write("Actions button was clicked");
+        }
+
+        [Then(@"following items are displayed in the Actions dropdown:")]
+        public void ThenFollowingItemsAreDisplayedInTheActionsDropdown(Table table)
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.ActionsButton);
+            button.ActionsButton.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = button.ActionsInDropdownList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Actions items are different");
+            button.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" in the Actions")]
