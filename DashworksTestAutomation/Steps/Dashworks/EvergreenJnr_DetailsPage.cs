@@ -158,7 +158,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinksFromColumnIsDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
             var content = _driver.NowAt<DetailsPage>();
-            content.GetHrefByColumnName(columnName);
             Assert.IsTrue(content.GetHrefByColumnName(columnName) != null);
         }
 
@@ -166,7 +165,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinksFromColumnIsNOTDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
             var content = _driver.NowAt<DetailsPage>();
-            content.GetHrefByColumnName(columnName);
             Assert.IsFalse(content.GetHrefByColumnName(columnName) != null);
         }
 
