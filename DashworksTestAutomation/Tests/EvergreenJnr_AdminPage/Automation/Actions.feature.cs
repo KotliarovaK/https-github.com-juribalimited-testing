@@ -224,6 +224,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15427")]
         [NUnit.Framework.CategoryAttribute("DAS15428")]
         [NUnit.Framework.CategoryAttribute("DAS16728")]
+        [NUnit.Framework.CategoryAttribute("DAS16976")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly()
         {
@@ -261,6 +262,7 @@ this.FeatureBackground();
                         "DAS15427",
                         "DAS15428",
                         "DAS16728",
+                        "DAS16976",
                         "Not_Ready"});
 #line 56
 this.ScenarioInitialize(scenarioInfo);
@@ -404,8 +406,8 @@ this.FeatureBackground();
 #line 118
  testRunner.When("User clicks \"Delete\" option in Cog-menu for \"DAS15427_Action\" item on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 119
- testRunner.Then("Warning message with \"Are you sure you wish to delete 1 action?\" text is displaye" +
-                    "d on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Warning message with \"This action will be permanently deleted\" text is displayed " +
+                    "on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 120
  testRunner.When("User clicks Cancel button in the warning message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121

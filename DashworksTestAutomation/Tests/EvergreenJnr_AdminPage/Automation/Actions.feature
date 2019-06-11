@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then "UPDATE" Action button is displayed
 	Then "CANCEL" Action button is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
@@ -116,7 +116,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	When User clicks "Delete" option in Cog-menu for "DAS15427_Action" item on Admin page
-	Then Warning message with "Are you sure you wish to delete 1 action?" text is displayed on the Admin page
+	Then Warning message with "This action will be permanently deleted" text is displayed on the Admin page
 	When User clicks Cancel button in the warning message on the Admin page
 	When User clicks "Delete" option in Cog-menu for "DAS15427_Action" item on Admin page
 	When User clicks Delete button in the warning message
