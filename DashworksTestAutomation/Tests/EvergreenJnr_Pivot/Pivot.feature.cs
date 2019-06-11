@@ -869,7 +869,7 @@ this.FeatureBackground();
             table24.AddRow(new string[] {
                         "New York - Devices"});
 #line 229
- testRunner.Then("following Values are displayed in \"Scope\" drop-down on the Project details page:", ((string)(null)), table24, "Then ");
+ testRunner.Then("following Values are displayed in \"Scope\" drop-down on the Admin page:", ((string)(null)), table24, "Then ");
 #line 236
  testRunner.When("User navigates to the \"User Scope\" tab in the Scope section on the Project detail" +
                     "s page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -881,8 +881,7 @@ this.FeatureBackground();
             table25.AddRow(new string[] {
                         "Users with Device Count"});
 #line 237
- testRunner.Then("following Values are displayed in \"User Scope\" drop-down on the Project details p" +
-                    "age:", ((string)(null)), table25, "Then ");
+ testRunner.Then("following Values are displayed in \"User Scope\" drop-down on the Admin page:", ((string)(null)), table25, "Then ");
 #line 241
  testRunner.When("User navigates to the \"Application Scope\" tab in the Scope section on the Project" +
                     " details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -896,8 +895,8 @@ this.FeatureBackground();
             table26.AddRow(new string[] {
                         "Apps with a Vendor"});
 #line 242
- testRunner.Then("following Values are displayed in \"Application Scope\" drop-down on the Project de" +
-                    "tails page:", ((string)(null)), table26, "Then ");
+ testRunner.Then("following Values are displayed in \"Application Scope\" drop-down on the Admin page" +
+                    ":", ((string)(null)), table26, "Then ");
 #line 247
  testRunner.And("User remove list with \"Pivot_DAS_14224\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

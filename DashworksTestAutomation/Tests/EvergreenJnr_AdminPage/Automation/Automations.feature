@@ -420,7 +420,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -436,25 +436,12 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "CREATE" Action button is disabled
 	When User selects "Manual" in the "Run" dropdown
 	And User clicks the "CREATE" Action button
+	When User clicks newly created object link
+	Then "All Devices" content is displayed in the Scope Automation dropdown
+	When User clicks "Automations" navigation link on the Admin page
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	Then Warning message with "Are you sure you wish to delete 1 automation?" text is displayed on the Admin page
 	When User clicks Cancel button in the warning message on the Admin page
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected automation has been deleted" text
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @Not_Ready
-#Change value after gold data complete added
-#Greed should have at least three automations
-Scenario: EvergreenJnr_AdminPage_CheckDeleteOptionInCogMenuForAnAutomationThatIsRunning
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
-	When User clicks "Run now" option in Cog-menu for "Kate_Test_Automation" item on Admin page
-	When User clicks the "RUN" Action button
-	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
-	When User clicks "RUN" button in the warning message on Admin page
-	Then Success message is displayed and contains "1 automation started," text
-	When User clicks "Delete" option in Cog-menu for "Kate_Test_Automation" item on Admin page
-	#Check error message

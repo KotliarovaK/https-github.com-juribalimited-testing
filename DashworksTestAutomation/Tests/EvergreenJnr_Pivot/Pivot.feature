@@ -226,7 +226,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	When User clicks newly created object link
 	And User selects "Scope Details" tab on the Project details page
 	And User navigates to the "Device Scope" tab in the Scope section on the Project details page
-	Then following Values are displayed in "Scope" drop-down on the Project details page:
+	Then following Values are displayed in "Scope" drop-down on the Admin page:
 	| Values                  |
 	| All Devices             |
 	| 1803 Rollout            |
@@ -234,12 +234,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectO
 	| Migration Type Capacity |
 	| New York - Devices     |
 	When User navigates to the "User Scope" tab in the Scope section on the Project details page
-	Then following Values are displayed in "User Scope" drop-down on the Project details page:
+	Then following Values are displayed in "User Scope" drop-down on the Admin page:
 	| Values                  |
 	| All Users               |
 	| Users with Device Count |
 	When User navigates to the "Application Scope" tab in the Scope section on the Project details page
-	Then following Values are displayed in "Application Scope" drop-down on the Project details page:
+	Then following Values are displayed in "Application Scope" drop-down on the Admin page:
 	| Values             |
 	| All Applications   |
 	| 1803 Apps          |
