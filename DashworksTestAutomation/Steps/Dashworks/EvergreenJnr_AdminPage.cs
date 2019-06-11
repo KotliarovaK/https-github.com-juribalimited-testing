@@ -202,8 +202,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"following Values are displayed in ""(.*)"" drop-down on the Project details page:")]
-        public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheProjectDetailsPage(string dropDownName, Table table)
+        [Then(@"following Values are displayed in ""(.*)"" drop-down on the Admin page:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheAdminPage(string dropDownName, Table table)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetDropDownByName(dropDownName).Click();
@@ -1750,6 +1750,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var createProjectElement = _driver.NowAt<ProjectsPage>();
             createProjectElement.ScopeProjectField.Click();
             createProjectElement.SelectObjectForProjectCreation(objectName);
+        }
+
+        [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
+        public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains(dropdownValue, createProjectElement.ScopeProjectField.GetAttribute("value"), $"{dropdownValue} is not displayed in the Scope Automation dropdown");
         }
 
         [Then(@"Main lists are displayed correctly in the Scope dropdown")]
