@@ -576,6 +576,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (!string.IsNullOrEmpty(row["SplitBy"]))
                 {
+                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.SplitBy);
                     createWidgetElement.SplitBy.Click();
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();

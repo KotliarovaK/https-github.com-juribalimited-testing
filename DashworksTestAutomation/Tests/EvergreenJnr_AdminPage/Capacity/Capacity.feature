@@ -844,7 +844,6 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultValueForCapacityModeFieldEqual
 	And User clicks "Capacity" tab
 	And User selects "Capacity Details" tab on the Project details page
 	Then Capacity Units value is displayed for Capacity Mode field
-	When User click on Back button
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode               |
 	| Project14029 | All Devices | None            | Standalone Project |
