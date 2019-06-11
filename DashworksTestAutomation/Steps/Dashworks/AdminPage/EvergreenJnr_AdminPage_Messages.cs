@@ -143,6 +143,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
+            Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetMessageColor()); //Red color
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
