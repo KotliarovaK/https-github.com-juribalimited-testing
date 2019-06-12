@@ -444,4 +444,4 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks Cancel button in the warning message on the Admin page
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected automation has been deleted" text
+	Then Success message is displayed and contains "1 automation deleted" text
