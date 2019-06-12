@@ -22,6 +22,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckPrintStylesOnTheDashboardsPage
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @DAS14618
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD SECTION" Action button
 	And User clicks Ellipsis menu for "Top 10 App Vendors" Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |
@@ -36,6 +37,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForWidget
 @Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358
 Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	When User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD SECTION" Action button
 	And User clicks Ellipsis menu for Section having "Operating System" Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:
 	| items            |

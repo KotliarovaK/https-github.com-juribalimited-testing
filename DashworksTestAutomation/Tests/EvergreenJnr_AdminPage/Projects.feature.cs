@@ -7992,6 +7992,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12787")]
         [NUnit.Framework.CategoryAttribute("DAS13529")]
         [NUnit.Framework.CategoryAttribute("DAS16128")]
+        [NUnit.Framework.CategoryAttribute("DAS15201")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory()
         {
@@ -8031,6 +8032,7 @@ this.FeatureBackground();
                         "DAS12787",
                         "DAS13529",
                         "DAS16128",
+                        "DAS15201",
                         "Delete_Newly_Created_Project"});
 #line 2300
 this.ScenarioInitialize(scenarioInfo);

@@ -1734,3 +1734,105 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User navigates to the "Evergreen Summary" sub-menu on the Details page
 	When User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Team              |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Device Owner      |
+	| Language          |
+	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
+	And Link from "Device" field is displayed to the user on the Details Page
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @Not_Ready
+Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Team              |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Primary Device    |
+	| Language          |
+	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	When User click content from "Application" column
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields              |
+	| Object ID           |
+	| Team                |
+	| Capacity Unit       |
+	| Ring                |
+	| Overall Readiness   |
+	| App Readiness       |
+	| Primary App         |
+	| App Rationalisation |
+	| Target App          |
+	| Hide From End Users |
+	| Path                |
+	| Category            |
+	| Tags                |
+	Then "GREEN" content is displayed in "Overall Readiness" field on Item Details page
+	Then "GREEN" content is displayed in "App Readiness" field on Item Details page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @Not_Ready
+Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Mailbox Device    |
+	| Language          |
+	Then "NONE" content is displayed in "Overall Readiness" field on Item Details page
