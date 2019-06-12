@@ -415,7 +415,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoErrorsInConsoleAfterAddingAppli
 	Then "Really Extremely Orange" color is displayed for Card Widget
 	Then Icon and Text is displayed for Card widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16325 @DAS15145 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetDisplaysCorrectValueWhenFirstCellIsSortedBool
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
