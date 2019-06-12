@@ -6421,6 +6421,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Senior")]
+        [NUnit.Framework.CategoryAttribute("Nott_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAddingRemovingTaskFromCapacitySlot()
         {
             System.Exception lastException = null;
@@ -6459,7 +6460,8 @@ this.FeatureBackground();
                         "DAS13502",
                         "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_Slots",
-                        "Do_Not_Run_With_Senior"});
+                        "Do_Not_Run_With_Senior",
+                        "Nott_Run"});
 #line 1699
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6560,6 +6562,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Senior")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedToACapacitySlot()
         {
             System.Exception lastException = null;
@@ -6598,7 +6601,8 @@ this.FeatureBackground();
                         "DAS13500",
                         "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_Slots",
-                        "Do_Not_Run_With_Senior"});
+                        "Do_Not_Run_With_Senior",
+                        "Not_Run"});
 #line 1731
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -6959,6 +6963,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTeamsAndRequestTypes()
         {
             System.Exception lastException = null;
@@ -6996,7 +7001,8 @@ this.FeatureBackground();
                         "Slots",
                         "Senior_Projects",
                         "DAS13152",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Not_Run"});
 #line 1844
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
