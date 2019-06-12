@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "QA Automation Users" text in the Search field for "Automation" column
+	When User enters "AM 110619 Devices" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
 	Then Actions dropdown is disabled
@@ -70,46 +70,56 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	When User selects "Undetermined" in the Path dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
-	When User clicks "Move to top" option in Cog-menu for "15309_Action" item on Admin page
+	When User clicks "Move to top" option in Cog-menu for "AM 2897" item on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | 15309_Action       |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
+    | AM 2897            |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
     | DAS15427_Action    |
-	When User clicks "Move to bottom" option in Cog-menu for "15309_Action" item on Admin page
+	When User clicks "Move to bottom" option in Cog-menu for "AM 2897" item on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	| 15309_Action       |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+    | DAS15427_Action    |
+	| AM 2897            |
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User move "15309_Action" item to "4" position on Admin page
+	When User move "AM 2897" item to "6" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	| 15309_Action       |
-	When User move "15309_Action" item to "1" position on Admin page
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+    | DAS15427_Action    |
+	| AM 2897            |
+	When User move "AM 2897" item to "1" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-	| 15309_Action       |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	When User move "15309_Action" item to "20" position on Admin page
+	 | AM 2897            |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+    | DAS15427_Action    |
+	When User move "AM 2897" item to "20" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	| 15309_Action       |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+    | DAS15427_Action    |
+	| AM 2897            |
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
