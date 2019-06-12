@@ -2296,7 +2296,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectO
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "2" of "6" rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12787 @DAS13529 @DAS16128 @DAS15201 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSelectedBucketsIsDisplayedForOnboardedObjectsInQueueAndHistory
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -4173,4 +4173,5 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then "TRUE" content is displayed in "Evergreen" column 
+
 	
