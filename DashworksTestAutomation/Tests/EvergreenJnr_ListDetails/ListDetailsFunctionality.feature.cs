@@ -1999,7 +1999,8 @@ this.FeatureBackground();
  testRunner.And("\"Any Application in list [List not found] used on device\" is displayed in added f" +
                     "ilter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 529
- testRunner.And("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("message \'This list could not be processed, it may refer to a list with errors\' is" +
+                    " displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2160,7 +2161,8 @@ this.FeatureBackground();
  testRunner.And("\"Any Application in list [List not found] used on device\" is displayed in added f" +
                     "ilter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 574
- testRunner.And("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("message \'This list could not be processed, it may refer to a list with errors\' is" +
+                    " displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

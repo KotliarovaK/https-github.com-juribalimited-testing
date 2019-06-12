@@ -526,7 +526,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] used on device" is displayed in added filter info
-	And message 'No devices found' is displayed to the user
+	And message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS12791 @DAS12952 @DAS14222 @DAS15551 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists
@@ -571,7 +571,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] used on device" is displayed in added filter info
-	And message 'No devices found' is displayed to the user
+	And message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS14222 @DAS15551 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists

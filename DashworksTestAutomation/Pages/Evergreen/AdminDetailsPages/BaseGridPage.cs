@@ -166,7 +166,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[@class='header-back-link']")]
+        [FindsBy(How = How.XPath, Using = ".//a[contains(@class,'header-back-link')]")]
         public IWebElement BackToTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
