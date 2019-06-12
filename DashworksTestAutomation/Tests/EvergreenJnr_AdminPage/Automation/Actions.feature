@@ -160,8 +160,8 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| 15428_Action     |
 	And User removes selected item
 
-#Remove pre-requisites after adding it to Gold data
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @Not_Ready
+#Remove Pre-requisites after adding it to Gold data
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
 	When User clicks "Users" on the left-hand menu
@@ -175,11 +175,10 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then Create Project button is enabled
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
-	When User clicks "Create Request Type" button
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
-	When User navigate to "User Migration" Project
-	Then Project with "User Migration" name is displayed correctly
+	When User navigate to "Melbourne User Migration" Project
+	Then Project with "Melbourne User Migration" name is displayed correctly
 	And "Manage Project Details" page is displayed to the user
 	When User navigate to "Request Types" tab
 	Then "Manage Request Types" page is displayed to the user
@@ -187,6 +186,7 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	And User create Request Type
 	| Name           | Description | ObjectTypeString |
 	| User Migration | DAS15938    | User             |
+	When User navigate to Evergreen link
 #Pre-requisites:
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -194,6 +194,8 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
+	When User type "" Name in the "Automation Name" field on the Automation details page
+	Then Filling field error with "An Automation Name must be entered" text is displayed
 	When User type "Melbourne User" Name in the "Automation Name" field on the Automation details page
 	When User type "Melbourne users" Name in the "Description" field on the Automation details page
 	When User selects "Melbourne Users" in the Scope Automation dropdown
@@ -202,9 +204,27 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User selects "Manual" in the "Run" dropdown
 	And User clicks the "CREATE" Action button
 	Then Create Action page is displayed to the User
+	Then "CREATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then "CREATE" Action button is disabled
+	Then "SAVE AND CREATE ANOTHER" Action button have tooltip with "Some values are missing or not valid" text
+	Then "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then "CANCEL" Action button is active
+	When User type "" Name in the "Action Name" field on the Automation details page
+	Then Filling field error with "An action name must be entered" text is displayed
 	When User type "Melbourne users" Name in the "Action Name" field on the Automation details page
+	Then "CREATE" Action button is disabled
+	Then "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then "CANCEL" Action button is active
 	When User selects "Update path" in the "Action Type" dropdown
+	Then "CREATE" Action button is disabled
+	Then "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then "CANCEL" Action button is active
 	When User selects "Melbourne User Migration" in the Project dropdown
+	Then "CREATE" Action button is disabled
+	Then "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then "CANCEL" Action button is active
 	When User selects "User Migration" in the Path dropdown
-	And User clicks the "CREATE" Action button
+	Then "SAVE AND CREATE ANOTHER" Action button is active
+	Then "CANCEL" Action button is active
+	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
