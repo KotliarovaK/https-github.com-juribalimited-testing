@@ -440,7 +440,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard
 	#create dashboard and share it
 	When Dashboard with "Dashboard for DAS15876" name created via API and opened
@@ -471,3 +471,42 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	And User selects "Remove" option from Settings
 	Then There is no user in shared list
 	And User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15550 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
+	#create dashboard and share it
+	When Dashboard with "Dashboard for DAS15550" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title             | List             | SplitBy     | AggregateBy | AggregateFunction | OrderBy         | TableOrientation | MaxValues | ShowLegend |
+	| Table      | WidgetForDAS15550 | All Applications | Application | Application | Count distinct    | Application ASC |                  | 10        |            |
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User clicks Settings button for "Dashboard for DAS15550" dashboard
+	And User clicks Manage in the list panel
+	Then Permission panel is displayed to the user
+	When User changes sharing type from "Private" to "Specific users"
+	And User adds user to list of shared person
+	| User                | Permission |
+	| Automation Admin 10 | Edit       |
+	Then User "automation_admin10" was added to shared list with "Edit" permission
+	#login as user2
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks the Switch to Evergreen link
+	And User clicks on the Login link
+	And User login with following credentials:
+	| Username           | Password  |
+	| automation_admin10 | m!gration |
+	And User clicks the Switch to Evergreen link
+	#edit widget
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User clicks Settings button for "Dashboard for DAS15550" dashboard
+	And User clicks Manage in the list panel
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks Ellipsis menu for "WidgetForDAS15550" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	And User updates Widget with following info:
+	| WidgetType | Title                    | List | SplitBy | AggregateBy | AggregateFunction | OrderBy | TableOrientation | MaxValues | ShowLegend |
+	|            | WidgetForDAS15550_Edited |      | Version | Application |                   |         |                  |           |            |
+	Then User sees widget with the next name "WidgetForDAS15550_Edited" on Dashboards page
