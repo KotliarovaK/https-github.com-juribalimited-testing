@@ -421,7 +421,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -438,7 +438,18 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User selects "Manual" in the "Run" dropdown
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
+	#Failed because warning pop-up appears DAS-16936
+	Then Edit Automation page is displayed to the User
 	Then "All Devices" content is displayed in the Scope Automation dropdown
+	Then "16764" content is displayed in "Description" field
+	Then "Manual" text value is displayed in the "Run" dropdown
+	Then "Active" checkbox is checked on the Admin page
+	Then "Stop on failed action" checkbox is checked on the Admin page
+	Then "UPDATE" Action button is disabled
+	Then "CANCEL" Action button is active
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	#Wait for "RUN NOW" button
+	#Then "RUN NOW" Action button is active
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	Then Warning message with "Are you sure you wish to delete 1 automation?" text is displayed on the Admin page

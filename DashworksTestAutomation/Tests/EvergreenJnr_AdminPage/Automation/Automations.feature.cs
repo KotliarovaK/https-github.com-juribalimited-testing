@@ -1363,6 +1363,9 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
         [NUnit.Framework.CategoryAttribute("DAS16998")]
+        [NUnit.Framework.CategoryAttribute("DAS15757")]
+        [NUnit.Framework.CategoryAttribute("DAS15423")]
+        [NUnit.Framework.CategoryAttribute("DAS16936")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality()
         {
@@ -1399,6 +1402,9 @@ this.FeatureBackground();
                         "Automations",
                         "DAS16764",
                         "DAS16998",
+                        "DAS15757",
+                        "DAS15423",
+                        "DAS16936",
                         "Not_Ready"});
 #line 425
 this.ScenarioInitialize(scenarioInfo);
@@ -1436,24 +1442,41 @@ this.FeatureBackground();
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 440
  testRunner.When("User clicks newly created object link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 441
- testRunner.Then("\"All Devices\" content is displayed in the Scope Automation dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 442
- testRunner.When("User clicks \"Automations\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Edit Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 443
+ testRunner.Then("\"All Devices\" content is displayed in the Scope Automation dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 444
+ testRunner.Then("\"16764\" content is displayed in \"Description\" field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 445
+ testRunner.Then("\"Manual\" text value is displayed in the \"Run\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 446
+ testRunner.Then("\"Active\" checkbox is checked on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 447
+ testRunner.Then("\"Stop on failed action\" checkbox is checked on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 448
+ testRunner.Then("\"UPDATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 449
+ testRunner.Then("\"CANCEL\" Action button is active", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 450
+ testRunner.Then("\"UPDATE\" Action button have tooltip with \"Some values are missing or not valid\" t" +
+                    "ext", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 453
+ testRunner.When("User clicks \"Automations\" navigation link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 454
  testRunner.When("User clicks \"Delete\" option in Cog-menu for \"16764_Automation\" item on Admin page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 444
+#line 455
  testRunner.Then("Warning message with \"Are you sure you wish to delete 1 automation?\" text is disp" +
                     "layed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 445
+#line 456
  testRunner.When("User clicks Cancel button in the warning message on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 446
+#line 457
  testRunner.When("User clicks \"Delete\" option in Cog-menu for \"16764_Automation\" item on Admin page" +
                     "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 447
+#line 458
  testRunner.When("User clicks Delete button in the warning message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 448
+#line 459
  testRunner.Then("Success message is displayed and contains \"1 automation deleted\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

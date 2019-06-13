@@ -83,6 +83,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CancelButtonInWarning);
             page.CancelButtonInWarning.Click();
+            Assert.IsFalse(page.WarningMessage.Displayed());
         }
 
         [When(@"User clicks Delete button in the warning message")]
@@ -252,6 +253,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenFillingFieldErrorWithTextIsDisplayed(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
             Assert.IsTrue(page.GetFillingFieldErrorByText(text).Displayed(), $"Filling field error with {text} is not displayed");
             Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetFillingFieldErrorByText(text).GetCssValue("color"));
             Assert.AreEqual("rgba(242, 88, 49, 1)", page.UnderFieldWarningIcon.GetCssValue("color"));
