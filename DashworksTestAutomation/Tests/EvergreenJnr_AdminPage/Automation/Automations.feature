@@ -69,7 +69,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	| Actions     |
 	| Description |
 	Then "FALSE" content is displayed in "Running" column
-	When User enters "DELAY (DO NOT DELETE)" text in the Search field for "Automation" column
+	When User enters "DELAY (DO NOT DELETE)4" text in the Search field for "Automation" column
 	Then "TRUE" content is displayed in "Active" column
 	When User selects all rows on the grid
 	Then following items are displayed in the Actions dropdown:
@@ -84,25 +84,25 @@ Scenario: EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations
 	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
-	When User enters "DELAY (DO NOT DELETE)" text in the Search field for "Automation" column
-	Then "TRUE" content is displayed in "Run Status" column
-	When User clicks Cog-menu for "DELAY (DO NOT DELETE)" item on Admin page
+	When User enters "DELAY (DO NOT DELETE)4" text in the Search field for "Automation" column
+	Then "TRUE" content is displayed in "Running" column
+	When User clicks Cog-menu for "DELAY (DO NOT DELETE)4" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
-	| Run now          |
 	| Duplicate        |
 	| Move to top      |
+	| Move to bottom   |
 	| Move to position |
 	| Make inactive    |
 	#Check Delay Running Automation
 	When User selects all rows on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
-	And User clicks Delete button 
+	And User clicks Delete button
+	When User clicks Delete button in the warning message
 	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
-	When User clicks Reset Filters button on the Admin page
-	When User moves "AM 110619 Devices" automation to "z-test" automation
+	When User moves "QA 1306 devices" automation to "z-test" automation
 	When User have opened column settings for "Automation" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened

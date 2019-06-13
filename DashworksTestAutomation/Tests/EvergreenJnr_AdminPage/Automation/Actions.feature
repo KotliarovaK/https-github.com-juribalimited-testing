@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then "UPDATE" Action button is displayed
 	Then "CANCEL" Action button is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
@@ -68,7 +68,9 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
 	When User selects "Undetermined" in the Path dropdown
-	And User clicks the "CREATE" Action button
+	Then "Undetermined" content is displayed in the Path Automation dropdown
+	When User clicks the "CREATE" Action button
+	#Then There are no errors in the browser console
 	Then Success message is displayed and contains "The automation action has been created" text
 	When User clicks "Move to top" option in Cog-menu for "AM 2897" item on Admin page
 	Then "Action" column content is displayed in the following order:
@@ -78,6 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
     | Alex M233          |
     | AM 110619 Action 1 |
     | Alex M45           |
+    | Alex M2367         |
     | DAS15427_Action    |
 	When User clicks "Move to bottom" option in Cog-menu for "AM 2897" item on Admin page
 	Then "Action" column content is displayed in the following order:
@@ -86,6 +89,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
     | Alex M233          |
     | AM 110619 Action 1 |
     | Alex M45           |
+	| Alex M2367         |
     | DAS15427_Action    |
 	| AM 2897            |
 	When User have opened column settings for "Action" column
@@ -93,23 +97,25 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User move "AM 2897" item to "6" position on Admin page
+	When User move "AM 2897" item to "7" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
     | AM 110619 Action 2 |
     | Alex M233          |
     | AM 110619 Action 1 |
     | Alex M45           |
+	| Alex M2367         |
     | DAS15427_Action    |
 	| AM 2897            |
 	When User move "AM 2897" item to "1" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-	 | AM 2897            |
+    | AM 2897            |
     | AM 110619 Action 2 |
     | Alex M233          |
     | AM 110619 Action 1 |
     | Alex M45           |
+    | Alex M2367         |
     | DAS15427_Action    |
 	When User move "AM 2897" item to "20" position on Admin page
 	Then "Action" column content is displayed in the following order:
@@ -118,6 +124,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
     | Alex M233          |
     | AM 110619 Action 1 |
     | Alex M45           |
+	| Alex M2367         |
     | DAS15427_Action    |
 	| AM 2897            |
 	When User have opened column settings for "Action" column
