@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -25,7 +26,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void WhenUserSwitchesToTheProjectInTheTopBarOnItemDetailsPage(string projectName)
         {
             var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            topBar.ProjectSwitcherDropdownTopBar.Click();
 
+            var action = _driver.NowAt<BaseDashboardPage>();
+            action.GetOptionByName(projectName).Click();
         }
 
         [Then(@"following Compliance items are displayed in Top bar on the Item details page:")]

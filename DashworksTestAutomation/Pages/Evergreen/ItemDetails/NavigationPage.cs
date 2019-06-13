@@ -74,5 +74,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         {
             return Driver.IsElementDisplayed(By.XPath($"//a[text()='{tabName}']//span[@class='ng-star-inserted']"));
         }
+
+        public bool GetDisplayStatusForDisabledTabByName(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-tree-node/li[contains(@class, 'disabled')]"));
+        }
     }
 }

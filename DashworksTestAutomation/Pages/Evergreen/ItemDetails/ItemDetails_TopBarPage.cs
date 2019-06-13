@@ -15,6 +15,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = "//div[@id='topbar']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'DropdownTopbar')]")]
+        public IWebElement ProjectSwitcherDropdownTopBar { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
