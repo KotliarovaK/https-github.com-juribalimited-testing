@@ -140,7 +140,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 110619 Devices" text in the Search field for "Automation" column
+	When User enters "AM 110619 Users" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
@@ -151,20 +151,19 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User type "15428_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "[Default (Application)]" in the Path dropdown
+	When User selects "[Default (User)]" in the Path dropdown
 	And User clicks the "CREATE" Action button
-	When User moves "15428_Action" action to "AM 030619 Mailbox Action 1" action
+	When User moves "15428_Action" action to "AM 110619 Users Act 1" action
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	Then "Action" column content is displayed in the following order:
-	| Items                      |
-	| AM 030619 Mailbox Action 1 |
-	| 15428_Action               |
-	| AM 030619 Mailbox Action 2 |
-	| AM 1                       |
+	| Items                 |
+	| AM 110619 Users Act 1 |
+	| 15428_Action          |
+	| AM 110619 Users Act 2 |
 	When User select "Action" rows in the grid
 	| SelectedRowsName |
 	| 15428_Action     |
