@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
@@ -16,6 +17,9 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='WidgetType']")]
         public IWebElement WidgetType { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
+        public IList<IWebElement> Dropdowns { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Title']")]
         public IWebElement Title { get; set; }
@@ -97,7 +101,7 @@ namespace DashworksTestAutomation.Pages
 
         public void SelectListForWidgetCreation(string listName)
         {
-            var listNameSelector = $".//span[@class='mat-option-text']//span[contains(text(), '{listName}')]";
+            var listNameSelector = $".//mat-option//span[contains(text(), '{listName}')]";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
@@ -157,12 +161,17 @@ namespace DashworksTestAutomation.Pages
                 return Driver.FindElement(byOtherVer);
             }
         }
-
-       
-
+        
         public IWebElement GetTableWidgetPreview()
         {
             return Driver.FindElement(By.XPath(".//div[@class='table-responsive']"));
         }
+
+        public bool IsAggregateByDropdownDisabled()
+        {
+            return Convert.ToBoolean(AggregateBy.GetAttribute("aria-disabled"));
+        }
+
+
     }
 }

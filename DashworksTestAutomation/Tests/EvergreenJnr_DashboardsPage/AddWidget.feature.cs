@@ -415,6 +415,147 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggrega" +
+            "teBySelection")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS15437")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.TestCaseAttribute("Pie", null)]
+        [NUnit.Framework.TestCaseAttribute("Bar", null)]
+        [NUnit.Framework.TestCaseAttribute("Column", null)]
+        [NUnit.Framework.TestCaseAttribute("Line", null)]
+        [NUnit.Framework.TestCaseAttribute("Donut", null)]
+        [NUnit.Framework.TestCaseAttribute("Half donut", null)]
+        [NUnit.Framework.TestCaseAttribute("Table", null)]
+        [NUnit.Framework.TestCaseAttribute("Card", null)]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection(string widgetType, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelectionInternal(widgetType,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelectionInternal(string widgetType, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "EvergreenJnr_DashboardsPage",
+                    "Widgets",
+                    "DAS15437",
+                    "Delete_Newly_Created_Dashboard"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggrega" +
+                    "teBySelection", null, @__tags);
+#line 54
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 55
+ testRunner.When("Dashboard with \"Dashboard for DAS15437\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 56
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And(string.Format("User selects \"{0}\" in the \"Widget Type\" Widget dropdown", widgetType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.Then("Aggregate Function dropdown is placed above the Aggregate By dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMis" +
+            "singForListWidget")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
+        [NUnit.Framework.CategoryAttribute("Widgets")]
+        [NUnit.Framework.CategoryAttribute("DAS15437")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        public virtual void EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidgetInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidgetInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMis" +
+                    "singForListWidget", null, new string[] {
+                        "Evergreen",
+                        "EvergreenJnr_DashboardsPage",
+                        "Widgets",
+                        "DAS15437",
+                        "Delete_Newly_Created_Dashboard"});
+#line 73
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 74
+ testRunner.When("Dashboard with \"Dashboard for DAS15437\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 75
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("User selects \"List\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.Then("\"Aggregate Function\" dropdown is missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 79
+ testRunner.And("\"Aggregate By\" dropdown is missing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
