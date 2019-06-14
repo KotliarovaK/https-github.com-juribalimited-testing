@@ -390,18 +390,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
-	When User select "ActionId" checkbox on the Column Settings panel
+	When User select "Action ID" checkbox on the Column Settings panel
 	When User select "Processing order" checkbox on the Column Settings panel
-	When User select "ActionTypeId" checkbox on the Column Settings panel
+	When User select "Action Type ID" checkbox on the Column Settings panel
 	When User select "Project ID" checkbox on the Column Settings panel
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName       |
 	|                  |
-	| ActionId         |
+	| Action ID        |
 	| Action           |
 	|                  |
 	| Processing order |
-	| ActionTypeId     |
+	| Action Type ID   |
 	| Type             |
 	| Project ID       |
 	| Project          |
@@ -413,7 +413,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User type "15309_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "[Default (User)]" in the Path dropdown
 	And User clicks the "CREATE" Action button
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel

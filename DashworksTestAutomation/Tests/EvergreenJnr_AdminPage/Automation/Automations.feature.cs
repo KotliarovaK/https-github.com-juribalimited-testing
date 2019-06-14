@@ -1290,11 +1290,11 @@ this.FeatureBackground();
 #line 392
  testRunner.Then("Column Settings was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 393
- testRunner.When("User select \"ActionId\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User select \"Action ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 394
  testRunner.When("User select \"Processing order\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 395
- testRunner.When("User select \"ActionTypeId\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User select \"Action Type ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 396
  testRunner.When("User select \"Project ID\" checkbox on the Column Settings panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -1303,7 +1303,7 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         ""});
             table22.AddRow(new string[] {
-                        "ActionId"});
+                        "Action ID"});
             table22.AddRow(new string[] {
                         "Action"});
             table22.AddRow(new string[] {
@@ -1311,7 +1311,7 @@ this.FeatureBackground();
             table22.AddRow(new string[] {
                         "Processing order"});
             table22.AddRow(new string[] {
-                        "ActionTypeId"});
+                        "Action Type ID"});
             table22.AddRow(new string[] {
                         "Type"});
             table22.AddRow(new string[] {
@@ -1336,7 +1336,7 @@ this.FeatureBackground();
 #line 415
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 416
- testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"[Default (User)]\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 417
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 418
