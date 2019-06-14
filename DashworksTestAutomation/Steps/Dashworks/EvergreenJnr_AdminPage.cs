@@ -1778,6 +1778,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
+        [Then(@"following lists are displayed in the Scope dropdown:")]
+        public void ThenFollowingListsAreDisplayedInTheScopeDropdown(Table table)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ScopeProjectField.Click();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(createProjectElement.GetListByNameInScopeDropdown(row["Lists"]).Displayed());
+            }
+        }
+
         [When(@"User selects ""(.*)"" in the Scope Project details")]
         public void WhenUserSelectsInTheScopeProjectDetails(string listName)
         {

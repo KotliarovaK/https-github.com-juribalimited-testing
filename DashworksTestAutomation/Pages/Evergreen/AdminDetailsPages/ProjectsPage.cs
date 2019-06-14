@@ -2,11 +2,14 @@
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ProjectsPage : BaseGridPage
     {
+        public const string ExpandedScopeDropdownSection = ".//div[@role='listbox']";
+
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
@@ -403,13 +406,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement CorrectMainListsScopeDropdown(string checkboxName)
+        public IWebElement GetListByNameInScopeDropdown(string listName)
         {
-            var devices = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var users = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var mailboxes = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var applications = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            return Driver.FindElement(devices);
+            var selector = By.XPath($".//mat-optgroup//*[text()='{listName}']");
+            return Driver.FindElement(selector);
         }
     }
 

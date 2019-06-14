@@ -457,3 +457,51 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "1 automation deleted" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @Not_Ready
+#Change value after gold data complete added
+Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCorrectLists
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "AM 030619 Mailboxes 1" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Edit Automation page is displayed to the User
+	Then following lists are displayed in the Scope dropdown:
+	| Lists            |
+	| Users (0)        |
+	| Applications (0) |
+	| Mailboxes (0)    |
+	| All Devices      |
+	| 1803 Rollout     |
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @Delete_Newly_Created_List @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "City" filter where type is "Equals" with added column and "Belfast" Lookup option
+	And User create dynamic list with "DAS15423_List" name on "Devices" page
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "DAS15423_Automation" Name in the "Automation Name" field on the Automation details page
+	When User type "DAS15423" Name in the "Description" field on the Automation details page
+	When User selects "DAS15423_List" in the Scope Automation dropdown
+	When User selects "Manual" in the "Run" dropdown
+	When User selects "Active" checkbox on the Automation Page
+	And User clicks the "CREATE" Action button
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "DAS15423_List" list
+	Then "DAS15423_List" list is displayed to user
+	When User removes custom list with "DAS15423_List" name
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then "[List not found]" content is displayed in the Scope Automation dropdown
