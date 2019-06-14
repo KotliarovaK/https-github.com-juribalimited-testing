@@ -1518,6 +1518,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
         }
 
+        [Then(@"Following items displayed in the History table")]
+        public void ThenFollowingItemsDisplayedInTheHistoryTable(Table table)
+        {
+            var projectElement = _driver.NowAt<BaseGridPage>();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
+            }
+        }
+
         [Then(@"additional onboarded Items are displayed in the History table")]
         public void ThenAdditionalOnboardedItemsAreDisplayedInTheHistoryTable(Table table)
         {

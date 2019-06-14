@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.Providers;
 
 namespace DashworksTestAutomation.Helpers
@@ -119,6 +120,28 @@ namespace DashworksTestAutomation.Helpers
                 IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
             };
             return cu;
+        }
+
+        #endregion
+
+        #region Teams
+
+        public static TeamDto GetTeam(string name)
+        {
+            var dataTable = DatabaseHelper
+                .ExecuteReaderWithoutZeroResultCheck(
+                    $"select [TeamID],[TeamName],[TeamShortDescription],[IsDefault] from [PM].[dbo].[Teams] where [TeamName] = '{name}'");
+
+            if (dataTable.Rows.Count < 1)
+                throw new Exception($"Unable to find Team with name {name}");
+
+            var team = new TeamDto(dataTable.Rows[0][0].ToString())
+            {
+                TeamName = dataTable.Rows[0][1].ToString(),
+                Description = dataTable.Rows[0][2].ToString(),
+                IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
+            };
+            return team;
         }
 
         #endregion
