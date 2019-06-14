@@ -864,7 +864,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -947,18 +947,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User navigate to Evergreen link
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User enters "ProjectForDAS13812" text in the Search field for "Project" column
-	And User clicks content from "Project" column
-	And User open "Capacity" sub menu on Admin page
+	
+	When User navigates to "ProjectForDAS13812" project details
+	Then Project "ProjectForDAS13812" is displayed to user
+	When User clicks "Capacity" tab
+	
 	And User selects "Slots" tab on the Project details page
 	And User enters "Slot 2" text in the Search field for "Capacity Slot" column
 	And User clicks content from "Capacity Slot" column
 	And User changes value to "1" for "Tuesday" day column
 	Then "UPDATE" Action button is active
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13593 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13593 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage
 	When Project created via API and opened
 	| ProjectName     | Scope       | ProjectTemplate | Mode               |
@@ -1219,7 +1219,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	| Computer Information ---- Text fill; Text fill; \ 2Task13500 |
 	And "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field are available to select
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13152 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

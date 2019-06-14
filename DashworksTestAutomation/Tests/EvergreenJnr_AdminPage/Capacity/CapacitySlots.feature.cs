@@ -3287,7 +3287,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13812")]
         [NUnit.Framework.CategoryAttribute("DAS13676")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged()
         {
             System.Exception lastException = null;
@@ -3326,8 +3325,7 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS13812",
                         "DAS13676",
-                        "Delete_Newly_Created_Project",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Project"});
 #line 868
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3548,16 +3546,12 @@ this.FeatureBackground();
  testRunner.And("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 949
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 950
- testRunner.When("User clicks \"Projects\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 951
- testRunner.Then("\"Projects\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User navigates to \"ProjectForDAS13812\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 952
- testRunner.When("User enters \"ProjectForDAS13812\" text in the Search field for \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Project \"ProjectForDAS13812\" is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 953
- testRunner.And("User clicks content from \"Project\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 954
- testRunner.And("User open \"Capacity\" sub menu on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 955
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 956
@@ -3584,7 +3578,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13593")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage()
         {
             System.Exception lastException = null;
@@ -3622,8 +3615,7 @@ this.FeatureBackground();
                         "Slots",
                         "Senior_Projects",
                         "DAS13593",
-                        "Delete_Newly_Created_Project",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Project"});
 #line 962
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -4529,7 +4521,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType()
         {
             System.Exception lastException = null;
@@ -4567,8 +4558,7 @@ this.FeatureBackground();
                         "Slots",
                         "Senior_Projects",
                         "DAS13152",
-                        "Delete_Newly_Created_Project",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Project"});
 #line 1223
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
