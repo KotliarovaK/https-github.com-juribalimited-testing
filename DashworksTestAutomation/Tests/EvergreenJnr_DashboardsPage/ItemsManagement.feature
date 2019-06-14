@@ -252,6 +252,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenning
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with "Dashboard for DAS15721" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD SECTION" Action button
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |

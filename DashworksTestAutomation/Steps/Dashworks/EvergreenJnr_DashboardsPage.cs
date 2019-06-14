@@ -729,6 +729,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColourSchemeDropdownIsNotDisplayedToTheUser()
         {
             var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             Assert.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
         }
 
