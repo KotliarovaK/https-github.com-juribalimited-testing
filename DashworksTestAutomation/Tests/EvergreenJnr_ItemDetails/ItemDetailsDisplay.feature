@@ -2172,3 +2172,17 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Mailbox Device    |
 	| Language          |
 	Then "NONE" content is displayed in "Overall Readiness" field on Item Details page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087
+Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAProjectOnTheMailboxDetailsPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "abel.y.hanson@dwlabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "abel.y.hanson@dwlabs.local" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	Then "7" rows found label displays on Details Page
+	Then "Administrator" content is displayed in "Username" column
+	When User switches to the "Email Migration" project in the Top bar on Item details page
+	Then "1" rows found label displays on Details Page
+	Then "hansonay" content is displayed in "Username" column
