@@ -171,6 +171,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDe
 	Then "Users" list should be displayed to the user
 	When User perform search by "Administrator.Users.dwlabs.local"
 	And User click content from "Username" column
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the "Devices" main-menu on the Details page
 	Then ColumnName is displayed in following order on the Details page:
 	| ColumnName     |
@@ -205,7 +206,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Project Type |
 	| Bucket       |
 	| Ring         |
-	| Request Type |
+	| Path         |
 	| Workflow     |
 	| Category     |
 	| Status       |
@@ -219,7 +220,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Project Type |
 	| Bucket       |
 	| Ring         |
-	| Request Type |
+	| Path         |
 	| Workflow     |
 	| Category     |
 	| Status       |
@@ -555,12 +556,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Request Type" checkbox on the Column Settings panel
+	And User select "Slot" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	When User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -582,8 +581,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	When User navigates to the "<MainTabName>" main-menu on the Details page
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User clicks String Filter button for "Project Type" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -607,8 +604,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column 
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285
@@ -1217,7 +1212,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	And User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Request Type" checkbox on the Column Settings panel
+	And User select "Path" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	When User click on 'Readiness' column header
 	Then color data is sorted by 'Readiness' column in descending order
