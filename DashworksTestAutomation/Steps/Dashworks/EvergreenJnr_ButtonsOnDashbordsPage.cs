@@ -117,6 +117,15 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 "Create button is not displayed on the Base Dashboard Page");
         }
 
+        [When(@"User selects ""(.*)"" from the Create actions")]
+        public void WhenUserSelectsFromTheCreateActions(string action)
+        {
+            var button = _driver.NowAt<BaseDashboardPage>();
+            button.CreateActionButton.Click();
+            _driver.WaitForDataLoading();
+            button.GetCreateButtonByName(action).Click();
+        }
+
         [Then(@"""(.*)"" button is displayed on the Base Dashboard Page")]
         public void ThenButtonIsDisplayedOnTheBaseDashboardPage(string buttonName)
         {

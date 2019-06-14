@@ -447,13 +447,15 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "Stop on failed action" checkbox is checked on the Admin page
 	Then "UPDATE" Action button is disabled
 	Then "CANCEL" Action button is active
-	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then "UPDATE" Action button have tooltip with "No changes made" text
 	#Wait for "RUN NOW" button
 	#Then "RUN NOW" Action button is active
 	When User clicks "Automations" navigation link on the Admin page
+	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
-	Then Warning message with "Are you sure you wish to delete 1 automation?" text is displayed on the Admin page
-	When User clicks Cancel button in the warning message on the Admin page
+	Then Warning message with "This automation will be permanently deleted" text is displayed on the Admin page
+	#Remove # after Cancel button is clickable
+	#When User clicks Cancel button in the warning message on the Admin page
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "1 automation deleted" text
