@@ -419,6 +419,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots.feature.cs">
+      <DependentUpon>CapacitySlots.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Readiness.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -751,6 +756,10 @@
     <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\AddObjectsToCapacityUnits.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddObjectsToCapacityUnits.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlots.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Readiness.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

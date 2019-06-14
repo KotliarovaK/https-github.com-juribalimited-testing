@@ -578,6 +578,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.SplitBy);
                     createWidgetElement.SplitBy.Click();
+                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
@@ -656,6 +657,25 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoadingOnProjects();
         }
 
+        [When(@"User selects ""(.*)"" as Widget Split By")]
+        public void WhenUserSetsWidgetSplitBy(string SplitBy)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoadingOnProjects();
+            createWidgetElement.SplitBy.Click();
+            createWidgetElement.SelectListForWidgetCreation(SplitBy);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
+        [When(@"User selects ""(.*)"" as Widget Type")]
+        public void WhenUserSetsWidgetType(string Type)
+        {
+            var createWidgetElement = _driver.NowAt<AddWidgetPage>();
+            createWidgetElement.Type.Click();
+            createWidgetElement.SelectObjectForWidgetCreation(Type);
+            _driver.WaitForDataLoadingOnProjects();
+        }
+
         [When(@"User selects ""(.*)"" as Widget AggregateBy")]
         public void WhenUserSetsWidgetAggregateBy(string aggregateBy)
         {
@@ -709,6 +729,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenColourSchemeDropdownIsNotDisplayedToTheUser()
         {
             var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForDataLoading();
             Assert.IsFalse(page.ColorScheme.Displayed(), "Colour Scheme dropdown is displayed to the user");
         }
 
@@ -1408,7 +1429,42 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
+        
+        [Then(@"Aggregate Function dropdown is placed above the Aggregate By dropdown")]
+        public void ThenUserSeesAggregateFunctionAboveTheAggregateByDropdown()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
 
+            Assert.That(page.AggregateFunction.Location.Y, Is.LessThan(page.AggregateBy.Location.Y));
+        }
+
+        [Then(@"""(.*)"" dropdown is missing")]
+        public void ThenSelectedDropdownIsMissing(string label)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+
+            Assert.That(page.Dropdowns.Any(x=>x.Text.Equals(label)), Is.EqualTo(false));
+        }
+
+        [Then(@"Aggregate By dropdown is disabled")]
+        public void ThenSelectedDropdownIsMissing()
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+
+            Assert.That(page.IsAggregateByDropdownDisabled, Is.EqualTo(true));
+        }
+
+        [Then(@"User sees following options for Aggregate By selector on Create Widget page:")]
+        public void WhenUserSeesFollowingOptionsForAggregateBySelectorOnCreateWidgetPage(Table items)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            page.AggregateBy.Click();
+
+            Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
+                page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+        }
+
+        
         #endregion
     }
 }

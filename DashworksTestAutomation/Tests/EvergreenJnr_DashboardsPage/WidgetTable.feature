@@ -164,3 +164,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Unassigned2      |
 	| Unassigned       |
 	| Empty            |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15582 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereThereAreNoColumnsAvailableShowsWarning
+	When Dashboard with "Dashboard for DAS15582" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	When User clicks the "ADD WIDGET" Action button
+	And User selects "Table" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "All Devices" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Sum" as Widget Aggregate Function
+	Then User sees "There are no fields available for this aggregate function" warning text below Lists field
