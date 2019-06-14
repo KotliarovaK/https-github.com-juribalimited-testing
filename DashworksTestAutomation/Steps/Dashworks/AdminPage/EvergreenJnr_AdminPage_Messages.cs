@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
@@ -124,7 +125,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            try
+            {
+                _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Success message with '{text}' was not displayed: {e}");
+            }
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
