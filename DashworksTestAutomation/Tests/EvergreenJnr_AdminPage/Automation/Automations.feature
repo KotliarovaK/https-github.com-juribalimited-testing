@@ -494,6 +494,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
+	When User clicks newly created object link
+	#Failed because warning pop-up appears DAS-16936
+	Then Edit Automation page is displayed to the User
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User navigates to the "DAS15423_List" list
