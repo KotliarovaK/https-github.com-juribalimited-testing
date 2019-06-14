@@ -127,6 +127,17 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static void OpenEmptyTab(this RemoteWebDriver driver)
+        {
+            ((IJavaScriptExecutor)driver).ExecuteScript("window.open()");
+        }
+
+        public static void OpenInNewTab(this RemoteWebDriver driver, string url)
+        {
+            driver.ExecuteScript($"window.open('{url}','_blank');");
+            driver.SwitchTo().Window(driver.WindowHandles.Last());
+        }
+
         public static void WaitForLoadingElements(this RemoteWebDriver driver, SeleniumBasePage page, By bySelector)
         {
             var bys = bySelector != null ? new List<By> { bySelector } : page.GetPageIdentitySelectors();

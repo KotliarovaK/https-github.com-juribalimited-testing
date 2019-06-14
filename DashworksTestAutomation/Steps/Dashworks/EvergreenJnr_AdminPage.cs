@@ -3016,7 +3016,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     pTemplate = "-1";
 
                 pMode = row["Mode"].Equals("Standalone Project") ? 1 : 3;
-
             }
 
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/createProject";
@@ -3051,7 +3050,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
         }
-
 
         [AfterScenario("Delete_Newly_Created_Team")]
         public void DeleteAllTeamsAfterScenarioRun()

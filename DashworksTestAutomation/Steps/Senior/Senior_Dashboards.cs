@@ -62,6 +62,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
                 _projects.Value.Add(row["ProjectName"]);
             }
+
             var tab = _driver.NowAt<MainElementsOfProjectCreation>();
             tab.CreatedProjectButton.Click();
             //[YT] added thread sleep since we have max 30 sec delay between senior and evergreen

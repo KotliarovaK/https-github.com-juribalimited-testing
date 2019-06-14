@@ -11105,10 +11105,10 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
+        [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13110")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope()
         {
             System.Exception lastException = null;
@@ -11143,10 +11143,10 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
+                        "Projects",
                         "DAS13110",
                         "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project",
-                        "Projects"});
+                        "Delete_Newly_Created_Project"});
 #line 3301
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -13614,6 +13614,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16145")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnEvergreen()
         {
             System.Exception lastException = null;
@@ -13648,7 +13649,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Projects",
-                        "DAS16145"});
+                        "DAS16145",
+                        "Delete_Newly_Created_Project"});
 #line 4030
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -13705,6 +13707,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16145")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnSenior()
         {
             System.Exception lastException = null;
@@ -13738,7 +13741,8 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "Projects",
-                        "DAS16145"});
+                        "DAS16145",
+                        "Delete_Newly_Created_Project"});
 #line 4048
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
