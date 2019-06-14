@@ -474,10 +474,11 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "4" of "6" rows
-	When User selects "History" tab on the Project details page
+	When User waits until Queue disappears
+	And User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
-	Then following Items are displayed in the History table
+	Then Following items displayed in the History table
 	| Items                          |
 	| 0IJB93JZPG72PX                 |
 	| 04I01QSFL1AWKM                 |

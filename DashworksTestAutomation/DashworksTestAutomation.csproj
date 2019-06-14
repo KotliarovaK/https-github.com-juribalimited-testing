@@ -105,6 +105,7 @@
     <Compile Include="DTO\ColorCompliance.cs" />
     <Compile Include="DTO\Evergreen\Admin\Automations\AutomationsDTO.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
@@ -139,6 +140,8 @@
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Automation.cs" />
+    <Compile Include="DTO\RuntimeVariables\TeamDefaultId.cs" />
+    <Compile Include="DTO\RuntimeVariables\Team.cs" />
     <Compile Include="DTO\RuntimeVariables\Dashboard.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnitUnassignedId.cs" />
@@ -311,6 +314,10 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\RemoveTeamAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SaveDefaultTeamBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AfterScenario.cs" />
@@ -447,10 +454,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Automations.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature.cs">
+      <DependentUpon>DeleteBucketsFromTheTeam.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Teams.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\AddMembersToTheTeam.feature.cs">
+      <DependentUpon>AddMembersToTheTeam.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\AddBucketsToTheTeam.feature.cs">
+      <DependentUpon>AddBucketsToTheTeam.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\TeamsGrid.feature.cs">
+      <DependentUpon>TeamsGrid.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\UpdateTeam.feature.cs">
+      <DependentUpon>UpdateTeam.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\TeamDetails.feature.cs">
+      <DependentUpon>TeamDetails.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\CreateTeam.feature.cs">
+      <DependentUpon>CreateTeam.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\TeamsGridFiltering.feature.cs">
+      <DependentUpon>TeamsGridFiltering.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
       <AutoGen>True</AutoGen>
@@ -743,9 +785,37 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Automations.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Teams.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Teams.feature.cs</LastGenOutput>
+      <LastGenOutput>DeleteBucketsFromTheTeam.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\AddMembersToTheTeam.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddMembersToTheTeam.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\AddBucketsToTheTeam.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AddBucketsToTheTeam.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\TeamsGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TeamsGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\UpdateTeam.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UpdateTeam.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\TeamDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TeamDetails.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\CreateTeam.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateTeam.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Teams\TeamsGridFiltering.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TeamsGridFiltering.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromConditionPanel']//input[@aria-label='Date']")]
         public IWebElement DateRegularValueSecond { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']//input")]
         public IWebElement DateFromValue { get; set; }
 
@@ -108,8 +108,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            var columnSettingsSelector =
-                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
+            var columnSettingsSelector = $"//*[text()='{columnName}']/ancestor::div/span[contains(@class, 'cell-menu-button')]";
             Driver.MouseHover(By.XPath(columnSettingsSelector));
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
