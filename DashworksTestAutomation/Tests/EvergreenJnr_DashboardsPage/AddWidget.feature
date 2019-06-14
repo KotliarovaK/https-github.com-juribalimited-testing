@@ -49,3 +49,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	Then User sees "You have unsaved changes. Are you sure you want to leave the page?" text in alert on Edit Widget page
 	When User clicks "NO" button in Unsaved Changes alert
 	Then Unsaved Changes alert not displayed to the user
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Delete_Newly_Created_Dashboard
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
+	When Dashboard with "Dashboard for DAS15437" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "<WidgetType>" in the "Widget Type" Widget dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+
+Examples: 
+	| WidgetType |
+	| Pie        |
+	| Bar        |
+	| Column     |
+	| Line       |
+	| Donut      |
+	| Half donut |
+	| Table      |
+	| Card       |
+	
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
+	When Dashboard with "Dashboard for DAS15437" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "List" in the "Widget Type" Widget dropdown
+	Then "Aggregate Function" dropdown is missing
+	And "Aggregate By" dropdown is missing
+
