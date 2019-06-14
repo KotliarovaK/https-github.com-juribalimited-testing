@@ -103,6 +103,7 @@
     <Compile Include="Base\IBaseTest.cs" />
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\ColorCompliance.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Automations\AutomationsDTO.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
+    <Compile Include="DTO\RuntimeVariables\Automation.cs" />
     <Compile Include="DTO\RuntimeVariables\Dashboard.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnitUnassignedId.cs" />
@@ -178,6 +180,10 @@
     <Compile Include="Helpers\HttpClientHelper.cs" />
     <Compile Include="Helpers\SortingHelper.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\AutomationsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\ActionsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditActionPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateActionsPage.cs" />
+    <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\EditAutomationPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Automations\CreateAutomationsPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\Forms\CreateReadinessPage.cs" />
     <Compile Include="Pages\Evergreen\AdminDetailsPages\RingsPage.cs" />
@@ -188,6 +194,7 @@
     <Compile Include="Pages\Evergreen\Dashboards\PrintDashboardsPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\ActionPanelPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\AggridHeaderCounterPage.cs" />
+    <Compile Include="Pages\Evergreen\ItemDetails\ItemDetails_TopBarPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\NavigationPage.cs" />
     <Compile Include="Pages\Evergreen\ItemDetails\TabContent.cs" />
     <Compile Include="Pages\Evergreen\LeavePageWarning.cs" />
@@ -287,6 +294,10 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\EditActions.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Automations\EditAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />
@@ -310,6 +321,7 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_AggridHeaderCounter.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
+    <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
@@ -364,6 +376,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateAutomation.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\CreateAction.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateAction.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\Actions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Actions.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature.cs">
       <DependentUpon>CapacityUnitsGridFiltering.feature</DependentUpon>
@@ -659,6 +681,14 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automation\CreateAutomation.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateAutomation.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\CreateAction.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateAction.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Automation\Actions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Actions.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -11,20 +11,20 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
 {
     [Binding]
-    internal class AutomationSteps : SpecFlowContext
+    internal class EditAutomation : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public AutomationSteps(RemoteWebDriver driver)
+        public EditAutomation(RemoteWebDriver driver)
         {
             _driver = driver;
         }
 
-        [When(@"User selects ""(.*)"" checkbox on the Automation Page")]
-        public void WhenUserSelectsCheckboxOnTheAutomationPage(string checkboxName)
+        [Then(@"Edit Automation page is displayed to the User")]
+        public void ThenEditAutomationPageIsDisplayedToTheUser()
         {
-            var checkbox = _driver.NowAt<CreateAutomationsPage>();
-            checkbox.SelectCheckboxByName(checkboxName).Click();
+            var page = _driver.NowAt<EditAutomationPage>();
+            Assert.IsTrue(page.EditAutomationTitle.Displayed(), "Edit Automation page is not displayed");
         }
     }
 }

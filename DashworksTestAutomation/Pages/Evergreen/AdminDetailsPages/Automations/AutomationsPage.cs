@@ -39,12 +39,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             var selector = By.XPath($".//div[@row-index='{indexRow}']/div[@col-id='dragColumn']");
             return Driver.FindElement(selector);
         }
-
-        public IWebElement SelectCheckboxByName(string checkboxName)
-        {
-            var button = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
-            return Driver.FindElement(button);
-        }
     }
 }

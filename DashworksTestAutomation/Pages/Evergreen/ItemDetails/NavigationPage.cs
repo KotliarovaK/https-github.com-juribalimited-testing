@@ -20,9 +20,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         [FindsBy(How = How.XPath, Using = MainTabsOnDetailsPage)]
         public IList<IWebElement> MainTabsOnDetailsPageList { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//ul[@class='das-mat-tree-submenu']//li[contains(@class, 'das-mat-tree-node')]/a/text()[1]")]
-        public IList<IWebElement> SubTabsOnDetailsPageList { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -76,6 +73,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public bool GetCountOfItemsDisplayStatusByTabName(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//a[text()='{tabName}']//span[@class='ng-star-inserted']"));
+        }
+
+        public bool GetDisplayStatusForDisabledTabByName(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-tree-node/li[contains(@class, 'disabled')]"));
         }
     }
 }

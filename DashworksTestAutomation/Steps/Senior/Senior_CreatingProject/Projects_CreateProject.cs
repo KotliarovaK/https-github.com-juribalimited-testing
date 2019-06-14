@@ -75,7 +75,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void WhenUserNavigateToTab(string tabName)
         {
             var tab = _driver.NowAt<MainElementsOfProjectCreation>();
-
+            _driver.WaitForDataLoading();
             tab.GetTabElementByName(tabName).Click();
         }
 

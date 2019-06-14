@@ -11700,6 +11700,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13347")]
         [NUnit.Framework.CategoryAttribute("DAS11978")]
+        [NUnit.Framework.CategoryAttribute("DAS16887")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText()
@@ -11738,6 +11739,7 @@ this.FeatureBackground();
                         "Projects",
                         "DAS13347",
                         "DAS11978",
+                        "DAS16887",
                         "Delete_Newly_Created_Project",
                         "Not_Run"});
 #line 3536

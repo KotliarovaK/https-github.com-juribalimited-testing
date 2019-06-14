@@ -15,9 +15,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Automation Name']")]
         public IWebElement AutomationNameField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Description']")]
-        public IWebElement DescriptionField { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -25,6 +22,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             {
                 SelectorFor(this, p => p.CreateAutomationsTitle)
             };
+        }
+
+        public IWebElement SelectCheckboxByName(string checkboxName)
+        {
+            var button = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']");
+            Driver.WaitWhileControlIsNotDisplayed(button);
+            return Driver.FindElement(button);
         }
     }
 }

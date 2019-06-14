@@ -11,20 +11,22 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
 {
     [Binding]
-    internal class AutomationSteps : SpecFlowContext
+    internal class ActionSteps : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
 
-        public AutomationSteps(RemoteWebDriver driver)
+        public ActionSteps(RemoteWebDriver driver)
         {
             _driver = driver;
         }
 
-        [When(@"User selects ""(.*)"" checkbox on the Automation Page")]
-        public void WhenUserSelectsCheckboxOnTheAutomationPage(string checkboxName)
+        [When(@"User moves ""(.*)"" action to ""(.*)"" action")]
+        public void WhenUserMovesActionToAction(string actionFrom, string actionTo)
         {
-            var checkbox = _driver.NowAt<CreateAutomationsPage>();
-            checkbox.SelectCheckboxByName(checkboxName).Click();
+            var page = _driver.NowAt<ActionsPage>();
+            var action1 = page.GetMoveButtonByActionName(actionFrom);
+            var action2 = page.GetMoveButtonByActionName(actionTo);
+            _driver.DragAndDrop(action1, action2);
         }
     }
 }

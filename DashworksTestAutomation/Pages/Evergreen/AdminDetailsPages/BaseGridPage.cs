@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
-        public const string OptionTabsOnAdminPage = ".//mat-nested-tree-node[@aria-expanded='true']//li[contains(@class,'tree-node')]/a";
+        public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
 
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
@@ -123,6 +123,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
         public IWebElement ActionsInDropdown { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-option/span[@class='mat-option-text']/span")]
+        public IList<IWebElement> ActionsInDropdownList { get; set; }
+
         [FindsBy(How = How.XPath, Using = ObjectsToAdd)]
         public IList<IWebElement> ObjectsList { get; set; }
 
@@ -163,7 +166,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@aria-label='Toggle panel']")]
         public IWebElement PlusButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//a[@class='header-back-link']")]
+        [FindsBy(How = How.XPath, Using = ".//a[contains(@class,'header-back-link')]")]
         public IWebElement BackToTableButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
@@ -183,6 +186,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = TeamInFilterDropdown)]
         public IList<IWebElement> TeamListInFilterDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
+        public IWebElement ProjectDropdown { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Path']")]
+        public IWebElement PathtDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = Row)]
         public IList<IWebElement> RowsList { get; set; }
@@ -212,7 +221,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
         public IWebElement ErrorMessage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'inline-tip')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-tip')]")]
         public IWebElement WarningMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'btn-close-wrap')]//button")]
@@ -457,7 +466,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public bool TextMessage(string textMessage)
         {
-            return Driver.IsElementDisplayed(By.XPath($".//div[text()='{textMessage}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//*[text()='{textMessage}']"));
         }
 
         public bool GetTabHeaderInTheScopeChangesSection(string text)
@@ -552,7 +561,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetMessageColor()
         {
-            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("background-color");
+            return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("background-color");
         }
 
         public string GetMessageHeightOnAdminPage()
@@ -638,12 +647,25 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetExpandedSubMenuSection(string section)
+        {
+            var selector = By.XPath($".//mat-nested-tree-node[@aria-expanded='true']//a[text()='{section}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetOpenedPageByName(string pageName)
         {
             var selector = By.XPath($"//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetEmptyFieldByName(string fieldName)
+        {
+            var selector = By.XPath($".//mat-form-field[contains(@class, 'invalid')]//label[text()='{fieldName}']");
+            return Driver.FindElement(selector);
+        }
+        
         public List<string> GetSumOfObjectsContent(string columnName)
         {
             var by = By.XPath(

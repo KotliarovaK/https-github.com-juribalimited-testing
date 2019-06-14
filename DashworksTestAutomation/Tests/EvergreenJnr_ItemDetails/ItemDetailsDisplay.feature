@@ -815,7 +815,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @Delete_Newly_Created_Bucket
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -828,6 +828,7 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	And User selects "My Team" team in the Team dropdown on the Buckets page
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The bucket has been created" text
+	#============================================================================#
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -837,32 +838,23 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	Then User clicks on "New Bucket" dropdown
 	When User select "Bucket12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Bucket" dropdown
 	When User select "[Unassigned]" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
+	#============================================================================#
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -872,111 +864,85 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Bucket field
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Mailboxes" section on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Bucket" dropdown
 	When User select "Bucket12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Bucket12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "Bucket12883" link on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Bucket" dropdown
 	When User select "[Unassigned]" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
+	#============================================================================#
+	#unavailable for 'nova' now
 		#go to Mailboxes page
-	When User clicks "Mailboxes" on the left-hand menu
-	Then "Mailboxes" list should be displayed to the user
-	When User perform search by "0845467C65E5438D83E@bclabs.local"
-	And User click content from "Email Address" column
-	Then Details object page is displayed to the user
-	When User navigates to the "Projects" main-menu on the Details page
-	When User clicks on "Unassigned" link for Evergreen Bucket field
-	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
-	When User opens "Related Users" section on the Details Page
-	When User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Bucket" dropdown
-	When User select "Bucket12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
-	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
-	Then "Bucket12883" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#When User clicks "Mailboxes" on the left-hand menu
+	#Then "Mailboxes" list should be displayed to the user
+	#When User perform search by "0845467C65E5438D83E@bclabs.local"
+	#And User click content from "Email Address" column
+	#Then Details object page is displayed to the user
+	#When User navigates to the "Projects" main-menu on the Details page
+	#When User clicks on "Unassigned" link for Evergreen Bucket field
+	#Then popup changes window opened
+	#When User opens "Related Users" section on the Details Page
+	#When User selects all rows on the grid on the Details Page for "Related Users"
+	#Then User clicks on "New Bucket" dropdown
+	#When User select "Bucket12883" value on the Details Page
+	#When User clicks the "UPDATE" Action button
+	#Then "Bucket12883" link is displayed on the Details Page
+	#Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
-	When User clicks on "Bucket12883" link on the Details Page
-	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
-	When User selects all rows on the grid on the Details Page for "Related Users"
-	Then User clicks on "New Bucket" dropdown
-	When User select "[Unassigned]" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
-	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	When User navigates to the "Projects" main-menu on the Details page
-	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#When User clicks on "Bucket12883" link on the Details Page
+	#Then popup changes window opened
+	#When User selects all rows on the grid on the Details Page for "Related Users"
+	#Then User clicks on "New Bucket" dropdown
+	#When User select "[Unassigned]" value on the Details Page
+	#When User clicks the "UPDATE" Action button
+	#Then "Unassigned" link is displayed on the Details Page
+	#Then There are no errors in the browser console
 	
-@Evergreen @AdminPage @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Delete_Newly_Created_Capacity_Unit
+@Evergreen @AllLists @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Delete_Newly_Created_Capacity_Unit
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
-	When User clicks Admin on the left-hand menu
-	Then Admin page should be displayed to the user
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
-	Then "Create Evergreen Capacity Unit" page should be displayed to the user
-	When User type "CapacityUnit12883" Name in the "Capacity Unit Name" field on the Project details page
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User creates new Capacity Unit via api
+	| Name              | Description | IsDefault |
+	| CapacityUnit12883 | Devices     | false     |
+	#============================================================================#
 		#go to Devices page
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
-	When User perform search by "01ERDGD48UDQKE"
+	When User perform search by "ZYKEGN8CRK0NR4"
 	And User click content from "Hostname" column
 	Then Details object page is displayed to the user
-	When User clicks refresh button in the browser
 	When User navigates to the "Projects" main-menu on the Details page
-	When User clicks on "Unassigned" link for Evergreen Capacity Unit field
+	When User clicks on "Evergreen Capacity Unit 3" link for Evergreen Capacity Unit field
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "CapacityUnit12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
+    When User clicks refresh button in the browser after waiting
 	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
-	When User select "[Unassigned]" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
+	When User select "Evergreen Capacity Unit 3" value on the Details Page
 	When User clicks the "UPDATE" Action button
+    When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" main-menu on the Details page
+	Then "Evergreen Capacity Unit 3" link is displayed on the Details Page
 	Then There are no errors in the browser console
-	When User clicks refresh button in the browser after waiting
-	Then "Unassigned" link is displayed on the Details Page
-	Then There are no errors in the browser console
+	#============================================================================#
 		#go to Users page
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -986,30 +952,27 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Mailboxes" section on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "CapacityUnit12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	When User clicks refresh button in the browser after waiting
+    When User clicks refresh button in the browser after waiting
 	When User navigates to the "Projects" main-menu on the Details page
 	Then "CapacityUnit12883" link is displayed on the Details Page
 	Then There are no errors in the browser console
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "[Unassigned]" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
-	Then There are no errors in the browser console
 	When User clicks refresh button in the browser after waiting
+	When User navigates to the "Projects" main-menu on the Details page
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
+	#============================================================================#
 		#go to Mailboxes page
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -1019,12 +982,10 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 	When User navigates to the "Projects" main-menu on the Details page
 	When User clicks on "Unassigned" link for Evergreen Capacity Unit field
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User opens "Related Users" section on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "CapacityUnit12883" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
 	When User navigates to the "Projects" main-menu on the Details page
@@ -1033,11 +994,9 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjec
 		#backs the Evergreen Bucket and Capacity Unit to default value
 	When User clicks on "CapacityUnit12883" link on the Details Page
 	Then popup changes window opened
-	Then Bucket pop-up has standard size on the Details Page
 	When User selects all rows on the grid on the Details Page for "Related Users"
 	Then User clicks on "New Capacity Unit" dropdown
 	When User select "[Unassigned]" value on the Details Page
-	Then Bucket pop-up has standard size on the Details Page
 	When User clicks the "UPDATE" Action button
 	When User clicks refresh button in the browser after waiting
 	When User navigates to the "Projects" main-menu on the Details page
@@ -1295,8 +1254,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatVerticalMenuIsUnfoldedCorrectlyOnMen
 	Then "Applications" tab-menu on the Details page is not expanded
 	Then "Compliance" tab-menu on the Details page is not expanded
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379 @DAS16415 @DAS16500 @DAS16297
-Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPage
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16379 @DAS16415 @DAS16500 @DAS16297 @DAS15583 @DAS15559
+Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPageInEvergreenMode
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
@@ -1310,27 +1269,33 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Active Directory |
 	| Applications     |
 	| Compliance       |
+	Then "Users" tab is displayed on left menu on the Details page and contains count of items
+	Then "Related" tab is displayed with disabled state on left menu on the Details page
+	#================ checks sub-menu for main Details tab ================#
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Device                  |
 	| Device Owner            |
 	| Department and Location |
 	| Custom Fields           |
+	#================ checks counters ================#
 	Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
 	Then "Device" tab is displayed on left menu on the Details page and NOT contains count of items
-	#waiting 'nova'
-	#Then "Organization" tab is displayed on left menu on the Details page and NOT contains count of items
-	#Then "Location" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Device Owner" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Evergreen Details      |
 	| Projects Summary       |
 	| Owner Projects Summary |
+	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	#================ checks counters ================#
 	Then "Projects Summary" tab is displayed on left menu on the Details page and contains count of items
 	Then "Owner Projects Summary" tab is displayed on left menu on the Details page and contains count of items
 	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	#waiting 'nova'
-	#Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Specification tab ================#
 	Then "Specification" main-menu on the Details page contains following sub-menu:
 	| SubTabName    |
 	| Specification | 
@@ -1339,40 +1304,36 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Video Cards   |
 	| Monitors      |
 	| Sound Cards   | 
+	#================ checks counters ================#
 	Then "Network Cards" tab is displayed on left menu on the Details page and contains count of items
 	Then "CPUS" tab is displayed on left menu on the Details page and contains count of items
 	Then "Video Cards" tab is displayed on left menu on the Details page and contains count of items
 	Then "Monitors" tab is displayed on left menu on the Details page and contains count of items
 	Then "Sound Cards" tab is displayed on left menu on the Details page and contains count of items
-	#waiting 'nova'
-	#Then "Hardware" tab is displayed on left menu on the Details page and NOT contains count of items
-	#Then "Operating System" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Specification" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Active Directory tab ================#
 	Then "Active Directory" main-menu on the Details page contains following sub-menu:
 	| SubTabName       | 
 	| Active Directory |  
 	| Groups           |
 	| LDAP             | 
+	#================ checks counters ================#
 	Then "Groups" tab is displayed on left menu on the Details page and contains count of items
 	Then "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Users" tab is not displayed on left menu on the Details page
-	#waiting status bar
-	#Then "Users" tab is displayed on left menu on the Details page and contains count of items
+	#================ checks sub-menu for main Applications tab ================#
 	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Summary | 
 	| Evergreen Detail  |
 	| Advertisements    | 
 	| Collections       |
+	#================ checks counters ================#
 	Then "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
 	Then "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
 	Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
 	Then "Collections" tab is displayed on left menu on the Details page and contains count of items
-	#waiting 'nova'
-	#Then "Projects States" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Related" tab is not displayed on left menu on the Details page
-	#waiting 'nova'
-	#Then "Related" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Compliance tab ================#
 	Then "Compliance" main-menu on the Details page contains following sub-menu:
 	| SubTabName          | 
 	| Overview            |          
@@ -1380,17 +1341,112 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Hardware Rules      |           
 	| Application Summary |            
 	| Application Issues  |
+	#================ checks counters ================#
 	Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
 	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
-	#waiting status bar
-	#Then "Notes" tab is displayed on left menu on the Details page and contains count of items
-	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415
-Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPage
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS15560
+Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForDevicesPageInProjectMode
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	Then User sees following main-tabs on left menu on the Details page:
+	| TabName          |
+	| Details          |
+	| Projects         |
+	| Specification    |
+	| Active Directory |
+	| Applications     |
+	| Compliance       |
+	Then "Users" tab is displayed on left menu on the Details page and contains count of items
+	Then "Related" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Tasks Disabled in Evergreen" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Details tab ================#
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| Device                  |
+	| Device Owner            |
+	| Department and Location |
+	| Custom Fields           |
+	#================ checks counters ================#
+	Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	Then "Device" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Device Owner" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName             |
+	| Evergreen Details      |
+	| Project Details        |
+	| Projects Summary       |
+	| Owner Projects Summary |
+	#================ checks counters ================#
+	Then "Projects Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Owner Projects Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Specification tab ================#
+	Then "Specification" main-menu on the Details page contains following sub-menu:
+	| SubTabName    |
+	| Specification | 
+	| Network Cards | 
+	| CPUS          |
+	| Video Cards   |
+	| Monitors      |
+	| Sound Cards   | 
+	#================ checks counters ================#
+	Then "Network Cards" tab is displayed on left menu on the Details page and contains count of items
+	Then "CPUS" tab is displayed on left menu on the Details page and contains count of items
+	Then "Video Cards" tab is displayed on left menu on the Details page and contains count of items
+	Then "Monitors" tab is displayed on left menu on the Details page and contains count of items
+	Then "Sound Cards" tab is displayed on left menu on the Details page and contains count of items
+	Then "Specification" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Active Directory tab ================#
+	Then "Active Directory" main-menu on the Details page contains following sub-menu:
+	| SubTabName       | 
+	| Active Directory |  
+	| Groups           |
+	| LDAP             | 
+	#================ checks counters ================#
+	Then "Groups" tab is displayed on left menu on the Details page and contains count of items
+	Then "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Applications tab ================#
+	Then "Applications" main-menu on the Details page contains following sub-menu:
+	| SubTabName        |
+	| Evergreen Summary | 
+	| Evergreen Detail  |
+	| Advertisements    | 
+	| Collections       |
+	#================ checks counters ================#
+	Then "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
+	Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	Then "Collections" tab is displayed on left menu on the Details page and contains count of items
+	#================ checks sub-menu for main Compliance tab ================#
+	Then "Compliance" main-menu on the Details page contains following sub-menu:
+	| SubTabName          | 
+	| Overview            |          
+	| Hardware Summary    |            
+	| Hardware Rules      |           
+	| Application Summary |            
+	| Application Issues  |
+	#================ checks counters ================#
+	Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
+	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+
+	#remove hash when the functionality will be implemented
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS16418 @DAS16415 @DAS15583 @DAS15348
+Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInEvergreenMode
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
@@ -1404,42 +1460,62 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Applications     |
 	| Mailboxes        |
 	| Compliance       |
-	Then "Devices" tab is displayed on left menu on the Details page
+	#Then "Devices" tab is displayed on left menu on the Details page and contains count of items
+	#================ checks sub-menu for main Details tab ================#
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| User                    |
 	| Department and Location |
 	| Custom Fields           |
-	Then "Users" tab is not displayed on left menu on the Details page
+	#================ checks counters ================#
+	#Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "User" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Evergreen Details       |
 	| User Projects           |
 	| Device Project Summary  |
 	| Mailbox Project Summary |
+	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	#================ checks counters ================#
+	#Then "User Projects" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Device Project Summary" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Mailbox Project Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Active Directory tab ================#
 	Then "Active Directory" main-menu on the Details page contains following sub-menu:
-	| SubTabName |
-	| Groups     |
-	| LDAP       |
+	| SubTabName       |
+	#| Active Directory |
+	| Groups           |
+	| LDAP             |
+	#================ checks counters ================#
+	#Then "Groups" tab is displayed on left menu on the Details page and contains count of items
+	Then "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Applications tab ================#
 	Then "Applications" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Summary |
 	| Evergreen Detail  |
 	| Advertisements    |
 	| Collections       |
+	#================ checks counters ================#
+	#Then "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Collections" tab is displayed on left menu on the Details page and contains count of items
+	#================ checks sub-menu for main Mailboxes tab ================#
 	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Mailboxes           |
 	| Mailbox Permissions |
-	Then following columns are displayed on the Item details page:
-	| ColumnName        |
-	| Mailbox Platform  |
-	| Server            |
-	| Email Address     |
-	| Display Name      |
-	| Owner             |
-	| Email Count       |
-	| Mailbox Size (MB) |
+	#================ checks counters ================#
+	#Then "Mailboxes" tab is displayed on left menu on the Details page and contains count of items
+	Then "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Compliance tab ================#
 	Then "Compliance" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Overview            |
@@ -1447,9 +1523,103 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Hardware Rules      |
 	| Application Summary |
 	| Application Issues  |
+	#================ checks counters ================#
+	#Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
+	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378
-Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPage
+	#remove hash when the functionality will be implemented
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16884
+Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInProjectMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	Then User sees following main-tabs on left menu on the Details page:
+	| TabName          |
+	| Details          |
+	| Projects         |
+	| Active Directory |
+	| Applications     |
+	| Mailboxes        |
+	| Compliance       |
+	#Then "Devices" tab is displayed on left menu on the Details page and contains count of items
+	#================ checks sub-menu for main Details tab ================#
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| User                    |
+	| Department and Location |
+	| Custom Fields           |
+	#================ checks counters ================#
+	#Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "User" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| Evergreen Details       |
+	| Project Details         |
+	| User Projects           |
+	| Device Project Summary  |
+	| Mailbox Project Summary |
+	#================ checks counters ================#
+	#Then "User Projects" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Device Project Summary" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Mailbox Project Summary" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Active Directory tab ================#
+	Then "Active Directory" main-menu on the Details page contains following sub-menu:
+	| SubTabName       |
+	#| Active Directory |
+	| Groups           |
+	| LDAP             |
+	#================ checks counters ================#
+	#Then "Groups" tab is displayed on left menu on the Details page and contains count of items
+	Then "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Applications tab ================#
+	Then "Applications" main-menu on the Details page contains following sub-menu:
+	| SubTabName        |
+	| Evergreen Summary |
+	| Evergreen Detail  |
+	| Advertisements    |
+	| Collections       |
+	#================ checks counters ================#
+	#Then "Evergreen Summary" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Evergreen Detail" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Collections" tab is displayed on left menu on the Details page and contains count of items
+	#================ checks sub-menu for main Mailboxes tab ================#
+	Then "Mailboxes" main-menu on the Details page contains following sub-menu:
+	| SubTabName          |
+	| Mailboxes           |
+	| Mailbox Permissions |
+	#================ checks counters ================#
+	#Then "Mailboxes" tab is displayed on left menu on the Details page and contains count of items
+	Then "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Compliance tab ================#
+	Then "Compliance" main-menu on the Details page contains following sub-menu:
+	| SubTabName          |
+	| Overview            |
+	| Hardware Summary    |
+	| Hardware Rules      |
+	| Application Summary |
+	| Application Issues  |
+	#================ checks counters ================#
+	#Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
+	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+
+	#remove hash when the functionality will be implemented
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInEvergreenMode
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
@@ -1458,32 +1628,113 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	Then User sees following main-tabs on left menu on the Details page:
 	| TabName      |
 	| Details      |
+	| Projects     |
 	| MSI          |
 	| Distribution |
-	| Projects     |
+	#================ checks sub-menu for main Details tab ================#
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName     |
 	| Application    |
 	| Advertisements |
 	| Programs       |
 	| Custom Fields  |
+	#================ checks counters ================#
+	#Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Programs" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	Then "Application" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName        |
+	| Evergreen Details |
+	| Projects          |
+	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	#================ checks counters ================#
+	#Then "Projects" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main MSI tab ================#
 	Then "MSI" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| MSIFiles   |
 	| AOK        |
+	#================ checks counters ================#
+	Then "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Distribution tab ================#
 	Then "Distribution" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| Users      |
 	| Devices    |
 	| Groups     |
 	| AD         |
+	#================ checks counters ================#
+	#Then "Users" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Devices" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Groups" tab is displayed on left menu on the Details page and contains count of items
+	Then "AD" tab is displayed on left menu on the Details page and NOT contains count of items
+
+	#remove hash when the functionality will be implemented
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885
+Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInProjectMode
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
+	When User click content from "Application" column
+	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
+	Then User sees following main-tabs on left menu on the Details page:
+	| TabName      |
+	| Details      |
+	| Projects     |
+	| MSI          |
+	| Distribution |
+	#================ checks sub-menu for main Details tab ================#
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName     |
+	| Application    |
+	| Advertisements |
+	| Programs       |
+	| Custom Fields  |
+	#================ checks counters ================#
+	#Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Programs" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	Then "Application" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Details |
+	| Project Details   |
 	| Projects          |
+	#================ checks counters ================#
+	#Then "Projects" tab is displayed on left menu on the Details page and contains count of items
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main MSI tab ================#
+	Then "MSI" main-menu on the Details page contains following sub-menu:
+	| SubTabName |
+	| MSIFiles   |
+	| AOK        |
+	#================ checks counters ================#
+	Then "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Distribution tab ================#
+	Then "Distribution" main-menu on the Details page contains following sub-menu:
+	| SubTabName |
+	| Users      |
+	| Devices    |
+	| Groups     |
+	| AD         |
+	#================ checks counters ================#
+	#Then "Users" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Devices" tab is displayed on left menu on the Details page and contains count of items
+	#Then "Groups" tab is displayed on left menu on the Details page and contains count of items
+	Then "AD" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378
-Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPage
+	#remove hash when the functionality will be implemented
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905
+Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInEvergreenMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
@@ -1495,6 +1746,10 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Projects |
 	| Users    |
 	| Trend    |
+	#Then "Related" tab is displayed with disabled state on left menu on the Details page
+	#Then "Notes" tab is displayed with disabled state on left menu on the Details page
+	#Then "Audit History" tab is displayed with disabled state on left menu on the Details page
+	#================ checks sub-menu for main Details tab ================#
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Mailbox                 |
@@ -1502,11 +1757,25 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Email Addresses         |
 	| Department and Location |
 	| Custom Fields           |
+	#================ checks counters ================#
+	Then "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Custom Fields" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
 	Then "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName            |
 	| Evergreen Details     |
 	| Mailbox Projects      |
 	| Mailbox User Projects |
+	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	#================ checks counters ================#
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Projects" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox User Projects" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Users tab ================#
 	Then "Users" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Users               |
@@ -1514,6 +1783,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Unresolved Users    |
 	| Mailbox Permissions |
 	| Folder Permissions  |
+	#================ checks counters ================#
+	Then "Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Groups" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Trend tab ================#
 	Then "Trend" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Email Count            |
@@ -1521,6 +1797,81 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Associated Item Count  |
 	| Deleted Item Count     |
 	| Deleted Item Size (MB) |
+	#================ checks counters ================#
+	Then "Email Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Associated Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906
+Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	Then User sees following main-tabs on left menu on the Details page:
+	| TabName  |
+	| Details  |
+	| Projects |
+	| Users    |
+	| Trend    |
+	#================ checks sub-menu for main Details tab ================#
+	Then "Details" main-menu on the Details page contains following sub-menu:
+	| SubTabName              |
+	| Mailbox                 |
+	| Mailbox Owner           |
+	| Email Addresses         |
+	| Department and Location |
+	| Custom Fields           |
+	#================ checks counters ================#
+	Then "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Custom Fields" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Projects tab ================#
+	Then "Projects" main-menu on the Details page contains following sub-menu:
+	| SubTabName            |
+	| Evergreen Details     |
+	| Project Details       |
+	| Mailbox Projects      |
+	| Mailbox User Projects |
+	#================ checks counters ================#
+	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Projects" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox User Projects" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Users tab ================#
+	Then "Users" main-menu on the Details page contains following sub-menu:
+	| SubTabName          |
+	| Users               |
+	| Groups              |
+	| Unresolved Users    |
+	| Mailbox Permissions |
+	| Folder Permissions  |
+	#================ checks counters ================#
+	Then "Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Groups" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Trend tab ================#
+	Then "Trend" main-menu on the Details page contains following sub-menu:
+	| SubTabName             |
+	| Email Count            |
+	| Mailbox Size (MB)      |
+	| Associated Item Count  |
+	| Deleted Item Count     |
+	| Deleted Item Size (MB) |
+	#================ checks counters ================#
+	Then "Email Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Mailbox Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Associated Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
@@ -1590,7 +1941,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatDataIsDisplayedInHardwareSummaryTabFor
 	Then element table is displayed on the Details page
 
 #test for 'Nova'
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16472 @DAS16469 @DAS15039 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1615,6 +1966,103 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	| GREY                    |
 	| NONE                    |
 
+#not fully ready on 'Nova'
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15039 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWithTheCorrectElementsAndColumns
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
+	| Devices               |
+	| Owner                 |
+	| Owner Display         |
+	| Linked By             |
+	| Path                  |
+	| Category              |
+	| Status                |
+	| Date                  |
+	| Application Readiness |
+	| Pre Migration         |
+	| Post Migration        |
+	| Migration             |
+	| Email Controls        |
+	| Communications        |
+	And Links from "Device" column is displayed to the user on the Details Page
+	And Links from "Owner" column is displayed to the user on the Details Page
+	And Links from "Owner Display Name" column is displayed to the user on the Details Page
+	And Links from "Linked By" column is displayed to the user on the Details Page
+	And Links from "Path" column is NOT displayed to the user on the Details Page
+	And Links from "Category" column is NOT displayed to the user on the Details Page
+	And Links from "Status" column is NOT displayed to the user on the Details Page
+	And Links from "Date" column is NOT displayed to the user on the Details Page
+	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
+	And User clicks "03ME2G7TIR4GBN" link on the Details Page
+	Then Details page for "03ME2G7TIR4GBN" item is displayed correctly
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	And User enters "ACG370114" text in the Search field for "Owner" column on the Details Page
+	And User clicks "ACG370114" link on the Details Page
+	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	And User enters "James N. Snow" text in the Search field for "Owner Display Name" column on the Details Page
+	And User clicks "James N. Snow" link on the Details Page
+	Then Details page for "ACG370114 (James N. Snow)" item is displayed correctly
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Related" main-menu on the Details page
+	#Not ready for 'nova'
+	#When User enters "ACG370114" text in the Search field for "Linked By" column on the Details Page
+	#When User clicks "ACG370114" link on the Details Page
+	#Then Details page for "ACG370114" item is displayed correctly
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921
+Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems     |
+	| Overall Compliance  |
+	| App Compliance      |
+	| Hardware Compliance |
+	#=====================================================================================#
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems       |
+	| Overall Compliance    |
+	| User App Compliance   |
+	| Hardware Compliance   |
+	| Device App Compliance |
+	#=====================================================================================#
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
+	When User click content from "Application" column
+	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems    |
+	| Overall Compliance |
+	#=====================================================================================#
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	Then No one Compliance items are displayed for the User in Top bar on the Item details page
+	
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15913
 Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelOfGroupedRows
 	When User clicks "Devices" on the left-hand menu
@@ -1626,3 +2074,106 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User navigates to the "Evergreen Summary" sub-menu on the Details page
 	When User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @Not_Ready
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Team              |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Device Owner      |
+	| Language          |
+	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
+	#TODO step
+	#And Link from "Device" field is displayed to the user on the Details Page
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @Not_Ready
+Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Team              |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Primary Device    |
+	| Language          |
+	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	When User click content from "Application" column
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields              |
+	| Object ID           |
+	| Team                |
+	| Capacity Unit       |
+	| Ring                |
+	| Overall Readiness   |
+	| App Readiness       |
+	| Primary App         |
+	| App Rationalisation |
+	| Target App          |
+	| Hide From End Users |
+	| Path                |
+	| Category            |
+	| Tags                |
+	Then "GREEN" content is displayed in "Overall Readiness" field on Item Details page
+	Then "GREEN" content is displayed in "App Readiness" field on Item Details page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @Not_Ready
+Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Mailbox Device    |
+	| Language          |
+	Then "NONE" content is displayed in "Overall Readiness" field on Item Details page

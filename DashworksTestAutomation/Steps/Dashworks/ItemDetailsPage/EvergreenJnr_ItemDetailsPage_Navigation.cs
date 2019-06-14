@@ -89,6 +89,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
+        [Then(@"""(.*)"" tab is displayed with disabled state on left menu on the Details page")]
+        public void ThenTabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage (string tabName)
+        {
+            _driver.WaitForDataLoading();
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsTrue(detailsPage.GetDisplayStatusForDisabledTabByName(tabName), $"{tabName} Tab must be disabled!");
+        }
+
         [Then(@"User sees following main-tabs on left menu on the Details page:")]
         public void ThenUserSeesFollowingMain_TabsOnLeftMenuOnTheDetailsPage(Table table)
         {

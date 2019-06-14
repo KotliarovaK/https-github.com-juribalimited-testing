@@ -110,6 +110,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
         public IWebElement WarningPopUp { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-optgroup/label")]
+        public IList<IWebElement> ScopeDropdownSection { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-optgroup//span")]
+        public IList<IWebElement> ScopeDropdownSectionList { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
@@ -396,5 +402,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($"//mat-checkbox[contains(@class, 'checkbox-disabled')]//span[text()='{checkboxName}']");
             return Driver.FindElement(selector);
         }
+
+        public IWebElement CorrectMainListsScopeDropdown(string checkboxName)
+        {
+            var devices = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            var users = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            var mailboxes = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            var applications = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
+            return Driver.FindElement(devices);
+        }
     }
+
 }

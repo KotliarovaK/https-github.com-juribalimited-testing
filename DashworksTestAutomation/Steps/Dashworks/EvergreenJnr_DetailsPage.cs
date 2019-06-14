@@ -158,8 +158,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinksFromColumnIsDisplayedToTheUserOnTheDetailsPage(string columnName)
         {
             var content = _driver.NowAt<DetailsPage>();
-            content.GetHrefByColumnName(columnName);
             Assert.IsTrue(content.GetHrefByColumnName(columnName) != null);
+        }
+
+        [Then(@"Links from ""(.*)"" column is NOT displayed to the user on the Details Page")]
+        public void ThenLinksFromColumnIsNOTDisplayedToTheUserOnTheDetailsPage(string columnName)
+        {
+            var content = _driver.NowAt<DetailsPage>();
+            Assert.IsFalse(content.GetHrefByColumnName(columnName) != null);
         }
 
         [Then(@"expanded section is displayed to the User")]
@@ -362,7 +368,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 menu.DateRegularValueFirst.Clear();
 
-                
+
                 if (!string.IsNullOrEmpty(row["Date"]))
                     menu.DateRegularValueFirst.SendKeys(row["Date"]);
 
@@ -454,8 +460,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterPanel = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             if (!_driver.IsElementDisplayed(By.XPath(ApplicationsDetailsTabsMenu.SiteColumnSelector)))
-            {
-            }
+            { }
             else
                 Assert.AreEqual("97px", filterPanel.PackageSiteColumnWidth());
         }
@@ -631,7 +636,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenRingDdlContainsOptionsInProjectSummarySectionOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            Assert.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x=>x.Contains("Ring") || x.Contains("[Unassigned]")), 
+            Assert.That(detailsPage.OperatorOptions.Select(value => value.Text).ToList().All(x => x.Contains("Ring") || x.Contains("[Unassigned]")),
                 "Some options are not available for selected filter");
         }
 
@@ -669,7 +674,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 $"Incorrect number of rows in agGrid.");
         }
 
-        
+
         [Then(@"""(.*)"" rows found label displays on Details Page")]
         public void ThenCorrectFoundRowsLabelDisplaysOnTheDetailsPage(string numberOfRows)
         {

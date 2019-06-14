@@ -40,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string ImageSelector = ".//i";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']")]
         public IWebElement Heading { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//p[@class='topnav-item-menu-toggle']//button[@mattooltip='Toggle Menu']")]
@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]
         public IWebElement RequestTypeDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Project']")]
+        [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
         public IWebElement ProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Project or Evergreen']")]
@@ -117,8 +117,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
         public IWebElement DateField { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Request Type']")]
-        public IWebElement RequestTypeField { get; set; }
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Path']")]
+        public IWebElement PathDropdown { get; set; }
 
         #endregion
 
@@ -849,6 +849,13 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var selector = By.XPath($"//div[@class='ag-center-cols-clipper']//div[contains(@class, 'ag-row')]/div[{GetColumnNumberByName(columnName)}]/span");
             Driver.WaitForDataLoading();
             return Driver.FindElements(selector).ToList();
+        }
+
+        public IWebElement GetHighlightedLeftMenuByName(string columnName)
+        {
+            var selector = By.XPath($".//div[@class='responsive-desktop-menu']//p[contains(@class, 'selected')]//span[text()='{columnName}']");
+            Driver.WaitForDataLoading();
+            return Driver.FindElement(selector);
         }
     }
 }

@@ -202,8 +202,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
-        [Then(@"following Values are displayed in ""(.*)"" drop-down on the Project details page:")]
-        public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheProjectDetailsPage(string dropDownName, Table table)
+        [Then(@"following Values are displayed in ""(.*)"" drop-down on the Admin page:")]
+        public void ThenFollowingValuesAreDisplayedInDrop_DownOnTheAdminPage(string dropDownName, Table table)
         {
             var page = _driver.NowAt<ProjectsPage>();
             page.GetDropDownByName(dropDownName).Click();
@@ -373,6 +373,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"Project ""(.*)"" is displayed to user")]
+        [Then(@"Automation ""(.*)"" is displayed to user")]
         public void ThenProjectIsDisplayedToUser(string projectName)
         {
             var page = _driver.NowAt<ProjectsPage>();
@@ -821,6 +822,24 @@ namespace DashworksTestAutomation.Steps.Dashworks
             dropdown.GetDropdownValueByName(value).Click();
         }
 
+        //Update step after changing Project dropdown selector
+        [When(@"User selects ""(.*)"" in the Project dropdown")]
+        public void WhenUserSelectsInTheProjectDropdown(string value)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.ProjectDropdown.Click();
+            dropdown.GetDropdownValueByName(value).Click();
+        }
+
+        //Update step after changing Project dropdown selector
+        [When(@"User selects ""(.*)"" in the Path dropdown")]
+        public void WhenUserSelectsInThePathDropdown(string value)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            dropdown.PathtDropdown.Click();
+            dropdown.GetDropdownValueByName(value).Click();
+        }
+
         [When(@"User clicks Update Team button")]
         public void WhenUserClicksUpdateTeamButton()
         {
@@ -1124,6 +1143,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(button.ActionsButton.Displayed(), "Actions dropdown is not displayed correctly");
         }
 
+        [Then(@"Actions dropdown is disabled")]
+        public void ThenActionsDropdownIsDisabled()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(button.ActionsSelectBox.GetAttribute("class").Contains("disabled"), "Actions dropdown is active");
+        }
+
         [When(@"User clicks on Actions button")]
         public void ThenUserClicksOnActionsButton()
         {
@@ -1131,6 +1157,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.ActionsButton);
             button.ActionsButton.Click();
             Logger.Write("Actions button was clicked");
+        }
+
+        [Then(@"following items are displayed in the Actions dropdown:")]
+        public void ThenFollowingItemsAreDisplayedInTheActionsDropdown(Table table)
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.ActionsButton);
+            button.ActionsButton.Click();
+            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+            var actualList = button.ActionsInDropdownList.Select(value => value.Text).ToList();
+            Assert.AreEqual(expectedList, actualList, "Actions items are different");
+            button.BodyContainer.Click();
         }
 
         [When(@"User selects ""(.*)"" in the Actions")]
@@ -1714,6 +1752,31 @@ namespace DashworksTestAutomation.Steps.Dashworks
             createProjectElement.SelectObjectForProjectCreation(objectName);
         }
 
+        [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
+        public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            StringAssert.Contains(dropdownValue, createProjectElement.ScopeProjectField.GetAttribute("value"), $"{dropdownValue} is not displayed in the Scope Automation dropdown");
+        }
+
+        [Then(@"Main lists are displayed correctly in the Scope dropdown")]
+        public void ThenMainListsAreDisplayedCorrectlyInTheScopeDropdown(Table table)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ScopeProjectField.Click();
+            createProjectElement.ScopeProjectField.SendKeys("All");
+            var sectionName = createProjectElement.ScopeDropdownSection.Select(x => x.Text).ToList();
+            var listName = createProjectElement.ScopeDropdownSectionList.Select(x => x.Text).ToList();
+            foreach (var row in table.Rows)
+            {
+                for (var i = 0; i < createProjectElement.ScopeDropdownSection.Count; i++)
+                    if (sectionName[i].Equals(row["Section"]))
+                    {
+                        Assert.AreEqual(listName[i], row["ListName"]);
+                    }
+            }
+        }
+
         [When(@"User selects ""(.*)"" in the Scope Project details")]
         public void WhenUserSelectsInTheScopeProjectDetails(string listName)
         {
@@ -2123,13 +2186,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<Capacity_SlotsPage>();
             var actionBtn = page.GetMoveToPositionDialogButtonByText(buttonName);
             Assert.IsFalse(actionBtn.Enabled, "Specified button is in Enabled state");
-        }
-
-        [When(@"User clicks ""(.*)"" bth in Move to position dialog")]
-        public void WhenUserClicksButtonInMoveToPositionDialog(string buttonName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.GetMoveToPositionDialogButtonByText(buttonName).Click();
         }
 
         [When(@"User moves ""(.*)"" slot to ""(.*)"" slot")]
