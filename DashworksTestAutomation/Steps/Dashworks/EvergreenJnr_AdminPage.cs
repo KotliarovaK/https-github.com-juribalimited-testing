@@ -1629,9 +1629,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<CreateProjectPage>();
             _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => page.CreateProjectButton);
-            page.CreateProjectButton.Click();
-            //TODO check why common click is not working
-            //_driver.ClickByJavascript(page.CreateProjectButton);
+            _driver.ClickByJavascript(page.CreateProjectButton);
             _driver.WaitForDataLoading();
             Logger.Write("Create Project button was clicked");
         }
@@ -3060,11 +3058,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_Project")]
         public void DeleteNewlyCreatedProject()
         {
-            try
-            {
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
 
-                foreach (var projectName in _projects.Value)
+            foreach (var projectName in _projects.Value)
+            {
+                try
                 {
                     if (string.IsNullOrEmpty(projectName))
                         continue;
@@ -3081,23 +3079,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var response = _client.Value.Post(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
-                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                        Logger.Write($"Unable to execute request. URI: {requestUri}");
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
+                catch (Exception e)
+                {
+                    Logger.Write($"Error during removing '{projectName}' Project: {e}");
+                }
             }
         }
 
         [AfterScenario("Delete_Newly_Created_Bucket")]
         public void DeleteAllBucketAfterScenarioRun()
         {
-            try
-            {
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
 
-                foreach (var bucketName in _buckets.Value)
+            foreach (var bucketName in _buckets.Value)
+            {
+                try
                 {
                     if (string.IsNullOrEmpty(bucketName))
                         continue;
@@ -3116,12 +3114,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var response = _client.Value.Put(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
-                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                        Logger.Write($"Unable to execute request. URI: {requestUri}");
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
+                catch (Exception e)
+                {
+                    Logger.Write($"Error during '{bucketName}' Bucket removing: {e}");
+                }
             }
         }
 
@@ -3184,6 +3182,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return DatabaseHelper.ExecuteReader(
                     $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
         }
-
     }
 }

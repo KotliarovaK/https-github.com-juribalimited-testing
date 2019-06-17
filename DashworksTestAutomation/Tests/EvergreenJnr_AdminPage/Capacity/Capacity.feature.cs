@@ -2116,7 +2116,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
-        [NUnit.Framework.CategoryAttribute("Save_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit()
         {
             System.Exception lastException = null;
@@ -2156,8 +2155,7 @@ this.FeatureBackground();
                         "DAS14218",
                         "Delete_Newly_Created_Project",
                         "Do_Not_Run_With_CapacityUnits",
-                        "Set_Default_Capacity_Unit",
-                        "Save_Default_Capacity_Unit"});
+                        "Set_Default_Capacity_Unit"});
 #line 528
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

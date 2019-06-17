@@ -2,6 +2,7 @@
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using RestSharp;
 using TechTalk.SpecFlow;
 
@@ -23,13 +24,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
         public void SetDefaultCapacityUnit()
         {
             if (string.IsNullOrEmpty(_capacityUnitUnassignedId.Value))
-                throw new Exception("Unassigned Capacity Unit ID was not saved. Please use @Save_Default_Capacity_Unit tag in you test to do this");
+                throw new Exception("Unassigned Capacity Unit ID was not saved or set.");
 
             try
             {
-                var capacityUnit = new CapacityUnitDto() { Name = "Unassigned", Description = "Unassigned", IsDefault = true };
+                var capacityUnit = new CapacityUnitDto()
+                { Name = "Unassigned", Description = "Unassigned", IsDefault = true };
 
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/capacityUnits/{_capacityUnitUnassignedId.Value}/updateCapacityUnit";
+                var requestUri =
+                    $"{UrlProvider.RestClientBaseUrl}admin/capacityUnits/{_capacityUnitUnassignedId.Value}/updateCapacityUnit";
 
                 var request = new RestRequest(requestUri);
 
@@ -44,7 +47,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
 
                 _client.Value.Put(request);
             }
-            catch { }
+            catch (Exception e)
+            {
+                Logger.Write($"Some issues appears during set of Default Capacity Unit in after scenario: {e}");
+            }
         }
     }
 }

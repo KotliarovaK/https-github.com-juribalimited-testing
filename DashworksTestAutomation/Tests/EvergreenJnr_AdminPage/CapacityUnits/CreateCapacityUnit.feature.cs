@@ -210,7 +210,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12632")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
-        [NUnit.Framework.CategoryAttribute("Save_Default_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly()
         {
@@ -248,7 +247,6 @@ this.FeatureBackground();
                         "DAS12632",
                         "Delete_Newly_Created_Capacity_Unit",
                         "Do_Not_Run_With_CapacityUnits",
-                        "Save_Default_Capacity_Unit",
                         "Set_Default_Capacity_Unit"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
