@@ -27,8 +27,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
-        public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
-
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
@@ -37,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//a[@href]/img")]
         public IWebElement DashworksLogo { get; set; }
 
-        [FindsBy(How = How.XPath, Using = OptionTabsOnAdminPage)]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'das-mat-tree-node-collapsed')]/following-sibling::ul/*[@mattreenodetoggle]")]
         public IList<IWebElement> MenuTabOptionListOnAdminPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = FirstColumnTableContent)]
@@ -336,9 +334,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetFillingFieldErrorByText(string text)
         {
-            var selector = By.XPath($".//mat-error/span[text()='{text}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            try
+            {
+                var selector = By.XPath($".//mat-error/span[text()='{text}']");
+                Driver.WaitWhileControlIsNotDisplayed(selector);
+                return Driver.FindElement(selector);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error message with '{text}' was not displayed: {e}");
+            }
         }
 
         public void AddDateByFieldName(string fieldName, string date)
@@ -657,7 +662,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDisabledTabByName(string tabName)
         {
-            var selector = By.XPath($"//li[contains(@class, 'disabled')]//a[text()='{tabName}']");
+            var selector = By.XPath($".//*[contains(@class,'mat-tree-node')][contains(@class,'disabled')]//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

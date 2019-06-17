@@ -1629,9 +1629,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<CreateProjectPage>();
             _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => page.CreateProjectButton);
-            //page.CreateProjectButton.Click();
+            page.CreateProjectButton.Click();
             //TODO check why common click is not working
-            _driver.ClickByJavascript(page.CreateProjectButton);
+            //_driver.ClickByJavascript(page.CreateProjectButton);
             _driver.WaitForDataLoading();
             Logger.Write("Create Project button was clicked");
         }
