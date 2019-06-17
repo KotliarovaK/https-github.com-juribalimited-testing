@@ -674,6 +674,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Resources\CSV-Upload-Devices - Hostname no header.csv" />
     <None Include="Resources\IncorrectFile.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

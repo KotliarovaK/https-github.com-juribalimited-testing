@@ -5,19 +5,35 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS13221 @DAS13222 @DAS16585 @Not_Ready
-Scenario Outline: EvergreenJnr_AllLists_Check
+@Evergreen @AllLists @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS13221 @DAS13222 @DAS13223 @DAS13224 @DAS16585 @Not_Ready
+Scenario Outline: EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User selects "LIST FROM CSV" from the Create actions
+	When User selects "List from CSV" from the Create actions
 	Then "<ImportPage>" Import page is displayed to the User
-	When User navigates to Pivot
-	And User selects the following Row Groups on Pivot:
-	| RowGroups   |
+	When User selects "List from CSV" from the Create actions
+	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
+	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
+	When User selects "<FileContains>" in the "File Contains" dropdown
+	Then "NEXT" Action button is active
 
 Examples:
-	| ListName     | ImportPage            |
-	| Devices      | Devices from CSV      |
-	| Users        | Users from CSV        |
-	| Applications | Applications from CSV |
-	| Mailboxes    | Mailboxes from CSV    |
+	| ListName     | ImportPage            | FileContains    |
+	| Users        | Users from CSV        | User Key        |
+	| Applications | Applications from CSV | Application Key |
+	| Mailboxes    | Mailboxes from CSV    | Mailboxe Key    |
+
+@Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @Not_Ready
+Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User selects "List from CSV" from the Create actions
+	Then "Devices from CSV" Import page is displayed to the User
+	When User clicks the "CANCEL" Action button
+	Then "Devices" list should be displayed to the user
+	When User selects "List from CSV" from the Create actions
+	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
+	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
+	Then "Include archived applications" checkbox is unchecked on the Base Dashboard Page
+	When User selects "Hostname" in the "File Contains" dropdown
+	Then "NEXT" Action button is active

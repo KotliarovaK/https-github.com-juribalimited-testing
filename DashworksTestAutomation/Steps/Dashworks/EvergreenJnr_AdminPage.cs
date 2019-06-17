@@ -440,6 +440,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" checkbox is unchecked on the Admin page")]
+        [Then(@"""(.*)"" checkbox is unchecked on the Base Dashboard Page")]
         public void ThenCheckboxIsUncheckedOnTheAdminPage(string checkbox)
         {
             var page = _driver.NowAt<BaseGridPage>();

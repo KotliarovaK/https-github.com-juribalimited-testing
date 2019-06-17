@@ -10,6 +10,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//h1[contains(text(), 'Import ')]")]
         public IWebElement ImportListsTitle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//input[@id='fileUploader']")]
+        public IWebElement ChooseFile { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

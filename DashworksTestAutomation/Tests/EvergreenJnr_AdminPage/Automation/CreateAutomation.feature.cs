@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS15626")]
         [NUnit.Framework.CategoryAttribute("DAS16880")]
         [NUnit.Framework.CategoryAttribute("DAS16931")]
+        [NUnit.Framework.CategoryAttribute("DAS17102")]
         [NUnit.Framework.CategoryAttribute("Remove_Profile_Changes")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckActionGridInAutomations()
@@ -128,6 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "DAS15626",
                         "DAS16880",
                         "DAS16931",
+                        "DAS17102",
                         "Remove_Profile_Changes",
                         "Not_Ready"});
 #line 9
