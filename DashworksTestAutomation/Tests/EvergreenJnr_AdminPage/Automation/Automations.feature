@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -457,8 +457,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User enters "16764_Automation" text in the Search field for "Automation" column
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	Then Warning message with "This automation will be permanently deleted" text is displayed on the Admin page
-	#Remove # after Cancel button is clickable
-	#When User clicks Cancel button in the warning message on the Admin page
+	When User clicks Cancel button in the warning message on the Admin page
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "1 automation deleted" text
@@ -513,3 +512,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then "[List not found]" content is displayed in the Scope Automation dropdown
+	When User clicks "Administration" navigation link on the Admin page
+	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
+	When User selects "Automation Log" tab on the Project details page
+	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
+	Then "LIST DOES NOT EXIST" content is displayed for "Outcome" column

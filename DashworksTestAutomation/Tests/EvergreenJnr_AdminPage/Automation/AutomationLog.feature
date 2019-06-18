@@ -5,7 +5,6 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#Update tests with new gold data
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When User clicks Admin on the left-hand menu
@@ -46,3 +45,39 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "16890_Action" checkbox from String Filter with item list on the Admin page
 	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
+
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
+#Use Inactive Automation
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "Melbourne - not onboarded" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
+	Then Success message is displayed and contains "1 automation started," text
+	When User selects "Automation Log" tab on the Project details page
+	When User enters "Melbourne - not onboarded" text in the Search field for "Automation" column
+	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
+
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
+#Use correct, active Automation
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "DD Autimation" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
+	Then Success message is displayed and contains "1 automation started," text
+	When User selects "Automation Log" tab on the Project details page
+	When User enters "DD Autimation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column

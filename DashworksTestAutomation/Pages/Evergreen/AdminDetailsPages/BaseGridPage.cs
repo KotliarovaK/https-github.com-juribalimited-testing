@@ -671,7 +671,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetButtonInWarningPopUp(string buttonName)
         {
-            var selector = By.XPath($".//mat-dialog-container//button/span[text()='YES']");
+            var selector = By.XPath($".//mat-dialog-container//button/span[text()='{buttonName}']");
             return Driver.FindElement(selector);
         }
 
