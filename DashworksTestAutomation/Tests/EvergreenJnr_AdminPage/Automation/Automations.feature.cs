@@ -658,7 +658,7 @@ this.FeatureBackground();
             table10.AddRow(new string[] {
                         "Active"});
             table10.AddRow(new string[] {
-                        "Run Status"});
+                        "Running"});
             table10.AddRow(new string[] {
                         "Scope"});
             table10.AddRow(new string[] {

@@ -189,7 +189,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationCogMenuMoveToTopOptionWorksC
     |                  |
     | Processing order |
     | Active           |
-    | Run Status       |
+    | Running          |
     | Scope            |
     | Run              |
     | Actions          |
