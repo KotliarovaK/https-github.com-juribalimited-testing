@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement BodyContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
-        public IWebElement WarningPopUp { get; set; }
+        public IWebElement WarningPopUpPanel { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
         public IWebElement ErrorBox  { get; set; }

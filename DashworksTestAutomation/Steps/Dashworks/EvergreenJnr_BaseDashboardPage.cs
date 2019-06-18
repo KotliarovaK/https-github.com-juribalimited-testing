@@ -644,7 +644,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningPop_UpIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(page.WarningPopUp.Displayed(), "Warning Pop-up is not displayed");
+            Assert.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
         }
 
         [When(@"User clicks ""(.*)"" button in the Warning Pop-up message")]
