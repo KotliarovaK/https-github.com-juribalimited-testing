@@ -211,7 +211,8 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
 	When User type "" Name in the "Automation Name" field on the Automation details page
-	Then Filling field error with "An Automation Name must be entered" text is displayed
+	When User type "" Name in the "Description" field on the Automation details page
+	Then Filling field error with "An automation name must be entered" text is displayed
 	When User type "Melbourne User" Name in the "Automation Name" field on the Automation details page
 	When User type "Melbourne users" Name in the "Description" field on the Automation details page
 	When User selects "Melbourne Users" in the Scope Automation dropdown
