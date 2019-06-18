@@ -226,6 +226,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16728")]
         [NUnit.Framework.CategoryAttribute("DAS16976")]
         [NUnit.Framework.CategoryAttribute("DAS17067")]
+        [NUnit.Framework.CategoryAttribute("DAS16890")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly()
         {
@@ -265,6 +266,7 @@ this.FeatureBackground();
                         "DAS16728",
                         "DAS16976",
                         "DAS17067",
+                        "DAS16890",
                         "Not_Ready"});
 #line 56
 this.ScenarioInitialize(scenarioInfo);

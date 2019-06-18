@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Then Evergreen Dashboards page should be displayed to the user
 
 #Update tests with new gold data
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15903 @DAS13467 @DAS16239 @DAS16510 @DAS16511 @DAS16754 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15903 @DAS13467 @DAS16239 @DAS16510 @DAS16511 @DAS16754 @DAS16890 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -26,6 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Duration (hh:mm) |
 	| Outcome          |
 	Then Export button is displayed
+	Then "SUCCESS" content is displayed in "Outcome" column
 	When User have opened column settings for "Date" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
@@ -35,6 +36,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User select "Action Project" checkbox on the Column Settings panel
 	When User select "Action Task or Field" checkbox on the Column Settings panel
 	When User select "Action Value" checkbox on the Column Settings panel
+	When User select "Action Value ID" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
 	| ColumnName           |
@@ -43,6 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	| Action Type          |
 	| Action Project       |
 	| Action Task or Field |
+	| Action Value ID      |
 	| Action Value         |
 	When User clicks String Filter button for "Scope" column on the Admin page
 	When User selects "1803 Rollout" checkbox from String Filter on the Admin page
