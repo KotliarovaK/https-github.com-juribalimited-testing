@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public bool GetTheDisplayStateOfContentOnOpenTab(string name)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//div[contains(@class, 'details-keyvalue')]//span[text()='{name}']"));
+            return Driver.IsElementDisplayed(By.XPath($"//td[@role='gridcell']//span[text()='{name}']"));
         }
 
         public bool CheckThatSelectedTabHasOpened(string name)

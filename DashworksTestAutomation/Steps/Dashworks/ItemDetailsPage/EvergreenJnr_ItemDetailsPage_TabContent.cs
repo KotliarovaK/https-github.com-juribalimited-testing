@@ -49,6 +49,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.IsTrue(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
         }
 
+        [Then(@"field with ""(.*)"" text is not displayed in expanded tab on the Details Page")]
+        public void ThenFieldWithTextIsNotDisplayedInExpandedTabOnTheDetailsPage(string text)
+        {
+            var content = _driver.NowAt<TabContent>();
+            Assert.IsFalse(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
+        }
+
         [Then(@"element table is displayed on the Details page")]
         public void ThenElementTableIsDisplayedOnTheDetailsPage()
         {

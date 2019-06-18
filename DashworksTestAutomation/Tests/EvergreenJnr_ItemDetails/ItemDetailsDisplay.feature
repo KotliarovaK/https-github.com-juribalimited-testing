@@ -2178,23 +2178,44 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "abel.y.hanson@dwlabs.local"
-	When User click content from "Email Address" column
+	And User click content from "Email Address" column
 	Then Details page for "abel.y.hanson@dwlabs.local" item is displayed to the user
 	When User navigates to the "Users" main-menu on the Details page
 	Then "7" rows found label displays on Details Page
-	Then "Administrator" content is displayed in "Username" column
+	And "Administrator" content is displayed in "Username" column
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	Then "1" rows found label displays on Details Page
-	Then "hansonay" content is displayed in "Username" column
+	And "hansonay" content is displayed in "Username" column
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17086
 Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsOpenedCorrectlyWithSameKeyAndUserValues
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
-	When User click content from "Hostname" column
+	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the "Users" main-menu on the Details page
 	And User clicks "Nicole P. Braun" link on the Details Page
 	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
-	Then "Key" title matches the "23726" value
+	And "Key" title matches the "23726" value
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007
+Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	And User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
