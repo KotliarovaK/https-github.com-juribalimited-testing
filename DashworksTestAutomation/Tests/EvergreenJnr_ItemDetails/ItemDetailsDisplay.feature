@@ -2077,6 +2077,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2094,8 +2095,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Device Owner      |
 	| Language          |
 	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
-	#TODO step
-	#And Link from "Device" field is displayed to the user on the Details Page
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @Not_Ready
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
@@ -2104,6 +2103,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	When User perform search by "0072B088173449E3A93"
 	When User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2117,9 +2117,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Overall Readiness |
 	| Path              |
 	| Category          |
+	| Language          |
 	| Tags              |
 	| Primary Device    |
-	| Language          |
 	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @Not_Ready
@@ -2129,6 +2129,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	When User click content from "Application" column
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2146,16 +2147,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Path                |
 	| Category            |
 	| Tags                |
-	Then "GREEN" content is displayed in "Overall Readiness" field on Item Details page
-	Then "GREEN" content is displayed in "App Readiness" field on Item Details page
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
 	When User click content from "Email Address" column
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2169,9 +2169,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Path              |
 	| Category          |
 	| Tags              |
-	| Mailbox Device    |
+	| Mailbox Owner     |
 	| Language          |
-	Then "NONE" content is displayed in "Overall Readiness" field on Item Details page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087
 Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAProjectOnTheMailboxDetailsPage

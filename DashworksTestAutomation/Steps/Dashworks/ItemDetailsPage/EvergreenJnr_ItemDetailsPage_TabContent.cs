@@ -81,13 +81,5 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var projectTabs = _driver.NowAt<TabContent>();
             Assert.IsFalse(projectTabs.GetContentDisplayState(textContent));
         }
-
-        [Then(@"Link from ""(.*)"" field is displayed to the user on the Details Page")]
-        public void ThenLinkFromFieldIsDisplayedToTheUserOnTheDetailsPage(string fieldName)
-        {
-            var content = _driver.NowAt<TabContent>();
-            //TODO GetHrefByFieldName 
-            //Assert.IsTrue(content.GetHrefByFieldName(fieldName) != null);
-        }
     }
 }
