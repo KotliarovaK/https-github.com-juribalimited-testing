@@ -37,3 +37,10 @@ Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCS
 	Then "Include archived applications" checkbox is unchecked on the Base Dashboard Page
 	When User selects "Hostname" in the "File Contains" dropdown
 	Then "NEXT" Action button is active
+	When User clicks the "CANCEL" Action button
+	Then Warning Pop-up is displayed to the User
+	When User clicks "NO" button in the Warning Pop-up message
+	When User clicks the "CANCEL" Action button
+	Then Warning Pop-up is displayed to the User
+	When User clicks "YES" button in the Warning Pop-up message
+	Then "Devices" list should be displayed to the user

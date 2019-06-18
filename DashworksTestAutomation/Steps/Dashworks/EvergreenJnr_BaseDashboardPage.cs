@@ -640,6 +640,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
         }
 
+        [Then(@"Warning Pop-up is displayed to the User")]
+        public void ThenWarningPop_UpIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.WarningPopUp.Displayed(), "Warning Pop-up is not displayed");
+        }
+
+        [When(@"User clicks ""(.*)"" button in the Warning Pop-up message")]
+        public void WhenUserClicksButtonInTheWarningPop_UpMessage(string buttonName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetButtonInWarningPopUp(buttonName).Click();
+        }
+
         [Then(@"Error page is displayed correctly")]
         public void ThenErrorPageIsDisplayedCorrectly()
         {

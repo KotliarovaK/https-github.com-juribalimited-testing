@@ -50,6 +50,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
+        public IWebElement WarningPopUp { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
         public IWebElement ErrorBox  { get; set; }
 
@@ -665,7 +668,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($".//mat-form-field[contains(@class, 'invalid')]//label[text()='{fieldName}']");
             return Driver.FindElement(selector);
         }
-        
+
+        public IWebElement GetButtonInWarningPopUp(string buttonName)
+        {
+            var selector = By.XPath($".//mat-dialog-container//button/span[text()='YES']");
+            return Driver.FindElement(selector);
+        }
+
         public List<string> GetSumOfObjectsContent(string columnName)
         {
             var by = By.XPath(
