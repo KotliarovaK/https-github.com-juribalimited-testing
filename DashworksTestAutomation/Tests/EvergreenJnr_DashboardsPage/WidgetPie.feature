@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User selects "Count" as Widget Aggregate Function
 	Then Aggregate By dropdown is disabled
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -196,13 +196,14 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	| Device Key                           |
 	| Hostname                             |
 	| First Seen Date                      |
+	| Compliance                           |
 	| Device Type                          |
 	| HDD Total Size (GB)                  |
 	| Operating System                     |
 	| Owner Display Name                   |
 	| 1803: In Scope                       |
 	| Windows7Mi: Communication \ DateTime |
-	#| Compliance                           |
+
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown	

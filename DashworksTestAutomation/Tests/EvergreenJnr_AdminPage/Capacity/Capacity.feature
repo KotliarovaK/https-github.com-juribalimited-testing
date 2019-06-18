@@ -571,7 +571,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" content is displayed for "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits
 	When User navigates to "Email Migration" project details
 	And User clicks "Capacity" tab

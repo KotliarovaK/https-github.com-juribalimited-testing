@@ -4166,7 +4166,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Senior")]
-        [NUnit.Framework.CategoryAttribute("Nott_Run")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAddingRemovingTaskFromCapacitySlot()
         {
             System.Exception lastException = null;
@@ -4206,7 +4206,7 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_Slots",
                         "Do_Not_Run_With_Senior",
-                        "Nott_Run"});
+                        "Not_Run"});
 #line 1130
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
