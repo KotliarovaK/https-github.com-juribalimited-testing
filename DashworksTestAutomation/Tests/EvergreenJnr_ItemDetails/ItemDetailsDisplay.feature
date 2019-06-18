@@ -2186,3 +2186,15 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	Then "1" rows found label displays on Details Page
 	Then "hansonay" content is displayed in "Username" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17086
+Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsOpenedCorrectlyWithSameKeyAndUserValues
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	When User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	And User clicks "Nicole P. Braun" link on the Details Page
+	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	Then "Key" title matches the "23726" value

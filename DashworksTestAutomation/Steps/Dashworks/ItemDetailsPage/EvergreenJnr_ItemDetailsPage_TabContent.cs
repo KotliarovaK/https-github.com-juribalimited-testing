@@ -35,8 +35,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"Details page for ""(.*)"" item is displayed to the user")]
         public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
         {
-            _driver.WaitForDataLoading();
-
             var detailsPage = _driver.NowAt<DetailsPage>();
             NUnit.Framework.Assert.IsTrue(detailsPage.GroupIcon.Displayed());
 
