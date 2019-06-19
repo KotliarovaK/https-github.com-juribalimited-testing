@@ -2057,6 +2057,60 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	When User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	Then No one Compliance items are displayed for the User in Top bar on the Item details page
+
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762
+Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| App Readiness     |
+	| Task Readiness    |
+	| Workflow          |
+	#=====================================================================================#
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| App Readiness     |
+	| Task Readiness    |
+	| Workflow          |
+	#=====================================================================================#
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
+	When User click content from "Application" column
+	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	When User switches to the "Computer Scheduled Test (Jo)" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| App Readiness     |
+	| Task Readiness    |
+	| Workflow          |
+	#=====================================================================================#
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| Task Readiness    |
+	| Workflow          |
 	
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15913
 Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelOfGroupedRows
