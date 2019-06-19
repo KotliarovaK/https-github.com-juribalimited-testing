@@ -59,8 +59,9 @@ Examples:
 	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Evergreen Summary | Application | Key                 | Key                 |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Projects          | Project     | Object ID           | Object ID           |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Projects          | Project     | Object Key          | Object Key          |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Key                 | Key                 |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Evergreen Object ID | Evergreen Object ID |
+	#archived
+	#| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Key                 | Key                 |
+	#| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Evergreen Object ID | Evergreen Object ID |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @DAS13657
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
@@ -118,7 +119,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User select "Device" checkbox on the Column Settings panel
 	And User select "Installed" checkbox on the Column Settings panel
 	And User select "Owner Display Name" checkbox on the Column Settings panel
-	And User select "<CheckboxName>" checkbox on the Column Settings panel
+	And User select "<NewColumnName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
 	| ColumnName      |
@@ -129,11 +130,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| MainTabName  | SubTabName | CheckboxName      | NewColumnName     |
-	| Distribution | Devices    | User Key          | User Key          |
-	| Distribution | Devices    | Advertisement Key | Advertisement Key |
-	| Distribution | Devices    | Collection Key    | Collection Key    |
-	| Distribution | Devices    | Program Key       | Program Key       |
+	| MainTabName  | SubTabName | NewColumnName     |
+	| Distribution | Devices    | Computer Key      |
+	| Distribution | Devices    | Advertisement Key |
+	| Distribution | Devices    | Collection Key    |
+	| Distribution | Devices    | Program Key       |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @DAS13657
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
@@ -796,7 +797,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
-	And User have opened Column Settings for "Username" column in the Details Page table
+	And User have opened Column Settings for "User" column in the Details Page table
 	And User have select "Sort descending" option from column settings on the Details Page
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
@@ -1029,13 +1030,14 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then Rows counter shows "99" of "173" rows
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923
+	#added hash because of the DAS17093 bug 6/19/2019
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User perform search by "<SearchText>"
+	When User perform search by "<ItemName>"
 	When User clicks content from "<ColumnName>" column
-	Then Details page for "<PegeItemName>" item is displayed to the user
+	Then Details page for "<ItemName>" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Evergreen Details" sub-menu on the Details page
 	Then field with "Project Count" text is displayed in expanded tab on the Details Page
@@ -1045,10 +1047,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 	And There are no errors in the browser console
 
 Examples:
-	| ListName  | SearchText                       | ColumnName    | PegeItemName                     |
-	| Devices   | 00HA7MKAVVFDAV                   | Hostname      | 00HA7MKAVVFDAV                   |
-	| Users     | 0072B088173449E3A93              | Username      | 0072B088173449E3A93              |
-	| Mailboxes | 00C8BC63E7424A6E862@bclabs.local | Email Address | 00C8BC63E7424A6E862@bclabs.local |
+	| ListName  | ItemName                         | ColumnName    |
+	| Devices   | 00HA7MKAVVFDAV                   | Hostname      |
+	| Users     | 0072B088173449E3A93              | Username      |
+	#| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
