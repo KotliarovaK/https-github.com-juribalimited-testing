@@ -2272,3 +2272,20 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
+
+	#added hash because of the DAS17005 bug 6/19/2019
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User clicks by Project Switcher in the Top bar on Item details page
+	#Then Project Switcher in the Top bar on Item details page is open
+	#When User clicks by Project Switcher in the Top bar on Item details page
+	#Then Project Switcher in the Top bar on Item details page is closed
+	Then projects on the Project Switcher panel are displayed in alphabetical order
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User clicks by Project Switcher in the Top bar on Item details page
+	Then projects on the Project Switcher panel are displayed in alphabetical order

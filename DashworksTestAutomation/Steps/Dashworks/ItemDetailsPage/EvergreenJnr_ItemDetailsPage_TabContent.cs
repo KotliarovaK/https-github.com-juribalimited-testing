@@ -79,7 +79,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenContentIsNotDisplayedInTheGridOnTheItemDetailsPage(string textContent)
         {
             var projectTabs = _driver.NowAt<TabContent>();
-            Assert.IsFalse(projectTabs.GetContentDisplayState(textContent));
+            Assert.IsFalse(projectTabs.GetContentDisplayState(textContent), $"{textContent} content should not be displayed in the grid on the Item details page!");
         }
     }
 }
