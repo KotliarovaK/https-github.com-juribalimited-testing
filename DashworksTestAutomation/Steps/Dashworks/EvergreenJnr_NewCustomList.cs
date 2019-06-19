@@ -293,6 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveAsDropdown);
             listElement.SaveAsDropdown.Click();
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.UpdateCurrentListButton);
+            _driver.WaitForDataLoading();
             listElement.UpdateCurrentListButton.Click();
         }
 

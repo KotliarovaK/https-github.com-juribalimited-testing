@@ -15,16 +15,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads
 	When User selects "Automation Log" tab on the Project details page
 	Then "Automations" sub-menu section is expanded
 	Then Columns on Admin page is displayed in following order:
-	| ColumnName       |
-	| Date             |
-	| Type             |
-	| Automation       |
-	| Action           |
-	| Run              |
-	| Objects          |
-	| User             |
-	| Duration (hh:mm) |
-	| Outcome          |
+	| ColumnName          |
+	| Date                |
+	| Type                |
+	| Automation          |
+	| Action              |
+	| Run                 |
+	| Objects             |
+	| Duration (hh:mm:ss) |
+	| User                |
+	| Outcome             |
 	Then Export button is displayed
 	Then "SUCCESS" content is displayed in "Outcome" column
 	When User have opened column settings for "Date" column
@@ -480,7 +480,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| All Devices      |
 	| 1803 Rollout     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @Delete_Newly_Created_List @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button

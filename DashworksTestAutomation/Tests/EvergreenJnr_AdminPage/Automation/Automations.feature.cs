@@ -167,9 +167,9 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Objects"});
             table1.AddRow(new string[] {
-                        "User"});
+                        "Duration (hh:mm:ss)"});
             table1.AddRow(new string[] {
-                        "Duration (hh:mm)"});
+                        "User"});
             table1.AddRow(new string[] {
                         "Outcome"});
 #line 17
@@ -1590,6 +1590,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS15886")]
         [NUnit.Framework.CategoryAttribute("DAS15423")]
+        [NUnit.Framework.CategoryAttribute("DAS16317")]
+        [NUnit.Framework.CategoryAttribute("DAS16316")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList()
@@ -1628,6 +1630,8 @@ this.FeatureBackground();
                         "Automations",
                         "DAS15886",
                         "DAS15423",
+                        "DAS16317",
+                        "DAS16316",
                         "Delete_Newly_Created_List",
                         "Not_Ready"});
 #line 484

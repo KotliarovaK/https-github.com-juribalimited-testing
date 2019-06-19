@@ -11,6 +11,9 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
+	#When User creates new Automation Unit via API
+	#| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
+	#| 15309_laptop   | 15309       | true   | true               | All Devices | Manual |
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
 	When User type "15309_laptop" Name in the "Automation Name" field on the Automation details page
@@ -30,18 +33,6 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User clicks "Actions" tab
 	Then "No Actions Found" message is displayed on the Admin Page
 	Then "CREATE ACTION" Action button is active
-	#When User clicks Profile in Account Dropdown
-	#Then Profile page is displayed to user
-	#When User navigates to the "Preferences" page on Account details
-	#And User changes language to "Deutsch"
-	#And User clicks Update button on Preferences page
-	#When Evergreen QueryStringURL is entered for Complex QueryType	
-	#| QueryType   | QueryStringURL                 |
-	#| Automations | evergreen/#/admin/automations/ |
-	#Then "15309_laptop" content is displayed in "Automation Name" field
-	#When User enters "15309_laptop" text in the Search field for "Automation" column
-	#When User clicks content from "Automation" column
-	#Then "15309_laptop" content is displayed in "Automation Name" field
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS15764 @DAS15423 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation

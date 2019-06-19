@@ -11,7 +11,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage
 	Then "<ListName>" list should be displayed to the user
 	When User selects "List from CSV" from the Create actions
 	Then "<ImportPage>" Import page is displayed to the User
-	When User selects "List from CSV" from the Create actions
 	When User selects "CSV-Upload-Devices - Hostname no header.csv" file to upload on Import Lists from CSV page
 	Then "File has headers" checkbox is unchecked on the Base Dashboard Page
 	When User selects "<FileContains>" in the "File Contains" dropdown
@@ -19,9 +18,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckCreatingStaticListFromCSVFirstPage
 
 Examples:
 	| ListName     | ImportPage            | FileContains    |
-	| Users        | Users from CSV        | User Key        |
-	| Applications | Applications from CSV | Application Key |
-	| Mailboxes    | Mailboxes from CSV    | Mailboxe Key    |
+	| Users        | Users from CSV        | User key        |
+	| Applications | Applications from CSV | Application key |
+	| Mailboxes    | Mailboxes from CSV    | Mailbox key     |
 
 @Evergreen @EvergreenJnr_ListFromCSV @ListsFromCSV @DAS16616 @DAS16585 @Not_Ready
 Scenario: EvergreenJnr_AllLists_CheckCancelButtonFunctionalityOnCreateListFromCSV
