@@ -624,28 +624,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByTextValueByName(string value, string dropdownName)
         {
-            var selector = By.XPath($"//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
+            var selector = By.XPath($".//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropdownByValueByName(string value, string dropdownName)
         {
-            var selector = By.XPath($"//mat-form-field//label[text()='{dropdownName}']//ancestor::div//span[text()='{value}']");
+            var selector = By.XPath($".//mat-form-field//label[text()='{dropdownName}']//ancestor::div//span[text()='{value}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDisabledTabByName(string tabName)
         {
-            var selector = By.XPath($"//li[contains(@class, 'disabled')]//a[text()='{tabName}']");
+            var selector = By.XPath($".//li[contains(@class, 'disabled')]//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetLinkByText(string text)
         {
-            var selector = By.XPath($"//span[contains(@class, 'inline-link')]//a[text()='{text}']");
+            var selector = By.XPath($".//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -659,7 +659,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetOpenedPageByName(string pageName)
         {
-            var selector = By.XPath($"//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
+            var selector = By.XPath($".//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
             return Driver.FindElement(selector);
         }
 
@@ -678,13 +678,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public List<string> GetSumOfObjectsContent(string columnName)
         {
             var by = By.XPath(
-                $"//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
+                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public IWebElement GetValueInGroupByFilterOnAdminPAge(string value)
         {
-            var selector = By.XPath($"//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
+            var selector = By.XPath($".//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }

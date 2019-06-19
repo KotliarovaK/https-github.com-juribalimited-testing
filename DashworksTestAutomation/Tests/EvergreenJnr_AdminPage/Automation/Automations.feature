@@ -517,3 +517,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST DOES NOT EXIST" content is displayed for "Outcome" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @Not_Ready
+#Change value after gold data complete added
+Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "Test_Automation" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	Then Warning message with "Are you sure you wish to run 2 automations?" text is displayed on the Admin page
+	When User clicks "RUN" button in the warning message on Admin page
+	Then Success message is displayed and contains "2 automations started," text
+	When User selects "Automation Log" tab on the Project details page
+	When User enters "Test_Automation" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column

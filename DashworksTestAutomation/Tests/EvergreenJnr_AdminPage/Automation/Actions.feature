@@ -245,3 +245,17 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then "CANCEL" Action button is active
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @Not_Ready
+#Change value after gold data complete added
+Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "Edinburgh" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User enters "TEST 2" text in the Search field for "Action" column
+	Then Edit Action page is displayed to the User
+	Then "TEST 2" content is displayed in "Action Name" field
