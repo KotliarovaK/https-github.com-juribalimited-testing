@@ -636,6 +636,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetDropdownByNameForAutomations(string value, string dropdownName)
+        {
+            var selector = By.XPath($".//mat-select//span[text()='{value}']//ancestor::div//label[text()='{dropdownName}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetDisabledTabByName(string tabName)
         {
             var selector = By.XPath($".//li[contains(@class, 'disabled')]//a[text()='{tabName}']");

@@ -338,10 +338,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
 #change item name when state status will be fixed
-	When User clicks "Run now" option in Cog-menu for "Delay_Automation" item on Admin page
-	When User clicks the "RUN" Action button
-	Then Warning message with "Are you sure you wish to run 1 automation?" text is displayed on the Admin page
-	When User clicks "RUN" button in the warning message on Admin page
+	When User clicks "Run now" option in Cog-menu for "DELAY - do not delete3" item on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User clicks the Logout button
 	Then User is logged out
@@ -355,10 +352,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User clicks "Delete" option in Cog-menu for "Delay_Automation" item on Admin page
-	Then "Delay_Automation" item is not displayed in the grid on Admin page
-	Then Error message with "This automation is currently running" text is displayed
-	When User clicks Cog-menu for "Delay_Automation" item on Admin page
+	When User enters "DELAY - do not delete3" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	And User clicks on Actions button
+	And User selects "Delete" in the Actions
+	And User clicks Delete button
+	When User clicks Delete button in the warning message
+	Then Warning message with "Cannot delete a running automation" text is displayed on the Admin page
+	When User clicks Cog-menu for "DELAY - do not delete3" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -366,8 +367,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	| Move to top      |
 	| Move to bottom   |
 	| Move to position |
-	| Make active      |
-	| Delete           |
+	| Make inactive    |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15634 @DAS15756 @DAS15754 @Not_Ready
 #Change value after gold data complete added

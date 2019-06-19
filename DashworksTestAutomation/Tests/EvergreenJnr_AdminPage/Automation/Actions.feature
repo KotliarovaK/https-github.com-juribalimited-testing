@@ -259,3 +259,18 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User enters "TEST 2" text in the Search field for "Action" column
 	Then Edit Action page is displayed to the User
 	Then "TEST 2" content is displayed in "Action Name" field
+	Then "[Default (Computer)]" value is displayed in the "Update path" dropdown
+	Then "Update path" value is displayed in the "Action Type" dropdown for Automation
+	Then "UPDATE" Action button is disabled
+	Then "CANCEL" Action button is active
+	When User type "" Name in the "Action Name" field on the Automation details page
+	Then Filling field error with "An action name must be entered" text is displayed
+	Then "UPDATE" Action button is disabled
+	When User type "TEST 2" Name in the "Action Name" field on the Automation details page
+	Then "UPDATE" Action button is disabled
+	When User type "TEST NEW" Name in the "Action Name" field on the Automation details page
+	Then "UPDATE" Action button is active
+	When User selects "1803 Rollout" in the Project dropdown
+	Then "UPDATE" Action button is disabled
+	Then "" value is displayed in the "Update path" dropdown
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text

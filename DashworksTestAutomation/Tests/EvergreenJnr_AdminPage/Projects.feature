@@ -4062,7 +4062,8 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOn
 	When User removes the Project
 	Then Error message is displayed with "This project does not exist. The project has not been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16365
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16365 @DAS17167 @Not_Run
+#Remove Not Run after DAS 17167 fixed
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterSelectingBrokenListToProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
