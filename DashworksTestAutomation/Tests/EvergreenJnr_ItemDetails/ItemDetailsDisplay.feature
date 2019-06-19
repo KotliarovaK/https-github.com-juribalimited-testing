@@ -811,7 +811,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @Delete_Newly_Created_Bucket
+	#added hash because of the DAS17093 bug 6/19/2019
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -876,7 +877,6 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 	#============================================================================#
-	#unavailable for 'nova' now
 		#go to Mailboxes page
 	#When User clicks "Mailboxes" on the left-hand menu
 	#Then "Mailboxes" list should be displayed to the user
