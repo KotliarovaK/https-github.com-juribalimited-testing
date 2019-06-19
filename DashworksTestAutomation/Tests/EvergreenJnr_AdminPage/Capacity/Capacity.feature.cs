@@ -2321,6 +2321,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13156")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits()
         {
             System.Exception lastException = null;
@@ -2356,7 +2357,8 @@ this.FeatureBackground();
                         "Capacity",
                         "Units",
                         "DAS13156",
-                        "Set_Default_Capacity_Unit"});
+                        "Set_Default_Capacity_Unit",
+                        "Not_Run"});
 #line 575
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
