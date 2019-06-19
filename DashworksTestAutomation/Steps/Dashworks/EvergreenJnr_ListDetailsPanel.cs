@@ -40,6 +40,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
         }
 
+        [When(@"User adds ""(.*)"" to list name")]
+        public void WhenUserAddsTextToListName(string listName)
+        {
+            var listDetailsElement = _driver.NowAt<ListDetailsElement>();
+            listDetailsElement.ListNameField.Click();
+            listDetailsElement.ListNameField.SendkeysWithDelay(listName);
+            Thread.Sleep(3000);//Wait for autosave action, no indicators available
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User is closed List Details panel")]
         public void WhenUserIsClosedListDetailsPanel()
         {

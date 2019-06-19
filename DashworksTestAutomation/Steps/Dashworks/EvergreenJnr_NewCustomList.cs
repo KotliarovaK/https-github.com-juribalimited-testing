@@ -379,6 +379,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.DuplicateButton.Click();
         }
 
+        [When(@"User opens manage pane for list with ""(.*)"" name")]
+        public void WhenUserManagePaneForListName(string listName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            listElement.ClickSettingsButtonByListName(listName);
+            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.DuplicateButton);
+            listElement.ManageButton.Click();
+        }
+
         [Then(@"list name automatically changed to ""(.*)"" name")]
         public void ThenListNameAutomaticallyChangedToName(string listName)
         {
