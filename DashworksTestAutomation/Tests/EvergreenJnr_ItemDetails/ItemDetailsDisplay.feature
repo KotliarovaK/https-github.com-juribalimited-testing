@@ -2070,14 +2070,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @Not_Ready
+	#Language field is still missing
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2094,9 +2095,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Tags              |
 	| Device Owner      |
 	| Language          |
-	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @Not_Ready
+	#added hash because of the bug DAS17160
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -2117,12 +2118,12 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Overall Readiness |
 	| Path              |
 	| Category          |
-	| Language          |
 	| Tags              |
 	| Primary Device    |
-	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
+	| Language          |
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @Not_Ready
+	#added hash because of the bug DAS17158
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -2137,7 +2138,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Object ID           |
 	| Team                |
 	| Capacity Unit       |
-	| Ring                |
 	| Overall Readiness   |
 	| App Readiness       |
 	| Primary App         |
