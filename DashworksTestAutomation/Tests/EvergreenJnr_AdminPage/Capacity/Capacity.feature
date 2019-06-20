@@ -524,7 +524,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit @Save_Default_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -571,7 +571,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" content is displayed for "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Set_Default_Capacity_Unit @Set_Default_Capacity_Unit @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits
 	When User navigates to "Email Migration" project details
 	And User clicks "Capacity" tab
@@ -608,11 +608,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User clicks String Filter button for "Project" column
 	When User selects "Email Migration" checkbox from String Filter with item list on the Admin page
 	Then "2" content is displayed in "Applications" column
-	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	And User click content from "Capacity Unit" column
-	And User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
-	When User clicks Reset Filters button on the Admin page
+	#remove this part
+	#When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	#And User click content from "Capacity Unit" column
+	#And User updates the "Default Unit" checkbox state
+	#And User clicks the "UPDATE" Action button
+	#When User clicks Reset Filters button on the Admin page
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName |
 	| 1Test            |

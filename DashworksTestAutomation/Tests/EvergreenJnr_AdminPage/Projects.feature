@@ -5,6 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @DAS12744 @DAS12999 @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
@@ -3298,7 +3299,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope
 	When User create static list with "Static13110" name on "Devices" page with following items
 	| ItemName        |
@@ -4027,7 +4028,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	Then Admin menu item is hidden
 	Then Error is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnEvergreen
 	When Project created via API and opened
 	| ProjectName            | Scope       | ProjectTemplate | Mode               |
@@ -4045,7 +4046,7 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOn
 	And User removes selected item
 	Then Error message with "This project does not exist. The project has not been updated" text is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnSenior
 	When User clicks "Projects" on the left-hand menu
 	And User clicks create Project button
@@ -4174,5 +4175,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then "TRUE" content is displayed in "Evergreen" column 
-
-	

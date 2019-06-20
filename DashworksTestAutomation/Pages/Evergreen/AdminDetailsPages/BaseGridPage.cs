@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -25,8 +27,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public const string Row = "//div[@col-id='name']//a";
 
-        public const string OptionTabsOnAdminPage = "//li/a[@mattooltipshowdelay]";
-
         public const string FirstColumnTableContent = ".//div[@role='gridcell']//a[@href]";
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle-text']/descendant::h1")]
@@ -35,7 +35,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//a[@href]/img")]
         public IWebElement DashworksLogo { get; set; }
 
-        [FindsBy(How = How.XPath, Using = OptionTabsOnAdminPage)]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'das-mat-tree-node-collapsed')]/following-sibling::ul/*[@mattreenodetoggle]")]
         public IList<IWebElement> MenuTabOptionListOnAdminPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = FirstColumnTableContent)]
@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement BodyContainer { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
-        public IWebElement ErrorBox  { get; set; }
+        public IWebElement ErrorBox { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@ref='eBodyContainer']//div[@row-index]")]
         public IWebElement TableString { get; set; }
@@ -171,9 +171,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='CANCEL']")]
         public IWebElement CancelButtonInWarning { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-container')]")]
-        public IWebElement OnboardedObjectsTable { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//span[contains(@class, 'mat-select-value-text')]//span[text()='Capacity Units']")]
         public IWebElement DefaultCapacityMode { get; set; }
@@ -337,9 +334,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetFillingFieldErrorByText(string text)
         {
-            var selector = By.XPath($".//mat-error/span[text()='{text}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            try
+            {
+                var selector = By.XPath($".//mat-error/span[text()='{text}']");
+                Driver.WaitWhileControlIsNotDisplayed(selector);
+                return Driver.FindElement(selector);
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Error message with '{text}' was not displayed: {e}");
+            }
         }
 
         public void AddDateByFieldName(string fieldName, string date)
@@ -438,11 +442,34 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement HistoryOnboardedObjectDisplayed(string objectName)
+        public bool HistoryOnboardedObjectDisplayed(string objectName)
         {
-            var selector = By.XPath($"//a[text()='{objectName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
-            return Driver.FindElement(selector);
+            var selector = By.XPath($".//a[text()='{objectName}']");
+            return Driver.IsElementDisplayed(selector);
+        }
+
+        public bool WaitForHistoryOnboardedObject(string item, int seconds)
+        {
+            var attempts = 5;
+            var waitTime = (seconds * 1000) / attempts;
+
+            try
+            {
+                for (int i = 0; i < attempts; i++)
+                {
+                    if (HistoryOnboardedObjectDisplayed(item))
+                        return true;
+                    Thread.Sleep(waitTime);
+                    Driver.Navigate().Refresh();
+                    Driver.WaitForDataLoading();
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Error waiting History Onboarded object: {e}");
+            }
+
+            return false;
         }
 
         public IWebElement DropdownItemDisplayed(string itemName)
@@ -635,7 +662,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDisabledTabByName(string tabName)
         {
-            var selector = By.XPath($"//li[contains(@class, 'disabled')]//a[text()='{tabName}']");
+            var selector = By.XPath($".//*[contains(@class,'mat-tree-node')][contains(@class,'disabled')]//a[text()='{tabName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -665,7 +692,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var selector = By.XPath($".//mat-form-field[contains(@class, 'invalid')]//label[text()='{fieldName}']");
             return Driver.FindElement(selector);
         }
-        
+
         public List<string> GetSumOfObjectsContent(string columnName)
         {
             var by = By.XPath(

@@ -22,6 +22,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             _driver = driver;
         }
 
+        [When(@"User clicks by Project Switcher in the Top bar on Item details page")]
+        public void WhenUserClicksByProjectSwitcherInTheTopBarOnItemDetailsPage()
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            topBar.ProjectSwitcherDropdownTopBar.Click();
+        }
+
+        [Then(@"Project Switcher in the Top bar on Item details page is open")]
+        public void ThenProjectSwitcherInTheTopBarOnItemDetailsPageIsOpen()
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            Assert.IsTrue(topBar.GetProjectSwitcherDisplayedState(), "Project Switcher panel should be displayed for User!");
+        }
+
+        [Then(@"Project Switcher in the Top bar on Item details page is closed")]
+        public void ThenProjectSwitcherInTheTopBarOnItemDetailsPageIsClosed()
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            Assert.IsFalse(topBar.GetProjectSwitcherDisplayedState(), "Project Switcher panel should not be displayed for User!");
+        }
+
         [When(@"User switches to the ""(.*)"" project in the Top bar on Item details page")]
         public void WhenUserSwitchesToTheProjectInTheTopBarOnItemDetailsPage(string projectName)
         {
@@ -30,6 +51,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetOptionByName(projectName).Click();
+        }
+
+        [Then(@"projects on the Project Switcher panel are displayed in alphabetical order")]
+        public void ThenProjectsOnTheProjectSwitcherPanelAreDisplayedInAlphabeticalOrder()
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            if (topBar.DefaultProjectStatusInProjectSwitcherDropDown.Displayed())
+            {
+                var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();
+                Assert.AreEqual(list.OrderBy(s => s), list, "Projects on the Project Switcher panel are not in alphabetical order!");
+            }
+            else
+            {
+                var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).Where(x => !x.Contains("Evergreen")).ToList();
+                Assert.AreEqual(list.OrderBy(s => s), list, "Projects on the Project Switcher panel are not in alphabetical order!");
+            }
         }
 
         [Then(@"following Compliance items are displayed in Top bar on the Item details page:")]

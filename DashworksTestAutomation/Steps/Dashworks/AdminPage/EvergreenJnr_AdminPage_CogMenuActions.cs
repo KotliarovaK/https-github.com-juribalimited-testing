@@ -74,7 +74,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var cogMenu = _driver.NowAt<CogMenuElements>();
             _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
             cogMenu.GetCogMenuByItem(itemName).Click();
+            Thread.Sleep(500);
             cogMenu.GetCogmenuOptionByName("Move to position").Click();
+            cogMenu.MoveToPositionField.Clear();
             cogMenu.MoveToPositionField.SendKeys(position);
             var action = _driver.NowAt<BaseDashboardPage>();
             action.GetActionsButtonByName("MOVE").Click();

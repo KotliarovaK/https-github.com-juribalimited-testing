@@ -59,8 +59,9 @@ Examples:
 	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Evergreen Summary | Application | Key                 | Key                 |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Projects          | Project     | Object ID           | Object ID           |
 	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | Projects     | Projects          | Project     | Object Key          | Object Key          |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Key                 | Key                 |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Evergreen Object ID | Evergreen Object ID |
+	#archived
+	#| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Key                 | Key                 |
+	#| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Users             | Domain      | Evergreen Object ID | Evergreen Object ID |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12235 @DAS12799 @DAS13657
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumns
@@ -118,7 +119,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	And User select "Device" checkbox on the Column Settings panel
 	And User select "Installed" checkbox on the Column Settings panel
 	And User select "Owner Display Name" checkbox on the Column Settings panel
-	And User select "<CheckboxName>" checkbox on the Column Settings panel
+	And User select "<NewColumnName>" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then following columns added to the table:
 	| ColumnName      |
@@ -129,11 +130,11 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColum
 	Then There are no errors in the browser console
 
 Examples: 
-	| MainTabName  | SubTabName | CheckboxName      | NewColumnName     |
-	| Distribution | Devices    | User Key          | User Key          |
-	| Distribution | Devices    | Advertisement Key | Advertisement Key |
-	| Distribution | Devices    | Collection Key    | Collection Key    |
-	| Distribution | Devices    | Program Key       | Program Key       |
+	| MainTabName  | SubTabName | NewColumnName     |
+	| Distribution | Devices    | Computer Key      |
+	| Distribution | Devices    | Advertisement Key |
+	| Distribution | Devices    | Collection Key    |
+	| Distribution | Devices    | Program Key       |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11732 @DAS12053 @DAS12235 @DAS13004 @DAS13657
 Scenario Outline: EvergreenJnr_AllLists_CheckThatDataIsDisplayedAfterAddingColumnsForClosedSections
@@ -171,6 +172,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTheTableColumnsAreNotDuplicatedOnTheDe
 	Then "Users" list should be displayed to the user
 	When User perform search by "Administrator.Users.dwlabs.local"
 	And User click content from "Username" column
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	And User navigates to the "Devices" main-menu on the Details page
 	Then ColumnName is displayed in following order on the Details page:
 	| ColumnName     |
@@ -205,7 +207,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Project Type |
 	| Bucket       |
 	| Ring         |
-	| Request Type |
+	| Path         |
 	| Workflow     |
 	| Category     |
 	| Status       |
@@ -219,7 +221,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Project Type |
 	| Bucket       |
 	| Ring         |
-	| Request Type |
+	| Path         |
 	| Workflow     |
 	| Category     |
 	| Status       |
@@ -555,12 +557,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Request Type" checkbox on the Column Settings panel
+	And User select "Slot" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	When User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -582,8 +582,6 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	When User navigates to the "<MainTabName>" main-menu on the Details page
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User clicks String Filter button for "Project Type" column
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -607,8 +605,6 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	When User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column 
-	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285
@@ -801,7 +797,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	And User clicks "False" checkbox from String Filter on the Details Page
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	And User closes Checkbox filter for "Used" column
-	And User have opened Column Settings for "Username" column in the Details Page table
+	And User have opened Column Settings for "User" column in the Details Page table
 	And User have select "Sort descending" option from column settings on the Details Page
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
@@ -815,7 +811,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUsersAndDevicesDistributionList
 	Then Content is present in the table on the Details Page
 	And Rows do not have unknown values
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @Delete_Newly_Created_Bucket
+	#added hash because of the DAS17093 bug 6/19/2019
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -880,7 +877,6 @@ Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResu
 	Then "Unassigned" link is displayed on the Details Page
 	Then There are no errors in the browser console
 	#============================================================================#
-	#unavailable for 'nova' now
 		#go to Mailboxes page
 	#When User clicks "Mailboxes" on the left-hand menu
 	#Then "Mailboxes" list should be displayed to the user
@@ -1034,13 +1030,14 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then Rows counter shows "99" of "173" rows
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923
+	#added hash because of the DAS17093 bug 6/19/2019
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
 	When User clicks "<ListName>" on the left-hand menu
 	Then "<ListName>" list should be displayed to the user
-	When User perform search by "<SearchText>"
+	When User perform search by "<ItemName>"
 	When User clicks content from "<ColumnName>" column
-	Then Details page for "<PegeItemName>" item is displayed to the user
+	Then Details page for "<ItemName>" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Evergreen Details" sub-menu on the Details page
 	Then field with "Project Count" text is displayed in expanded tab on the Details Page
@@ -1050,10 +1047,10 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplaye
 	And There are no errors in the browser console
 
 Examples:
-	| ListName  | SearchText                       | ColumnName    | PegeItemName                     |
-	| Devices   | 00HA7MKAVVFDAV                   | Hostname      | 00HA7MKAVVFDAV                   |
-	| Users     | 0072B088173449E3A93              | Username      | 0072B088173449E3A93              |
-	| Mailboxes | 00C8BC63E7424A6E862@bclabs.local | Email Address | 00C8BC63E7424A6E862@bclabs.local |
+	| ListName  | ItemName                         | ColumnName    |
+	| Devices   | 00HA7MKAVVFDAV                   | Hostname      |
+	| Users     | 0072B088173449E3A93              | Username      |
+	#| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14431
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenuPositionStaysTheSameWhenSettingDeliveryDate
@@ -1217,7 +1214,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	And User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Request Type" checkbox on the Column Settings panel
+	And User select "Path" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	When User click on 'Readiness' column header
 	Then color data is sorted by 'Readiness' column in descending order
@@ -2062,6 +2059,60 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	When User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	Then No one Compliance items are displayed for the User in Top bar on the Item details page
+
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762
+Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| App Readiness     |
+	| Task Readiness    |
+	| Workflow          |
+	#=====================================================================================#
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	When User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| App Readiness     |
+	| Task Readiness    |
+	| Workflow          |
+	#=====================================================================================#
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
+	When User click content from "Application" column
+	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
+	When User switches to the "Computer Scheduled Test (Jo)" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| App Readiness     |
+	| Task Readiness    |
+	| Workflow          |
+	#=====================================================================================#
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
+	When User click content from "Email Address" column
+	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| Task Readiness    |
+	| Workflow          |
 	
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15913
 Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelOfGroupedRows
@@ -2075,13 +2126,15 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @Not_Ready
+	#Language field is still missing
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2098,17 +2151,16 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Tags              |
 	| Device Owner      |
 	| Language          |
-	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
-	#TODO step
-	#And Link from "Device" field is displayed to the user on the Details Page
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @Not_Ready
+	#added hash because of the bug DAS17160
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
 	When User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2125,15 +2177,16 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Tags              |
 	| Primary Device    |
 	| Language          |
-	Then "RED" content is displayed in "Overall Readiness" field on Item Details page
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @Not_Ready
+	#added hash because of the bug DAS17158
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @Not_Run
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
 	When User click content from "Application" column
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2141,7 +2194,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Object ID           |
 	| Team                |
 	| Capacity Unit       |
-	| Ring                |
 	| Overall Readiness   |
 	| App Readiness       |
 	| Primary App         |
@@ -2151,16 +2203,15 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Path                |
 	| Category            |
 	| Tags                |
-	Then "GREEN" content is displayed in "Overall Readiness" field on Item Details page
-	Then "GREEN" content is displayed in "App Readiness" field on Item Details page
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957
 Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
 	When User click content from "Email Address" column
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
@@ -2174,6 +2225,69 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	| Path              |
 	| Category          |
 	| Tags              |
-	| Mailbox Device    |
+	| Mailbox Owner     |
 	| Language          |
-	Then "NONE" content is displayed in "Overall Readiness" field on Item Details page
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17087
+Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAProjectOnTheMailboxDetailsPage
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "abel.y.hanson@dwlabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "abel.y.hanson@dwlabs.local" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	Then "7" rows found label displays on Details Page
+	And "Administrator" content is displayed in "Username" column
+	When User switches to the "Email Migration" project in the Top bar on Item details page
+	Then "1" rows found label displays on Details Page
+	And "hansonay" content is displayed in "Username" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17086
+Scenario: EvergreenJnr_DevicesList_ChecksThatUserDetailsIsOpenedCorrectlyWithSameKeyAndUserValues
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	And User clicks "Nicole P. Braun" link on the Details Page
+	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	And "Key" title matches the "23726" value
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007
+Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	And User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
+
+	#added hash because of the DAS17005 bug 6/19/2019
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User clicks by Project Switcher in the Top bar on Item details page
+	#Then Project Switcher in the Top bar on Item details page is open
+	#When User clicks by Project Switcher in the Top bar on Item details page
+	#Then Project Switcher in the Top bar on Item details page is closed
+	Then projects on the Project Switcher panel are displayed in alphabetical order
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User clicks by Project Switcher in the Top bar on Item details page
+	Then projects on the Project Switcher panel are displayed in alphabetical order

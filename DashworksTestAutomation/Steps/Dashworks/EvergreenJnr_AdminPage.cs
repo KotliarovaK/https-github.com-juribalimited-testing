@@ -365,7 +365,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"User sees next Slots on the Capacity Slots page:")]
-        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots) 
+        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             _driver.WaitForDataLoading();
@@ -1400,7 +1400,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     dashboardPage.SelectOneRowsCheckboxes.Click();
                     dashboardPage.TableSearchTextBox.Clear();
                 }
-            } 
+            }
         }
 
         [Then(@"Objects are displayed in alphabetical order on the Admin page")]
@@ -1494,25 +1494,16 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"following Items are displayed in the History table")]
+        [Then(@"additional onboarded Items are displayed in the History table")]
         public void ThenFollowingItemsAreDisplayedInTheHistoryTable(Table table)
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
+            var secondsToWait = 80;
             foreach (var row in table.Rows)
-                if (!projectElement.OnboardedObjectsTable.Displayed())
-                    try
-                    {
-                        Thread.Sleep(30000);
-                        _driver.Navigate().Refresh();
-                        Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
-                    }
-                    catch (Exception)
-                    {
-                        Thread.Sleep(50000);
-                        _driver.Navigate().Refresh();
-                        Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
-                    }
-                else
-                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
+            {
+                Assert.True(projectElement.WaitForHistoryOnboardedObject(row["Items"], secondsToWait),
+                    $"History onboarded object with '{row["Items"]}' text was not appears in the grid in {secondsToWait} seconds");
+            }
         }
 
         [Then(@"Following items displayed in the History table")]
@@ -1521,29 +1512,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var projectElement = _driver.NowAt<BaseGridPage>();
             foreach (var row in table.Rows)
             {
-                Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed);
+                Assert.IsTrue(projectElement.WaitForHistoryOnboardedObject(row["Items"], 30),
+                    $"History table doesn't contains '{row["Items"]}' item");
             }
-        }
-
-        [Then(@"additional onboarded Items are displayed in the History table")]
-        public void ThenAdditionalOnboardedItemsAreDisplayedInTheHistoryTable(Table table)
-        {
-            var projectElement = _driver.NowAt<BaseGridPage>();
-            foreach (var row in table.Rows)
-                try
-                {
-                    Thread.Sleep(20000);
-                    _driver.Navigate().Refresh();
-                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed,
-                        $"{row["Items"]} is not displayed in History table");
-                }
-                catch (Exception)
-                {
-                    Thread.Sleep(30000);
-                    _driver.Navigate().Refresh();
-                    Assert.IsTrue(projectElement.HistoryOnboardedObjectDisplayed(row["Items"]).Displayed,
-                        $"{row["Items"]} is not displayed in History table");
-                }
         }
 
         [Then(@"following Items are displayed in the Queue table")]
@@ -1571,18 +1542,18 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 {
                     throw new Exception("Queue processing took too much time: 60 sec");
                 }
-                
+
                 if (!_driver.FindElement(By.XPath(filter_label)).Text.Equals("0 rows"))
                 {
                     Thread.Sleep(2000);
-                   _driver.FindElement(By.XPath(refresh_icon)).Click();
-                   _driver.WaitForDataLoading();
+                    _driver.FindElement(By.XPath(refresh_icon)).Click();
+                    _driver.WaitForDataLoading();
                 }
                 else
                 {
                     break;
                 }
-                
+
             }
         }
 
@@ -1655,7 +1626,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<CreateProjectPage>();
             _driver.WaitWhileControlIsNotDisplayed<CreateProjectPage>(() => page.CreateProjectButton);
-            page.CreateProjectButton.Click();
+            _driver.ClickByJavascript(page.CreateProjectButton);
             _driver.WaitForDataLoading();
             Logger.Write("Create Project button was clicked");
         }
@@ -1702,7 +1673,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             int index = current.LastIndexOf("/");
 
             if (index > 0)
-                current = current.Substring(0, index) + "/"+ Id;
+                current = current.Substring(0, index) + "/" + Id;
             _driver.Navigate().GoToUrl(current);
         }
 
@@ -2000,7 +1971,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var slot = _driver.NowAt<Capacity_SlotsPage>();
 
-            Assert.That(GetTaskCapacityEnabledFlag(slot.Storage.SessionStorage.GetItem("task_id")), 
+            Assert.That(GetTaskCapacityEnabledFlag(slot.Storage.SessionStorage.GetItem("task_id")),
                 Is.EqualTo(flagState), $"Flag state is in different state");
         }
 
@@ -2168,7 +2139,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.MoveToPositionInput.SendKeys(value);
         }
 
-        [When (@"User remembers the Move to position dialog size")]
+        [When(@"User remembers the Move to position dialog size")]
         public void WhenUserRemembersMoveToPositionDialogSize()
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
@@ -2867,7 +2838,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesDropListExpandedOnEditPage()
         {
             var createReadiness = _driver.NowAt<CreateReadinessPage>();
-            
+
             Assert.That(createReadiness.GetColourStatusNumber(), Is.GreaterThan(0));
             Assert.That(createReadiness.GetColourStatusTextNumber(), Is.GreaterThan(0));
             Assert.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(createReadiness.GetColourStatusTextNumber()));
@@ -2880,7 +2851,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Assert.That(createReadiness.GetColourStatusTextNumber(), Is.EqualTo(0));
         }
-   
+
         [When(@"User remembers opened Readiness data on Edit Readiness")]
         public void WhenUserRemembersReadinessName()
         {
@@ -2924,7 +2895,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var readiness = _driver.NowAt<ReadinessPage>();
             List<string> labels = readiness.GetListOfReadinessLabel();
 
-            Assert.That(labels.FindIndex(x => x.Equals(title))+1, Is.EqualTo(labels.FindIndex(x => x.Equals("NONE"))));
+            Assert.That(labels.FindIndex(x => x.Equals(title)) + 1, Is.EqualTo(labels.FindIndex(x => x.Equals("NONE"))));
         }
 
         [When(@"User clicks ""(.*)"" button in the Readiness dialog screen")]
@@ -3006,10 +2977,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"Project created via API and opened")]
         public void WhenUserCreateNewDashboardViaApi(Table table)
         {
-            string pName="";
+            string pName = "";
             string pScope = "";
             string pTemplate = "";
-            int pMode=0;
+            int pMode = 0;
 
             foreach (var row in table.Rows)
             {
@@ -3023,7 +2994,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     pTemplate = "-1";
 
                 pMode = row["Mode"].Equals("Standalone Project") ? 1 : 3;
-
             }
 
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/createProject";
@@ -3062,11 +3032,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [AfterScenario("Delete_Newly_Created_Project")]
         public void DeleteNewlyCreatedProject()
         {
-            try
-            {
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
 
-                foreach (var projectName in _projects.Value)
+            foreach (var projectName in _projects.Value)
+            {
+                try
                 {
                     if (string.IsNullOrEmpty(projectName))
                         continue;
@@ -3083,23 +3053,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var response = _client.Value.Post(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
-                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                        Logger.Write($"Unable to execute request. URI: {requestUri}");
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
+                catch (Exception e)
+                {
+                    Logger.Write($"Error during removing '{projectName}' Project: {e}");
+                }
             }
         }
 
         [AfterScenario("Delete_Newly_Created_Bucket")]
         public void DeleteAllBucketAfterScenarioRun()
         {
-            try
-            {
-                var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
+            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
 
-                foreach (var bucketName in _buckets.Value)
+            foreach (var bucketName in _buckets.Value)
+            {
+                try
                 {
                     if (string.IsNullOrEmpty(bucketName))
                         continue;
@@ -3118,12 +3088,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     var response = _client.Value.Put(request);
 
                     if (response.StatusCode != HttpStatusCode.OK)
-                        throw new Exception($"Unable to execute request. URI: {requestUri}");
+                        Logger.Write($"Unable to execute request. URI: {requestUri}");
                 }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
+                catch (Exception e)
+                {
+                    Logger.Write($"Error during '{bucketName}' Bucket removing: {e}");
+                }
             }
         }
 
@@ -3140,7 +3110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var flagState =
                 DatabaseHelper.ExecuteReader(
-                    $"SELECT [CapacityEnabled] FROM [PM].[dbo].[ProjectTasks] where [TaskID] = '{taskId}'",0).LastOrDefault();
+                    $"SELECT [CapacityEnabled] FROM [PM].[dbo].[ProjectTasks] where [TaskID] = '{taskId}'", 0).LastOrDefault();
             return flagState;
         }
 
@@ -3175,6 +3145,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return DatabaseHelper.ExecuteReader(
                     $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
         }
-
     }
 }

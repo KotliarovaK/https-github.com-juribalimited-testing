@@ -596,7 +596,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ClosePanelButton.Click();
         }
 
-
         [When(@"User remembers value in ""(.*)"" column")]
         public void WhenUserRemembersValueInSpecificColumn(string columnName)
         {
@@ -628,10 +627,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User navigates to ""(.*)"" URL in a new tab")]
         public void WhenUserNavigatesToURLInANewTab(string urlParameters)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.OpenNewTab(_driver);
+            _driver.OpenInNewTab($"{UrlProvider.Url}{urlParameters}");
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
-            _driver.Navigate().GoToUrl($"{UrlProvider.Url}{urlParameters}");
         }
 
         [When(@"User switches to previous tab")]

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Projects.CreatingProjects;
@@ -62,6 +63,7 @@ namespace DashworksTestAutomation.Steps.Projects
 
                 _projects.Value.Add(row["ProjectName"]);
             }
+
             var tab = _driver.NowAt<MainElementsOfProjectCreation>();
             tab.CreatedProjectButton.Click();
             //[YT] added thread sleep since we have max 30 sec delay between senior and evergreen
@@ -146,6 +148,10 @@ namespace DashworksTestAutomation.Steps.Projects
                 page.ObjectType.SelectboxSelect(row["ObjectType"]);
                 if (!string.IsNullOrEmpty(row["TaskValuesTemplate"]))
                     page.TaskValuesTemplate.SelectboxSelect(row["TaskValuesTemplate"]);
+
+                _driver.WaitForDataLoadingOnProjects();
+                page.ApplyToAllCheckbox.SetCheckboxState(Convert.ToBoolean(row["ApplyToAllCheckbox"]));
+
                 page.ConfirmCreateTaskButton.Click();
             }
         }
