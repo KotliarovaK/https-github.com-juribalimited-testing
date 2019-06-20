@@ -8645,10 +8645,10 @@ this.FeatureBackground();
 
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallCompl" +
-            "ianceFromTopBarInProjectMode")]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplian" +
+            "ceFromTopBarInProjectMode")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS16857")]
@@ -8657,14 +8657,14 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "ACG370114", "GREY", "User Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7zip", "BLUE", "Devices Evergreen Capacity Project", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "000F977AC8824FE39B8@bclabs.local", "LIGHT BLUE", "Mailbox Evergreen Capacity Project", null)]
-        public virtual void EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode(string pageName, string columnName, string itemName, string value, string projectName, string[] exampleTags)
+        public virtual void EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode(string pageName, string columnName, string itemName, string value, string projectName, string[] exampleTags)
         {
             System.Exception lastException = null;
             for (int i = 0; (i <= 1); i = (i + 1))
             {
                 try
                 {
-                    this.EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectModeInternal(pageName,columnName,itemName,value,projectName,exampleTags);
+                    this.EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectModeInternal(pageName,columnName,itemName,value,projectName,exampleTags);
                     return;
                 }
                 catch (System.Exception exc)
@@ -8683,11 +8683,11 @@ this.FeatureBackground();
             }
         }
 
-        private void EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectModeInternal(string pageName, string columnName, string itemName, string value, string projectName, string[] exampleTags)
+        private void EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectModeInternal(string pageName, string columnName, string itemName, string value, string projectName, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Devices",
+                    "AllLists",
                     "EvergreenJnr_ItemDetails",
                     "ItemDetailsDisplay",
                     "DAS16857",
@@ -8696,8 +8696,8 @@ this.FeatureBackground();
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallCompl" +
-                    "ianceFromTopBarInProjectMode", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplian" +
+                    "ceFromTopBarInProjectMode", null, @__tags);
 #line 2326
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

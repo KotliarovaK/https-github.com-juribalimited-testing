@@ -2322,8 +2322,8 @@ Examples:
 	| Applications | Application | 7zip           | Application  | UNKNOWN |
 
 	#added 'not_run' tag because of the DAS17160 bug 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @Not_Run_DAS17160
-Scenario Outline: EvergreenJnr_DevicesList_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @Not_Run_DAS17160
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<ItemName>"
