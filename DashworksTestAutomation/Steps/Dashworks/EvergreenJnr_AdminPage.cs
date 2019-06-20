@@ -803,7 +803,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenValueIsDisplayedInTheDropdownForAutomation(string value, string dropdownName)
         {
             var dropdown = _driver.NowAt<BaseGridPage>();
-            Assert.IsTrue(dropdown.GetDropdownByNameForAutomations(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+            var dropdownValue = dropdown.GetDropdownByNameForAutomations(dropdownName).GetAttribute("value");
+            Assert.AreEqual(dropdownValue, value, $"{value} is not displayed in the {dropdownName}");
         }
 
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
@@ -1985,7 +1986,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).Clear();
+            projectElement.GetFieldByName(fieldName).ClearWithBackspaces();
             projectElement.GetFieldByName(fieldName).SendKeys(name);
             _capacityUnit.Value.Add(new CapacityUnitDto() { Name = name });
         }

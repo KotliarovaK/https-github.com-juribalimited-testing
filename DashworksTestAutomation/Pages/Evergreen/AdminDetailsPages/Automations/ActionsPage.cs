@@ -10,14 +10,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
     internal class ActionsPage : SeleniumBasePage
     {
         [FindsBy(How = How.XPath, Using = ".//h1[contains(text(), 'Actions')]")]
-        public IWebElement ActionssTitle { get; set; }
+        public IWebElement ActionsTitle { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.ActionssTitle)
+                SelectorFor(this, p => p.ActionsTitle)
             };
         }
 

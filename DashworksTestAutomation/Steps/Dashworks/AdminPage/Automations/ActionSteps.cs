@@ -28,5 +28,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             var action2 = page.GetMoveButtonByActionName(actionTo);
             _driver.DragAndDrop(action1, action2);
         }
+
+        [Then(@"Actions page is displayed to the User")]
+        public void ThenActionsPageIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<ActionsPage>();
+            Assert.IsTrue(page.ActionsTitle.Displayed(), "Actions page is not displayed");
+        }
     }
 }

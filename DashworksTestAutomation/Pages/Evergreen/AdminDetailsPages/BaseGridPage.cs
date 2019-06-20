@@ -636,9 +636,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement GetDropdownByNameForAutomations(string value, string dropdownName)
+        public IWebElement GetDropdownByNameForAutomations(string dropdownName)
         {
-            var selector = By.XPath($".//mat-select//span[text()='{value}']//ancestor::div//label[text()='{dropdownName}']");
+            var selector = By.XPath($".//label[text()='{dropdownName}']//ancestor::div//input[@placeholder='{dropdownName}']");
             Driver.WaitWhileControlIsNotDisplayed(selector);
             return Driver.FindElement(selector);
         }
