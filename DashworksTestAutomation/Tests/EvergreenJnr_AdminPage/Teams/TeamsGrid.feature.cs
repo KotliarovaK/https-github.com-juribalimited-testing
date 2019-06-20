@@ -93,7 +93,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         [NUnit.Framework.CategoryAttribute("Save_Default_Team")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
-        [NUnit.Framework.CategoryAttribute("Delete_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatUserCantRemoveDefaultTeamOnAdminPage()
         {
@@ -136,7 +136,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
                         "Do_Not_Run_With_Teams",
                         "Save_Default_Team",
                         "Set_Default_Team",
-                        "Delete_Created_Team",
+                        "Delete_Newly_Created_Team",
                         "Not_Run"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);

@@ -5,17 +5,17 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Teams @Delete_Created_Team
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13421 @DAS12788 @Teams @Delete_Newly_Created_Team
 Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	When User creates new Team via api
-	| Name      | Description | IsDefault |
+	| TeamName  | Description | IsDefault |
 	| TestTeam5 | test        | false     |
 	And User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Teams" link on the Admin page
 	Then "Teams" page should be displayed to the user
-	When User enters "TestTeam5" text in the Search field for "Teams" column
-	And User clicks content from "Teams" column
+	When User enters "TestTeam5" text in the Search field for "Team" column
+	And User clicks content from "Team" column
 	And User clicks "Buckets" tab
 	And User clicks the "ADD BUCKETS" Action button
 	Then Add Buckets page is displayed to the user
@@ -90,13 +90,3 @@ Scenario: EvergreenJnr_AdminPage_AddingBucketsToTheTeam
 	Then Success message is displayed and contains "The selected bucket has been reassigned to the selected team" text
 	Then There are no errors in the browser console
 	When User click on Back button
-	When User enters "TestTeam5" text in the Search field for "Team" column
-	And User selects all rows on the grid
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks the "DELETE" Action button
-	Then Reassign Buckets page is displayed to the user
-	When User selects "Team 0" in the Select a team dropdown
-	And User clicks the "DELETE TEAM" Action button
-	Then Success message is displayed and contains "The selected team has been deleted, and their buckets reassigned" text
-	Then There are no errors in the browser console

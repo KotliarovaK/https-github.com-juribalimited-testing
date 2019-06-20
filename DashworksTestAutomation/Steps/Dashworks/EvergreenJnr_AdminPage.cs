@@ -20,6 +20,7 @@ using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -33,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_AdminPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly TeamName _teamName;
+        private readonly Team _team;
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Buckets _buckets;
         private readonly RestWebClient _client;
@@ -42,11 +43,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly CapacityUnit _capacityUnit;
         private readonly UserDto _user;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, TeamName teamName, DTO.RuntimeVariables.Projects projects,
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Team team, DTO.RuntimeVariables.Projects projects,
             RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnit capacityUnit, UserDto user)
         {
             _driver = driver;
-            _teamName = teamName;
+            _team = team;
             _projects = projects;
             _client = client;
             _buckets = buckets;
@@ -123,7 +124,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         _projects.Value.Add(name);
                         break;
                     case "Team Name":
-                        _teamName.Value.Add(name);
+                        TeamDto teamDto = new TeamDto();
+                        teamDto.TeamName = name;
+                        _team.Value.Add(teamDto);
                         break;
                     case "Bucket Name":
                         _buckets.Value.Add(name);
@@ -737,12 +740,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var importProjectPage = _driver.NowAt<ImportProjectPage>();
             importProjectPage.SelectDropdownOption(dropdownName, optionName);
-        }
-
-        [Then(@"Delete ""(.*)"" Team in the Administration")]
-        public void ThenDeleteTeamInTheAdministration(string teamName)
-        {
-            DeleteTeam(teamName);
         }
 
         [When(@"User enters ""(.*)"" in the Team Description field")]
@@ -3062,30 +3059,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
         }
 
-
-        [AfterScenario("Delete_Newly_Created_Team")]
-        public void DeleteAllTeamsAfterScenarioRun()
-        {
-            try
-            {
-                if (!_teamName.Value.Any())
-                    return;
-
-                foreach (var name in _teamName.Value)
-                    try
-                    {
-                        UnlinkTeamWithBucket(name);
-                        DeleteTeam(name);
-                    }
-                    catch
-                    {
-                    }
-            }
-            catch
-            {
-            }
-        }
-
         [AfterScenario("Delete_Newly_Created_Project")]
         public void DeleteNewlyCreatedProject()
         {
@@ -3152,17 +3125,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Console.WriteLine(e);
             }
-        }
-
-        private void UnlinkTeamWithBucket(string teamName)
-        {
-            DatabaseHelper.ExecuteQuery(
-                $"update [PM].[dbo].[ProjectGroups] set OwnedByTeamID = null where GroupID = (select TOP 1 GroupID from[PM].[dbo].[ProjectGroups] buckets join[PM].[dbo].[Teams] teams on buckets.OwnedByTeamID = teams.TeamID where teams.TeamName = '{teamName}') ");
-        }
-
-        private void DeleteTeam(string teamName)
-        {
-            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[Teams] where [TeamName] = '{teamName}'");
         }
 
         private string GetProjectId(string projectName)
