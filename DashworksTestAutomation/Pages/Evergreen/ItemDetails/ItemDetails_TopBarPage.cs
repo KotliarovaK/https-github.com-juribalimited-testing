@@ -12,15 +12,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     internal class ItemDetails_TopBarPage : SeleniumBasePage
     {
-        public const string ProjectOnSwitcherPanel = "//mat-option[@class='mat-option ng-star-inserted']";
+        public const string ProjectOnSwitcherPanel = ".//mat-option[@class='mat-option ng-star-inserted']";
 
-        [FindsBy(How = How.XPath, Using = "//div[@id='topbar']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='topbar']")]
         public IWebElement PageIdentitySelectors { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[text()='Evergreen']/ancestor::mat-select")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Evergreen']/ancestor::mat-select")]
         public IWebElement DefaultProjectStatusInProjectSwitcherDropDown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'DropdownTopbar')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownTopbar')]")]
         public IWebElement ProjectSwitcherDropdownTopBar { get; set; }
 
         [FindsBy(How = How.XPath, Using = ProjectOnSwitcherPanel)]
@@ -38,13 +38,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public List<string> GetComplianceItemsOnTopBar()
         {
-            var selector = By.XPath("//div[@class='topbar-item-label']");
+            var selector = By.XPath(".//div[@class='topbar-item-label']");
             return Driver.FindElements(selector).Select(x => x.Text).ToList();
         }
 
         public bool GetProjectSwitcherDisplayedState()
         {
-            return Driver.IsElementDisplayed(By.XPath("//div[contains(@class, 'transformPanel')]"));
+            return Driver.IsElementDisplayed(By.XPath(".//div[contains(@class, 'transformPanel')]"));
+        }
+
+        public IWebElement GetComplianceValueOnTheDetailsPageByComplianceName(string title, string value)
+        {
+            var selector = By.XPath($".//div[text()='{title}']//ancestor::div//div[@class='topbar-item-value']//span[text()='{value}']");
+            Driver.WaitWhileControlIsNotDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

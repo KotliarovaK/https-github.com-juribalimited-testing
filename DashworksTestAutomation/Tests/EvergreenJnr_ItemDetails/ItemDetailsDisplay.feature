@@ -2276,18 +2276,72 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
 
 	#added hash because of the DAS17005 bug 6/19/2019
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005
-Scenario: EvergreenJnr_DevicesList_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User perform search by "001BAQXT6JWFPI"
-	And User click content from "Hostname" column
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
 	When User clicks by Project Switcher in the Top bar on Item details page
 	#Then Project Switcher in the Top bar on Item details page is open
 	#When User clicks by Project Switcher in the Top bar on Item details page
 	#Then Project Switcher in the Top bar on Item details page is closed
 	Then projects on the Project Switcher panel are displayed in alphabetical order
-	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "<ProjectName>" project in the Top bar on Item details page
+	Then Project Switcher in the Top bar on Item details page is closed
 	When User clicks by Project Switcher in the Top bar on Item details page
 	Then projects on the Project Switcher panel are displayed in alphabetical order
+
+Examples:
+	| PageName     | ColumnName    | ItemName                         | ProjectName                        |
+	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Devices Evergreen Capacity Project |
+	| Users        | Username      | ACG370114                        | User Evergreen Capacity Project    |
+	| Applications | Application   | 7zip                             | User Evergreen Capacity Project    |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Mailbox Evergreen Capacity Project |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User navigates to the "<SubMenu>" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title      | Value   |
+	| Compliance | <Value> |
+	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	| ComplianceItems    | ColorName |
+	| Overall Compliance | <Value>   |
+
+Examples:
+	| PageName     | ColumnName  | ItemName       | SubMenu      | Value   |
+	| Devices      | Hostname    | 001BAQXT6JWFPI | Device Owner | RED     |
+	| Users        | Username    | ACG370114      | User         | RED     |
+	| Applications | Application | 7zip           | Application  | UNKNOWN |
+
+	#added 'not_run' tag because of the DAS17160 bug 
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 @Not_Run_DAS17160
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User switches to the "<ProjectName>" project in the Top bar on Item details page
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title             | Value   |
+	| Overall Readiness | <Value> |
+	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	| ComplianceItems   | ColorName |
+	| Overall Readiness | <Value>   |
+
+Examples:
+	| PageName     | ColumnName    | ItemName                         | Value        | ProjectName                        |
+	| Devices      | Hostname      | 001BAQXT6JWFPI                   | OUT OF SCOPE | Devices Evergreen Capacity Project |
+	| Users        | Username      | ACG370114                        | GREY         | User Evergreen Capacity Project    |
+	| Applications | Application   | 7zip                             | BLUE         | Devices Evergreen Capacity Project |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | LIGHT BLUE   | Mailbox Evergreen Capacity Project |

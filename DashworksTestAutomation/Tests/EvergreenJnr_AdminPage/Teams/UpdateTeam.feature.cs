@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Delete_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         public virtual void EvergreenJnr_AdminPage_CheckThatErrorsDoNotAppearAfterUpdatingTeamDescriptionField()
         {
             System.Exception lastException = null;
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
                         "DAS12999",
                         "DAS13199",
                         "Teams",
-                        "Delete_Created_Team"});
+                        "Delete_Newly_Created_Team"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -196,8 +196,6 @@ this.FeatureBackground();
                     "t", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 36
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
- testRunner.Then("Delete \"NewTeamName\" Team in the Administration", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

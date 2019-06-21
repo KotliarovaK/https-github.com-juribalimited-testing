@@ -140,8 +140,8 @@
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Automation.cs" />
-    <Compile Include="DTO\RuntimeVariables\TeamDefaultId.cs" />
-    <Compile Include="DTO\RuntimeVariables\Team.cs" />
+    <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
+    <Compile Include="DTO\RuntimeVariables\Teams\Team.cs" />
     <Compile Include="DTO\RuntimeVariables\Dashboard.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnitUnassignedId.cs" />
@@ -157,7 +157,6 @@
     <Compile Include="DTO\RuntimeVariables\Projects.cs" />
     <Compile Include="DTO\RuntimeVariables\ResponceDetails.cs" />
     <Compile Include="DTO\RuntimeVariables\RestWebClient.cs" />
-    <Compile Include="DTO\RuntimeVariables\TeamName.cs" />
     <Compile Include="DTO\RuntimeVariables\UsedUsers.cs" />
     <Compile Include="DTO\AuthObject.cs" />
     <Compile Include="DTO\RuntimeVariables\UsersWithSharedLists.cs" />

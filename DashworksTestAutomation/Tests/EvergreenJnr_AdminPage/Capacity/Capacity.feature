@@ -571,7 +571,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" content is displayed for "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Set_Default_Capacity_Unit @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Set_Default_Capacity_Unit @Set_Default_Capacity_Unit @Not_Run
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits
 	When User navigates to "Email Migration" project details
 	And User clicks "Capacity" tab
@@ -608,11 +608,12 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapac
 	When User clicks String Filter button for "Project" column
 	When User selects "Email Migration" checkbox from String Filter with item list on the Admin page
 	Then "2" content is displayed in "Applications" column
-	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
-	And User click content from "Capacity Unit" column
-	And User updates the "Default Unit" checkbox state
-	And User clicks the "UPDATE" Action button
-	When User clicks Reset Filters button on the Admin page
+	#remove this part
+	#When User enters "Unassigned" text in the Search field for "Capacity Unit" column
+	#And User click content from "Capacity Unit" column
+	#And User updates the "Default Unit" checkbox state
+	#And User clicks the "UPDATE" Action button
+	#When User clicks Reset Filters button on the Admin page
 	When User select "Capacity Unit" rows in the grid
 	| SelectedRowsName |
 	| 1Test            |

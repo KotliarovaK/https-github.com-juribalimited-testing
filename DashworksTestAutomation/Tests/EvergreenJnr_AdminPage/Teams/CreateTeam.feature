@@ -28,7 +28,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyTeamName
 	Then Error message with "A team already exists with this name" text is displayed
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Teams @Do_Not_Run_With_Teams @Save_Default_Team @Set_Default_Team @Delete_Created_Team
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11770 @DAS12999 @DAS13199 @DAS12846 @DAS13602 @Teams @Do_Not_Run_With_Teams @Save_Default_Team @Set_Default_Team @Delete_Newly_Created_Team
 Scenario: EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol
 	When User creates new Team via api
 	| TeamName | Description | IsDefault |
