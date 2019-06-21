@@ -651,6 +651,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             actionsElement.RemoveButton.Click();
         }
 
+        [Then(@"Date column shows Date and Time values")]
+        public void ThenDateColumnShowsDateAndTimeValues()
+        {
+            var dashboardPage = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsTrue(dashboardPage.DateTimeColumnValue.Displayed(), "Date column does not shows Date and Time values");
+        }
+
         [Then(@"User add selected rows in ""(.*)"" list")]
         public void ThenUserAddSelectedRowsInList(string listName)
         {

@@ -46,14 +46,14 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects "16890_Action" checkbox from String Filter with item list on the Admin page
 	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS17110 @Not_Ready
+#Use Inactive automation
 Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
-#Use Inactive Automation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "Melbourne - not onboarded" text in the Search field for "Automation" column
+	When User enters "zAutomation 01" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
@@ -61,7 +61,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
-	When User enters "Melbourne - not onboarded" text in the Search field for "Automation" column
+	Then Date column shows Date and Time values
+	When User enters "zAutomation 01" text in the Search field for "Automation" column
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS16974 @DAS16316 @Not_Ready
