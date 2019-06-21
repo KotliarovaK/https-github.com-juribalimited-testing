@@ -131,3 +131,36 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @DAS17212 @Not_Ready
+Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "<AutomationName>" Name in the "Automation Name" field on the Automation details page
+	When User type "17212" Name in the "Description" field on the Automation details page
+	When User selects "<Scope>" in the Scope Automation dropdown
+	When User selects "Manual" in the "Run" dropdown
+	When User selects "Active" checkbox on the Automation Page
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "<AutomationName>" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
+	Then Success message is displayed and contains "1 automation started," text
+	When User selects "Automation Log" tab on the Project details page
+	When User enters "<AutomationName>" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+
+Examples:
+	| AutomationName     | Scope            |
+	| 17212_Devices      | All Devices      |
+	| 17212_Users        | All Users        |
+	| 17212_Applications | All Applications |
+	| 17212_Mailboxes    | All Mailboxes    |
