@@ -104,6 +104,7 @@
     <Compile Include="Base\SeleniumBasePage.cs" />
     <Compile Include="DTO\ColorCompliance.cs" />
     <Compile Include="DTO\Evergreen\Admin\Automations\AutomationsDTO.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Bucket\BucketDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />

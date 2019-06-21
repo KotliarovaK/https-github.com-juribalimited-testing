@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.Providers;
@@ -111,7 +112,7 @@ namespace DashworksTestAutomation.Helpers
                     $"select [UnitId], [UnitName], [UnitDescription], [IsDefault] from [PM].[dbo].[CapacityUnits] where UnitName='{name}'");
 
             if (dataTable.Rows.Count < 1)
-                throw new Exception($"Unable to find Capacity Unit with name {name}");
+                throw new Exception($"Unable to find Capacity Unit with name {name} in the Database");
 
             var cu = new CapacityUnitDto(dataTable.Rows[0][0].ToString())
             {
@@ -120,6 +121,29 @@ namespace DashworksTestAutomation.Helpers
                 IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
             };
             return cu;
+        }
+
+        #endregion
+
+        #region Buckets
+
+        public static BucketDto GetBucket(string name)
+        {
+            throw new NotImplementedException("Please update this method. Below just copy paste from Capacity Units");
+            //var dataTable = DatabaseHelper
+            //    .ExecuteReaderWithoutZeroResultCheck(
+            //        $"select [UnitId], [UnitName], [UnitDescription], [IsDefault] from [PM].[dbo].[CapacityUnits] where UnitName='{name}'");
+
+            //if (dataTable.Rows.Count < 1)
+            //    throw new Exception($"Unable to find Bucket with name {name} in the Database");
+
+            //var b = new BucketDto(dataTable.Rows[0][0].ToString())
+            //{
+            //    Name = dataTable.Rows[0][1].ToString(),
+            //    Team = dataTable.Rows[0][2].ToString(),
+            //    IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
+            //};
+            //return b;
         }
 
         #endregion
