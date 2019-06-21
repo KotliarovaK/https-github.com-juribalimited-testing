@@ -1155,6 +1155,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15362")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunctionIsSelected()
         {
             System.Exception lastException = null;
@@ -1189,7 +1190,8 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS15362",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Delete_Newly_Created_Dashboard",
+                        "Not_Run"});
 #line 270
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
