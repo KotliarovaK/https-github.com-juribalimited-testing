@@ -2060,7 +2060,6 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	Then No one Compliance items are displayed for the User in Top bar on the Item details page
 
-
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762
 Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
@@ -2152,7 +2151,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Device Owner      |
 	| Language          |
 
-	#added hash because of the bug DAS17160
+	#added 'Not_Run' tag because of Language field has an incorrect location
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @Not_Run
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks "Users" on the left-hand menu
@@ -2164,19 +2163,19 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	When User navigates to the "Projects" main-menu on the Details page
 	When User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
-	| Fields            |
-	| Object ID         |
-	| Team              |
-	| Capacity Unit     |
-	| Bucket            |
-	| Ring              |
-	| Self Service URL  |
-	| Overall Readiness |
-	| Path              |
-	| Category          |
-	| Tags              |
-	| Primary Device    |
-	| Language          |
+	| Fields           |
+	| Object ID        |
+	| Team             |
+	| Capacity Unit    |
+	| Bucket           |
+	| Ring             |
+	| Self Service URL |
+	| Readiness        |
+	| Path             |
+	| Category         |
+	| Tags             |
+	| Primary Device   |
+	| Language         |
 
 	#added hash because of the bug DAS17158
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @Not_Run
@@ -2297,7 +2296,7 @@ Examples:
 	| PageName     | ColumnName    | ItemName                         | ProjectName                        |
 	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Devices Evergreen Capacity Project |
 	| Users        | Username      | ACG370114                        | User Evergreen Capacity Project    |
-	| Applications | Application   | 7zip                             | User Evergreen Capacity Project    |
+	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo)       |
 	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Mailbox Evergreen Capacity Project |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 
@@ -2333,15 +2332,15 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	When User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following content is displayed on the Details Page
-	| Title             | Value   |
-	| Overall Readiness | <Value> |
+	| Title   | Value   |
+	| <Title> | <Value> |
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | <Value>   |
 
 Examples:
-	| PageName     | ColumnName    | ItemName                         | Value        | ProjectName                        |
-	| Devices      | Hostname      | 001BAQXT6JWFPI                   | OUT OF SCOPE | Devices Evergreen Capacity Project |
-	| Users        | Username      | ACG370114                        | GREY         | User Evergreen Capacity Project    |
-	| Applications | Application   | 7zip                             | BLUE         | Devices Evergreen Capacity Project |
-	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | LIGHT BLUE   | Mailbox Evergreen Capacity Project |
+	| PageName     | ColumnName    | ItemName                         | Title             | Value | ProjectName                        |
+	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
+	| Users        | Username      | ACG370114                        | Readiness         | GREY  | User Evergreen Capacity Project    |
+	| Applications | Application   | 7zip                             | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Overall Readiness | NONE  | Mailbox Evergreen Capacity Project |
