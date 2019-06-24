@@ -1070,7 +1070,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatNoConsoleErrorDisplayedAndMenu
 	Then User checks that date input has same position
 	And There are no errors in the browser console
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12968 @Not_Run
 Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyCellWorksInItemDetails
 	When User clicks "<PageName>" on the left-hand menu
 	And User perform search by "<SearchTerm>"
@@ -1095,7 +1095,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
 	And User click content from "<ColumnName>" column
 	When User navigates to the "<TabName>" main-menu on the Details page
 	And User performs right-click on "<TargetCell>" cell in the grid
-	And User selects 'Copy cell' option in context menu
+	And User selects 'Copy row' option in context menu
 	Then Next data '<ExpectedData>' is copied
 	
 Examples:
@@ -2125,8 +2125,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
 
-	#Language field is still missing
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -2149,7 +2148,6 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Category          |
 	| Tags              |
 	| Device Owner      |
-	| Language          |
 
 	#added 'Not_Run' tag because of Language field has an incorrect location
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @Not_Run
@@ -2177,8 +2175,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Primary Device   |
 	| Language         |
 
-	#added hash because of the bug DAS17158
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @Not_Run
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158
 Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -2198,7 +2195,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	| Primary App         |
 	| App Rationalisation |
 	| Target App          |
-	| Hide From End Users |
+	| Hide from End Users |
 	| Path                |
 	| Category            |
 	| Tags                |
@@ -2275,7 +2272,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDet
 	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
 
 	#added hash because of the DAS17005 bug 6/19/2019
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907 @DAS16857
 Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
