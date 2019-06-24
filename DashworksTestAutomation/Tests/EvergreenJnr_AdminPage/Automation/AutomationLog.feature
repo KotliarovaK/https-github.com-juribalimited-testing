@@ -53,17 +53,22 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "zAutomation 01" text in the Search field for "Automation" column
-	When User selects all rows on the grid
-	When User clicks on Actions button
-	And User selects "Run now" in the Actions
-	When User clicks the "RUN" Action button
-	When User clicks "RUN" button in the warning message on Admin page
-	Then Success message is displayed and contains "1 automation started," text
+	#When User enters "AM 240619 Mailboxes" text in the Search field for "Automation" column
+	#When User selects all rows on the grid
+	#When User clicks on Actions button
+	#And User selects "Run now" in the Actions
+	#When User clicks the "RUN" Action button
+	#When User clicks "RUN" button in the warning message on Admin page
+	#Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
 	Then Date column shows Date and Time values
-	When User enters "zAutomation 01" text in the Search field for "Automation" column
+	When User enters "AM 240619 Mailboxes" text in the Search field for "Automation" column
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
+	When User clicks Export button on the Admin page
+	Then User checks that file "Dashworks export" was downloaded
+	Then User verifies " " rows in the " " downloaded file
+	| Date | Type | Automation | Action | Run | Objects | Duration (hh:mm:ss) | User | Outcome |
+	|      |      |            |        |     |         |                     |      |         |
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS16974 @DAS16316 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn

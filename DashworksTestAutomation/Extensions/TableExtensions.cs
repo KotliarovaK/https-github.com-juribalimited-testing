@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Extensions
@@ -24,8 +25,10 @@ namespace DashworksTestAutomation.Extensions
                 {
                     line.Add(pair.Value);
                 }
+
                 result.Add(line.ToArray());
             }
+
             return result;
         }
 
@@ -48,5 +51,32 @@ namespace DashworksTestAutomation.Extensions
 
             throw new Exception($"Unable to find element with '{key}' in the table.");
         }
+
+        public static void CompareWith(this Table expectedTable, Table actualTable, int rowsToCompare)
+        {
+            CompareWithTable(expectedTable, actualTable, rowsToCompare);
+        }
+
+        private static void CompareWithTable(this Table expectedTable, Table actualTable, int rowsToCompare)
+        {
+            if (rowsToCompare > actualTable.RowCount)
+                throw new Exception($"Unable to compare tables. Tables have less than {rowsToCompare} rows");
+
+            Assert.AreEqual(expectedTable.Header.Count, actualTable.Header.Count,
+                "Headers count is different");
+            //Assert.AreEqual(expectedTable.RowCount, actualTable.RowCount,
+            //    $"Rows count is different in tables: {expectedTable.RowCount} != {actualTable.RowCount}");
+
+            for (int i = 0; i < rowsToCompare; i++)
+            {
+                var expectedTableRow = expectedTable.Rows[i];
+                var actualTableRow = actualTable.Rows[i];
+                for (int j = 0; j < actualTable.Header.Count; j++)
+                {
+                    Assert.AreEqual(expectedTableRow[j], actualTableRow[j], "Content in Tables doesn't match");
+                }
+            }
+        }
+
     }
 }

@@ -2432,6 +2432,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.GroupByButton.Click();
         }
 
+        [When(@"User clicks Export button on the Admin page")]
+        public void WhenUserClicksExportButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.ExportButton.Click();
+        }
+
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
         public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
         {
