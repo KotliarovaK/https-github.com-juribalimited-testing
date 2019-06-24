@@ -884,24 +884,24 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | 
-	| 1Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | 
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| 1Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    |                    |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | 
-	| 2Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | 
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 2Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | 
-	| 3Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    | 
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 3Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -974,72 +974,72 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectio
 	And User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |
-	| 1Task13593 | 13593 | Stage13593 | Normal   | Date      | Computer   |                    | 
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 1Task13593 | 13593 | Stage13593 | Normal   | Date      | Computer   |                    |                     | 
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType  | TaskValuesTemplate |
-	| 2Task13593 | 13593 | Stage13593 | Normal   | Date      | Application |                    | 
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType  | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 2Task13593 | 13593 | Stage13593 | Normal   | Date      | Application |                    |                     | 
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |
-	| 3Task13593 | 13593 | Stage13593 | Normal   | Date      | User       |                    |
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 3Task13593 | 13593 | Stage13593 | Normal   | Date      | User       |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType    | ObjectType | TaskValuesTemplate              |
-	| 4Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Computer   | Readiness (NNSFC) with due date |
+	| Name       | Help  | StagesName | TaskType | ValueType    | ObjectType | TaskValuesTemplate              |  ApplyToAllCheckbox |
+	| 4Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Computer   | Readiness (NNSFC) with due date |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType | TaskValuesTemplate              |
-	| 5Task13593 | 13593 | Stage13593 | Normal   | Radiobutton | User       | Readiness (NNSFC) with due date |
+	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType | TaskValuesTemplate              |  ApplyToAllCheckbox |
+	| 5Task13593 | 13593 | Stage13593 | Normal   | Radiobutton | User       | Readiness (NNSFC) with due date |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType  | TaskValuesTemplate              |
-	| 6Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Application | Readiness (NNSFC) with due date |
+	| Name       | Help  | StagesName | TaskType | ValueType    | ObjectType  | TaskValuesTemplate              | ApplyToAllCheckbox |
+	| 6Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Application | Readiness (NNSFC) with due date |                    |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType    | ObjectType | TaskValuesTemplate |
-	| 7Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Computer   |                    | 
+	| Name       | Help  | StagesName | TaskType | ValueType    | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 7Task13593 | 13593 | Stage13593 | Normal   | DropDownList | Computer   |                    |                     | 
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType  | TaskValuesTemplate |
-	| 8Task13593 | 13593 | Stage13593 | Normal   | Text      | Application |                    |
+	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType  | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 8Task13593 | 13593 | Stage13593 | Normal   | Text      | Application |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType | TaskValuesTemplate |
-	| 9Task13593 | 13593 | Stage13593 | Normal   | Radiobutton | User       |                    |
+	| Name       | Help  | StagesName | TaskType | ValueType   | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 9Task13593 | 13593 | Stage13593 | Normal   | Radiobutton | User       |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -1135,8 +1135,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAdding
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name      | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
-	| Task13502 | 13502 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    | 
+	| Name      | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| Task13502 | 13502 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    |                     | 
 	Then Success message is displayed with "Task successfully created" text
 	When Task Id is stored in memory
 	When User publishes the task
@@ -1168,16 +1168,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedTo
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
-	| 1Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    | 
+	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 1Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Normal   | Date      | Computer   |                    |                     | 
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |
-	| 2Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Group    | Date      | Computer   |                    |
+	| Name       | Help  | StagesName                                      | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 2Task13500 | 13500 | Computer Information ---- Text fill; Text fill; | Group    | Date      | Computer   |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published

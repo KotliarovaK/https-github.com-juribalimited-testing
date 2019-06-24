@@ -12843,7 +12843,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table175.AddRow(new string[] {
                         "13499Task",
                         "13499",
@@ -12851,6 +12852,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 3835
  testRunner.And("User creates new Task on Senior", ((string)(null)), table175, "And ");
