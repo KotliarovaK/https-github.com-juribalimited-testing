@@ -92,6 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS16511")]
         [NUnit.Framework.CategoryAttribute("DAS16754")]
         [NUnit.Framework.CategoryAttribute("DAS16890")]
+        [NUnit.Framework.CategoryAttribute("DAS17222")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationsLogGridLoads()
         {
@@ -133,6 +134,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "DAS16511",
                         "DAS16754",
                         "DAS16890",
+                        "DAS17222",
                         "Not_Ready"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
@@ -242,6 +244,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15805")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
         [NUnit.Framework.CategoryAttribute("DAS16728")]
+        [NUnit.Framework.CategoryAttribute("DAS17222")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckRunStatusColumnOnTheAutomations()
         {
@@ -280,6 +283,7 @@ this.FeatureBackground();
                         "DAS15805",
                         "DAS16764",
                         "DAS16728",
+                        "DAS17222",
                         "Not_Ready"});
 #line 58
 this.ScenarioInitialize(scenarioInfo);
@@ -418,6 +422,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15740")]
         [NUnit.Framework.CategoryAttribute("DAS15741")]
         [NUnit.Framework.CategoryAttribute("DAS16764")]
+        [NUnit.Framework.CategoryAttribute("DAS17222")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAutomationCogMenuIsWorkedCorrectly()
         {
@@ -457,6 +462,7 @@ this.FeatureBackground();
                         "DAS15740",
                         "DAS15741",
                         "DAS16764",
+                        "DAS17222",
                         "Not_Ready"});
 #line 117
 this.ScenarioInitialize(scenarioInfo);
