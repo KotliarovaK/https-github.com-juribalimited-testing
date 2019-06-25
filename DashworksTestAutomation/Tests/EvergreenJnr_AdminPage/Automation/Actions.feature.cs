@@ -583,8 +583,6 @@ this.FeatureBackground();
  testRunner.Then("\"Action\" column content is displayed in the following order:", ((string)(null)), table10, "Then ");
 #line 179
  testRunner.When("User click on \'Task or Field\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 180
- testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "SelectedRowsName"});

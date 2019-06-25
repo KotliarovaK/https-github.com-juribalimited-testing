@@ -177,7 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| 15428_Action               |
 	| AM 240619 Devices Action 2 |
 	When User click on 'Task or Field' column header
-	Then There are no errors in the browser console
+	#Then There are no errors in the browser console
 	When User select "Action" rows in the grid
 	| SelectedRowsName |
 	| 15428_Action     |

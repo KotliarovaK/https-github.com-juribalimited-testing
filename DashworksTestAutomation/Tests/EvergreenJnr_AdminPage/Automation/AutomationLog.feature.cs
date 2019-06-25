@@ -239,6 +239,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AutomationLog")]
         [NUnit.Framework.CategoryAttribute("DAS17104")]
         [NUnit.Framework.CategoryAttribute("DAS17110")]
+        [NUnit.Framework.CategoryAttribute("DAS17169")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun()
         {
@@ -274,6 +275,7 @@ this.FeatureBackground();
                         "AutomationLog",
                         "DAS17104",
                         "DAS17110",
+                        "DAS17169",
                         "Not_Ready"});
 #line 60
 this.ScenarioInitialize(scenarioInfo);
@@ -288,6 +290,21 @@ this.FeatureBackground();
  testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 64
  testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 65
+ testRunner.When("User enters \"AM 240619 Mailboxes\" text in the Search field for \"Automation\" colum" +
+                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
+ testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
+ testRunner.When("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
+ testRunner.And("User selects \"Run now\" in the Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+ testRunner.When("User clicks the \"RUN\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 70
+ testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+ testRunner.Then("Success message is displayed and contains \"1 automation started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 72
  testRunner.When("User selects \"Automation Log\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 73
@@ -313,17 +330,17 @@ this.FeatureBackground();
                         "User",
                         "Outcome"});
             table1.AddRow(new string[] {
+                        "2019-06-25T11:01:24.843",
+                        "Automation Finish",
+                        "AM 240619 Mailboxes",
                         "",
+                        "Manual",
                         "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""});
+                        "0:00:00",
+                        "Kateryna Kotliarova",
+                        "INACTIVE AUTOMATION"});
 #line 78
- testRunner.Then("User verifies \" \" rows in the \" \" downloaded file", ((string)(null)), table1, "Then ");
+ testRunner.Then("User verifies \"1\" rows in the \"Dashworks export\" downloaded file", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
