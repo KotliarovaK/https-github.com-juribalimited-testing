@@ -70,14 +70,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _downloadedFileName.Value.Add(fileName);
         }
 
-        [Then(@"User verifies ""(.*)"" rows in the ""(.*)"" downloaded file")]
-        public void ThenUserVerifiesRowsInTheDownloadedFile(int rows, string fileName, Table table)
+        [Then(@"User verifies ""(.*)"" column content in the ""(.*)"" downloaded file")]
+        public void ThenUserVerifiesColumnContentInTheDownloadedFile(string columnName, string fileName, Table table)
         {
             var filePath = FileSystemHelper.WaitForFileWithNameContainingToBeDownloaded(fileName);
             var content = File.ReadAllText(filePath);
-            var actualTable = content.CsvToTable();
-            var expectedTable = table;
-            expectedTable.CompareWith(actualTable, rows);
+            var actualTable = content.CsvToTable().GetDataByKey($"{columnName}");
+            var expectedTable = table.GetDataByKey("ColumnContent");
+            Assert.AreEqual(actualTable, expectedTable);
         }
     }
 }
