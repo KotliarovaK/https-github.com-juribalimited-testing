@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Base
                     var chromeOptions = new ChromeOptions();
                     chromeOptions.AddArgument("headless");
                     chromeOptions.AddArgument("--window-size=1920,1080");
-                    chromeOptions.AddAdditionalCapability("excludeSwitches", "disable-default-apps");
+                    chromeOptions.AddAdditionalCapability("w3c", false);
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
 
                 case "firefox":
