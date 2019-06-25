@@ -1733,6 +1733,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16899")]
         [NUnit.Framework.CategoryAttribute("DAS17071")]
         [NUnit.Framework.CategoryAttribute("DAS17216")]
+        [NUnit.Framework.CategoryAttribute("DAS17216")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation()
         {
@@ -1769,6 +1770,7 @@ this.FeatureBackground();
                         "Automations",
                         "DAS16899",
                         "DAS17071",
+                        "DAS17216",
                         "DAS17216",
                         "Not_Ready"});
 #line 524

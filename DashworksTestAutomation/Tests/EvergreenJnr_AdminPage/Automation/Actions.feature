@@ -139,7 +139,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected action has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
@@ -177,6 +177,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	| 15428_Action               |
 	| AM 240619 Devices Action 2 |
 	When User click on 'Task or Field' column header
+	#Please uncomment step after DAS-17253 fixed
 	#Then There are no errors in the browser console
 	When User select "Action" rows in the grid
 	| SelectedRowsName |
