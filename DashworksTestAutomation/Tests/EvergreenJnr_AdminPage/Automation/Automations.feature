@@ -518,8 +518,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST DOES NOT EXIST" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @Not_Ready
 #Change value after gold data complete added
+#Run At least two automations
 Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
