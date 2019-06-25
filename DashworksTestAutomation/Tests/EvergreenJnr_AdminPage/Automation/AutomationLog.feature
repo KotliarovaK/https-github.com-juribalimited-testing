@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @DAS17063 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -38,13 +38,22 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	And User selects all rows on the grid
 	And User removes selected item
 	When User clicks "Automations" link on the Admin page
-	When User clicks "Run now" option in Cog-menu for "16890_Automation" item on Admin page
+	When User enters "16890_Automation" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
+	Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "16890_Action" checkbox from String Filter with item list on the Admin page
 	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
+	When User clicks Reset Filters button on the Admin page
+	When User enters "16890_Automation" text in the Search field for "Automation" column
+	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS17110 @Not_Ready
 #Use Inactive automation
