@@ -1949,6 +1949,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Related" main-menu on the Details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
@@ -1996,6 +1997,48 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#When User enters "ACG370114" text in the Search field for "Linked By" column on the Details Page
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219
+Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "000F977AC8824FE39B8@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the "Users" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
+	| Username              |
+	| Display Name          |
+	| Readiness             |
+	| Owner                 |
+	| Domain                |
+	| Path                  |
+	| Category              |
+	| Application Readiness |
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17218
+Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ZZP911429"
+	And User click content from "Username" column
+	Then Details page for "ZZP911429" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the "Devices" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
+	| Hostname              |
+	| Device Type           |
+	| Owner                 |
+	| Owner Display Name    |
+	| Operating System      |
+	| Readiness             |
+	| Path                  |
+	| Category              |
+	| Application Readiness |
+	| Stage 1               |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921
 Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly
