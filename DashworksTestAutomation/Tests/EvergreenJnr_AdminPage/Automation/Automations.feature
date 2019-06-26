@@ -521,6 +521,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216 @Not_Ready
 #Change value after gold data complete added
 #Run at least two automations
+#Add to Gold data Test_Automation1 and Test_Automation2 automations
 Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -535,5 +536,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "2 automations started," text
 	When User selects "Automation Log" tab on the Project details page
-	When User enters "Test_Automation" text in the Search field for "Automation" column
+	When User enters "Test_Automation1" text in the Search field for "Automation" column
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User enters "Test_Automation2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
