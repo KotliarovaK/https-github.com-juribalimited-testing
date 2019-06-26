@@ -1266,7 +1266,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Applications     |
 	| Compliance       |
 	Then "Users" tab is displayed on left menu on the Details page and contains count of items
-	Then "Related" tab is displayed with disabled state on left menu on the Details page
+	Then "Related" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks sub-menu for main Details tab ================#
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
@@ -1285,7 +1285,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNewPatternOfTheVerticalMenuIsDisplay
 	| Evergreen Details      |
 	| Projects Summary       |
 	| Owner Projects Summary |
-	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	Then "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks counters ================#
 	Then "Projects Summary" tab is displayed on left menu on the Details page and contains count of items
 	Then "Owner Projects Summary" tab is displayed on left menu on the Details page and contains count of items
@@ -1474,7 +1474,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| User Projects           |
 	| Device Project Summary  |
 	| Mailbox Project Summary |
-	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	Then "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks counters ================#
 	#Then "User Projects" tab is displayed on left menu on the Details page and contains count of items
 	#Then "Device Project Summary" tab is displayed on left menu on the Details page and contains count of items
@@ -1644,7 +1644,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| SubTabName        |
 	| Evergreen Details |
 	| Projects          |
-	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	Then "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks counters ================#
 	#Then "Projects" tab is displayed on left menu on the Details page and contains count of items
 	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
@@ -1671,7 +1671,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	Then "AD" tab is displayed on left menu on the Details page and NOT contains count of items
 
 	#remove hash when the functionality will be implemented
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInProjectMode
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -1685,6 +1685,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Projects     |
 	| MSI          |
 	| Distribution |
+	Then "Distribution" main-tab is displayed with disabled state on left menu on the Details page
 	#================ checks sub-menu for main Details tab ================#
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName     |
@@ -1715,18 +1716,6 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	#================ checks counters ================#
 	Then "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
-	#================ checks sub-menu for main Distribution tab ================#
-	Then "Distribution" main-menu on the Details page contains following sub-menu:
-	| SubTabName |
-	| Users      |
-	| Devices    |
-	| Groups     |
-	| AD         |
-	#================ checks counters ================#
-	#Then "Users" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Devices" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Groups" tab is displayed on left menu on the Details page and contains count of items
-	Then "AD" tab is displayed on left menu on the Details page and NOT contains count of items
 
 	#remove hash when the functionality will be implemented
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905
@@ -1742,9 +1731,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Projects |
 	| Users    |
 	| Trend    |
-	#Then "Related" tab is displayed with disabled state on left menu on the Details page
-	#Then "Notes" tab is displayed with disabled state on left menu on the Details page
-	#Then "Audit History" tab is displayed with disabled state on left menu on the Details page
+	#Then "Related" sub-tab is displayed with disabled state on left menu on the Details page
+	#Then "Notes" sub-tab is displayed with disabled state on left menu on the Details page
+	#Then "Audit History" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks sub-menu for main Details tab ================#
 	Then "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
@@ -1765,7 +1754,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Evergreen Details     |
 	| Mailbox Projects      |
 	| Mailbox User Projects |
-	Then "Project Details" tab is displayed with disabled state on left menu on the Details page
+	Then "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks counters ================#
 	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
@@ -1934,6 +1923,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Related" main-menu on the Details page
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
 	Then "31 May 2019" content is displayed in the "Date" column
@@ -1960,6 +1950,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Related" main-menu on the Details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
@@ -2007,6 +1998,48 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#When User enters "ACG370114" text in the Search field for "Linked By" column on the Details Page
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219
+Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "000F977AC8824FE39B8@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the "Users" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
+	| Username              |
+	| Display Name          |
+	| Readiness             |
+	| Owner                 |
+	| Domain                |
+	| Path                  |
+	| Category              |
+	| Application Readiness |
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17218
+Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "ZZP911429"
+	And User click content from "Username" column
+	Then Details page for "ZZP911429" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User navigates to the "Devices" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName            |
+	| Hostname              |
+	| Device Type           |
+	| Owner                 |
+	| Owner Display Name    |
+	| Operating System      |
+	| Readiness             |
+	| Path                  |
+	| Category              |
+	| Application Readiness |
+	| Stage 1               |
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15552 @DAS16921
 Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrectly
