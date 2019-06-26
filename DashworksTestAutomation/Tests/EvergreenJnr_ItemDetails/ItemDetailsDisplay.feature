@@ -1923,6 +1923,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatIconsForReadinessDdlOnRelatedTabAreD
 	When User perform search by "001BAQXT6JWFPI"
 	When User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Related" main-menu on the Details page
 	When User enters "03ME2G7TIR4GBN" text in the Search field for "Device" column on the Details Page
 	Then "31 May 2019" content is displayed in the "Date" column
