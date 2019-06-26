@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Base
                 case "chrome":
                     ChromeDriverService service = ChromeDriverService.CreateDefaultService();
                     service.SuppressInitialDiagnosticInformation = true;
-                    service.HideCommandPromptWindow = true;
+                    //service.HideCommandPromptWindow = true;
                     return new ChromeDriver(service);
 
                 case "firefox":
@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Base
             {
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArguments("headless", "--window-size=1920,1080");
+                    chromeOptions.AddArguments("headless", "--window-size=1920,1080", "w3c");
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
 
                 case "firefox":
