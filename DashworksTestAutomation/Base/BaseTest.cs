@@ -48,14 +48,11 @@ namespace DashworksTestAutomation.Base
             switch (Browser.Type)
             {
                 case "chrome":
-                    ChromeDriverService service = ChromeDriverService.CreateDefaultService();
-                    service.SuppressInitialDiagnosticInformation = true;
-                    //service.HideCommandPromptWindow = true;
-
                     var options = new ChromeOptions();
                     if (Browser.RemoteDriver.Equals("local"))
                         options.AddArgument("--start-maximized");
-                    return new ChromeDriver(service, options);
+                    options.UseSpecCompliantProtocol = false;
+                    return new ChromeDriver(options);
 
                 case "firefox":
                     return new FirefoxDriver();
@@ -78,7 +75,7 @@ namespace DashworksTestAutomation.Base
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
                     chromeOptions.AddArguments("headless", "--window-size=1920,1080", "w3c");
-                    chromeOptions.UseSpecCompliantProtocol = true;
+                    chromeOptions.UseSpecCompliantProtocol = false;
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
 
                 case "firefox":
@@ -100,17 +97,7 @@ namespace DashworksTestAutomation.Base
 
         private RemoteWebDriver CreateSauceLabsDriver()
         {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability(CapabilityType.BrowserName, Browser.Type);
-            capabilities.SetCapability(CapabilityType.Version, Browser.Version);
-            capabilities.SetCapability(CapabilityType.Platform, Browser.Platform);
-            capabilities.SetCapability("screenResolution", Browser.Resolution);
-
-            capabilities.SetCapability("username", SauceLabsCredentialsProvider.Username);
-            capabilities.SetCapability("accessKey", SauceLabsCredentialsProvider.AccessKey);
-
-            var driver = new CustomRemoteWebDriver(new Uri(Browser.HubUri), capabilities, TimeSpan.FromSeconds(60));
-            return driver;
+            throw new NotImplementedException();
         }
     }
 }
