@@ -48,7 +48,10 @@ namespace DashworksTestAutomation.Base
             switch (Browser.Type)
             {
                 case "chrome":
-                    return new ChromeDriver();
+                    ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+                    service.SuppressInitialDiagnosticInformation = true;
+                    service.HideCommandPromptWindow = true;
+                    return new ChromeDriver(service);
 
                 case "firefox":
                     return new FirefoxDriver();
