@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium.Chrome;
@@ -47,7 +48,14 @@ namespace DashworksTestAutomation.Base
             switch (Browser.Type)
             {
                 case "chrome":
-                    return new ChromeDriver();
+                    ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+                    service.SuppressInitialDiagnosticInformation = true;
+                    //service.HideCommandPromptWindow = true;
+
+                    var options = new ChromeOptions();
+                    if (Browser.RemoteDriver.Equals("local"))
+                        options.AddArgument("--start-maximized");
+                    return new ChromeDriver(service, options);
 
                 case "firefox":
                     return new FirefoxDriver();
@@ -69,9 +77,7 @@ namespace DashworksTestAutomation.Base
             {
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArgument("headless");
-                    chromeOptions.AddArgument("--window-size=1920,1080");
-                    chromeOptions.AddUserProfilePreference("w3c", false);
+                    chromeOptions.AddArguments("headless", "--window-size=1920,1080", "w3c");
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
 
                 case "firefox":

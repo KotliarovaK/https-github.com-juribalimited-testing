@@ -37,7 +37,8 @@ namespace DashworksTestAutomation.Base
 
             var driverInstance = CreateBrowserDriver();
 
-            driverInstance.Manage().Window.Maximize();
+            if (!Browser.RemoteDriver.Equals("local"))
+                driverInstance.Manage().Window.Maximize();
 
             _objectContainer.RegisterInstanceAs(driverInstance);
         }
@@ -62,13 +63,13 @@ namespace DashworksTestAutomation.Base
                         try
                         {
                             // Logs the result to Sauce Labs
-                            ((IJavaScriptExecutor) driver).ExecuteScript(
+                            ((IJavaScriptExecutor)driver).ExecuteScript(
                                 "sauce:job-result=" + (passed ? "passed" : "failed"));
                         }
                         finally
                         {
                             Console.WriteLine(
-                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver) driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
+                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
                         }
                     }
 
