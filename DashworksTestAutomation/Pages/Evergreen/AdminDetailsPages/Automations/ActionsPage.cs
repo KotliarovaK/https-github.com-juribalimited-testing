@@ -12,6 +12,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
         [FindsBy(How = How.XPath, Using = ".//h1[contains(text(), 'Actions')]")]
         public IWebElement ActionsTitle { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@role='row']//div[@role='gridcell']")]
+        public IWebElement ActionsTableContent { get; set; }
+
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

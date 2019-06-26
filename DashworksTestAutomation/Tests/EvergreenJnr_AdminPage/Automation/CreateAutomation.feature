@@ -34,7 +34,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	Then "No Actions Found" message is displayed on the Admin Page
 	Then "CREATE ACTION" Action button is active
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS15764 @DAS15423 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16801 @DAS15764 @DAS15423 @DAS17134 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWithPreviouslyCreatedAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -42,6 +42,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateAutomationFieldsIsNotPopulatedWi
 	Then "Automations" page should be displayed to the user
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
+	Then following Values are displayed in "Run" drop-down on the Admin page:
+	| Values                     |
+	| Manual                     |
+	| After Transform            |
+	| Scheduled: Dashworks Daily |
 	When User type "DAS16801_Automation" Name in the "Automation Name" field on the Automation details page
 	When User type "DAS16801" Name in the "Description" field on the Automation details page
 	When User selects "1803 Rollout" in the Scope Automation dropdown
@@ -76,5 +81,3 @@ Scenario: EvergreenJnr_AdminPage_CheckThatAdminTabIsHighlightedAfterClickingOnAu
 	When User creates new Capacity Unit via api
 	| Name                     | Description | IsDefault |
 	| DefaultCapacityUnit13720 | 13720       | true      |
-	#When User creates new Automation Unit via API
-	#| Name | Description | Scope |Run|Active|StopOnFailedAction|

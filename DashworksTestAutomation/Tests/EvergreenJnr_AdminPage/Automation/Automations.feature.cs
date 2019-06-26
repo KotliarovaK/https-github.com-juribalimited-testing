@@ -1732,6 +1732,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS16899")]
         [NUnit.Framework.CategoryAttribute("DAS17071")]
+        [NUnit.Framework.CategoryAttribute("DAS17216")]
+        [NUnit.Framework.CategoryAttribute("DAS17216")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomation()
         {
@@ -1768,42 +1770,44 @@ this.FeatureBackground();
                         "Automations",
                         "DAS16899",
                         "DAS17071",
+                        "DAS17216",
+                        "DAS17216",
                         "Not_Ready"});
-#line 523
+#line 524
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 524
- testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 525
- testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 526
- testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 527
- testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 528
- testRunner.When("User enters \"Test_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 529
- testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User enters \"Test_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 530
- testRunner.When("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects all rows on the grid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 531
- testRunner.And("User selects \"Run now\" in the Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks on Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 532
- testRunner.When("User clicks the \"RUN\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User selects \"Run now\" in the Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 533
+ testRunner.When("User clicks the \"RUN\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 534
  testRunner.Then("Warning message with \"Are you sure you wish to run 2 automations?\" text is displa" +
                     "yed on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 534
- testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 535
- testRunner.Then("Success message is displayed and contains \"2 automations started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User clicks \"RUN\" button in the warning message on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 536
- testRunner.When("User selects \"Automation Log\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("Success message is displayed and contains \"2 automations started,\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 537
- testRunner.When("User enters \"Test_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Automation Log\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 538
+ testRunner.When("User enters \"Test_Automation\" text in the Search field for \"Automation\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 539
  testRunner.Then("\"SUCCESS\" content is displayed for \"Outcome\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
