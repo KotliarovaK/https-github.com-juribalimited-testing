@@ -51,7 +51,11 @@ namespace DashworksTestAutomation.Base
                     ChromeDriverService service = ChromeDriverService.CreateDefaultService();
                     service.SuppressInitialDiagnosticInformation = true;
                     //service.HideCommandPromptWindow = true;
-                    return new ChromeDriver(service);
+
+                    var options = new ChromeOptions();
+                    if (Browser.RemoteDriver.Equals("local"))
+                        options.AddArgument("--start-maximized");
+                    return new ChromeDriver(service, options);
 
                 case "firefox":
                     return new FirefoxDriver();
