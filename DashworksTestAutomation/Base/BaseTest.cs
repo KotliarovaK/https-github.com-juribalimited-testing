@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Base
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
                     chromeOptions.AddArguments("headless", "--window-size=1920,1080", "w3c");
-                    chromeOptions.UseSpecCompliantProtocol = false;
+                    chromeOptions.UseSpecCompliantProtocol = true;
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
 
                 case "firefox":
