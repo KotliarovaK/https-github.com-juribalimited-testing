@@ -93,7 +93,7 @@ namespace DashworksTestAutomation.Base
             catch (ObjectContainerException e)
             {
                 //There are no driver in the context
-                Logger.Write(e + "There are no driver in the context");
+                Logger.Write($"There are no driver in the context: {e}");
             }
             catch (Exception e)
             {

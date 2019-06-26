@@ -4,7 +4,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
