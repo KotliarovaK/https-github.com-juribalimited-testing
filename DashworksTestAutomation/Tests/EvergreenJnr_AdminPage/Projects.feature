@@ -3833,8 +3833,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name      | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |
-	| 13499Task | 13499 | Stage13499 | Normal   | Date      | Computer   |                    |
+	| Name      | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 13499Task | 13499 | Stage13499 | Normal   | Date      | Computer   |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User navigate to "Categories" tab
 	Then "Manage Categories" page is displayed to the user

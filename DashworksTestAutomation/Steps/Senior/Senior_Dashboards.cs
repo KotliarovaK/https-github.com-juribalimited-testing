@@ -149,8 +149,11 @@ namespace DashworksTestAutomation.Steps.Projects
                 if (!string.IsNullOrEmpty(row["TaskValuesTemplate"]))
                     page.TaskValuesTemplate.SelectboxSelect(row["TaskValuesTemplate"]);
 
-                _driver.WaitForDataLoadingOnProjects();
-                page.ApplyToAllCheckbox.SetCheckboxState(Convert.ToBoolean(row["ApplyToAllCheckbox"]));
+                if (!string.IsNullOrEmpty(row["ApplyToAllCheckbox"]))
+                {
+                    _driver.WaitForDataLoadingOnProjects();
+                    page.ApplyToAllCheckbox.SetCheckboxState(Convert.ToBoolean(row["ApplyToAllCheckbox"]));
+                }
 
                 page.ConfirmCreateTaskButton.Click();
             }

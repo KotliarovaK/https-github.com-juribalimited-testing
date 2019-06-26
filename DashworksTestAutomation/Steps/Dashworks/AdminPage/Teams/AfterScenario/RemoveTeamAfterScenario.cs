@@ -2,6 +2,7 @@
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using RestSharp;
 using TechTalk.SpecFlow;
@@ -20,8 +21,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
             _client = client;
         }
 
-        [AfterScenario("Delete_Created_Team", Order = 10)]
-        public void DeleteCreatedTeam()
+        [AfterScenario("Delete_Newly_Created_Team", Order = 10)]
+        public void DeleteNewlyCreatedTeam()
         {
             try
             {
@@ -32,6 +33,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
 
                 foreach (TeamDto team in _team.Value)
                 {
+                    UnlinkTeamWithBucket(team.TeamName);
+
                     try
                     {
                         var request = new RestRequest(requestUri);
@@ -48,6 +51,19 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
                 }
             }
             catch { }
+        }
+
+        private void UnlinkTeamWithBucket(string teamName)
+        {
+            var groupIds = DatabaseHelper.ExecuteReader(
+                $"select GroupID from[PM].[dbo].[ProjectGroups] buckets join[PM].[dbo].[Teams] teams on buckets.OwnedByTeamID = teams.TeamID where teams.TeamName = '{teamName}'",
+                0);
+
+            foreach (var groupId in groupIds)
+            {
+                DatabaseHelper.ExecuteQuery(
+                    $"update [PM].[dbo].[ProjectGroups] set OwnedByTeamID = null where GroupID = '{groupId}'");
+            }
         }
     }
 }

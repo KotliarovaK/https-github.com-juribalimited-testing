@@ -268,7 +268,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13254")]
         [NUnit.Framework.CategoryAttribute("DAS13421")]
         [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Delete_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         public virtual void EvergreenJnr_AdminPage_AddingMembersToTheTeam()
         {
             System.Exception lastException = null;
@@ -306,7 +306,7 @@ this.FeatureBackground();
                         "DAS13254",
                         "DAS13421",
                         "Teams",
-                        "Delete_Created_Team"});
+                        "Delete_Newly_Created_Team"});
 #line 68
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -423,7 +423,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12326")]
         [NUnit.Framework.CategoryAttribute("DAS16130")]
         [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Delete_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -460,7 +460,7 @@ this.FeatureBackground();
                         "DAS12326",
                         "DAS16130",
                         "Teams",
-                        "Delete_Created_Team"});
+                        "Delete_Newly_Created_Team"});
 #line 113
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

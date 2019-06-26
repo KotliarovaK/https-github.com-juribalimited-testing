@@ -989,7 +989,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11944")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
+        [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids()
         {
             System.Exception lastException = null;
@@ -1025,7 +1025,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS11944",
                         "Buckets",
-                        "Not_Run"});
+                        "archived"});
 #line 264
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1040,7 +1040,7 @@ this.FeatureBackground();
 #line 268
  testRunner.And("User clicks Reset Filters button on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 269
- testRunner.Then("User sees \"7\" of \"577\" rows selected label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User sees \"11\" of \"607\" rows selected label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 270
  testRunner.When("User clicks String Filter button for \"Project\" column on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 271

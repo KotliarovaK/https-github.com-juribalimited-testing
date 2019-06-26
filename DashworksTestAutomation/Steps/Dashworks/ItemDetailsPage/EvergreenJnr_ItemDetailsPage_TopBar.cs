@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_ItemDetailsPage_TopBar (RemoteWebDriver driver)
+        public EvergreenJnr_ItemDetailsPage_TopBar(RemoteWebDriver driver)
         {
             _driver = driver;
         }
@@ -77,6 +77,18 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = topBar.GetComplianceItemsOnTopBar();
             Assert.AreEqual(expectedList, actualList, "Compliance items in Top bar on the Item details page is incorrect!");
+        }
+
+        [Then(@"following Compliance items with appropriate colors are displayed in Top bar on the Item details page:")]
+        public void ThenFollowingComplianceItemsWithAppropriateColorsAreDisplayedInTopBarOnTheItemDetailsPage(Table table)
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(topBar.GetComplianceValueOnTheDetailsPageByComplianceName(row["ComplianceItems"], row["ColorName"]).Displayed(),
+                    $"'{row["ComplianceItems"]}' does not match the '{row["ColorName"]}'!");
+            }
         }
 
         [Then(@"No one Compliance items are displayed for the User in Top bar on the Item details page")]

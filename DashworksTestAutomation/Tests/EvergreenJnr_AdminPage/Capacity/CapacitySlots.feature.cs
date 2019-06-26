@@ -3381,7 +3381,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table48.AddRow(new string[] {
                         "1Task13812",
                         "13812",
@@ -3389,6 +3390,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 886
  testRunner.And("User creates new Task on Senior", ((string)(null)), table48, "And ");
@@ -3410,7 +3412,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table49.AddRow(new string[] {
                         "2Task13812",
                         "13812",
@@ -3418,6 +3421,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 894
  testRunner.And("User creates new Task on Senior", ((string)(null)), table49, "And ");
@@ -3439,7 +3443,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table50.AddRow(new string[] {
                         "3Task13812",
                         "13812",
@@ -3447,6 +3452,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 902
  testRunner.And("User creates new Task on Senior", ((string)(null)), table50, "And ");
@@ -3663,7 +3669,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table53.AddRow(new string[] {
                         "1Task13593",
                         "13593",
@@ -3671,6 +3678,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 976
  testRunner.And("User creates new Task on Senior", ((string)(null)), table53, "And ");
@@ -3692,7 +3700,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table54.AddRow(new string[] {
                         "2Task13593",
                         "13593",
@@ -3700,6 +3709,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Application",
+                        "",
                         ""});
 #line 984
  testRunner.And("User creates new Task on Senior", ((string)(null)), table54, "And ");
@@ -3721,7 +3731,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table55.AddRow(new string[] {
                         "3Task13593",
                         "13593",
@@ -3729,6 +3740,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "User",
+                        "",
                         ""});
 #line 992
  testRunner.And("User creates new Task on Senior", ((string)(null)), table55, "And ");
@@ -3750,7 +3762,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table56.AddRow(new string[] {
                         "4Task13593",
                         "13593",
@@ -3758,7 +3771,8 @@ this.FeatureBackground();
                         "Normal",
                         "DropDownList",
                         "Computer",
-                        "Readiness (NNSFC) with due date"});
+                        "Readiness (NNSFC) with due date",
+                        ""});
 #line 1000
  testRunner.And("User creates new Task on Senior", ((string)(null)), table56, "And ");
 #line 1003
@@ -3779,7 +3793,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table57.AddRow(new string[] {
                         "5Task13593",
                         "13593",
@@ -3787,7 +3802,8 @@ this.FeatureBackground();
                         "Normal",
                         "Radiobutton",
                         "User",
-                        "Readiness (NNSFC) with due date"});
+                        "Readiness (NNSFC) with due date",
+                        ""});
 #line 1008
  testRunner.And("User creates new Task on Senior", ((string)(null)), table57, "And ");
 #line 1011
@@ -3808,7 +3824,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table58.AddRow(new string[] {
                         "6Task13593",
                         "13593",
@@ -3816,7 +3833,8 @@ this.FeatureBackground();
                         "Normal",
                         "DropDownList",
                         "Application",
-                        "Readiness (NNSFC) with due date"});
+                        "Readiness (NNSFC) with due date",
+                        ""});
 #line 1016
  testRunner.And("User creates new Task on Senior", ((string)(null)), table58, "And ");
 #line 1019
@@ -3837,7 +3855,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table59.AddRow(new string[] {
                         "7Task13593",
                         "13593",
@@ -3845,6 +3864,7 @@ this.FeatureBackground();
                         "Normal",
                         "DropDownList",
                         "Computer",
+                        "",
                         ""});
 #line 1024
  testRunner.And("User creates new Task on Senior", ((string)(null)), table59, "And ");
@@ -3866,7 +3886,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table60.AddRow(new string[] {
                         "8Task13593",
                         "13593",
@@ -3874,6 +3895,7 @@ this.FeatureBackground();
                         "Normal",
                         "Text",
                         "Application",
+                        "",
                         ""});
 #line 1032
  testRunner.And("User creates new Task on Senior", ((string)(null)), table60, "And ");
@@ -3895,7 +3917,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table61.AddRow(new string[] {
                         "9Task13593",
                         "13593",
@@ -3903,6 +3926,7 @@ this.FeatureBackground();
                         "Normal",
                         "Radiobutton",
                         "User",
+                        "",
                         ""});
 #line 1040
  testRunner.And("User creates new Task on Senior", ((string)(null)), table61, "And ");
@@ -4231,7 +4255,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table68.AddRow(new string[] {
                         "Task13502",
                         "13502",
@@ -4239,6 +4264,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 1137
  testRunner.And("User creates new Task on Senior", ((string)(null)), table68, "And ");
@@ -4372,7 +4398,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table69.AddRow(new string[] {
                         "1Task13500",
                         "13500",
@@ -4380,6 +4407,7 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 1170
  testRunner.And("User creates new Task on Senior", ((string)(null)), table69, "And ");
@@ -4401,7 +4429,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table70.AddRow(new string[] {
                         "2Task13500",
                         "13500",
@@ -4409,6 +4438,7 @@ this.FeatureBackground();
                         "Group",
                         "Date",
                         "Computer",
+                        "",
                         ""});
 #line 1178
  testRunner.And("User creates new Task on Senior", ((string)(null)), table70, "And ");

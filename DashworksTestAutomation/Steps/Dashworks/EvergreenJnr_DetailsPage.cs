@@ -744,6 +744,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinkIsDisplayedOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
+            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.GetBucketLinkByName(bucketName));
             Assert.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
         }
 

@@ -194,7 +194,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         [NUnit.Framework.CategoryAttribute("Save_Default_Team")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Team")]
-        [NUnit.Framework.CategoryAttribute("Delete_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
         public virtual void EvergreenJnr_AdminPage_CheckThatImpossibleToCreateSameNamedTeamUsingTheSpaceAsAFirstSymbol()
         {
             System.Exception lastException = null;
@@ -238,7 +238,7 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Teams",
                         "Save_Default_Team",
                         "Set_Default_Team",
-                        "Delete_Created_Team"});
+                        "Delete_Newly_Created_Team"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

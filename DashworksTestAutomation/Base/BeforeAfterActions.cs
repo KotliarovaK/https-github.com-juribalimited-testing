@@ -37,7 +37,8 @@ namespace DashworksTestAutomation.Base
 
             var driverInstance = CreateBrowserDriver();
 
-            driverInstance.Manage().Window.Maximize();
+            if (!Browser.RemoteDriver.Equals("local"))
+                driverInstance.Manage().Window.Maximize();
 
             _objectContainer.RegisterInstanceAs(driverInstance);
         }
@@ -54,23 +55,23 @@ namespace DashworksTestAutomation.Base
 
                 try
                 {
-                    if (Browser.RemoteDriver.Equals("sauceLabs"))
-                    {
-                        bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
-                                      TestStatus.Passed;
+                    //if (Browser.RemoteDriver.Equals("sauceLabs"))
+                    //{
+                    //    bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
+                    //                  TestStatus.Passed;
 
-                        try
-                        {
-                            // Logs the result to Sauce Labs
-                            ((IJavaScriptExecutor) driver).ExecuteScript(
-                                "sauce:job-result=" + (passed ? "passed" : "failed"));
-                        }
-                        finally
-                        {
-                            Console.WriteLine(
-                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver) driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
-                        }
-                    }
+                    //    try
+                    //    {
+                    //        // Logs the result to Sauce Labs
+                    //        ((IJavaScriptExecutor)driver).ExecuteScript(
+                    //            "sauce:job-result=" + (passed ? "passed" : "failed"));
+                    //    }
+                    //    finally
+                    //    {
+                    //        Console.WriteLine(
+                    //            $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
+                    //    }
+                    //}
 
                     var testStatus = GetTestStatus();
                     if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))

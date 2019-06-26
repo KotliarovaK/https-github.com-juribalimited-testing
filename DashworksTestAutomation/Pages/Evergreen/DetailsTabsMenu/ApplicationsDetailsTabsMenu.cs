@@ -263,10 +263,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void GetCheckboxByName(string checkboxName)
         {
-            var checkboxSettingsSelector = $".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']";
-            Driver.MouseHover(By.XPath(checkboxSettingsSelector));
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(checkboxSettingsSelector));
-            Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
+            var checkboxSettingsSelector = By.XPath($".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']");
+            Driver.MouseHover(checkboxSettingsSelector);
+            Driver.WaitWhileControlIsNotDisplayed(checkboxSettingsSelector);
+            Driver.FindElement(checkboxSettingsSelector).Click();
         }
 
         public IList<IWebElement> GetAllColumnHeadersOnTheDetailsPage()

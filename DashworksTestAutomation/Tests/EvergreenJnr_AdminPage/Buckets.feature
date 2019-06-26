@@ -260,13 +260,13 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Buckets @archived
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	When User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
 	And User selects all rows on the grid
 	And User clicks Reset Filters button on the Admin page
-	Then User sees "7" of "577" rows selected label
+	Then User sees "11" of "607" rows selected label
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page
