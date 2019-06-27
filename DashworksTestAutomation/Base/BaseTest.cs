@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
@@ -49,10 +51,20 @@ namespace DashworksTestAutomation.Base
             {
                 case "chrome":
                     var options = new ChromeOptions();
+                    options.AddArgument("--safebrowsing-disable-download-protection");
+                    options.AddUserProfilePreference("download.prompt_for_download", false);
+                    options.AddUserProfilePreference("download.directory_upgrade", true);
+                    options.AddUserProfilePreference("safebrowsing.enabled", true);
                     if (Browser.RemoteDriver.Equals("local"))
                         options.AddArgument("--start-maximized");
                     options.UseSpecCompliantProtocol = false;
-                    return new ChromeDriver(options);
+                    options.SetLoggingPreference(LogType.Browser, LogLevel.All);
+
+                    var driver = new ChromeDriver(options);
+
+                    var logs = driver.Manage().Logs.GetLog(LogType.Browser).ToList();
+
+                    return driver;
 
                 case "firefox":
                     return new FirefoxDriver();

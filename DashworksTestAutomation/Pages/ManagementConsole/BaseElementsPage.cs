@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Base;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.ManagementConsole
 {
