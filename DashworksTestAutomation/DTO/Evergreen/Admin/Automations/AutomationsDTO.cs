@@ -6,6 +6,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
     {
         private string Id;
 
+        public string AutomationId { get; set; }
         public string AutomationName { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }

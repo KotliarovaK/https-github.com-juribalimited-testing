@@ -480,7 +480,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| All Devices      |
 	| 1803 Rollout     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17003 @Delete_Newly_Created_List @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -516,7 +516,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
-	Then "LIST DOES NOT EXIST" content is displayed for "Outcome" column
+	Then "LIST NOT FOUND" content is displayed for "Outcome" column
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16899 @DAS17071 @DAS17216 @DAS17216 @Not_Ready
 #Change value after gold data complete added
@@ -540,3 +540,84 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowFunctionalityToRunMoreThanOneAutomat
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User enters "Test_Automation2" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17172 @Not_Ready
+#Add to Gold data Test_Automation3 and Test_Automation4 automations
+Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "Test_Automation3" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
+	Then Success message is displayed and contains "1 automation started," text
+	When User enters "Test_Automation4" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
+	Then Success message is displayed and contains "1 automation started," text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17171 @DAS17003 @Not_Ready
+#Use specific Automation (Delay) that run longer
+Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAutomationThatIsRunning
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "Delay22" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "Delay22" item on Admin page
+	When User enters "Delay22" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User clicks the "CREATE ACTION" Action button
+	Then Create Action page is displayed to the User
+	When User type "17171_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	When User clicks the "CREATE" Action button
+	Then Error message with "This automation is currently running" text is displayed
+	When User clicks "Actions" tab
+	When User clicks content from "Action" column
+	When User type "NewAction" Name in the "Action Name" field on the Automation details page
+	When User clicks the "UPDATE" Action button
+	Then Error message with "This automation is currently running" text is displayed
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Not_Ready
+Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username  | FullName | Password | ConfirmPassword | Roles                 |
+	| 17003User | 17003    | 1234qwer | 1234qwer        | Project Administrator |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username  | Password |
+	| 17003User | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	Then "Automations" tab is not displayed to the User
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "17003User" User
