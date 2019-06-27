@@ -240,7 +240,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
+	And User sees Widget square colored in amber
 	When User clicks Cancel button in Delete Widget warning on Dashboards page
+	And User deletes "WidgetForDAS14855" Widget on Dashboards page
+	Then User cant see widget with the next name "WidgetForDAS14855" on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14610
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard

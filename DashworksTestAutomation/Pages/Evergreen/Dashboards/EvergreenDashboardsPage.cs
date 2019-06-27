@@ -354,6 +354,12 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(ellipsisItem);
         }
 
+        public string GetDeleteWidgetSquareColor()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='widgets']//div[@class='inline-tip' and @role='alert']")).GetCssValue("background-color");
+        }
+
+
         public IWebElement GetCardWidgetByName(string widgetName)
         {
             var dashboardWidget =

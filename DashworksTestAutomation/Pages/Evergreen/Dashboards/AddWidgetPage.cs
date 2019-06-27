@@ -132,6 +132,11 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElements(By.XPath(".//mat-option"));
         }
 
+        public void ClickColorSchemeByIndex(int index)
+        {
+            Driver.FindElement(By.XPath($".//mat-option[{index}]")).Click();
+        }
+
         public bool GetCheckboxByName(string checkboxName)
         {
             return Driver.IsElementDisplayed(By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox"));
@@ -142,8 +147,7 @@ namespace DashworksTestAutomation.Pages
             var selector = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox");
             return Driver.FindElement(selector);
         }
-
-        
+      
         public IWebElement GetPreviewFirstCellValue()
         {
             var byFirstVer =By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']");
