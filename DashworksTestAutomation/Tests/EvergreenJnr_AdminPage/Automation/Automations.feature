@@ -480,7 +480,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| All Devices      |
 	| 1803 Rollout     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17003 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @Delete_Newly_Created_List @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -621,3 +621,50 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 	When User navigate to Manage link
 	And User select "Manage Users" option in Management Console
 	And User removes "17003User" User
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Delete_Newly_Created_List @Not_Ready
+Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownLists
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User create new User
+	| Username  | FullName | Password | ConfirmPassword | Roles                 |
+	| DAS_17003 | 17003    | 1234qwer | 1234qwer        | Project Administrator |
+	Then Success message is displayed
+	When User cliks Logout link
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User login with following credentials:
+	| Username  | Password |
+	| DAS_17003 | 1234qwer |
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "City" filter where type is "Equals" with added column and "Belfast" Lookup option
+	When User clicks Save button on the list panel
+	When User selects Save as new list option
+	When User creates new custom list with "17003_List" name
+	Then "17003_List" list is displayed to user
+	When User clicks the Logout button
+	Then User is logged out
+	When User clicks on the Login link
+	Then Login Page is displayed to the user
+	When User provides the Login and Password and clicks on the login button
+	Then Dashworks homepage is displayed to the user in a logged in state
+	When User clicks the Switch to Evergreen link
+	Then Evergreen Dashboards page should be displayed to the user
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User selects "17003_List" in the Scope Automation dropdown
+	When User clicks "Projects" on the left-hand menu
+	When User navigate to Manage link
+	And User select "Manage Users" option in Management Console
+	And User removes "DAS_17003" User
