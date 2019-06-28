@@ -86,7 +86,10 @@ namespace DashworksTestAutomation.Base
             {
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArguments("headless", "--window-size=1920,1080", "w3c");
+                    chromeOptions.AddArguments("headless", "--window-size=1920,1080", "--safebrowsing-disable-download-protection");
+                    chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
+                    chromeOptions.AddUserProfilePreference("download.directory_upgrade", true);
+                    chromeOptions.AddUserProfilePreference("safebrowsing.enabled", true);
                     chromeOptions.UseSpecCompliantProtocol = false;
                     chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
