@@ -218,7 +218,7 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static void WaitWhileControlIsDisplayed<T>(this RemoteWebDriver driver,
+        public static void WaitWhileControlIsDisplayedObsolete<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {
             var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;

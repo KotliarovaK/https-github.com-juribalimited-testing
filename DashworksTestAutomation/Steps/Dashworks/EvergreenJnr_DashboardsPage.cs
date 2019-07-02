@@ -701,7 +701,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNoUserFoundInSharedList()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitWhileControlIsDisplayed<EvergreenDashboardsPage>(()=>page.PermissionNameOfAddedUser);
+            _driver.WaitWhileControlIsDisplayedObsolete<EvergreenDashboardsPage>(()=>page.PermissionNameOfAddedUser);
             Assert.That(page.PermissionNameOfAddedUser.Displayed(), Is.False, "Username found in shared list");
         }
         

@@ -78,7 +78,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => button.DeleteButton);
             Thread.Sleep(1000);
             button.DeleteButton.Click();
-            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => button.MenuItem);
+            _driver.WaitWhileControlIsDisplayedObsolete<CustomListElement>(() => button.MenuItem);
         }
 
         [Then(@"Settings panel is displayed to the user")]
@@ -124,7 +124,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Small wait for message display
             Thread.Sleep(300);
-            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            _driver.WaitWhileControlIsDisplayedObsolete<CustomListElement>(() => listElement.SuccessCreateMessage);
             _listsDetails.AddList($"{listName}");
         }
 

@@ -757,7 +757,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Small wait for message display
             var customListElement = _driver.NowAt<CustomListElement>();
             Thread.Sleep(300);
-            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => customListElement.SuccessCreateMessage);
+            _driver.WaitWhileControlIsDisplayedObsolete<CustomListElement>(() => customListElement.SuccessCreateMessage);
         }
 
         [Then(@"User type ""(.*)"" into Static list name field")]

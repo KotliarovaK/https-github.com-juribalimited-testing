@@ -220,7 +220,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Small wait for message display
             //Thread.Sleep(300);
             //var listElement = _driver.NowAt<CustomListElement>();
-            //_driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            //_driver.WaitWhileControlIsDisplayedObsolete<CustomListElement>(() => listElement.SuccessCreateMessage);
             //Assert.IsTrue(listElement.SuccessCreateMessage.Displayed(), "Success message is not displayed");
         }
 

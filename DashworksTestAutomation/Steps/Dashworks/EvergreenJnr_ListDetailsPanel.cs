@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             listDetailsElement.CloseListDetailsPanelButton.Click();
-            _driver.WaitWhileControlIsDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+            _driver.WaitWhileControlIsDisplayedObsolete<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
         }
 
         [When(@"User mark list as favorite")]

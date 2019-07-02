@@ -274,7 +274,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             catch
             {
             }
-            _driver.WaitWhileControlIsDisplayed<AccountDetailsPage>(() => page.SuccessMessage);
+            _driver.WaitWhileControlIsDisplayedObsolete<AccountDetailsPage>(() => page.SuccessMessage);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Change Password page")]
@@ -300,7 +300,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             catch
             {
             }
-            _driver.WaitWhileControlIsDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
+            _driver.WaitWhileControlIsDisplayedObsolete<ChangePasswordPage>(() => page.ErrorMessage);
         }
 
         [Then(@"""(.*)"" error message is displayed")]
@@ -316,7 +316,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             catch
             {
             }
-            _driver.WaitWhileControlIsDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
+            _driver.WaitWhileControlIsDisplayedObsolete<ChangePasswordPage>(() => page.ErrorMessage);
         }
 
         [Then(@"Success message with ""(.*)"" text is displayed on the Advanced page")]
@@ -326,7 +326,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitWhileControlIsNotDisplayed<AdvancedPage>(() => page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
             page.CloseMessageButton.Click();
-            _driver.WaitWhileControlIsDisplayed<AdvancedPage>(() => page.SuccessMessage);
+            _driver.WaitWhileControlIsDisplayedObsolete<AdvancedPage>(() => page.SuccessMessage);
         }
 
         [Then(@"User picture is changed to uploaded photo")]

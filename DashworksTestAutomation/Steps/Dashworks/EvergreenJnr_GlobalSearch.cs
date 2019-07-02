@@ -62,7 +62,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             else
             {
                 _driver.IsElementDisplayed(listPageElement.ResultsRowsCount);
-                _driver.WaitWhileControlIsDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
+                _driver.WaitWhileControlIsDisplayedObsolete<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
                 Assert.IsFalse(listPageElement.ResultsRowsCount.Displayed(), "Rows count is displayed");
                 _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
                 Assert.IsTrue(listPageElement.ResultsRowsCount.Displayed(),
