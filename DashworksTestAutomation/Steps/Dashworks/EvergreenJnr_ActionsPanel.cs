@@ -679,7 +679,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectAllSelectboxIsUnchecked()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, false);
+            _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
             Assert.IsTrue(dashboardPage.SelectAllCheckboxState.GetAttribute("aria-checked").Equals("false"), "Select All checkbox is checked");
         }
 

@@ -61,6 +61,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[@id='context']//input[@id='chipInput']")]
         public IWebElement FilterSearchTextBox { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='filter-panel']//i[contains(@class,'icon-search')]")]
+        public IList<IWebElement> FilterSearchInputs { get; set; }
+
         [FindsBy(How = How.XPath,
             Using = ".//ul/li[@class='chips-item ng-star-inserted']")]
         public IWebElement FilterChipBox { get; set; }
@@ -540,8 +543,12 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public void SelectSavedListByName(string listName)
         {
-            var checkboxSelector = $".//div//span[text()='{listName}']";
-            Driver.FindElement(By.XPath(checkboxSelector)).Click();
+            var checkbox = Driver.FindElement(By.XPath($".//div//span[text()='{listName}']"));
+            if (!checkbox.Displayed)
+            {
+                FilterSearchInputs.FirstOrDefault().Click();
+            }
+            checkbox.Click();
         }
 
         public IWebElement GetValueForLookupFilter(string name)

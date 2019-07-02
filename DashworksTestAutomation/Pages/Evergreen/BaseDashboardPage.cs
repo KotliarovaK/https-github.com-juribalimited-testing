@@ -248,7 +248,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
         public IList<IWebElement> ContentColor { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span[contains(text(),'No devices found')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'save')]//button")]

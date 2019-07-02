@@ -758,42 +758,42 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/devices?$filter=(entitledApplications%20%3C%3E%2012)&$select=hostname" +
             ",chassisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entit" +
-            "ledApplications%20desc", "17,163", null)]
+            "ledApplications%20desc", "17,223", null)]
         [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/devices?$filter=(installedApplications%20%3E%2012)&$select=hostname,c" +
             "hassisCategory,oSCategory,ownerDisplayName,installedApplications", "94", null)]
         [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/devices?$filter=(usedApplications%20%3C%2011)&$select=hostname,chassi" +
-            "sCategory,oSCategory,ownerDisplayName,installedApplications,usedApplications", "17,126", null)]
+            "sCategory,oSCategory,ownerDisplayName,installedApplications,usedApplications", "17,186", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20NOT%20EQUALS%20(\'882\'%2C\'839\'%2C\'778\')" +
-            "%20WHERE%20(netdo%2Cnubdo%2Cnetd%2Cnuod%2Cniod))", "17,225", null)]
-        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20EQUALS%20(\'882\')%20WHERE%20(nuod))", "17,225", null)]
+            "%20WHERE%20(netdo%2Cnubdo%2Cnetd%2Cnuod%2Cniod))", "17,285", null)]
+        [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20EQUALS%20(\'882\')%20WHERE%20(nuod))", "17,285", null)]
         [NUnit.Framework.TestCaseAttribute("Application Compliance", "evergreen/#/devices?$filter=(applicationMigrationRAG%20EQUALS%20(\'Red\')%20WHERE%2" +
-            "0(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", null)]
+            "0(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,285", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20EQUALS%20(\'%25SQL_PRODUCT_SHORT_NA" +
             "ME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013\')%20WHERE%20(uod%2C" +
             "etd%2Cubdo%2Ciod%2Cetdo))", "2", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20NOT%20EQUALS%20(\'%25SQL_PRODUCT_SH" +
             "ORT_NAME%25%20Data%20Tools%20-%20BI%20for%20Visual%20Studio%202013\')%20WHERE%20(" +
-            "netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", null)]
+            "netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,285", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20CONTAINS%20(\'7zip\')%20WHERE%20(nuo" +
-            "d))", "17,225", null)]
+            "d))", "17,285", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20BEGINS%20WITH%20(\'7zip\')%20WHERE%2" +
             "0(ubdo%2Cetd))", "11", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20DOES%20NOT%20BEGIN%20WITH%20(\'7zip" +
-            "\')%20WHERE%20(nubdo%2Cnetdo))", "17,096", null)]
+            "\')%20WHERE%20(nubdo%2Cnetdo))", "17,156", null)]
         [NUnit.Framework.TestCaseAttribute("Application Vendor", "evergreen/#/devices?$filter=(applicationManufacturer%20EQUALS%20(\'Aaronbock%20Dev" +
             "elopment\')%20WHERE%20(etdo))", "95", null)]
         [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20EQUALS%20(\'App%20Discove" +
             "ry\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))", "1,003", null)]
         [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20(\'App%20D" +
-            "iscovery\')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", null)]
+            "iscovery\')%20WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,285", null)]
         [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20NOT%20EQUALS%20(\'App%20D" +
             "iscovery\')%20WHERE%20(iod))", "12,076", null)]
         [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20BEGIN%20WIT" +
             "H%20(\'General%205\')%20WHERE%20(nubdo%2Cniod))&$select=hostname,chassisCategory,o" +
-            "SCategory,ownerDisplayName,deviceOwnerCustomField_79", "17,225", null)]
+            "SCategory,ownerDisplayName,deviceOwnerCustomField_79", "17,285", null)]
         [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20ENDS%20WITH%20(\'0.5\')%20" +
             "WHERE%20(nubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))&$select=hostname,chassisCategory,o" +
-            "SCategory,ownerDisplayName,deviceOwnerCustomField_79", "17,225", null)]
+            "SCategory,ownerDisplayName,deviceOwnerCustomField_79", "17,285", null)]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountCheckForDeviceList(string filterName, string queryString, string rows, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -843,7 +843,7 @@ this.FeatureBackground();
             "e,chassisCategory,oSCategory,ownerDisplayName,installedApplications", "25", "App Count (Installed) is greater than or equal to 64", null)]
         [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/devices?$filter=(usedApplications%20%3C%3D%20100)&$select=hostname,ch" +
             "assisCategory,oSCategory,ownerDisplayName,usedApplications&$orderby=usedApplicat" +
-            "ions%20desc", "17,225", "App Count (Used) is less than or equal to 100", null)]
+            "ions%20desc", "17,285", "App Count (Used) is less than or equal to 100", null)]
         [NUnit.Framework.TestCaseAttribute("Application", "evergreen/#/devices?$filter=(application%20EQUALS%20(\'4093\'%2C\'4409\'%2C\'3854\'%2C\'" +
             "3992\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))", "9", "Application 7-Zip 16.02 (x64) (4093), 7-Zip 16.04 (x64) (4409), 7-Zip 9.20 (x64 e" +
             "dition) (3854) or 7-Zip 9.22 (x64 edition) (3992) used on device; entitled to de" +
@@ -857,15 +857,15 @@ this.FeatureBackground();
             "evice; entitled to device; installed on device; used by device\'s owner; or entit" +
             "led to device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("Application Import", "evergreen/#/devices?$filter=(applicationImport%20EQUALS%20(\'SCCM%202012%20PS1\')%2" +
-            "0WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,225", "Application whose Import is SCCM 2012 PS1 not entitled to device\'s owner; not use" +
+            "0WHERE%20(netdo%2Cnubdo%2Cniod%2Cnetd%2Cnuod))", "17,285", "Application whose Import is SCCM 2012 PS1 not entitled to device\'s owner; not use" +
             "d by device\'s owner; not installed on device; not entitled to device; or not use" +
             "d on device", null)]
         [NUnit.Framework.TestCaseAttribute("Application Name", "evergreen/#/devices?$filter=(applicationName%20ENDS%20WITH%20(\'1.1\')%20WHERE%20(n" +
-            "ubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))", "17,225", "Application whose Name ends with 1.1 not used by device\'s owner; not entitled to " +
+            "ubdo%2Cnetdo%2Cnuod%2Cnetd%2Cniod))", "17,285", "Application whose Name ends with 1.1 not used by device\'s owner; not entitled to " +
             "device\'s owner; not used on device; not entitled to device; or not installed on " +
             "device", null)]
         [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20CONTAINS%20(\'app\')%20WHE" +
-            "RE%20(nuod))", "17,225", "Application Owner contains app not used on device", null)]
+            "RE%20(nuod))", "17,285", "Application Owner contains app not used on device", null)]
         [NUnit.Framework.TestCaseAttribute("Application Owner (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_80%20BEGINS%20WITH%20(\'app\')%" +
             "20WHERE%20(iod%2Cubdo))", "1,003", "Application Owner begins with app installed on device; or used by device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("General information field 5 (App Custom Fields)", "evergreen/#/devices?$filter=(applicationCustomField_79%20DOES%20NOT%20END%20WITH%" +
@@ -1113,7 +1113,7 @@ this.FeatureBackground();
 #line 201
  testRunner.Then("\"List13179\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 202
- testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"17,285\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 203
  testRunner.When("User navigates to the \"All Devices\" list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 204
@@ -1123,7 +1123,7 @@ this.FeatureBackground();
 #line 206
  testRunner.Then("Filters panel is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 207
- testRunner.And("\"17,225\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"17,285\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 208
  testRunner.And("\"Any Application in list Dynamic13179 not entitled to device\'s owner; not used by" +
                     " device\'s owner; not installed on device; not entitled to device; or not used on" +
