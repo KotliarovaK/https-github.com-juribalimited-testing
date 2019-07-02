@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             TeamSelectBox.Click();
             var teamSelector = $"//mat-option/span[text()='{teamName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(teamSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(teamSelector));
             Driver.FindElement(By.XPath(teamSelector)).Click();
         }
     }

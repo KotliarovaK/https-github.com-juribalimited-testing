@@ -51,7 +51,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetCogMenuByItem(string item)
         {
             var selector = By.XPath($".//div[@title='{item}']/./following-sibling::div//div[@class='cell-menu-settings']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

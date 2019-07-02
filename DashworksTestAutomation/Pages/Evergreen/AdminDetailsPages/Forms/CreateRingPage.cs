@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         public void SelectOptionInMapsToEvergreenRingDropdown(string option)
         {
             var listNameSelector = $"//span[@class='mat-option-text' and contains(text(), '{option}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
     }

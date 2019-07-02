@@ -33,21 +33,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement  GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitWhileControlIsNotDisplayed(link);
+            Driver.WaitForElementToBeDisplayed(link);
             return Driver.FindElement(link);
         }
 
         public IWebElement GetTabMenuByName(string name)
         {
             var selector = By.XPath($".//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetSubMenuByName(string name)
         {
             var selector = By.XPath($".//ul[@class='das-mat-tree-submenu']//a[text()='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

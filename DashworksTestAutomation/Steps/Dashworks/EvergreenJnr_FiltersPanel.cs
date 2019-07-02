@@ -1360,7 +1360,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var styleColorItem = color.GetAttribute("style");
                 //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ColorItem);
-                _driver.WaitWhileControlIsNotDisplayed(colorItem);
+                _driver.WaitForElementToBeDisplayed(colorItem);
                 Assert.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
                 Assert.AreEqual(page.GetColorContainer(styleColorItem), colorName,
                     "Items color does not match the caption");
@@ -1377,7 +1377,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 var imageItemSource = image.GetAttribute("src");
                 var imageItemName = imageItemSource.Split('/').Last();
-                _driver.WaitWhileControlIsNotDisplayed(imageItem);
+                _driver.WaitForElementToBeDisplayed(imageItem);
                 //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ImageItemSelector);
                 Assert.AreEqual(page.GetImageContainer(imageItemName), imageName, "Image does not match the caption");
             }

@@ -462,7 +462,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.MouseHover(By.XPath(listElement.SettingButtonSelector));
-            _driver.WaitWhileControlIsNotDisplayed(By.XPath(listElement.SettingButtonSelector));
+            _driver.WaitForElementToBeDisplayed(By.XPath(listElement.SettingButtonSelector));
             _driver.FindElement(By.XPath(listElement.SettingButtonSelector)).Click();
             Assert.IsFalse(listElement.DeleteButton.Displayed(), "Delete Current List button is displayed");
         }
@@ -472,7 +472,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.MouseHover(By.XPath(listElement.SettingButtonSelector));
-            _driver.WaitWhileControlIsNotDisplayed(By.XPath(listElement.SettingButtonSelector));
+            _driver.WaitForElementToBeDisplayed(By.XPath(listElement.SettingButtonSelector));
             _driver.FindElement(By.XPath(listElement.SettingButtonSelector)).Click();
             Assert.IsTrue(listElement.DeleteButton.Displayed(), "Delete Current List button is NOT displayed");
         }

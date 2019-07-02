@@ -17,7 +17,7 @@ namespace DashworksTestAutomation.Pages
         public IWebElement GetLinkInManagementConsoleByName(string linkName)
         {
             var selector = By.XPath($".//table[@class='table_features']/..//a[text()='{linkName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

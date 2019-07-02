@@ -91,35 +91,35 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetButtonByNameOnPivot(string button)
         {
             var selector = By.XPath($"//span[text()='{button}']/ancestor::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetLeftPinnedExpandButtonByName(string text)
         {
             var selector = By.XPath($"//div[@role='gridcell']//span[text()='{text}']//ancestor::div[@col-id='ag-Grid-AutoColumn']//span[@class='ag-icon ag-icon-expanded']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetColumnsDisplayedForAggregateFunctions(string text)
         {
             var selector = By.XPath($".//div[@ref='eLabel']/span[@role='columnheader'][text()='{text}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTopLeftCornerText(string text)
         {
             var selector = By.XPath($".//div[@ref='agContainer']/span[text()='{text}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public void GetSubCategoryOnPivotByName(string name)
         {
             var selector = By.XPath($"//*[text()='{name}']/ancestor::div[contains(@class, 'sub-categories-item')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.MouseHover(selector);
             Driver.FindElement(selector).Click();
         }
@@ -161,14 +161,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetPanelByName(string button)
         {
             var selector = By.XPath($"//*[text()='{button}']/ancestor::div[@id='context-container']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetPlusButtonOnPivotByName(string button)
         {
             var selector = By.XPath($"//div[@class='context-block-title'][text()='{button}']/following-sibling::div//button[contains(@class, 'plus')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -176,7 +176,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
             if (!allHeaders.Any())
                 throw new Exception("Table does not contains any columns");
@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement SelectAggregateFunctionByName(string functionName)
         {
             var selector = By.XPath($".//option[@class='ng-star-inserted'][text()='{functionName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

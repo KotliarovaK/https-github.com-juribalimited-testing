@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetValueInGroupByFilterOnDetailsPage(string value)
         {
             var selector = By.XPath($"//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

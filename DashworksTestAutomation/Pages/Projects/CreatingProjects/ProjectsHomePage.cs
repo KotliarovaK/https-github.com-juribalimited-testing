@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetProjectInDropDownListByName(string projectName)
         {
             var selector = By.XPath($".//option[contains(text(), '{projectName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

@@ -201,21 +201,7 @@ namespace DashworksTestAutomation.Extensions
         {
             var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
             var by = GetByFor<T>(propertyName);
-            driver.WaitWhileControlIsNotDisplayed(by);
-        }
-
-        public static void WaitWhileControlIsNotDisplayed(this RemoteWebDriver driver, By by)
-        {
-            try
-            {
-                WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
-                wait.Until(ExpectedConditions.ElementIsVisible(by));
-            }
-            catch (WebDriverTimeoutException e)
-            {
-                throw new Exception(
-                    $"Element with '{by}' selector is NOT displayed in {WaitTimeout.TotalSeconds} seconds", e);
-            }
+            driver.WaitForElementToBeDisplayed(by);
         }
 
         public static void WaitWhileControlIsDisplayedObsolete<T>(this RemoteWebDriver driver,
@@ -350,7 +336,7 @@ namespace DashworksTestAutomation.Extensions
             var toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
             if (String.IsNullOrEmpty(toolTipText))
             {
-                driver.WaitWhileControlIsNotDisplayed(By.XPath(selector + "/div"));
+                driver.WaitForElementToBeDisplayed(By.XPath(selector + "/div"));
                 toolTipText = toolTips.First().FindElement(By.XPath("./div")).Text;
             }
             return toolTipText;

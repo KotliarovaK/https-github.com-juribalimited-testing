@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement CheckAllListName(string listName)
         {
             var allListName = $".//div[@class='submenu-selected-list list-selected'][text()='{listName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
+            Driver.WaitForElementToBeDisplayed(By.XPath(allListName));
             return Driver.FindElement(By.XPath(allListName));
         }
 
@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     $".//ul[@class='submenu-actions-list ng-star-inserted']//span[text()='{listName}']//ancestor::li[@class='menu-show-on-hover ng-star-inserted']//div[@class='menu-wrapper']//i");
             Driver.MouseHover(listSettingsSelector);
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(listSettingsSelector);
+            Driver.WaitForElementToBeDisplayed(listSettingsSelector);
             return Driver.FindElement(listSettingsSelector);
         }
 
@@ -132,14 +132,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetListNameOnTopToolsPanel(string listName)
         {
             var allListName = $".//*[text()='{listName}']/ancestor::div[@class='top-tools']//div[@aria-controls='submenu']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(allListName));
+            Driver.WaitForElementToBeDisplayed(By.XPath(allListName));
             return Driver.FindElement(By.XPath(allListName));
         }
 
         public IWebElement GetFilterForListsByName(string filterListName)
         {
             var selector = By.XPath($"//div[contains(@class, 'transformPanel ')]//mat-option//span[text()='{filterListName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
