@@ -356,7 +356,7 @@ namespace DashworksTestAutomation.Extensions
             return toolTipText;
         }
 
-        public static void WhatForElementToBeNotSelected(this RemoteWebDriver driver, IWebElement element, bool selectorState)
+        public static void WhatForElementToBeSelected(this RemoteWebDriver driver, IWebElement element, bool selectorState)
         {
             try
             {
