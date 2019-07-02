@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 var page = _driver.NowAt<BaseDashboardPage>();
                 _driver.WaitForDataLoading();
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.NoResultsFoundMessage);
+                _driver.WaitForElementToBeDisplayed(page.NoResultsFoundMessage);
                 Assert.IsTrue(page.NoResultsFoundMessage.Displayed(), $"{message} is not displayed");
                 _driver.WaitForDataLoading();
             }
@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Thread.Sleep(1000);
 
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
+                _driver.WaitForElementToBeDisplayed(listPageElement.ResultsOnPageCount);
 
                 StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                     listPageElement.ResultsOnPageCount.Text,
@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
                 _driver.WaitWhileControlIsDisplayedObsolete<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
                 Assert.IsFalse(listPageElement.ResultsOnPageCount.Displayed(), "Rows count is displayed");
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.NoResultsFoundMessage);
+                _driver.WaitForElementToBeDisplayed(listPageElement.NoResultsFoundMessage);
                 Assert.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(),
                     "'No Results Found' message not displayed");
                 Logger.Write(
@@ -100,7 +100,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listPageElement = _driver.NowAt<BaseDashboardPage>();
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
+            _driver.WaitForElementToBeDisplayed(listPageElement.ResultsOnPageCount);
             if (listPageElement.TableSearchTextBox.Displayed())
             {
                 Assert.IsEmpty(listPageElement.TableSearchTextBox.GetAttribute("value"), "Search textbox is not empty");
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInTableSearchFieldIsDisplayed()
         {
             var resetButton = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => resetButton.SearchTextBoxResetButton);
+            _driver.WaitForElementToBeDisplayed(resetButton.SearchTextBoxResetButton);
             Assert.IsTrue(resetButton.SearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
@@ -141,8 +141,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldOnSelectedPanelIsDisplayed()
         {
             var resetButton = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() =>
-                resetButton.SearchTextBoxResetButtonInPanel);
+            _driver.WaitForElementToBeDisplayed(resetButton.SearchTextBoxResetButtonInPanel);
 
             Assert.IsTrue(resetButton.SearchTextBoxResetButtonInPanel.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
@@ -171,7 +170,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
             {
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listPageElement.TableSearchButton);
+                _driver.WaitForElementToBeDisplayed(listPageElement.TableSearchButton);
                 listPageElement.TableSearchButton.Click();
                 listPageElement.TableSearchTextBox.Clear();
                 Thread.Sleep(3000);

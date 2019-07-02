@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             if (!expandButtons.Any()) return;
             foreach (var button in expandButtons)
             {
-                //Driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => button);
+                //Driver.WaitForElementToBeDisplayed(button);
                 Driver.MouseHover(button);
                 button.Click();
                 Driver.WaitForDataLoading();

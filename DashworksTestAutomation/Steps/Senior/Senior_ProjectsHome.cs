@@ -36,7 +36,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.WaitForDataLoadingOnProjects();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => project.ManageProject);
+            _driver.WaitForElementToBeDisplayed(project.ManageProject);
             _driver.MouseHover(project.ManageProject);
             _driver.MouseHover(menu.GetSubTabByName(_projectDto.ProjectName));
             menu.GetSubTabByName(_projectDto.ProjectName).Click();
@@ -49,7 +49,7 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver.WaitForDataLoadingOnProjects();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => project.ManageProject);
+            _driver.WaitForElementToBeDisplayed(project.ManageProject);
             _driver.MouseHover(project.ManageProject);
             _driver.MouseHover(menu.GetSubTabByName(projectName));
             menu.GetSubTabByName(projectName).Click();

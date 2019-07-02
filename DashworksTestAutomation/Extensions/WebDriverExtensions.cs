@@ -196,14 +196,6 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static void WaitWhileControlIsNotDisplayed<T>(this RemoteWebDriver driver,
-            Expression<Func<IWebElement>> elementGetter)
-        {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
-            var by = GetByFor<T>(propertyName);
-            driver.WaitForElementToBeDisplayed(by);
-        }
-
         public static void WaitWhileControlIsDisplayedObsolete<T>(this RemoteWebDriver driver,
             Expression<Func<IWebElement>> elementGetter)
         {

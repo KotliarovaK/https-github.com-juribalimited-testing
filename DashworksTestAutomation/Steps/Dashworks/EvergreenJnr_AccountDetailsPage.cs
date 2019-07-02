@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var header = _driver.NowAt<HeaderElement>();
             header.UserNameDropdown.Click();
-            _driver.WaitWhileControlIsNotDisplayed<HeaderElement>(() => header.ProfileButton);
+            _driver.WaitForElementToBeDisplayed(header.ProfileButton);
             header.ProfileButton.Click();
         }
 
@@ -265,7 +265,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnAccountDetailsPage(string text)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
             try
             {
@@ -281,7 +281,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
         {
             var page = _driver.NowAt<ChangePasswordPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
             //Waiting for success green banner is displayed
             Thread.Sleep(4000);
@@ -291,7 +291,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageWithTextIsDisplayedOnTheChangePasswordPage(string text)
         {
             var page = _driver.NowAt<ChangePasswordPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
+            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
             StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
             try
             {
@@ -307,7 +307,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenErrorMessageIsDisplayed(string errorMessage)
         {
             var page = _driver.NowAt<AccountDetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<ChangePasswordPage>(() => page.ErrorMessage);
+            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
             Assert.AreEqual(errorMessage, page.ErrorMessage.Text, "Incorrect Error message text");
             try
             {
@@ -323,7 +323,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnTheAdvancedPage(string text)
         {
             var page = _driver.NowAt<AdvancedPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AdvancedPage>(() => page.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             Assert.AreEqual(text, page.SuccessMessage.Text, "Success Message is not displayed");
             page.CloseMessageButton.Click();
             _driver.WaitWhileControlIsDisplayedObsolete<AdvancedPage>(() => page.SuccessMessage);

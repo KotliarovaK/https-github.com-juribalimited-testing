@@ -48,7 +48,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksAddNewButtonOnTheFilterPanel()
         {
             var menu = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => menu.AddNewFilterButton);
+            _driver.WaitForElementToBeDisplayed(menu.AddNewFilterButton);
             menu.AddNewFilterButton.Click();
             Logger.Write("Add New button was clicked");
         }
@@ -57,7 +57,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksAddAndButtonOnTheFilterPanel()
         {
             var menu = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => menu.AddNewFilterButton);
+            _driver.WaitForElementToBeDisplayed(menu.AddNewFilterButton);
             menu.AddNewFilterButton.Click();
             Logger.Write("Add And button was clicked");
         }
@@ -162,7 +162,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserEntersTextInSearchFieldAtSelectedLookupFilter(string searchedText)
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextBox);
+            _driver.WaitForElementToBeDisplayed(filterElement.LookupFilterSearchTextBox);
             filterElement.LookupFilterSearchTextBox.Clear();
             filterElement.LookupFilterSearchTextBox.SendKeys(searchedText);
         }
@@ -189,7 +189,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
             if (!string.IsNullOrWhiteSpace(searchedText))
             {
-                _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.FilterSearchTextBox);
+                _driver.WaitForElementToBeDisplayed(filterElement.FilterSearchTextBox);
                 filterElement.FilterSearchTextBox.Clear();
                 filterElement.FilterSearchTextBox.SendKeys(searchedText);
             }
@@ -228,7 +228,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.AssociationSearchTextBox.Click();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextBox);
+            _driver.WaitForElementToBeDisplayed(filterElement.LookupFilterSearchTextBox);
             filterElement.AssociationSearchTextBox.Clear();
             filterElement.AssociationSearchTextBox.SendKeys(searchedText);
         }
@@ -238,7 +238,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.AssociationSearchTextBox.Click();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextBox);
+            _driver.WaitForElementToBeDisplayed(filterElement.LookupFilterSearchTextBox);
             filterElement.AssociationSearchTextBox.Clear();
             filterElement.AssociationSearchTextBox.SendKeys(checkboxName);
             filterElement.GetAssociationCheckbox(checkboxName);
@@ -249,7 +249,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<FiltersElement>();
             filterElement.AssociationSearchTextBox.Click();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.LookupFilterSearchTextBox);
+            _driver.WaitForElementToBeDisplayed(filterElement.LookupFilterSearchTextBox);
             filterElement.AssociationSearchTextBox.Clear();
             filterElement.AssociationSearchTextBox.SendKeys(checkboxName);
             filterElement.GetCheckboxForAssociationLookupFilter(checkboxName);
@@ -740,7 +740,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var filterElement = _driver.NowAt<FiltersElement>();
 
             filterElement.GetEditFilterButton(filterName).Click();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.RemoveFilterButton);
+            _driver.WaitForElementToBeDisplayed(filterElement.RemoveFilterButton);
             filterElement.RemoveFilterButton.Click();
         }
 
@@ -857,7 +857,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserHaveResetAllFilters()
         {
             var filterElement = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterElement.ResetFiltersButton);
+            _driver.WaitForElementToBeDisplayed(filterElement.ResetFiltersButton);
             _driver.MouseHover(filterElement.ResetFiltersButton);
             filterElement.ResetFiltersButton.Click();
         }
@@ -1321,7 +1321,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesFilterDateDate(string date)
         {
             var page = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.InputDate);
+            _driver.WaitForElementToBeDisplayed(page.InputDate);
 
             //TODO: clear() method doesn't work for now. Remove code below and use clear() when it works again
             page.InputDate.Click();
@@ -1338,7 +1338,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSaveButtonIsNotAvailableOnTheFilterPanel()
         {
             var filterPanel = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
+            _driver.WaitForElementToBeDisplayed(filterPanel.SaveButton);
             Assert.IsTrue(Convert.ToBoolean(filterPanel.SaveButton.GetAttribute("disabled")), "Save Button is active");
         }
 
@@ -1346,7 +1346,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSaveChangeInCurrentFilter()
         {
             var filterPanel = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => filterPanel.SaveButton);
+            _driver.WaitForElementToBeDisplayed(filterPanel.SaveButton);
             filterPanel.SaveButton.Click();
         }
 
@@ -1359,7 +1359,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             foreach (var color in colors)
             {
                 var styleColorItem = color.GetAttribute("style");
-                //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ColorItem);
+                //_driver.WaitForElementToBeDisplayed(page.ColorItem);
                 _driver.WaitForElementToBeDisplayed(colorItem);
                 Assert.IsTrue(page.GetColorByName(colorName).Displayed(), "Captions color does not match the caption");
                 Assert.AreEqual(page.GetColorContainer(styleColorItem), colorName,
@@ -1378,7 +1378,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 var imageItemSource = image.GetAttribute("src");
                 var imageItemName = imageItemSource.Split('/').Last();
                 _driver.WaitForElementToBeDisplayed(imageItem);
-                //_driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.ImageItemSelector);
+                //_driver.WaitForElementToBeDisplayed(page.ImageItemSelector);
                 Assert.AreEqual(page.GetImageContainer(imageItemName), imageName, "Image does not match the caption");
             }
         }
@@ -1387,7 +1387,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInSearchFieldAtSelectedFilterIsDisplayed()
         {
             var page = _driver.NowAt<FiltersElement>();
-            _driver.WaitWhileControlIsNotDisplayed<FiltersElement>(() => page.SearchTextBoxResetButton);
+            _driver.WaitForElementToBeDisplayed(page.SearchTextBoxResetButton);
             Assert.IsTrue(page.SearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }

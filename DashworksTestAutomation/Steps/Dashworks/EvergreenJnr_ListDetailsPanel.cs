@@ -119,7 +119,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenStarIconIsActiveInListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ActiveFavoriteButton); 
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.ActiveFavoriteButton); 
             Assert.IsTrue(listDetailsElement.ActiveFavoriteButton.Displayed(),
                 "Star icon is not active");
         }
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.ListDetailsPanel);
             Assert.IsTrue(listDetailsElement.ListDetailsPanel.Displayed(), "List Details panel is not displayed");
             Logger.Write("List Details panel is visible");
         }
@@ -175,7 +175,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNoWarningMessageIsDisplayedInTheListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.ListDetailsPanel);
             Assert.IsFalse(listDetailsElement.WarningMessage.Displayed(),
                 "Warning message is displayed in the list details panel");
         }
@@ -222,7 +222,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenDependantsSectionIsDisplayedToTheUser()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.ListDetailsPanel);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.ListDetailsPanel);
             Assert.IsTrue(listDetailsElement.DependantsSection.Displayed(), "Dependants section is not displayed");
             Logger.Write("Dependants section is visible");
         }
@@ -334,7 +334,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickAcceptButtonInListDetailsPanel()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.AcceptButton);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.AcceptButton);
             listDetailsElement.AcceptButton.Click();
             _driver.WaitForDataLoadingInActionsPanel();
             _driver.WaitForDataLoading();
@@ -344,7 +344,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClickAddUserButton()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.AddUserButton);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.AddUserButton);
             listDetailsElement.AddUserButton.Click();
         }
 
@@ -352,7 +352,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectInSelectUserDropdown(string userOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectUserDropdown);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown, userOption);
         }
 
@@ -360,7 +360,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectCurrentUserInSelectUserDropdown()
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectUserDropdown);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown,
                 GetFullNameByUserName(_userDto.UserName));
         }
@@ -369,7 +369,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectInSelectAccessDropdown(string accessOption)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectAccessDropdown);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectAccessDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectAccessDropdown, accessOption);
             _driver.WaitForDataLoading();
         }
@@ -378,7 +378,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectInPermissionDropdown(string option)
         {
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ListDetailsElement>(() => listDetailsElement.SelectPermissionDropdown);
+            _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectPermissionDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectPermissionDropdown, option);
             _driver.WaitForDataLoading();
         }
@@ -388,7 +388,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => listElement.ErrorMessage);
+            _driver.WaitForElementToBeDisplayed(listElement.ErrorMessage);
             Assert.AreEqual(message, listElement.ErrorMessage.Text, $"{message} is not displayed");
         }
 
