@@ -229,7 +229,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             if (FilterCategories.Any())
                 Driver.MouseHover(FilterCategories.Last());
             Driver.MouseHover(By.XPath(SearchTextBoxSelector));
-            Driver.WaitWhileControlIsNotClickable(By.XPath(SearchTextBoxSelector));
+            Driver.WaitForElementToBeEnabled(By.XPath(SearchTextBoxSelector));
             Driver.FindElement(By.XPath(SearchTextBoxSelector)).Click();
             Driver.FindElement(By.XPath(SearchTextBoxSelector)).SendKeys(filterName);
             string selector;
@@ -271,7 +271,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             if (FilterCategories.Any())
                 Driver.MouseHover(FilterCategories.Last());
             Driver.MouseHover(By.XPath(SearchTextBoxSelector));
-            Driver.WaitWhileControlIsNotClickable(By.XPath(SearchTextBoxSelector));
+            Driver.WaitForElementToBeEnabled(By.XPath(SearchTextBoxSelector));
             Driver.FindElement(By.XPath(SearchTextBoxSelector)).Click();
             Driver.FindElement(By.XPath(SearchTextBoxSelector)).SendKeys(filterName);
             string selector;
@@ -365,7 +365,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public List<string> GetFiltersNames()
         {
-            Driver.WaitWhileControlIsNotExists(By.XPath(".//span[@class='filter-label-name']"));
+            Driver.WhatForElementToBeExists(By.XPath(".//span[@class='filter-label-name']"));
             var namesListElements = Driver.FindElements(By.XPath(".//span[@class='filter-label-name']"));
             return namesListElements.Select(name => name.Text).ToList();
         }
