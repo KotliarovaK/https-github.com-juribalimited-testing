@@ -174,12 +174,12 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And User clicks Save filter button
 	When User create custom list with "DynamicList13179" name
 	Then "DynamicList13179" list is displayed to user
-	And "17,196" rows are displayed in the agGrid
+	And "17,256" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	And User navigates to the "DynamicList13179" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "17,196" rows are displayed in the agGrid
+	And "17,256" rows are displayed in the agGrid
 	And "Any Application in list StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
@@ -228,12 +228,12 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And User clicks Save filter button
 	When User create custom list with "List11179" name
 	Then "List11179" list is displayed to user
-	And "7,365" rows are displayed in the agGrid
+	And "7,425" rows are displayed in the agGrid
 	When User navigates to the "All Devices" list
 	And User navigates to the "List11179" list
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
-	And "7,365" rows are displayed in the agGrid
+	And "7,425" rows are displayed in the agGrid
 	And "Any Application in list StaticList12911 not installed on device" is displayed in added filter info
 
 @Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
