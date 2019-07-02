@@ -424,7 +424,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -512,8 +512,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then "[List not found]" content is displayed in the Scope Automation dropdown
-	When User clicks "Administration" navigation link on the Admin page
-	When User clicks "Run now" option in Cog-menu for "DAS15423_Automation" item on Admin page
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
+	When User selects all rows on the grid
+	When User clicks on Actions button
+	And User selects "Run now" in the Actions
+	When User clicks the "RUN" Action button
+	When User clicks "RUN" button in the warning message on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	Then "LIST NOT FOUND" content is displayed for "Outcome" column
@@ -563,24 +568,27 @@ Scenario: EvergreenJnr_AdminPage_CheckRunNowfunctionalityInBulkActions
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17171 @DAS17003 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17171 @DAS17003 @DAS17260 @Not_Ready
 #Use specific Automation (Delay) that run longer
 Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAutomationThatIsRunning
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "Delay22" text in the Search field for "Automation" column
-	When User clicks "Run now" option in Cog-menu for "Delay22" item on Admin page
-	When User enters "Delay22" text in the Search field for "Automation" column
+	When User enters "Delay" text in the Search field for "Automation" column
+	When User clicks "Run now" option in Cog-menu for "Delay" item on Admin page
+	When User enters "Delay" text in the Search field for "Automation" column
+	When User clicks "Make inactive" option in Cog-menu for "Delay" item on Admin page
+	Then Error message with "This automation is currently running" text is displayed
+	When User enters "Delay" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
 	Then Create Action page is displayed to the User
 	When User type "17171_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
-	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Barry's User Project" in the Project dropdown
+	When User selects "Virtual User (Default)" in the Path dropdown
 	When User clicks the "CREATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 	When User clicks "Actions" tab

@@ -61,13 +61,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
                 request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
                 request.AddParameter("Referer", UrlProvider.EvergreenUrl);
                 request.AddParameter("objectId", null);
-                request.AddParameter("automationName", automation.AutomationName);
-                request.AddParameter("automationName", automation.AutomationName);
-                request.AddParameter("description", automation.Description);
-                request.AddParameter("stopOnFailedAction", automation.StopOnFailedAction);
+
                 request.AddParameter("active", automation.Active);
+                request.AddParameter("automationId", automation.AutomationId);
+                request.AddParameter("automationName", automation.AutomationName);
                 request.AddParameter("automationScheduleTypeId", GetScheduleTypeId(automation.Run));
-                request.AddParameter(GetCreateProjectRequestScopeProperty(automation.Scope), GetObjectType(automation.Scope));
+                request.AddParameter("automationSqlAgentJobId", automation.AutomationSqlAgentJobId);
+                request.AddParameter("description", automation.Description);
+                request.AddParameter("listId", GetListId(automation.Scope));
+                request.AddParameter("objectTypeId", GetObjectTypeId(automation.Scope));
+                request.AddParameter("stopOnFailedAction", automation.StopOnFailedAction);
 
                 var response = _client.Value.Post(request);
 
@@ -78,11 +81,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
 
                 _automation.Value.Add(automation);
             }
-        }
-
-        private void GetRunType(string runType)
-        {
-            string[] subMenus = { "Manual", "After Transform", "Dashworks Daily" };
         }
 
         private string GetScheduleTypeId(string runType)
@@ -96,24 +94,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
             return "NOT FOUND";
         }
 
-        private string GetCreateProjectRequestScopeProperty(string scope)
+        private string GetListId(string listName)
         {
-            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? "objectType" : "listId";
+            if (listName.Equals("All Devices") || listName.Equals("All Users") || listName.Equals("All Mailboxes") || listName.Equals("All Mailboxes"))
+                return "-1";
+            else
+            {
+                GetProjectListIdScope(listName);
+            }
+            return "NOT FOUND";
         }
 
-        private string GetObjectType(string scope)
-        {
-            return new string[] { "All Devices", "All Users", "All Mailboxes", "All Applications" }.Contains(scope) ? GetProjectObjectTypeScope(scope) : GetProjectListIdScope(scope);
-        }
-
-        private string GetProjectObjectTypeScope(string scope)
+        private string GetObjectTypeId(string scope)
         {
             if (scope.Equals("All Devices"))
-                return "-1";
+                return "2";
             if (scope.Equals("All Users"))
-                return "-1";
+                return "1";
             if (scope.Equals("All Mailboxes"))
-                return "-1";
+                return "4";
+            if (scope.Equals("All Applications"))
+                return "3";
             return "NOT FOUND";
         }
 

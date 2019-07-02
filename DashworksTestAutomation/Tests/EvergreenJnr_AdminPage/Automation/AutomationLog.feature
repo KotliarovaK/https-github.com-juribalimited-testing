@@ -84,14 +84,14 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	| INACTIVE AUTOMATION |
 	| SUCCESS             |
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS16974 @DAS16316 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS16974 @DAS16316 @DAS17263 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 #Use correct, active Automation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "DD Autimation" text in the Search field for "Automation" column
+	When User enters "AM 1.7.19 Application" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
@@ -99,8 +99,13 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
-	When User enters "DD Autimation" text in the Search field for "Automation" column
+	When User enters "AM 1.7.19 Application" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
+	#Update for DAS17263
+	#When User clicks String Filter button for "Action" column on the Admin page
+	#When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	#When User clicks String Filter button for "Action" column on the Admin page
+	#When User selects "16890_Action" checkbox from String Filter with item list on the Admin page
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16316 @DAS16319 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRunning
