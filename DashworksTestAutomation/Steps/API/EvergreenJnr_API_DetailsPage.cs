@@ -66,6 +66,27 @@ namespace DashworksTestAutomation.Steps.API
             }
         }
 
+        [Then(@"following fields are displayed with next state on Details tab API")]
+        public void ThenFollowingFieldsAreDisplayedWithNextStateOnDetailsTabAPI(Table table)
+        {
+            var content = _response.Value.Content;
+            var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
+
+            try
+            {
+                foreach (var row in table.Rows)
+                {
+                    var item = allItems.First(x => x["friendlyName"].ToString().Equals(row["FieldName"]));
+                    Assert.AreEqual(row["DisplayState"], item["visible"].ToString(), $"Incorrect display state for {row["FieldName"]}");
+                }
+            }
+            catch
+            {
+                foreach (var row in table.Rows)
+                    Assert.AreEqual(row["DisplayState"], "False", $"Incorrect display state for {row["FieldName"]}");
+            }
+        }
+
         [Then(@"""(.*)"" text displayed for ""(.*)"" empty fields")]
         public void ThenTextDisplayedForEmptyFields(string text, string sectionName)
         {

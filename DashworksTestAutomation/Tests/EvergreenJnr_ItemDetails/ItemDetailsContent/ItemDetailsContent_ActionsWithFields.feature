@@ -79,3 +79,25 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	When User navigates to the "Mailbox Owner" sub-menu on the Details page
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17274
+Scenario: EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly
+	When I perform test request to the "Users" API and get "002B5DC7D4D34D5C895" item summary for "Department and Location" section
+	Then following fields are displayed with next state on Details tab API
+	| FieldName            | DisplayState |
+	| Department Name      | True         |
+	| Department Full Path | True         |
+	| Department Code      | True         |
+	| Cost Centre          | True         |
+	| Location Name        | True         |
+	| Region               | True         |
+	| Country              | True         |
+	| City                 | True         |
+	| Building Name        | True         |
+	| Floor                | True         |
+	| Address 1            | True         |
+	| Address 2            | True         |
+	| Address 3            | True         |
+	| Address 4            | True         |
+	| State/County         | True         |
+	| Postal Code          | True         |

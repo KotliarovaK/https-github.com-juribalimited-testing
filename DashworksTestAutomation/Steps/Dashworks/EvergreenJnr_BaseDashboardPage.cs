@@ -155,10 +155,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForDataLoading();
 
+            //TODO replace by the separate method
             new Actions(_driver)
                 .Click(searchElement.SearchEverythingField)
-                .SendKeys(OpenQA.Selenium.Keys.LeftControl + "v")
-                .KeyUp(OpenQA.Selenium.Keys.LeftControl)
+                .SendKeys(OpenQA.Selenium.Keys.Shift).SendKeys(OpenQA.Selenium.Keys.Insert)
+                .KeyUp(OpenQA.Selenium.Keys.Shift).KeyUp(OpenQA.Selenium.Keys.Insert)
                 .Perform();
 
             Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
