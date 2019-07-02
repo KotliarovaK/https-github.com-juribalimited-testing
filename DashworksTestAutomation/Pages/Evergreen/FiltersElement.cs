@@ -260,7 +260,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             }
 
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsDisplayedObsolete<FiltersElement>(() => AddNewFilterButton);
+            Driver.WaitForElementToBeNotDisplayed(AddNewFilterButton);
         }
 
         public void AddFilterForCategory(string filterName, string categoryName)
@@ -293,7 +293,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(By.XPath(selector)).Click();
 
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsDisplayedObsolete<FiltersElement>(() => AddNewFilterButton);
+            Driver.WaitForElementToBeNotDisplayed(AddNewFilterButton);
         }
 
         public string GetShowedResultsCount()
@@ -330,7 +330,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Driver.FindElement(By.XPath(selector)).Click();
 
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsDisplayedObsolete<FiltersElement>(() => AddAndFilterButton);
+            Driver.WaitForElementToBeNotDisplayed(AddAndFilterButton);
         }
 
         public bool CheckFilterAvailability(string filterName)

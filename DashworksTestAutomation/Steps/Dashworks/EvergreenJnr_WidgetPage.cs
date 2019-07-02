@@ -390,7 +390,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNoUnsavedChangesAlertDisplayedOnEditWidgetPage()
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitWhileControlIsDisplayedObsolete<AddWidgetPage>(() => page.UnsavedChangesAlert);
+            _driver.WaitForElementToBeNotDisplayed(page.UnsavedChangesAlert);
             Assert.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert));
         }
 

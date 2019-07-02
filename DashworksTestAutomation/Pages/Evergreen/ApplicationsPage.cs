@@ -8,7 +8,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
     {
         public override List<By> GetPageIdentitySelectors()
         {
-            Driver.WaitForElementToBeDisplayed(List);
             Driver.WaitForDataLoading();
             return new List<By>
             {

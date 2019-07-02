@@ -196,28 +196,6 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
-        public static void WaitWhileControlIsDisplayedObsolete<T>(this RemoteWebDriver driver,
-            Expression<Func<IWebElement>> elementGetter)
-        {
-            var propertyName = ((MemberExpression)elementGetter.Body).Member.Name;
-            var by = GetByFor<T>(propertyName);
-            driver.WaitWhileControlIsDisplayed(by);
-        }
-
-        public static void WaitWhileControlIsDisplayed(this RemoteWebDriver driver, By by)
-        {
-            try
-            {
-                WebDriverWait wait = new WebDriverWait(driver, WaitTimeout);
-                wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
-            }
-            catch (WebDriverTimeoutException e)
-            {
-                throw new Exception(
-                    $"Element with '{by}' selector still displayed after {WaitTimeout.TotalSeconds} seconds", e);
-            }
-        }
-
         public static void WaitForDataLoading(this RemoteWebDriver driver)
         {
             WaitForDataToBeLoaded(driver, ".//div[contains(@class,'spinner') and not(contains(@class,'small'))]", WaitTimeout);
@@ -763,6 +741,7 @@ namespace DashworksTestAutomation.Extensions
             {
                 try
                 {
+                    var t = element.Displayed();
                     return element.Displayed().Equals(displayedCondition);
                 }
                 catch (NoSuchElementException)

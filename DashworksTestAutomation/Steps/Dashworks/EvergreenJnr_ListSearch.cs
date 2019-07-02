@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             else
             {
                 _driver.IsElementDisplayed(listPageElement.NoResultsFoundMessage);
-                _driver.WaitWhileControlIsDisplayedObsolete<BaseDashboardPage>(() => listPageElement.ResultsOnPageCount);
+                _driver.WaitForElementToBeNotDisplayed(listPageElement.ResultsOnPageCount);
                 Assert.IsFalse(listPageElement.ResultsOnPageCount.Displayed(), "Rows count is displayed");
                 _driver.WaitForElementToBeDisplayed(listPageElement.NoResultsFoundMessage);
                 Assert.IsTrue(listPageElement.NoResultsFoundMessage.Displayed(),

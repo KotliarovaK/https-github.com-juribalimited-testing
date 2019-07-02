@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var settingsButton =
                 $".//span[@class='submenu-actions-list-name'][text()='{listName}']//ancestor::li//i[contains(@class,'settings')]";
-            Driver.WaitWhileControlIsDisplayedObsolete<CustomListElement>(() => UpdateCurrentListButton);
+            Driver.WaitForElementToBeNotDisplayed(UpdateCurrentListButton);
             Driver.MouseHover(By.XPath(settingsButton));
             Driver.FindElement(By.XPath(settingsButton)).Click();
         }
