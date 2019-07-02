@@ -43,3 +43,32 @@ Scenario: EvergreenJnr_GlobalSearch_CheckThatErrorMessageIsNotDisplayedAfterTypi
 	Then "Search results for "Escaping Test User |\\/\,\<\>#\;+\"\=- |\\/\,\<\>#\;+\"\=-.Users.corp.juriba.com"" is displayed below Global Search field
 	Then message "No results found for the current search" is displayed to the user below Search results
 	And There are no errors in the browser console
+
+@Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS11350
+Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User type "CheckTheResetButton" in Global Search Field
+	Then reset button in Global Search field is displayed
+
+@Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS11495
+Scenario Outline: EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User type "[^abc]" in Global Search Field
+	Then "<PageName>" list should be displayed to the user
+
+Examples: 
+	| PageName     |
+	| Devices      |
+	| Users        |
+	| Applications |
+	| Mailboxes    |
+
+@Evergreen @GlobalSearch @EvergreenJnr_GlobalSearch @MainFunctionality @DAS14731
+Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed
+	When User type "jet" in Global Search Field and presses Enter key
+	Then list of results is displayed to the user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	And There are no errors in the browser console
