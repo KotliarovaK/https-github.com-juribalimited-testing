@@ -176,13 +176,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectElement.EmptyUnlimitedField.Displayed());
         }
 
-        [Then(@"Bucket dropdown is not displayed on the Project details page")]
-        public void ThenBucketDropdownIsNotDisplayedOnTheProjectDetailsPage()
-        {
-            var projectPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsFalse(projectPage.BucketDropdown.Displayed(), "Bucket dropdown is displayed");
-        }
-
         [Then(@"Evergreen Unit is displayed to the user")]
         public void ThenEvergreenUnitIsDisplayedToTheUser()
         {
@@ -924,34 +917,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.BodyContainer.Click();
         }
 
-        [Then(@"Add Buckets page is displayed to the user")]
-        public void ThenAddBucketsPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<AddBucketToTeamPage>();
-            Assert.IsTrue(page.PageTitle.Displayed(), "Add Buckets page is not displayed");
-        }
-
-        [Then(@"Reassign Buckets page is displayed to the user")]
-        public void ThenReassignBucketsPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<ReassignBucketsPage>();
-            Assert.IsTrue(page.PageReassignBucketsTitle.Displayed(), "Reassign Buckets page is not displayed");
-        }
-
         [Then(@"Change Team page is displayed to the user")]
         public void ThenChangeTeamPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<ChangeTeamPage>();
             Assert.IsTrue(page.PageTitle.Displayed(), "Change Team page is not displayed");
-        }
-
-        [When(@"User selects ""(.*)"" in the Select a team dropdown")]
-        public void WhenUserSelectsInTheSelectATeamDropdown(string teamName)
-        {
-            var page = _driver.NowAt<ReassignBucketsPage>();
-            page.SelectTeamDropdown.Click();
-            _driver.WaitForDataLoading();
-            page.SelectTeamToReassign(teamName);
         }
 
         [When(@"User selects ""(.*)"" in the Team dropdown")]
@@ -962,14 +932,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             page.SelectTeamToChange(teamName);
         }
-
-        [When(@"User expands ""(.*)"" project to add bucket")]
-        public void WhenUserExpandsProjectToAddBucket(string projectName)
-        {
-            var teamElement = _driver.NowAt<AddBucketToTeamPage>();
-            teamElement.ExpandProjectByName(projectName).Click();
-        }
-
+       
         #region Column Settings
 
         [When(@"User have opened Column Settings for ""(.*)"" column")]
@@ -1028,28 +991,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.SelectTabByName(tabName);
         }
 
-        [Then(@"Default Bucket checkbox is selected")]
-        public void ThenDefaultBucketCheckboxIsSelected()
-        {
-            var page = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(page.SelectedDefaultBucketCheckbox.Displayed(), "Default Bucket checkbox is not selected");
-        }
-
-        [When(@"User clicks ""(.*)"" tab on the Buckets page")]
-        public void WhenUserClicksTabOnTheBucketsPage(string tabName)
-        {
-            var tab = _driver.NowAt<BucketsPage>();
-            tab.ClickTabByName(tabName);
-        }
-
-        [When(@"User adds ""(.*)"" objects to bucket")]
-        public void WhenUserAddsObjectsToBucket(string objectName)
-        {
-            var objects = _driver.NowAt<BucketsPage>();
-            objects.SearchFieldForBucketsPage.SendKeys(objectName);
-            objects.SelectObjectByName(objectName).Click();
-        }
-
         [Then(@"Create Team button is disabled")]
         public void ThenCreateTeamButtonIsDisabled()
         {
@@ -1083,46 +1024,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<TeamsPage>();
             _driver.WaitForElementToBeDisplayed(page.ReassignObjectsSummary);
             Assert.IsTrue(page.ReassignObjectsSummary.Displayed(), "Reassign Objects was not displayed");
-        }
-
-        [When(@"User selects ""(.*)"" team in the Team dropdown on the Buckets page")]
-        public void ThenUserSelectTeamInTheTeamDropdownOnTheBucketsPage(string teamName)
-        {
-            var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.TeamsNameField.Clear();
-            _driver.WaitForDataLoading();
-            createBucketElement.TeamsNameField.SendKeys(teamName);
-            createBucketElement.SelectTeam(teamName);
-        }
-
-        [When(@"User updates the ""(.*)"" checkbox state")]
-        public void WhenUserUpdatesTheCheckboxState(string checkbox)
-        {
-            var createBucketElement = _driver.NowAt<CreateBucketPage>();
-            createBucketElement.GetDefaultCheckboxByName(checkbox).Click();
-        }
-
-        [Then(@"""(.*)"" bucket details is displayed to the user")]
-        public void ThenBucketDetailsIsDisplayedToTheUser(string bucketName)
-        {
-            var teamElement = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(teamElement.AppropriateBucketName(bucketName),
-                $"{bucketName} is not displayed on the Bucket page");
-        }
-
-        [Then(@"Move To Another Bucket Page is displayed to the user")]
-        public void ThenMoveToAnotherBucketPageIsDisplayedToTheUser()
-        {
-            var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            Assert.IsTrue(page.MoveToSelectBox.Displayed, "Move To Another Bucket Page is not displayed to the user");
-        }
-
-        [When(@"User moves selected objects to ""(.*)"" Capacity Unit")]
-        [When(@"User moves selected objects to ""(.*)"" bucket")]
-        public void WhenUserMovesSelectedObjectsToBucket(string bucketName)
-        {
-            var page = _driver.NowAt<MoveToAnotherBucketPage>();
-            page.MoveToBucketByName(bucketName);
         }
 
         [Then(@"""(.*)"" is displayed on the Admin page")]
@@ -1174,38 +1075,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseGridPage>();
             action.SelectActions(actionName);
         }
-
-        [Then(@"Create Capacity Unit button is disabled")]
-        [Then(@"Create Bucket button is disabled")]
-        public void ThenCreateBucketButtonIsDisabled()
-        {
-            var button = _driver.NowAt<CreateBucketPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateBucketButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateBucketButton.GetAttribute("disabled")),
-                "Create Bucket button is active");
-        }
-
-        [Then(@"Bucket ""(.*)"" is displayed to user")]
-        public void ThenBucketIsDisplayedToUser(string bucketName)
-        {
-            var page = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(page.ActiveBucketByName(bucketName), $"{bucketName} is not displayed on the Buckets page");
-        }
-
-        [Then(@"No items text is displayed")]
-        public void ThenNoItemsTextIsDisplayed()
-        {
-            var text = _driver.NowAt<BucketsPage>();
-            Assert.IsTrue(text.NoItemsMessage.Displayed, "No items text is not displayed");
-        }
-
-        [When(@"User clicks Update Bucket button on the Buckets page")]
-        public void WhenUserClicksUpdateBucketButtonOnTheBucketsPage()
-        {
-            var button = _driver.NowAt<BucketsPage>();
-            button.UpdateBucketButton.Click();
-        }
-
+      
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
@@ -1287,16 +1157,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             bucketElement.AddItemButton.Click();
         }
-
-        [Then(@"following Objects are displayed in Buckets table:")]
-        public void ThenFollowingObjectsAreDisplayedInBuckets(Table table)
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            var expectedRowList = table.Rows.SelectMany(row => row.Values).ToList();
-            var actualRowList = page.RowsList.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedRowList, actualRowList, "Buckets lists are different");
-        }
-
+        
         [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
         public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
         {
@@ -1409,15 +1270,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
             var originalList = page.ObjectsList.Select(x => x.Text).ToList();
-            SortingHelper.IsListSorted(originalList);
-        }
-
-        [Then(@"Objects for Buckets are displayed in alphabetical order on the Admin page")]
-        public void ThenObjectsForBucketsAreDisplayedInAlphabeticalOrderOnTheAdminPage()
-        {
-            var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitForDataLoading();
-            var originalList = page.ObjectsBucketsList.Select(x => x.Text).ToList();
             SortingHelper.IsListSorted(originalList);
         }
 
@@ -2550,17 +2402,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
         }
 
-        [Then(@"User sees Buckets in next default sort order:")]
-        public void ThenUserSeesBuketsInNextDefaultSortOrder(Table buckets)
-        {
-            var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
-
-            for (var i = 0; i < buckets.RowCount; i++)
-                Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
-                    "Buckets are not the same");
-        }
-
         [Then(@"Columns on Admin page is displayed in following order:")]
         public void ThenColumnsOnAdminPageIsDisplayedInFollowingOrder(Table table)
         {
@@ -2579,32 +2420,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnNames = page.GetAllColumnHeadersWithSettingMenuColumn().Select(column => column.Text).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page with Setting menu column is incorrect");
-        }
-
-        [When(@"User creates following buckets in Administration:")]
-        public void WhenUserCreatesFollowingBucketsInAdministration(Table buckets)
-        {
-            foreach (var bucket in buckets.Rows)
-            {
-                var action = _driver.NowAt<BaseDashboardPage>();
-                action.GetActionsButtonByName("CREATE EVERGREEN BUCKET").Click();
-                _driver.WaitForDataLoading();
-
-                var page = _driver.NowAt<CreateBucketPage>();
-                page.BucketNameField.Clear();
-                page.BucketNameField.SendKeys(bucket.Values.FirstOrDefault());
-
-                if (!string.IsNullOrEmpty(bucket.Values.FirstOrDefault()))
-                    _buckets.Value.Add(bucket.Values.FirstOrDefault());
-
-                page.TeamsNameField.Clear();
-                _driver.WaitForDataLoading();
-                page.TeamsNameField.SendKeys(bucket.Values.ElementAt(1));
-                page.SelectTeam(bucket.Values.ElementAt(1));
-
-                page.CreateBucketButton.Click();
-                Logger.Write("Create Team button was clicked");
-            }
         }
 
         [When(@"User clicks Default Ring checkbox")]
@@ -2628,23 +2443,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
             DatabaseHelper.ExecuteQuery($"delete from[PM].[dbo].[Projects] where[ProjectID] = '{projectId}'");
         }
-
-        [Then(@"Delete ""(.*)"" Bucket in the Administration")]
-        [When(@"User deletes ""(.*)"" Bucket in the Administration")]
-        public void ThenDeleteBucketInTheAdministration(string bucketName)
-        {
-            //var projectId = DatabaseHelper.ExecuteReader($"SELECT [ProjectID] FROM[PM].[dbo].[Projects] where[ProjectName] = '{projectName}'", 0)[0];
-            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'");
-        }
-
-        [Then(@"Delete following Buckets in the Administration:")]
-        public void ThenDeleteFollowingBucketsInTheAdministration(Table buckets)
-        {
-            foreach (var bucket in buckets.Rows)
-                DatabaseHelper.ExecuteQuery(
-                    $"delete from [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucket.Values.FirstOrDefault()}'");
-        }
-
 
         [When(@"User updates readiness properties on Edit Readiness")]
         public void WhenUpdatesReadinessPropertiesOnEditPage(Table table)
@@ -2972,131 +2770,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(page.ActiveProjectByName(projectName), $"{projectName} is not displayed on the Project page");
         }
 
-        // table example
-        // | ProjectName | Scope | ProjectTemplate | Mode |
-        [When(@"Project created via API and opened")]
-        public void WhenUserCreateNewDashboardViaApi(Table table)
-        {
-            string pName = "";
-            string pScope = "";
-            string pTemplate = "";
-            int pMode = 0;
-
-            foreach (var row in table.Rows)
-            {
-                if (!string.IsNullOrEmpty(row["ProjectName"]))
-                    pName = row["ProjectName"];
-
-                if (!string.IsNullOrEmpty(row["Scope"]))
-                    pScope = row["Scope"];
-
-                if (row["ProjectTemplate"].Equals("None"))
-                    pTemplate = "-1";
-
-                pMode = row["Mode"].Equals("Standalone Project") ? 1 : 3;
-            }
-
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/createProject";
-            var request = new RestRequest(requestUri);
-
-            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-            request.AddParameter("Accept", "application/json");
-            request.AddParameter("Content-Type", "application/json");
-
-            request.AddParameter("modeId", pMode);
-            request.AddParameter(GetCreateProjectRequestScopeProperty(pScope), GetObjectType(pScope));
-
-            request.AddParameter("projectName", pName);
-            request.AddParameter("template", pTemplate);
-
-            var response = _client.Value.Post(request);
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new Exception(
-                    $"Unable to execute request. Error details: {JsonConvert.DeserializeObject<JObject>(response.Content)["message"]}");
-
-            var responseContent = JsonConvert.DeserializeObject<JObject>(response.Content);
-            string projectId = responseContent["id"].ToString();
-
-            _projects.Value.Add(pName);
-
-            _driver.Navigate().GoToUrl($"{UrlProvider.EvergreenUrl}#/admin/project/{projectId}/details");
-
-            var page = _driver.NowAt<ProjectsPage>();
-            _driver.WaitForDataLoading();
-            Assert.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
-        }
-
-        [AfterScenario("Delete_Newly_Created_Project")]
-        public void DeleteNewlyCreatedProject()
-        {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
-
-            foreach (var projectName in _projects.Value)
-            {
-                try
-                {
-                    if (string.IsNullOrEmpty(projectName))
-                        continue;
-
-                    var projectId = GetProjectId(projectName);
-
-                    var request = new RestRequest(requestUri);
-
-                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                    request.AddParameter("selectedObjectsList", projectId);
-
-                    var response = _client.Value.Post(request);
-
-                    if (response.StatusCode != HttpStatusCode.OK)
-                        Logger.Write($"Unable to execute request. URI: {requestUri}");
-                }
-                catch (Exception e)
-                {
-                    Logger.Write($"Error during removing '{projectName}' Project: {e}");
-                }
-            }
-        }
-
-        [AfterScenario("Delete_Newly_Created_Bucket")]
-        public void DeleteAllBucketAfterScenarioRun()
-        {
-            var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/bucket/deleteBuckets";
-
-            foreach (var bucketName in _buckets.Value)
-            {
-                try
-                {
-                    if (string.IsNullOrEmpty(bucketName))
-                        continue;
-
-                    var bucketId = DatabaseHelper.ExecuteReader(
-                        $"SELECT [GroupID] FROM [PM].[dbo].[ProjectGroups] where [GroupName] = '{bucketName}'", 0)[0];
-
-                    var request = new RestRequest(requestUri);
-
-                    request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                    request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                    request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                    request.AddParameter("objectId", null);
-                    request.AddParameter("selectedObjectsList", bucketId);
-
-                    var response = _client.Value.Put(request);
-
-                    if (response.StatusCode != HttpStatusCode.OK)
-                        Logger.Write($"Unable to execute request. URI: {requestUri}");
-                }
-                catch (Exception e)
-                {
-                    Logger.Write($"Error during '{bucketName}' Bucket removing: {e}");
-                }
-            }
-        }
-
         private string GetProjectId(string projectName)
         {
             var projectId =
@@ -3114,36 +2787,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return flagState;
         }
 
-
-        private string GetCreateProjectRequestScopeProperty(string scope)
-        {
-            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? "objectType" : "listId";
-        }
-
-        private string GetObjectType(string scope)
-        {
-            return new string[] { "All Devices", "All Users", "All Mailboxes" }.Contains(scope) ? GetProjectObjectTypeScope(scope) : GetProjectListIdScope(scope);
-        }
-
-        private string GetProjectObjectTypeScope(string scope)
-        {
-            if (scope.Equals("All Devices"))
-                return "Devices";
-            if (scope.Equals("All Users"))
-                return "Users";
-            if (scope.Equals("All Mailboxes"))
-                return "Mailboxes";
-            return "NOT FOUND";
-        }
-
-        private string GetProjectListIdScope(string listName)
-        {
-            //string userId =
-            //    DatabaseHelper.ExecuteReader(
-            //        $"SELECT [aspnetdb].[dbo].[aspnet_Users].[UserId] FROM[aspnetdb].[dbo].[aspnet_Users] where UserName = '{_user.UserName}'", 0).LastOrDefault();
-
-            return DatabaseHelper.ExecuteReader(
-                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
-        }
     }
 }
