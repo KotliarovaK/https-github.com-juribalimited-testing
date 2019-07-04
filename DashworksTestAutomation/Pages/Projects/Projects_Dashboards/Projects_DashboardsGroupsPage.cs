@@ -26,7 +26,7 @@ namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
                 selector = $"//div[contains(@class, 'ui-helper-clearfix')]//span[text()='{groupName}']";
             }
 
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             ;
             return Driver.FindElement(By.XPath(selector));
         }

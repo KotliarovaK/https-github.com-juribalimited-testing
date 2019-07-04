@@ -307,6 +307,7 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\BucketsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\BeforeScenario\SaveDefaultCapacityUnitBeforeScenario.cs" />
@@ -318,14 +319,16 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
-    <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
+    <Compile Include="Steps\Dashworks\Dashboards\DashboardsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\RemoveTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\BeforeScenario\SaveDefaultTeamBeforeScenario.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_WidgetPage.cs" />
+    <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\EvergreenJnr_BucketsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_DashboardsPage.cs" />
+    <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AfterScenario.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_BaseFormPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListsPanel.cs" />

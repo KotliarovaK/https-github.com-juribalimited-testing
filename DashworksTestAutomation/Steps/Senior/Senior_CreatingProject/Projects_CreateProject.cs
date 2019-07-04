@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             var menu = _driver.NowAt<ProjectsBaseElements>();
             _driver.MouseHover(menu.AdministrationTab);
             var project = _driver.NowAt<MainElementsOfProjectCreation>();
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => project.CreatedProject);
+            _driver.WaitForElementToBeDisplayed(project.CreatedProject);
             _driver.MouseHover(project.CreatedProject);
             project.CreatedProject.Click();
         }
@@ -114,7 +114,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
 
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.ErrorMessage);
+            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
             StringAssert.Contains(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.InformationMessage);
+            _driver.WaitForElementToBeDisplayed(page.InformationMessage);
             StringAssert.Contains(text, page.InformationMessage.Text, "Information Message is not displayed");
         }
 
@@ -148,7 +148,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             Assert.IsTrue(page.SuccessMessage.Displayed(), "Success Message is not displayed");
         }
 
@@ -552,7 +552,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            _driver.WaitWhileControlIsNotDisplayed<MainElementsOfProjectCreation>(() => page.SuccessPublishedTaskFlag);
+            _driver.WaitForElementToBeDisplayed(page.SuccessPublishedTaskFlag);
             Assert.IsTrue(page.SuccessPublishedTaskFlag.Displayed(), "Success Flag is not displayed");
         }
 

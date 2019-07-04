@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         {
             var byControl =By.XPath($"//thead//td[text()='{columnName}']//ancestor::table//input");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).Clear();
             Driver.FindElement(byControl).SendKeys(value);
@@ -68,7 +68,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         {
             var byControl = By.XPath($".//input[@id='{columnName.ToLower()}']");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).Clear();
             Driver.FindElement(byControl).SendKeys(value);
@@ -78,14 +78,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         {
             var byControl = By.XPath($"//div//input[@placeholder='{dropdownName}']");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
         }
 
         public IWebElement GetLanguageLinkByName(string link)
         {
             var selector = By.XPath($"//div[@class='form-item']//a[contains(text(), '{link}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -98,21 +98,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public IWebElement GetLanguageInTranslationsTableByName(string language)
         {
             var selector = By.XPath($"//div[contains(@class,'translations')]//span[text()='{language}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDisplayNameFieldByLanguage(string language)
         {
             var selector = By.XPath($"//span[text()='{language}']/../following-sibling::td//input[@name='displayName']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetCheckboxByName(string checkboxName)
         {
             var selector = By.XPath($".//div[@role='presentation']//span[text()='{checkboxName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

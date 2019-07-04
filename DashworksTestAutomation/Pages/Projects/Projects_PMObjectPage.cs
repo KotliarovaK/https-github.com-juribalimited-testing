@@ -34,14 +34,14 @@ namespace DashworksTestAutomation.Pages.Projects
         public void GetViewStateByName(string stateName)
         {
             var selector = By.XPath($"//select[contains(@id, 'ViewState')]//option[text()='{stateName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
 
         public void GetViewTypeByName(string typeName)
         {
             var selector = By.XPath($"//select[contains(@id, 'ViewType')]//option[text()='{typeName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
     }

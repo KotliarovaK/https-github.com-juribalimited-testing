@@ -29,7 +29,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void SelectTeamToReassign(string teamName)
         {
             var teamSelector = $".//span[@class='mat-option-text'][(text()= '{teamName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(teamSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(teamSelector));
             Driver.FindElement(By.XPath(teamSelector)).Click();
         }
     }

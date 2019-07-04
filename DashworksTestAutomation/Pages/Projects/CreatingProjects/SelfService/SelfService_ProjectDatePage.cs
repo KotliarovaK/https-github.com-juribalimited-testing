@@ -55,7 +55,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
         public IWebElement SelectTaskByName(string taskName)
         {
             var selector = By.XPath($"//select[@aria-label='Additional Tasks']/option[text()='{taskName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

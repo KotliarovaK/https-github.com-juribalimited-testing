@@ -54,7 +54,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         {
             DisplayModeDropdown.Click();
             var displayModeSelector = $".//mat-option/span[text()='{displayMode}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(displayModeSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(displayModeSelector));
             Driver.FindElement(By.XPath(displayModeSelector)).Click();
         }
 

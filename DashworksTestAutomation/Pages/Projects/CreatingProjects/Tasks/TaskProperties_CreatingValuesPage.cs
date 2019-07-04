@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
         {
             var option = GetRandomReadinessOption(index);
             var selector = string.Format(Readiness, option.Value);
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
             return option;
         }

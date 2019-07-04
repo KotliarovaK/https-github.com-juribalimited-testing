@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             var columnSettingsSelector =
                 $".//div[@role='presentation']/span[text()='{columnName}']/ancestor::div[@class='ag-header-cell ag-header-cell-sortable']//span[@ref='eMenu']";
             Driver.MouseHover(By.XPath(columnSettingsSelector));
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
     }

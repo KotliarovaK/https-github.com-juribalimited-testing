@@ -66,7 +66,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             if (ellipsisMenu != null)
             {
                 page.GetEllipsisMenuForWidget(widgetName).Click();
-                _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.EllipsisMenu);
+                _driver.WaitForElementToBeDisplayed(page.EllipsisMenu);
             }
             else
             {
@@ -79,9 +79,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.DashboardsDetailsIcon);
+            _driver.WaitForElementToBeDisplayed(page.DashboardsDetailsIcon);
             page.DashboardsDetailsIcon.Click();
-            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.DashboardsContextMenu);
+            _driver.WaitForElementToBeDisplayed(page.DashboardsContextMenu);
         }
 
         [Then(@"User sees Ellipsis icon enabled for ""(.*)"" Widget on Dashboards page")]
@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
             page.GetEllipsisIconsForSectionsHavingWidget(widgetName).FirstOrDefault().Click();
-            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.EllipsisMenu);
+            _driver.WaitForElementToBeDisplayed(page.EllipsisMenu);
         }
 
         [Then(@"User sees Ellipsis icon enabled for Section having ""(.*)"" Widget on Dashboards page")]
@@ -451,7 +451,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
 
-            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.CancelButtonInAlert);
+            _driver.WaitForElementToBeDisplayed(page.CancelButtonInAlert);
             page.CancelButtonInAlert.Click();
         }
 
@@ -460,7 +460,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
 
-            _driver.WaitWhileControlIsNotDisplayed<CustomListElement>(() => listElement.SaveButton);
+            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.DashboardNameTextBox.SendKeys(dashboardName);
             listElement.SaveButton.Click();
@@ -665,7 +665,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserAddsNewPersonToSharingList(Table table)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<EvergreenDashboardsPage>(() => page.PermissionAddUserButton);
+            _driver.WaitForElementToBeDisplayed(page.PermissionAddUserButton);
             page.PermissionAddUserButton.Click();
             
             foreach (var row in table.Rows)
@@ -701,7 +701,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNoUserFoundInSharedList()
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            _driver.WaitWhileControlIsDisplayed<EvergreenDashboardsPage>(()=>page.PermissionNameOfAddedUser);
+            _driver.WaitForElementToBeNotDisplayed(page.PermissionNameOfAddedUser);
             Assert.That(page.PermissionNameOfAddedUser.Displayed(), Is.False, "Username found in shared list");
         }
         

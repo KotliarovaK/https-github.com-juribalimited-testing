@@ -28,7 +28,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         public IWebElement GetMovingElementByName(string name)
         {
             var selector = By.XPath($"//div[contains(@class, 'action-container')]//h2[text()='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

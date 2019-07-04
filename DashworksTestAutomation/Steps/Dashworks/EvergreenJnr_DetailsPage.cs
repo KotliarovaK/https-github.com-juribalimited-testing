@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserOpensSectionOnTheDetailsPage(string sectionName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            _driver.WaitForElementToBeDisplayed(detailsPage.PopupChangesPanel);
             if (!detailsPage.OpenedSection.Displayed())
             {
                 _driver.MouseHover(detailsPage.NavigateToSectionByName(sectionName));
@@ -107,7 +107,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenHighchartsGraphicIsDisplayedOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.GraphicInOpenedSection);
+            _driver.WaitForElementToBeDisplayed(detailsPage.GraphicInOpenedSection);
             Assert.IsTrue(detailsPage.GraphicInOpenedSection.Displayed(), "Graphic content is not displayed");
         }
 
@@ -115,7 +115,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayedOnTheDetailsPage(string message)
         {
             var listElement = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => listElement.NoFoundMessage);
+            _driver.WaitForElementToBeDisplayed(listElement.NoFoundMessage);
             Assert.AreEqual(message, listElement.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
@@ -261,7 +261,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             filterElement.BodyContainer.Click();
-            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => filterElement.ResetFiltersButton);
+            _driver.WaitForElementToBeDisplayed(filterElement.ResetFiltersButton);
             filterElement.ResetFiltersButton.Click();
         }
 
@@ -307,7 +307,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksColumnButtonOnTheColumnSettingsPanel()
         {
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.ColumnButton);
+            _driver.WaitForElementToBeDisplayed(menu.ColumnButton);
             menu.ColumnButton.Click();
         }
 
@@ -323,7 +323,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             _driver.MouseHover(menu.FilterButton);
-            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() => menu.FilterButton);
+            _driver.WaitForElementToBeDisplayed(menu.FilterButton);
             menu.FilterButton.Click();
         }
 
@@ -476,8 +476,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserEntersTextInTheFilterField(string searchedText)
         {
             var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            _driver.WaitWhileControlIsNotDisplayed<ApplicationsDetailsTabsMenu>(() =>
-                filterElement.FilterSearchTextBox);
+            _driver.WaitForElementToBeDisplayed(filterElement.FilterSearchTextBox);
             filterElement.FilterSearchTextBox.SendKeys(searchedText);
         }
 
@@ -596,7 +595,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenTextIsDisplayedForOpenedTab(string textMessage)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.NoFoundContent);
+            _driver.WaitForElementToBeDisplayed(detailsPage.NoFoundContent);
             Assert.AreEqual(textMessage, detailsPage.NoFoundContent.Text,
                 $"{textMessage} is not displayed");
         }
@@ -620,7 +619,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksEvergreenRingInProjectSummarySectionOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.ProjectSummaryRingValue);
+            _driver.WaitForElementToBeDisplayed(detailsPage.ProjectSummaryRingValue);
             detailsPage.ProjectSummaryRingValue.Click();
         }
 
@@ -628,7 +627,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksNewRingDdlOfInProjectSummarySectionOnTheDetailsPage()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.ProjectSummaryRingPopupDDL);
+            _driver.WaitForElementToBeDisplayed(detailsPage.ProjectSummaryRingPopupDDL);
             detailsPage.ProjectSummaryRingPopupDDL.Click();
         }
 
@@ -744,7 +743,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenLinkIsDisplayedOnTheDetailsPage(string bucketName)
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.GetBucketLinkByName(bucketName));
+            _driver.WaitForElementToBeDisplayed(detailsPage.GetBucketLinkByName(bucketName));
             Assert.IsTrue(detailsPage.GetBucketLinkByName(bucketName).Displayed(), "Bucket link name was not changed");
         }
 
@@ -752,7 +751,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenPopupChangesWindowOpened()
         {
             var detailsPage = _driver.NowAt<DetailsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.PopupChangesPanel);
+            _driver.WaitForElementToBeDisplayed(detailsPage.PopupChangesPanel);
             Assert.IsTrue(detailsPage.PopupChangesPanel.Displayed(), "Popup changes panel is not loaded");
         }
 
@@ -782,7 +781,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 _driver.MouseHover(button);
                 button.Click();
                 _driver.WaitForDataLoading();
-                _driver.WaitWhileControlIsNotDisplayed<DetailsPage>(() => detailsPage.SelectAllCheckBox);
+                _driver.WaitForElementToBeDisplayed(detailsPage.SelectAllCheckBox);
                 detailsPage.SelectAllCheckBox.Click();
             }
             else
