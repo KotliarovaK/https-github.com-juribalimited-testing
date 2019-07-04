@@ -193,8 +193,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             projectTabs.GetTabByNameOnCapacityUnits(tabName).Click();
         }
 
-        [Then(@"""(.*)"" tab is not displayed to the User")]
-        public void ThenTabIsNotDisplayedToTheUser(string tabName)
+        [Then(@"""(.*)"" tab is not displayed to the User on Admin Page Navigation")]
+        public void ThenTabIsNotDisplayedToTheUserOnAdminPageNavigation(string tabName)
         {
             var page = _driver.NowAt<AdminLeftHandMenu>();
             Assert.IsFalse(page.Automations.Displayed(), $"{tabName} tab still displayed");

@@ -587,8 +587,8 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	Then Create Action page is displayed to the User
 	When User type "17171_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
-	When User selects "Barry's User Project" in the Project dropdown
-	When User selects "Virtual User (Default)" in the Path dropdown
+	When User selects "Migration Project Phase 2 (User Project)" in the Project dropdown
+	When User selects "[Default (User)]" in the Path dropdown
 	When User clicks the "CREATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 	When User clicks "Actions" tab
@@ -619,7 +619,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 	Then Evergreen Dashboards page should be displayed to the user
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	Then "Automations" tab is not displayed to the User
+	Then "Automations" tab is not displayed to the User on Admin Page Navigation
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
