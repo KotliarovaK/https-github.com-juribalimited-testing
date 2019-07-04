@@ -1479,8 +1479,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	| Tags              |
 	| Device Owner      |
 
-	#added 'Not_Run' tag because of Language field has an incorrect location
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @Not_Run
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325
 Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -1501,9 +1500,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Readiness        |
 	| Path             |
 	| Category         |
+	| Language         |
 	| Tags             |
 	| Primary Device   |
-	| Language         |
 
 	#added hash because of the DAS17239 bug 6/25/2019
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @Not_Run_DAS17239
