@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
             var selector =
                 By.XPath(
                     $".//table[@class='grid']//tr[not(@class='grid-headerstyle')][@class='grid-alternatingrowstyle' or @class='grid-rowstyle']//a[text()='{requestTypeName}']/../..//input");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
     }

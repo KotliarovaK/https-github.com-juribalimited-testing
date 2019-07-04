@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             MoveToSelectBox.Click();
             Driver.WaitForDataLoading();
             var bucketSelector = $".//mat-option/span[contains(text(), '{bucketName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(bucketSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(bucketSelector));
             Driver.FindElement(By.XPath(bucketSelector)).Click();
             MoveButton.Click();
         }

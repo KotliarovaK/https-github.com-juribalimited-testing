@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
         public void NavigateToSelectedValue(string color)
         {
             var selector = By.XPath($".//a[text()='{color}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
     }

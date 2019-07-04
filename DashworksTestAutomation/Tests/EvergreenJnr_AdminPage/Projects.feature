@@ -338,7 +338,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 
 Examples:
 	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName     | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject   |
-	| Devices   | Hostname      | ProjectList4587 | 17,225    | TestProject4511 | 17225        | Device Type | Desktop  | 8,103        | 8103     | TestProject4511 |
+	| Devices   | Hostname      | ProjectList4587 | 17,285    | TestProject4511 | 17285        | Device Type | Desktop  | 8,103        | 8103     | TestProject4511 |
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
@@ -1343,7 +1343,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	When User selects "Scope Details" tab on the Project details page
 	And User selects "All Devices" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then Bucket dropdown is not displayed on the Project details page
@@ -1377,7 +1377,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User selects "StaticList6579" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page

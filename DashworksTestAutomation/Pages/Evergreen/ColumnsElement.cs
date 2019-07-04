@@ -70,7 +70,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 selector = $".//div[@class='columns-panel']//span[text()='{columnName}']";
             }
 
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
 
             Driver.WaitForDataLoading();
@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
             if (!Driver.IsElementDisplayed(By.XPath(selector))) Driver.MouseHover(ColumnSubcategories.First());
 
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
             Driver.WaitForDataLoading();
         }

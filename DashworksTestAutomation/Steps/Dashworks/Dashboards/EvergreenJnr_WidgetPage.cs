@@ -61,9 +61,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (!string.IsNullOrEmpty(row["SplitBy"]))
                 {
-                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.SplitBy);
+                    _driver.WaitForElementToBeDisplayed(createWidgetElement.SplitBy);
                     createWidgetElement.SplitBy.Click();
-                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.DropdownMenu);
+                    _driver.WaitForElementToBeDisplayed(createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
@@ -144,9 +144,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
                 if (createWidgetElement.SplitBy.Displayed() && !string.IsNullOrEmpty(row["SplitBy"]))
                 {
-                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.SplitBy);
+                    _driver.WaitForElementToBeDisplayed(createWidgetElement.SplitBy);
                     createWidgetElement.SplitBy.Click();
-                    _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => createWidgetElement.DropdownMenu);
+                    _driver.WaitForElementToBeDisplayed(createWidgetElement.DropdownMenu);
                     createWidgetElement.SelectObjectForWidgetCreation(row["SplitBy"]);
                     _driver.WaitForDataLoadingOnProjects();
                 }
@@ -382,7 +382,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => page.ErrorMessage);
+            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }
 
@@ -390,7 +390,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenNoUnsavedChangesAlertDisplayedOnEditWidgetPage()
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitWhileControlIsDisplayed<AddWidgetPage>(() => page.UnsavedChangesAlert);
+            _driver.WaitForElementToBeNotDisplayed(page.UnsavedChangesAlert);
             Assert.IsFalse(_driver.IsElementDisplayed(page.UnsavedChangesAlert));
         }
 
@@ -398,7 +398,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenUserSeesTextInAlertOnEditWidgetPage(string text)
         {
             var page = _driver.NowAt<AddWidgetPage>();
-            _driver.WaitWhileControlIsNotDisplayed<AddWidgetPage>(() => page.UnsavedChangesAlert);
+            _driver.WaitForElementToBeDisplayed(page.UnsavedChangesAlert);
             Assert.AreEqual(text, page.GetUnsavedChangesAlertText().Text);
         }
  

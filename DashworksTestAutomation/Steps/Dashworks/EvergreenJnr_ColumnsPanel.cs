@@ -63,7 +63,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Minimize the Selected Columns
             //columnElement.MinimizeGroupButton.Click();
-            //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
+            //_driver.WaitWhileControlIsDisplayedObsolete<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             listpageMenu.ColumnButton.Click();
@@ -81,7 +81,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             //Minimize the Selected Columns
             //columnElement.MinimizeGroupButton.Click();
-            //_driver.WaitWhileControlIsDisplayed<ColumnsElement>(() => columnElement.MinimizeGroupButton);
+            //_driver.WaitWhileControlIsDisplayedObsolete<ColumnsElement>(() => columnElement.MinimizeGroupButton);
             //Close the Columns Panel
             var listpageMenu = _driver.NowAt<BaseDashboardPage>();
             listpageMenu.ColumnButton.Click();
@@ -421,7 +421,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserHaveResetAllColumns()
         {
             var columnElement = _driver.NowAt<ColumnsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ColumnsElement>(() => columnElement.ResetColumnsButton);
+            _driver.WaitForElementToBeDisplayed(columnElement.ResetColumnsButton);
             _driver.MouseHover(columnElement.ResetColumnsButton);
             columnElement.ResetColumnsButton.Click();
         }

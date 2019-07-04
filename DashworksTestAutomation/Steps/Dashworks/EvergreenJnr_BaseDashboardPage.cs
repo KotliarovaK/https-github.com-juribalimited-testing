@@ -383,7 +383,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFullListContentIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
+            _driver.WaitForElementToBeDisplayed(page.TableContent);
             Assert.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
@@ -392,7 +392,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
+            _driver.WaitForElementToBeDisplayed(page.TableContent);
             Assert.That(page.TableRows.Count, Is.EqualTo(rowsCount));
         }
 
@@ -610,7 +610,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.ListRowsCounter);
+            _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 

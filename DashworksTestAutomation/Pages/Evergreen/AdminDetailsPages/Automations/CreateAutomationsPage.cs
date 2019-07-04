@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
         public IWebElement SelectCheckboxByName(string checkboxName)
         {
             var button = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
     }

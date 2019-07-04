@@ -77,7 +77,7 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
 
-            _driver.WaitForTextToAppear(page.PageHeader, pageName);
+            _driver.WaitForElementToHaveText(page.PageHeader, pageName);
             Logger.Write("Projects Home page is displayed");
         }
     }

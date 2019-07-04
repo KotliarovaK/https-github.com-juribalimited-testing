@@ -62,8 +62,6 @@ namespace DashworksTestAutomation.Base
 
                     var driver = new ChromeDriver(options);
 
-                    var logs = driver.Manage().Logs.GetLog(LogType.Browser).ToList();
-
                     return driver;
 
                 case "firefox":

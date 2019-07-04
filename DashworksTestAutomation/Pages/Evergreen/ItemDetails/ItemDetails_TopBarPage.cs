@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetComplianceValueOnTheDetailsPageByComplianceName(string title, string value)
         {
             var selector = By.XPath($".//div[text()='{title}']//ancestor::div//div[@class='topbar-item-value']//span[text()='{value}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

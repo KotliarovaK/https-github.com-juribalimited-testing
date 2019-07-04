@@ -45,14 +45,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         public IWebElement GetPrintPreviewDropdownByName(string dropdown)
         {
             var selector = $".//div[@class='styleSelectDropdown']//label[text()='{dropdown}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public void SelectPrintPreviewSettings(string option)
         {
             var optionSelector = $".//mat-option[@role='option']//span[text()='{option}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(optionSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(optionSelector));
             Driver.FindElement(By.XPath(optionSelector)).Click();
         }
     }

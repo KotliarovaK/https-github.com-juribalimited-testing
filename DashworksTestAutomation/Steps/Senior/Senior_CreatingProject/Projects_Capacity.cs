@@ -86,19 +86,19 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             _driver.WaitForDataLoadingOnProjects();
             try
             {
-                _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
+                _driver.WaitForElementToBeDisplayed(page.RequestType);
                 page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
                 _driver.WaitForDataLoadingOnProjects();
             }
             catch (StaleElementReferenceException)
             {
                 page = _driver.NowAt<Capacity_CapacityPage>();
-                _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.RequestType);
+                _driver.WaitForElementToBeDisplayed(page.RequestType);
                 page.RequestType.SelectboxSelect(_projectDto.ReqestTypes.Last().Name);
                 _driver.WaitForDataLoadingOnProjects();
             }
 
-            _driver.WaitWhileControlIsNotDisplayed<Capacity_CapacityPage>(() => page.Table);
+            _driver.WaitForElementToBeDisplayed(page.Table);
             page.StartDate.Clear();
             page.StartDate.SendKeys(_capacityDto.StartDate);
             page.StartDateButton.Click();
@@ -138,7 +138,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         public void ThenTableForSelectedRequestTypeIsDisplayed()
         {
             var page = _driver.NowAt<Capacity_SummaryPage>();
-            _driver.WaitWhileControlIsNotDisplayed<Capacity_SummaryPage>(() => page.Table);
+            _driver.WaitForElementToBeDisplayed(page.Table);
             Assert.IsTrue(page.Table.Displayed, "Table is not displayed for selected request type");
         }
 

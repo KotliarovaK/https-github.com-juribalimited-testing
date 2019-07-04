@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void LogOut()
         {
             UserNameDropdown.Click();
-            Driver.WaitWhileControlIsNotDisplayed<HeaderElement>(() => LogOutButton);
+            Driver.WaitForElementToBeDisplayed(LogOutButton);
 
             //Verifies DAS-10827
 

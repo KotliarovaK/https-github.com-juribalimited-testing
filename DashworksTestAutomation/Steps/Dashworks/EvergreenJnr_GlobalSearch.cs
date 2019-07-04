@@ -52,7 +52,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
                 Thread.Sleep(1000);
 
-                _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
+                _driver.WaitForElementToBeDisplayed(listPageElement.ResultsRowsCount);
 
                 StringAssert.AreEqualIgnoringCase(numberOfRows == "1" ? $"{numberOfRows} row" : $"{numberOfRows} rows",
                     listPageElement.ResultsRowsCount.Text, "Incorrect rows count");
@@ -62,9 +62,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             else
             {
                 _driver.IsElementDisplayed(listPageElement.ResultsRowsCount);
-                _driver.WaitWhileControlIsDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
+                _driver.WaitForElementToBeNotDisplayed(listPageElement.ResultsRowsCount);
                 Assert.IsFalse(listPageElement.ResultsRowsCount.Displayed(), "Rows count is displayed");
-                _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => listPageElement.ResultsRowsCount);
+                _driver.WaitForElementToBeDisplayed(listPageElement.ResultsRowsCount);
                 Assert.IsTrue(listPageElement.ResultsRowsCount.Displayed(),
                     "'No Results Found' message not displayed");
                 Logger.Write(
@@ -85,7 +85,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenMessageIsDisplayedBelowGlobalSearchField(string text)
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
-            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.NoResultFound);
+            _driver.WaitForElementToBeDisplayed(searchElement.NoResultFound);
             Assert.AreEqual(text, searchElement.NoResultFound.Text, $"{text} is not displayed");
         }
 
@@ -108,7 +108,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSearchResultsAreDisplayedBelowGlobalSearchField()
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
-            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.SearchResults);
+            _driver.WaitForElementToBeDisplayed(searchElement.SearchResults);
             Assert.IsTrue(searchElement.SearchResults.Displayed(), "Search Result are not displayed");
         }
 
@@ -116,7 +116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenListOfResultsIsDisplayedToTheUser()
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
-            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() => searchElement.TableOfSearchResults);
+            _driver.WaitForElementToBeDisplayed(searchElement.TableOfSearchResults);
             Assert.IsTrue(searchElement.TableOfSearchResults.Displayed());
             Assert.IsTrue(searchElement.TableContent.Displayed());
         }
@@ -125,8 +125,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenResetButtonInGlobalSearchFieldIsDisplayed()
         {
             var searchElement = _driver.NowAt<GlobalSearchElement>();
-            _driver.WaitWhileControlIsNotDisplayed<GlobalSearchElement>(() =>
-                searchElement.GlobalSearchTextBoxResetButton);
+            _driver.WaitForElementToBeDisplayed(searchElement.GlobalSearchTextBoxResetButton);
             Assert.IsTrue(searchElement.GlobalSearchTextBoxResetButton.Displayed(), "Reset button is not displayed");
             Logger.Write("Reset button is displayed");
         }
