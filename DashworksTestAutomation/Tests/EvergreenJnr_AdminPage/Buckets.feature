@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
 	When User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
@@ -124,13 +124,6 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
-	And Delete following Buckets in the Administration:
-	| Buckets    |
-	| 2ab        |
-	| a1ba       |
-	| aaa        |
-	| aba        |
-	| waa        |
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @DAS12999 @DAS13420 @DAS13837 @Buckets @Delete_Newly_Created_Bucket @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
