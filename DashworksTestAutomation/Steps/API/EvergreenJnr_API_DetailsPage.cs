@@ -55,15 +55,8 @@ namespace DashworksTestAutomation.Steps.API
         {
             var content = _response.Value.Content;
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
-            try
-            {
-                var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
-                Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
-            }
-            catch
-            {
-                Assert.AreEqual(state, "False", $"Incorrect display state for {fieldName}");
-            }
+            var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
+            Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
         }
 
         [Then(@"following fields are displayed with next state on Details tab API")]
@@ -74,16 +67,9 @@ namespace DashworksTestAutomation.Steps.API
 
             foreach (var row in table.Rows)
             {
-                try
-                {
-                    var item = allItems.First(x => x["friendlyName"].ToString().Equals(row["FieldName"]));
-                    Assert.AreEqual(row["DisplayState"], item["visible"].ToString(),
-                        $"Incorrect display state for {row["FieldName"]}");
-                }
-                catch
-                {
-                    Assert.AreEqual(row["DisplayState"], "False", $"Incorrect display state for {row["FieldName"]}");
-                }
+                var item = allItems.First(x => x["friendlyName"].ToString().Equals(row["FieldName"]));
+                Assert.AreEqual(row["DisplayState"], item["visible"].ToString(),
+                    $"Incorrect display state for {row["FieldName"]}");
             }
         }
 
