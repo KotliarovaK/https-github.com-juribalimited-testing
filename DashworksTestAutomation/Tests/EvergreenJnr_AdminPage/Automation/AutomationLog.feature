@@ -107,11 +107,12 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
-	Then "SUCCESS" content is displayed for "Outcome" column
+	Then "Manual" content is displayed for "Run" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Action Start" checkbox from String Filter with item list on the Admin page
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
+	Then "Manual" content is displayed for "Run" column
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16316 @DAS16319 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRunning

@@ -461,6 +461,9 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks "Delete" option in Cog-menu for "16764_Automation" item on Admin page
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "1 automation deleted" text
+	When User selects "Automation Log" tab on the Project details page
+	When User selects "Automations" tab on the Project details page
+	Then Success message is not displayed on the Admin page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15767 @DAS15423 @Not_Ready
 #Change value after gold data complete added
@@ -499,7 +502,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	When User clicks newly created object link
-	#Failed because warning pop-up appears DAS-16936
 	Then Edit Automation page is displayed to the User
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

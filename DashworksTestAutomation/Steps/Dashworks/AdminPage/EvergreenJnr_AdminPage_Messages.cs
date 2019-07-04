@@ -242,10 +242,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Assert.IsFalse(page.WarningMessage.Displayed());
         }
 
-        [Then(@"Success message is not displayed on the Projects page")]
-        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        [Then(@"Success message is not displayed on the Admin page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheAdminPage()
         {
-            var message = _driver.NowAt<ProjectsPage>();
+            var message = _driver.NowAt<BaseGridPage>();
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
