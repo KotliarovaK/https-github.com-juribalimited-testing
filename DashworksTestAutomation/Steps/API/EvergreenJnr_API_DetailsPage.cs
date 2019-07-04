@@ -72,18 +72,18 @@ namespace DashworksTestAutomation.Steps.API
             var content = _response.Value.Content;
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
 
-            try
+            foreach (var row in table.Rows)
             {
-                foreach (var row in table.Rows)
+                try
                 {
                     var item = allItems.First(x => x["friendlyName"].ToString().Equals(row["FieldName"]));
-                    Assert.AreEqual(row["DisplayState"], item["visible"].ToString(), $"Incorrect display state for {row["FieldName"]}");
+                    Assert.AreEqual(row["DisplayState"], item["visible"].ToString(),
+                        $"Incorrect display state for {row["FieldName"]}");
                 }
-            }
-            catch
-            {
-                foreach (var row in table.Rows)
+                catch
+                {
                     Assert.AreEqual(row["DisplayState"], "False", $"Incorrect display state for {row["FieldName"]}");
+                }
             }
         }
 
@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Steps.API
             var allFields = JsonConvert.DeserializeObject<JObject>(content)["results"];
             foreach (var pair in allFields)
             {
-                if (pair.ToString().Contains("address2") || 
+                if (pair.ToString().Contains("address2") ||
                     pair.ToString().Contains("address3") ||
                     pair.ToString().Contains("address4") ||
                     pair.ToString().Contains("pendingStickyDepartmentMessage") ||

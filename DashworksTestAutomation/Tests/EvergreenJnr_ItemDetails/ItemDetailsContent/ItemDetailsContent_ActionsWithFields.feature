@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17274
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17274 @API
 Scenario: EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly
 	When I perform test request to the "Users" API and get "002B5DC7D4D34D5C895" item summary for "Department and Location" section
 	Then following fields are displayed with next state on Details tab API

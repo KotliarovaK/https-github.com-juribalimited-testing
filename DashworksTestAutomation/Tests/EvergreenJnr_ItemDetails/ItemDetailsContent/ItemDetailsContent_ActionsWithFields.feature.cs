@@ -521,6 +521,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17274")]
+        [NUnit.Framework.CategoryAttribute("API")]
         public virtual void EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -554,7 +555,8 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17274"});
+                        "DAS17274",
+                        "API"});
 #line 84
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
