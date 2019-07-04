@@ -1920,7 +1920,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	And User changes Category to "18MailboxCategory"
 	And User selects "Scope Details" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	#Then "18RequestTypeName" Request Type is displayed to the user
+	#Then "18RequestTypeName" Path is displayed to the user
 	#Then "18MailboxCategory" Category is displayed to the user
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes to remove (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
