@@ -96,7 +96,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            action.RequestTypeDropdown.Click();
+            action.BulkUpdateTypeDropdown.Click();
             _driver.WaitForDataLoading();
             action.GetOptionByName(typeName).Click();
         }
@@ -105,7 +105,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenBulkUpdateTypeDropdownIsDisplayedOnActionPanel()
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            Assert.IsTrue(action.RequestTypeDropdown.Displayed(),
+            Assert.IsTrue(action.BulkUpdateTypeDropdown.Displayed(),
                 "Bulk Update Type dropdown is not displayed on Action panel");
         }
 

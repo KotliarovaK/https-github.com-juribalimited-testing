@@ -87,8 +87,8 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministrat
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| Windows7Mi: Request Type |
+	| ColumnName       |
+	| Windows7Mi: Path |
 	And User perform search by "0DTXL41673EW7O"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -140,8 +140,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| EmailMigra: Request Type |
+	| ColumnName       |
+	| EmailMigra: Path |
 	And User perform search by "0047 - Microsoft Access 97 SR-2 Francais"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUp
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Sharepoint Application" content is displayed for "EmailMigra: Request Type" column
+	Then "Sharepoint Application" content is displayed for "EmailMigra: Path" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link
@@ -281,8 +281,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| Windows7Mi: Request Type |
+	| ColumnName       |
+	| Windows7Mi: Path |
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Hostname" rows in the grid
@@ -301,11 +301,11 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnDevi
 	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001PSUMZYOW581"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
+	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Path" column
 	When User perform search by "00BDM1JUR8IF419"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
+	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Path" column
 	When User perform search by "00RUUMAH9OZN9A"
-	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Request Type" column
+	Then "Computer: PC Rebuild" content is displayed in "Windows7Mi: Path" column
 	When User closes Tools panel
 	And User clicks Close panel button
 		#returns default object state
@@ -364,10 +364,10 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| Windows7Mi: Request Type |
-	And User click on 'Windows7Mi: Request Type' column header
-	And User click on 'Windows7Mi: Request Type' column header
+	| ColumnName       |
+	| Windows7Mi: Path |
+	And User click on 'Windows7Mi: Path' column header
+	And User click on 'Windows7Mi: Path' column header
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User searches and selects following rows in the grid on Details page:
@@ -387,11 +387,11 @@ Scenario: EvergreenJnr_UsersList_ChecksThatRequestTypeIsUpdatedCorrectlyOnUsersP
 	When User refreshes agGrid
 	When User clicks Search button and opens Search panel for agGrid
 	And User perform search by "FMN5805290"
-	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
+	Then "User; Maternity" content is displayed in "Windows7Mi: Path" column
 	When User perform search by "AKX995383"
-	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
+	Then "User; Maternity" content is displayed in "Windows7Mi: Path" column
 	When User perform search by "AAD1011948"
-	Then "User; Maternity" content is displayed in "Windows7Mi: Request Type" column
+	Then "User; Maternity" content is displayed in "Windows7Mi: Path" column
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid
@@ -451,8 +451,8 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| Windows7Mi: Request Type |
+	| ColumnName       |
+	| Windows7Mi: Path |
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Application" rows in the grid
@@ -470,9 +470,9 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatRequestTypeIsUpdatedCorrectlyO
 	And Success message with "2 of 2 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
-	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
+	Then "Application: Request Type B" content is displayed in "Windows7Mi: Path" column
 	When User perform search by "0004 - Adobe Acrobat Reader 5.0.5 Francais"
-	Then "Application: Request Type B" content is displayed in "Windows7Mi: Request Type" column
+	Then "Application: Request Type B" content is displayed in "Windows7Mi: Path" column
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid
@@ -518,8 +518,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| EmailMigra: Request Type |
+	| ColumnName       |
+	| EmailMigra: Path |
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User select "Email Address" rows in the grid
@@ -538,11 +538,11 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatRequestTypeIsUpdatedCorrectlyOnMa
 	And Success message with "3 of 3 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "0F1ED67386AD4FA7BF4@bclabs.local"
-	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
+	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Path" column
 	When User perform search by "10A919CA1E7641E08E7@bclabs.local"
-	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
+	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Path" column
 	When User perform search by "229DCF8E575243E9928@bclabs.local"
-	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Request Type" column
+	Then "Personal Mailbox - VIP" content is displayed in "EmailMigra: Path" column
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid
@@ -596,8 +596,8 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName               |
-	| Windows7Mi: Request Type |
+	| ColumnName       |
+	| Windows7Mi: Path |
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
 	When User searches and selects following rows in the grid on Details page:
@@ -617,15 +617,15 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatRequestTypeIsUpdatedCorrectlyWhereS
 	And Success message with "5 of 5 objects were in the selected project and have been queued" text is displayed on Action panel
 	When User refreshes agGrid
 	And User perform search by "001BAQXT6JWFPI"
-	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
 	When User perform search by "001PSUMZYOW581"
-	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
 	When User perform search by "00RUUMAH9OZN9A"
-	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
 	When User perform search by "1B1CJ31RV9ZPYD"
-	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
 	When User perform search by "018UQ6KL9TF4YF"
-	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Request Type" column
+	Then "Computer: Workstation Replacement" content is displayed for "Windows7Mi: Path" column
 	When User closes Tools panel
 	And User clicks Close panel button
 	When User refreshes agGrid

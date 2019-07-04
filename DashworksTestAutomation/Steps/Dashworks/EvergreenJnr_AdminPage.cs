@@ -541,12 +541,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
         }
 
-        [When(@"User changes Request Type to ""(.*)""")]
-        public void WhenUserChangesRequestTypeTo(string requestTypeName)
+        [When(@"User changes Path to ""(.*)""")]
+        public void WhenUserChangesPathTo(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            projectsPage.RequestTypeDropdown.Click();
-            projectsPage.SelectRequestTypeByName(requestTypeName).Click();
+            projectsPage.PathDropdown.Click();
+            projectsPage.SelectPathByName(pathName).Click();
         }
 
         [When(@"User changes Category to ""(.*)""")]
@@ -557,19 +557,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectsPage.SelectCategoryByName(CategoryName).Click();
         }
 
-        [Then(@"""(.*)"" Request Type is displayed to the user")]
-        public void ThenRequestTypeIsDisplayedToTheUser(string requestTypeName)
+        [Then(@"""(.*)"" Path is displayed to the user")]
+        public void ThenRequestTypeIsDisplayedToTheUser(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(requestTypeName).Displayed(),
-                "Incorrect Request Type is displayed");
+            Assert.IsTrue(projectsPage.GetPathOrCategory(pathName).Displayed(),
+                "Incorrect Path is displayed");
         }
 
         [Then(@"""(.*)"" Category is displayed to the user")]
         public void ThenCategoryIsDisplayedToTheUser(string categoryName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(categoryName).Displayed(),
+            Assert.IsTrue(projectsPage.GetPathOrCategory(categoryName).Displayed(),
                 "Incorrect Category is displayed");
         }
 

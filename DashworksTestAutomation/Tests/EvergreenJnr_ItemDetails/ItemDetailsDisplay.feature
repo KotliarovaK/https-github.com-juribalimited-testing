@@ -205,7 +205,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Project Type |
 	| Bucket       |
 	| Ring         |
-	| Request Type |
+	| Path         |
 	| Workflow     |
 	| Category     |
 	| Status       |
@@ -219,7 +219,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatSelectedCheckboxesMatchTheColumnsInT
 	| Project Type |
 	| Bucket       |
 	| Ring         |
-	| Request Type |
+	| Path         |
 	| Workflow     |
 	| Category     |
 	| Status       |
@@ -555,12 +555,12 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
+	When User clicks String Filter button for "Path" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Request Type" checkbox on the Column Settings panel
+	And User select "Path" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	When User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -583,7 +583,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
+	When User clicks String Filter button for "Path" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -604,11 +604,11 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	Then "Bucket" column is displayed to the user
 	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
 	Then "Bucket" column is displayed to the user
-	When User clicks String Filter button for "Project Type" column
+	When User clicks String Filter button for "Path" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column 
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
-	When User clicks String Filter button for "Request Type" column
+	When User clicks String Filter button for "Path" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285
@@ -1269,7 +1269,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatReadinessValuesInDdlOnProjectsTabAre
 	And User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Project Type" checkbox on the Column Settings panel
-	And User select "Request Type" checkbox on the Column Settings panel
+	And User select "Path" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	When User click on 'Readiness' column header
 	Then color data is sorted by 'Readiness' column in descending order
