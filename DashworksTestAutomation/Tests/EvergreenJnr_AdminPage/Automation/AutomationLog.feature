@@ -101,11 +101,17 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "AM 1.7.19 Application" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
-	#Update for DAS17263
-	#When User clicks String Filter button for "Action" column on the Admin page
-	#When User selects "Select All" checkbox from String Filter with item list on the Admin page
-	#When User clicks String Filter button for "Action" column on the Admin page
-	#When User selects "16890_Action" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Start" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Automation Finish" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
+	Then "SUCCESS" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Action Start" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Type" column on the Admin page
+	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
 
 @Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16316 @DAS16319 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRunning
