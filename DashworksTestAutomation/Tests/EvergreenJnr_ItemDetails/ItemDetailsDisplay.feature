@@ -1522,9 +1522,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	| Readiness        |
 	| Path             |
 	| Category         |
-	| Language         |
 	| Tags             |
 	| Primary Device   |
+	| Language         |
 
 	#added hash because of the DAS17239 bug 6/25/2019
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158 @Not_Run_DAS17239
