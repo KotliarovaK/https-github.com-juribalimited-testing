@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12043 @DAS11531 @DAS12321 @DAS17279
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12043 @DAS11531 @DAS12321 @DAS17279 @DAS16678
 Scenario Outline: EvergreenJnr_AllLists_CheckThatErrorsAreNotDisplayedWhenOpenedDetailsPageThatDoesNotContainOwnerInformation
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -22,7 +22,7 @@ Examples:
 	#Added new check for DAS17279
 	| Devices   | 00BDM1JUR8IF419         | Hostname      | Custom Fields | No custom fields found for this device            |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285 @DAS16678
 Scenario: EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDevicesSectionOnTheDistributionTab
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

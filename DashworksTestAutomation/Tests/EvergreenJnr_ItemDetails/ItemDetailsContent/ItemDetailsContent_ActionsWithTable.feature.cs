@@ -168,6 +168,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12285")]
+        [NUnit.Framework.CategoryAttribute("DAS16678")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDevicesSectionOnTheDistributionTab()
         {
             System.Exception lastException = null;
@@ -202,7 +203,7 @@ this.FeatureBackground();
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12285"});
+                        "DAS12285",
 #line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
