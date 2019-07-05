@@ -532,6 +532,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("VDO")]
         public virtual void EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects()
         {
             System.Exception lastException = null;
@@ -572,7 +573,8 @@ this.FeatureBackground();
                         "DAS12999",
                         "DAS13973",
                         "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Bucket"});
+                        "Delete_Newly_Created_Bucket",
+                        "VDO"});
 #line 108
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
