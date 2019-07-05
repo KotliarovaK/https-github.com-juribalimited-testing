@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	And User clicks "Details" tab
 	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
 	When User clicks "Rings" tab
-	Then "TRUE" value is displayed for Default column
+	Then "TRUE" content is displayed in "Default" column
 	When User clicks "Details" tab
 	And User selects "Use project rings" in the "Rings" dropdown
 	And User clicks "Rings" tab
