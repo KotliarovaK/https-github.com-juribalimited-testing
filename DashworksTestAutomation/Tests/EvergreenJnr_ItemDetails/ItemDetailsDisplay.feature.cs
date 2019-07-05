@@ -5103,6 +5103,7 @@ this.FeatureBackground();
                         "Primary Device"});
             table73.AddRow(new string[] {
                         "Language"});
+#line 1514
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table73, "Then ");
 #line hidden
             this.ScenarioCleanup();

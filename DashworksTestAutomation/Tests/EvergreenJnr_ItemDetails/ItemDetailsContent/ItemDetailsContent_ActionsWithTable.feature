@@ -558,7 +558,7 @@ Examples:
 	| Users        | 01A921EFD05545818AA | Username    | Mailboxes | Mailboxes |
 
 	#Delete the tag "not ready" when new gold date will be on automation server
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17166 @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17094 @Not_Ready
 Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObjectsWithSnrMatch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
