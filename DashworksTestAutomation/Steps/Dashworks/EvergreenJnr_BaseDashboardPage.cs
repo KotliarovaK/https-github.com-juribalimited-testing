@@ -155,11 +155,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForDataLoading();
 
-            new Actions(_driver)
-                .Click(searchElement.SearchEverythingField)
-                .SendKeys(OpenQA.Selenium.Keys.LeftControl + "v")
-                .KeyUp(OpenQA.Selenium.Keys.LeftControl)
-                .Perform();
+            _driver.InsertFromClipboard(searchElement.SearchEverythingField);
 
             Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
