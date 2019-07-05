@@ -293,6 +293,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserHaveOpenedColumnSettingsForColumnInTheDetailsPageTable(string columnName)
         {
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
+
+            _driver.WaitForDataLoading();
             page.OpenColumnSettingsByName(columnName);
         }
 

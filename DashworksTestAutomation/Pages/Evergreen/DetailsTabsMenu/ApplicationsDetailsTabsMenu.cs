@@ -108,10 +108,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            var columnSettingsSelector = $"//*[text()='{columnName}']/ancestor::div/span[contains(@class, 'cell-menu-button')]";
-            Driver.MouseHover(By.XPath(columnSettingsSelector));
-            Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
-            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
+            var columnSettingsSelector = By.XPath($"//*[text()='{columnName}']/ancestor::div/span[contains(@class, 'cell-menu-button')]");
+            Driver.MouseHover(columnSettingsSelector);
+            Driver.WaitForElementToBeDisplayed(columnSettingsSelector);
+            Driver.FindElement(columnSettingsSelector).Click();
         }
 
         public bool IsColumnPresent(string columnName)

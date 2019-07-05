@@ -5098,12 +5098,11 @@ this.FeatureBackground();
             table73.AddRow(new string[] {
                         "Category"});
             table73.AddRow(new string[] {
-                        "Language"});
-            table73.AddRow(new string[] {
                         "Tags"});
             table73.AddRow(new string[] {
                         "Primary Device"});
-#line 1514
+            table73.AddRow(new string[] {
+                        "Language"});
  testRunner.Then("following fields are displayed in the open section:", ((string)(null)), table73, "Then ");
 #line hidden
             this.ScenarioCleanup();
