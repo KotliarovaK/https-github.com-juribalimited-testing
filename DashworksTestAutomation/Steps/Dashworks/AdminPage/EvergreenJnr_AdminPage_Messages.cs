@@ -246,6 +246,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageIsNotDisplayedOnTheAdminPage()
         {
             var message = _driver.NowAt<BaseGridPage>();
+            //TODO Remove wait for message after fixing for Automation (5.07.19)
+            if (message.SuccessMessage.Displayed())
+            {
+                Thread.Sleep(3000);
+            }
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 

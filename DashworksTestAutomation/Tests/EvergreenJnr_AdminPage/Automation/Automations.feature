@@ -369,18 +369,18 @@ Scenario: EvergreenJnr_AdminPage_CheckThatDeleteOptionForAutomationsCogmenuWorks
 	| Move to position |
 	| Make inactive    |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15634 @DAS15756 @DAS15754 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15309 @DAS15634 @DAS15756 @DAS15754 @DAS17277 @Not_Ready
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutomation
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 030619 Devices 1" text in the Search field for "Automation" column
-	Then "2" content is displayed in "Actions" column
+	When User enters "AM 030619 Devices 145" text in the Search field for "Automation" column
+	Then "3" content is displayed in "Actions" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
-	Then Counter shows "2" found rows
+	Then Counter shows "3" found rows
 	Then Columns on Admin page is displayed in following order:
 	| ColumnName    |
 	|               |
@@ -416,15 +416,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User type "15309_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "[Default (User)]" in the Path dropdown
+	When User selects "Undetermined" in the Path dropdown
 	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "click here to view the 15309_Action action" link
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	Then Column Settings was opened
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @DAS17290 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @DAS17290 @DAS17277 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -440,6 +441,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "CREATE" Action button is disabled
 	When User selects "Manual" in the "Run" dropdown
 	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "click here to view the 16764_Automation automation" link
 	When User clicks newly created object link
 	Then Edit Automation page is displayed to the User
 	Then "All Devices" content is displayed in the Scope Automation dropdown
@@ -449,7 +451,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	Then "Stop on failed action" checkbox is checked on the Admin page
 	Then "UPDATE" Action button is disabled
 	Then "CANCEL" Action button is active
-	Then "UPDATE" Action button have tooltip with "No changes made" text
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	#Wait for "RUN NOW" button
 	#Then "RUN NOW" Action button is active
 	When User clicks "Automations" navigation link on the Admin page
