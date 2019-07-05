@@ -71,6 +71,7 @@ namespace DashworksTestAutomation.Utils
                 #endregion
 
                 _quarantinedTests = testIdsWithNames;
+                Logger.Write("Test in Quarantine:" + String.Concat(_quarantinedTests.Select(x=>x.Value)));
             }
             catch
             {
@@ -84,6 +85,8 @@ namespace DashworksTestAutomation.Utils
             {
                 if (_quarantinedTests != null && _quarantinedTests.Any(x => x.Value.Equals(testName)))
                 {
+                    Logger.Write($"Trying to Unleash '{testName}' test");
+
                     RestClient client = GetClient();
 
                     var testId = _quarantinedTests.First(x => x.Value.Equals(testName)).Key;

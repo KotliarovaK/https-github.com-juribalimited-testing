@@ -14,5 +14,6 @@ namespace DashworksTestAutomation.Providers
         public static readonly string Password = ConfigurationManager.AppSettings["bamboo.password"];
         public static readonly string ProjectKey = ConfigurationManager.AppSettings["bamboo.projectKey"];
         public static readonly string BuildKey = ConfigurationManager.AppSettings["bamboo.buildKey"];
+        public static readonly string BuildNumber = ConfigurationManager.AppSettings["bamboo.buildNumber"];
     }
 }
