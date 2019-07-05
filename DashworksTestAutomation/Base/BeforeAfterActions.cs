@@ -8,10 +8,13 @@ using BoDi;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using HtmlAgilityPack;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
+using RestSharp.Authenticators;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Base
@@ -26,6 +29,13 @@ namespace DashworksTestAutomation.Base
         {
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
+        }
+
+        [BeforeTestRun]
+        public static void BeforeTestRun()
+        {
+            if (!Browser.RemoteDriver.Equals("local") && !string.IsNullOrEmpty(BambooProvider.BuildKey))
+                BambooUtil.GetAllQuarantinedTests();
         }
 
         [BeforeScenario]
@@ -55,30 +65,16 @@ namespace DashworksTestAutomation.Base
 
                 try
                 {
-                    //if (Browser.RemoteDriver.Equals("sauceLabs"))
-                    //{
-                    //    bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
-                    //                  TestStatus.Passed;
-
-                    //    try
-                    //    {
-                    //        // Logs the result to Sauce Labs
-                    //        ((IJavaScriptExecutor)driver).ExecuteScript(
-                    //            "sauce:job-result=" + (passed ? "passed" : "failed"));
-                    //    }
-                    //    finally
-                    //    {
-                    //        Console.WriteLine(
-                    //            $"SauceOnDemandSessionID={((CustomRemoteWebDriver)driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
-                    //    }
-                    //}
-
                     var testStatus = GetTestStatus();
                     if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
                             driver.CreateScreenshot(testName);
+                    }
+                    else if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
+                    {
+                        BambooUtil.UnleashTest(GetTestName());
                     }
 
                     Logger.Write($"Closing window at: {driver.Url}");
