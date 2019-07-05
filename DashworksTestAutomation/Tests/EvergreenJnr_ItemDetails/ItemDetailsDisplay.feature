@@ -1673,9 +1673,9 @@ Examples:
 	| Applications | Application   | 7zip                             | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
 	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Overall Readiness | NONE  | Mailbox Evergreen Capacity Project |
 
-	#ready for 'orbit' release
+#ready for 'orbit' release
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17002 @Not_Ready
-Scenario Outline: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject
+Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ACD Display 3.4"
