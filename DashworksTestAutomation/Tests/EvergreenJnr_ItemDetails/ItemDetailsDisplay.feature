@@ -1332,11 +1332,15 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	| Path                  |
 	| Category              |
 	| Application Readiness |
-	#ready for 'orbit' release 7/05/19
-	#| Stage 1               |
-	#| Stage 2               |
-	#| Stage 3               |
-	#| Stage Z               |
+	#Ann.Ilchenko 7/05/19: ready for "orbit" release (remove hash when it comes to automation server) --> DAS17254
+	##| Stage 1               |
+	##| Stage 2               |
+	##| Stage 3               |
+	##| Stage Z               |
+	##And "GREEN" content is displayed for "Stage 1" column
+	##And "AMBER" content is displayed for "Stage 2" column
+	##And "RED" content is displayed for "Stage 3" column
+	##And "GREY" content is displayed for "Stage Z" column
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17218
 Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode
