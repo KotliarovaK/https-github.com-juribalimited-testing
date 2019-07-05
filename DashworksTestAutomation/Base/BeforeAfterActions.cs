@@ -32,85 +32,15 @@ namespace DashworksTestAutomation.Base
         }
 
         [BeforeTestRun]
-        public void BeforeTestRun()
+        public static void BeforeTestRun()
         {
-            if (!Browser.RemoteDriver.Equals("local"))
+            if (!Browser.RemoteDriver.Equals("local") && !string.IsNullOrEmpty(BambooProvider.BuildKey))
                 BambooUtil.GetAllQuarantinedTests();
         }
 
         [BeforeScenario]
         public void OnStartUp()
         {
-            //try
-            //{
-            //    if (string.IsNullOrEmpty(BambooProvider.BuildKey))
-            //        return;
-
-            //    var projAndBuild = $"{BambooProvider.ProjectKey}-{BambooProvider.BuildKey}";
-            //    var client = new RestClient
-            //    {
-            //        BaseUrl = new Uri(BambooProvider.BaseUrl),
-            //        Authenticator = new HttpBasicAuthenticator(BambooProvider.Username, BambooProvider.Password)
-            //    };
-
-            //    var request = new RestRequest(Method.GET) {Resource = $"/browse/{projAndBuild}"};
-            //    request.AddHeader("Accept", "application/json");
-            //    request.AddHeader("Content-Type", "application/json; charset=utf-8");
-            //    request.RequestFormat = DataFormat.Json;
-            //    IRestResponse response = client.Execute(request);
-
-            //    #region Get previous build ID
-
-            //    HtmlDocument doc = new HtmlDocument();
-            //    string html = response.Content;
-            //    doc.LoadHtml(html);
-            //    var buildIdElement = doc.DocumentNode.SelectNodes("//a[@class='statusIndicator']");
-            //    var prevBuildId = int.Parse(buildIdElement.First().GetAttributeValue("href", null).Split('/').Last().Split('-').Last()) - 1;
-
-            //    #endregion
-
-            //    #region Get all quarantined Tests 
-
-            //    request = new RestRequest(Method.GET) {Resource = $"/browse/{projAndBuild}-{prevBuildId}/test"};
-            //    request.AddHeader("Accept", "application/json");
-            //    request.AddHeader("Content-Type", "application/json; charset=utf-8");
-            //    request.RequestFormat = DataFormat.Json;
-            //    response = client.Execute(request);
-
-            //    html = response.Content;
-            //    doc.LoadHtml(html);
-
-            //    var quarantinedTests =
-            //        doc.DocumentNode.SelectNodes("//table[@id='skipped-tests']//a[@class='test-name']");
-
-            //    List<KeyValuePair<string, string>> testIdsWithNames = new List<KeyValuePair<string, string>>();
-            //    foreach (HtmlNode node in quarantinedTests)
-            //    {
-            //        var id = node.GetAttributeValue("href", null).Split('/').Last();
-            //        var name = node.InnerText;
-            //        testIdsWithNames.Add(new KeyValuePair<string, string>(id, name));
-            //    }
-
-            //    #endregion
-
-            //    foreach (KeyValuePair<string, string> pair in testIdsWithNames)
-            //    {
-            //        request = new RestRequest(Method.POST)
-            //        {
-            //            Resource = $"/rest/api/latest/plan/{projAndBuild}-{prevBuildId + 1}/test/{pair.Key}/unleash"
-            //        };
-            //        request.AddHeader("Accept", "application/json");
-            //        request.AddHeader("Content-Type", "application/json; charset=utf-8");
-
-            //        request.RequestFormat = DataFormat.Json;
-
-            //        response = client.Execute(request);
-            //    }
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine(e);
-            //}
             List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
             LockCategory.AwaitTags(testTags);
             LockCategory.AddTags(testTags);
@@ -142,7 +72,7 @@ namespace DashworksTestAutomation.Base
                         if (!string.IsNullOrEmpty(testName))
                             driver.CreateScreenshot(testName);
                     }
-                    else
+                    else if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
                     {
                         BambooUtil.UnleashTest(GetTestName());
                     }

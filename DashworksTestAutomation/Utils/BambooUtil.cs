@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Utils
                 doc.LoadHtml(html);
 
                 var quarantinedTests =
-                    doc.DocumentNode.SelectNodes("//table[@id='skipped-tests']//a[@class='test-name']");
+                    doc.DocumentNode.SelectNodes("//table[@id='quarantined-tests']//a[@class='test-name']");
 
                 List<KeyValuePair<string, string>> testIdsWithNames = new List<KeyValuePair<string, string>>();
                 foreach (HtmlNode node in quarantinedTests)
