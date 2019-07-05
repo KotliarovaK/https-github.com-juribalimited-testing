@@ -161,7 +161,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
 
-
         [When(@"User click on '(.*)' column header")]
         public void WhenUserClickOnColumnHeader(string columnName)
         {

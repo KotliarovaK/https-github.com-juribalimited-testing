@@ -556,3 +556,22 @@ Examples:
 	| PageName     | SearchTerm          | Column      | MainTab   | SubTab    |
 	| Applications | IEWatch 2.1         | Application | MSI       | MSIFiles  |
 	| Users        | 01A921EFD05545818AA | Username    | Mailboxes | Mailboxes |
+
+#Delete the tag "not ready" when new gold date will be on automation server
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17166 @Not_Ready
+Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObjectsWithSnrMatch
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "AAD1011948"
+	And User click content from "Username" column
+	Then Details page for "AAD1011948" item is displayed to the user
+	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	Then "001BAQXT6JWFPI" content is displayed in "Hostname" column
+	#=====================================================================================#
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	Then "00A5B910A1004CF5AC4" content is displayed in "Username" column
