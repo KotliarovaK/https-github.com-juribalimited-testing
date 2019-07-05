@@ -89,6 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsCont
         [NUnit.Framework.CategoryAttribute("DAS12043")]
         [NUnit.Framework.CategoryAttribute("DAS11531")]
         [NUnit.Framework.CategoryAttribute("DAS12321")]
+        [NUnit.Framework.CategoryAttribute("DAS16678")]
         [NUnit.Framework.TestCaseAttribute("Devices", "06Y8HSNCPVHENV", "Hostname", "Device Owner", "No device owner information found for this device", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alex.cristea@juriba.com", "Email Address", "Mailbox Owner", "No mailbox owner found for this mailbox", null)]
         public virtual void EvergreenJnr_AllLists_CheckThatErrorsAreNotDisplayedWhenOpenedDetailsPageThatDoesNotContainOwnerInformation(string pageName, string objectName, string columnName, string tabName, string messageText, string[] exampleTags)
@@ -126,7 +127,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsCont
                     "ItemDetailsDisplay",
                     "DAS12043",
                     "DAS11531",
-                    "DAS12321"};
+                    "DAS12321",
+                    "DAS16678"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -165,6 +167,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12285")]
+        [NUnit.Framework.CategoryAttribute("DAS16678")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectMessageIsDisplayedForDevicesSectionOnTheDistributionTab()
         {
             System.Exception lastException = null;
@@ -199,7 +202,8 @@ this.FeatureBackground();
                         "Mailboxes",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS12285"});
+                        "DAS12285",
+                        "DAS16678"});
 #line 24
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

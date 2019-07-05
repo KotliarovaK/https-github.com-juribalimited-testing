@@ -1307,15 +1307,21 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheRelatedTabIsDisplayedCorrectlyWit
 	#When User clicks "ACG370114" link on the Details Page
 	#Then Details page for "ACG370114" item is displayed correctly
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17219 @DAS17254
 Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColumnsOnMailboxesDetailsPageForProjectMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "000F977AC8824FE39B8@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Users" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Username           |
+	| Domain             |
+	| Display Name       |
+	| Distinguished Name |
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
 	| Username              |
@@ -1326,6 +1332,11 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	| Path                  |
 	| Category              |
 	| Application Readiness |
+	#ready for 'orbit' release 7/05/19
+	#| Stage 1               |
+	#| Stage 2               |
+	#| Stage 3               |
+	#| Stage Z               |
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17218
 Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode
@@ -1334,8 +1345,15 @@ Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumn
 	When User perform search by "ZZP911429"
 	And User click content from "Username" column
 	Then Details page for "ZZP911429" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	When User navigates to the "Devices" main-menu on the Details page
+	Then following columns are displayed on the Item details page:
+	| ColumnName         |
+	| Hostname           |
+	| Device Type        |
+	| Owner Display Name |
+	| Operating System   |
+	| Compliance         |
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
 	| Hostname              |
@@ -1356,7 +1374,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	And following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems     |
 	| Overall Compliance  |
 	| App Compliance      |
@@ -1365,9 +1383,9 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
-	When User click content from "Username" column
+	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	And following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems       |
 	| Overall Compliance    |
 	| User App Compliance   |
@@ -1377,18 +1395,18 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	When User click content from "Application" column
+	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
-	Then following Compliance items are displayed in Top bar on the Item details page:
+	And following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems    |
 	| Overall Compliance |
 	#=====================================================================================#
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
-	When User click content from "Email Address" column
+	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
-	Then No one Compliance items are displayed for the User in Top bar on the Item details page
+	And No one Compliance items are displayed for the User in Top bar on the Item details page
 
 @Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762
 Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
@@ -1408,7 +1426,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
-	When User click content from "Username" column
+	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
@@ -1421,7 +1439,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	When User click content from "Application" column
+	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
 	When User switches to the "Computer Scheduled Test (Jo)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
@@ -1434,7 +1452,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
-	When User click content from "Email Address" column
+	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
@@ -1448,11 +1466,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatUnknownValuesAreNotDisplayedOnLevelO
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
-	When User click content from "Hostname" column
+	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the "Applications" main-menu on the Details page
-	When User navigates to the "Evergreen Summary" sub-menu on the Details page
-	When User clicks Group By button on the Details page and selects "Vendor" value
+	And User navigates to the "Evergreen Summary" sub-menu on the Details page
+	And User clicks Group By button on the Details page and selects "Vendor" value
 	Then "UNKNOWN" content is not displayed in the grid on the Item details page
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859
@@ -1460,11 +1478,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayed
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001BAQXT6JWFPI"
-	When User click content from "Hostname" column
+	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
-	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields            |
 	| Object ID         |
@@ -1485,11 +1503,11 @@ Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCo
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	When User perform search by "0072B088173449E3A93"
-	When User click content from "Username" column
+	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
 	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
-	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields           |
 	| Object ID        |
@@ -1511,11 +1529,11 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisp
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
-	When User click content from "Application" column
+	And User click content from "Application" column
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
-	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields              |
 	| Object ID           |
@@ -1536,11 +1554,11 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplay
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
-	When User click content from "Email Address" column
+	And User click content from "Email Address" column
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
 	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
-	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Project Details" sub-menu on the Details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following fields are displayed in the open section:
 	| Fields            |
 	| Object ID         |
