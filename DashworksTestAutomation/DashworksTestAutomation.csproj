@@ -301,6 +301,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsGroupsPage.cs" />
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
+    <Compile Include="Providers\BambooProvider.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditActions.cs" />
@@ -728,6 +729,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Senior_PMObject.feature</DependentUpon>
     </Compile>
+    <Compile Include="Utils\BambooUtil.cs" />
     <Compile Include="Utils\ByFactory.cs" />
     <Compile Include="Utils\DatabaseWorker.cs" />
     <Compile Include="Utils\FileSystemHelper.cs" />
