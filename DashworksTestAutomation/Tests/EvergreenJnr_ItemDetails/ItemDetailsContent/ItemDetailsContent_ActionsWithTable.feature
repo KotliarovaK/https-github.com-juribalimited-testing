@@ -542,7 +542,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	When User clicks String Filter button for "Category" column 
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
-@Evergreen @ALlLists @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923
+@Evergreen @ALlLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12491 @DAS14923
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnDetailsPages
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -556,3 +556,183 @@ Examples:
 	| PageName     | SearchTerm          | Column      | MainTab   | SubTab    |
 	| Applications | IEWatch 2.1         | Application | MSI       | MSIFiles  |
 	| Users        | 01A921EFD05545818AA | Username    | Mailboxes | Mailboxes |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnDevicesPageGoingToSenior
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Projects Summary" sub-menu on the Details page
+	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+	Then User click back button in the browser
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "33819" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+	Then User click back button in the browser
+	#=====================================================================================#
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Owner Projects Summary" sub-menu on the Details page
+	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
+	Then User click back button in the browser
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "34305" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "000F977AC8824FE39B8"
+	And User click content from "Username" column
+	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "User Projects" sub-menu on the Details page
+	And User clicks "Project K-Computer Scheduled Project" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+	Then User click back button in the browser
+	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "61097" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+	Then User click back button in the browser
+	#=====================================================================================#
+	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
+	When User navigates to the "Mailbox Project Summary" sub-menu on the Details page
+	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	Then User click back button in the browser
+	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "66461" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	Then User click back button in the browser
+	#=====================================================================================#
+	When User clicks on "Users" navigation link
+	Then "Users" list should be displayed to the user
+	When User perform search by "QLL295118"
+	And User click content from "Username" column
+	Then Details page for "QLL295118" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Device Project Summary" sub-menu on the Details page
+	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+	Then User click back button in the browser
+	Then Details page for "QLL295118" item is displayed to the user
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "11176" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	And User click content from "Application" column
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Projects" sub-menu on the Details page
+	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
+	Then User click back button in the browser
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "17622" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
+	
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
+Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "000F977AC8824FE39B8@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	When User navigates to the "Mailbox Projects" sub-menu on the Details page
+	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	Then User click back button in the browser
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "66461" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	Then User click back button in the browser
+	#=====================================================================================#
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
+	And User clicks "Project K-Computer Scheduled Project" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+	Then User click back button in the browser
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User have opened Column Settings for "Project" column in the Details Page table
+	And User clicks Column button on the Column Settings panel
+	And User select "Object ID" checkbox on the Column Settings panel
+	And User clicks Column button on the Column Settings panel
+	Then following columns added to the table:
+	| ColumnName |
+	| Object ID  |
+	When User clicks "61097" link on the Details Page
+	Then "Project Object" page is displayed to the user
+	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user

@@ -44,5 +44,12 @@ namespace DashworksTestAutomation.Pages.Projects
             Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
+
+        public IWebElement GetObjectOnPMObjectpageByName(string objectName)
+        {
+            var selector = By.XPath($".//span[contains(@id, 'objectTitleText')][text()='{objectName}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }
