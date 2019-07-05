@@ -1390,7 +1390,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInEvergreenModeIsDisplayedCorrect
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	Then No one Compliance items are displayed for the User in Top bar on the Item details page
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166
 Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1671,3 +1671,23 @@ Examples:
 	| Users        | Username      | ACG370114                        | Readiness         | GREY  | User Evergreen Capacity Project    |
 	| Applications | Application   | 7zip                             | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
 	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Overall Readiness | NONE  | Mailbox Evergreen Capacity Project |
+
+#ready for 'orbit' release
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17002 @Not_Ready
+Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ACD Display 3.4"
+	And User click content from "Application" column
+	Then Details page for "ACD Display 3.4" item is displayed to the user
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title             | Value |
+	| Overall Readiness | RED   |
+	| App Readiness     | RED   |
+	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	| ComplianceItems   | ColorName |
+	| Overall Readiness | RED       |
+	| App Readiness     | RED       |

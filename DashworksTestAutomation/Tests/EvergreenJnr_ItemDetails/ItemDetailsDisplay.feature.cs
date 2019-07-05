@@ -4653,6 +4653,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14975")]
         [NUnit.Framework.CategoryAttribute("DAS15333")]
         [NUnit.Framework.CategoryAttribute("DAS16762")]
+        [NUnit.Framework.CategoryAttribute("DAS17166")]
         public virtual void EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -4688,7 +4689,8 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS14975",
                         "DAS15333",
-                        "DAS16762"});
+                        "DAS16762",
+                        "DAS17166"});
 #line 1394
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5807,6 +5809,103 @@ this.FeatureBackground();
 #line 1664
  testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
                     "e Item details page:", ((string)(null)), table77, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavoc" +
+            "BigDataProject")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17002")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
+        public virtual void EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProjectInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProjectInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavoc" +
+                    "BigDataProject", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17002",
+                        "Not_Ready"});
+#line 1678
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 1679
+ testRunner.When("User clicks \"Applications\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1680
+ testRunner.Then("\"Applications\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1681
+ testRunner.When("User perform search by \"ACD Display 3.4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1682
+ testRunner.And("User click content from \"Application\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1683
+ testRunner.Then("Details page for \"ACD Display 3.4\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 1684
+ testRunner.When("User switches to the \"Havoc (Big Data)\" project in the Top bar on Item details pa" +
+                    "ge", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1685
+ testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1686
+ testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table78 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Title",
+                        "Value"});
+            table78.AddRow(new string[] {
+                        "Overall Readiness",
+                        "RED"});
+            table78.AddRow(new string[] {
+                        "App Readiness",
+                        "RED"});
+#line 1687
+ testRunner.Then("following content is displayed on the Details Page", ((string)(null)), table78, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table79 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ComplianceItems",
+                        "ColorName"});
+            table79.AddRow(new string[] {
+                        "Overall Readiness",
+                        "RED"});
+            table79.AddRow(new string[] {
+                        "App Readiness",
+                        "RED"});
+#line 1691
+ testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
+                    "e Item details page:", ((string)(null)), table79, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
