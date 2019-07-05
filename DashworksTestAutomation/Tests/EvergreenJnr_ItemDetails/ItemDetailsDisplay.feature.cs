@@ -5817,7 +5817,7 @@ this.FeatureBackground();
 #line 1680
  testRunner.When(string.Format("User switches to the \"{0}\" project in the Top bar on Item details page", projectName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1681
- testRunner.When("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User navigates to the \"Projects\" main-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1682
  testRunner.And("User navigates to the \"Project Details\" sub-menu on the Details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
