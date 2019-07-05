@@ -19,6 +19,7 @@ Examples:
 	| PageName  | ObjectName              | ColumnName    | TabName       | MessageText                                       |
 	| Devices   | 06Y8HSNCPVHENV          | Hostname      | Device Owner  | No device owner information found for this device |
 	| Mailboxes | alex.cristea@juriba.com | Email Address | Mailbox Owner | No mailbox owner found for this mailbox           |
+	#Added new check for DAS17279
 	| Devices   | 00BDM1JUR8IF419         | Hostname      | Custom Fields | No custom fields found for this device            |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12285
