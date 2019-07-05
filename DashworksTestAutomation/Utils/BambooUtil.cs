@@ -71,7 +71,7 @@ namespace DashworksTestAutomation.Utils
                 #endregion
 
                 _quarantinedTests = testIdsWithNames;
-                Logger.Write(String.Concat(_quarantinedTests.Select(x=>x.Value)));
+                Logger.Write("Test in Quarantine:" + String.Concat(_quarantinedTests.Select(x=>x.Value)));
             }
             catch
             {
