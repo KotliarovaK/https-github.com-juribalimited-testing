@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsCont
         [NUnit.Framework.CategoryAttribute("DAS11531")]
         [NUnit.Framework.CategoryAttribute("DAS12321")]
         [NUnit.Framework.CategoryAttribute("DAS17279")]
+        [NUnit.Framework.CategoryAttribute("DAS16678")]
         [NUnit.Framework.TestCaseAttribute("Devices", "06Y8HSNCPVHENV", "Hostname", "Device Owner", "No device owner information found for this device", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alex.cristea@juriba.com", "Email Address", "Mailbox Owner", "No mailbox owner found for this mailbox", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "00BDM1JUR8IF419", "Hostname", "Custom Fields", "No custom fields found for this device", null)]
@@ -129,7 +130,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsCont
                     "DAS12043",
                     "DAS11531",
                     "DAS12321",
-                    "DAS17279"};
+                    "DAS17279",
+                    "DAS16678"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -204,6 +206,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS12285",
+                        "DAS16678"});
 #line 26
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
