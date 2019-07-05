@@ -2425,7 +2425,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
-        [NUnit.Framework.CategoryAttribute("DAS17166")]
+        [NUnit.Framework.CategoryAttribute("DAS17094")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObjectsWithSnrMatch()
         {
@@ -2461,7 +2461,7 @@ this.FeatureBackground();
                         "AllLists",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17166",
+                        "DAS17094",
                         "Not_Ready"});
 #line 562
 this.ScenarioInitialize(scenarioInfo);
