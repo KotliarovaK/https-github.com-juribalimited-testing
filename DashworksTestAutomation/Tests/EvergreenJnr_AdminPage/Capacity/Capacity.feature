@@ -531,13 +531,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedTo
 	When User updates Capacity Units via api
 	| OldName    | Name     | Description | IsDefault |
 	| Unassigned | New Name |             |           |
-	And User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13956" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link	
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13956 | All Devices | None            | Standalone Project |
 	And User selects "Capacity" tab on the Project details page	
 	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button

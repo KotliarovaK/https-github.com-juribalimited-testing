@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Base
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            if (!Browser.RemoteDriver.Equals("local") && !string.IsNullOrEmpty(BambooProvider.BuildKey))
+            if (!Browser.RemoteDriver.Equals("local") && !string.IsNullOrEmpty(BambooProvider.BuildResultKey))
                 BambooUtil.GetAllQuarantinedTests();
         }
 

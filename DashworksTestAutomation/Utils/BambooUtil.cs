@@ -12,9 +12,7 @@ namespace DashworksTestAutomation.Utils
 {
     public static class BambooUtil
     {
-        static string _projAndBuild = $"{BambooProvider.ProjectKey}-{BambooProvider.BuildKey}";
         static List<KeyValuePair<string, string>> _quarantinedTests;
-        static int _prevBuildId;
 
         private static RestClient GetClient()
         {
@@ -30,31 +28,18 @@ namespace DashworksTestAutomation.Utils
             try
             {
                 RestClient client = GetClient();
-                var request = new RestRequest(Method.GET) { Resource = $"/browse/{_projAndBuild}" };
+
+                #region Get all quarantined Tests 
+
+                var request = new RestRequest(Method.GET) { Resource = $"/browse/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber - 1}/test" };
+                Logger.Write($"GetAllQuarantinedTests: {request}");
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json; charset=utf-8");
                 request.RequestFormat = DataFormat.Json;
                 IRestResponse response = client.Execute(request);
 
-                #region Get previous build ID
-
                 HtmlDocument doc = new HtmlDocument();
                 string html = response.Content;
-                doc.LoadHtml(html);
-                var buildIdElement = doc.DocumentNode.SelectNodes("//a[@class='statusIndicator']");
-                _prevBuildId = int.Parse(buildIdElement.First().GetAttributeValue("href", null).Split('/').Last().Split('-').Last()) - 1;
-
-                #endregion
-
-                #region Get all quarantined Tests 
-
-                request = new RestRequest(Method.GET) { Resource = $"/browse/{_projAndBuild}-{_prevBuildId}/test" };
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json; charset=utf-8");
-                request.RequestFormat = DataFormat.Json;
-                response = client.Execute(request);
-
-                html = response.Content;
                 doc.LoadHtml(html);
 
                 var quarantinedTests =
@@ -90,8 +75,9 @@ namespace DashworksTestAutomation.Utils
 
                     var request = new RestRequest(Method.POST)
                     {
-                        Resource = $"/rest/api/latest/plan/{_projAndBuild}-{_prevBuildId + 1}/test/{testId}/unleash"
+                        Resource = $"/rest/api/latest/plan/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber}/test/{testId}/unleash"
                     };
+                    Logger.Write($"GetAllQuarantinedTests: {request.Resource}");
                     request.AddHeader("Accept", "application/json");
                     request.AddHeader("Content-Type", "application/json; charset=utf-8");
 
