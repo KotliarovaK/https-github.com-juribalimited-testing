@@ -12,9 +12,7 @@ namespace DashworksTestAutomation.Utils
 {
     public static class BambooUtil
     {
-        //static string _projAndBuild = $"{BambooProvider.ProjectKey}-{BambooProvider.BuildKey}";
         static List<KeyValuePair<string, string>> _quarantinedTests;
-        //static int _prevBuildNumber;
 
         private static RestClient GetClient()
         {
@@ -31,25 +29,11 @@ namespace DashworksTestAutomation.Utils
             {
                 Logger.Write("BuildResultKey:" + BambooProvider.BuildResultKey);
                 RestClient client = GetClient();
-                //var request = new RestRequest(Method.GET) { Resource = $"/browse/{_projAndBuild}" };
-                //request.AddHeader("Accept", "application/json");
-                //request.AddHeader("Content-Type", "application/json; charset=utf-8");
-                //request.RequestFormat = DataFormat.Json;
-                //IRestResponse response = client.Execute(request);
-
-                #region Get previous build ID
-
-                //HtmlDocument doc = new HtmlDocument();
-                //string html = response.Content;
-                //doc.LoadHtml(html);
-                //var buildIdElement = doc.DocumentNode.SelectNodes("//a[@class='statusIndicator']");
-                //_prevBuildNumber = int.Parse(buildIdElement.First().GetAttributeValue("href", null).Split('/').Last().Split('-').Last()) - 1;
-
-                #endregion
 
                 #region Get all quarantined Tests 
 
                 var request = new RestRequest(Method.GET) { Resource = $"/browse/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber - 1}/test" };
+                Logger.Write($"GetAllQuarantinedTests: {request}");
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json; charset=utf-8");
                 request.RequestFormat = DataFormat.Json;
@@ -94,6 +78,7 @@ namespace DashworksTestAutomation.Utils
                     {
                         Resource = $"/rest/api/latest/plan/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber}/test/{testId}/unleash"
                     };
+                    Logger.Write($"GetAllQuarantinedTests: {request.Resource}");
                     request.AddHeader("Accept", "application/json");
                     request.AddHeader("Content-Type", "application/json; charset=utf-8");
 

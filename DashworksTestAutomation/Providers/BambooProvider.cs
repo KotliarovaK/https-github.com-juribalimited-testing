@@ -14,7 +14,6 @@ namespace DashworksTestAutomation.Providers
         public static readonly string Username = ConfigurationManager.AppSettings["bamboo.username"];
         public static readonly string Password = ConfigurationManager.AppSettings["bamboo.password"];
         public static readonly string ProjectKey = ConfigurationManager.AppSettings["bamboo.projectKey"];
-        public static readonly string BuildKey = ConfigurationManager.AppSettings["bamboo.buildKey"];
         public static readonly string BuildResultKey = ConfigurationManager.AppSettings["bamboo.buildResultKey"];
         public static int BuildNumber
         {
@@ -22,8 +21,6 @@ namespace DashworksTestAutomation.Providers
             {
                 try
                 {
-                    Logger.Write($"BuildResultKey is {BuildResultKey}");
-                    Logger.Write($"Last part is {BuildResultKey.Split('-').Last()}");
                     return int.Parse(BuildResultKey.Split('-').Last());
                 }
                 catch (Exception e)
