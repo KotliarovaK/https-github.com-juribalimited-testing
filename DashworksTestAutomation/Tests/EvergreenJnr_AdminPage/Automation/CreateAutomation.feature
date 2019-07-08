@@ -11,7 +11,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	#When User creates new Automation Unit via API
+	#When User creates new Automation via API
 	#| AutomationName | Description | Active | StopOnFailedAction | Scope       | Run    |
 	#| 15309_laptop   | 15309       | true   | false              | All Devices | Manual |
 	When User clicks the "CREATE AUTOMATION" Action button
