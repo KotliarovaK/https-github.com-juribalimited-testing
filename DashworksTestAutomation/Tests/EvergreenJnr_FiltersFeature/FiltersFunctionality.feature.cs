@@ -809,7 +809,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("archived")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Babel(Engl: Category", "None", "17,225", "Hostname", "01COJATLYVAR7A6", "Babel(Engl: Category is None", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Barry\'sUse: In Scope", "FALSE", "15,896", "Hostname", "00BDM1JUR8IF419", "Barry\'sUse: In Scope is false", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Request Type", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Path", "Request Type A", "132", "Hostname", "46DIQRWG3BM6K9Z", "ComputerSc: Request Type is Request Type A", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Havoc(BigD: Hide from End Users", "UNKNOWN", "1,156", "Application", "Microsoft Silverlight 2 SDK (2.0.31005.0)", "Havoc(BigD: Hide from End Users is Unknown", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "MigrationP: Core Application", "FALSE", "220", "Application", "Quartus II Programmer 4.0", "MigrationP: Core Application is false", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "EmailMigra: Device Type", "Not Identified", "729", "Email Address", "alex.cristea@juriba.com", "EmailMigra: Device Type is Not Identified", null)]
@@ -4316,10 +4316,10 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Values but no RAG", "Three", "1", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: SS Application List Completed", "Not Applicable", "5,161", null)]
         [NUnit.Framework.TestCaseAttribute("MigrationP: Category", "None", "17,220", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Machines", "62", null)]
-        [NUnit.Framework.TestCaseAttribute("ComputerSc: Request Type", "Request Type A", "132", null)]
-        [NUnit.Framework.TestCaseAttribute("MigrationP: Request Type", "[Default (Computer)]", "41", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "60", null)]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Path", "Machines", "62", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Path", "Request Type A", "132", null)]
+        [NUnit.Framework.TestCaseAttribute("MigrationP: Path", "[Default (Computer)]", "41", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Path", "Request Type A", "60", null)]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnDevicesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -4403,8 +4403,9 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Category", "Terminated", "1", null)]
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Read Only on Bulk Update Page", "Not Applicable", "4,642", null)]
         [NUnit.Framework.TestCaseAttribute("Barry\'sUse: Category", "None", "41,339", null)]
-        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Request Type", "[Default (User)]", "7,578", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Group User Default Request Type", "Not Applicable", "679", null)]
+        [NUnit.Framework.TestCaseAttribute("Havoc(BigD: Path", "[Default (User)]", "7,578", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Group Stage \\ Group User Default Request Type", "Not Applicable", "595", null)]
+        [NUnit.Framework.TestCaseAttribute("ComputerSc: Group Stage \\ Group User Default Request Type", "Not Applicable", "1,809 rows", null)]
         public virtual void EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -4489,8 +4490,9 @@ this.FeatureBackground();
         [NUnit.Framework.TestCaseAttribute("Windows7Mi: Technical Test", "Started", "4", null)]
         [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "None", "2,223", null)]
         [NUnit.Framework.TestCaseAttribute("UserSchedu: Category", "None", "2,223", null)]
-        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Request Type", "Tools", "302", null)]
-        [NUnit.Framework.TestCaseAttribute("UserSchedu: Request Type", "Request Type A", "47", null)]
+        [NUnit.Framework.TestCaseAttribute("Babel(Engl: Path", "Tools", "302", null)]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Path", "Public Folder", "50", null)]
+        [NUnit.Framework.TestCaseAttribute("UserSchedu: Path", "Request Type A", "47", null)]
         public virtual void EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -4650,6 +4652,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
         [NUnit.Framework.TestCaseAttribute("EmailMigra: Category", "Mailbox Category A", "6", null)]
+        [NUnit.Framework.TestCaseAttribute("EmailMigra: Path", "Personal Mailbox - VIP", "6", null)]
         public virtual void EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnMailboxesPage(string filterName, string selectedCheckboxes, string rows, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -5962,7 +5965,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14603")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Babel(Engl: Category", "None", "00KLL9S8NRF0X6", "Babel(Engl: Category is None", null)]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Babel(Engl: In Scope", "FALSE", "00I0COBFWHOF27", "Babel(Engl: In Scope is False", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ComputerSc: Request Type", "Request Type A", "47NK3ATE5DM2HD", "ComputerSc: Request Type is Request Type A", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ComputerSc: Path", "Request Type A", "47NK3ATE5DM2HD", "ComputerSc: Request Type is Request Type A", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Havoc(BigD: Hide from End Users", "UNKNOWN", "Adobe Flash Player 10 ActiveX (10.0.12.36)", "Havoc(BigD: Hide from End Users is Unknown", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "MigrationP: Core Application", "FALSE", "Adobe Download Manager 2.0 (Remove Only)", "MigrationP: Core Application is False", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "EmailMigra: Device Type", "Not Identified", "238BAE24882E48BFA9F@bclabs.local", "EmailMigra: Device Type is Not Identified", null)]

@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ActionsDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]
-        public IWebElement RequestTypeDropdown { get; set; }
+        public IWebElement BulkUpdateTypeDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
         public IWebElement ProjectField { get; set; }
