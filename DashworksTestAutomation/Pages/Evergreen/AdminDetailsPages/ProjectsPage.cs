@@ -95,8 +95,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
         public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Request Type']")]
-        public IWebElement RequestTypeDropdown { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Path']")]
+        public IWebElement PathDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Category']")]
         public IWebElement CategoryDropdown { get; set; }
@@ -309,21 +309,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectProjectLanguage(string language)
         {
-            var listNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
+            var listNameSelector = $".//span[@class='mat-option-text'][text()='{language}']";
             Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public IWebElement SelectRequestTypeByName(string requestTypeName)
+        public IWebElement SelectPathByName(string pathName)
         {
-            var requestTypeSelector = $"//mat-option/span[contains(text(), '{requestTypeName}')]";
+            var requestTypeSelector = $".//mat-option/span[contains(text(), '{pathName}')]";
             return Driver.FindElement(By.XPath(requestTypeSelector));
         }
 
-        public IWebElement GetRequestTypeOrCategory(string requestTypeName)
+        public IWebElement GetPathOrCategory(string pathTypeName)
         {
-            var requestTypeSelector = $"//mat-select//div//div//span[contains(text(), '{requestTypeName}')]";
-            return Driver.FindElement(By.XPath(requestTypeSelector));
+            var pathSelector = $".//mat-select//div//span[contains(text(), '{pathTypeName}')]";
+            return Driver.FindElement(By.XPath(pathSelector));
         }
 
         public IWebElement GetReadinessOptionByName(string colorName)
