@@ -755,3 +755,41 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	When User clicks "61097" link on the Details Page
 	Then "Project Object" page is displayed to the user
 	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDevicesObjectsOnUsersTabInEvergreenMode
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00HA7MKAVVFDAV"
+	And User click content from "Hostname" column
+	Then Details page for "00HA7MKAVVFDAV" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "01C44C91EB7E4BE88F6"
+	And User click content from "Username" column
+	Then Details page for "01C44C91EB7E4BE88F6" item is displayed to the user
+	When User navigates to the "Active Directory" main-menu on the Details page
+	When User navigates to the "Groups" sub-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "000F977AC8824FE39B8@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+	And User closes Checkbox filter for "Domain" column
+	When User navigates to the "Groups" sub-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+	And User closes Checkbox filter for "Domain" column
+	When User navigates to the "Mailbox Permissions" sub-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+	And User closes Checkbox filter for "Domain" column
