@@ -322,7 +322,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetPathOrCategory(string pathTypeName)
         {
-            var pathSelector = $".//mat-select//div//div//span[contains(text(), '{pathTypeName}')]";
+            var pathSelector = $".//mat-select//div//span[contains(text(), '{pathTypeName}')]";
             return Driver.FindElement(By.XPath(pathSelector));
         }
 

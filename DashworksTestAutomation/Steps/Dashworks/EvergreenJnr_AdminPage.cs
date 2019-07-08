@@ -558,7 +558,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" Path is displayed to the user")]
-        public void ThenRequestTypeIsDisplayedToTheUser(string pathName)
+        public void ThenPathIsDisplayedToTheUser(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
             Assert.IsTrue(projectsPage.GetPathOrCategory(pathName).Displayed(),
