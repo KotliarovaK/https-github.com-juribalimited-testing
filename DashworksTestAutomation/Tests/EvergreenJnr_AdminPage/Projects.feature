@@ -232,7 +232,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
 	| NewProject15 | All Users | None            | Standalone Project |
 	Then Project "NewProject15" is displayed to user
-	And Success message is not displayed on the Projects page
+	And Success message is not displayed on the Admin page
 	When User click on Back button
 	Then data in table is sorted by "Project" column in ascending order by default on the Admin page
 	When User enters "NewProject15" text in the Search field for "Project" column
@@ -2487,7 +2487,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	| Items           |
 	| 0623U41CZ73RV2Q |
 	When User selects "Scope Changes" tab on the Project details page
-	Then Success message is not displayed on the Projects page
+	Then Success message is not displayed on the Admin page
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13390 @DAS12582 @DAS11978 @DAS12825 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
@@ -2633,7 +2633,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
-	Then Success message is not displayed on the Projects page
+	Then Success message is not displayed on the Admin page
 	And "Devices to add (0 of 17200 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects         |

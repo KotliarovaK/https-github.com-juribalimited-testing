@@ -392,17 +392,6 @@ this.FeatureBackground();
 #line 80
  testRunner.Then("\"Admin\" left-hand menu is highlighted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
-                        "Description",
-                        "IsDefault"});
-            table3.AddRow(new string[] {
-                        "DefaultCapacityUnit13720",
-                        "13720",
-                        "true"});
-#line 81
- testRunner.When("User creates new Capacity Unit via api", ((string)(null)), table3, "When ");
-#line hidden
             this.ScenarioCleanup();
         }
 

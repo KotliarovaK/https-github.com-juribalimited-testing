@@ -3231,6 +3231,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             return DatabaseHelper.ExecuteReader(
                     $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
         }
-
     }
 }
