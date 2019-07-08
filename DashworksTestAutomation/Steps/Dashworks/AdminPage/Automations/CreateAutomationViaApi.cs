@@ -25,8 +25,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         }
 
         //TODO Use this step after completed
-        [ When(@"User creates new Automation Unit via API")]
-        public void WhenUserCreatesNewAutomationUnitViaAPI(Table table)
+        [ When(@"User creates new Automation via API")]
+        public void WhenUserCreatesNewAutomationViaAPI(Table table)
         {
             var automations = table.CreateSet<AutomationsDto>();
 
@@ -49,16 +49,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
 
                 request.AddJsonBody(automation);
 
-                //request.AddParameter("active", automation.active);
-                //request.AddParameter("automationId", automation.automationId);
-                //request.AddParameter("automationName", automation.automationName);
-                //request.AddParameter("automationScheduleTypeId", GetScheduleTypeId(automation.));
-                //request.AddParameter("automationSqlAgentJobId", automation.AutomationSqlAgentJobId);
-                //request.AddParameter("description", automation.Description);
-                //request.AddParameter("listId", GetListId(automation.Scope));
-                //request.AddParameter("objectTypeId", GetObjectTypeId(automation.Scope));
-                //request.AddParameter("stopOnFailedAction", automation.StopOnFailedAction);
-
                 var response = _client.Value.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
@@ -66,6 +56,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
                     throw new Exception(
                         $"Automation with {automation.automationName} name was not created via api: {response.ErrorMessage}");
                 }
+
+                _automation.Value.Add(automation);
             }
         }
     }

@@ -145,6 +145,23 @@ this.FeatureBackground();
  testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
  testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "AutomationName",
+                        "Description",
+                        "Active",
+                        "StopOnFailedAction",
+                        "listId",
+                        "automationScheduleTypeId"});
+            table1.AddRow(new string[] {
+                        "15309_laptop",
+                        "15309",
+                        "true",
+                        "false",
+                        "Devices",
+                        "Manual"});
+#line 14
+ testRunner.When("User creates new Automation via API", ((string)(null)), table1, "When ");
 #line 17
  testRunner.When("User clicks the \"CREATE AUTOMATION\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 18
@@ -155,23 +172,23 @@ this.FeatureBackground();
 #line 20
  testRunner.When("User type \"15309\" Name in the \"Description\" field on the Automation details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Section",
                         "ListName"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Devices (1)",
                         "All Devices"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Users (1)",
                         "All Users"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Mailboxes (1)",
                         "All Mailboxes"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "Applications (1)",
                         "All Applications"});
 #line 21
- testRunner.Then("Main lists are displayed correctly in the Scope dropdown", ((string)(null)), table1, "Then ");
+ testRunner.Then("Main lists are displayed correctly in the Scope dropdown", ((string)(null)), table2, "Then ");
 #line 27
  testRunner.When("User selects \"All Devices\" in the Scope Automation dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 28
@@ -264,16 +281,16 @@ this.FeatureBackground();
 #line 44
  testRunner.Then("Create Automation page is displayed to the User", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Values"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Manual"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "After Transform"});
-            table2.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Scheduled: Dashworks Daily"});
 #line 45
- testRunner.Then("following Values are displayed in \"Run\" drop-down on the Admin page:", ((string)(null)), table2, "Then ");
+ testRunner.Then("following Values are displayed in \"Run\" drop-down on the Admin page:", ((string)(null)), table3, "Then ");
 #line 50
  testRunner.When("User type \"DAS16801_Automation\" Name in the \"Automation Name\" field on the Automa" +
                     "tion details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
