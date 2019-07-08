@@ -385,7 +385,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             listElement.ClickSettingsButtonByListName(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.DuplicateButton);
+            _driver.WaitForElementToBeDisplayed(listElement.ManageButton);
             listElement.ManageButton.Click();
         }
 

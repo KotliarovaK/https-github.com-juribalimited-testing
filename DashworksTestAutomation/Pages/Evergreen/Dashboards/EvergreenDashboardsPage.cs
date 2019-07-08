@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
@@ -12,13 +13,30 @@ namespace DashworksTestAutomation.Pages
     {
         [FindsBy(How = How.XPath, Using = "//div[@id='content']//i[@class='material-icons mat-menu']")]
         public IWebElement DashboardsPanelIcon { get; set; }
+        
+        [FindsBy(How = How.XPath, Using = ".//ul[@class='submenu-actions-dashboards']//span[@class='submenu-actions-dashboards-name']")]
+        public IList<IWebElement> AllDashboards { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[text()='Dashboard name should be unique']")]
+        public IWebElement DashboardUniqueError { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
+        public IList<IWebElement> DashboardMenuOptions { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Manage']")]
+        public IWebElement ManageContextMenuItem { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Make favourite']")]
+        public IWebElement MakeFavoriteContextMenuItem { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Unfavourite']")]
+        public IWebElement UnfavoriteContextMenuItem { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//li[text()='Set default']")]
+        public IWebElement MakeDefaultContextMenuItem { get; set; }
+        
         [FindsBy(How = How.XPath, Using = ".//mat-slide-toggle")]
         public IWebElement EditModeOnOffTrigger { get; set; }
-
-        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-color']//div[contains(@style, 'color')]")]
-        public IWebElement ColorWidgetItem { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='status-code']")]
         public IWebElement StatusCodeLabel { get; set; }
@@ -68,6 +86,12 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@id='submenuBlock']//*[starts-with(@class, 'inline-tip')]")]
         public IWebElement SubmenuAlertMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']//input[@type='checkbox']")]
+        public IWebElement DefaultDashboardCheckbox { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Default dashboard']")]
+        public IWebElement DefaultDashboardCheckboxLabel { get; set; }
+       
         [FindsBy(How = How.XPath, Using = ".//div[@class='permissions-container']")]
         public IWebElement PermissionPanel { get; set; }
 
@@ -113,9 +137,6 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'only-text')]")]
         public IWebElement TextOnlyCardWidget { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='card-widget-data']")]
-        public IWebElement CardWidgetValue { get; set; }
-
         [FindsBy(How = How.XPath,
             Using = ".//input[@class='form-control search-input ng-untouched ng-pristine ng-valid']")]
         public IWebElement SearchTextbox { get; set; }
@@ -137,8 +158,9 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//div[@class='chartContainer ng-star-inserted']//*[@style='font-weight:bold']")]
         public IWebElement DataLabels { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//app-dashboard-submenu-action//div[@class='menu']//li")]
-        public IList<IWebElement> DashboardMenuOptions { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//input[@id='DashboardName']")]
+        public IWebElement DashboardDetailsNameInput { get; set; }
+
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -359,7 +381,6 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(By.XPath(".//div[@class='widgets']//div[@class='inline-tip' and @role='alert']")).GetCssValue("background-color");
         }
 
-
         public IWebElement GetCardWidgetByName(string widgetName)
         {
             var dashboardWidget =
@@ -547,5 +568,62 @@ namespace DashworksTestAutomation.Pages
             else
             { return Driver.FindElement(By.XPath(".//div[@class='card-widget-data']")); }
         }
+
+
+
+
+        public void ClickSettingsButtonByDashboardName(string dashboardName)
+        {
+            var settingsButton =
+                $".//span[@class='submenu-actions-dashboards-name' and text()='{dashboardName}']//ancestor::li//i[contains(@class,'settings')]";
+            Driver.MouseHover(By.XPath(settingsButton));
+            Driver.FindElement(By.XPath(settingsButton)).Click();
+        }
+
+
+
+
+
+
+        public bool GetFavoriteStateInDashboardDetailsPane()
+        {
+            var starIconEmpty = $".//i[@class='material-icons list-star-icon mat-star_border']";
+            var starIconFilled = $".//i[@class='material-icons list-star-icon mat-star']";
+
+            return Driver.FindElements(By.XPath(starIconFilled)).Count == 1 &&
+                   Driver.FindElements(By.XPath(starIconEmpty)).Count == 0; 
+        }
+
+
+
+        public void MarkFavoriteInDashboardDetails()
+        {
+            var starIconEmpty = $".//i[@class='material-icons list-star-icon mat-star_border']";
+            Driver.FindElement(By.XPath(starIconEmpty)).Click();
+        }
+
+        public void UnMarkFavoriteInDashboardDetails()
+        {
+            var starIconFilled = $".//i[@class='material-icons list-star-icon mat-star']";
+            Driver.FindElement(By.XPath(starIconFilled)).Click();
+        }
+
+
+        public bool IsDashboardMarkedAsFavoriteInList(string dashboardName)
+        {
+            var starIcon =
+                $".//span[text()='{dashboardName}']/preceding-sibling::span//i[@class='material-icons mat-star']";
+
+            return Driver.FindElements(By.XPath(starIcon)).Count == 1;
+        }
+
+        public bool IsDashboardMarkedAsDefaultInList(string dashboardName)
+        {
+            var starIcon =
+                $".//span[text()='{dashboardName}']/preceding-sibling::span//i[@class='material-icons mat-home']";
+
+            return Driver.FindElements(By.XPath(starIcon)).Count == 1;
+        }
+
     }
 }

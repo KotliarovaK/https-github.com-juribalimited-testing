@@ -327,6 +327,8 @@
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_WidgetPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Project\ProjectsApi.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Buckets\EvergreenJnr_BucketsPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\EvergreenJnr_CapacitySlotPage.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Project\EvergreenJnr_RingsPage.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_LeavePageWarning.cs" />
     <Compile Include="Steps\Dashworks\Dashboards\EvergreenJnr_DashboardsPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_AfterScenario.cs" />

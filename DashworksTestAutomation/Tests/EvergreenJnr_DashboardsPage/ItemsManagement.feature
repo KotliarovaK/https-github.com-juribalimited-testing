@@ -384,3 +384,76 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 	| Duplicate      |
 	| Set default    |
 	| Delete         | 
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User creates new Dashboard with "Dashboard_DAS12974" name
+	Then Dashboard with "Dashboard_DAS12974" title displayed in All Dashboards
+	When User opens manage pane for dashboard with "Dashboard_DAS12974" name
+	And User changes dashboard name to "Dashboard_DAS12974Updated"
+	Then Dashboard with "Dashboard_DAS12974Updated" title displayed in All Dashboards
+	When User sets "true" as favorite state in dashboard details for "Dashboard_DAS12974Updated" dashboard
+	Then Dashboard with name "Dashboard_DAS12974Updated" marked as favorite
+	When User sets "false" as favorite state in dashboard details for "Dashboard_DAS12974Updated" dashboard
+	Then Dashboard with name "Dashboard_DAS12974Updated" not marked as favorite
+
+	When User opens manage pane for dashboard with "Project Status" name
+	When User sets "true" as favorite state in dashboard details for "Project Status" dashboard
+	Then Dashboard with name "Project Status" marked as favorite
+	When User sets "false" as favorite state in dashboard details for "Project Status" dashboard
+	Then Dashboard with name "Project Status" not marked as favorite
+
+	When User makes dashboard with "Project Summary" name favorite via context menu
+	Then Dashboard with name "Project Summary" marked as favorite
+	When User unfavorites "Project Summary" dashboard via context menu
+	Then Dashboard with name "Project Summary" not marked as favorite
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
+	When Dashboard with "Dashboard_DAS12974Default" name created via API and opened
+	And User clicks Show Dashboards panel icon on Dashboards page
+	And User opens manage pane for dashboard with "Dashboard_DAS12974Default" name
+	And User clicks Default dashboard checkbox in Dashboard details
+	Then Default dashboard checkbox becomes disabled in Dashboard details
+	And Default dashboard checkbox displayed checked in Dashboard details
+	And Dashboard with name "Dashboard_DAS12974Default" marked as default
+	When User makes dashboard with "Project Status" name default via context menu
+	Then Dashboard with name "Project Status" marked as default
+	And Dashboard with name "Dashboard_DAS12974Default" not marked as default
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
+	When Dashboard with "Dashboard for DAS12974SECTION" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | DAS12974SECTION1 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	And User clicks the "ADD SECTION" Action button
+	And User clicks "ADD WIDGET" button for "2" Section on Dashboards page
+	And User creates new Widget
+	| WidgetType | Title            | List             | SplitBy | AggregateBy | AggregateFunction | OrderBy    | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | DAS12974SECTION2 | All Applications | Vendor  | Version     | Count distinct    | Vendor ASC |                  | 10        | true       |
+	And User remembers number of Sections and Widgets on Dashboards page
+	And User clicks Ellipsis menu for Section having "DAS12974SECTION1" Widget on Dashboards page
+	And User clicks "Delete" item from Ellipsis menu on Dashboards page
+	And User confirms item deleting on Dashboards page
+	Then User sees number of Sections increased by "-1" on Dashboards page
+	And User sees number of Widgets increased by "-1" on Dashboards page
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
+	When Dashboard with "DAS12974DUPLICATED" name created via API and opened
+	When User clicks "Dashboards" on the left-hand menu
+	And User clicks the "CREATE DASHBOARD" Action button
+	And User types "<DashboardName>" as dashboard title
+	Then Red Dashboard should be unique error displayed to user
+	When User types "extra" as dashboard title
+	Then Red Dashboard should be unique error disappears
+
+Examples:
+	| DashboardName      |
+	| DAS12974DUPLICATED |
+	| DAS12974duplicated |

@@ -1710,5 +1710,25 @@ namespace DashworksTestAutomation.Extensions
                 return false;
             }
         }
+        public static void WaitFor(this RemoteWebDriver driver, Func<bool> flag)
+        {
+            bool result;
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (flag())
+                {
+                    result = flag();
+                    break;
+                }
+
+                else
+                {
+                    result = flag();
+                }
+
+                Thread.Sleep(500);
+            }
+        }
     }
 }
