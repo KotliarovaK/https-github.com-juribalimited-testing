@@ -412,6 +412,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" checkbox is unchecked on the Admin page")]
+        [Then(@"""(.*)"" checkbox is unchecked on the Base Dashboard Page")]
         public void ThenCheckboxIsUncheckedOnTheAdminPage(string checkbox)
         {
             var page = _driver.NowAt<BaseGridPage>();
@@ -512,12 +513,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
         }
 
-        [When(@"User changes Request Type to ""(.*)""")]
-        public void WhenUserChangesRequestTypeTo(string requestTypeName)
+        [When(@"User changes Path to ""(.*)""")]
+        public void WhenUserChangesPathTo(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            projectsPage.RequestTypeDropdown.Click();
-            projectsPage.SelectRequestTypeByName(requestTypeName).Click();
+            projectsPage.PathDropdown.Click();
+            projectsPage.SelectPathByName(pathName).Click();
         }
 
         [When(@"User changes Category to ""(.*)""")]
@@ -528,19 +529,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectsPage.SelectCategoryByName(CategoryName).Click();
         }
 
-        [Then(@"""(.*)"" Request Type is displayed to the user")]
-        public void ThenRequestTypeIsDisplayedToTheUser(string requestTypeName)
+        [Then(@"""(.*)"" Path is displayed to the user")]
+        public void ThenPathIsDisplayedToTheUser(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(requestTypeName).Displayed(),
-                "Incorrect Request Type is displayed");
+            Assert.IsTrue(projectsPage.GetPathOrCategory(pathName).Displayed(),
+                "Incorrect Path is displayed");
         }
 
         [Then(@"""(.*)"" Category is displayed to the user")]
         public void ThenCategoryIsDisplayedToTheUser(string categoryName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(categoryName).Displayed(),
+            Assert.IsTrue(projectsPage.GetPathOrCategory(categoryName).Displayed(),
                 "Incorrect Category is displayed");
         }
 
@@ -762,6 +763,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
                 Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
+        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown for Automation")]
+        public void ThenValueIsDisplayedInTheDropdownForAutomation(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            var dropdownValue = dropdown.GetDropdownByNameForAutomations(dropdownName).GetAttribute("value");
+            Assert.AreEqual(dropdownValue, value, $"{value} is not displayed in the {dropdownName}");
         }
 
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
@@ -1524,6 +1533,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
+        [Then(@"""(.*)"" content is displayed in the Path Automation dropdown")]
         public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
@@ -1545,6 +1555,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     {
                         Assert.AreEqual(listName[i], row["ListName"]);
                     }
+            }
+        }
+
+        [Then(@"following lists are displayed in the Scope dropdown:")]
+        public void ThenFollowingListsAreDisplayedInTheScopeDropdown(Table table)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ScopeProjectField.Click();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(createProjectElement.GetListByNameInScopeDropdown(row["Lists"]).Displayed());
             }
         }
 
@@ -1736,7 +1757,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).Clear();
+            projectElement.GetFieldByName(fieldName).ClearWithBackspaces();
             projectElement.GetFieldByName(fieldName).SendKeys(name);
             _capacityUnit.Value.Add(new CapacityUnitDto() { Name = name });
         }
@@ -2110,6 +2131,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var button = _driver.NowAt<BaseGridPage>();
             button.GroupByButton.Click();
+        }
+
+        [When(@"User clicks Export button on the Admin page")]
+        public void WhenUserClicksExportButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.ExportButton.Click();
         }
 
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]

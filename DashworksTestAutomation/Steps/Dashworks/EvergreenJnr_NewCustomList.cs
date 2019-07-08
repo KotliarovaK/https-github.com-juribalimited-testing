@@ -410,6 +410,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             page.GetListElementByName(listName).Click();
+            _driver.ClickByJavascript(page.GetListElementByName(listName));
             _driver.WaitForDataLoading();
         }
 

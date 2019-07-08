@@ -741,7 +741,6 @@ namespace DashworksTestAutomation.Extensions
             {
                 try
                 {
-                    var t = element.Displayed();
                     return element.Displayed().Equals(displayedCondition);
                 }
                 catch (NoSuchElementException)

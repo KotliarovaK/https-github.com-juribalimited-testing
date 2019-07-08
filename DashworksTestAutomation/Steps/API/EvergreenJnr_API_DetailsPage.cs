@@ -55,14 +55,21 @@ namespace DashworksTestAutomation.Steps.API
         {
             var content = _response.Value.Content;
             var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
-            try
+            var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
+            Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
+        }
+
+        [Then(@"following fields are displayed with next state on Details tab API")]
+        public void ThenFollowingFieldsAreDisplayedWithNextStateOnDetailsTabAPI(Table table)
+        {
+            var content = _response.Value.Content;
+            var allItems = JsonConvert.DeserializeObject<JObject>(content)["metadata"];
+
+            foreach (var row in table.Rows)
             {
-                var item = allItems.First(x => x["friendlyName"].ToString().Equals(fieldName));
-                Assert.AreEqual(state, item["visible"].ToString(), $"Incorrect display state for {fieldName}");
-            }
-            catch
-            {
-                Assert.AreEqual(state, "False", $"Incorrect display state for {fieldName}");
+                var item = allItems.First(x => x["friendlyName"].ToString().Equals(row["FieldName"]));
+                Assert.AreEqual(row["DisplayState"], item["visible"].ToString(),
+                    $"Incorrect display state for {row["FieldName"]}");
             }
         }
 
@@ -73,7 +80,7 @@ namespace DashworksTestAutomation.Steps.API
             var allFields = JsonConvert.DeserializeObject<JObject>(content)["results"];
             foreach (var pair in allFields)
             {
-                if (pair.ToString().Contains("address2") || 
+                if (pair.ToString().Contains("address2") ||
                     pair.ToString().Contains("address3") ||
                     pair.ToString().Contains("address4") ||
                     pair.ToString().Contains("pendingStickyDepartmentMessage") ||

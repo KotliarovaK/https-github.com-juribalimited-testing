@@ -233,7 +233,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedP
 	| ProjectName  | Scope     | ProjectTemplate | Mode               |
 	| NewProject15 | All Users | None            | Standalone Project |
 	Then Project "NewProject15" is displayed to user
-	And Success message is not displayed on the Projects page
+	And Success message is not displayed on the Admin page
 	When User click on Back button
 	Then data in table is sorted by "Project" column in ascending order by default on the Admin page
 	When User enters "NewProject15" text in the Search field for "Project" column
@@ -391,7 +391,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	And User selects "Scope" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
 	And User clicks "Devices" tab in the Project Scope Changes section
-	Then "[Default (Computer)]" Request Type is displayed to the user
+	Then "[Default (Computer)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
 	When User expands the object to add
@@ -400,7 +400,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| 0IJB93JZPG72PX |
 	| 04I01QSFL1AWKM |
 	When User clicks "Applications" tab in the Project Scope Changes section
-	Then "[Default (Application)]" Request Type is displayed to the user
+	Then "[Default (Application)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	When User expands the object to add
 	And User selects following Objects
@@ -408,7 +408,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	| ACDSee 4.0.1 Std Trial Version |
 	| ACDSee 8 (8.0.39)              |
 	When User clicks "Users" tab in the Project Scope Changes section
-	Then "[Default (User)]" Request Type is displayed to the user
+	Then "[Default (User)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And "Unassigned" is displayed in the Bucket dropdown
 	When User expands the object to add
@@ -1918,11 +1918,11 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User enters "TestName18" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	Then Project "TestName18" is displayed to user
-	When User changes Request Type to "18RequestTypeName"
+	When User changes Path to "18RequestTypeName"
 	And User changes Category to "18MailboxCategory"
 	And User selects "Scope Details" tab on the Project details page
 	And User selects "Scope Changes" tab on the Project details page
-	#Then "18RequestTypeName" Request Type is displayed to the user
+	#Then "18RequestTypeName" Path is displayed to the user
 	#Then "18MailboxCategory" Category is displayed to the user
 	Then "Mailboxes to add (0 of 14784 selected)" is displayed to the user in the Project Scope Changes section
 	And "Mailboxes to remove (0 of 0 selected)" is displayed to the user in the Project Scope Changes section
@@ -1940,7 +1940,7 @@ Scenario: EvergreenJnr_AdminPage_AddingRequestTypesAndCategories
 	When User clicks the "UPDATE PROJECT" Action button
 	Then Success message is displayed and contains "2 objects queued for onboarding, 0 objects offboarded" text
 	And "Mailboxes to add (0 of 14782 selected)" is displayed to the user in the Project Scope Changes section
-	And "[Default (Mailbox)]" Request Type is displayed to the user
+	And "[Default (Mailbox)]" Path is displayed to the user
 	And "[None]" Category is displayed to the user
 	And Add Objects panel is collapsed
 	When User expands the object to add
@@ -2489,7 +2489,7 @@ Scenario: EvergreenJnr_AdminPage_TheGreenBannerIsNotDisplayedIfBannerWasBeShownO
 	| Items           |
 	| 0623U41CZ73RV2Q |
 	When User selects "Scope Changes" tab on the Project details page
-	Then Success message is not displayed on the Projects page
+	Then Success message is not displayed on the Admin page
 	
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13390 @DAS12582 @DAS11978 @DAS12825 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers
@@ -2635,7 +2635,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUs
 	When User enters "Project13390" text in the Search field for "Project" column
 	And User clicks content from "Project" column
 	And User selects "Scope Changes" tab on the Project details page
-	Then Success message is not displayed on the Projects page
+	Then Success message is not displayed on the Admin page
 	And "Devices to add (0 of 17200 selected)" is displayed to the user in the Project Scope Changes section
 	And following objects were not found
 	| Objects         |
@@ -4064,7 +4064,8 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOn
 	When User removes the Project
 	Then Error message is displayed with "This project does not exist. The project has not been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16365
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16365 @DAS17167 @Not_Run
+#Remove Not Run after DAS 17167 fixed
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterSelectingBrokenListToProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

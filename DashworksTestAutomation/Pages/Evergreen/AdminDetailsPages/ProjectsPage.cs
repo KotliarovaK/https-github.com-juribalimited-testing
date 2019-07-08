@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using SeleniumExtras.PageObjects;
+using OpenQA.Selenium.Support.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ProjectsPage : BaseGridPage
     {
+        public const string ExpandedScopeDropdownSection = ".//div[@role='listbox']";
+
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
@@ -92,8 +95,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
         public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Request Type']")]
-        public IWebElement RequestTypeDropdown { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Path']")]
+        public IWebElement PathDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Category']")]
         public IWebElement CategoryDropdown { get; set; }
@@ -306,21 +309,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectProjectLanguage(string language)
         {
-            var listNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
+            var listNameSelector = $".//span[@class='mat-option-text'][text()='{language}']";
             Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public IWebElement SelectRequestTypeByName(string requestTypeName)
+        public IWebElement SelectPathByName(string pathName)
         {
-            var requestTypeSelector = $"//mat-option/span[contains(text(), '{requestTypeName}')]";
+            var requestTypeSelector = $".//mat-option/span[contains(text(), '{pathName}')]";
             return Driver.FindElement(By.XPath(requestTypeSelector));
         }
 
-        public IWebElement GetRequestTypeOrCategory(string requestTypeName)
+        public IWebElement GetPathOrCategory(string pathTypeName)
         {
-            var requestTypeSelector = $"//mat-select//div//div//span[contains(text(), '{requestTypeName}')]";
-            return Driver.FindElement(By.XPath(requestTypeSelector));
+            var pathSelector = $".//mat-select//div//span[contains(text(), '{pathTypeName}')]";
+            return Driver.FindElement(By.XPath(pathSelector));
         }
 
         public IWebElement GetReadinessOptionByName(string colorName)
@@ -365,7 +368,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropDownByName(string name)
         {
-            var selector = By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
+            var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -403,13 +406,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
-        public IWebElement CorrectMainListsScopeDropdown(string checkboxName)
+        public IWebElement GetListByNameInScopeDropdown(string listName)
         {
-            var devices = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var users = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var mailboxes = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var applications = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            return Driver.FindElement(devices);
+            var selector = By.XPath($".//mat-optgroup//*[text()='{listName}']");
+            return Driver.FindElement(selector);
         }
     }
 

@@ -390,7 +390,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	| ProjectName        | Scope      | ProjectTemplate | Mode               |
 	| ProjectForDAS14103 | All Device | None            | Standalone Project |
 	And User clicks "Capacity" tab
-	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Mode" dropdown
 	And User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
@@ -524,20 +524,16 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit @Save_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User updates Capacity Units via api
 	| OldName    | Name     | Description | IsDefault |
 	| Unassigned | New Name |             |           |
-	And User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS13956" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link	
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
+	| ProjectForDAS13956 | All Devices | None            | Standalone Project |
 	And User selects "Capacity" tab on the Project details page	
 	Then User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button

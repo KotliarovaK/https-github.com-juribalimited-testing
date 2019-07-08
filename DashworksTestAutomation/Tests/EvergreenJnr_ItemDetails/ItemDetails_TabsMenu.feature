@@ -46,3 +46,16 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatListLoadedCorrectlyAndNoConsoleErr
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
 	And There are no errors in the browser console
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17230
+Scenario: EvergreenJnr_ApplicationsList_ChecksThatDisabledDistributionSectionCantBeEnteredByUsingTheBackButtonInTheBrowser
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ACD Display 3.4"
+	And User click content from "Application" column
+	When User navigates to the "Distribution" main-menu on the Details page
+	When User navigates to the "Devices" sub-menu on the Details page
+	When User switches to the "Email Migration" project in the Top bar on Item details page
+	Then User click back button in the browser
+	Then "Distribution" tab-menu on the Details page is expanded
+	Then "Evergreen" project is selected in the Top bar on Item details page

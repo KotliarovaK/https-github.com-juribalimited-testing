@@ -414,7 +414,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table8.AddRow(new string[] {
-                        "Windows7Mi: Request Type"});
+                        "Windows7Mi: Path"});
 #line 89
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table8, "When ");
 #line 92
@@ -590,7 +590,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table12.AddRow(new string[] {
-                        "EmailMigra: Request Type"});
+                        "EmailMigra: Path"});
 #line 142
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "When ");
 #line 145
@@ -627,8 +627,7 @@ this.FeatureBackground();
 #line 159
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 160
- testRunner.Then("\"Sharepoint Application\" content is displayed for \"EmailMigra: Request Type\" colu" +
-                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Sharepoint Application\" content is displayed for \"EmailMigra: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 161
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 162
@@ -1081,7 +1080,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table21.AddRow(new string[] {
-                        "Windows7Mi: Request Type"});
+                        "Windows7Mi: Path"});
 #line 283
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "When ");
 #line 286
@@ -1125,15 +1124,15 @@ this.FeatureBackground();
 #line 303
  testRunner.And("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 304
- testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 305
  testRunner.When("User perform search by \"00BDM1JUR8IF419\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 306
- testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 307
  testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 308
- testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: PC Rebuild\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 309
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 310
@@ -1314,13 +1313,13 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table27.AddRow(new string[] {
-                        "Windows7Mi: Request Type"});
+                        "Windows7Mi: Path"});
 #line 366
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table27, "When ");
 #line 369
- testRunner.And("User click on \'Windows7Mi: Request Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click on \'Windows7Mi: Path\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 370
- testRunner.And("User click on \'Windows7Mi: Request Type\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User click on \'Windows7Mi: Path\' column header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 371
  testRunner.And("User clicks the Actions button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 372
@@ -1364,15 +1363,15 @@ this.FeatureBackground();
 #line 389
  testRunner.And("User perform search by \"FMN5805290\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 390
- testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 391
  testRunner.When("User perform search by \"AKX995383\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 392
- testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 393
  testRunner.When("User perform search by \"AAD1011948\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 394
- testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Request Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"User; Maternity\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 395
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 396
@@ -1558,7 +1557,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table33.AddRow(new string[] {
-                        "Windows7Mi: Request Type"});
+                        "Windows7Mi: Path"});
 #line 453
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table33, "When ");
 #line 456
@@ -1601,13 +1600,11 @@ this.FeatureBackground();
  testRunner.And("User perform search by \"\"WPF/E\" (codename) Community Technology Preview (Feb 2007" +
                     ")\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 473
- testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Request Type\" " +
-                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 474
  testRunner.When("User perform search by \"0004 - Adobe Acrobat Reader 5.0.5 Francais\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 475
- testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Request Type\" " +
-                    "column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Application: Request Type B\" content is displayed in \"Windows7Mi: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 476
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 477
@@ -1761,7 +1758,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table38.AddRow(new string[] {
-                        "EmailMigra: Request Type"});
+                        "EmailMigra: Path"});
 #line 520
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table38, "When ");
 #line 523
@@ -1804,18 +1801,15 @@ this.FeatureBackground();
 #line 540
  testRunner.And("User perform search by \"0F1ED67386AD4FA7BF4@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 541
- testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
-                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 542
  testRunner.When("User perform search by \"10A919CA1E7641E08E7@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 543
- testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
-                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 544
  testRunner.When("User perform search by \"229DCF8E575243E9928@bclabs.local\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 545
- testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Request Type\" colum" +
-                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Personal Mailbox - VIP\" content is displayed in \"EmailMigra: Path\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 546
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 547
@@ -1984,7 +1978,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table43.AddRow(new string[] {
-                        "Windows7Mi: Request Type"});
+                        "Windows7Mi: Path"});
 #line 598
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table43, "When ");
 #line 601
@@ -2030,28 +2024,28 @@ this.FeatureBackground();
 #line 619
  testRunner.And("User perform search by \"001BAQXT6JWFPI\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 620
- testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
-                    " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Path\" c" +
+                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 621
  testRunner.When("User perform search by \"001PSUMZYOW581\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 622
- testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
-                    " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Path\" c" +
+                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 623
  testRunner.When("User perform search by \"00RUUMAH9OZN9A\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 624
- testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
-                    " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Path\" c" +
+                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 625
  testRunner.When("User perform search by \"1B1CJ31RV9ZPYD\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 626
- testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
-                    " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Path\" c" +
+                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 627
  testRunner.When("User perform search by \"018UQ6KL9TF4YF\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 628
- testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Request" +
-                    " Type\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Computer: Workstation Replacement\" content is displayed for \"Windows7Mi: Path\" c" +
+                    "olumn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 629
  testRunner.When("User closes Tools panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 630
