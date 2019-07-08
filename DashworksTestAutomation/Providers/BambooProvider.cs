@@ -22,6 +22,8 @@ namespace DashworksTestAutomation.Providers
             {
                 try
                 {
+                    Logger.Write($"BuildResultKey is {BuildResultKey}");
+                    Logger.Write($"Last part is {BuildResultKey.Split('-').Last()}");
                     return int.Parse(BuildResultKey.Split('-').Last());
                 }
                 catch (Exception e)
