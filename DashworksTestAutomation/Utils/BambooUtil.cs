@@ -27,7 +27,6 @@ namespace DashworksTestAutomation.Utils
         {
             try
             {
-                Logger.Write("BuildResultKey:" + BambooProvider.BuildResultKey);
                 RestClient client = GetClient();
 
                 #region Get all quarantined Tests 
