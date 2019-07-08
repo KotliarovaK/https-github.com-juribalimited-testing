@@ -53,5 +53,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
+
+        public IWebElement GetSelectedProjectOnTopBarByName(string projectName)
+        {
+            var selector = By.XPath($".//span[text()='{projectName}']/ancestor::div[@class='details-project-selector']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
     }
 }

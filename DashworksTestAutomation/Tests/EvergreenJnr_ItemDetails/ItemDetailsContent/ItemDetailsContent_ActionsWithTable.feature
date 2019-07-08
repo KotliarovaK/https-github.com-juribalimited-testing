@@ -436,7 +436,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "001PSUMZYOW581"
-	When User click content from "Hostname" column
+	And User click content from "Hostname" column
 	When User navigates to the "Applications" main-menu on the Details page
 	Then All text is displayed for "Compliance" column in the String Filter
 	When User clicks String Filter button for "Compliance" column
@@ -447,11 +447,11 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAllTextIsDisplayedAfterClearingFilte
 	When User enters "ea" text in the Search field for "Application" column on the Details Page
 	Then Rows counter contains "3" found row of all rows
 	When User clicks Reset Filters button on the Details Page
-	When User enters "3.0.0" text in the Search field for "Version" column on the Details Page
+	And User enters "3.0.0" text in the Search field for "Version" column on the Details Page
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Details Page
 	And User clicks String Filter button for "Used" column
-	When User clicks "Unknown" checkbox from String Filter on the Details Page
+	And User clicks "Unknown" checkbox from String Filter on the Details Page
 	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Details Page
 	And User clicks String Filter button for "Entitled" column
@@ -465,8 +465,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatMailboxPermissionsAndFolderPermiss
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "abraham.f.wong@dwlabs.local"
 	And User click content from "Email Address" column
-	When User navigates to the "Users" main-menu on the Details page
-	When User navigates to the "Mailbox Permissions" sub-menu on the Details page
+	And User navigates to the "Users" main-menu on the Details page
+	And User navigates to the "Mailbox Permissions" sub-menu on the Details page
 	Then Content is present in the table on the Details Page
 	And "68" rows found label displays on Details Page
 	When User navigates to the "Folder Permissions" sub-menu on the Details page
@@ -480,7 +480,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
 	When User navigates to the "<MainTabName>" main-menu on the Details page
-	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	And User navigates to the "<SubTabName>" sub-menu on the Details page
 	Then "<CountRows>" rows found label displays on Details Page
 	When User clicks String Filter button for "Project" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
@@ -497,7 +497,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	And User select "Project Type" checkbox on the Column Settings panel
 	And User select "Slot" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
-	When User clicks String Filter button for "Readiness" column
+	And User clicks String Filter button for "Readiness" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 Examples:
@@ -515,7 +515,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
 	When User navigates to the "<MainTabName>" main-menu on the Details page
-	When User navigates to the "<SubTabName>" sub-menu on the Details page
+	And User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User clicks String Filter button for "Project Type" column
 	Then Dropdown List is displayed correctly in the Filter on the Details Page
 	When User clicks String Filter button for "Category" column
@@ -532,8 +532,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatDropdownListsInTheProjectDetailsFi
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "040698EE82354C17B60@bclabs.local"
 	And User click content from "Email Address" column
-	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Mailbox Projects" sub-menu on the Details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Mailbox Projects" sub-menu on the Details page
 	Then "Bucket" column is displayed to the user
 	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
 	Then "Bucket" column is displayed to the user
@@ -549,7 +549,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysO
 	When User perform search by "<SearchTerm>"
 	And User click content from "<Column>" column
 	When User navigates to the "<MainTab>" main-menu on the Details page
-	When User navigates to the "<SubTab>" sub-menu on the Details page
+	And User navigates to the "<SubTab>" sub-menu on the Details page
 	Then "1" rows found label displays on Details Page
 
 Examples:
@@ -584,12 +584,12 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Projects Summary" sub-menu on the Details page
+	And User navigates to the "Projects Summary" sub-menu on the Details page
 	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
-	Then User click back button in the browser
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -599,15 +599,15 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	| Object ID  |
 	When User clicks "33819" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
-	Then User click back button in the browser
+	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+	And User click back button in the browser
 	#=====================================================================================#
-	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
 	When User navigates to the "Owner Projects Summary" sub-menu on the Details page
 	And User clicks "Computer Scheduled Test (Jo)" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
-	Then User click back button in the browser
+	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
+	And User click back button in the browser
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -617,7 +617,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatLinksFromTheDeviceColumnInDevicePro
 	| Object ID  |
 	When User clicks "34305" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
+	And PMObject page for "User: QLL295118 (Nicole P. Braun)" object is displayed to the user
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnUsersPageGoingToSenior
@@ -627,12 +627,12 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And User click content from "Username" column
 	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "User Projects" sub-menu on the Details page
+	And User navigates to the "User Projects" sub-menu on the Details page
 	And User clicks "Project K-Computer Scheduled Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
-	Then User click back button in the browser
-	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
+	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+	And User click back button in the browser
+	And Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -642,16 +642,16 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| Object ID  |
 	When User clicks "61097" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
-	Then User click back button in the browser
+	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+	And User click back button in the browser
 	#=====================================================================================#
-	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
+	And Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User navigates to the "Mailbox Project Summary" sub-menu on the Details page
 	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
-	Then User click back button in the browser
-	Then Details page for "000F977AC8824FE39B8" item is displayed to the user
+	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	And User click back button in the browser
+	And Details page for "000F977AC8824FE39B8" item is displayed to the user
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -661,8 +661,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| Object ID  |
 	When User clicks "66461" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
-	Then User click back button in the browser
+	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	And User click back button in the browser
 	#=====================================================================================#
 	When User clicks on "Users" navigation link
 	Then "Users" list should be displayed to the user
@@ -670,12 +670,12 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	And User click content from "Username" column
 	Then Details page for "QLL295118" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Device Project Summary" sub-menu on the Details page
+	And User navigates to the "Device Project Summary" sub-menu on the Details page
 	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
-	Then User click back button in the browser
-	Then Details page for "QLL295118" item is displayed to the user
+	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+	And User click back button in the browser
+	And Details page for "QLL295118" item is displayed to the user
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -685,7 +685,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatLinksFromTheDeviceColumnInDeviceProje
 	| Object ID  |
 	When User clicks "11176" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
+	And PMObject page for "Computer: 001BAQXT6JWFPI" object is displayed to the user
 
 @Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnApplicationsPageGoingToSenior
@@ -695,12 +695,12 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	And User click content from "Application" column
 	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Projects" sub-menu on the Details page
+	And User navigates to the "Projects" sub-menu on the Details page
 	And User clicks "Windows 7 Migration (Computer Scheduled Project)" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
-	Then User click back button in the browser
-	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
+	And User click back button in the browser
+	And Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -710,7 +710,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatLinksFromTheDeviceColumnInDevi
 	| Object ID  |
 	When User clicks "17622" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
+	And PMObject page for "Application: "WPF/E" (codename) Community Technology Preview (Feb 2007) (A01)" object is displayed to the user
 	
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
 Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceProjectSummaryOnMailboxesPageGoingToSenior
@@ -720,12 +720,12 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	And User click content from "Email Address" column
 	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the "Projects" main-menu on the Details page
-	When User navigates to the "Mailbox Projects" sub-menu on the Details page
+	And User navigates to the "Mailbox Projects" sub-menu on the Details page
 	And User clicks "Mailbox Evergreen Capacity Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
-	Then User click back button in the browser
-	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	And User click back button in the browser
+	And Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -735,16 +735,16 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	| Object ID  |
 	When User clicks "66461" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
-	Then User click back button in the browser
+	And PMObject page for "Mailbox: 000F977AC8824FE39B8@bclabs.local (Spruill, Shea)" object is displayed to the user
+	And User click back button in the browser
 	#=====================================================================================#
-	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	And Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User navigates to the "Mailbox User Projects" sub-menu on the Details page
 	And User clicks "Project K-Computer Scheduled Project" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
-	Then User click back button in the browser
-	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+	And User click back button in the browser
+	And Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
 	When User have opened Column Settings for "Project" column in the Details Page table
 	And User clicks Column button on the Column Settings panel
 	And User select "Object ID" checkbox on the Column Settings panel
@@ -754,4 +754,42 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatLinksFromTheDeviceColumnInDeviceP
 	| Object ID  |
 	When User clicks "61097" link on the Details Page
 	Then "Project Object" page is displayed to the user
-	Then PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+	And PMObject page for "User: 000F977AC8824FE39B8 (Spruill, Shea)" object is displayed to the user
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForDevicesObjectsOnUsersTabInEvergreenMode
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00HA7MKAVVFDAV"
+	And User click content from "Hostname" column
+	Then Details page for "00HA7MKAVVFDAV" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "01C44C91EB7E4BE88F6"
+	And User click content from "Username" column
+	Then Details page for "01C44C91EB7E4BE88F6" item is displayed to the user
+	When User navigates to the "Active Directory" main-menu on the Details page
+	When User navigates to the "Groups" sub-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
+Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "000F977AC8824FE39B8@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "000F977AC8824FE39B8@bclabs.local" item is displayed to the user
+	When User navigates to the "Users" main-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+	And User closes Checkbox filter for "Domain" column
+	When User navigates to the "Groups" sub-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+	And User closes Checkbox filter for "Domain" column
+	When User navigates to the "Mailbox Permissions" sub-menu on the Details page
+	When User clicks String Filter button for "Domain" column
+	And User closes Checkbox filter for "Domain" column
