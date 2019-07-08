@@ -4,7 +4,7 @@ using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages
 {
@@ -183,7 +183,7 @@ namespace DashworksTestAutomation.Pages
         {
             var selector = By.XPath(
                 $".//span[text()='{buttonLabel}']/ancestor::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElements(selector);
         }
 
@@ -284,21 +284,21 @@ namespace DashworksTestAutomation.Pages
         public void ChangePermissionSharingFieldFromTo(string valueInField, string newValue)
         {
             var from = $" .//div[@class='permissions-container']//span[contains(text(), '{valueInField}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(from));
+            Driver.WaitForElementToBeDisplayed(By.XPath(from));
             Driver.FindElement(By.XPath(from)).Click();
 
             var to = $".//span[@class='mat-option-text'][contains(text(), '{newValue}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(to));
+            Driver.WaitForElementToBeDisplayed(By.XPath(to));
             Driver.FindElement(By.XPath(to)).Click();
 
             var newVal = $" .//div[@class='permissions-container']//span[contains(text(), '{newValue}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(newVal));
+            Driver.WaitForElementToBeDisplayed(By.XPath(newVal));
         }
 
         public void SelectOptionFromList(string option)
         {
             var selector = $".//span[@class='mat-option-text'][contains(text(), '{option}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
 
@@ -309,7 +309,7 @@ namespace DashworksTestAutomation.Pages
                     $".//ul[@class='submenu-actions-dashboards']//span[text()='{dashboardName}']/ancestor::li//i[contains(@class,'menu')]");
             Driver.MouseHover(dashboardSettingsSelector);
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
+            Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
             return Driver.FindElement(dashboardSettingsSelector);
         }
 
@@ -319,7 +319,7 @@ namespace DashworksTestAutomation.Pages
                 By.XPath($".//div[@class='permissions-container']//td[contains(text(),'{username}')]/following-sibling::td/div[starts-with(@class, 'cog-menu')]");
             Driver.MouseHover(dashboardSettingsSelector);
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(dashboardSettingsSelector);
+            Driver.WaitForElementToBeDisplayed(dashboardSettingsSelector);
             return Driver.FindElement(dashboardSettingsSelector);
         }
 
@@ -354,6 +354,12 @@ namespace DashworksTestAutomation.Pages
             return Driver.FindElement(ellipsisItem);
         }
 
+        public string GetDeleteWidgetSquareColor()
+        {
+            return Driver.FindElement(By.XPath(".//div[@class='widgets']//div[@class='inline-tip' and @role='alert']")).GetCssValue("background-color");
+        }
+
+
         public IWebElement GetCardWidgetByName(string widgetName)
         {
             var dashboardWidget =
@@ -373,7 +379,7 @@ namespace DashworksTestAutomation.Pages
         {
             var allHeadersSelector = By.XPath(".//tr[@class='mat-header-row ng-star-inserted']//th[@role]");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
             if (!allHeaders.Any())
                 throw new Exception("Table does not contains any columns");

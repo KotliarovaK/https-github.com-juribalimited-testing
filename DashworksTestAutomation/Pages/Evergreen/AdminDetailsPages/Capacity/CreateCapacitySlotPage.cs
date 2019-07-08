@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 {
@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         {
             var byControl = By.XPath($".//das-datepicker/*//input[@placeholder='{placeholder}']");
 
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
             Driver.FindElement(byControl).ClearWithBackspaces();
             Driver.FindElement(byControl).SendKeys(value);
@@ -41,7 +41,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
             var byControl = By.XPath($".//das-datepicker/*//input[@placeholder='{placeholder}']");
 
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
 
             return Driver.FindElement(byControl).GetAttribute("value");
         }

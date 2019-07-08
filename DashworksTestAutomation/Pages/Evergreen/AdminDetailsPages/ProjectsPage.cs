@@ -148,28 +148,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetSubMenuByName(string menuName)
         {
             var button = By.XPath($".//button[contains(@class, 'subMenu-title')]//span[text()='{menuName}']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
         public IWebElement GetsSelectedTabByName(string tabName)
         {
             var button = By.XPath($"//div[contains(@class, 'item-selected')]//span[text()='{tabName}']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
         public IWebElement GetsSelectedTabInProjectByName(string tabName)
         {
             var button = By.XPath($".//li[contains(@class, 'node active')]//a[text()='{tabName}']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
         public IWebElement GetTabByNameOnCapacityUnits(string tabName)
         {
             var button = By.XPath($"//div[contains(@class, 'menuItems')]//span[text()='{tabName}']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
@@ -197,28 +197,28 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement SelectRadioButtonByName(string radioButtonName)
         {
             var button = By.XPath($".//div[text()='{radioButtonName}']/../div[@class='mat-radio-container']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
         public IWebElement GetNavigationLinkByName(string linkName)
         {
             var button = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
         public IWebElement GetButtonOnWarningContainerByName(string linkName)
         {
             var button = By.XPath($"//div[@class='mat-dialog-actions']//span[text()='{linkName}']/ancestor::button");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
         public IWebElement GetAssociatedCheckboxByName(string associatedCheckbox)
         {
             var button = By.XPath($".//span[text()='{associatedCheckbox}']/../div/input[@type='checkbox']");
-            Driver.WaitWhileControlIsNotDisplayed(button);
+            Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
 
@@ -273,14 +273,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void SelectObjectForProjectCreation(string objectName)
         {
             var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public void SelectProjectsMode(string objectName)
         {
             var listNameSelector = $".//span[@class='mat-option-text'][text()='{objectName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
@@ -289,13 +289,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             if (filterName.Equals("Select All"))
             {
                 var selector = "//span[text()='Select All']";
-                Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+                Driver.WaitForElementToBeDisplayed(By.XPath(selector));
                 Driver.FindElement(By.XPath(selector)).Click();
             }
             else
             {
                 var filterSelector = $"//mat-option//div//span[text()='{filterName}']";
-                Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+                Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
                 Driver.FindElement(By.XPath(filterSelector)).Click();
             }
         }
@@ -303,14 +303,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void GetCheckboxStringFilterByName(string filterName)
         {
             var filterSelector = $".//mat-option//span[text()='{filterName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
         public void SelectProjectLanguage(string language)
         {
             var listNameSelector = $".//span[@class='mat-option-text'][text()='{language}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
@@ -362,35 +362,35 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetFieldByName(string name)
         {
             var selector = By.XPath($".//input[@placeholder='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropDownByName(string name)
         {
             var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropdownContentByName(string name)
         {
             var selector = By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select//span/span");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetLanguageMenuOptionByName(string option)
         {
             var selector = By.XPath($"//div[@class='menu']//li[text()='{option}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetButtonInWarningMessage(string name)
         {
             var selector = By.XPath($".//div[@class='inline-tip ng-star-inserted']//button/span[text()='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

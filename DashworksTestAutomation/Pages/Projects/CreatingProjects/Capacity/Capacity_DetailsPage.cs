@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Capacity
 {
@@ -38,7 +38,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Capacity
         public void SelectTheTypeOfDateByName(string typeOfDateByName)
         {
             var selector = $"//td[text()='{typeOfDateByName}']//following-sibling::td//input[@type='checkbox']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
     }

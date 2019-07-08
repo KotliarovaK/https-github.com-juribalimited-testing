@@ -89,6 +89,22 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             Assert.IsFalse(detailsPage.GetCountOfItemsDisplayStatusByTabName(tabName), $"Tab {tabName} must contain the number of elements!");
         }
 
+        [Then(@"""(.*)"" sub-tab is displayed with disabled state on left menu on the Details page")]
+        public void ThenSub_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage (string tabName)
+        {
+            _driver.WaitForDataLoading();
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsTrue(detailsPage.GetDisplayStatusForDisabledSubTabByName(tabName), $"{tabName} Tab must be disabled!");
+        }
+
+        [Then(@"""(.*)"" main-tab is displayed with disabled state on left menu on the Details page")]
+        public void ThenMain_TabIsDisplayedWithDisabledStateOnLeftMenuOnTheDetailsPage(string tabName)
+        {
+            _driver.WaitForDataLoading();
+            var detailsPage = _driver.NowAt<NavigationPage>();
+            Assert.IsTrue(detailsPage.GetDisplayStatusForDisabledMainTabByName(tabName), $"{tabName} Tab must be disabled!");
+        }
+
         [Then(@"User sees following main-tabs on left menu on the Details page:")]
         public void ThenUserSeesFollowingMain_TabsOnLeftMenuOnTheDetailsPage(Table table)
         {
@@ -106,9 +122,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             //opens main-menu 
             detailsPage.GetTabMenuByName(tabMenuName).Click();
-
+            _driver.WaitForDataLoading();
             foreach (var row in table.Rows)
-                Assert.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"{row["SubTabName"]} tab is not displayed!");
+                Assert.IsTrue(detailsPage.GetDisplayStatusSubTabByName(row["SubTabName"]), $"'{row["SubTabName"]}' tab is not displayed!");
         }
 
         [Then(@"""(.*)"" main-menu on the Details page contains following sub-menu with count of items:")]

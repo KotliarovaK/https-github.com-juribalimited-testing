@@ -92,7 +92,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
         [NUnit.Framework.CategoryAttribute("DAS16803")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
-        [NUnit.Framework.CategoryAttribute("Save_Default_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_AdminPage_CheckThatTheUpdateCapacityUnitSettingsIsWorkingCorrectly()
         {
@@ -134,7 +133,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
                         "DAS16803",
                         "Delete_Newly_Created_Capacity_Unit",
                         "Do_Not_Run_With_CapacityUnits",
-                        "Save_Default_Capacity_Unit",
                         "Set_Default_Capacity_Unit"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);

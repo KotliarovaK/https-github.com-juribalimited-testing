@@ -22,6 +22,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
             _client = client;
         }
 
+        //| Name | Description | IsDefault |
         [When(@"User creates new Capacity Unit via api")]
         public void WhenUserCreatesNewCapacityUnitViaApi(Table table)
         {

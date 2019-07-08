@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
@@ -33,21 +33,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement  GetNavigationLinkByName(string linkName)
         {
             var link = By.XPath($".//div[@class='title-container']//a[text()='{linkName}']");
-            Driver.WaitWhileControlIsNotDisplayed(link);
+            Driver.WaitForElementToBeDisplayed(link);
             return Driver.FindElement(link);
         }
 
         public IWebElement GetTabMenuByName(string name)
         {
             var selector = By.XPath($".//li[contains(@class, 'das-mat-tree')]//a[text()='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetSubMenuByName(string name)
         {
             var selector = By.XPath($".//ul[@class='das-mat-tree-submenu']//a[text()='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -73,6 +73,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public bool GetCountOfItemsDisplayStatusByTabName(string tabName)
         {
             return Driver.IsElementDisplayed(By.XPath($"//a[text()='{tabName}']//span[@class='ng-star-inserted']"));
+        }
+
+        public bool GetDisplayStatusForDisabledSubTabByName(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-tree-node[contains(@class, 'disabled')]"));
+        }
+        public bool GetDisplayStatusForDisabledMainTabByName(string tabName)
+        {
+            return Driver.IsElementDisplayed(By.XPath($".//a[text()='{tabName}']/ancestor::mat-nested-tree-node[contains(@class, 'disabled')]"));
         }
     }
 }

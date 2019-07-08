@@ -1,7 +1,7 @@
 ﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 {
@@ -15,7 +15,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
             var selector =
                 By.XPath(
                     $".//table[@class='grid']//tr[not(@class='grid-headerstyle')][@class='grid-alternatingrowstyle' or @class='grid-rowstyle']//a[text()='{requestTypeName}']/../..//input");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
     }

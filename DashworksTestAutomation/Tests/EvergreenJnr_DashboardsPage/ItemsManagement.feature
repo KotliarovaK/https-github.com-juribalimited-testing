@@ -240,7 +240,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingW
 	And User clicks Ellipsis menu for "WidgetForDAS14855" Widget on Dashboards page
 	And User clicks "Delete" item from Ellipsis menu on Dashboards page
 	Then User sees ""WidgetForDAS14855" will be permanently deleted" text in warning message on Dashboards page
+	And User sees Widget square colored in amber
 	When User clicks Cancel button in Delete Widget warning on Dashboards page
+	And User deletes "WidgetForDAS14855" Widget on Dashboards page
+	Then User cant see widget with the next name "WidgetForDAS14855" on Dashboards page
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS14610
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenningNotExistingDashboard
@@ -252,6 +255,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenning
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with "Dashboard for DAS15721" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD SECTION" Action button
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title    | List        | MaxRows | MaxColumns |
@@ -312,8 +316,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10Wi
 	| List       | 10_Widget | All Devices | 5       | 5          |
 	Then "10_Widget" Widget is displayed to the user
 	#==========================================================#
-	Then "ADD WIDGET" Action button is disabled
 	Then "ADD SECTION" Action button is disabled
+	And "ADD WIDGET" Action button is disabled
 	Then "ADD WIDGET" Action button have tooltip with "Maximum number of widgets has been reached for this dashboard" text
 	When User clicks Ellipsis menu for "10_Widget" Widget on Dashboards page
 	Then User sees following Ellipsis menu items on Dashboards page:

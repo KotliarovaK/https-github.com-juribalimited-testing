@@ -526,7 +526,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] used on device" is displayed in added filter info
-	And message 'No devices found' is displayed to the user
+	And message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS12791 @DAS12952 @DAS14222 @DAS15551 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists
@@ -571,7 +571,7 @@ Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDepe
 	And User clicks the Filters button
 	Then Filters panel is displayed to the user
 	And "Any Application in list [List not found] used on device" is displayed in added filter info
-	And message 'No devices found' is displayed to the user
+	And message 'This list could not be processed, it may refer to a list with errors' is displayed to the user
 
 @Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12075 @DAS12578 @DAS14222 @DAS15551 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists
@@ -882,7 +882,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopyRowOptionWork
 
 Examples: 
 	| PageName     | Columnname    | TargetCell                                 | SelectedRow                             | ExpectedData                                                                                                              |
-	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | \t00HA7MKAVVFDAV\tLaptop\tWindows XP\tKris C. Herman                                                                      |
+	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | \t00HA7MKAVVFDAV\tLaptop\tWindows 7\tKris C. Herman                                                                       |
 	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     | \t$6BE000-SUDQ9614UVO8\tBCLABS\tExchange Online-ApplicationAccount\tExchange Online-ApplicationAccount.Users.bclabs.local |
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English | \t0004 - Adobe Acrobat Reader 5.0.5 Francais\tAdobe\t5.0.5                                                                |
 	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local           | 002B5DC7D4D34D5C895@bclabs.local        | \t000F977AC8824FE39B8@bclabs.local\tExchange 2007\tbc-exch07\tUserMailbox\tSpruill, Shea                                  |
@@ -902,8 +902,21 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatRightClickMenuCopySelectedRowOp
 	Then Next data '<ExpectedData>' is copied
 
 Examples: 
-	| PageName     | Columnname    | TargetCell                                 | SelectedRow1                            | SelectedRow2                     | ExpectedData                                                                                                                                                                                             |
-	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | 001PSUMZYOW581                   | \t001BAQXT6JWFPI\tDesktop\tWindows XP\tNicole P. Braun \t001PSUMZYOW581\tLaptop\tWindows XP\tTricia G. Huang                                                                                               |
+	| PageName     | Columnname    | TargetCell                                 | SelectedRow1                            | SelectedRow2                     | ExpectedData                                                                                                                                                                                               |
+	| Devices      | Hostname      | 00HA7MKAVVFDAV                             | 001BAQXT6JWFPI                          | 001PSUMZYOW581                   | \t001BAQXT6JWFPI\tDesktop\tWindows 7\tNicole P. Braun \t001PSUMZYOW581\tLaptop\tWindows 7\tTricia G. Huang                                                                                                 |
 	| Users        | Username      | $6BE000-SUDQ9614UVO8                       | 000F977AC8824FE39B8                     | 002B5DC7D4D34D5C895              | \t000F977AC8824FE39B8\tBCLABS\tSpruill, Shea\tSpruill\\, Shea.Employees.Birmingham.UK.bclabs.local \t002B5DC7D4D34D5C895\tDWLABS\tCollor, Christopher\tCollor\\, Christopher.Users.Birmingham.dwlabs.local |
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English | 20040610sqlserverck              | \t0036 - Microsoft Access 97 SR-2 English\tMicrosoft\t8.0 \t20040610sqlserverck\tMicrosoft\t1.0.0                                                                                                          |
 	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local           | 002B5DC7D4D34D5C895@bclabs.local        | 0072B088173449E3A93@bclabs.local | \t002B5DC7D4D34D5C895@bclabs.local\tExchange 2013\tbc-exch13\tUserMailbox\tCollor, Christopher \t0072B088173449E3A93@bclabs.local\tExchange 2007\tbc-exch07\tUserMailbox\tRegister, Donna                  |
+
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS16332 @Delete_Newly_Created_List
+Scenario: EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPane
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "1803: In Scope" filter where type is "Equals" with added column and following checkboxes:
+	| SelectedCheckboxes |
+	| TRUE               |
+	And User create dynamic list with "TestListName" name on "Devices" page
+	Then "TestListName" list is displayed to user
+	When User opens manage pane for list with "TestListName" name
+	And User adds "post" to list name
+	Then "TestListNamepost" list is displayed to user

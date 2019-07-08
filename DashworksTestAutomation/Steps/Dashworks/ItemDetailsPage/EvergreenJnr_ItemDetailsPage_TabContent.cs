@@ -35,8 +35,6 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         [Then(@"Details page for ""(.*)"" item is displayed to the user")]
         public void ThenDetailsPageForItemIsDisplayedToTheUser(string pageName)
         {
-            _driver.WaitForDataLoading();
-
             var detailsPage = _driver.NowAt<DetailsPage>();
             NUnit.Framework.Assert.IsTrue(detailsPage.GroupIcon.Displayed());
 
@@ -49,6 +47,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var content = _driver.NowAt<TabContent>();
             Assert.IsTrue(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
+        }
+
+        [Then(@"field with ""(.*)"" text is not displayed in expanded tab on the Details Page")]
+        public void ThenFieldWithTextIsNotDisplayedInExpandedTabOnTheDetailsPage(string text)
+        {
+            var content = _driver.NowAt<TabContent>();
+            Assert.IsFalse(content.GetTheDisplayStateOfContentOnOpenTab(text), $"{text} content is not found in opened tab!");
         }
 
         [Then(@"element table is displayed on the Details page")]
@@ -74,15 +79,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenContentIsNotDisplayedInTheGridOnTheItemDetailsPage(string textContent)
         {
             var projectTabs = _driver.NowAt<TabContent>();
-            Assert.IsFalse(projectTabs.GetContentDisplayState(textContent));
-        }
-
-        [Then(@"Link from ""(.*)"" field is displayed to the user on the Details Page")]
-        public void ThenLinkFromFieldIsDisplayedToTheUserOnTheDetailsPage(string fieldName)
-        {
-            var content = _driver.NowAt<TabContent>();
-            //TODO GetHrefByFieldName 
-            //Assert.IsTrue(content.GetHrefByFieldName(fieldName) != null);
+            Assert.IsFalse(projectTabs.GetContentDisplayState(textContent), $"{textContent} content should not be displayed in the grid on the Item details page!");
         }
     }
 }

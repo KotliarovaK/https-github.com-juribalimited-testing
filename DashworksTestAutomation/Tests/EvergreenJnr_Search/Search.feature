@@ -124,18 +124,25 @@ Scenario: EvergreenJnr_DevicesList_Search_NoDevicesFound
 	| #12               |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
-Scenario: EvergreenJnr_DevicesList_Search_CheckThatGlobalSearchFieldHaveAResetButton
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User type "CheckTheResetButton" in Global Search Field
-	Then reset button in Global Search field is displayed
-
-@Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatTableSearchFieldHaveAResetButton
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User perform search by "CheckTheResetButton"
 	Then reset button in Table Search field is displayed
+
+@Evergreen @ALlLists @EvergreenJnr_Search @Search @DAS12491
+Scenario Outline: EvergreenJnr_AllLists_CheckThatSingularFoundItemLabelDisplaysOnActionsToolbar
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<SearchTerm>"
+	Then "1" rows are displayed in the agGrid
+
+Examples:
+	| PageName     | SearchTerm                                |
+	| Applications | ABBYY FineReader 8.0 Professional Edition |
+	| Mailboxes    | 002B5DC7D4D34D5C895@bclabs.local          |
+	| Devices      | 001BAQXT6JWFPI                            |
+	| Users        | $231000-3AC04R8AR431                      |
 
 @Evergreen @Devices @EvergreenJnr_Search @Search @DAS11350
 Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtFilterPanel
@@ -175,20 +182,6 @@ Scenario: EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtL
 	When User create dynamic list with "TestListDED759" name on "Devices" page
 	When User enters "CheckTheResetButton" text in Search field at List Panel
 	Then reset button in Search field at List Panel is displayed
-
-@Evergreen @AllLists @EvergreenJnr_Search @Search @DAS11495
-Scenario Outline: EvergreenJnr_AllLists_Search_CheckThat500ErrorMessageIsNotDisplayedAfterEnteringTheSpecificCharacters
-	When User clicks "<PageName>" on the left-hand menu
-	Then "<PageName>" list should be displayed to the user
-	When User type "[^abc]" in Global Search Field
-	Then "<PageName>" list should be displayed to the user
-
-Examples: 
-	| PageName     |
-	| Devices      |
-	| Users        |
-	| Applications |
-	| Mailboxes    |
 
 @Evergreen @AllLists @EvergreenJnr_Search @Search @DAS11511
 Scenario Outline: EvergreenJnr_AllLists_Search_CheckThatTableSearchIsWorkingCorrectly
@@ -372,14 +365,6 @@ Scenario: EvergreenJnr_ApplicationsList_Search_ChecksThatRowCountIsResetBackToTh
 	Then "395" rows are displayed in the agGrid
 	When User opens filter container
 	Then "1,067" rows are displayed in the agGrid
-
-	@Evergreen @EvergreenJnr_Search @Search @DAS14731
-Scenario: EvergreenJnr_Search_CheckThatAnyTabCanBeOpenedAfterSearchHasBeenPerformed
-	When User type "jet" in Global Search Field and presses Enter key
-	Then list of results is displayed to the user
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	And There are no errors in the browser console
 
 @Evergreen @Users @EvergreenJnr_Search @Search @DAS16375
 Scenario: EvergreenJnr_UsersList_CheckThatRingsInRingsColumnShownAccordingToDisplayOrderOfRing

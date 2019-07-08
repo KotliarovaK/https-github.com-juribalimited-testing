@@ -17,17 +17,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _capacityUnitUnassignedId = capacityUnitUnassignedId;
         }
 
-        [BeforeScenario("Save_Default_Capacity_Unit")]
-        public void SaveDefaultCapacityUnit()
+        //This method is actually just save Default Capacity Unit ID
+        [BeforeScenario("Set_Default_Capacity_Unit")]
+        public void SetDefaultCapacityUnitBeforeScenario()
         {
-            var capacityUnit = new CapacityUnitDto() { Name = "Unassigned", Description = "Unassigned", IsDefault = true };
+            try
+            {
+                var capacityUnit = new CapacityUnitDto() { Name = "Unassigned", Description = "Unassigned", IsDefault = true };
 
-            var id = capacityUnit.GetId();
+                var id = capacityUnit.GetId();
 
-            if (string.IsNullOrEmpty(id))
-                throw new Exception("Unable to get Unassigned Capacity Unit ID");
+                if (string.IsNullOrEmpty(id))
+                    throw new Exception("Unable to get Unassigned Capacity Unit ID");
 
-            _capacityUnitUnassignedId.Value = id;
+                _capacityUnitUnassignedId.Value = id;
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"Unable to save default Capacity Unit ID in the before scenario: {e}");
+            }
         }
     }
 }

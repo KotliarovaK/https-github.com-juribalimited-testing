@@ -124,3 +124,275 @@ Examples:
 	| Pie        | 00RUUMAH9OZN9A |
 	| Half donut | 00RUUMAH9OZN9A |
 	| Donut      | 00RUUMAH9OZN9A |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15500 @Delete_Newly_Created_Dashboard
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection
+	When Dashboard with "Dashboard for DAS15500" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User creates new Widget
+	| WidgetType | Title           | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy      | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | Widget_DAS15500 | All Devices | Hostname |             | Count             | Hostname ASC |                  | 5         |            |
+	Then User sees widget with the next name "Widget_DAS15500" on Dashboards page
+	When User clicks Ellipsis menu for "Widget_DAS15500" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	And User selects "<WidgetType>" in the "Widget Type" Widget dropdown
+	Then Aggregate Function dropdown is placed above the Aggregate By dropdown
+
+Examples: 
+	| WidgetType |
+	| Bar        |
+	| Column     |
+	| Line       |
+	| Donut      |
+	| Half donut |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15508 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| Device Key                           |
+	| 1803: In Scope                       |
+	| HDD Total Size (GB)                  |
+	| First Seen Date                      |
+	| Windows7Mi: Communication \ DateTime |
+	| Compliance                           |
+	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
+	And Dashboard with "All Data Types for DAS15508" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "ListWithAllDatatypes" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count" as Widget Aggregate Function
+	Then Aggregate By dropdown is disabled
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
+Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| Device Key                           |
+	| 1803: In Scope                       |
+	| HDD Total Size (GB)                  |
+	| First Seen Date                      |
+	| Windows7Mi: Communication \ DateTime |
+	| Compliance                           |
+	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
+	And Dashboard with "All Data Types for DAS15509" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "ListWithAllDatatypes" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count distinct" as Widget Aggregate Function
+	Then User sees following options for Aggregate By selector on Create Widget page:
+	| items                                |
+	| Device Key                           |
+	| Hostname                             |
+	| First Seen Date                      |
+	| Compliance                           |
+	| Device Type                          |
+	| HDD Total Size (GB)                  |
+	| Operating System                     |
+	| Owner Display Name                   |
+	| 1803: In Scope                       |
+	| Windows7Mi: Communication \ DateTime |
+
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown	
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| Device Key                           |
+	| 1803: In Scope                       |
+	| HDD Total Size (GB)                  |
+	| First Seen Date                      |
+	| Windows7Mi: Communication \ DateTime |
+	| Compliance                           |
+	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
+	And Dashboard with "All Data Types for DAS15510" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "ListWithAllDatatypes" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "<AggFunc>" as Widget Aggregate Function
+	Then User sees following options for Aggregate By selector on Create Widget page:
+	| items               |
+	| HDD Total Size (GB) |
+
+Examples: 
+	| AggFunc |
+	| Sum     |
+	| Min     |
+	| Max     |
+	| Average |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectValuesInOrderByDropDown
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| Device Key                           |
+	| 1803: In Scope                       |
+	| HDD Total Size (GB)                  |
+	| First Seen Date                      |
+	| Windows7Mi: Communication \ DateTime |
+	| Compliance                           |
+	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
+	And Dashboard with "All Data Types for DAS15524" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "ListWithAllDatatypes" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count" as Widget Aggregate Function
+	Then Aggregate By dropdown is disabled
+	And User sees following options for Order By selector on Create Widget page:
+	| items                 |
+	| Operating System ASC  |
+	| Operating System DESC |
+	| Count ASC             |
+	| Count DESC            |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunctionIsSelected
+	When Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "All Devices" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count" as Widget Aggregate Function
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                 |
+	| Operating System ASC  |
+	| Operating System DESC |
+	| Count ASC             |
+	| Count DESC            |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDistinctAggregateFunctionIsSelected
+	When Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "All Devices" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count distinct" as Widget Aggregate Function
+	And User selects "Hostname" as Widget AggregateBy
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                        |
+	| Operating System ASC         |
+	| Operating System DESC        |
+	| Hostname Count distinct ASC  |
+	| Hostname Count distinct DESC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctionIsSelected
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| HDD Total Size (GB)                  |
+	And User create dynamic list with "HddList" name on "Devices" page
+	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "HddList" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Sum" as Widget Aggregate Function
+	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                        |
+	| Operating System ASC         |
+	| Operating System DESC        |
+	| HDD Total Size (GB) Sum ASC  |
+	| HDD Total Size (GB) Sum DESC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctionIsSelected
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| HDD Total Size (GB)                  |
+	And User create dynamic list with "HddList" name on "Devices" page
+	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "HddList" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Minimum" as Widget Aggregate Function
+	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                            |
+	| Operating System ASC             |
+	| Operating System DESC            |
+	| HDD Total Size (GB) Minimum ASC  |
+	| HDD Total Size (GB) Minimum DESC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctionIsSelected
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| HDD Total Size (GB)                  |
+	And User create dynamic list with "HddList" name on "Devices" page
+	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "HddList" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Maximum" as Widget Aggregate Function
+	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                            |
+	| Operating System ASC             |
+	| Operating System DESC            |
+	| HDD Total Size (GB) Maximum ASC  |
+	| HDD Total Size (GB) Maximum DESC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctionIsSelected
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName                           |
+	| HDD Total Size (GB)                  |
+	And User create dynamic list with "HddList" name on "Devices" page
+	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "HddList" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Average" as Widget Aggregate Function
+	And User selects "HDD Total Size (GB)" as Widget AggregateBy
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                            |
+	| Operating System ASC             |
+	| Operating System DESC            |
+	| HDD Total Size (GB) Average ASC  |
+	| HDD Total Size (GB) Average DESC |

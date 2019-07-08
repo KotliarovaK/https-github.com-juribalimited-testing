@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Helpers
 
         public void SelectOperator()
         {
-            _driver.WaitWhileControlIsNotDisplayed(
+            _driver.WaitForElementToBeDisplayed(
                 By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
             var selectbox =
                 _driver.FindElement(By.XPath(".//div[@class='filter-panel']//div[@class='mat-select-trigger']"));
@@ -277,7 +277,7 @@ namespace DashworksTestAutomation.Helpers
             foreach (var row in Table.Rows)
             {
                 var selector = string.Format(CheckboxSelector, row["Option"]);
-                _driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+                _driver.WaitForElementToBeDisplayed(By.XPath(selector));
                 var checkbox = _driver.FindElement(By.XPath(selector));
                 if (bool.Parse(row["State"]) != checkbox.GetFilterCheckboxSelectedState()) checkbox.Click();
             }

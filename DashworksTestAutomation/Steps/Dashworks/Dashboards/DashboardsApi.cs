@@ -14,13 +14,13 @@ using TechTalk.SpecFlow;
 namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Dashboard
 {
     [Binding]
-    public class EvergreenJnr_API_DashboardPage : SpecFlowContext
+    public class DashboardsApi : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
         private readonly DTO.RuntimeVariables.Dashboard _dashboard;
         private readonly RestWebClient _client;
 
-        private EvergreenJnr_API_DashboardPage(RemoteWebDriver driver, DTO.RuntimeVariables.Dashboard dashboard, RestWebClient client)
+        private DashboardsApi(RemoteWebDriver driver, DTO.RuntimeVariables.Dashboard dashboard, RestWebClient client)
         {
             _driver = driver;
             _dashboard = dashboard;

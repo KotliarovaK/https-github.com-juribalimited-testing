@@ -86,7 +86,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             //Wait until all rows are selected
             Thread.Sleep(3000);
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ActionsDropdown);
+            _driver.WaitForElementToBeDisplayed(action.ActionsDropdown);
             action.ActionsDropdown.Click();
             action.GetOptionByName(actionsName).Click();
         }
@@ -114,7 +114,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectOrEvergreenField.Click();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
+            _driver.WaitForElementToBeDisplayed(action.ProjectSection);
             action.ActionsProjectOrEvergreenOptions.Where(x => x.Text.Equals(projectName)).FirstOrDefault().Click();
         }
 
@@ -124,7 +124,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseDashboardPage>();
             action.ProjectField.Clear();
             action.ProjectField.SendKeys(projectName);
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.ProjectSection);
+            _driver.WaitForElementToBeDisplayed(action.ProjectSection);
             action.ProjectSection.Click();
         }
 
@@ -165,7 +165,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsPathOnActionPanel(string requestType)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.PathDropdown);
+            _driver.WaitForElementToBeDisplayed(action.PathDropdown);
             action.PathDropdown.Clear();
             action.PathDropdown.SendKeys(requestType);
             action.GetOptionByName(requestType).Click();
@@ -175,7 +175,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsStageOnActionPanel(string stageValue)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.StageField);
+            _driver.WaitForElementToBeDisplayed(action.StageField);
             action.StageField.Clear();
             action.StageField.SendKeys(stageValue);
             action.GetOptionByName(stageValue).Click();
@@ -186,7 +186,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsCapacityUnitOnActionPanel(string capacityUnit)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.CapacityUnitField);
+            _driver.WaitForElementToBeDisplayed(action.CapacityUnitField);
             action.CapacityUnitField.Clear();
             action.CapacityUnitField.SendKeys(capacityUnit);
             action.GetOptionByName(capacityUnit).Click();
@@ -197,7 +197,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSelectsRingOnActionPanel(string ringValue)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.RingField);
+            _driver.WaitForElementToBeDisplayed(action.RingField);
             action.RingField.Clear();
             action.RingField.SendKeys(ringValue);
             action.GetOptionByName(ringValue).Click();
@@ -572,7 +572,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenWarningMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.WarningMessageText);
+            _driver.WaitForElementToBeDisplayed(action.WarningMessageText);
             Assert.AreEqual(textMessage, action.WarningMessageText.Text, $"{textMessage} in Warning message is not displayed");
         }
 
@@ -596,7 +596,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSuccessMessageWithTextIsDisplayedOnActionPanel(string textMessage)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => action.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(action.SuccessMessage);
             Assert.AreEqual(textMessage, action.SuccessMessage.Text, $"{textMessage} are not equal");
             Assert.IsTrue(action.CloseButtonInSuccessMessage.Displayed(),
                 "Close button in Success message is not displayed");
@@ -686,7 +686,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenSelectAllSelectboxIsUnchecked()
         {
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitToBeSelected(dashboardPage.SelectAllCheckbox, false);
+            _driver.WhatForElementToBeSelected(dashboardPage.SelectAllCheckbox, false);
             Assert.IsTrue(dashboardPage.SelectAllCheckboxState.GetAttribute("aria-checked").Equals("false"), "Select All checkbox is checked");
         }
 
@@ -717,7 +717,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var dashboardPage = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             _driver.WaitForDataLoadingInActionsPanel();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => dashboardPage.ResultsOnPageCount);
+            _driver.WaitForElementToBeDisplayed(dashboardPage.ResultsOnPageCount);
             if (!dashboardPage.ResultsOnPageCount.Text.Split(' ').Any() &&
                 string.IsNullOrEmpty(dashboardPage.ResultsOnPageCount.Text.Split(' ').First()))
                 throw new Exception("Rows count in table is missed");
@@ -756,22 +756,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserCreateStaticListWithName(string listName)
         {
             var listElement = _driver.NowAt<ActionsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.ListNameTextBox.SendKeys(listName);
-            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.CreateButton.Click();
 
             //Small wait for message display
             var customListElement = _driver.NowAt<CustomListElement>();
             Thread.Sleep(300);
-            _driver.WaitWhileControlIsDisplayed<CustomListElement>(() => customListElement.SuccessCreateMessage);
+            _driver.WaitForElementToBeNotDisplayed(customListElement.SuccessCreateMessage);
         }
 
         [Then(@"User type ""(.*)"" into Static list name field")]
         public void ThenUserTypeIntoStaticListNameField(string listName)
         {
             var listElement = _driver.NowAt<ActionsElement>();
-            _driver.WaitWhileControlIsNotDisplayed<ActionsElement>(() => listElement.CreateButton);
+            _driver.WaitForElementToBeDisplayed(listElement.CreateButton);
             listElement.ListNameTextBox.SendKeys(listName);
         }
 

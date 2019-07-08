@@ -4,7 +4,7 @@ using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public void LogOut()
         {
             UserNameDropdown.Click();
-            Driver.WaitWhileControlIsNotDisplayed<HeaderElement>(() => LogOutButton);
+            Driver.WaitForElementToBeDisplayed(LogOutButton);
 
             //Verifies DAS-10827
 

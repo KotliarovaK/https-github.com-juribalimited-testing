@@ -6,7 +6,7 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -251,7 +251,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//span[@class='status-text'][text()='RED']")]
         public IList<IWebElement> ContentColor { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span[contains(text(),'No devices found')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='empty-message ng-star-inserted']/span")]
         public IWebElement NoResultsFoundMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'save')]//button")]
@@ -418,7 +418,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 selector = $".//div[@role='presentation']/span[text()='{columnName}']/..";
             }
             
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
@@ -472,7 +472,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $".//div[@class='topnav-footer']//span[contains(text(),'{versionNumber}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -480,7 +480,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $"//div[text()='{categoryName}']/../following-sibling::div[contains(@class, 'sub-categories')]//div//span");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -539,7 +539,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $".//span[@class='status-text'][text()='{colorName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -547,14 +547,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var selector = By.XPath(
                 $".//span[text()='{button}']/ancestor::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetButtonOnMessageBoxByNameOnActionPanel(string button)
         {
             var selector = By.XPath($"//div[contains(@class, 'notification')]//span[text()='{button}']/ancestor::button");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -562,7 +562,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']//div[@col-id]");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
             if (!allHeaders.Any())
                 throw new Exception("Table does not contains any columns");
@@ -601,14 +601,14 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetItalicContentByColumnName(string text)
         {
             var selector = By.XPath($"//span[@class='agEmptyValue'][text()='{text}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement SelectHiddenLeftHandMenu(string menuName)
         {
             var selector = By.XPath($".//div[@class='nav-toggled']//a[contains(@href, '{menuName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -625,7 +625,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var byControl = By.XPath($".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
 
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
         }
 
@@ -641,7 +641,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     $".//div[contains(@class, 'ag-body-container')]/div[1]/div[{GetColumnNumberByName(columnName)}]");
 
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             return Driver.FindElement(byControl);
         }
 
@@ -649,7 +649,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         {
             var byControl =
                 By.XPath($".//div[@role='grid']//div/div[@title='{columnContent}']");
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             return Driver.FindElement(byControl).Text;
         }
 
@@ -660,7 +660,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
                     $".//div[@col-id='{GetColIdByColumnName(columnName)}' and @role='gridcell']//a");
 
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).GetAttribute("href");
             return Driver.FindElement(byControl);
         }
@@ -668,7 +668,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetListElementByName(string listName)
         {
             var selector = By.XPath($".//div[@id='submenuBlock']//*[text()='{listName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -678,26 +678,26 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
             Driver.WaitForDataLoading();
             Driver.MouseHover(By.XPath(columnSettingsSelector));
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(columnSettingsSelector));
             Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
         }
 
         public IWebElement GetSettingButtonByName(string settingName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
+            Driver.WaitForElementToBeDisplayed(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
 
         public IWebElement GetSettingOptionByName(string optionName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
+            Driver.WaitForElementToBeDisplayed(By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
             return Driver.FindElement(
                 By.XPath($".//ul[@class='menu-settings']//span[contains(text(), '{optionName}')]"));
         }
 
         public IWebElement GetSettingIconByRowName(string rowName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(
+            Driver.WaitForElementToBeDisplayed(By.XPath(
                 $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
             return Driver.FindElement(By.XPath(
                 $".//div[@role='row']//a[text()='{rowName}']//ancestor::div[@role='row']//div[@col-id='settings']"));
@@ -706,7 +706,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetOptionByName(string optionName)
         {
             var selector = By.XPath($".//span[text()='{optionName}']/ancestor::mat-option");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -829,21 +829,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetCreateButtonByName(string button)
         {
             var selector = By.XPath($"//span[text()='{button}']/ancestor::mat-option");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropdownWithSearchByFieldName(string name)
         {
             var selector = By.XPath($"//input[@aria-label='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropdownByFieldName(string name)
         {
             var selector = By.XPath($"//*[text()='{name}']/ancestor::div[@class='mat-form-field-infix']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

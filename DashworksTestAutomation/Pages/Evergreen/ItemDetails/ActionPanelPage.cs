@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
@@ -31,7 +31,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetActionButtonByName(string name)
         {
             var selector = By.XPath($".//span[@class='mat-accent'][text()='{name}']/ancestor::mat-option");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

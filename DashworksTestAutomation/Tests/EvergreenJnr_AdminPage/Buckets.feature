@@ -103,7 +103,7 @@ Scenario: EvergreenJnr_AdminPage_CreatingDefaultBucket
 	Then Success message The "Unassigned" bucket has been updated is displayed on the Buckets page
 	And Delete "NewBucket5" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
 	When User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
@@ -124,15 +124,8 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpda
 	When User deletes "aab" Bucket in the Administration
 	And User clicks refresh button in the browser
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
-	And Delete following Buckets in the Administration:
-	| Buckets    |
-	| 2ab        |
-	| a1ba       |
-	| aaa        |
-	| aba        |
-	| waa        |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @DAS13837 @Buckets @Delete_Newly_Created_Bucket @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @DAS12999 @DAS13420 @DAS13837 @Buckets @Delete_Newly_Created_Bucket @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -260,13 +253,13 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Buckets @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11944 @Buckets @archived
 Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnBucketsGrids
 	When User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
 	And User selects all rows on the grid
 	And User clicks Reset Filters button on the Admin page
-	Then User sees "7" of "577" rows selected label
+	Then User sees "11" of "607" rows selected label
 	When User clicks String Filter button for "Project" column on the Admin page
 	When User selects "Select All" checkbox from String Filter with item list on the Admin page
 	When User selects "Evergreen" checkbox from String Filter with item list on the Admin page

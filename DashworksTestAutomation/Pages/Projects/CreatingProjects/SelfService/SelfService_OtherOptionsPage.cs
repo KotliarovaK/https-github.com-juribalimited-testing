@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
@@ -50,7 +50,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
         public void SelectLinkedObjectTasksByName(string taskName)
         {
             var selector = By.XPath($"//select[@aria-label='Linked Object Tasks']/option[text()='{taskName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
     }

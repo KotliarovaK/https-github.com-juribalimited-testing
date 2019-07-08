@@ -84,3 +84,57 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	| Amber        |
 	| Green        |
 	| Grey         |
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
+	When Dashboard with "Dashboard12983" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And  User clicks the "ADD WIDGET" Action button
+	And User selects "Column" in the "Widget Type" Widget dropdown
+	And User enters "ColumnWidget" as Widget Title
+	And User selects "All Devices" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count distinct" as Widget Aggregate Function
+	And User selects "Hostname" as Widget AggregateBy
+	And User selects "Operating System ASC" as Widget OrderBy
+	And User enters "2" as Widget Max Values
+	And User selects the Colour Scheme by index "2"
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "ColumnWidget" Widget is displayed to the user
+	And Line X labels of "ColumnWidget" column widget is displayed in following order:
+	| ColumnName |
+	| Other      |
+	| OS X 10.5  |
+
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
+	When Dashboard with "Dashboard12983" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And  User clicks the "ADD WIDGET" Action button
+	And User selects "Column" in the "Widget Type" Widget dropdown
+	And User enters "ColumnWidget#1" as Widget Title
+	And User selects "All Devices" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count distinct" as Widget Aggregate Function
+	And User selects "Hostname" as Widget AggregateBy
+	And User selects "Operating System ASC" as Widget OrderBy
+	And User enters "2" as Widget Max Values
+	And User selects the Colour Scheme by index "2"
+	Then Widget Preview is displayed to the user
+	When User clicks the "CREATE" Action button
+	Then Card "ColumnWidget#1" Widget is displayed to the user
+	When User clicks Ellipsis menu for "ColumnWidget#1" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	And User selects "Pie" in the "Widget Type" Widget dropdown
+	And User enters "ColumnWidget#2" as Widget Title
+	And User selects "All Devices" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Count distinct" as Widget Aggregate Function
+	And User selects "Hostname" as Widget AggregateBy
+	And User selects "Operating System ASC" as Widget OrderBy
+	And User enters "3" as Widget Max Values
+	And User selects the Colour Scheme by index "3"
+	Then Widget Preview is displayed to the user
+	When User clicks the "UPDATE" Action button
+	Then Card "ColumnWidget#1ColumnWidget#2" Widget is displayed to the user

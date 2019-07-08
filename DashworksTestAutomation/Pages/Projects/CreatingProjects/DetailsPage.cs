@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
@@ -113,7 +113,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         {
             var option = GetRandomOnboardedApplicationOption(index);
             var selector = string.Format(OnboardedApplicationsColorsSelector, option.Value);
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
             return option;
         }
@@ -121,14 +121,14 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetTextInCcEmailAddressField(string text)
         {
             var selector = By.XPath($"//input[contains(@name, 'TaskEmailCCEmailAddress')][@value='{text}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTextInBccEmailAddressField(string text)
         {
             var selector = By.XPath($"//input[contains(@name, 'TaskEmailBCCEmailAddress')][@value='{text}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

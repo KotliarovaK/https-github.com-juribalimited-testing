@@ -1,7 +1,7 @@
 ﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
@@ -19,28 +19,28 @@ namespace DashworksTestAutomation.Pages.Projects
         public IWebElement OpenMainTabByName(string mainTabName)
         {
             var selector = By.XPath($".//ul[contains(@id, 'Menu')]/../following-sibling::li/a[text()='{mainTabName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetSubTabByName(string subTabName)
         {
             var selector = By.XPath($".//a[text()='{subTabName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public void GoToTabByName(string tabName)
         {
             var selector = By.XPath($"//a[contains(@onclick, '{tabName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
 
         public void SelectCheckboxByName(string checkboxName)
         {
             var selector = $"//td[text()='{checkboxName}']//following-sibling::td//input[@name='TaskId']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
     }

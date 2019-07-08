@@ -31,13 +31,6 @@ namespace DashworksTestAutomation.Steps.Base
             _driver.Navigate().Refresh();
         }
 
-        [When(@"User clicks refresh button in the browser after waiting")]
-        public void WhenUserClicksRefreshButtonInTheBrowserAfterWaiting()
-        {
-            Thread.Sleep(60000);
-            _driver.Navigate().Refresh();
-        }
-
         [Then(@"There are no errors in the browser console")]
         public void ThenThereAreNoErrorsInTheBrowserConsole()
         {

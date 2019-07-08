@@ -24,11 +24,6 @@ namespace DashworksTestAutomation.Extensions
                 .SendKeys(Keys.Backspace).Perform();
         }
 
-        public static void OpenNewTab(this IWebElement textbox, RemoteWebDriver driver)
-        {
-            ((IJavaScriptExecutor)driver).ExecuteScript("window.open()");
-        }
-
         public static void SendkeysWithDelay(this IWebElement textbox, string input)
         {
             foreach (char letter in input) textbox.SendKeys(letter.ToString());

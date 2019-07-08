@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         public bool GetTheDisplayStateOfContentOnOpenTab(string name)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//div[contains(@class, 'details-keyvalue')]//span[text()='{name}']"));
+            return Driver.IsElementDisplayed(By.XPath($"//span[text()='{name}']/ancestor::td[@class='fld-label']"));
         }
 
         public bool CheckThatSelectedTabHasOpened(string name)
@@ -41,14 +41,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
         public IWebElement GetItemDetailsPageByName(string name)
         {
             var selector = By.XPath($".//div[@id='pagetitle-text']//h1[contains(text(), '{name}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetColorIconsForColorFilters(string color)
         {
             var selector = By.XPath($"//span[@class='status-text'][text()='{color}']/../div");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

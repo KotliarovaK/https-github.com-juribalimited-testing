@@ -164,3 +164,63 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Unassigned2      |
 	| Unassigned       |
 	| Empty            |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15582 @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereThereAreNoColumnsAvailableShowsWarning
+	When Dashboard with "Dashboard for DAS15582" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	When User clicks the "ADD WIDGET" Action button
+	And User selects "Table" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "All Devices" as Widget List
+	And User selects "Operating System" as Widget Split By
+	And User selects "Sum" as Widget Aggregate Function
+	Then User sees "There are no fields available for this aggregate function" warning text below Lists field
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| Last Logon Date |
+	And User create dynamic list with "LastLogout" name on "Users" page
+	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Table" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "LastLogout" as Widget List
+	And User selects "Domain" as Widget Split By
+	And User selects "First" as Widget Aggregate Function
+	And User selects "Last Logon Date" as Widget AggregateBy
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                      |
+	| Domain ASC                 |
+	| Domain DESC                |
+	| Last Logon Date First ASC  |
+	| Last Logon Date First DESC |
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggregateFunctionIsSelected
+	When User clicks "Users" on the left-hand menu
+	And User clicks the Columns button
+	And ColumnName is entered into the search box and the selection is clicked
+	| ColumnName      |
+	| Last Logon Date |
+	And User create dynamic list with "LastLogout" name on "Users" page
+	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Table" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "LastLogout" as Widget List
+	And User selects "Domain" as Widget Split By
+	And User selects "Last" as Widget Aggregate Function
+	And User selects "Last Logon Date" as Widget AggregateBy
+	Then User sees following options for Order By selector on Create Widget page:
+	| items                     |
+	| Domain ASC                |
+	| Domain DESC               |
+	| Last Logon Date Last ASC  |
+	| Last Logon Date Last DESC |

@@ -3,7 +3,7 @@ using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
 {
@@ -53,7 +53,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.Tasks
         {
             var option = GetRandomReadinessOption(index);
             var selector = string.Format(Readiness, option.Value);
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
             return option;
         }
