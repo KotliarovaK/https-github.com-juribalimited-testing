@@ -53,6 +53,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             action.GetOptionByName(projectName).Click();
         }
 
+        [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]
+        public void ThenProjectIsSelectedInTheTopBarOnItemDetailsPage(string projectName)
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            Assert.IsTrue(topBar.GetSelectedProjectOnTopBarByName(projectName).Displayed(), $"{projectName} project is not displayed in Top Bar");
+        }
+
         [Then(@"projects on the Project Switcher panel are displayed in alphabetical order")]
         public void ThenProjectsOnTheProjectSwitcherPanelAreDisplayedInAlphabeticalOrder()
         {

@@ -1678,7 +1678,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatche
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
-	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Projects" main-menu on the Details page
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following content is displayed on the Details Page
 	| Title   | Value   |
