@@ -666,10 +666,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return Driver.FindElement(selector);
         }
 
+        public IWebElement GetButtonInWarningPopUp(string buttonName)
+        {
+            var selector = By.XPath($".//mat-dialog-container//button/span[text()='{buttonName}']");
+            return Driver.FindElement(selector);
+        }
+
         public IWebElement GetDropdownByNameForAutomations(string dropdownName)
         {
             var selector = By.XPath($".//label[text()='{dropdownName}']//ancestor::div//input[@placeholder='{dropdownName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
