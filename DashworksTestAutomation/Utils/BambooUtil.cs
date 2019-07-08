@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Utils
 
                     var request = new RestRequest(Method.POST)
                     {
-                        Resource = $"/rest/api/latest/plan/{BambooProvider.BuildResultKey}/test/{testId}/unleash"
+                        Resource = $"/rest/api/latest/plan/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber}/test/{testId}/unleash"
                     };
                     request.AddHeader("Accept", "application/json");
                     request.AddHeader("Content-Type", "application/json; charset=utf-8");
