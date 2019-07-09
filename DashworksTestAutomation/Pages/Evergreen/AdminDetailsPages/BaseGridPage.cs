@@ -341,6 +341,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public IWebElement GetObjectTitle(string titleName)
         {
             var objectTitle = By.XPath($".//div[@class='title-container']//h1[text()='{titleName}']");
+            Driver.WaitForElementToBeDisplayed(objectTitle);
             return Driver.FindElement(objectTitle);
         }
 
