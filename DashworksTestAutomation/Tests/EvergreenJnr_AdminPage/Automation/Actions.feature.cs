@@ -856,6 +856,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Actions")]
         [NUnit.Framework.CategoryAttribute("DAS15425")]
         [NUnit.Framework.CategoryAttribute("DAS16143")]
+        [NUnit.Framework.CategoryAttribute("DAS17336")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckEditActionPage()
         {
@@ -892,6 +893,7 @@ this.FeatureBackground();
                         "Actions",
                         "DAS15425",
                         "DAS16143",
+                        "DAS17336",
                         "Not_Ready"});
 #line 282
 this.ScenarioInitialize(scenarioInfo);
