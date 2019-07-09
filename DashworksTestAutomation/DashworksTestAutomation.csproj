@@ -113,6 +113,7 @@
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
+    <Compile Include="DTO\Evergreen\FilterDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
@@ -514,6 +515,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddColumnAction.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_Columns\CheckAllColumnsApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckAllColumnsApi.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -747,6 +753,28 @@
     <None Include="Resources\IncorrectFile.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestData\Columns\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Mailboxes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Users.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Mailboxes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Users.json" />
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanel.feature.cs</LastGenOutput>
@@ -854,6 +882,10 @@
     <None Include="Tests\EvergreenJnr_Columns\AddColumnAction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddColumnAction.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Columns\CheckAllColumnsApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CheckAllColumnsApi.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1043,9 +1075,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TestData\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
