@@ -1076,7 +1076,7 @@ this.FeatureBackground();
 #line 258
  testRunner.And("User type \"Slot 4\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 259
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 260
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 261
@@ -2143,7 +2143,7 @@ this.FeatureBackground();
  testRunner.And("User type \"capacity type = Teams and Request types\" Name in the \"Display Name\" fi" +
                     "eld on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 573
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 574
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 575
@@ -2232,7 +2232,7 @@ this.FeatureBackground();
  testRunner.And("User type \"capacity type = Teams and Request types\" Name in the \"Display Name\" fi" +
                     "eld on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 588
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 589
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 590
@@ -2349,7 +2349,7 @@ this.FeatureBackground();
 #line 611
  testRunner.And("User type \"13979\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 612
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 613
  testRunner.When("User changes value to \"0\" for \"Monday\" day column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 614
@@ -2588,7 +2588,7 @@ this.FeatureBackground();
 #line 677
  testRunner.And("User type \"14478\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 678
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 679
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 680
@@ -2769,7 +2769,7 @@ this.FeatureBackground();
 #line 711
  testRunner.And("User type \"10001\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 712
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 713
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 714
@@ -2779,7 +2779,7 @@ this.FeatureBackground();
 #line 716
  testRunner.And("User type \"10002\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 717
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 718
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 719
@@ -2789,7 +2789,7 @@ this.FeatureBackground();
 #line 721
  testRunner.And("User type \"10003\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 722
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 723
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -2917,7 +2917,7 @@ this.FeatureBackground();
 #line 752
  testRunner.And("User type \"Slot 2\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 753
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 754
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 755

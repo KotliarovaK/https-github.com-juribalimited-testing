@@ -256,7 +256,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot4" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 4" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#act1
@@ -570,7 +570,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	And User clicks the "CREATE SLOT" Action button
 	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
 	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	And "" content is displayed in "Capacity Units" column
@@ -585,7 +585,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	And User clicks the "CREATE SLOT" Action button
 	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
 	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks the "CREATE SLOT" Action button
@@ -609,7 +609,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 13979" Name in the "Slot Name" field on the Project details page
 	And User type "13979" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User changes value to "0" for "Monday" day column
 	And User changes value to "1" for "Tuesday" day column
 	And User changes value to "2" for "Wednesday" day column
@@ -675,7 +675,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 14478" Name in the "Slot Name" field on the Project details page
 	And User type "14478" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User opens settings for "Slot 14478" row
@@ -709,17 +709,17 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEntere
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 10001" Name in the "Slot Name" field on the Project details page
 	And User type "10001" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 10002" Name in the "Slot Name" field on the Project details page
 	And User type "10002" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot 10003" Name in the "Slot Name" field on the Project details page
 	And User type "10003" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then User sees next Slots on the Capacity Slots page:
 	| slots      |
@@ -750,7 +750,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
 	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Type" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks the "CREATE SLOT" Action button
