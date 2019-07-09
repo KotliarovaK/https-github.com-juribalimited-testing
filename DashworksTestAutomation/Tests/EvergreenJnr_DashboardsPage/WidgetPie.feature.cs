@@ -812,7 +812,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15509")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown()
         {
             System.Exception lastException = null;
@@ -848,8 +847,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15509",
                         "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard",
-                        "Not_Run"});
+                        "Delete_Newly_Created_Dashboard"});
 #line 174
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
