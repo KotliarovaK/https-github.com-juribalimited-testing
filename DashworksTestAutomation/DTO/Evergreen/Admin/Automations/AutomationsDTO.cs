@@ -37,23 +37,23 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
         public string listId
         {
             get => _automationlistId;
-            set => _automationlistId = GetAutomationListIdScope(value);
+            set => _automationlistId = GetAutomationListId(value);
         }
 
-        private string GetAutomationListIdScope(string listName)
+        private string GetAutomationListId(string listName)
         {
             return DatabaseHelper.ExecuteReader(
-                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", -1)
+                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0)
                 .LastOrDefault();
         }
 
         public string objectTypeId
         {
             get => _automationObjectTypeId;
-            set => _automationObjectTypeId = GetObjectTypeIdScope(value);
+            set => _automationObjectTypeId = GetObjectTypeId(value);
         }
 
-        private string GetObjectTypeIdScope(string listName)
+        private string GetObjectTypeId(string listName)
         {
             return DatabaseHelper.ExecuteReader(
                     $"select[ObjectTypeID] from[PM].[dbo].[ObjectTypes] where[ObjectType] = '{listName}'", 0)

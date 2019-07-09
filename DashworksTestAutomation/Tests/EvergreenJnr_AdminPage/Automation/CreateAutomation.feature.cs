@@ -151,6 +151,7 @@ this.FeatureBackground();
                         "Description",
                         "Active",
                         "StopOnFailedAction",
+                        "objectTypeId",
                         "listId",
                         "automationScheduleTypeId"});
             table1.AddRow(new string[] {
@@ -158,7 +159,8 @@ this.FeatureBackground();
                         "15309",
                         "true",
                         "false",
-                        "Devices",
+                        "User",
+                        "Users",
                         "Manual"});
 #line 14
  testRunner.When("User creates new Automation via API", ((string)(null)), table1, "When ");
