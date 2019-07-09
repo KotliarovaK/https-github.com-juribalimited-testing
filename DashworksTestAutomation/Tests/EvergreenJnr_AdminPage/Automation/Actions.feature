@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#Use different Automation for tests
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
@@ -14,12 +13,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 030619 Devices 1" text in the Search field for "Automation" column
-	When User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
-	#Check Cog Menu for the first Action
-	When User clicks Cog-menu for "AM 030619 Action 1" item on Admin page
+	#Delete Creating Automation after gold data complete
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "Test_Automation_15427" Name in the "Automation Name" field on the Automation details page
+	When User type "15427" Name in the "Description" field on the Automation details page
+	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects "Active" checkbox on the Automation Page
+	When User selects "Manual" in the "Run" dropdown
+	And User clicks the "CREATE" Action button
+	Then Create Action page is displayed to the User
+	When User type "15427_Action1" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE ACTION" Action button
+	When User type "15427_Action2" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE ACTION" Action button
+	Then "Test_Automation_15427" object name is displayed to the User
+	When User type "15427_Action3" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	When User clicks the "CREATE" Action button
+	When User clicks Cog-menu for "15427_Action1" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -28,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the second Action
-	When User clicks Cog-menu for "AM 030619 Action 2" item on Admin page
+	When User clicks Cog-menu for "15427_Action2" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -37,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the last Action
-	When User clicks Cog-menu for "15309_Action" item on Admin page
+	When User clicks Cog-menu for "15427_Action3" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -45,10 +67,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
-	When User clicks "Edit" option in Cog-menu for "AM 030619 Action 1" item on Admin page
+	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
 	Then Edit Action page is displayed to the User
 	Then "UPDATE" Action button is displayed
 	Then "CANCEL" Action button is displayed
+	Then "Test_Automation_15427" object name is displayed to the User
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @Not_Ready
 #Change value after gold data complete added
