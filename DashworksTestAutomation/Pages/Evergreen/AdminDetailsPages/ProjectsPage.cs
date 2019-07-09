@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using TechTalk.SpecFlow;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
