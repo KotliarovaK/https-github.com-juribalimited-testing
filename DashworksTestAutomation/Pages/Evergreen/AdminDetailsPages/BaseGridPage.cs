@@ -338,6 +338,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 
+        public IWebElement GetObjectTitle(string titleName)
+        {
+            var objectTitle = By.XPath($".//div[@class='title-container']//h1[text()='{titleName}']");
+            return Driver.FindElement(objectTitle);
+        }
+
         public IWebElement GetFillingFieldErrorByText(string text)
         {
             try
