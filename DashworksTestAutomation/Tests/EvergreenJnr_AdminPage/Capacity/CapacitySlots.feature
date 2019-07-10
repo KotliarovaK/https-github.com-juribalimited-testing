@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingI
 	When User clicks the "CREATE SLOT" Action button
 	And User type "CapacitySlot2" Name in the "Slot Name" field on the Project details page
 	And User type "DAS13432" Name in the "Display Name" field on the Project details page
-	When User selects "Teams and Request Types" in the "Capacity Type" dropdown
+	When User selects "Teams and Paths" in the "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
@@ -221,7 +221,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	And User clicks "Capacity" tab
 	#prepare data
 	And User selects "Capacity Details" tab on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Mode" dropdown
 	When User clicks the "UPDATE" Action button
 	Then User selects "Capacity Units" option in "Capacity Mode" dropdown
 	When User clicks the "UPDATE" Action button
@@ -319,7 +319,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected units have been deleted" text
 	When User selects "Capacity Details" tab on the Project details page
-	Then User selects "Teams and Request Types" option in "Capacity Mode" dropdown
+	Then User selects "Teams and Paths" option in "Capacity Mode" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
@@ -419,7 +419,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	And User selects "Slots" tab on the Project details page
 	When User clicks content from "Capacity Slot" column
 	Then "Pre-Migration \ Scheduled date" value is displayed in the "Tasks" dropdown
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
 	| Personal Mailbox       |
@@ -429,14 +429,14 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Personal Mailbox - EA  |
 	When User selects "User" in the "Object Type" dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items         |
 	| Standard User |
 	| VIP User      |
 	When User selects "Application" in the "Object Type" dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                  |
 	| Public Folder          |
@@ -448,7 +448,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	And User selects "Slots" tab on the Project details page
 	And User clicks content from "Capacity Slot" column
 	Then "Pre-Migration \ Scheduled Date" value is displayed in the "Tasks" dropdown
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                                            |
 	| [This is the Default Request Type for Computer)] |
@@ -458,7 +458,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| Computer: Virtual Machine                        |
 	When User selects "User" in the "Object Type" dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items            |
 	| [Default (User)] |
@@ -467,7 +467,7 @@ Scenario: EvergreenJnr_AdminPage_CheckRequestTypesDisplayedForEachObjectType
 	| User; Maternity  |
 	When User selects "Application" in the "Object Type" dropdown
 	Then "" content is displayed in "Tasks" field
-	When User clicks on "Request Types" dropdown on the Capacity Slots page
+	When User clicks on "Paths" dropdown on the Capacity Slots page
 	Then following items are displayed in the dropdown:
 	| Items                       |
 	| [Default (Application)]     |
@@ -568,8 +568,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRe
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
+	And User type "capacity type = Teams and Paths" Name in the "Slot Name" field on the Project details page
+	And User type "capacity type = Teams and Paths" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
@@ -583,8 +583,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnits
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
-	And User type "capacity type = Teams and Request types" Name in the "Slot Name" field on the Project details page
-	And User type "capacity type = Teams and Request types" Name in the "Display Name" field on the Project details page
+	And User type "capacity type = Teams and Paths" Name in the "Slot Name" field on the Project details page
+	And User type "capacity type = Teams and Paths" Name in the "Display Name" field on the Project details page
 	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
@@ -622,32 +622,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWith
 	And User selects "Duplicate" option from settings menu
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) slot" text
 	And User sees following duplicates counts for columns:
-	| column         | duplicatedValue   | duplicateCount |
-	| Monday         | 0                 | 2              |
-	| Tuesday        | 1                 | 2              |
-	| Wednesday      | 2                 | 2              |
-	| Thursday       | 3                 | 2              |
-	| Friday         | 4                 | 2              |
-	| Saturday       | 5                 | 2              |
-	| Sunday         | 6                 | 2              |
-	| Request Types  | All Request Types | 2              |
-	| Teams          | All Teams         | 2              |
-	| Capacity Units |                   | 2              |
+	| column         | duplicatedValue | duplicateCount |
+	| Monday         | 0               | 2              |
+	| Tuesday        | 1               | 2              |
+	| Wednesday      | 2               | 2              |
+	| Thursday       | 3               | 2              |
+	| Friday         | 4               | 2              |
+	| Saturday       | 5               | 2              |
+	| Sunday         | 6               | 2              |
+	| Paths          | All Paths       | 2              |
+	| Teams          | All Teams       | 2              |
+	| Capacity Units |                 | 2              |
 	When User opens settings for "Slot 13979 (copy)" row
 	And User selects "Duplicate" option from settings menu
 	Then Success message is displayed and contains "Your capacity slot has been created, click here to view the Slot 13979 (copy) (copy) slot" text
 	And User sees following duplicates counts for columns:
-	| column         | duplicatedValue   | duplicateCount |
-	| Monday         | 0                 | 3              |
-	| Tuesday        | 1                 | 3              |
-	| Wednesday      | 2                 | 3              |
-	| Thursday       | 3                 | 3              |
-	| Friday         | 4                 | 3              |
-	| Saturday       | 5                 | 3              |
-	| Sunday         | 6                 | 3              |
-	| Request Types  | All Request Types | 3              |
-	| Teams          | All Teams         | 3              |
-	| Capacity Units |                   | 3              |
+	| column         | duplicatedValue | duplicateCount |
+	| Monday         | 0               | 3              |
+	| Tuesday        | 1               | 3              |
+	| Wednesday      | 2               | 3              |
+	| Thursday       | 3               | 3              |
+	| Friday         | 4               | 3              |
+	| Saturday       | 5               | 3              |
+	| Sunday         | 6               | 3              |
+	| Paths          | All Paths       | 3              |
+	| Teams          | All Teams       | 3              |
+	| Capacity Units |                 | 3              |
 	And User sees next Slots on the Capacity Slots page:
 	| slots                    |
 	| Slot 13979               |
@@ -768,10 +768,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	When User click on 'Teams' column header
 	Then data in table is sorted by "Teams" column in descending order on the Admin page
 	And There are no errors in the browser console
-	When User click on 'Request Types' column header
-	Then data in table is sorted by "Request Types" column in ascending order on the Admin page
-	When User click on 'Request Types' column header
-	Then data in table is sorted by "Request Types" column in descending order on the Admin page
+	When User click on 'Paths' column header
+	Then data in table is sorted by "Paths" column in ascending order on the Admin page
+	When User click on 'Paths' column header
+	Then data in table is sorted by "Paths" column in descending order on the Admin page
 	And There are no errors in the browser console
 	When User clicks String Filter button for "Capacity Units" column on the Admin page
 	When User selects "All Capacity Units" checkbox from String Filter with item list on the Admin page
@@ -792,7 +792,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks the "CREATE SLOT" Action button
 	And User type "DAS_13811_1" Name in the "Slot Name" field on the Project details page
 	And User type "13811_1" Name in the "Display Name" field on the Project details page
-	And User selects following items in "Request Types" dropdown:
+	And User selects following items in "Paths" dropdown:
 	| items                             |
 	| Computer: PC Rebuild              |
 	| Computer: Workstation Replacement |
@@ -1308,32 +1308,32 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
 	And User type "13152" Name in the "Display Name" field on the Project details page
-	And User selects "Teams and Request Types" in the "Capacity Type" dropdown
+	And User selects "Teams and Paths" in the "Capacity Type" dropdown
 	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
-	And User selects "[Default (Computer)]" checkbox in the "Request Types" field on the Project details page
+	And User selects "[Default (Computer)]" checkbox in the "Paths" field on the Project details page
 	When User selects "Device" in the "Object Type" dropdown
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "Your capacity slot has been created" text
 	#Check data in the slot after creation
 	When User clicks content from "Capacity Slot" column
-	Then "Teams and Request Types" value is displayed in the "Capacity Type" dropdown
+	Then "Teams and Paths" value is displayed in the "Capacity Type" dropdown
 	And "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
 	And "Device" text value is displayed in the "Object Type" dropdown
-	And "[Default (Computer)]" value is displayed in the "Request Types" dropdown
+	And "[Default (Computer)]" value is displayed in the "Paths" dropdown
 	And "Admin IT" value is displayed in the "Teams" dropdown
 	#Change data in the slot
 	When User selects "Application" in the "Object Type" dropdown
 	And User selects "Admin IT" checkbox in the "Teams" field on the Project details page
 	And User selects "1803 Team" checkbox in the "Teams" field on the Project details page
-	And User selects "[Default (Application)]" checkbox in the "Request Types" field on the Project details page
+	And User selects "[Default (Application)]" checkbox in the "Paths" field on the Project details page
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The capacity slot details have been updated" text
 	#Check updated data in the slot and change Capacity Type
 	When User clicks content from "Capacity Slot" column
-	Then "Teams and Request Types" text value is displayed in the "Capacity Type" dropdown
+	Then "Teams and Paths" text value is displayed in the "Capacity Type" dropdown
 	And "Application" text value is displayed in the "Object Type" dropdown
-	And "[Default (Application)]" value is displayed in the "Request Types" dropdown
+	And "[Default (Application)]" value is displayed in the "Paths" dropdown
 	And "1803 Team" value is displayed in the "Teams" dropdown
 	When User selects "Capacity Units" in the "Capacity Type" dropdown
 	And User clicks the "UPDATE" Action button
@@ -1366,9 +1366,11 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfUserPr
 	And Values is displayed in added filter info
 	| Values                    |
 	| Evergreen Capacity Unit 3 |
+	| Offboarded                |
 	And Options is displayed in added filter info
 	| Values |
 	| is     |
+	| is not |
 
 Examples:
 	| ListName     |
@@ -1464,7 +1466,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTasksListDisplayingOnCreateAndEditSlotsScr
 	When User clicks "Capacity" tab
 	When User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
-	And User selects following items in "Request Types" dropdown:
+	And User selects following items in "Paths" dropdown:
 	| items                             |
 	| req type comp              |
 	And User clicks on "Tasks" dropdown on the Capacity Slots page
