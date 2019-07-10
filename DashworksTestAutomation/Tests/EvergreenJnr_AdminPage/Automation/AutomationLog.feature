@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	When User enters "DELAY - do not delete2" text in the Search field for "Automation" column
 	Then "AUTOMATION IS ALREADY RUNNING" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17011 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17011 @DAS17374 @Delete_Newly_Created_List @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -158,6 +158,11 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User clicks Admin on the left-hand menu
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
+	When User enters "17011_Automation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Filling field error with "This list has errors" text is displayed
+	#DAS-17374
+	When User clicks the "CANCEL" Action button
 	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
 	When User enters "17011_Automation" text in the Search field for "Automation" column
