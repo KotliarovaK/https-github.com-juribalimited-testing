@@ -55,6 +55,11 @@ namespace DashworksTestAutomation.Utils
 
                 #endregion
 
+                if (_quarantinedTests != null)
+                    Logger.Write($"1 Quarantined tests: {String.Join(", ", testIdsWithNames.ToArray().Select(x => x.Value).ToArray())}");
+                else
+                    Logger.Write("1 There are not Quarantined tests!");
+
                 _quarantinedTests = testIdsWithNames;
             }
             catch
@@ -67,6 +72,11 @@ namespace DashworksTestAutomation.Utils
         {
             try
             {
+                if (_quarantinedTests != null)
+                    Logger.Write($"2 Quarantined tests: {String.Join(", ", _quarantinedTests.ToArray().Select(x => x.Value).ToArray())}");
+                else
+                    Logger.Write("2 There are not Quarantined tests!");
+
                 if (_quarantinedTests != null && _quarantinedTests.Any(x => x.Value.Equals(testName)))
                 {
                     RestClient client = GetClient();
