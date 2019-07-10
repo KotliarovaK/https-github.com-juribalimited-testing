@@ -64,6 +64,7 @@ namespace DashworksTestAutomation.Utils
             }
             catch
             {
+                Logger.Write("_quarantinedTests will be empty");
                 _quarantinedTests = null;
             }
         }

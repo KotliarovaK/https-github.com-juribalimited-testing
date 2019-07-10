@@ -34,8 +34,12 @@ namespace DashworksTestAutomation.Base
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
+            Logger.Write("BeforeTestRun");
             if (!Browser.RemoteDriver.Equals("local") && !string.IsNullOrEmpty(BambooProvider.BuildResultKey))
+            {
+                Logger.Write("Truing to get quarantined tests");
                 BambooUtil.GetAllQuarantinedTests();
+            }
         }
 
         [BeforeScenario]
