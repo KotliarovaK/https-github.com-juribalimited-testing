@@ -371,7 +371,7 @@ namespace DashworksTestAutomation.Extensions
         {
             new Actions(driver)
                 .Click(textbox)
-                .SendKeys(OpenQA.Selenium.Keys.Shift).SendKeys(OpenQA.Selenium.Keys.Insert)
+                .KeyDown(OpenQA.Selenium.Keys.Shift).KeyDown(OpenQA.Selenium.Keys.Insert)
                 .KeyUp(OpenQA.Selenium.Keys.Shift).KeyUp(OpenQA.Selenium.Keys.Insert)
                 .Perform();
         }
