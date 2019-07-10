@@ -50,6 +50,7 @@ namespace DashworksTestAutomation.Utils
                 {
                     var id = node.GetAttributeValue("href", null).Split('/').Last();
                     var name = node.InnerText;
+                    Logger.Write($"ADDED new test: {id}: {name}");
                     testIdsWithNames.Add(new KeyValuePair<string, string>(id, name));
                 }
 
@@ -62,9 +63,9 @@ namespace DashworksTestAutomation.Utils
 
                 _quarantinedTests = testIdsWithNames;
             }
-            catch
+            catch (Exception e)
             {
-                Logger.Write("_quarantinedTests will be empty");
+                Logger.Write($"_quarantinedTests will be empty: {e}");
                 _quarantinedTests = null;
             }
         }
