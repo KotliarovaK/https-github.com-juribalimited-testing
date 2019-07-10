@@ -258,7 +258,7 @@ Scenario: EvergreenJnr_UsersList_CheckRenamedColumnForApplicationTabOnTheDetails
 	Then "Manufacturer" column is not displayed to the user
 	Then "Vendor" column is displayed to the user
 
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11091 @DAS14923 @DAS16121 @DAS17305
 Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoftwareComplianceIssuesSectionOnTheDetailsPage
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -272,7 +272,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 	| AMBER        |
 	| GREEN        |
 	| UNKNOWN      |
-	| N/A          |
+	| NONE         |
 	When User navigates to the "Application Issues" sub-menu on the Details page
 	Then "<CountRows>" rows found label displays on Details Page
 	And "Manufacturer" column is not displayed to the user
@@ -284,7 +284,8 @@ Scenario Outline: EvergreenJnr_AllLists_CheckRenamedColumnAndStringFilterForSoft
 Examples:
 	| PageName | SelectedName   | ColumnName | CountRows |
 	| Devices  | 001BAQXT6JWFPI | Hostname   | 2         |
-	| Users    | EKS951231      | Username   | 4         |
+	#DAS17305 not ready yet for Users;
+	#| Users    | EKS951231      | Username   | 4         |
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11667 @DAS12321 @DAS11921
 Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxDetails

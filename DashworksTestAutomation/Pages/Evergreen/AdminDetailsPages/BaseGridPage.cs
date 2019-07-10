@@ -475,6 +475,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     Thread.Sleep(waitTime);
                     Driver.Navigate().Refresh();
                     Driver.WaitForDataLoading();
+                    Thread.Sleep(2000);
                 }
             }
             catch (Exception e)
