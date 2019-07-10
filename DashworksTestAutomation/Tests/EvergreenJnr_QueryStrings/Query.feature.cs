@@ -853,7 +853,7 @@ this.FeatureBackground();
             ")", "12,083", "Application is not Access (882) installed on device", null)]
         [NUnit.Framework.TestCaseAttribute("Application Compliance", "evergreen/#/devices?$filter=(applicationMigrationRAG%20NOT%20EQUALS%20(\'Red\'%2C\'A" +
             "mber\'%2C\'Green\'%2C\'Not%20Applicable\')%20WHERE%20(uod%2Cetd%2Ciod%2Cubdo%2Cetdo))" +
-            "", "63", "Application whose Compliance is not Red, Amber, Green or Not Applicable used on d" +
+            "", "4,547", "Application whose Compliance is not Red, Amber, Green or Not Applicable used on d" +
             "evice; entitled to device; installed on device; used by device\'s owner; or entit" +
             "led to device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("Application Import", "evergreen/#/devices?$filter=(applicationImport%20EQUALS%20(\'SCCM%202012%20PS1\')%2" +
@@ -931,6 +931,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.CategoryAttribute("DAS17398")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList()
         {
@@ -967,6 +968,7 @@ this.FeatureBackground();
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
+                        "DAS17398",
                         "Delete_Newly_Created_List"});
 #line 162
 this.ScenarioInitialize(scenarioInfo);
@@ -1036,6 +1038,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.CategoryAttribute("DAS17398")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList()
         {
@@ -1072,6 +1075,7 @@ this.FeatureBackground();
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
+                        "DAS17398",
                         "Delete_Newly_Created_List"});
 #line 186
 this.ScenarioInitialize(scenarioInfo);
@@ -1141,6 +1145,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.CategoryAttribute("DAS17398")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter()
         {
@@ -1177,6 +1182,7 @@ this.FeatureBackground();
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
+                        "DAS17398",
                         "Delete_Newly_Created_List"});
 #line 211
 this.ScenarioInitialize(scenarioInfo);
@@ -1259,6 +1265,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
+        [NUnit.Framework.CategoryAttribute("DAS17398")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilter()
         {
@@ -1295,6 +1302,7 @@ this.FeatureBackground();
                         "EvergreenJnr_QueryStrings",
                         "Query",
                         "DAS13179",
+                        "DAS17398",
                         "Delete_Newly_Created_List"});
 #line 240
 this.ScenarioInitialize(scenarioInfo);
@@ -1322,8 +1330,8 @@ this.FeatureBackground();
             table18.AddRow(new string[] {
                         "Application (Saved List) - Static - Specific rows selected by Compliance = Red, A" +
                             "mber or Unknown",
-                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'346\')%20WHERE%20" +
-                            "(uod))"});
+                        "evergreen/#/devices?$filter=(applicationSavedListId%20EQUALS%20(\'37\')%20WHERE%20(" +
+                            "uod))"});
 #line 246
  testRunner.When("Evergreen QueryStringURL is entered for Simple QueryType", ((string)(null)), table18, "When ");
 #line 249
