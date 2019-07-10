@@ -30,13 +30,15 @@ namespace DashworksTestAutomation.Utils
                 RestClient client = GetClient();
 
                 #region Get all quarantined Tests 
-                var url = $"/browse/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber - 1}/test";
+                var url = $"/browse/{BambooProvider.ProjAndBuild}-{BambooProvider.BuildNumber - 1}/test";
                 var request = new RestRequest(Method.GET) { Resource = url };
                 Logger.Write($"GetAllQuarantinedTests: {url}");
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json; charset=utf-8");
                 request.RequestFormat = DataFormat.Json;
                 IRestResponse response = client.Execute(request);
+
+                Logger.Write($"response: {response.StatusCode}");
 
                 HtmlDocument doc = new HtmlDocument();
                 string html = response.Content;
@@ -85,7 +87,7 @@ namespace DashworksTestAutomation.Utils
 
                     var testId = _quarantinedTests.First(x => x.Value.Equals(testName)).Key;
                     var url =
-                        $"/rest/api/latest/plan/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber}/test/{testId}/unleash";
+                        $"/rest/api/latest/plan/{BambooProvider.ProjAndBuild}-{BambooProvider.BuildNumber}/test/{testId}/unleash";
                     var request = new RestRequest(Method.POST)
                     {
                         Resource = url
