@@ -161,6 +161,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Filling field error with "This list has errors" text is displayed
+	#DAS-17374
 	When User clicks the "CANCEL" Action button
 	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
