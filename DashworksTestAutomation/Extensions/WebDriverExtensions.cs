@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
@@ -1644,6 +1645,20 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static bool IsElementDisplayed(this RemoteWebDriver driver, IWebElement element, WaitTime waitTime)
+        {
+            try
+            {
+                var time = int.Parse(waitTime.GetValue());
+                driver.WaitForElementToBeDisplayed(element, time);
+                return element.Displayed;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public static bool IsElementDisplayed(this RemoteWebDriver driver, By selector)
         {
             try
@@ -1654,6 +1669,30 @@ namespace DashworksTestAutomation.Extensions
             {
                 return false;
             }
+        }
+
+        public static bool IsElementDisplayed(this RemoteWebDriver driver, By selector, WaitTime waitTime)
+        {
+            try
+            {
+                var time = int.Parse(waitTime.GetValue());
+                driver.WaitForElementToBeDisplayed(selector, time);
+                return driver.FindElement(selector).Displayed;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public enum WaitTime
+        {
+            [Description("6")]
+            Short,
+            [Description("15")]
+            Medium,
+            [Description("30")]
+            Long
         }
 
         public static bool IsElementExists(this IWebDriver driver, By @by)
