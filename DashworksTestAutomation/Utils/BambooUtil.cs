@@ -32,13 +32,10 @@ namespace DashworksTestAutomation.Utils
                 #region Get all quarantined Tests 
                 var url = $"/browse/{BambooProvider.ProjAndBuild}-{BambooProvider.BuildNumber - 1}/test";
                 var request = new RestRequest(Method.GET) { Resource = url };
-                Logger.Write($"GetAllQuarantinedTests: {url}");
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json; charset=utf-8");
                 request.RequestFormat = DataFormat.Json;
                 IRestResponse response = client.Execute(request);
-
-                Logger.Write($"response: {response.StatusCode}");
 
                 HtmlDocument doc = new HtmlDocument();
                 string html = response.Content;
@@ -58,16 +55,15 @@ namespace DashworksTestAutomation.Utils
 
                 #endregion
 
-                if (_quarantinedTests != null)
-                    Logger.Write($"1 Quarantined tests: {String.Join(", ", testIdsWithNames.ToArray().Select(x => x.Value).ToArray())}");
-                else
-                    Logger.Write("1 There are not Quarantined tests!");
+                Logger.Write(testIdsWithNames != null
+                    ? $"Quarantined tests: {String.Join(", ", testIdsWithNames.ToArray().Select(x => x.Value).ToArray())}"
+                    : "There are not Quarantined tests!");
 
                 _quarantinedTests = testIdsWithNames;
             }
             catch (Exception e)
             {
-                Logger.Write($"_quarantinedTests will be empty: {e}");
+                Logger.Write($"Unable to get quarantined tests: {e}");
                 _quarantinedTests = null;
             }
         }
@@ -76,11 +72,6 @@ namespace DashworksTestAutomation.Utils
         {
             try
             {
-                if (_quarantinedTests != null)
-                    Logger.Write($"2 Quarantined tests: {String.Join(", ", _quarantinedTests.ToArray().Select(x => x.Value).ToArray())}");
-                else
-                    Logger.Write("2 There are not Quarantined tests!");
-
                 if (_quarantinedTests != null && _quarantinedTests.Any(x => x.Value.Equals(testName)))
                 {
                     RestClient client = GetClient();

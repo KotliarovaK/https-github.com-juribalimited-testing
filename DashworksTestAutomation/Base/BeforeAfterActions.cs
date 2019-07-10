@@ -34,12 +34,8 @@ namespace DashworksTestAutomation.Base
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            Logger.Write("BeforeTestRun");
             if (!Browser.RemoteDriver.Equals("local") && !string.IsNullOrEmpty(BambooProvider.BuildResultKey))
-            {
-                Logger.Write("Truing to get quarantined tests");
                 BambooUtil.GetAllQuarantinedTests();
-            }
         }
 
         [BeforeScenario]
@@ -79,13 +75,6 @@ namespace DashworksTestAutomation.Base
                     else if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
                     {
                         BambooUtil.UnleashTest(GetTestName());
-                    }
-
-                    if (GetTestName().Contains("EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects"))
-                    {
-                        Logger.Write($"testStatus: {testStatus}");
-                        BambooUtil.UnleashTest(GetTestName());
-                        Logger.Write($"Unleashed");
                     }
 
                     Logger.Write($"Closing window at: {driver.Url}");
