@@ -425,7 +425,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User select "Processing order" checkbox on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @DAS17290 @DAS17277 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS16764 @DAS16998 @DAS15757 @DAS15423 @DAS16936 @DAS17095 @DAS17083 @DAS16475 @DAS17290 @DAS17277 @DAS17336 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckDeleteAutomationFunctionality
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| All Devices      |
 	| 1803 Rollout     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -515,7 +515,11 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextFor
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then "[List not found]" content is displayed in the Scope Automation dropdown
-	When User clicks "Automations" navigation link on the Admin page
+	#Update after DAS-17336 fixed
+	#When User clicks "Actions" tab
+	#Then Edit Action page is displayed to the User
+	#When User clicks "Details" tab
+	When User clicks the "CANCEL" Action button
 	When User enters "DAS15423_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button

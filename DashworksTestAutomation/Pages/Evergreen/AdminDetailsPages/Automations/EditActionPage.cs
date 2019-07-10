@@ -9,15 +9,15 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 {
     internal class EditActionPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//h2[contains(text(), 'Edit Action')]")]
-        public IWebElement EditActionTitle { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button//span[text()='CREATE ACTION']")]
+        public IWebElement CreatActionButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.EditActionTitle)
+                SelectorFor(this, p => p.CreatActionButton)
             };
         }
     }

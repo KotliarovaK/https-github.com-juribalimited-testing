@@ -338,6 +338,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             return allFilters[GetColumnNumberByName(columnName) - 1];
         }
 
+        public IWebElement GetObjectTitle(string titleName)
+        {
+            var objectTitle = By.XPath($".//div[@class='title-container']//h1[text()='{titleName}']");
+            Driver.WaitForElementToBeDisplayed(objectTitle);
+            return Driver.FindElement(objectTitle);
+        }
+
         public IWebElement GetFillingFieldErrorByText(string text)
         {
             try
@@ -468,6 +475,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     Thread.Sleep(waitTime);
                     Driver.Navigate().Refresh();
                     Driver.WaitForDataLoading();
+                    Thread.Sleep(2000);
                 }
             }
             catch (Exception e)

@@ -101,3 +101,32 @@ Scenario: EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayed
 	| Address 4            | True         |
 	| State/County         | True         |
 	| Postal Code          | True         |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17180
+Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARightFormatWithAProjectIdAtTheEnd
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the "Device Owner" sub-menu on the Details page
+	And User clicks "QLL295118" link on the Details Page
+	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	And URL contains "user/23726/details/user"
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the "Device Owner" sub-menu on the Details page
+	And User clicks "QLL295118" link on the Details Page
+	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	And URL contains "user/23726/details/user?$projectId=43"
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	When User navigates to the "Applications" main-menu on the Details page
+	And User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
+	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
+	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	And URL contains "application/373/details/application?$projectId=43"
