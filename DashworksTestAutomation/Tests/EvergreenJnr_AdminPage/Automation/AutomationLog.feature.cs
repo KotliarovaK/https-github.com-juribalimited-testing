@@ -541,7 +541,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17374")]
         [NUnit.Framework.CategoryAttribute("DAS17370")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation()
         {
             System.Exception lastException = null;
@@ -577,8 +576,7 @@ this.FeatureBackground();
                         "DAS17011",
                         "DAS17374",
                         "DAS17370",
-                        "Delete_Newly_Created_List",
-                        "Not_Ready"});
+                        "Delete_Newly_Created_List"});
 #line 131
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

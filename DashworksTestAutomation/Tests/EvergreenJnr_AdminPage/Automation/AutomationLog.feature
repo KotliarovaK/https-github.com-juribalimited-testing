@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	When User enters "DELAY - do not delete2" text in the Search field for "Automation" column
 	Then "AUTOMATION IS ALREADY RUNNING" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17011 @DAS17374 @DAS17370 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17011 @DAS17374 @DAS17370 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
