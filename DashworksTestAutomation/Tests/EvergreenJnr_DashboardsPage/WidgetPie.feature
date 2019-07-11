@@ -105,7 +105,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	When User selects "Hostname" in the "Split By" Widget dropdown
 	When User selects "Count" in the "Aggregate Function" Widget dropdown
 	When User selects "Count ASC" in the "Order By" Widget dropdown
-	When User selects "Data Label" checkbox on the Create Widget page
+	When User selects "Show data labels" checkbox on the Create Widget page
 	Then Data Labels are displayed on the Dashboards page
 	Then "<DataLabel>" data label is displayed on the Dashboards page
 	When User clicks the "CREATE" Action button
@@ -115,7 +115,7 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
 	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	Then "Data Label" checkbox is checked on the Create Widget page
+	Then "Show data labels" checkbox is checked on the Create Widget page
 	Then Data Labels are displayed on the Dashboards page
 	Then "<DataLabel>" data label is displayed on the Dashboards page
 
@@ -170,7 +170,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User selects "Count" as Widget Aggregate Function
 	Then Aggregate By dropdown is disabled
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button

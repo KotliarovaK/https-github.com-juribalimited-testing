@@ -16,6 +16,13 @@ namespace DashworksTestAutomation.Steps.Projects
             _driver = driver;
         }
 
+        [Then(@"PMObject page for ""(.*)"" object is displayed to the user")]
+        public void ThenPMObjectPageForObjectIsDisplayedToTheUser(string objectName)
+        {
+            var page = _driver.NowAt<Projects_PMObjectPage>();
+            Assert.IsTrue(page.GetObjectOnPMObjectpageByName(objectName).Displayed(), $"Something went wrong. PMObject page for {objectName} object is not displayed!");
+        }
+
         [When(@"User navigate to ""(.*)"" tab on PMObject page")]
         public void WhenUserNavigateToTabOnPMObjectPage(string tabName)
         {

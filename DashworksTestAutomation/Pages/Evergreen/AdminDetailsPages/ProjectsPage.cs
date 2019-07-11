@@ -2,33 +2,36 @@
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
     internal class ProjectsPage : BaseGridPage
     {
+        public const string ExpandedScopeDropdownSection = ".//div[@role='listbox']";
+
         [FindsBy(How = How.XPath, Using = ".//a[text()='Administration']")]
         public IWebElement AdminPageTitle { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@aria-checked='false']")]
         public IWebElement UncheckedCheckbox { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'wrapper-disabled')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'wrapper-disabled')]")]
         public IWebElement DisabledAllAssociations { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]")]
+        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[contains(@class, 'mat-checkbox-disabled')]")]
         public IWebElement DisabledAssociation { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='ng-star-inserted']/div[@class='wrapper-outer']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='ng-star-inserted']/div[@class='wrapper-outer']")]
         public IWebElement UserScopeCheckboxes { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='wrapper-disabled']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='wrapper-disabled']")]
         public IWebElement ApplicationScopeCheckboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[@class='mat-option-text']")]
         public IWebElement DeleteProjectInActions { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//label[contains(@class, 'mat-form-field-empty')]")]
+        [FindsBy(How = How.XPath, Using = ".//label[contains(@class, 'mat-form-field-empty')]")]
         public IWebElement EmptyScopeField { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@title, 'Update')]")]
@@ -37,7 +40,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button[@title='Update All Changes']")]
         public IWebElement UpdateAllChangesButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@id='mode']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='mode']")]
         public IWebElement ModeProjectField { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@id='buckets']")]
@@ -55,53 +58,53 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = "//div[@class='mat-form-field-infix']/mat-select[@aria-disabled='false']")]
         public IWebElement ActiveScopeListDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@id='buckets']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='buckets']")]
         public IWebElement BucketDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Name']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Project Name']")]
         public IWebElement ProjectName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Short Name']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Project Short Name']")]
         public IWebElement ProjectShortName { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Description']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Project Description']")]
         public IWebElement ProjectDescription { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Project Type']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Project Type']")]
         public IWebElement ProjectType { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Default Language']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Default Language']")]
         public IWebElement DefaultLanguage { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Select Permission']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Select Permission']")]
         public IWebElement PermissionsDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@aria-label='Date']")]
+        [FindsBy(How = How.XPath, Using = ".//input[@aria-label='Date']")]
         public IWebElement DateFilterValue { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//span[text()='Application Scope']")]
+        [FindsBy(How = How.XPath, Using = ".//span[text()='Application Scope']")]
         public IWebElement ApplicationScopeTab { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='permissions']/admin-mailbox-permission/ul/li/button/span")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='permissions']/admin-mailbox-permission/ul/li/button/span")]
         public IWebElement AddMailboxPermissionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='form-container']/div/button/span[text()='ADD PERMISSION']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='form-container']/div/button/span[text()='ADD PERMISSION']")]
         public IWebElement AddPermissionsButtonInTab { get; set; }
 
         [FindsBy(How = How.XPath,
             Using = "//div[@class='permissions no-margin-bottom']/admin-mailbox-permission/ul/li/button/span")]
         public IWebElement AddMailboxFolderPermissionsButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Request Type']")]
-        public IWebElement RequestTypeDropdown { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Path']")]
+        public IWebElement PathDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@aria-label='Category']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@aria-label='Category']")]
         public IWebElement CategoryDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//mat-select[@id='readinessForOnboardedApplications']")]
+        [FindsBy(How = How.XPath, Using = ".//mat-select[@id='readinessForOnboardedApplications']")]
         public IWebElement DefaultReadinessDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'mat-tab-label-active')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'mat-tab-label-active')]")]
         public IWebElement ActiveTabOnScopeChangesSection { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='error-status-box']//span[contains(text(),'404')]")]
@@ -127,12 +130,12 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetDllPanelHeight()
         {
-            return Driver.FindElement(By.XPath("//div[@class='cdk-overlay-pane']")).GetCssValue("height");
+            return Driver.FindElement(By.XPath(".//div[@class='cdk-overlay-pane']")).GetCssValue("height");
         }
 
         public string GetDllPanelWidth()
         {
-            return Driver.FindElement(By.XPath("//div[@role='listbox']")).GetCssValue("width");
+            return Driver.FindElement(By.XPath(".//div[@role='listbox']")).GetCssValue("width");
         }
 
         public void NavigateToProjectTabByName(string tabName)
@@ -151,7 +154,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetsSelectedTabByName(string tabName)
         {
-            var button = By.XPath($"//div[contains(@class, 'item-selected')]//span[text()='{tabName}']");
+            var button = By.XPath($".//div[contains(@class, 'item-selected')]//span[text()='{tabName}']");
             Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
@@ -165,7 +168,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetTabByNameOnCapacityUnits(string tabName)
         {
-            var button = By.XPath($"//div[contains(@class, 'menuItems')]//span[text()='{tabName}']");
+            var button = By.XPath($".//div[contains(@class, 'menuItems')]//span[text()='{tabName}']");
             Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
@@ -187,7 +190,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void ClickAssociatedCheckbox(string checkboxName)
         {
             var tab = Driver.FindElement(
-                By.XPath($"//span[@class='mat-checkbox-label'][contains(text(), '{checkboxName}')]"));
+                By.XPath($".//span[@class='mat-checkbox-label'][contains(text(), '{checkboxName}')]"));
             tab.Click();
         }
 
@@ -207,7 +210,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetButtonOnWarningContainerByName(string linkName)
         {
-            var button = By.XPath($"//div[@class='mat-dialog-actions']//span[text()='{linkName}']/ancestor::button");
+            var button = By.XPath($".//div[@class='mat-dialog-actions']//span[text()='{linkName}']/ancestor::button");
             Driver.WaitForElementToBeDisplayed(button);
             return Driver.FindElement(button);
         }
@@ -237,19 +240,19 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void SelectPermissionsByName(string permissions)
         {
             var tab = Driver.FindElement(
-                By.XPath($"//mat-option/span[text()='{permissions}']"));
+                By.XPath($".//mat-option/span[text()='{permissions}']"));
             tab.Click();
         }
 
         public bool PermissionsDisplay(string permissions)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//li/span[text()='{permissions}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//li/span[text()='{permissions}']"));
         }
 
         public bool CheckboxesDisplay(string checkboxes)
         {
             return Driver.IsElementDisplayed(By.XPath(
-                $"//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
+                $".//mat-checkbox[contains(@class, 'checkbox-checked')]/label/span[contains(text(), '{checkboxes}')]"));
         }
 
         public bool ActiveProjectByName(string projectName)
@@ -285,13 +288,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         {
             if (filterName.Equals("Select All"))
             {
-                var selector = "//span[text()='Select All']";
+                var selector = ".//span[text()='Select All']";
                 Driver.WaitForElementToBeDisplayed(By.XPath(selector));
                 Driver.FindElement(By.XPath(selector)).Click();
             }
             else
             {
-                var filterSelector = $"//mat-option//div//span[text()='{filterName}']";
+                var filterSelector = $".//mat-option//div//span[text()='{filterName}']";
                 Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
                 Driver.FindElement(By.XPath(filterSelector)).Click();
             }
@@ -306,44 +309,44 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public void SelectProjectLanguage(string language)
         {
-            var listNameSelector = $"//span[@class='mat-option-text'][text()='{language}']";
+            var listNameSelector = $".//span[@class='mat-option-text'][text()='{language}']";
             Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
-        public IWebElement SelectRequestTypeByName(string requestTypeName)
+        public IWebElement SelectPathByName(string pathName)
         {
-            var requestTypeSelector = $"//mat-option/span[contains(text(), '{requestTypeName}')]";
+            var requestTypeSelector = $".//mat-option/span[contains(text(), '{pathName}')]";
             return Driver.FindElement(By.XPath(requestTypeSelector));
         }
 
-        public IWebElement GetRequestTypeOrCategory(string requestTypeName)
+        public IWebElement GetPathOrCategory(string pathTypeName)
         {
-            var requestTypeSelector = $"//mat-select//div//div//span[contains(text(), '{requestTypeName}')]";
-            return Driver.FindElement(By.XPath(requestTypeSelector));
+            var pathSelector = $".//mat-select//div//span[contains(text(), '{pathTypeName}')]";
+            return Driver.FindElement(By.XPath(pathSelector));
         }
 
         public IWebElement GetReadinessOptionByName(string colorName)
         {
-            var option = $"//mat-option[@role='option']//span[text()='{colorName}']";
+            var option = $".//mat-option[@role='option']//span[text()='{colorName}']";
             return Driver.FindElement(By.XPath(option));
         }
 
         public IWebElement SelectCategoryByName(string categoryName)
         {
-            var categorySelector = $"//mat-option/span[contains(text(), '{categoryName}')]";
+            var categorySelector = $".//mat-option/span[contains(text(), '{categoryName}')]";
             return Driver.FindElement(By.XPath(categorySelector));
         }
 
         public bool GetDisabledAssociationName(string associationName)
         {
             return Driver.IsElementDisplayed(
-                By.XPath($"//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
+                By.XPath($".//mat-checkbox[contains(@class, 'disabled')]/label/span[text()='{associationName}']"));
         }
 
         public bool GetCheckboxByName(string checkboxName)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//span[text()='{checkboxName}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//span[text()='{checkboxName}']"));
         }
 
         public bool SelectedTabInProjectScopeChangesSection(string tabName)
@@ -365,21 +368,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropDownByName(string name)
         {
-            var selector = By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
+            var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropdownContentByName(string name)
         {
-            var selector = By.XPath($"//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select//span/span");
+            var selector = By.XPath($".//span[@class='mat-form-field-label-wrapper']//label[text()='{name}']/ancestor::div/mat-select//span/span");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetLanguageMenuOptionByName(string option)
         {
-            var selector = By.XPath($"//div[@class='menu']//li[text()='{option}']");
+            var selector = By.XPath($".//div[@class='menu']//li[text()='{option}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -399,17 +402,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetdisabledCheckboxByName(string checkboxName)
         {
-            var selector = By.XPath($"//mat-checkbox[contains(@class, 'checkbox-disabled')]//span[text()='{checkboxName}']");
+            var selector = By.XPath($".//mat-checkbox[contains(@class, 'checkbox-disabled')]//span[text()='{checkboxName}']");
             return Driver.FindElement(selector);
         }
 
-        public IWebElement CorrectMainListsScopeDropdown(string checkboxName)
+        public IWebElement GetListByNameInScopeDropdown(string listName)
         {
-            var devices = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var users = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var mailboxes = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            var applications = By.XPath($".//mat-optgroup/label[contains(text(), 'Devices')]//parent::*//span[text()='All Devices']");
-            return Driver.FindElement(devices);
+            var selector = By.XPath($".//mat-optgroup//*[text()='{listName}']");
+            return Driver.FindElement(selector);
         }
     }
 

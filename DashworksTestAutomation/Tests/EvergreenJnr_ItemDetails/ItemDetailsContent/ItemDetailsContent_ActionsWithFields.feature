@@ -79,3 +79,54 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatLinksInMailboxDetailsAreRedirected
 	When User navigates to the "Mailbox Owner" sub-menu on the Details page
 	And User clicks "hartmajt" link on the Details Page
 	Then Details object page is displayed to the user
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17274 @API
+Scenario: EvergreenJnr_UserList_CheckThatDataDepartmentAndLocationTabIsDisplayedCorrectly
+	When I perform test request to the "Users" API and get "002B5DC7D4D34D5C895" item summary for "Department and Location" section
+	Then following fields are displayed with next state on Details tab API
+	| FieldName            | DisplayState |
+	| Department Name      | True         |
+	| Department Full Path | True         |
+	| Department Code      | True         |
+	| Cost Centre          | True         |
+	| Location Name        | True         |
+	| Region               | True         |
+	| Country              | True         |
+	| City                 | True         |
+	| Building Name        | True         |
+	| Floor                | True         |
+	| Address 1            | True         |
+	| Address 2            | True         |
+	| Address 3            | True         |
+	| Address 4            | True         |
+	| State/County         | True         |
+	| Postal Code          | True         |
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17180
+Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARightFormatWithAProjectIdAtTheEnd
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the "Device Owner" sub-menu on the Details page
+	And User clicks "QLL295118" link on the Details Page
+	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	And URL contains "user/23726/details/user"
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	And User navigates to the "Details" main-menu on the Details page
+	And User navigates to the "Device Owner" sub-menu on the Details page
+	And User clicks "QLL295118" link on the Details Page
+	Then Details page for "QLL295118 (Nicole P. Braun)" item is displayed to the user
+	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	And URL contains "user/23726/details/user?$projectId=43"
+	And User click back button in the browser
+	And Details page for "001BAQXT6JWFPI" item is displayed to the user
+	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	When User navigates to the "Applications" main-menu on the Details page
+	And User clicks "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" link on the Details Page
+	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
+	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
+	And URL contains "application/373/details/application?$projectId=43"

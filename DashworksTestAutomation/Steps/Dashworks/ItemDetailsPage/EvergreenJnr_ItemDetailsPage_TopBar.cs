@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen;
+using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Pages.Evergreen.ItemDetails;
 using NUnit.Framework;
 using OpenQA.Selenium.Remote;
@@ -53,10 +54,20 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
             action.GetOptionByName(projectName).Click();
         }
 
+        [Then(@"""(.*)"" project is selected in the Top bar on Item details page")]
+        public void ThenProjectIsSelectedInTheTopBarOnItemDetailsPage(string projectName)
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+            Assert.IsTrue(topBar.GetSelectedProjectOnTopBarByName(projectName).Displayed(), $"{projectName} project is not displayed in Top Bar");
+        }
+
         [Then(@"projects on the Project Switcher panel are displayed in alphabetical order")]
         public void ThenProjectsOnTheProjectSwitcherPanelAreDisplayedInAlphabeticalOrder()
         {
             var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+
+            topBar.ProjectSwitcherDropdownTopBar.Click();
+
             if (topBar.DefaultProjectStatusInProjectSwitcherDropDown.Displayed())
             {
                 var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();
@@ -67,6 +78,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
                 var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).Where(x => !x.Contains("Evergreen")).ToList();
                 Assert.AreEqual(list.OrderBy(s => s), list, "Projects on the Project Switcher panel are not in alphabetical order!");
             }
+
+            var filterElement = _driver.NowAt<BaseGridPage>();
+            filterElement.BodyContainer.Click();
         }
 
         [Then(@"following Compliance items are displayed in Top bar on the Item details page:")]
@@ -98,6 +112,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
 
             var actualList = topBar.GetComplianceItemsOnTopBar();
             Assert.IsEmpty(actualList, "Compliance items in Top bar on the Item details page is incorrect!");
+        }
+
+        [Then(@"Top bar on the Item details page is not displayed")]
+        public void ThenTopBarOnTheItemDetailsPageIsNotDisplayed()
+        {
+            var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
+
+            Assert.IsFalse(topBar.TopBarOnItemDetailsPage.Displayed(), "Top bar should not be displayed!");
         }
     }
 }

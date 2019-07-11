@@ -381,10 +381,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 preferencesPage.DisplayModeNormal.Click();
                 page.UpdateButton.Click();
                 page.NavigateToPage("Advanced");
-                //var advancedPage = _driver.NowAt<AdvancedPage>();
-                //advancedPage.ListPageSizeField.Clear();
-                //advancedPage.ListPageSizeField.SendKeys("0");
-                //advancedPage.UpdateButton.Click();
             }
             catch
             {

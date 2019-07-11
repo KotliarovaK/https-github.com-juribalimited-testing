@@ -43,5 +43,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
             Assert.IsTrue(page.GetEmptyFieldByName(fieldName).Displayed(), $"{fieldName} field is populated");
         }
+
+        [Then(@"""(.*)"" object name is displayed to the User")]
+        public void ThenObjectNameIsDisplayedToTheUser(string objectName)
+        {
+            var page = _driver.NowAtWithoutWait<BaseGridPage>();
+            Assert.IsTrue(page.GetObjectTitle(objectName).Displayed(), $"{objectName} is not displayed");
+        }
     }
 }

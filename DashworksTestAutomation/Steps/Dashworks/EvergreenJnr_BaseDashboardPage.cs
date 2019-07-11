@@ -155,16 +155,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForDataLoading();
 
-            new Actions(_driver)
-                .Click(searchElement.SearchEverythingField)
-                .SendKeys(OpenQA.Selenium.Keys.LeftControl + "v")
-                .KeyUp(OpenQA.Selenium.Keys.LeftControl)
-                .Perform();
+            _driver.InsertFromClipboard(searchElement.SearchEverythingField);
 
             Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
-
 
         [When(@"User click on '(.*)' column header")]
         public void WhenUserClickOnColumnHeader(string columnName)
@@ -614,7 +609,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
-                foundRowsCounter.ListRowsCounter.Text, "Incorrect rows count");
+                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
         }
 
         [Then(@"Error is displayed to the User")]
@@ -635,6 +630,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSwitchesToPreviousTab()
         {
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
+        }
+
+        [Then(@"Warning Pop-up is displayed to the User")]
+        public void ThenWarningPop_UpIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
+        }
+
+        [When(@"User clicks ""(.*)"" button in the Warning Pop-up message")]
+        public void WhenUserClicksButtonInTheWarningPop_UpMessage(string buttonName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetButtonInWarningPopUp(buttonName).Click();
         }
 
         [Then(@"Error page is displayed correctly")]

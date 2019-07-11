@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-#Use different Automation for tests
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
@@ -14,12 +13,35 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 030619 Devices 1" text in the Search field for "Automation" column
-	When User clicks content from "Automation" column
-	Then Edit Automation page is displayed to the User
-	When User clicks "Actions" tab
-	#Check Cog Menu for the first Action
-	When User clicks Cog-menu for "AM 030619 Action 1" item on Admin page
+	#Delete Creating Automation after gold data complete
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "Test_Automation_15427" Name in the "Automation Name" field on the Automation details page
+	When User type "15427" Name in the "Description" field on the Automation details page
+	When User selects "All Devices" in the Scope Automation dropdown
+	When User selects "Active" checkbox on the Automation Page
+	When User selects "Manual" in the "Run" dropdown
+	And User clicks the "CREATE" Action button
+	Then Create Action page is displayed to the User
+	When User type "15427_Action1" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE ACTION" Action button
+	When User type "15427_Action2" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	When User clicks the "CREATE" Action button
+	When User clicks the "CREATE ACTION" Action button
+	Then "Test_Automation_15427" object name is displayed to the User
+	When User type "15427_Action3" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
+	When User clicks the "CREATE" Action button
+	When User clicks Cog-menu for "15427_Action1" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -28,7 +50,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the second Action
-	When User clicks Cog-menu for "AM 030619 Action 2" item on Admin page
+	When User clicks Cog-menu for "15427_Action2" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -37,7 +59,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to position |
 	| Delete           |
 	#Check Cog Menu for the last Action
-	When User clicks Cog-menu for "15309_Action" item on Admin page
+	When User clicks Cog-menu for "15427_Action3" item on Admin page
 	Then User sees following cog-menu items on Admin page:
 	| items            |
 	| Edit             |
@@ -45,12 +67,13 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	| Move to bottom   |
 	| Move to position |
 	| Delete           |
-	When User clicks "Edit" option in Cog-menu for "AM 030619 Action 1" item on Admin page
+	When User clicks "Edit" option in Cog-menu for "15427_Action1" item on Admin page
 	Then Edit Action page is displayed to the User
 	Then "UPDATE" Action button is displayed
 	Then "CANCEL" Action button is displayed
+	Then "Test_Automation_15427" object name is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15427 @DAS15428 @DAS16728 @DAS16976 @DAS17067 @DAS16890 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
@@ -58,7 +81,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "QA Automation Users" text in the Search field for "Automation" column
+	When User enters "AM 110619 Devices" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
 	Then Actions dropdown is disabled
@@ -68,48 +91,65 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
 	When User selects "Undetermined" in the Path dropdown
-	And User clicks the "CREATE" Action button
+	Then "Undetermined" content is displayed in the Path Automation dropdown
+	When User clicks the "CREATE" Action button
+	#Then There are no errors in the browser console
 	Then Success message is displayed and contains "The automation action has been created" text
-	When User clicks "Move to top" option in Cog-menu for "15309_Action" item on Admin page
+	When User clicks "Move to top" option in Cog-menu for "AM 2897" item on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | 15309_Action       |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
+    | AM 2897            |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+    | Alex M2367         |
     | DAS15427_Action    |
-	When User clicks "Move to bottom" option in Cog-menu for "15309_Action" item on Admin page
+	When User clicks "Move to bottom" option in Cog-menu for "AM 2897" item on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	| 15309_Action       |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+	| Alex M2367         |
+    | DAS15427_Action    |
+	| AM 2897            |
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
 	And User clicks Column button on the Column Settings panel
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
-	When User move "15309_Action" item to "4" position on Admin page
+	When User move "AM 2897" item to "7" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	| 15309_Action       |
-	When User move "15309_Action" item to "1" position on Admin page
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+	| Alex M2367         |
+    | DAS15427_Action    |
+	| AM 2897            |
+	When User move "AM 2897" item to "1" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-	| 15309_Action       |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	When User move "15309_Action" item to "20" position on Admin page
+    | AM 2897            |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+    | Alex M2367         |
+    | DAS15427_Action    |
+	When User move "AM 2897" item to "20" position on Admin page
 	Then "Action" column content is displayed in the following order:
     | Items              |
-    | AM 030619 Action 1 |
-    | AM 030619 Action 2 |
-	| DAS15427_Action    |
-	| 15309_Action       |
+    | AM 110619 Action 2 |
+    | Alex M233          |
+    | AM 110619 Action 1 |
+    | Alex M45           |
+	| Alex M2367         |
+    | DAS15427_Action    |
+	| AM 2897            |
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
@@ -122,7 +162,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	When User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected action has been deleted" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15428 @DAS15938 @DAS17186 @DAS17057 @DAS17253 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
@@ -130,7 +170,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 110619 Devices" text in the Search field for "Automation" column
+	When User enters "AM 240619 Devices" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	When User clicks "Actions" tab
 	When User clicks the "CREATE ACTION" Action button
@@ -141,9 +181,14 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User type "15428_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "[Default (Application)]" in the Path dropdown
+	When User selects "Undetermined" in the Path dropdown
 	And User clicks the "CREATE" Action button
-	When User moves "15428_Action" action to "AM 030619 Mailbox Action 1" action
+	When User clicks the "CREATE ACTION" Action button
+	When User type "15428_Action" Name in the "Action Name" field on the Automation details page
+	Then Filling field error with "An action with this name already exists for this automation" text is displayed
+	When User clicks the "CANCEL" Action button
+	When User clicks "YES" button in the Warning Pop-up message
+	When User moves "15428_Action" action to "AM 240619 Devices Action 1" action
 	When User have opened column settings for "Action" column
 	And User clicks Column button on the Column Settings panel
 	And User select "Processing order" checkbox on the Column Settings panel
@@ -151,10 +196,12 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	Then numeric data in "Processing order" column is sorted in ascending order by default on the Admin page
 	Then "Action" column content is displayed in the following order:
 	| Items                      |
-	| AM 030619 Mailbox Action 1 |
+	| AM 240619 Devices Action 1 |
 	| 15428_Action               |
-	| AM 030619 Mailbox Action 2 |
-	| AM 1                       |
+	| AM 240619 Devices Action 2 |
+	When User click on 'Task or Field' column header
+	#Please uncomment step after DAS-17253 fixed
+	#Then There are no errors in the browser console
 	When User select "Action" rows in the grid
 	| SelectedRowsName |
 	| 15428_Action     |
@@ -195,7 +242,8 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
 	When User type "" Name in the "Automation Name" field on the Automation details page
-	Then Filling field error with "An Automation Name must be entered" text is displayed
+	When User type "" Name in the "Description" field on the Automation details page
+	Then Filling field error with "An automation name must be entered" text is displayed
 	When User type "Melbourne User" Name in the "Automation Name" field on the Automation details page
 	When User type "Melbourne users" Name in the "Description" field on the Automation details page
 	When User selects "Melbourne Users" in the Scope Automation dropdown
@@ -228,3 +276,37 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then "CANCEL" Action button is active
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @Not_Ready
+#Change value after gold data complete added
+Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User enters "DD Autimation" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	When User clicks "Actions" tab
+	When User enters "Action #2" text in the Search field for "Action" column
+	When User clicks content from "Action" column
+	Then Edit Action page is displayed to the User
+	Then "Action #2" content is displayed in "Action Name" field
+	Then "Machines" value is displayed in the "Path" dropdown for Automation
+	Then "Update path" text value is displayed in the "Action Type" dropdown
+	Then "UPDATE" Action button is disabled
+	Then "CANCEL" Action button is active
+	When User type "" Name in the "Action Name" field on the Automation details page
+	Then Filling field error with "An action name must be entered" text is displayed
+	Then "UPDATE" Action button is disabled
+	When User type "Action #2" Name in the "Action Name" field on the Automation details page
+	Then "UPDATE" Action button is disabled
+	When User type "TEST NEW" Name in the "Action Name" field on the Automation details page
+	Then "UPDATE" Action button is active
+	When User selects "1803 Rollout" in the Project dropdown
+	Then "UPDATE" Action button is disabled
+	Then "" value is displayed in the "Path" dropdown for Automation
+	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
+	When User clicks the "CANCEL" Action button
+	Then Warning Pop-up is displayed to the User
+	When User clicks "YES" button in the Warning Pop-up message
+	Then Actions page is displayed to the User

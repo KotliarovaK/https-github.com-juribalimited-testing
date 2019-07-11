@@ -67,7 +67,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement ActionsDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//mat-select[@role='listbox']//span[text()='Bulk Update Type']")]
-        public IWebElement RequestTypeDropdown { get; set; }
+        public IWebElement BulkUpdateTypeDropdown { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//textarea[@placeholder='Project']")]
         public IWebElement ProjectField { get; set; }
@@ -222,6 +222,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
                 "//div[contains(@class, 'actions-lists')]//i[contains(@class, 'mat-list')]/..//following-sibling::span[text()='All lists']")]
         public IWebElement AllListsIcon { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Owner']")]
+        public IWebElement OwnerDropDown { get; set; }
+
         #endregion
 
         [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'rowCount')]")]
@@ -331,8 +334,8 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//ul[@class='menu-settings']/li[@class='ng-star-inserted']")]
         public IList<IWebElement> CogMenuItems { get; set; }
 
-        [FindsBy(How = How.XPath, Using = "//input[@placeholder='Owner']")]
-        public IWebElement OwnerDropDown { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DateTime')]/span[contains(text(), ':')]")]
+        public IWebElement DateTimeColumnValue { get; set; }
 
         [FindsBy(How = How.XPath, Using = OptionsDllOnActionsPanel)]
         public IList<IWebElement> OptionsDll { get; set; }

@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = "//div[@class='cdk-overlay-pane small-dialogs-styling']")]
         public IWebElement MoveToPositionDialog { get; set; }
         
-        [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//input[contains(@placeholder, 'Move to position')]")]
+        [FindsBy(How = How.XPath, Using = ".//input[contains(@placeholder, 'Move to position')]")]
         public IWebElement MoveToPositionInput { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//*[@role='alert']//span[1]")]

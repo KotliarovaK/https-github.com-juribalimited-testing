@@ -104,7 +104,7 @@ Scenario: EvergreenJnr_AdminPage_CheckPositionOfContextMenuInGridForCapacityUnit
 	Then User sees context menu placed near "True" cell in the grid
 
 #Should be added one more beforeScenario to make Unassigned backed default again
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @Projects @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @Projects @DAS12948 @DAS13073 @DAS12999 @DAS13973 @Delete_Newly_Created_Project @Delete_Newly_Created_Bucket @VDO
 Scenario: EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
