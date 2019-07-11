@@ -36,20 +36,23 @@ namespace DashworksTestAutomation.Steps.API.Columns
 
             CheckFiltersCount(list, response);
 
-            var currentFilters = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
+            var currentColumns = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
 
             var expectedList = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
 
-            Assert.True(expectedList.All(x => currentFilters.Contains(x)));
+            foreach (ColumnDto columnDto in expectedList)
+            {
+                Assert.True(currentColumns.Contains(columnDto), $"Incorrect data for column with '{columnDto.Label}' name");
+            }
         }
 
         private void CheckFiltersCount(string list, IRestResponse response)
         {
-            var currentFilters = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
+            var currentColumns = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ColumnDto>>(response.Content);
 
             var expectedList = FileSystemHelper.ReadJsonListFromSystem<ColumnDto>($"Columns\\{list}.json");
 
-            Assert.AreEqual(expectedList.Count, currentFilters.Count, "Columns count are different");
+            Assert.AreEqual(expectedList.Count, currentColumns.Count, "Columns count are different");
         }
     }
 }

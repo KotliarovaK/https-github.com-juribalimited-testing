@@ -41,6 +41,11 @@ namespace DashworksTestAutomation.Steps.API.Filters
             var expectedList = FileSystemHelper.ReadJsonListFromSystem<FilterDto>($"Filters\\{list}.json");
 
             Assert.True(expectedList.All(x => currentFilters.Contains(x)));
+
+            foreach (FilterDto filterDto in expectedList)
+            {
+                Assert.True(currentFilters.Contains(filterDto), $"Incorrect data for filter with '{filterDto.ColumnName}' name");
+            }
         }
 
         private void CheckFiltersCount(string list, IRestResponse response)
