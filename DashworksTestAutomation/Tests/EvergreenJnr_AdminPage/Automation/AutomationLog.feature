@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @DAS17063 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @DAS17063 @DAS17364
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -23,7 +23,6 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User type "16890" Name in the "Description" field on the Automation details page
 	When User selects "All Devices" in the Scope Automation dropdown
 	When User selects "Active" checkbox on the Automation Page
-	When User selects "Stop on failed action" checkbox on the Automation Page
 	Then "CREATE" Action button is disabled
 	When User selects "Manual" in the "Run" dropdown
 	And User clicks the "CREATE" Action button
@@ -31,6 +30,12 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "16890Project" in the Project dropdown
 	When User selects "[Default (Computer)]" in the Path dropdown
+	And User clicks the "CREATE" Action button
+	When User clicks the "CREATE ACTION" Action button
+	When User type "New_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Undetermined" in the Path dropdown
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks "Projects" link on the Admin page
@@ -44,13 +49,19 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	And User selects "Run now" in the Actions
 	When User clicks the "RUN" Action button
 	When User clicks "RUN" button in the warning message on Admin page
-	Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
 	When User clicks String Filter button for "Action" column on the Admin page
-	When User selects "Select All" checkbox from String Filter with item list on the Admin page
+	When User selects "(Blanks)" checkbox from String Filter with item list on the Admin page
+	When User clicks String Filter button for "Action" column on the Admin page
+	When User selects "New_Action" checkbox from String Filter with item list on the Admin page
+	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "16890_Action" checkbox from String Filter with item list on the Admin page
-	Then "PROJECT DOES NOT EXIST" content is displayed for "Outcome" column
+	When User clicks String Filter button for "Action" column on the Admin page
+	When User selects "New_Action" checkbox from String Filter with item list on the Admin page
+	Then "SUCCESS" content is displayed for "Outcome" column
+	Then some data is displayed in the "Objects" column
 	When User clicks Reset Filters button on the Admin page
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
@@ -172,6 +183,8 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	Then Filling field error with "This list has errors" text is displayed
 	#DAS-17374
 	When User clicks the "CANCEL" Action button
+	When User clicks "Projects" link on the Admin page
+	When User clicks "Automations" link on the Admin page
 	When User enters "17011_Automation_1" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
 	Then Filling field error is not displayed

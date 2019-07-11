@@ -1462,7 +1462,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
         {
             var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateProjectButton);
+            _driver.WaitForElementToBeEnabled(page.CreateProjectButton);
             _driver.ClickByJavascript(page.CreateProjectButton);
             _driver.WaitForDataLoading();
             Logger.Write("Create Project button was clicked");
