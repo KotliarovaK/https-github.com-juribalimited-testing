@@ -237,6 +237,9 @@ namespace DashworksTestAutomation.Helpers
                 case "MigrationP: Readiness":
                     return "project_34_ragStatus";
 
+                case "Secure Boot Enabled":
+                    return "secureBootEnabled";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

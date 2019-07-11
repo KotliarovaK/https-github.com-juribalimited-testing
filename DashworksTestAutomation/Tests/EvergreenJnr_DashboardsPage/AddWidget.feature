@@ -78,3 +78,23 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 	Then "Aggregate Function" dropdown is missing
 	And "Aggregate By" dropdown is missing
 
+@Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
+	| Secure Boot Enabled |
+	And User create dynamic list with "List16958" name on "Devices" page
+	And Dashboard with "Dashboard for DAS16958" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User adds new Widget
+	| WidgetType | Title             | List      | SplitBy             | AggregateBy | AggregateFunction | OrderBy                 | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
+	| Bar        | WidgetForDAS16958 | List16958 | Secure Boot Enabled | Device Type | Count distinct    | Secure Boot Enabled ASC |                  | 10        | true       |      |           |        |
+	And User clicks the "CREATE" Action button
+	And Dashboard page loaded
+	And User lists were removed by API
+	And User clicks refresh button in the browser
+	And Dashboard page loaded
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks edit option for broken widget on Dashboards page
+	Then Message saying that list is unavailable appears in Edit Widget page

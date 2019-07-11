@@ -31,11 +31,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFollowingDashboardDisplayedInAllDashboardList(string dashboardName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
-            var currentList = page.AllDashboards.Select(title => title.Text).ToList();
+            var currentList = page.AllDashboardsInPanel.Select(title => title.Text).ToList();
 
-            Assert.That(page.AllDashboards.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
+            Assert.That(page.AllDashboardsInPanel.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
         }
-
+        
         [When(@"User clicks Settings button for ""(.*)"" dashboard")]
         public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
         {
@@ -545,6 +545,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.GetEllipsisMenuForWidget(widgetName).Click();
             page.EllipsisMenuItems.Select(x => x).Where(c => c.Text.Equals("Delete")).FirstOrDefault().Click();
             page.DeleteButtonInAlert.Click();
+        }
+
+        [When(@"User clicks edit option for broken widget on Dashboards page")]
+        public void WhenUserClicksEditWidgetOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementToBeDisplayed(page.EditButtonInAlert);
+            page.EditButtonInAlert.Click();
         }
 
         [When(@"User confirms item deleting on Dashboards page")]
@@ -1260,16 +1268,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
 
-        #endregion
+        [When(@"Dashboard page loaded")]
+        public void ThenUserSeesDashboardPageOpened()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementToBeDisplayed(page.EditModeOnOffTrigger);
+            _driver.WaitForDataLoading();
+        }
 
+        #endregion
 
         private string GetDashboardId(string dashboardName)
         {
-            var dashboardId =
+            return
                 DatabaseHelper.ExecuteReader(
                     $"select [DashboardId] from [desktopBI].[dbo].[EvergreenDashboards] where [DashboardName] = '{dashboardName}'",
                     0).LastOrDefault();
-            return dashboardId;
         }
     }
 }

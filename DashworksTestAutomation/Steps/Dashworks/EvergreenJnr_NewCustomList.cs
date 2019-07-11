@@ -550,6 +550,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.CloseButton.Click();
         }
 
+        [When(@"User lists were removed by API")]
+        public void WhenUserListsRemovedByApi()
+        {
+            DeleteAllCustomListsAfterScenarioRun();
+        }
+
         [AfterScenario("Delete_Newly_Created_List")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
