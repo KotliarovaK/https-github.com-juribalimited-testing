@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using DashworksTestAutomation.Providers;
+using RestSharp;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -24,6 +26,17 @@ namespace DashworksTestAutomation.Extensions
             {
                 return null;
             }
+        }
+
+        public static RestRequest GenerateRequest(this string requestUri)
+        {
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            return request;
         }
     }
 }

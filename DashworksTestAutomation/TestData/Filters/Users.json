@@ -5397,27 +5397,6 @@
     "options": null
   },
   {
-    "translatedColumnName": "1803: Information",
-    "columnName": "project_stage_63_393_stageValue",
-    "translatedCategory": "Project Stages: 1803",
-    "category": "ProjectStage-1803",
-    "categoryOrder": 8,
-    "displayType": "Readiness",
-    "displayOrder": 1,
-    "default": false,
-    "visible": true,
-    "hideOnColumns": false,
-    "hideOnRowGroups": false,
-    "hideOnValues": false,
-    "key": null,
-    "uRL": null,
-    "tooltip": null,
-    "dataType": "String",
-    "sortOrder": "ReadinessCompliance",
-    "sortByField": "SORTproject_stage_63_393_stageValue",
-    "options": null
-  },
-  {
     "translatedColumnName": "Babel(Engl: Object ID",
     "columnName": "project_46_objectId",
     "translatedCategory": "Project: Babel(Engl",
