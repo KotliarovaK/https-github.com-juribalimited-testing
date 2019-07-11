@@ -543,6 +543,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsA
 	And User clicks "See Translations" link on the Capacity Slot page
 	Then "CheckName" is displayed in Display Name field for "German" Language in Translations table on the Capacity Slot page
 	When User clicks "Capacity" tab
+	#You have unsaved changes. Are you sure you want to leave the page?
 	And User clicks "Details" tab
 	And User opens menu for selected language
 	Then User selects "Remove" option for selected language
@@ -825,7 +826,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Projec
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
@@ -1402,9 +1403,11 @@ Scenario Outline: EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCountersOfMailPr
 	And Values is displayed in added filter info
 	| Values     |
 	| Unassigned |
+	| Offboarded |
 	And Options is displayed in added filter info
 	| Values |
 	| is     |
+	| is not |
 
 Examples:
 	| ListName  |
