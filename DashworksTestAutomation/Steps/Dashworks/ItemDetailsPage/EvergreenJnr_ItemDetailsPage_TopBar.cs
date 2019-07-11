@@ -66,6 +66,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         {
             var topBar = _driver.NowAt<ItemDetails_TopBarPage>();
 
+            topBar.ProjectSwitcherDropdownTopBar.Click();
+
             if (topBar.DefaultProjectStatusInProjectSwitcherDropDown.Displayed())
             {
                 var list = topBar.ProjectsOnSwitcherPanel.Select(x => x.Text).ToList();

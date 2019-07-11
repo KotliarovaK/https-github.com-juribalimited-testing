@@ -1537,11 +1537,9 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectsInTheTopBarOnItemDetail
 	And User click content from "<ColumnName>" column
 	Then Details page for "<ItemName>" item is displayed to the user
 	Then Project Switcher in the Top bar on Item details page is closed
-	When User clicks by Project Switcher in the Top bar on Item details page
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 	When User switches to the "<ProjectName>" project in the Top bar on Item details page
 	Then Project Switcher in the Top bar on Item details page is closed
-	When User clicks by Project Switcher in the Top bar on Item details page
 	Then projects on the Project Switcher panel are displayed in alphabetical order
 
 Examples:
