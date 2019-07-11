@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
-using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Pages;
-using DashworksTestAutomation.Pages.Evergreen;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
-using DashworksTestAutomation.Pages.Evergreen.Dashboards;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
@@ -466,6 +461,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             Assert.AreEqual(items.Rows.SelectMany(row => row.Values).ToList(),
                 page.GetDropdownOptions().Select(p => p.Text), "Incorrect options in lists dropdown");
+        }
+
+        [Then(@"Message saying that list is unavailable appears in Edit Widget page")]
+        public void ThenMessageIsDisplayedInTheListsPanel()
+        {
+            var listElement = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForElementToBeDisplayed(listElement.ListDoesntExistMessage);
         }
     }
 }
