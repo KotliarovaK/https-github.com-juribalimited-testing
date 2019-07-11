@@ -130,3 +130,351 @@ Scenario: EvergreenJnr_DevicesList_CheckThatTheLinkCanBeOpenedAndTheLinkHasARigh
 	Then Details page for "Microsoft Internet Explorer 6.0 MUI Pack (Greek) - Menus and Dialogs" item is displayed to the user
 	And "Havoc (Big Data)" project is selected in the Top bar on Item details page
 	And URL contains "application/373/details/application?$projectId=43"
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS12883 @DAS13208 @DAS13478 @DAS13971 @DAS13892 @DAS16824 @DAS17093 @Delete_Newly_Created_Bucket
+Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly
+	When User clicks Admin on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Evergreen" link on the Admin page
+	When User clicks "Buckets" tab
+	Then "Buckets" page should be displayed to the user
+	When User clicks the "CREATE EVERGREEN BUCKET" Action button
+	Then "Create Evergreen Bucket" page should be displayed to the user
+	When User enters "Bucket12883" in the "Bucket Name" field
+	And User selects "My Team" team in the Team dropdown on the Buckets page
+	And User clicks the "CREATE" Action button
+	Then Success message is displayed and contains "The bucket has been created" text
+	#============================================================================#
+		#go to Devices page
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "01ERDGD48UDQKE"
+	And User click content from "Hostname" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User clicks on "Unassigned" link for Evergreen Bucket field
+	Then popup changes window opened
+	And User clicks on "New Bucket" dropdown
+	When User select "Bucket12883" value on the Details Page
+	And User opens "Related Users" section on the Details Page
+	And User selects all rows on the grid on the Details Page for "Related Users"
+	And User clicks the "UPDATE" Action button
+	Then "Bucket12883" link is displayed on the Details Page
+	And There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "Bucket12883" link on the Details Page
+	Then popup changes window opened
+	When User selects all rows on the grid on the Details Page for "Related Users"
+	Then User clicks on "New Bucket" dropdown
+	When User select "[Unassigned]" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	And There are no errors in the browser console
+	#============================================================================#
+		#go to Users page
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "00DBB114BE1B41B0A38"
+	And User click content from "Username" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User clicks on "Unassigned" link for Evergreen Bucket field
+	Then popup changes window opened
+	When User opens "Related Mailboxes" section on the Details Page
+	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
+	Then User clicks on "New Bucket" dropdown
+	When User select "Bucket12883" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Bucket12883" link is displayed on the Details Page
+	And There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "Bucket12883" link on the Details Page
+	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
+	Then User clicks on "New Bucket" dropdown
+	When User select "[Unassigned]" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	And There are no errors in the browser console
+	#============================================================================#
+		#go to Mailboxes page
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "0845467C65E5438D83E@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User clicks on "Unassigned" link for Evergreen Bucket field
+	Then popup changes window opened
+	When User opens "Related Users" section on the Details Page
+	And User selects all rows on the grid on the Details Page for "Related Users"
+	Then User clicks on "New Bucket" dropdown
+	When User select "Bucket12883" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Bucket12883" link is displayed on the Details Page
+	And There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "Bucket12883" link on the Details Page
+	Then popup changes window opened
+	When User selects all rows on the grid on the Details Page for "Related Users"
+	Then User clicks on "New Bucket" dropdown
+	When User select "[Unassigned]" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	And There are no errors in the browser console
+	
+@Evergreen @AllLists @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13208 @DAS13971 @DAS13892 @DAS13892 @Delete_Newly_Created_Capacity_Unit
+Scenario: EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly
+	When User creates new Capacity Unit via api
+	| Name              | Description | IsDefault |
+	| CapacityUnit12883 | Devices     | false     |
+	#============================================================================#
+		#go to Devices page
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "ZZNKKYW97AL4VS"
+	And User click content from "Hostname" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
+	Then popup changes window opened
+	When User opens "Related Users" section on the Details Page
+	And User selects all rows on the grid on the Details Page for "Related Users"
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	And There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	When User selects all rows on the grid on the Details Page for "Related Users"
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "[Unassigned]" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	And There are no errors in the browser console
+	#============================================================================#
+		#go to Users page
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "00DBB114BE1B41B0A38"
+	And User click content from "Username" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
+	Then popup changes window opened
+	When User opens "Related Mailboxes" section on the Details Page
+	And User selects all rows on the grid on the Details Page for "Related Mailboxes"
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	And There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	When User selects all rows on the grid on the Details Page for "Related Mailboxes"
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "[Unassigned]" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	And There are no errors in the browser console
+	#============================================================================#
+		#go to Mailboxes page
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "0845467C65E5438D83E@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details object page is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User clicks on "Unassigned" link for Evergreen Capacity Unit field
+	Then popup changes window opened
+	When User opens "Related Users" section on the Details Page
+	And User selects all rows on the grid on the Details Page for "Related Users"
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "CapacityUnit12883" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "CapacityUnit12883" link is displayed on the Details Page
+	And There are no errors in the browser console
+		#backs the Evergreen Bucket and Capacity Unit to default value
+	When User clicks on "CapacityUnit12883" link on the Details Page
+	Then popup changes window opened
+	When User selects all rows on the grid on the Details Page for "Related Users"
+	Then User clicks on "New Capacity Unit" dropdown
+	When User select "[Unassigned]" value on the Details Page
+	And User clicks the "UPDATE" Action button
+	Then "Unassigned" link is displayed on the Details Page
+	And There are no errors in the browser console
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS13679 @DAS14216 @DAS14923 @DAS17093 @DAS17093 @DAS17236
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectSummarySectionIsDisplayedSuccessfully
+	When User clicks "<ListName>" on the left-hand menu
+	Then "<ListName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User clicks content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Evergreen Details" sub-menu on the Details page
+	Then field with "Project Count" text is displayed in expanded tab on the Details Page
+	And field with "Evergreen Bucket" text is displayed in expanded tab on the Details Page
+	And field with "Evergreen Capacity Unit" text is displayed in expanded tab on the Details Page
+	And field with "Evergreen Ring" text is displayed in expanded tab on the Details Page
+	And There are no errors in the browser console
+
+Examples:
+	| ListName  | ItemName                         | ColumnName    |
+	| Devices   | 00HA7MKAVVFDAV                   | Hostname      |
+	| Users     | 0072B088173449E3A93              | Username      |
+	| Mailboxes | 000F977AC8824FE39B8@bclabs.local | Email Address |
+
+@Evergreen @DevicesLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14973
+Scenario: EvergreenJnr_DevicesList_CheckDeviceTabUIOnTheDeviceDetails
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User click content from "Hostname" column
+	When User navigates to the "Details" main-menu on the Details page
+	Then "Key" title matches the "9141" value
+	Then following content is displayed on the Details Page
+	| Title                     | Value           |
+	| Hostname                  | 001BAQXT6JWFPI  |
+	| Source                    | A01 SMS (Spoof) |
+	| Source Type               | SMS/SCCM 2007   |
+	| Inventory Site            | A01             |
+	Then empty value is displayed for "Dashworks First Seen Date" field on the Details Page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15889 @DAS16378
+Scenario: EvergreenJnr_DevicesList_CheckThatCommonNameFieldIsDisplayedInTheComputerAdObjectSection
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "00OMQQXWA1DRI6"
+	And User click content from "Hostname" column
+	Then Details page for "00OMQQXWA1DRI6" item is displayed to the user
+	When User navigates to the "Active Directory" main-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields                          |
+	| Directory Type                  |
+	| Domain                          |
+	| Fully Distinguished Object Name |
+	| Common Name                     |
+	| Display Name                    |
+	| Description                     |
+	Then "00OMQQXWA1DRI6" content is displayed in "Common Name" field on Item Details page
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16859
+Scenario: EvergreenJnr_DevicesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForDeviceObjects
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Team              |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Device Owner      |
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16858 @DAS17160 @DAS17325
+Scenario: EvergreenJnr_UsersList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForUserObjects
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	And User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields           |
+	| Object ID        |
+	| Team             |
+	| Capacity Unit    |
+	| Bucket           |
+	| Ring             |
+	| Self Service URL |
+	| Readiness        |
+	| Path             |
+	| Category         |
+	| Tags             |
+	| Primary Device   |
+	| Language         |
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16861 @DAS17158
+Scenario: EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by ""WPF/E" (codename) Community Technology Preview (Feb 2007)"
+	And User click content from "Application" column
+	Then Details page for ""WPF/E" (codename) Community Technology Preview (Feb 2007)" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields              |
+	| Object ID           |
+	| Team                |
+	| Capacity Unit       |
+	| Overall Readiness   |
+	| App Readiness       |
+	| Primary App         |
+	| App Rationalisation |
+	| Target App          |
+	| Hide From End Users |
+	| Path                |
+	| Category            |
+	| Tags                |
+
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16829 @DAS16957
+Scenario: EvergreenJnr_MailboxesList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForMailboxObjects
+	When User clicks "Mailboxes" on the left-hand menu
+	Then "Mailboxes" list should be displayed to the user
+	When User perform search by "00A5B910A1004CF5AC4@bclabs.local"
+	And User click content from "Email Address" column
+	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
+	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following fields are displayed in the open section:
+	| Fields            |
+	| Object ID         |
+	| Capacity Unit     |
+	| Bucket            |
+	| Ring              |
+	| Self Service URL  |
+	| Overall Readiness |
+	| Path              |
+	| Category          |
+	| Tags              |
+	| Mailbox Owner     |
+	| Language          |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17007
+Scenario: EvergreenJnr_AllLists_CheckThatSelfServiceUrlIsNotDisplayedOnObjectDetailsPageEvenWhenItsDisabledInProjectManagement
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User switches to the "Devices Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then field with "Self Service URL" text is not displayed in expanded tab on the Details Page
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "0072B088173449E3A93"
+	And User click content from "Username" column
+	Then Details page for "0072B088173449E3A93" item is displayed to the user
+	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then field with "Self Service URL" text is displayed in expanded tab on the Details Page
