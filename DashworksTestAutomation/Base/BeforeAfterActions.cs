@@ -77,13 +77,6 @@ namespace DashworksTestAutomation.Base
                         BambooUtil.UnleashTest(GetTestName());
                     }
 
-                    if (GetTestName().Contains("EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects"))
-                    {
-                        Logger.Write($"testStatus: {testStatus}");
-                        BambooUtil.UnleashTest(GetTestName());
-                        Logger.Write($"Unleashed");
-                    }
-
                     Logger.Write($"Closing window at: {driver.Url}");
                 }
                 catch (Exception e)

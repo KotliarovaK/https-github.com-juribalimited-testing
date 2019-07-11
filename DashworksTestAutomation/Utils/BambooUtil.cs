@@ -30,9 +30,8 @@ namespace DashworksTestAutomation.Utils
                 RestClient client = GetClient();
 
                 #region Get all quarantined Tests 
-                var url = $"/browse/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber - 1}/test";
+                var url = $"/browse/{BambooProvider.ProjAndBuild}-{BambooProvider.BuildNumber - 1}/test";
                 var request = new RestRequest(Method.GET) { Resource = url };
-                Logger.Write($"GetAllQuarantinedTests: {url}");
                 request.AddHeader("Accept", "application/json");
                 request.AddHeader("Content-Type", "application/json; charset=utf-8");
                 request.RequestFormat = DataFormat.Json;
@@ -50,15 +49,21 @@ namespace DashworksTestAutomation.Utils
                 {
                     var id = node.GetAttributeValue("href", null).Split('/').Last();
                     var name = node.InnerText;
+                    Logger.Write($"ADDED new test: {id}: {name}");
                     testIdsWithNames.Add(new KeyValuePair<string, string>(id, name));
                 }
 
                 #endregion
 
+                Logger.Write(testIdsWithNames != null
+                    ? $"Quarantined tests: {String.Join(", ", testIdsWithNames.ToArray().Select(x => x.Value).ToArray())}"
+                    : "There are not Quarantined tests!");
+
                 _quarantinedTests = testIdsWithNames;
             }
-            catch
+            catch (Exception e)
             {
+                Logger.Write($"Unable to get quarantined tests: {e}");
                 _quarantinedTests = null;
             }
         }
@@ -73,7 +78,7 @@ namespace DashworksTestAutomation.Utils
 
                     var testId = _quarantinedTests.First(x => x.Value.Equals(testName)).Key;
                     var url =
-                        $"/rest/api/latest/plan/{BambooProvider.ProjectKey}-{BambooProvider.BuildNumber}/test/{testId}/unleash";
+                        $"/rest/api/latest/plan/{BambooProvider.ProjAndBuild}-{BambooProvider.BuildNumber}/test/{testId}/unleash";
                     var request = new RestRequest(Method.POST)
                     {
                         Resource = url

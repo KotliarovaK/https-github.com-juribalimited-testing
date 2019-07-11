@@ -13,7 +13,6 @@ namespace DashworksTestAutomation.Providers
         public static string BaseUrl => "https://panda.corp.juriba.com";
         public static readonly string Username = ConfigurationManager.AppSettings["bamboo.username"];
         public static readonly string Password = ConfigurationManager.AppSettings["bamboo.password"];
-        public static readonly string ProjectKey = ConfigurationManager.AppSettings["bamboo.projectKey"];
         public static readonly string BuildResultKey = ConfigurationManager.AppSettings["bamboo.buildResultKey"];
         public static int BuildNumber
         {
