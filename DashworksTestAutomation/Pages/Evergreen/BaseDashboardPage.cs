@@ -302,7 +302,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']/ancestor::mat-select")]
         public IWebElement CreateActionButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span")]
+        [FindsBy(How = How.XPath, Using = ".//div[@class='list-selected']/span[contains(@class,'name')]")]
         public IWebElement ActiveCustomList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-viewport']//div[@role='row']")]
@@ -612,7 +612,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string ActiveCustomListName()
         {
             var by = By.XPath(
-                ".//div[@class='active-list-wrapper ng-star-inserted']/ul/li/span");
+                ".//div[@class='list-selected']/span[contains(@class,'name')]");
             Driver.WaitForElement(by);
             return Driver.FindElement(by).Text;
         }
