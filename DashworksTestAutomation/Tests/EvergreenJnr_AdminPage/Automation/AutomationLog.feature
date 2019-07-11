@@ -127,7 +127,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	When User enters "DELAY - do not delete2" text in the Search field for "Automation" column
 	Then "AUTOMATION IS ALREADY RUNNING" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17011 @DAS17374 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17011 @DAS17374 @DAS17370 @Delete_Newly_Created_List @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -142,6 +142,15 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User type "17011_Automation" Name in the "Automation Name" field on the Automation details page
 	When User type "17011" Name in the "Description" field on the Automation details page
 	When User selects "17011_List" in the Scope Automation dropdown
+	When User selects "Manual" in the "Run" dropdown
+	When User selects "Active" checkbox on the Automation Page
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "17011_Automation_1" Name in the "Automation Name" field on the Automation details page
+	When User type "17011_1" Name in the "Description" field on the Automation details page
+	When User selects "All Devices" in the Scope Automation dropdown
 	When User selects "Manual" in the "Run" dropdown
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
@@ -163,8 +172,13 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	Then Filling field error with "This list has errors" text is displayed
 	#DAS-17374
 	When User clicks the "CANCEL" Action button
+	When User enters "17011_Automation_1" text in the Search field for "Automation" column
+	When User clicks content from "Automation" column
+	Then Filling field error is not displayed
+	When User clicks the "CANCEL" Action button
 	When User clicks "Run now" option in Cog-menu for "17011_Automation" item on Admin page
 	When User selects "Automation Log" tab on the Project details page
+	When User clicks refresh button in the browser
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
