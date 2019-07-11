@@ -359,9 +359,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Application Issues  |
 	#================ checks counters ================#
 	Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
-	Then "Hardware Rules" tab is displayed on left menu on the Details page and contains count of items
 	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	#Ann.Ilchenko 7/11/19: waiting for an error response
+	#Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 
 	#remove hash when the functionality will be implemented
@@ -446,9 +447,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	| Application Issues  |
 	#================ checks counters ================#
 	Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
-	Then "Hardware Rules" tab is displayed on left menu on the Details page and contains count of items
 	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
+	#Ann.Ilchenko 7/11/19: waiting for an error response
+	#Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 
 	#remove hash when the functionality will be implemented
