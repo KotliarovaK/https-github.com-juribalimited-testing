@@ -1152,6 +1152,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11483")]
+        [NUnit.Framework.CategoryAttribute("DAS17352")]
+        [NUnit.Framework.CategoryAttribute("DAS17281")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection()
         {
@@ -1188,6 +1190,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
                         "DAS11483",
+                        "DAS17352",
+                        "DAS17281",
                         "Not_Run"});
 #line 283
 this.ScenarioInitialize(scenarioInfo);

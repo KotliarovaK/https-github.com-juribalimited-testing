@@ -278,8 +278,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxD
 	Then Item content is displayed to the User
 	And There are no errors in the browser console
 
-	#Ann.Ilchenko 7/11/19: waiting for an error response
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @Not_Run
+	#upd Ann.Ilchenko 7/12/19: awaiting automation server update
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @DAS17352 @DAS17281 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

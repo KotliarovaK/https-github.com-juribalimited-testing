@@ -1648,6 +1648,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16829")]
         [NUnit.Framework.CategoryAttribute("DAS16861")]
         [NUnit.Framework.CategoryAttribute("DAS17158")]
+        [NUnit.Framework.CategoryAttribute("DAS17239")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectDetailsDefaultViewIsDisplayedCorrectlyForApplicationObjects()
         {
             System.Exception lastException = null;
@@ -1684,7 +1685,8 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS16829",
                         "DAS16861",
-                        "DAS17158"});
+                        "DAS17158",
+                        "DAS17239"});
 #line 413
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
