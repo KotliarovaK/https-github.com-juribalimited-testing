@@ -56,6 +56,7 @@ namespace DashworksTestAutomation.Utils
             var reader = new StreamReader(fullPath);
             string myJson = reader.ReadToEnd();
             return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(myJson);
+        }
 
         public static string GetLastFileWithNameContains(string partOfFileName)
         {
