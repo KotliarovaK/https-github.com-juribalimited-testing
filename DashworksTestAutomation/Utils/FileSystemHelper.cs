@@ -73,7 +73,7 @@ namespace DashworksTestAutomation.Utils
 
             return file;
         }
-        
+
         public static string WaitForFileWithNameContainingToBeDownloaded(string partOfFileName, int attempts = 15)
         {
             var directory = new DirectoryInfo(GetPathForDownloadsFolder());
@@ -89,12 +89,6 @@ namespace DashworksTestAutomation.Utils
             throw new Exception($"File containing '{partOfFileName}' name was not downloaded in {attempts} seconds");
         }
 
-        public static string GetPathForDownloadsFolder()
-        {
-            var downloadFolder = ConfigurationManager.AppSettings["downloadsFolder"];
-            return downloadFolder.Equals("DEFAULT_DOWNLOADS_FOLDER") ? Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\Downloads") : downloadFolder;
-        }
-
         private static bool IsFolderContainsFileContainingName(DirectoryInfo directory, string partOfFileName)
         {
             return directory.GetFiles()
@@ -102,20 +96,10 @@ namespace DashworksTestAutomation.Utils
                 .Any(x => x.Name.Contains(partOfFileName));
         }
 
-        public static string GetLastFileWithNameContains(string partOfFileName)
+        public static string GetPathForDownloadsFolder()
         {
-            var directory = new DirectoryInfo(GetPathForDownloadsFolder());
-
-            if (!IsFolderContainsFileContainingName(directory, partOfFileName))
-            {
-                throw new Exception($"File containing '{partOfFileName}' name was not found");
-            }
-
-            var file = directory.GetFiles()
-                .OrderByDescending(f => f.LastWriteTime)
-                .First(x => x.Name.Contains(partOfFileName)).FullName;
-
-            return file;
+            var downloadFolder = ConfigurationManager.AppSettings["downloadsFolder"];
+            return downloadFolder.Equals("DEFAULT_DOWNLOADS_FOLDER") ? Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\Downloads") : downloadFolder;
         }
     }
 }
