@@ -293,6 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             listElement.SaveAsDropdown.Click();
             _driver.WaitForElementToBeDisplayed(listElement.UpdateCurrentListButton);
+            _driver.WaitForElementToBeEnabled(listElement.UpdateCurrentListButton);
             listElement.UpdateCurrentListButton.Click();
         }
 
