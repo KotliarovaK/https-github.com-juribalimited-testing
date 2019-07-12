@@ -305,7 +305,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@name='createActions']/div[@class='mat-select-trigger']/ancestor::mat-select")]
         public IWebElement CreateActionButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='list-selected']/span[contains(@class,'name')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'active-list')]//span[contains(@class,'name')]")]
         public IWebElement ActiveCustomList { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'ag-body-viewport')]//div[@class='ag-center-cols-viewport']//div[@role='row']")]
