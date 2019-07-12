@@ -293,6 +293,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             listElement.SaveAsDropdown.Click();
             _driver.WaitForElementToBeDisplayed(listElement.UpdateCurrentListButton);
+            _driver.WaitForElementToBeEnabled(listElement.UpdateCurrentListButton);
             listElement.UpdateCurrentListButton.Click();
         }
 
@@ -385,7 +386,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
 
             listElement.ClickSettingsButtonByListName(listName);
-            _driver.WaitForElementToBeDisplayed(listElement.DuplicateButton);
+            _driver.WaitForElementToBeDisplayed(listElement.ManageButton);
             listElement.ManageButton.Click();
         }
 
@@ -410,6 +411,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             page.GetListElementByName(listName).Click();
+            _driver.ClickByJavascript(page.GetListElementByName(listName));
             _driver.WaitForDataLoading();
         }
 
@@ -547,6 +549,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var listElement = _driver.NowAt<CustomListElement>();
             listElement.CloseButton.Click();
+        }
+
+        [When(@"User lists were removed by API")]
+        public void WhenUserListsRemovedByApi()
+        {
+            DeleteAllCustomListsAfterScenarioRun();
         }
 
         [AfterScenario("Delete_Newly_Created_List")]

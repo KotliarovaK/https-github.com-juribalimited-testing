@@ -91,6 +91,7 @@ namespace DashworksTestAutomation.Base
                     chromeOptions.AddUserProfilePreference("safebrowsing.enabled", true);
                     chromeOptions.UseSpecCompliantProtocol = false;
                     chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
+                    //typeof(CapabilityType).GetField(nameof(CapabilityType.LoggingPreferences), BindingFlags.Static | BindingFlags.Public).SetValue(null, "goog:loggingPrefs");
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
 
                 case "firefox":

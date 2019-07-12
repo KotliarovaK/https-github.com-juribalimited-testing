@@ -50,6 +50,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//body")]
         public IWebElement BodyContainer { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-dialog-container//h1[text()='Warning']")]
+        public IWebElement WarningPopUpPanel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='error-box clearfix default ng-star-inserted']//span[text()='403']")]
         public IWebElement ErrorBox { get; set; }
 
@@ -91,6 +94,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='GroupBy']")]
         public IWebElement GroupByButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='Export']")]
+        public IWebElement ExportButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'actions-right-button')]/button[@aria-label='reload']")]
         public IWebElement RefreshButton { get; set; }
@@ -215,7 +221,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-info')]")]
         public IWebElement BlueBanner { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error ng-star-inserted')]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-error')]")]
         public IWebElement ErrorMessage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'inline-tip')]")]
@@ -330,6 +336,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
             var allFilters =
                 Driver.FindElements(By.XPath(".//div[@class='aggrid-input-styled']"));
             return allFilters[GetColumnNumberByName(columnName) - 1];
+        }
+
+        public IWebElement GetObjectTitle(string titleName)
+        {
+            var objectTitle = By.XPath($".//div[@class='title-container']//h1[text()='{titleName}']");
+            Driver.WaitForElementToBeDisplayed(objectTitle);
+            return Driver.FindElement(objectTitle);
         }
 
         public IWebElement GetFillingFieldErrorByText(string text)
@@ -462,6 +475,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
                     Thread.Sleep(waitTime);
                     Driver.Navigate().Refresh();
                     Driver.WaitForDataLoading();
+                    Thread.Sleep(2000);
                 }
             }
             catch (Exception e)
@@ -648,14 +662,27 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetDropdownByTextValueByName(string value, string dropdownName)
         {
-            var selector = By.XPath($"//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
+            var selector = By.XPath($".//mat-form-field//mat-select[@aria-label='{dropdownName}']//span/span[text()='{value}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDropdownByValueByName(string value, string dropdownName)
         {
-            var selector = By.XPath($"//mat-form-field//label[text()='{dropdownName}']//ancestor::div//span[text()='{value}']");
+            var selector = By.XPath($".//mat-form-field//label[text()='{dropdownName}']//ancestor::div//span[text()='{value}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetButtonInWarningPopUp(string buttonName)
+        {
+            var selector = By.XPath($".//mat-dialog-container//button/span[text()='{buttonName}']");
+            return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownByNameForAutomations(string dropdownName)
+        {
+            var selector = By.XPath($".//label[text()='{dropdownName}']//ancestor::div//input[@placeholder='{dropdownName}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -669,7 +696,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetLinkByText(string text)
         {
-            var selector = By.XPath($"//span[contains(@class, 'inline-link')]//a[text()='{text}']");
+            var selector = By.XPath($".//span[contains(@class, 'inline-link')]//a[text()='{text}']");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
@@ -683,7 +710,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public IWebElement GetOpenedPageByName(string pageName)
         {
-            var selector = By.XPath($"//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
+            var selector = By.XPath($".//div[contains(@class, 'wrapper-container')]//h2[text()='{pageName}']");
             return Driver.FindElement(selector);
         }
 
@@ -696,13 +723,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public List<string> GetSumOfObjectsContent(string columnName)
         {
             var by = By.XPath(
-                $"//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
+                $".//div[@role='gridcell'][{GetColumnNumberByName(columnName)}]//a");
             return Driver.FindElements(by).Select(x => x.Text).ToList();
         }
 
         public IWebElement GetValueInGroupByFilterOnAdminPAge(string value)
         {
-            var selector = By.XPath($"//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
+            var selector = By.XPath($".//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }

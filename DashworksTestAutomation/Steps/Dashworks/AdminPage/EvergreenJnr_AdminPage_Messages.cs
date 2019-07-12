@@ -84,6 +84,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarning);
             page.CancelButtonInWarning.Click();
+            Assert.IsFalse(page.WarningMessage.Displayed());
         }
 
         [When(@"User clicks Delete button in the warning message")]
@@ -242,10 +243,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             Assert.IsFalse(page.WarningMessage.Displayed());
         }
 
-        [Then(@"Success message is not displayed on the Projects page")]
-        public void ThenSuccessMessageIsNotDisplayedOnTheProjectsPage()
+        [Then(@"Success message is not displayed on the Admin page")]
+        public void ThenSuccessMessageIsNotDisplayedOnTheAdminPage()
         {
-            var message = _driver.NowAt<ProjectsPage>();
+            var message = _driver.NowAt<BaseGridPage>();
+            //TODO Remove wait for message after fixing for Automation (5.07.19)
+            if (message.SuccessMessage.Displayed())
+            {
+                Thread.Sleep(3000);
+            }
             Assert.IsFalse(message.SuccessMessage.Displayed());
         }
 
@@ -253,6 +259,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenFillingFieldErrorWithTextIsDisplayed(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
+            page.BodyContainer.Click();
             Assert.IsTrue(page.GetFillingFieldErrorByText(text).Displayed(), $"Filling field error with {text} is not displayed");
             Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetFillingFieldErrorByText(text).GetCssValue("color"));
             Assert.AreEqual("rgba(242, 88, 49, 1)", page.UnderFieldWarningIcon.GetCssValue("color"));

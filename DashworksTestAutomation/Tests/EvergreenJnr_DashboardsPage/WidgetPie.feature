@@ -35,13 +35,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Delete_Newly_Created_List @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName       |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
 	| CPU Architecture |
-	And User clicks Save button on the list panel
 	And User create dynamic list with "List15372" name on "Devices" page
 	And User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
@@ -57,13 +53,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Delete_Newly_Created_List @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
-	| Model      |
-	And User clicks Save button on the list panel
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
+	| Model |
 	And User create dynamic list with "List15365" name on "Devices" page
 	And User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
@@ -99,25 +91,22 @@ Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	When Dashboard with "DAS15662_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
-	When User selects "<WidgetType>" in the "Widget Type" Widget dropdown
-	And User enters "WidgetForDAS15662" as Widget Title
-	And User selects "All Devices" as Widget List
-	When User selects "Hostname" in the "Split By" Widget dropdown
-	When User selects "Count" in the "Aggregate Function" Widget dropdown
-	When User selects "Count ASC" in the "Order By" Widget dropdown
-	When User selects "Data Label" checkbox on the Create Widget page
+	And User adds new Widget
+	| WidgetType   | Title             | List        | SplitBy  | AggregateBy | AggregateFunction | OrderBy   | TableOrientation | MaxValues | ShowLegend | Type | Drilldown | Layout |
+	| <WidgetType> | WidgetForDAS15662 | All Devices | Hostname |             | Count             | Count ASC |                  |           |            |      |           |        |
+	And User selects "Show data labels" checkbox on the Create Widget page
 	Then Data Labels are displayed on the Dashboards page
-	Then "<DataLabel>" data label is displayed on the Dashboards page
+	And "<DataLabel>" data label is displayed on the Dashboards page
 	When User clicks the "CREATE" Action button
 	Then Data Labels are displayed on the Dashboards page
-	Then "<DataLabel>" data label is displayed on the Dashboards page
+	And "<DataLabel>" data label is displayed on the Dashboards page
 	When User clicks Ellipsis menu for "WidgetForDAS15662" Widget on Dashboards page
 	And User clicks "Duplicate" item from Ellipsis menu on Dashboards page
 	And User clicks Ellipsis menu for "WidgetForDAS156622" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	Then "Data Label" checkbox is checked on the Create Widget page
-	Then Data Labels are displayed on the Dashboards page
-	Then "<DataLabel>" data label is displayed on the Dashboards page
+	Then "Show data labels" checkbox is checked on the Create Widget page
+	And Data Labels are displayed on the Dashboards page
+	And "<DataLabel>" data label is displayed on the Dashboards page
 
 Examples:
 	| WidgetType | DataLabel      |
@@ -170,7 +159,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User selects "Count" as Widget Aggregate Function
 	Then Aggregate By dropdown is disabled
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button

@@ -1753,7 +1753,7 @@ this.FeatureBackground();
 #line 392
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 393
- testRunner.Then("User selects \"Teams and Request Types\" option in \"Capacity Mode\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Mode\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 394
  testRunner.And("User selects \"Clone evergreen capacity units to project capacity units\" option in" +
                     " \"Capacity Units\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2116,6 +2116,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Save_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit()
         {
             System.Exception lastException = null;
@@ -2155,7 +2156,8 @@ this.FeatureBackground();
                         "DAS14218",
                         "Delete_Newly_Created_Project",
                         "Do_Not_Run_With_CapacityUnits",
-                        "Set_Default_Capacity_Unit"});
+                        "Set_Default_Capacity_Unit",
+                        "Save_Default_Capacity_Unit"});
 #line 528
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

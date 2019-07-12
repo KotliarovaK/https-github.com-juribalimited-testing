@@ -237,6 +237,24 @@ namespace DashworksTestAutomation.Helpers
                 case "MigrationP: Readiness":
                     return "project_34_ragStatus";
 
+                case "Secure Boot Enabled":
+                    return "secureBootEnabled";
+
+                case "Windows7Mi: In Scope":
+                    return "project_1_inScope";
+
+                case @"Windows7Mi: Pre-Migration \ Scheduled Date (Slot)":
+                    return "project_task_1_3_2_taskSlot";
+
+                case "UserEvergr: Ring (All Users)":
+                    return "project_56_allUsersRing";
+
+                case "CPU Architecture":
+                    return "processorArchitecture";
+
+                case "Model":
+                    return "model";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

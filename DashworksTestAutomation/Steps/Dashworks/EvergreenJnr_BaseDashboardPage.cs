@@ -365,6 +365,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
+        [Then(@"some data is displayed in the ""(.*)"" column")]
+        public void ThenSomeDataIsDisplayedInTheColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsNotEmpty(page.GetColumnContentByColumnName(columnName));
+        }
+
         [Then(@"""(.*)"" italic content is displayed")]
         public void ThenItalicContentIsDisplayed(string textContent)
         {
@@ -609,7 +616,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
-                foundRowsCounter.ListRowsCounter.Text, "Incorrect rows count");
+                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
         }
 
         [Then(@"Error is displayed to the User")]
@@ -630,6 +637,20 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserSwitchesToPreviousTab()
         {
             _driver.SwitchTo().Window(_driver.WindowHandles.First());
+        }
+
+        [Then(@"Warning Pop-up is displayed to the User")]
+        public void ThenWarningPop_UpIsDisplayedToTheUser()
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            Assert.IsTrue(page.WarningPopUpPanel.Displayed(), "Warning Pop-up is not displayed");
+        }
+
+        [When(@"User clicks ""(.*)"" button in the Warning Pop-up message")]
+        public void WhenUserClicksButtonInTheWarningPop_UpMessage(string buttonName)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            page.GetButtonInWarningPopUp(buttonName).Click();
         }
 
         [Then(@"Error page is displayed correctly")]

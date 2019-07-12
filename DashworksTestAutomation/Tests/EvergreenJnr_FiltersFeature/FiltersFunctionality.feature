@@ -182,7 +182,7 @@ Examples:
 	| ListName     | FilterName                      | FilterValue    | RowsCount | ColumnName    | ObjectName                                | Text                                       |
 	| Devices      | Babel(Engl: Category            | None           | 17,225    | Hostname      | 01COJATLYVAR7A6                           | Babel(Engl: Category is None               |
 	| Devices      | Barry'sUse: In Scope            | FALSE          | 15,896    | Hostname      | 00BDM1JUR8IF419                           | Barry'sUse: In Scope is false              |
-	| Devices      | ComputerSc: Request Type        | Request Type A | 132       | Hostname      | 46DIQRWG3BM6K9Z                           | ComputerSc: Request Type is Request Type A |
+	| Devices      | ComputerSc: Path                | Request Type A | 132       | Hostname      | 46DIQRWG3BM6K9Z                           | ComputerSc: Request Type is Request Type A |
 	| Applications | Havoc(BigD: Hide from End Users | UNKNOWN        | 1,156     | Application   | Microsoft Silverlight 2 SDK (2.0.31005.0) | Havoc(BigD: Hide from End Users is Unknown |
 	| Applications | MigrationP: Core Application    | FALSE          | 220       | Application   | Quartus II Programmer 4.0                 | MigrationP: Core Application is false      |
 	| Mailboxes    | EmailMigra: Device Type         | Not Identified | 729       | Email Address | alex.cristea@juriba.com                   | EmailMigra: Device Type is Not Identified  |
@@ -991,10 +991,10 @@ Examples:
 	| Windows7Mi: Values but no RAG             | Three                | 1      |
 	| Windows7Mi: SS Application List Completed | Not Applicable       | 5,161  |
 	| MigrationP: Category                      | None                 | 17,220 |
-	| Babel(Engl: Request Type                  | Machines             | 62     |
-	| ComputerSc: Request Type                  | Request Type A       | 132    |
-	| MigrationP: Request Type                  | [Default (Computer)] | 41     |
-	| UserSchedu: Request Type                  | Request Type A       | 60     |
+	| Babel(Engl: Path                          | Machines             | 62     |
+	| ComputerSc: Path                          | Request Type A       | 132    |
+	| MigrationP: Path                          | [Default (Computer)] | 41     |
+	| UserSchedu: Path                          | Request Type A       | 60     |
 	
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnUsersPage
@@ -1010,13 +1010,13 @@ Scenario Outline: EvergreenJnr_UsersList_CheckThat500ISEInvalidColumnNameErrorIs
 	Then "<Rows>" rows are displayed in the agGrid
 
 Examples: 
-	| FilterName                                  | SelectedCheckboxes | Rows   |
-	| Windows7Mi: Category                        | Terminated         | 1      |
-	| Windows7Mi: Read Only on Bulk Update Page   | Not Applicable     | 4,642  |
-	| Barry'sUse: Category                        | None               | 41,339 |
-	| Havoc(BigD: Request Type                    | [Default (User)]   | 7,578  |
-	| UserSchedu: Group User Default Request Type | Not Applicable     | 679    |
-	#| ComputerSc: Group User Default Request Type | Not Applicable     | 1,789  |
+	| FilterName                                                | SelectedCheckboxes | Rows       |
+	| Windows7Mi: Category                                      | Terminated         | 1          |
+	| Windows7Mi: Read Only on Bulk Update Page                 | Not Applicable     | 4,642      |
+	| Barry'sUse: Category                                      | None               | 41,339     |
+	| Havoc(BigD: Path                                          | [Default (User)]   | 7,578      |
+	| UserSchedu: Group Stage \ Group User Default Request Type | Not Applicable     | 595        |
+	| ComputerSc: Group Stage \ Group User Default Request Type | Not Applicable     | 1,809 rows |
 
 @Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseSelectedFilterOnApplicationsPage
@@ -1030,16 +1030,16 @@ Scenario Outline: EvergreenJnr_ApplicationsList_CheckThat500ISEInvalidColumnName
 	Then "<FilterName>" filter is added to the list
 	Then table data is filtered correctly
 	Then "<Rows>" rows are displayed in the agGrid
-
-Examples: 
-	| FilterName                 | SelectedCheckboxes          | Rows  |
-	| Windows7Mi: Category       | A Star Packages             | 3     |
-	| Windows7Mi: Technical Test | Started                     | 4     |
-	| EmailMigra: Category       | None                        | 2,223 |
-	| UserSchedu: Category       | None                        | 2,223 |
-	| Babel(Engl: Request Type   | Tools                       | 302   |
-	#| EmailMigra: Request Type   | Public Folder               | 50    |
-	| UserSchedu: Request Type   | Request Type A              | 47    |
+	
+Examples:
+	| FilterName                 | SelectedCheckboxes | Rows  |
+	| Windows7Mi: Category       | A Star Packages    | 3     |
+	| Windows7Mi: Technical Test | Started            | 4     |
+	| EmailMigra: Category       | None               | 2,223 |
+	| UserSchedu: Category       | None               | 2,223 |
+	| Babel(Engl: Path           | Tools              | 302   |
+	| EmailMigra: Path           | Public Folder      | 50    |
+	| UserSchedu: Path           | Request Type A     | 47    |
 
 @Evergreen @AllLists @Evergreen_FiltersFeature @FiltersDisplay @DAS13392
 Scenario Outline: EvergreenJnr_AllLists_CheckThatSearchBySharpOrAmpersandSymbolWorksInTextFilter
@@ -1072,10 +1072,10 @@ Scenario Outline: EvergreenJnr_MailboxesList_CheckThat500ISEInvalidColumnNameErr
 	Then table data is filtered correctly
 	Then "<Rows>" rows are displayed in the agGrid
 
-Examples: 
-	| FilterName               | SelectedCheckboxes     | Rows  |
-	| EmailMigra: Category     | Mailbox Category A     | 6     |
-	#| EmailMigra: Request Type | Personal Mailbox - VIP | 6     |
+Examples:
+	| FilterName           | SelectedCheckboxes     | Rows |
+	| EmailMigra: Category | Mailbox Category A     | 6    |
+	| EmailMigra: Path     | Personal Mailbox - VIP | 6    |
 
 @Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS12351
 Scenario Outline: EvergreenJnr_DevicesList_CheckThat500ISEInvalidColumnNameErrorIsNotDisplayedIfUseDepartmentFilter
@@ -1359,7 +1359,7 @@ Examples:
 	| PageName     | ColumnName    | FilterName                      | FilterValue    | Search                                     | FilterInfo                                 |
 	| Devices      | Hostname      | Babel(Engl: Category            | None           | 00KLL9S8NRF0X6                             | Babel(Engl: Category is None               |
 	| Devices      | Hostname      | Babel(Engl: In Scope            | FALSE          | 00I0COBFWHOF27                             | Babel(Engl: In Scope is False              |
-	| Devices      | Hostname      | ComputerSc: Request Type        | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
+	| Devices      | Hostname      | ComputerSc: Path                | Request Type A | 47NK3ATE5DM2HD                             | ComputerSc: Request Type is Request Type A |
 	| Applications | Application   | Havoc(BigD: Hide from End Users | UNKNOWN        | Adobe Flash Player 10 ActiveX (10.0.12.36) | Havoc(BigD: Hide from End Users is Unknown |
 	| Applications | Application   | MigrationP: Core Application    | FALSE          | Adobe Download Manager 2.0 (Remove Only)   | MigrationP: Core Application is False      |
 	| Mailboxes    | Email Address | EmailMigra: Device Type         | Not Identified | 238BAE24882E48BFA9F@bclabs.local           | EmailMigra: Device Type is Not Identified  |

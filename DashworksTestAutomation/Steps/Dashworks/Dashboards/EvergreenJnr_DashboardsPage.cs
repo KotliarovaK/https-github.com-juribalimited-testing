@@ -19,17 +19,128 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_DashboardsPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
+        private readonly DTO.RuntimeVariables.Dashboard _dashboard;
 
-        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver)
+        public EvergreenJnr_DashboardsPage(RemoteWebDriver driver, DTO.RuntimeVariables.Dashboard dashboard)
         {
             _driver = driver;
+            _dashboard = dashboard;
         }
 
+        [Then(@"Dashboard with ""(.*)"" title displayed in All Dashboards")]
+        public void ThenFollowingDashboardDisplayedInAllDashboardList(string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            var currentList = page.AllDashboardsInPanel.Select(title => title.Text).ToList();
+
+            Assert.That(page.AllDashboardsInPanel.Select(title => title.Text).ToList().Contains(dashboardName), Is.True, $"Dashboard name is missing");
+        }
+        
         [When(@"User clicks Settings button for ""(.*)"" dashboard")]
         public void WhenUserClicksSettingsButtonForDashboard(string dashboardName)
         {
             var page = _driver.NowAt<EvergreenDashboardsPage>();
             page.OpenSettingsByDashboardName(dashboardName).Click();
+        }
+
+        [When(@"User sets ""(.*)"" as favorite state in dashboard details for ""(.*)"" dashboard")]
+        public void WhenUserSetsDashboardFavoriteState(string state, string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            if (Convert.ToBoolean(state))
+            {
+                if (!page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.MarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(()=>page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
+
+            if (!Convert.ToBoolean(state))
+            {
+                if (page.GetFavoriteStateInDashboardDetailsPane())
+                {
+                    page.UnMarkFavoriteInDashboardDetails();
+                    _driver.WaitFor(() => !page.IsDashboardMarkedAsFavoriteInList(dashboardName));
+                }
+            }
+        }
+
+        [When(@"User opens manage pane for dashboard with ""(.*)"" name")]
+        public void WhenUserManagePaneForListName(string dashboardName)
+        {
+            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
+
+            dashboardElement.ClickSettingsButtonByDashboardName(dashboardName);
+            _driver.WaitForElementToBeDisplayed(dashboardElement.ManageContextMenuItem);
+            dashboardElement.ManageContextMenuItem.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User makes dashboard with ""(.*)"" name favorite via context menu")]
+        public void WhenUserMakesDashboardFavoriteViaContextMenu(string dashboardName)
+        {
+            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
+
+            dashboardElement.ClickSettingsButtonByDashboardName(dashboardName);
+            _driver.WaitForElementToBeDisplayed(dashboardElement.MakeFavoriteContextMenuItem);
+            dashboardElement.MakeFavoriteContextMenuItem.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User unfavorites ""(.*)"" dashboard via context menu")]
+        public void WhenUserUnfavoritesDashboardViaContextMenu(string dashboardName)
+        {
+            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
+
+            dashboardElement.ClickSettingsButtonByDashboardName(dashboardName);
+            _driver.WaitForElementToBeDisplayed(dashboardElement.UnfavoriteContextMenuItem);
+            dashboardElement.UnfavoriteContextMenuItem.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User makes dashboard with ""(.*)"" name default via context menu")]
+        public void WhenUserMakesDashboardDefaultViaContextMenu(string dashboardName)
+        {
+            var dashboardElement = _driver.NowAt<EvergreenDashboardsPage>();
+
+            dashboardElement.ClickSettingsButtonByDashboardName(dashboardName);
+            _driver.WaitForElementToBeDisplayed(dashboardElement.MakeDefaultContextMenuItem);
+            dashboardElement.MakeDefaultContextMenuItem.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Dashboard with name ""(.*)"" marked as favorite")]
+        public void ThenUserSeesDashboardsMarkedAsFavorite(string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.IsDashboardMarkedAsFavoriteInList(dashboardName), Is.True);
+        }
+
+        [Then(@"Dashboard with name ""(.*)"" marked as default")]
+        public void ThenUserSeesDashboardsMarkedAsDefault(string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.IsDashboardMarkedAsDefaultInList(dashboardName), Is.True);
+        }
+
+        [Then(@"Dashboard with name ""(.*)"" not marked as favorite")]
+        public void ThenUserSeesDashboardsNotMarkedAsFavorite(string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.IsDashboardMarkedAsFavoriteInList(dashboardName), Is.False);
+        }
+
+        [Then(@"Dashboard with name ""(.*)"" not marked as default")]
+        public void ThenUserSeesDashboardsNotMarkedAsDefault(string dashboardName)
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+
+            Assert.That(page.IsDashboardMarkedAsDefaultInList(dashboardName), Is.False);
         }
 
         [When(@"User clicks ""(.*)"" section from ""(.*)"" circle chart on Dashboards page")]
@@ -436,6 +547,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.DeleteButtonInAlert.Click();
         }
 
+        [When(@"User clicks edit option for broken widget on Dashboards page")]
+        public void WhenUserClicksEditWidgetOnDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementToBeDisplayed(page.EditButtonInAlert);
+            page.EditButtonInAlert.Click();
+        }
+
+        [When(@"User confirms item deleting on Dashboards page")]
+        public void WhenUserConfirmItemDeletingDashboardsPage()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            page.DeleteButtonInAlert.Click();
+            _driver.WaitForDataLoading();
+        }
+
         [When(@"User deletes duplicated Section having ""(.*)"" Widget on Dashboards page")]
         public void WhenUserDeletesDuplicatedSectionHavingWidgetOnDashboardsPage(string widgetName)
         {
@@ -464,10 +591,43 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
             listElement.DashboardNameTextBox.SendKeys(dashboardName);
             listElement.SaveButton.Click();
+            _driver.WaitForElementToBeNotDisplayed(listElement.SaveButton);
             _driver.WaitForDataLoading();
+            _dashboard.Value.dashboardId = GetDashboardId(dashboardName);
         }
 
-     
+        [When(@"User types ""(.*)"" as dashboard title")]
+        public void WhenEnterDashboardTitle(string dashboardName)
+        {
+            var listElement = _driver.NowAt<CustomListElement>();
+
+            _driver.WaitForElementToBeDisplayed(listElement.SaveButton);
+            Assert.IsTrue(listElement.SaveButton.Displayed(), "SaveButton is displayed");
+            listElement.DashboardNameTextBox.SendKeys(dashboardName);
+        }
+
+        [Then(@"Red Dashboard should be unique error displayed to user")]
+        public void DashboardUniqueErrorDisplayed()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementToBeDisplayed(page.DashboardUniqueError);
+            Assert.IsTrue(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is not displayed");
+            Assert.That(page.DashboardUniqueError.GetCssValue("background-color"), Is.EqualTo("rgba(242, 88, 49, 1)"), "Wrong message color");
+
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsTrue(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
+        }
+
+        [Then(@"Red Dashboard should be unique error disappears")]
+        public void DashboardUniqueErrorDisappears()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementToBeNotDisplayed(page.DashboardUniqueError);
+            Assert.IsFalse(page.DashboardUniqueError.Displayed(), "Dashboard should be unique error is still displayed");
+
+            var listElement = _driver.NowAt<CustomListElement>();
+            Assert.IsFalse(Convert.ToBoolean(listElement.SaveButton.GetAttribute("disabled")), "Save button is active");
+        }
 
         [Then(@"Text Only is displayed for Card widget")]
         public void ThenTextOnlyIsDisplayedForCardWidget()
@@ -912,7 +1072,41 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(page.GetCardWidgetPreviewText().Text, Is.EqualTo(option), "Widget Preview shown different value");
         }
 
+
+
         #region Dashboards details
+
+        [When(@"User changes dashboard name to ""(.*)""")]
+        public void WhenUserChangesDashboardNameTo(string dashboardName)
+        {
+            var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
+            dashboardDetailsElement.DashboardDetailsNameInput.Clear();
+            dashboardDetailsElement.DashboardDetailsNameInput.SendkeysWithDelay(dashboardName);
+            Thread.Sleep(3000);//Wait for autosave action, no indicators available
+            _driver.WaitForDataLoading();
+        }
+
+        [When(@"User clicks Default dashboard checkbox in Dashboard details")]
+        public void WhenUserClicksDefaultDashboardCheckboxInDashboardDetails()
+        {
+            var dashboardDetailsElement = _driver.NowAt<EvergreenDashboardsPage>();
+            dashboardDetailsElement.DefaultDashboardCheckboxLabel.Click();
+            _driver.WaitForDataLoading();
+        }
+
+        [Then(@"Default dashboard checkbox becomes disabled in Dashboard details")]
+        public void ThenDefaultDashboardCheckboxBecomesDisabled()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.DefaultDashboardCheckbox.GetAttribute("disabled"), Is.EqualTo("true"), $"Default dashboard displayed enabled");
+        }
+
+        [Then(@"Default dashboard checkbox displayed checked in Dashboard details")]
+        public void ThenDefaultDashboardCheckboxDisplayedChecked()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            Assert.That(page.DefaultDashboardCheckbox.Selected, Is.EqualTo(true), $"Default dashboard displayed deselected");
+        }
 
         [When(@"User select ""(.*)"" sharing option on the Dashboards page")]
         public void WhenUserSelectSharingOptionOnTheDashboardsPage(string option)
@@ -1074,6 +1268,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(options.Count, Is.EqualTo(table.Rows.Count));
         }
 
+        [When(@"Dashboard page loaded")]
+        public void ThenUserSeesDashboardPageOpened()
+        {
+            var page = _driver.NowAt<EvergreenDashboardsPage>();
+            _driver.WaitForElementToBeDisplayed(page.EditModeOnOffTrigger);
+            _driver.WaitForDataLoading();
+        }
+
         #endregion
+
+        private string GetDashboardId(string dashboardName)
+        {
+            return
+                DatabaseHelper.ExecuteReader(
+                    $"select [DashboardId] from [desktopBI].[dbo].[EvergreenDashboards] where [DashboardName] = '{dashboardName}'",
+                    0).LastOrDefault();
+        }
     }
 }

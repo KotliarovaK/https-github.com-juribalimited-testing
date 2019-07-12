@@ -11,21 +11,15 @@ using DashworksTestAutomation.Utils;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
-using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -160,13 +154,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var projectTabs = _driver.NowAt<ProjectsPage>();
             Assert.IsFalse(projectTabs.CheckContentDisplay(text));
-        }
-
-        [When(@"User clicks on the Unlimited field on the Capacity Slots page")]
-        public void WhenUserClicksOnTheUnlimitedFieldOnTheOnTheCapacitySlotsPage()
-        {
-            var projectElement = _driver.NowAt<CreateCapacitySlotPage>();
-            projectElement.UnlimitedField.Click();
         }
 
         [Then(@"Unlimited text disappears from column")]
@@ -357,17 +344,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.That(total, Is.EqualTo(sumOfObjects), $"Sum of objects in {columnName} list is incorrect!");
         }
 
-        [Then(@"User sees next Slots on the Capacity Slots page:")]
-        public void ThenUserSeesNextSlotsOnTheCapacitySlotsPage(Table slots)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            _driver.WaitForDataLoading();
-
-            for (var i = 0; i < slots.RowCount; i++)
-                Assert.That(page.GridSlotsNames[i].Text, Is.EqualTo(slots.Rows[i].Values.FirstOrDefault()),
-                    "Slots are not the same");
-        }
-
         [Then(@"Project ""(.*)"" is displayed to user")]
         [Then(@"Automation ""(.*)"" is displayed to user")]
         public void ThenProjectIsDisplayedToUser(string projectName)
@@ -436,6 +412,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" checkbox is unchecked on the Admin page")]
+        [Then(@"""(.*)"" checkbox is unchecked on the Base Dashboard Page")]
         public void ThenCheckboxIsUncheckedOnTheAdminPage(string checkbox)
         {
             var page = _driver.NowAt<BaseGridPage>();
@@ -536,12 +513,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.IsTrue(projectsPage.ApplicationScopeTab.Displayed(), "Application Scope tab is not displayed");
         }
 
-        [When(@"User changes Request Type to ""(.*)""")]
-        public void WhenUserChangesRequestTypeTo(string requestTypeName)
+        [When(@"User changes Path to ""(.*)""")]
+        public void WhenUserChangesPathTo(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            projectsPage.RequestTypeDropdown.Click();
-            projectsPage.SelectRequestTypeByName(requestTypeName).Click();
+            projectsPage.PathDropdown.Click();
+            projectsPage.SelectPathByName(pathName).Click();
         }
 
         [When(@"User changes Category to ""(.*)""")]
@@ -552,19 +529,19 @@ namespace DashworksTestAutomation.Steps.Dashworks
             projectsPage.SelectCategoryByName(CategoryName).Click();
         }
 
-        [Then(@"""(.*)"" Request Type is displayed to the user")]
-        public void ThenRequestTypeIsDisplayedToTheUser(string requestTypeName)
+        [Then(@"""(.*)"" Path is displayed to the user")]
+        public void ThenPathIsDisplayedToTheUser(string pathName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(requestTypeName).Displayed(),
-                "Incorrect Request Type is displayed");
+            Assert.IsTrue(projectsPage.GetPathOrCategory(pathName).Displayed(),
+                "Incorrect Path is displayed");
         }
 
         [Then(@"""(.*)"" Category is displayed to the user")]
         public void ThenCategoryIsDisplayedToTheUser(string categoryName)
         {
             var projectsPage = _driver.NowAt<ProjectsPage>();
-            Assert.IsTrue(projectsPage.GetRequestTypeOrCategory(categoryName).Displayed(),
+            Assert.IsTrue(projectsPage.GetPathOrCategory(categoryName).Displayed(),
                 "Incorrect Category is displayed");
         }
 
@@ -786,6 +763,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             }
             else
                 Assert.IsTrue(dropdown.GetDropdownByValueByName(value, dropdownName).Displayed(), $"{value} is not displayed in the {dropdownName}");
+        }
+
+        [Then(@"""(.*)"" value is displayed in the ""(.*)"" dropdown for Automation")]
+        public void ThenValueIsDisplayedInTheDropdownForAutomation(string value, string dropdownName)
+        {
+            var dropdown = _driver.NowAt<BaseGridPage>();
+            var dropdownValue = dropdown.GetDropdownByNameForAutomations(dropdownName).GetAttribute("value");
+            Assert.AreEqual(dropdownValue, value, $"{value} is not displayed in the {dropdownName}");
         }
 
         [Then(@"Capacity Units value is displayed for Capacity Mode field")]
@@ -1477,47 +1462,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
         {
             var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateProjectButton);
+            _driver.WaitForElementToBeEnabled(page.CreateProjectButton);
             _driver.ClickByJavascript(page.CreateProjectButton);
             _driver.WaitForDataLoading();
             Logger.Write("Create Project button was clicked");
         }
-
-        [When(@"User clicks Create button on the Create Ring page")]
-        public void WhenUserClicksCreateButtonOnTheCreateRingPage()
-        {
-            var page = _driver.NowAt<CreateRingPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateRingButton);
-            page.CreateRingButton.Click();
-            Thread.Sleep(2000);
-            _driver.WaitForDataLoading();
-            Logger.Write("Create Ring button was clicked");
-        }
-
-        [When(@"User sets ""(.*)"" value in Maps to evergreen ring field")]
-        public void WhenUserSetsMapsToEvergreenRingValue(string option)
-        {
-            var page = _driver.NowAt<CreateRingPage>();
-            page.MapsToEvergreenField.Clear();
-            page.MapsToEvergreenField.SendKeys(option);
-            page.SelectOptionInMapsToEvergreenRingDropdown(option);
-            Logger.Write("Create Ring button was clicked");
-        }
-
-        [Then(@"Ring settings Maps to evergreen ring is displayed as ""(.*)""")]
-        public void ThenRingSettingsMapsToEvergreenIsDisplayedCorrectly(string ringName)
-        {
-            var page = _driver.NowAt<CreateRingPage>();
-            Assert.AreEqual(ringName, page.MapsToEvergreenField.GetAttribute("value"), $"'{ringName}' text is not displayed in Maps to Evergreen Ring field");
-        }
-
-        [When(@"User doubleclicks Create button on Create Ring page")]
-        public void WhenUserDoubleclicksCreateButtonOnTheCreateRingPage()
-        {
-            var page = _driver.NowAt<CreateRingPage>();
-            page.Actions.Click(page.CreateRingButton).DoubleClick().Build().Perform();
-        }
-
+        
         [When(@"User tries to open same page with ""(.*)"" item id")]
         public void WhenUserOpensSamePageForNotExistingItem(string Id)
         {
@@ -1583,6 +1533,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         }
 
         [Then(@"""(.*)"" content is displayed in the Scope Automation dropdown")]
+        [Then(@"""(.*)"" content is displayed in the Path Automation dropdown")]
         public void ThenContentIsDisplayedInTheScopeAutomationDropdown(string dropdownValue)
         {
             var createProjectElement = _driver.NowAt<ProjectsPage>();
@@ -1604,6 +1555,17 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     {
                         Assert.AreEqual(listName[i], row["ListName"]);
                     }
+            }
+        }
+
+        [Then(@"following lists are displayed in the Scope dropdown:")]
+        public void ThenFollowingListsAreDisplayedInTheScopeDropdown(Table table)
+        {
+            var createProjectElement = _driver.NowAt<ProjectsPage>();
+            createProjectElement.ScopeProjectField.Click();
+            foreach (var row in table.Rows)
+            {
+                Assert.IsTrue(createProjectElement.GetListByNameInScopeDropdown(row["Lists"]).Displayed());
             }
         }
 
@@ -1795,7 +1757,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).Clear();
+            projectElement.GetFieldByName(fieldName).ClearWithBackspaces();
             projectElement.GetFieldByName(fieldName).SendKeys(name);
             _capacityUnit.Value.Add(new CapacityUnitDto() { Name = name });
         }
@@ -1893,13 +1855,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             body.BodyContainer.Click();
         }
 
-        [When(@"User clicks on ""(.*)"" dropdown on the Capacity Slots page")]
-        public void WhenUserClicksOnDropdownOnTheCapacitySlotsPage(string dropdownName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.ClickDropdownByName(dropdownName);
-        }
-
         [Then(@"following items are displayed in the dropdown:")]
         public void ThenFollowingItemsAreDisplayedInTheDropdown(Table items)
         {
@@ -1918,69 +1873,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             var actualList = page.DropdownTaskItemsList.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Tasks are different");
-        }
-
-        [When(@"User selects next items in the ""(.*)"" dropdown:")]
-        public void WhenUserSelectsNextItemsInTheDropdown(string dropdownName, Table items)
-        {
-            WhenUserClicksOnDropdownOnTheCapacitySlotsPage(dropdownName);
-
-            var page = _driver.NowAt<BaseGridPage>();
-            foreach (var row in items.Rows)
-            {
-                page.DropdownItemDisplayed(row["Items"]).Click();
-            }
-        }
-
-        [When(@"User enters ""(.*)"" value to ""(.*)"" date field on Capacity Slot form page")]
-        public void WhenUserEntersValueToDateFieldOnCapacitySlotFormPage(string value, string field)
-        {
-            var page = _driver.NowAt<CreateCapacitySlotPage>();
-            page.EnterValueToTheDateByPlaceholder(value, field);
-        }
-
-        [Then(@"User sees ""(.*)"" value in the ""(.*)"" date field on Capacity Slot form page")]
-        public void ThenUserSeesValueInTheDateFieldOnCapacitySlotFormPage(string valueExpected, string field)
-        {
-            var page = _driver.NowAt<CreateCapacitySlotPage>();
-
-            Assert.That(page.GetValueFromDateByPlaceholder(field), Is.EqualTo(valueExpected));
-        }
-
-        [When(@"User clicks ""(.*)"" link on the Capacity Slot page")]
-        public void WhenUserClicksLinkOnTheCapacitySlotPage(string linkName)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.GetLanguageLinkByName(linkName).Click();
-        }
-
-        [Then(@"See Translations link on the Capacity Slot page is not displayed")]
-        public void ThenSeeTranslationsLinkOnTheCapacitySlotPageIsNotDisplayed()
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            Assert.IsFalse(page.LanguageTranslationsLink.Displayed(), "See Translations link is displayed");
-        }
-
-        [Then(@"""(.*)"" Language is displayed in Translations table on the Capacity Slot page")]
-        public void ThenLanguageIsDisplayedInTranslationsTableOnTheCapacitySlotPage(string language)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            Assert.IsTrue(page.GetLanguageInTranslationsTableByName(language).Displayed, $"{language} is not displayed in Translations table");
-        }
-
-        [When(@"User types ""(.*)"" in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
-        public void WhenUserTypesInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            page.GetDisplayNameFieldByLanguage(language).Clear();
-            page.GetDisplayNameFieldByLanguage(language).SendKeys(text);
-        }
-
-        [Then(@"""(.*)"" is displayed in Display Name field for ""(.*)"" Language in Translations table on the Capacity Slot page")]
-        public void ThenIsDisplayedInDisplayNameFieldForLanguageInTranslationsTableOnTheCapacitySlotPage(string text, string language)
-        {
-            var page = _driver.NowAt<Capacity_SlotsPage>();
-            Assert.AreEqual(text, page.GetDisplayNameFieldByLanguage(language).GetAttribute("value"), $"'{text}' text is not displayed in Display Name field");
         }
 
         [When(@"User enters ""(.*)"" value in Move to position dialog")]
@@ -2241,6 +2133,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.GroupByButton.Click();
         }
 
+        [When(@"User clicks Export button on the Admin page")]
+        public void WhenUserClicksExportButtonOnTheAdminPage()
+        {
+            var button = _driver.NowAt<BaseGridPage>();
+            button.ExportButton.Click();
+        }
+
         [When(@"User clicks Group By button on the Admin page and selects ""(.*)"" value")]
         public void WhenUserClicksGroupByButtonOnTheAdminPageAndSelectsValue(string value)
         {
@@ -2420,13 +2319,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var columnNames = page.GetAllColumnHeadersWithSettingMenuColumn().Select(column => column.Text).ToList();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
             Assert.AreEqual(expectedList, columnNames, "Columns order on Admin page with Setting menu column is incorrect");
-        }
-
-        [When(@"User clicks Default Ring checkbox")]
-        public void WhenUserClicksDefaultRingCheckbox()
-        {
-            var page = _driver.NowAt<CreateRingPage>();
-            page.DefaultRingCheckbox.Click();
         }
 
         [Then(@"Delete ""(.*)"" Project in the Administration")]
@@ -2736,17 +2628,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<ReadinessPage>();
             Assert.IsTrue(page.ReadinessDialogContainer.Displayed(), "Readiness Dialog Container is displayed");
-        }
-
-        [Then(@"User sees following Processing order on the Automation page")]
-        public void ThenUserSeesFollowingProcessingOrderOnTheAutomationPage(Table processingOrder)
-        {
-            var page = _driver.NowAt<AutomationsPage>();
-            _driver.WaitForDataLoading();
-
-            for (var i = 0; i < processingOrder.RowCount; i++)
-                Assert.That(page.ProcessingOrderValues[i].Text, Is.EqualTo(processingOrder.Rows[i].Values.FirstOrDefault()),
-                    "Processing order values are not the same");
         }
 
         [Then(@"User sees following Display order on the Automation page")]

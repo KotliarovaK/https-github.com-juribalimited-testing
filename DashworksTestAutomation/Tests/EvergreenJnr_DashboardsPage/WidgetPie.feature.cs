@@ -276,28 +276,20 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 38
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 39
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 40
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table5.AddRow(new string[] {
                         "CPU Architecture"});
+#line 38
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table5, "When ");
 #line 41
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table5, "And ");
-#line 44
- testRunner.And("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 45
  testRunner.And("User create dynamic list with \"List15372\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
+#line 42
  testRunner.And("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
+#line 43
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 44
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -328,17 +320,17 @@ this.FeatureBackground();
                         "",
                         "",
                         ""});
-#line 49
+#line 45
  testRunner.And("User adds new Widget", ((string)(null)), table6, "And ");
-#line 52
+#line 48
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 53
+#line 49
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 50
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
+#line 51
  testRunner.Then("\"WidgetForDAS15372\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 56
+#line 52
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -392,33 +384,25 @@ this.FeatureBackground();
                         "DAS15352",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_List"});
-#line 59
+#line 55
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 60
- testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 61
- testRunner.Then("\"Devices\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 62
- testRunner.When("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table7.AddRow(new string[] {
                         "Model"});
-#line 63
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table7, "And ");
-#line 66
- testRunner.And("User clicks Save button on the list panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
+#line 56
+ testRunner.When("User add following columns using URL to the \"Devices\" page:", ((string)(null)), table7, "When ");
+#line 59
  testRunner.And("User create dynamic list with \"List15365\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
+#line 60
  testRunner.And("User clicks \"Dashboards\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 69
+#line 61
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 70
+#line 62
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -449,51 +433,51 @@ this.FeatureBackground();
                         "",
                         "",
                         ""});
-#line 71
+#line 63
  testRunner.And("User adds new Widget", ((string)(null)), table8, "And ");
-#line 74
+#line 66
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 75
+#line 67
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
+#line 68
  testRunner.When("User selects \"Bar\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 77
+#line 69
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 78
+#line 70
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
+#line 71
  testRunner.When("User selects \"Column\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 80
+#line 72
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 81
+#line 73
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 74
  testRunner.When("User selects \"Line\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
+#line 75
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 84
+#line 76
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 77
  testRunner.When("User selects \"Donut\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 86
+#line 78
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 87
+#line 79
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
+#line 80
  testRunner.When("User selects \"Half donut\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 89
+#line 81
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 90
+#line 82
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 83
  testRunner.When("User selects \"Table\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 92
+#line 84
  testRunner.Then("Widget Preview is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 93
+#line 85
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 94
+#line 86
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
+#line 87
  testRunner.Then("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -549,55 +533,74 @@ this.FeatureBackground();
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget", null, @__tags);
-#line 98
+#line 90
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 99
+#line 91
  testRunner.When("Dashboard with \"DAS15662_Dashboard\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 100
+#line 92
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
+#line 93
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
- testRunner.When(string.Format("User selects \"{0}\" in the \"Widget Type\" Widget dropdown", widgetType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 103
- testRunner.And("User enters \"WidgetForDAS15662\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 104
- testRunner.And("User selects \"All Devices\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 105
- testRunner.When("User selects \"Hostname\" in the \"Split By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 106
- testRunner.When("User selects \"Count\" in the \"Aggregate Function\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 107
- testRunner.When("User selects \"Count ASC\" in the \"Order By\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 108
- testRunner.When("User selects \"Data Label\" checkbox on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 109
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WidgetType",
+                        "Title",
+                        "List",
+                        "SplitBy",
+                        "AggregateBy",
+                        "AggregateFunction",
+                        "OrderBy",
+                        "TableOrientation",
+                        "MaxValues",
+                        "ShowLegend",
+                        "Type",
+                        "Drilldown",
+                        "Layout"});
+            table9.AddRow(new string[] {
+                        string.Format("{0}", widgetType),
+                        "WidgetForDAS15662",
+                        "All Devices",
+                        "Hostname",
+                        "",
+                        "Count",
+                        "Count ASC",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""});
+#line 94
+ testRunner.And("User adds new Widget", ((string)(null)), table9, "And ");
+#line 97
+ testRunner.And("User selects \"Show data labels\" checkbox on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
  testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 110
- testRunner.Then(string.Format("\"{0}\" data label is displayed on the Dashboards page", dataLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 111
+#line 99
+ testRunner.And(string.Format("\"{0}\" data label is displayed on the Dashboards page", dataLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 112
+#line 101
  testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 113
- testRunner.Then(string.Format("\"{0}\" data label is displayed on the Dashboards page", dataLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 114
+#line 102
+ testRunner.And(string.Format("\"{0}\" data label is displayed on the Dashboards page", dataLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 103
  testRunner.When("User clicks Ellipsis menu for \"WidgetForDAS15662\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 115
+#line 104
  testRunner.And("User clicks \"Duplicate\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
+#line 105
  testRunner.And("User clicks Ellipsis menu for \"WidgetForDAS156622\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
+#line 106
  testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
- testRunner.Then("\"Data Label\" checkbox is checked on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 119
- testRunner.Then("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 120
- testRunner.Then(string.Format("\"{0}\" data label is displayed on the Dashboards page", dataLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 107
+ testRunner.Then("\"Show data labels\" checkbox is checked on the Create Widget page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 108
+ testRunner.And("Data Labels are displayed on the Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+ testRunner.And(string.Format("\"{0}\" data label is displayed on the Dashboards page", dataLabel), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -656,19 +659,19 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelecti" +
                     "onIsBeforeAggregateBySelection", null, @__tags);
-#line 129
+#line 118
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 130
+#line 119
  testRunner.When("Dashboard with \"Dashboard for DAS15500\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 131
+#line 120
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 132
+#line 121
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "WidgetType",
                         "Title",
                         "List",
@@ -679,7 +682,7 @@ this.FeatureBackground();
                         "TableOrientation",
                         "MaxValues",
                         "ShowLegend"});
-            table9.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "Pie",
                         "Widget_DAS15500",
                         "All Devices",
@@ -690,17 +693,17 @@ this.FeatureBackground();
                         "",
                         "5",
                         ""});
-#line 133
- testRunner.And("User creates new Widget", ((string)(null)), table9, "And ");
-#line 136
+#line 122
+ testRunner.And("User creates new Widget", ((string)(null)), table10, "And ");
+#line 125
  testRunner.Then("User sees widget with the next name \"Widget_DAS15500\" on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 137
+#line 126
  testRunner.When("User clicks Ellipsis menu for \"Widget_DAS15500\" Widget on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 138
+#line 127
  testRunner.And("User clicks \"Edit\" item from Ellipsis menu on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 139
+#line 128
  testRunner.And(string.Format("User selects \"{0}\" in the \"Widget Type\" Widget dropdown", widgetType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
+#line 129
  testRunner.Then("Aggregate Function dropdown is placed above the Aggregate By dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -752,51 +755,51 @@ this.FeatureBackground();
                         "DAS15508",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Dashboard"});
-#line 151
+#line 140
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 152
+#line 141
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 153
+#line 142
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Device Key"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "1803: In Scope"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "First Seen Date"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Windows7Mi: Communication \\ DateTime"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "Compliance"});
-#line 154
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table10, "And ");
-#line 162
+#line 143
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table11, "And ");
+#line 151
  testRunner.And("User create dynamic list with \"ListWithAllDatatypes\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 163
+#line 152
  testRunner.And("Dashboard with \"All Data Types for DAS15508\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 164
+#line 153
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 165
+#line 154
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 166
+#line 155
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 167
+#line 156
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 168
+#line 157
  testRunner.And("User selects \"ListWithAllDatatypes\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 169
+#line 158
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 170
+#line 159
  testRunner.And("User selects \"Count\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 171
+#line 160
  testRunner.Then("Aggregate By dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -812,7 +815,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15509")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
-        [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown()
         {
             System.Exception lastException = null;
@@ -848,77 +850,76 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15509",
                         "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Dashboard",
-                        "Not_Run"});
-#line 174
+                        "Delete_Newly_Created_Dashboard"});
+#line 163
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 175
+#line 164
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 176
+#line 165
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Device Key"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "1803: In Scope"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "First Seen Date"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Windows7Mi: Communication \\ DateTime"});
-            table11.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Compliance"});
-#line 177
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table11, "And ");
-#line 185
+#line 166
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table12, "And ");
+#line 174
  testRunner.And("User create dynamic list with \"ListWithAllDatatypes\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 186
+#line 175
  testRunner.And("Dashboard with \"All Data Types for DAS15509\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 187
+#line 176
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 188
+#line 177
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 189
+#line 178
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 190
+#line 179
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 191
+#line 180
  testRunner.And("User selects \"ListWithAllDatatypes\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 192
+#line 181
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 193
+#line 182
  testRunner.And("User selects \"Count distinct\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Device Key"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Hostname"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "First Seen Date"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Compliance"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Device Type"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Operating System"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Owner Display Name"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "1803: In Scope"});
-            table12.AddRow(new string[] {
+            table13.AddRow(new string[] {
                         "Windows7Mi: Communication \\ DateTime"});
-#line 194
- testRunner.Then("User sees following options for Aggregate By selector on Create Widget page:", ((string)(null)), table12, "Then ");
+#line 183
+ testRunner.Then("User sees following options for Aggregate By selector on Create Widget page:", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -982,57 +983,57 @@ this.FeatureBackground();
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCor" +
                     "rectDatatypeInAggregateByDropdown", null, @__tags);
-#line 209
+#line 198
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 210
+#line 199
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 211
+#line 200
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "ColumnName"});
-            table13.AddRow(new string[] {
-                        "Device Key"});
-            table13.AddRow(new string[] {
-                        "1803: In Scope"});
-            table13.AddRow(new string[] {
-                        "HDD Total Size (GB)"});
-            table13.AddRow(new string[] {
-                        "First Seen Date"});
-            table13.AddRow(new string[] {
-                        "Windows7Mi: Communication \\ DateTime"});
-            table13.AddRow(new string[] {
-                        "Compliance"});
-#line 212
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table13, "And ");
-#line 220
- testRunner.And("User create dynamic list with \"ListWithAllDatatypes\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 221
- testRunner.And("Dashboard with \"All Data Types for DAS15510\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 222
- testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 223
- testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 224
- testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 225
- testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 226
- testRunner.And("User selects \"ListWithAllDatatypes\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 227
- testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 228
- testRunner.And(string.Format("User selects \"{0}\" as Widget Aggregate Function", aggFunc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "items"});
+                        "ColumnName"});
+            table14.AddRow(new string[] {
+                        "Device Key"});
+            table14.AddRow(new string[] {
+                        "1803: In Scope"});
             table14.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-#line 229
- testRunner.Then("User sees following options for Aggregate By selector on Create Widget page:", ((string)(null)), table14, "Then ");
+            table14.AddRow(new string[] {
+                        "First Seen Date"});
+            table14.AddRow(new string[] {
+                        "Windows7Mi: Communication \\ DateTime"});
+            table14.AddRow(new string[] {
+                        "Compliance"});
+#line 201
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table14, "And ");
+#line 209
+ testRunner.And("User create dynamic list with \"ListWithAllDatatypes\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 210
+ testRunner.And("Dashboard with \"All Data Types for DAS15510\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 211
+ testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 212
+ testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 213
+ testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 214
+ testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 215
+ testRunner.And("User selects \"ListWithAllDatatypes\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 216
+ testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 217
+ testRunner.And(string.Format("User selects \"{0}\" as Widget Aggregate Function", aggFunc), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "items"});
+            table15.AddRow(new string[] {
+                        "HDD Total Size (GB)"});
+#line 218
+ testRunner.Then("User sees following options for Aggregate By selector on Create Widget page:", ((string)(null)), table15, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1083,65 +1084,65 @@ this.FeatureBackground();
                         "DAS15524",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Dashboard"});
-#line 241
+#line 230
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 242
+#line 231
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 243
+#line 232
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Device Key"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "1803: In Scope"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "First Seen Date"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Windows7Mi: Communication \\ DateTime"});
-            table15.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "Compliance"});
-#line 244
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table15, "And ");
-#line 252
+#line 233
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table16, "And ");
+#line 241
  testRunner.And("User create dynamic list with \"ListWithAllDatatypes\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 253
+#line 242
  testRunner.And("Dashboard with \"All Data Types for DAS15524\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 254
+#line 243
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 255
+#line 244
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 256
+#line 245
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 257
+#line 246
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 258
+#line 247
  testRunner.And("User selects \"ListWithAllDatatypes\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 259
+#line 248
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 260
+#line 249
  testRunner.And("User selects \"Count\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 261
+#line 250
  testRunner.Then("Aggregate By dropdown is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Operating System ASC"});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Operating System DESC"});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Count ASC"});
-            table16.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Count DESC"});
-#line 262
- testRunner.And("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table16, "And ");
+#line 251
+ testRunner.And("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table17, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1190,40 +1191,40 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15362",
                         "Delete_Newly_Created_Dashboard"});
-#line 270
+#line 259
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 271
+#line 260
  testRunner.When("Dashboard with \"TestDashboardForDAS15362\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 272
+#line 261
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 273
+#line 262
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 274
+#line 263
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 275
+#line 264
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 276
+#line 265
  testRunner.And("User selects \"All Devices\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 277
+#line 266
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 278
+#line 267
  testRunner.And("User selects \"Count\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Operating System ASC"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Operating System DESC"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Count ASC"});
-            table17.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Count DESC"});
-#line 279
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table17, "Then ");
+#line 268
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1272,42 +1273,42 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15362",
                         "Delete_Newly_Created_Dashboard"});
-#line 287
+#line 276
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 288
+#line 277
  testRunner.When("Dashboard with \"TestDashboardForDAS15362\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 289
+#line 278
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 290
+#line 279
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 291
+#line 280
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 292
+#line 281
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 293
+#line 282
  testRunner.And("User selects \"All Devices\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 294
+#line 283
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 295
+#line 284
  testRunner.And("User selects \"Count distinct\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 296
+#line 285
  testRunner.And("User selects \"Hostname\" as Widget AggregateBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table18.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Operating System ASC"});
-            table18.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Operating System DESC"});
-            table18.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Hostname Count distinct ASC"});
-            table18.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Hostname Count distinct DESC"});
-#line 297
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table18, "Then ");
+#line 286
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table19, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1358,55 +1359,55 @@ this.FeatureBackground();
                         "DAS15362",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Dashboard"});
-#line 305
+#line 294
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 306
+#line 295
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 307
+#line 296
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table19.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-#line 308
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table19, "And ");
-#line 311
+#line 297
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table20, "And ");
+#line 300
  testRunner.And("User create dynamic list with \"HddList\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 312
+#line 301
  testRunner.And("Dashboard with \"TestDashboardForDAS15362\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 313
+#line 302
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 314
+#line 303
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 315
+#line 304
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 316
+#line 305
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 317
+#line 306
  testRunner.And("User selects \"HddList\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 318
+#line 307
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 319
+#line 308
  testRunner.And("User selects \"Sum\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 320
+#line 309
  testRunner.And("User selects \"HDD Total Size (GB)\" as Widget AggregateBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Operating System ASC"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "Operating System DESC"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "HDD Total Size (GB) Sum ASC"});
-            table20.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "HDD Total Size (GB) Sum DESC"});
-#line 321
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table20, "Then ");
+#line 310
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table21, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1457,55 +1458,55 @@ this.FeatureBackground();
                         "DAS15362",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Dashboard"});
-#line 329
+#line 318
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 330
+#line 319
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 331
+#line 320
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table21.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-#line 332
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table21, "And ");
-#line 335
+#line 321
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table22, "And ");
+#line 324
  testRunner.And("User create dynamic list with \"HddList\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 336
+#line 325
  testRunner.And("Dashboard with \"TestDashboardForDAS15362\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 337
+#line 326
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 338
+#line 327
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 339
+#line 328
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 340
+#line 329
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 341
+#line 330
  testRunner.And("User selects \"HddList\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 342
+#line 331
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 343
+#line 332
  testRunner.And("User selects \"Minimum\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 344
+#line 333
  testRunner.And("User selects \"HDD Total Size (GB)\" as Widget AggregateBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Operating System ASC"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Operating System DESC"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HDD Total Size (GB) Minimum ASC"});
-            table22.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "HDD Total Size (GB) Minimum DESC"});
-#line 345
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table22, "Then ");
+#line 334
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table23, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1556,55 +1557,55 @@ this.FeatureBackground();
                         "DAS15362",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Dashboard"});
-#line 353
+#line 342
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 354
+#line 343
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 355
+#line 344
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table23.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-#line 356
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table23, "And ");
-#line 359
+#line 345
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table24, "And ");
+#line 348
  testRunner.And("User create dynamic list with \"HddList\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 360
+#line 349
  testRunner.And("Dashboard with \"TestDashboardForDAS15362\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 361
+#line 350
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 362
+#line 351
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 363
+#line 352
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 364
+#line 353
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 365
+#line 354
  testRunner.And("User selects \"HddList\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 366
+#line 355
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 367
+#line 356
  testRunner.And("User selects \"Maximum\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 368
+#line 357
  testRunner.And("User selects \"HDD Total Size (GB)\" as Widget AggregateBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "Operating System ASC"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "Operating System DESC"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "HDD Total Size (GB) Maximum ASC"});
-            table24.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "HDD Total Size (GB) Maximum DESC"});
-#line 369
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table24, "Then ");
+#line 358
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table25, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -1655,55 +1656,55 @@ this.FeatureBackground();
                         "DAS15362",
                         "Delete_Newly_Created_List",
                         "Delete_Newly_Created_Dashboard"});
-#line 377
+#line 366
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 378
+#line 367
  testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 379
+#line 368
  testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
-            table25.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "HDD Total Size (GB)"});
-#line 380
- testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table25, "And ");
-#line 383
+#line 369
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table26, "And ");
+#line 372
  testRunner.And("User create dynamic list with \"HddList\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 384
+#line 373
  testRunner.And("Dashboard with \"TestDashboardForDAS15362\" name created via API and opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 385
+#line 374
  testRunner.And("User clicks Edit mode trigger on Dashboards page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 386
+#line 375
  testRunner.And("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 387
+#line 376
  testRunner.And("User selects \"Pie\" in the \"Widget Type\" Widget dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 388
+#line 377
  testRunner.And("User enters \"Widget Name\" as Widget Title", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 389
+#line 378
  testRunner.And("User selects \"HddList\" as Widget List", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 390
+#line 379
  testRunner.And("User selects \"Operating System\" as Widget Split By", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 391
+#line 380
  testRunner.And("User selects \"Average\" as Widget Aggregate Function", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 392
+#line 381
  testRunner.And("User selects \"HDD Total Size (GB)\" as Widget AggregateBy", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "items"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "Operating System ASC"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "Operating System DESC"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "HDD Total Size (GB) Average ASC"});
-            table26.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "HDD Total Size (GB) Average DESC"});
-#line 393
- testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table26, "Then ");
+#line 382
+ testRunner.Then("User sees following options for Order By selector on Create Widget page:", ((string)(null)), table27, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
