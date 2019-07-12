@@ -246,6 +246,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         [FindsBy(How = How.XPath, Using = ".//mat-error[@role='alert']")]
         public IWebElement FieldWarningMessage { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'message-error')]")]
+        public IWebElement ScopeChangesError { get; set; }
+
         #endregion
 
         public override List<By> GetPageIdentitySelectors()
