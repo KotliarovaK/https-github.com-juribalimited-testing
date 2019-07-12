@@ -83,6 +83,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_API_FiltersAndColumns
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         public virtual void EvergreenJnr_DevicesList_CheckAllColumnsAndFilters()
         {
             System.Exception lastException = null;
@@ -115,7 +116,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_API_FiltersAndColumns
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
-                        "API"});
+                        "API",
+                        "FiltersAndColumns"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -136,6 +138,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         public virtual void EvergreenJnr_DevicesList_CheckFiltersAndColumnsResponseData()
         {
             System.Exception lastException = null;
@@ -168,7 +171,8 @@ this.FeatureBackground();
                         "Evergreen",
                         "Devices",
                         "EvergreenJnr_Columns",
-                        "API"});
+                        "API",
+                        "FiltersAndColumns"});
 #line 13
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

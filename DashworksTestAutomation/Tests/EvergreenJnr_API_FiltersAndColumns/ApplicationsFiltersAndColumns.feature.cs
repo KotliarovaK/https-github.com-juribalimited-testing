@@ -83,6 +83,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_API_FiltersAndColumns
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         public virtual void EvergreenJnr_ApplicationsList_CheckAllColumnsAndFilters()
         {
             System.Exception lastException = null;
@@ -115,7 +116,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_API_FiltersAndColumns
                         "Evergreen",
                         "Applications",
                         "EvergreenJnr_Columns",
-                        "API"});
+                        "API",
+                        "FiltersAndColumns"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -136,6 +138,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Applications")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("API")]
+        [NUnit.Framework.CategoryAttribute("FiltersAndColumns")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_ApplicationsList_CheckFiltersAndColumnsResponseData()
         {
@@ -170,6 +173,7 @@ this.FeatureBackground();
                         "Applications",
                         "EvergreenJnr_Columns",
                         "API",
+                        "FiltersAndColumns",
                         "Not_Run"});
 #line 14
 this.ScenarioInitialize(scenarioInfo);
