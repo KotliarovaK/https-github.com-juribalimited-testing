@@ -125,14 +125,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            try
-            {
-                _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
-            }
-            catch (Exception e)
-            {
-                throw new Exception($"Success message with '{text}' was not displayed: {e}");
-            }
+            _driver.WaitForElementToContainsText(page.SuccessMessage, text);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
@@ -150,7 +143,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitForElementToBeDisplayed(page.ErrorMessage);
+            _driver.WaitForElementToContainsText(page.ErrorMessage, text);
             Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetMessageColor()); //Red color
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
         }

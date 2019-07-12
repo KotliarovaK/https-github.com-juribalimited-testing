@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 using DashworksTestAutomation.Providers;
 using RestSharp;
@@ -37,6 +39,11 @@ namespace DashworksTestAutomation.Extensions
             request.AddParameter("Referer", UrlProvider.EvergreenUrl);
 
             return request;
+        }
+
+        public static List<string> SplitByLinebraeak(this string str)
+        {
+            return str.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None).ToList();
         }
     }
 }

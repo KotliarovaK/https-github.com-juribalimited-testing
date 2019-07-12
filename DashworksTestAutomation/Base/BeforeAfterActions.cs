@@ -45,12 +45,16 @@ namespace DashworksTestAutomation.Base
             LockCategory.AwaitTags(testTags);
             LockCategory.AddTags(testTags);
 
-            var driverInstance = CreateBrowserDriver();
+            RemoteWebDriver driverInstance = null;
+
+            if (!testTags.Contains("API"))
+                driverInstance = CreateBrowserDriver();
 
             if (!Browser.RemoteDriver.Equals("local"))
                 driverInstance.Manage().Window.Maximize();
 
-            _objectContainer.RegisterInstanceAs(driverInstance);
+            if (!testTags.Contains("API"))
+                _objectContainer.RegisterInstanceAs(driverInstance);
         }
 
         [AfterScenario]
@@ -61,7 +65,9 @@ namespace DashworksTestAutomation.Base
                 List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
                 LockCategory.RemoveTags(testTags);
 
-                var driver = _objectContainer.Resolve<RemoteWebDriver>();
+                RemoteWebDriver driver = null;
+                if (!testTags.Contains("API"))
+                    driver = _objectContainer.Resolve<RemoteWebDriver>();
 
                 try
                 {
@@ -70,21 +76,22 @@ namespace DashworksTestAutomation.Base
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
-                            driver.CreateScreenshot(testName);
+                            driver?.CreateScreenshot(testName);
                     }
                     else if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
                     {
                         BambooUtil.UnleashTest(GetTestName());
                     }
 
-                    Logger.Write($"Closing window at: {driver.Url}");
+                    if (driver != null)
+                        Logger.Write($"Closing window at: {driver.Url}");
                 }
                 catch (Exception e)
                 {
                     Logger.Write(e);
                 }
 
-                driver.QuitDriver();
+                driver?.QuitDriver();
             }
             catch (ObjectContainerException e)
             {

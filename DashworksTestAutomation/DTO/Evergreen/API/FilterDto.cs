@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Utils;
 using KellermanSoftware.CompareNetObjects;
 using Newtonsoft.Json;
 using NewsStyleUriParser = System.NewsStyleUriParser;
 
-namespace DashworksTestAutomation.DTO.Evergreen
+namespace DashworksTestAutomation.DTO.Evergreen.API
 {
     class FilterDto
     {

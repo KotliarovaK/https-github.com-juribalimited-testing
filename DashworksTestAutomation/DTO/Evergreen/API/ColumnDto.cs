@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.Utils;
 using KellermanSoftware.CompareNetObjects;
 using Newtonsoft.Json;
 
-namespace DashworksTestAutomation.DTO.Evergreen
+namespace DashworksTestAutomation.DTO.Evergreen.API
 {
     public class ColumnDto
     {

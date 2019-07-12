@@ -116,9 +116,9 @@
     <Compile Include="DTO\Evergreen\Admin\Bucket\BucketDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
-    <Compile Include="DTO\Evergreen\ColumnDto.cs" />
+    <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
-    <Compile Include="DTO\Evergreen\FilterDto.cs" />
+    <Compile Include="DTO\Evergreen\API\FilterDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
@@ -308,8 +308,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Providers\BambooProvider.cs" />
-    <Compile Include="Steps\API\Columns\EvergreenJnr_API_CheckAllColumns.cs" />
-    <Compile Include="Steps\API\Filters\EvergreenJnr_API_CheckAllFilters.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditActions.cs" />
@@ -347,6 +346,8 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
+    <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
+    <Compile Include="Steps\Dashworks\Login\EvergreenJnr_LoginApi.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
@@ -377,7 +378,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_GlobalSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListDetailsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />
+    <Compile Include="Steps\Dashworks\Login\EvergreenJnr_Login.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Logout.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_MenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
@@ -512,6 +513,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\ApplicationsFiltersAndColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationsFiltersAndColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\DevicesFiltersAndColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesFiltersAndColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\UsersFiltersAndColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersFiltersAndColumns.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -522,10 +538,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddColumnAction.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_Columns\CheckAllColumnsApi.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\MailboxesFiltersAndColumns.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CheckAllColumnsApi.feature</DependentUpon>
+      <DependentUpon>MailboxesFiltersAndColumns.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature.cs">
       <AutoGen>True</AutoGen>
@@ -884,6 +900,18 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TeamsGridFiltering.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\ApplicationsFiltersAndColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ApplicationsFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\DevicesFiltersAndColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\UsersFiltersAndColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UsersFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseDashboardPage.feature.cs</LastGenOutput>
@@ -892,9 +920,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddColumnAction.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_Columns\CheckAllColumnsApi.feature">
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\MailboxesFiltersAndColumns.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CheckAllColumnsApi.feature.cs</LastGenOutput>
+      <LastGenOutput>MailboxesFiltersAndColumns.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1078,6 +1106,18 @@
     <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
     <Content Include="Resources\DAS_13733_Valid_file.xml" />
     <Content Include="Resources\Windows_7_Migration_%28Computer_Scheduled_Project%29 %28jet 5.3.3%29.xml" />
+    <Content Include="TestData\QueryUrls\ApplicationsQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\QueryUrls\DevicesQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\QueryUrls\MailboxesQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\QueryUrls\UsersQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">
