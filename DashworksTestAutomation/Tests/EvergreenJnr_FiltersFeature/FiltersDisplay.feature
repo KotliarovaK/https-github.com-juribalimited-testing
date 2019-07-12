@@ -1482,7 +1482,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatColorsInReadinessFilterAreDisplayed
 	| Red   |
 	| Amber |
 
-@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @API @DAS12547
+@Evergreen @Mailboxes @Evergreen_FiltersFeature @FiltersDisplay @DAS12547
 Scenario: EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

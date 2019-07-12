@@ -548,6 +548,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplayApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumnSectionDisplayApi.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature.cs">
       <DependentUpon>WidgetBar.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -613,10 +618,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FiltersFunctionality.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionalityApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiltersFunctionalityApi.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheck.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NewFilterCheck.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheckApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewFilterCheckApi.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_FiltersFeature\RemoveFilter.feature.cs">
       <AutoGen>True</AutoGen>
@@ -637,6 +652,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsContent_ActionsWithFields.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFieldsApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetailsContent_ActionsWithFieldsApi.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithTable.feature.cs">
       <AutoGen>True</AutoGen>
@@ -928,6 +948,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplayApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ColumnSectionDisplayApi.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WidgetBar.feature.cs</LastGenOutput>
@@ -980,9 +1004,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FiltersFunctionality.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionalityApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiltersFunctionalityApi.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheck.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>NewFilterCheck.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheckApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NewFilterCheckApi.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_FiltersFeature\RemoveFilter.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -999,6 +1031,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithFields.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFieldsApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetailsContent_ActionsWithFieldsApi.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

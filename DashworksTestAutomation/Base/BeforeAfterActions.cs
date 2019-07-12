@@ -42,6 +42,11 @@ namespace DashworksTestAutomation.Base
         public void OnStartUp()
         {
             List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+
+            //If we are not able to get nUnit tags the try to get them from SpecFlow
+            if (!testTags.Any())
+                testTags = ScenarioContext.Current.ScenarioInfo.Tags.ToList();
+
             LockCategory.AwaitTags(testTags);
             LockCategory.AddTags(testTags);
 
