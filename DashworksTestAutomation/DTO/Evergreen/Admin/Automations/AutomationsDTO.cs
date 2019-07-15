@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
         private string _scheduleTypeId;
         public string automationSqlAgentJobId { get; set; }
         public string description { get; set; }
-        private string _automationlistId;
+        private int automationlistId => -1;
         private string _automationObjectTypeId;
         public bool stopOnFailedAction { get; set; }
 
@@ -34,18 +34,18 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Automations
             return "NOT FOUND";
         }
 
-        public string listId
-        {
-            get => _automationlistId;
-            set => _automationlistId = GetAutomationListId(value);
-        }
+        //public string listId
+        //{
+        //    get => _automationlistId;
+        //    set => _automationlistId = GetAutomationListId(value);
+        //}
 
-        private string GetAutomationListId(string listName)
-        {
-            return DatabaseHelper.ExecuteReader(
-                    $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0)
-                .LastOrDefault();
-        }
+        //private string GetAutomationListId(string listName)
+        //{
+        //    return DatabaseHelper.ExecuteReader(
+        //            $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0)
+        //        .LastOrDefault();
+        //}
 
         public string objectTypeId
         {
