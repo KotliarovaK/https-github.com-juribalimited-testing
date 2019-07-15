@@ -1482,8 +1482,8 @@ this.FeatureBackground();
             "obu%2Cnetdobu%2Cnetu%2Cnuodobu%2Cnubu))", "41,339", "Application whose Name ends with a not installed on any device owned by user; not" +
             " entitled to any device owned by user; not entitled to user; not used on any dev" +
             "ice owned by user; or not used by user", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20>%201%20WHERE%20(netdobu))", "26,803", "Application whose Key is greater than 1 not entitled to any device owned by user", null)]
-        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%202%20WHERE%20(ubu%2Cuodou))", "191", "Application whose Key is less than 2 used by user; or used on a device owned by u" +
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20>%201%20WHERE%20(netdobu))", "26,808", "Application whose Key is greater than 1 not entitled to any device owned by user", null)]
+        [NUnit.Framework.TestCaseAttribute("Application Key", "evergreen/#/users?$filter=(applicationKey%20<%202%20WHERE%20(ubu%2Cuodou))", "186", "Application whose Key is less than 2 used by user; or used on a device owned by u" +
             "ser", null)]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList(string filterName, string queryString, string rows, string filterInfo, string[] exampleTags)
         {
