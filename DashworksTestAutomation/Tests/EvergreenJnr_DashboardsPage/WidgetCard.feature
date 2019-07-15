@@ -7,15 +7,11 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15364 @DAS15316 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
 	| CPU Virtualisation Capable |
 	And User have opened column settings for "CPU Virtualisation Capable" column
 	And User have select "Pin Left" option from column settings
-	And User clicks Save button on the list panel
 	And User create dynamic list with "List15364" name on "Devices" page
 	And User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
@@ -149,19 +145,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                 |
 	| Build Date |
 	And User have opened column settings for "Build Date" column
 	And User have select "Pin Left" option from column settings
-	And User click on 'Build Date' column header
 	And User create dynamic list with "ListForDas15722" name on "Devices" page
-	Then "ListForDas15722" list is displayed to user
-	When Dashboard with "DashboardForDas15722" name created via API and opened
+	And Dashboard with "DashboardForDas15722" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
 	| Card       | WidgetForDAS15722 | ListForDas15722 | Aggregate | Build Date  | First             |         |         |           |            |                  | Yes       |        |
@@ -464,9 +456,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15514 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
 	| 1803: In Scope                       |

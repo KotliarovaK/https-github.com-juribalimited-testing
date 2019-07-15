@@ -60,7 +60,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
 	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
+	| ColumnName            |
 	| Babel(Engl: Readiness |
 	And User move 'Babel(Engl: Readiness' column to 'Hostname' column
 	And User move 'Hostname' column to 'Device Type' column
