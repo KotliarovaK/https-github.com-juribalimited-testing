@@ -5,42 +5,11 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14867 @DAS15417 @DAS16694
-Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenDeletingRing
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User enters "Windows 7 Migration (Computer Scheduled Project)" text in the Search field for "Project" column
-	And User clicks content from "Project" column
-	And User clicks "Rings" tab
-	And User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
-	When User type "TestRing" Name in the "Ring name" field on the Project details page
-	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
-	When User select "Ring" rows in the grid
-	| SelectedRowsName |
-	| TestRing         |
-	And User clicks Actions button on the Projects page
-	And User clicks Delete button in Actions
-	And User clicks Delete button
-	And User clicks Delete button in the warning message
-	Then Success message is displayed and contains "The selected ring has been deleted" text
-	And There are no errors in the browser console
-
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14780 @DAS13530 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	Then "Projects" page should be displayed to the user
-	When User clicks the "CREATE PROJECT" Action button
-	Then "Create Project" page should be displayed to the user
-	When User enters "ProjectForDAS14780" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
-	Then Success message is displayed and contains "The project has been created" text
-	When User enters "ProjectForDAS14780" text in the Search field for "Project" column
-	And User clicks content from "Project" column
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode                            |
+	| ProjectForDAS14780 | All Devices | None            | Clone from Evergreen to Project |
 	Then Project "ProjectForDAS14780" is displayed to user
 	When User clicks "Details" tab
 	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
@@ -63,14 +32,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14839 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRingWasChanged
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User clicks the "CREATE PROJECT" Action button
-	And User enters "ProjectForDAS14839" in the "Project Name" field
-	And User selects "All Devices" in the Scope Project dropdown
-	And User selects "Clone from Evergreen to Project" in the Mode Project dropdown
-	And User clicks Create button on the Create Project page
-	And User clicks newly created object link
+	When Project created via API and opened
+	| ProjectName        | Scope       | ProjectTemplate | Mode                            |
+	| ProjectForDAS14839 | All Devices | None            | Clone from Evergreen to Project |
 	And User clicks "Details" tab
 	Then "Clone evergreen rings to project rings" text value is displayed in the "Rings" dropdown
 	When User clicks "Rings" tab
@@ -86,27 +50,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsDetailsPageCanBeSeenAfterTypeOfRi
 	When User clicks content from "Ring" column
 	Then "OneRing" content is displayed in "Ring name" field
 	Then "TwoRing" content is displayed in "Description" field
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901 @DAS16803
-Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
-	When User clicks Admin on the left-hand menu
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Rings" tab
-	And User clicks the "CREATE EVERGREEN RING" Action button
-	And User type "OneRing" Name in the "Ring name" field on the Project details page
-	And User doubleclicks Create button on Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
-	And  "OneRing" text is displayed in the table content
-	When User enters "OneRing" text in the Search field for "Ring" column
-	Then Rows counter contains "1" found row of all rows
-	And There are no errors in the browser console
-	When User select "Ring" rows in the grid
-	| SelectedRowsName |
-	| OneRing          |
-	And User clicks on Actions button
-	And User selects "Delete" in the Actions
-	And User clicks Delete button
-	And User clicks Delete button in the warning message
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14903 @DAS15180
 Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExistingRingDetails
@@ -340,30 +283,6 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	And User clicks Delete button
 	Then Warning message with "These rings will be permanently deleted and any objects within them reassigned to the default ring" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
-
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397
-Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User enters "1803 Rollout" text in the Search field for "Project" column
-	And User clicks content from "Project" column
-	And User clicks "Rings" tab
-	And User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
-	When User type "TestRing15397_1" Name in the "Ring name" field on the Project details page
-	And User clicks Create button on the Create Ring page
-	Then Success message is displayed and contains "The ring has been created" text
-	When User clicks Admin on the left-hand menu
-	And User clicks "Projects" link on the Admin page
-	And User enters "1803 Rollout" text in the Search field for "Project" column
-	And User clicks content from "Project" column
-	And User clicks "Rings" tab
-	And User clicks the "CREATE PROJECT RING" Action button
-	Then "Create Project Ring" page should be displayed to the user
-	When User type "TestRing15397_2" Name in the "Ring name" field on the Project details page
-	And User clicks Create button on the Create Ring page
-	Then There are no errors in the browser console
-	And Success message is displayed and contains "The ring has been created" text
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15906
 Scenario: EvergreenJnr_AdminPage_CheckThatCogIconIsNotDisplayedOnLevelOfGroupedRows
