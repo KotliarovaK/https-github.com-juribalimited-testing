@@ -255,6 +255,18 @@ namespace DashworksTestAutomation.Helpers
                 case "Model":
                     return "model";
 
+                case "1803: In Scope":
+                    return "project_63_inScope";
+
+                case "HDD Total Size (GB)":
+                    return "hDDTotalSpaceGB";
+
+                case "First Seen Date":
+                    return "firstSeenDate";
+
+                case @"Windows7Mi: Communication \ DateTime":
+                    return "project_task_1_250_2_Task";
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

@@ -54,8 +54,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Delete_Newly_Created_List @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
 	When User add following columns using URL to the "Devices" page:
-	| ColumnName          |
-	| Model |
+	| ColumnName |
+	| Model      |
 	And User create dynamic list with "List15365" name on "Devices" page
 	And User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
@@ -138,9 +138,7 @@ Examples:
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15508 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
 	| 1803: In Scope                       |
@@ -161,9 +159,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
 	| 1803: In Scope                       |
@@ -196,9 +192,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown	
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
 	| 1803: In Scope                       |
@@ -228,9 +222,7 @@ Examples:
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectValuesInOrderByDropDown
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
 	| Device Key                           |
 	| 1803: In Scope                       |
@@ -292,11 +284,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDis
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctionIsSelected
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                           |
-	| HDD Total Size (GB)                  |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
+	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -316,11 +306,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctionIsSelected
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                           |
-	| HDD Total Size (GB)                  |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
+	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -340,11 +328,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctionIsSelected
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                           |
-	| HDD Total Size (GB)                  |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
+	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -364,11 +350,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctionIsSelected
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                           |
-	| HDD Total Size (GB)                  |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
+	| HDD Total Size (GB) |
 	And User create dynamic list with "HddList" name on "Devices" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
