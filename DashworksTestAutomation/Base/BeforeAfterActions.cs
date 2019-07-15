@@ -50,16 +50,14 @@ namespace DashworksTestAutomation.Base
             LockCategory.AwaitTags(testTags);
             LockCategory.AddTags(testTags);
 
-            RemoteWebDriver driverInstance = null;
-
+            //Create browser if not API test
             if (!testTags.Contains("API"))
-                driverInstance = CreateBrowserDriver();
-
-            if (!Browser.RemoteDriver.Equals("local"))
-                driverInstance.Manage().Window.Maximize();
-
-            if (!testTags.Contains("API"))
+            {
+                var driverInstance = CreateBrowserDriver();
+                if (!Browser.RemoteDriver.Equals("local"))
+                    driverInstance.Manage().Window.Maximize();
                 _objectContainer.RegisterInstanceAs(driverInstance);
+            }
         }
 
         [AfterScenario]
