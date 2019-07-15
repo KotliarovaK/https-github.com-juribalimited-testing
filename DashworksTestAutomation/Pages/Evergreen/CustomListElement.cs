@@ -192,6 +192,9 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         #region UpdateList
 
+        [FindsBy(How = How.XPath, Using = ".//div[@role='menu']")]
+        public IWebElement SaveAsMenu { get; set; }
+
         [FindsBy(How = How.XPath, Using = "//span[text()='SAVE']/ancestor::button")]
         public IWebElement SaveAsDropdown { get; set; }
 

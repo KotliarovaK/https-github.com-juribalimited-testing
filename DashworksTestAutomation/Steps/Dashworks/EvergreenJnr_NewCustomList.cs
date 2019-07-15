@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO.RuntimeVariables;
@@ -292,7 +293,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             listElement.SaveAsDropdown.Click();
-            _driver.WaitForElementToBeDisplayed(listElement.UpdateCurrentListButton);
+            _driver.WaitForElementsToBeDisplayed(new List<IWebElement> { listElement.SaveAsDropdown, listElement.UpdateCurrentListButton });
+            _driver.WaitForAttributePresentInElement(listElement.UpdateCurrentListButton, "aria-disabled");
             listElement.UpdateCurrentListButton.Click();
         }
 
