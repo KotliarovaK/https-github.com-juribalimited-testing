@@ -146,7 +146,16 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             _driver.WaitForDataLoading();
             _driver.WaitForElementToContainsText(page.ErrorMessage, text);
             Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetMessageColor()); //Red color
-            Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+            Assert.AreEqual(text, page.ScopeChangesError.Text, "Error Message is not displayed");
+        }
+
+        [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]
+        public void ThenErrorInTheScopeChangesDisplayedToTheUser(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForElementToBeDisplayed(page.ScopeChangesError);
+            Assert.AreEqual(text, page.ScopeChangesError.Text, "Error Message is not displayed in the Scope Changes");
         }
 
         [Then(@"""(.*)"" message is displayed on the Admin Page")]
