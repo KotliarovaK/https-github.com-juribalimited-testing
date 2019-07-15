@@ -294,7 +294,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             listElement.SaveAsDropdown.Click();
             _driver.WaitForElementToBeDisplayed(listElement.UpdateCurrentListButton);
             _driver.WaitForElementToBeEnabled(listElement.UpdateCurrentListButton);
-            listElement.UpdateCurrentListButton.Click();
+            _driver.ClickByJavascript(listElement.UpdateCurrentListButton);
         }
 
         [Then(@"User save changes in list with ""(.*)"" name")]

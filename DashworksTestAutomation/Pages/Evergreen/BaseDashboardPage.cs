@@ -615,7 +615,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public string ActiveCustomListName()
         {
             var by = By.XPath(
-                ".//div[@class='list-selected']/span[contains(@class,'name')]");
+                ".//div[contains(@class, 'active-list')]//span[contains(@class,'name')]");
             Driver.WaitForElement(by);
             return Driver.FindElement(by).Text;
         }

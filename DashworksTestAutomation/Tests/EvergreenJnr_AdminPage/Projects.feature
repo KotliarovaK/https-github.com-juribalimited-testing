@@ -4176,3 +4176,29 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	Then Success message is displayed and contains "The project has been created" text
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then "TRUE" content is displayed in "Evergreen" column 
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
+	And User create dynamic list with "17122_List" name on "Devices" page
+	When Project created via API and opened
+	| ProjectName   | Scope      | ProjectTemplate | Mode               |
+	| 17122_Project | 17122_List | None            | Standalone Project |
+	Then Project "17122_Project" is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "17122_List" list
+	Then "17122_List" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList                             | Association        |
+	| Application List (Complex) - BROKEN LIST | Entitled to device |
+	When User update current custom list
+	When User clicks Admin on the left-hand menu
+	When User clicks "Projects" link on the Admin page
+	When User enters "17122_Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then "The scope changes could not be loaded, there may be an error with one of the lists referred to in the scope details" error in the Scope Changes displayed to the User
