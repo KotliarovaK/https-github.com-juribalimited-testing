@@ -9,8 +9,8 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
 {
     internal class ActionsPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = ".//h1[contains(text(), 'Actions')]")]
-        public IWebElement ActionsTitle { get; set; }
+        [FindsBy(How = How.XPath, Using = ".//button//span[text()='CREATE ACTION']")]
+        public IWebElement CreateActionButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@role='row']//div[@role='gridcell']")]
         public IWebElement ActionsTableContent { get; set; }
@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             Driver.WaitForDataLoading();
             return new List<By>
             {
-                SelectorFor(this, p => p.ActionsTitle)
+                SelectorFor(this, p => p.CreateActionButton)
             };
         }
 
