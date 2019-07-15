@@ -64,13 +64,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
-	When User switches to the "Computer Scheduled Test (Jo)" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -83,14 +83,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	| Workflow          |
-	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -102,14 +102,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
 	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
-	When User switches to the "Email Migration" project in the Top bar on Item details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	| Workflow          |
-	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
-	When User switches to the "Email Migration" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -221,9 +221,9 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 	And User navigates to the "Project Details" sub-menu on the Details page
 	Then following content is displayed on the Details Page
 	| Title             | Value |
-	| Overall Readiness | NONE  |
-	| App Readiness     | NONE  |
+	| Overall Readiness | RED   |
+	| App Readiness     | RED   |
 	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
 	| ComplianceItems   | ColorName |
-	| Overall Readiness | NONE      |
-	| App Readiness     | NONE      |
+	| Overall Readiness | RED       |
+	| App Readiness     | RED       |
