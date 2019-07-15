@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.Utils;
 using HtmlAgilityPack;
 using RestSharp;
 
@@ -30,10 +31,14 @@ namespace DashworksTestAutomation.Extensions
             var doc = new HtmlDocument();
 
             int attempts = 2;
+            var html = string.Empty;
             while (attempts > 0)
             {
-                var requet = new RestRequest();
-                var html = client.Get(requet).Content;
+                var request = new RestRequest();
+                var response = client.Get(request);
+                if (response.StatusCode != HttpStatusCode.OK)
+                    Logger.Write($"Automation server is not responding: {response.StatusCode}");
+                html = response.Content;
                 if (!string.IsNullOrEmpty(html))
                 {
                     doc.LoadHtml(html);
@@ -46,6 +51,9 @@ namespace DashworksTestAutomation.Extensions
 
                 Thread.Sleep(800);
             }
+
+            if (string.IsNullOrEmpty(html))
+                throw new Exception("Empty response from automation server was returned. Unable to get VIEWSTATE");
 
             try
             {
