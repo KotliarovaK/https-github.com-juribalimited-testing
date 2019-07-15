@@ -339,29 +339,6 @@ Examples:
 	| department             | Ends with        | LongName01234567890123456789012345678901234567890123456789 | Add Department column             |
 	| iscriticalsystemobject | Not empty        |                                                            | Add iscriticalsystemobject column |
 
-@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11550 @DAS11749 @DAS9583 @API
-Scenario Outline: EvergreenJnr_DevicesList_CheckThatOperatorInSelectedFilterIsDisplayedCorrectlyAPI
-	Then following operators are displayed in "<CategoryName>" category for "<FilterName>" filter on "Devices" page:
-	| OperatorValues      |
-	| Equals              |
-	| Does not equal      |
-	| Contains            |
-	| Does not contain    |
-	| Begins with         |
-	| Does not begin with |
-	| Ends with           |
-	| Does not end with   |
-	| Empty               |
-	| Not empty           |
-
-Examples:
-	| CategoryName              | FilterName                  |
-	| Application               | Application Name            |
-	| Application Custom Fields | App field 1                 |
-	| Application Custom Fields | Application Owner           |
-	| Application Custom Fields | General information field 1 |
-	| Application Custom Fields | App field 2                 |
-
 @Evergreen @Users @EvergreenJnr_FilterFeature @FilterFunctionality @DAS11738 @DAS12194 @DAS12199 @DAS12220
 Scenario: EvergreenJnr_UsersList_CheckThatToolTipShownWithEditFilterTextWhenEditingAFilterDisplayed 
 	When User clicks "Users" on the left-hand menu
@@ -1297,7 +1274,7 @@ Examples:
 	| Mailbox Count (Access) | 3      | 6                |
 	#| Mailbox Count (Owned)  | 4      | to_be_determined |
 
-@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @API @DAS13145
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS13145
 Scenario Outline: EvergreenJnr_AllLists_ChecksThatApplicationFilterIsNotExcludedApplicationsWhichAreNotLinkedToAnyDevices
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user

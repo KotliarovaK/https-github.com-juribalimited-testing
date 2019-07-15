@@ -14,13 +14,16 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
     {
         public const string ProjectOnSwitcherPanel = ".//mat-option[@class='mat-option ng-star-inserted']";
 
-        [FindsBy(How = How.XPath, Using = ".//div[@id='topbar']")]
+        [FindsBy(How = How.XPath, Using = ".//div[@id='pagetitle']")]
         public IWebElement PageIdentitySelectors { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='topbar']")]
+        public IWebElement TopBarOnItemDetailsPage { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//span[text()='Evergreen']/ancestor::mat-select")]
         public IWebElement DefaultProjectStatusInProjectSwitcherDropDown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'DropdownTopbar')]")]
+        [FindsBy(How = How.XPath, Using = "//div[@class='mat-select-trigger']")]
         public IWebElement ProjectSwitcherDropdownTopBar { get; set; }
 
         [FindsBy(How = How.XPath, Using = ProjectOnSwitcherPanel)]

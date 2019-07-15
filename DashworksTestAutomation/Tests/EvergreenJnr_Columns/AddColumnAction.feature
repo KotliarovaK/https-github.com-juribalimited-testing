@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: AddColumnAction
+﻿Feature: AddColumnAction
 	Runs Add column related tests
 
 Background: Pre-Conditions

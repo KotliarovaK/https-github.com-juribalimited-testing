@@ -78,6 +78,11 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-error//span")]
         public IWebElement WarningTextUnderField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
+        public IWebElement ListDoesntExistMessage { get; set; }
+
+        
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>

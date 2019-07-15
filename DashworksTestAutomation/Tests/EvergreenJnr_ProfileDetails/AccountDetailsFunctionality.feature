@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: AccountDetailsFunctionality
+﻿Feature: AccountDetailsFunctionality
 	Runs Profile Details related tests
 
 Background: Pre-Conditions
@@ -67,11 +66,7 @@ Scenario: EvergreenJnr_UserProfile_CheckThatErrorIsNotDisplayedAfterChangingProf
 	When User changes Email to "automation@juriba.com"
 	And User clicks the "UPDATE" Action button
 
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @DAS16979 @API @Not_Run
-Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
-	Then default list page Size is "1000" and Cache "10"
-
-@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS13026 @API @Remove_Profile_Changes
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS13026 @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	When User clicks Profile in Account Dropdown
 	Then Profile page is displayed to user
@@ -88,6 +83,10 @@ Scenario: EvergreenJnr_UserProfile_ChecksListPageSizeAPI
 	And User changes List Page Size to "1000"
 	And User clicks the "UPDATE" Action button
 	Then Success message with "User preferences have been changed" text is displayed on the Advanced page
+
+@Evergreen @ProfileDetails @EvergreenJnr_FilterFeature @UserProfile @DAS11723 @DAS16979 @Not_Run
+Scenario: EvergreenJnr_UserProfile_CheckThatDefaultListPageSizeIs1000API
+	Then default list page Size is "1000" and Cache "10"
 
 @Evergreen @ProfileDetails @EvergreenJnr_ProfileDetails @UserProfile @DAS11646 @DAS12947 @DAS13026 @DAS16248 @DAS16232 @Remove_Profile_Changes
 Scenario: EvergreenJnr_UserProfile_CheckThatNotificationMessageDisappearsAfter5Seconds

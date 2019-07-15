@@ -18,14 +18,11 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName           |
 	| Secure Boot Enabled  |
 	| Windows7Mi: In Scope |
-	When User create dynamic list with "14920_List" name on "Devices" page
+	And User create dynamic list with "14920_List" name on "Devices" page
 	And Dashboard with "Dashboard for DAS14920" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
@@ -96,31 +93,28 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPrevie
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                                        |
 	| Windows7Mi: Pre-Migration \ Scheduled Date (Slot) |
 	And User create dynamic list with "Devices_List_DAS16275" name on "Devices" page
-	Then "Devices_List_DAS16275" list is displayed to user
-	When Dashboard with "DAS16275_Dashboard" name created via API and opened
+	And Dashboard with "DAS16275_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title           | List                  | SplitBy                                           | AggregateFunction | AggregateBy | OrderBy   | MaxValues | TableOrientation | ShowLegend | Layout |
 	| Table      | DAS16275_Widget | Devices_List_DAS16275 | Windows7Mi: Pre-Migration \ Scheduled Date (Slot) | Count             |             | Count ASC |           | Vertical         |            |        |
 	Then Widget Preview is displayed to the user
 	When User clicks the "CREATE" Action button
 	Then "DAS16275_Widget" Widget is displayed to the user
-	Then content in the Widget is displayed in following order:
+	And content in the Widget is displayed in following order:
 	| TableValue                    |
 	| Slot 2018-10-01 to 2018-12-31 |
 	| Slot 2018-11-01 - 2020-12-26  |
 	| Empty                         |
 	When User clicks Ellipsis menu for "DAS16275_Widget" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	When User selects "Count DESC" in the "Order By" Widget dropdown
-	When User clicks the "UPDATE" Action button
+	And User selects "Count DESC" in the "Order By" Widget dropdown
+	And User clicks the "UPDATE" Action button
 	Then content in the Widget is displayed in following order:
 	| TableValue                    |
 	| Empty                         |
@@ -129,21 +123,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
 	| UserEvergr: Ring (All Users) |
 	And User create dynamic list with "DeviceListForDAS15826" name on "Devices" page
-	Then "DeviceListForDAS15826" list is displayed to user
-	When Dashboard with "DAS15826_Dashboard" name created via API and opened
+	And Dashboard with "DAS15826_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
 	| WidgetType | Title           | List                  | SplitBy                      | AggregateFunction | OrderBy                          | TableOrientation | MaxValues |
 	| Table      | DAS15826_Widget | DeviceListForDAS15826 | UserEvergr: Ring (All Users) | Count             | UserEvergr: Ring (All Users) ASC | Vertical         |           |
 	Then Card "DAS15826_Widget" Widget is displayed to the user
-	Then content in the Widget is displayed in following order:
+	And content in the Widget is displayed in following order:
 	| TableValue       |
 	| Empty            |
 	| Unassigned       |
@@ -153,10 +144,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Evergreen Ring 3 |
 	When User clicks Ellipsis menu for "DAS15826_Widget" Widget on Dashboards page
 	And User clicks "Edit" item from Ellipsis menu on Dashboards page
-	When User selects "UserEvergr: Ring (All Users) DESC" in the "Order By" Widget dropdown
-	When User clicks the "UPDATE" Action button
+	And User selects "UserEvergr: Ring (All Users) DESC" in the "Order By" Widget dropdown
+	And User clicks the "UPDATE" Action button
 	Then Card "DAS15826_Widget" Widget is displayed to the user
-	Then content in the Widget is displayed in following order:
+	And content in the Widget is displayed in following order:
 	| TableValue       |
 	| Evergreen Ring 3 |
 	| Evergreen Ring 2 |
@@ -179,10 +170,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereTh
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected
-	When User clicks "Users" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName      |
+	When User add following columns using URL to the "Users" page:
+	| ColumnName                   |
 	| Last Logon Date |
 	And User create dynamic list with "LastLogout" name on "Users" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened
@@ -203,10 +192,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggregateFunctionIsSelected
-	When User clicks "Users" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName      |
+	When User add following columns using URL to the "Users" page:
+	| ColumnName                   |
 	| Last Logon Date |
 	And User create dynamic list with "LastLogout" name on "Users" page
 	And Dashboard with "TestDashboardForDAS15362" name created via API and opened

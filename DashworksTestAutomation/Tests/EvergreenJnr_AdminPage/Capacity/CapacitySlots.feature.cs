@@ -2027,8 +2027,6 @@ this.FeatureBackground();
 #line 545
  testRunner.Then("\"CheckName\" is displayed in Display Name field for \"German\" Language in Translati" +
                     "ons table on the Capacity Slot page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 546
- testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 547
  testRunner.And("User clicks \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 548
@@ -3147,7 +3145,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13526")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Projec")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed()
         {
             System.Exception lastException = null;
@@ -3184,7 +3182,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS13526",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Projec"});
 #line 830
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5167,6 +5165,8 @@ this.FeatureBackground();
                         "Values"});
             table83.AddRow(new string[] {
                         "Unassigned"});
+            table83.AddRow(new string[] {
+                        "Offboarded"});
 #line 1403
  testRunner.And("Values is displayed in added filter info", ((string)(null)), table83, "And ");
 #line hidden
@@ -5174,7 +5174,9 @@ this.FeatureBackground();
                         "Values"});
             table84.AddRow(new string[] {
                         "is"});
-#line 1406
+            table84.AddRow(new string[] {
+                        "is not"});
+#line 1407
  testRunner.And("Options is displayed in added filter info", ((string)(null)), table84, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -5226,16 +5228,17 @@ this.FeatureBackground();
                         "Slots",
                         "DAS15878",
                         "DAS15291"});
-#line 1416
+#line 1418
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1417
- testRunner.When("User navigates to \"1803 Rollout\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1418
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1419
+#line 1420
+ testRunner.When("User navigates to \"1803 Rollout\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1421
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1422
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1420
  testRunner.When("User moves \"Birmingham Morning\" slot to \"London Depot 15:00 - 17:00\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -5266,9 +5269,9 @@ this.FeatureBackground();
                         "Birmingham Morning"});
             table85.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
-#line 1421
+#line 1423
  testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table85, "Then ");
-#line 1435
+#line 1437
  testRunner.When("User moves \"Birmingham Morning\" slot to \"Birmingham Afternoon\" slot", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table86 = new TechTalk.SpecFlow.Table(new string[] {
@@ -5297,7 +5300,7 @@ this.FeatureBackground();
                         "London Depot 13:00 - 15:00"});
             table86.AddRow(new string[] {
                         "London Depot 15:00 - 17:00"});
-#line 1436
+#line 1438
  testRunner.Then("\"Capacity Slot\" column content is displayed in the following order:", ((string)(null)), table86, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -5343,21 +5346,23 @@ this.FeatureBackground();
                         "Admin",
                         "EvergreenJnr_AdminPage",
                         "DAS13671"});
-#line 1452
+#line 1454
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 1453
- testRunner.When("User navigates to \"I-Computer Scheduled Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1454
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1455
+#line 1456
+ testRunner.When("User navigates to \"I-Computer Scheduled Project\" project details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1457
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1458
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1456
  testRunner.And("User enters \"Scheduled/Targeted\" text in the Search field for \"Capacity Slot\" col" +
                     "umn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 1457
+#line 1459
+#line 1460
  testRunner.And("User clicks content from \"Capacity Slot\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 1458
  testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -5376,11 +5381,12 @@ this.FeatureBackground();
                         "i-stage A \\ i-Schedule"});
             table87.AddRow(new string[] {
                         "i-stage A \\ i-Targeted"});
-#line 1459
+#line 1461
  testRunner.Then("Tasks are displayed in the following order on Action panel:", ((string)(null)), table87, "Then ");
-#line 1467
+#line 1469
+#line 1470
  testRunner.When("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 1468
+#line 1471
  testRunner.When("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1469
  testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -5389,9 +5395,9 @@ this.FeatureBackground();
                         "items"});
             table88.AddRow(new string[] {
                         "req type comp"});
-#line 1470
- testRunner.And("User selects following items in \"Paths\" dropdown:", ((string)(null)), table88, "And ");
 #line 1473
+ testRunner.And("User selects following items in \"Paths\" dropdown:", ((string)(null)), table88, "And ");
+#line 1475
  testRunner.And("User clicks on \"Tasks\" dropdown on the Capacity Slots page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table89 = new TechTalk.SpecFlow.Table(new string[] {
@@ -5408,7 +5414,7 @@ this.FeatureBackground();
                         "i-stage A \\ i-Schedule"});
             table89.AddRow(new string[] {
                         "i-stage A \\ i-Targeted"});
-#line 1474
+#line 1476
  testRunner.Then("Tasks are displayed in the following order on Action panel:", ((string)(null)), table89, "Then ");
 #line hidden
             this.ScenarioCleanup();
