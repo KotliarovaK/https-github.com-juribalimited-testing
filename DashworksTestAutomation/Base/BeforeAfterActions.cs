@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Base
 
             //If we are not able to get nUnit tags the try to get them from SpecFlow
             if (!testTags.Any())
-                testTags = ScenarioContext.Current.ScenarioInfo.Tags.ToList();
+                testTags = _scenarioContext.ScenarioInfo.Tags.ToList();
 
             LockCategory.AwaitTags(testTags);
             LockCategory.AddTags(testTags);
