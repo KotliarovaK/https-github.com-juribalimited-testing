@@ -115,6 +115,7 @@
     <Compile Include="DTO\Evergreen\Admin\Automations\AutomationsDTO.cs" />
     <Compile Include="DTO\Evergreen\Admin\Bucket\BucketDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
     <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
@@ -152,6 +153,8 @@
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Automation.cs" />
+    <Compile Include="DTO\RuntimeVariables\Rings.cs" />
+    <Compile Include="DTO\RuntimeVariables\RingUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\Team.cs" />
     <Compile Include="DTO\RuntimeVariables\DownloadedFileName.cs" />
@@ -330,6 +333,9 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\RemoveTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
@@ -458,7 +464,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Readiness.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\EditRings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditRings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\GridScreenForListScopedProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GridScreenForListScopedProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\NavigationRings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NavigationRings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\Rings.feature.cs">
       <DependentUpon>Rings.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -482,6 +503,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Automations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\CreateRing.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateRing.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\DeleteRings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature.cs">
       <DependentUpon>DeleteBucketsFromTheTeam.feature</DependentUpon>
@@ -888,7 +919,19 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Readiness.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Rings.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\EditRings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditRings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\GridScreenForListScopedProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GridScreenForListScopedProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\NavigationRings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NavigationRings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\Rings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Rings.feature.cs</LastGenOutput>
     </None>
@@ -907,6 +950,14 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automation\Automations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Automations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\CreateRing.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateRing.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\DeleteRings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

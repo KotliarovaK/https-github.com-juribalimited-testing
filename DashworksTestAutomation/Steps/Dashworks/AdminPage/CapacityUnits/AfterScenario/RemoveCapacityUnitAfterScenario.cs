@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using RestSharp;
 using TechTalk.SpecFlow;
 
@@ -10,12 +12,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
     [Binding]
     public class RemoveCapacityUnitAfterScenario : SpecFlowContext
     {
-        private readonly CapacityUnit _capacityUnit;
+        private readonly DTO.RuntimeVariables.CapacityUnits _capacityUnits;
         private readonly RestWebClient _client;
 
-        private RemoveCapacityUnitAfterScenario(CapacityUnit capacityUnit, RestWebClient client)
+        private RemoveCapacityUnitAfterScenario(DTO.RuntimeVariables.CapacityUnits capacityUnit, RestWebClient client)
         {
-            _capacityUnit = capacityUnit;
+            _capacityUnits = capacityUnit;
             _client = client;
         }
 
@@ -24,12 +26,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
         {
             try
             {
-                if (!_capacityUnit.Value.Any())
+                if (!_capacityUnits.Value.Any())
                     return;
 
                 var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/capacityUnits/deleteCapacityUnits";
 
-                foreach (CapacityUnitDto capacityUnit in _capacityUnit.Value)
+                foreach (CapacityUnitDto capacityUnit in _capacityUnits.Value)
                 {
                     try
                     {
@@ -43,7 +45,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
 
                         _client.Value.Put(request);
                     }
-                    catch { }
+                    catch (Exception e)
+                    {
+                        Logger.Write($"Unable to delete Capacity Unit via API: {e}");
+                    }
                 }
             }
             catch { }
