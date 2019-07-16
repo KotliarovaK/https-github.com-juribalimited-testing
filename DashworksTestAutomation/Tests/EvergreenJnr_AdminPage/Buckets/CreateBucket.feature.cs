@@ -182,6 +182,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Buckets")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Bucket")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Buckets")]
         public virtual void EvergreenJnr_AdminPage_CreatingDefaultBucket()
         {
             System.Exception lastException = null;
@@ -220,7 +221,8 @@ this.FeatureBackground();
                         "DAS16636",
                         "Buckets",
                         "Set_Default_Bucket",
-                        "Delete_Newly_Created_Bucket"});
+                        "Delete_Newly_Created_Bucket",
+                        "Do_Not_Run_With_Buckets"});
 #line 29
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
