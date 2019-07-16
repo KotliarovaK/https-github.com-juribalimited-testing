@@ -827,7 +827,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @Delete_Newly_Created_Projec
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @DAS17419 @Delete_Newly_Created_Projec
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |

@@ -85,10 +85,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AutomationLog")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS16890")]
         [NUnit.Framework.CategoryAttribute("DAS17063")]
         [NUnit.Framework.CategoryAttribute("DAS17364")]
         [NUnit.Framework.CategoryAttribute("DAS17402")]
+        [NUnit.Framework.CategoryAttribute("DAS17425")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject()
         {
             System.Exception lastException = null;
@@ -122,10 +124,12 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "AutomationLog",
+                        "Automations",
                         "DAS16890",
                         "DAS17063",
                         "DAS17364",
-                        "DAS17402"});
+                        "DAS17402",
+                        "DAS17425"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -264,6 +268,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AutomationLog")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17104")]
         [NUnit.Framework.CategoryAttribute("DAS17110")]
         [NUnit.Framework.CategoryAttribute("DAS17169")]
@@ -300,6 +305,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "AutomationLog",
+                        "Automations",
                         "DAS17104",
                         "DAS17110",
                         "DAS17169",
@@ -372,6 +378,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AutomationLog")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17104")]
         [NUnit.Framework.CategoryAttribute("DAS16974")]
         [NUnit.Framework.CategoryAttribute("DAS16316")]
@@ -409,6 +416,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "AutomationLog",
+                        "Automations",
                         "DAS17104",
                         "DAS16974",
                         "DAS16316",
@@ -488,6 +496,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AutomationLog")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS16316")]
         [NUnit.Framework.CategoryAttribute("DAS16319")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
@@ -523,6 +532,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "AutomationLog",
+                        "Automations",
                         "DAS16316",
                         "DAS16319",
                         "Not_Ready"});
@@ -564,6 +574,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AutomationLog")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17011")]
         [NUnit.Framework.CategoryAttribute("DAS17374")]
         [NUnit.Framework.CategoryAttribute("DAS17370")]
@@ -601,6 +612,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_AdminPage",
                         "AutomationLog",
+                        "Automations",
                         "DAS17011",
                         "DAS17374",
                         "DAS17370",
@@ -741,6 +753,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Admin")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AutomationLog")]
+        [NUnit.Framework.CategoryAttribute("Automations")]
         [NUnit.Framework.CategoryAttribute("DAS17212")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         [NUnit.Framework.TestCaseAttribute("17212_Devices", "All Devices", null)]
@@ -780,6 +793,7 @@ this.FeatureBackground();
                     "Admin",
                     "EvergreenJnr_AdminPage",
                     "AutomationLog",
+                    "Automations",
                     "DAS17212",
                     "Not_Ready"};
             if ((exampleTags != null))

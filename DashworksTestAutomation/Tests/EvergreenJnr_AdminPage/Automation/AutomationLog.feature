@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @DAS17063 @DAS17364 @DAS17402
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS17110 @DAS17169 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @Not_Ready
 #Use Inactive automation
 Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
 	When User clicks Admin on the left-hand menu
@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	| INACTIVE AUTOMATION |
 	| SUCCESS             |
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17104 @DAS16974 @DAS16316 @DAS17263 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS16974 @DAS16316 @DAS17263 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 #Use correct, active Automation
 	When User clicks Admin on the left-hand menu
@@ -125,7 +125,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User selects "Action Finish" checkbox from String Filter with item list on the Admin page
 	Then "Manual" content is displayed for "Run" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16316 @DAS16319 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16316 @DAS16319 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRunning
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -138,7 +138,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	When User enters "DELAY - do not delete2" text in the Search field for "Automation" column
 	Then "AUTOMATION IS ALREADY RUNNING" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS17011 @DAS17374 @DAS17370 @DAS17367 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17011 @DAS17374 @DAS17370 @DAS17367 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -196,7 +196,7 @@ Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomatio
 	When User enters "17011_Automation" text in the Search field for "Automation" column
 	Then "LIST HAS ERRORS" content is displayed for "Outcome" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @DAS17212 @Not_Ready 
+@Evergreen @Admin @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17212 @Not_Ready 
 Scenario Outline: EvergreenJnr_AdminPage_CheckSuccessfulRunningAutomationWithMainListsInTheScope
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

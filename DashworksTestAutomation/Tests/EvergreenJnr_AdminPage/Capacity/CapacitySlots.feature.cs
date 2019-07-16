@@ -3149,6 +3149,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13526")]
+        [NUnit.Framework.CategoryAttribute("DAS17419")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Projec")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed()
         {
@@ -3186,6 +3187,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS13526",
+                        "DAS17419",
                         "Delete_Newly_Created_Projec"});
 #line 831
 this.ScenarioInitialize(scenarioInfo);
