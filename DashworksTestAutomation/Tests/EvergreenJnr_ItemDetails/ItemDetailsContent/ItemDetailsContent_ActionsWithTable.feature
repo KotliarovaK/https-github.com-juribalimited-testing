@@ -278,8 +278,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNoConsoleErrorsWhenViewingMailboxD
 	Then Item content is displayed to the User
 	And There are no errors in the browser console
 
-	#upd Ann.Ilchenko 7/12/19: awaiting automation server update
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @DAS17352 @DAS17281 @Not_Run
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS11483 @DAS17352 @DAS17281
 Scenario: EvergreenJnr_DevicesList_CheckThatDataOfColumnsIsDisplayedInTheCustomFieldSection
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -485,7 +484,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | MainTabName | SubTabName              | CountRows |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 1         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 8         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 10        |
 	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 7         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 2         |
 	
@@ -539,8 +538,7 @@ Examples:
 	| Applications | IEWatch 2.1         | Application | MSI       | MSIFiles  |
 	| Users        | 01A921EFD05545818AA | Username    | Mailboxes | Mailboxes |
 
-	#Delete the tag "not ready" when new gold date will be on automation server
-@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17094 @Not_Ready
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17094
 Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObjectsWithSnrMatch
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -548,6 +546,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	And User click content from "Username" column
 	Then Details page for "AAD1011948" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	When User navigates to the "Devices" main-menu on the Details page
 	Then "001BAQXT6JWFPI" content is displayed in "Hostname" column
 	#=====================================================================================#
 	When User clicks "Mailboxes" on the left-hand menu
@@ -556,6 +555,7 @@ Scenario: EvergreenJnr_AllLists_CheckThatDataAboutUsersDevicesOnUsersMailboxObje
 	And User click content from "Email Address" column
 	Then Details page for "00A5B910A1004CF5AC4@bclabs.local" item is displayed to the user
 	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
+	When User navigates to the "Users" main-menu on the Details page
 	Then "00A5B910A1004CF5AC4" content is displayed in "Username" column
 	
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16860
@@ -747,6 +747,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatMultiselectFilterIsAppliedForDomain
 	Then Details page for "00HA7MKAVVFDAV" item is displayed to the user
 	When User navigates to the "Users" main-menu on the Details page
 	When User clicks String Filter button for "Domain" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
 Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForUsersObjectsOnUsersTabInEvergreenMode
@@ -758,6 +759,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatMultiselectFilterIsAppliedForDomainCo
 	When User navigates to the "Active Directory" main-menu on the Details page
 	When User navigates to the "Groups" sub-menu on the Details page
 	When User clicks String Filter button for "Domain" column
+	Then Dropdown List is displayed correctly in the Filter on the Details Page
 
 @Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17113
 Scenario: EvergreenJnr_MailboxesList_ChecksThatMultiselectFilterIsAppliedForDomainColumnForMailboxesObjectsOnUsersTabInEvergreenMode
@@ -884,7 +886,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| Device Count (Used) |
 	| User Count (Used)   |
 	When User perform search by "Microsoft DirectX 5 DDK"
-	Then "99" content is displayed in "Device Count (Used)" column
+	Then "94" content is displayed in "Device Count (Used)" column
 	And "98" content is displayed in "User Count (Used)" column
 	When User click content from "Application" column
 	When User navigates to the "Distribution" main-menu on the Details page
@@ -1035,7 +1037,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	| Domain             |
 	| Display Name       |
 	| Distinguished Name |
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then following columns are displayed on the Item details page:
 	| ColumnName            |
 	| Username              |
@@ -1046,15 +1048,14 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatUsersTabIsDisplayedWithCorrectColu
 	| Path                  |
 	| Category              |
 	| Application Readiness |
-	#Ann.Ilchenko upd 7/11/19: ready for "pulsar" release (remove hash when it comes to automation server) --> DAS17254
-	##| Stage 1               |
-	##| Stage 2               |
-	##| Stage 3               |
-	##| Stage Z               |
-	##And "GREEN" content is displayed for "Stage 1" column
-	##And "AMBER" content is displayed for "Stage 2" column
-	##And "RED" content is displayed for "Stage 3" column
-	##And "GREY" content is displayed for "Stage Z" column
+	| Stage 1               |
+	| Stage 2               |
+	| Stage 3               |
+	| Stage Z               |
+	And "AMBER" content is displayed for "Stage 1" column
+	And "RED" content is displayed for "Stage 2" column
+	And "GREEN" content is displayed for "Stage 3" column
+	And "BLUE" content is displayed for "Stage Z" column
 	
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17182 @DAS17218 @DAS11053 @DAS14923
 Scenario: EvergreenJnr_UsersList_CheckThatDevicesTabIsDisplayedWithCorrectColumnsOnUsersDetailsPageForProjectMode

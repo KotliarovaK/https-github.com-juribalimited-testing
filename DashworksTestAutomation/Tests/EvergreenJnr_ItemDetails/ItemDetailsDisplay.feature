@@ -51,17 +51,18 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatCopyRowWorksInItemDetails
 	Then "<PageName>" list should be displayed to the user
 	When User perform search by "<SearchTerm>"
 	And User click content from "<ColumnName>" column
-	When User navigates to the "<TabName>" main-menu on the Details page
+	When User navigates to the "<MainTabName>" main-menu on the Details page
+	When User navigates to the "<SubTabName>" sub-menu on the Details page
 	And User performs right-click on "<TargetCell>" cell in the grid
 	And User selects 'Copy row' option in context menu
 	Then Next data '<ExpectedData>' is copied
 	
 Examples:
-	| PageName     | SearchTerm                                              | ColumnName    | TabName      | SelectedColumn | TargetCell    | ExpectedData          |
-	| Devices      | 30BGMTLBM9PTW5                                          | Hostname      | Applications | Application    | Access 95     | !should be scpecified |
-	| Users        | svc_dashworks                                           | Username      | Groups       | Group          | Domain Admins | !should be scpecified |
-	| Applications | Microsoft Office Visio 2000 Solutions - Custom Patterns | Application   | MSI          | File Name      | setup_x86.msi | !should be scpecified |
-	| Mailboxes    | aaron.u.flores@dwlabs.local                             | Email Address | Users        | Username       | floresau      | !should be scpecified |
+	| PageName     | SearchTerm             | ColumnName    | MainTabName      | SubTabName        | TargetCell    | ExpectedData                                                    |
+	| Devices      | 30BGMTLBM9PTW5         | Hostname      | Applications     | Evergreen Summary | Access 95     | Access 95   Microsoft   Unknown   Green   True   Unknown   True |
+	| Users        | ZZZ588323              | Username      | Active Directory | Groups            | GAPP-A012448B | GAPP-A012448B   US-W   Global Security Group   Unknown          |
+	| Applications | ACD Display 3.4        | Application   | Details          | Programs          | Install       | Install   setup.exe /q                                          |
+	| Mailboxes    | Zurong.Wu@bclabs.local | Email Address | Details          | Email Addresses   | SMTP          | SMTP   Zurong.Wu@bclabs.local   True                            |
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15133
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
@@ -70,9 +71,9 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User perform search by "00BDM1JUR8IF419"
 	And User click content from "Hostname" column
 	When User navigates to the "Applications" main-menu on the Details page
-	When User performs right-click on "Advantage Data Architect" cell in the grid
+	When User performs right-click on "egcs-objc" cell in the grid
 	And User selects 'Copy row' option in context menu
-	Then Next data 'Advantage Data Architect\tUnknown\tExtended Systems\tGreen\tSMS_GEN\tUnknown\tTrue\tFalse\t\t\t5200\t75518\t10 Jan 2018' is copied
+	Then Next data 'egcs-objc   Red Hat   1.1.2   Red   Unknown   True   False' is copied
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication

@@ -267,6 +267,32 @@ namespace DashworksTestAutomation.Helpers
                 case @"Windows7Mi: Communication \ DateTime":
                     return "project_task_1_250_2_Task";
 
+                case @"Service Pack or Build":
+                    return "oSServicePackName";
+
+                case @"CPU Virtualisation Capable":
+                    return "processorVirtualisationCapable";
+
+                case "prK: Application Readiness":
+                    switch (pageName)
+                    {
+                        case "Users":
+                            return "project_49_linkedApplicationReadiness";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+                case "Device Application Compliance":
+                    switch (pageName)
+                    {
+                        case "Users":
+                            return "deviceApplicationCompliance";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }
