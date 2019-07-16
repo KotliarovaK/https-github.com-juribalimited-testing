@@ -70,7 +70,15 @@ namespace DashworksTestAutomation.Base
 
                 RemoteWebDriver driver = null;
                 if (!testTags.Contains("API"))
-                    driver = _objectContainer.Resolve<RemoteWebDriver>();
+                    try
+                    {
+                        driver = _objectContainer.Resolve<RemoteWebDriver>();
+                    }
+                    catch (Exception e)
+                    {
+                        Logger.Write($"UNABLE to get driver from context. It was closed before or doesn't exist: {e}");
+                        driver = null;
+                    }
 
                 try
                 {
