@@ -485,7 +485,7 @@ Scenario Outline: EvergreenJnr_AllLists_CheckThatDropdownListsInTheProjectDetail
 Examples:
 	| PageName | SearchTerm                                      | ColumnName | MainTabName | SubTabName              | CountRows |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | Mailbox Project Summary | 1         |
-	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 8         |
+	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Projects Summary        | 10        |
 	| Devices  | 001BAQXT6JWFPI                                  | Hostname   | Projects    | Owner Projects Summary  | 7         |
 	| Users    | Loya\, Dan.Employees.Birmingham.UK.bclabs.local | Username   | Projects    | User Projects           | 2         |
 	
@@ -884,7 +884,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatDevicesUsersUsedQuantityMatchE
 	| Device Count (Used) |
 	| User Count (Used)   |
 	When User perform search by "Microsoft DirectX 5 DDK"
-	Then "99" content is displayed in "Device Count (Used)" column
+	Then "94" content is displayed in "Device Count (Used)" column
 	And "98" content is displayed in "User Count (Used)" column
 	When User click content from "Application" column
 	When User navigates to the "Distribution" main-menu on the Details page

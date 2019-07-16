@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsSummaryRowCanBeCopied
 	When User navigates to the "Applications" main-menu on the Details page
 	When User performs right-click on "Advantage Data Architect" cell in the grid
 	And User selects 'Copy row' option in context menu
-	Then Next data 'Advantage Data Architect\tUnknown\tExtended Systems\tGreen\tSMS_GEN\tUnknown\tTrue\tFalse\t\t\t5200\t75518\t10 Jan 2018' is copied
+	Then Next data 'Advantage Data Architect	Extended Systems	Unknown	Green	Unknown	True	False' is copied
 
 @Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16067
 Scenario: EvergreenJnr_DevicesList_CheckThatApplicationsInTheApplicationColumnAreLinksAndAfterClickingUserIsRedirectedCorrectApplication
