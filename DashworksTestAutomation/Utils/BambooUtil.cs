@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Utils
                 var quarantinedTests =
                     doc.DocumentNode.SelectNodes("//table[@id='quarantined-tests']//a[@class='test-name']");
 
-                if (!quarantinedTests.Any())
+                if (quarantinedTests == null || !quarantinedTests.Any())
                 {
                     Logger.Write("There are no tests on quarantine");
                     _quarantinedTests = null;
