@@ -16,10 +16,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
     [Binding]
     public class RemoveBucketAfterScenario : SpecFlowContext
     {
-        private readonly Buckets _buckets;
+        private readonly DTO.RuntimeVariables.Buckets.Buckets _buckets;
         private readonly RestWebClient _client;
 
-        private RemoveBucketAfterScenario(Buckets buckets, RestWebClient client)
+        private RemoveBucketAfterScenario(DTO.RuntimeVariables.Buckets.Buckets buckets, RestWebClient client)
         {
             _buckets = buckets;
             _client = client;

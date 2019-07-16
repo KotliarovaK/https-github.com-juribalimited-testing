@@ -62,7 +62,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 }
             }
 
-            _driver.WaitForElementToBeDisplayed(message.WarningMessage);
+            _driver.WaitForElementToContainsText(message.WarningMessage, text);
             Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor()); //Amber color
             //Waiting for message text change
             Thread.Sleep(1000);

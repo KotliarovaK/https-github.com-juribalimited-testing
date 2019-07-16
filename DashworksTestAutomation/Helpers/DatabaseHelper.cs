@@ -166,6 +166,19 @@ namespace DashworksTestAutomation.Helpers
             return team;
         }
 
+        public static void UnlinkTeamWithBucket(string teamName)
+        {
+            var groupIds = DatabaseHelper.ExecuteReader(
+                $"select GroupID from[PM].[dbo].[ProjectGroups] buckets join[PM].[dbo].[Teams] teams on buckets.OwnedByTeamID = teams.TeamID where teams.TeamName = '{teamName}'",
+                0);
+
+            foreach (var groupId in groupIds)
+            {
+                DatabaseHelper.ExecuteQuery(
+                    $"update [PM].[dbo].[ProjectGroups] set OwnedByTeamID = null where GroupID = '{groupId}'");
+            }
+        }
+
 
         #endregion
 

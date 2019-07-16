@@ -13,6 +13,11 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.Bucket
         private string Id;
 
         public string Name { get; set; }
+
+        public string TeamName
+        {
+            set => this.Team = new TeamDto() { TeamName = value };
+        }
         public TeamDto Team { get; set; }
         public bool IsDefault { get; set; }
 

@@ -4,11 +4,11 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 namespace DashworksTestAutomation.DTO.RuntimeVariables
 {
     //Created team names are stored here
-    public class Team
+    public class Teams
     {
         public List<TeamDto> Value { get; set; }
 
-        public Team()
+        public Teams()
         {
             Value = new List<TeamDto>();
         }

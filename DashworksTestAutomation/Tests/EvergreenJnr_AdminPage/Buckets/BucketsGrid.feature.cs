@@ -252,14 +252,10 @@ this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 59
- testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 60
- testRunner.And("User clicks \"Evergreen\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Buckets",
-                        "Teams"});
+                        "Name",
+                        "TeamName"});
             table1.AddRow(new string[] {
                         "1ba",
                         "Admin IT"});
@@ -278,8 +274,12 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "waa",
                         "IB Team"});
-#line 61
- testRunner.And("User creates following buckets in Administration:", ((string)(null)), table1, "And ");
+#line 59
+ testRunner.When("User creates new Bucket via api", ((string)(null)), table1, "When ");
+#line 67
+ testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
+ testRunner.And("User clicks \"Evergreen\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 69
  testRunner.Then("data in table is sorted by \"Bucket\" column in ascending order by default on the A" +
                     "dmin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

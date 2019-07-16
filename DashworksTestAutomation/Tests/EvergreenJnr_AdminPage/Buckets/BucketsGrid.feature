@@ -56,16 +56,16 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
+	When User creates new Bucket via api
+	| Name | TeamName |
+	| 1ba  | Admin IT |
+	| 2ab  | K-Team   |
+	| aaa  | Admin IT |
+	| aab  | I-Team   |
+	| aba  | Admin IT |
+	| waa  | IB Team  |
 	When User clicks Admin on the left-hand menu
 	And User clicks "Evergreen" link on the Admin page
-	And User creates following buckets in Administration:
-	| Buckets | Teams    |
-	| 1ba     | Admin IT |
-	| 2ab     | K-Team   |
-	| aaa     | Admin IT |
-	| aab     | I-Team   |
-	| aba     | Admin IT |
-	| waa     | IB Team  |
 	Then data in table is sorted by "Bucket" column in ascending order by default on the Admin page
 	When User enters "1ba" text in the Search field for "Bucket" column
 	And User clicks content from "Bucket" column

@@ -33,23 +33,21 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_AdminPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly Team _team;
+        private readonly Teams _teams;
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Buckets _buckets;
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
-        private readonly CapacityUnits _capacityUnits;
         private readonly Rings _rings;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Team team, DTO.RuntimeVariables.Projects projects, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnits capacityUnit, Rings rings)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings)
         {
             _driver = driver;
-            _team = team;
+            _teams = teams;
             _projects = projects;
             _buckets = buckets;
             _lastUsedBucket = lastUsedBucket;
             _addedObjects = addedObjects;
-            _capacityUnits = capacityUnit;
             _rings = rings;
         }
 
@@ -122,7 +120,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     case "Team Name":
                         TeamDto teamDto = new TeamDto();
                         teamDto.TeamName = name;
-                        _team.Value.Add(teamDto);
+                        _teams.Value.Add(teamDto);
                         break;
                     case "Bucket Name":
                         _buckets.Value.Add(new BucketDto() { Name = name });
