@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
 using DashworksTestAutomation.Utils;
@@ -37,7 +38,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenBlueBannerWithTextIsDisplayed(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            //_driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
+            //_driver.WaitForElementToBeDisplayed(page.BlueBanner);
             StringAssert.Contains(text, page.BlueBanner.Text, "Blue banner is not displayed");
         }
 
@@ -61,7 +62,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 }
             }
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => message.WarningMessage);
+            _driver.WaitForElementToContainsText(message.WarningMessage, text);
             Assert.AreEqual("rgba(235, 175, 37, 1)", message.GetMessageColor()); //Amber color
             //Waiting for message text change
             Thread.Sleep(1000);
@@ -81,7 +82,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserClicksCancelButtonInTheWarningMessageOnTheAdminPage()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.CancelButtonInWarning);
+            _driver.WaitForElementToBeDisplayed(page.CancelButtonInWarning);
             page.CancelButtonInWarning.Click();
             Assert.IsFalse(page.WarningMessage.Displayed());
         }
@@ -90,7 +91,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserClicksDeleteButtonInTheWarningMessage()
         {
             var button = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.WarningMessage);
+            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
             button.DeleteButtonInWarningMessage.Click();
             Logger.Write("Delete button was clicked");
         }
@@ -99,7 +100,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void WhenUserClicksButtonInTheWarningMessageOnAdminPage(string buttonName)
         {
             var button = _driver.NowAt<ProjectsPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => button.WarningMessage);
+            _driver.WaitForElementToBeDisplayed(button.WarningMessage);
             button.GetButtonInWarningMessage(buttonName).Click();
             Logger.Write($"{buttonName} button was clicked");
         }
@@ -115,7 +116,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenInfoMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.BlueBanner);
+            _driver.WaitForElementToBeDisplayed(page.BlueBanner);
             Assert.AreEqual("rgba(49, 122, 193, 1)", page.GetMessageColor()); //Blue color
             //Assert.AreEqual("1530px", page.GetMessageWidthOnAdminPage());
             StringAssert.Contains(text, page.BlueBanner.Text, "Success Message is not displayed");
@@ -125,7 +126,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageIsDisplayedAndContainsText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            _driver.WaitForElementToContainsText(page.SuccessMessage, text);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
             StringAssert.Contains(text, page.SuccessMessage.Text, "Success Message is not displayed");
         }
@@ -134,7 +135,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenGreenBannerContainsFollowingText(string text)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             StringAssert.Contains(text, page.SuccessMessageThirdPart.Text, "Success Message is not displayed");
         }
 
@@ -143,16 +144,25 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.ErrorMessage);
+            _driver.WaitForElementToContainsText(page.ErrorMessage, text);
             Assert.AreEqual("rgba(242, 88, 49, 1)", page.GetMessageColor()); //Red color
             Assert.AreEqual(text, page.ErrorMessage.Text, "Error Message is not displayed");
+        }
+
+        [Then(@"""(.*)"" error in the Scope Changes displayed to the User")]
+        public void ThenErrorInTheScopeChangesDisplayedToTheUser(string text)
+        {
+            var page = _driver.NowAt<BaseGridPage>();
+            _driver.WaitForDataLoading();
+            _driver.WaitForElementToBeDisplayed(page.ScopeChangesError);
+            Assert.AreEqual(text, page.ScopeChangesError.Text, "Error Message is not displayed in the Scope Changes");
         }
 
         [Then(@"""(.*)"" message is displayed on the Admin Page")]
         public void ThenMessageIsDisplayedOnTheAdminPage(string message)
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.NoFoundMessage);
+            _driver.WaitForElementToBeDisplayed(page.NoFoundMessage);
             Assert.AreEqual(message, page.NoFoundMessage.Text, $"{message} is not displayed");
         }
 
@@ -160,7 +170,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenUserSeesBannerAtTheTopOfWorkArea()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.Banner);
+            _driver.WaitForElementToBeDisplayed(page.Banner);
             Assert.That(page.Banner.Displayed, Is.True, "Banner is not displayed");
         }
 
@@ -168,7 +178,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageIsDisplayedCorrectly()
         {
             var page = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => page.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
             Assert.AreEqual("1658px", page.GetMessageWidthOnAdminPage());
             Assert.AreEqual("33.6px", page.GetMessageHeightOnAdminPage());
@@ -178,7 +188,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         public void ThenSuccessMessageTheBucketHasBeenUpdatedIsDisplayedOnTheBucketsPage(string bucketName)
         {
             var pageBase = _driver.NowAt<BaseGridPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => pageBase.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(pageBase.SuccessMessage);
             var pageBuckets = _driver.NowAt<BucketsPage>();
             Assert.IsTrue(pageBuckets.SuccessUpdatedMessageBucketsPage(bucketName),
                 $"Success Message is not displayed for {bucketName}");
@@ -204,7 +214,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
                 }
             }
 
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.SuccessMessage);
+            _driver.WaitForElementToBeDisplayed(projectElement.SuccessMessage);
             Thread.Sleep(10000);
             Assert.IsTrue(projectElement.TextMessage(textMessage),
                 $"{textMessage} is not displayed on the Project page");
@@ -215,7 +225,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
         {
             var projectElement = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => projectElement.NewProjectLink);
+            _driver.WaitForElementToBeDisplayed(projectElement.NewProjectLink);
             projectElement.NewProjectLink.Click();
         }
 

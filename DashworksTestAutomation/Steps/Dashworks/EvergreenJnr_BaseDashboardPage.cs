@@ -155,16 +155,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var searchElement = _driver.NowAt<GlobalSearchElement>();
             _driver.WaitForDataLoading();
 
-            new Actions(_driver)
-                .Click(searchElement.SearchEverythingField)
-                .SendKeys(OpenQA.Selenium.Keys.LeftControl + "v")
-                .KeyUp(OpenQA.Selenium.Keys.LeftControl)
-                .Perform();
+            _driver.InsertFromClipboard(searchElement.SearchEverythingField);
 
             Assert.That(searchElement.SearchEverythingField.GetAttribute("value").Replace("\t", "   "),
                 Is.EqualTo(data.Replace(@"\t", "   ")));
         }
-
 
         [When(@"User click on '(.*)' column header")]
         public void WhenUserClickOnColumnHeader(string columnName)
@@ -370,6 +365,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
+        [Then(@"some data is displayed in the ""(.*)"" column")]
+        public void ThenSomeDataIsDisplayedInTheColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsNotEmpty(page.GetColumnContentByColumnName(columnName));
+        }
+
         [Then(@"""(.*)"" italic content is displayed")]
         public void ThenItalicContentIsDisplayed(string textContent)
         {
@@ -382,7 +384,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenFullListContentIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
+            _driver.WaitForElementToBeDisplayed(page.TableContent);
             Assert.IsTrue(page.TableRows.Count > 5, "Table is empty");
         }
 
@@ -391,7 +393,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.TableContent);
+            _driver.WaitForElementToBeDisplayed(page.TableContent);
             Assert.That(page.TableRows.Count, Is.EqualTo(rowsCount));
         }
 
@@ -596,7 +598,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             button.ClosePanelButton.Click();
         }
 
-
         [When(@"User remembers value in ""(.*)"" column")]
         public void WhenUserRemembersValueInSpecificColumn(string columnName)
         {
@@ -610,12 +611,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var foundRowsCounter = _driver.NowAt<BaseGridPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<BaseGridPage>(() => foundRowsCounter.ListRowsCounter);
+            _driver.WaitForElementToBeDisplayed(foundRowsCounter.ListRowsCounter);
 
             string rememberedNumber = foundRowsCounter.Storage.SessionStorage.GetItem("column_value");
 
             StringAssert.AreEqualIgnoringCase(rememberedNumber == "1" ? $"{rememberedNumber} row" : $"{rememberedNumber} rows",
-                foundRowsCounter.ListRowsCounter.Text, "Incorrect rows count");
+                foundRowsCounter.ListRowsCounter.Text.Replace(",",""), "Incorrect rows count");
         }
 
         [Then(@"Error is displayed to the User")]
@@ -628,10 +629,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User navigates to ""(.*)"" URL in a new tab")]
         public void WhenUserNavigatesToURLInANewTab(string urlParameters)
         {
-            var page = _driver.NowAt<BaseGridPage>();
-            page.BodyContainer.OpenNewTab(_driver);
+            _driver.OpenInNewTab($"{UrlProvider.Url}{urlParameters}");
             _driver.SwitchTo().Window(_driver.WindowHandles.Last());
-            _driver.Navigate().GoToUrl($"{UrlProvider.Url}{urlParameters}");
         }
 
         [When(@"User switches to previous tab")]

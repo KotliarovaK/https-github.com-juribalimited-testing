@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserNavigatesToPivot()
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => page.CreateActionButton);
+            _driver.WaitForElementToBeDisplayed(page.CreateActionButton);
             _driver.WaitForDataLoading();
             page.CreateActionButton.Click();
             page.GetCreateButtonByName("Pivot").Click();
@@ -43,7 +43,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var menu = _driver.NowAt<PivotElementPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => menu.PivotButton);
+            _driver.WaitForElementToBeDisplayed(menu.PivotButton);
             menu.PivotButton.Click();
             _driver.WaitForDataLoading();
         }
@@ -204,14 +204,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<PivotElementPage>();
 
-            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => page.SaveButton);
+            _driver.WaitForElementToBeDisplayed(page.SaveButton);
             page.SaveButton.Click();
 
-            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => page.SaveNewListButton);
+            _driver.WaitForElementToBeDisplayed(page.SaveNewListButton);
             Assert.IsTrue(page.SaveNewListButton.Displayed(), "'Save' button is not displayed");
             page.SaveNewListButton.Click();
 
-            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => page.SaveButton);
+            _driver.WaitForElementToBeDisplayed(page.SaveButton);
             Assert.IsTrue(page.SaveButton.Displayed(), "'Save' button is not displayed");
             
             page.PivotNameTextBox.SendKeys(listName);
@@ -220,7 +220,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             //Small wait for message display
             //Thread.Sleep(300);
             //var listElement = _driver.NowAt<CustomListElement>();
-            //_driver.WaitWhileControlIsDisplayed<CustomListElement>(() => listElement.SuccessCreateMessage);
+            //_driver.WaitWhileControlIsDisplayedObsolete<CustomListElement>(() => listElement.SuccessCreateMessage);
             //Assert.IsTrue(listElement.SuccessCreateMessage.Displayed(), "Success message is not displayed");
         }
 
@@ -416,7 +416,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var columnElement = _driver.NowAt<PivotElementPage>();
             _driver.WaitForDataLoading();
-            _driver.WaitWhileControlIsNotDisplayed<PivotElementPage>(() => columnElement.FirstEmptyValueLeftPinned);
+            _driver.WaitForElementToBeDisplayed(columnElement.FirstEmptyValueLeftPinned);
             Assert.IsTrue(columnElement.FirstEmptyValueLeftPinned.Displayed(), "Empty value is not displayed on the first place");
         }
 

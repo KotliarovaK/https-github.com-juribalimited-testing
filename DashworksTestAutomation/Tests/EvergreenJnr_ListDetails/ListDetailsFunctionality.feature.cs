@@ -1999,7 +1999,8 @@ this.FeatureBackground();
  testRunner.And("\"Any Application in list [List not found] used on device\" is displayed in added f" +
                     "ilter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 529
- testRunner.And("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("message \'This list could not be processed, it may refer to a list with errors\' is" +
+                    " displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -2160,7 +2161,8 @@ this.FeatureBackground();
  testRunner.And("\"Any Application in list [List not found] used on device\" is displayed in added f" +
                     "ilter info", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 574
- testRunner.And("message \'No devices found\' is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("message \'This list could not be processed, it may refer to a list with errors\' is" +
+                    " displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -3321,7 +3323,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "\\t00HA7MKAVVFDAV\\tLaptop\\tWindows XP\\tKris C. Herman", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "\\t00HA7MKAVVFDAV\\tLaptop\\tWindows 7\\tKris C. Herman", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "\\t$6BE000-SUDQ9614UVO8\\tBCLABS\\tExchange Online-ApplicationAccount\\tExchange Onli" +
             "ne-ApplicationAccount.Users.bclabs.local", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "0036 - Microsoft Access 97 SR-2 English", "\\t0004 - Adobe Acrobat Reader 5.0.5 Francais\\tAdobe\\t5.0.5", null)]
@@ -3375,8 +3377,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12968")]
-        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "001PSUMZYOW581", "\\t001BAQXT6JWFPI\\tDesktop\\tWindows XP\\tNicole P. Braun \\t001PSUMZYOW581\\tLaptop\\t" +
-            "Windows XP\\tTricia G. Huang", null)]
+        [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "00HA7MKAVVFDAV", "001BAQXT6JWFPI", "001PSUMZYOW581", "\\t001BAQXT6JWFPI\\tDesktop\\tWindows 7\\tNicole P. Braun \\t001PSUMZYOW581\\tLaptop\\tW" +
+            "indows 7\\tTricia G. Huang", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "$6BE000-SUDQ9614UVO8", "000F977AC8824FE39B8", "002B5DC7D4D34D5C895", "\\t000F977AC8824FE39B8\\tBCLABS\\tSpruill, Shea\\tSpruill\\, Shea.Employees.Birmingham" +
             ".UK.bclabs.local \\t002B5DC7D4D34D5C895\\tDWLABS\\tCollor, Christopher\\tCollor\\, Ch" +
             "ristopher.Users.Birmingham.dwlabs.local", null)]
@@ -3427,6 +3429,83 @@ this.FeatureBackground();
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsP" +
+            "ane")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
+        [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS16332")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPane()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPaneInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPaneInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsP" +
+                    "ane", null, new string[] {
+                        "Evergreen",
+                        "AllLists",
+                        "EvergreenJnr_ListDetails",
+                        "ListDetailsFunctionality",
+                        "DAS16332",
+                        "Delete_Newly_Created_List"});
+#line 912
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 5
+this.FeatureBackground();
+#line 913
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 914
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "SelectedCheckboxes"});
+            table31.AddRow(new string[] {
+                        "TRUE"});
+#line 915
+ testRunner.And("User add \"1803: In Scope\" filter where type is \"Equals\" with added column and fol" +
+                    "lowing checkboxes:", ((string)(null)), table31, "And ");
+#line 918
+ testRunner.And("User create dynamic list with \"TestListName\" name on \"Devices\" page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 919
+ testRunner.Then("\"TestListName\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 920
+ testRunner.When("User opens manage pane for list with \"TestListName\" name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 921
+ testRunner.And("User adds \"post\" to list name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 922
+ testRunner.Then("\"TestListNamepost\" list is displayed to user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore

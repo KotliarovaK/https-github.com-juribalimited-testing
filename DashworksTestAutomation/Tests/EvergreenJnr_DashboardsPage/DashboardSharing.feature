@@ -44,15 +44,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16380 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
 	| Build Date |
 	And User create dynamic list with "First_List_DAS16380" name on "Devices" page
-	Then "First_List_DAS16380" list is displayed to user
-	When User navigates to the "All Devices" list
-	When User click on 'Hostname' column header
+	And User navigates to the "All Devices" list
+	And User click on 'Hostname' column header
 	And User create dynamic list with "Second_List_DAS16380" name on "Devices" page
 	Then "Second_List_DAS16380" list is displayed to user
 	When Dashboard with "Dashboard for DAS16380" name created via API and opened
@@ -102,13 +99,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPermisson
 	#create private list
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName |
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841" name on "Devices" page
-	Then "DeviceListFor14841" list is displayed to user
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -152,13 +146,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissionPoup
 	#create private list
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName |
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_1" name on "Devices" page
-	Then "DeviceListFor14841_1" list is displayed to user
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_1" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -188,13 +179,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPopup
 	#create private list
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName            |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName |
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_2" name on "Devices" page
-	Then "DeviceListFor14841_2" list is displayed to user
 	#create dashboard
 	When Dashboard with "Dashboard for DAS14841_2" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -224,13 +212,10 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow
 	#create private list#1
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName            |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName |
 	| Service Pack or Build |
 	And User create dynamic list with "DeviceListFor14841_3" name on "Devices" page
-	Then "DeviceListFor14841_3" list is displayed to user
 	#create private list#2
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button

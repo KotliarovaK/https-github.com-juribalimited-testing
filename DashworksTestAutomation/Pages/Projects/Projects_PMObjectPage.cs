@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects
 {
@@ -34,15 +34,22 @@ namespace DashworksTestAutomation.Pages.Projects
         public void GetViewStateByName(string stateName)
         {
             var selector = By.XPath($"//select[contains(@id, 'ViewState')]//option[text()='{stateName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
 
         public void GetViewTypeByName(string typeName)
         {
             var selector = By.XPath($"//select[contains(@id, 'ViewType')]//option[text()='{typeName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
+        }
+
+        public IWebElement GetObjectOnPMObjectpageByName(string objectName)
+        {
+            var selector = By.XPath($".//span[contains(@id, 'objectTitleText')][text()='{objectName}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
         }
     }
 }

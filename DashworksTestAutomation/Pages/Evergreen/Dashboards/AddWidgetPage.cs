@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages
 {
@@ -16,6 +17,9 @@ namespace DashworksTestAutomation.Pages
 
         [FindsBy(How = How.XPath, Using = ".//*[@aria-label='WidgetType']")]
         public IWebElement WidgetType { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//span[contains(@class, 'mat-select-placeholder')]")]
+        public IList<IWebElement> Dropdowns { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//input[@placeholder='Title']")]
         public IWebElement Title { get; set; }
@@ -74,6 +78,11 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-error//span")]
         public IWebElement WarningTextUnderField { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//div[text()='This list does not exist or you do not have access to it']")]
+        public IWebElement ListDoesntExistMessage { get; set; }
+
+        
+
         public override List<By> GetPageIdentitySelectors()
         {
             return new List<By>
@@ -91,41 +100,46 @@ namespace DashworksTestAutomation.Pages
         public void SelectObjectForWidgetCreation(string objectName)
         {
             var listNameSelector = $".//span[@class='mat-option-text'][contains(text(), '{objectName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public void SelectListForWidgetCreation(string listName)
         {
-            var listNameSelector = $".//span[@class='mat-option-text']//span[contains(text(), '{listName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            var listNameSelector = $".//mat-option//span[contains(text(), '{listName}')]";
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
         
         public IWebElement GetUnsavedChangesAlertText()
         {
             var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//p";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public IWebElement UnsavedChangesAlertButton(string buttonTitle)
         {
             var selector = $".//deactivate-guard-dialog/parent::mat-dialog-container//span[text()='{buttonTitle}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public IWebElement GetColorFromColorScheme(string colorTitle)
         {
             var selector = $".//div[@class='inner-colour'][text()='{colorTitle}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             return Driver.FindElement(By.XPath(selector));
         }
 
         public IList<IWebElement> GetDropdownOptions()
         {
             return Driver.FindElements(By.XPath(".//mat-option"));
+        }
+
+        public void ClickColorSchemeByIndex(int index)
+        {
+            Driver.FindElement(By.XPath($".//mat-option[{index}]")).Click();
         }
 
         public bool GetCheckboxByName(string checkboxName)
@@ -138,8 +152,7 @@ namespace DashworksTestAutomation.Pages
             var selector = By.XPath($".//mat-checkbox//span[text()='{checkboxName}']//ancestor::mat-checkbox");
             return Driver.FindElement(selector);
         }
-
-        
+      
         public IWebElement GetPreviewFirstCellValue()
         {
             var byFirstVer =By.XPath(".//div[@class='widget-preview-inner ng-star-inserted']//span[@class='status-text']");
@@ -157,12 +170,17 @@ namespace DashworksTestAutomation.Pages
                 return Driver.FindElement(byOtherVer);
             }
         }
-
-       
-
+        
         public IWebElement GetTableWidgetPreview()
         {
             return Driver.FindElement(By.XPath(".//div[@class='table-responsive']"));
         }
+
+        public bool IsAggregateByDropdownDisabled()
+        {
+            return Convert.ToBoolean(AggregateBy.GetAttribute("aria-disabled"));
+        }
+
+
     }
 }

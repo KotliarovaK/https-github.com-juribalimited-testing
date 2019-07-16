@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 {
@@ -58,14 +58,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
         public void ClickTabByName(string tabName)
         {
             var tabNameSelector = $".//div[@role='tab']/div[text()='{tabName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(tabNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(tabNameSelector));
             Driver.FindElement(By.XPath(tabNameSelector)).Click();
         }
 
         public IWebElement SelectObjectByName(string objectName)
         {
             var selector = By.XPath($".//span[contains(text(), '{objectName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

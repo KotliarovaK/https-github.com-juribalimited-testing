@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
@@ -24,14 +24,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         {
             var byControl = By.XPath($".//div//input[@placeholder='{dropdownName}']");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             return Driver.FindElement(byControl);
         }
 
         public IWebElement GetDropdownCheckboxByName(string checkboxName)
         {
             var selector = By.XPath($".//li//label//span[contains(text(), '{checkboxName}')]//parent::label/div[contains(@class,'mat-checkbox')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

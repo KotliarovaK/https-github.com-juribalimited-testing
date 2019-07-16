@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void WhenUserMovesActionToAction(string actionFrom, string actionTo)
         {
             var page = _driver.NowAt<ActionsPage>();
-            _driver.WaitWhileControlIsDisplayed<ActionsPage> (() => page.ActionsTableContent);
+            _driver.WaitForElementToBeNotDisplayed(page.ActionsTableContent);
             var action1 = page.GetMoveButtonByActionName(actionFrom);
             var action2 = page.GetMoveButtonByActionName(actionTo);
             _driver.DragAndDrop(action1, action2);
@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void ThenActionsPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<ActionsPage>();
-            Assert.IsTrue(page.ActionsTitle.Displayed(), "Actions page is not displayed");
+            Assert.IsTrue(page.CreateActionButton.Displayed(), "Actions page is not displayed");
         }
     }
 }

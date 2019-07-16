@@ -4,7 +4,7 @@ using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 {
@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromConditionPanel']//input[@aria-label='Date']")]
         public IWebElement DateRegularValueSecond { get; set; }
-        
+
         [FindsBy(How = How.XPath, Using = ".//div[@id='filterDateFromPanel']//input")]
         public IWebElement DateFromValue { get; set; }
 
@@ -108,11 +108,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void OpenColumnSettingsByName(string columnName)
         {
-            var columnSettingsSelector =
-                $".//div[@role='presentation']/span[text()='{columnName}']//ancestor::div[@class='ag-cell-label-container ag-header-cell-sorted-none']//span[@class='ag-icon ag-icon-menu']";
-            Driver.MouseHover(By.XPath(columnSettingsSelector));
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(columnSettingsSelector));
-            Driver.FindElement(By.XPath(columnSettingsSelector)).Click();
+            var columnSettingsSelector = By.XPath($"//*[text()='{columnName}']/ancestor::div/span[contains(@class, 'cell-menu-button')]");
+            Driver.MouseHover(columnSettingsSelector);
+            Driver.WaitForElementToBeDisplayed(columnSettingsSelector);
+            Driver.FindElement(columnSettingsSelector).Click();
         }
 
         public bool IsColumnPresent(string columnName)
@@ -136,7 +135,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         {
             var allHeadersSelector = By.XPath(".//div[@class='ag-header-container']/div/div");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(allHeadersSelector);
+            Driver.WaitForElementToBeDisplayed(allHeadersSelector);
             var allHeaders = Driver.FindElements(allHeadersSelector);
             if (!allHeaders.Any())
                 throw new Exception("Table does not contains any columns");
@@ -159,14 +158,14 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
                 By.XPath(
                     $".//div[@role='presentation']/div[2]/div[{GetColumnNumberByName(columnName)}][@aria-hidden='true']");
             Driver.WaitForDataLoading();
-            Driver.WaitWhileControlIsNotDisplayed(byControl);
+            Driver.WaitForElementToBeDisplayed(byControl);
             Driver.FindElement(byControl).Click();
         }
 
         public void GetCheckboxStringFilterByName(string filterName)
         {
             var filterSelector = $"//div[@class='ng-star-inserted']/span[(text()='{filterName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(filterSelector));
             Driver.FindElement(By.XPath(filterSelector)).Click();
         }
 
@@ -178,20 +177,20 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public IWebElement GetFilterByName(string filterName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
+            Driver.WaitForElementToBeDisplayed(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
             return Driver.FindElement(By.XPath($".//div[@class='ag-filter']//span[text()='{filterName}']"));
         }
 
         public IWebElement GetStringFilterByName(string filterName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(
+            Driver.WaitForElementToBeDisplayed(
                 By.XPath($".//div[@class='ng-star-inserted']/span[(text()='{filterName}')]"));
             return Driver.FindElement(By.XPath($".//div[@class='ng-star-inserted']//span[(text()='{filterName}')]"));
         }
 
         public IWebElement GetBooleanStringFilterByName(string filterName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(
+            Driver.WaitForElementToBeDisplayed(
                 By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
             return Driver.FindElement(
                 By.XPath($".//div[@class='boolean-icon ng-star-inserted']/span[(text()='{filterName}')]"));
@@ -234,7 +233,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public IWebElement GetSettingByNameDetailsPage(string settingName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(
+            Driver.WaitForElementToBeDisplayed(
                 By.XPath($".//span[@class='ag-menu-option-text'][text()='{settingName}']"));
             return Driver.FindElement(By.XPath($".//span[@id='eName'][text()='{settingName}']"));
         }
@@ -264,10 +263,10 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
 
         public void GetCheckboxByName(string checkboxName)
         {
-            var checkboxSettingsSelector = $".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']";
-            Driver.MouseHover(By.XPath(checkboxSettingsSelector));
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(checkboxSettingsSelector));
-            Driver.FindElement(By.XPath(checkboxSettingsSelector)).Click();
+            var checkboxSettingsSelector = By.XPath($".//div[@class='ag-column-select-panel']//span[text()='{checkboxName}']");
+            Driver.MouseHover(checkboxSettingsSelector);
+            Driver.WaitForElementToBeDisplayed(checkboxSettingsSelector);
+            Driver.FindElement(checkboxSettingsSelector).Click();
         }
 
         public IList<IWebElement> GetAllColumnHeadersOnTheDetailsPage()
@@ -282,7 +281,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             var filterCheckboxSelector =
                 $".//div[@class='boolean-icon ng-star-inserted']/span[text()='{checkboxName}']";
             //Driver.MouseHover(By.XPath(filterCheckboxSelector));
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(filterCheckboxSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(filterCheckboxSelector));
         }
 
         public bool ColumnIsDisplayed(string columnName)
@@ -294,9 +293,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         public void SelectValueForDateColumn(string dateValue)
         {
             var selectBox = By.XPath(".//select[@class='ag-filter-select']");
-            Driver.WaitWhileControlIsNotDisplayed(selectBox);
+            Driver.WaitForElementToBeDisplayed(selectBox);
             Driver.FindElement(selectBox).Click();
-            Driver.WaitWhileControlIsNotDisplayed(
+            Driver.WaitForElementToBeDisplayed(
                 By.XPath($".//select[@class='ag-filter-select']//option[text()='{dateValue}']"));
             var value = By.XPath($".//select[@class='ag-filter-select']//option[text()='{dateValue}']");
             Driver.FindElement(value).Click();
@@ -306,7 +305,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
         {
             var selectBox = By.XPath(".//select[@id='filterType']");
 
-            Driver.WaitWhileControlIsNotDisplayed(selectBox);
+            Driver.WaitForElementToBeDisplayed(selectBox);
             Driver.FindElement(selectBox).SelectboxSelect(filterConditionValue);
         }
 

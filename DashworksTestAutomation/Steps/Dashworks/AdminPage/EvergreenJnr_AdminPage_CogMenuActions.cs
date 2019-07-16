@@ -61,7 +61,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var cogMenu = _driver.NowAt<CogMenuElements>();
             _driver.MouseHover(cogMenu.GetCogMenuByItem(itemName));
             cogMenu.GetCogMenuByItem(itemName).Click();
-            _driver.WaitWhileControlIsNotDisplayed<CogMenuElements>(() => cogMenu.CogMenuDropdown);
+            _driver.WaitForElementToBeDisplayed(cogMenu.CogMenuDropdown);
             cogMenu.GetCogmenuOptionByName(option).Click();
             Thread.Sleep(1000);
         }

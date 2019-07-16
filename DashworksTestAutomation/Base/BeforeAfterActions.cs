@@ -8,10 +8,13 @@ using BoDi;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using HtmlAgilityPack;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using RestSharp;
+using RestSharp.Authenticators;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Base
@@ -28,18 +31,33 @@ namespace DashworksTestAutomation.Base
             _scenarioContext = scenarioContext;
         }
 
+        [BeforeTestRun]
+        public static void BeforeTestRun()
+        {
+            if (!Browser.RemoteDriver.Equals("local") && !string.IsNullOrEmpty(BambooProvider.BuildResultKey))
+                BambooUtil.GetAllQuarantinedTests();
+        }
+
         [BeforeScenario]
         public void OnStartUp()
         {
             List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+
+            //If we are not able to get nUnit tags the try to get them from SpecFlow
+            if (!testTags.Any())
+                testTags = _scenarioContext.ScenarioInfo.Tags.ToList();
+
             LockCategory.AwaitTags(testTags);
             LockCategory.AddTags(testTags);
 
-            var driverInstance = CreateBrowserDriver();
-
-            driverInstance.Manage().Window.Maximize();
-
-            _objectContainer.RegisterInstanceAs(driverInstance);
+            //Create browser if not API test
+            if (!testTags.Contains("API"))
+            {
+                var driverInstance = CreateBrowserDriver();
+                if (!Browser.RemoteDriver.Equals("local"))
+                    driverInstance.Manage().Window.Maximize();
+                _objectContainer.RegisterInstanceAs(driverInstance);
+            }
         }
 
         [AfterScenario]
@@ -50,49 +68,38 @@ namespace DashworksTestAutomation.Base
                 List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
                 LockCategory.RemoveTags(testTags);
 
-                var driver = _objectContainer.Resolve<RemoteWebDriver>();
+                RemoteWebDriver driver = null;
+                if (!testTags.Contains("API"))
+                    driver = _objectContainer.Resolve<RemoteWebDriver>();
 
                 try
                 {
-                    if (Browser.RemoteDriver.Equals("sauceLabs"))
-                    {
-                        bool passed = TestContext.CurrentContext.Result.Outcome.Status ==
-                                      TestStatus.Passed;
-
-                        try
-                        {
-                            // Logs the result to Sauce Labs
-                            ((IJavaScriptExecutor) driver).ExecuteScript(
-                                "sauce:job-result=" + (passed ? "passed" : "failed"));
-                        }
-                        finally
-                        {
-                            Console.WriteLine(
-                                $"SauceOnDemandSessionID={((CustomRemoteWebDriver) driver).getSessionId()} job-name={TestContext.CurrentContext.Test.MethodName}");
-                        }
-                    }
-
                     var testStatus = GetTestStatus();
                     if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Failed"))
                     {
                         var testName = GetTestName();
                         if (!string.IsNullOrEmpty(testName))
-                            driver.CreateScreenshot(testName);
+                            driver?.CreateScreenshot(testName);
+                    }
+                    else if (!string.IsNullOrEmpty(testStatus) && testStatus.Equals("Passed"))
+                    {
+                        BambooUtil.UnleashTest(GetTestName());
                     }
 
-                    Logger.Write($"Closing window at: {driver.Url}");
+                    if (driver != null)
+                        Logger.Write($"Closing window at: {driver.Url}");
                 }
                 catch (Exception e)
                 {
                     Logger.Write(e);
                 }
 
-                driver.QuitDriver();
+                driver?.QuitDriver();
             }
             catch (ObjectContainerException e)
             {
                 //There are no driver in the context
-                Logger.Write(e + "There are no driver in the context");
+                Logger.Write($"There are no driver in the context: {e}");
             }
             catch (Exception e)
             {

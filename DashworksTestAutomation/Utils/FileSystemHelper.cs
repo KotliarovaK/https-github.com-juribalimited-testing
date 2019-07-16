@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using System.Reflection;
 
 namespace DashworksTestAutomation.Utils
 {
@@ -27,32 +29,33 @@ namespace DashworksTestAutomation.Utils
             return ConfigurationManager.AppSettings["screenshotsFolder"];
         }
 
-        public static string WaitForFileWithNameContainingToBeDownloaded(string partOfFileName, int attempts = 15)
+        public static string GeneratePathToEmbeddedResource(string pathPart)
         {
-            var directory = new DirectoryInfo(GetPathForDownloadsFolder());
+            if (string.IsNullOrEmpty(pathPart))
+                throw new Exception("Path not set");
 
-            for (int i = 0; i < attempts; i++)
-            {
-                if (IsFolderContainsFileContainingName(directory, partOfFileName))
-                    return GetLastFileWithNameContains(partOfFileName);
+            string executingAssemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var pathParts = new List<string>() { executingAssemblyFolder, "TestData" };
+            pathParts.AddRange(pathPart.Split('\\'));
+            var fullPath = Path.Combine(pathParts.ToArray());
 
-                Thread.Sleep(3000);
-            }
-
-            throw new Exception($"File containing '{partOfFileName}' name was not downloaded in {attempts} seconds");
+            return fullPath;
         }
 
-        public static string GetPathForDownloadsFolder()
+        public static IList<T> ReadJsonListFromSystem<T>(string pathToJson)
         {
-            var downloadFolder = ConfigurationManager.AppSettings["downloadsFolder"];
-            return downloadFolder.Equals("DEFAULT_DOWNLOADS_FOLDER") ? Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\Downloads") : downloadFolder;
+            var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource(pathToJson);
+            var reader = new StreamReader(fullPath);
+            string myJson = reader.ReadToEnd();
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<List<T>>(myJson);
         }
 
-        private static bool IsFolderContainsFileContainingName(DirectoryInfo directory, string partOfFileName)
+        public static object ReadJsonFromSystem<T>(string pathToJson)
         {
-            return directory.GetFiles()
-                .OrderByDescending(f => f.LastWriteTime)
-                .Any(x => x.Name.Contains(partOfFileName));
+            var fullPath = FileSystemHelper.GeneratePathToEmbeddedResource(pathToJson);
+            var reader = new StreamReader(fullPath);
+            string myJson = reader.ReadToEnd();
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(myJson);
         }
 
         public static string GetLastFileWithNameContains(string partOfFileName)
@@ -69,6 +72,34 @@ namespace DashworksTestAutomation.Utils
                 .First(x => x.Name.Contains(partOfFileName)).FullName;
 
             return file;
+        }
+
+        public static string WaitForFileWithNameContainingToBeDownloaded(string partOfFileName, int attempts = 15)
+        {
+            var directory = new DirectoryInfo(GetPathForDownloadsFolder());
+
+            for (int i = 0; i < attempts; i++)
+            {
+                if (IsFolderContainsFileContainingName(directory, partOfFileName))
+                    return GetLastFileWithNameContains(partOfFileName);
+
+                Thread.Sleep(3000);
+            }
+
+            throw new Exception($"File containing '{partOfFileName}' name was not downloaded in {attempts} seconds");
+        }
+
+        private static bool IsFolderContainsFileContainingName(DirectoryInfo directory, string partOfFileName)
+        {
+            return directory.GetFiles()
+                .OrderByDescending(f => f.LastWriteTime)
+                .Any(x => x.Name.Contains(partOfFileName));
+        }
+
+        public static string GetPathForDownloadsFolder()
+        {
+            var downloadFolder = ConfigurationManager.AppSettings["downloadsFolder"];
+            return downloadFolder.Equals("DEFAULT_DOWNLOADS_FOLDER") ? Environment.ExpandEnvironmentVariables(@"%USERPROFILE%\Downloads") : downloadFolder;
         }
     }
 }

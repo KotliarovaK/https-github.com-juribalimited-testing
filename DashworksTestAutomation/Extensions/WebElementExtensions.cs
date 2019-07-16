@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Extensions
 {
     public static class WebElementExtensions
     {
-        public static void ClearWithBackspaces(this IWebElement textbox, int charectersCount = 21)
+        public static void ClearWithBackspaces(this IWebElement textbox, int charectersCount = 50)
         {
             for (int i = 0; i < charectersCount; i++) textbox.SendKeys(Keys.Backspace);
         }
@@ -22,11 +22,6 @@ namespace DashworksTestAutomation.Extensions
             Actions action = new Actions(driver);
             action.Click(textbox).SendKeys(Keys.End).KeyDown(Keys.Shift).SendKeys(Keys.Home).KeyUp(Keys.Shift)
                 .SendKeys(Keys.Backspace).Perform();
-        }
-
-        public static void OpenNewTab(this IWebElement textbox, RemoteWebDriver driver)
-        {
-            ((IJavaScriptExecutor)driver).ExecuteScript("window.open()");
         }
 
         public static void SendkeysWithDelay(this IWebElement textbox, string input)

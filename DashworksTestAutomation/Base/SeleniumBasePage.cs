@@ -8,7 +8,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Html5;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Base
 {
@@ -34,7 +34,7 @@ namespace DashworksTestAutomation.Base
                 .Where(a =>
                     (object) a != null
                     && a != null)
-                .Select(ByFactory.From)
+                .Select(DashworksTestAutomation.Utils.ByFactory.From)
                 .ToList();
         }
 
@@ -42,7 +42,7 @@ namespace DashworksTestAutomation.Base
         {
             var attribute = ReflectionExtensions.ResolveMember(page, expression)
                 .GetFirstDecoration<FindsByAttribute>();
-            return ByFactory.From(attribute);
+            return DashworksTestAutomation.Utils.ByFactory.From(attribute);
         }
     }
 }

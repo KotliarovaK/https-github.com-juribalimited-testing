@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         public void SelectTeam(string teamName)
         {
             var teamNameSelector = $".//span[@class='mat-option-text'][text()='{teamName}']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(teamNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(teamNameSelector));
             Driver.FindElement(By.XPath(teamNameSelector)).Click();
         }
 

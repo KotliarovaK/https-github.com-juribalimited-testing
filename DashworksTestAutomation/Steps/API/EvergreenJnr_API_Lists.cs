@@ -69,7 +69,7 @@ namespace DashworksTestAutomation.Steps.API
             var list = _driver.NowAt<BaseDashboardPage>();
             try
             {
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList);
+                _driver.WaitForElementToBeDisplayed(list.ActiveCustomList);
             }
             catch (Exception)
             {
@@ -229,7 +229,7 @@ namespace DashworksTestAutomation.Steps.API
             var list = _driver.NowAt<BaseDashboardPage>();
             try
             {
-                _driver.WaitWhileControlIsNotDisplayed<BaseDashboardPage>(() => list.ActiveCustomList);
+                _driver.WaitForElementToBeDisplayed(list.ActiveCustomList);
             }
             catch (Exception)
             {

@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
 {
@@ -48,21 +48,21 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Forms
         public void SelectObjectForReadinessCreation(string objectName)
         {
             var listNameSelector = $".//span[@class='mat-option-text']//span[contains(text(), '{objectName}')]";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
         public int GetColourStatusNumber()
         {
             var statusSelector = $".//mat-option[@role='option']//div[@class='status']";
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(statusSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(statusSelector));
             return Driver.FindElements(By.XPath(statusSelector)).Count;
         }
 
         public int GetColourStatusTextNumber()
         {
             var statusTextSelector = $"//mat-option[@role='option']//span[@class='status-text']";
-            //Driver.WaitWhileControlIsNotDisplayed(By.XPath(statusTextSelector));
+            //Driver.WaitForElementToBeDisplayed(By.XPath(statusTextSelector));
             return Driver.FindElements(By.XPath(statusTextSelector)).Count;
         }
     }

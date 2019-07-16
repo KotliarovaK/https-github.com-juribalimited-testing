@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
@@ -20,7 +20,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetProjectInDropDownListByName(string projectName)
         {
             var selector = By.XPath($".//option[contains(text(), '{projectName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 

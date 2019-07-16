@@ -4,7 +4,7 @@ using DashworksTestAutomation.Extensions;
 using HtmlAgilityPack;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -111,7 +111,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public IWebElement ListNameInDependantsSection(string listName)
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
+            Driver.WaitForElementToBeDisplayed(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
             return Driver.FindElement(By.XPath($".//a[@class='ng-star-inserted'][text()='{listName}']"));
         }
 
@@ -135,21 +135,21 @@ namespace DashworksTestAutomation.Pages.Evergreen
         public IWebElement GetDependentListByName(string listName)
         {
             var selector = By.XPath($"//a[text()='{listName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetSharingUserInDllByName(string userName)
         {
             var selector = By.XPath($".//mat-option[@role='option']//span[text()='{userName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetSharingUserOnDetailsPanelByName(string userName)
         {
             var selector = By.XPath($".//tr[contains(@class, 'menu-show-on-hover')]//td[text()='{userName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

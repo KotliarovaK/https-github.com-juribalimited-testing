@@ -7,15 +7,11 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15364 @DAS15316 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingCardWidgetUsedCpuVirtField
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName                 |
 	| CPU Virtualisation Capable |
 	And User have opened column settings for "CPU Virtualisation Capable" column
 	And User have select "Pin Left" option from column settings
-	And User clicks Save button on the list panel
 	And User create dynamic list with "List15364" name on "Devices" page
 	And User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
@@ -149,19 +145,15 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetIncludeSelectionOfEverg
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15722 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatCardWidgetHavingDateColumnsDisplayedCorrectlyOnDashboard
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                 |
 	| Build Date |
 	And User have opened column settings for "Build Date" column
 	And User have select "Pin Left" option from column settings
-	And User click on 'Build Date' column header
 	And User create dynamic list with "ListForDas15722" name on "Devices" page
-	Then "ListForDas15722" list is displayed to user
-	When Dashboard with "DashboardForDas15722" name created via API and opened
+	And Dashboard with "DashboardForDas15722" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title             | List            | Type      | AggregateBy | AggregateFunction | SplitBy | OrderBy | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
 	| Card       | WidgetForDAS15722 | ListForDas15722 | Aggregate | Build Date  | First             |         |         |           |            |                  | Yes       |        |
@@ -217,7 +209,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckComplianceFirstCellIconsForCardWidget
 	When User clicks the "UPDATE" Action button
 	Then Icon Only is displayed for Card widget
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15355 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckReadinessFirstCellIconsForCardWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -461,3 +453,32 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetCreatingFromListHavingSortedRin
 	| Card       | WidgetForDAS16347 | List16347 | First Cell |             |                   |         |         |           |            |                  |           |        |
 	Then Widget Preview is displayed to the user
 	And There are no errors in the browser console
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15514 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatCardSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName                           |
+	| Device Key                           |
+	| 1803: In Scope                       |
+	| HDD Total Size (GB)                  |
+	| First Seen Date                      |
+	| Windows7Mi: Communication \ DateTime |
+	| Compliance                           |
+	And User create dynamic list with "ListWithAllDatatypes" name on "Devices" page
+	And Dashboard with "All Data Types for DAS15514" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	And User selects "Card" in the "Widget Type" Widget dropdown
+	And User enters "Widget Name" as Widget Title
+	And User selects "ListWithAllDatatypes" as Widget List
+	And User selects "Aggregate" as Widget Type
+	And User selects "<AggFunc>" as Widget Aggregate Function
+	Then User sees following options for Aggregate By selector on Create Widget page:
+	| items                                |
+	| First Seen Date                      |
+	| Windows7Mi: Communication \ DateTime |
+
+Examples: 
+	| AggFunc |
+	| First   |
+	| Last    |

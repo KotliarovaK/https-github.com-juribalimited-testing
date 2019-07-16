@@ -7,30 +7,22 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15737 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
-	When User clicks "Users" on the left-hand menu
-	Then "Users" list should be displayed to the user
-	When User clicks the Columns button
-	Then Columns panel is displayed to the user
-	When ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Users" page:
 	| ColumnName                 |
 	| prK: Application Readiness |
-	Then ColumnName is added to the list
-	| ColumnName                 |
-	| prK: Application Readiness |
-	When User create dynamic list with "TestList_DAS15737" name on "Users" page
-	Then "TestList_DAS15737" list is displayed to user
-	When Dashboard with "Dashboard for DAS15737" name created via API and opened
+	And User create dynamic list with "TestList_DAS15737" name on "Users" page
+	And Dashboard with "Dashboard for DAS15737" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
-	When User selects "Line" in the "Widget Type" Widget dropdown
+	And User selects "Line" in the "Widget Type" Widget dropdown
 	And User enters "DAS15737" as Widget Title
 	And User selects "TestList_DAS15737" as Widget List
-	When User selects "prK: Application Readiness" in the "Split By" Widget dropdown
-	When User selects "Count" in the "Aggregate Function" Widget dropdown
-	When User selects "prK: Application Readiness ASC" in the "Order By" Widget dropdown
+	And User selects "prK: Application Readiness" in the "Split By" Widget dropdown
+	And User selects "Count" in the "Aggregate Function" Widget dropdown
+	And User selects "prK: Application Readiness ASC" in the "Order By" Widget dropdown
 	And User clicks on the Colour Scheme dropdown
 	Then Colour Scheme dropdown is displayed to the user
-	Then "Data Label" checkbox is not displayed on the Create Widget page
+	And "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
@@ -77,15 +69,12 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
-	When User clicks "Users" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                    |
+	When User add following columns using URL to the "Users" page:
+	| ColumnName          |
 	| Device Application Compliance |
 	| Compliance                    |
 	And User create dynamic list with "ListForDas15920" name on "Users" page
-	Then "ListForDas15920" list is displayed to user
-	When Dashboard with "DashboardForDas15920" name created via API and opened
+	And Dashboard with "DashboardForDas15920" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
@@ -99,16 +88,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 
 @Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
-	When User clicks "Devices" on the left-hand menu
-	And User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
-	| ColumnName           |
+	When User add following columns using URL to the "Devices" page:
+	| ColumnName          |
 	| Service Pack or Build |
 	And User create dynamic list with "ListForDas15544" name on "Devices" page
-	Then "ListForDas15544" list is displayed to user
-	When Dashboard with "1803 ProjectDAS15544" name created via API and opened
+	And Dashboard with "1803 ProjectDAS15544" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
-	When User clicks the "ADD WIDGET" Action button
+	And User clicks the "ADD WIDGET" Action button
 	And User adds new Widget
 	| WidgetType | Title                     | List            | Type | AggregateBy | AggregateFunction | SplitBy               | OrderBy                   | MaxValues | ShowLegend | TableOrientation | Drilldown | Layout |
 	| Line       | SortOrderCheckForDas15544 | ListForDas15544 |      |             | Count             | Service Pack or Build | Service Pack or Build ASC |           |            |                  | Yes       |        |

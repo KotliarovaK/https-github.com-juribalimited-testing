@@ -3,7 +3,7 @@ using System.Linq;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Evergreen
 {
@@ -64,7 +64,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             var listNameSelector =
                 $".//mat-option//span[text()='{listName}']";
             Driver.FindElement(By.XPath(ListsDropdownSelector)).Click();
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(listNameSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(listNameSelector));
             Driver.FindElement(By.XPath(listNameSelector)).Click();
         }
 
@@ -75,28 +75,28 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public string GetSelectedRowsCount()
         {
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(RowsSelectedCountSelector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(RowsSelectedCountSelector));
             return Driver.FindElement(By.XPath(RowsSelectedCountSelector)).Text.Split(' ').First();
         }
 
         public IWebElement GetDropdownOnActionPanelByName(string name)
         {
             var dropDown = By.XPath($"//*[contains(text(),'{name}')]/parent::span//preceding-sibling::mat-select");
-            Driver.WaitWhileControlIsNotDisplayed(dropDown);
+            Driver.WaitForElementToBeDisplayed(dropDown);
             return Driver.FindElement(dropDown);
         }
 
         public IWebElement GetFieldOnActionPanelByName(string name)
         {
             var selector = By.XPath($"//div//input[@placeholder='{name}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetSearchDropDownOnActionPanelByName(string name)
         {
             var selector = By.XPath($"//*[contains(text(), '{name}')]/ancestor::div[@class='mat-form-field-infix']/textarea");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

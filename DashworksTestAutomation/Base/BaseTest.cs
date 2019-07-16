@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
@@ -47,7 +51,19 @@ namespace DashworksTestAutomation.Base
             switch (Browser.Type)
             {
                 case "chrome":
-                    return new ChromeDriver();
+                    var options = new ChromeOptions();
+                    options.AddArgument("--safebrowsing-disable-download-protection");
+                    options.AddUserProfilePreference("download.prompt_for_download", false);
+                    options.AddUserProfilePreference("download.directory_upgrade", true);
+                    options.AddUserProfilePreference("safebrowsing.enabled", true);
+                    if (Browser.RemoteDriver.Equals("local"))
+                        options.AddArgument("--start-maximized");
+                    options.UseSpecCompliantProtocol = false;
+                    options.SetLoggingPreference(LogType.Browser, LogLevel.All);
+
+                    var driver = new ChromeDriver(options);
+
+                    return driver;
 
                 case "firefox":
                     return new FirefoxDriver();
@@ -69,8 +85,13 @@ namespace DashworksTestAutomation.Base
             {
                 case "chrome":
                     var chromeOptions = new ChromeOptions();
-                    chromeOptions.AddArgument("headless");
-                    chromeOptions.AddArgument("--window-size=1920,1080");
+                    chromeOptions.AddArguments("headless", "--window-size=1920,1080", "--safebrowsing-disable-download-protection");
+                    chromeOptions.AddUserProfilePreference("download.prompt_for_download", false);
+                    chromeOptions.AddUserProfilePreference("download.directory_upgrade", true);
+                    chromeOptions.AddUserProfilePreference("safebrowsing.enabled", true);
+                    chromeOptions.UseSpecCompliantProtocol = false;
+                    chromeOptions.SetLoggingPreference(LogType.Browser, LogLevel.All);
+                    //typeof(CapabilityType).GetField(nameof(CapabilityType.LoggingPreferences), BindingFlags.Static | BindingFlags.Public).SetValue(null, "goog:loggingPrefs");
                     return new RemoteWebDriver(new Uri(Browser.HubUri), chromeOptions);
 
                 case "firefox":
@@ -92,17 +113,7 @@ namespace DashworksTestAutomation.Base
 
         private RemoteWebDriver CreateSauceLabsDriver()
         {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.SetCapability(CapabilityType.BrowserName, Browser.Type);
-            capabilities.SetCapability(CapabilityType.Version, Browser.Version);
-            capabilities.SetCapability(CapabilityType.Platform, Browser.Platform);
-            capabilities.SetCapability("screenResolution", Browser.Resolution);
-
-            capabilities.SetCapability("username", SauceLabsCredentialsProvider.Username);
-            capabilities.SetCapability("accessKey", SauceLabsCredentialsProvider.AccessKey);
-
-            var driver = new CustomRemoteWebDriver(new Uri(Browser.HubUri), capabilities, TimeSpan.FromSeconds(60));
-            return driver;
+            throw new NotImplementedException();
         }
     }
 }

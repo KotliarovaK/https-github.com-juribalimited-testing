@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
 {
@@ -76,14 +76,14 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetOpenedProjectName(string projectName)
         {
             var selector = By.XPath($".//div[text()='Project: {projectName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTabElementByName(string tabName)
         {
             var selector = By.XPath($".//div[@class='toolbar toolbar-row']//a[contains(text(), '{tabName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -92,14 +92,14 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
             var selector =
                 By.XPath(
                     $".//div[@class='dwmenu navigation-menu alignList manageSelfServiceMenu']//a[contains(text(), '{tabName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTabElementByNameOnSelectedTab(string tabName)
         {
             var selector = By.XPath($".//div[@class='dwmenu navigation-menu']//a[contains(text(), '{tabName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -119,14 +119,14 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetDeleteButtonElementByName(string name)
         {
             var selector = By.XPath($".//a[text()='{name}']/../following-sibling::td/input[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDeleteStageButtonElementByName(string stageName)
         {
             var selector = By.XPath($".//td[@title='{stageName}']/..//td[2]//input[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -135,14 +135,14 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetButtonElementByName(string buttonName)
         {
             var selector = By.XPath($".//input[contains(@value, '{buttonName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement SelectUserForMembersByName(string userName)
         {
             var selector = By.XPath($".//td[@title='{userName}']/..//input");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -156,35 +156,35 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetTheCreatedElementInTableByName(string name)
         {
             var selector = By.XPath($".//td[@title='{name}']/..//td[1]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTheCreatedRequestTypeInTableByName(string requestTypeName)
         {
             var selector = By.XPath($".//a[contains(@id, 'RequestType')]/..//a[contains(text(), '{requestTypeName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTheCreatedTaskInTableByName(string taskName)
         {
             var selector = By.XPath($".//a[contains(@id, 'TaskName')]/..//a[contains(text(), '{taskName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTheCreatedEmailInTableByName(string name)
         {
             var selector = By.XPath($".//td[@title='{name}']/..//td[2]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTheCreatedCategoryInTableByName(string categoryName)
         {
             var selector = By.XPath($".//a[contains(@id, 'CategoryName')]/..//a[contains(text(), '{categoryName}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -193,7 +193,7 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
         public IWebElement GetTeamByName(string teamName)
         {
             var selector = By.XPath($"//td[contains(@title, '{teamName}')]/a");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
@@ -214,28 +214,28 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects
             var selector =
                 By.XPath(
                     $".//a[contains(text(), '{requestName}')]/../following-sibling::td//input[@src='/images/tick2.png']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTaskByName(string taskName)
         {
             var selector = By.XPath($"//a[contains(@id, 'Tasks')][text()='{taskName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetCheckboxByName(string checkboxName)
         {
             var selector = By.XPath($"//label[text()='{checkboxName}']/ancestor::td/input");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetTableContentByText(string text)
         {
             var selector = By.XPath($".//tr[@class='grid-rowstyle']//td/a[contains(text(), '{text}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
     }

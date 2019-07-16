@@ -1,7 +1,7 @@
 ﻿using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
 {
@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
                 selector = $"//td[contains(@aria-describedby, 'GroupName')]//a[text()='{groupName}']";
             }
 
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
 
@@ -44,7 +44,7 @@ namespace DashworksTestAutomation.Pages.Projects.Projects_Dashboards
                 selector = $".//select[contains(@name, 'ProjectId')]//option[text()='{projectName}']";
             }
 
-            Driver.WaitWhileControlIsNotDisplayed(By.XPath(selector));
+            Driver.WaitForElementToBeDisplayed(By.XPath(selector));
             Driver.FindElement(By.XPath(selector)).Click();
         }
     }

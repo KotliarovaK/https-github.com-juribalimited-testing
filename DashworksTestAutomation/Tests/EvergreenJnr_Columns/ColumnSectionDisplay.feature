@@ -1,5 +1,4 @@
-﻿@retry:1
-Feature: ColumnSectionDisplay
+﻿Feature: ColumnSectionDisplay
 	Runs Column Panel related tests
 
 Background: Pre-Conditions
@@ -798,21 +797,6 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatSubcategoriesOnColumnsPanelIsDisp
 	And User clicks Save filter button
 	And User create custom list with "Object ID != EMPTY" name
 	Then "Object ID != EMPTY" list is displayed to user
-
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @API @DAS13419
-Scenario: EvergreenJnr_DevicesList_ChecksThatColumnsPanelDoesNotIncludeUnpublishedTasks
-	Then the following subcategories are NOT displayed for "Project Tasks: Windows7Mi" Columns category:
-	| Value             |
-	| Adhoc Information |
-	| Targeting Date    |
-	| Migration Updates |
-
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @API @DAS13419 @DAS14288
-Scenario: EvergreenJnr_UsersList_ChecksThatFilterPanelDoesNotIncludeUnpublishedTasks
-	Then the following subcategories are NOT displayed for "Project Tasks: prK" Columns category:
-	| Value                                                    |
-	| user-norm-radb-k                                         |
-	| Email Notifications Allowed?Email Notifications Allowed? |
 
 @Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS14629 @DAS14660 @DAS15167
 Scenario: EvergreenJnr_UsersList_CheckThatPrimaryDeviceColumnIsAvailableInTheColumnsPanelForUsersList

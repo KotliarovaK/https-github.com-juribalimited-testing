@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Utils
 {

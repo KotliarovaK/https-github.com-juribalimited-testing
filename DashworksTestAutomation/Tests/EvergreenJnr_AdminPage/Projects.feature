@@ -5,6 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
+
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS11697 @DAS12744 @DAS12999 @Projects
 Scenario Outline: EvergreenJnr_AdminPage_CheckThatCancelButtonOnTheCreateProjectPageRedirectsToTheLastPage
 	When User clicks "<ListName>" on the left-hand menu
@@ -337,7 +338,7 @@ Scenario Outline: EvergreenJnr_AdminPage_CheckThatNumberOfObjectIsUpdatedInTheSc
 
 Examples:
 	| ListName  | ColumnName    | DynamicListName | RowsCount | ProjectName     | ObjectsCount | FilterName  | Checkbox | NewRowsCount | NewCount | DeleteProject   |
-	| Devices   | Hostname      | ProjectList4587 | 17,225    | TestProject4511 | 17225        | Device Type | Desktop  | 8,103        | 8103     | TestProject4511 |
+	| Devices   | Hostname      | ProjectList4587 | 17,285    | TestProject4511 | 17285        | Device Type | Desktop  | 8,103        | 8103     | TestProject4511 |
 	| Users     | Username      | ProjectList4511 | 41,339    | TestProject4512 | 41339        | Domain      | CORP     | 103          | 103      | TestProject4512 |
 	| Mailboxes | Email Address | ProjectList4548 | 14,784    | TestProject4513 | 14784        | Owner City  | London   | 3,294        | 3294     | TestProject4513 |
 
@@ -474,10 +475,11 @@ Scenario: EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIs
 	When User clicks String Filter button for "Action" column on the Admin page
 	When User selects "Onboard Computer Object" checkbox from String Filter with item list on the Admin page
 	Then Rows counter shows "4" of "6" rows
-	When User selects "History" tab on the Project details page
+	When User waits until Queue disappears
+	And User selects "History" tab on the Project details page
 	Then There are no errors in the browser console
 	Then Error message is not displayed on the Projects page
-	Then following Items are displayed in the History table
+	Then Following items displayed in the History table
 	| Items                          |
 	| 0IJB93JZPG72PX                 |
 	| 04I01QSFL1AWKM                 |
@@ -1341,7 +1343,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListUsingEverg
 	When User selects "Scope Details" tab on the Project details page
 	And User selects "All Devices" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
 	When User clicks "Users" tab in the Project Scope Changes section
 	When User clicks "Applications" tab in the Project Scope Changes section
 	Then Bucket dropdown is not displayed on the Project details page
@@ -1375,7 +1377,7 @@ Scenario: EvergreenJnr_AdminPage_ChangingDevicesScopeListToAnotherListForDevices
 	Then Success message is displayed and contains "The project has been created" text
 	When User clicks newly created object link
 	And User selects "Scope Changes" tab on the Project details page
-	Then "Devices to add (0 of 17225 selected)" is displayed to the user in the Project Scope Changes section
+	Then "Devices to add (0 of 17285 selected)" is displayed to the user in the Project Scope Changes section
 	When User selects "Scope Details" tab on the Project details page
 	And User selects "StaticList6579" in the Scope Project details
 	And User selects "Scope Changes" tab on the Project details page
@@ -3297,7 +3299,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUse
 	| 00BDM1JUR8IF419 |
 	And There are no errors in the browser console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project @Projects
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS13110 @Delete_Newly_Created_List @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope
 	When User create static list with "Static13110" name on "Devices" page with following items
 	| ItemName        |
@@ -3831,8 +3833,8 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotD
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name      | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |
-	| 13499Task | 13499 | Stage13499 | Normal   | Date      | Computer   |                    |
+	| Name      | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
+	| 13499Task | 13499 | Stage13499 | Normal   | Date      | Computer   |                    |                     |
 	Then Success message is displayed with "Task successfully created" text
 	When User navigate to "Categories" tab
 	Then "Manage Categories" page is displayed to the user
@@ -4026,7 +4028,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithou
 	Then Admin menu item is hidden
 	Then Error is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnEvergreen
 	When Project created via API and opened
 	| ProjectName            | Scope       | ProjectTemplate | Mode               |
@@ -4044,7 +4046,7 @@ Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOn
 	And User removes selected item
 	Then Error message with "This project does not exist. The project has not been updated" text is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS16145 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckErrorMessageAfterDeletingProjectMoreThanOnceOnSenior
 	When User clicks "Projects" on the left-hand menu
 	And User clicks create Project button
@@ -4175,4 +4177,28 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then "TRUE" content is displayed in "Evergreen" column 
 
-	
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Country" filter where type is "Equals" with added column and "England" Lookup option
+	And User create dynamic list with "17122_List" name on "Devices" page
+	When Project created via API and opened
+	| ProjectName   | Scope      | ProjectTemplate | Mode               |
+	| 17122_Project | 17122_List | None            | Standalone Project |
+	Then Project "17122_Project" is displayed to user
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User navigates to the "17122_List" list
+	Then "17122_List" list is displayed to user
+	When User clicks the Filters button
+	Then Filters panel is displayed to the user
+	When User add "Application (Saved List)" filter where type is "In list" with Selected Value and following Association:
+	| SelectedList                             | Association        |
+	| Application List (Complex) - BROKEN LIST | Entitled to device |
+	When User update current custom list
+	When User clicks Admin on the left-hand menu
+	When User clicks "Projects" link on the Admin page
+	When User enters "17122_Project" text in the Search field for "Project" column
+	And User clicks content from "Project" column
+	Then "The scope changes could not be loaded, there may be an error with one of the lists referred to in the scope details" error in the Scope Changes displayed to the User

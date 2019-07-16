@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
+using RestSharp;
 
 namespace DashworksTestAutomation.Extensions
 {
@@ -27,6 +29,17 @@ namespace DashworksTestAutomation.Extensions
             {
                 return null;
             }
+        }
+
+        public static RestRequest GenerateRequest(this string requestUri)
+        {
+            var request = new RestRequest(requestUri);
+
+            request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
+            request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
+            request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+
+            return request;
         }
 
         public static Table CsvToTable(this string str)

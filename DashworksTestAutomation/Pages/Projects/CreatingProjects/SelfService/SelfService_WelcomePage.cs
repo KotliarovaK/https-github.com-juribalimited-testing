@@ -2,7 +2,7 @@
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Extensions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
+using SeleniumExtras.PageObjects;
 
 namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
 {
@@ -68,28 +68,28 @@ namespace DashworksTestAutomation.Pages.Projects.CreatingProjects.SelfService
         public IWebElement GetLanguagesByName(string languages)
         {
             var selector = By.XPath($".//td[contains(text(), '{languages}')]");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public IWebElement GetDeleteButtonByLanguages(string languages)
         {
             var selector = By.XPath($".//td[contains(text(), '{languages}')]/..//img[@title='Delete']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
 
         public void GetTypeByName(string typeName)
         {
             var selector = By.XPath($"//select[@aria-label='Type']/option[text()='{typeName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
 
         public void GetFieldByName(string fieldName)
         {
             var selector = By.XPath($"//select[@aria-label='Field']/option[text()='{fieldName}']");
-            Driver.WaitWhileControlIsNotDisplayed(selector);
+            Driver.WaitForElementToBeDisplayed(selector);
             Driver.FindElement(selector).Click();
         }
     }
