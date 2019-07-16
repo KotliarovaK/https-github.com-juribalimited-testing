@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @DAS17063 @DAS17364
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @DAS16890 @DAS17063 @DAS17364 @DAS17402
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

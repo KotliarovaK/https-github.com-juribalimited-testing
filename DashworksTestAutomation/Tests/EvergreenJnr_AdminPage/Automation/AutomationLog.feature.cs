@@ -88,6 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
         [NUnit.Framework.CategoryAttribute("DAS16890")]
         [NUnit.Framework.CategoryAttribute("DAS17063")]
         [NUnit.Framework.CategoryAttribute("DAS17364")]
+        [NUnit.Framework.CategoryAttribute("DAS17402")]
         public virtual void EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject()
         {
             System.Exception lastException = null;
@@ -123,7 +124,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Automation
                         "AutomationLog",
                         "DAS16890",
                         "DAS17063",
-                        "DAS17364"});
+                        "DAS17364",
+                        "DAS17402"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
