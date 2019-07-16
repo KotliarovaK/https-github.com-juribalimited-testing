@@ -484,8 +484,73 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots.feature.cs">
-      <DependentUpon>CapacitySlots.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart9.feature.cs">
+      <DependentUpon>CapacitySlotsPart9.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart8.feature.cs">
+      <DependentUpon>CapacitySlotsPart8.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart7.feature.cs">
+      <DependentUpon>CapacitySlotsPart7.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart6.feature.cs">
+      <DependentUpon>CapacitySlotsPart6.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart5.feature.cs">
+      <DependentUpon>CapacitySlotsPart5.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart4.feature.cs">
+      <DependentUpon>CapacitySlotsPart4.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart3.feature.cs">
+      <DependentUpon>CapacitySlotsPart3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart2.feature.cs">
+      <DependentUpon>CapacitySlotsPart2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart1.feature.cs">
+      <DependentUpon>CapacitySlotsPart1.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart6.feature.cs">
+      <DependentUpon>CapacityPart6.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart5.feature.cs">
+      <DependentUpon>CapacityPart5.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart4.feature.cs">
+      <DependentUpon>CapacityPart4.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart3.feature.cs">
+      <DependentUpon>CapacityPart3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart2.feature.cs">
+      <DependentUpon>CapacityPart2.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -519,10 +584,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Buckets.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Capacity.feature</DependentUpon>
+      <DependentUpon>CapacityPart1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Projects.feature.cs">
       <AutoGen>True</AutoGen>
@@ -961,9 +1026,61 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddObjectsToCapacityUnits.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart9.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CapacitySlots.feature.cs</LastGenOutput>
+      <LastGenOutput>CapacitySlotsPart9.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart8.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart8.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart7.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart7.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart6.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart6.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart5.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\CapacitySlots\CapacitySlotsPart1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacitySlotsPart1.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart6.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityPart6.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityPart5.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityPart4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityPart3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CapacityPart2.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Readiness.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -989,9 +1106,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Buckets.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Capacity\Capacity\CapacityPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Capacity.feature.cs</LastGenOutput>
+      <LastGenOutput>CapacityPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Projects.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
