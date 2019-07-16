@@ -45,7 +45,7 @@ Scenario: Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	Then information message is displayed with "Team was successfully updated." text
 	And Default Team checkbox is checked and cannot be unchecked
 
-@Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322
+@Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322 @Delete_Newly_Created_Project
 Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -64,8 +64,8 @@ Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	And User navigate to "Tasks" tab
 	And User clicks "Create Task" button
 	And User creates new Task on Senior
-	| Name      | Help      | StagesName  | TaskType | ValueType   | ObjectType | TaskValuesTemplate |
-	| for 14322 | for 14322 | Stage 14322 | Normal   | Radiobutton | User       | None               |
+	| Name      | Help      | StagesName  | TaskType | ValueType   | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| for 14322 | for 14322 | Stage 14322 | Normal   | Radiobutton | User       | None               |                    |
 	Then Success message is displayed with "Task successfully created" text
 	When User navigate to "Values" page
 	And User clicks "Add value" button
@@ -79,8 +79,6 @@ Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User navigate to "Request Types" page
 	Then "Edit Task" page is displayed to the user
 	And There are no errors in the browser console
-	When User navigate to "Details" tab
-	When User removes the Project
 
 @Senior @Projects_Dashboards @Senior_Projects @DAS14171 
 Scenario: Senior_Projects_ChecksThatSeniorProjectHavingCapacitySlotCanBeDeletedWithoutError
