@@ -434,11 +434,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLog.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\BucketsGrid.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BucketsGrid.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -454,10 +449,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EditBuckets.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\GreedScreenBuckets.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\GridScreenBuckets.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GreedScreenBuckets.feature</DependentUpon>
+      <DependentUpon>GridScreenBuckets.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\OnboarBuckets.feature.cs">
       <AutoGen>True</AutoGen>
@@ -926,10 +921,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLog.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\BucketsGrid.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>BucketsGrid.feature.cs</LastGenOutput>
-    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateBucket.feature.cs</LastGenOutput>
@@ -942,9 +933,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>EditBuckets.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\GreedScreenBuckets.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\GridScreenBuckets.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>GreedScreenBuckets.feature.cs</LastGenOutput>
+      <LastGenOutput>GridScreenBuckets.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Buckets\OnboarBuckets.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
