@@ -17,9 +17,13 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
+using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
+using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
+using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using TechTalk.SpecFlow;
 
@@ -121,7 +125,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         _team.Value.Add(teamDto);
                         break;
                     case "Bucket Name":
-                        _buckets.Value.Add(name);
+                        _buckets.Value.Add(new BucketDto() { Name = name });
                         break;
                     //case "Capacity Unit Name":
                     //    break;
@@ -1763,7 +1767,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             SendKeysToTheNamedTextbox(name, fieldName);
 
             if (fieldName.Equals("Ring name"))
-                _rings.Value.Add(new RingDto() { Name = name, Project = project});
+                _rings.Value.Add(new RingDto() { Name = name, Project = project });
         }
 
         private void SendKeysToTheNamedTextbox(string text, string fieldName)

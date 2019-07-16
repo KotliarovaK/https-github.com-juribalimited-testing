@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+﻿using System.Collections.Generic;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 
-namespace DashworksTestAutomation.DTO.RuntimeVariables
+namespace DashworksTestAutomation.DTO.RuntimeVariables.Rings
 {
     //Created Rings objects are stored here
     class Rings

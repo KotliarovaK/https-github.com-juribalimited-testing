@@ -151,16 +151,17 @@
     <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
-    <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
+    <Compile Include="DTO\RuntimeVariables\Buckets\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Automation.cs" />
-    <Compile Include="DTO\RuntimeVariables\Rings.cs" />
-    <Compile Include="DTO\RuntimeVariables\RingUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
+    <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\Team.cs" />
     <Compile Include="DTO\RuntimeVariables\DownloadedFileName.cs" />
     <Compile Include="DTO\RuntimeVariables\Dashboard.cs" />
-    <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
-    <Compile Include="DTO\RuntimeVariables\CapacityUnitUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityUnits\CapacityUnit.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityUnits\CapacityUnitUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\LastUsedBucket.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
@@ -321,7 +322,9 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Buckets\BucketsApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\RemoveBucketAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\SetDefaultBucketAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\BeforeScenario\SaveDefaultBucketBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\BeforeScenario\SaveDefaultCapacityUnitBeforeScenario.cs" />
@@ -429,6 +432,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLog.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\BucketsGrid.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BucketsGrid.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateBucket.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature.cs">
       <DependentUpon>CapacityUnitsGridFiltering.feature</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -484,7 +497,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\Buckets.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Buckets.feature</DependentUpon>
@@ -891,6 +904,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLog.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\BucketsGrid.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>BucketsGrid.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateBucket.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityUnitsGridFiltering.feature.cs</LastGenOutput>
@@ -935,7 +956,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Rings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Buckets.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\Buckets.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Buckets.feature.cs</LastGenOutput>
     </None>

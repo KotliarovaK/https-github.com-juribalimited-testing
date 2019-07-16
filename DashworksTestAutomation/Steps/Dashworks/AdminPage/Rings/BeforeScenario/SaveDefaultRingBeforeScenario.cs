@@ -2,6 +2,7 @@
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Providers;
 using RestSharp;
 using TechTalk.SpecFlow;

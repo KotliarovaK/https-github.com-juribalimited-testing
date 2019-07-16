@@ -9,6 +9,8 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Linq;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
+using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -189,7 +191,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 page.BucketNameField.SendKeys(bucket.Values.FirstOrDefault());
 
                 if (!string.IsNullOrEmpty(bucket.Values.FirstOrDefault()))
-                    _buckets.Value.Add(bucket.Values.FirstOrDefault());
+                    _buckets.Value.Add(new BucketDto() { Name = bucket.Values.FirstOrDefault() });
 
                 page.TeamsNameField.Clear();
                 _driver.WaitForDataLoading();

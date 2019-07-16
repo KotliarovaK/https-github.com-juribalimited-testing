@@ -12,10 +12,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
     [Binding]
     public class RemoveCapacityUnitAfterScenario : SpecFlowContext
     {
-        private readonly DTO.RuntimeVariables.CapacityUnits _capacityUnits;
+        private readonly DTO.RuntimeVariables.CapacityUnits.CapacityUnits _capacityUnits;
         private readonly RestWebClient _client;
 
-        private RemoveCapacityUnitAfterScenario(DTO.RuntimeVariables.CapacityUnits capacityUnit, RestWebClient client)
+        private RemoveCapacityUnitAfterScenario(DTO.RuntimeVariables.CapacityUnits.CapacityUnits capacityUnit, RestWebClient client)
         {
             _capacityUnits = capacityUnit;
             _client = client;
