@@ -7,18 +7,14 @@ Background: Pre-Conditions
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15356 @Delete_Newly_Created_List
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetWithSpecificColumns
-	When User clicks "Devices" on the left-hand menu
-	Then "Devices" list should be displayed to the user
-	When User clicks the Columns button
-	And ColumnName is entered into the search box and the selection is clicked
+	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
 	| Secure Boot Enabled |
 	| Manufacturer        |
 	| Compliance          |
 	And User click on 'Manufacturer' column header
 	Then data in table is sorted by 'Manufacturer' column in ascending order
-	When User clicks Save button on the list panel
-	And User create dynamic list with "List15356" name on "Devices" page
+	When User create dynamic list with "List15356" name on "Devices" page
 	And User clicks "Dashboards" on the left-hand menu
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks the "ADD WIDGET" Action button

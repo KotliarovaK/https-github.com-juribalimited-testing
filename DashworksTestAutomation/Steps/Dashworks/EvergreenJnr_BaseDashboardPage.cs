@@ -365,6 +365,13 @@ namespace DashworksTestAutomation.Steps.Dashworks
             Assert.AreEqual(textContent, originalList, "Content is not displayed correctly");
         }
 
+        [Then(@"some data is displayed in the ""(.*)"" column")]
+        public void ThenSomeDataIsDisplayedInTheColumn(string columnName)
+        {
+            var page = _driver.NowAt<BaseDashboardPage>();
+            Assert.IsNotEmpty(page.GetColumnContentByColumnName(columnName));
+        }
+
         [Then(@"""(.*)"" italic content is displayed")]
         public void ThenItalicContentIsDisplayed(string textContent)
         {

@@ -17,7 +17,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSelectedRowsCountDisplayingOnTeamsGrids
 	Then User sees "8" of "8" rows selected label
 	When User clicks "Buckets" tab
 	And User selects all rows on the grid
-	Then User sees "6" of "6" rows selected label
+	Then User sees "7" of "7" rows selected label
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12375 @Teams
 Scenario: EvergreenJnr_AdminPage_CheckThatPanelOfAvailableMemberslIsExpandedByDefault

@@ -38,6 +38,10 @@
     <Reference Include="HtmlAgilityPack, Version=1.11.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=4.61.0.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\packages\CompareNETObjects.4.61.0\lib\net46\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
@@ -111,8 +115,11 @@
     <Compile Include="DTO\Evergreen\Admin\Automations\AutomationsDTO.cs" />
     <Compile Include="DTO\Evergreen\Admin\Bucket\BucketDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\CapacityUnits\CapacityUnitDto.cs" />
+    <Compile Include="DTO\Evergreen\Admin\Rings\RingDto.cs" />
     <Compile Include="DTO\Evergreen\Admin\Teams\TeamDto.cs" />
+    <Compile Include="DTO\Evergreen\API\ColumnDto.cs" />
     <Compile Include="DTO\Evergreen\DashboardDto.cs" />
+    <Compile Include="DTO\Evergreen\API\FilterDto.cs" />
     <Compile Include="DTO\Projects\Capacity\Capacity_SummaryDto.cs" />
     <Compile Include="DTO\Projects\StagePropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_EmailsDto.cs" />
@@ -144,14 +151,17 @@
     <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
-    <Compile Include="DTO\RuntimeVariables\Buckets.cs" />
+    <Compile Include="DTO\RuntimeVariables\Buckets\Buckets.cs" />
     <Compile Include="DTO\RuntimeVariables\Automation.cs" />
+    <Compile Include="DTO\RuntimeVariables\Buckets\BucketUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\Rings\Rings.cs" />
+    <Compile Include="DTO\RuntimeVariables\Rings\RingUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Teams\TeamDefaultId.cs" />
-    <Compile Include="DTO\RuntimeVariables\Teams\Team.cs" />
+    <Compile Include="DTO\RuntimeVariables\Teams\Teams.cs" />
     <Compile Include="DTO\RuntimeVariables\DownloadedFileName.cs" />
     <Compile Include="DTO\RuntimeVariables\Dashboard.cs" />
-    <Compile Include="DTO\RuntimeVariables\CapacityUnit.cs" />
-    <Compile Include="DTO\RuntimeVariables\CapacityUnitUnassignedId.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityUnits\CapacityUnit.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityUnits\CapacityUnitUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\LastUsedBucket.cs" />
     <Compile Include="DTO\RuntimeVariables\ListsDetails.cs" />
@@ -304,6 +314,7 @@
     <Compile Include="Pages\Projects\Projects_Dashboards\Projects_DashboardsPage.cs" />
     <Compile Include="Pages\Projects\Projects_PMObjectPage.cs" />
     <Compile Include="Providers\BambooProvider.cs" />
+    <Compile Include="Steps\API\EvergreenJnr_API_CheckAllFiltersAndColumns.cs" />
     <Compile Include="Steps\API\EvergreenJnr_API_DashboardPage.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\AutomationSteps.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\ActionSteps.cs" />
@@ -311,7 +322,11 @@
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAction.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\EditAutomation.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Automations\CreateAutomation.cs" />
-    <Compile Include="Steps\Dashworks\AdminPage\Buckets\BucketsApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\RemoveBucketAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\AfterScenario\SetDefaultBucketAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\Api\CreateBucketViaApi.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\BeforeScenario\SaveDefaultBucketBeforeScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Buckets\NavigationBuckets.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\SetDefaultCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\AfterScenario\RemoveCapacityUnitAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\CapacityUnits\BeforeScenario\SaveDefaultCapacityUnitBeforeScenario.cs" />
@@ -323,6 +338,9 @@
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_Messages.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_PageActions.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\EvergreenJnr_AdminPage_TableSorting.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\RemoveRingsAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Rings\AfterScenario\SetDefaultRingAfterScenario.cs" />
+    <Compile Include="Steps\Dashworks\AdminPage\Rings\BeforeScenario\SaveDefaultRingBeforeScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\RemoveTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\AfterScenario\SetDefaultTeamAfterScenario.cs" />
     <Compile Include="Steps\Dashworks\AdminPage\Teams\Api\CreateTeamViaApi.cs" />
@@ -344,6 +362,8 @@
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_Navigation.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TabContent.cs" />
     <Compile Include="Steps\Dashworks\ItemDetailsPage\EvergreenJnr_ItemDetailsPage_TopBar.cs" />
+    <Compile Include="Steps\Dashworks\Login\BaseLoginActions.cs" />
+    <Compile Include="Steps\Dashworks\Login\EvergreenJnr_LoginApi.cs" />
     <Compile Include="Steps\ManagementConsole\ManagementConsole.cs" />
     <Compile Include="Steps\Senior\Senior_BulkUpdate.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Capacity.cs" />
@@ -374,7 +394,7 @@
     <Compile Include="Steps\Dashworks\EvergreenJnr_GlobalSearch.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListDetailsPanel.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_ListSearch.cs" />
-    <Compile Include="Steps\Dashworks\EvergreenJnr_Login.cs" />
+    <Compile Include="Steps\Dashworks\Login\EvergreenJnr_Login.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_Logout.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_MenuNavigation.cs" />
     <Compile Include="Steps\Dashworks\EvergreenJnr_NewCustomList.cs" />
@@ -414,13 +434,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AutomationLog.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateBucket.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\DeleteBuckets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteBuckets.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\EditBuckets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditBuckets.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\GridScreenBuckets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GridScreenBuckets.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\OnboarBuckets.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OnboarBuckets.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature.cs">
       <DependentUpon>CapacityUnitsGridFiltering.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\UpdateCapacityUnit.feature.cs">
-      <DependentUpon>UpdateCapacityUnit.feature</DependentUpon>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\EditCapacityUnit.feature.cs">
+      <DependentUpon>EditCapacityUnit.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -449,12 +494,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Readiness.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\EditRings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditRings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\GridScreenForListScopedProject.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GridScreenForListScopedProject.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\NavigationRings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NavigationRings.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\Rings.feature.cs">
       <DependentUpon>Rings.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Buckets\Buckets.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Buckets.feature</DependentUpon>
@@ -473,6 +533,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Automations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\CreateRing.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateRing.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Rings\DeleteRings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteRings.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature.cs">
       <DependentUpon>DeleteBucketsFromTheTeam.feature</DependentUpon>
@@ -514,6 +584,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\ApplicationsFiltersAndColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationsFiltersAndColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\DevicesFiltersAndColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevicesFiltersAndColumns.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\UsersFiltersAndColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersFiltersAndColumns.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -524,10 +609,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AddColumnAction.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_API_FiltersAndColumns\MailboxesFiltersAndColumns.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailboxesFiltersAndColumns.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ColumnSectionDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplayApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColumnSectionDisplayApi.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature.cs">
       <DependentUpon>WidgetBar.feature</DependentUpon>
@@ -594,10 +689,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FiltersFunctionality.feature</DependentUpon>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionalityApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FiltersFunctionalityApi.feature</DependentUpon>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheck.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NewFilterCheck.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheckApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewFilterCheckApi.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_FiltersFeature\RemoveFilter.feature.cs">
       <AutoGen>True</AutoGen>
@@ -618,6 +723,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ItemDetailsContent_ActionsWithFields.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFieldsApi.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemDetailsContent_ActionsWithFieldsApi.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithTable.feature.cs">
       <AutoGen>True</AutoGen>
@@ -763,6 +873,30 @@
     <None Include="Resources\IncorrectFile.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="TestData\Columns\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Mailboxes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Columns\Users.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Devices.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Mailboxes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="TestData\Filters\Users.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ActionsPanel.feature.cs</LastGenOutput>
@@ -787,13 +921,33 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AutomationLog.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\CreateBucket.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateBucket.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\DeleteBuckets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteBuckets.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\EditBuckets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditBuckets.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\GridScreenBuckets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GridScreenBuckets.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\OnboarBuckets.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OnboarBuckets.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CapacityUnitsGridFiltering.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityUnitsGridFiltering.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\UpdateCapacityUnit.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\EditCapacityUnit.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>UpdateCapacityUnit.feature.cs</LastGenOutput>
+      <LastGenOutput>EditCapacityUnit.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\CapacityUnits\CreateCapacityUnit.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -815,11 +969,23 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Readiness.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Rings.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\EditRings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditRings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\GridScreenForListScopedProject.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GridScreenForListScopedProject.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\NavigationRings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NavigationRings.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\Rings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Rings.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Buckets.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Buckets\Buckets.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Buckets.feature.cs</LastGenOutput>
     </None>
@@ -834,6 +1000,14 @@
     <None Include="Tests\EvergreenJnr_AdminPage\Automation\Automations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Automations.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\CreateRing.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CreateRing.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Rings\DeleteRings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteRings.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Teams\DeleteBucketsFromTheTeam.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -867,6 +1041,18 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TeamsGridFiltering.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\ApplicationsFiltersAndColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ApplicationsFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\DevicesFiltersAndColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DevicesFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\UsersFiltersAndColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>UsersFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_BaseDashboardPage\BaseDashboardPage.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>BaseDashboardPage.feature.cs</LastGenOutput>
@@ -875,9 +1061,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>AddColumnAction.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_API_FiltersAndColumns\MailboxesFiltersAndColumns.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MailboxesFiltersAndColumns.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplay.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ColumnSectionDisplay.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_Columns\ColumnSectionDisplayApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ColumnSectionDisplayApi.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_DashboardsPage\WidgetBar.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -931,9 +1125,17 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>FiltersFunctionality.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\FiltersFunctionalityApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>FiltersFunctionalityApi.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheck.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>NewFilterCheck.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_FiltersFeature\NewFilterCheckApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>NewFilterCheckApi.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_FiltersFeature\RemoveFilter.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -950,6 +1152,10 @@
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFields.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ItemDetailsContent_ActionsWithFields.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithFieldsApi.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ItemDetailsContent_ActionsWithFieldsApi.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_ItemDetails\ItemDetailsContent\ItemDetailsContent_ActionsWithTable.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1061,6 +1267,18 @@
     <Content Include="Resources\DAS_13733_Duplicates_in_project_tasks.xml" />
     <Content Include="Resources\DAS_13733_Valid_file.xml" />
     <Content Include="Resources\Windows_7_Migration_%28Computer_Scheduled_Project%29 %28jet 5.3.3%29.xml" />
+    <Content Include="TestData\QueryUrls\ApplicationsQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\QueryUrls\DevicesQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\QueryUrls\MailboxesQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\QueryUrls\UsersQueryUrls.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CorrectFile.png">

@@ -277,36 +277,50 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "DD Autimation" text in the Search field for "Automation" column
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "15425_Automation" Name in the "Automation Name" field on the Automation details page
+	When User type "15425" Name in the "Description" field on the Automation details page
+	When User selects "All Users" in the Scope Automation dropdown
+	When User selects "Manual" in the "Run" dropdown
+	When User selects "Active" checkbox on the Automation Page
+	And User clicks the "CREATE" Action button
+	#Create Action
+	When User type "15425_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "User Evergreen Capacity Project" in the Project dropdown
+	When User selects "[Default (User)]" in the Path dropdown
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "15425_Automation" text in the Search field for "Automation" column
 	When User clicks content from "Automation" column
+	Then "UPDATE" Action button have tooltip with "No changes made" text
 	When User clicks "Actions" tab
-	When User enters "Action #2" text in the Search field for "Action" column
+	When User enters "15425_Action" text in the Search field for "Action" column
 	When User clicks content from "Action" column
 	Then Edit Action page is displayed to the User
-	Then "Action #2" content is displayed in "Action Name" field
-	Then "Machines" value is displayed in the "Path" dropdown for Automation
+	Then "15425_Action" content is displayed in "Action Name" field
+	Then "[Default (User)]" value is displayed in the "Path" dropdown for Automation
 	Then "Update path" text value is displayed in the "Action Type" dropdown
 	Then "UPDATE" Action button is disabled
 	Then "CANCEL" Action button is active
 	When User type "" Name in the "Action Name" field on the Automation details page
 	Then Filling field error with "An action name must be entered" text is displayed
 	Then "UPDATE" Action button is disabled
-	When User type "Action #2" Name in the "Action Name" field on the Automation details page
+	When User type "15425_Action" Name in the "Action Name" field on the Automation details page
 	Then "UPDATE" Action button is disabled
 	When User type "TEST NEW" Name in the "Action Name" field on the Automation details page
 	Then "UPDATE" Action button is active
-	When User selects "1803 Rollout" in the Project dropdown
+	When User selects "Migration Project Phase 2 (User Project)" in the Project dropdown
 	Then "UPDATE" Action button is disabled
 	Then "" value is displayed in the "Path" dropdown for Automation
 	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	When User clicks the "CANCEL" Action button
-	Then Warning Pop-up is displayed to the User
-	When User clicks "YES" button in the Warning Pop-up message
 	Then Actions page is displayed to the User

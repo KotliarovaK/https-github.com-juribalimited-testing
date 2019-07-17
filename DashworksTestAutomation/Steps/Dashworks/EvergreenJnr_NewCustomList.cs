@@ -293,9 +293,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<CustomListElement>();
             _driver.WaitForElementToBeDisplayed(listElement.SaveAsDropdown);
             listElement.SaveAsDropdown.Click();
-            _driver.WaitForElementsToBeDisplayed(new List<IWebElement> { listElement.SaveAsDropdown, listElement.UpdateCurrentListButton });
-            _driver.WaitForAttributePresentInElement(listElement.UpdateCurrentListButton, "aria-disabled");
-            listElement.UpdateCurrentListButton.Click();
+            _driver.WaitForElementToBeDisplayed(listElement.UpdateCurrentListButton);
+            _driver.WaitForElementToBeEnabled(listElement.UpdateCurrentListButton);
+            _driver.ClickByJavascript(listElement.UpdateCurrentListButton);
         }
 
         [Then(@"User save changes in list with ""(.*)"" name")]

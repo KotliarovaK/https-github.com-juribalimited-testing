@@ -17,8 +17,13 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.DTO;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
+using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
+using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
+using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations;
 using TechTalk.SpecFlow;
 
@@ -28,27 +33,22 @@ namespace DashworksTestAutomation.Steps.Dashworks
     internal class EvergreenJnr_AdminPage : SpecFlowContext
     {
         private readonly RemoteWebDriver _driver;
-        private readonly Team _team;
+        private readonly Teams _teams;
         private readonly DTO.RuntimeVariables.Projects _projects;
         private readonly Buckets _buckets;
-        private readonly RestWebClient _client;
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
-        private readonly CapacityUnit _capacityUnit;
-        private readonly UserDto _user;
+        private readonly Rings _rings;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Team team, DTO.RuntimeVariables.Projects projects,
-            RestWebClient client, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, CapacityUnit capacityUnit, UserDto user)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings)
         {
             _driver = driver;
-            _team = team;
+            _teams = teams;
             _projects = projects;
-            _client = client;
             _buckets = buckets;
             _lastUsedBucket = lastUsedBucket;
             _addedObjects = addedObjects;
-            _capacityUnit = capacityUnit;
-            _user = user;
+            _rings = rings;
         }
 
         #region Check button state
@@ -120,10 +120,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
                     case "Team Name":
                         TeamDto teamDto = new TeamDto();
                         teamDto.TeamName = name;
-                        _team.Value.Add(teamDto);
+                        _teams.Value.Add(teamDto);
                         break;
                     case "Bucket Name":
-                        _buckets.Value.Add(name);
+                        _buckets.Value.Add(new BucketDto() { Name = name });
                         break;
                     //case "Capacity Unit Name":
                     //    break;
@@ -917,7 +917,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             page.SelectTeamToChange(teamName);
         }
-       
+
         #region Column Settings
 
         [When(@"User have opened Column Settings for ""(.*)"" column")]
@@ -1060,7 +1060,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var action = _driver.NowAt<BaseGridPage>();
             action.SelectActions(actionName);
         }
-      
+
         [When(@"User expands the object to add")]
         public void WhenUserExpandsTheObjectToAdd()
         {
@@ -1142,7 +1142,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             bucketElement.AddItemButton.Click();
         }
-        
+
         [Then(@"following Objects are displayed in ""(.*)"" tab on the Capacity Units page:")]
         public void ThenFollowingObjectsAreDisplayedInTabOnTheCapacityUnitsPage(string tabName, Table table)
         {
@@ -1462,12 +1462,12 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksCreateButtonOnTheCreateProjectPage()
         {
             var page = _driver.NowAt<CreateProjectPage>();
-            _driver.WaitForElementToBeDisplayed(page.CreateProjectButton);
+            _driver.WaitForElementToBeEnabled(page.CreateProjectButton);
             _driver.ClickByJavascript(page.CreateProjectButton);
             _driver.WaitForDataLoading();
             Logger.Write("Create Project button was clicked");
         }
-        
+
         [When(@"User tries to open same page with ""(.*)"" item id")]
         public void WhenUserOpensSamePageForNotExistingItem(string Id)
         {
@@ -1756,10 +1756,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the Automation details page")]
         public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName)
         {
+            SendKeysToTheNamedTextbox(name, fieldName);
+        }
+
+        [When(@"User type ""(.*)"" Name in the ""(.*)"" field on the '(.*)' Project details page")]
+        public void WhenUserTypeNameInTheFieldOnTheProjectDetailsPage(string name, string fieldName, string project)
+        {
+            SendKeysToTheNamedTextbox(name, fieldName);
+
+            if (fieldName.Equals("Ring name"))
+                _rings.Value.Add(new RingDto() { Name = name, Project = project });
+        }
+
+        private void SendKeysToTheNamedTextbox(string text, string fieldName)
+        {
             var projectElement = _driver.NowAt<ProjectsPage>();
             projectElement.GetFieldByName(fieldName).ClearWithBackspaces();
-            projectElement.GetFieldByName(fieldName).SendKeys(name);
-            _capacityUnit.Value.Add(new CapacityUnitDto() { Name = name });
+            projectElement.GetFieldByName(fieldName).SendKeys(text);
         }
 
         [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]

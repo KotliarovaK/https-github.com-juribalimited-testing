@@ -9,6 +9,9 @@ using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using System;
 using System.Linq;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
+using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
+using DashworksTestAutomation.Providers;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Steps.Dashworks
@@ -92,6 +95,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _driver.WaitForDataLoading();
             createBucketElement.TeamsNameField.SendKeys(teamName);
             createBucketElement.SelectTeam(teamName);
+            _buckets.Value.Last().TeamName = teamName;
         }
 
         [When(@"User updates the ""(.*)"" checkbox state")]
@@ -173,32 +177,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             for (var i = 0; i < buckets.RowCount; i++)
                 Assert.That(page.GridBucketsNames[i].Text, Is.EqualTo(buckets.Rows[i].Values.FirstOrDefault()),
                     "Buckets are not the same");
-        }
-
-        [When(@"User creates following buckets in Administration:")]
-        public void WhenUserCreatesFollowingBucketsInAdministration(Table buckets)
-        {
-            foreach (var bucket in buckets.Rows)
-            {
-                var action = _driver.NowAt<BaseDashboardPage>();
-                action.GetActionsButtonByName("CREATE EVERGREEN BUCKET").Click();
-                _driver.WaitForDataLoading();
-
-                var page = _driver.NowAt<CreateBucketPage>();
-                page.BucketNameField.Clear();
-                page.BucketNameField.SendKeys(bucket.Values.FirstOrDefault());
-
-                if (!string.IsNullOrEmpty(bucket.Values.FirstOrDefault()))
-                    _buckets.Value.Add(bucket.Values.FirstOrDefault());
-
-                page.TeamsNameField.Clear();
-                _driver.WaitForDataLoading();
-                page.TeamsNameField.SendKeys(bucket.Values.ElementAt(1));
-                page.SelectTeam(bucket.Values.ElementAt(1));
-
-                page.CreateBucketButton.Click();
-                Logger.Write("Create Team button was clicked");
-            }
         }
 
         [Then(@"Delete ""(.*)"" Bucket in the Administration")]

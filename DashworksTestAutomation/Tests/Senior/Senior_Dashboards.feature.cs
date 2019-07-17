@@ -252,6 +252,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
         [NUnit.Framework.CategoryAttribute("DAS14322")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
         public virtual void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
         {
             System.Exception lastException = null;
@@ -286,7 +287,8 @@ this.FeatureBackground();
                         "Projects_Dashworks",
                         "Senior_Projects",
                         "Senior_Tasks",
-                        "DAS14322"});
+                        "DAS14322",
+                        "Delete_Newly_Created_Project"});
 #line 49
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -340,7 +342,8 @@ this.FeatureBackground();
                         "TaskType",
                         "ValueType",
                         "ObjectType",
-                        "TaskValuesTemplate"});
+                        "TaskValuesTemplate",
+                        "ApplyToAllCheckbox"});
             table3.AddRow(new string[] {
                         "for 14322",
                         "for 14322",
@@ -348,7 +351,8 @@ this.FeatureBackground();
                         "Normal",
                         "Radiobutton",
                         "User",
-                        "None"});
+                        "None",
+                        ""});
 #line 66
  testRunner.And("User creates new Task on Senior", ((string)(null)), table3, "And ");
 #line 69
@@ -382,10 +386,6 @@ this.FeatureBackground();
  testRunner.Then("\"Edit Task\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 81
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
- testRunner.When("User navigate to \"Details\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 83
- testRunner.When("User removes the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -432,22 +432,22 @@ this.FeatureBackground();
                         "Projects_Dashboards",
                         "Senior_Projects",
                         "DAS14171"});
-#line 86
+#line 84
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 87
+#line 85
  testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 88
+#line 86
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 89
+#line 87
  testRunner.When("User navigate to \"User Scheduled Test (Jo)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 90
+#line 88
  testRunner.And("User removes the Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 91
+#line 89
  testRunner.Then("Error message is not displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 92
+#line 90
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -495,25 +495,25 @@ this.FeatureBackground();
                         "Projects_Dashboards",
                         "Senior_Tasks",
                         "DAS13887"});
-#line 95
+#line 93
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 96
+#line 94
  testRunner.When("User clicks \"Projects\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 97
+#line 95
  testRunner.Then("\"Projects Home\" page is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 98
+#line 96
  testRunner.When("User navigate to \"Windows 7 Migration (Computer Scheduled Project)\" Project", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 99
+#line 97
  testRunner.Then("Project with \"Windows 7 Migration (Computer Scheduled Project)\" name is displayed" +
                     " correctly", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 100
+#line 98
  testRunner.When("User navigate to \"Tasks\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 101
+#line 99
  testRunner.And("User clicks \"Create Task\" button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
+#line 100
  testRunner.And("User selects \"Date\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -526,9 +526,9 @@ this.FeatureBackground();
                         "Computer"});
             table5.AddRow(new string[] {
                         "Application"});
-#line 103
+#line 101
  testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table5, "Then ");
-#line 109
+#line 107
  testRunner.When("User selects \"Text\" as Task Value Type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -541,7 +541,7 @@ this.FeatureBackground();
                         "Computer"});
             table6.AddRow(new string[] {
                         "Application"});
-#line 110
+#line 108
  testRunner.Then("Next items are displayed as options of Object Type property:", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -13,12 +13,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
     [Binding]
     public class CreateCapacityUnitViaApi : SpecFlowContext
     {
-        private readonly CapacityUnit _capacityUnit;
+        private readonly DTO.RuntimeVariables.CapacityUnits.CapacityUnits _capacityUnits;
         private readonly RestWebClient _client;
 
-        private CreateCapacityUnitViaApi(CapacityUnit capacityUnit, RestWebClient client)
+        private CreateCapacityUnitViaApi(DTO.RuntimeVariables.CapacityUnits.CapacityUnits capacityUnit, RestWebClient client)
         {
-            _capacityUnit = capacityUnit;
+            _capacityUnits = capacityUnit;
             _client = client;
         }
 
@@ -58,7 +58,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
                     throw new Exception($"Capacity Unit with {capacityUnit.Name} name was not created via api: {response.ErrorMessage}");
                 }
 
-                _capacityUnit.Value.Add(capacityUnit);
+                _capacityUnits.Value.Add(capacityUnit);
             }
         }
     }

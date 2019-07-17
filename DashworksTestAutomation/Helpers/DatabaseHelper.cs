@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
+using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.Providers;
+using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Helpers
 {
@@ -125,29 +128,6 @@ namespace DashworksTestAutomation.Helpers
 
         #endregion
 
-        #region Buckets
-
-        public static BucketDto GetBucket(string name)
-        {
-            throw new NotImplementedException("Please update this method. Below just copy paste from Capacity Units");
-            //var dataTable = DatabaseHelper
-            //    .ExecuteReaderWithoutZeroResultCheck(
-            //        $"select [UnitId], [UnitName], [UnitDescription], [IsDefault] from [PM].[dbo].[CapacityUnits] where UnitName='{name}'");
-
-            //if (dataTable.Rows.Count < 1)
-            //    throw new Exception($"Unable to find Bucket with name {name} in the Database");
-
-            //var b = new BucketDto(dataTable.Rows[0][0].ToString())
-            //{
-            //    Name = dataTable.Rows[0][1].ToString(),
-            //    Team = dataTable.Rows[0][2].ToString(),
-            //    IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
-            //};
-            //return b;
-        }
-
-        #endregion
-
         #region Teams
 
         public static TeamDto GetTeam(string name)
@@ -157,7 +137,7 @@ namespace DashworksTestAutomation.Helpers
                     $"select [TeamID],[TeamName],[TeamShortDescription],[IsDefault] from [PM].[dbo].[Teams] where [TeamName] = '{name}'");
 
             if (dataTable.Rows.Count < 1)
-                throw new Exception($"Unable to find Team with name {name}");
+                throw new Exception($"Unable to find Team with '{name}' name");
 
             var team = new TeamDto(dataTable.Rows[0][0].ToString())
             {
@@ -166,6 +146,133 @@ namespace DashworksTestAutomation.Helpers
                 IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
             };
             return team;
+        }
+
+        public static TeamDto GetTeamById(string id)
+        {
+            var dataTable = DatabaseHelper
+                .ExecuteReaderWithoutZeroResultCheck(
+                    $"select [TeamName],[TeamShortDescription],[IsDefault] from [PM].[dbo].[Teams] where [TeamID] = {id}");
+
+            if (dataTable.Rows.Count < 1)
+                throw new Exception($"Unable to find Team with {id} id");
+
+            var team = new TeamDto(id)
+            {
+                TeamName = dataTable.Rows[0][0].ToString(),
+                Description = dataTable.Rows[0][1].ToString(),
+                IsDefault = bool.Parse(dataTable.Rows[0][2].ToString())
+            };
+            return team;
+        }
+
+        public static void UnlinkTeamWithBucket(string teamName)
+        {
+            var groupIds = DatabaseHelper.ExecuteReader(
+                $"select GroupID from[PM].[dbo].[ProjectGroups] buckets join[PM].[dbo].[Teams] teams on buckets.OwnedByTeamID = teams.TeamID where teams.TeamName = '{teamName}'",
+                0);
+
+            foreach (var groupId in groupIds)
+            {
+                DatabaseHelper.ExecuteQuery(
+                    $"update [PM].[dbo].[ProjectGroups] set OwnedByTeamID = null where GroupID = '{groupId}'");
+            }
+        }
+
+
+        #endregion
+
+        #region Rings
+
+        public static RingDto GetRing(string name)
+        {
+            return GetRingFromDb(name);
+        }
+
+        public static RingDto GetRing(string name, string projectName)
+        {
+            return GetRingFromDb(name, projectName);
+        }
+
+        //Null for Evergreen projects
+        private static RingDto GetRingFromDb(string name, string projectName = "")
+        {
+            string query = string.IsNullOrEmpty(projectName)
+                ? $"select [RingId],[RingName],[RingDescription],[IsDefault] from [PM].[dbo].[Rings] where [ProjectId] is NULL and [RingName] = '{name}'"
+                : $"select [RingId],[RingName],[RingDescription],[IsDefault] from [PM].[dbo].[Rings] where [ProjectId] = {GetProjectId(projectName)} and [RingName] = '{name}'";
+
+            var dataTable = DatabaseHelper
+                .ExecuteReaderWithoutZeroResultCheck(query);
+
+            if (dataTable.Rows.Count < 1)
+                throw new Exception($"Unable to find Ring with name {name} in the Database");
+
+            var ring = new RingDto(dataTable.Rows[0][0].ToString())
+            {
+                Name = dataTable.Rows[0][1].ToString(),
+                Description = dataTable.Rows[0][2].ToString(),
+                IsDefault = bool.Parse(dataTable.Rows[0][3].ToString())
+            };
+            return ring;
+        }
+
+        #endregion
+
+        #region Buckets
+
+        public static BucketDto GetBucket(string name)
+        {
+            return GetBucketFromDb(name);
+        }
+
+        public static BucketDto GetBucket(string name, string projectName)
+        {
+            return GetBucketFromDb(name, projectName);
+        }
+
+        //Null for Evergreen projects
+        private static BucketDto GetBucketFromDb(string name, string projectName = "")
+        {
+            string query = string.IsNullOrEmpty(projectName)
+                ? $"select [GroupID],[GroupName],[IsEvergreenDefault],[OwnedByTeamID] from [PM].[dbo].[ProjectGroups] where [ProjectID] is NULL and [GroupName] = '{name}'"
+                : $"select [GroupID],[GroupName],[IsEvergreenDefault],[OwnedByTeamID] from [PM].[dbo].[ProjectGroups] where [ProjectId] = {GetProjectId(projectName)} and [GroupName] = '{name}'";
+
+            var dataTable = DatabaseHelper
+                .ExecuteReaderWithoutZeroResultCheck(query);
+
+            if (dataTable.Rows.Count < 1)
+                throw new Exception($"Unable to find Bucket with name {name} in the Database");
+
+            var ring = new BucketDto(dataTable.Rows[0][0].ToString())
+            {
+                Name = dataTable.Rows[0][1].ToString(),
+                IsDefault = bool.Parse(dataTable.Rows[0][2].ToString()),
+                Team = GetTeamById(dataTable.Rows[0][3].ToString())
+            };
+            return ring;
+        }
+
+        #endregion
+
+        #region Projects
+
+        public static string GetProjectId(string projectName)
+        {
+            var projectId =
+                DatabaseHelper.ExecuteReader(
+                    $"SELECT [ProjectID] FROM [PM].[dbo].[Projects] where [ProjectName] = '{projectName}' AND [IsDeleted] = 0",
+                    0).LastOrDefault();
+            return projectId;
+        }
+
+        public static string GetProjectListIdScope(string listName)
+        {
+            //string userId =
+            //    DatabaseHelper.ExecuteReader(
+            //        $"SELECT [aspnetdb].[dbo].[aspnet_Users].[UserId] FROM[aspnetdb].[dbo].[aspnet_Users] where UserName = '{_user.UserName}'", 0).LastOrDefault();
+
+            return DatabaseHelper.ExecuteReader(
+                $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
         }
 
         #endregion

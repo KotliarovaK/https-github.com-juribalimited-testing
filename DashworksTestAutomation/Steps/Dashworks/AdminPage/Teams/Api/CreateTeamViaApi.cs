@@ -13,12 +13,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.Api
     [Binding]
     public class CreateTeamViaApi : SpecFlowContext
     {
-        private readonly Team _team;
+        private readonly DTO.RuntimeVariables.Teams _teams;
         private readonly RestWebClient _client;
 
-        private CreateTeamViaApi(Team team, RestWebClient client)
+        private CreateTeamViaApi(DTO.RuntimeVariables.Teams teams, RestWebClient client)
         {
-            _team = team;
+            _teams = teams;
             _client = client;
         }
 
@@ -53,11 +53,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.Api
                 var response = _client.Value.Post(request);
 
                 if (response.StatusCode != HttpStatusCode.OK)
-                {
                     throw new Exception($"Team with {team.TeamName} name was not created via api: {response.ErrorMessage}");
-                }
 
-                _team.Value.Add(team);
+                _teams.Value.Add(team);
             }
         }
     }

@@ -240,6 +240,59 @@ namespace DashworksTestAutomation.Helpers
                 case "Secure Boot Enabled":
                     return "secureBootEnabled";
 
+                case "Windows7Mi: In Scope":
+                    return "project_1_inScope";
+
+                case @"Windows7Mi: Pre-Migration \ Scheduled Date (Slot)":
+                    return "project_task_1_3_2_taskSlot";
+
+                case "UserEvergr: Ring (All Users)":
+                    return "project_56_allUsersRing";
+
+                case "CPU Architecture":
+                    return "processorArchitecture";
+
+                case "Model":
+                    return "model";
+
+                case "1803: In Scope":
+                    return "project_63_inScope";
+
+                case "HDD Total Size (GB)":
+                    return "hDDTotalSpaceGB";
+
+                case "First Seen Date":
+                    return "firstSeenDate";
+
+                case @"Windows7Mi: Communication \ DateTime":
+                    return "project_task_1_250_2_Task";
+
+                case @"Service Pack or Build":
+                    return "oSServicePackName";
+
+                case @"CPU Virtualisation Capable":
+                    return "processorVirtualisationCapable";
+
+                case "prK: Application Readiness":
+                    switch (pageName)
+                    {
+                        case "Users":
+                            return "project_49_linkedApplicationReadiness";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+                case "Device Application Compliance":
+                    switch (pageName)
+                    {
+                        case "Users":
+                            return "deviceApplicationCompliance";
+                        default:
+                            throw new Exception($"'{pageName}' page not found in convertor");
+                    }
+
+
+
                 default:
                     throw new Exception($"{columnName} column not found in convertor");
             }

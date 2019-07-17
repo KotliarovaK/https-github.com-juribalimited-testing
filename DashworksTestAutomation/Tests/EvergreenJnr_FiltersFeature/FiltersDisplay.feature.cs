@@ -6515,7 +6515,6 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Mailboxes")]
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FiltersDisplay")]
-        [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.CategoryAttribute("DAS12547")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatOwnerFloorValuesAreSortedInTheFilterBlock()
         {
@@ -6550,7 +6549,6 @@ this.FeatureBackground();
                         "Mailboxes",
                         "Evergreen_FiltersFeature",
                         "FiltersDisplay",
-                        "API",
                         "DAS12547"});
 #line 1486
 this.ScenarioInitialize(scenarioInfo);

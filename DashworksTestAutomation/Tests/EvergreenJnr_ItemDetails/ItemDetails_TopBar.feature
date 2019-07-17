@@ -64,13 +64,13 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "001BAQXT6JWFPI"
 	And User click content from "Hostname" column
 	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
-	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -83,14 +83,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "0072B088173449E3A93"
 	And User click content from "Username" column
 	Then Details page for "0072B088173449E3A93" item is displayed to the user
-	When User switches to the "User Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	| Workflow          |
-	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -102,14 +102,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
 	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
-	When User switches to the "1803 Rollout" project in the Top bar on Item details page
+	When User switches to the "Windows 7 Migration (Computer Scheduled Project)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| App Readiness     |
 	| Task Readiness    |
 	| Workflow          |
-	When User switches to the "Computer Scheduled Test (Jo)" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(USR SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
@@ -121,15 +121,14 @@ Scenario: EvergreenJnr_AllLists_CheckThatTopBarInProjectModeIsDisplayedCorrectly
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
 	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
-	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
+	When User switches to the "USE ME FOR AUTOMATION(MAIL SCHDLD)" project in the Top bar on Item details page
 	Then following Compliance items are displayed in Top bar on the Item details page:
 	| ComplianceItems   |
 	| Overall Readiness |
 	| Task Readiness    |
 	| Workflow          |
 
-	#Delete the tag "not ready" when new gold date will be on automation server
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17166 @Not_Ready
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17166
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -143,3 +142,87 @@ Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsD
 	| App Readiness     | RED       |
 	| Task Readiness    | PURPLE    |
 	| Workflow          | Failed    |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16698 @DAS17005 @DAS15347 @DAS16668 @DAS16903 @DAS16907 @DAS16857
+Scenario Outline: EvergreenJnr_AllLists_CheckThatProjectsInTheTopBarOnItemDetailsPageAreDisplayedInAlphabeticalOrder
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	Then Project Switcher in the Top bar on Item details page is closed
+	Then projects on the Project Switcher panel are displayed in alphabetical order
+	When User switches to the "<ProjectName>" project in the Top bar on Item details page
+	Then Project Switcher in the Top bar on Item details page is closed
+	Then projects on the Project Switcher panel are displayed in alphabetical order
+
+Examples:
+	| PageName     | ColumnName    | ItemName                         | ProjectName                        |
+	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Devices Evergreen Capacity Project |
+	| Users        | Username      | ACG370114                        | User Evergreen Capacity Project    |
+	| Applications | Application   | 7zip                             | Computer Scheduled Test (Jo)       |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Mailbox Evergreen Capacity Project |
+	
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857 
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInEvergreenMode
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User navigates to the "<SubMenu>" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title      | Value   |
+	| Compliance | <Value> |
+	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	| ComplianceItems    | ColorName |
+	| Overall Compliance | <Value>   |
+
+Examples:
+	| PageName     | ColumnName  | ItemName       | SubMenu      | Value   |
+	| Devices      | Hostname    | 001BAQXT6JWFPI | Device Owner | RED     |
+	| Users        | Username    | ACG370114      | User         | RED     |
+	| Applications | Application | 7zip           | Application  | UNKNOWN |
+
+@Evergreen @AllLists @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16857
+Scenario Outline: EvergreenJnr_AllLists_CheckThatComplianceInKeyValueTableMatchesTheOverallComplianceFromTopBarInProjectMode
+	When User clicks "<PageName>" on the left-hand menu
+	Then "<PageName>" list should be displayed to the user
+	When User perform search by "<ItemName>"
+	And User click content from "<ColumnName>" column
+	Then Details page for "<ItemName>" item is displayed to the user
+	When User switches to the "<ProjectName>" project in the Top bar on Item details page
+	And User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title   | Value   |
+	| <Title> | <Value> |
+	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	| ComplianceItems   | ColorName |
+	| Overall Readiness | <Value>   |
+
+Examples:
+	| PageName     | ColumnName    | ItemName                         | Title             | Value | ProjectName                        |
+	| Devices      | Hostname      | 001BAQXT6JWFPI                   | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
+	| Users        | Username      | ACG370114                        | Readiness         | GREY  | User Evergreen Capacity Project    |
+	| Applications | Application   | 7zip                             | Overall Readiness | GREY  | Devices Evergreen Capacity Project |
+	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local | Overall Readiness | NONE  | Mailbox Evergreen Capacity Project |
+
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17002
+Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccordingToHavocBigDataProject
+	When User clicks "Applications" on the left-hand menu
+	Then "Applications" list should be displayed to the user
+	When User perform search by "ACD Display 3.4"
+	And User click content from "Application" column
+	Then Details page for "ACD Display 3.4" item is displayed to the user
+	When User switches to the "Havoc (Big Data)" project in the Top bar on Item details page
+	When User navigates to the "Projects" main-menu on the Details page
+	And User navigates to the "Project Details" sub-menu on the Details page
+	Then following content is displayed on the Details Page
+	| Title             | Value |
+	| Overall Readiness | RED   |
+	| App Readiness     | RED   |
+	Then following Compliance items with appropriate colors are displayed in Top bar on the Item details page:
+	| ComplianceItems   | ColorName |
+	| Overall Readiness | RED       |
+	| App Readiness     | RED       |
