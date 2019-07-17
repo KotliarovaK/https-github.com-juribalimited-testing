@@ -9,6 +9,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
 using DashworksTestAutomation.Providers;
+using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
 
 namespace DashworksTestAutomation.Helpers
@@ -168,14 +169,21 @@ namespace DashworksTestAutomation.Helpers
 
         public static void UnlinkTeamWithBucket(string teamName)
         {
-            var groupIds = DatabaseHelper.ExecuteReader(
-                $"select GroupID from[PM].[dbo].[ProjectGroups] buckets join[PM].[dbo].[Teams] teams on buckets.OwnedByTeamID = teams.TeamID where teams.TeamName = '{teamName}'",
-                0);
-
-            foreach (var groupId in groupIds)
+            try
             {
-                DatabaseHelper.ExecuteQuery(
-                    $"update [PM].[dbo].[ProjectGroups] set OwnedByTeamID = null where GroupID = '{groupId}'");
+                var groupIds = DatabaseHelper.ExecuteReader(
+                    $"select GroupID from[PM].[dbo].[ProjectGroups] buckets join[PM].[dbo].[Teams] teams on buckets.OwnedByTeamID = teams.TeamID where teams.TeamName = '{teamName}'",
+                    0);
+
+                foreach (var groupId in groupIds)
+                {
+                    DatabaseHelper.ExecuteQuery(
+                        $"update [PM].[dbo].[ProjectGroups] set OwnedByTeamID = null where GroupID = '{groupId}'");
+                }
+            }
+            catch (Exception e)
+            {
+                Logger.Write($"Some issues appears during Team Unlinking: {e}");
             }
         }
 

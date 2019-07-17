@@ -44,6 +44,13 @@ namespace DashworksTestAutomation.Utils
                 var quarantinedTests =
                     doc.DocumentNode.SelectNodes("//table[@id='quarantined-tests']//a[@class='test-name']");
 
+                if (quarantinedTests == null || !quarantinedTests.Any())
+                {
+                    Logger.Write("There are no tests on quarantine");
+                    _quarantinedTests = null;
+                    return;
+                }
+
                 List<KeyValuePair<string, string>> testIdsWithNames = new List<KeyValuePair<string, string>>();
                 foreach (HtmlNode node in quarantinedTests)
                 {

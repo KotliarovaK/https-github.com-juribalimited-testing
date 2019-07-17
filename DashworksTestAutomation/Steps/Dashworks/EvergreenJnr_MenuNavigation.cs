@@ -118,7 +118,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 case "Applications":
                     //Check Applications heading is visible
                     var applicationsPage = _driver.NowAt<ApplicationsPage>();
-                    var t = applicationsPage.List.Displayed();
                     StringAssert.Contains(applicationsPage.Heading.Text.ToLower(), listPage.ToLower(),
                         "Incorrect list is displayed to user");
                     break;

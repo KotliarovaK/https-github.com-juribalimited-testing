@@ -7,9 +7,9 @@ Background: Pre-Conditions
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12760 @DAS13254 @Buckets @Delete_Newly_Created_Bucket
 Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
-	#When User creates new Bucket via api
-	#| Name        | TeamName  | IsDefault |
-	#| TestBucket4 | Team 1045 | false     |
+	When User creates new Bucket via api
+	| Name        | TeamName  | IsDefault |
+	| TestBucket4 | Team 1045 | false     |
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Evergreen" link on the Admin page
@@ -29,16 +29,9 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User selects "Delete" in the Actions
 	When User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	#Can be replaced by API step
-	When User clicks the "CREATE EVERGREEN BUCKET" Action button
-	Then "Create Evergreen Bucket" page should be displayed to the user
-	When User enters "TestBucket4" in the "Bucket Name" field
-	And User selects "Team 1045" team in the Team dropdown on the Buckets page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The bucket has been created" text
-
 	When User enters "TestBucket4" text in the Search field for "Bucket" column
-	And User selects all rows on the grid
+	And User clicks Select All checkbox on the grid
+	And User clicks Select All checkbox on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
