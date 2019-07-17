@@ -86,12 +86,10 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsCont
         [NUnit.Framework.CategoryAttribute("DAS11478")]
         [NUnit.Framework.CategoryAttribute("DAS11477")]
         [NUnit.Framework.CategoryAttribute("DAS11476")]
-        [NUnit.Framework.CategoryAttribute("DAS11510")]
         [NUnit.Framework.CategoryAttribute("API")]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Mailbox Database", "True", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alfredo.m.daniel@dwlabs.local", "Mailbox", "Cloud Mail Server", "False", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "alex.cristea@juriba.com", "Mailbox", "Mail Server", "False", null)]
-        [NUnit.Framework.TestCaseAttribute("Devices", "001BAQXT6JWFPI", "Device Owner", "Last Logoff Date", "False", null)]
         public virtual void EvergreenJnr_AllLists_CheckStateOfSelectedFieldOnDetailsTabOnAPI(string pageName, string itemName, string sectionName, string fieldName, string displayState, string[] exampleTags)
         {
             System.Exception lastException = null;
@@ -128,7 +126,6 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ItemDetails.ItemDetailsCont
                     "DAS11478",
                     "DAS11477",
                     "DAS11476",
-                    "DAS11510",
                     "API"};
             if ((exampleTags != null))
             {
@@ -193,12 +190,12 @@ this.FeatureBackground();
                         "ItemDetailsDisplay",
                         "DAS17274",
                         "API"});
-#line 20
+#line 19
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
 this.FeatureBackground();
-#line 21
+#line 20
  testRunner.When("I perform test request to the \"Users\" API and get \"002B5DC7D4D34D5C895\" item summ" +
                     "ary for \"Department and Location\" section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -253,7 +250,7 @@ this.FeatureBackground();
             table1.AddRow(new string[] {
                         "Postal Code",
                         "True"});
-#line 22
+#line 21
  testRunner.Then("following fields are displayed with next state on Details tab API", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();

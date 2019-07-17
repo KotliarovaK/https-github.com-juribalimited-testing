@@ -721,7 +721,10 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatProjectNamesAreDisplayedCorrectlyIn
 	| Havoc (Big Data)                                 |
 	| I-Computer Scheduled Project                     |
 	| Migration Project Phase 2 (User Project)         |
+	| Project 00 M Computer Scheduled                  |
 	| Project K-Computer Scheduled Project             |
+	| USE ME FOR AUTOMATION(DEVICE SCHDLD)             |
+	| USE ME FOR AUTOMATION(USR SCHDLD)                |
 	| User Evergreen Capacity Project                  |
 	| User Scheduled Test (Jo)                         |
 	| Windows 10 Migration - Depot                     |
@@ -1108,7 +1111,8 @@ Examples:
 	| 00HA7MKAVVFDAV | 1 of 1 object was in the selected project and has been queued |
 	| 00I0COBFWHOF27 | 0 of 1 object was in the selected project and has been queued |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127
+	#Ann.Ilchenko 7/17/19 : waiting for an error response
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForValueField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1195,7 +1199,8 @@ Examples:
 	| DAS1324 | LZI970280  | Not Applicable | Admin IT | Failed         | IB Team             |
 	| DAS1325 | ZQX656408  | Not Applicable | Admin IT | Complete       | Migration Phase 2   |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127
+	#Ann.Ilchenko 7/17/19 : waiting for an error response
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1283,7 +1288,8 @@ Examples:
 	| DAS1333 | LZI970280  | Admin IT | IB Team             | Not Applicable |
 	| DAS1334 | ZQX656408  | Admin IT | Migration Phase 2   | Not Applicable |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287
+	#Ann.Ilchenko 7/17/19 : waiting for an error response
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Not_Run
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1373,7 +1379,8 @@ Examples:
 	| DAS13283 | LZI970280  | Not Applicable | Failed         |
 	| DAS13284 | ZQX656408  | Not Applicable | Complete       |
 
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127
+	#Ann.Ilchenko 7/17/19 : waiting for an error response
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Not_Run
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -1797,7 +1804,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatBucketBulkUpdateOptionNotAvaila
 	| Update path          |
 	| Update task value    |
 
-@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291
+@Evergreen @Devices @EvergreenJnr_ActionsPanel @BulkUpdate @DAS15291 @Not_Run
 Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1813,6 +1820,7 @@ Scenario: EvergreenJnr_DevicesList_CheckSortOrderForBulkUpdateCapacitySlot
 	And User selects "Scheduled Date" Task on Action panel
 	And User selects "Update" Update Date on Action panel
 	And User selects "23 Nov 2018" Date on Action panel
+	#Ann.Ilchenko 7/17/19 : fixed on 'orbit'
 	#Update Capacity Slot sort order
 	Then following values are displayed in "Capacity Slot" drop-down on Action panel:
 	| Options                      |
