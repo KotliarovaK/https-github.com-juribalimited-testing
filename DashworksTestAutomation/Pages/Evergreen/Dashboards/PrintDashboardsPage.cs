@@ -13,13 +13,13 @@ namespace DashworksTestAutomation.Pages.Evergreen.Dashboards
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'print-preview')]//h2[text()='Print Preview Settings']")]
         public IWebElement PrintPreviewSettingsPopUp { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//body[@class='dashboardPrintPreview']//img[@alt='DashWorks']")]
+        [FindsBy(How = How.XPath, Using = ".//body[contains(@class,'dashboardPrintPreview')]//img[@alt='DashWorks']")]
         public IWebElement DashWorksPrintLogo { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div [@class='cdk-drop-list']//div[@class='widget']")]
         public IWebElement PrintPreviewWidgets { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//body[@class='dashboardPrintPreview']//div[@style='min-width: 777px;']")]
+        [FindsBy(How = How.XPath, Using = ".//body[@class='dashboardPrintPreview A4 Portrait']//div[@style='min-width: 777px;']")]
         public IWebElement A4PrintPreviewView { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//body[@class='dashboardPrintPreview Letter Portrait']//div[@style='min-width: 799px;']")]

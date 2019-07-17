@@ -369,11 +369,13 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	| Username          | Password  |
 	| automation_admin1 | m!gration |
 	When User clicks the Switch to Evergreen link
+	
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
 	When User click on 'Hostname' column header
 	And User create custom list with "DeviceListFor14841_Admin" name
 	Then "DeviceListFor14841_Admin" list is displayed to user
+	
 	When User clicks the List Details button
 	And User select "Specific users / teams" sharing option
 	And User clicks the "ADD USER" Action button
@@ -381,7 +383,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	And User select "Admin" in Select Access dropdown
 	And User clicks the "ADD USER" Action button
 	And User clicks the "ADD USER" Action button
-	And User clicks the Logout button
+	
+	When User clicks the Logout button
 	Then User is logged out
 	When User clicks the Switch to Evergreen link
 	When User clicks on the Login link
