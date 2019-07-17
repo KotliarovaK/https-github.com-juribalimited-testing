@@ -58,4 +58,4 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCreateButtonIsDisabledForEmptyBucketNa
 	Then "Create Evergreen Bucket" page should be displayed to the user
 	When User enters " " in the "Bucket Name" field
 	And User selects "Admin IT" team in the Team dropdown on the Buckets page
-	Then Create Bucket button is disabled
+	Then "CREATE" Action button is disabled

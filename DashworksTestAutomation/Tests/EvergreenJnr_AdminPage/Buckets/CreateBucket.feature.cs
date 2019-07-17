@@ -350,7 +350,7 @@ this.FeatureBackground();
 #line 60
  testRunner.And("User selects \"Admin IT\" team in the Team dropdown on the Buckets page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
- testRunner.Then("Create Bucket button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"CREATE\" Action button is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

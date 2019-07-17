@@ -111,9 +111,23 @@ namespace DashworksTestAutomation.Helpers
 
         public static CapacityUnitDto GetCapacityUnit(string name)
         {
+            return GetCapacityUnitFromDb(name);
+        }
+
+        public static CapacityUnitDto GetCapacityUnit(string name, string projectName)
+        {
+            return GetCapacityUnitFromDb(name, projectName);
+        }
+
+        //Null for Evergreen projects
+        private static CapacityUnitDto GetCapacityUnitFromDb(string name, string projectName = "")
+        {
+            string query = string.IsNullOrEmpty(projectName)
+                ? $"select [UnitId], [UnitName], [UnitDescription], [IsDefault], [ProjectID] from [PM].[dbo].[CapacityUnits] where UnitName='{name}' and [ProjectID] is NULL"
+                : $"select [UnitId], [UnitName], [UnitDescription], [IsDefault], [ProjectID] from [PM].[dbo].[CapacityUnits] where UnitName='{name}' and [ProjectId] = {GetProjectId(projectName)}";
+
             var dataTable = DatabaseHelper
-                .ExecuteReaderWithoutZeroResultCheck(
-                    $"select [UnitId], [UnitName], [UnitDescription], [IsDefault] from [PM].[dbo].[CapacityUnits] where UnitName='{name}'");
+                .ExecuteReaderWithoutZeroResultCheck(query);
 
             if (dataTable.Rows.Count < 1)
                 throw new Exception($"Unable to find Capacity Unit with name {name} in the Database");
@@ -186,7 +200,6 @@ namespace DashworksTestAutomation.Helpers
                 Logger.Write($"Some issues appears during Team Unlinking: {e}");
             }
         }
-
 
         #endregion
 

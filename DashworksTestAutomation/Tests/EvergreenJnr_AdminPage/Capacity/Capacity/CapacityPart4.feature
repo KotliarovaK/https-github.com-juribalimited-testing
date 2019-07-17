@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS14103 @DAS14172 @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS14103 @DAS14172 @Delete_Newly_Created_Project @Delete_Newly_Created_Capacity_Unit @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
 	When Project created via API and opened
 	| ProjectName        | Scope      | ProjectTemplate | Mode               |
@@ -52,15 +52,10 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And User selects "Clone evergreen capacity units to project capacity units" option in "Capacity Units" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
-	When User click on Back button
-	When User clicks "Evergreen" link on the Admin page
-	When User clicks "Capacity Units" tab
-	Then "Capacity Units" page should be displayed to the user
-	When User clicks the "CREATE EVERGREEN CAPACITY UNIT" Action button
-	And User type "Capacity Unit For DAS14103" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks newly created object link
+	When User creates new Capacity Unit via api
+	| Name                       | Description | IsDefault |
+	| Capacity Unit For DAS14103 |             | false     |
+	And User navigates to newly created Capacity Unit
 	And User selects "Devices" tab on the Capacity Units page
 	Then "Devices" tab is selected on the Admin page
 	When User clicks the "ADD DEVICE" Action button
@@ -172,11 +167,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplaye
 	When User enters "001BAQXT6JWFPI" text in the Search field for "Item" column
 	Then "Unassigned" content is displayed in "Capacity Unit" column
 	When User clicks "Capacity" tab
-	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "CapacityUnit13961" Name in the "Capacity Unit Name" field on the Project details page
-	And User updates the "Default Unit" checkbox state
-	And User clicks the "CREATE" Action button
+	When User creates new Capacity Unit via api
+	| Name              | Description | IsDefault | Project            |
+	| CapacityUnit13961 |             | true      | ProjectForDAS13961 |
 	And User clicks "Scope" tab
 	And User selects "History" tab on the Project details page
 	And User enters "001BAQXT6JWFPI" text in the Search field for "Item" column

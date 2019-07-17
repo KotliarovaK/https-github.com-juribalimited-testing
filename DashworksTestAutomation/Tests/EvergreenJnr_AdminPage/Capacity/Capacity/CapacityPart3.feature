@@ -23,7 +23,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCapacityUnitCanBeCreatedWithNameAlread
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13945 @DAS12672 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithSpace
 	When Project created via API and opened
-	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13945 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
@@ -50,26 +50,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitStartedWithS
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13159 @DAS13754 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckingSortOrderForCapacityUnits
 	When Project created via API and opened
-	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| 13159ProjectForCapacity | All Devices | None            | Standalone Project |
+	And User creates new Capacity Unit via api
+	| Name              | Description | IsDefault | Project                 |
+	| CapacityUnit13790 |             | false     | 13159ProjectForCapacity |
+	| NewUnit           |             | false     | 13159ProjectForCapacity |
+	| 13159             |             | false     | 13159ProjectForCapacity |
+	| A13159Unit        |             | false     | 13159ProjectForCapacity |
 	And User clicks "Capacity" tab
 	And User selects "Units" tab on the Project details page
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "CapacityUnit13790" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "NewUnit" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "13159" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "A13159Unit" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
 	Then "Capacity Unit" column content is displayed in the following order:
 	| Items             |
 	| Unassigned        |

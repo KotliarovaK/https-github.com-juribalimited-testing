@@ -39,8 +39,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly LastUsedBucket _lastUsedBucket;
         private readonly AddedObjects _addedObjects;
         private readonly Rings _rings;
+        private readonly CapacityUnits _capacityUnits;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings, CapacityUnits capacityUnits)
         {
             _driver = driver;
             _teams = teams;
@@ -49,6 +50,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _lastUsedBucket = lastUsedBucket;
             _addedObjects = addedObjects;
             _rings = rings;
+            _capacityUnits = capacityUnits;
         }
 
         #region Check button state
@@ -1766,6 +1768,9 @@ namespace DashworksTestAutomation.Steps.Dashworks
 
             if (fieldName.Equals("Ring name"))
                 _rings.Value.Add(new RingDto() { Name = name, Project = project });
+
+            if (fieldName.Equals("Capacity Unit Name"))
+                _capacityUnits.Value.Add(new CapacityUnitDto() { Name = name, Project = project });
         }
 
         private void SendKeysToTheNamedTextbox(string text, string fieldName)

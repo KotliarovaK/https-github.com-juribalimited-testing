@@ -519,9 +519,23 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [Then(@"""(.*)"" Action button is disabled")]
         public void ThenActionButtonIsDisabled(string buttonName)
         {
+            Assert.True(IsButtonDisabled(buttonName), $"{buttonName} Button state is not disabled");
+        }
+
+        [Then(@"""(.*)"" Action button is enabled")]
+        public void ThenActionButtonIsEnabled(string buttonName)
+        {
+            Assert.False(IsButtonDisabled(buttonName), $"{buttonName} Button state is not enabled");
+        }
+
+        private bool IsButtonDisabled(string buttonName)
+        {
             var button = _driver.NowAt<BaseDashboardPage>();
             var buttonState = button.GetActionsButtonByName(buttonName).GetAttribute("disabled");
-            Assert.AreEqual(buttonState, "true", $"{buttonName} Button state is incorrect");
+            if (buttonState == null)
+                return false;
+            else
+                return bool.Parse(buttonState);
         }
 
         [Then(@"""(.*)"" Action button is active")]
@@ -643,7 +657,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                 if (rowIndex < 0)
                     throw new Exception($"'{row["SelectedRowsName"]}' is not found in the '{columnName}' column");
                 _driver.WaitForDataLoading();
-                dashboardPage.SelectRowsCheckboxes[rowIndex].Click();
+                _driver.ClickByJavascript(dashboardPage.SelectRowsCheckboxes.ElementAt(rowIndex));
             }
         }
 
