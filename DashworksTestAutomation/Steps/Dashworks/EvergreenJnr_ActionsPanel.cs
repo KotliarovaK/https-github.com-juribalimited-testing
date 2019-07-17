@@ -279,10 +279,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var field = _driver.NowAt<ActionsElement>();
             field.GetSearchDropDownOnActionPanelByName(fieldName).Click();
-            var action = _driver.NowAt<BaseDashboardPage>();
-            var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
+
+            var action = _driver.NowAt<BaseDashboardPage>(); ;
             var actualList = action.OptionListOnActionsPanel.Select(value => value.Text).ToList();
-            Assert.AreEqual(expectedList, actualList, $"Values in {fieldName} drop-down with searchfield are different");
+            foreach (var row in table.Rows)
+            {
+                Assert.Contains(row["Options"], actualList, $"This {fieldName} project in drop-down with search field not found");
+            }
+
             var page = _driver.NowAt<ApplicationsDetailsTabsMenu>();
             page.BodyContainer.Click();
         }

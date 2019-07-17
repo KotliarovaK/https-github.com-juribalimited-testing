@@ -1655,7 +1655,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserChangesProjectNameTo(string projectName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.ProjectName.Clear();
+            projectElement.ProjectName.ClearWithBackspaces();
             projectElement.ProjectName.SendKeys(projectName);
             _driver.WaitForDataLoading();
         }
