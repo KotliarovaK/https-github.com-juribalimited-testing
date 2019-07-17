@@ -402,6 +402,20 @@ namespace DashworksTestAutomation.Extensions
             return netData.ToString();
         }
 
+        public static bool IsElementHaveVerticalScrollbar(this RemoteWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor ex = driver;
+            bool result = (bool)ex.ExecuteScript("return arguments[0].scrollHeight > arguments[0].clientHeight", element);
+            return result;
+        }
+
+        public static bool IsElementHaveHorizontalScrollbar(this RemoteWebDriver driver, IWebElement element)
+        {
+            IJavaScriptExecutor ex = driver;
+            bool result = (bool)ex.ExecuteScript("return arguments[0].scrollHeight > arguments[0].clientHeight", element);
+            return result;
+        }
+
         #endregion Actions with Javascript
 
         #region JavaSctipt Alert

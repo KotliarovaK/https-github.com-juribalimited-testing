@@ -128,16 +128,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             page.MoveToBucketByName(bucketName);
         }
 
-        [Then(@"Create Capacity Unit button is disabled")]
-        [Then(@"Create Bucket button is disabled")]
-        public void ThenCreateBucketButtonIsDisabled()
-        {
-            var button = _driver.NowAt<CreateBucketPage>();
-            _driver.WaitForElementToBeDisplayed(button.CreateBucketButton);
-            Assert.IsTrue(Convert.ToBoolean(button.CreateBucketButton.GetAttribute("disabled")),
-                "Create Bucket button is active");
-        }
-
         [Then(@"Bucket ""(.*)"" is displayed to user")]
         public void ThenBucketIsDisplayedToUser(string bucketName)
         {

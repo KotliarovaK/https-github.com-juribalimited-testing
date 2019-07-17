@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages;
@@ -15,7 +16,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_AdminPage_Messages (RemoteWebDriver driver)
+        public EvergreenJnr_AdminPage_Messages(RemoteWebDriver driver)
         {
             _driver = driver;
         }
@@ -180,8 +181,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             var page = _driver.NowAt<BaseGridPage>();
             _driver.WaitForElementToBeDisplayed(page.SuccessMessage);
             Assert.AreEqual("rgba(126, 189, 56, 1)", page.GetMessageColor()); //Green color
-            Assert.AreEqual("1658px", page.GetMessageWidthOnAdminPage());
-            Assert.AreEqual("33.6px", page.GetMessageHeightOnAdminPage());
+            //TODO update web element or move this assertion to separate step after Olga replay in https://juriba.atlassian.net/browse/DAS-14037
+            //Assert.False(_driver.IsElementHaveHorizontalScrollbar(
+            //        _driver.FindElement(By.XPath(".//admin-project-units-list/.."))), "Table has scrollbar");
         }
 
         [Then(@"Success message The ""(.*)"" bucket has been updated is displayed on the Buckets page")]

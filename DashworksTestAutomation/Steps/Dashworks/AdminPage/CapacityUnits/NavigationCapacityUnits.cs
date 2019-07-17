@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using OpenQA.Selenium.Remote;
 using TechTalk.SpecFlow;
@@ -28,7 +29,9 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
             if (!_capacityUnits.Value.Any())
                 throw new Exception("There are no created Capacity Units to navigate");
 
-            var url = $"{UrlProvider.EvergreenUrl}/#/admin/capacityUnit/{_capacityUnits.Value.Last().GetId()}/settings";
+            var url = string.IsNullOrEmpty(_capacityUnits.Value.Last().Project) ?
+                $"{UrlProvider.EvergreenUrl}/#/admin/capacityUnit/{_capacityUnits.Value.Last().GetId()}/settings" :
+                $"{UrlProvider.EvergreenUrl}/#/admin/project/{DatabaseHelper.GetProjectId(_capacityUnits.Value.Last().Project)}/capacity/units/unit/{_capacityUnits.Value.Last().GetId()}";
             _driver.NavigateToUrl(url);
             _driver.WaitForDataLoading();
         }
