@@ -70,7 +70,7 @@ Scenario: EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityU
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Override_Dates @DAS13723 @DAS13370 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn
 	When Project created via API and opened
-	| ProjectName           | Scope         | ProjectTemplate | Mode               |
+	| ProjectName             | Scope       | ProjectTemplate | Mode               |
 	| ProjectForCapacity13723 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
