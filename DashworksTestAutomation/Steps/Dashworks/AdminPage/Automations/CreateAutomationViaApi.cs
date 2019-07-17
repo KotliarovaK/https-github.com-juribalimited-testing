@@ -4,6 +4,7 @@ using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Automations;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using RestSharp;
@@ -40,11 +41,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
                 if (string.IsNullOrEmpty(automation.automationName))
                     throw new Exception("Unable to create Automation with empty name");
 
-                var request = new RestRequest(requestUri);
-
-                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                var request = requestUri.GenerateRequest();
                 request.AddParameter("objectId", null);
 
                 request.AddJsonBody(automation);

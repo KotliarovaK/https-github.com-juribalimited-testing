@@ -141,26 +141,20 @@ this.FeatureBackground();
  testRunner.When("User clicks Admin on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
  testRunner.Then("Admin page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
- testRunner.When("User clicks \"Automations\" link on the Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
- testRunner.Then("\"Automations\" page should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "AutomationName",
                         "Description",
                         "Active",
                         "StopOnFailedAction",
-                        "objectTypeId",
-                        "listId",
-                        "automationScheduleTypeId"});
+                        "Scope",
+                        "Run"});
             table1.AddRow(new string[] {
                         "15309_laptop",
                         "15309",
                         "true",
                         "false",
-                        "User",
-                        "Users",
+                        "All Users",
                         "Manual"});
 #line 14
  testRunner.When("User creates new Automation via API", ((string)(null)), table1, "When ");

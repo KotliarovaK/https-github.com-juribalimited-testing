@@ -9,11 +9,11 @@ Background: Pre-Conditions
 Scenario: EvergreenJnr_AdminPage_CheckActionGridInAutomations
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
-	When User clicks "Automations" link on the Admin page
-	Then "Automations" page should be displayed to the user
+	#When User clicks "Automations" link on the Admin page
+	#Then "Automations" page should be displayed to the user
 	When User creates new Automation via API
-	| AutomationName | Description | Active | StopOnFailedAction | objectTypeId | listId | automationScheduleTypeId |
-	| 15309_laptop   | 15309       | true   | false              | User         | Users  | Manual                   |
+	| AutomationName | Description | Active | StopOnFailedAction | Scope     | Run    |
+	| 15309_laptop   | 15309       | true   | false              | All Users | Manual |
 	When User clicks the "CREATE AUTOMATION" Action button
 	Then Create Automation page is displayed to the User
 	When User type "15309_laptop" Name in the "Automation Name" field on the Automation details page
