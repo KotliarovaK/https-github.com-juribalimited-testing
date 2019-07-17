@@ -34,10 +34,10 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
 
             foreach (TeamDto team in _teams.Value)
             {
-                DatabaseHelper.UnlinkTeamWithBucket(team.TeamName);
-
                 try
                 {
+                    DatabaseHelper.UnlinkTeamWithBucket(team.TeamName);
+
                     var request = new RestRequest(requestUri);
 
                     request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
