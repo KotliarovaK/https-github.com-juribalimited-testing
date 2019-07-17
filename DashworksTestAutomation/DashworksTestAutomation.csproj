@@ -160,7 +160,7 @@
     <Compile Include="DTO\RuntimeVariables\Teams\Teams.cs" />
     <Compile Include="DTO\RuntimeVariables\DownloadedFileName.cs" />
     <Compile Include="DTO\RuntimeVariables\Dashboard.cs" />
-    <Compile Include="DTO\RuntimeVariables\CapacityUnits\CapacityUnit.cs" />
+    <Compile Include="DTO\RuntimeVariables\CapacityUnits\CapacityUnits.cs" />
     <Compile Include="DTO\RuntimeVariables\CapacityUnits\CapacityUnitUnassignedId.cs" />
     <Compile Include="DTO\RuntimeVariables\Filter.cs" />
     <Compile Include="DTO\RuntimeVariables\LastUsedBucket.cs" />

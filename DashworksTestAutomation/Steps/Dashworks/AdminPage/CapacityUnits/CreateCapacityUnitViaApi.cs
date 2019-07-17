@@ -3,6 +3,8 @@ using System.Linq;
 using System.Net;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
+using DashworksTestAutomation.Helpers;
 using DashworksTestAutomation.Providers;
 using RestSharp;
 using TechTalk.SpecFlow;
@@ -22,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
             _client = client;
         }
 
-        //| Name | Description | IsDefault |
+        //| Name | Description | IsDefault | Project |
         [When(@"User creates new Capacity Unit via api")]
         public void WhenUserCreatesNewCapacityUnitViaApi(Table table)
         {
@@ -41,15 +43,15 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits
                 if (string.IsNullOrEmpty(capacityUnit.Name))
                     throw new Exception("Unable to create Capacity Unit with empty name");
 
-                var request = new RestRequest(requestUri);
-
-                request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                request.AddParameter("Referer", UrlProvider.EvergreenUrl);
-                request.AddParameter("objectId", null);
+                var request = requestUri.GenerateRequest();
                 request.AddParameter("name", capacityUnit.Name);
                 request.AddParameter("description", capacityUnit.Description);
                 request.AddParameter("isDefault", capacityUnit.IsDefault);
+                if (!string.IsNullOrEmpty(capacityUnit.Project))
+                {
+                    request.AddParameter("mapsToEvergreenUnit", "-1");
+                    request.AddParameter("projectId", DatabaseHelper.GetProjectId(capacityUnit.Project));
+                }
 
                 var response = _client.Value.Post(request);
 

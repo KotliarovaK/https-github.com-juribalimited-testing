@@ -2,6 +2,7 @@
 using System.Linq;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables;
+using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using RestSharp;
@@ -35,11 +36,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
                 {
                     try
                     {
-                        var request = new RestRequest(requestUri);
-
-                        request.AddParameter("Host", UrlProvider.RestClientBaseUrl);
-                        request.AddParameter("Origin", UrlProvider.Url.TrimEnd('/'));
-                        request.AddParameter("Referer", UrlProvider.EvergreenUrl);
+                        var request = requestUri.GenerateRequest();
                         request.AddParameter("objectId", null);
                         request.AddParameter("selectedObjectsList", capacityUnit.GetId());
 

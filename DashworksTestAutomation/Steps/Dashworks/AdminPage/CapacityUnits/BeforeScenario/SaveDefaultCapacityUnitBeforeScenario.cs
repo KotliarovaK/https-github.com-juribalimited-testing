@@ -18,20 +18,44 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _capacityUnitUnassignedId = capacityUnitUnassignedId;
         }
 
+        //This just for EVERGREEN projects. For other projects please use 'Given' step
         //This method is actually just save Default Capacity Unit ID
         [BeforeScenario("Set_Default_Capacity_Unit")]
         public void SetDefaultCapacityUnitBeforeScenario()
         {
+            SaveDefaultCapacityUnit();
+        }
+
+        [Given(@"Save Default Capacity Unit for '(.*)' project")]
+        public void GivenSaveDefaultCapacityUnitForProject(string project)
+        {
+            SaveDefaultCapacityUnit(project);
+        }
+
+        private void SaveDefaultCapacityUnit(string project = "")
+        {
             try
             {
-                var capacityUnit = new CapacityUnitDto() { Name = "Unassigned", Description = "Unassigned", IsDefault = true };
+                CapacityUnitDto capacityUnit = null;
+                switch (project)
+                {
+                    case "":
+                        capacityUnit = new CapacityUnitDto() { Name = "Unassigned", Description = "Unassigned", IsDefault = true };
+                        break;
+                    case "Email Migration":
+                        capacityUnit = new CapacityUnitDto() { Name = "Unassigned", Description = "Default Capacity Unit for Email Migration project", IsDefault = true, Project = project };
+                        break;
+                    default:
+                        throw new Exception($"There are no information for default Capacity Unit for '{project}' project");
+                }
+
 
                 var id = capacityUnit.GetId();
 
                 if (string.IsNullOrEmpty(id))
                     throw new Exception("Unable to get Unassigned Capacity Unit ID");
 
-                _capacityUnitUnassignedId.Value = id;
+                _capacityUnitUnassignedId.Value.Add(capacityUnit);
             }
             catch (Exception e)
             {

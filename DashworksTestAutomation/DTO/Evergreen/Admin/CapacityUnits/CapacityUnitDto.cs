@@ -10,6 +10,8 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits
         public string Description { get; set; }
         public bool IsDefault { get; set; }
 
+        public string Project { get; set; }
+
         public CapacityUnitDto(string id)
         {
             Id = id;
@@ -21,7 +23,17 @@ namespace DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits
         {
             if (string.IsNullOrEmpty(Id))
             {
-                Id = DatabaseHelper.GetCapacityUnit(this.Name).Id;
+                Id = string.IsNullOrEmpty(this.Project) ?
+                    DatabaseHelper.GetCapacityUnit(this.Name).Id : GetId(this.Project);
+            }
+            return Id;
+        }
+
+        public string GetId(string projectName)
+        {
+            if (string.IsNullOrEmpty(Id))
+            {
+                Id = DatabaseHelper.GetCapacityUnit(this.Name, projectName).Id;
             }
             return Id;
         }
