@@ -22,15 +22,15 @@ Scenario: EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket
 	And User selects "Delete" in the Actions
 	And User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	When User enters "Unassigned" text in the Search field for "Bucket" column
-	And User clicks Select All checkbox on the grid
+	When User clicks Select All checkbox on the grid
+	And User enters "Unassigned" text in the Search field for "Bucket" column
 	And User clicks Select All checkbox on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
 	When User clicks Delete button 
 	Then Warning message with "You cannot delete the default bucket" text is displayed on the Admin page
-	When User enters "TestBucket4" text in the Search field for "Bucket" column
-	And User clicks Select All checkbox on the grid
+	When User clicks Select All checkbox on the grid
+	And User enters "TestBucket4" text in the Search field for "Bucket" column
 	And User clicks Select All checkbox on the grid
 	And User clicks on Actions button
 	And User selects "Delete" in the Actions
