@@ -301,25 +301,18 @@ namespace DashworksTestAutomation.Helpers
 
         #region Task
 
-        public static string GetTaskId(string name, string projectName)
+        public static string GetTaskId(TaskPropertiesDto task)
         {
-            var projId = GetProjectId(projectName);
-            var projectId =
-                DatabaseHelper.ExecuteReader(
-                    $"select ptl.TaskId from [PM].[dbo].[ProjectTaskLanguage] as ptl join[PM].[dbo].[ProjectTasks] as pt on ptl.TaskId = pt.TaskID where pt.ProjectID = {projId} and ptl.[TaskName] = '{name}'",
-                    0).LastOrDefault();
-            return projectId;
+            var query =
+                $"select ptl.TaskId from [PM].[dbo].[ProjectTaskLanguage] as ptl join[PM].[dbo].[ProjectTasks] as pt on ptl.TaskId = pt.TaskID where pt.ProjectID = {task.ProjectId} and ptl.[TaskName] = '{task.Name}'";
+            var taskId =
+                DatabaseHelper.ExecuteReader(query, 0).LastOrDefault();
+            return taskId;
         }
 
-        public static void DeleteTask(TaskPropertiesDto task, string project)
+        public static void DeleteTask(TaskPropertiesDto task)
         {
-            DeleteTaskFromDb(task.GetId(project));
-        }
-
-        public static void DeleteTask(string name, string project)
-        {
-            var taskId = GetTaskId(name, project);
-            DeleteTaskFromDb(taskId);
+            DeleteTaskFromDb(task.GetId());
         }
 
         private static void DeleteTaskFromDb(string taskId)

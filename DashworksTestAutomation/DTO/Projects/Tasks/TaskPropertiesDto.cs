@@ -7,6 +7,7 @@ namespace DashworksTestAutomation.DTO.Projects
     public class TaskPropertiesDto
     {
         private string Id;
+        public string ProjectId { get; set; }
 
         public string Name { get; set; }
         public string Help { get; set; }
@@ -22,10 +23,10 @@ namespace DashworksTestAutomation.DTO.Projects
         public TaskValuesTemplateEnum TaskValuesTemplate;
         public bool ApplyToAllCheckbox { get; set; }
 
-        public string GetId(string projectName)
+        public string GetId()
         {
             if (string.IsNullOrEmpty(Id))
-                Id = DatabaseHelper.GetTaskId(this.Name, projectName);
+                Id = DatabaseHelper.GetTaskId(this);
 
             return Id;
         }

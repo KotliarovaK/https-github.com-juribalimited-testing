@@ -96,19 +96,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 	
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @DAS17419 @Delete_Newly_Created_Projec
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13526 @DAS17419 @Delete_Newly_Created_Project
 Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |
 	| ProjectForDAS13526 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
-	And User selects "Units" tab on the Project details page
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "Unit 1" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "Unit 2" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Capacity Unit via api
+	| Name   | Description | IsDefault | Project            |
+	| Unit 1 |             | false     | ProjectForDAS13526 |
+	| Unit 2 |             | false     | ProjectForDAS13526 |
 	And User selects "Slots" tab on the Project details page
 	When User clicks the "CREATE SLOT" Action button
 	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
@@ -135,7 +132,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @Senior_Projects @DAS13812 @DAS13676 @Delete_Newly_Created_Project @Delete_Newly_Created_Task
 Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

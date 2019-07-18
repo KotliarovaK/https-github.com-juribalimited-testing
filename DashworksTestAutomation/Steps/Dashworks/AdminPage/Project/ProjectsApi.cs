@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
         }
 
         [AfterScenario("Delete_Newly_Created_Project")]
-        public void DeleteNewlyCreatedProject()
+        public void Delete_Newly_Created_Project()
         {
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
 

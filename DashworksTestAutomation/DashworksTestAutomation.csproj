@@ -149,6 +149,7 @@
     <Compile Include="DTO\Projects\SelfService\SelfService_WelcomeDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskPropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\Tasks.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\Buckets.cs" />

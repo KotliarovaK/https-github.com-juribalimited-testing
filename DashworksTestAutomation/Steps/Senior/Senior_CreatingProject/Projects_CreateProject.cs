@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using DashworksTestAutomation.DTO.Projects;
+using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu;
 using DashworksTestAutomation.Pages.Projects;
@@ -34,6 +36,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         private readonly GroupPropertiesDto _groupPropertiesDto;
         private readonly MailTemplatePropertiesDto _mailTemplatePropertiesDto;
         private readonly NewsDto _newsDto;
+        private readonly Tasks _tasks;
 
         public Projects_CreateProject(RemoteWebDriver driver, ProjectDto projectDto, DetailsDto detailsDto,
             RequestTypesDto requestTypesDto, CategoryPropertiesDto categoryPropertiesDto,
@@ -41,7 +44,8 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             TeamPropertiesDto teamPropertiesDto, GroupPropertiesDto groupPropertiesDto,
             MailTemplatePropertiesDto mailTemplatePropertiesDto, NewsDto newsDto,
             TaskProperties_DetailsDto taskPropertiesDetailsDto, RequestType_DetailsDto requestTypeDetailsDto,
-            TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto)
+            TaskProperties_ValuesDto taskPropertiesValuesDto, TaskProperties_EmailsDto taskPropertiesEmailsDto,
+            Tasks tasks)
         {
             _driver = driver;
             _projectDto = projectDto;
@@ -58,6 +62,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             _requestTypeDetailsDto = requestTypeDetailsDto;
             _taskPropertiesValuesDto = taskPropertiesValuesDto;
             _taskPropertiesEmailsDto = taskPropertiesEmailsDto;
+            _tasks = tasks;
         }
 
         [When(@"User clicks create Project button")]
@@ -343,7 +348,12 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<TaskPropertiesPage>();
 
-            table.CreateInstance<TaskPropertiesDto>().CopyPropertiesTo(_taskPropertiesDto);
+            //Get ProjectId from URL
+            var projectId = Regex.Match(_driver.Url, @"(?<=ProjectId=)(\d*)").Groups[0].Value;
+
+            var task = table.CreateInstance<TaskPropertiesDto>();
+            task.ProjectId = projectId;
+            task.CopyPropertiesTo(_taskPropertiesDto);
             
             //assign StagesNameString to StageNameEnum
             //_taskPropertiesDto.Stages =
@@ -392,6 +402,8 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             tempTaskPropertiesDto.TaskType = _taskPropertiesDto.TaskType;
             tempTaskPropertiesDto.ValueType = _taskPropertiesDto.ValueType;
             tempTaskPropertiesDto.ObjectType = _taskPropertiesDto.ObjectType;
+
+            _tasks.Value.Add(task);
         }
 
         [When(@"User updates the Task page")]
@@ -513,21 +525,6 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
         {
             var page = _driver.NowAt<MainElementsOfProjectCreation>();
             page.GetTaskByName(taskName).Click();
-        }
-
-        [When(@"Task Id is stored in memory")]
-        public void WhenUserStoresTaskId()
-        {
-            var page = _driver.NowAt<MainElementsOfProjectCreation>();
-
-            string taskId = _driver.Url;
-            taskId = taskId
-                .Substring(taskId.IndexOf("&") + 1);
-            taskId = taskId
-                .Substring(0, taskId.IndexOf("&"))
-                .Replace("TaskId=", "");
-
-            page.Storage.SessionStorage.SetItem("task_id", taskId);
         }
 
         [When(@"User publishes the task")]
