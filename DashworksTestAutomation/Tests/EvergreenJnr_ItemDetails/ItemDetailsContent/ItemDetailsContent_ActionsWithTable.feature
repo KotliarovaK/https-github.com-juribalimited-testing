@@ -1170,7 +1170,8 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	Then "1" rows found label displays on Details Page
 	And "hansonay" content is displayed in "Username" column
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228 @Not_Ready
 Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1184,3 +1185,12 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	#Then date in table is sorted by 'Custom Field' column in ascending order
 	#When User click on 'Custom Field' column header
 	#Then date in table is sorted by 'Custom Field' column in descending order
+	#Then ColumnName is displayed in following order on the Details page:
+	#| ColumnName   |
+	#| Custom Field |
+	#| Value        |
+	#When User move 'Value' column to 'Custom Field' column
+	#Then ColumnName is displayed in following order on the Details page:
+	#| ColumnName   |
+	#| Value        |
+	#| Custom Field |
