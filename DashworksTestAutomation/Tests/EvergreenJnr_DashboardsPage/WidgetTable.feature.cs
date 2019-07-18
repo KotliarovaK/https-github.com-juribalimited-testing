@@ -274,11 +274,11 @@ this.FeatureBackground();
 #line 36
  testRunner.And("\"DAS-14920_1\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.And("\"2,190\" count is displayed for \"False\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"2,189\" count is displayed for \"False\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
  testRunner.And("\"2,192\" count is displayed for \"True\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.And("\"12,843\" count is displayed for \"Unknown\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"12,898\" count is displayed for \"Unknown\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
  testRunner.When("User clicks the \"ADD WIDGET\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
@@ -311,9 +311,9 @@ this.FeatureBackground();
 #line 46
  testRunner.And("\"DAS-14920_2\" Widget is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.Then("\"12,044\" count is displayed for \"False\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"12,100\" count is displayed for \"False\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 48
- testRunner.And("\"5,181\" count is displayed for \"True\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"5,179\" count is displayed for \"True\" in the table Widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
