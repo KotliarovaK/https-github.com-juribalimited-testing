@@ -324,3 +324,70 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	Then "UPDATE" Action button have tooltip with "Some values are missing or not valid" text
 	When User clicks the "CANCEL" Action button
 	Then Actions page is displayed to the User
+
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
+Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
+	#Pre-requisites:
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "City" filter where type is "Equals" with added column and "Edinburgh" Lookup option
+	And User create dynamic list with "Edinburgh Devices" name on "Devices" page
+	And User clicks Create Project from the main list
+	Then "Create Project" page should be displayed to the user
+	Then Create Project button is disabled
+	When User enters "Edinburgh Devices Migration" in the "Project Name" field
+	When User clicks Create button on the Create Project page
+	Then Success message is displayed and contains "The project has been created" text
+	When User clicks "Projects" on the left-hand menu
+	Then "Projects Home" page is displayed to the user
+	When User navigate to "Edinburgh Devices Migration" Project
+	Then "Manage Project Details" page is displayed to the user
+	When User navigate to "Stages" tab
+	Then "Manage Stages" page is displayed to the user
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName     |
+	| Pre-Migration |
+	And User clicks "Create Stage" button
+	And User navigate to "Tasks" tab
+	Then "Manage Tasks" page is displayed to the user
+	When User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| Device Task 1 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| Device Task 3 | DAS16992 | Pre-Migration | Group    | Date      | Computer   |                    |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
+	When User clicks "Cancel" button
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| Device Task 2 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User navigate to Evergreen link
+	And User clicks "Admin" on the left-hand menu
+	Then Admin page should be displayed to the user
+	When User clicks "Automations" link on the Admin page
+	Then "Automations" page should be displayed to the user
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "DAS16992_Edinburgh_Automation" Name in the "Automation Name" field on the Automation details page
+	When User type "Task value change" Name in the "Description" field on the Automation details page
+	When User selects "Edinburgh Devices" in the Scope Automation dropdown
+	When User selects "Manual" in the "Run" dropdown
+	When User selects "Active" checkbox on the Automation Page
+	And User clicks the "CREATE" Action button
+	#Create Action
+	When User type "DAS16992_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update task value" in the "Action Type" dropdown
+	When User selects "\" in the Project dropdown
+	When User selects "[Default (User)]" in the Path dropdown
+	And User clicks the "CREATE" Action button

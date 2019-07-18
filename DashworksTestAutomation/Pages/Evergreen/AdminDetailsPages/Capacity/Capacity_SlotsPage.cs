@@ -30,7 +30,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
         [FindsBy(How = How.XPath, Using = ".//input[contains(@placeholder, 'Move to position')]")]
         public IWebElement MoveToPositionInput { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//div[@class='dialog-small mat-dialog-content']//*[@role='alert']//span[1]")]
+        [FindsBy(How = How.XPath, Using = ".//mat-error/span")]
         public IWebElement MoveToPositionAlert { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//div[@aria-live='assertive'][text()='0 shown']")]
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Capacity
 
         public IWebElement GetMoveToPositionDialogButtonByText(string buttonText)
         {
-            var selector = By.XPath($"//div[@class='dialog-small mat-dialog-content']/following-sibling :: div//button/span[contains(text(), '{buttonText.ToUpper()}')]/parent :: button");
+            var selector = By.XPath($".//change-order-dialog//span[contains(text(), '{buttonText.ToUpper()}')]//parent::button");
             return Driver.FindElement(selector);
         }
     }
