@@ -149,6 +149,7 @@
     <Compile Include="DTO\Projects\SelfService\SelfService_WelcomeDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskPropertiesDto.cs" />
     <Compile Include="DTO\Projects\Tasks\TaskProperties_DetailsDto.cs" />
+    <Compile Include="DTO\Projects\Tasks\Tasks.cs" />
     <Compile Include="DTO\Projects\TeamPropertiesDto.cs" />
     <Compile Include="DTO\RuntimeVariables\AddedObjects.cs" />
     <Compile Include="DTO\RuntimeVariables\Buckets\Buckets.cs" />
@@ -405,6 +406,7 @@
     <Compile Include="Steps\Senior\Senior_ProjectsHome.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_Removing.cs" />
     <Compile Include="Steps\Senior\Senior_CreatingProject\Projects_SelfService.cs" />
+    <Compile Include="Steps\Senior\Tasks\AfterScenario\RemoveTaskAfterScenario.cs" />
     <Compile Include="Tests\EvergreenJnr_ActionsPanel\ActionsPanel.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

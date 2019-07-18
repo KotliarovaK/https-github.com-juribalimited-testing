@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Task")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCapacityUnitsType()
         {
             System.Exception lastException = null;
@@ -127,7 +128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "Slots",
                         "Senior_Projects",
                         "DAS13152",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Delete_Newly_Created_Task"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -179,12 +181,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StagesName",
-                        "TaskType",
-                        "ValueType",
-                        "ObjectType",
-                        "TaskValuesTemplate",
-                        "ApplyToAllCheckbox"});
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
+                        "ObjectTypeString",
+                        "TaskValuesTemplateString"});
             table3.AddRow(new string[] {
                         "Task13152",
                         "13152",
@@ -192,10 +193,9 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
-                        "",
-                        "true"});
+                        ""});
 #line 27
- testRunner.And("User creates new Task on Senior", ((string)(null)), table3, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table3, "And ");
 #line 30
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 31
@@ -275,6 +275,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13152")]
         [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Task")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTeamsAndRequestTypes()
         {
             System.Exception lastException = null;
@@ -312,7 +313,8 @@ this.FeatureBackground();
                         "Slots",
                         "Senior_Projects",
                         "DAS13152",
-                        "Delete_Newly_Created_Project"});
+                        "Delete_Newly_Created_Project",
+                        "Delete_Newly_Created_Task"});
 #line 61
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -364,11 +366,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StagesName",
-                        "TaskType",
-                        "ValueType",
-                        "ObjectType",
-                        "TaskValuesTemplate",
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
+                        "ObjectTypeString",
+                        "TaskValuesTemplateString",
                         "ApplyToAllCheckbox"});
             table6.AddRow(new string[] {
                         "Task13152",
@@ -380,7 +382,7 @@ this.FeatureBackground();
                         "",
                         "true"});
 #line 79
- testRunner.And("User creates new Task on Senior", ((string)(null)), table6, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table6, "And ");
 #line 82
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83

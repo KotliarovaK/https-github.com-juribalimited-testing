@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDelet
 	And User clicks Delete button 
 	Then Warning message with "The selected slots will be deleted, do you want to proceed?" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835 @Delete_Newly_Created_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage
 	When User navigates to "User Scheduled Project in Italian & Japanese (Jo)" project details
 	And User clicks "Capacity" tab
@@ -83,15 +83,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFil
 	Then User selects "Capacity Units" option in "Capacity Mode" dropdown
 	When User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
-	When User selects "Units" tab on the Project details page
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "Capacity Unit 1" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
-	When User clicks the "CREATE PROJECT CAPACITY UNIT" Action button
-	And User type "Capacity Unit 2" Name in the "Capacity Unit Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "The capacity unit has been created" text
+	When User creates new Capacity Unit via api
+	| Name            | Description | IsDefault | Project                                           |
+	| Capacity Unit 1 |             | false     | User Scheduled Project in Italian & Japanese (Jo) |
+	| Capacity Unit 2 |             | false     | User Scheduled Project in Italian & Japanese (Jo) |
 	When User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
 	And User type "Slot1" Name in the "Slot Name" field on the Project details page
