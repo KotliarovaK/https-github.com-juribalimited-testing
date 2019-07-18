@@ -1169,3 +1169,18 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatUsersAreReloadedAfterSelectingAPr
 	When User switches to the "Email Migration" project in the Top bar on Item details page
 	Then "1" rows found label displays on Details Page
 	And "hansonay" content is displayed in "Username" column
+
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17159 @DAS17161 @DAS17162 @DAS17228
+Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage
+	When User clicks "Devices" on the left-hand menu
+	Then "Devices" list should be displayed to the user
+	When User perform search by "001BAQXT6JWFPI"
+	And User click content from "Hostname" column
+	Then Details page for "001BAQXT6JWFPI" item is displayed to the user
+	When User navigates to the "Details" main-menu on the Details page
+	And User navigates to the "Custom Fields" sub-menu on the Details page
+	#cannot be checked until there is only one item in the table
+	#When User click on 'Custom Field' column header
+	#Then date in table is sorted by 'Custom Field' column in ascending order
+	#When User click on 'Custom Field' column header
+	#Then date in table is sorted by 'Custom Field' column in descending order
