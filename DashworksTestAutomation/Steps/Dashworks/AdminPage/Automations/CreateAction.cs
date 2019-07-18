@@ -24,6 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Automations
         public void ThenCreateActionPageIsDisplayedToTheUser()
         {
             var page = _driver.NowAt<CreateActionsPage>();
+            _driver.WaitForElementToBeDisplayed(page.CreateActionTitle);
             Assert.IsTrue(page.CreateActionTitle.Displayed());
             Assert.IsTrue(page.ActionNameField.Displayed(), "Create Action page is not displayed");
         }

@@ -434,6 +434,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13980")]
         [NUnit.Framework.CategoryAttribute("DAS13981")]
+        [NUnit.Framework.CategoryAttribute("DAS17458")]
         public virtual void EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhenInvalidValueEnteredInSlotMoveToPositionDialog()
         {
             System.Exception lastException = null;
@@ -470,7 +471,8 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS13980",
-                        "DAS13981"});
+                        "DAS13981",
+                        "DAS17458"});
 #line 95
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -483,22 +485,22 @@ this.FeatureBackground();
  testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 98
  testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
- testRunner.And("User opens settings for \"User Slot\" row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
- testRunner.And("User selects \"Move to position\" option from settings menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 101
- testRunner.And("User remembers the Move to position dialog size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 102
- testRunner.And("User enters \"1.2\" value in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 103
- testRunner.Then("User checks that Move to position dialog has the same size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 104
- testRunner.And("Button \"Move\" in Move to position dialog is displayed disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens settings for \"User Slot\" row", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 105
+ testRunner.And("User selects \"Move to position\" option from settings menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+ testRunner.And("User remembers the Move to position dialog size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 107
+ testRunner.And("User enters \"1.2\" value in Move to position dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 108
+ testRunner.Then("User checks that Move to position dialog has the same size", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 109
+ testRunner.And("Button \"Move\" in Move to position dialog is displayed disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
  testRunner.And("Alert message is displayed and contains \"Enter integer value between 1 and 32767\"" +
                     " text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 106
+#line 111
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -552,7 +554,7 @@ this.FeatureBackground();
                         "Slots",
                         "DAS13791",
                         "Delete_Newly_Created_Project"});
-#line 109
+#line 114
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
@@ -568,28 +570,18 @@ this.FeatureBackground();
                         "All Devices",
                         "None",
                         "Standalone Project"});
-#line 110
- testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
-#line 113
- testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 114
- testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 115
- testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
- testRunner.And("User type \"Slot 10001\" Name in the \"Slot Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 117
- testRunner.And("User type \"10001\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Project created via API and opened", ((string)(null)), table7, "When ");
 #line 118
- testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks \"Capacity\" tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 119
- testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User selects \"Slots\" tab on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 120
  testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 121
- testRunner.And("User type \"Slot 10002\" Name in the \"Slot Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User type \"Slot 10001\" Name in the \"Slot Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 122
- testRunner.And("User type \"10002\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User type \"10001\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
  testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 124
@@ -597,12 +589,22 @@ this.FeatureBackground();
 #line 125
  testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 126
- testRunner.And("User type \"Slot 10003\" Name in the \"Slot Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User type \"Slot 10002\" Name in the \"Slot Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 127
- testRunner.And("User type \"10003\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User type \"10002\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 128
  testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 129
+ testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 130
+ testRunner.And("User clicks the \"CREATE SLOT\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 131
+ testRunner.And("User type \"Slot 10003\" Name in the \"Slot Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 132
+ testRunner.And("User type \"10003\" Name in the \"Display Name\" field on the Project details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+ testRunner.Then("User selects \"Teams and Paths\" option in \"Capacity Type\" dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 134
  testRunner.When("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -613,9 +615,9 @@ this.FeatureBackground();
                         "Slot 10002"});
             table8.AddRow(new string[] {
                         "Slot 10003"});
-#line 130
- testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table8, "Then ");
 #line 135
+ testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table8, "Then ");
+#line 140
  testRunner.When("User move \"Slot 10001\" item to \"32767\" position on Admin page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -626,9 +628,9 @@ this.FeatureBackground();
                         "Slot 10003"});
             table9.AddRow(new string[] {
                         "Slot 10001"});
-#line 136
- testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table9, "Then ");
 #line 141
+ testRunner.Then("User sees next Slots on the Capacity Slots page:", ((string)(null)), table9, "Then ");
+#line 146
  testRunner.And("There are no errors in the browser console", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

@@ -91,11 +91,16 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames
 	Then "Slot 14478 (copy)" content is displayed in "Slot Name" field
 	And "14478" content is displayed in "Display Name" field
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13980 @DAS13981 @DAS17458
 Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhenInvalidValueEnteredInSlotMoveToPositionDialog
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
+	#DAS-17458 Uncomment after DAS-17458 fixed
+	#And User clicks String Filter button for "Paths" column on the Admin page
+	#When User selects "No Paths" checkbox from String Filter on the Admin page
+	#When User clicks Reset Filters button on the Admin page
+	#DAS-17458
 	And User opens settings for "User Slot" row
 	And User selects "Move to position" option from settings menu
 	And User remembers the Move to position dialog size
