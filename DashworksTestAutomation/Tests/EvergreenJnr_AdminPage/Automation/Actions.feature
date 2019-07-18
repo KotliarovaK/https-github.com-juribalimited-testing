@@ -325,7 +325,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks the "CANCEL" Action button
 	Then Actions page is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Pre-requisites:
 	When User clicks "Devices" on the left-hand menu
@@ -386,8 +386,20 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	When User selects "Active" checkbox on the Automation Page
 	And User clicks the "CREATE" Action button
 	#Create Action
+	Then "CREATE" Action button is disabled
+	Then "CREATE" Action button have tooltip with "Some values are missing or not valid" text
+	Then "SAVE AND CREATE ANOTHER" Action button is disabled
+	Then "SAVE AND CREATE ANOTHER" Action button have tooltip with "Some values are missing or not valid" text
 	When User type "DAS16992_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update task value" in the "Action Type" dropdown
-	When User selects "\" in the Project dropdown
-	When User selects "[Default (User)]" in the Path dropdown
-	And User clicks the "CREATE" Action button
+	When User selects "Edinburgh Devices Migration" in the Project dropdown
+	When User selects "Pre-Migration" in the "Stage" dropdown for Actions
+	Then following items are displayed in the "Task" dropdown for Actions:
+	| Values        |
+	| Device Task 1 |
+	When User selects "Device Task 1" in the "Task" dropdown for Actions
+	When User selects "Unknown" Value for Actions
+	Then "UPDATE" Action button is active
+	When User clicks the "SAVE AND CREATE ANOTHER" Action button
+	Then Create Action page is displayed to the User
+	#Add steps for running Automation (DAS-17427)
