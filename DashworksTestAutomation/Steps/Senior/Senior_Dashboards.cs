@@ -131,34 +131,6 @@ namespace DashworksTestAutomation.Steps.Projects
             Assert.IsEmpty(page.BccEmail.GetAttribute("value"), "BCC email field is not empty");
         }
 
-        [When(@"User creates new Task on Senior")]
-        public void WhenUserCreatesNewTaskOnSenior(Table table)
-        {
-            var page = _driver.NowAt<TaskPropertiesPage>();
-            foreach (var row in table.Rows)
-            {
-                page.Name.SendKeys(row["Name"]);
-                page.Help.SendKeys(row["Help"]);
-                page.StageName.SelectboxSelect(row["StagesName"]);
-                if (!string.IsNullOrEmpty(row["TaskType"]))
-                    page.TaskType.SelectboxSelect(row["TaskType"]);
-                if (!string.IsNullOrEmpty(row["ValueType"]))
-                    page.ValueType.SelectboxSelect(row["ValueType"]);
-                _driver.WaitForDataLoadingOnProjects();
-                page.ObjectType.SelectboxSelect(row["ObjectType"]);
-                if (!string.IsNullOrEmpty(row["TaskValuesTemplate"]))
-                    page.TaskValuesTemplate.SelectboxSelect(row["TaskValuesTemplate"]);
-
-                if (!string.IsNullOrEmpty(row["ApplyToAllCheckbox"]))
-                {
-                    _driver.WaitForDataLoadingOnProjects();
-                    page.ApplyToAllCheckbox.SetCheckboxState(Convert.ToBoolean(row["ApplyToAllCheckbox"]));
-                }
-
-                page.ConfirmCreateTaskButton.Click();
-            }
-        }
-
         [When(@"User selects ""(.*)"" as Task Value Type")]
         public void WhenUserSetsTaskValueTypeOnSenior(string valueType)
         {
@@ -172,10 +144,9 @@ namespace DashworksTestAutomation.Steps.Projects
         {
             var action = _driver.NowAt<TaskPropertiesPage>();
             var expectedList = table.Rows.SelectMany(row => row.Values).ToList();
-            System.Threading.Thread.Sleep(500);
+            Thread.Sleep(500);
             var actualList = action.OptionsOfObjectTypeProperty.Select(value => value.Text).ToList();
             Assert.AreEqual(expectedList, actualList, "Items are different");
         }
-
     }
 }

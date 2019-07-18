@@ -24,9 +24,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates new Task on Senior
-	| Name      | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| Task13152 | 13152 | Stage13152 | Normal   | Date      | Computer   |                    | true               |
+	And User creates Task
+	| Name      | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| Task13152 | 13152 | Stage13152       | Normal         | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
@@ -76,9 +76,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForTe
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates new Task on Senior
-	| Name      | Help       | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| Task13152 | 13152 Date | Stage13152 | Normal   | Date      | Computer   |                    | true               |
+	And User creates Task
+	| Name      | Help       | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString | ApplyToAllCheckbox |
+	| Task13152 | 13152 Date | Stage13152       | Normal         | Date            | Computer         |                          | true               |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published

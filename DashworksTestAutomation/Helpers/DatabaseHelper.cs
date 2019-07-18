@@ -8,6 +8,7 @@ using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
+using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
@@ -294,6 +295,37 @@ namespace DashworksTestAutomation.Helpers
 
             return DatabaseHelper.ExecuteReader(
                 $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+        }
+
+        #endregion
+
+        #region Task
+
+        public static string GetTaskId(string name, string projectName)
+        {
+            var projId = GetProjectId(projectName);
+            var projectId =
+                DatabaseHelper.ExecuteReader(
+                    $"select ptl.TaskId from [PM].[dbo].[ProjectTaskLanguage] as ptl join[PM].[dbo].[ProjectTasks] as pt on ptl.TaskId = pt.TaskID where pt.ProjectID = {projId} and ptl.[TaskName] = '{name}'",
+                    0).LastOrDefault();
+            return projectId;
+        }
+
+        public static void DeleteTask(TaskPropertiesDto task, string project)
+        {
+            DeleteTaskFromDb(task.GetId(project));
+        }
+
+        public static void DeleteTask(string name, string project)
+        {
+            var taskId = GetTaskId(name, project);
+            DeleteTaskFromDb(taskId);
+        }
+
+        private static void DeleteTaskFromDb(string taskId)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTaskLanguage] where [TaskID] = {taskId}");
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTasks] where [TaskID] = {taskId}");
         }
 
         #endregion

@@ -12839,12 +12839,11 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table175 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Help",
-                        "StagesName",
-                        "TaskType",
-                        "ValueType",
-                        "ObjectType",
-                        "TaskValuesTemplate",
-                        "ApplyToAllCheckbox"});
+                        "StagesNameString",
+                        "TaskTypeString",
+                        "ValueTypeString",
+                        "ObjectTypeString",
+                        "TaskValuesTemplateString"});
             table175.AddRow(new string[] {
                         "13499Task",
                         "13499",
@@ -12852,10 +12851,9 @@ this.FeatureBackground();
                         "Normal",
                         "Date",
                         "Computer",
-                        "",
                         ""});
 #line 3835
- testRunner.And("User creates new Task on Senior", ((string)(null)), table175, "And ");
+ testRunner.And("User creates Task", ((string)(null)), table175, "And ");
 #line 3838
  testRunner.Then("Success message is displayed with \"Task successfully created\" text", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 3839

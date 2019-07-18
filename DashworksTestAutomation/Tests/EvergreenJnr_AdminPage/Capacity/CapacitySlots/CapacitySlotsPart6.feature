@@ -154,25 +154,25 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
 	When User clicks "Create Task" button
-	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
-	| 1Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    |                    |
+	And User creates Task
+	| Name       | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| 1Task13812 | 13812 | Stage13812       | Normal         | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
-	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
-	| 2Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    |                     |
+	And User creates Task
+	| Name       | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| 2Task13812 | 13812 | Stage13812       | Normal         | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
 	When User clicks "Cancel" button
 	And User clicks "Create Task" button
-	And User creates new Task on Senior
-	| Name       | Help  | StagesName | TaskType | ValueType | ObjectType | TaskValuesTemplate |  ApplyToAllCheckbox |
-	| 3Task13812 | 13812 | Stage13812 | Normal   | Date      | Computer   |                    |                     |
+	And User creates Task
+	| Name       | Help  | StagesNameString | TaskTypeString | ValueTypeString | ObjectTypeString | TaskValuesTemplateString |
+	| 3Task13812 | 13812 | Stage13812       | Normal         | Date            | Computer         |                          |
 	Then Success message is displayed with "Task successfully created" text
 	When User publishes the task
 	Then selected task was published
