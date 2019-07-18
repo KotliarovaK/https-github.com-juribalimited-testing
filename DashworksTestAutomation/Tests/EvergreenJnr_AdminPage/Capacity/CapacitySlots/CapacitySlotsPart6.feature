@@ -61,7 +61,8 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
 	And User clicks the "CREATE SLOT" Action button
-	And User type "DAS_13811_1" Name in the "Slot Name" field on the Project details page
+	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
+	When User type "DAS_13811_1" Name in the "Slot Name" field on the Project details page
 	And User type "13811_1" Name in the "Display Name" field on the Project details page
 	And User selects following items in "Paths" dropdown:
 	| items                             |
