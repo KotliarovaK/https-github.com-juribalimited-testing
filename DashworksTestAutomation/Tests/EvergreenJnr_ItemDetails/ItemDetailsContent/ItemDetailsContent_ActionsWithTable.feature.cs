@@ -4856,6 +4856,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17228")]
         [NUnit.Framework.CategoryAttribute("DAS17229")]
         [NUnit.Framework.CategoryAttribute("DAS17265")]
+        [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetailsPage()
         {
             System.Exception lastException = null;
@@ -4894,7 +4895,8 @@ this.FeatureBackground();
                         "DAS17162",
                         "DAS17228",
                         "DAS17229",
-                        "DAS17265"});
+                        "DAS17265",
+                        "Not_Ready"});
 #line 1175
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
