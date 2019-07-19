@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
             Using = ".//div[@role='presentation']//div[@class='ag-header-cell']//header-cell//input")]
         public IWebElement SelectAllRowsAction { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']/span[contains(@class,'checkbox-unchecked')]")]
+        [FindsBy(How = How.XPath, Using = ".//span[@class='ag-selection-checkbox']/span[contains(@class,'checkbox-unchecked')]/../*[not(contains(@class,'ag-hidden'))][1]")]
         public IList<IWebElement> SelectRowsCheckboxes { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//button[contains(@class, 'btn-close')]")]

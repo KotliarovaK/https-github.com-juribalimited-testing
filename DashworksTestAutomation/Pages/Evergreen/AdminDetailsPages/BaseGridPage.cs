@@ -200,7 +200,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         #region Messages
 
-        [FindsBy(How = How.XPath, Using = "//admin-header/div[@id='messageAdmin' and @role='alert']")]
+        [FindsBy(How = How.XPath, Using = ".//admin-header/div[@id='messageAdmin' and @role='alert']")]
         public IWebElement Banner { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[contains(@class,'empty-message')]")]
@@ -607,17 +607,17 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages
 
         public string GetMessageHeightOnAdminPage()
         {
-            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("Height");
+            return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("Height");
         }
 
         public string GetMessageWidthOnAdminPage()
         {
-            return Driver.FindElement(By.XPath("//div[@id='messageAdmin']")).GetCssValue("width");
+            return Driver.FindElement(By.XPath(".//div[@id='messageAdmin']")).GetCssValue("width");
         }
 
         public bool GetDefaultColumnValue(string defaultValue)
         {
-            return Driver.IsElementDisplayed(By.XPath($"//span[contains(@class, 'boolean')][text()='{defaultValue}']"));
+            return Driver.IsElementDisplayed(By.XPath($".//span[contains(@class, 'boolean')][text()='{defaultValue}']"));
         }
 
         public IWebElement GetTextInSearchFieldByColumnName(string columnName)

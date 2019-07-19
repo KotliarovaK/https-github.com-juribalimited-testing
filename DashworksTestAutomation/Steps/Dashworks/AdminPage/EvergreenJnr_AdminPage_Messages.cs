@@ -68,15 +68,27 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage
             //Waiting for message text change
             Thread.Sleep(1000);
             Assert.IsTrue(message.TextMessage(text),
-                $"{text} is not displayed on the Project page");
+                $"{text} is NOT displayed on the Project page");
         }
 
-        [Then(@"""(.*)"" warning message is not displayed on the Buckets page")]
-        public void ThenWarningMessageIsNotDisplayedOnTheBucketsPage(string warningText)
+        [Then(@"Warning message with ""(.*)"" text is not displayed on the Admin page")]
+        public void ThenWarningMessageWithTextIsNotDisplayedOnTheAdminPage(string text)
         {
-            var message = _driver.NowAt<BucketsPage>();
-            Assert.IsFalse(message.WarningDeleteBucketMessage(warningText),
-                $"{warningText} warning message is displayed on the Buckets page");
+            BaseGridPage message;
+            try
+            {
+                message = _driver.NowAt<BaseGridPage>();
+            }
+            catch (WebDriverTimeoutException)
+            {
+                message = _driver.NowAt<BaseGridPage>();
+            }
+
+            //If there is no banner on page then there are no message at all. All good
+            if (!_driver.IsElementDisplayed(message.Banner, WebDriverExtensions.WaitTime.Short))
+                return;
+
+            _driver.WaitForElementToNotContainsText(message.WarningMessage, text);
         }
 
         [When(@"User clicks Cancel button in the warning message on the Admin page")]
