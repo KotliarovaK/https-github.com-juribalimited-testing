@@ -54,5 +54,11 @@ namespace DashworksTestAutomation.Base
             Driver.WaitForElementToBeDisplayed(element);
             Assert.AreEqual(expectedCondition, element.Disabled(), exceptionMessage);
         }
+
+        public void CheckElementDisplayedState(IWebElement element, bool expectedCondition, string exceptionMessage)
+        {
+            Driver.WaitForElementToBeDisplayed(element);
+            Assert.AreEqual(expectedCondition, element.Displayed(), exceptionMessage);
+        }
     }
 }

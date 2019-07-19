@@ -1201,7 +1201,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatAgGridActionsWorksCorrectlyForDetail
 	Then 'Group By' button is displayed on the Item Details page
 	Then Reset Filters button on the Item Details page is disable
 	When User enters "com" text in the Search field for "Custom Field" column on the Details Page
-	Then Reset Filters button on the Item Details page is available
+	Then Reset Filters button on the Item Details page is enabled
 	Then Rows counter shows "1" of "1" rows
 	When User clicks Reset Filters button on the Item Details page
 	Then Reset Filters button on the Item Details page is disable

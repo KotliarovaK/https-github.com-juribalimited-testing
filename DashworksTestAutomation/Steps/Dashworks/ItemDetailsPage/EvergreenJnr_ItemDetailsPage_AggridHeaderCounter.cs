@@ -62,28 +62,28 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenResetFiltersButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterPage>();
-            Assert.IsTrue(page.ResetFiltersButton.Displayed(), "'Reset Filters' button is not displayed on the Item Details page!");
+            page.CheckElementDisplayedState(page.ResetFiltersButton, true, "'Reset Filters' button is not displayed on the Item Details page!");
         }
 
         [Then(@"'Refresh' button is displayed on the Item Details page")]
         public void ThenRefreshButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterPage>();
-            Assert.IsTrue(page.RefreshButton.Displayed(), "'Refresh' button is not displayed on the Item Details page!");
+            page.CheckElementDisplayedState(page.RefreshButton, true, "'Refresh' button is not displayed on the Item Details page!");
         }
 
         [Then(@"'Export' button is displayed on the Item Details page")]
         public void ThenExportButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterPage>();
-            Assert.IsTrue(page.ExportButton.Displayed(), "'Export' button is not displayed on the Item Details page!");
+            page.CheckElementDisplayedState(page.ExportButton, true, "'Export' button is not displayed on the Item Details page!");
         }
 
         [Then(@"'Group By' button is displayed on the Item Details page")]
         public void ThenGroupByButtonIsDisplayedOnTheItemDetailsPage()
         {
             var page = _driver.NowAt<AggridHeaderCounterPage>();
-            Assert.IsTrue(page.GroupByButton.Displayed(), "'Group By' button is not displayed on the Item Details page!");
+            page.CheckElementDisplayedState(page.GroupByButton, true, "'Group By' button is not displayed on the Item Details page!");
         }
     }
 }
