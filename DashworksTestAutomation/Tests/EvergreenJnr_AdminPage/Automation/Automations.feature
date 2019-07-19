@@ -416,7 +416,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridLoadsWithActionsForAnAutoma
 	When User type "15309_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "click here to view the 15309_Action action" link
 	When User have opened column settings for "Action" column
@@ -595,7 +595,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User type "17171_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "Migration Project Phase 2 (User Project)" in the Project dropdown
-	When User selects "[Default (User)]" in the Path dropdown
+	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 	When User clicks "Actions" tab

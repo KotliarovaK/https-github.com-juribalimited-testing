@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Pages.Evergreen
 
         public const string SelectedColumnSubcategory = "//div[contains(@class, 'sub-categories')]//div//span";
 
-        public const string OptionOnActionsPanel = "//mat-option[@role='option']";
+        public const string OptionOnActionsPanel = ".//mat-option[@role='option']";
 
         public const string GridCellByText = ".//div[@role='gridcell' and @title='{0}']";
 
