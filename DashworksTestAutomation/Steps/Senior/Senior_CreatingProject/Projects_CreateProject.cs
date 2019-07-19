@@ -361,13 +361,13 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             
             //assign TaskTypeString to TaskTypeEnum
             _taskPropertiesDto.TaskType =
-                (TaskTypeEnum)Enum.Parse(typeof(TaskTypeEnum), _taskPropertiesDto.TaskTypeString);
+                EnumExtensions.Parse<TaskTypeEnum>(_taskPropertiesDto.TaskTypeString);
             //assign ValueTypeString to ValueTypeEnum
             _taskPropertiesDto.ValueType =
-                (ValueTypeEnum)Enum.Parse(typeof(ValueTypeEnum), _taskPropertiesDto.ValueTypeString);
+                EnumExtensions.Parse<ValueTypeEnum>(_taskPropertiesDto.ValueTypeString);
             //assign ObjectTypeString to TaskObjectTypeEnum
             _taskPropertiesDto.ObjectType =
-                (TaskObjectTypeEnum)Enum.Parse(typeof(TaskObjectTypeEnum), _taskPropertiesDto.ObjectTypeString);
+                EnumExtensions.Parse<TaskObjectTypeEnum>(_taskPropertiesDto.ObjectTypeString);
 
             var tempTaskPropertiesDto = new TaskPropertiesDto();
             _taskPropertiesDto.CopyPropertiesTo(tempTaskPropertiesDto);
@@ -385,8 +385,7 @@ namespace DashworksTestAutomation.Steps.Projects.Projects_CreatingProject
             {
                 //assign TaskValuesTemplateString to TaskValuesTemplateEnum
                 _taskPropertiesDto.TaskValuesTemplate =
-                    (TaskValuesTemplateEnum)Enum.Parse(typeof(TaskValuesTemplateEnum),
-                        _taskPropertiesDto.TaskValuesTemplateString);
+                    EnumExtensions.Parse<TaskValuesTemplateEnum>(_taskPropertiesDto.TaskValuesTemplateString);
 
                 if (_taskPropertiesDto.ValueType.Equals(ValueTypeEnum.Radiobutton))
                     page.TaskValuesTemplate.SelectboxSelect(_taskPropertiesDto.TaskValuesTemplate.GetValue());

@@ -13,7 +13,7 @@ namespace DashworksTestAutomation.Extensions
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
 
-            var attributes = (DescriptionAttribute[]) fi.GetCustomAttributes(
+            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(
                 typeof(DescriptionAttribute),
                 false);
 
@@ -21,6 +21,27 @@ namespace DashworksTestAutomation.Extensions
                 attributes.Length > 0)
                 return attributes[0].Description;
             return value.ToString();
+        }
+
+        public static KeyValuePair<string, string> GetValueAndDescription(this Enum value)
+        {
+            FieldInfo fi = value.GetType().GetField(value.ToString());
+
+            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(
+                typeof(DescriptionAttribute),
+                false);
+
+           var result = new KeyValuePair<string, string>(value.ToString(),
+               attributes.Length > 0 ? attributes[0].Description : value.ToString());
+           return result;
+        }
+
+        //Usage EnumExtensions.Parse<YourEnum>()
+        public static T Parse<T>(string enumValue) where T : System.Enum
+        {
+            var result = EnumExtensions.GetAllValues<T>().First(x =>
+                x.GetValueAndDescription().Key.Equals(enumValue) || x.GetValueAndDescription().Value.Equals(enumValue));
+            return result;
         }
 
         //Usage EnumExtensions.GetAllValues<YourEnum>()
