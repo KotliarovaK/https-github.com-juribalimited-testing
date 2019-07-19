@@ -448,7 +448,8 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	Then "Hardware Rules" tab is displayed on left menu on the Details page and contains count of items
 	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345 @DAS16831 @DAS17142
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345 @DAS16831 @DAS17142 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInEvergreenMode
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -504,7 +505,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "Groups" tab is displayed on left menu on the Details page and contains count of items
 	And "AD" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213 @DAS16831 @DAS17142
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213 @DAS16831 @DAS17142 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInProjectMode
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -550,7 +552,8 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905 @DAS16832 @DAS17143
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905 @DAS16832 @DAS17143 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInEvergreenMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -621,7 +624,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143
+	    #Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -690,7 +694,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16833 @DAS17415
+    #Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16833 @DAS17415 @Not_Ready
 Scenario: EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForGroupsPage
 	When User type "Allowed RODC Password Replication Group" in Global Search Field
 	Then User clicks on "Allowed RODC Password Replication Group" search result

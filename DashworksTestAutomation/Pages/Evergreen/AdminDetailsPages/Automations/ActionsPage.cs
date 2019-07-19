@@ -12,6 +12,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
         [FindsBy(How = How.XPath, Using = ".//button//span[text()='CREATE ACTION']")]
         public IWebElement CreateActionButton { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-select//span[text()='Value']")]
+        public IWebElement ValueDropdown { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@role='row']//div[@role='gridcell']")]
         public IWebElement ActionsTableContent { get; set; }
 
@@ -29,6 +32,22 @@ namespace DashworksTestAutomation.Pages.Evergreen.AdminDetailsPages.Automations
             var indexRow = GetActionContent().IndexOf(action);
             var selector = By.XPath($".//div[@row-index='{indexRow}']/div[@col-id='dragColumn']");
             return Driver.FindElement(selector);
+        }
+
+        public IWebElement GetDropdownByName(string dropdown)
+        {
+            var selector = By.XPath($".//div//*[@placeholder='{dropdown}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            return Driver.FindElement(selector);
+        }
+
+        public void GetSelectValueForActions(string dropdown)
+        {
+            Driver.WaitForElementToBeDisplayed(ValueDropdown);
+            ValueDropdown.Click();
+            var selector = By.XPath($".//mat-option//span[text()='{dropdown}']");
+            Driver.WaitForElementToBeDisplayed(selector);
+            Driver.FindElement(selector).Click();
         }
 
         public IList<string> GetActionContent()
