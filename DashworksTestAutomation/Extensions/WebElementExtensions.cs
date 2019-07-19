@@ -84,6 +84,19 @@ namespace DashworksTestAutomation.Extensions
             }
         }
 
+        public static bool Disabled(this IWebElement element)
+        {
+            var isDisabled = element.GetAttribute("disabled");
+            if (isDisabled != null)
+                return bool.Parse(isDisabled);
+
+            var classValue = element.GetAttribute("class");
+            if (classValue == null)
+                throw new Exception("Unable to get element Disabled state.");
+
+            return classValue.Contains("disabled");
+        }
+
         public static bool IsElementExists(this IWebElement element, By by)
         {
             try

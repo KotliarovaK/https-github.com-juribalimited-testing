@@ -164,7 +164,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void ThenEmptyLinkIsDisplayedForFirstRowInTheColumn(string columnName)
         {
             var page = _driver.NowAt<BaseDashboardPage>();
-            //page.GetHrefByColumnName(columnName);//TODO: Y.Timchenko - 19 Feb 2019 remove it later, looks like no need to run this method
             Assert.AreEqual("Empty", page.GetColumnContent(columnName).First());
         }
 

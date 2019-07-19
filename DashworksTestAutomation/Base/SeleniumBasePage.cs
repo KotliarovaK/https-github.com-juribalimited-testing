@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using DashworksTestAutomation.Extensions;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Html5;
 using OpenQA.Selenium.Interactions;
@@ -14,6 +15,9 @@ namespace DashworksTestAutomation.Base
 {
     public abstract class SeleniumBasePage
     {
+        [FindsBy(How = How.XPath, Using = ".//body")]
+        public IWebElement BodyContainer { get; set; }
+
         public RemoteWebDriver Driver { get; set; }
 
         public Actions Actions { get; set; }
@@ -32,7 +36,7 @@ namespace DashworksTestAutomation.Base
                 .GetProperties()
                 .Select(p => p.GetFirstDecoration<FindsByAttribute>())
                 .Where(a =>
-                    (object) a != null
+                    (object)a != null
                     && a != null)
                 .Select(DashworksTestAutomation.Utils.ByFactory.From)
                 .ToList();
@@ -43,6 +47,17 @@ namespace DashworksTestAutomation.Base
             var attribute = ReflectionExtensions.ResolveMember(page, expression)
                 .GetFirstDecoration<FindsByAttribute>();
             return DashworksTestAutomation.Utils.ByFactory.From(attribute);
+        }
+
+        public void CheckElementDisabledState(IWebElement element, bool expectedCondition, string exceptionMessage)
+        {
+            Driver.WaitForElementToBeDisplayed(element);
+            Assert.AreEqual(expectedCondition, element.Disabled(), exceptionMessage);
+        }
+
+        public void CheckElementDisplayedState(IWebElement element, bool expectedCondition, string exceptionMessage)
+        {
+            Assert.AreEqual(expectedCondition, Driver.IsElementDisplayed(element, WebDriverExtensions.WaitTime.Short), exceptionMessage);
         }
     }
 }

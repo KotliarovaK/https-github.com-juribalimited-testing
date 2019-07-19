@@ -49,9 +49,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.DetailsTabsMenu
             Using = ".//button[@aria-label='ResetFilters']")]
         public IWebElement ResetFiltersButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//body")]
-        public IWebElement BodyContainer { get; set; }
-
         [FindsBy(How = How.XPath, Using = "//div//select[@id='filterType']")]
         public IWebElement FilterTypeDropdownOnTheColumnPanel { get; set; }
 
