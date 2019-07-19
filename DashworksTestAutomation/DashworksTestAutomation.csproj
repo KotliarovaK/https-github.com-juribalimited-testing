@@ -859,10 +859,60 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ListsFromCSV.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart11.feature.cs">
+      <DependentUpon>CustomListDisplayPart11.feature</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomListDisplay.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart10.feature.cs">
+      <DependentUpon>CustomListDisplayPart10.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart9.feature.cs">
+      <DependentUpon>CustomListDisplayPart9.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart8.feature.cs">
+      <DependentUpon>CustomListDisplayPart8.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart7.feature.cs">
+      <DependentUpon>CustomListDisplayPart7.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart6.feature.cs">
+      <DependentUpon>CustomListDisplayPart6.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart5.feature.cs">
+      <DependentUpon>CustomListDisplayPart5.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart4.feature.cs">
+      <DependentUpon>CustomListDisplayPart4.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart3.feature.cs">
+      <DependentUpon>CustomListDisplayPart3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart2.feature.cs">
+      <DependentUpon>CustomListDisplayPart2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart1.feature.cs">
+      <DependentUpon>CustomListDisplayPart1.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1362,9 +1412,49 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ListsFromCSV.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplay.feature">
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart11.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>CustomListDisplay.feature.cs</LastGenOutput>
+      <LastGenOutput>CustomListDisplayPart11.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart10.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart10.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart9.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart9.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart8.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart8.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart7.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart7.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart6.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart6.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart5.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart2.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_ListPanel\CustomListDisplayPart1.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CustomListDisplayPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_Columns\RemoveColumn.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
