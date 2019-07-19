@@ -42,10 +42,5 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
         }
-
-        public bool GetDisplayStateOfFilterButton()
-        {
-            return Driver.IsElementDisplayed(By.XPath(".//button[@aria-label='ResetFilters'][contains(@class, 'disabled')]"));
-        }
     }
 }

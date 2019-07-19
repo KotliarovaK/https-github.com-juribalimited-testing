@@ -18,7 +18,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_ItemDetailsPage_AggridHeaderCounter (RemoteWebDriver driver)
+        public EvergreenJnr_ItemDetailsPage_AggridHeaderCounter(RemoteWebDriver driver)
         {
             _driver = driver;
         }
@@ -48,14 +48,14 @@ namespace DashworksTestAutomation.Steps.Dashworks.ItemDetailsPage
         public void ThenResetFiltersButtonOnTheItemDetailsPageIsDisable()
         {
             var page = _driver.NowAt<AggridHeaderCounterPage>();
-            Assert.IsTrue(page.GetDisplayStateOfFilterButton(), "Reset Filters button on the Item Details page is active");
+            page.CheckElementDisabledState(page.ResetFiltersButton, true, "Reset Filters button on the Item Details page is enabled");
         }
 
-        [Then(@"Reset Filters button on the Item Details page is available")]
-        public void ThenResetFiltersButtonOnTheItemDetailsPageIsAvailable()
+        [Then(@"Reset Filters button on the Item Details page is enabled")]
+        public void ThenResetFiltersButtonOnTheItemDetailsPageIsEnabled()
         {
             var page = _driver.NowAt<AggridHeaderCounterPage>();
-            Assert.IsFalse(page.GetDisplayStateOfFilterButton(), "Reset Filters button on the Item Details page is inactive");
+            page.CheckElementDisabledState(page.ResetFiltersButton, false, "Reset Filters button on the Item Details page is disabled");
         }
 
         [Then(@"'Reset Filters' button is displayed on the Item Details page")]

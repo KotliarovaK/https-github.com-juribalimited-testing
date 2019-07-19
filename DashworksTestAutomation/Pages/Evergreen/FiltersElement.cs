@@ -150,9 +150,6 @@ namespace DashworksTestAutomation.Pages.Evergreen
         [FindsBy(How = How.XPath, Using = ".//mat-select[@mat-container-class='my-container']")]
         public IWebElement OperatorDropdown { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//body")]
-        public IWebElement BodyContainer { get; set; }
-
         [FindsBy(How = How.XPath, Using = ".//div/mat-option/span[@class='mat-option-text']")]
         public IList<IWebElement> OperatorOptions { get; set; }
 
