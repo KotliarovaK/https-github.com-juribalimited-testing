@@ -559,6 +559,121 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart24.feature.cs">
+      <DependentUpon>ProjectsPart24.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart23.feature.cs">
+      <DependentUpon>ProjectsPart23.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart22.feature.cs">
+      <DependentUpon>ProjectsPart22.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart21.feature.cs">
+      <DependentUpon>ProjectsPart21.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart20.feature.cs">
+      <DependentUpon>ProjectsPart20.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart19.feature.cs">
+      <DependentUpon>ProjectsPart19.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart18.feature.cs">
+      <DependentUpon>ProjectsPart18.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart17.feature.cs">
+      <DependentUpon>ProjectsPart17.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart16.feature.cs">
+      <DependentUpon>ProjectsPart16.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart15.feature.cs">
+      <DependentUpon>ProjectsPart15.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart14.feature.cs">
+      <DependentUpon>ProjectsPart14.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart13.feature.cs">
+      <DependentUpon>ProjectsPart13.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart12.feature.cs">
+      <DependentUpon>ProjectsPart12.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart11.feature.cs">
+      <DependentUpon>ProjectsPart11.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart10.feature.cs">
+      <DependentUpon>ProjectsPart10.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart9.feature.cs">
+      <DependentUpon>ProjectsPart9.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart8.feature.cs">
+      <DependentUpon>ProjectsPart8.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart7.feature.cs">
+      <DependentUpon>ProjectsPart7.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart6.feature.cs">
+      <DependentUpon>ProjectsPart6.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart5.feature.cs">
+      <DependentUpon>ProjectsPart5.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart4.feature.cs">
+      <DependentUpon>ProjectsPart4.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart3.feature.cs">
+      <DependentUpon>ProjectsPart3.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart2.feature.cs">
+      <DependentUpon>ProjectsPart2.feature</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Readiness.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -594,10 +709,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CapacityPart1.feature</DependentUpon>
     </Compile>
-    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects.feature.cs">
+    <Compile Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Projects.feature</DependentUpon>
+      <DependentUpon>ProjectsPart1.feature</DependentUpon>
     </Compile>
     <Compile Include="Tests\EvergreenJnr_AdminPage\Automation\Automations.feature.cs">
       <AutoGen>True</AutoGen>
@@ -1122,6 +1237,98 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityPart2.feature.cs</LastGenOutput>
     </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart24.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart24.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart23.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart23.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart22.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart22.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart21.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart21.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart20.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart20.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart19.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart19.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart18.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart18.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart17.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart17.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart16.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart16.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart15.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart15.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart14.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart14.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart13.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart13.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart12.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart12.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart11.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart11.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart10.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart10.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart9.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart9.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart8.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart8.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart7.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart7.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart6.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart6.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart5.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart5.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart4.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart4.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart3.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart3.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart2.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ProjectsPart2.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Readiness.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Readiness.feature.cs</LastGenOutput>
@@ -1150,9 +1357,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CapacityPart1.feature.cs</LastGenOutput>
     </None>
-    <None Include="Tests\EvergreenJnr_AdminPage\Projects.feature">
+    <None Include="Tests\EvergreenJnr_AdminPage\Projects\ProjectsPart1.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Projects.feature.cs</LastGenOutput>
+      <LastGenOutput>ProjectsPart1.feature.cs</LastGenOutput>
     </None>
     <None Include="Tests\EvergreenJnr_AdminPage\Automation\Automations.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -1470,9 +1677,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\EvergreenJnr_AdminPage\Projects\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
