@@ -12,7 +12,7 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 {
     internal class AggridHeaderCounterPage : SeleniumBasePage
     {
-        [FindsBy(How = How.XPath, Using = "//div[contains(@class, 'aggrid-container')][1]")]
+        [FindsBy(How = How.XPath, Using = ".//div[contains(@class, 'aggrid-container wrapper-flexbox')]")]
         public IWebElement PageIdentitySelectors { get; set; }
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='ResetFilters']")]
@@ -23,6 +23,9 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
 
         [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='reload']")]
         public IWebElement RefreshButton { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//div[@id='aggridHeaderActions']//button[@aria-label='Export']")]
+        public IWebElement ExportButton { get; set; }
 
         public override List<By> GetPageIdentitySelectors()
         {
@@ -38,6 +41,11 @@ namespace DashworksTestAutomation.Pages.Evergreen.ItemDetails
             var selector = By.XPath($"//*[text()='{value}']/ancestor::label[contains(@class, 'checkbox')]");
             Driver.WaitForElementToBeDisplayed(selector);
             return Driver.FindElement(selector);
+        }
+
+        public bool GetDisplayStateOfFilterButton()
+        {
+            return Driver.IsElementDisplayed(By.XPath(".//button[@aria-label='ResetFilters'][contains(@class, 'disabled')]"));
         }
     }
 }
