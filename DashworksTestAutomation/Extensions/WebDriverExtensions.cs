@@ -380,9 +380,7 @@ namespace DashworksTestAutomation.Extensions
         public static void SearchOnPage(this RemoteWebDriver driver)
         {
             Actions action = new Actions(driver);
-            action.SendKeys(Keys.Control + "F").Build()
-                .Perform();
-
+            action.KeyDown(Keys.Control).SendKeys("F").Build().Perform();
             action.KeyUp(Keys.Control).Build().Perform();
         }
 
