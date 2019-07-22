@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
         [NUnit.Framework.CategoryAttribute("DAS13808")]
         [NUnit.Framework.CategoryAttribute("DAS14200")]
         [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDevicesAreAddedCorrectly()
         {
             System.Exception lastException = null;
@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
                         "DAS13808",
                         "DAS14200",
                         "DAS14236",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -213,7 +213,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13808")]
         [NUnit.Framework.CategoryAttribute("DAS14200")]
         [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatUsersAreAddedCorrectly()
         {
             System.Exception lastException = null;
@@ -251,7 +251,7 @@ this.FeatureBackground();
                         "DAS13808",
                         "DAS14200",
                         "DAS14236",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 40
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -340,7 +340,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14237")]
         [NUnit.Framework.CategoryAttribute("DAS14757")]
         [NUnit.Framework.CategoryAttribute("DAS16124")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatApplicationsAreAddedCorrectly()
         {
             System.Exception lastException = null;
@@ -381,7 +381,7 @@ this.FeatureBackground();
                         "DAS14237",
                         "DAS14757",
                         "DAS16124",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 71
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -467,7 +467,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13808")]
         [NUnit.Framework.CategoryAttribute("DAS14200")]
         [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatMailboxesAreAddedCorrectly()
         {
             System.Exception lastException = null;
@@ -505,7 +505,7 @@ this.FeatureBackground();
                         "DAS13808",
                         "DAS14200",
                         "DAS14236",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 102
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

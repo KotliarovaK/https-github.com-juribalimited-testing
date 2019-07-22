@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS14911 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS14911 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpecificUserWithDifferentPermissions
 	When Dashboard with "Dashboard for DAS14911" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOwnerCanBeAddedToSharedUsersAsSpe
 	Then There is no user in shared list
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16380 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16380 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPublicDashboard
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
@@ -96,7 +96,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageUsingPrivateListForPubl
 	And User selects "Second_List_DAS16380" as Widget List
 	Then User sees "You have chosen a restricted list for a shared dashboard, some users may not be able to see this widget" warning text below Lists field
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChangingDashboardPermisson
 	#create private list
 	When User add following columns using URL to the "Devices" page:
@@ -143,7 +143,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningPopUpDisplayedWhenChanging
 	Then Review Widget List Permissions is not displayed to the User
 	And Permission "Private" displayed in Dashboard Details
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarningPermissionPoup
 	#create private list
 	When User add following columns using URL to the "Devices" page:
@@ -176,7 +176,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatIgnoreAndShareWorksProperlyInWarn
 	Then List details panel is displayed to the user
 	And "Private" sharing option is selected
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarningPermissionPopup
 	#create private list
 	When User add following columns using URL to the "Devices" page:
@@ -209,7 +209,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksProperlyInWarn
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticularRow
 	#create private list#1
 	When User add following columns using URL to the "Devices" page:
@@ -260,7 +260,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatUpdateAndShareWorksOnlyForParticu
 	Then List details panel is displayed to the user
 	And "Private" sharing option is selected
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14393 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForReadOnlySharedList
 	When User clicks the Logout button
 	When User clicks the Switch to Evergreen link
@@ -309,7 +309,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCantBeChangedForRea
 	And New Permission dropdown has disabled property "true" for "DeviceListFor14841_Read" list on Permissions Pop-up
 	And New Permission dropdown has "You cannot change the permission for this list" tooltip for "DeviceListFor14841_Read" list on Permissions Pop-up
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14282 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS14282 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEditSharedList
 	When User clicks the Logout button
 	When User clicks the Switch to Evergreen link
@@ -359,7 +359,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForEdit
 	And New Permission dropdown has disabled property "true" for "DeviceListFor14841_Edit" list on Permissions Pop-up
 	And New Permission dropdown has "You cannot change the permission for this list" tooltip for "DeviceListFor14841_Edit" list on Permissions Pop-up
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14841 @DAS11120 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdminSharedList
 	When User clicks the Logout button
 	Then User is logged out
@@ -428,7 +428,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatListPermissionCanBeChangedForAdmi
 	Then List details panel is displayed to the user
 	And "Everyone can see" sharing option is selected
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15876 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashboard
 	#create dashboard and share it
 	When Dashboard with "Dashboard for DAS15876" name created via API and opened
@@ -460,7 +460,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckUserCanRemoveYourselfFromSharedDashbo
 	Then There is no user in shared list
 	And User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15550 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15550 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckUserCanEditWidgetFromSharedDashboard
 	#create dashboard and share it
 	When Dashboard with "Dashboard for DAS15550" name created via API and opened

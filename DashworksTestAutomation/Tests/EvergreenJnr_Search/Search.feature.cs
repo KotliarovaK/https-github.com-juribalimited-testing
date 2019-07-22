@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS10704")]
         [NUnit.Framework.CategoryAttribute("DAS12762")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatQuickSearchResetWhenMovingBetweenLists()
         {
             System.Exception lastException = null;
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Search
                         "Search",
                         "DAS10704",
                         "DAS12762",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1025,7 +1025,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Search")]
         [NUnit.Framework.CategoryAttribute("DAS11350")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_Search_CheckThatSearchFieldHaveResetButtonAtListPanel()
         {
             System.Exception lastException = null;
@@ -1061,7 +1061,7 @@ this.FeatureBackground();
                         "Search",
                         "DAS11350",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 177
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

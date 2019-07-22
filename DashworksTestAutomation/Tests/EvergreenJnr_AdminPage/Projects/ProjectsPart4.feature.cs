@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11700")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckingThatTheProjectIdColumnIsAddedAndDisplayedCorrectlyToTheAdminProjectGrid()
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS11700",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 9
@@ -189,7 +189,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11985")]
         [NUnit.Framework.CategoryAttribute("DAS12857")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckingThatProjectNameIsDisplayedCorrectlyWhenSpecialSymbolsAreUsedInTheProjectName()
@@ -228,7 +228,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS11985",
                         "DAS12857",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 32
@@ -274,7 +274,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("DAS12645")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckingThatTheProjectIsUpdatedWithoutErrors()
@@ -317,7 +317,7 @@ this.FeatureBackground();
                         "DAS12485",
                         "DAS12108",
                         "DAS12645",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 45
@@ -478,8 +478,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11729")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedIfTryToRemoveCreatedListThatUsedInAnyProject()
         {
@@ -517,8 +517,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS11729",
                         "DAS13199",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
+                        "Cleanup",
                         "Projects"});
 #line 112
 this.ScenarioInitialize(scenarioInfo);

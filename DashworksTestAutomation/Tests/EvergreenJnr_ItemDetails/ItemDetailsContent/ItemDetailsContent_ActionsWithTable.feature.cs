@@ -3445,7 +3445,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14923")]
         [NUnit.Framework.CategoryAttribute("DAS12963")]
         [NUnit.Framework.CategoryAttribute("DAS16233")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckUpdatingDeviceBucketViaRelatedUserProjectSummaryWhenMailboxesSectionIsExpanded()
         {
             System.Exception lastException = null;
@@ -3484,7 +3484,7 @@ this.FeatureBackground();
                         "DAS14923",
                         "DAS12963",
                         "DAS16233",
-                        "Delete_Newly_Created_Bucket"});
+                        "Cleanup"});
 #line 823
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

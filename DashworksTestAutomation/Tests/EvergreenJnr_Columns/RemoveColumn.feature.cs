@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
         [NUnit.Framework.CategoryAttribute("DAS10966")]
         [NUnit.Framework.CategoryAttribute("DAS10973")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomList()
         {
             System.Exception lastException = null;
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_Columns
                         "DAS10966",
                         "DAS10973",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -212,7 +212,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS10966")]
         [NUnit.Framework.CategoryAttribute("DAS10973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingMultipleSortedColumnInCustomList()
         {
             System.Exception lastException = null;
@@ -249,7 +249,7 @@ this.FeatureBackground();
                         "RemoveColumn",
                         "DAS10966",
                         "DAS10973",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -342,7 +342,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10973")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThat500ErrorPageIsNotDisplayedAfterRemovingSortedColumnInCustomListThrowFilters()
         {
             System.Exception lastException = null;
@@ -381,7 +381,7 @@ this.FeatureBackground();
                         "DAS10973",
                         "DAS11951",
                         "DAS12351",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -924,7 +924,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS11044")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnsFromUrlIsWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -960,7 +960,7 @@ this.FeatureBackground();
                         "RemoveColumn",
                         "DAS11044",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 230
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1028,7 +1028,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS11044")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterFromUrlWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -1064,7 +1064,7 @@ this.FeatureBackground();
                         "RemoveColumn",
                         "DAS11044",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 256
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1149,7 +1149,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("RemoveColumn")]
         [NUnit.Framework.CategoryAttribute("DAS1044")]
         [NUnit.Framework.CategoryAttribute("DAS11506")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatRemovingColumnAndFilterAndCustomListFromUrlWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -1186,7 +1186,7 @@ this.FeatureBackground();
                         "RemoveColumn",
                         "DAS1044",
                         "DAS11506",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 290
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

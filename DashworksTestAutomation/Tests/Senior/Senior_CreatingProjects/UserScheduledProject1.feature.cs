@@ -84,7 +84,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
         [NUnit.Framework.CategoryAttribute("ProjectsOnSenior")]
         [NUnit.Framework.CategoryAttribute("Projects_Administration")]
         [NUnit.Framework.CategoryAttribute("UserScheduledProject")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void Projects_CreateUserScheduledProject()
         {
             System.Exception lastException = null;
@@ -117,7 +117,7 @@ namespace DashworksTestAutomation.Tests.Senior.Senior_CreatingProjects
                         "ProjectsOnSenior",
                         "Projects_Administration",
                         "UserScheduledProject",
-                        "Delete_Newly_Created_Team"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

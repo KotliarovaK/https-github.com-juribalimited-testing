@@ -484,7 +484,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeListIsLoadedWithCor
 	| All Devices      |
 	| 1803 Rollout     |
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @Delete_Newly_Created_List
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS15886 @DAS15423 @DAS16317 @DAS16316 @DAS17223 @DAS17336 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatEditAutomationScopeShowsCorrectTextForDeletedList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -637,7 +637,7 @@ Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 	And User select "Manage Users" option in Management Console
 	And User removes "17003User" User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissionsForScopeDropdownLists
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Projects
 	Then "Projects Home" page is displayed to the user
 
-@ProjectsOnSenior @Projects_Administration @MailboxScheduledProject @Delete_Newly_Created_Team
+@ProjectsOnSenior @Projects_Administration @MailboxScheduledProject @Cleanup
 Scenario: Projects_CreateMailboxScheduledProject
 	When User clicks create Project button
 	Then "Create Project" page is displayed to the user

@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS10870")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedStaticLists()
         {
             System.Exception lastException = null;
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS10870",
                         "DAS11951",
                         "DAS12152",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -200,7 +200,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10870")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSortingWillBeWorkForExistingSavedDynamicLists()
         {
             System.Exception lastException = null;
@@ -237,7 +237,7 @@ this.FeatureBackground();
                         "DAS10870",
                         "DAS11951",
                         "DAS12199",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -291,7 +291,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10914")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12199")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForActiveList()
         {
             System.Exception lastException = null;
@@ -328,7 +328,7 @@ this.FeatureBackground();
                         "DAS10914",
                         "DAS12152",
                         "DAS12199",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -448,7 +448,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12199")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.CategoryAttribute("DAS13838")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatEditListMenuNotDisplayedForDifferentFilterTypes()
         {
             System.Exception lastException = null;
@@ -488,7 +488,7 @@ this.FeatureBackground();
                         "DAS12199",
                         "DAS13001",
                         "DAS13838",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 105
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

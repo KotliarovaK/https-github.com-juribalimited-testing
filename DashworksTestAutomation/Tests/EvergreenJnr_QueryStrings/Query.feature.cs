@@ -847,7 +847,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/devices?$filter=(entitledApplications%20%3D%2012)&$select=hostname,ch" +
             "assisCategory,oSCategory,ownerDisplayName,entitledApplications&$orderby=entitled" +
             "Applications%20desc", "62", "App Count (Entitled) is 12", null)]
@@ -894,7 +894,7 @@ this.FeatureBackground();
                     "EvergreenJnr_QueryStrings",
                     "Query",
                     "DAS13179",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -946,7 +946,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("DAS17398")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList()
         {
             System.Exception lastException = null;
@@ -983,7 +983,7 @@ this.FeatureBackground();
                         "Query",
                         "DAS13179",
                         "DAS17398",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 162
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1053,7 +1053,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("DAS17398")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList()
         {
             System.Exception lastException = null;
@@ -1090,7 +1090,7 @@ this.FeatureBackground();
                         "Query",
                         "DAS13179",
                         "DAS17398",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 186
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1160,7 +1160,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("DAS17398")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter()
         {
             System.Exception lastException = null;
@@ -1197,7 +1197,7 @@ this.FeatureBackground();
                         "Query",
                         "DAS13179",
                         "DAS17398",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 211
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1280,7 +1280,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
         [NUnit.Framework.CategoryAttribute("DAS17398")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilter()
         {
             System.Exception lastException = null;
@@ -1317,7 +1317,7 @@ this.FeatureBackground();
                         "Query",
                         "DAS13179",
                         "DAS17398",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 240
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1462,7 +1462,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_QueryStrings")]
         [NUnit.Framework.CategoryAttribute("Query")]
         [NUnit.Framework.CategoryAttribute("DAS13179")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("App Count (Entitled)", "evergreen/#/users?$filter=(entitledApplications%20%3D%2010)", "32", "App Count (Entitled) is 10", null)]
         [NUnit.Framework.TestCaseAttribute("App Count (Installed)", "evergreen/#/users?$filter=(installedApplications%20%3E%3D%2010)", "1,068", "App Count (Installed) is greater than or equal to 10", null)]
         [NUnit.Framework.TestCaseAttribute("App Count (Used)", "evergreen/#/users?$filter=(usedApplications%20%3C%3D%2010)", "41,337", "App Count (Used) is less than or equal to 10", null)]
@@ -1493,7 +1493,7 @@ this.FeatureBackground();
                     "EvergreenJnr_QueryStrings",
                     "Query",
                     "DAS13179",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

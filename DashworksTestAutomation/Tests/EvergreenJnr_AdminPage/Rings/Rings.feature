@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14780 @DAS13530 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14780 @DAS13530 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode                            |
@@ -30,7 +30,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged
 	When User selects "ProjectForDAS14780" checkbox from String Filter with item list on the Admin page
 	Then "Unassigned" text is displayed in the table content
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS14695 @DAS15415 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14690 @DAS14691 @DAS15370 @DAS14692 @DAS14695 @DAS15415 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |

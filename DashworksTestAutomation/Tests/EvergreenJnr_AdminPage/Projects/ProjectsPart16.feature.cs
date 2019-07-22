@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12582")]
         [NUnit.Framework.CategoryAttribute("DAS11978")]
         [NUnit.Framework.CategoryAttribute("DAS12825")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatOnboardedObjectsWorkCorrectlyForTwoUsers()
         {
             System.Exception lastException = null;
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12582",
                         "DAS11978",
                         "DAS12825",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -580,7 +580,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12645")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckingSortingOrderOfTheObjectsInTheProjectScopeChanges()
         {
             System.Exception lastException = null;
@@ -616,7 +616,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS12645",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 207
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -701,7 +701,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("DAS11758")]
         [NUnit.Framework.CategoryAttribute("DAS14190")]
         [NUnit.Framework.CategoryAttribute("DAS15528")]
@@ -739,7 +739,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "Projects",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "DAS11758",
                         "DAS14190",
                         "DAS15528"});
@@ -829,7 +829,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12578")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13429")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "TestList6589", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "TestList6588", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Email Address", "TestList6587", null)]
@@ -870,7 +870,7 @@ this.FeatureBackground();
                     "DAS12578",
                     "DAS12999",
                     "DAS13429",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

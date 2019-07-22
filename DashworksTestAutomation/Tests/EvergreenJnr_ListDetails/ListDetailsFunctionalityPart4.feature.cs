@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12204")]
         [NUnit.Framework.CategoryAttribute("DAS13207")]
         [NUnit.Framework.CategoryAttribute("DAS14963")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatTwoDependencyAreDisplayedInTheDependentsBlock()
         {
             System.Exception lastException = null;
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12204",
                         "DAS13207",
                         "DAS14963",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -233,7 +233,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12623")]
         [NUnit.Framework.CategoryAttribute("DAS12687")]
         [NUnit.Framework.CategoryAttribute("DAS14963")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatListDoesNotExistErrorWhenViewingDependentList()
         {
             System.Exception lastException = null;
@@ -274,7 +274,7 @@ this.FeatureBackground();
                         "DAS12623",
                         "DAS12687",
                         "DAS14963",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 49
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -382,7 +382,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10713")]
         [NUnit.Framework.CategoryAttribute("DAS12192")]
         [NUnit.Framework.CategoryAttribute("DAS14963")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatListPanelDoesNotExistErrorWhenViewingDependentList()
         {
             System.Exception lastException = null;
@@ -420,7 +420,7 @@ this.FeatureBackground();
                         "DAS10713",
                         "DAS12192",
                         "DAS14963",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 92
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -503,7 +503,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12874")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("DAS15551")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Application1", "Devices1", "Used on device", "Any Application in list [List not found] used on device", null)]
         [NUnit.Framework.TestCaseAttribute("Application2", "Devices2", "Used by device\'s owner", "Any Application in list [List not found] used by device\'s owner", null)]
         [NUnit.Framework.TestCaseAttribute("Application3", "Devices3", "Not used by device\'s owner", "Any Application in list [List not found] not used by device\'s owner", null)]
@@ -544,7 +544,7 @@ this.FeatureBackground();
                     "DAS12874",
                     "DAS14222",
                     "DAS15551",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

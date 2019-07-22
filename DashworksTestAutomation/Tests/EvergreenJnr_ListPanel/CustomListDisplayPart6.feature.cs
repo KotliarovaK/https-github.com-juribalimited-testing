@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10988")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithSameName()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "CustomListDisplay",
                         "DAS10988",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -173,7 +173,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11655")]
         [NUnit.Framework.CategoryAttribute("DAS11666")]
         [NUnit.Framework.CategoryAttribute("DAS12156")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Empty", "evergreen/#/devices?$listid=", null)]
         [NUnit.Framework.TestCaseAttribute("Not empty", "evergreen/#/devices?$listid=", null)]
         public virtual void EvergreenJnr_DevicesLists_CheckThatTheSavedListWithOwnerDisplayNameFilterIsDisplayed(string operatorValues, string uRL, string[] exampleTags)
@@ -212,7 +212,7 @@ this.FeatureBackground();
                     "DAS11655",
                     "DAS11666",
                     "DAS12156",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -282,7 +282,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11015")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatUserIsNotAbleToCreateListsWithLongNames()
         {
             System.Exception lastException = null;
@@ -318,7 +318,7 @@ this.FeatureBackground();
                         "CustomListDisplay",
                         "DAS11015",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 55
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

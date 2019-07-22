@@ -252,7 +252,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Tasks")]
         [NUnit.Framework.CategoryAttribute("DAS14322")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask()
         {
             System.Exception lastException = null;
@@ -288,7 +288,7 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "Senior_Tasks",
                         "DAS14322",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 49
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

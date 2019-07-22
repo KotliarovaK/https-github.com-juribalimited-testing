@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
         [NUnit.Framework.CategoryAttribute("DAS12760")]
         [NUnit.Framework.CategoryAttribute("DAS13254")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckMessageThatDisplayedWhenDeletingBucket()
         {
             System.Exception lastException = null;
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Buckets
                         "DAS12760",
                         "DAS13254",
                         "Buckets",
-                        "Delete_Newly_Created_Bucket"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -412,7 +412,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12331")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatWarningNotificationIsDisappearedAfterSwitchingFocusToAnotherBucket()
         {
             System.Exception lastException = null;
@@ -449,7 +449,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS12331",
                         "Buckets",
-                        "Delete_Newly_Created_Bucket"});
+                        "Cleanup"});
 #line 88
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

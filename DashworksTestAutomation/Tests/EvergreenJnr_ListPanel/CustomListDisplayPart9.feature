@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12656 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_ListPanel @CustomListDisplay @DAS12656 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicatingANewStaticListWithALongName
 	When User create static list with "1111111111111111111111111111111111111111" name on "Devices" page with following items
 	| ItemName       |
@@ -18,7 +18,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatNoErrorsAreDisplayedAfterDuplicating
 	Then "111111111111111111111111111111111111112" list is displayed to user
 	Then There are no errors in the browser console
 
-@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12685 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListPanel @CustomListDisplay @DAS12685 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatDataFromTheStaticListAreSavedInTheNewListAfterEditing
 	When User create static list with "StaticList1412" name on "Users" page with following items
 	| ItemName            |

@@ -354,7 +354,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11166")]
         [NUnit.Framework.CategoryAttribute("DAS11665")]
         [NUnit.Framework.CategoryAttribute("DAS13172")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredAfterGoingBackToTheListAgain()
         {
             System.Exception lastException = null;
@@ -392,7 +392,7 @@ this.FeatureBackground();
                         "DAS11166",
                         "DAS11665",
                         "DAS13172",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 63
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -548,7 +548,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11042")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddColumnCheckboxIsCheckedAfterSavingFilterInANewList()
         {
             System.Exception lastException = null;
@@ -584,7 +584,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS11042",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 109
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1093,7 +1093,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10977")]
         [NUnit.Framework.CategoryAttribute("DAS13376")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatFilterIsRestoredCorrectlyAfterLeavingThePageAndGoingBackViaTheBrowseBackButtonForListFilters()
         {
             System.Exception lastException = null;
@@ -1130,7 +1130,7 @@ this.FeatureBackground();
                         "FilterFunctionality",
                         "DAS10977",
                         "DAS13376",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 234
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2202,7 +2202,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11760")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatTheSaveButtonIsNotAvailableWithoutTheFilterValue()
         {
             System.Exception lastException = null;
@@ -2238,7 +2238,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS11760",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 512
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2637,7 +2637,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12543")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatEditFilterElementsBlockIsDisplayedCorrectlyOnTheFiltersPanel()
         {
             System.Exception lastException = null;
@@ -2674,7 +2674,7 @@ this.FeatureBackground();
                         "FilterFunctionality",
                         "DAS12543",
                         "DAS13001",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 609
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2926,7 +2926,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12202")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedAfterApplyingAStaticListWithApplicationSavedListFilter()
         {
             System.Exception lastException = null;
@@ -2962,7 +2962,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12202",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 677
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3039,7 +3039,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12202")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingAStaticListAsTheFilteredApplicationSavedList()
         {
             System.Exception lastException = null;
@@ -3075,7 +3075,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12202",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 705
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3158,7 +3158,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12202")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatCorrectDeviceDataIsReturnedWhenUsingADynamicListAsTheFilteredApplicationSavedList()
         {
             System.Exception lastException = null;
@@ -3194,7 +3194,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12202",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 736
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3350,7 +3350,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12167")]
         [NUnit.Framework.CategoryAttribute("DAS12056")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatNoConsoleErrorIsDisplayedAfterAddingUserSavedListFilter()
         {
             System.Exception lastException = null;
@@ -3387,7 +3387,7 @@ this.FeatureBackground();
                         "FilterFunctionality",
                         "DAS12167",
                         "DAS12056",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 777
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3455,7 +3455,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12181")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatNoErrorIsDisplayedAfterAddingAdvancedFilterForUsernameAndApplicationSavedList()
         {
             System.Exception lastException = null;
@@ -3491,7 +3491,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12181",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 801
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3579,7 +3579,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12181")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFilters()
         {
             System.Exception lastException = null;
@@ -3615,7 +3615,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12181",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 832
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3677,7 +3677,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12181")]
         [NUnit.Framework.CategoryAttribute("DAS11561")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatNoErrorIsDisplayedAfterAddingFewAdvancedFiltersAndFewStandardFilters()
         {
             System.Exception lastException = null;
@@ -3714,7 +3714,7 @@ this.FeatureBackground();
                         "FilterFunctionality",
                         "DAS12181",
                         "DAS11561",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 850
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -3870,7 +3870,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12058")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectGroupCurrentStateFiltersInTheApplicationListWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -3906,7 +3906,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12058",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 888
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -4002,7 +4002,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12058")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatProjectGroupTargetStateFiltersInTheApplicationListWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -4038,7 +4038,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12058",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 924
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -4978,7 +4978,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12804")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatSavedStaticListIsNotShownInEditMode()
         {
             System.Exception lastException = null;
@@ -5013,7 +5013,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS12804",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1153
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5075,7 +5075,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13104")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatAddAndButtonIsDisplayedWhenAddingTwoOrMoreFiltersUsingTheSameFieldAndClearingOneOfTheFilters()
         {
             System.Exception lastException = null;
@@ -5111,7 +5111,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS13104",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1176
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5174,7 +5174,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13414")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatApplicationListWhichIncludeADateBasedAdvancedFilterAreSavedAndNotOpenedInEditMode()
         {
             System.Exception lastException = null;
@@ -5210,7 +5210,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS13414",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1198
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5265,7 +5265,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13384")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_ChecksThatEditButtonIsDisplayedOnFiltersSectionIfEditFormOpenWhenYouSaveList()
         {
             System.Exception lastException = null;
@@ -5301,7 +5301,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS13384",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1217
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -5679,7 +5679,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13473")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatIfListWithAnAdvancedUserDescriptionIsEmptyFilterIsSavedAndOpenedNotInEditMode()
         {
             System.Exception lastException = null;
@@ -5715,7 +5715,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS13473",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1301
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -7437,7 +7437,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS15246")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatUrlOfSavedListHasNoEmptyParameters()
         {
             System.Exception lastException = null;
@@ -7472,7 +7472,7 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "FilterFunctionality",
                         "DAS15246",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1710
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -7984,7 +7984,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS16394")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCreateButtonIsNotEnabledAfterClickingEditFilterForTheListBasedOnSavedListWithErrors()
         {
             System.Exception lastException = null;
@@ -8020,7 +8020,7 @@ this.FeatureBackground();
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS16394",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1854
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

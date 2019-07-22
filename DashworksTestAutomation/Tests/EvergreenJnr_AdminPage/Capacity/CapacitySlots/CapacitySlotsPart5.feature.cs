@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS13792")]
         [NUnit.Framework.CategoryAttribute("DAS13788")]
         [NUnit.Framework.CategoryAttribute("DAS14241")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNewSlotAppearsAfterDuplicateActionWithCorrectNameAndSameContent()
         {
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS13792",
                         "DAS13788",
                         "DAS14241",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Not_Run"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -334,7 +334,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS14478")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCopySuffixDisplayingForNames()
         {
             System.Exception lastException = null;
@@ -370,7 +370,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS14478",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 75
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -516,7 +516,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13791")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotIsMovedToLastPositionIfValueEnteredInMoveToPositionIsGreaterThanTotalresocordsNumber()
         {
             System.Exception lastException = null;
@@ -553,7 +553,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS13791",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 114
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

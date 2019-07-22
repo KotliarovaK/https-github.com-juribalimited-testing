@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
         [NUnit.Framework.CategoryAttribute("DAS14697")]
         [NUnit.Framework.CategoryAttribute("DAS15180")]
         [NUnit.Framework.CategoryAttribute("DAS15826")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject()
         {
             System.Exception lastException = null;
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
                         "DAS14697",
                         "DAS15180",
                         "DAS15826",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -294,7 +294,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS12452")]
         [NUnit.Framework.CategoryAttribute("DAS14705")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Ring")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject()
         {
             System.Exception lastException = null;
@@ -330,7 +330,7 @@ this.FeatureBackground();
                         "Rings",
                         "DAS12452",
                         "DAS14705",
-                        "Delete_Newly_Created_Ring"});
+                        "Cleanup"});
 #line 78
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

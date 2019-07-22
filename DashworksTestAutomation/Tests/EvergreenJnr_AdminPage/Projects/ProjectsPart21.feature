@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS13498 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS13498 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSeniorIsReflectedInEvergreen
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -45,7 +45,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatChangingTheProjectNameOrShortNameInSen
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13501 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @UpdatingName @Senior_Projects @DAS13501 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatNameForProjectThatCreatedInSeniorWasUpdatedCorrectlyInAdminPage
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_AdminPage_CheckTheCapacitySlotsLinkRedirectsToTheCorrectS
 	Then "Slots" tab in Project selected on the Admin page
 
 	#required functionality (Project Mode) was temporarily hidden, 05/29/19
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Delete_Newly_Created_Project @archived
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @DAS13510 @DAS13511 @Project_Creation_and_Scope @Projects @Cleanup @archived
 Scenario: EvergreenJnr_AdminPage_CheckThatProjectWithUseEvergreenCapacityUnitsIsNotDisplayedOnTheCapacityUnitsTab
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user

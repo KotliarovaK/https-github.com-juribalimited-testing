@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS13254")]
         [NUnit.Framework.CategoryAttribute("DAS13172")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Teams")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Teams")]
         public virtual void EvergreenJnr_AdminPage_AddingIndividualAndMembersFromAnotherTeam()
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
                         "DAS13199",
                         "DAS13254",
                         "DAS13172",
-                        "Delete_Newly_Created_Team",
+                        "Cleanup",
                         "Teams",
                         "Do_Not_Run_With_Teams"});
 #line 9
@@ -268,7 +268,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13254")]
         [NUnit.Framework.CategoryAttribute("DAS13421")]
         [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_AddingMembersToTheTeam()
         {
             System.Exception lastException = null;
@@ -306,7 +306,7 @@ this.FeatureBackground();
                         "DAS13254",
                         "DAS13421",
                         "Teams",
-                        "Delete_Newly_Created_Team"});
+                        "Cleanup"});
 #line 68
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -423,7 +423,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12326")]
         [NUnit.Framework.CategoryAttribute("DAS16130")]
         [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatSelectANewTeamDropdownAreWorkingCorrectly()
         {
             System.Exception lastException = null;
@@ -460,7 +460,7 @@ this.FeatureBackground();
                         "DAS12326",
                         "DAS16130",
                         "Teams",
-                        "Delete_Newly_Created_Team"});
+                        "Cleanup"});
 #line 113
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

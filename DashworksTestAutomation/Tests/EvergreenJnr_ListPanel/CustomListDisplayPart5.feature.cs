@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS10647")]
         [NUnit.Framework.CategoryAttribute("DAS13001")]
         [NUnit.Framework.CategoryAttribute("DAS13838")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatDatabaseErrorOccurringOccurringWhenAttemptingToSaveListsInEvergreenAreNotDisplayed()
         {
             System.Exception lastException = null;
@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                         "DAS10647",
                         "DAS13001",
                         "DAS13838",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -169,7 +169,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11465")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedColumnsWithoutErrors()
         {
             System.Exception lastException = null;
@@ -205,7 +205,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11465",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 23
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -346,7 +346,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11465")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSelectedFiltersWithoutErrors()
         {
             System.Exception lastException = null;
@@ -382,7 +382,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS11465",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 85
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -514,7 +514,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11465")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesLists_CheckThatAnotherUserCanEditsAndSavesASharedListWithSortingWithoutErrors()
         {
             System.Exception lastException = null;
@@ -551,7 +551,7 @@ this.FeatureBackground();
                         "CustomListDisplay",
                         "DAS11465",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 142
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

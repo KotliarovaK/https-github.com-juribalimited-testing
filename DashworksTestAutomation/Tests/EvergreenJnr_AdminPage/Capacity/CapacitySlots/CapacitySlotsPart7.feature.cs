@@ -89,8 +89,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13593")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Task")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyDateTasksCanBeAvailableForSelectionInCreateSlotPage()
         {
             System.Exception lastException = null;
@@ -128,8 +128,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "Slots",
                         "Senior_Projects",
                         "DAS13593",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Task"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -680,7 +680,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Senior")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Task")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityEnabledFlagUpdatesAfterAddingRemovingTaskFromCapacitySlot()
         {
             System.Exception lastException = null;
@@ -720,7 +720,7 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_Slots",
                         "Do_Not_Run_With_Senior",
-                        "Delete_Newly_Created_Task"});
+                        "Cleanup"});
 #line 177
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -821,7 +821,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Capacity")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Slots")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_Senior")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Task")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatTasksAreDeletedAfterBeingAssociatedToACapacitySlot()
         {
             System.Exception lastException = null;
@@ -861,7 +861,7 @@ this.FeatureBackground();
                         "Do_Not_Run_With_Capacity",
                         "Do_Not_Run_With_Slots",
                         "Do_Not_Run_With_Senior",
-                        "Delete_Newly_Created_Task"});
+                        "Cleanup"});
 #line 209
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

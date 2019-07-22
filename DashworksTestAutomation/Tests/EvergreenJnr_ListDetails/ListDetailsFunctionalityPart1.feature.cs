@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12624")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                     "DAS10880",
                     "DAS11951",
                     "DAS12624",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -195,7 +195,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS12624")]
         [NUnit.Framework.CategoryAttribute("DAS16866")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
@@ -239,7 +239,7 @@ this.FeatureBackground();
                     "DAS12602",
                     "DAS12624",
                     "DAS16866",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -305,7 +305,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "All Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "All Applications", null)]
@@ -345,7 +345,7 @@ this.FeatureBackground();
                     "ListDetailsFunctionality",
                     "DAS10880",
                     "DAS11951",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -407,7 +407,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12555")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
@@ -449,7 +449,7 @@ this.FeatureBackground();
                     "DAS12152",
                     "DAS12555",
                     "DAS12602",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

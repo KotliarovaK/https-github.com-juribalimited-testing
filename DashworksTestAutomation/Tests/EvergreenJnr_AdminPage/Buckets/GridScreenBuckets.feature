@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSingularFoundItemLabelDisplaysOnAction
 	And User enters "birmingham" text in the Search field for "Bucket" column
 	Then Rows counter contains "3" found row of all rows
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets @Delete_Newly_Created_Bucket
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12939 @Buckets @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction
 	When User creates new Bucket via api
 	| Name | TeamName |

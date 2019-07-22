@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14587 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14587 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavingWidgetHavingInvalidName
 	When Dashboard with "Dashboard for DAS14587" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -20,7 +20,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatValidationMessageAppearsWhenSavin
 	|            | Dashboard for DAS14587 |      |         |             |                   |         |                  |           |            |
 	Then User sees widget with the next name "Dashboard for DAS14587" on Dashboards page
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14578 @DAS14584 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	When Dashboard with "Dashboard for DAS14578" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -31,7 +31,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckWidgetTitleIsLimitedToOneHundredChars
 	Then User sees widget with the next name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" on Dashboards page
 	And Widget name "Line with one hundred and seven chars Line with one hundred and seven chars Line with one hundred an" has word break style on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15900 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwitchingToDashboardWithoutSavingWidgetChanges
 	When Dashboard with "Dashboard for DAS15900" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWarningMessageAppearsOnceWhenSwit
 	When User clicks "NO" button in Unsaved Changes alert
 	Then Unsaved Changes alert not displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionSelectionIsBeforeTheAggregateBySelection
 	When Dashboard with "Dashboard for DAS15437" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -69,7 +69,7 @@ Examples:
 	| Table      |
 	| Card       |
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15437 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDropdownAreMissingForListWidget
 	When Dashboard with "Dashboard for DAS15437" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -78,7 +78,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAggregateFunctionOrAggregateByDro
 	Then "Aggregate Function" dropdown is missing
 	And "Aggregate By" dropdown is missing
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS16958 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidgetHavingDeletedList
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |

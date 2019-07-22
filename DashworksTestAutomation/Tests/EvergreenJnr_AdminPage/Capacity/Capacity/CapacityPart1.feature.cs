@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS13162")]
         [NUnit.Framework.CategoryAttribute("DAS14037")]
         [NUnit.Framework.CategoryAttribute("DAS15823")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_CheckThatDefaultCapacityUnitRenamedInUnassignedWithoutErrors()
         {
@@ -134,7 +134,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS13162",
                         "DAS14037",
                         "DAS15823",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Not_Run"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -210,7 +210,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13431")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckDefaultColumnsForDevicesProjectCapacityUnits()
         {
             System.Exception lastException = null;
@@ -246,7 +246,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Units",
                         "DAS13431",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 35
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -303,7 +303,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13431")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckDefaultColumnsForMailboxesProjectCapacityUnits()
         {
             System.Exception lastException = null;
@@ -339,7 +339,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Units",
                         "DAS13431",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 53
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -397,7 +397,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Override_Dates")]
         [NUnit.Framework.CategoryAttribute("DAS13723")]
         [NUnit.Framework.CategoryAttribute("DAS13370")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedValueIsDisplayedForCapacityColumn()
         {
             System.Exception lastException = null;
@@ -434,7 +434,7 @@ this.FeatureBackground();
                         "Override_Dates",
                         "DAS13723",
                         "DAS13370",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 71
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

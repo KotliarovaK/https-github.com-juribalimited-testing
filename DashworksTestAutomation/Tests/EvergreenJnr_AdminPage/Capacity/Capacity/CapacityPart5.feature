@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Delete_Newly_Created_Project @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS13956 @DAS14068 @DAS14218 @Cleanup @Do_Not_Run_With_CapacityUnits @Set_Default_Capacity_Unit
 Scenario: EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -48,7 +48,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingMapsToEvergreenColumnDisplayedForDiffer
 	When User enters "2" text in the Search field for "Capacity Unit" column
 	Then "" content is displayed for "Maps to Evergreen" column
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Delete_Newly_Created_Capacity_Unit @Set_Default_Capacity_Unit_With_Project @Do_Not_Run_With_CapacityUnits
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13156 @Cleanup @Set_Default_Capacity_Unit_With_Project @Do_Not_Run_With_CapacityUnits
 Scenario: EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits
 	Given Save Default Capacity Unit for 'Email Migration' project
 	When User creates new Capacity Unit via api

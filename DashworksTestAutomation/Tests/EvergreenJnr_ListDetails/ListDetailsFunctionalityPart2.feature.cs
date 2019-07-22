@@ -153,7 +153,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
@@ -193,7 +193,7 @@ this.FeatureBackground();
                     "ListDetailsFunctionality",
                     "DAS10880",
                     "DAS11951",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -239,7 +239,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", null)]
@@ -279,7 +279,7 @@ this.FeatureBackground();
                     "ListDetailsFunctionality",
                     "DAS10880",
                     "DAS12152",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -323,7 +323,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS11493")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", null)]
@@ -363,7 +363,7 @@ this.FeatureBackground();
                     "ListDetailsFunctionality",
                     "DAS11493",
                     "DAS11951",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

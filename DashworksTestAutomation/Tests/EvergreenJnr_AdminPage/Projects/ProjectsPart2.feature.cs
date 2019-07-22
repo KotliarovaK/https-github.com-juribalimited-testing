@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS13408")]
         [NUnit.Framework.CategoryAttribute("DAS12645")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedAfterUpdatingProjectScopeChanges()
@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS13199",
                         "DAS13408",
                         "DAS12645",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 9
@@ -246,7 +246,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12333")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_ChecksThatDeviceScopeDDLIsDisabledWhenDoNotIncludeOwnedDevicesIsSelected()
         {
@@ -284,7 +284,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS12333",
                         "DAS12999",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Projects"});
 #line 50
 this.ScenarioInitialize(scenarioInfo);
@@ -336,7 +336,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12747")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS12645")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSelectedCheckboxIsSelectedAfterSwitchingBetweenTabs()
@@ -377,7 +377,7 @@ this.FeatureBackground();
                         "DAS12747",
                         "DAS12999",
                         "DAS12645",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 67
@@ -468,7 +468,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12757")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnboardingOfObjectsIsProceedForScopedProjects()
@@ -508,7 +508,7 @@ this.FeatureBackground();
                         "DAS12757",
                         "DAS12999",
                         "DAS13199",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 102

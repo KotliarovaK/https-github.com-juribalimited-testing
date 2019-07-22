@@ -182,7 +182,7 @@ this.FeatureBackground();
 #line 31
  testRunner.When("User selects \"16890Project\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
- testRunner.When("User selects \"[Default (Computer)]\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"[Default (Computer)]\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
@@ -195,7 +195,7 @@ this.FeatureBackground();
 #line 37
  testRunner.When("User selects \"1803 Rollout\" in the Project dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 38
- testRunner.When("User selects \"Undetermined\" in the \"Path\" dropdown for Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects \"Undetermined\" in the Path dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
  testRunner.And("User clicks the \"CREATE\" Action button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
@@ -579,7 +579,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS17374")]
         [NUnit.Framework.CategoryAttribute("DAS17370")]
         [NUnit.Framework.CategoryAttribute("DAS17367")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation()
         {
             System.Exception lastException = null;
@@ -617,7 +617,7 @@ this.FeatureBackground();
                         "DAS17374",
                         "DAS17370",
                         "DAS17367",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 142
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

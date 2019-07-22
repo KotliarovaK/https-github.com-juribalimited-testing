@@ -789,7 +789,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Type", "ComputerSc: Readiness ID", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Domain", "UserSchedu: Readiness ID", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Vendor", "UserSchedu: Readiness ID", null)]
@@ -829,7 +829,7 @@ this.FeatureBackground();
                     "BaseDashboardPage",
                     "DAS10972",
                     "DAS12602",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -1226,8 +1226,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BaseDashboardPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15444")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCorrectMessageIsDisplayedBeforeDeletingListWhichHasDependencies()
         {
             System.Exception lastException = null;
@@ -1264,8 +1264,8 @@ this.FeatureBackground();
                         "BaseDashboardPage",
                         "Widgets",
                         "DAS15444",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 258
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

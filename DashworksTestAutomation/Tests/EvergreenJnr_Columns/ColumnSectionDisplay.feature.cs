@@ -601,7 +601,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11768")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists()
         {
             System.Exception lastException = null;
@@ -638,7 +638,7 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS11768",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 99
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -712,7 +712,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12553")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists()
         {
             System.Exception lastException = null;
@@ -751,7 +751,7 @@ this.FeatureBackground();
                         "DAS12152",
                         "DAS12553",
                         "DAS12602",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 126
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -827,7 +827,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11768")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists()
         {
             System.Exception lastException = null;
@@ -864,7 +864,7 @@ this.FeatureBackground();
                         "ColumnSectionDisplay",
                         "DAS11768",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 155
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1235,7 +1235,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnDevicesPage()
         {
             System.Exception lastException = null;
@@ -1271,7 +1271,7 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS13059",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 278
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1377,7 +1377,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnUsersPage()
         {
             System.Exception lastException = null;
@@ -1413,7 +1413,7 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS13059",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 322
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1513,7 +1513,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnApplicationsPage()
         {
             System.Exception lastException = null;
@@ -1549,7 +1549,7 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS13059",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 363
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1647,7 +1647,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnMailboxesPage()
         {
             System.Exception lastException = null;
@@ -1683,7 +1683,7 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS13059",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 403
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1785,7 +1785,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTheColumnsIsDisplayedCorrectlyOnDevicesPage()
         {
             System.Exception lastException = null;
@@ -1821,7 +1821,7 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS13059",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 445
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1933,7 +1933,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_Columns")]
         [NUnit.Framework.CategoryAttribute("ColumnSectionDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS13059")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListTheColumnsIsDisplayedCorrectlyOnDevicesPage()
         {
             System.Exception lastException = null;
@@ -1969,7 +1969,7 @@ this.FeatureBackground();
                         "EvergreenJnr_Columns",
                         "ColumnSectionDisplay",
                         "DAS13059",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 491
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

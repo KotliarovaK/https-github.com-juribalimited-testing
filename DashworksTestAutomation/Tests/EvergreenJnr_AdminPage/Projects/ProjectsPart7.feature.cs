@@ -88,8 +88,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
         [NUnit.Framework.CategoryAttribute("DAS12680")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUsersToAddAndRemoveAreChangingAppropriate()
         {
@@ -127,8 +127,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12999",
                         "DAS13199",
                         "DAS12680",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_List",
+                        "Cleanup",
+                        "Cleanup",
                         "Projects"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -238,8 +238,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS12903")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Project2587", "StaticList6521", "00KLL9S8NRF0X6", "Hostname", "TestList6584", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Project2587", "StaticList6522", "ZVI880605@bclabs.local", "Email Address", "TestList6583", null)]
@@ -279,8 +279,8 @@ this.FeatureBackground();
                     "DAS12999",
                     "DAS12903",
                     "DAS13973",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {
@@ -384,8 +384,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12799")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckMailboxProjectCreationWithCloneEvergreenBuckets()
         {
@@ -424,8 +424,8 @@ this.FeatureBackground();
                         "DAS12799",
                         "DAS13973",
                         "Project_Creation_and_Scope",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_List",
+                        "Cleanup",
+                        "Cleanup",
                         "Projects"});
 #line 98
 this.ScenarioInitialize(scenarioInfo);
@@ -558,8 +558,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("TestProject9543", "StaticList8851", "Devices", "00KWQ4J3WKQM0G", "Hostname", "DynamicList9527", null)]
         [NUnit.Framework.TestCaseAttribute("TestProject9544", "StaticList8852", "Users", "003F5D8E1A844B1FAA5", "Username", "DynamicList9528", null)]
@@ -598,8 +598,8 @@ this.FeatureBackground();
                     "AdminPage",
                     "DAS12999",
                     "DAS13973",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {

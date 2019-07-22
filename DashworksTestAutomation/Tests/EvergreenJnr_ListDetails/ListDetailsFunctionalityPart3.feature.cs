@@ -167,7 +167,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12029")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "All Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "All Applications", null)]
@@ -206,7 +206,7 @@ this.FeatureBackground();
                     "EvergreenJnr_ListDetails",
                     "ListDetailsFunctionality",
                     "DAS12029",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -254,7 +254,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12555")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS12966")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "All Users", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "All Applications", null)]
@@ -296,7 +296,7 @@ this.FeatureBackground();
                     "DAS12555",
                     "DAS12602",
                     "DAS12966",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -352,7 +352,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12208")]
         [NUnit.Framework.CategoryAttribute("DAS12684")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatWarningMessageIsNotDisplayedInTheListPanelAfterViewingDependentList()
         {
             System.Exception lastException = null;
@@ -389,7 +389,7 @@ this.FeatureBackground();
                         "ListDetailsFunctionality",
                         "DAS12208",
                         "DAS12684",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 72
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

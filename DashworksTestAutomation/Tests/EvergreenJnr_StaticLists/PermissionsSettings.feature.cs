@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateStaticList()
         {
             System.Exception lastException = null;
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_StaticLists
                         "DAS11553",
                         "DAS10880",
                         "DAS12152",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -196,7 +196,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_PermissionsSettings")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAddRowsOptionsIsAvailableForSpecifiedPermissionLevel()
         {
@@ -237,7 +237,7 @@ this.FeatureBackground();
                         "DAS10880",
                         "DAS12152",
                         "DAS12602",
-                        "Delete_Newly_Created_List",
+                        "Cleanup",
                         "Do_Not_Run_With_PermissionsSettings"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
