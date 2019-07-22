@@ -86,8 +86,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("All Applications", "DynamicList57", "Applications to add (0 of 2129 selected)", "Applications to add (0 of 39 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList6379", "All Applications", "Applications to add (0 of 2 selected)", "Applications to add (0 of 2129 selected)", null)]
@@ -125,8 +125,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "DAS12999",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {
@@ -238,8 +238,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("All Users", "StaticList6329", "Clone from Evergreen to Project", "Users to add (0 of 41339 selected)", "Users to add (0 of 2 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList6329", "DynamicList37", "Standalone Project", "Users to add (0 of 2 selected)", "Users to add (0 of 92 selected)", null)]
@@ -278,8 +278,8 @@ this.FeatureBackground();
                     "AdminPage",
                     "DAS12999",
                     "DAS13973",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {
@@ -382,8 +382,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Operating System", "Windows 8", "28", "All Users", "All Devices", "Devices", "Device Scope", "Devices to add (0 of 16765 selected)", "StaticList6429", "Devices to add (0 of 24 selected)", "Devices to add (0 of 16765 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "CA", "850", "All Mailbox", "All Users", "Users", "User Scope", "Users to add (0 of 14747 selected)", "DynamicList17", "Users to add (0 of 0 selected)", "Users to add (0 of 14747 selected)", null)]
@@ -421,8 +421,8 @@ this.FeatureBackground();
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "DAS12999",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {
@@ -518,8 +518,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13297")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("All Applications", "StaticList6429", "Applications to add (0 of 2081 selected)", "Applications to add (0 of 2 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList6429", "DynamicList17", "Applications to add (0 of 2 selected)", "Applications to add (0 of 1612 selected)", null)]
@@ -558,8 +558,8 @@ this.FeatureBackground();
                     "AdminPage",
                     "DAS12999",
                     "DAS13297",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {

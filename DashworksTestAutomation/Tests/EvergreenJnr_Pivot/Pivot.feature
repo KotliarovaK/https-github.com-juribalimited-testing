@@ -196,7 +196,7 @@ Examples:
 	| Mailboxes    | Alias       | Owner City                        | Created Date   | Pivot_Mailboxes_List_13747    | Display Name    | Mailbox      |
 	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Pivot_Applications_List_13747 | Application Key | Application  |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @Delete_Newly_Created_Project
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS14224 @DAS14413 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1056,7 +1056,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatDeviceOwnerComplianceColumnsDisplayI
 	| UNKNOWN        |
 	| NOT APPLICABLE |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139 @DAS13833 @DAS13843 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS15139 @DAS13833 @DAS13843 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfThatWereAppliedToTheCustomList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -1248,7 +1248,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatPivotSubmenuIsDisplayedCorrectlyAfte
 	Then User sees Dashboards sub menu on Dashboards page
 	And User remove list with "PivotList_DAS13652" name on "Devices" page
 
-@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS11264 @DAS11360 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatRemovingValueThroughTheChipsWorksCorrectly
 	When User clicks "<PageName>" on the left-hand menu
 	Then "<PageName>" list should be displayed to the user
@@ -1291,7 +1291,7 @@ Examples:
 	| Mailboxes    | Alias       | Owner City                        | Created Date   | Alias                | Mailboxes_List_11103    | Enabled                | TRUE            | Mailbox          |
 	| Applications | Application | Evergreen Capacity Unit           | Vendor         | Application Owner    | Applications_List_11103 | Compliance             | Red             | Custom Fields    |
 
-@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS13819 @DAS13818 @DAS13817 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Pivot @Pivot @DAS11103 @DAS13819 @DAS13818 @DAS13817 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

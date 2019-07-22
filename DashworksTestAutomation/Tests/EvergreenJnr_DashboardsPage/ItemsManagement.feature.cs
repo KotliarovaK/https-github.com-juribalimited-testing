@@ -314,7 +314,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14358")]
         [NUnit.Framework.CategoryAttribute("DAS12989")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIntoSameSection()
         {
             System.Exception lastException = null;
@@ -350,7 +350,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14358",
                         "DAS12989",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 54
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -481,7 +481,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Sections")]
         [NUnit.Framework.CategoryAttribute("DAS14358")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated()
         {
             System.Exception lastException = null;
@@ -515,7 +515,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Sections",
                         "DAS14358",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 84
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -575,7 +575,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14586")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Dashboard for DAS14586_devices", "Line", "All Devices Widget For DAS_14586", "All Devices", "Hostname", "", "Count", "Count DESC", "All Devices Widget For DAS_145862", "false", null)]
         [NUnit.Framework.TestCaseAttribute("Dashboard for DAS14586_users", "Pie", "All Users Widget For DAS_14586", "All Users", "Username", "Display Name", "Count distinct", "Username ASC", "All Users Widget For DAS_145862", "false", null)]
         [NUnit.Framework.TestCaseAttribute("Dashboard for DAS14586_applications", "Bar", "All Applications Widget For DAS_14586", "All Applications", "Application", "", "Count", "Count DESC", "All Applications Widget For DAS_145862", "true", null)]
@@ -613,7 +613,7 @@ this.FeatureBackground();
                     "EvergreenJnr_DashboardsPage",
                     "Widgets",
                     "DAS14586",
-                    "Delete_Newly_Created_Dashboard"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -680,7 +680,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14728")]
         [NUnit.Framework.CategoryAttribute("DAS14263")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection()
         {
             System.Exception lastException = null;
@@ -715,7 +715,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS14728",
                         "DAS14263",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 120
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -788,7 +788,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS12978")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode()
         {
             System.Exception lastException = null;
@@ -822,7 +822,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS12978",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 141
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -971,7 +971,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS12977")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode()
         {
             System.Exception lastException = null;
@@ -1005,7 +1005,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS12977",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 179
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1088,7 +1088,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14583")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing()
         {
             System.Exception lastException = null;
@@ -1122,7 +1122,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14583",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 204
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1268,7 +1268,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS14855")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingWidget()
         {
             System.Exception lastException = null;
@@ -1302,7 +1302,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS14855",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 233
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1423,7 +1423,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS15721")]
         [NUnit.Framework.CategoryAttribute("DAS15937")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating()
         {
             System.Exception lastException = null;
@@ -1459,7 +1459,7 @@ this.FeatureBackground();
                         "Widgets",
                         "DAS15721",
                         "DAS15937",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 255
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1787,7 +1787,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("Widgets")]
         [NUnit.Framework.CategoryAttribute("DAS16326")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage()
         {
@@ -1822,7 +1822,7 @@ this.FeatureBackground();
                         "EvergreenJnr_DashboardsPage",
                         "Widgets",
                         "DAS16326",
-                        "Delete_Newly_Created_Dashboard",
+                        "Cleanup",
                         "Not_Run"});
 #line 356
 this.ScenarioInitialize(scenarioInfo);
@@ -1932,7 +1932,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS15877")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard()
         {
             System.Exception lastException = null;
@@ -1965,7 +1965,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS15877",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 376
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2002,7 +2002,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite()
         {
             System.Exception lastException = null;
@@ -2035,7 +2035,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS12974",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 389
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2095,7 +2095,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault()
         {
             System.Exception lastException = null;
@@ -2128,7 +2128,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS12974",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 414
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2164,7 +2164,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted()
         {
             System.Exception lastException = null;
@@ -2197,7 +2197,7 @@ this.FeatureBackground();
                         "Evergreen",
                         "EvergreenJnr_DashboardsPage",
                         "DAS12974",
-                        "Delete_Newly_Created_Dashboard"});
+                        "Cleanup"});
 #line 427
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -2287,7 +2287,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DashboardsPage")]
         [NUnit.Framework.CategoryAttribute("DAS12974")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Dashboard")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("DAS12974DUPLICATED", null)]
         [NUnit.Framework.TestCaseAttribute("DAS12974duplicated", null)]
         public virtual void EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists(string dashboardName, string[] exampleTags)
@@ -2322,7 +2322,7 @@ this.FeatureBackground();
                     "Evergreen",
                     "EvergreenJnr_DashboardsPage",
                     "DAS12974",
-                    "Delete_Newly_Created_Dashboard"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

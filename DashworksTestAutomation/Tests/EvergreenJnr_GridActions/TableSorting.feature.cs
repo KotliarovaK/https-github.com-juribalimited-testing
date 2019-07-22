@@ -578,7 +578,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("TableSorting")]
         [NUnit.Framework.CategoryAttribute("DAS12545")]
         [NUnit.Framework.CategoryAttribute("DAS14287")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "ComputerSc: Team ID", "All Devices", "DynamicList4857", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "UserEvergr: Team ID", "All Users", "DynamicList1857", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "ComputerSc: Project ID", "All Applications", "DynamicList2857", null)]
@@ -618,7 +618,7 @@ this.FeatureBackground();
                     "TableSorting",
                     "DAS12545",
                     "DAS14287",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

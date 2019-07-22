@@ -86,8 +86,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("All Applications", "StaticList1529", "Applications to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", null)]
         [NUnit.Framework.TestCaseAttribute("StaticList1529", "DynamicList87", "Applications to add (0 of 0 selected)", "Applications to add (0 of 0 selected)", null)]
@@ -125,8 +125,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "DAS12999",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {
@@ -243,7 +243,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_AddingAndDeletingPermissionsForMailboxProject()
         {
@@ -279,7 +279,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS12999",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Projects"});
 #line 60
 this.ScenarioInitialize(scenarioInfo);
@@ -442,7 +442,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13205")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatBannerDisplaysOnScopeDetailsPage()
         {
@@ -478,7 +478,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS13205",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Projects"});
 #line 127
 this.ScenarioInitialize(scenarioInfo);
@@ -515,7 +515,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS12680")]
         [NUnit.Framework.CategoryAttribute("DAS12108")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_AddingRequestTypesAndCategories()
         {
@@ -553,7 +553,7 @@ this.FeatureBackground();
                         "DAS12999",
                         "DAS12680",
                         "DAS12108",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Projects"});
 #line 138
 this.ScenarioInitialize(scenarioInfo);

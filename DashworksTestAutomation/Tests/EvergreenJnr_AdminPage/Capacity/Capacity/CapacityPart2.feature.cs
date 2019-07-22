@@ -95,7 +95,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS14037")]
         [NUnit.Framework.CategoryAttribute("DAS14236")]
         [NUnit.Framework.CategoryAttribute("DAS13157")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCorrectLinkIsDisplayedInTheGreenBannerForCreatedUnit()
         {
             System.Exception lastException = null;
@@ -139,7 +139,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS14037",
                         "DAS14236",
                         "DAS13157",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -246,7 +246,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("DAS12672")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOneDefaultCapacityUnitCanBeCreated()
         {
             System.Exception lastException = null;
@@ -281,7 +281,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Capacity",
                         "DAS12672",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 45
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -405,7 +405,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS14240")]
         [NUnit.Framework.CategoryAttribute("DAS16372")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatCapacityUnitsGridUpdatedAfterUnitUpdatingOrCreation()
         {
             System.Exception lastException = null;
@@ -443,7 +443,7 @@ this.FeatureBackground();
                         "Units",
                         "DAS14240",
                         "DAS16372",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 93
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -564,7 +564,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13945")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserCantCreateCapacityUnitWithEmptyName()
         {
             System.Exception lastException = null;
@@ -600,7 +600,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Units",
                         "DAS13945",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 140
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

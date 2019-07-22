@@ -86,8 +86,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("TestProject9553", "StaticList8891", "Mailboxes", "00A5B910A1004CF5AC4@bclabs.local", "Email Address", "DynamicList9537", null)]
         [NUnit.Framework.TestCaseAttribute("TestProject9554", "StaticList8892", "Users", "003F5D8E1A844B1FAA5", "Username", "DynamicList9538", null)]
@@ -125,8 +125,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "EvergreenJnr_AdminPage",
                     "AdminPage",
                     "DAS12999",
-                    "Delete_Newly_Created_Project",
-                    "Delete_Newly_Created_List",
+                    "Cleanup",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {
@@ -226,7 +226,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("All Mailboxes", "Mailboxes", "003F5D8E1A844B1FAA5@bclabs.local (Hunter, Melanie)", "1 mailbox will be added", "1 object queued for onboarding, 0 objects offboarded", null)]
         [NUnit.Framework.TestCaseAttribute("All Devices", "Users", "ADC714277 (Dina Q. Knight)", "1 user will be added", "1 object queued for onboarding, 0 objects offboarded", null)]
@@ -265,7 +265,7 @@ this.FeatureBackground();
                     "AdminPage",
                     "DAS12999",
                     "DAS13199",
-                    "Delete_Newly_Created_Project",
+                    "Cleanup",
                     "Projects"};
             if ((exampleTags != null))
             {
@@ -347,7 +347,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("DAS13530")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChangingBucketFromUseEvergreenBucketsToCloneEvergreenBuckets()
         {
             System.Exception lastException = null;
@@ -392,7 +392,7 @@ this.FeatureBackground();
                         "DAS13973",
                         "DAS13530",
                         "Projects",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 85
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -497,7 +497,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13530")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoAdditionalCapacityUnitsAreCreatedWhenChangingCapacityUnitsMode()
         {
             System.Exception lastException = null;
@@ -534,7 +534,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS13530",
                         "Projects",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 129
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

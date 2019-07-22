@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16816 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS16816 @Cleanup @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User clicks "Users" on the left-hand menu
 	When Evergreen QueryStringURL is entered for Simple QueryType
@@ -56,7 +56,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed
 	When User clicks Create button on the Create Project page
 	Then Success message is displayed and contains "The project has been created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS15666 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS15666 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenPr
 	When User enters "15666Project" text in the Search field for "Project" column
 	Then "TRUE" content is displayed in "Evergreen" column 
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Delete_Newly_Created_List @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS17122 @Cleanup @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button

@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("DAS12952")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("DAS15551")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesStaticLists()
         {
             System.Exception lastException = null;
@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "DAS12952",
                         "DAS14222",
                         "DAS15551",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -228,7 +228,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12952")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("DAS15551")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForDependenciesLists()
         {
             System.Exception lastException = null;
@@ -269,7 +269,7 @@ this.FeatureBackground();
                         "DAS12952",
                         "DAS14222",
                         "DAS15551",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 43
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -388,7 +388,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12578")]
         [NUnit.Framework.CategoryAttribute("DAS14222")]
         [NUnit.Framework.CategoryAttribute("DAS15551")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckDisplayingListDeletionWarningMessageForTwoDependenciesLists()
         {
             System.Exception lastException = null;
@@ -427,7 +427,7 @@ this.FeatureBackground();
                         "DAS12578",
                         "DAS14222",
                         "DAS15551",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 88
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -520,7 +520,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12536")]
         [NUnit.Framework.CategoryAttribute("DAS12791")]
         [NUnit.Framework.CategoryAttribute("DAS12952")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicAndStaticLists()
         {
             System.Exception lastException = null;
@@ -558,7 +558,7 @@ this.FeatureBackground();
                         "DAS12536",
                         "DAS12791",
                         "DAS12952",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 123
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -86,8 +86,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12892")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnlyFilteredListObjectsAreUsedAsAScopeOfProject()
         {
@@ -123,8 +123,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS12892",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_List",
+                        "Cleanup",
+                        "Cleanup",
                         "Projects"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -204,7 +204,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("UpdatingName")]
         [NUnit.Framework.CategoryAttribute("DAS13096")]
         [NUnit.Framework.CategoryAttribute("DAS15994")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatProjectNameEditedInSeniorIsUpdatedInAdminTab()
@@ -243,7 +243,7 @@ this.FeatureBackground();
                         "UpdatingName",
                         "DAS13096",
                         "DAS15994",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Projects",
                         "Not_Run"});
 #line 39
@@ -328,8 +328,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12776")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForDynamicList()
         {
             System.Exception lastException = null;
@@ -366,8 +366,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS12776",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 73
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -494,8 +494,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12776")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatScopeChangesSelectionIsDisabledAfterClickUpdateForStaticList()
         {
             System.Exception lastException = null;
@@ -533,8 +533,8 @@ this.FeatureBackground();
                         "Projects",
                         "DAS12776",
                         "DAS13973",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 125
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
         [NUnit.Framework.CategoryAttribute("DAS13421")]
         [NUnit.Framework.CategoryAttribute("DAS12788")]
         [NUnit.Framework.CategoryAttribute("Teams")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Team")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_AddingBucketsToTheTeam()
         {
             System.Exception lastException = null;
@@ -127,7 +127,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Teams
                         "DAS13421",
                         "DAS12788",
                         "Teams",
-                        "Delete_Newly_Created_Team"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

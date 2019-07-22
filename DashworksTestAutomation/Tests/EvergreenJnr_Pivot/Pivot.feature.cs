@@ -752,7 +752,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Pivot")]
         [NUnit.Framework.CategoryAttribute("DAS14224")]
         [NUnit.Framework.CategoryAttribute("DAS14413")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatPivotsAreNotShownInTheListToSelectOnScopeChangesPage()
         {
             System.Exception lastException = null;
@@ -789,7 +789,7 @@ this.FeatureBackground();
                         "Pivot",
                         "DAS14224",
                         "DAS14413",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 200
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -4312,7 +4312,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15139")]
         [NUnit.Framework.CategoryAttribute("DAS13833")]
         [NUnit.Framework.CategoryAttribute("DAS13843")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatThePivotPanelShowNoFiltersAppliedIfThatWereAppliedToTheCustomList()
         {
             System.Exception lastException = null;
@@ -4350,7 +4350,7 @@ this.FeatureBackground();
                         "DAS15139",
                         "DAS13833",
                         "DAS13843",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1060
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -4955,7 +4955,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11103")]
         [NUnit.Framework.CategoryAttribute("DAS11264")]
         [NUnit.Framework.CategoryAttribute("DAS11360")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Babel(Engl: Application Readiness", "Last Seen Date", "OS Branch", "Devices_List_11103", "Application Compliance", "Red", "Operating System", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "App Count (Entitled)", "Domain", "Dashworks First Seen", "Users_List_11103", "Compliance", "Red", "User", null)]
         [NUnit.Framework.TestCaseAttribute("Mailboxes", "Alias", "Owner City", "Created Date", "Alias", "Mailboxes_List_11103", "Enabled", "TRUE", "Mailbox", null)]
@@ -4996,7 +4996,7 @@ this.FeatureBackground();
                     "DAS11103",
                     "DAS11264",
                     "DAS11360",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -5094,7 +5094,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13819")]
         [NUnit.Framework.CategoryAttribute("DAS13818")]
         [NUnit.Framework.CategoryAttribute("DAS13817")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatAggregateFunctionContainsCorrectValues()
         {
             System.Exception lastException = null;
@@ -5132,7 +5132,7 @@ this.FeatureBackground();
                         "DAS13819",
                         "DAS13818",
                         "DAS13817",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 1295
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

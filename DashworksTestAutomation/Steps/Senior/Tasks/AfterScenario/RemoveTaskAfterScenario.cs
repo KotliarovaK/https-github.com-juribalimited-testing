@@ -21,8 +21,8 @@ namespace DashworksTestAutomation.Steps.Senior.Tasks.AfterScenario
             _tasks = tasks;
         }
 
-        [AfterScenario("Delete_Newly_Created_Task")]
-        public void Delete_Newly_Created_Task()
+        [AfterScenario("Cleanup")]
+        public void DeleteNewlyCreatedTask()
         {
             if (_tasks.Value.Any())
                 foreach (TaskPropertiesDto task in _tasks.Value)

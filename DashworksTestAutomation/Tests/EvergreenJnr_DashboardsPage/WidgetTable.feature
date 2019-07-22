@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14685 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14685 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreatingTableWidget
 	When Dashboard with "Dashboard for DAS14685" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -16,7 +16,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsWhenCreating
 	Then There are no errors in the browser console
 	And User sees widget with the next name "WidgetForDAS14685" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14920 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashboardWidgetThatUsesBooleanField
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName           |
@@ -47,7 +47,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	Then "12,100" count is displayed for "False" in the table Widget
 	And "5,179" count is displayed for "True" in the table Widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16073 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16073 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	When Dashboard with "Dashboard for DAS16073" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -61,7 +61,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly
 	Then link is not displayed for the "WIN-43TMG2KMRBI" value in the Widget
 	Then link is not displayed for the "WIN81PRO" value in the Widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetValuesLeadsToApplicationsListFilteredPage
 	When Dashboard with "Dashboard for DAS16069_1" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -91,7 +91,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetDisplayedFullyInPrevie
 	And Table widget displayed inside preview pane correctly
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS16275 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                                        |
@@ -121,7 +121,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckCapacitySlotsDisplayOrderInDashboards
 	| Slot 2018-11-01 - 2020-12-26  |
 	| Slot 2018-10-01 to 2018-12-31 |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15826 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                   |
@@ -156,7 +156,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckRingsDisplayOrderInAWidgetOnDashboard
 	| Unassigned       |
 	| Empty            |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15582 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15582 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereThereAreNoColumnsAvailableShowsWarning
 	When Dashboard with "Dashboard for DAS15582" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -168,7 +168,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionWhereTh
 	And User selects "Sum" as Widget Aggregate Function
 	Then User sees "There are no fields available for this aggregate function" warning text below Lists field
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAggregateFunctionIsSelected
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenFirstAgg
 	| Last Logon Date First ASC  |
 	| Last Logon Date First DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenLastAggregateFunctionIsSelected
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                   |

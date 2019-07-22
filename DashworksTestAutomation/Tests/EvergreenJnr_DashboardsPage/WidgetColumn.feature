@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16278 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16278 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -55,7 +55,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckStatusDisplayOrderForColumnWidget
 	| Onboarded     |
 	| Not Onboarded |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS15780 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15780 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverityOrdering
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -85,7 +85,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatReadinessWidgetHasCorrectseverity
 	| Green        |
 	| Grey         |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	When Dashboard with "Dashboard12983" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeAdded
 	| Other      |
 	| OS X 10.5  |
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12983 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColumnWidgetCanBeEdited
 	When Dashboard with "Dashboard12983" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page

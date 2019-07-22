@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS13149")]
         [NUnit.Framework.CategoryAttribute("DAS13147")]
         [NUnit.Framework.CategoryAttribute("DAS15827")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNewSlotIsSuccessfullyCreatedUsingExistingDisplayName()
         {
             System.Exception lastException = null;
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS13149",
                         "DAS13147",
                         "DAS15827",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -229,7 +229,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13955")]
         [NUnit.Framework.CategoryAttribute("DAS13681")]
         [NUnit.Framework.CategoryAttribute("DAS14208")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCorrectlyLanguageIsDisplayedForSlotsAfterChangingOrRemovingLanguage()
         {
             System.Exception lastException = null;
@@ -268,7 +268,7 @@ this.FeatureBackground();
                         "DAS13955",
                         "DAS13681",
                         "DAS14208",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 44
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -398,7 +398,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13661")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCreatedSlotWithSelectedTypeTeamsAndRequestTypesIsDisplayedWithCorrectlyValue()
         {
             System.Exception lastException = null;
@@ -435,7 +435,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS13661",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 96
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -488,7 +488,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13417")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatNoUnitsOptionsWasAddedToCapacityUnitsFilter()
         {
             System.Exception lastException = null;
@@ -524,7 +524,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS13417",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 111
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -199,8 +199,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13110")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesDynamicListAsAScope()
         {
@@ -237,8 +237,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS13110",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
+                        "Cleanup",
                         "Projects"});
 #line 37
 this.ScenarioInitialize(scenarioInfo);
@@ -527,8 +527,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13110")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatErrorIsNotDisplayedWhenForProjectsUsesStaticListAsAScope()
         {
             System.Exception lastException = null;
@@ -565,8 +565,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS13110",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 166
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -848,7 +848,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12955")]
         [NUnit.Framework.CategoryAttribute("DAS12820")]
         [NUnit.Framework.CategoryAttribute("DAS11978")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckDefaultSortOrderForQueueAndHistoryTab()
         {
             System.Exception lastException = null;
@@ -886,7 +886,7 @@ this.FeatureBackground();
                         "DAS12955",
                         "DAS12820",
                         "DAS11978",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 287
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

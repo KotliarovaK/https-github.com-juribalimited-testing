@@ -664,7 +664,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13259")]
         [NUnit.Framework.CategoryAttribute("DAS13260")]
         [NUnit.Framework.CategoryAttribute("DAS13263")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001PSUMZYOW581", "User Scheduled Test (Jo)", "Two", "Radio Non Rag only Comp", "Not Applicable", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "003F5D8E1A844B1FAA5", "User Scheduled Test (Jo)", "Two", "Radio Non Rag only User", "Not Applicable", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "7zip", "User Scheduled Test (Jo)", "Two", "Radio Non Rag only App", "Not Applicable", null)]
@@ -708,7 +708,7 @@ this.FeatureBackground();
                     "DAS13259",
                     "DAS13260",
                     "DAS13263",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -797,7 +797,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12946")]
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13258")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "001PSUMZYOW581", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "002B5DC7D4D34D5C895", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "20040610sqlserverck", null)]
@@ -838,7 +838,7 @@ this.FeatureBackground();
                     "DAS12946",
                     "DAS12864",
                     "DAS13258",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -908,7 +908,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ActionsPanel")]
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12946")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Compliance", "Red", "9174", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Compliance", "Red", "9438", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Compliance", "Red", "181", null)]
@@ -947,7 +947,7 @@ this.FeatureBackground();
                     "EvergreenJnr_ActionsPanel",
                     "BulkUpdate",
                     "DAS12946",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -3426,7 +3426,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13281")]
         [NUnit.Framework.CategoryAttribute("DAS13284")]
         [NUnit.Framework.CategoryAttribute("DAS13285")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("00HA7MKAVVFDAV", "1 of 1 object was in the selected project and has been queued", null)]
         [NUnit.Framework.TestCaseAttribute("00I0COBFWHOF27", "0 of 1 object was in the selected project and has been queued", null)]
         public virtual void EvergreenJnr_DevicesList_ChecksThatDllOptionsAreDisplayedCorrectly(string rowName, string messageText, string[] exampleTags)
@@ -3466,7 +3466,7 @@ this.FeatureBackground();
                     "DAS13281",
                     "DAS13284",
                     "DAS13285",
-                    "Delete_Newly_Created_User"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -4615,7 +4615,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13291")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -4652,7 +4652,7 @@ this.FeatureBackground();
                         "DAS12864",
                         "DAS13291",
                         "DAS14127",
-                        "Delete_Newly_Created_User"});
+                        "Cleanup"});
 #line 1463
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

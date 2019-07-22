@@ -88,9 +88,12 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Project
             Assert.IsTrue(page.ActiveProjectByName(pName), $"{pName} is not displayed on the Project page");
         }
 
-        [AfterScenario("Delete_Newly_Created_Project")]
-        public void Delete_Newly_Created_Project()
+        [AfterScenario("Cleanup")]
+        public void DeleteNewlyCreatedProject()
         {
+            if (!_projects.Value.Any())
+                return;
+
             var requestUri = $"{UrlProvider.RestClientBaseUrl}admin/projects/deleteProjects";
 
             foreach (var projectName in _projects.Value)

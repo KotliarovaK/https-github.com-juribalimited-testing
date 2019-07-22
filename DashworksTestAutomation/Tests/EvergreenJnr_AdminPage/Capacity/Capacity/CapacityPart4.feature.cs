@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS13928")]
         [NUnit.Framework.CategoryAttribute("DAS14614")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLanguageDoesNotHaveTranslations()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "EvergreenJnr_AdminPage",
                         "DAS13928",
                         "DAS14614",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -260,8 +260,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("DAS14103")]
         [NUnit.Framework.CategoryAttribute("DAS14172")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits()
         {
@@ -299,8 +299,8 @@ this.FeatureBackground();
                         "Capacity",
                         "DAS14103",
                         "DAS14172",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Capacity_Unit",
+                        "Cleanup",
+                        "Cleanup",
                         "Not_Run"});
 #line 46
 this.ScenarioInitialize(scenarioInfo);
@@ -550,7 +550,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13961")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged()
         {
             System.Exception lastException = null;
@@ -587,7 +587,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Units",
                         "DAS13961",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 149
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

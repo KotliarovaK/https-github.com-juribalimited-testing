@@ -50,7 +50,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckEllipsisMenuContentForSection
 	| Move to position |
 	| Delete           |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14358 @DAS12989 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14358 @DAS12989 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIntoSameSection
 	When Dashboard with "Dashboard for DAS12989" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -80,7 +80,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularWidgetCanBeDuplicatedIn
 	| Section2_WidgetForDAS12989_2 |
 	And User sees number of Widgets increased by "1" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Sections @DAS14358 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBeDuplicated
 	When Dashboard with "Dashboard for DAS14358" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -94,7 +94,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatParticularSectionWithWidgetsCanBe
 	Then User sees number of Sections increased by "1" on Dashboards page
 	And User sees number of Widgets increased by "1" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14586 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14586 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatDuplicatingWorksForWidgetsCreatedForAllLists
 	When Dashboard with "<DashboardName>" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -116,7 +116,7 @@ Examples:
 	| Dashboard for DAS14586_applications | Bar    | All Applications Widget For DAS_14586 | All Applications | Application   |              | Count            | Count DESC                     | All Applications Widget For DAS_145862 | true       |
 	| Dashboard for DAS14586_mailboxes    | Column | All Mailboxes Widget For DAS_14586    | All Mailboxes    | Email Address | Mail Server  | Count distinct   | Mail Server Count distinct ASC | All Mailboxes Widget For DAS_145862    | true       |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14728 @DAS14263 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14728 @DAS14263 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicatingSection
 	When Dashboard with "Dashboard for DAS14728" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -137,7 +137,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetLegendCopiedWhenDuplicating
 	When User clicks the "CANCEL" button on Dashboard Details
 	Then Team/User section in not displayed on Dashboard Details
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12978 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12978 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	When Dashboard with "Dashboard for DAS12978" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -175,7 +175,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheEditMode
 	| WidgetTitles               |
 	| WidgetForDAS12978_2_Edited |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12977 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS12977 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When Dashboard with "Dashboard for DAS12977" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -200,7 +200,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatDashboardIsInTheReadOnlyMode
 	When User clicks Dashboards Details icon on Dashboards page
 	Then User sees Dashboards context menu on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14583 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEditing
 	When Dashboard with "Dashboard for DAS14583" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -229,7 +229,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetStaysOnTopPositionAfterEdit
 	| WidgetForDAS14583_1 |
 	| WidgetForDAS14583_2 |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14855 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14855 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckWarningMessageDisplayingWhenDeletingWidget
 	When Dashboard with "Dashboard for DAS14855" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -251,7 +251,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatCorrectMessageAppearsWhenOpenning
 	Then User sees "This dashboard does not exist or you do not have access to it" text in warning message on Dashboards submenu pane
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15721 @DAS15937 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatNoMoreSectionsCanBeAddedAfter10WidgetsCreating
 	When Dashboard with "Dashboard for DAS15721" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -352,7 +352,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckMovingWidgetsBetweenSections
 	When User clicks "MOVE" button on the Move to Section Pop up
 	Then "Device Profile" Widget is displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Delete_Newly_Created_Dashboard @Not_Run
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16326 @Cleanup @Not_Run
 Scenario: EvergreenJnr_DashboardsPage_CheckErrorTextAndLinkOnTheWarningMessage
 	When Dashboard with "Dashboard_DAS16326" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -372,7 +372,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatNoConsoleErrorAppearsAndCorrectTe
 	And User sees "This widget refers to list Users List (Complex) - BROKEN LIST which has errors" text in "2" warning messages on Dashboards page
 	And User sees "This widget refers to list Application List (Complex) - BROKEN LIST which has errors" text in "3" warning messages on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15877 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 	When Dashboard with "Dashboard_DAS15877" name created via API and opened
 	And User clicks Show Dashboards panel icon on Dashboards page
@@ -385,7 +385,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSettingsDisplayedForDashboard
 	| Set default    |
 	| Delete         | 
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When User clicks "Dashboards" on the left-hand menu
 	And User clicks the "CREATE DASHBOARD" Action button
@@ -410,7 +410,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedFavorite
 	When User unfavorites "Project Summary" dashboard via context menu
 	Then Dashboard with name "Project Summary" not marked as favorite
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	When Dashboard with "Dashboard_DAS12974Default" name created via API and opened
 	And User clicks Show Dashboards panel icon on Dashboards page
@@ -423,7 +423,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatAnyDashboardCanBeMarkedAsDefault
 	Then Dashboard with name "Project Status" marked as default
 	And Dashboard with name "Dashboard_DAS12974Default" not marked as default
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	When Dashboard with "Dashboard for DAS12974SECTION" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -443,7 +443,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSectionCanBeDeleted
 	Then User sees number of Sections increased by "-1" on Dashboards page
 	And User sees number of Widgets increased by "-1" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS12974 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatErrorMessageDisplayedWhenDashboardNameExists
 	When Dashboard with "DAS12974DUPLICATED" name created via API and opened
 	When User clicks "Dashboards" on the left-hand menu

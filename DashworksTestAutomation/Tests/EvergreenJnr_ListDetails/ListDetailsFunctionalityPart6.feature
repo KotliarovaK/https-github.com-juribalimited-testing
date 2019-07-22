@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12536 @Cleanup
 Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAfterDeletingAnotherListForDynamicLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_Users_CheckThatListDeletionWarningMessageIsNotDisplayedAf
 	Then List details panel is displayed to the user
 	And no Warning message is displayed in the list details panel
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11498 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS11498 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatListDetailsPanelDisplaysIfItWasOpenedFromManageMenu
 	When User clicks "<PageName>" on the left-hand menu
 	And User clicks the Actions button
@@ -46,7 +46,7 @@ Examples:
 	| Applications | Applications DAS11498 |
 	| Mailboxes    | Mailboxes DAS11498    |
 
-@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12535 @DAS12791 @DAS12952 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS12535 @DAS12791 @DAS12952 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckThatListDetailsPanelIsDisplayedAfterSelectingManageFromListPanelMenu
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user

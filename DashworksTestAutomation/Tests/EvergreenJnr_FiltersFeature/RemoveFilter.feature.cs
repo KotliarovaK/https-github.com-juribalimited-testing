@@ -473,7 +473,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Evergreen_FiltersFeature")]
         [NUnit.Framework.CategoryAttribute("RemoveFilter")]
         [NUnit.Framework.CategoryAttribute("DAS12635")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList()
         {
             System.Exception lastException = null;
@@ -508,7 +508,7 @@ this.FeatureBackground();
                         "Evergreen_FiltersFeature",
                         "RemoveFilter",
                         "DAS12635",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 101
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

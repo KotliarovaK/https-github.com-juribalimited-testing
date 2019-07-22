@@ -88,7 +88,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
         [NUnit.Framework.CategoryAttribute("DAS12632")]
         [NUnit.Framework.CategoryAttribute("DAS13626")]
         [NUnit.Framework.CategoryAttribute("DAS14236")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCapacityUnitsCreatedCorrectly()
         {
             System.Exception lastException = null;
@@ -125,7 +125,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.CapacityUnits
                         "DAS12632",
                         "DAS13626",
                         "DAS14236",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -208,9 +208,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("DAS12632")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
-        [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
-        [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitsCreatedCorrectly()
         {
             System.Exception lastException = null;
@@ -245,9 +243,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "CapacityUnits",
                         "DAS12632",
-                        "Delete_Newly_Created_Capacity_Unit",
-                        "Do_Not_Run_With_CapacityUnits",
-                        "Set_Default_Capacity_Unit"});
+                        "Cleanup"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -335,7 +331,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("DAS13013")]
         [NUnit.Framework.CategoryAttribute("DAS12926")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatMessageAppearsWhenUserCreatesUnitWithTheSameNameInDifferentCase()
         {
             System.Exception lastException = null;
@@ -372,7 +368,7 @@ this.FeatureBackground();
                         "CapacityUnits",
                         "DAS13013",
                         "DAS12926",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 73
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @DAS12999 @DAS13420 @DAS13837 @Buckets @Delete_Newly_Created_Bucket @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Buckets @DAS12999 @DAS13420 @DAS13837 @Buckets @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User creates new Bucket via api
 	| Name        | TeamName | IsDefault |
@@ -58,7 +58,7 @@ Scenario: EvergreenJnr_AdminPage_AddingDevicesFromBuckets
 	When User moves selected objects to "Unassigned" bucket
 	Then Success message is displayed and contains "The selected devices have been added to the selected bucket" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @DAS13837 @Buckets @Delete_Newly_Created_Bucket @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @DAS12999 @DAS13420 @DAS13837 @Buckets @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	When User creates new Bucket via api
 	| Name        | TeamName | IsDefault |
@@ -119,7 +119,7 @@ Scenario: EvergreenJnr_AdminPage_AddingMailboxesFromBuckets
 	And There are no errors in the browser console
 	And Delete "TestBucket8" Bucket in the Administration
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12905 @DAS12930 @DAS13973 @Buckets @Delete_Newly_Created_Bucket @Delete_Newly_Created_Project @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @AdminPage @Projects @DAS12905 @DAS12930 @DAS13973 @Buckets @Cleanup @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatAddedObjectsThatWasUsedRemovedBucketAreDisplayedCorrectlyInProjectHistory 
 	When Project created via API and opened
 	| ProjectName  | Scope       | ProjectTemplate | Mode      |

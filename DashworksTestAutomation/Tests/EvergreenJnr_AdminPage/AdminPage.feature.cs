@@ -530,9 +530,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13073")]
         [NUnit.Framework.CategoryAttribute("DAS12999")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
-        [NUnit.Framework.CategoryAttribute("VDO")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckTheBucketStateForOnboardedObjects()
         {
             System.Exception lastException = null;
@@ -572,9 +571,8 @@ this.FeatureBackground();
                         "DAS13073",
                         "DAS12999",
                         "DAS13973",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Bucket",
-                        "VDO"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 108
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -715,8 +713,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12763")]
         [NUnit.Framework.CategoryAttribute("DAS12767")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("archived")]
         public virtual void EvergreenJnr_AdminPage_CheckDisplayingBucketsAfterCreationProjectsWithDifferentOptions()
         {
@@ -756,8 +754,8 @@ this.FeatureBackground();
                         "DAS12763",
                         "DAS12767",
                         "DAS13973",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Bucket",
+                        "Cleanup",
+                        "Cleanup",
                         "archived"});
 #line 169
 this.ScenarioInitialize(scenarioInfo);
@@ -965,7 +963,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS15989")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckThatExtraUnknownReadinessIsNotCreatedWhileImportingToANewProject()
         {
             System.Exception lastException = null;
@@ -1001,7 +999,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS15989",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 279
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1048,7 +1046,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS16089")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ImportProjectPage_CheckBannerMessageAfterImportProjectWithoutReadiness()
         {
             System.Exception lastException = null;
@@ -1084,7 +1082,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS16089",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 295
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -565,7 +565,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             DeleteAllCustomListsAfterScenarioRun();
         }
 
-        [AfterScenario("Delete_Newly_Created_List")]
+        [AfterScenario("Cleanup")]
         public void DeleteAllCustomListsAfterScenarioRun()
         {
             try

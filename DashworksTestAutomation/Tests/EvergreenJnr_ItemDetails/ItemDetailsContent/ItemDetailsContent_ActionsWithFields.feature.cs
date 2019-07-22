@@ -563,7 +563,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13892")]
         [NUnit.Framework.CategoryAttribute("DAS16824")]
         [NUnit.Framework.CategoryAttribute("DAS17093")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_UpdatingTheEvergreenBucketFieldInTheProjectsResumeWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -605,7 +605,7 @@ this.FeatureBackground();
                         "DAS13892",
                         "DAS16824",
                         "DAS17093",
-                        "Delete_Newly_Created_Bucket"});
+                        "Cleanup"});
 #line 101
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -786,7 +786,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13971")]
         [NUnit.Framework.CategoryAttribute("DAS13892")]
         [NUnit.Framework.CategoryAttribute("DAS13892")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_UpdatingTheEvergreenCapacityUnitFieldInTheProjectsResumeWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -826,7 +826,7 @@ this.FeatureBackground();
                         "DAS13971",
                         "DAS13892",
                         "DAS13892",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 192
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

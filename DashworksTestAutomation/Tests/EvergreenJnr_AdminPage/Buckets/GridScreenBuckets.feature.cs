@@ -392,7 +392,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS12939")]
         [NUnit.Framework.CategoryAttribute("Buckets")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Bucket")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckDefaultSortOrderOfBucketsAfterCreateOrUpdateOrDeleteAction()
         {
             System.Exception lastException = null;
@@ -429,7 +429,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS12939",
                         "Buckets",
-                        "Delete_Newly_Created_Bucket"});
+                        "Cleanup"});
 #line 84
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

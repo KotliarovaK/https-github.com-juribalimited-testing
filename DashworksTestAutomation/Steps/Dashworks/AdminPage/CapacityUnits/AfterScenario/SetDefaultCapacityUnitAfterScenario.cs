@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
 
         [AfterScenario("Set_Default_Capacity_Unit", Order = 0)]
         [AfterScenario("Set_Default_Capacity_Unit_With_Project", Order = 0)]
-        public void SetDefaultCapacityUnit()
+        public void Set_Default_Capacity_Unit()
         {
             if (!_capacityUnitUnassignedId.Value.Any())
                 throw new Exception("Unassigned Capacity Unit ID was not saved or set.");

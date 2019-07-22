@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS14901")]
         [NUnit.Framework.CategoryAttribute("DAS16803")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Ring")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
                         "Rings",
                         "DAS14901",
                         "DAS16803",
-                        "Delete_Newly_Created_Ring"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -179,8 +179,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS15397")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Ring")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently()
         {
             System.Exception lastException = null;
@@ -216,8 +216,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Rings",
                         "DAS15397",
-                        "Delete_Newly_Created_Ring",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 30
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

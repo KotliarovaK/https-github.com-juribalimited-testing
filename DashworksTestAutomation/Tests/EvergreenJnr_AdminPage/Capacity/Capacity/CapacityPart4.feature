@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @DAS13928 @DAS14614 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @DAS13928 @DAS14614 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectlMessageAppearsWhenDefaultLanguageDoesNotHaveTranslations
 	When Project created via API and opened
 	| ProjectName                | Scope     | ProjectTemplate | Mode               |
@@ -42,7 +42,7 @@ Scenario: EvergreenJnr_AdminPage_CheckingPercentageCapacityToReachBeforeShowingA
 	And User clicks the "UPDATE" Action button
 	Then Success message is displayed and contains "The project capacity details have been updated" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS14103 @DAS14172 @Delete_Newly_Created_Project @Delete_Newly_Created_Capacity_Unit @Not_Run
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @DAS14103 @DAS14172 @Cleanup @Cleanup @Not_Run
 Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProjectCapacityUnitsIsWorkedCorrectlyIfTheCapacityModeEqualsCapacityUnits
 	When Project created via API and opened
 	| ProjectName        | Scope      | ProjectTemplate | Mode               |
@@ -145,7 +145,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatCloningOfEvergreenCapacityUnitsToProj
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13961 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Units @DAS13961 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatOriginalCapacityUnitStoredAndDisplayedIfCapacityUnitForOnboardedObjectsWasChanged
 	When Project created via API and opened
 	| ProjectName        | Scope       | ProjectTemplate | Mode               |

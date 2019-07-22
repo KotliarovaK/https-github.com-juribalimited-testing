@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12580")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatTheSaveButtonIsNotDisplayedOnTheListPanelAfterListCreation()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListDetails
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS12580",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -174,7 +174,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS12629")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsLists_CheckThatListOwnerOfDynamicListIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -210,7 +210,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS12629",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 27
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -299,7 +299,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15569")]
         [NUnit.Framework.CategoryAttribute("DAS16403")]
         [NUnit.Framework.CategoryAttribute("DAS16407")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_ChecksThatListDetailsIsLoadedCorrectlyAfterSwitchingBetweenTabsWhileAddUserFormIsOpen()
         {
             System.Exception lastException = null;
@@ -339,7 +339,7 @@ this.FeatureBackground();
                         "DAS15569",
                         "DAS16403",
                         "DAS16407",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 62
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -430,7 +430,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS13029")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatOwnersIsDisplayedInAlphabeticalOrderOnListDetailsPage()
         {
             System.Exception lastException = null;
@@ -466,7 +466,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS13029",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 101
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

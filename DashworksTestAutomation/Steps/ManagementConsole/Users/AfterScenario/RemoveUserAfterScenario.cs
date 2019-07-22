@@ -23,8 +23,8 @@ namespace DashworksTestAutomation.Steps.ManagementConsole.Users.AfterScenario
             _users = users;
         }
 
-        [AfterScenario("Delete_Newly_Created_User")]
-        public void Delete_Newly_Created_User()
+        [AfterScenario("Cleanup")]
+        public void DeleteNewlyCreatedUser()
         {
             if (!_users.Value.Any())
                 return;

@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS13788")]
         [NUnit.Framework.CategoryAttribute("DAS14241")]
         [NUnit.Framework.CategoryAttribute("DAS17419")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTeamsCapacityUnitsColumnsOnSlotsPage()
         {
             System.Exception lastException = null;
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS13788",
                         "DAS14241",
                         "DAS17419",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -404,7 +404,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13526")]
         [NUnit.Framework.CategoryAttribute("DAS17419")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCorrectDataIsDisplayed()
         {
             System.Exception lastException = null;
@@ -442,7 +442,7 @@ this.FeatureBackground();
                         "Slots",
                         "DAS13526",
                         "DAS17419",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 101
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -548,8 +548,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13812")]
         [NUnit.Framework.CategoryAttribute("DAS13676")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Task")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheEditCapacitySlotScreenIfAnAllocatedTaskHasSinceBeenChanged()
         {
             System.Exception lastException = null;
@@ -588,8 +588,8 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS13812",
                         "DAS13676",
-                        "Delete_Newly_Created_Project",
-                        "Delete_Newly_Created_Task"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 137
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	And User removes selected item
 
 #Remove Pre-requisites after adding it to Gold data
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Cleanup @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
 	When User clicks "Users" on the left-hand menu
@@ -325,7 +325,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks the "CANCEL" Action button
 	Then Actions page is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @Cleanup @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Pre-requisites:
 	When User clicks "Devices" on the left-hand menu

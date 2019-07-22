@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _client = client;
         }
 
-        [AfterScenario("Delete_Newly_Created_Capacity_Unit", Order = 10)]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedCapacityUnit()
         {
             try

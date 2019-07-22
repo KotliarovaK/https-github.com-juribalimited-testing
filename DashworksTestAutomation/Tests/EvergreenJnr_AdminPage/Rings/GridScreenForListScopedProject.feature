@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @DAS15180 @DAS15826 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14695 @DAS14697 @DAS15180 @DAS15826 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	When Project created via API and opened
 	| ProjectName   | Scope       | ProjectTemplate | Mode               |
@@ -74,7 +74,7 @@ Scenario: EvergreenJnr_AdminPage_CheckGridScreenForDeviceScopedProject
 	Then Warning message with "This ring will be permanently deleted and any objects within it reassigned to the default ring" text is displayed on the Admin page
 	When User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14705 @Delete_Newly_Created_Ring
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS12452 @DAS14705 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckGridScreenForMailboxScopedProject
 	When User clicks Admin on the left-hand menu
 	And User clicks "Projects" link on the Admin page

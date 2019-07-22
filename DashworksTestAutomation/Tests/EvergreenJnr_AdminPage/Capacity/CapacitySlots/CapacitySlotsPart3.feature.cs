@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS13779")]
         [NUnit.Framework.CategoryAttribute("DAS14176")]
         [NUnit.Framework.CategoryAttribute("DAS14177")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplicateOverrideDate()
         {
             System.Exception lastException = null;
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS13779",
                         "DAS14176",
                         "DAS14177",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -230,7 +230,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13442")]
         [NUnit.Framework.CategoryAttribute("DAS13440")]
         [NUnit.Framework.CategoryAttribute("DAS17418")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverrideDatesForOneSlot()
         {
             System.Exception lastException = null;
@@ -270,7 +270,7 @@ this.FeatureBackground();
                         "DAS13442",
                         "DAS13440",
                         "DAS17418",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 46
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

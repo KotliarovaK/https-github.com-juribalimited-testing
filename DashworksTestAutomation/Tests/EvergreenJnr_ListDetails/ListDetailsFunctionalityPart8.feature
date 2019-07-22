@@ -82,7 +82,7 @@ Examples:
 	| Applications | Application   | 0004 - Adobe Acrobat Reader 5.0.5 Francais | 0036 - Microsoft Access 97 SR-2 English | 20040610sqlserverck              | \t0036 - Microsoft Access 97 SR-2 English\tMicrosoft\t8.0 \t20040610sqlserverck\tMicrosoft\t1.0.0                                                                                                          |
 	| Mailboxes    | Email Address | 000F977AC8824FE39B8@bclabs.local           | 002B5DC7D4D34D5C895@bclabs.local        | 0072B088173449E3A93@bclabs.local | \t002B5DC7D4D34D5C895@bclabs.local\tExchange 2013\tbc-exch13\tUserMailbox\tCollor, Christopher \t0072B088173449E3A93@bclabs.local\tExchange 2007\tbc-exch07\tUserMailbox\tRegister, Donna                  |
 
-@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS16332 @Delete_Newly_Created_List
+@Evergreen @AllLists @EvergreenJnr_ListDetails @ListDetailsFunctionality @DAS16332 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPane
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button

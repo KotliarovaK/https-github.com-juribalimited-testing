@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15737 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15737 @DAS15662 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadinessSplitByInDropdown
 	When User add following columns using URL to the "Users" page:
 	| ColumnName                 |
@@ -25,7 +25,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatColourSchemeIsDisplayedForReadine
 	And "Data Label" checkbox is not displayed on the Create Widget page
 	When User clicks the "CREATE" Action button
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16069 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceListFilteredPage
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button
@@ -67,7 +67,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetValuesLeadsToDeviceList
 	| Owner Display Name                   |
 	| 1803: Pre-Migration \ Scheduled Date |	
 	
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15920 @DAS15662 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumnsDisplayedCorrectlyOnDashboard
 	When User add following columns using URL to the "Users" page:
 	| ColumnName          |
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHavingComplianceColumns
 	Then Card "LineWidgetForDas15920" Widget is displayed to the user
 	And Line chart displayed in "LineWidgetForDas15920" widget
 
-@Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @DAS15544 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatLineWidgetHasCorrectChronologicalOrder
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
