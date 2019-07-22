@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	Then Page not found displayed for the user
 	And There are only page not found errors in console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS16137
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS16137 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithoutPermissionsNavigatesToAdminPages
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

@@ -90,6 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1330", "CQV0623434", "Admin IT", "Administrative Team", "Complete", null)]
         [NUnit.Framework.TestCaseAttribute("DAS1331", "BBZ877343", "Admin IT", "Retail Team", "Failed", null)]
@@ -134,6 +135,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.ActionsPanel
                     "DAS13289",
                     "DAS13287",
                     "DAS14127",
+                    "Cleanup",
                     "Not_Run"};
             if ((exampleTags != null))
             {
@@ -328,6 +330,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13288")]
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS13280", "CQV0623434", "Complete", "Started", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13281", "BBZ877343", "Failed", "Not Applicable", null)]
@@ -371,6 +374,7 @@ this.FeatureBackground();
                     "DAS13288",
                     "DAS13289",
                     "DAS13287",
+                    "Cleanup",
                     "Not_Run"};
             if ((exampleTags != null))
             {
@@ -570,6 +574,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13290")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly()
         {
@@ -607,6 +612,7 @@ this.FeatureBackground();
                         "DAS12864",
                         "DAS13290",
                         "DAS14127",
+                        "Cleanup",
                         "Not_Run"});
 #line 190
 this.ScenarioInitialize(scenarioInfo);

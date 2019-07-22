@@ -604,7 +604,7 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateAndCreateActionsFunctionalityForAuto
 	When User clicks the "UPDATE" Action button
 	Then Error message with "This automation is currently running" text is displayed
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @DAS17003 @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_ChechAutomationsPermissions
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

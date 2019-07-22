@@ -93,6 +93,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.ActionsPanel
         [NUnit.Framework.CategoryAttribute("DAS13273")]
         [NUnit.Framework.CategoryAttribute("DAS13276")]
         [NUnit.Framework.CategoryAttribute("DAS13275")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_ChecksThatActionsPanelIsWorkingCorrectlyWhenSelectedTaskThatHasAnTeamOrOwner()
         {
             System.Exception lastException = null;
@@ -133,7 +134,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ActionsPanel.ActionsPanel
                         "DAS13272",
                         "DAS13273",
                         "DAS13276",
-                        "DAS13275"});
+                        "DAS13275",
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -298,6 +300,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("BulkUpdate")]
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13280")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatClearingAValueResetsSubsequentValuesr()
         {
             System.Exception lastException = null;
@@ -332,7 +335,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "BulkUpdate",
                         "DAS12864",
-                        "DAS13280"});
+                        "DAS13280",
+                        "Cleanup"});
 #line 77
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -693,6 +697,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13289")]
         [NUnit.Framework.CategoryAttribute("DAS13287")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         [NUnit.Framework.TestCaseAttribute("DAS1321", "CQV0623434", "Complete", "Admin IT", "Started", "Administrative Team", null)]
         [NUnit.Framework.TestCaseAttribute("DAS1322", "BBZ877343", "Failed", "Admin IT", "Not Applicable", "Retail Team", null)]
@@ -737,6 +742,7 @@ this.FeatureBackground();
                     "DAS13289",
                     "DAS13287",
                     "DAS14127",
+                    "Cleanup",
                     "Not_Run"};
             if ((exampleTags != null))
             {

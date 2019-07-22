@@ -377,6 +377,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13265")]
         [NUnit.Framework.CategoryAttribute("DAS13278")]
         [NUnit.Framework.CategoryAttribute("DAS14448")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("DAS13264_Devices", "Devices", "Hostname", "00CWZRC4UK6W20", "Babel (English, German and French)", "Initiation", "Scheduled Date", "Remove", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13264_Users", "Users", "Username", "0088FC8A50DD4344B92", "Barry\'s User Project", "Project Dates", "Scheduled Date", "Remove", null)]
         [NUnit.Framework.TestCaseAttribute("DAS13264_Applications", "Applications", "Application", "0047 - Microsoft Access 97 SR-2 Francais", "Barry\'s User Project", "Audit & Configuration", "Package Delivery Date", "Remove", null)]
@@ -418,7 +419,8 @@ this.FeatureBackground();
                     "DAS13264",
                     "DAS13265",
                     "DAS13278",
-                    "DAS14448"};
+                    "DAS14448",
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

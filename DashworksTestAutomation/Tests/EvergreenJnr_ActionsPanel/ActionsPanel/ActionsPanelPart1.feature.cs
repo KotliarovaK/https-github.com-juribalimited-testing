@@ -151,6 +151,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13262")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatUserWithoutRelevantRolesCannotSeeBulkUpdateOptionInActionsPanel()
         {
             System.Exception lastException = null;
@@ -186,7 +187,8 @@ this.FeatureBackground();
                         "EvergreenJnr_ActionsPanel",
                         "DAS12864",
                         "DAS12932",
-                        "DAS13262"});
+                        "DAS13262",
+                        "Cleanup"});
 #line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -312,6 +314,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13261")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatUserWithoutJustTheProjectAdministratorRoleCanStillBulkUpdateObjects()
         {
             System.Exception lastException = null;
@@ -348,7 +351,8 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS12864",
                         "DAS12932",
-                        "DAS13261"});
+                        "DAS13261",
+                        "Cleanup"});
 #line 66
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -487,6 +491,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12932")]
         [NUnit.Framework.CategoryAttribute("DAS13261")]
         [NUnit.Framework.CategoryAttribute("DAS16826")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatUserWithoutJustTheProjectBulkUpdaterRoleCanStillBulkUpdateObjects()
         {
             System.Exception lastException = null;
@@ -524,7 +529,8 @@ this.FeatureBackground();
                         "DAS12864",
                         "DAS12932",
                         "DAS13261",
-                        "DAS16826"});
+                        "DAS16826",
+                        "Cleanup"});
 #line 119
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

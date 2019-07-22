@@ -72,7 +72,7 @@ Examples:
 	| Users        | Username    | 00DB4000EDD84951993              | Text User- Email Address        |
 	| Applications | Application | 32VerSee v.231 en (C:\32VerSee\) | Text Application- Future Groups |
 
-@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448
+@Evergreen @AllLists @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13264 @DAS13265 @DAS13278 @DAS14448 @Cleanup
 Scenario Outline: EvergreenJnr_AllLists_CheckThatUpdateAndCancelButtonsAreEnabledWhenUserLoggedWithProjectBulkUpdaterRole
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

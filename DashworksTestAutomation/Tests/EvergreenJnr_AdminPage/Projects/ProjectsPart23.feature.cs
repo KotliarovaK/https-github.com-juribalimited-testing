@@ -431,6 +431,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16137")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithoutPermissionsNavigatesToAdminPages()
         {
             System.Exception lastException = null;
@@ -466,7 +467,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Projects",
                         "Senior_Projects",
-                        "DAS16137"});
+                        "DAS16137",
+                        "Cleanup"});
 #line 94
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
