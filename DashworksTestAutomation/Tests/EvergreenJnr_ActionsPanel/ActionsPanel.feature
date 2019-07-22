@@ -1484,8 +1484,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                               |
-	| Windows7Mi: Perform User Acceptance Test |
+	| ColumnName                                                      |
+	| Windows7Mi: User Acceptance Test \ Perform User Acceptance Test |
 	And User perform search by "LZI970280"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -1508,7 +1508,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
-	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	Then "Failed" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 #returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -1525,7 +1525,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Failed" content is displayed for "Windows7Mi: Perform User Acceptance Test" column
+	Then "Failed" content is displayed for "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 	When User clicks the Logout button
 	Then User is logged out
 	When User clicks on the Login link

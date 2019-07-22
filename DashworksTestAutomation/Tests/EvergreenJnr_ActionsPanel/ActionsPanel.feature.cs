@@ -4718,7 +4718,7 @@ this.FeatureBackground();
             TechTalk.SpecFlow.Table table99 = new TechTalk.SpecFlow.Table(new string[] {
                         "ColumnName"});
             table99.AddRow(new string[] {
-                        "Windows7Mi: Perform User Acceptance Test"});
+                        "Windows7Mi: User Acceptance Test \\ Perform User Acceptance Test"});
 #line 1486
  testRunner.When("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table99, "When ");
 #line 1489
@@ -4769,8 +4769,8 @@ this.FeatureBackground();
 #line 1510
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1511
- testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: Perform User Acceptance Test\" colum" +
-                    "n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Failed\" content is displayed in \"Windows7Mi: User Acceptance Test \\ Perform User" +
+                    " Acceptance Test\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1513
  testRunner.When("User selects \"Bulk update\" in the Actions dropdown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1514
@@ -4804,8 +4804,8 @@ this.FeatureBackground();
 #line 1527
  testRunner.When("User refreshes agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1528
- testRunner.Then("\"Failed\" content is displayed for \"Windows7Mi: Perform User Acceptance Test\" colu" +
-                    "mn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"Failed\" content is displayed for \"Windows7Mi: User Acceptance Test \\ Perform Use" +
+                    "r Acceptance Test\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 1529
  testRunner.When("User clicks the Logout button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 1530
