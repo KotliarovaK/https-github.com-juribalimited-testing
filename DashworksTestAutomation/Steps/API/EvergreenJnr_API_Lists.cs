@@ -47,7 +47,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listType", "dynamic");
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
+            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
 
             var response = _client.Value.Post(request);
 
@@ -128,7 +128,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listName", listName);
             request.AddParameter("listType", "Static");
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
+            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
 
             var response = _client.Value.Post(request);
 
@@ -174,7 +174,7 @@ namespace DashworksTestAutomation.Steps.API
             request.AddParameter("listType", "Static");
             request.AddParameter("queryString", queryString);
             request.AddParameter("sharedAccessType", "Private");
-            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.UserName));
+            request.AddParameter("userId", DatabaseWorker.GetUserIdByLogin(_user.Username));
 
             response = _client.Value.Put(request);
 

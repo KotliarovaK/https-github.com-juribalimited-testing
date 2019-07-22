@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
@@ -319,6 +320,26 @@ namespace DashworksTestAutomation.Helpers
         {
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTaskLanguage] where [TaskID] = {taskId}");
             DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTasks] where [TaskID] = {taskId}");
+        }
+
+        #endregion
+
+        #region User
+
+        public static string GetUserId(string name)
+        {
+            var userId =
+                DatabaseHelper.ExecuteReader(
+                    $"select [UserId] from [aspnetdb].[dbo].[aspnet_Users] where [LoweredUserName] = '{name}'",
+                    0)[0];
+            return userId;
+        }
+
+        public static void DeleteUser(UserDto user)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_UsersInRoles] where [UserId] = '{user.Id}'");
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Membership] where [UserId] = '{user.Id}'");
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Users] where [UserName] = '{user.Username}'");
         }
 
         #endregion
