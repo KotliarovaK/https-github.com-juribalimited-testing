@@ -377,6 +377,13 @@ namespace DashworksTestAutomation.Extensions
             action.KeyUp(Keys.Shift).Build().Perform();
         }
 
+        public static void SearchOnPage(this RemoteWebDriver driver)
+        {
+            Actions action = new Actions(driver);
+            action.KeyDown(Keys.Control).SendKeys("F").Build().Perform();
+            action.KeyUp(Keys.Control).Build().Perform();
+        }
+
         #endregion Actions
 
         #region Actions with Javascript

@@ -4,10 +4,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
+using DashworksTestAutomation.DTO.Projects;
 using DashworksTestAutomation.Providers;
 using DashworksTestAutomation.Utils;
 using TechTalk.SpecFlow;
@@ -294,6 +296,50 @@ namespace DashworksTestAutomation.Helpers
 
             return DatabaseHelper.ExecuteReader(
                 $"select [ListId] from [DesktopBI].[dbo].[EvergreenList] where [ListName]='{listName}'", 0).LastOrDefault();
+        }
+
+        #endregion
+
+        #region Task
+
+        public static string GetTaskId(TaskPropertiesDto task)
+        {
+            var query =
+                $"select ptl.TaskId from [PM].[dbo].[ProjectTaskLanguage] as ptl join[PM].[dbo].[ProjectTasks] as pt on ptl.TaskId = pt.TaskID where pt.ProjectID = {task.ProjectId} and ptl.[TaskName] = '{task.Name}'";
+            var taskId =
+                DatabaseHelper.ExecuteReader(query, 0).LastOrDefault();
+            return taskId;
+        }
+
+        public static void DeleteTask(TaskPropertiesDto task)
+        {
+            DeleteTaskFromDb(task.GetId());
+        }
+
+        private static void DeleteTaskFromDb(string taskId)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTaskLanguage] where [TaskID] = {taskId}");
+            DatabaseHelper.ExecuteQuery($"delete from [PM].[dbo].[ProjectTasks] where [TaskID] = {taskId}");
+        }
+
+        #endregion
+
+        #region User
+
+        public static string GetUserId(string name)
+        {
+            var userId =
+                DatabaseHelper.ExecuteReader(
+                    $"select [UserId] from [aspnetdb].[dbo].[aspnet_Users] where [LoweredUserName] = '{name}'",
+                    0)[0];
+            return userId;
+        }
+
+        public static void DeleteUser(UserDto user)
+        {
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_UsersInRoles] where [UserId] = '{user.Id}'");
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Membership] where [UserId] = '{user.Id}'");
+            DatabaseHelper.ExecuteQuery($"delete from [aspnetdb].[dbo].[aspnet_Users] where [UserName] = '{user.Username}'");
         }
 
         #endregion

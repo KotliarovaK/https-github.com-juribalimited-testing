@@ -23,9 +23,6 @@ namespace DashworksTestAutomation.Pages.Evergreen.ProfileDetailsPages
         [FindsBy(How = How.XPath, Using = ".//button/i[@class='material-icons mat-clear']")]
         public IWebElement CloseMessageButton { get; set; }
 
-        [FindsBy(How = How.XPath, Using = ".//body")]
-        public IWebElement BodyContainer { get; set; }
-
         public override List<By> GetPageIdentitySelectors()
         {
             Driver.WaitForDataLoading();

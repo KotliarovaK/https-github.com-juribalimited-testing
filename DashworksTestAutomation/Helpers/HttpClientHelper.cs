@@ -45,7 +45,7 @@ namespace DashworksTestAutomation.Helpers
                         new KeyValuePair<string, string>("__VIEWSTATEGENERATOR", auth.ViewstateGenerator),
                         new KeyValuePair<string, string>("__VIEWSTATE", auth.Viewstate),
                         new KeyValuePair<string, string>("__EVENTVALIDATION", auth.Eventvalidation),
-                        new KeyValuePair<string, string>("TB_UserName", credentials.UserName),
+                        new KeyValuePair<string, string>("TB_UserName", credentials.Username),
                         new KeyValuePair<string, string>("TB_Password", credentials.Password),
                         new KeyValuePair<string, string>("Btn_Login", "Login")
                     });

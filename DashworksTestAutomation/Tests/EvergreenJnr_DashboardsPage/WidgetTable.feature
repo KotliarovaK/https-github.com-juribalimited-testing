@@ -34,9 +34,9 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 	And "DAS-14920_1" Widget is displayed to the user
-	And "2,190" count is displayed for "False" in the table Widget
+	And "2,189" count is displayed for "False" in the table Widget
 	And "2,192" count is displayed for "True" in the table Widget
-	And "12,843" count is displayed for "Unknown" in the table Widget
+	And "12,898" count is displayed for "Unknown" in the table Widget
 	#Second Widget creation
 	When User clicks the "ADD WIDGET" Action button
 	And User creates new Widget
@@ -44,8 +44,8 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccursWhenCreatingDashb
 	| Table      | DAS-14920_2 | 14920_List | Windows7Mi: In Scope |             | Count             | Count ASC |                  | 10        |            |
 	Then There are no errors in the browser console
 	And "DAS-14920_2" Widget is displayed to the user
-	Then "12,044" count is displayed for "False" in the table Widget
-	And "5,181" count is displayed for "True" in the table Widget
+	Then "12,100" count is displayed for "False" in the table Widget
+	And "5,179" count is displayed for "True" in the table Widget
 
 @Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16073 @Delete_Newly_Created_Dashboard
 Scenario: EvergreenJnr_DashboardsPage_CheckThatTableWidgetIsDisplayedCorrectly

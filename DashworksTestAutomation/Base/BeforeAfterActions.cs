@@ -41,6 +41,8 @@ namespace DashworksTestAutomation.Base
         [BeforeScenario]
         public void OnStartUp()
         {
+            Logger.Write($"TEST STARTED: {GetTestName()}");
+
             List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
 
             //If we are not able to get nUnit tags the try to get them from SpecFlow
@@ -65,7 +67,8 @@ namespace DashworksTestAutomation.Base
         {
             try
             {
-                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString()).ToList();
+                List<string> testTags = TestContext.CurrentContext.Test.Properties["Category"].Select(x => x.ToString())
+                    .ToList();
                 LockCategory.RemoveTags(testTags);
 
                 RemoteWebDriver driver = null;
@@ -112,6 +115,14 @@ namespace DashworksTestAutomation.Base
             catch (Exception e)
             {
                 Logger.Write(e);
+            }
+            finally
+            {
+                try
+                {
+                    Logger.Write($"TEST FINISHED: {GetTestName()}");
+                }
+                catch { }
             }
         }
 

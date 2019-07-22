@@ -256,15 +256,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
             filterElement.BodyContainer.Click();
         }
 
-        [When(@"User clicks Reset Filters button on the Details Page")]
-        public void WhenUserClicksResetFiltersButtonOnTheDetailsPage()
-        {
-            var filterElement = _driver.NowAt<ApplicationsDetailsTabsMenu>();
-            filterElement.BodyContainer.Click();
-            _driver.WaitForElementToBeDisplayed(filterElement.ResetFiltersButton);
-            filterElement.ResetFiltersButton.Click();
-        }
-
         [When(@"User selects ""(.*)"" text from key value grid on the Details Page")]
         public void WhenUserSelectsFollowingTextFromKeyValueGridOnTheDetailsPage(string textToBeSelected)
         {

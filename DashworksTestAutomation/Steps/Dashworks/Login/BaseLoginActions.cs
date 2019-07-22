@@ -67,11 +67,11 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
             //Change profile language
             try
             {
-                _client.ChangeUserProfileLanguage(User.UserName, User.Language);
+                _client.ChangeUserProfileLanguage(User.Username, User.Language);
             }
             catch (Exception)
             {
-                _client.ChangeUserProfileLanguage(User.UserName, User.Language);
+                _client.ChangeUserProfileLanguage(User.Username, User.Language);
             }
         }
 

@@ -16,11 +16,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using DashworksTestAutomation.DTO;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Bucket;
 using DashworksTestAutomation.DTO.Evergreen.Admin.CapacityUnits;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Rings;
 using DashworksTestAutomation.DTO.Evergreen.Admin.Teams;
+using DashworksTestAutomation.DTO.Projects.Tasks;
 using DashworksTestAutomation.DTO.RuntimeVariables.Buckets;
 using DashworksTestAutomation.DTO.RuntimeVariables.CapacityUnits;
 using DashworksTestAutomation.DTO.RuntimeVariables.Rings;
@@ -40,8 +40,11 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private readonly AddedObjects _addedObjects;
         private readonly Rings _rings;
         private readonly CapacityUnits _capacityUnits;
+        private readonly Tasks _tasks;
 
-        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects, Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings, CapacityUnits capacityUnits)
+        public EvergreenJnr_AdminPage(RemoteWebDriver driver, Teams teams, DTO.RuntimeVariables.Projects projects,
+            Buckets buckets, LastUsedBucket lastUsedBucket, AddedObjects addedObjects, Rings rings, CapacityUnits capacityUnits,
+            Tasks tasks)
         {
             _driver = driver;
             _teams = teams;
@@ -51,6 +54,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             _addedObjects = addedObjects;
             _rings = rings;
             _capacityUnits = capacityUnits;
+            _tasks = tasks;
         }
 
         #region Check button state
@@ -1794,7 +1798,10 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var slot = _driver.NowAt<Capacity_SlotsPage>();
 
-            Assert.That(GetTaskCapacityEnabledFlag(slot.Storage.SessionStorage.GetItem("task_id")),
+            if (!_tasks.Value.Any())
+                throw new Exception("No tasks were created!");
+
+            Assert.That(GetTaskCapacityEnabledFlag(_tasks.Value.Last().GetId()),
                 Is.EqualTo(flagState), $"Flag state is in different state");
         }
 

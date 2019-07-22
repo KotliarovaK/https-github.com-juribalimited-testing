@@ -361,11 +361,9 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
 	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
-	#Ann.Ilchenko 7/11/19: waiting for an error response
-	#Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Rules" tab is displayed on left menu on the Details page and contains count of items
 	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 
-	#remove hash when the functionality will be implemented
 @Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16884
 Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForUsersPageInProjectMode
 	When User clicks "Users" on the left-hand menu
@@ -410,12 +408,10 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	#================ checks sub-menu for main Active Directory tab ================#
 	Then "Active Directory" main-menu on the Details page contains following sub-menu:
 	| SubTabName       |
-	#| Active Directory |
 	| Groups           |
 	| LDAP             |
 	#================ checks counters ================#
 	Then "Groups" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Active Directory" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Applications tab ================#
 	Then "Applications" main-menu on the Details page contains following sub-menu:
@@ -449,74 +445,73 @@ Scenario: EvergreenJnr_UsersList_CheckThatNewPatternOfTheVerticalMenuIsDisplayed
 	Then "Application Issues" tab is displayed on left menu on the Details page and contains count of items
 	Then "Overview" tab is displayed on left menu on the Details page and NOT contains count of items
 	Then "Hardware Summary" tab is displayed on left menu on the Details page and NOT contains count of items
-	#Ann.Ilchenko 7/11/19: waiting for an error response
-	#Then "Hardware Rules" tab is displayed on left menu on the Details page and NOT contains count of items
+	Then "Hardware Rules" tab is displayed on left menu on the Details page and contains count of items
 	Then "Application Summary" tab is displayed on left menu on the Details page and NOT contains count of items
 
-	#remove hash when the functionality will be implemented
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS15345 @DAS16831 @DAS17142 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInEvergreenMode
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	When User click content from "Application" column
+	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
-	Then User sees following main-tabs on left menu on the Details page:
+	And User sees following main-tabs on left menu on the Details page:
 	| TabName      |
 	| Details      |
 	| Projects     |
 	| MSI          |
 	| Distribution |
 	#================ checks sub-menu for main Details tab ================#
-	Then "Details" main-menu on the Details page contains following sub-menu:
+	And "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName     |
 	| Application    |
 	| Advertisements |
 	| Programs       |
 	| Custom Fields  |
 	#================ checks counters ================#
-	#Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Programs" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
-	Then "Application" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	And "Programs" tab is displayed on left menu on the Details page and contains count of items
+	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	And "Application" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	Then "Projects" main-menu on the Details page contains following sub-menu:
+	And "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Details |
 	| Projects          |
-	Then "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
+	And "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks counters ================#
-	#Then "Projects" tab is displayed on left menu on the Details page and contains count of items
-	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Projects" tab is displayed on left menu on the Details page and contains count of items
+	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main MSI tab ================#
-	Then "MSI" main-menu on the Details page contains following sub-menu:
+	And "MSI" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| MSIFiles   |
 	| AOK        |
 	#================ checks counters ================#
-	Then "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Distribution tab ================#
-	Then "Distribution" main-menu on the Details page contains following sub-menu:
+	And "Distribution" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| Users      |
 	| Devices    |
 	| Groups     |
 	| AD         |
 	#================ checks counters ================#
-	#Then "Users" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Devices" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Groups" tab is displayed on left menu on the Details page and contains count of items
-	Then "AD" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Users" tab is displayed on left menu on the Details page and contains count of items
+	And "Devices" tab is displayed on left menu on the Details page and contains count of items
+	And "Groups" tab is displayed on left menu on the Details page and contains count of items
+	And "AD" tab is displayed on left menu on the Details page and NOT contains count of items
 
-	#remove hash when the functionality will be implemented
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16885 @DAS17213 @DAS16831 @DAS17142 @Not_Ready
 Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForApplicationsPageInProjectMode
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
 	When User perform search by "ABBYY FineReader 8.0 Professional Edition"
-	When User click content from "Application" column
+	And User click content from "Application" column
 	Then Details page for "ABBYY FineReader 8.0 Professional Edition" item is displayed to the user
 	When User switches to the "Project K-Computer Scheduled Project" project in the Top bar on Item details page
 	Then User sees following main-tabs on left menu on the Details page:
@@ -525,47 +520,47 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	| Projects     |
 	| MSI          |
 	| Distribution |
-	Then "Distribution" main-tab is displayed with disabled state on left menu on the Details page
+	And "Distribution" main-tab is displayed with disabled state on left menu on the Details page
 	#================ checks sub-menu for main Details tab ================#
-	Then "Details" main-menu on the Details page contains following sub-menu:
+	And "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName     |
 	| Application    |
 	| Advertisements |
 	| Programs       |
 	| Custom Fields  |
 	#================ checks counters ================#
-	#Then "Advertisements" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Programs" tab is displayed on left menu on the Details page and contains count of items
-	#Then "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
-	Then "Application" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Advertisements" tab is displayed on left menu on the Details page and contains count of items
+	And "Programs" tab is displayed on left menu on the Details page and contains count of items
+	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	And "Application" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	Then "Projects" main-menu on the Details page contains following sub-menu:
+	And "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName        |
 	| Evergreen Details |
 	| Project Details   |
 	| Projects          |
 	#================ checks counters ================#
-	#Then "Projects" tab is displayed on left menu on the Details page and contains count of items
-	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Projects" tab is displayed on left menu on the Details page and contains count of items
+	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main MSI tab ================#
-	Then "MSI" main-menu on the Details page contains following sub-menu:
+	And "MSI" main-menu on the Details page contains following sub-menu:
 	| SubTabName |
 	| MSIFiles   |
 	| AOK        |
 	#================ checks counters ================#
-	Then "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "MSIFiles" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
 
-	#remove hash when the functionality will be implemented
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905 @DAS16832 @DAS17143 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInEvergreenMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
-	When User click content from "Email Address" column
+	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
-	Then User sees following main-tabs on left menu on the Details page:
+	And User sees following main-tabs on left menu on the Details page:
 	| TabName  |
 	| Details  |
 	| Projects |
@@ -575,7 +570,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	#Then "Notes" sub-tab is displayed with disabled state on left menu on the Details page
 	#Then "Audit History" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks sub-menu for main Details tab ================#
-	Then "Details" main-menu on the Details page contains following sub-menu:
+	And "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Mailbox                 |
 	| Mailbox Owner           |
@@ -583,25 +578,25 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Department and Location |
 	| Custom Fields           |
 	#================ checks counters ================#
-	Then "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Custom Fields" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	And "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	Then "Projects" main-menu on the Details page contains following sub-menu:
+	And "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName            |
 	| Evergreen Details     |
 	| Mailbox Projects      |
 	| Mailbox User Projects |
-	Then "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
+	And "Project Details" sub-tab is displayed with disabled state on left menu on the Details page
 	#================ checks counters ================#
-	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Projects" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox User Projects" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Projects" tab is displayed on left menu on the Details page and contains count of items
+	And "Mailbox User Projects" tab is displayed on left menu on the Details page and contains count of items
+	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Users tab ================#
-	Then "Users" main-menu on the Details page contains following sub-menu:
+	And "Users" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Users               |
 	| Groups              |
@@ -609,13 +604,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Mailbox Permissions |
 	| Folder Permissions  |
 	#================ checks counters ================#
-	Then "Users" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Groups" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Users" tab is displayed on left menu on the Details page and contains count of items
+	And "Groups" tab is displayed on left menu on the Details page and contains count of items
+	And "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Trend tab ================#
-	Then "Trend" main-menu on the Details page contains following sub-menu:
+	And "Trend" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Email Count            |
 	| Mailbox Size (MB)      |
@@ -623,18 +618,19 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Deleted Item Count     |
 	| Deleted Item Size (MB) |
 	#================ checks counters ================#
-	Then "Email Count" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Associated Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Email Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Associated Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906
+	    #Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
 	When User perform search by "00B5CCB89AD0404B965@bclabs.local"
-	When User click content from "Email Address" column
+	And User click content from "Email Address" column
 	Then Details page for "00B5CCB89AD0404B965@bclabs.local" item is displayed to the user
 	When User switches to the "Mailbox Evergreen Capacity Project" project in the Top bar on Item details page
 	Then User sees following main-tabs on left menu on the Details page:
@@ -644,7 +640,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Users    |
 	| Trend    |
 	#================ checks sub-menu for main Details tab ================#
-	Then "Details" main-menu on the Details page contains following sub-menu:
+	And "Details" main-menu on the Details page contains following sub-menu:
 	| SubTabName              |
 	| Mailbox                 |
 	| Mailbox Owner           |
@@ -652,25 +648,25 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Department and Location |
 	| Custom Fields           |
 	#================ checks counters ================#
-	Then "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Custom Fields" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	And "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
-	Then "Projects" main-menu on the Details page contains following sub-menu:
+	And "Projects" main-menu on the Details page contains following sub-menu:
 	| SubTabName            |
 	| Evergreen Details     |
 	| Project Details       |
 	| Mailbox Projects      |
 	| Mailbox User Projects |
 	#================ checks counters ================#
-	Then "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Projects" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox User Projects" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Projects" tab is displayed on left menu on the Details page and contains count of items
+	And "Mailbox User Projects" tab is displayed on left menu on the Details page and contains count of items
+	And "Evergreen Details" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Project Details" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Users tab ================#
-	Then "Users" main-menu on the Details page contains following sub-menu:
+	And "Users" main-menu on the Details page contains following sub-menu:
 	| SubTabName          |
 	| Users               |
 	| Groups              |
@@ -678,13 +674,13 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Mailbox Permissions |
 	| Folder Permissions  |
 	#================ checks counters ================#
-	Then "Users" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Groups" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Users" tab is displayed on left menu on the Details page and contains count of items
+	And "Groups" tab is displayed on left menu on the Details page and contains count of items
+	And "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Trend tab ================#
-	Then "Trend" main-menu on the Details page contains following sub-menu:
+	And "Trend" main-menu on the Details page contains following sub-menu:
 	| SubTabName             |
 	| Email Count            |
 	| Mailbox Size (MB)      |
@@ -692,8 +688,39 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Deleted Item Count     |
 	| Deleted Item Size (MB) |
 	#================ checks counters ================#
-	Then "Email Count" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Mailbox Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Associated Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
-	Then "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Email Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Mailbox Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Associated Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
+
+    #Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Groups @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16833 @DAS17415 @Not_Ready
+Scenario: EvergreenJnr_GroupsList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForGroupsPage
+	When User type "Allowed RODC Password Replication Group" in Global Search Field
+	Then User clicks on "Allowed RODC Password Replication Group" search result
+	And Details page for "Allowed RODC Password Replication Group" item is displayed to the user
+	And User sees following main-tabs on left menu on the Details page:
+	| TabName      |
+	| Applications |
+	| Members      |
+	And "Group" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "LDAP" tab is displayed on left menu on the Details page and NOT contains count of items
+	#================ checks sub-menu for main Applications tab ================#
+	And "Applications" main-menu on the Details page contains following sub-menu:
+	| SubTabName   |
+	| Applications |
+	| Collections  |
+	#================ checks counters ================#
+	And "Applications" tab is displayed on left menu on the Details page and contains count of items
+	And "Collections" tab is displayed on left menu on the Details page and contains count of items
+	#================ checks sub-menu for main Members tab ================#
+	Then "Members" main-menu on the Details page contains following sub-menu:
+	| SubTabName     |
+	| User Members   |
+	| Device Members |
+	| Member Of      |
+	#================ checks counters ================#
+	And "User Members" tab is displayed on left menu on the Details page and contains count of items
+	And "Device Members" tab is displayed on left menu on the Details page and contains count of items
+	And "Member Of" tab is displayed on left menu on the Details page and contains count of items

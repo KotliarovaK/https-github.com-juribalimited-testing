@@ -146,10 +146,8 @@ namespace DashworksTestAutomation.Steps.Dashworks
         [When(@"User clicks Admin on the left-hand menu")]
         public void WhenUserClicksAdminOnTheLeft_HandMenu()
         {
-            _driver.NowAt<LeftHandMenuElement>();
-            //menu.Admin.Click();
-            //Admin tab on the left-hand menu is temporarily unavailable
-            _driver.NavigateToUrl($"{UrlProvider.EvergreenUrl}#//admin");
+            var menu =_driver.NowAt<LeftHandMenuElement>();
+            menu.Admin.Click();
         }
 
         [Then(@"Admin page should be displayed to the user")]

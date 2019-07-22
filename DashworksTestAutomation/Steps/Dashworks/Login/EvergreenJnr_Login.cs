@@ -51,13 +51,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             if (loginPage.LoginGroupBox.Displayed())
             {
-                loginPage.UserNameTextBox.SendKeys(user.UserName);
+                loginPage.UserNameTextBox.SendKeys(user.Username);
                 loginPage.PasswordTextBox.SendKeys(user.Password);
                 loginPage.LoginButton.Click();
             }
             else
             {
-                loginPage.SplashUserNameTextBox.SendKeys(user.UserName);
+                loginPage.SplashUserNameTextBox.SendKeys(user.Username);
                 loginPage.SplashPasswordTextBox.SendKeys(user.Password);
                 loginPage.SplashLoginButton.Click();
             }
@@ -73,13 +73,13 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
 
             if (loginPage.LoginGroupBox.Displayed())
             {
-                loginPage.UserNameTextBox.SendKeys(User.UserName);
+                loginPage.UserNameTextBox.SendKeys(User.Username);
                 loginPage.PasswordTextBox.SendKeys(User.Password);
                 loginPage.LoginButton.Click();
             }
             else
             {
-                loginPage.SplashUserNameTextBox.SendKeys(User.UserName);
+                loginPage.SplashUserNameTextBox.SendKeys(User.Username);
                 loginPage.SplashPasswordTextBox.SendKeys(User.Password);
                 loginPage.SplashLoginButton.Click();
             }

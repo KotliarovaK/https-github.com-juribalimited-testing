@@ -412,7 +412,14 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var page = _driver.NowAt<BaseDashboardPage>();
             _driver.WaitForDataLoading();
             page.GetListElementByName(listName).Click();
-            _driver.ClickByJavascript(page.GetListElementByName(listName));
+            try
+            {
+                _driver.ClickByJavascript(page.GetListElementByName(listName));
+            }
+            catch (StaleElementReferenceException)
+            {
+                _driver.ClickByJavascript(page.GetListElementByName(listName));
+            }
             _driver.WaitForDataLoading();
         }
 
@@ -586,7 +593,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
                         //var listsIds = DatabaseHelper.ExecuteReader("SELECT [ListId] FROM[DesktopBI].[dbo].[EvergreenList]", 0);
                         //All lists for specific user
                         var listsIds = DatabaseHelper.ExecuteReader(
-                            $"select l.ListId from [aspnetdb].[dbo].[aspnet_Users] u join [DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.UserName}'",
+                            $"select l.ListId from [aspnetdb].[dbo].[aspnet_Users] u join [DesktopBI].[dbo].[EvergreenList] l on u.UserId = l.UserId where u.LoweredUserName = '{userDto.Username}'",
                             0);
                         DatabaseHelper.RemoveLists(listsIds);
                     }

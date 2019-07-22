@@ -4615,6 +4615,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12864")]
         [NUnit.Framework.CategoryAttribute("DAS13291")]
         [NUnit.Framework.CategoryAttribute("DAS14127")]
+        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_User")]
         public virtual void EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly()
         {
             System.Exception lastException = null;
@@ -4650,7 +4651,8 @@ this.FeatureBackground();
                         "BulkUpdate",
                         "DAS12864",
                         "DAS13291",
-                        "DAS14127"});
+                        "DAS14127",
+                        "Delete_Newly_Created_User"});
 #line 1463
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

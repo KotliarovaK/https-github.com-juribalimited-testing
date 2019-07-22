@@ -362,7 +362,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listDetailsElement = _driver.NowAt<ListDetailsElement>();
             _driver.WaitForElementToBeDisplayed(listDetailsElement.SelectUserDropdown);
             _driver.SelectCustomSelectbox(listDetailsElement.SelectUserDropdown,
-                GetFullNameByUserName(_userDto.UserName));
+                GetFullNameByUserName(_userDto.Username));
         }
 
         [When(@"User select ""(.*)"" in Select Access dropdown")]

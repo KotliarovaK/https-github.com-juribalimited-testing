@@ -22,7 +22,7 @@ namespace DashworksTestAutomation.Providers
             for (var i = 2; i < int.Parse(ConfigurationManager.AppSettings["availableUsersRange"]); i++)
                 _accounts.Add(new UserDto
                 {
-                    UserName = $"automation_admin{i}",
+                    Username = $"automation_admin{i}",
                     Password = Password,
                     Language = ConfigurationManager.AppSettings["user.language"]
                 });
@@ -32,7 +32,7 @@ namespace DashworksTestAutomation.Providers
         {
             return new UserDto()
             {
-                UserName = $"admin",
+                Username = $"admin",
                 Password = Password,
                 Language = ConfigurationManager.AppSettings["user.language"]
             };
