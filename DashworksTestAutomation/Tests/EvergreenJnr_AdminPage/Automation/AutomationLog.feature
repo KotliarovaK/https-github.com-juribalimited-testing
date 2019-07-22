@@ -29,13 +29,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User type "16890_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "16890Project" in the Project dropdown
-	When User selects "[Default (Computer)]" in the Path dropdown
+	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	When User type "New_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks "Projects" link on the Admin page
