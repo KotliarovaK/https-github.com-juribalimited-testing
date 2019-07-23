@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _ringUnassignedId = ringUnassignedId;
         }
 
-        [AfterScenario("Set_Default_Ring", Order = 0)]
+        [AfterScenario("Set_Default_Ring", Order = 1)]
         public void SetDefaultRing()
         {
             if (string.IsNullOrEmpty(_ringUnassignedId.Value))

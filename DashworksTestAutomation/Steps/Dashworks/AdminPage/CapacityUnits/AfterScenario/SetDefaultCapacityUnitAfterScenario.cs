@@ -23,7 +23,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _capacityUnitUnassignedId = capacityUnitUnassignedId;
         }
 
-        [AfterScenario("Set_Default_Capacity_Unit", Order = 0)]
+        [AfterScenario("Set_Default_Capacity_Unit", Order = 1)]
         public void Set_Default_Capacity_Unit()
         {
             if (!_capacityUnitUnassignedId.Value.Any())
