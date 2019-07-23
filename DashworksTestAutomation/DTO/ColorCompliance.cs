@@ -2,10 +2,10 @@
 {
     enum ColorCompliance
     {
-        UNKNOWN = 5,
-        RED = 4,
+        UNKNOWN = 1,
+        RED = 2,
         AMBER = 3,
-        GREEN = 2,
-        NOTAPPLICABLE = 1
+        GREEN = 4,
+        NONE = 5
     }
 }
