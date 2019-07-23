@@ -121,13 +121,17 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatTasksAreUnpublishedAfterBeingAssociat
 	And User clicks content from "Project" column
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE NEW SLOT" Action button
-	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
-	And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName | Tasks                                                                                                                                              |
+	| Slot 1   | Slot 1      | Pre-Migration \ Scheduled Date‡Pre-Migration \ Forecast Date‡Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner |
+	#TODO Remove commented steps
+	#And User clicks the "CREATE NEW SLOT" Action button
+	#And User type "Slot 1" Name in the "Slot Name" field on the Project details page
+	#And User type "Slot 1" Name in the "Display Name" field on the Project details page
+	#And User selects "Pre-Migration \ Scheduled Date" checkbox in the "Tasks" field on the Project details page
+	#And User selects "Pre-Migration \ Forecast Date" checkbox in the "Tasks" field on the Project details page
+	#And User selects "Computer Information ---- Text fill; Text fill; \ Group Computer Rag Radio Date Owner" checkbox in the "Tasks" field on the Project details page
+	#And User clicks the "CREATE" Action button
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "Windows 7 Migration (Computer Scheduled Project)" Project

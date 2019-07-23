@@ -491,7 +491,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         public void WhenUserClicksTheActionButton(string buttonName)
         {
             var action = _driver.NowAt<BaseDashboardPage>();
-            _driver.WaitForDataLoading();
             action.GetActionsButtonByName(buttonName).Click();
         }
 

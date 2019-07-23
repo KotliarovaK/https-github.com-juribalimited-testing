@@ -1771,8 +1771,7 @@ namespace DashworksTestAutomation.Steps.Dashworks
         private void SendKeysToTheNamedTextbox(string text, string fieldName)
         {
             var projectElement = _driver.NowAt<ProjectsPage>();
-            projectElement.GetFieldByName(fieldName).ClearWithBackspaces();
-            projectElement.GetFieldByName(fieldName).SendKeys(text);
+            projectElement.SendKeysToTheNamedTextbox(text, fieldName);
         }
 
         [When(@"User selects ""(.*)"" checkbox in the ""(.*)"" field on the Project details page")]
@@ -1867,8 +1866,6 @@ namespace DashworksTestAutomation.Steps.Dashworks
         {
             var page = _driver.NowAt<Capacity_SlotsPage>();
             page.EnterValueByDayName(value, columnName);
-            var body = _driver.NowAt<BaseGridPage>();
-            body.BodyContainer.Click();
         }
 
         [Then(@"following items are displayed in the dropdown:")]
