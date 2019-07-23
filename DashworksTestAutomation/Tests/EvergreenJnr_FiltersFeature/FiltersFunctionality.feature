@@ -1895,7 +1895,7 @@ Examples:
 	| Windows7Mi: Status | Not Onboarded      | 12,044 |
 	| Windows7Mi: Status | Offboarded         | 20     |
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411 @Cleanup
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -1920,7 +1920,7 @@ Scenario: EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList
     | 2      |
 	Then "4" rows are displayed in the agGrid
 
-@Evergreen @Applications @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411 @Cleanup
+@Evergreen @AllLists @EvergreenJnr_FilterFeature @FilterFunctionality @DAS17411 @Cleanup
 Scenario Outline: EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesList
 	When User clicks "<ListName>" on the left-hand menu
 	And User clicks the Columns button
@@ -1939,3 +1939,21 @@ Examples:
 	| Applications	| 
 	| Mailboxes		| 
 	| Users			|
+
+@Evergreen @Devices @EvergreenJnr_FilterFeature @FilterFunctionality @DAS16178 @Cleanup
+Scenario: EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter
+	When User clicks "Devices" on the left-hand menu
+	And User clicks the Filters button
+	And User add "Windows7Mi: Owner Username" filter where type is "Not empty" with added column and following value:
+	| Values |
+	|        |
+	And User Add And "Windows7Mi: Owner Display Name" filter where type is "Does not begin with" with added column and following value:
+    | Values |
+    | to     |
+	And User Add And "Windows7Mi: Owner Username" filter where type is "Contains" with added column and following value:
+    | Values |
+    | 1    |
+	And User Add And "Windows7Mi: Owner Display Name" filter where type is "Does not end with" with added column and following value:
+    | Values |
+    | 9      |
+	Then "2,471" rows are displayed in the agGrid
