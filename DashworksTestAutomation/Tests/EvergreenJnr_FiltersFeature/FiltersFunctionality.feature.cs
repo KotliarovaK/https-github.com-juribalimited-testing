@@ -8212,7 +8212,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS17411")]
@@ -8247,7 +8247,7 @@ this.FeatureBackground();
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList", null, new string[] {
                         "Evergreen",
-                        "Applications",
+                        "Devices",
                         "EvergreenJnr_FilterFeature",
                         "FilterFunctionality",
                         "DAS17411",
@@ -8319,7 +8319,7 @@ this.FeatureBackground();
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesList")]
         [NUnit.Framework.CategoryAttribute("Evergreen")]
-        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("AllLists")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
         [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS17411")]
@@ -8357,7 +8357,7 @@ this.FeatureBackground();
         {
             string[] @__tags = new string[] {
                     "Evergreen",
-                    "Applications",
+                    "AllLists",
                     "EvergreenJnr_FilterFeature",
                     "FilterFunctionality",
                     "DAS17411",
@@ -8396,6 +8396,97 @@ this.FeatureBackground();
                         "Number"});
 #line 1934
  testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table157, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Devices")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS16178")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounterInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounterInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckProjectOwnerItemsCounter", null, new string[] {
+                        "Evergreen",
+                        "Devices",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS16178",
+                        "Cleanup"});
+#line 1944
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1945
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1946
+ testRunner.And("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table158 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table158.AddRow(new string[] {
+                        ""});
+#line 1947
+ testRunner.And("User add \"Windows7Mi: Owner Username\" filter where type is \"Not empty\" with added" +
+                    " column and following value:", ((string)(null)), table158, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table159 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table159.AddRow(new string[] {
+                        "to"});
+#line 1950
+ testRunner.And("User Add And \"Windows7Mi: Owner Display Name\" filter where type is \"Does not begi" +
+                    "n with\" with added column and following value:", ((string)(null)), table159, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table160 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table160.AddRow(new string[] {
+                        "1"});
+#line 1953
+ testRunner.And("User Add And \"Windows7Mi: Owner Username\" filter where type is \"Contains\" with ad" +
+                    "ded column and following value:", ((string)(null)), table160, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table161 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table161.AddRow(new string[] {
+                        "9"});
+#line 1956
+ testRunner.And("User Add And \"Windows7Mi: Owner Display Name\" filter where type is \"Does not end " +
+                    "with\" with added column and following value:", ((string)(null)), table161, "And ");
+#line 1959
+ testRunner.Then("\"2,471\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
