@@ -5,8 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-	#Ann.Ilchenko 7/17/19 : waiting for an error response
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @DAS14127 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForDateField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -31,8 +30,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                               |
-	| Windows7Mi: Perform User Acceptance Test |
+	| ColumnName                                                      |
+	| Windows7Mi: User Acceptance Test \ Perform User Acceptance Test |
 	And User perform search by "<RowName>"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -57,9 +56,9 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
-	#Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	Then "<DefaultValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 	#returns default object state
-	And User selects "Bulk update" in the Actions dropdown
+	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
 	And User selects "Windows 7 Migration (Computer Scheduled Project)" Project on Action panel
 	And User selects "User Acceptance Test" Stage on Action panel
@@ -75,16 +74,6 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And User navigate to the top of the Action panel
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
-	When User refreshes agGrid
-	When User clicks the Logout button
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes "<Name>" User
 
 Examples: 
 	| Name    | RowName    | NewTeam  | DefaultTeam         | DefaultValue   |
@@ -94,8 +83,7 @@ Examples:
 	| DAS1333 | LZI970280  | Admin IT | IB Team             | Not Applicable |
 	| DAS1334 | ZQX656408  | Admin IT | Migration Phase 2   | Not Applicable |
 
-	#Ann.Ilchenko 7/17/19 : waiting for an error response
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Cleanup @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13288 @DAS13289 @DAS13287 @Cleanup
 Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorrectlyForOwnerField
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -120,8 +108,8 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                               |
-	| Windows7Mi: Perform User Acceptance Test |
+	| ColumnName                                                      |
+	| Windows7Mi: User Acceptance Test \ Perform User Acceptance Test |
 	And User perform search by "<RowName>"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -146,7 +134,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	And Success message is hidden after five seconds
 	When User refreshes agGrid
-	Then "<NewValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	Then "<NewValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 	#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -166,16 +154,7 @@ Scenario Outline: EvergreenJnr_UsersList_ChecksThatTheNoChangeOptionIsWorkedCorr
 	Then User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "<DefaultValue>" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	When User clicks the Logout button
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes "<Name>" User
+	Then "<DefaultValue>" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 
 Examples: 
 	| Name     | RowName    | NewValue       | DefaultValue   |
@@ -185,8 +164,7 @@ Examples:
 	| DAS13283 | LZI970280  | Not Applicable | Failed         |
 	| DAS13284 | ZQX656408  | Not Applicable | Complete       |
 
-	#Ann.Ilchenko 7/17/19 : waiting for an error response
-@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup @Not_Run
+@Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13290 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
@@ -211,8 +189,8 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	When User clicks the Columns button
 	Then Columns panel is displayed to the user
 	When ColumnName is entered into the search box and the selection is clicked
-	| ColumnName                               |
-	| Windows7Mi: Perform User Acceptance Test |
+	| ColumnName                                                      |
+	| Windows7Mi: User Acceptance Test \ Perform User Acceptance Test |
 	And User perform search by "LZI970280"
 	And User clicks the Actions button
 	Then Actions panel is displayed to the user
@@ -235,7 +213,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	Then Success message is hidden after five seconds
 	When User refreshes agGrid
-	Then "Complete" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
+	Then "Complete" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 	#returns default object state
 	When User selects "Bulk update" in the Actions dropdown
 	And User selects "Update task value" Bulk Update Type on Action panel
@@ -254,16 +232,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatDateRemovingIsWorksCorrectly
 	And User clicks "UPDATE" button on message box
 	And Success message with "1 of 1 object was in the selected project and has been queued" text is displayed on Action panel
 	When User refreshes agGrid
-	Then "Failed" content is displayed in "Windows7Mi: Perform User Acceptance Test" column
-	When User clicks the Logout button
-	Then User is logged out
-	When User clicks on the Login link
-	Then Login Page is displayed to the user
-	When User provides the Login and Password and clicks on the login button
-	Then Dashworks homepage is displayed to the user in a logged in state
-	When User navigate to Manage link
-	And User select "Manage Users" option in Management Console
-	And User removes "DAS13290" User
+	Then "Failed" content is displayed in "Windows7Mi: User Acceptance Test \ Perform User Acceptance Test" column
 
 @Evergreen @Users @EvergreenJnr_ActionsPanel @BulkUpdate @DAS12864 @DAS13291 @DAS14127 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatOwnerRemovingIsWorksCorrectly

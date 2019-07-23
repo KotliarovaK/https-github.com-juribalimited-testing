@@ -107,7 +107,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatTopBarInProjectModeIsDisplayedCorrectl
 	| App Readiness     |
 	| Task Readiness    |
 	
-@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075
+@Evergreen @Applications @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
 Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -128,7 +128,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedC
 	| App Readiness     |
 	| Task Readiness    |
 
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS14975 @DAS15333 @DAS16762 @DAS17166 @DAS17075 @DAS17355
 Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -142,7 +142,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorr
 	| Task Readiness    |
 	| Workflow          |
 
-@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17166
+@Evergreen @Devices @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17166 @DAS17355
 Scenario: EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsDisplayedCorrectly
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -240,3 +240,17 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatReadinessValuesIsDisplayedAccor
 	| ComplianceItems   | ColorName |
 	| Overall Readiness | RED       |
 	| App Readiness     | RED       |
+
+@Evergreen @Users @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS17355 @DAS17075
+Scenario: EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage
+	When User clicks "Users" on the left-hand menu
+	Then "Users" list should be displayed to the user
+	When User perform search by "AAC860150"
+	And User click content from "Username" column
+	Then Details page for "AAC860150" item is displayed to the user
+	When User switches to the "USE ME FOR AUTOMATION(DEVICE SCHDLD)" project in the Top bar on Item details page
+	Then following Compliance items are displayed in Top bar on the Item details page:
+	| ComplianceItems   |
+	| Overall Readiness |
+	| App Readiness     |
+	| Task Readiness    |

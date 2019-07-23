@@ -234,7 +234,8 @@ Examples:
 	| Users        | 
 	| Mailboxes    | 
 
-@Evergreen @Applications @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects
+	#Remove Not_Run tag. Added by Vitalii just for test
+@Evergreen @Applications @EvergreenJnr_BaseDashboardPage @BaseDashboardPage @DAS14189 @Projects @Not_Run
 Scenario: EvergreenJnr_ApplicationList_CheckThatTheCorrectCreateMenuOptionsAreDisplayedForApplicationPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user

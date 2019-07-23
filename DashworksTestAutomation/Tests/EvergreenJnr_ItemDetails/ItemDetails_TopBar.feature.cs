@@ -716,6 +716,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16762")]
         [NUnit.Framework.CategoryAttribute("DAS17166")]
         [NUnit.Framework.CategoryAttribute("DAS17075")]
+        [NUnit.Framework.CategoryAttribute("DAS17355")]
         public virtual void EvergreenJnr_ApplicationsList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnApplicationsPage()
         {
             System.Exception lastException = null;
@@ -754,7 +755,8 @@ this.FeatureBackground();
                         "DAS15333",
                         "DAS16762",
                         "DAS17166",
-                        "DAS17075"});
+                        "DAS17075",
+                        "DAS17355"});
 #line 111
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -818,6 +820,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16762")]
         [NUnit.Framework.CategoryAttribute("DAS17166")]
         [NUnit.Framework.CategoryAttribute("DAS17075")]
+        [NUnit.Framework.CategoryAttribute("DAS17355")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatTopBarInProjectModeIsDisplayedCorrectlyOnMailboxesPage()
         {
             System.Exception lastException = null;
@@ -856,7 +859,8 @@ this.FeatureBackground();
                         "DAS15333",
                         "DAS16762",
                         "DAS17166",
-                        "DAS17075"});
+                        "DAS17075",
+                        "DAS17355"});
 #line 132
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -900,6 +904,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
         [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS17166")]
+        [NUnit.Framework.CategoryAttribute("DAS17355")]
         public virtual void EvergreenJnr_DevicesList_CheckThatValueForUseMeForAutomationProjectIsDisplayedCorrectly()
         {
             System.Exception lastException = null;
@@ -934,7 +939,8 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_ItemDetails",
                         "ItemDetailsDisplay",
-                        "DAS17166"});
+                        "DAS17166",
+                        "DAS17355"});
 #line 146
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -1350,6 +1356,85 @@ this.FeatureBackground();
 #line 239
  testRunner.Then("following Compliance items with appropriate colors are displayed in Top bar on th" +
                     "e Item details page:", ((string)(null)), table17, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage" +
+            "")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Users")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_ItemDetails")]
+        [NUnit.Framework.CategoryAttribute("ItemDetailsDisplay")]
+        [NUnit.Framework.CategoryAttribute("DAS17355")]
+        [NUnit.Framework.CategoryAttribute("DAS17075")]
+        public virtual void EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPageInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPageInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_UsersList_CheckThaWorkflowTextAndValueArentDisplayedAtAllOnUsersPage" +
+                    "", null, new string[] {
+                        "Evergreen",
+                        "Users",
+                        "EvergreenJnr_ItemDetails",
+                        "ItemDetailsDisplay",
+                        "DAS17355",
+                        "DAS17075"});
+#line 245
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 246
+ testRunner.When("User clicks \"Users\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 247
+ testRunner.Then("\"Users\" list should be displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 248
+ testRunner.When("User perform search by \"AAC860150\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 249
+ testRunner.And("User click content from \"Username\" column", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 250
+ testRunner.Then("Details page for \"AAC860150\" item is displayed to the user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 251
+ testRunner.When("User switches to the \"USE ME FOR AUTOMATION(DEVICE SCHDLD)\" project in the Top ba" +
+                    "r on Item details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ComplianceItems"});
+            table18.AddRow(new string[] {
+                        "Overall Readiness"});
+            table18.AddRow(new string[] {
+                        "App Readiness"});
+            table18.AddRow(new string[] {
+                        "Task Readiness"});
+#line 252
+ testRunner.Then("following Compliance items are displayed in Top bar on the Item details page:", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

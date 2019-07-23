@@ -296,7 +296,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13156")]
         [NUnit.Framework.CategoryAttribute("Cleanup")]
-        [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit_With_Project")]
+        [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits()
         {
@@ -334,7 +334,7 @@ this.FeatureBackground();
                         "Units",
                         "DAS13156",
                         "Cleanup",
-                        "Set_Default_Capacity_Unit_With_Project",
+                        "Set_Default_Capacity_Unit",
                         "Do_Not_Run_With_CapacityUnits"});
 #line 52
 this.ScenarioInitialize(scenarioInfo);

@@ -553,7 +553,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckThatNewPatternOfTheVerticalMenuIsDi
 	And "AOK" tab is displayed on left menu on the Details page and NOT contains count of items
 
 	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905 @DAS16832 @DAS17143 @Not_Ready
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS16378 @DAS15583 @DAS16905 @DAS16832 @DAS17143 @DAS17521 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInEvergreenMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -579,9 +579,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Custom Fields           |
 	#================ checks counters ================#
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	And "Email Addresses" tab is displayed on left menu on the Details page and contains count of items
 	And "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
 	And "Projects" main-menu on the Details page contains following sub-menu:
@@ -606,7 +606,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	#================ checks counters ================#
 	And "Users" tab is displayed on left menu on the Details page and contains count of items
 	And "Groups" tab is displayed on left menu on the Details page and contains count of items
-	And "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Unresolved Users" tab is displayed on left menu on the Details page and contains count of items
 	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Trend tab ================#
@@ -624,8 +624,8 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	And "Deleted Item Count" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Deleted Item Size (MB)" tab is displayed on left menu on the Details page and NOT contains count of items
 
-	    #Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
-@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143 @Not_Ready
+	#Ann.Ilchenko 7/18/19: The navigation menu counters are ready in the 'Pulsar' release.
+@Evergreen @Mailboxes @EvergreenJnr_ItemDetails @ItemDetailsDisplay @DAS15583 @DAS16906 @DAS16832 @DAS17143 @DAS17521 @Not_Ready
 Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -649,9 +649,9 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	| Custom Fields           |
 	#================ checks counters ================#
 	And "Custom Fields" tab is displayed on left menu on the Details page and contains count of items
+	And "Email Addresses" tab is displayed on left menu on the Details page and contains count of items
 	And "Mailbox" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Mailbox Owner" tab is displayed on left menu on the Details page and NOT contains count of items
-	And "Email Addresses" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Department and Location" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Projects tab ================#
 	And "Projects" main-menu on the Details page contains following sub-menu:
@@ -676,7 +676,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDispl
 	#================ checks counters ================#
 	And "Users" tab is displayed on left menu on the Details page and contains count of items
 	And "Groups" tab is displayed on left menu on the Details page and contains count of items
-	And "Unresolved Users" tab is displayed on left menu on the Details page and NOT contains count of items
+	And "Unresolved Users" tab is displayed on left menu on the Details page and contains count of items
 	And "Mailbox Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	And "Folder Permissions" tab is displayed on left menu on the Details page and NOT contains count of items
 	#================ checks sub-menu for main Trend tab ================#
