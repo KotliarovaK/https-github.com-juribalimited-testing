@@ -1747,6 +1747,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16905")]
         [NUnit.Framework.CategoryAttribute("DAS16832")]
         [NUnit.Framework.CategoryAttribute("DAS17143")]
+        [NUnit.Framework.CategoryAttribute("DAS17521")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInEvergreenMode()
         {
@@ -1787,6 +1788,7 @@ this.FeatureBackground();
                         "DAS16905",
                         "DAS16832",
                         "DAS17143",
+                        "DAS17521",
                         "Not_Ready"});
 #line 557
 this.ScenarioInitialize(scenarioInfo);
@@ -1836,14 +1838,14 @@ this.FeatureBackground();
  testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains co" +
                     "unt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 582
+ testRunner.And("\"Email Addresses\" tab is displayed on left menu on the Details page and contains " +
+                    "count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 583
  testRunner.And("\"Mailbox\" tab is displayed on left menu on the Details page and NOT contains coun" +
                     "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 583
+#line 584
  testRunner.And("\"Mailbox Owner\" tab is displayed on left menu on the Details page and NOT contain" +
                     "s count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 584
- testRunner.And("\"Email Addresses\" tab is displayed on left menu on the Details page and NOT conta" +
-                    "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 585
  testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
                     "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1895,8 +1897,8 @@ this.FeatureBackground();
  testRunner.And("\"Groups\" tab is displayed on left menu on the Details page and contains count of " +
                     "items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 609
- testRunner.And("\"Unresolved Users\" tab is displayed on left menu on the Details page and NOT cont" +
-                    "ains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Unresolved Users\" tab is displayed on left menu on the Details page and contains" +
+                    " count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 610
  testRunner.And("\"Mailbox Permissions\" tab is displayed on left menu on the Details page and NOT c" +
                     "ontains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -1949,6 +1951,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16906")]
         [NUnit.Framework.CategoryAttribute("DAS16832")]
         [NUnit.Framework.CategoryAttribute("DAS17143")]
+        [NUnit.Framework.CategoryAttribute("DAS17521")]
         [NUnit.Framework.CategoryAttribute("Not_Ready")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatNewPatternOfTheVerticalMenuIsDisplayedCorrectlyForMailboxesPageInProjectMode()
         {
@@ -1988,6 +1991,7 @@ this.FeatureBackground();
                         "DAS16906",
                         "DAS16832",
                         "DAS17143",
+                        "DAS17521",
                         "Not_Ready"});
 #line 629
 this.ScenarioInitialize(scenarioInfo);
@@ -2040,14 +2044,14 @@ this.FeatureBackground();
  testRunner.And("\"Custom Fields\" tab is displayed on left menu on the Details page and contains co" +
                     "unt of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 652
+ testRunner.And("\"Email Addresses\" tab is displayed on left menu on the Details page and contains " +
+                    "count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 653
  testRunner.And("\"Mailbox\" tab is displayed on left menu on the Details page and NOT contains coun" +
                     "t of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 653
+#line 654
  testRunner.And("\"Mailbox Owner\" tab is displayed on left menu on the Details page and NOT contain" +
                     "s count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 654
- testRunner.And("\"Email Addresses\" tab is displayed on left menu on the Details page and NOT conta" +
-                    "ins count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 655
  testRunner.And("\"Department and Location\" tab is displayed on left menu on the Details page and N" +
                     "OT contains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -2098,8 +2102,8 @@ this.FeatureBackground();
  testRunner.And("\"Groups\" tab is displayed on left menu on the Details page and contains count of " +
                     "items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 679
- testRunner.And("\"Unresolved Users\" tab is displayed on left menu on the Details page and NOT cont" +
-                    "ains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"Unresolved Users\" tab is displayed on left menu on the Details page and contains" +
+                    " count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 680
  testRunner.And("\"Mailbox Permissions\" tab is displayed on left menu on the Details page and NOT c" +
                     "ontains count of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
