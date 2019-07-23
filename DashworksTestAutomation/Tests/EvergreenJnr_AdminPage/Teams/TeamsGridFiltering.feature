@@ -46,6 +46,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAreDisplayedWhenDeleteD
 	Then Rows counter contains "0" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "5" text in the Search field for "Project Buckets" column
+	And User enters "I-Team" text in the Search field for "Team" column
 	Then Rows counter contains "1" found row of all rows
 	When User clicks Reset Filters button on the Admin page
 	And User enters "12" text in the Search field for "Members" column
