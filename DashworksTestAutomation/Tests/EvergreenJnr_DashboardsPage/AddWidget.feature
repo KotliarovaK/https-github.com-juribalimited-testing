@@ -98,3 +98,18 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatEditWidgetPageCanBeOpenedForWidge
 	And User clicks Edit mode trigger on Dashboards page
 	And User clicks edit option for broken widget on Dashboards page
 	Then Message saying that list is unavailable appears in Edit Widget page
+
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS16853 @Cleanup
+Scenario: EvergreenJnr_DashboardsPage_CheckCheckboxLabelDisplaying
+	When Dashboard with "DAS16853_Dashboard" name created via API and opened
+	And User clicks Edit mode trigger on Dashboards page
+	And User clicks the "ADD WIDGET" Action button
+	Then "Show legend" checkbox has a correct label
+	And "Show data labels" checkbox has a correct label
+	When User creates new Widget
+	| WidgetType | Title             | List        | SplitBy  | AggregateFunction | AggregateBy | OrderBy   | TableOrientation | MaxValues | ShowLegend |
+	| Pie        | WidgetForDAS16853 | All Devices | Hostname | Count             |             | Count ASC |                  | 10        | true       |
+	When User clicks Ellipsis menu for "WidgetForDAS16853" Widget on Dashboards page
+	And User clicks "Edit" item from Ellipsis menu on Dashboards page
+	Then "Show legend" checkbox has a correct label
+	And "Show data labels" checkbox has a correct label
