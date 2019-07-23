@@ -39,8 +39,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	And User type "DAS13866" Name in the "Display Name" field on the Project details page
 	When User clicks the "CREATE" Action button
 	Then Success message with "Your capacity slot has been created" text is displayed on the Projects page
-	#Remove refresh after fixed
-	When User clicks refresh button in the browser
 	When User select "Capacity Slot" rows in the grid
 	| SelectedRowsName  |
 	| CapacitySlot13866 |
@@ -50,9 +48,6 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUserIsAbleToDeleteParticularCapacitySl
 	And User clicks Delete button in the warning message
 	Then Success message is displayed and contains "The selected slot has been deleted" text
 	Then There are no errors in the browser console
-	#When User selects "Units" tab on the Project details page
-	#And User selects "Slots" tab on the Project details page
-	#Then "No slots found" message is displayed on the Admin Page
 
 @Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS12921
 Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDeletionMessages

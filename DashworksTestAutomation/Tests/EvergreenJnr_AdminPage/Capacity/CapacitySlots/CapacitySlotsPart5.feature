@@ -96,11 +96,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatMessageDisplayedAndMoveBtnDisabledWhen
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	#DAS-17458 Uncomment after DAS-17458 fixed
-	#And User clicks String Filter button for "Paths" column on the Admin page
-	#When User selects "No Paths" checkbox from String Filter on the Admin page
-	#When User clicks Reset Filters button on the Admin page
-	#DAS-17458
+	And User clicks String Filter button for "Paths" column on the Admin page
+	When User selects "No Paths" checkbox from String Filter on the Admin page
+	When User clicks Reset Filters button on the Admin page
 	And User opens settings for "User Slot" row
 	And User selects "Move to position" option from settings menu
 	And User remembers the Move to position dialog size
