@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS14819 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS14819 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectConverting
 	When User clicks "Projects" on the left-hand menu
 	When User clicks create Project button
@@ -29,7 +29,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectCo
 	And User selects all rows on the grid
 	And User removes selected item
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15260 @DAS15794 @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS15260 @DAS15794 @Cleanup
 Scenario: EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridForDeviceScopedProject
 	When User clicks "Projects" on the left-hand menu
 	And User clicks create Project button
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatCorrectPageDisplayedWhenOpeningNotExis
 	Then Page not found displayed for the user
 	And There are only page not found errors in console
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS16137
+@Evergreen @Admin @EvergreenJnr_AdminPage @Projects @Senior_Projects @DAS16137 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithoutPermissionsNavigatesToAdminPages
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

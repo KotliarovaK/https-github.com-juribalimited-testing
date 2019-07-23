@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901 @DAS16803 @Delete_Newly_Created_Ring
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS14901 @DAS16803 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateButton
 	When User clicks Admin on the left-hand menu
 	When User clicks "Evergreen" link on the Admin page
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatOneRingAddeddAfterMulticlickingCreateB
 	And User clicks Delete button
 	And User clicks Delete button in the warning message
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Delete_Newly_Created_Ring @Delete_Newly_Created_Project
+@Evergreen @Admin @EvergreenJnr_AdminPage @Rings @DAS15397 @Cleanup @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatNoConsoleErrorDisplayedWhenCreatingRingsConsistently
 	When Project created via API and opened
 	| ProjectName     | Scope     | ProjectTemplate | Mode               |

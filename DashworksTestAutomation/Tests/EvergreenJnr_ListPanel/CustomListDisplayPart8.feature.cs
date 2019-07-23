@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS14183")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Device Type", "Hostname", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Vendor", "Application", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Domain", "Username", null)]
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_ListPanel
                     "DAS10972",
                     "DAS12602",
                     "DAS14183",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -223,7 +223,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12515")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Owner Display Name", "StaticList5548", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Version", "StaticList8944", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Distinguished Name", "StaticList7412", null)]
@@ -262,7 +262,7 @@ this.FeatureBackground();
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
                     "DAS12515",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -324,7 +324,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12524")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Device Key", "DynamicList1178", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Barry\'sUse: Category", "DynamicList1125", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "GUID", "DynamicList1195", null)]
@@ -363,7 +363,7 @@ this.FeatureBackground();
                     "EvergreenJnr_ListPanel",
                     "CustomListDisplay",
                     "DAS12524",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -436,7 +436,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12524")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AllLists_CheckThatActionsPanelIsHiddenAfterCancellingProcessOfSavingList()
         {
             System.Exception lastException = null;
@@ -472,7 +472,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS12524",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 114
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

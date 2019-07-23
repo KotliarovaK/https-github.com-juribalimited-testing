@@ -181,7 +181,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("DAS12917")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_MailboxesList_CheckThatFilterNameIsNotChangedAfterRenameWhileUpdateValuesOfFilter()
         {
             System.Exception lastException = null;
@@ -217,7 +217,7 @@ this.FeatureBackground();
                         "CustomListDisplay",
                         "EvergreenJnr_ListPanel",
                         "DAS12917",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 30
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -263,7 +263,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListPanel")]
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS12891")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCancelButtonIsDisplayedWithCorrectlyColorOnListPanel()
         {
             System.Exception lastException = null;
@@ -299,7 +299,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListPanel",
                         "CustomListDisplay",
                         "DAS12891",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 46
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -337,7 +337,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13637")]
         [NUnit.Framework.CategoryAttribute("DAS13639")]
         [NUnit.Framework.CategoryAttribute("DAS13643")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatListTypeFilterForCreatedListsIsWorkedCorrectly()
         {
             System.Exception lastException = null;
@@ -374,7 +374,7 @@ this.FeatureBackground();
                         "DAS13637",
                         "DAS13639",
                         "DAS13643",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 58
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

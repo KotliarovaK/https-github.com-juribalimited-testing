@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _client = client;
         }
 
-        [AfterScenario("Delete_Newly_Created_Ring", Order = 10)]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedRing()
         {
             if (!_rings.Value.Any())

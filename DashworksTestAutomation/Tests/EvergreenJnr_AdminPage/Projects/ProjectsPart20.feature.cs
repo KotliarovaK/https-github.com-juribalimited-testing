@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS13347")]
         [NUnit.Framework.CategoryAttribute("DAS11978")]
         [NUnit.Framework.CategoryAttribute("DAS16887")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatBlueBannerIsDisplayedWithCorrectlyText()
         {
@@ -128,7 +128,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS13347",
                         "DAS11978",
                         "DAS16887",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Not_Run"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
@@ -258,7 +258,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12756")]
         [NUnit.Framework.CategoryAttribute("DAS13586")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatProjectTypesInTheFilterAlphabetised()
         {
             System.Exception lastException = null;
@@ -295,7 +295,7 @@ this.FeatureBackground();
                         "Projects",
                         "DAS12756",
                         "DAS13586",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 65
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -363,7 +363,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12183")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatAllCheckboxesOnScopeDetailsTabAreWorkedCorrectly()
         {
             System.Exception lastException = null;
@@ -400,7 +400,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS12183",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 92
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

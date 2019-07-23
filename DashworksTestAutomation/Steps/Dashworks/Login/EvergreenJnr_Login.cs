@@ -19,7 +19,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
     {
         private readonly RemoteWebDriver _driver;
 
-        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client) : base(user, usedUsers, client)
+        public EvergreenJnr_Login(RemoteWebDriver driver, UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject) : 
+            base(user, usedUsers, client, authObject)
         {
             _driver = driver;
         }

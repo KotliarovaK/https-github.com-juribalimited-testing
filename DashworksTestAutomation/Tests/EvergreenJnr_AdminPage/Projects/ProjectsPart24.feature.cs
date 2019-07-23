@@ -87,8 +87,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16816")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatFillingFieldErrorIsNotDisplayed()
         {
             System.Exception lastException = null;
@@ -124,8 +124,8 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "AdminPage",
                         "Projects",
                         "DAS16816",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -248,7 +248,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS15666")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatTrueValueDisplayedInGridForEvergreenProject()
         {
             System.Exception lastException = null;
@@ -284,7 +284,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS15666",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 60
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -330,8 +330,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS17122")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckRedErrorMessageOnScopeChangesIfBrokenListIsSetInProjectScope()
         {
             System.Exception lastException = null;
@@ -368,8 +368,8 @@ this.FeatureBackground();
                         "AdminPage",
                         "Projects",
                         "DAS17122",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup",
+                        "Cleanup"});
 #line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

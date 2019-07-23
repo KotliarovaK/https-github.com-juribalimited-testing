@@ -127,7 +127,7 @@ Examples:
 	| Application Name                                | evergreen/#/devices?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))                                                                                                                                                        | 5,195    |
 	| Application Owner (App Custom Fields)           | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                                       | 16,276   |
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @Cleanup
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceList
 	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
 	| QueryType    | QueryStringURL | RowCount |
@@ -158,7 +158,7 @@ Examples:
 	#| Application Owner (App Custom Fields)                                                                   | evergreen/#/devices?$filter=(applicationCustomField_80%20IS%20NOT%20EMPTY%20()%20WHERE%20(niod))&$select=hostname,chassisCategory,oSCategory,ownerDisplayName,deviceOwnerCustomField_79                                      | 16,222 |                                                                                                                                                                                                                                                   |
 	#| Application Name                                                                                        | evergreen/#/devices?$filter=(applicationName%20IS%20EMPTY%20()%20WHERE%20(iod))                                                                                                                                              | 6      |                                                                                                                                                                                                                                                   |
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceStaticList
 	When User create static list with "StaticList13179" name on "Applications" page with following items
 	| ItemName |
@@ -182,7 +182,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And "17,256" rows are displayed in the agGrid
 	And "Any Application in list StaticList13179 used on device; entitled to device; installed on device; used by device's owner; or entitled to device's owner" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDeviceDynamicList
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -207,7 +207,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForDe
 	And "17,285" rows are displayed in the agGrid
 	And "Any Application in list Dynamic13179 not entitled to device's owner; not used by device's owner; not installed on device; not entitled to device; or not used on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithComplianceIsRedAmberOrUnknownFilter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                                                        | QueryStringURL                                                                                                                                               |
@@ -236,7 +236,7 @@ Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForSt
 	And "7,425" rows are displayed in the agGrid
 	And "Any Application in list StaticList12911 not installed on device" is displayed in added filter info
 
-@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_QueryStrings @Query @DAS13179 @DAS17398 @Cleanup
 Scenario: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForStaticListWithVendorContainsMicrosoftOrAdobeFilter
 	When Evergreen QueryStringURL is entered for Simple QueryType
 	| QueryType                                                          | QueryStringURL                                                                              |
@@ -291,7 +291,7 @@ Examples:
 	#| Application Import                    | evergreen/#/users?$filter=(applicationImport%20NOT%20EQUALS%20('A01%20SMS%20(Spoof%C2%A7')%20WHERE%20(ubu%2Cetu%2Cuodou%2Cetdobu%2Ciodobu)) | 4,910  |
 	#| Application Name                      | evergreen/#/users?$filter=(applicationName%20IS%20NOT%20EMPTY%20()%20WHERE%20())                                                            | 26,802 |
 
-@Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS13179 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_QueryStrings @Query @DAS13179 @Cleanup
 Scenario Outline: EvergreenJnr_QueryString_AdvancedFilterRowCountAndFilterTextCheckForUserList
 	When Evergreen QueryStringURL is entered for Simple QueryType and appropriate RowCount is displayed
 	| QueryType    | QueryStringURL | RowCount |

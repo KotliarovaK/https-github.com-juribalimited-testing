@@ -24,7 +24,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
             _client = client;
         }
 
-        [AfterScenario("Delete_Newly_Created_Team", Order = 10)]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedTeam()
         {
             if (!_teams.Value.Any())

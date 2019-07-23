@@ -19,7 +19,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Teams.AfterScenario
             _teamDefaultId = teamDefaultId;
         }
 
-        [AfterScenario("Set_Default_Team", Order = 0)]
+        [AfterScenario("Set_Default_Team", Order = 1)]
         public void SetDefaultTeam()
         {
             if (string.IsNullOrEmpty(_teamDefaultId.Value))

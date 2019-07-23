@@ -45,7 +45,7 @@ Scenario: Senior_ChecksThatUserCantRemoveDefaultTeamOnSeniorPage
 	Then information message is displayed with "Team was successfully updated." text
 	And Default Team checkbox is checked and cannot be unchecked
 
-@Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322 @Delete_Newly_Created_Project
+@Senior @Dashworks @Projects_Dashworks @Senior_Projects @Senior_Tasks @DAS14322 @Cleanup
 Scenario: Senior_ChecksThatAnyTabsCanBeOpenedAfterAddingNewValuesToTask
 	When User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user

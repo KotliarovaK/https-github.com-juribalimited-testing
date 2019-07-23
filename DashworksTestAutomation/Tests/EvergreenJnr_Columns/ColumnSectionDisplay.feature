@@ -95,7 +95,7 @@ Scenario: EvergreenJnr_DevicesList_CheckTheColumnCategoriesUpdatesAfterAddingCol
 	| ColumnName |
 	| Build Date |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -122,7 +122,7 @@ Scenario: EvergreenJnr_UsersList_CheckTheColumnCategoriesUpdatesAfterAddingColum
 	| ColumnName |
 	| Zip Code   |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @DAS12553 @DAS12602 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS12152 @DAS12553 @DAS12602 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForStaticLists
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -151,7 +151,7 @@ Scenario: EvergreenJnr_ApplicationsList_CheckTheColumnCategoriesUpdatesAfterAddi
 	| ColumnName           |
 	| Windows7Mi: In Scope |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS11768 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_CheckTheColumnCategoriesUpdatesAfterAddingColumnForDynamicLists
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -274,7 +274,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatColumnsPanelIsDisplayedCorrectlyAfter
 	Then Columns panel is displayed to the user
 	Then Maximize button is displayed for "User" category
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -318,7 +318,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromThe
 	| Compliance         |
 	| Import             |
 
-@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnUsersPage
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -359,7 +359,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatAfterAddingRowsToAStaticListFromTheAl
 	| Compliance         |
 	| Enabled            |
 
-@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Applications @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnApplicationsPage
 	When User clicks "Applications" on the left-hand menu
 	Then "Applications" list should be displayed to the user
@@ -399,7 +399,7 @@ Scenario: EvergreenJnr_ApplicationsList_ChecksThatAfterAddingRowsToAStaticListFr
 	| Compliance  |
 	| Import      |
 
-@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Mailboxes @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromTheAllListTheColumnsIsDisplayedCorrectlyOnMailboxesPage
 	When User clicks "Mailboxes" on the left-hand menu
 	Then "Mailboxes" list should be displayed to the user
@@ -441,7 +441,7 @@ Scenario: EvergreenJnr_MailboxesList_ChecksThatAfterAddingRowsToAStaticListFromT
 	| Alias              |
 	| Import             |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADynamicListTheColumnsIsDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user
@@ -487,7 +487,7 @@ Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromADy
 	| Owner Display Name |
 	| Import             |
 
-@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_Columns @ColumnSectionDisplay @DAS13059 @Cleanup
 Scenario: EvergreenJnr_DevicesList_ChecksThatAfterAddingRowsToAStaticListFromAStaticListTheColumnsIsDisplayedCorrectlyOnDevicesPage
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

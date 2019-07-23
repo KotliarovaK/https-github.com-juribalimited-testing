@@ -90,7 +90,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12154")]
         [NUnit.Framework.CategoryAttribute("DAS12742")]
         [NUnit.Framework.CategoryAttribute("DAS12872")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         public virtual void EvergreenJnr_AdminPage_CheckThatWarningMessageIsNotDisplayedWhenDeletingListUsingInTheProjectThatWasDeleted()
         {
@@ -130,7 +130,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12154",
                         "DAS12742",
                         "DAS12872",
-                        "Delete_Newly_Created_List",
+                        "Cleanup",
                         "Project_Creation_and_Scope"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
@@ -227,7 +227,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS13803")]
         [NUnit.Framework.CategoryAttribute("DAS13930")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNumberOfApplicationsInProjectScopeIsCorrectlyUpdated()
         {
@@ -271,7 +271,7 @@ this.FeatureBackground();
                         "DAS12485",
                         "DAS13803",
                         "DAS13930",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope"});
 #line 46
 this.ScenarioInitialize(scenarioInfo);
@@ -383,8 +383,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11886")]
         [NUnit.Framework.CategoryAttribute("DAS12613")]
         [NUnit.Framework.CategoryAttribute("DAS13199")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         public virtual void EvergreenJnr_AdminPage_CheckThatWarningMessageIsDisplayedAfterDeletingUsedForProjectLists()
         {
@@ -424,8 +424,8 @@ this.FeatureBackground();
                         "DAS11886",
                         "DAS12613",
                         "DAS13199",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
+                        "Cleanup",
                         "Project_Creation_and_Scope"});
 #line 89
 this.ScenarioInitialize(scenarioInfo);
@@ -526,7 +526,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13393")]
         [NUnit.Framework.CategoryAttribute("DAS13803")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAfterApplyingDoNotIncludeDeviceOwnersListHas0ItemsInTheUsersTab()
@@ -575,7 +575,7 @@ this.FeatureBackground();
                         "DAS13393",
                         "DAS13803",
                         "DAS13973",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 126

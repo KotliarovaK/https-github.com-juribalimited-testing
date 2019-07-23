@@ -27,7 +27,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _bucketUnassignedId = bucketUnassignedId;
         }
 
-        [AfterScenario("Set_Default_Bucket", Order = 0)]
+        [AfterScenario("Set_Default_Bucket", Order = 1)]
         public void SetDefaultBucket()
         {
             if (string.IsNullOrEmpty(_bucketUnassignedId.Value))

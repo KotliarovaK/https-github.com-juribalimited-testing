@@ -167,7 +167,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS11982")]
         [NUnit.Framework.CategoryAttribute("DAS12773")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatAllAssociationsAreSelectedByDefaultInTheProjectApplicationsScope()
@@ -206,7 +206,7 @@ this.FeatureBackground();
                         "AdminPage",
                         "DAS11982",
                         "DAS12773",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 24
@@ -284,7 +284,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("AdminPage")]
         [NUnit.Framework.CategoryAttribute("DAS14283")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatExistingProjectNameCantBeRemoved()
@@ -321,7 +321,7 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "AdminPage",
                         "DAS14283",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 54
@@ -383,8 +383,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12744")]
         [NUnit.Framework.CategoryAttribute("DAS12162")]
         [NUnit.Framework.CategoryAttribute("DAS12532")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoErrorsAreDisplayedInTheProjectScopeChangesSectionAfterUsingSavedDevicesList()
@@ -427,8 +427,8 @@ this.FeatureBackground();
                         "DAS12744",
                         "DAS12162",
                         "DAS12532",
-                        "Delete_Newly_Created_List",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 75

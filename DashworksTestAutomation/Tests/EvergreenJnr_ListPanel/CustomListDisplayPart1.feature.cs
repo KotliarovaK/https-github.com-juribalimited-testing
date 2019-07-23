@@ -242,7 +242,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11017")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenDeletingAFilterInCustomList()
         {
             System.Exception lastException = null;
@@ -279,7 +279,7 @@ this.FeatureBackground();
                         "CustomListDisplay",
                         "DAS11017",
                         "DAS12351",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 35
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -343,7 +343,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS11017")]
         [NUnit.Framework.CategoryAttribute("DAS12351")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatCustomListCreationBlockIsNotDisplayedWhenResetingAFilterInCustomList()
         {
             System.Exception lastException = null;
@@ -380,7 +380,7 @@ this.FeatureBackground();
                         "CustomListDisplay",
                         "DAS11017",
                         "DAS12351",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 58
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

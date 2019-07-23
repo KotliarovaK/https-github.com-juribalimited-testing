@@ -2,6 +2,7 @@
 
 namespace DashworksTestAutomation.Utils
 {
+    //TODO move all methods from this class to DatabaseHelper
     internal class DatabaseWorker
     {
         /// <summary>

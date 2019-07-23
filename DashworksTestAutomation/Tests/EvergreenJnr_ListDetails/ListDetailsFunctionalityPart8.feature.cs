@@ -316,7 +316,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_ListDetails")]
         [NUnit.Framework.CategoryAttribute("ListDetailsFunctionality")]
         [NUnit.Framework.CategoryAttribute("DAS16332")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatListNameUpdatesImmediatelyWhileTypingInDetailsPane()
         {
             System.Exception lastException = null;
@@ -352,7 +352,7 @@ this.FeatureBackground();
                         "EvergreenJnr_ListDetails",
                         "ListDetailsFunctionality",
                         "DAS16332",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 86
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

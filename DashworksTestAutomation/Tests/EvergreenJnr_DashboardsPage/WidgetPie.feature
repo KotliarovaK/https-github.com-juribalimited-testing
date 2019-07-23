@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS14668 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplitByAndAggregateByDateColumn
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Columns button
@@ -33,7 +33,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatWidgetsCanBeCreatedWhenUsingSplit
 	| Pie        | Test_Widget_DAS14668_2 | TestList_DAS14668 | ICSP: i-stage A \ i-Schedule | ICSP: i-stage A \ i-Schedule | Count distinct    | ICSP: i-stage A \ i-Schedule DESC |                  | 20        |            |
 	Then User sees widget with the next name "Test_Widget_DAS14668_2" on Dashboards page
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Delete_Newly_Created_List @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15372 @DAS15317 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWidgetThatUsesCpuArchitField
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -51,7 +51,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingWid
 	Then "WidgetForDAS15372" Widget is displayed to the user
 	And There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Delete_Newly_Created_List @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15365 @DAS15352 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPieWidgetUsedSavedList
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName |
@@ -86,7 +86,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatErrorIsNotOccurredWhenCreatingPie
 	When User clicks the "CREATE" Action button
 	Then There are no errors in the browser console
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15662 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15662 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckDataLabelsOnTheWidget
 	When Dashboard with "DAS15662_Dashboard" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -114,7 +114,7 @@ Examples:
 	| Half donut | 00RUUMAH9OZN9A |
 	| Donut      | 00RUUMAH9OZN9A |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15500 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15500 @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatWhenEditingPieWidgetAggregateFunctionSelectionIsBeforeAggregateBySelection
 	When Dashboard with "Dashboard for DAS15500" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -136,7 +136,7 @@ Examples:
 	| Donut      |
 	| Half donut |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15508 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15508 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -157,7 +157,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	And User selects "Count" as Widget Aggregate Function
 	Then Aggregate By dropdown is disabled
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15509 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -190,7 +190,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountDistinctAsAggregate
 	| Windows7Mi: Communication \ DateTime |
 
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15510 @DAS15511 @DAS15512 @Cleanup @Cleanup
 Scenario Outline: EvergreenJnr_DashboardsPage_CheckThatSelectingAggregateFunctionShowsFieldsWithCorrectDatatypeInAggregateByDropdown	
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -220,7 +220,7 @@ Examples:
 	| Max     |
 	| Average |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15524 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunctionShowsFieldsWithCorrectValuesInOrderByDropDown
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName                           |
@@ -247,7 +247,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatSelectingCountAsAggregateFunction
 	| Count ASC             |
 	| Count DESC            |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAggregateFunctionIsSelected
 	When Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -264,7 +264,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountAgg
 	| Count ASC             |
 	| Count DESC            |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDistinctAggregateFunctionIsSelected
 	When Dashboard with "TestDashboardForDAS15362" name created via API and opened
 	And User clicks Edit mode trigger on Dashboards page
@@ -282,7 +282,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenCountDis
 	| Hostname Count distinct ASC  |
 	| Hostname Count distinct DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -304,7 +304,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenSumAggre
 	| HDD Total Size (GB) Sum ASC  |
 	| HDD Total Size (GB) Sum DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -326,7 +326,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMinAggre
 	| HDD Total Size (GB) Minimum ASC  |
 	| HDD Total Size (GB) Minimum DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |
@@ -348,7 +348,7 @@ Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenMaxAggre
 	| HDD Total Size (GB) Maximum ASC  |
 	| HDD Total Size (GB) Maximum DESC |
 
-@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Delete_Newly_Created_List @Delete_Newly_Created_Dashboard
+@Evergreen @EvergreenJnr_DashboardsPage @Widgets @DAS15362 @Cleanup @Cleanup
 Scenario: EvergreenJnr_DashboardsPage_CheckThatOrderByFieldIsCorrectWhenAvgAggregateFunctionIsSelected
 	When User add following columns using URL to the "Devices" page:
 	| ColumnName          |

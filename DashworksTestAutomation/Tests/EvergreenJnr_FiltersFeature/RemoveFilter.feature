@@ -97,7 +97,7 @@ Scenario: EvergreenJnr_MailboxesList_CheckThatFiltersIsResetAndDataOnTheGridUpda
 	Then "14,784" rows are displayed in the agGrid
 	And "City" filter is removed from filters
 
-@Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS12635 @Delete_Newly_Created_List
+@Evergreen @AllLists @Evergreen_FiltersFeature @RemoveFilter @DAS12635 @Cleanup
 Scenario: EvergreenJnr_AllLists_CheckThatCancelingUnsavedFilterDoesNotReloadList
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

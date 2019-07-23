@@ -72,7 +72,7 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSpellingIsCorrectInCapacitySlotsDelet
 	And User clicks Delete button 
 	Then Warning message with "The selected slots will be deleted, do you want to proceed?" text is displayed on the Admin page
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835 @Delete_Newly_Created_Capacity_Unit
+@Evergreen @Admin @EvergreenJnr_AdminPage @Capacity @Slots @DAS13835 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage
 	When User navigates to "User Scheduled Project in Italian & Japanese (Jo)" project details
 	And User clicks "Capacity" tab

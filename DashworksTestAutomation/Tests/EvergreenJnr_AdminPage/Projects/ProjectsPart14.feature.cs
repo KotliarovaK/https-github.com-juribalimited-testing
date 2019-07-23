@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12609")]
         [NUnit.Framework.CategoryAttribute("DAS12108")]
         [NUnit.Framework.CategoryAttribute("DAS12756")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatProjectNameWhichStartsWithLowerCaseLetterIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12609",
                         "DAS12108",
                         "DAS12756",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -278,7 +278,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12755")]
         [NUnit.Framework.CategoryAttribute("DAS12763")]
         [NUnit.Framework.CategoryAttribute("DAS14604")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRelatedBucketsAreUpdatedAfterCreatingOrDeletingProject()
         {
             System.Exception lastException = null;
@@ -317,7 +317,7 @@ this.FeatureBackground();
                         "DAS12755",
                         "DAS12763",
                         "DAS14604",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 71
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -406,7 +406,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS12825")]
         [NUnit.Framework.CategoryAttribute("DASDAS14617")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Not_Run")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatColourOfOnboardedAppIsDisplayedCorrectly()
         {
@@ -447,7 +447,7 @@ this.FeatureBackground();
                         "DAS12485",
                         "DAS12825",
                         "DASDAS14617",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Not_Run"});
 #line 107
 this.ScenarioInitialize(scenarioInfo);
@@ -555,7 +555,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12496")]
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS12108")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOffboardedObjectsAreListedAfterSelectObjectToRemove()
         {
             System.Exception lastException = null;
@@ -594,7 +594,7 @@ this.FeatureBackground();
                         "DAS12496",
                         "DAS12485",
                         "DAS12108",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 149
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

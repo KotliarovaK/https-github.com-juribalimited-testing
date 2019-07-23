@@ -469,5 +469,26 @@ namespace DashworksTestAutomation.Steps.Dashworks
             var listElement = _driver.NowAt<AddWidgetPage>();
             _driver.WaitForElementToBeDisplayed(listElement.ListDoesntExistMessage);
         }
+
+        [Then(@"""(.*)"" checkbox has a correct label")]
+        public void ThenCheckboxLabelDisplayedOnForm(string checkbox)
+        {
+            var page = _driver.NowAt<AddWidgetPage>();
+            _driver.WaitForElementToBeDisplayed(page.ShowLegend);
+
+            switch (checkbox)
+            {
+                case "Show legend":
+                    Assert.That(page.ShowLegendLabel.Text, Is.EqualTo("Show legend"), "Show legend label wrong");
+                    break;
+                case "Show data labels":
+                    Assert.That(page.ShowDataLabel.Text, Is.EqualTo("Show data labels"), "Show data labels label wrong");
+                    break;
+
+                default:
+                    Assert.True(false, "Wrong checkbox specified");
+                    break;
+            }
+        }
     }
 }

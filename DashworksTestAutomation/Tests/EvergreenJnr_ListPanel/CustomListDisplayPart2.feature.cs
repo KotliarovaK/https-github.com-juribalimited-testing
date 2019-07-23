@@ -190,7 +190,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS15032")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewListCreatedMessageForStaticListIsDisplayed()
         {
             System.Exception lastException = null;
@@ -229,7 +229,7 @@ this.FeatureBackground();
                         "DAS12152",
                         "DAS12602",
                         "DAS15032",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -280,7 +280,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12602")]
         [NUnit.Framework.CategoryAttribute("DAS12966")]
         [NUnit.Framework.CategoryAttribute("DAS13838")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatListsIsDisplayedInAlphabeticalOrder()
         {
             System.Exception lastException = null;
@@ -324,7 +324,7 @@ this.FeatureBackground();
                         "DAS12602",
                         "DAS12966",
                         "DAS13838",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 49
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

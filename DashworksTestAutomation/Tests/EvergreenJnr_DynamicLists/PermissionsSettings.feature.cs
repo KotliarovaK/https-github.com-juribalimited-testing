@@ -92,7 +92,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
         [NUnit.Framework.CategoryAttribute("DAS11553")]
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList()
         {
             System.Exception lastException = null;
@@ -131,7 +131,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_DynamicLists
                         "DAS11553",
                         "DAS10880",
                         "DAS11951",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -189,7 +189,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10880")]
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS14263")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList()
         {
             System.Exception lastException = null;
@@ -228,7 +228,7 @@ this.FeatureBackground();
                         "DAS10880",
                         "DAS11951",
                         "DAS14263",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 30
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -292,7 +292,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Users")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
         [NUnit.Framework.CategoryAttribute("DAS12941")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditModeIfUseDepartmentFilter()
         {
             System.Exception lastException = null;
@@ -327,7 +327,7 @@ this.FeatureBackground();
                         "Users",
                         "EvergreenJnr_DynamicLists",
                         "DAS12941",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 56
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -368,7 +368,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Devices")]
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_DynamicLists")]
         [NUnit.Framework.CategoryAttribute("DAS16228")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserShareItForTheTeamToWhichHeAlsoBelongs()
         {
             System.Exception lastException = null;
@@ -403,7 +403,7 @@ this.FeatureBackground();
                         "Devices",
                         "EvergreenJnr_DynamicLists",
                         "DAS16228",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 70
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

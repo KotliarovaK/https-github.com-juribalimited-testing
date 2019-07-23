@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS14819")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatConvertButtonDisappearsAfterProjectConverting()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "Projects",
                         "Senior_Projects",
                         "DAS14819",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -195,7 +195,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS15260")]
         [NUnit.Framework.CategoryAttribute("DAS15794")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatCorrectCountersDisplayedInRingGridForDeviceScopedProject()
         {
             System.Exception lastException = null;
@@ -233,7 +233,7 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS15260",
                         "DAS15794",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 33
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -431,6 +431,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS16137")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThat403FullPageErrorAppearsAfterUserWithoutPermissionsNavigatesToAdminPages()
         {
             System.Exception lastException = null;
@@ -466,7 +467,8 @@ this.FeatureBackground();
                         "EvergreenJnr_AdminPage",
                         "Projects",
                         "Senior_Projects",
-                        "DAS16137"});
+                        "DAS16137",
+                        "Cleanup"});
 #line 94
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

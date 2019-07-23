@@ -12,7 +12,8 @@ namespace DashworksTestAutomation.Steps.Dashworks.Login
     [Binding]
     class EvergreenJnr_LoginApi : BaseLoginActions
     {
-        public EvergreenJnr_LoginApi(UserDto user, UsedUsers usedUsers, RestWebClient client) : base(user, usedUsers, client) { }
+        public EvergreenJnr_LoginApi(UserDto user, UsedUsers usedUsers, RestWebClient client, AuthObject authObject) : 
+            base(user, usedUsers, client, authObject) { }
 
         [Given(@"User is logged in to the Evergreen via API")]
         public void GivenUserIsLoggedInToTheEvergreen()

@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
         [NUnit.Framework.CategoryAttribute("Rings")]
         [NUnit.Framework.CategoryAttribute("DAS14780")]
         [NUnit.Framework.CategoryAttribute("DAS13530")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatRingsOptionMapsToEvergreenCanBeChanged()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Rings
                         "Rings",
                         "DAS14780",
                         "DAS13530",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -201,7 +201,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS14692")]
         [NUnit.Framework.CategoryAttribute("DAS14695")]
         [NUnit.Framework.CategoryAttribute("DAS15415")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckProjectDetailFormAndRingDropdown()
         {
             System.Exception lastException = null;
@@ -242,7 +242,7 @@ this.FeatureBackground();
                         "DAS14692",
                         "DAS14695",
                         "DAS15415",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

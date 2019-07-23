@@ -89,7 +89,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS13956")]
         [NUnit.Framework.CategoryAttribute("DAS14068")]
         [NUnit.Framework.CategoryAttribute("DAS14218")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultCapacityUnitInAProjectMappedToEvergreenDefaultCapacityUnit()
@@ -129,7 +129,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS13956",
                         "DAS14068",
                         "DAS14218",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Do_Not_Run_With_CapacityUnits",
                         "Set_Default_Capacity_Unit"});
 #line 9
@@ -295,8 +295,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13156")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
-        [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit_With_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Set_Default_Capacity_Unit")]
         [NUnit.Framework.CategoryAttribute("Do_Not_Run_With_CapacityUnits")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOnboardedApplicationsAreDisplayedCapacityUnits()
         {
@@ -333,8 +333,8 @@ this.FeatureBackground();
                         "Capacity",
                         "Units",
                         "DAS13156",
-                        "Delete_Newly_Created_Capacity_Unit",
-                        "Set_Default_Capacity_Unit_With_Project",
+                        "Cleanup",
+                        "Set_Default_Capacity_Unit",
                         "Do_Not_Run_With_CapacityUnits"});
 #line 52
 this.ScenarioInitialize(scenarioInfo);

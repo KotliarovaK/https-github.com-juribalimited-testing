@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("EvergreenJnr_AdminPage")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.CategoryAttribute("DAS12768")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.TestCaseAttribute("All Devices", null)]
         [NUnit.Framework.TestCaseAttribute("All Users", null)]
@@ -126,7 +126,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                     "EvergreenJnr_AdminPage",
                     "Projects",
                     "DAS12768",
-                    "Delete_Newly_Created_Project",
+                    "Cleanup",
                     "Project_Creation_and_Scope"};
             if ((exampleTags != null))
             {
@@ -182,7 +182,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("UpdatingName")]
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS13499")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatTasksRequestTypesAndCategoriesAreNotDeletedAfterChangingProjectName()
         {
             System.Exception lastException = null;
@@ -220,7 +220,7 @@ this.FeatureBackground();
                         "UpdatingName",
                         "Senior_Projects",
                         "DAS13499",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -380,7 +380,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS15262")]
         [NUnit.Framework.CategoryAttribute("DAS13973")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatDefaultValuesStayTheSameAfterConvertingProjectToEvergreen()
         {
             System.Exception lastException = null;
@@ -418,7 +418,7 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS15262",
                         "DAS13973",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 90
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -498,7 +498,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Senior_Projects")]
         [NUnit.Framework.CategoryAttribute("DAS15262")]
         [NUnit.Framework.CategoryAttribute("DAS16361")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_ChecksThatConvertToEvergreenButtonIsNotDisplayedForEvergreensProject()
         {
             System.Exception lastException = null;
@@ -536,7 +536,7 @@ this.FeatureBackground();
                         "Senior_Projects",
                         "DAS15262",
                         "DAS16361",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 118
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

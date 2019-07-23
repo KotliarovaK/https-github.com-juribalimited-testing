@@ -25,7 +25,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.CapacityUnits.AfterS
             _client = client;
         }
 
-        [AfterScenario("Delete_Newly_Created_Bucket", Order = 10)]
+        [AfterScenario("Cleanup", Order = 10)]
         public void DeleteNewlyCreatedBucket()
         {
             if (!_buckets.Value.Any())

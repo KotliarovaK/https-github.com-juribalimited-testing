@@ -405,39 +405,5 @@ namespace DashworksTestAutomation.Steps.Dashworks
             {
             }
         }
-
-        [AfterScenario("Delete_Newly_Created_User")]
-        public void DeleteNewlyCreatedUser()
-        {
-            try
-            {
-                var header = _driver.NowAt<HeaderElement>();
-                header.LogOut();
-                _driver.WaitForDataLoading();
-                var loginPage1 = _driver.NowAt<LoginPanelPage>();
-                loginPage1.LoginLink.Click();
-                var loginPage = _driver.NowAt<LoginPage>();
-                loginPage.SplashUserNameTextBox.SendKeys("admin");
-                loginPage.SplashPasswordTextBox.SendKeys("m!gration");
-                loginPage.SplashLoginButton.Click();
-                _driver.WaitForDataLoading();
-                var page = _driver.NowAt<ManagementConsolePage>();
-                page.ManageLink.Click();
-                _driver.WaitForDataLoading();
-                page.ManageUsersLink.Click();
-                _driver.WaitForDataLoading();
-                var page1 = _driver.NowAt<MainElementsOfProjectCreation>();
-                page1.SearchTextBox.Clear();
-                page1.SearchTextBox.SendKeys("DAS13288");
-                page1.SearchButton.Click();
-                _driver.WaitForDataLoading();
-                page1.GetDeleteButtonElementByName("DAS13288").Click();
-                _driver.WaitForDataLoading();
-                _driver.AcceptAlert();
-            }
-            catch
-            {
-            }
-        }
     }
 }

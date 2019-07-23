@@ -375,7 +375,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13835")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Capacity_Unit")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotsLinkFromUnitGridLeadsToCorrectFilteredPage()
         {
             System.Exception lastException = null;
@@ -411,7 +411,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Slots",
                         "DAS13835",
-                        "Delete_Newly_Created_Capacity_Unit"});
+                        "Cleanup"});
 #line 76
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

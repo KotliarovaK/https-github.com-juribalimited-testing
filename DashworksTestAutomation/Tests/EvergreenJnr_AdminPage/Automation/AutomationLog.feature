@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS16890 @DAS17063 @DAS17364 @DAS17402 @DAS17425 @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWithDeletedProject
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
@@ -29,13 +29,13 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User type "16890_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "16890Project" in the Project dropdown
-	When User selects "[Default (Computer)]" in the Path dropdown
+	When User selects "[Default (Computer)]" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	When User type "New_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User clicks "Projects" link on the Admin page
@@ -66,14 +66,23 @@ Scenario: EvergreenJnr_AdminPage_CheckAutomationsLogGridForRunningAutomationWith
 	When User enters "16890_Automation" text in the Search field for "Automation" column
 	Then "ONE OR MORE ACTIONS FAILED" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169 @Not_Ready
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17104 @DAS17110 @DAS17169
 #Use Inactive automation
 Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNotRun
 	When User clicks Admin on the left-hand menu
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 240619 Mailboxes" text in the Search field for "Automation" column
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "17104_Automation" Name in the "Automation Name" field on the Automation details page
+	When User type "17104" Name in the "Description" field on the Automation details page
+	When User selects "All Users" in the Scope Automation dropdown
+	Then "CREATE" Action button is disabled
+	When User selects "Manual" in the "Run" dropdown
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "17104_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
@@ -82,7 +91,7 @@ Scenario: EvergreenJnr_AdminPage_CheckThatInactiveAutomationShouldBeLoggedButNot
 	Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
 	Then Date column shows Date and Time values
-	When User enters "AM 240619 Mailboxes" text in the Search field for "Automation" column
+	When User enters "17104_Automation" text in the Search field for "Automation" column
 	Then "INACTIVE AUTOMATION" content is displayed for "Outcome" column
 	When User clicks Export button on the Admin page
 	Then User checks that file "Dashworks export" was downloaded
@@ -102,7 +111,21 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	Then Admin page should be displayed to the user
 	When User clicks "Automations" link on the Admin page
 	Then "Automations" page should be displayed to the user
-	When User enters "AM 1.7.19 Application" text in the Search field for "Automation" column
+	When User clicks the "CREATE AUTOMATION" Action button
+	Then Create Automation page is displayed to the User
+	When User type "D16974_Automation" Name in the "Automation Name" field on the Automation details page
+	When User type "1745104" Name in the "Description" field on the Automation details page
+	When User selects "All Users" in the Scope Automation dropdown
+	Then "CREATE" Action button is disabled
+	When User selects "Manual" in the "Run" dropdown
+	And User clicks the "CREATE" Action button
+	When User type "D16974_Action" Name in the "Action Name" field on the Automation details page
+	When User selects "Update path" in the "Action Type" dropdown
+	When User selects "User Evergreen Capacity Project" in the Project dropdown
+	When User selects "[Default (User)]" in the "Path" dropdown for Actions
+	And User clicks the "CREATE" Action button
+	When User clicks "Automations" navigation link on the Admin page
+	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	When User selects all rows on the grid
 	When User clicks on Actions button
 	And User selects "Run now" in the Actions
@@ -110,7 +133,7 @@ Scenario: EvergreenJnr_AdminPage_CheckSuccessfulRunInOutcomeColumn
 	When User clicks "RUN" button in the warning message on Admin page
 	Then Success message is displayed and contains "1 automation started," text
 	When User selects "Automation Log" tab on the Project details page
-	When User enters "AM 1.7.19 Application" text in the Search field for "Automation" column
+	When User enters "D16974_Automation" text in the Search field for "Automation" column
 	Then "SUCCESS" content is displayed for "Outcome" column
 	When User clicks String Filter button for "Type" column on the Admin page
 	When User selects "Automation Start" checkbox from String Filter with item list on the Admin page
@@ -138,7 +161,7 @@ Scenario: EvergreenJnr_AdminPage_CheckOutcomeValueForAnAutomationThatIsAlreadyRu
 	When User enters "DELAY - do not delete2" text in the Search field for "Automation" column
 	Then "AUTOMATION IS ALREADY RUNNING" content is displayed for "Outcome" column
 
-@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17011 @DAS17374 @DAS17370 @DAS17367 @Delete_Newly_Created_List
+@Evergreen @EvergreenJnr_AdminPage @AutomationLog @Automations @DAS17011 @DAS17374 @DAS17370 @DAS17367 @Cleanup
 Scenario: EvergreenJnr_AdminPage_CheckBrokenListValidationWhenRunningAnAutomation
 	When User clicks "Devices" on the left-hand menu
 	And User clicks the Filters button

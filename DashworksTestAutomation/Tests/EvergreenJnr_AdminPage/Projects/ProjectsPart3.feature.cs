@@ -91,7 +91,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
         [NUnit.Framework.CategoryAttribute("DAS12485")]
         [NUnit.Framework.CategoryAttribute("DAS12645")]
         [NUnit.Framework.CategoryAttribute("DAS11877")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckingThatRedBannerWithOkMessageIsNotDisplayedAfterAddingItemsToCreatedProject()
@@ -133,7 +133,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Projects
                         "DAS12485",
                         "DAS12645",
                         "DAS11877",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Project_Creation_and_Scope",
                         "Projects"});
 #line 9
@@ -232,8 +232,8 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12872")]
         [NUnit.Framework.CategoryAttribute("DAS13401")]
         [NUnit.Framework.CategoryAttribute("DAS-14877")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "ProjectList4587", "17,285", "TestProject4511", "17285", "Device Type", "Desktop", "8,103", "8103", "TestProject4511", null)]
@@ -276,8 +276,8 @@ this.FeatureBackground();
                     "DAS12872",
                     "DAS13401",
                     "DAS-14877",
-                    "Delete_Newly_Created_List",
-                    "Delete_Newly_Created_Project",
+                    "Cleanup",
+                    "Cleanup",
                     "Project_Creation_and_Scope",
                     "Projects"};
             if ((exampleTags != null))
@@ -373,7 +373,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13973")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
         [NUnit.Framework.CategoryAttribute("Projects")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatObjectsIsOnboardedToTheProjectWithCloneEvergreenBucketsToProjectBuckets()
         {
             System.Exception lastException = null;
@@ -415,7 +415,7 @@ this.FeatureBackground();
                         "DAS13973",
                         "Project_Creation_and_Scope",
                         "Projects",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 87
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -522,7 +522,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS13949")]
         [NUnit.Framework.CategoryAttribute("DAS14180")]
         [NUnit.Framework.CategoryAttribute("Project_Creation_and_Scope")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.CategoryAttribute("Projects")]
         public virtual void EvergreenJnr_AdminPage_CheckingThatProjectDetailsForOnboardedObjectsIsDisplayedCorrectly()
         {
@@ -567,7 +567,7 @@ this.FeatureBackground();
                         "DAS13949",
                         "DAS14180",
                         "Project_Creation_and_Scope",
-                        "Delete_Newly_Created_Project",
+                        "Cleanup",
                         "Projects"});
 #line 128
 this.ScenarioInitialize(scenarioInfo);

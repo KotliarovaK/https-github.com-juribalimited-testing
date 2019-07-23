@@ -5,7 +5,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276
+@Evergreen @Admin @EvergreenJnr_AdminPage @Automations @Actions @DAS15427 @DAS15832 @DAS15833 @DAS17276 @Not_Ready
 #Change value after gold data complete added
 #Selected automation should have at least three actions
 Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptions
@@ -26,20 +26,20 @@ Scenario: EvergreenJnr_AdminPage_CheckThatActionsGridCogMenuShowsTheCorrectOptio
 	When User type "15427_Action1" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	When User type "15427_Action2" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	Then "Test_Automation_15427" object name is displayed to the User
 	When User type "15427_Action3" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	When User clicks the "CREATE" Action button
 	When User clicks Cog-menu for "15427_Action1" item on Admin page
 	Then User sees following cog-menu items on Admin page:
@@ -90,7 +90,7 @@ Scenario: EvergreenJnr_AdminPage_CheckMoveToOptionWorksCorrectly
 	When User type "DAS15427_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	Then "Undetermined" content is displayed in the Path Automation dropdown
 	When User clicks the "CREATE" Action button
 	#Then There are no errors in the browser console
@@ -181,7 +181,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	When User type "15428_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "1803 Rollout" in the Project dropdown
-	When User selects "Undetermined" in the Path dropdown
+	When User selects "Undetermined" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks the "CREATE ACTION" Action button
 	When User type "15428_Action" Name in the "Action Name" field on the Automation details page
@@ -208,7 +208,7 @@ Scenario: EvergreenJnr_AdminPage_CheckActionsReorderingFunctionality
 	And User removes selected item
 
 #Remove Pre-requisites after adding it to Gold data
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15938 @DAS17076 @Cleanup @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 #Pre-requisites:
 	When User clicks "Users" on the left-hand menu
@@ -271,13 +271,13 @@ Scenario: EvergreenJnr_AdminPage_CheckParametersToCreateUpdatePathAction
 	Then "CREATE" Action button is disabled
 	Then "SAVE AND CREATE ANOTHER" Action button is disabled
 	Then "CANCEL" Action button is active
-	When User selects "User Migration" in the Path dropdown
+	When User selects "User Migration" in the "Path" dropdown for Actions
 	Then "SAVE AND CREATE ANOTHER" Action button is active
 	Then "CANCEL" Action button is active
 	When User clicks the "CREATE" Action button
 	Then Success message is displayed and contains "The automation action has been created" text
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS15425 @DAS16143 @DAS17336 @DAS17367 @Not_Ready
 #Change value after gold data complete added
 Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks Admin on the left-hand menu
@@ -296,7 +296,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User type "15425_Action" Name in the "Action Name" field on the Automation details page
 	When User selects "Update path" in the "Action Type" dropdown
 	When User selects "User Evergreen Capacity Project" in the Project dropdown
-	When User selects "[Default (User)]" in the Path dropdown
+	When User selects "[Default (User)]" in the "Path" dropdown for Actions
 	And User clicks the "CREATE" Action button
 	When User clicks "Automations" navigation link on the Admin page
 	When User enters "15425_Automation" text in the Search field for "Automation" column
@@ -325,7 +325,7 @@ Scenario: EvergreenJnr_AdminPage_CheckEditActionPage
 	When User clicks the "CANCEL" Action button
 	Then Actions page is displayed to the User
 
-@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @Delete_Newly_Created_Project @Delete_Newly_Created_List @Not_Ready
+@Evergreen @Admin @EvergreenJnr_AdminPage @Actions @DAS16992 @DAS17427 @Cleanup @Cleanup @Not_Ready
 Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	#Pre-requisites:
 	When User clicks "Devices" on the left-hand menu
@@ -348,6 +348,11 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	And User create Stage
 	| StageName     |
 	| Pre-Migration |
+	And User clicks "Create Stage" button
+	When User clicks "Create Stage" button
+	And User create Stage
+	| StageName |
+	| Migration |
 	And User clicks "Create Stage" button
 	And User navigate to "Tasks" tab
 	Then "Manage Tasks" page is displayed to the user
@@ -372,6 +377,14 @@ Scenario: EvergreenJnr_AdminPage_CheckUpdateTaskValueForCreateActions
 	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
 	| Device Task 2 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
 	Then Success message is displayed with "Task successfully created" text
+	When User clicks "Cancel" button
+	And User clicks "Create Task" button
+	And User creates new Task on Senior
+	| Name          | Help     | StagesName    | TaskType | ValueType | ObjectType | TaskValuesTemplate | ApplyToAllCheckbox |
+	| Device Task 4 | DAS16992 | Pre-Migration | Normal   | Date      | Computer   |                    |                    |
+	Then Success message is displayed with "Task successfully created" text
+	When User publishes the task
+	Then selected task was published
 	When User navigate to Evergreen link
 	And User clicks "Admin" on the left-hand menu
 	Then Admin page should be displayed to the user

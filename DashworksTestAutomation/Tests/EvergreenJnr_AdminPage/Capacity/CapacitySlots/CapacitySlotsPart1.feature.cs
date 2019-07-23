@@ -94,7 +94,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
         [NUnit.Framework.CategoryAttribute("DAS13375")]
         [NUnit.Framework.CategoryAttribute("DAS13711")]
         [NUnit.Framework.CategoryAttribute("DAS17271")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUnlimitedTextIsDisappearAfterClickingIntoTheCell()
         {
             System.Exception lastException = null;
@@ -137,7 +137,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage.Capacity.Capacity
                         "DAS13375",
                         "DAS13711",
                         "DAS17271",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -277,7 +277,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Capacity")]
         [NUnit.Framework.CategoryAttribute("Override_Dates")]
         [NUnit.Framework.CategoryAttribute("DAS13780")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserIsUnableToCreateMoreThanOneOverrideDateForSameSlotWithSameDate()
         {
             System.Exception lastException = null;
@@ -314,7 +314,7 @@ this.FeatureBackground();
                         "Capacity",
                         "Override_Dates",
                         "DAS13780",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 60
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -424,7 +424,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("Units")]
         [NUnit.Framework.CategoryAttribute("DAS13789")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatUserIsAbleToUpdateCapacityUnitOrSlotUsingTheSameNameWithDifferentCase()
         {
             System.Exception lastException = null;
@@ -462,7 +462,7 @@ this.FeatureBackground();
                         "Slots",
                         "Units",
                         "DAS13789",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 101
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -554,7 +554,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("Slots")]
         [NUnit.Framework.CategoryAttribute("DAS13824")]
         [NUnit.Framework.CategoryAttribute("DAS14250")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatSlotAvailableFromAndSlotAvailableToCanBeClearedOnUpdateCapacitySlotPage()
         {
             System.Exception lastException = null;
@@ -592,7 +592,7 @@ this.FeatureBackground();
                         "Slots",
                         "DAS13824",
                         "DAS14250",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 131
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

@@ -280,7 +280,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS11951")]
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12595")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckTheSortOrderIsSavedForExistingListAndNotDeletedAfterClickingResetButtonInColumnsMenu()
         {
             System.Exception lastException = null;
@@ -319,7 +319,7 @@ this.FeatureBackground();
                         "DAS11951",
                         "DAS12152",
                         "DAS12595",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 52
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -419,7 +419,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS12152")]
         [NUnit.Framework.CategoryAttribute("DAS12595")]
         [NUnit.Framework.CategoryAttribute("DAS14783")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_DevicesList_CheckThatNewlySavedListIsCreatedWithTheCorrectColumnsAndSortsAndTheSameRowsOfData()
         {
             System.Exception lastException = null;
@@ -458,7 +458,7 @@ this.FeatureBackground();
                         "DAS12152",
                         "DAS12595",
                         "DAS14783",
-                        "Delete_Newly_Created_List"});
+                        "Cleanup"});
 #line 93
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

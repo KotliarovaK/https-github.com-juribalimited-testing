@@ -87,7 +87,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
         [NUnit.Framework.CategoryAttribute("Readiness")]
         [NUnit.Framework.CategoryAttribute("DAS15665")]
         [NUnit.Framework.CategoryAttribute("DAS14994")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatOptionsInTheCogMenuForReadinessAreCorrect()
         {
             System.Exception lastException = null;
@@ -123,7 +123,7 @@ namespace DashworksTestAutomation.Tests.EvergreenJnr_AdminPage
                         "Readiness",
                         "DAS15665",
                         "DAS14994",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -203,7 +203,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS15884")]
         [NUnit.Framework.CategoryAttribute("DAS15789")]
         [NUnit.Framework.CategoryAttribute("DAS16131")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckThatNoConsoleErrorsAppearWhenDeleteReadiness()
         {
             System.Exception lastException = null;
@@ -240,7 +240,7 @@ this.FeatureBackground();
                         "DAS15884",
                         "DAS15789",
                         "DAS16131",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 41
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -338,7 +338,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS16131")]
         [NUnit.Framework.CategoryAttribute("DAS16226")]
         [NUnit.Framework.CategoryAttribute("DAS16163")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_Project")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         public virtual void EvergreenJnr_AdminPage_CheckReadinessDialogContainerDisplay()
         {
             System.Exception lastException = null;
@@ -375,7 +375,7 @@ this.FeatureBackground();
                         "DAS16131",
                         "DAS16226",
                         "DAS16163",
-                        "Delete_Newly_Created_Project"});
+                        "Cleanup"});
 #line 81
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

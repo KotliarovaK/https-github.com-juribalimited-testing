@@ -6,7 +6,7 @@ Background: Pre-Conditions
 	Given User is logged in to the Evergreen
 	Then Evergreen Dashboards page should be displayed to the user
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @DAS11951 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10945 @DAS11553 @DAS10880 @DAS11951 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpdateDynamicList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -26,7 +26,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatNotOwnerUsersDontHavePermissionsToUpda
 	Then Update list option is NOT available
 	And Save as a new list option is available
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @DAS14263 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @PermissionsSettings @DAS10979 @DAS11553 @DAS10880 @DAS11951 @DAS14263 @Cleanup
 Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteList
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -52,7 +52,7 @@ Scenario: EvergreenJnr_UsersList_CheckThatAdminUserButNotOwnerIsNotAbleToDeleteL
 	Then Delete list button is disabled in List Details panel
 	And Delete List option is NOT available
 
-@Evergreen @Users @EvergreenJnr_DynamicLists @DAS12941 @Delete_Newly_Created_List
+@Evergreen @Users @EvergreenJnr_DynamicLists @DAS12941 @Cleanup
 Scenario: EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditModeIfUseDepartmentFilter
 	When User clicks "Users" on the left-hand menu
 	Then "Users" list should be displayed to the user
@@ -66,7 +66,7 @@ Scenario: EvergreenJnr_UsersList_ChecksThatSavedDynamicListIsNotDisplayedInEditM
 	When User navigates to the "DAS12941" list
 	Then Edit List menu is not displayed
 
-@Evergreen @Devices @EvergreenJnr_DynamicLists @DAS16228 @Delete_Newly_Created_List
+@Evergreen @Devices @EvergreenJnr_DynamicLists @DAS16228 @Cleanup
 Scenario: EvergreenJnr_DevicesList_CheckThatSharedItemIsNotDuplicatedWhenUserShareItForTheTeamToWhichHeAlsoBelongs
 	When User clicks "Devices" on the left-hand menu
 	Then "Devices" list should be displayed to the user

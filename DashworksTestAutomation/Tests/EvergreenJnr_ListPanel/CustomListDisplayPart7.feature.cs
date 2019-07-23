@@ -292,7 +292,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("CustomListDisplay")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12738")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Import", "001BAQXT6JWFPI", "Network Card", "Owner City", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Application Key", "0004 - Adobe Acrobat Reader 5.0.5 Francais", "prK: In Scope", "Compliance", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "City", "$6BE000-SUDQ9614UVO8", "Cost Centre", "Department Name", null)]
@@ -332,7 +332,7 @@ this.FeatureBackground();
                     "CustomListDisplay",
                     "DAS10972",
                     "DAS12738",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -429,7 +429,7 @@ this.FeatureBackground();
         [NUnit.Framework.CategoryAttribute("DAS10998")]
         [NUnit.Framework.CategoryAttribute("DAS10972")]
         [NUnit.Framework.CategoryAttribute("DAS12602")]
-        [NUnit.Framework.CategoryAttribute("Delete_Newly_Created_List")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
         [NUnit.Framework.TestCaseAttribute("Devices", "Hostname", "Centre", "3,283", "18", null)]
         [NUnit.Framework.TestCaseAttribute("Users", "Username", "Barland", "3", "142", null)]
         [NUnit.Framework.TestCaseAttribute("Applications", "Application", "Adobe", "40", "1", null)]
@@ -470,7 +470,7 @@ this.FeatureBackground();
                     "DAS10998",
                     "DAS10972",
                     "DAS12602",
-                    "Delete_Newly_Created_List"};
+                    "Cleanup"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
