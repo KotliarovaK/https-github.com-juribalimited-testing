@@ -110,6 +110,7 @@ namespace DashworksTestAutomation.Steps.Dashworks.AdminPage.Slots
 
                 action.GetActionsButtonByName("CREATE").Click();
                 _driver.WaitForDataLoading();
+                _driver.CheckConsoleErrors();
             }
         }
     }

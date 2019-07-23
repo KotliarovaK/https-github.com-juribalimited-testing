@@ -36,14 +36,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatSlotsValueAreChangedAfterUpdatingForCa
 	And User navigates to "ProjectForDAS13152" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot13152" Name in the "Slot Name" field on the Project details page
-	And User type "13152" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Units" in the "Capacity Type" dropdown
-	And User selects "Stage13152 \ Task13152" checkbox in the "Tasks" field on the Project details page
-	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	And User creates new Slot
+	| SlotName  | DisplayName | CapacityType   | Tasks                  | CapacityUnits |
+	| Slot13152 | 13152       | Capacity Units | Stage13152 \ Task13152 | Unassigned    |
 	When User clicks content from "Capacity Slot" column
 	Then "Stage13152 \ Task13152" value is displayed in the "Tasks" dropdown
 	And "Unassigned" value is displayed in the "Capacity Units" dropdown

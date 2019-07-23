@@ -12,23 +12,11 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatSortingWorkCorrectlyForRequestTypeTea
 	| ProjectForDAS13792 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot 3" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 3" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	And User creates new Slot
+	| SlotName | DisplayName | CapacityUnits | CapacityType    |
+	| Slot 1   | Slot 1      | Unassigned    |                 |
+	| Slot 2   | Slot 2      |               | Teams and Paths |
+	| Slot 3   | Slot 3      |               |                 |
 	When User click on 'Capacity Units' column header
 	Then data in table is sorted by "Capacity Units" column in ascending order on the Admin page
 	When User click on 'Capacity Units' column header
@@ -60,29 +48,10 @@ Scenario: EvergreenJnr_AdminPage_CheckThatListOfSelectedItemsIsTruncatedForReque
 	When User navigates to "Windows 7 Migration (Computer Scheduled Project)" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	Then User selects "Teams and Paths" option in "Capacity Type" dropdown
-	When User type "DAS_13811_1" Name in the "Slot Name" field on the Project details page
-	And User type "13811_1" Name in the "Display Name" field on the Project details page
-	And User selects following items in "Paths" dropdown:
-	| items                             |
-	| Computer: PC Rebuild              |
-	| Computer: Workstation Replacement |
-	And User selects following items in "Teams" dropdown:
-	| items               |
-	| Administrative Team |
-	| Admin IT            |
-	And User clicks the "CREATE" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "DAS_13811_2" Name in the "Slot Name" field on the Project details page
-	And User type "13811_2" Name in the "Display Name" field on the Project details page
-	And User selects "Capacity Units" in the "Capacity Type" dropdown
-	And User selects following items in "Capacity Units" dropdown:
-	| items           |
-	| Unassigned      |
-	| Capacity Unit 1 |
-	| Capacity Unit 2 |
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName    | DisplayName | CapacityType    | Paths                                                  | Teams                        | CapacityUnits                              |
+	| DAS_13811_1 | 13811_1     | Teams and Paths | Computer: PC Rebuild‡Computer: Workstation Replacement | Administrative Team‡Admin IT |                                            |
+	| DAS_13811_2 | 13811_2     | Capacity Units  |                                                        |                              | Unassigned‡Capacity Unit 1‡Capacity Unit 2 |
 	Then User sees following text in cell truncated with ellipsis:
 	| cellText                                               |
 	| Computer: PC Rebuild,Computer: Workstation Replacement |
@@ -108,10 +77,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	| Unit 1 |             | false     | ProjectForDAS13526 |
 	| Unit 2 |             | false     | ProjectForDAS13526 |
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName |
+	| Slot 1   | Slot 1      |
 	And User selects "Units" tab on the Project details page
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
@@ -120,11 +88,9 @@ Scenario: EvergreenJnr_AdminPage_ChecksThatInSlotsColumnOnCapacityUnitsPageTheCo
 	When User enters "Unit 2" text in the Search field for "Capacity Unit" column
 	Then "1" content is displayed in "Slots" column
 	When User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	And User selects "Unassigned" checkbox in the "Capacity Units" field on the Project details page
-	When User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName | CapacityUnits |
+	| Slot 2   | Slot 2      | Unassigned    |
 	And User selects "Units" tab on the Project details page
 	When User enters "Unassigned" text in the Search field for "Capacity Unit" column
 	Then "2" content is displayed in "Slots" column
@@ -179,13 +145,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	When User navigates to "ProjectForDAS13812" project details
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 1" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 1" Name in the "Display Name" field on the Project details page
-	And User selects "Stage13812 \ 1Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "Stage13812 \ 2Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "Stage13812 \ 3Task13812" checkbox in the "Tasks" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName | Tasks                                                                   |
+	| Slot 1   | Slot 1      | Stage13812 \ 1Task13812‡Stage13812 \ 2Task13812‡Stage13812 \ 3Task13812 |
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "ProjectForDAS13812" Project
@@ -202,12 +164,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatUpdateButtonIsDisplayedCorrectlyOnTheE
 	Then "UPDATE" Action button is disabled
 	And "UPDATE" Action button have tooltip with "This slot cannot be saved because it is associated to at least 1 unpublished task (Stage13812 \ 1Task13812)" text
 	When User clicks the "CANCEL" Action button
-	And User clicks the "CREATE SLOT" Action button
-	And User type "Slot 2" Name in the "Slot Name" field on the Project details page
-	And User type "Slot 2" Name in the "Display Name" field on the Project details page
-	And User selects "Stage13812 \ 2Task13812" checkbox in the "Tasks" field on the Project details page
-	And User selects "Stage13812 \ 3Task13812" checkbox in the "Tasks" field on the Project details page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName | DisplayName | Tasks                                           |
+	| Slot 2   | Slot 2      | Stage13812 \ 2Task13812†Stage13812 \ 3Task13812 |
 	And User clicks "Projects" on the left-hand menu
 	Then "Projects Home" page is displayed to the user
 	When User navigate to "ProjectForDAS13812" Project

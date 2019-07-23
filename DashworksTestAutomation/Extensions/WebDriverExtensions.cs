@@ -2,12 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using DashworksTestAutomation.Base;
 using DashworksTestAutomation.Utils;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Remote;
@@ -240,6 +240,15 @@ namespace DashworksTestAutomation.Extensions
                 else
                     break;
             } while (wasLoadingSpinnerDisplayed && attempts < 3);
+        }
+
+        public static void CheckConsoleErrors(this RemoteWebDriver driver)
+        {
+            var errorsList = new List<LogEntry>();
+            foreach (var entry in driver.Manage().Logs.GetLog(LogType.Browser).ToList())
+                if (entry.Level == LogLevel.Severe)
+                    errorsList.Add(entry);
+            Assert.IsEmpty(errorsList, "Error message is displayed in the console");
         }
 
         #region Web element extensions
@@ -1708,11 +1717,11 @@ namespace DashworksTestAutomation.Extensions
 
         public enum WaitTime
         {
-            [Description("6")]
+            [System.ComponentModel.Description("6")]
             Short,
-            [Description("15")]
+            [System.ComponentModel.Description("15")]
             Medium,
-            [Description("30")]
+            [System.ComponentModel.Description("30")]
             Long
         }
 

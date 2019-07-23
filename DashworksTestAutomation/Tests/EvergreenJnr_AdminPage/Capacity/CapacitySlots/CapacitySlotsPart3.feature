@@ -12,12 +12,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatErrorMessageAppearsWhenCreatingDuplica
 	| ProjectDAS13779 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	And User clicks the "CREATE SLOT" Action button
-	And User type "SlotDAS13779" Name in the "Slot Name" field on the Project details page
-	And User type "13779" Name in the "Display Name" field on the Project details page
-	And User enters "29 Oct 2018" value to "Slot Available From" date field on Capacity Slot form page
-	And User enters "29 Oct 2018" value to "Slot Available To" date field on Capacity Slot form page
-	And User clicks the "CREATE" Action button
+	And User creates new Slot
+	| SlotName     | DisplayName | SlotAvailableFrom | SlotAvailableTo |
+	| SlotDAS13779 | 13779       | 29 Oct 2018       | 29 Oct 2018     |
 	And User selects "Override Dates" tab on the Project details page
 	And User clicks the "CREATE OVERRIDE DATE" Action button
 	Then Create Override Date is displayed correctly
@@ -49,11 +46,9 @@ Scenario: EvergreenJnr_AdminPage_CheckThatNoErrorInConsoleAfterSettingSameOverri
 	| ProjectDAS13442 | All Devices | None            | Standalone Project |
 	And User clicks "Capacity" tab
 	And User selects "Slots" tab on the Project details page
-	When User clicks the "CREATE SLOT" Action button
-	And User type "Slot13442" Name in the "Slot Name" field on the Project details page
-	And User type "13442" Name in the "Display Name" field on the Project details page
-	And User clicks the "CREATE" Action button
-	Then Success message is displayed and contains "Your capacity slot has been created" text
+	And User creates new Slot
+	| SlotName  | DisplayName |
+	| Slot13442 | 13442       |
 	When User clicks newly created object link
 	And User clicks "Capacity" tab
 	And User selects "Override Dates" tab on the Project details page
