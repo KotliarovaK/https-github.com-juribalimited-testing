@@ -66,6 +66,12 @@ namespace DashworksTestAutomation.Pages
         [FindsBy(How = How.XPath, Using = ".//mat-checkbox[@formcontrolname='showLegend']/label")]
         public IWebElement ShowLegend { get; set; }
 
+        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[@formcontrolname='showLegend']/label/span")]
+        public IWebElement ShowLegendLabel { get; set; }
+
+        [FindsBy(How = How.XPath, Using = ".//mat-checkbox[@formcontrolname='displayDataLabels']/label/span")]
+        public IWebElement ShowDataLabel { get; set; }
+
         [FindsBy(How = How.XPath, Using = ".//div[@class='actions']/button[contains(@class,'star')]")]
         public IWebElement CreateUpdateWidgetButton { get; set; }
 

@@ -8208,6 +8208,198 @@ this.FeatureBackground();
             this.ScenarioCleanup();
         }
 
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17411")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        public virtual void EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList()
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForListInternal();
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForListInternal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_DevicesList_CheckThatProjectNameCategoryAppearsForList", null, new string[] {
+                        "Evergreen",
+                        "Applications",
+                        "EvergreenJnr_FilterFeature",
+                        "FilterFunctionality",
+                        "DAS17411",
+                        "Cleanup"});
+#line 1899
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1900
+ testRunner.When("User clicks \"Devices\" on the left-hand menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1901
+ testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table150 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table150.AddRow(new string[] {
+                        "Windows7Mi: Name"});
+#line 1902
+ testRunner.And("ColumnName is entered into the search box and the selection is clicked", ((string)(null)), table150, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table151 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ColumnName"});
+            table151.AddRow(new string[] {
+                        "Windows7Mi: Name"});
+#line 1905
+ testRunner.Then("ColumnName is added to the list", ((string)(null)), table151, "Then ");
+#line 1908
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table152 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table152.AddRow(new string[] {
+                        ""});
+#line 1909
+ testRunner.And("User add \"Windows7Mi: Name\" filter where type is \"Not empty\" with added column an" +
+                    "d following value:", ((string)(null)), table152, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table153 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table153.AddRow(new string[] {
+                        "00"});
+#line 1912
+ testRunner.And("User Add And \"Windows7Mi: Name\" filter where type is \"Contains\" with added column" +
+                    " and following value:", ((string)(null)), table153, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table154 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table154.AddRow(new string[] {
+                        "fpi"});
+#line 1915
+ testRunner.And("User Add And \"Windows7Mi: Name\" filter where type is \"Does not contain\" with adde" +
+                    "d column and following value:", ((string)(null)), table154, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table155 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Values"});
+            table155.AddRow(new string[] {
+                        "2"});
+#line 1918
+ testRunner.And("User Add And \"Windows7Mi: Name\" filter where type is \"Begins with\" with added col" +
+                    "umn and following value:", ((string)(null)), table155, "And ");
+#line 1921
+ testRunner.Then("\"4\" rows are displayed in the agGrid", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesList")]
+        [NUnit.Framework.CategoryAttribute("Evergreen")]
+        [NUnit.Framework.CategoryAttribute("Applications")]
+        [NUnit.Framework.CategoryAttribute("EvergreenJnr_FilterFeature")]
+        [NUnit.Framework.CategoryAttribute("FilterFunctionality")]
+        [NUnit.Framework.CategoryAttribute("DAS17411")]
+        [NUnit.Framework.CategoryAttribute("Cleanup")]
+        [NUnit.Framework.TestCaseAttribute("Applications", null)]
+        [NUnit.Framework.TestCaseAttribute("Mailboxes", null)]
+        [NUnit.Framework.TestCaseAttribute("Users", null)]
+        public virtual void EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesList(string listName, string[] exampleTags)
+        {
+            System.Exception lastException = null;
+            for (int i = 0; (i <= 1); i = (i + 1))
+            {
+                try
+                {
+                    this.EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesListInternal(listName,exampleTags);
+                    return;
+                }
+                catch (System.Exception exc)
+                {
+                    lastException = exc;
+                }
+                if (((i + 1)
+                     <= 1))
+                {
+                    testRunner.OnScenarioEnd();
+                }
+            }
+            if ((lastException != null))
+            {
+                throw lastException;
+            }
+        }
+
+        private void EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesListInternal(string listName, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "Evergreen",
+                    "Applications",
+                    "EvergreenJnr_FilterFeature",
+                    "FilterFunctionality",
+                    "DAS17411",
+                    "Cleanup"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("EvergreenJnr_Lists_CheckThatProjectNameIsNotDisplayedForNotDevicesList", null, @__tags);
+#line 1924
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line 1925
+ testRunner.When(string.Format("User clicks \"{0}\" on the left-hand menu", listName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1926
+ testRunner.And("User clicks the Columns button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1927
+ testRunner.And("User enters \"Windows7Mi: Name\" text in Search field at Columns Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table156 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+#line 1928
+ testRunner.Then("Category with counter is displayed on Columns panel", ((string)(null)), table156, "Then ");
+#line 1931
+ testRunner.When("User clicks the Filters button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 1932
+ testRunner.And("User clicks Add New button on the Filter panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 1933
+ testRunner.And("User enters \"Windows7Mi: Name\" text in Search field at Filters Panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table157 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Category",
+                        "Number"});
+#line 1934
+ testRunner.Then("Category with counter is displayed on Filter panel", ((string)(null)), table157, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+
     }
 }
 #pragma warning restore
